@@ -885,3 +885,319 @@ body.properties.版面名称.select.name should be populated, instead was `""`.
 2026-02-08 06:43:22,627 - root - INFO - 分析到 1 条政策趋势
 2026-02-08 06:43:22,679 - root - INFO - 文章聚类为 5 个主题
 2026-02-08 06:43:22,680 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-08 06:57:16,452 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:57:17,660 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:57:17,666 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:57:17,667 - root - INFO - 找到 7 篇文章
+2026-02-08 06:57:19,627 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:20,855 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:21,977 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:24,230 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:25,170 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:27,230 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:28,634 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:31,376 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:32,835 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:44,231 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:46,083 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:57:47,272 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:58:00,805 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:58:03,547 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:58:05,503 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:58:06,604 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:58:18,845 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:58:20,251 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:58:22,897 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-08 06:58:22,898 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-08 06:58:23,281 - jieba - DEBUG - Loading model cost 0.384 seconds.
+2026-02-08 06:58:23,281 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-08 06:58:23,291 - root - INFO - 创建新文章: 中央军委举行慰问驻京部队老干部迎新春文艺演出
+2026-02-08 06:58:24,669 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:58:26,618 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81c1-809e-e973f86ca340/children "HTTP/1.1 200 OK"
+2026-02-08 06:58:26,621 - root - INFO - 成功创建Notion页面: 中央军委举行慰问驻京部队老干部迎新春文艺演出
+2026-02-08 06:58:29,065 - root - INFO - 创建新文章: 习近平致电祝贺费尔南德斯当选哥斯达黎加总统
+2026-02-08 06:58:32,365 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:58:33,513 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-815f-8c11-e1ac1c138f97/children "HTTP/1.1 200 OK"
+2026-02-08 06:58:33,515 - root - INFO - 成功创建Notion页面: 习近平致电祝贺费尔南德斯当选哥斯达黎加总统
+2026-02-08 06:58:36,337 - root - INFO - 创建新文章: 以博物馆为媒，让中华文明可触可感（总书记的关切·落地的回响）
+2026-02-08 06:58:37,723 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:58:44,101 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8100-bf0a-c4259c6354cb/children "HTTP/1.1 200 OK"
+2026-02-08 06:58:44,104 - root - INFO - 成功创建Notion页面: 以博物馆为媒，让中华文明可触可感（总书记的关切·落地的回响）
+2026-02-08 06:58:46,950 - root - INFO - 创建新文章: 90后卫星设计师的“三张图”（新春走基层·新赛道迸发新活力）
+2026-02-08 06:58:47,585 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:58:50,253 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8171-830f-e08bef86825b/children "HTTP/1.1 200 OK"
+2026-02-08 06:58:50,260 - root - INFO - 成功创建Notion页面: 90后卫星设计师的“三张图”（新春走基层·新赛道迸发新活力）
+2026-02-08 06:58:52,055 - root - INFO - 创建新文章: 托起乡亲们稳稳的幸福（贯彻四中全会精神一线见闻）
+2026-02-08 06:58:52,606 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:58:53,917 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81b3-821c-cbf9421b965b/children "HTTP/1.1 200 OK"
+2026-02-08 06:58:53,919 - root - INFO - 成功创建Notion页面: 托起乡亲们稳稳的幸福（贯彻四中全会精神一线见闻）
+2026-02-08 06:58:56,766 - root - INFO - 创建新文章: 2025年规上文化企业营收同比增长7.4%
+2026-02-08 06:58:57,282 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:58:58,001 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8131-862d-fc6ece0390d7/children "HTTP/1.1 200 OK"
+2026-02-08 06:58:58,003 - root - INFO - 成功创建Notion页面: 2025年规上文化企业营收同比增长7.4%
+2026-02-08 06:59:00,165 - root - INFO - 创建新文章: 2025年农村网络零售额同比增长6.7%
+2026-02-08 06:59:00,697 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:59:01,453 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8150-bf67-d18bf0a4a9db/children "HTTP/1.1 200 OK"
+2026-02-08 06:59:01,455 - root - INFO - 成功创建Notion页面: 2025年农村网络零售额同比增长6.7%
+2026-02-08 06:59:01,460 - root - INFO - 成功保存 7 篇文章到本地
+2026-02-08 06:59:01,464 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20260208.json
+2026-02-08 06:59:01,479 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20260208.csv
+2026-02-08 06:59:01,480 - root - INFO - 成功导出 7 篇文章到 data/exports/claude_articles_20260208.json (Claude格式)
+2026-02-08 06:59:01,510 - root - INFO - 预测到 5 个热点话题
+2026-02-08 06:59:01,510 - root - INFO - 分析到 1 条政策趋势
+2026-02-08 06:59:01,573 - root - INFO - 文章聚类为 5 个主题
+2026-02-08 06:59:01,574 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-08 07:07:14,345 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 07:07:16,554 - root - INFO - 找到 8 个版面
+2026-02-08 07:07:18,131 - root - INFO - 成功抓取版面 01
+2026-02-08 07:07:20,765 - root - INFO - 成功抓取版面 02
+2026-02-08 07:07:22,501 - root - INFO - 成功抓取版面 03
+2026-02-08 07:07:24,711 - root - INFO - 成功抓取版面 04
+2026-02-08 07:07:25,813 - root - INFO - 成功抓取版面 05
+2026-02-08 07:07:26,907 - root - INFO - 成功抓取版面 06
+2026-02-08 07:07:29,193 - root - INFO - 成功抓取版面 07
+2026-02-08 07:07:32,174 - root - INFO - 成功抓取版面 08
+2026-02-08 07:07:32,174 - root - INFO - 共抓取 8 个版面
+2026-02-08 07:07:32,185 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 07:07:32,193 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 07:07:32,198 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 07:07:32,203 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 07:07:32,208 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 07:07:32,212 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 07:07:32,216 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 07:07:32,220 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 07:07:32,220 - root - INFO - 共找到 51 篇文章
+2026-02-08 07:07:33,878 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:35,309 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:45,083 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:46,082 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:48,300 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:49,517 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:50,814 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:52,232 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:53,894 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:56,175 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:58,793 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:07:59,927 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:08:03,240 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:08:04,426 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:08:05,826 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:08:06,928 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:08:07,855 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:08:08,462 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 07:08:10,977 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-08 07:08:10,978 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-08 07:08:11,333 - jieba - DEBUG - Loading model cost 0.356 seconds.
+2026-02-08 07:08:11,333 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-08 07:08:11,338 - root - INFO - 创建新文章: 中央军委举行慰问驻京部队老干部迎新春文艺演出
+2026-02-08 07:08:11,856 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:08:12,703 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-816d-b477-fd09ad795990/children "HTTP/1.1 200 OK"
+2026-02-08 07:08:12,704 - root - INFO - 成功创建Notion页面: 中央军委举行慰问驻京部队老干部迎新春文艺演出
+2026-02-08 07:08:14,897 - root - INFO - 创建新文章: 习近平致电祝贺费尔南德斯当选哥斯达黎加总统
+2026-02-08 07:08:16,419 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:08:17,896 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8179-bfb4-d902d40bc6fb/children "HTTP/1.1 200 OK"
+2026-02-08 07:08:17,897 - root - INFO - 成功创建Notion页面: 习近平致电祝贺费尔南德斯当选哥斯达黎加总统
+2026-02-08 07:08:20,131 - root - INFO - 创建新文章: 以博物馆为媒，让中华文明可触可感（总书记的关切·落地的回响）
+2026-02-08 07:08:21,645 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:08:26,933 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8113-b7aa-d2b66b522ca7/children "HTTP/1.1 200 OK"
+2026-02-08 07:08:26,985 - root - INFO - 成功创建Notion页面: 以博物馆为媒，让中华文明可触可感（总书记的关切·落地的回响）
+2026-02-08 07:08:28,474 - root - INFO - 创建新文章: 90后卫星设计师的“三张图”（新春走基层·新赛道迸发新活力）
+2026-02-08 07:08:28,977 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:08:31,369 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8102-b4b5-e8c526910355/children "HTTP/1.1 200 OK"
+2026-02-08 07:08:31,372 - root - INFO - 成功创建Notion页面: 90后卫星设计师的“三张图”（新春走基层·新赛道迸发新活力）
+2026-02-08 07:08:33,294 - root - INFO - 创建新文章: 托起乡亲们稳稳的幸福（贯彻四中全会精神一线见闻）
+2026-02-08 07:08:34,556 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:08:36,273 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8155-92c2-ea3656e6d403/children "HTTP/1.1 200 OK"
+2026-02-08 07:08:36,280 - root - INFO - 成功创建Notion页面: 托起乡亲们稳稳的幸福（贯彻四中全会精神一线见闻）
+2026-02-08 07:08:37,537 - root - INFO - 创建新文章: 2025年规上文化企业营收同比增长7.4%
+2026-02-08 07:08:37,993 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:08:42,146 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8159-8ca6-e95f943edfc9/children "HTTP/1.1 200 OK"
+2026-02-08 07:08:42,148 - root - INFO - 成功创建Notion页面: 2025年规上文化企业营收同比增长7.4%
+2026-02-08 07:08:45,047 - root - INFO - 创建新文章: 2025年农村网络零售额同比增长6.7%
+2026-02-08 07:08:46,430 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:08:47,527 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-811c-be7a-eaf28fcf1c97/children "HTTP/1.1 200 OK"
+2026-02-08 07:08:47,529 - root - INFO - 成功创建Notion页面: 2025年农村网络零售额同比增长6.7%
+2026-02-08 07:08:48,974 - root - INFO - 创建新文章: 产业链上下游，三家企业负责人谈协同创新（经济新方位·对话·奋进2026）
+2026-02-08 07:08:49,505 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:08:49,827 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81c1-9343-f2291fdbebde/children "HTTP/1.1 400 Bad Request"
+2026-02-08 07:08:49,829 - root - ERROR - 创建Notion页面失败: body failed validation: body.children.length should be ≤ `100`, instead was `114`.
+2026-02-08 07:08:51,739 - root - INFO - 创建新文章: 坚持做困难而正确的事（编辑手记）
+2026-02-08 07:08:52,244 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:08:53,375 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-815b-acbd-ef6d790f7e53/children "HTTP/1.1 200 OK"
+2026-02-08 07:08:53,377 - root - INFO - 成功创建Notion页面: 坚持做困难而正确的事（编辑手记）
+2026-02-08 07:08:55,165 - root - INFO - 创建新文章: 优化创新生态，让企业轻装上阵（延伸阅读）
+2026-02-08 07:08:59,559 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:09:00,864 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81c4-9f77-e5a5c93066fb/children "HTTP/1.1 200 OK"
+2026-02-08 07:09:00,865 - root - INFO - 成功创建Notion页面: 优化创新生态，让企业轻装上阵（延伸阅读）
+2026-02-08 07:09:02,657 - root - INFO - 创建新文章: 价稳量足，“菜篮子”供应有保障（新春走基层）
+2026-02-08 07:09:03,150 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:09:23,701 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81d0-b1ea-d3c54ad6978c/children "HTTP/1.1 200 OK"
+2026-02-08 07:09:23,704 - root - INFO - 成功创建Notion页面: 价稳量足，“菜篮子”供应有保障（新春走基层）
+2026-02-08 07:09:25,713 - root - INFO - 创建新文章: 做好春耕及全年化肥保供稳价
+2026-02-08 07:09:26,210 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:09:27,591 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8174-b618-cc9748587c03/children "HTTP/1.1 200 OK"
+2026-02-08 07:09:27,593 - root - INFO - 成功创建Notion页面: 做好春耕及全年化肥保供稳价
+2026-02-08 07:09:30,346 - root - INFO - 创建新文章: 支持医保领域新场景大规模应用
+2026-02-08 07:09:30,827 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:09:34,338 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8180-b1a4-cbd02a4f3953/children "HTTP/1.1 200 OK"
+2026-02-08 07:09:34,348 - root - INFO - 成功创建Notion页面: 支持医保领域新场景大规模应用
+2026-02-08 07:09:37,200 - root - INFO - 创建新文章: 中巴携手打造“地下长龙”
+2026-02-08 07:09:38,663 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:09:51,445 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81b5-a944-d9fd659558cf/children "HTTP/1.1 200 OK"
+2026-02-08 07:09:51,508 - root - INFO - 成功创建Notion页面: 中巴携手打造“地下长龙”
+2026-02-08 07:09:54,152 - root - INFO - 创建新文章: 维护一个中国原则，就是维护国际公平正义（国际论坛）
+2026-02-08 07:09:54,769 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:09:57,187 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8125-ae2f-d33af141f143/children "HTTP/1.1 200 OK"
+2026-02-08 07:09:57,189 - root - INFO - 成功创建Notion页面: 维护一个中国原则，就是维护国际公平正义（国际论坛）
+2026-02-08 07:09:58,387 - root - INFO - 创建新文章: 何立峰向英国48家集团2026“破冰者”新春晚宴致贺电
+2026-02-08 07:09:58,880 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:00,609 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8171-bee8-c4f8c4ab27d6/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:00,611 - root - INFO - 成功创建Notion页面: 何立峰向英国48家集团2026“破冰者”新春晚宴致贺电
+2026-02-08 07:10:03,088 - root - INFO - 创建新文章: “中国为完善全球治理发挥重要作用”
+2026-02-08 07:10:03,708 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:06,088 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81b7-acd3-cd32520de2c6/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:06,095 - root - INFO - 成功创建Notion页面: “中国为完善全球治理发挥重要作用”
+2026-02-08 07:10:07,983 - root - INFO - 创建新文章: 中国机器人首次亮相巴黎香街春节巡游
+2026-02-08 07:10:08,553 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:10,307 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81f1-a0e4-e9cbcabc7194/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:10,310 - root - INFO - 成功创建Notion页面: 中国机器人首次亮相巴黎香街春节巡游
+2026-02-08 07:10:12,239 - root - INFO - 创建新文章: “为推动中国医疗健康市场发展添砖加瓦”
+2026-02-08 07:10:16,599 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:18,381 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8161-9082-e6d464dfb70d/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:18,383 - root - INFO - 成功创建Notion页面: “为推动中国医疗健康市场发展添砖加瓦”
+2026-02-08 07:10:20,422 - root - INFO - 创建新文章: 以高质量发展的确定性应对各种不确定性
+2026-02-08 07:10:22,173 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:23,232 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81f1-bff3-e0e377b3acce/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:23,233 - root - INFO - 成功创建Notion页面: 以高质量发展的确定性应对各种不确定性
+2026-02-08 07:10:26,114 - root - INFO - 创建新文章: 10余年，西湖会所整治成效持续显现（在现场·作风建设新观察）
+2026-02-08 07:10:26,582 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:28,610 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81f6-9320-cb220384b21f/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:28,613 - root - INFO - 成功创建Notion页面: 10余年，西湖会所整治成效持续显现（在现场·作风建设新观察）
+2026-02-08 07:10:30,594 - root - INFO - 创建新文章: 全国实现生育津贴直达个人
+2026-02-08 07:10:31,067 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:33,125 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81ac-b53d-c82a23394cc0/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:33,128 - root - INFO - 成功创建Notion页面: 全国实现生育津贴直达个人
+2026-02-08 07:10:34,722 - root - INFO - 创建新文章: 我国成功发射可重复使用试验航天器
+2026-02-08 07:10:35,423 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:36,491 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8153-8518-e6a5c38d21b9/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:36,493 - root - INFO - 成功创建Notion页面: 我国成功发射可重复使用试验航天器
+2026-02-08 07:10:38,413 - root - INFO - 创建新文章: 图片报道
+2026-02-08 07:10:39,853 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:40,570 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8168-8f02-f468fe7126e6/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:40,572 - root - INFO - 成功创建Notion页面: 图片报道
+2026-02-08 07:10:42,614 - root - INFO - 创建新文章: “冰海卫士”守护航行安全
+2026-02-08 07:10:43,454 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:50,262 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81f2-97f3-dc13b927a592/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:50,267 - root - INFO - 成功创建Notion页面: “冰海卫士”守护航行安全
+2026-02-08 07:10:52,913 - root - INFO - 创建新文章: 云南发布旅居发展专项规划
+2026-02-08 07:10:53,445 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:54,245 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81ac-997d-fa5c84a2cc46/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:54,246 - root - INFO - 成功创建Notion页面: 云南发布旅居发展专项规划
+2026-02-08 07:10:56,999 - root - INFO - 创建新文章: 张西明当选安徽省政协主席
+2026-02-08 07:10:57,603 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:10:58,544 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8177-b0ea-f7c4c432d409/children "HTTP/1.1 200 OK"
+2026-02-08 07:10:58,546 - root - INFO - 成功创建Notion页面: 张西明当选安徽省政协主席
+2026-02-08 07:11:01,509 - root - INFO - 创建新文章: 海南今年谋划393个城市更新项目
+2026-02-08 07:11:02,026 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:11:03,352 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-813e-abdc-d2a224ff4fad/children "HTTP/1.1 200 OK"
+2026-02-08 07:11:03,354 - root - INFO - 成功创建Notion页面: 海南今年谋划393个城市更新项目
+2026-02-08 07:11:05,315 - root - INFO - 创建新文章: 一版责编：许  诺  张帅祯  赵川博  二版责编：吕  莉  祁嘉润  何  彪  三版责编：韩晓明  姜  波  李安琪  四版责编：刘  念  韩春瑶  陈  震
+2026-02-08 07:11:06,353 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:11:07,700 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81ce-91c7-ea841e335c11/children "HTTP/1.1 200 OK"
+2026-02-08 07:11:07,702 - root - INFO - 成功创建Notion页面: 一版责编：许  诺  张帅祯  赵川博  二版责编：吕  莉  祁嘉润  何  彪  三版责编：韩晓明  姜  波  李安琪  四版责编：刘  念  韩春瑶  陈  震
+2026-02-08 07:11:09,614 - root - INFO - 创建新文章: 不惧“冒险”，把实力发挥出来就好（奥运纵横）
+2026-02-08 07:11:10,101 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:11:13,577 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-816b-b511-c2bc5d2e0159/children "HTTP/1.1 200 OK"
+2026-02-08 07:11:13,579 - root - INFO - 成功创建Notion页面: 不惧“冒险”，把实力发挥出来就好（奥运纵横）
+2026-02-08 07:11:16,511 - root - INFO - 创建新文章: 聆听文明交流互鉴的冬奥乐章（冬奥观澜）
+2026-02-08 07:11:18,725 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:11:22,294 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8133-a2ab-cc02c42003d1/children "HTTP/1.1 200 OK"
+2026-02-08 07:11:22,312 - root - INFO - 成功创建Notion页面: 聆听文明交流互鉴的冬奥乐章（冬奥观澜）
+2026-02-08 07:11:24,115 - root - INFO - 创建新文章: 瑞士队摘得本届冬奥会首金
+2026-02-08 07:11:26,834 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:11:28,014 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-818f-aef8-d5ff86f91b16/children "HTTP/1.1 200 OK"
+2026-02-08 07:11:28,016 - root - INFO - 成功创建Notion页面: 瑞士队摘得本届冬奥会首金
+2026-02-08 07:11:29,306 - root - INFO - 创建新文章: 花样滑冰中的4A是什么（秒懂冬奥）
+2026-02-08 07:11:29,798 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:11:31,065 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81bc-942e-c48f8e3fe65a/children "HTTP/1.1 200 OK"
+2026-02-08 07:11:31,067 - root - INFO - 成功创建Notion页面: 花样滑冰中的4A是什么（秒懂冬奥）
+2026-02-08 07:11:33,991 - root - INFO - 创建新文章: “和谐”主题  团结故事
+2026-02-08 07:11:34,490 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:11:35,879 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8165-9919-d2421538a81c/children "HTTP/1.1 200 OK"
+2026-02-08 07:11:35,881 - root - INFO - 成功创建Notion页面: “和谐”主题  团结故事
+2026-02-08 07:11:38,754 - root - INFO - 创建新文章: “我与中国体育有缘”（冬奥走笔）
+2026-02-08 07:11:42,354 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:11:52,645 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81a5-9454-e45acd851e1f/children "HTTP/1.1 200 OK"
+2026-02-08 07:11:52,682 - root - INFO - 成功创建Notion页面: “我与中国体育有缘”（冬奥走笔）
+2026-02-08 07:11:54,596 - root - INFO - 创建新文章: 本版责编：林  琳  史  哲  高  佶
+2026-02-08 07:11:57,103 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:11:58,080 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81e6-9349-cdcb2a0ee553/children "HTTP/1.1 200 OK"
+2026-02-08 07:11:58,082 - root - INFO - 成功创建Notion页面: 本版责编：林  琳  史  哲  高  佶
+2026-02-08 07:12:00,024 - root - INFO - 创建新文章: 品读课本里的中国年（深聚焦）
+2026-02-08 07:12:00,618 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:03,283 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-815e-8bb4-ed9bba3ef79f/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:03,306 - root - INFO - 成功创建Notion页面: 品读课本里的中国年（深聚焦）
+2026-02-08 07:12:04,428 - root - INFO - 创建新文章: 感悟这堂延续千年的年俗“大课”
+2026-02-08 07:12:04,908 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:06,510 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-814e-b308-f4320bbcd07f/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:06,512 - root - INFO - 成功创建Notion页面: 感悟这堂延续千年的年俗“大课”
+2026-02-08 07:12:09,461 - root - INFO - 创建新文章: 孩子用AI写作业，你怎么看？（教育时评）
+2026-02-08 07:12:10,084 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:11,457 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8108-b0ce-d0c3b382df6d/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:11,460 - root - INFO - 成功创建Notion页面: 孩子用AI写作业，你怎么看？（教育时评）
+2026-02-08 07:12:14,137 - root - INFO - 创建新文章: 打通学段之间的“墙”（师说）
+2026-02-08 07:12:15,654 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:17,241 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-819a-8aa6-dca5ad39e9b4/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:17,242 - root - INFO - 成功创建Notion页面: 打通学段之间的“墙”（师说）
+2026-02-08 07:12:18,722 - root - INFO - 创建新文章: 本版责编：丁雅诵
+2026-02-08 07:12:19,357 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:20,892 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8106-8a0f-c784f6a518bc/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:20,894 - root - INFO - 成功创建Notion页面: 本版责编：丁雅诵
+2026-02-08 07:12:23,792 - root - INFO - 创建新文章: 人间至味是团圆（新春特别策划）
+2026-02-08 07:12:25,510 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:25,805 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-810e-a84b-da78a777afc1/children "HTTP/1.1 400 Bad Request"
+2026-02-08 07:12:25,807 - root - ERROR - 创建Notion页面失败: body failed validation: body.children.length should be ≤ `100`, instead was `106`.
+2026-02-08 07:12:27,023 - root - INFO - 创建新文章: 家国同心，血脉里的文化印记（观沧海）
+2026-02-08 07:12:29,443 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:30,939 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8119-965c-c33b08103b60/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:30,941 - root - INFO - 成功创建Notion页面: 家国同心，血脉里的文化印记（观沧海）
+2026-02-08 07:12:33,784 - root - INFO - 创建新文章: 本版责编：江  琳
+2026-02-08 07:12:34,277 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:35,192 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81ca-8fa4-eaf3df77e467/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:35,194 - root - INFO - 成功创建Notion页面: 本版责编：江  琳
+2026-02-08 07:12:36,822 - root - INFO - 创建新文章: 丹心铸魂（谈艺录）
+2026-02-08 07:12:37,310 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:38,802 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8168-bb57-ce5539af2804/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:38,803 - root - INFO - 成功创建Notion页面: 丹心铸魂（谈艺录）
+2026-02-08 07:12:41,040 - root - INFO - 创建新文章: 花笺：蕴藏中式浪漫
+2026-02-08 07:12:41,629 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:43,369 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-810f-91bb-f3281c105065/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:43,372 - root - INFO - 成功创建Notion页面: 花笺：蕴藏中式浪漫
+2026-02-08 07:12:45,925 - root - INFO - 创建新文章: 生生不息的立春之美（读画）
+2026-02-08 07:12:46,459 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:47,933 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81ba-874c-cc4360f05eaf/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:47,935 - root - INFO - 成功创建Notion页面: 生生不息的立春之美（读画）
+2026-02-08 07:12:50,571 - root - INFO - 创建新文章: 科技艺术呈现新样貌
+2026-02-08 07:12:51,061 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:52,739 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-810d-93e7-eaf29d64317b/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:52,741 - root - INFO - 成功创建Notion页面: 科技艺术呈现新样貌
+2026-02-08 07:12:54,270 - root - INFO - 创建新文章: 图片报道
+2026-02-08 07:12:54,975 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:12:56,260 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-813a-9400-e9ff44ad77f6/children "HTTP/1.1 200 OK"
+2026-02-08 07:12:56,262 - root - INFO - 成功创建Notion页面: 图片报道
+2026-02-08 07:12:59,022 - root - INFO - 创建新文章: 以场景促教学（艺坛走笔）
+2026-02-08 07:12:59,600 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:13:01,086 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81f1-8a23-d0b0e78e305b/children "HTTP/1.1 200 OK"
+2026-02-08 07:13:01,089 - root - INFO - 成功创建Notion页面: 以场景促教学（艺坛走笔）
+2026-02-08 07:13:03,083 - root - INFO - 创建新文章: 本版责编 徐红梅  吴艳丽
+2026-02-08 07:13:03,657 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 07:13:05,241 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-815c-894b-c562bb718a10/children "HTTP/1.1 200 OK"
+2026-02-08 07:13:05,242 - root - INFO - 成功创建Notion页面: 本版责编 徐红梅  吴艳丽
+2026-02-08 07:13:05,249 - root - INFO - 成功保存 51 篇文章到本地
+2026-02-08 07:13:05,254 - root - INFO - 成功导出 51 篇文章到 data/exports/articles_20260208.json
+2026-02-08 07:13:05,276 - root - INFO - 成功导出 51 篇文章到 data/exports/articles_20260208.csv
+2026-02-08 07:13:05,278 - root - INFO - 成功导出 51 篇文章到 data/exports/claude_articles_20260208.json (Claude格式)
+2026-02-08 07:13:05,505 - root - INFO - 预测到 5 个热点话题
+2026-02-08 07:13:05,506 - root - INFO - 分析到 1 条政策趋势
+2026-02-08 07:13:05,833 - root - INFO - 文章聚类为 5 个主题
+2026-02-08 07:13:05,833 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable

@@ -58,25 +58,31 @@ class PeopleDailyMaterialSystem:
         """抓取单个日期的文章"""
         logging.info(f"开始抓取 {date.strftime('%Y-%m-%d')} 的人民日报文章")
         
-        # 抓取目录页
-        result = self.crawler.crawl_directory(date)
-        if not result:
+        # 抓取所有版面的目录页
+        directories = self.crawler.crawl_all_directories(date)
+        if not directories:
             logging.error(f"无法获取目录页")
             return []
         
-        url, html = result
-        logging.info(f"目录页URL: {url}")
+        logging.info(f"共抓取 {len(directories)} 个版面")
         
-        # 解析目录页
-        articles_info = self.parser.parse_directory(html)
-        logging.info(f"找到 {len(articles_info)} 篇文章")
+        # 解析所有版面的目录页，获取所有文章链接
+        all_articles_info = []
+        for url, html in directories:
+            articles_info = self.parser.parse_directory(html)
+            # 为每个文章添加目录页URL，用于后续构建完整文章URL
+            for article in articles_info:
+                article['source_url'] = url
+            all_articles_info.extend(articles_info)
+        
+        logging.info(f"共找到 {len(all_articles_info)} 篇文章")
         
         # 获取已存在的文章
         existing_articles = self.notion_api.get_existing_articles()
         
         # 处理每篇文章
         processed_articles = []
-        for article_info in articles_info:
+        for article_info in all_articles_info:
             # 构建完整URL
             if article_info['href'].startswith('http'):
                 # 完整URL，直接使用
@@ -84,7 +90,8 @@ class PeopleDailyMaterialSystem:
             else:
                 # 相对路径，构建完整URL
                 # 从目录页URL中提取日期信息
-                url_parts = url.split('/')
+                source_url = article_info.get('source_url', '')
+                url_parts = source_url.split('/')
                 if len(url_parts) >= 8:
                     # 目录页URL格式: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
                     year_month = url_parts[-3]  # 202602
@@ -93,7 +100,7 @@ class PeopleDailyMaterialSystem:
                     article_url = f"https://paper.people.com.cn/rmrb/pc/content/{year_month}/{day}/{article_info['href']}"
                 else:
                     # 回退到原始方法
-                    base_url = url.rsplit('/', 1)[0]  # 提取基础URL
+                    base_url = source_url.rsplit('/', 1)[0]  # 提取基础URL
                     article_url = f"{base_url}/{article_info['href']}"
             
             # 抓取文章页
