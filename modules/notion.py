@@ -33,22 +33,29 @@ class NotionAPI:
             start_cursor = None
             
             while has_more:
-                response = self.notion.databases.query(
-                    database_id=self.database_id,
+                # 使用search API查询数据库中的内容
+                response = self.notion.search(
+                    filter={
+                        "property": "object",
+                        "value": "page"
+                    },
                     start_cursor=start_cursor
                 )
                 
                 for page in response.get('results', []):
-                    properties = page.get('properties', {})
-                    article = {
-                        'id': page.get('id'),
-                        'title': properties.get('标题', {}).get('title', [{}])[0].get('plain_text', ''),
-                        'url': properties.get('URL', {}).get('url', ''),
-                        'plate': properties.get('版面名称', {}).get('select', {}).get('name', ''),
-                        'date': properties.get('发布日期', {}).get('date', {}).get('start', ''),
-                        'content': ''  # 内容需要单独获取
-                    }
-                    existing_articles.append(article)
+                    # 检查页面是否属于目标数据库
+                    parent = page.get('parent', {})
+                    if parent.get('type') == 'database_id' and parent.get('database_id') == self.database_id:
+                        properties = page.get('properties', {})
+                        article = {
+                            'id': page.get('id'),
+                            'title': properties.get('标题', {}).get('title', [{}])[0].get('plain_text', ''),
+                            'url': properties.get('URL', {}).get('url', ''),
+                            'plate': properties.get('版面名称', {}).get('select', {}).get('name', ''),
+                            'date': properties.get('发布日期', {}).get('date', {}).get('start', ''),
+                            'content': ''  # 内容需要单独获取
+                        }
+                        existing_articles.append(article)
                 
                 has_more = response.get('has_more', False)
                 start_cursor = response.get('next_cursor')
@@ -77,7 +84,7 @@ class NotionAPI:
                 },
                 '版面名称': {
                     'select': {
-                        'name': article.get('plate', '其他')
+                        'name': article.get('plate') or '其他'
                     }
                 },
                 '发布日期': {
@@ -151,7 +158,7 @@ class NotionAPI:
                 },
                 '版面名称': {
                     'select': {
-                        'name': article.get('plate', '其他')
+                        'name': article.get('plate') or '其他'
                     }
                 },
                 '分类': {

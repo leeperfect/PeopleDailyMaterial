@@ -24,7 +24,7 @@ USER_AGENTS = [
 class URLGenerator:
     """URL生成类"""
     def __init__(self):
-        self.base_url = "http://paper.people.com.cn/rmrb/html/{date_str}/nbs.D110000renmrb_01.htm"
+        self.base_url = "https://paper.people.com.cn/rmrb/html/{date_str}/nbs.D110000renmrb_01.htm"
     
     def generate_url(self, date: datetime) -> str:
         """生成指定日期的人民日报目录页URL"""
@@ -86,6 +86,11 @@ class WebRequestor:
                 )
                 
                 response.raise_for_status()
+                # 处理编码问题
+                if response.encoding == 'ISO-8859-1':
+                    # 尝试猜测正确的编码
+                    encoding = response.apparent_encoding
+                    response.encoding = encoding
                 return response
             except requests.RequestException as e:
                 retries += 1

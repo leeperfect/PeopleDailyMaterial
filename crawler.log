@@ -1,0 +1,294 @@
+2026-02-07 07:07:58,124 - root - INFO - 开始抓取 2026-02-07 的人民日报文章
+2026-02-07 07:08:00,326 - root - WARNING - 请求 http://paper.people.com.cn/rmrb/html/2026-02/07/nbs.D110000renmrb_01.htm 失败，第 1 次重试: 404 Client Error: Not Found for url: http://paper.people.com.cn/rmrb/html/2026-02/07/nbs.D110000renmrb_01.htm
+2026-02-07 07:08:02,614 - root - WARNING - 请求 http://paper.people.com.cn/rmrb/html/2026-02/07/nbs.D110000renmrb_01.htm 失败，第 2 次重试: 404 Client Error: Not Found for url: http://paper.people.com.cn/rmrb/html/2026-02/07/nbs.D110000renmrb_01.htm
+2026-02-07 07:08:03,945 - root - WARNING - 请求 http://paper.people.com.cn/rmrb/html/2026-02/07/nbs.D110000renmrb_01.htm 失败，第 3 次重试: 404 Client Error: Not Found for url: http://paper.people.com.cn/rmrb/html/2026-02/07/nbs.D110000renmrb_01.htm
+2026-02-07 07:08:03,945 - root - ERROR - 请求 http://paper.people.com.cn/rmrb/html/2026-02/07/nbs.D110000renmrb_01.htm 失败，已达到最大重试次数
+2026-02-07 07:08:03,945 - root - ERROR - 无法获取目录页
+2026-02-07 07:08:32,582 - root - INFO - 开始抓取 2026-02-07 的人民日报文章
+2026-02-07 07:08:35,097 - root - WARNING - 请求 http://paper.people.com.cn/rmrb/html/2026-02/07/index.htm 失败，第 1 次重试: 404 Client Error: Not Found for url: http://paper.people.com.cn/rmrb/html/2026-02/07/index.htm
+2026-02-07 07:08:37,822 - root - WARNING - 请求 http://paper.people.com.cn/rmrb/html/2026-02/07/index.htm 失败，第 2 次重试: 404 Client Error: Not Found for url: http://paper.people.com.cn/rmrb/html/2026-02/07/index.htm
+2026-02-07 07:08:40,733 - root - WARNING - 请求 http://paper.people.com.cn/rmrb/html/2026-02/07/index.htm 失败，第 3 次重试: 404 Client Error: Not Found for url: http://paper.people.com.cn/rmrb/html/2026-02/07/index.htm
+2026-02-07 07:08:40,734 - root - ERROR - 请求 http://paper.people.com.cn/rmrb/html/2026-02/07/index.htm 失败，已达到最大重试次数
+2026-02-07 07:08:40,734 - root - ERROR - 无法获取目录页
+2026-02-07 07:08:56,042 - root - INFO - 开始抓取 2024-01-01 的人民日报文章
+2026-02-07 07:08:59,100 - root - WARNING - 请求 http://paper.people.com.cn/rmrb/html/2024-01/01/index.htm 失败，第 1 次重试: 404 Client Error: Not Found for url: http://paper.people.com.cn/rmrb/html/2024-01/01/index.htm
+2026-02-07 07:09:01,944 - root - WARNING - 请求 http://paper.people.com.cn/rmrb/html/2024-01/01/index.htm 失败，第 2 次重试: 404 Client Error: Not Found for url: http://paper.people.com.cn/rmrb/html/2024-01/01/index.htm
+2026-02-07 07:09:03,857 - root - WARNING - 请求 http://paper.people.com.cn/rmrb/html/2024-01/01/index.htm 失败，第 3 次重试: 404 Client Error: Not Found for url: http://paper.people.com.cn/rmrb/html/2024-01/01/index.htm
+2026-02-07 07:09:03,857 - root - ERROR - 请求 http://paper.people.com.cn/rmrb/html/2024-01/01/index.htm 失败，已达到最大重试次数
+2026-02-07 07:09:03,858 - root - ERROR - 无法获取目录页
+2026-02-07 07:09:18,149 - root - INFO - 开始抓取 2023-01-01 的人民日报文章
+2026-02-07 07:09:21,282 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/html/2023-01/01/nbs.D110000renmrb_01.htm
+2026-02-07 07:09:21,286 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-07 07:09:21,287 - root - INFO - 找到 7 篇文章
+2026-02-07 07:10:02,562 - root - INFO - 开始抓取 2023-01-01 的人民日报文章
+2026-02-07 07:10:04,790 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/html/2023-01/01/nbs.D110000renmrb_01.htm
+2026-02-07 07:10:04,797 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-07 07:10:04,797 - root - INFO - 找到 7 篇文章
+2026-02-07 07:10:49,395 - root - INFO - 开始抓取 2023-01-01 的人民日报文章
+2026-02-07 07:10:52,125 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/html/2023-01/01/nbs.D110000renmrb_01.htm
+2026-02-07 07:10:52,129 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-07 07:10:52,129 - root - INFO - 找到 7 篇文章
+2026-02-07 07:10:53,951 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-07 07:10:54,367 - jieba - DEBUG - Dumping model to file cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-07 07:10:54,408 - jieba - DEBUG - Loading model cost 0.457 seconds.
+2026-02-07 07:10:54,408 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-07 07:10:54,409 - root - INFO - 处理文章: å½å®¶ä¸»å¸­ä¹ è¿å¹³åè¡¨äºãäºä¸å¹´æ°å¹´è´ºè¯
+2026-02-07 07:10:56,748 - root - INFO - 处理文章: ä¸­ä¿ä¸¤å½åé¦äºè´æ°å¹´è´ºçµ
+2026-02-07 07:10:58,714 - root - INFO - 处理文章: ä¸ºå®ç°åçäºåå¤§ç¡®å®çç®æ ä»»å¡èå¢ç»å¥æ
+2026-02-07 07:11:00,145 - root - INFO - 处理文章: ä¹ è¿å¹³åæé©¬ç¦è¨å½éè¿ä»»åééæ´²äººå½æ°å¤§ä¼ä¸»å¸­è´è´ºçµ
+2026-02-07 07:11:02,175 - root - INFO - 处理文章: ä»å¤©çä¸­å½ï¼æ¯æ¢¦æ³æ¥è¿å®ç°çä¸­å½
+2026-02-07 07:11:05,190 - root - INFO - 处理文章: è´ºè¯éçè¿½æ¢¦äºº
+2026-02-07 07:11:07,094 - root - INFO - 处理文章: âè®©æå¤©çä¸­å½æ´ç¾å¥½â
+2026-02-07 07:11:07,095 - root - INFO - 成功保存 7 篇文章到本地
+2026-02-07 07:11:07,096 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.json
+2026-02-07 07:11:07,102 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.csv
+2026-02-07 07:11:07,103 - root - INFO - 成功导出 7 篇文章到 data/exports/claude_articles_20230101.json (Claude格式)
+2026-02-07 07:11:07,114 - root - INFO - 预测到 5 个热点话题
+2026-02-07 07:11:07,115 - root - INFO - 分析到 0 条政策趋势
+2026-02-07 07:11:07,152 - root - INFO - 文章聚类为 5 个主题
+2026-02-07 07:11:07,153 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-07 07:17:57,076 - root - INFO - 开始抓取 2023-01-01 的人民日报文章
+2026-02-07 07:18:00,035 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/html/2023-01/01/nbs.D110000renmrb_01.htm
+2026-02-07 07:18:00,041 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-07 07:18:00,041 - root - INFO - 找到 7 篇文章
+2026-02-07 07:18:02,109 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:03,446 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:06,843 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:08,070 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:09,400 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:10,302 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:11,655 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:12,794 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:14,111 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:15,042 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:16,469 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:17,800 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:20,255 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:23,869 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:24,902 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:26,183 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:27,327 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:18:28,982 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-07 07:18:28,985 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-07 07:18:29,372 - jieba - DEBUG - Loading model cost 0.391 seconds.
+2026-02-07 07:18:29,373 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-07 07:18:29,374 - root - INFO - 创建新文章: å½å®¶ä¸»å¸­ä¹ è¿å¹³åè¡¨äºãäºä¸å¹´æ°å¹´è´ºè¯
+2026-02-07 07:18:29,981 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:18:29,982 - root - ERROR - 创建Notion页面失败: body failed validation. Fix one:
+body.properties.版面名称.select.id should be defined, instead was `undefined`.
+body.properties.版面名称.select.name should be populated, instead was `""`.
+2026-02-07 07:18:32,531 - root - INFO - 创建新文章: ä¸­ä¿ä¸¤å½åé¦äºè´æ°å¹´è´ºçµ
+2026-02-07 07:18:32,852 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:18:32,852 - root - ERROR - 创建Notion页面失败: body failed validation. Fix one:
+body.properties.版面名称.select.id should be defined, instead was `undefined`.
+body.properties.版面名称.select.name should be populated, instead was `""`.
+2026-02-07 07:18:35,415 - root - INFO - 创建新文章: ä¸ºå®ç°åçäºåå¤§ç¡®å®çç®æ ä»»å¡èå¢ç»å¥æ
+2026-02-07 07:18:35,818 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:18:35,819 - root - ERROR - 创建Notion页面失败: body failed validation. Fix one:
+body.properties.版面名称.select.id should be defined, instead was `undefined`.
+body.properties.版面名称.select.name should be populated, instead was `""`.
+2026-02-07 07:18:38,562 - root - INFO - 创建新文章: ä¹ è¿å¹³åæé©¬ç¦è¨å½éè¿ä»»åééæ´²äººå½æ°å¤§ä¼ä¸»å¸­è´è´ºçµ
+2026-02-07 07:18:38,868 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:18:38,869 - root - ERROR - 创建Notion页面失败: body failed validation. Fix one:
+body.properties.版面名称.select.id should be defined, instead was `undefined`.
+body.properties.版面名称.select.name should be populated, instead was `""`.
+2026-02-07 07:18:40,637 - root - INFO - 创建新文章: ä»å¤©çä¸­å½ï¼æ¯æ¢¦æ³æ¥è¿å®ç°çä¸­å½
+2026-02-07 07:18:41,041 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:18:41,042 - root - ERROR - 创建Notion页面失败: body failed validation. Fix one:
+body.properties.版面名称.select.id should be defined, instead was `undefined`.
+body.properties.版面名称.select.name should be populated, instead was `""`.
+2026-02-07 07:18:42,449 - root - INFO - 创建新文章: è´ºè¯éçè¿½æ¢¦äºº
+2026-02-07 07:18:45,105 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:18:45,105 - root - ERROR - 创建Notion页面失败: body failed validation. Fix one:
+body.properties.版面名称.select.id should be defined, instead was `undefined`.
+body.properties.版面名称.select.name should be populated, instead was `""`.
+2026-02-07 07:18:47,075 - root - INFO - 创建新文章: âè®©æå¤©çä¸­å½æ´ç¾å¥½â
+2026-02-07 07:18:47,390 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:18:47,390 - root - ERROR - 创建Notion页面失败: body failed validation. Fix one:
+body.properties.版面名称.select.id should be defined, instead was `undefined`.
+body.properties.版面名称.select.name should be populated, instead was `""`.
+2026-02-07 07:18:47,391 - root - INFO - 成功保存 7 篇文章到本地
+2026-02-07 07:18:47,392 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.json
+2026-02-07 07:18:47,400 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.csv
+2026-02-07 07:18:47,401 - root - INFO - 成功导出 7 篇文章到 data/exports/claude_articles_20230101.json (Claude格式)
+2026-02-07 07:18:47,412 - root - INFO - 预测到 5 个热点话题
+2026-02-07 07:18:47,413 - root - INFO - 分析到 0 条政策趋势
+2026-02-07 07:18:47,448 - root - INFO - 文章聚类为 5 个主题
+2026-02-07 07:18:47,448 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-07 07:19:12,208 - root - INFO - 开始抓取 2023-01-01 的人民日报文章
+2026-02-07 07:19:13,913 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/html/2023-01/01/nbs.D110000renmrb_01.htm
+2026-02-07 07:19:13,918 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-07 07:19:13,918 - root - INFO - 找到 7 篇文章
+2026-02-07 07:19:15,654 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:16,984 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:18,316 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:19,338 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:25,079 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:26,509 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:28,983 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:32,449 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:33,576 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:37,785 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:40,231 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:41,670 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:42,839 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:44,024 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:45,559 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:46,683 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:47,709 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:19:49,862 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-07 07:19:49,865 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-07 07:19:50,254 - jieba - DEBUG - Loading model cost 0.392 seconds.
+2026-02-07 07:19:50,255 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-07 07:19:50,256 - root - INFO - 创建新文章: å½å®¶ä¸»å¸­ä¹ è¿å¹³åè¡¨äºãäºä¸å¹´æ°å¹´è´ºè¯
+2026-02-07 07:19:50,598 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:19:50,599 - root - ERROR - 创建Notion页面失败: 标题 is not a property that exists. URL is not a property that exists. 版面名称 is not a property that exists. 分类 is not a property that exists. 关键词 is not a property that exists.
+2026-02-07 07:19:52,217 - root - INFO - 创建新文章: ä¸­ä¿ä¸¤å½åé¦äºè´æ°å¹´è´ºçµ
+2026-02-07 07:19:52,724 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:19:52,726 - root - ERROR - 创建Notion页面失败: 标题 is not a property that exists. URL is not a property that exists. 版面名称 is not a property that exists. 分类 is not a property that exists. 关键词 is not a property that exists.
+2026-02-07 07:19:55,144 - root - INFO - 创建新文章: ä¸ºå®ç°åçäºåå¤§ç¡®å®çç®æ ä»»å¡èå¢ç»å¥æ
+2026-02-07 07:19:56,615 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:19:56,615 - root - ERROR - 创建Notion页面失败: 标题 is not a property that exists. URL is not a property that exists. 版面名称 is not a property that exists. 分类 is not a property that exists. 关键词 is not a property that exists.
+2026-02-07 07:19:57,645 - root - INFO - 创建新文章: ä¹ è¿å¹³åæé©¬ç¦è¨å½éè¿ä»»åééæ´²äººå½æ°å¤§ä¼ä¸»å¸­è´è´ºçµ
+2026-02-07 07:19:57,988 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:19:57,991 - root - ERROR - 创建Notion页面失败: 标题 is not a property that exists. URL is not a property that exists. 版面名称 is not a property that exists. 分类 is not a property that exists. 关键词 is not a property that exists.
+2026-02-07 07:20:00,091 - root - INFO - 创建新文章: ä»å¤©çä¸­å½ï¼æ¯æ¢¦æ³æ¥è¿å®ç°çä¸­å½
+2026-02-07 07:20:00,504 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:20:00,505 - root - ERROR - 创建Notion页面失败: 标题 is not a property that exists. URL is not a property that exists. 版面名称 is not a property that exists. 分类 is not a property that exists. 关键词 is not a property that exists.
+2026-02-07 07:20:03,117 - root - INFO - 创建新文章: è´ºè¯éçè¿½æ¢¦äºº
+2026-02-07 07:20:03,485 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:20:03,485 - root - ERROR - 创建Notion页面失败: 标题 is not a property that exists. URL is not a property that exists. 版面名称 is not a property that exists. 分类 is not a property that exists. 关键词 is not a property that exists.
+2026-02-07 07:20:04,797 - root - INFO - 创建新文章: âè®©æå¤©çä¸­å½æ´ç¾å¥½â
+2026-02-07 07:20:05,099 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-07 07:20:05,100 - root - ERROR - 创建Notion页面失败: 标题 is not a property that exists. URL is not a property that exists. 版面名称 is not a property that exists. 分类 is not a property that exists. 关键词 is not a property that exists.
+2026-02-07 07:20:05,102 - root - INFO - 成功保存 7 篇文章到本地
+2026-02-07 07:20:05,105 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.json
+2026-02-07 07:20:05,113 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.csv
+2026-02-07 07:20:05,114 - root - INFO - 成功导出 7 篇文章到 data/exports/claude_articles_20230101.json (Claude格式)
+2026-02-07 07:20:05,125 - root - INFO - 预测到 5 个热点话题
+2026-02-07 07:20:05,126 - root - INFO - 分析到 0 条政策趋势
+2026-02-07 07:20:05,161 - root - INFO - 文章聚类为 5 个主题
+2026-02-07 07:20:05,162 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-07 07:25:59,736 - root - INFO - 开始抓取 2023-01-01 的人民日报文章
+2026-02-07 07:26:01,817 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/html/2023-01/01/nbs.D110000renmrb_01.htm
+2026-02-07 07:26:01,829 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-07 07:26:01,829 - root - INFO - 找到 7 篇文章
+2026-02-07 07:26:07,931 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:13,176 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:16,711 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:17,657 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:18,710 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:20,177 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:22,939 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:23,909 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:26,472 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:29,701 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:30,757 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:32,178 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:33,186 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:34,413 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:35,437 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:37,696 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:38,713 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:26:40,213 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-07 07:26:40,216 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-07 07:26:40,594 - jieba - DEBUG - Loading model cost 0.380 seconds.
+2026-02-07 07:26:40,594 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-07 07:26:40,595 - root - INFO - 创建新文章: å½å®¶ä¸»å¸­ä¹ è¿å¹³åè¡¨äºãäºä¸å¹´æ°å¹´è´ºè¯
+2026-02-07 07:26:41,180 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:26:43,332 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-81b3-918b-e8c501fc8c16/children "HTTP/1.1 200 OK"
+2026-02-07 07:26:43,335 - root - INFO - 成功创建Notion页面: å½å®¶ä¸»å¸­ä¹ è¿å¹³åè¡¨äºãäºä¸å¹´æ°å¹´è´ºè¯
+2026-02-07 07:26:46,378 - root - INFO - 创建新文章: ä¸­ä¿ä¸¤å½åé¦äºè´æ°å¹´è´ºçµ
+2026-02-07 07:26:46,876 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:26:48,235 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-81db-a0f1-d4d411207366/children "HTTP/1.1 200 OK"
+2026-02-07 07:26:48,237 - root - INFO - 成功创建Notion页面: ä¸­ä¿ä¸¤å½åé¦äºè´æ°å¹´è´ºçµ
+2026-02-07 07:26:49,927 - root - INFO - 创建新文章: ä¸ºå®ç°åçäºåå¤§ç¡®å®çç®æ ä»»å¡èå¢ç»å¥æ
+2026-02-07 07:26:52,446 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:26:52,822 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8164-8f37-fb5319d76900/children "HTTP/1.1 400 Bad Request"
+2026-02-07 07:26:52,822 - root - ERROR - 创建Notion页面失败: body failed validation: body.children[9].paragraph.rich_text[0].text.content.length should be ≤ `2000`, instead was `2970`.
+2026-02-07 07:26:54,148 - root - INFO - 创建新文章: ä¹ è¿å¹³åæé©¬ç¦è¨å½éè¿ä»»åééæ´²äººå½æ°å¤§ä¼ä¸»å¸­è´è´ºçµ
+2026-02-07 07:26:56,837 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:26:59,017 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8126-b7b9-f78ee40d291b/children "HTTP/1.1 200 OK"
+2026-02-07 07:26:59,019 - root - INFO - 成功创建Notion页面: ä¹ è¿å¹³åæé©¬ç¦è¨å½éè¿ä»»åééæ´²äººå½æ°å¤§ä¼ä¸»å¸­è´è´ºçµ
+2026-02-07 07:27:02,123 - root - INFO - 创建新文章: ä»å¤©çä¸­å½ï¼æ¯æ¢¦æ³æ¥è¿å®ç°çä¸­å½
+2026-02-07 07:27:02,650 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:27:03,531 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8105-b897-e494493ba38b/children "HTTP/1.1 200 OK"
+2026-02-07 07:27:03,532 - root - INFO - 成功创建Notion页面: ä»å¤©çä¸­å½ï¼æ¯æ¢¦æ³æ¥è¿å®ç°çä¸­å½
+2026-02-07 07:27:05,078 - root - INFO - 创建新文章: è´ºè¯éçè¿½æ¢¦äºº
+2026-02-07 07:27:05,546 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:27:05,928 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8133-b681-f91f145a41fa/children "HTTP/1.1 400 Bad Request"
+2026-02-07 07:27:05,930 - root - ERROR - 创建Notion页面失败: body failed validation: body.children.length should be ≤ `100`, instead was `132`.
+2026-02-07 07:27:08,545 - root - INFO - 创建新文章: âè®©æå¤©çä¸­å½æ´ç¾å¥½â
+2026-02-07 07:27:09,028 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:27:11,176 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8146-b1af-df8a42621c88/children "HTTP/1.1 200 OK"
+2026-02-07 07:27:11,181 - root - INFO - 成功创建Notion页面: âè®©æå¤©çä¸­å½æ´ç¾å¥½â
+2026-02-07 07:27:11,183 - root - INFO - 成功保存 7 篇文章到本地
+2026-02-07 07:27:11,185 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.json
+2026-02-07 07:27:11,195 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.csv
+2026-02-07 07:27:11,196 - root - INFO - 成功导出 7 篇文章到 data/exports/claude_articles_20230101.json (Claude格式)
+2026-02-07 07:27:11,209 - root - INFO - 预测到 5 个热点话题
+2026-02-07 07:27:11,210 - root - INFO - 分析到 0 条政策趋势
+2026-02-07 07:27:11,248 - root - INFO - 文章聚类为 5 个主题
+2026-02-07 07:27:11,248 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-07 07:49:42,440 - root - INFO - 开始抓取 2023-01-01 的人民日报文章
+2026-02-07 07:49:44,028 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/html/2023-01/01/nbs.D110000renmrb_01.htm
+2026-02-07 07:49:44,034 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-07 07:49:44,034 - root - INFO - 找到 7 篇文章
+2026-02-07 07:49:45,869 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:49:46,915 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:49:48,186 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:49:50,334 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:49:53,509 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:49:56,309 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:49:57,380 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:49:58,561 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:00,256 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:01,376 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:02,728 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:03,854 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:04,922 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:06,380 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:08,565 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:12,866 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:13,968 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:14,945 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-07 07:50:17,386 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-07 07:50:17,388 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-07 07:50:17,759 - jieba - DEBUG - Loading model cost 0.373 seconds.
+2026-02-07 07:50:17,759 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-07 07:50:17,767 - root - INFO - 创建新文章: 国家主席习近平发表二〇二三年新年贺词
+2026-02-07 07:50:19,191 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:50:21,766 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8105-b40f-d38de795a401/children "HTTP/1.1 200 OK"
+2026-02-07 07:50:21,770 - root - INFO - 成功创建Notion页面: 国家主席习近平发表二〇二三年新年贺词
+2026-02-07 07:50:25,038 - root - INFO - 创建新文章: 中俄两国元首互致新年贺电
+2026-02-07 07:50:25,654 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:50:27,382 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8160-8570-e3d11ac07de8/children "HTTP/1.1 200 OK"
+2026-02-07 07:50:27,383 - root - INFO - 成功创建Notion页面: 中俄两国元首互致新年贺电
+2026-02-07 07:50:29,722 - root - INFO - 创建新文章: 为实现党的二十大确定的目标任务而团结奋斗
+2026-02-07 07:50:30,254 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:50:32,000 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8198-a6a2-f699bf23dc65/children "HTTP/1.1 200 OK"
+2026-02-07 07:50:32,003 - root - INFO - 成功创建Notion页面: 为实现党的二十大确定的目标任务而团结奋斗
+2026-02-07 07:50:33,695 - root - INFO - 创建新文章: 习近平向拉马福萨当选连任南非非洲人国民大会主席致贺电
+2026-02-07 07:50:38,178 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:50:39,197 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8145-b099-edf98799ba27/children "HTTP/1.1 200 OK"
+2026-02-07 07:50:39,199 - root - INFO - 成功创建Notion页面: 习近平向拉马福萨当选连任南非非洲人国民大会主席致贺电
+2026-02-07 07:50:41,050 - root - INFO - 创建新文章: 今天的中国，是梦想接连实现的中国
+2026-02-07 07:50:41,571 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:50:43,381 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-8185-9d02-e2faac6980b2/children "HTTP/1.1 200 OK"
+2026-02-07 07:50:43,383 - root - INFO - 成功创建Notion页面: 今天的中国，是梦想接连实现的中国
+2026-02-07 07:50:45,842 - root - INFO - 创建新文章: 贺词里的追梦人
+2026-02-07 07:50:46,344 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:50:46,656 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-81de-a7d3-c425b4e17c89/children "HTTP/1.1 400 Bad Request"
+2026-02-07 07:50:46,657 - root - ERROR - 创建Notion页面失败: body failed validation: body.children.length should be ≤ `100`, instead was `132`.
+2026-02-07 07:50:49,423 - root - INFO - 创建新文章: “让明天的中国更美好”
+2026-02-07 07:50:49,934 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-07 07:50:56,596 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/2ff4c730-6e9e-81bc-bbc5-c521f628c577/children "HTTP/1.1 200 OK"
+2026-02-07 07:50:56,598 - root - INFO - 成功创建Notion页面: “让明天的中国更美好”
+2026-02-07 07:50:56,600 - root - INFO - 成功保存 7 篇文章到本地
+2026-02-07 07:50:56,602 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.json
+2026-02-07 07:50:56,608 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20230101.csv
+2026-02-07 07:50:56,609 - root - INFO - 成功导出 7 篇文章到 data/exports/claude_articles_20230101.json (Claude格式)
+2026-02-07 07:50:56,661 - root - INFO - 预测到 5 个热点话题
+2026-02-07 07:50:56,662 - root - INFO - 分析到 1 条政策趋势
+2026-02-07 07:50:56,733 - root - INFO - 文章聚类为 5 个主题
+2026-02-07 07:50:56,734 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
