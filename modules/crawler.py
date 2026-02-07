@@ -24,11 +24,11 @@ USER_AGENTS = [
 class URLGenerator:
     """URL生成类"""
     def __init__(self):
-        self.base_url = "https://paper.people.com.cn/rmrb/html/{date_str}/nbs.D110000renmrb_01.htm"
+        self.base_url = "https://paper.people.com.cn/rmrb/pc/layout/{date_str}/node_01.html"
     
     def generate_url(self, date: datetime) -> str:
         """生成指定日期的人民日报目录页URL"""
-        date_str = date.strftime("%Y-%m/%d")
+        date_str = date.strftime("%Y%m/%d")
         return self.base_url.format(date_str=date_str)
     
     def generate_urls_for_date_range(self, start_date: datetime, end_date: datetime) -> List[Tuple[datetime, str]]:

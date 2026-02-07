@@ -78,7 +78,23 @@ class PeopleDailyMaterialSystem:
         processed_articles = []
         for article_info in articles_info:
             # 构建完整URL
-            article_url = url.rsplit('/', 1)[0] + '/' + article_info['href']
+            if article_info['href'].startswith('http'):
+                # 完整URL，直接使用
+                article_url = article_info['href']
+            else:
+                # 相对路径，构建完整URL
+                # 从目录页URL中提取日期信息
+                url_parts = url.split('/')
+                if len(url_parts) >= 8:
+                    # 目录页URL格式: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+                    year_month = url_parts[-3]  # 202602
+                    day = url_parts[-2]       # 08
+                    # 构建正确的内容URL
+                    article_url = f"https://paper.people.com.cn/rmrb/pc/content/{year_month}/{day}/{article_info['href']}"
+                else:
+                    # 回退到原始方法
+                    base_url = url.rsplit('/', 1)[0]  # 提取基础URL
+                    article_url = f"{base_url}/{article_info['href']}"
             
             # 抓取文章页
             article_html = self.crawler.crawl_article(article_url)

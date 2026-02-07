@@ -10,6 +10,7 @@ from datetime import datetime
 from typing import List, Dict, Optional
 from notion_client import Client
 from notion_client.errors import APIResponseError
+import httpx
 from modules.utils import Config
 
 
@@ -64,17 +65,37 @@ class NotionAPI:
         except APIResponseError as e:
             logging.error(f"获取Notion数据库内容失败: {str(e)}")
             return []
+        except httpx.RequestError as e:
+            logging.error(f"Notion API网络连接失败: {str(e)}")
+            return []
+        except Exception as e:
+            logging.error(f"获取Notion数据库内容时发生未知错误: {str(e)}")
+            return []
     
     def create_page(self, article: Dict, date: datetime):
         """创建Notion页面"""
         try:
+            # 检查标题和内容是否为空
+            title = article.get('title', '').strip()
+            content = article.get('content', '').strip()
+            
+            # 如果标题和内容都为空，跳过创建
+            if not title and not content:
+                logging.warning(f"跳过创建页面：标题和内容都为空 - URL: {article.get('url', '')}")
+                return
+            
+            # 如果只有标题为空，使用默认标题
+            if not title:
+                title = "无标题"
+                logging.warning(f"使用默认标题创建页面 - URL: {article.get('url', '')}")
+            
             # 创建页面元数据
             properties = {
                 '标题': {
                     'title': [
                         {
                             'text': {
-                                'content': article.get('title', '')
+                                'content': title
                             }
                         }
                     ]
@@ -109,7 +130,6 @@ class NotionAPI:
             )
             
             # 添加内容
-            content = article.get('content', '')
             if content:
                 blocks = []
                 for paragraph in content.split('\n'):
@@ -134,21 +154,54 @@ class NotionAPI:
                         block_id=page.get('id'),
                         children=blocks
                     )
+            else:
+                # 添加默认内容提示
+                blocks = [{
+                    "object": "block",
+                    "type": "paragraph",
+                    "paragraph": {
+                        "rich_text": [
+                            {
+                                "type": "text",
+                                "text": {
+                                    "content": "无内容"
+                                }
+                            }
+                        ]
+                    }
+                }]
+                self.notion.blocks.children.append(
+                    block_id=page.get('id'),
+                    children=blocks
+                )
             
-            logging.info(f"成功创建Notion页面: {article.get('title', '')}")
+            logging.info(f"成功创建Notion页面: {title}")
         except APIResponseError as e:
             logging.error(f"创建Notion页面失败: {str(e)}")
+        except httpx.RequestError as e:
+            logging.error(f"Notion API网络连接失败: {str(e)}")
+        except Exception as e:
+            logging.error(f"创建Notion页面时发生未知错误: {str(e)}")
     
     def update_page(self, page_id: str, article: Dict):
         """更新Notion页面"""
         try:
+            # 检查标题和内容是否为空
+            title = article.get('title', '').strip()
+            content = article.get('content', '').strip()
+            
+            # 如果只有标题为空，使用默认标题
+            if not title:
+                title = "无标题"
+                logging.warning(f"使用默认标题更新页面 - URL: {article.get('url', '')}")
+            
             # 更新页面元数据
             properties = {
                 '标题': {
                     'title': [
                         {
                             'text': {
-                                'content': article.get('title', '')
+                                'content': title
                             }
                         }
                     ]
@@ -177,14 +230,13 @@ class NotionAPI:
                 properties=properties
             )
             
+            # 清除现有内容
+            blocks = self.notion.blocks.children.list(block_id=page_id)
+            for block in blocks.get('results', []):
+                self.notion.blocks.delete(block_id=block.get('id'))
+            
             # 更新内容
-            content = article.get('content', '')
             if content:
-                # 清除现有内容
-                blocks = self.notion.blocks.children.list(block_id=page_id)
-                for block in blocks.get('results', []):
-                    self.notion.blocks.delete(block_id=block.get('id'))
-                
                 # 添加新内容
                 new_blocks = []
                 for paragraph in content.split('\n'):
@@ -209,7 +261,31 @@ class NotionAPI:
                         block_id=page_id,
                         children=new_blocks
                     )
+            else:
+                # 添加默认内容提示
+                blocks = [{
+                    "object": "block",
+                    "type": "paragraph",
+                    "paragraph": {
+                        "rich_text": [
+                            {
+                                "type": "text",
+                                "text": {
+                                    "content": "无内容"
+                                }
+                            }
+                        ]
+                    }
+                }]
+                self.notion.blocks.children.append(
+                    block_id=page_id,
+                    children=blocks
+                )
             
-            logging.info(f"成功更新Notion页面: {article.get('title', '')}")
+            logging.info(f"成功更新Notion页面: {title}")
         except APIResponseError as e:
             logging.error(f"更新Notion页面失败: {str(e)}")
+        except httpx.RequestError as e:
+            logging.error(f"Notion API网络连接失败: {str(e)}")
+        except Exception as e:
+            logging.error(f"更新Notion页面时发生未知错误: {str(e)}")

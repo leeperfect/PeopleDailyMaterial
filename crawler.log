@@ -292,3 +292,596 @@ body.properties.版面名称.select.name should be populated, instead was `""`.
 2026-02-07 07:50:56,662 - root - INFO - 分析到 1 条政策趋势
 2026-02-07 07:50:56,733 - root - INFO - 文章聚类为 5 个主题
 2026-02-07 07:50:56,734 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-08 06:14:21,999 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:14:23,507 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/html/2026-02/08/nbs.D110000renmrb_01.htm 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/html/2026-02/08/nbs.D110000renmrb_01.htm
+2026-02-08 06:14:25,613 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/html/2026-02/08/nbs.D110000renmrb_01.htm 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/html/2026-02/08/nbs.D110000renmrb_01.htm
+2026-02-08 06:14:27,312 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/html/2026-02/08/nbs.D110000renmrb_01.htm 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/html/2026-02/08/nbs.D110000renmrb_01.htm
+2026-02-08 06:14:27,313 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/html/2026-02/08/nbs.D110000renmrb_01.htm 失败，已达到最大重试次数
+2026-02-08 06:14:27,313 - root - ERROR - 无法获取目录页
+2026-02-08 06:17:21,842 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:17:23,290 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:17:23,294 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:17:23,295 - root - INFO - 找到 0 篇文章
+2026-02-08 06:17:25,300 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:27,318 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:28,737 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:29,958 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:31,826 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:32,971 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:34,898 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:37,311 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:39,344 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:41,328 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:42,797 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:44,096 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:46,161 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:17:58,921 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:18:00,169 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:18:01,664 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:18:04,898 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:18:05,801 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:18:05,805 - root - INFO - 成功保存 0 篇文章到本地
+2026-02-08 06:18:53,503 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:18:56,337 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:18:56,343 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:18:56,343 - root - INFO - 找到 16 篇文章
+2026-02-08 06:18:58,159 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:18:59,180 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:03,773 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:07,236 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:08,195 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:09,079 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:10,456 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:22,392 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:23,322 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:24,372 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:28,265 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:29,343 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:31,089 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:41,188 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:42,244 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:43,424 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:44,549 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:45,574 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:19:47,765 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html 解析可能失败
+2026-02-08 06:19:47,767 - root - INFO - 创建新文章: 
+2026-02-08 06:19:48,336 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:19:48,337 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:19:49,484 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_02.html 解析可能失败
+2026-02-08 06:19:49,486 - root - INFO - 创建新文章: 
+2026-02-08 06:19:49,934 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:19:49,936 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:19:51,788 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_03.html 解析可能失败
+2026-02-08 06:19:51,789 - root - INFO - 创建新文章: 
+2026-02-08 06:19:52,331 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:19:52,332 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:19:54,001 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_04.html 解析可能失败
+2026-02-08 06:19:54,002 - root - INFO - 创建新文章: 
+2026-02-08 06:19:54,697 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:19:54,698 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:19:57,121 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_05.html 解析可能失败
+2026-02-08 06:19:57,122 - root - INFO - 创建新文章: 
+2026-02-08 06:19:57,592 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:19:57,593 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:00,593 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_06.html 解析可能失败
+2026-02-08 06:20:00,595 - root - INFO - 创建新文章: 
+2026-02-08 06:20:01,112 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:01,114 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:02,805 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_07.html 解析可能失败
+2026-02-08 06:20:02,806 - root - INFO - 创建新文章: 
+2026-02-08 06:20:03,687 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:03,716 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:05,244 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_08.html 解析可能失败
+2026-02-08 06:20:05,246 - root - INFO - 创建新文章: 
+2026-02-08 06:20:07,588 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:07,588 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:08,785 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-08 06:20:08,786 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-08 06:20:09,237 - jieba - DEBUG - Loading model cost 0.451 seconds.
+2026-02-08 06:20:09,237 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-08 06:20:09,241 - root - INFO - 创建新文章: 
+2026-02-08 06:20:10,399 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:12,417 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8123-b32c-c7bc5897c86b/children "HTTP/1.1 200 OK"
+2026-02-08 06:20:12,442 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:14,961 - root - INFO - 创建新文章: 
+2026-02-08 06:20:15,512 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:17,218 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8114-983c-c28deb71c917/children "HTTP/1.1 200 OK"
+2026-02-08 06:20:17,218 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:20,239 - root - INFO - 创建新文章: 
+2026-02-08 06:20:20,736 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:22,037 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-819f-87cb-d798e9852521/children "HTTP/1.1 200 OK"
+2026-02-08 06:20:22,039 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:23,710 - root - INFO - 创建新文章: 
+2026-02-08 06:20:24,175 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:25,965 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81ff-985b-ea1669364dd6/children "HTTP/1.1 200 OK"
+2026-02-08 06:20:25,969 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:28,699 - root - INFO - 创建新文章: 
+2026-02-08 06:20:29,148 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:30,558 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8181-ae52-cce1e72bc0ab/children "HTTP/1.1 200 OK"
+2026-02-08 06:20:30,560 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:32,720 - root - INFO - 创建新文章: 
+2026-02-08 06:20:33,306 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:35,110 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-819d-b4ce-e79431d58060/children "HTTP/1.1 200 OK"
+2026-02-08 06:20:35,192 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:36,955 - root - INFO - 创建新文章: 
+2026-02-08 06:20:37,522 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:20:39,084 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8123-a969-e5387adcb003/children "HTTP/1.1 200 OK"
+2026-02-08 06:20:39,085 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:20:41,543 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html
+2026-02-08 06:20:42,813 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html
+2026-02-08 06:20:45,511 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html
+2026-02-08 06:20:45,512 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 失败，已达到最大重试次数
+2026-02-08 06:20:45,512 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html
+2026-02-08 06:20:45,514 - root - INFO - 成功保存 15 篇文章到本地
+2026-02-08 06:20:45,517 - root - INFO - 成功导出 15 篇文章到 data/exports/articles_20260208.json
+2026-02-08 06:20:45,530 - root - INFO - 成功导出 15 篇文章到 data/exports/articles_20260208.csv
+2026-02-08 06:20:45,531 - root - INFO - 成功导出 15 篇文章到 data/exports/claude_articles_20260208.json (Claude格式)
+2026-02-08 06:20:45,552 - root - INFO - 预测到 5 个热点话题
+2026-02-08 06:20:45,553 - root - INFO - 分析到 1 条政策趋势
+2026-02-08 06:20:45,592 - root - INFO - 文章聚类为 5 个主题
+2026-02-08 06:20:45,593 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-08 06:24:03,249 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:24:05,900 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:24:05,905 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:24:05,906 - root - INFO - 找到 16 篇文章
+2026-02-08 06:24:08,441 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:09,767 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:10,973 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:13,352 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:14,478 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:16,190 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:17,458 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:18,779 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:20,058 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:21,234 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:22,688 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:24:26,153 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:19,233 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:26:21,865 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:26:21,870 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:26:21,871 - root - INFO - 找到 16 篇文章
+2026-02-08 06:26:23,613 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:24,734 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:25,730 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:27,224 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:30,756 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:32,820 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:34,154 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:36,913 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:38,047 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:38,977 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:40,107 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:41,346 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:42,721 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:45,513 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:46,508 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:47,439 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:48,355 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:48,875 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:26:51,602 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html 解析可能失败
+2026-02-08 06:26:51,603 - root - INFO - 创建新文章: 
+2026-02-08 06:26:52,058 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:26:52,062 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:26:53,697 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_02.html 解析可能失败
+2026-02-08 06:26:53,698 - root - INFO - 创建新文章: 
+2026-02-08 06:26:54,123 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:26:54,124 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:26:56,286 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_03.html 解析可能失败
+2026-02-08 06:26:56,287 - root - INFO - 创建新文章: 
+2026-02-08 06:26:58,389 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:26:58,396 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:00,257 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_04.html 解析可能失败
+2026-02-08 06:27:00,258 - root - INFO - 创建新文章: 
+2026-02-08 06:27:00,670 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:00,672 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:03,381 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_05.html 解析可能失败
+2026-02-08 06:27:03,382 - root - INFO - 创建新文章: 
+2026-02-08 06:27:03,824 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:03,825 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:04,928 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_06.html 解析可能失败
+2026-02-08 06:27:04,929 - root - INFO - 创建新文章: 
+2026-02-08 06:27:05,446 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:05,446 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:06,493 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_07.html 解析可能失败
+2026-02-08 06:27:06,493 - root - INFO - 创建新文章: 
+2026-02-08 06:27:06,937 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:06,939 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:09,320 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_08.html 解析可能失败
+2026-02-08 06:27:09,322 - root - INFO - 创建新文章: 
+2026-02-08 06:27:09,821 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:09,822 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:12,737 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-08 06:27:12,738 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-08 06:27:13,226 - jieba - DEBUG - Loading model cost 0.489 seconds.
+2026-02-08 06:27:13,227 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-08 06:27:13,231 - root - INFO - 创建新文章: 
+2026-02-08 06:27:14,149 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:16,073 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81d3-8c5d-dbb18ab74929/children "HTTP/1.1 200 OK"
+2026-02-08 06:27:16,099 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:18,982 - root - INFO - 创建新文章: 
+2026-02-08 06:27:19,466 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:22,752 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81bf-b651-c240b1833913/children "HTTP/1.1 200 OK"
+2026-02-08 06:27:22,753 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:23,973 - root - INFO - 创建新文章: 
+2026-02-08 06:27:24,449 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:26,329 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8135-9021-f6492c2dcc7a/children "HTTP/1.1 200 OK"
+2026-02-08 06:27:26,331 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:29,027 - root - INFO - 创建新文章: 
+2026-02-08 06:27:29,460 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:31,145 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81a0-83d3-f8e193240bde/children "HTTP/1.1 200 OK"
+2026-02-08 06:27:31,148 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:34,174 - root - INFO - 创建新文章: 
+2026-02-08 06:27:34,826 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:35,595 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8105-ac88-db3e466be38b/children "HTTP/1.1 200 OK"
+2026-02-08 06:27:35,596 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:36,719 - root - INFO - 创建新文章: 
+2026-02-08 06:27:37,949 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:39,307 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-815a-8923-ca93b7983fc5/children "HTTP/1.1 200 OK"
+2026-02-08 06:27:39,308 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:40,636 - root - INFO - 创建新文章: 
+2026-02-08 06:27:41,126 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:27:44,043 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8144-bc50-fb67302c3314/children "HTTP/1.1 200 OK"
+2026-02-08 06:27:44,044 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:27:45,735 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html
+2026-02-08 06:27:47,775 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html
+2026-02-08 06:27:50,484 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html
+2026-02-08 06:27:50,485 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 失败，已达到最大重试次数
+2026-02-08 06:27:50,485 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/202602/08/http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html
+2026-02-08 06:27:50,487 - root - INFO - 成功保存 15 篇文章到本地
+2026-02-08 06:27:50,489 - root - INFO - 成功导出 15 篇文章到 data/exports/articles_20260208.json
+2026-02-08 06:27:50,501 - root - INFO - 成功导出 15 篇文章到 data/exports/articles_20260208.csv
+2026-02-08 06:27:50,502 - root - INFO - 成功导出 15 篇文章到 data/exports/claude_articles_20260208.json (Claude格式)
+2026-02-08 06:27:50,525 - root - INFO - 预测到 5 个热点话题
+2026-02-08 06:27:50,526 - root - INFO - 分析到 1 条政策趋势
+2026-02-08 06:27:50,564 - root - INFO - 文章聚类为 5 个主题
+2026-02-08 06:27:50,564 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-08 06:30:42,343 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:30:43,744 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:30:43,751 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:30:43,752 - root - INFO - 找到 16 篇文章
+2026-02-08 06:30:47,291 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:30:48,329 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:30:49,559 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:30:50,885 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:30:52,109 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:30:55,020 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:05,510 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:09,000 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:12,700 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:14,009 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:15,230 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:17,409 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:19,432 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:20,880 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:22,781 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:23,931 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:25,030 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:27,959 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:31:30,302 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_01.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_01.html
+2026-02-08 06:31:31,440 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_01.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_01.html
+2026-02-08 06:31:34,000 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_01.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_01.html
+2026-02-08 06:31:34,000 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_01.html 失败，已达到最大重试次数
+2026-02-08 06:31:34,000 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/node_01.html
+2026-02-08 06:31:35,329 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_02.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_02.html
+2026-02-08 06:31:36,941 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_02.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_02.html
+2026-02-08 06:31:38,299 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_02.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_02.html
+2026-02-08 06:31:38,299 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_02.html 失败，已达到最大重试次数
+2026-02-08 06:31:38,300 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/node_02.html
+2026-02-08 06:31:41,052 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_03.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_03.html
+2026-02-08 06:31:42,839 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_03.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_03.html
+2026-02-08 06:31:45,300 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_03.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_03.html
+2026-02-08 06:31:45,300 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_03.html 失败，已达到最大重试次数
+2026-02-08 06:31:45,300 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/node_03.html
+2026-02-08 06:31:47,450 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_04.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_04.html
+2026-02-08 06:31:50,521 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_04.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_04.html
+2026-02-08 06:31:52,070 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_04.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_04.html
+2026-02-08 06:31:52,071 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_04.html 失败，已达到最大重试次数
+2026-02-08 06:31:52,071 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/node_04.html
+2026-02-08 06:31:54,100 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_05.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_05.html
+2026-02-08 06:31:55,430 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_05.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_05.html
+2026-02-08 06:31:58,160 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_05.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_05.html
+2026-02-08 06:31:58,160 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_05.html 失败，已达到最大重试次数
+2026-02-08 06:31:58,160 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/node_05.html
+2026-02-08 06:32:01,559 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_06.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_06.html
+2026-02-08 06:32:03,079 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_06.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_06.html
+2026-02-08 06:32:05,030 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_06.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_06.html
+2026-02-08 06:32:05,030 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_06.html 失败，已达到最大重试次数
+2026-02-08 06:32:05,031 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/node_06.html
+2026-02-08 06:32:06,770 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_07.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_07.html
+2026-02-08 06:32:08,031 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_07.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_07.html
+2026-02-08 06:32:09,327 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_07.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_07.html
+2026-02-08 06:32:09,327 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_07.html 失败，已达到最大重试次数
+2026-02-08 06:32:09,327 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/node_07.html
+2026-02-08 06:32:11,739 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_08.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_08.html
+2026-02-08 06:32:13,740 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_08.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_08.html
+2026-02-08 06:32:16,070 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_08.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/layout/content/node_08.html
+2026-02-08 06:32:16,070 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/node_08.html 失败，已达到最大重试次数
+2026-02-08 06:32:16,070 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/node_08.html
+2026-02-08 06:32:17,641 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139309.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139309.html
+2026-02-08 06:32:20,231 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139309.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139309.html
+2026-02-08 06:32:22,459 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139309.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139309.html
+2026-02-08 06:32:22,460 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139309.html 失败，已达到最大重试次数
+2026-02-08 06:32:22,460 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139309.html
+2026-02-08 06:32:25,176 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139310.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139310.html
+2026-02-08 06:32:27,999 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139310.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139310.html
+2026-02-08 06:32:29,680 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139310.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139310.html
+2026-02-08 06:32:29,680 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139310.html 失败，已达到最大重试次数
+2026-02-08 06:32:29,681 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139310.html
+2026-02-08 06:32:32,140 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139311.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139311.html
+2026-02-08 06:32:35,001 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139311.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139311.html
+2026-02-08 06:32:36,130 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139311.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139311.html
+2026-02-08 06:32:36,130 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139311.html 失败，已达到最大重试次数
+2026-02-08 06:32:36,130 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139311.html
+2026-02-08 06:32:37,849 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139312.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139312.html
+2026-02-08 06:32:40,282 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139312.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139312.html
+2026-02-08 06:32:41,600 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139312.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139312.html
+2026-02-08 06:32:41,600 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139312.html 失败，已达到最大重试次数
+2026-02-08 06:32:41,600 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139312.html
+2026-02-08 06:32:44,190 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139313.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139313.html
+2026-02-08 06:32:46,350 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139313.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139313.html
+2026-02-08 06:32:49,340 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139313.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139313.html
+2026-02-08 06:32:49,340 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139313.html 失败，已达到最大重试次数
+2026-02-08 06:32:49,341 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139313.html
+2026-02-08 06:32:51,019 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139314.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139314.html
+2026-02-08 06:32:53,169 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139314.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139314.html
+2026-02-08 06:32:55,260 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139314.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139314.html
+2026-02-08 06:32:55,260 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139314.html 失败，已达到最大重试次数
+2026-02-08 06:32:55,260 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139314.html
+2026-02-08 06:32:57,280 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139315.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139315.html
+2026-02-08 06:32:58,930 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139315.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139315.html
+2026-02-08 06:33:00,890 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139315.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/content/202602/08/content_30139315.html
+2026-02-08 06:33:00,891 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139315.html 失败，已达到最大重试次数
+2026-02-08 06:33:00,891 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/layout/content/../../../content/202602/08/content_30139315.html
+2026-02-08 06:33:02,450 - root - WARNING - 网页结构可能发生变化，文章 http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 解析可能不完整
+2026-02-08 06:33:02,450 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-08 06:33:02,451 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-08 06:33:02,906 - jieba - DEBUG - Loading model cost 0.456 seconds.
+2026-02-08 06:33:02,906 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-08 06:33:02,909 - root - INFO - 创建新文章: 
+2026-02-08 06:33:06,979 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:33:08,463 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-819d-bd41-dc8d0a386d43/children "HTTP/1.1 200 OK"
+2026-02-08 06:33:08,465 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:33:08,467 - root - INFO - 成功保存 1 篇文章到本地
+2026-02-08 06:33:08,469 - root - INFO - 成功导出 1 篇文章到 data/exports/articles_20260208.json
+2026-02-08 06:33:08,510 - root - INFO - 成功导出 1 篇文章到 data/exports/articles_20260208.csv
+2026-02-08 06:33:08,510 - root - INFO - 成功导出 1 篇文章到 data/exports/claude_articles_20260208.json (Claude格式)
+2026-02-08 06:33:08,522 - root - INFO - 预测到 5 个热点话题
+2026-02-08 06:33:08,523 - root - INFO - 分析到 0 条政策趋势
+2026-02-08 06:33:08,563 - root - ERROR - 文章聚类失败: n_samples=1 should be >= n_clusters=5.
+2026-02-08 06:33:08,563 - root - INFO - 文章聚类为 0 个主题
+2026-02-08 06:33:48,858 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:33:51,756 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:33:51,765 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:33:51,765 - root - INFO - 找到 16 篇文章
+2026-02-08 06:33:53,931 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:33:55,160 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:33:56,470 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:33:58,709 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:01,838 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:02,980 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:07,551 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:09,089 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:10,910 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:13,151 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:14,850 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:17,668 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:19,090 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:21,505 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:22,581 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:23,780 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:29,392 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:30,083 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:34:33,290 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_01.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_01.html
+2026-02-08 06:34:34,840 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_01.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_01.html
+2026-02-08 06:34:36,568 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_01.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_01.html
+2026-02-08 06:34:36,569 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_01.html 失败，已达到最大重试次数
+2026-02-08 06:34:36,569 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_01.html
+2026-02-08 06:34:38,028 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_02.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_02.html
+2026-02-08 06:34:41,003 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_02.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_02.html
+2026-02-08 06:34:42,687 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_02.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_02.html
+2026-02-08 06:34:42,687 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_02.html 失败，已达到最大重试次数
+2026-02-08 06:34:42,687 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_02.html
+2026-02-08 06:34:43,937 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_03.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_03.html
+2026-02-08 06:34:46,345 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_03.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_03.html
+2026-02-08 06:34:47,438 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_03.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_03.html
+2026-02-08 06:34:47,439 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_03.html 失败，已达到最大重试次数
+2026-02-08 06:34:47,439 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_03.html
+2026-02-08 06:34:49,747 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_04.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_04.html
+2026-02-08 06:34:51,047 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_04.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_04.html
+2026-02-08 06:34:52,578 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_04.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_04.html
+2026-02-08 06:34:52,578 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_04.html 失败，已达到最大重试次数
+2026-02-08 06:34:52,578 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_04.html
+2026-02-08 06:34:53,976 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_05.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_05.html
+2026-02-08 06:34:55,386 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_05.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_05.html
+2026-02-08 06:34:57,166 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_05.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_05.html
+2026-02-08 06:34:57,166 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_05.html 失败，已达到最大重试次数
+2026-02-08 06:34:57,166 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_05.html
+2026-02-08 06:34:58,956 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_06.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_06.html
+2026-02-08 06:35:01,656 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_06.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_06.html
+2026-02-08 06:35:04,318 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_06.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_06.html
+2026-02-08 06:35:04,319 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_06.html 失败，已达到最大重试次数
+2026-02-08 06:35:04,319 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_06.html
+2026-02-08 06:35:06,542 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_07.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_07.html
+2026-02-08 06:35:08,685 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_07.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_07.html
+2026-02-08 06:35:10,096 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_07.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_07.html
+2026-02-08 06:35:10,098 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_07.html 失败，已达到最大重试次数
+2026-02-08 06:35:10,098 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_07.html
+2026-02-08 06:35:11,984 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_08.html 失败，第 1 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_08.html
+2026-02-08 06:35:14,105 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_08.html 失败，第 2 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_08.html
+2026-02-08 06:35:15,790 - root - WARNING - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_08.html 失败，第 3 次重试: 404 Client Error: Not Found for url: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_08.html
+2026-02-08 06:35:15,790 - root - ERROR - 请求 https://paper.people.com.cn/rmrb/pc/content/202602/08/node_08.html 失败，已达到最大重试次数
+2026-02-08 06:35:15,790 - root - ERROR - 无法获取文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/node_08.html
+2026-02-08 06:35:17,456 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139309.html 解析可能不完整
+2026-02-08 06:35:17,456 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-08 06:35:17,457 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-08 06:35:17,807 - jieba - DEBUG - Loading model cost 0.350 seconds.
+2026-02-08 06:35:17,807 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-08 06:35:17,812 - root - INFO - 创建新文章: 
+2026-02-08 06:35:18,884 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:35:20,404 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81b5-ba73-ef7c0ae1d57d/children "HTTP/1.1 200 OK"
+2026-02-08 06:35:20,419 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:35:22,444 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139310.html 解析可能不完整
+2026-02-08 06:35:22,447 - root - INFO - 创建新文章: 
+2026-02-08 06:35:22,914 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:35:24,071 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81f9-9df2-ca21ea89b5a9/children "HTTP/1.1 200 OK"
+2026-02-08 06:35:24,072 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:35:27,112 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139311.html 解析可能不完整
+2026-02-08 06:35:27,120 - root - INFO - 创建新文章: 
+2026-02-08 06:35:29,543 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:35:30,534 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-816c-a454-f0407702c402/children "HTTP/1.1 200 OK"
+2026-02-08 06:35:30,535 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:35:33,264 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139312.html 解析可能不完整
+2026-02-08 06:35:33,274 - root - INFO - 创建新文章: 
+2026-02-08 06:35:37,895 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:35:39,215 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81f9-b98d-e8f9e298867f/children "HTTP/1.1 200 OK"
+2026-02-08 06:35:39,216 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:35:41,201 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139313.html 解析可能不完整
+2026-02-08 06:35:41,206 - root - INFO - 创建新文章: 
+2026-02-08 06:35:42,098 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:35:43,073 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8149-9331-e06b9585d496/children "HTTP/1.1 200 OK"
+2026-02-08 06:35:43,077 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:35:45,989 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139314.html 解析可能不完整
+2026-02-08 06:35:45,991 - root - INFO - 创建新文章: 
+2026-02-08 06:35:47,403 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:35:49,571 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-815c-9843-cbaa53d9602b/children "HTTP/1.1 200 OK"
+2026-02-08 06:35:49,572 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:35:51,582 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139315.html 解析可能不完整
+2026-02-08 06:35:51,584 - root - INFO - 创建新文章: 
+2026-02-08 06:35:52,026 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:35:52,880 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8199-b85f-c6be78fcb299/children "HTTP/1.1 200 OK"
+2026-02-08 06:35:52,881 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:35:55,593 - root - WARNING - 网页结构可能发生变化，文章 http://paper.people.com.cn/rmrb/pad/layout/202602/08/node_01.html 解析可能不完整
+2026-02-08 06:35:55,594 - root - INFO - 创建新文章: 
+2026-02-08 06:35:56,072 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:35:57,206 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81a0-9415-e82dcbd55474/children "HTTP/1.1 200 OK"
+2026-02-08 06:35:57,208 - root - INFO - 成功创建Notion页面: 
+2026-02-08 06:35:57,209 - root - INFO - 成功保存 8 篇文章到本地
+2026-02-08 06:35:57,211 - root - INFO - 成功导出 8 篇文章到 data/exports/articles_20260208.json
+2026-02-08 06:35:57,226 - root - INFO - 成功导出 8 篇文章到 data/exports/articles_20260208.csv
+2026-02-08 06:35:57,227 - root - INFO - 成功导出 8 篇文章到 data/exports/claude_articles_20260208.json (Claude格式)
+2026-02-08 06:35:57,250 - root - INFO - 预测到 5 个热点话题
+2026-02-08 06:35:57,250 - root - INFO - 分析到 1 条政策趋势
+2026-02-08 06:35:57,317 - root - INFO - 文章聚类为 5 个主题
+2026-02-08 06:35:57,317 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
+2026-02-08 06:39:04,237 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:39:06,779 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:39:06,784 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:39:06,785 - root - INFO - 找到 7 篇文章
+2026-02-08 06:39:08,759 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:39:09,776 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:39:10,980 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:39:21,093 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:39:22,661 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:39:25,533 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:39:33,146 - root - ERROR - Notion API网络连接失败: Server disconnected without sending a response.
+2026-02-08 06:39:35,886 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139309.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:39:35,887 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139309.html
+2026-02-08 06:39:38,403 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139310.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:39:38,404 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139310.html
+2026-02-08 06:39:40,632 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139311.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:39:40,632 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139311.html
+2026-02-08 06:39:42,633 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139312.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:39:42,633 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139312.html
+2026-02-08 06:39:44,609 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139313.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:39:44,609 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139313.html
+2026-02-08 06:39:47,608 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139314.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:39:47,608 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139314.html
+2026-02-08 06:39:49,389 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139315.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:39:49,389 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139315.html
+2026-02-08 06:39:49,389 - root - INFO - 成功保存 0 篇文章到本地
+2026-02-08 06:40:14,108 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:40:15,373 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:40:15,379 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:40:15,379 - root - INFO - 找到 7 篇文章
+2026-02-08 06:40:33,888 - root - ERROR - Notion API网络连接失败: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)
+2026-02-08 06:40:36,296 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139309.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:40:36,297 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139309.html
+2026-02-08 06:40:38,142 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139310.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:40:38,142 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139310.html
+2026-02-08 06:40:41,009 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139311.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:40:41,010 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139311.html
+2026-02-08 06:40:42,380 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139312.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:40:42,380 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139312.html
+2026-02-08 06:40:44,013 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139313.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:40:44,013 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139313.html
+2026-02-08 06:40:45,601 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139314.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:40:45,602 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139314.html
+2026-02-08 06:40:47,866 - root - ERROR - 解析文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139315.html 失败: Tag.find() got multiple values for argument 'name'
+2026-02-08 06:40:47,866 - root - ERROR - 无法解析文章: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139315.html
+2026-02-08 06:40:47,866 - root - INFO - 成功保存 0 篇文章到本地
+2026-02-08 06:41:58,106 - root - INFO - 开始抓取 2026-02-08 的人民日报文章
+2026-02-08 06:42:00,381 - root - INFO - 目录页URL: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
+2026-02-08 06:42:00,387 - root - WARNING - 网页结构可能发生变化，目录解析可能失败
+2026-02-08 06:42:00,387 - root - INFO - 找到 7 篇文章
+2026-02-08 06:42:02,134 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:03,436 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:07,892 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:08,852 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:09,784 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:10,916 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:12,672 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:13,719 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:15,619 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:27,116 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:28,283 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:29,447 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:30,518 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:31,699 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:32,824 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:41,246 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:43,758 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:44,270 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-08 06:42:46,309 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139309.html 解析可能不完整
+2026-02-08 06:42:46,310 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-08 06:42:46,311 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-08 06:42:46,722 - jieba - DEBUG - Loading model cost 0.412 seconds.
+2026-02-08 06:42:46,722 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-08 06:42:46,729 - root - INFO - 创建新文章: 
+2026-02-08 06:42:46,729 - root - WARNING - 使用默认标题创建页面 - URL: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139309.html
+2026-02-08 06:42:48,712 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:42:50,209 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-814c-99a7-d6ce97f5ee0c/children "HTTP/1.1 200 OK"
+2026-02-08 06:42:50,212 - root - INFO - 成功创建Notion页面: 无标题
+2026-02-08 06:42:51,938 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139310.html 解析可能不完整
+2026-02-08 06:42:51,941 - root - INFO - 创建新文章: 
+2026-02-08 06:42:51,941 - root - WARNING - 使用默认标题创建页面 - URL: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139310.html
+2026-02-08 06:42:52,444 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:42:53,405 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-817e-9f48-ec546e25d30e/children "HTTP/1.1 200 OK"
+2026-02-08 06:42:53,407 - root - INFO - 成功创建Notion页面: 无标题
+2026-02-08 06:42:54,723 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139311.html 解析可能不完整
+2026-02-08 06:42:54,741 - root - INFO - 创建新文章: 
+2026-02-08 06:42:54,742 - root - WARNING - 使用默认标题创建页面 - URL: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139311.html
+2026-02-08 06:42:55,204 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:42:57,244 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-811e-a1a9-e6de85ded6c5/children "HTTP/1.1 200 OK"
+2026-02-08 06:42:57,246 - root - INFO - 成功创建Notion页面: 无标题
+2026-02-08 06:42:59,006 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139312.html 解析可能不完整
+2026-02-08 06:42:59,021 - root - INFO - 创建新文章: 
+2026-02-08 06:42:59,022 - root - WARNING - 使用默认标题创建页面 - URL: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139312.html
+2026-02-08 06:43:00,486 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:43:02,523 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-810c-b120-f411b3617c93/children "HTTP/1.1 200 OK"
+2026-02-08 06:43:02,526 - root - INFO - 成功创建Notion页面: 无标题
+2026-02-08 06:43:05,333 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139313.html 解析可能不完整
+2026-02-08 06:43:05,341 - root - INFO - 创建新文章: 
+2026-02-08 06:43:05,341 - root - WARNING - 使用默认标题创建页面 - URL: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139313.html
+2026-02-08 06:43:05,804 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:43:09,657 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-8194-b09e-e8ce109b5413/children "HTTP/1.1 200 OK"
+2026-02-08 06:43:09,661 - root - INFO - 成功创建Notion页面: 无标题
+2026-02-08 06:43:11,151 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139314.html 解析可能不完整
+2026-02-08 06:43:11,154 - root - INFO - 创建新文章: 
+2026-02-08 06:43:11,154 - root - WARNING - 使用默认标题创建页面 - URL: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139314.html
+2026-02-08 06:43:13,042 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:43:14,605 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81bb-98b1-c1c3d845a006/children "HTTP/1.1 200 OK"
+2026-02-08 06:43:14,606 - root - INFO - 成功创建Notion页面: 无标题
+2026-02-08 06:43:17,465 - root - WARNING - 网页结构可能发生变化，文章 https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139315.html 解析可能不完整
+2026-02-08 06:43:17,468 - root - INFO - 创建新文章: 
+2026-02-08 06:43:17,468 - root - WARNING - 使用默认标题创建页面 - URL: https://paper.people.com.cn/rmrb/pc/content/202602/08/../../../content/202602/08/content_30139315.html
+2026-02-08 06:43:20,403 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-08 06:43:22,588 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3004c730-6e9e-81e8-9b70-f8a644e0b94b/children "HTTP/1.1 200 OK"
+2026-02-08 06:43:22,588 - root - INFO - 成功创建Notion页面: 无标题
+2026-02-08 06:43:22,589 - root - INFO - 成功保存 7 篇文章到本地
+2026-02-08 06:43:22,590 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20260208.json
+2026-02-08 06:43:22,596 - root - INFO - 成功导出 7 篇文章到 data/exports/articles_20260208.csv
+2026-02-08 06:43:22,597 - root - INFO - 成功导出 7 篇文章到 data/exports/claude_articles_20260208.json (Claude格式)
+2026-02-08 06:43:22,626 - root - INFO - 预测到 5 个热点话题
+2026-02-08 06:43:22,627 - root - INFO - 分析到 1 条政策趋势
+2026-02-08 06:43:22,679 - root - INFO - 文章聚类为 5 个主题
+2026-02-08 06:43:22,680 - root - ERROR - 写入JSON文件失败: Object of type int32 is not JSON serializable
