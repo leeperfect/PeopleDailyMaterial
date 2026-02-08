@@ -9,8 +9,6 @@
 3. 支持日期范围查询
 4. 实现防反爬机制
 5. 数据去重和增量更新
-6. 数据分析和热点预测
-7. Claude Skill接口支持
 """
 
 import os
@@ -28,7 +26,6 @@ from modules.parser import ContentParser
 from modules.processor import DataProcessor
 from modules.notion import NotionAPI
 from modules.exporter import DataExporter
-from modules.analyzer import HotTopicAnalyzer, PolicyAnalyzer
 
 
 class PeopleDailyMaterialSystem:
@@ -51,8 +48,6 @@ class PeopleDailyMaterialSystem:
         self.processor = DataProcessor()
         self.notion_api = NotionAPI(self.config)
         self.exporter = DataExporter(self.config.get('export', {}))
-        self.hot_topic_analyzer = HotTopicAnalyzer(self.config.get('analyzer', {}))
-        self.policy_analyzer = PolicyAnalyzer(self.config.get('analyzer', {}))
     
     def crawl_single_date(self, date: datetime):
         """抓取单个日期的文章"""
@@ -143,9 +138,6 @@ class PeopleDailyMaterialSystem:
         # 导出数据
         self.export_articles(processed_articles, date)
         
-        # 分析数据
-        self.analyze_articles(processed_articles, date)
-        
         return processed_articles
     
     def crawl_date_range(self, start_date: datetime, end_date: datetime):
@@ -160,7 +152,6 @@ class PeopleDailyMaterialSystem:
         # 导出汇总数据
         if all_articles:
             self.export_articles(all_articles, start_date, end_date)
-            self.analyze_articles(all_articles, start_date, end_date)
         
         return all_articles
     
@@ -215,44 +206,6 @@ class PeopleDailyMaterialSystem:
         else:
             filename = f"claude_articles_{start_date.strftime('%Y%m%d')}.json"
         self.exporter.export_for_claude(articles, filename)
-    
-    def analyze_articles(self, articles: List[Dict], start_date: datetime, end_date: Optional[datetime] = None):
-        """分析文章"""
-        if not articles:
-            return
-        
-        # 分析热点话题
-        hot_topics = self.hot_topic_analyzer.predict_hot_topics(articles)
-        logging.info(f"预测到 {len(hot_topics)} 个热点话题")
-        
-        # 保存热点话题
-        if end_date:
-            filename = f"hot_topics_{start_date.strftime('%Y%m%d')}_{end_date.strftime('%Y%m%d')}.json"
-        else:
-            filename = f"hot_topics_{start_date.strftime('%Y%m%d')}.json"
-        safe_json_dump(hot_topics, f"data/processed/{filename}")
-        
-        # 分析政策趋势
-        policy_trends = self.policy_analyzer.analyze_policy_trends(articles)
-        logging.info(f"分析到 {len(policy_trends)} 条政策趋势")
-        
-        # 保存政策趋势
-        if end_date:
-            filename = f"policy_trends_{start_date.strftime('%Y%m%d')}_{end_date.strftime('%Y%m%d')}.json"
-        else:
-            filename = f"policy_trends_{start_date.strftime('%Y%m%d')}.json"
-        safe_json_dump(policy_trends, f"data/processed/{filename}")
-        
-        # 文章聚类
-        clusters = self.hot_topic_analyzer.cluster_articles(articles)
-        logging.info(f"文章聚类为 {len(clusters)} 个主题")
-        
-        # 保存聚类结果
-        if end_date:
-            filename = f"article_clusters_{start_date.strftime('%Y%m%d')}_{end_date.strftime('%Y%m%d')}.json"
-        else:
-            filename = f"article_clusters_{start_date.strftime('%Y%m%d')}.json"
-        safe_json_dump(clusters, f"data/processed/{filename}")
 
 
 # 修复类型注解
@@ -269,8 +222,6 @@ def main():
                         help='单个日期，格式: YYYY-MM-DD')
     parser.add_argument('--export', action='store_true',
                         help='导出数据')
-    parser.add_argument('--analyze', action='store_true',
-                        help='分析数据')
     
     args = parser.parse_args()
     

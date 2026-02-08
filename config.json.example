@@ -1,0 +1,21 @@
+{
+  "notion": {
+    "token": "YOUR_NOTION_TOKEN",
+    "database_id": "YOUR_DATABASE_ID"
+  },
+  "crawler": {
+    "base_url": "http://paper.people.com.cn/rmrb/html",
+    "request_interval": [1, 3],
+    "timeout": 10,
+    "max_retries": 3,
+    "proxy_enabled": false,
+    "proxies": []
+  },
+  "export": {
+    "dir": "data/exports"
+  },
+  "logging": {
+    "level": "INFO",
+    "log_file": "crawler.log"
+  }
+}
