@@ -109,43 +109,44 @@ class ContentParser:
                 except Exception as e:
                     logging.warning(f"从meta标签提取标题失败: {str(e)}")
             
-            # 提取版面名称
+            # 提取版面名称（只保留名称，如"要闻"、"教育"，去掉版号）
             plate = ""
             try:
-                # 优先从 meta name="author" 标签提取（人民日报使用此标签存储版面信息）
-                meta_author = soup.find('meta', attrs={'name': 'author'})
-                if meta_author:
-                    plate = meta_author.get('content', '').strip()
+                import re
                 
-                # 如果 meta 标签提取失败，尝试从 div 提取
+                # 从页面文本中查找版面名称（格式：第01版：要闻 或 01版：要闻）
+                page_text = soup.get_text()
+                # 匹配 "XX版：名称" 格式，提取名称部分
+                match = re.search(r'(?:第\s*)?\d+\s*版[：:]\s*([^\n\r\s]+)', page_text)
+                if match:
+                    plate = match.group(1).strip()
+                
+                # 如果还是没有，尝试从 div 提取
                 if not plate:
                     plate_elem = soup.find('div', attrs={'class': 'position'})
                     if not plate_elem:
                         plate_elem = soup.find('div', attrs={'class': 'channel'})
                     if plate_elem:
                         plate_text = plate_elem.get_text(strip=True)
-                        # 提取版面名称
-                        if '>' in plate_text:
+                        # 提取版面名称（去掉版号）
+                        match = re.search(r'(?:第\s*)?\d+\s*版[：:]\s*([^\n\r\s]+)', plate_text)
+                        if match:
+                            plate = match.group(1).strip()
+                        elif '>' in plate_text:
                             plate_parts = plate_text.split('>')
                             if len(plate_parts) >= 2:
                                 plate = plate_parts[1].strip()
-                        else:
-                            plate = plate_text.strip()
-                
-                # 从页面中提取版面格式（如 "第01版：要闻"）
-                if not plate:
-                    import re
-                    # 查找类似 "第01版：要闻" 的文本
-                    page_text = soup.get_text()
-                    match = re.search(r'第\s*(\d+)\s*版[：:]\s*(.+?)[\n\r]', page_text)
-                    if match:
-                        plate = f"第{match.group(1)}版：{match.group(2).strip()}"
             except Exception as e:
                 logging.warning(f"提取版面名称失败: {str(e)}")
             
             # 提取正文
             content = ""
             try:
+                # 移除包含"本版责编"的元素
+                for elem in soup.find_all(['a', 'p', 'div', 'span']):
+                    if elem.get_text() and '本版责编' in elem.get_text():
+                        elem.decompose()
+                
                 # 尝试从article标签提取
                 article_elem = soup.find('article')
                 if article_elem:
@@ -173,6 +174,14 @@ class ContentParser:
             # 检测网页结构变化
             if not title or not content:
                 logging.warning(f"网页结构可能发生变化，文章 {url} 解析可能不完整")
+            
+            # 过滤掉无关内容
+            if content:
+                import re
+                # 移除"本版责编"及其后面的内容
+                content = re.split(r'本版责编[：:]?', content)[0].strip()
+                # 移除版权声明
+                content = re.split(r'(?:©|Copyright|人\s*民\s*网\s*版\s*权)', content)[0].strip()
             
             return {
                 'title': title,

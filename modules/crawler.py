@@ -90,11 +90,8 @@ class WebRequestor:
                 )
                 
                 response.raise_for_status()
-                # 处理编码问题
-                if response.encoding == 'ISO-8859-1':
-                    # 尝试猜测正确的编码
-                    encoding = response.apparent_encoding
-                    response.encoding = encoding
+                # 强制使用UTF-8编码
+                response.encoding = 'utf-8'
                 return response
             except requests.RequestException as e:
                 retries += 1
