@@ -110,6 +110,12 @@ class PeopleDailyMaterialSystem:
                 logging.error(f"无法解析文章: {article_url}")
                 continue
             
+            # 过滤不需要的文章类型
+            skip_titles = ['图片报道', '导读', '征集']
+            if any(skip_title in article.get('title', '') for skip_title in skip_titles):
+                logging.info(f"跳过文章（标题过滤）: {article['title']}")
+                continue
+            
             # 处理文章
             article['content'] = self.processor.clean_content(article['content'])
             article['date'] = date.strftime('%Y-%m-%d')
