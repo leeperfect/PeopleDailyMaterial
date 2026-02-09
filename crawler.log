@@ -3668,3 +3668,177 @@ body.properties.版面名称.select.name should be populated, instead was `""`.
 2026-02-10 06:57:40,273 - root - INFO - 等待 26s 后请求: node_06.html
 2026-02-10 06:58:11,620 - root - INFO - 成功抓取版面 06
 2026-02-10 06:58:11,621 - root - INFO - 等待 27s 后请求: node_07.html
+2026-02-10 06:58:42,862 - root - INFO - 成功抓取版面 07
+2026-02-10 06:58:42,863 - root - INFO - 等待 23s 后请求: node_08.html
+2026-02-10 06:59:09,462 - root - INFO - 成功抓取版面 08
+2026-02-10 06:59:09,462 - root - INFO - 已请求 10 次，休息 34 秒...
+2026-02-10 06:59:43,349 - root - INFO - 等待 24s 后请求: node_09.html
+2026-02-10 07:00:10,916 - root - INFO - 成功抓取版面 09
+2026-02-10 07:00:10,916 - root - INFO - 等待 21s 后请求: node_10.html
+2026-02-10 07:00:35,986 - root - INFO - 成功抓取版面 10
+2026-02-10 07:00:35,987 - root - INFO - 等待 29s 后请求: node_11.html
+2026-02-10 07:01:07,674 - root - INFO - 成功抓取版面 11
+2026-02-10 07:01:07,675 - root - INFO - 等待 24s 后请求: node_12.html
+2026-02-10 07:01:36,436 - root - INFO - 成功抓取版面 12
+2026-02-10 07:01:36,436 - root - INFO - 等待 23s 后请求: node_13.html
+2026-02-10 07:02:04,059 - root - INFO - 成功抓取版面 13
+2026-02-10 07:02:04,059 - root - INFO - 等待 17s 后请求: node_14.html
+2026-02-10 07:02:25,085 - root - INFO - 成功抓取版面 14
+2026-02-10 07:02:25,086 - root - INFO - 等待 19s 后请求: node_15.html
+2026-02-10 07:02:47,563 - root - INFO - 成功抓取版面 15
+2026-02-10 07:02:47,564 - root - INFO - 等待 17s 后请求: node_16.html
+2026-02-10 07:03:08,662 - root - INFO - 成功抓取版面 16
+2026-02-10 07:03:08,663 - root - INFO - 等待 17s 后请求: node_17.html
+2026-02-10 07:03:28,986 - root - INFO - 成功抓取版面 17
+2026-02-10 07:03:28,987 - root - INFO - 等待 20s 后请求: node_18.html
+2026-02-10 07:03:53,430 - root - INFO - 成功抓取版面 18
+2026-02-10 07:03:53,431 - root - INFO - 已请求 20 次，休息 29 秒...
+2026-02-10 07:04:22,879 - root - INFO - 等待 17s 后请求: node_19.html
+2026-02-10 07:04:44,803 - root - INFO - 成功抓取版面 19
+2026-02-10 07:04:44,806 - root - INFO - 等待 18s 后请求: node_20.html
+2026-02-10 07:05:07,442 - root - INFO - 成功抓取版面 20
+2026-02-10 07:05:07,442 - root - INFO - 共抓取 20 个版面
+2026-02-10 07:05:07,462 - root - INFO - 目录页解析到 7 篇文章
+2026-02-10 07:05:07,496 - root - INFO - 目录页解析到 4 篇文章
+2026-02-10 07:05:07,562 - root - INFO - 目录页解析到 5 篇文章
+2026-02-10 07:05:07,566 - root - INFO - 目录页解析到 9 篇文章
+2026-02-10 07:05:07,570 - root - INFO - 目录页解析到 7 篇文章
+2026-02-10 07:05:07,575 - root - INFO - 目录页解析到 7 篇文章
+2026-02-10 07:05:07,579 - root - INFO - 目录页解析到 5 篇文章
+2026-02-10 07:05:07,584 - root - INFO - 目录页解析到 9 篇文章
+2026-02-10 07:05:07,588 - root - INFO - 目录页解析到 2 篇文章
+2026-02-10 07:05:07,592 - root - INFO - 目录页解析到 10 篇文章
+2026-02-10 07:05:07,596 - root - INFO - 目录页解析到 7 篇文章
+2026-02-10 07:05:07,601 - root - INFO - 目录页解析到 9 篇文章
+2026-02-10 07:05:07,605 - root - INFO - 目录页解析到 7 篇文章
+2026-02-10 07:05:07,610 - root - INFO - 目录页解析到 1 篇文章
+2026-02-10 07:05:07,614 - root - INFO - 目录页解析到 1 篇文章
+2026-02-10 07:05:07,618 - root - INFO - 目录页解析到 5 篇文章
+2026-02-10 07:05:07,623 - root - INFO - 目录页解析到 2 篇文章
+2026-02-10 07:05:07,627 - root - INFO - 目录页解析到 4 篇文章
+2026-02-10 07:05:07,632 - root - INFO - 目录页解析到 4 篇文章
+2026-02-10 07:05:07,636 - root - INFO - 目录页解析到 8 篇文章
+2026-02-10 07:05:07,636 - root - INFO - 共找到 113 篇文章
+2026-02-10 07:05:14,931 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-10 07:05:17,041 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-10 07:05:17,710 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 502 Bad Gateway"
+2026-02-10 07:05:17,711 - root - ERROR - 获取Notion数据库内容时发生未知错误: Request to Notion API failed with status: 502
+2026-02-10 07:05:17,712 - root - INFO - 等待 29s 后请求: content_30137423.html
+2026-02-10 07:05:50,558 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-10 07:05:50,562 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-10 07:05:50,988 - jieba - DEBUG - Loading model cost 0.429 seconds.
+2026-02-10 07:05:50,992 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-10 07:05:51,003 - root - INFO - 创建新文章: 高价值专利助力培育新质生产力（新春走基层）
+2026-02-10 07:05:54,817 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-10 07:06:01,912 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3024c730-6e9e-817e-8ebf-cc19fd3f8799/children "HTTP/1.1 200 OK"
+2026-02-10 07:06:01,915 - root - INFO - 成功创建Notion页面: 高价值专利助力培育新质生产力（新春走基层）
+2026-02-10 07:06:01,916 - root - INFO - 等待 23s 后请求: content_30137424.html
+2026-02-10 07:06:28,941 - root - INFO - 创建新文章: 本报记者  李卓尔《人民日报》（2026年02月02日第 01 版）
+2026-02-10 07:06:29,569 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-10 07:06:30,944 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3024c730-6e9e-81b3-a149-c2a6000870d1/children "HTTP/1.1 200 OK"
+2026-02-10 07:06:30,968 - root - INFO - 成功创建Notion页面: 本报记者  李卓尔《人民日报》（2026年02月02日第 01 版）
+2026-02-10 07:06:30,969 - root - INFO - 等待 29s 后请求: content_30137425.html
+2026-02-10 07:07:05,421 - root - INFO - 创建新文章: 国产盾构机高效开挖样样在行（向新向优的中国产业）
+2026-02-10 07:07:06,339 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-10 07:07:08,086 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3024c730-6e9e-8138-8e26-ffe751ed8c58/children "HTTP/1.1 200 OK"
+2026-02-10 07:07:08,088 - root - INFO - 成功创建Notion页面: 国产盾构机高效开挖样样在行（向新向优的中国产业）
+2026-02-10 07:07:08,089 - root - INFO - 等待 26s 后请求: content_30137426.html
+2026-02-10 07:07:39,113 - root - INFO - 创建新文章: 本报记者  韩  鑫《人民日报》（2026年02月02日第 01 版）
+2026-02-10 07:07:49,211 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-10 07:07:50,663 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3024c730-6e9e-81b3-8c33-f1e24859d4d8/children "HTTP/1.1 200 OK"
+2026-02-10 07:07:50,670 - root - INFO - 成功创建Notion页面: 本报记者  韩  鑫《人民日报》（2026年02月02日第 01 版）
+2026-02-10 07:07:50,670 - root - INFO - 等待 22s 后请求: content_30137427.html
+2026-02-10 07:08:15,919 - root - INFO - 创建新文章: 《人民日报》（2026年02月02日第 01 版）
+2026-02-10 07:08:17,295 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-10 07:08:18,342 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3024c730-6e9e-81f3-9b42-d83f1ae7a4a4/children "HTTP/1.1 200 OK"
+2026-02-10 07:08:18,343 - root - INFO - 成功创建Notion页面: 《人民日报》（2026年02月02日第 01 版）
+2026-02-10 07:08:18,343 - root - INFO - 等待 18s 后请求: content_30137428.html
+2026-02-10 07:08:40,964 - root - INFO - 创建新文章: 《人民日报》（2026年02月02日第 01 版）
+2026-02-10 07:08:41,617 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-10 07:08:42,676 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3024c730-6e9e-81d7-b8f0-d1aacda5c528/children "HTTP/1.1 200 OK"
+2026-02-10 07:08:42,677 - root - INFO - 成功创建Notion页面: 《人民日报》（2026年02月02日第 01 版）
+2026-02-10 07:08:42,678 - root - INFO - 等待 17s 后请求: content_30137429.html
+2026-02-10 07:09:02,855 - root - INFO - 创建新文章: 出口同比增长7.7%
+2026-02-10 07:09:06,657 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-10 07:09:08,150 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3024c730-6e9e-818e-a9c8-cebdae9eb4bb/children "HTTP/1.1 200 OK"
+2026-02-10 07:09:08,152 - root - INFO - 成功创建Notion页面: 出口同比增长7.7%
+2026-02-10 07:09:08,152 - root - INFO - 等待 23s 后请求: content_30137430.html
+2026-02-10 07:09:35,857 - root - INFO - 创建新文章: 推动投资止跌回稳（经济新方位·对话·奋进2026）
+2026-02-10 07:09:36,799 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-10 07:09:38,789 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3024c730-6e9e-81cc-9813-f75351ea0247/children "HTTP/1.1 200 OK"
+2026-02-10 07:09:38,792 - root - INFO - 成功创建Notion页面: 推动投资止跌回稳（经济新方位·对话·奋进2026）
+2026-02-10 07:09:38,792 - root - INFO - 已请求 30 次，休息 26 秒...
+2026-02-10 07:10:04,406 - root - INFO - 等待 20s 后请求: content_30137431.html
+2026-02-10 07:15:56,462 - root - INFO - 正在启动 Chrome 浏览器...
+2026-02-10 07:15:56,463 - WDM - INFO - ====== WebDriver manager ======
+2026-02-10 07:15:56,942 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-10 07:15:57,172 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-10 07:15:57,331 - WDM - INFO - Driver [/Users/pf.macbookpro/.wdm/drivers/chromedriver/mac64/144.0.7559.133/chromedriver-mac-arm64/chromedriver] found in cache
+2026-02-10 07:15:58,464 - root - INFO - 正在预热浏览器...
+2026-02-10 07:16:06,704 - root - INFO - 浏览器预热完成
+2026-02-10 07:16:06,704 - root - INFO - Chrome 浏览器启动成功
+2026-02-10 07:16:06,843 - root - INFO - 开始抓取 2026-02-10 的人民日报文章
+2026-02-10 07:16:06,843 - root - INFO - 等待 24s 后请求: node_01.html
+2026-02-10 07:16:34,365 - root - INFO - 找到 20 个版面
+2026-02-10 07:16:34,366 - root - INFO - 等待 25s 后请求: node_01.html
+2026-02-10 07:17:03,566 - root - INFO - 成功抓取版面 01
+2026-02-10 07:17:03,566 - root - INFO - 等待 17s 后请求: node_02.html
+2026-02-10 07:17:24,406 - root - INFO - 成功抓取版面 02
+2026-02-10 07:17:24,406 - root - INFO - 等待 16s 后请求: node_03.html
+2026-02-10 07:17:44,403 - root - INFO - 成功抓取版面 03
+2026-02-10 07:17:44,404 - root - INFO - 等待 15s 后请求: node_04.html
+2026-02-10 07:18:04,570 - root - INFO - 成功抓取版面 04
+2026-02-10 07:18:04,570 - root - INFO - 等待 21s 后请求: node_05.html
+2026-02-10 07:18:28,659 - root - INFO - 成功抓取版面 05
+2026-02-10 07:18:28,659 - root - INFO - 等待 16s 后请求: node_06.html
+2026-02-10 07:18:48,417 - root - INFO - 成功抓取版面 06
+2026-02-10 07:18:48,418 - root - INFO - 等待 15s 后请求: node_07.html
+2026-02-10 07:19:08,077 - root - INFO - 成功抓取版面 07
+2026-02-10 07:19:08,078 - root - INFO - 等待 18s 后请求: node_08.html
+2026-02-10 07:19:30,115 - root - INFO - 成功抓取版面 08
+2026-02-10 07:19:30,115 - root - INFO - 已请求 10 次，休息 39 秒...
+2026-02-10 07:20:08,837 - root - INFO - 等待 21s 后请求: node_09.html
+2026-02-10 07:20:33,223 - root - INFO - 成功抓取版面 09
+2026-02-10 07:20:33,224 - root - INFO - 等待 16s 后请求: node_10.html
+2026-02-10 07:20:53,842 - root - INFO - 成功抓取版面 10
+2026-02-10 07:20:53,844 - root - INFO - 等待 19s 后请求: node_11.html
+2026-02-10 07:21:16,528 - root - INFO - 成功抓取版面 11
+2026-02-10 07:21:16,528 - root - INFO - 等待 22s 后请求: node_12.html
+2026-02-10 07:21:43,966 - root - INFO - 成功抓取版面 12
+2026-02-10 07:21:43,967 - root - INFO - 等待 24s 后请求: node_13.html
+2026-02-10 07:22:11,782 - root - INFO - 成功抓取版面 13
+2026-02-10 07:22:11,783 - root - INFO - 等待 24s 后请求: node_14.html
+2026-02-10 07:22:40,131 - root - INFO - 成功抓取版面 14
+2026-02-10 07:22:40,133 - root - INFO - 等待 26s 后请求: node_15.html
+2026-02-10 07:23:10,101 - root - INFO - 成功抓取版面 15
+2026-02-10 07:23:10,102 - root - INFO - 等待 22s 后请求: node_16.html
+2026-02-10 07:23:36,009 - root - INFO - 成功抓取版面 16
+2026-02-10 07:23:36,010 - root - INFO - 等待 17s 后请求: node_17.html
+2026-02-10 07:23:56,703 - root - INFO - 成功抓取版面 17
+2026-02-10 07:23:56,703 - root - INFO - 等待 27s 后请求: node_18.html
+2026-02-10 07:24:28,666 - root - INFO - 成功抓取版面 18
+2026-02-10 07:24:28,667 - root - INFO - 已请求 20 次，休息 28 秒...
+2026-02-10 07:24:56,977 - root - INFO - 等待 18s 后请求: node_19.html
+2026-02-10 07:25:20,279 - root - INFO - 成功抓取版面 19
+2026-02-10 07:25:20,280 - root - INFO - 等待 24s 后请求: node_20.html
+2026-02-10 07:25:48,140 - root - INFO - 成功抓取版面 20
+2026-02-10 07:25:48,163 - root - INFO - 目录页解析到 8 篇文章
+2026-02-10 07:25:48,177 - root - INFO - 目录页解析到 6 篇文章
+2026-02-10 07:25:48,204 - root - INFO - 目录页解析到 8 篇文章
+2026-02-10 07:25:48,209 - root - INFO - 目录页解析到 10 篇文章
+2026-02-10 07:25:48,214 - root - INFO - 目录页解析到 8 篇文章
+2026-02-10 07:25:48,218 - root - INFO - 目录页解析到 10 篇文章
+2026-02-10 07:25:48,223 - root - INFO - 目录页解析到 3 篇文章
+2026-02-10 07:25:48,227 - root - INFO - 目录页解析到 9 篇文章
+2026-02-10 07:25:48,231 - root - INFO - 目录页解析到 3 篇文章
+2026-02-10 07:25:48,235 - root - INFO - 目录页解析到 10 篇文章
+2026-02-10 07:25:48,239 - root - INFO - 目录页解析到 7 篇文章
+2026-02-10 07:25:48,243 - root - INFO - 目录页解析到 1 篇文章
+2026-02-10 07:25:48,247 - root - INFO - 目录页解析到 6 篇文章
+2026-02-10 07:25:48,251 - root - INFO - 目录页解析到 7 篇文章
+2026-02-10 07:25:48,254 - root - INFO - 目录页解析到 7 篇文章
+2026-02-10 07:25:48,258 - root - INFO - 目录页解析到 1 篇文章
+2026-02-10 07:25:48,262 - root - INFO - 目录页解析到 1 篇文章
+2026-02-10 07:25:48,266 - root - INFO - 目录页解析到 4 篇文章
+2026-02-10 07:25:48,270 - root - INFO - 目录页解析到 5 篇文章
+2026-02-10 07:25:48,274 - root - INFO - 目录页解析到 7 篇文章

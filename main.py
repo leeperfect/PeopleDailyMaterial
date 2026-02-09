@@ -50,53 +50,124 @@ class PeopleDailyMaterialSystem:
         self.exporter = DataExporter(self.config.get('export', {}))
     
     def crawl_single_date(self, date: datetime):
-        """抓取单个日期的文章"""
+        """抓取单个日期的文章（交互式：先浏览目录再选择下载）"""
         logging.info(f"开始抓取 {date.strftime('%Y-%m-%d')} 的人民日报文章")
         
-        # 抓取所有版面的目录页
+        # ====== 第一步：抓取所有版面目录 ======
+        print(f"\n{'='*60}")
+        print(f"  📰 人民日报 {date.strftime('%Y-%m-%d')} 版面目录")
+        print(f"{'='*60}")
+        print("正在获取版面目录，请稍候...\n")
+        
         directories = self.crawler.crawl_all_directories(date)
         if not directories:
-            logging.error(f"无法获取目录页")
+            logging.error("无法获取目录页")
             return []
         
-        logging.info(f"共抓取 {len(directories)} 个版面")
-        
-        # 解析所有版面的目录页，获取所有文章链接
+        # 解析所有版面目录，按版面分组
         all_articles_info = []
+        article_index = 1  # 全局编号
+        
         for url, html in directories:
             articles_info = self.parser.parse_directory(html)
-            # 为每个文章添加目录页URL，用于后续构建完整文章URL
+            
+            # 提取版面名称（从 URL 中获取 node_id）
+            import re
+            node_match = re.search(r'node_(\d+)', url)
+            node_id = node_match.group(1) if node_match else '??'
+            
+            if not articles_info:
+                continue
+            
+            # 打印版面标题
+            print(f"  📋 第 {node_id} 版")
+            print(f"  {'─'*50}")
+            
             for article in articles_info:
                 article['source_url'] = url
-            all_articles_info.extend(articles_info)
-        
-        logging.info(f"共找到 {len(all_articles_info)} 篇文章")
-        
-        # 获取已存在的文章
-        existing_articles = self.notion_api.get_existing_articles()
-        
-        # 处理每篇文章
-        processed_articles = []
-        for article_info in all_articles_info:
-            # 构建完整URL
-            if article_info['href'].startswith('http'):
-                # 完整URL，直接使用
-                article_url = article_info['href']
-            else:
-                # 相对路径，构建完整URL
-                # 从目录页URL中提取日期信息
-                source_url = article_info.get('source_url', '')
-                url_parts = source_url.split('/')
-                if len(url_parts) >= 8:
-                    # 目录页URL格式: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
-                    year_month = url_parts[-3]  # 202602
-                    day = url_parts[-2]       # 08
-                    # 构建正确的内容URL
-                    article_url = f"https://paper.people.com.cn/rmrb/pc/content/{year_month}/{day}/{article_info['href']}"
+                article['index'] = article_index
+                
+                # 过滤不需要的文章类型
+                skip_titles = ['图片报道', '导读', '征集', '本版责编']
+                if any(skip in article.get('title', '') for skip in skip_titles):
+                    print(f"    ⊘  {article_index:3d}. {article['title'][:45]}  [已自动过滤]")
+                    article['auto_skip'] = True
                 else:
-                    # 回退到原始方法
-                    base_url = source_url.rsplit('/', 1)[0]  # 提取基础URL
-                    article_url = f"{base_url}/{article_info['href']}"
+                    print(f"    ☐  {article_index:3d}. {article['title'][:45]}")
+                    article['auto_skip'] = False
+                
+                all_articles_info.append(article)
+                article_index += 1
+            
+            print()  # 版面之间空行
+        
+        total = len(all_articles_info)
+        available = len([a for a in all_articles_info if not a.get('auto_skip')])
+        print(f"{'='*60}")
+        print(f"  共 {total} 篇文章，其中 {available} 篇可选择下载")
+        print(f"{'='*60}")
+        
+        # ====== 第二步：用户选择 ======
+        print("\n📝 请输入要下载的文章编号：")
+        print("   • 输入编号，用逗号分隔，如: 1,3,5,7")
+        print("   • 输入范围，如: 1-10")
+        print("   • 混合使用，如: 1-5,8,12-15")
+        print("   • 输入 all 下载全部可选文章")
+        print("   • 输入 q 退出")
+        print()
+        
+        user_input = input("  👉 请选择: ").strip()
+        
+        if user_input.lower() == 'q':
+            print("\n已退出，未下载任何文章。")
+            return []
+        
+        # 解析用户输入的编号
+        selected_indices = set()
+        if user_input.lower() == 'all':
+            selected_indices = {a['index'] for a in all_articles_info if not a.get('auto_skip')}
+        else:
+            for part in user_input.split(','):
+                part = part.strip()
+                if '-' in part:
+                    try:
+                        start, end = part.split('-')
+                        for i in range(int(start), int(end) + 1):
+                            selected_indices.add(i)
+                    except ValueError:
+                        print(f"  ⚠️  无法解析: {part}")
+                else:
+                    try:
+                        selected_indices.add(int(part))
+                    except ValueError:
+                        print(f"  ⚠️  无法解析: {part}")
+        
+        # 过滤出用户选择的文章
+        selected_articles = [a for a in all_articles_info if a['index'] in selected_indices]
+        
+        if not selected_articles:
+            print("\n未选择任何文章，退出。")
+            return []
+        
+        print(f"\n✅ 已选择 {len(selected_articles)} 篇文章，开始下载...\n")
+        
+        # ====== 第三步：下载选中的文章 ======
+        existing_articles = self.notion_api.get_existing_articles()
+        processed_articles = []
+        
+        for i, article_info in enumerate(selected_articles, 1):
+            # 构建完整URL
+            source_url = article_info.get('source_url', '')
+            url_parts = source_url.split('/')
+            if len(url_parts) >= 8:
+                year_month = url_parts[-3]
+                day = url_parts[-2]
+                article_url = f"https://paper.people.com.cn/rmrb/pc/content/{year_month}/{day}/{article_info['href']}"
+            else:
+                base_url = source_url.rsplit('/', 1)[0]
+                article_url = f"{base_url}/{article_info['href']}"
+            
+            print(f"  [{i}/{len(selected_articles)}] 正在下载: {article_info['title'][:40]}...")
             
             # 抓取文章页
             article_html = self.crawler.crawl_article(article_url)
@@ -110,12 +181,6 @@ class PeopleDailyMaterialSystem:
                 logging.error(f"无法解析文章: {article_url}")
                 continue
             
-            # 过滤不需要的文章类型
-            skip_titles = ['图片报道', '导读', '征集', '本版责编']
-            if any(skip_title in article.get('title', '') for skip_title in skip_titles):
-                logging.info(f"跳过文章（标题过滤）: {article['title']}")
-                continue
-            
             # 处理文章
             article['content'] = self.processor.clean_content(article['content'])
             article['date'] = date.strftime('%Y-%m-%d')
@@ -126,7 +191,6 @@ class PeopleDailyMaterialSystem:
             # 检测重复
             duplicate = self.processor.detect_duplicate(article, existing_articles)
             if duplicate:
-                # 检测内容变化
                 if self.processor.detect_content_change(article, duplicate):
                     logging.info(f"文章内容发生变化，更新: {article['title']}")
                     self.notion_api.update_page(duplicate['id'], article)
@@ -137,12 +201,17 @@ class PeopleDailyMaterialSystem:
                 self.notion_api.create_page(article, date)
             
             processed_articles.append(article)
+            print(f"         ✅ 完成")
         
         # 保存本地
         self.save_articles_local(processed_articles, date)
         
         # 导出数据
         self.export_articles(processed_articles, date)
+        
+        print(f"\n{'='*60}")
+        print(f"  🎉 下载完成！共处理 {len(processed_articles)} 篇文章")
+        print(f"{'='*60}\n")
         
         return processed_articles
     
