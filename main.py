@@ -111,7 +111,7 @@ class PeopleDailyMaterialSystem:
                 continue
             
             # 过滤不需要的文章类型
-            skip_titles = ['图片报道', '导读', '征集']
+            skip_titles = ['图片报道', '导读', '征集', '本版责编']
             if any(skip_title in article.get('title', '') for skip_title in skip_titles):
                 logging.info(f"跳过文章（标题过滤）: {article['title']}")
                 continue
