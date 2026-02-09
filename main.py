@@ -50,7 +50,7 @@ class PeopleDailyMaterialSystem:
         self.exporter = DataExporter(self.config.get('export', {}))
     
     def crawl_single_date(self, date: datetime):
-        """抓取单个日期的文章（交互式：先浏览目录再选择下载）"""
+        """抓取单个日期的文章（交互式：浏览器界面选择下载）"""
         logging.info(f"开始抓取 {date.strftime('%Y-%m-%d')} 的人民日报文章")
         
         # ====== 第一步：抓取所有版面目录 ======
@@ -65,82 +65,45 @@ class PeopleDailyMaterialSystem:
             return []
         
         # 解析所有版面目录，按版面分组
+        import re
         all_articles_info = []
-        article_index = 1  # 全局编号
+        articles_by_section = []
+        article_index = 1
         
         for url, html in directories:
             articles_info = self.parser.parse_directory(html)
             
-            # 提取版面名称（从 URL 中获取 node_id）
-            import re
             node_match = re.search(r'node_(\d+)', url)
             node_id = node_match.group(1) if node_match else '??'
             
             if not articles_info:
                 continue
             
-            # 打印版面标题
-            print(f"  📋 第 {node_id} 版")
-            print(f"  {'─'*50}")
+            section_articles = []
+            skip_titles = ['图片报道', '导读', '征集', '本版责编']
             
             for article in articles_info:
                 article['source_url'] = url
                 article['index'] = article_index
-                
-                # 过滤不需要的文章类型
-                skip_titles = ['图片报道', '导读', '征集', '本版责编']
-                if any(skip in article.get('title', '') for skip in skip_titles):
-                    print(f"    ⊘  {article_index:3d}. {article['title'][:45]}  [已自动过滤]")
-                    article['auto_skip'] = True
-                else:
-                    print(f"    ☐  {article_index:3d}. {article['title'][:45]}")
-                    article['auto_skip'] = False
+                article['auto_skip'] = any(skip in article.get('title', '') for skip in skip_titles)
                 
                 all_articles_info.append(article)
+                section_articles.append(article)
                 article_index += 1
             
-            print()  # 版面之间空行
+            articles_by_section.append({
+                'section_id': node_id,
+                'articles': section_articles
+            })
         
         total = len(all_articles_info)
         available = len([a for a in all_articles_info if not a.get('auto_skip')])
-        print(f"{'='*60}")
-        print(f"  共 {total} 篇文章，其中 {available} 篇可选择下载")
-        print(f"{'='*60}")
+        print(f"  ✅ 获取完成：{len(articles_by_section)} 个版面，{total} 篇文章（{available} 篇可选）")
         
-        # ====== 第二步：用户选择 ======
-        print("\n📝 请输入要下载的文章编号：")
-        print("   • 输入编号，用逗号分隔，如: 1,3,5,7")
-        print("   • 输入范围，如: 1-10")
-        print("   • 混合使用，如: 1-5,8,12-15")
-        print("   • 输入 all 下载全部可选文章")
-        print("   • 输入 q 退出")
-        print()
-        
-        user_input = input("  👉 请选择: ").strip()
-        
-        if user_input.lower() == 'q':
-            print("\n已退出，未下载任何文章。")
-            return []
-        
-        # 解析用户输入的编号
-        selected_indices = set()
-        if user_input.lower() == 'all':
-            selected_indices = {a['index'] for a in all_articles_info if not a.get('auto_skip')}
-        else:
-            for part in user_input.split(','):
-                part = part.strip()
-                if '-' in part:
-                    try:
-                        start, end = part.split('-')
-                        for i in range(int(start), int(end) + 1):
-                            selected_indices.add(i)
-                    except ValueError:
-                        print(f"  ⚠️  无法解析: {part}")
-                else:
-                    try:
-                        selected_indices.add(int(part))
-                    except ValueError:
-                        print(f"  ⚠️  无法解析: {part}")
+        # ====== 第二步：打开浏览器选择 ======
+        from modules.web_selector import ArticleSelector
+        selector = ArticleSelector(date.strftime('%Y-%m-%d'), articles_by_section)
+        selected_indices = selector.show_and_wait()
         
         # 过滤出用户选择的文章
         selected_articles = [a for a in all_articles_info if a['index'] in selected_indices]
