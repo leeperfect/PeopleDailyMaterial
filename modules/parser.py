@@ -4,6 +4,7 @@
 内容解析模块
 """
 
+import re
 import logging
 from bs4 import BeautifulSoup
 from typing import List, Dict, Optional
@@ -18,53 +19,38 @@ class ContentParser:
         """解析目录页获取所有文章链接"""
         try:
             soup = BeautifulSoup(html, 'lxml')
-            
-            # 检测网页结构变化
-            if not soup.find('div', class_='newsbox') and not soup.find('div', class_='layout'):
-                logging.warning("网页结构可能发生变化，目录解析可能失败")
-            
             articles = []
-            # 查找所有文章链接
-            for link in soup.find_all('a', href=True):
-                href = link.get('href')
+            
+            # 只在 div.news 容器中查找文章链接
+            news_div = soup.find('div', class_='news')
+            if not news_div:
+                logging.warning("未找到 div.news 容器，尝试全文搜索 content_ 链接")
+                search_scope = soup
+            else:
+                search_scope = news_div
+            
+            # 只提取包含 content_ 的链接（真正的文章链接）
+            for link in search_scope.find_all('a', href=True):
+                href = link.get('href', '')
                 title = link.get_text(strip=True)
                 
-                # 过滤掉无效链接
-                if not href or not title:
+                if not title or not href:
                     continue
                 
-                # 过滤掉节点链接（node_*.html）
-                if href.startswith('node_') and href.endswith('.html'):
+                # 只处理包含 content_ 的链接（文章页）
+                if 'content_' not in href:
                     continue
                 
-                # 过滤掉pad版链接
-                if 'pad/layout' in href:
-                    continue
-                
-                # 适配新的链接格式
-                if ('nw.D110000renmrb_' in href or href.endswith('.html')):
-                    # 处理完整URL
-                    if href.startswith('http'):
-                        # 提取内容链接
-                        if 'content' in href:
-                            # 从完整URL中提取相对路径
-                            import re
-                            match = re.search(r'content/(.*\.html)', href)
-                            if match:
-                                href = match.group(1)
-                            else:
-                                continue
-                    # 处理相对路径
-                    elif not href.startswith('http'):
-                        # 相对路径，直接使用
-                        pass
-                    
-                    if href and title:
-                        articles.append({
-                            'title': title,
-                            'href': href
-                        })
+                # 提取相对路径中的文件名部分
+                # 格式: ../../../content/202602/02/content_30137423.html
+                match = re.search(r'(content_\d+\.html)', href)
+                if match:
+                    articles.append({
+                        'title': title,
+                        'href': match.group(1)
+                    })
             
+            logging.info(f"目录页解析到 {len(articles)} 篇文章")
             return articles
         except Exception as e:
             logging.error(f"解析目录页失败: {str(e)}")
@@ -75,113 +61,127 @@ class ContentParser:
         try:
             soup = BeautifulSoup(html, 'lxml')
             
-            # 提取标题（支持多种标签和结构）
+            # === 提取标题 ===
             title = ""
             
-            # 优先从 <title> 标签提取标题（人民日报网页的标题通常在这里）
-            try:
+            # 方法1: 从 div.article 内的 <p> 标签中提取标题
+            # 人民日报文章页结构: div.article 中第1个 <p> 是副标题，第2个 <p> 是主标题
+            article_div = soup.find('div', class_='article')
+            if article_div:
+                p_tags = article_div.find_all('p', recursive=False)
+                # 尝试第2个 <p>（通常是主标题）
+                if len(p_tags) >= 2:
+                    candidate = p_tags[1].get_text(strip=True)
+                    if candidate and len(candidate) < 100:
+                        title = candidate
+                # 如果第2个 <p> 不合适，尝试第1个
+                if not title and len(p_tags) >= 1:
+                    candidate = p_tags[0].get_text(strip=True)
+                    if candidate and len(candidate) < 100:
+                        title = candidate
+            
+            # 方法2: 从 <title> 标签提取（但排除通用标题）
+            if not title:
                 title_elem = soup.find('title')
                 if title_elem:
-                    title = title_elem.get_text(strip=True)
-            except Exception as e:
-                logging.warning(f"从title标签提取标题失败: {str(e)}")
+                    title_text = title_elem.get_text(strip=True)
+                    # 排除通用的页面标题
+                    if title_text and title_text != '人民日报-人民网' and '人民网' not in title_text:
+                        title = title_text
             
-            # 如果 <title> 标签提取失败或为空，尝试从 <h1> 标签提取
+            # 方法3: 从 <h1> 提取
             if not title:
-                try:
-                    h1_elem = soup.find('h1')
-                    if h1_elem:
-                        # h1 可能嵌套了 <p> 标签，需要处理
-                        p_in_h1 = h1_elem.find('p')
-                        if p_in_h1:
-                            title = p_in_h1.get_text(strip=True)
-                        else:
-                            title = h1_elem.get_text(strip=True)
-                except Exception as e:
-                    logging.warning(f"从h1标签提取标题失败: {str(e)}")
+                h1_elem = soup.find('h1')
+                if h1_elem:
+                    p_in_h1 = h1_elem.find('p')
+                    title = (p_in_h1 or h1_elem).get_text(strip=True)
             
-            # 最后尝试从 meta 标签提取
-            if not title:
-                try:
-                    meta_title = soup.find('meta', attrs={'property': 'og:title'}) or soup.find('meta', attrs={'name': 'title'})
-                    if meta_title:
-                        title = meta_title.get('content', '').strip()
-                except Exception as e:
-                    logging.warning(f"从meta标签提取标题失败: {str(e)}")
-            
-            # 提取版面名称（只保留名称，如"要闻"、"教育"，去掉版号）
+            # === 提取版面名称 ===
             plate = ""
             try:
-                import re
-                
-                # 从页面文本中查找版面名称（格式：第01版：要闻 或 01版：要闻）
                 page_text = soup.get_text()
-                # 匹配 "XX版：名称" 格式，提取名称部分
                 match = re.search(r'(?:第\s*)?\d+\s*版[：:]\s*([^\n\r\s]+)', page_text)
                 if match:
                     plate = match.group(1).strip()
                 
-                # 如果还是没有，尝试从 div 提取
                 if not plate:
-                    plate_elem = soup.find('div', attrs={'class': 'position'})
-                    if not plate_elem:
-                        plate_elem = soup.find('div', attrs={'class': 'channel'})
+                    plate_elem = soup.find('div', attrs={'class': 'position'}) or soup.find('div', attrs={'class': 'channel'})
                     if plate_elem:
                         plate_text = plate_elem.get_text(strip=True)
-                        # 提取版面名称（去掉版号）
                         match = re.search(r'(?:第\s*)?\d+\s*版[：:]\s*([^\n\r\s]+)', plate_text)
                         if match:
                             plate = match.group(1).strip()
-                        elif '>' in plate_text:
-                            plate_parts = plate_text.split('>')
-                            if len(plate_parts) >= 2:
-                                plate = plate_parts[1].strip()
             except Exception as e:
                 logging.warning(f"提取版面名称失败: {str(e)}")
             
-            # 提取正文
+            # === 提取正文 ===
             content = ""
             try:
                 # 移除包含"本版责编"的元素
                 for elem in soup.find_all(['a', 'p', 'div', 'span']):
-                    if elem.get_text() and '本版责编' in elem.get_text():
+                    if elem.string and '本版责编' in elem.get_text():
                         elem.decompose()
                 
-                # 尝试从article标签提取
-                article_elem = soup.find('article')
-                if article_elem:
-                    # 移除广告和无关元素
-                    for script in article_elem.find_all(['script', 'style']):
-                        script.decompose()
-                    content = '\n'.join([p.get_text(strip=True) for p in article_elem.find_all('p') if p.get_text(strip=True)])
+                # 优先从 div.article 提取正文
+                if article_div:
+                    # 移除 script 和 style
+                    for tag in article_div.find_all(['script', 'style']):
+                        tag.decompose()
+                    
+                    # 获取正文内容的 div（跳过标题 <p> 标签）
+                    content_div = article_div.find('div')
+                    if content_div:
+                        paragraphs = [p.get_text(strip=True) for p in content_div.find_all('p') if p.get_text(strip=True)]
+                        content = '\n'.join(paragraphs)
+                    
+                    # 如果 div 中没有内容，从 article 的所有 <p> 中提取（跳过前两个标题 p）
+                    if not content:
+                        all_p = article_div.find_all('p')
+                        # 跳过前面的标题段落
+                        start_idx = 0
+                        for i, p in enumerate(all_p):
+                            text = p.get_text(strip=True)
+                            # 找到记者署名行后，后面的才是正文
+                            if '本报记者' in text or '《人民日报》' in text:
+                                start_idx = i + 1
+                                break
+                            # 或者找到较长的段落（大于50字）认为是正文开始
+                            if len(text) > 50:
+                                start_idx = i
+                                break
+                        
+                        paragraphs = [p.get_text(strip=True) for p in all_p[start_idx:] if p.get_text(strip=True)]
+                        content = '\n'.join(paragraphs)
                 
-                # 如果article标签提取失败，尝试从所有p标签提取
+                # 备用方案：从 <article> 标签提取
+                if not content:
+                    article_elem = soup.find('article')
+                    if article_elem:
+                        for script in article_elem.find_all(['script', 'style']):
+                            script.decompose()
+                        content = '\n'.join([p.get_text(strip=True) for p in article_elem.find_all('p') if p.get_text(strip=True)])
+                
+                # 最后备用方案
                 if not content:
                     all_p = soup.find_all('p')
                     content = '\n'.join([p.get_text(strip=True) for p in all_p if p.get_text(strip=True)])
+                    
             except Exception as e:
                 logging.warning(f"提取内容失败: {str(e)}")
             
-            # 如果内容为空，尝试从所有div标签提取
-            if not content:
-                try:
-                    all_div = soup.find_all('div')
-                    text_parts = [div.get_text(strip=True) for div in all_div if div.get_text(strip=True) and len(div.get_text(strip=True)) > 50]
-                    content = '\n'.join(text_parts)
-                except Exception as e:
-                    logging.warning(f"从div标签提取内容失败: {str(e)}")
-            
-            # 检测网页结构变化
+            # 检测解析完整性
             if not title or not content:
-                logging.warning(f"网页结构可能发生变化，文章 {url} 解析可能不完整")
+                logging.warning(f"文章 {url} 解析可能不完整 (标题: {'有' if title else '无'}, 正文: {'有' if content else '无'})")
             
-            # 过滤掉无关内容
+            # 过滤无关内容
             if content:
-                import re
-                # 移除"本版责编"及其后面的内容
                 content = re.split(r'本版责编[：:]?', content)[0].strip()
-                # 移除版权声明
                 content = re.split(r'(?:©|Copyright|人\s*民\s*网\s*版\s*权)', content)[0].strip()
+            
+            # 过滤标题中的多余信息
+            if title:
+                # 去掉标题末尾可能包含的空格
+                title = title.strip()
             
             return {
                 'title': title,

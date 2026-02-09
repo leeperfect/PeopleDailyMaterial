@@ -234,26 +234,31 @@ def main():
     # 初始化系统
     system = PeopleDailyMaterialSystem()
     
-    # 处理命令行参数
-    if args.date_range:
-        try:
-            start_date = datetime.strptime(args.date_range[0], '%Y-%m-%d')
-            end_date = datetime.strptime(args.date_range[1], '%Y-%m-%d')
-            system.crawl_date_range(start_date, end_date)
-        except ValueError:
-            logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
-            sys.exit(1)
-    elif args.date:
-        try:
-            date = datetime.strptime(args.date, '%Y-%m-%d')
-            system.crawl_single_date(date)
-        except ValueError:
-            logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
-            sys.exit(1)
-    else:
-        # 默认抓取当天
-        today = datetime.now()
-        system.crawl_single_date(today)
+    try:
+        # 处理命令行参数
+        if args.date_range:
+            try:
+                start_date = datetime.strptime(args.date_range[0], '%Y-%m-%d')
+                end_date = datetime.strptime(args.date_range[1], '%Y-%m-%d')
+                system.crawl_date_range(start_date, end_date)
+            except ValueError:
+                logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
+                sys.exit(1)
+        elif args.date:
+            try:
+                date = datetime.strptime(args.date, '%Y-%m-%d')
+                system.crawl_single_date(date)
+            except ValueError:
+                logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
+                sys.exit(1)
+        else:
+            # 默认抓取当天
+            today = datetime.now()
+            system.crawl_single_date(today)
+    finally:
+        # 确保关闭浏览器
+        system.crawler.close()
+        logging.info("程序结束，浏览器已关闭")
 
 
 if __name__ == '__main__':
