@@ -71,7 +71,7 @@ class PeopleDailyMaterialSystem:
         article_index = 1
         
         for url, html in directories:
-            articles_info = self.parser.parse_directory(html)
+            articles_info, section_name = self.parser.parse_directory(html)
             
             node_match = re.search(r'node_(\d+)', url)
             node_id = node_match.group(1) if node_match else '??'
@@ -93,6 +93,7 @@ class PeopleDailyMaterialSystem:
             
             articles_by_section.append({
                 'section_id': node_id,
+                'section_name': section_name or f'第{node_id}版',
                 'articles': section_articles
             })
         

@@ -97,6 +97,7 @@ class ArticleSelector:
         
         for section in self.articles_by_section:
             section_id = section['section_id']
+            section_name = section.get('section_name', '')
             articles = section['articles']
             
             if not articles:
@@ -124,12 +125,15 @@ class ArticleSelector:
                         <span class="title">{title}</span>
                     </label>'''
             
+            # 显示版面号 + 版面名称
+            section_label = f'第 {section_id} 版 · {section_name}' if section_name else f'第 {section_id} 版'
+            
             sections_html += f'''
             <div class="section">
                 <div class="section-header">
                     <label class="section-select-all">
                         <input type="checkbox" class="section-all-cb">
-                        <span>第 {section_id} 版</span>
+                        <span>{section_label}</span>
                     </label>
                     <span class="section-count">{len([a for a in articles if not a.get('auto_skip')])} 篇</span>
                 </div>
