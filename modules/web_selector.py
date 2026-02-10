@@ -14,22 +14,24 @@ from typing import List, Dict, Optional, Set
 
 
 class ArticleSelector:
-    """通过本地 Web 页面让用户点选文章"""
+    """通过本地 Web 页面让用户点选文章（支持单日/多日模式）"""
     
-    def __init__(self, date_str: str, articles_by_section: List[Dict]):
+    def __init__(self, date_str: str = "", articles_by_section: List[Dict] = None,
+                 dates_info: List[Dict] = None):
         """
-        date_str: 日期字符串，如 "2026-02-10"
-        articles_by_section: [
-            {
-                'section_id': '01',
-                'articles': [
-                    {'index': 1, 'title': '...', 'auto_skip': False, ...},
-                ]
-            },
-        ]
+        单日模式: ArticleSelector("2026-01-02", articles_by_section)
+        多日模式: ArticleSelector(dates_info=[{'date_str': '...', 'articles_by_section': [...]}, ...])
         """
-        self.date_str = date_str
-        self.articles_by_section = articles_by_section
+        if dates_info:
+            self.dates_info = dates_info
+            self.is_multi_date = True
+            date_strs = [d['date_str'] for d in dates_info]
+            self.title = f"{date_strs[0]} ~ {date_strs[-1]}"
+        else:
+            self.dates_info = [{'date_str': date_str, 'articles_by_section': articles_by_section or []}]
+            self.is_multi_date = False
+            self.title = date_str
+        
         self.selected_indices: Set[int] = set()
         self.selection_done = threading.Event()
         self.server = None
@@ -39,6 +41,10 @@ class ArticleSelector:
         port = 18765
         handler = self._make_handler()
         self.server = HTTPServer(('127.0.0.1', port), handler)
+        self.server.allow_reuse_address = True
+        # 修复端口占用：允许端口复用
+        import socket
+        self.server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         
         # 后台启动服务器
         server_thread = threading.Thread(target=self.server.serve_forever, daemon=True)
@@ -92,63 +98,79 @@ class ArticleSelector:
         return Handler
     
     def _generate_html(self) -> str:
-        """生成文章选择页面 HTML"""
-        sections_html = ""
+        """生成文章选择页面 HTML（支持多日分组）"""
+        content_html = ""
+        total_articles = 0
+        available_articles = 0
         
-        for section in self.articles_by_section:
-            section_id = section['section_id']
-            section_name = section.get('section_name', '')
-            articles = section['articles']
+        for date_item in self.dates_info:
+            date_str = date_item['date_str']
+            articles_by_section = date_item['articles_by_section']
             
-            if not articles:
+            if not articles_by_section:
                 continue
             
-            items_html = ""
-            for art in articles:
-                idx = art['index']
-                title = art['title']
-                auto_skip = art.get('auto_skip', False)
+            sections_html = ""
+            for section in articles_by_section:
+                section_id = section['section_id']
+                section_name = section.get('section_name', '')
+                articles = section['articles']
                 
-                if auto_skip:
-                    items_html += f'''
-                    <label class="article-item skipped">
-                        <input type="checkbox" value="{idx}" disabled>
-                        <span class="idx">{idx}</span>
-                        <span class="title">{title}</span>
-                        <span class="badge skip">已过滤</span>
-                    </label>'''
-                else:
-                    items_html += f'''
-                    <label class="article-item">
-                        <input type="checkbox" value="{idx}" class="article-cb">
-                        <span class="idx">{idx}</span>
-                        <span class="title">{title}</span>
-                    </label>'''
+                if not articles:
+                    continue
+                
+                items_html = ""
+                for art in articles:
+                    idx = art['index']
+                    title = art['title']
+                    auto_skip = art.get('auto_skip', False)
+                    
+                    total_articles += 1
+                    if not auto_skip:
+                        available_articles += 1
+                    
+                    if auto_skip:
+                        items_html += f'''
+                        <label class="article-item skipped">
+                            <input type="checkbox" value="{idx}" disabled>
+                            <span class="idx">{idx}</span>
+                            <span class="title">{title}</span>
+                            <span class="badge skip">已过滤</span>
+                        </label>'''
+                    else:
+                        items_html += f'''
+                        <label class="article-item">
+                            <input type="checkbox" value="{idx}" class="article-cb">
+                            <span class="idx">{idx}</span>
+                            <span class="title">{title}</span>
+                        </label>'''
+                
+                section_label = f'第 {section_id} 版 · {section_name}' if section_name else f'第 {section_id} 版'
+                
+                sections_html += f'''
+                <div class="section">
+                    <div class="section-header">
+                        <label class="section-select-all">
+                            <input type="checkbox" class="section-all-cb">
+                            <span>{section_label}</span>
+                        </label>
+                        <span class="section-count">{len([a for a in articles if not a.get('auto_skip')])} 篇</span>
+                    </div>
+                    <div class="section-body">{items_html}</div>
+                </div>'''
             
-            # 显示版面号 + 版面名称
-            section_label = f'第 {section_id} 版 · {section_name}' if section_name else f'第 {section_id} 版'
-            
-            sections_html += f'''
-            <div class="section">
-                <div class="section-header">
-                    <label class="section-select-all">
-                        <input type="checkbox" class="section-all-cb">
-                        <span>{section_label}</span>
-                    </label>
-                    <span class="section-count">{len([a for a in articles if not a.get('auto_skip')])} 篇</span>
-                </div>
-                <div class="section-body">{items_html}</div>
+            content_html += f'''
+            <div class="date-group">
+                <div class="date-group-header">📅 {date_str}</div>
+                {sections_html}
             </div>'''
-        
-        total = sum(len(s['articles']) for s in self.articles_by_section)
-        available = sum(1 for s in self.articles_by_section for a in s['articles'] if not a.get('auto_skip'))
         
         return f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>人民日报 {self.date_str} - 文章选择</title>
+<title>人民日报文章选择 - {self.title}</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
   
@@ -187,14 +209,18 @@ class ArticleSelector:
   }}
   
   .toolbar {{
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding: 12px 18px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(48, 43, 99, 0.95);
     border-radius: 12px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    z-index: 90;
+    border: 1px solid rgba(255,255,255,0.1);
   }}
   
   .toolbar .left {{
@@ -217,6 +243,21 @@ class ArticleSelector:
   .toolbar button:hover {{
     background: rgba(255,255,255,0.15);
     color: #fff;
+  }}
+  
+  .date-group {{
+    margin-bottom: 35px;
+  }}
+  
+  .date-group-header {{
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffd200;
+    margin-bottom: 15px;
+    padding: 8px 12px;
+    border-left: 4px solid #f7971e;
+    background: rgba(255,255,255,0.03);
+    border-radius: 0 8px 8px 0;
   }}
   
   .selected-count {{
@@ -326,7 +367,6 @@ class ArticleSelector:
     color: #666;
   }}
   
-  /* 底部固定操作栏 */
   .bottom-bar {{
     position: fixed;
     bottom: 0;
@@ -403,8 +443,8 @@ class ArticleSelector:
 <body>
 <div class="container">
   <div class="header">
-    <h1>📰 人民日报 {self.date_str}</h1>
-    <div class="subtitle">共 {total} 篇文章，{available} 篇可选择下载</div>
+    <h1>📰 人民日报文章选择</h1>
+    <div class="subtitle">{self.title} | 共 {total_articles} 篇文章，{available_articles} 篇可选择</div>
   </div>
   
   <div class="toolbar">
@@ -416,7 +456,7 @@ class ArticleSelector:
     <div class="selected-count">已选 <span id="count">0</span> 篇</div>
   </div>
   
-  {sections_html}
+  {content_html}
 </div>
 
 <div class="bottom-bar">
@@ -438,13 +478,11 @@ function updateCount() {{
   document.getElementById('count2').textContent = n;
   document.getElementById('btnDownload').disabled = n === 0;
   
-  // 更新选中样式
   document.querySelectorAll('.article-item:not(.skipped)').forEach(el => {{
     const cb = el.querySelector('.article-cb');
     if (cb) el.classList.toggle('selected', cb.checked);
   }});
   
-  // 更新版面全选状态
   document.querySelectorAll('.section').forEach(sec => {{
     const allCb = sec.querySelector('.section-all-cb');
     const cbs = sec.querySelectorAll('.article-cb');
@@ -456,7 +494,6 @@ function updateCount() {{
   }});
 }}
 
-// 版面全选
 document.querySelectorAll('.section-all-cb').forEach(allCb => {{
   allCb.addEventListener('change', function() {{
     const section = this.closest('.section');
@@ -467,7 +504,6 @@ document.querySelectorAll('.section-all-cb').forEach(allCb => {{
   }});
 }});
 
-// 单个文章勾选
 document.querySelectorAll('.article-cb').forEach(cb => {{
   cb.addEventListener('change', updateCount);
 }});
