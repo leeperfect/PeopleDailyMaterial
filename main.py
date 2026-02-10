@@ -85,6 +85,8 @@ class PeopleDailyMaterialSystem:
             for article in articles_info:
                 article['source_url'] = url
                 article['index'] = article_index
+                article['section_id'] = node_id
+                article['section_name'] = section_name or f'第{node_id}版'
                 article['auto_skip'] = any(skip in article.get('title', '') for skip in skip_titles)
                 
                 all_articles_info.append(article)
@@ -116,6 +118,10 @@ class PeopleDailyMaterialSystem:
         print(f"\n✅ 已选择 {len(selected_articles)} 篇文章，开始下载...\n")
         
         # ====== 第三步：下载选中的文章 ======
+        from modules.markdown_writer import MarkdownWriter
+        md_writer = MarkdownWriter()
+        md_saved_count = 0
+        
         existing_articles = self.notion_api.get_existing_articles()
         processed_articles = []
         
@@ -164,6 +170,15 @@ class PeopleDailyMaterialSystem:
                 logging.info(f"创建新文章: {article['title']}")
                 self.notion_api.create_page(article, date)
             
+            # 保存 Markdown 文件
+            md_path = md_writer.save_article(
+                article, date,
+                section_id=article_info.get('section_id', ''),
+                section_name=article_info.get('section_name', '')
+            )
+            if md_path:
+                md_saved_count += 1
+            
             processed_articles.append(article)
             print(f"         ✅ 完成")
         
@@ -175,6 +190,7 @@ class PeopleDailyMaterialSystem:
         
         print(f"\n{'='*60}")
         print(f"  🎉 下载完成！共处理 {len(processed_articles)} 篇文章")
+        print(f"  📁 Markdown 已保存 {md_saved_count} 篇到 data/vault/")
         print(f"{'='*60}\n")
         
         return processed_articles
