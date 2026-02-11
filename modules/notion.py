@@ -123,6 +123,18 @@ class NotionAPI:
                 }
             }
             
+            # 系列信息（仅在有系列时添加）
+            series_name = article.get('series_name')
+            if series_name:
+                properties['系列'] = {
+                    'rich_text': [{'text': {'content': series_name}}]
+                }
+                series_part = article.get('series_part')
+                if series_part is not None:
+                    properties['系列序号'] = {
+                        'number': series_part
+                    }
+            
             # 创建页面
             page = self.notion.pages.create(
                 parent={"database_id": self.database_id},

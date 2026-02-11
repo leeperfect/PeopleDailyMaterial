@@ -90,6 +90,11 @@ class MarkdownWriter:
         url = article.get('url', '')
         summary = article.get('summary', '').replace('"', '\\"')
         
+        # 系列信息
+        series_name = article.get('series_name', '') or ''
+        series_part = article.get('series_part')
+        related_titles = article.get('related_titles', [])
+        
         # 关键词列表
         if keywords:
             kw_str = ', '.join(keywords[:8])
@@ -108,9 +113,22 @@ class MarkdownWriter:
             kw_line,
             f"word_count: {word_count}",
             f'source_url: "{url}"',
-            "---",
-            ""
         ]
+        
+        # 系列字段（仅在有系列时添加）
+        if series_name:
+            lines.append(f'series: "{series_name}"')
+            if series_part is not None:
+                lines.append(f"series_part: {series_part}")
+        
+        # 关联文章（Obsidian wiki-link 格式）
+        if related_titles:
+            lines.append("related:")
+            for rt in related_titles:
+                lines.append(f'  - "[[{rt}]]"')
+        
+        lines.append("---")
+        lines.append("")
         
         return '\n'.join(lines)
     

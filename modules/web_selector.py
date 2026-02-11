@@ -33,6 +33,7 @@ class ArticleSelector:
             self.title = date_str
         
         self.selected_indices: Set[int] = set()
+        self.manual_groups: List[Dict] = []  # 手动编组信息
         self.selection_done = threading.Event()
         self.server = None
     
@@ -84,8 +85,10 @@ class ArticleSelector:
                 try:
                     data = json.loads(body)
                     selector.selected_indices = set(data.get('selected', []))
+                    selector.manual_groups = data.get('groups', [])
                 except Exception:
                     selector.selected_indices = set()
+                    selector.manual_groups = []
                 
                 self.send_response(200)
                 self.send_header('Content-Type', 'application/json; charset=utf-8')
@@ -98,10 +101,22 @@ class ArticleSelector:
         return Handler
     
     def _generate_html(self) -> str:
-        """生成文章选择页面 HTML（支持多日分组）"""
+        """生成文章选择页面 HTML（支持多日分组 + 系列标签）"""
         content_html = ""
         total_articles = 0
         available_articles = 0
+        
+        # 收集所有系列信息用于分配颜色
+        series_colors = {}
+        color_palette = ['#e74c3c', '#3498db', '#2ecc71', '#9b59b6', '#e67e22', '#1abc9c', '#f39c12', '#e84393']
+        color_idx = 0
+        for date_item in self.dates_info:
+            for section in date_item.get('articles_by_section', []):
+                for art in section.get('articles', []):
+                    sid = art.get('series_id')
+                    if sid and sid not in series_colors:
+                        series_colors[sid] = color_palette[color_idx % len(color_palette)]
+                        color_idx += 1
         
         for date_item in self.dates_info:
             date_str = date_item['date_str']
@@ -138,11 +153,20 @@ class ArticleSelector:
                             <span class="badge skip">已过滤</span>
                         </label>'''
                     else:
+                        series_id = art.get('series_id', '')
+                        series_name = art.get('series_name', '')
+                        series_badge = ''
+                        series_attr = ''
+                        if series_id and series_name:
+                            color = series_colors.get(series_id, '#888')
+                            series_badge = f'<span class="badge series" style="background:{color}20;color:{color};border:1px solid {color}40">🔗 {series_name}</span>'
+                            series_attr = f' data-series="{series_id}"'
                         items_html += f'''
-                        <label class="article-item">
+                        <label class="article-item"{series_attr}>
                             <input type="checkbox" value="{idx}" class="article-cb">
                             <span class="idx">{idx}</span>
                             <span class="title">{title}</span>
+                            {series_badge}
                         </label>'''
                 
                 section_label = f'第 {section_id} 版 · {section_name}' if section_name else f'第 {section_id} 版'
@@ -367,6 +391,23 @@ class ArticleSelector:
     color: #666;
   }}
   
+  .badge.series {{
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: all 0.2s;
+  }}
+  
+  .badge.series:hover {{
+    filter: brightness(1.3);
+    transform: scale(1.05);
+  }}
+  
   .bottom-bar {{
     position: fixed;
     bottom: 0;
@@ -452,6 +493,7 @@ class ArticleSelector:
       <button onclick="selectAll()">全选</button>
       <button onclick="deselectAll()">全不选</button>
       <button onclick="invertAll()">反选</button>
+      <button onclick="enterGroupMode()" id="btnGroup" style="background:rgba(155,89,182,0.2);border-color:rgba(155,89,182,0.4);color:#bb8fce">🔗 编组</button>
     </div>
     <div class="selected-count">已选 <span id="count">0</span> 篇</div>
   </div>
@@ -529,13 +571,87 @@ function submitSelection() {{
     selected.push(parseInt(cb.value));
   }});
   
+  // 收集手动编组信息
+  const groups = [];
+  if (window._manualGroups) {{
+    window._manualGroups.forEach(g => {{
+      groups.push({{ name: g.name, article_indices: g.indices }});
+    }});
+  }}
+  
   fetch('/', {{
     method: 'POST',
     headers: {{ 'Content-Type': 'application/json' }},
-    body: JSON.stringify({{ selected: selected }})
+    body: JSON.stringify({{ selected: selected, groups: groups }})
   }}).then(() => {{
     document.getElementById('doneOverlay').classList.add('show');
   }});
+}}
+
+// ====== 系列文章联动 ======
+window._manualGroups = [];
+
+document.querySelectorAll('.article-cb').forEach(cb => {{
+  cb.addEventListener('change', function() {{
+    if (!this.checked) return;
+    const item = this.closest('.article-item');
+    const seriesId = item ? item.getAttribute('data-series') : null;
+    if (!seriesId) return;
+    
+    // 找到同系列的其他未勾选文章
+    const siblings = document.querySelectorAll(`.article-item[data-series="${{seriesId}}"] .article-cb:not(:checked)`);
+    if (siblings.length === 0) return;
+    
+    const seriesBadge = item.querySelector('.badge.series');
+    const seriesName = seriesBadge ? seriesBadge.textContent.replace('🔗 ', '') : '该系列';
+    
+    if (confirm(`该文章属于系列「${{seriesName}}」，还有 ${{siblings.length}} 篇相关文章未选。\n是否全选该系列？`)) {{
+      siblings.forEach(s => s.checked = true);
+      updateCount();
+    }}
+  }});
+}});
+
+// ====== 手动编组 ======
+let _groupMode = false;
+
+function enterGroupMode() {{
+  const checked = document.querySelectorAll('.article-cb:checked');
+  if (checked.length < 2) {{
+    alert('请先勾选至少 2 篇文章，再进行编组操作。');
+    return;
+  }}
+  // 自动生成带时间戳的编组名称
+  const now = new Date();
+  const ts = now.getFullYear().toString() +
+    String(now.getMonth()+1).padStart(2,'0') +
+    String(now.getDate()).padStart(2,'0') + '_' +
+    String(now.getHours()).padStart(2,'0') +
+    String(now.getMinutes()).padStart(2,'0');
+  const seq = String(window._manualGroups.length + 1).padStart(2, '0');
+  const defaultName = `编组_${{ts}}_${{seq}}`;
+  
+  const name = prompt('编组名称（可直接确认或修改）：', defaultName);
+  if (!name || !name.trim()) return;
+  
+  const indices = [];
+  checked.forEach(cb => indices.push(parseInt(cb.value)));
+  window._manualGroups.push({{ name: name.trim(), indices: indices }});
+  
+  // 为选中的文章添加视觉标记
+  const colors = ['#e74c3c','#3498db','#2ecc71','#9b59b6','#e67e22','#1abc9c','#f39c12','#e84393'];
+  const color = colors[(window._manualGroups.length - 1) % colors.length];
+  checked.forEach(cb => {{
+    const item = cb.closest('.article-item');
+    if (item && !item.querySelector('.badge.series')) {{
+      const badge = document.createElement('span');
+      badge.className = 'badge series';
+      badge.style.cssText = `background:${{color}}20;color:${{color}};border:1px solid ${{color}}40`;
+      badge.textContent = '🔗 ' + name.trim();
+      item.appendChild(badge);
+    }}
+  }});
+  alert(`已将 ${{indices.length}} 篇文章编为「${{name.trim()}}」组。`);
 }}
 </script>
 </body>

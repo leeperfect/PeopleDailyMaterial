@@ -26,6 +26,7 @@ from modules.parser import ContentParser
 from modules.processor import DataProcessor
 from modules.notion import NotionAPI
 from modules.exporter import DataExporter
+from modules.series_detector import SeriesDetector
 
 
 class PeopleDailyMaterialSystem:
@@ -48,6 +49,7 @@ class PeopleDailyMaterialSystem:
         self.processor = DataProcessor()
         self.notion_api = NotionAPI(self.config)
         self.exporter = DataExporter(self.config.get('export', {}))
+        self.series_detector = SeriesDetector()
     
     def crawl_single_date(self, date: datetime):
         """抓取单个日期的文章（交互式：浏览器界面选择下载）"""
@@ -80,7 +82,7 @@ class PeopleDailyMaterialSystem:
                 continue
             
             section_articles = []
-            skip_titles = ['图片报道', '导读', '征集', '本版责编']
+            skip_titles = ['图片报道', '导读', '征集', '本版责编', '一版责编']
             
             for article in articles_info:
                 article['source_url'] = url
@@ -103,10 +105,22 @@ class PeopleDailyMaterialSystem:
         available = len([a for a in all_articles_info if not a.get('auto_skip')])
         print(f"  ✅ 获取完成：{len(articles_by_section)} 个版面，{total} 篇文章（{available} 篇可选）")
         
+        # ====== 系列文章检测 ======
+        self.series_detector.detect_and_register(all_articles_info)
+        series_summary = self.series_detector.get_summary()
+        if '检测到' in series_summary:
+            print(f"\n  {series_summary}")
+        
         # ====== 第二步：打开浏览器选择 ======
         from modules.web_selector import ArticleSelector
         selector = ArticleSelector(date.strftime('%Y-%m-%d'), articles_by_section)
         selected_indices = selector.show_and_wait()
+        
+        # 处理手动编组
+        for group in selector.manual_groups:
+            self.series_detector.manual_group(
+                all_articles_info, group['name'], group['article_indices']
+            )
         
         # 过滤出用户选择的文章
         selected_articles = [a for a in all_articles_info if a['index'] in selected_indices]
@@ -158,6 +172,12 @@ class PeopleDailyMaterialSystem:
             article['summary'] = self.processor.extract_summary(article['content'])
             article['category'] = self.processor.classify_article(article)
             
+            # 传递系列信息
+            article['series_id'] = article_info.get('series_id')
+            article['series_name'] = article_info.get('series_name')
+            article['series_part'] = article_info.get('series_part')
+            article['related_titles'] = self.series_detector.get_related_titles(article_info)
+            
             # 检测重复
             duplicate = self.processor.detect_duplicate(article, existing_articles)
             if duplicate:
@@ -181,6 +201,9 @@ class PeopleDailyMaterialSystem:
             
             processed_articles.append(article)
             print(f"         ✅ 完成")
+        
+        # 保存系列注册表
+        self.series_detector.save_registry()
         
         # 保存本地
         self.save_articles_local(processed_articles, date)
@@ -220,7 +243,7 @@ class PeopleDailyMaterialSystem:
                 continue
             
             articles_by_section = []
-            skip_titles = ['图片报道', '导读', '征集', '本版责编']
+            skip_titles = ['图片报道', '导读', '征集', '本版责编', '一版责编']
             
             for url, html in directories:
                 articles_info, section_name = self.parser.parse_directory(html)
@@ -263,10 +286,22 @@ class PeopleDailyMaterialSystem:
             print("\n未获取到任何文章目录，退出。")
             return []
         
+        # ====== 系列文章检测 ======
+        self.series_detector.detect_and_register(all_articles_info)
+        series_summary = self.series_detector.get_summary()
+        if '检测到' in series_summary:
+            print(f"\n  {series_summary}")
+        
         # ====== 第二步：统一展示选择器（所有日期合并为一页） ======
         from modules.web_selector import ArticleSelector
         selector = ArticleSelector(dates_info=dates_info)
         selected_indices = selector.show_and_wait()
+        
+        # 处理手动编组
+        for group in selector.manual_groups:
+            self.series_detector.manual_group(
+                all_articles_info, group['name'], group['article_indices']
+            )
         
         selected_articles = [a for a in all_articles_info if a['index'] in selected_indices]
         
@@ -319,6 +354,12 @@ class PeopleDailyMaterialSystem:
             article['summary'] = self.processor.extract_summary(article['content'])
             article['category'] = self.processor.classify_article(article)
             
+            # 传递系列信息
+            article['series_id'] = article_info.get('series_id')
+            article['series_name'] = article_info.get('series_name')
+            article['series_part'] = article_info.get('series_part')
+            article['related_titles'] = self.series_detector.get_related_titles(article_info)
+            
             # 检测重复
             duplicate = self.processor.detect_duplicate(article, existing_articles)
             if duplicate:
@@ -342,6 +383,9 @@ class PeopleDailyMaterialSystem:
             
             processed_articles.append(article)
             print(f"         ✅ 完成")
+        
+        # 保存系列注册表
+        self.series_detector.save_registry()
         
         # 按日期分组保存本地数据
         from collections import defaultdict
