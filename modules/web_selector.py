@@ -479,6 +479,198 @@ class ArticleSelector:
     color: #888;
     font-size: 14px;
   }}
+
+  /* ====== 编组面板（常驻） ====== */
+  .container {{
+    margin-right: 320px;
+  }}
+  
+  /* 编组切换按钮：每行文章右侧的 +/− */
+  .group-toggle-btn {{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(155, 89, 182, 0.15);
+    border: 2px solid rgba(155, 89, 182, 0.4);
+    color: #bb8fce;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    margin-left: auto;
+  }}
+  .group-toggle-btn:hover {{
+    background: rgba(155, 89, 182, 0.35);
+    transform: scale(1.15);
+  }}
+  .group-toggle-btn.added {{
+    background: rgba(155, 89, 182, 0.5);
+    border-color: #bb8fce;
+    color: #fff;
+  }}
+  
+  .article-item.in-group {{
+    border-left: 4px solid #9b59b6 !important;
+    padding-left: 8px;
+    background: rgba(155, 89, 182, 0.08) !important;
+  }}
+  
+  .group-panel {{
+    display: flex;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    background: linear-gradient(180deg, #1e1a3a 0%, #16213e 100%);
+    border-left: 2px solid rgba(155, 89, 182, 0.4);
+    z-index: 150;
+    flex-direction: column;
+    box-shadow: -8px 0 30px rgba(0,0,0,0.5);
+  }}
+  
+  .group-panel-header {{
+    padding: 20px 16px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }}
+  .group-panel-header h3 {{
+    color: #bb8fce;
+    margin: 0 0 10px;
+    font-size: 16px;
+  }}
+  .group-panel-header .gp-hint {{
+    color: #888;
+    font-size: 12px;
+    margin: 0 0 10px;
+  }}
+  .group-panel-header input {{
+    width: 100%;
+    padding: 8px 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(155, 89, 182, 0.4);
+    border-radius: 6px;
+    color: #e0e0e0;
+    font-size: 13px;
+    box-sizing: border-box;
+  }}
+  .group-panel-header input:focus {{
+    outline: none;
+    border-color: #bb8fce;
+  }}
+  
+  .group-panel-body {{
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 16px;
+  }}
+  .group-panel-body .empty-hint {{
+    color: #666;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 40px;
+    line-height: 1.8;
+  }}
+  .group-panel-body .gp-item {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: rgba(155, 89, 182, 0.1);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #ccc;
+  }}
+  .gp-item .gp-num {{
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(155, 89, 182, 0.3);
+    color: #bb8fce;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }}
+  .gp-item .gp-title {{
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }}
+  .gp-item .gp-remove {{
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+    font-size: 14px;
+  }}
+  .gp-item .gp-remove:hover {{
+    opacity: 1;
+    color: #e74c3c;
+  }}
+  
+  .group-panel-footer {{
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    gap: 8px;
+  }}
+  .group-panel-footer button {{
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }}
+  .gp-btn-cancel {{
+    background: rgba(255,255,255,0.08);
+    color: #aaa;
+  }}
+  .gp-btn-cancel:hover {{ background: rgba(255,255,255,0.15); }}
+  .gp-btn-save {{
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    color: #fff;
+  }}
+  .gp-btn-save:hover {{ filter: brightness(1.2); }}
+  .gp-btn-save:disabled {{ opacity: 0.4; cursor: not-allowed; filter: none; }}
+  
+  /* 已保存编组标记 */
+  .badge.group-saved {{
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+    cursor: default;
+  }}
+  
+  /* 已保存编组列表 */
+  .saved-groups-bar {{
+    padding: 6px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }}
+  .saved-groups-bar:empty {{ display: none; }}
+  .saved-group-chip {{
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: default;
+  }}
 </style>
 </head>
 <body>
@@ -493,12 +685,27 @@ class ArticleSelector:
       <button onclick="selectAll()">全选</button>
       <button onclick="deselectAll()">全不选</button>
       <button onclick="invertAll()">反选</button>
-      <button onclick="enterGroupMode()" id="btnGroup" style="background:rgba(155,89,182,0.2);border-color:rgba(155,89,182,0.4);color:#bb8fce">🔗 编组</button>
     </div>
     <div class="selected-count">已选 <span id="count">0</span> 篇</div>
   </div>
+  <div class="saved-groups-bar" id="savedGroupsBar"></div>
   
   {content_html}
+</div>
+
+<div class="group-panel" id="groupPanel">
+  <div class="group-panel-header">
+    <h3>🔗 文章编组</h3>
+    <p class="gp-hint">点击文章行末尾的 + 按钮加入编组</p>
+    <input type="text" id="groupNameInput" placeholder="编组名称...">
+  </div>
+  <div class="group-panel-body" id="groupPanelBody">
+    <div class="empty-hint">👈 点击左侧文章行末尾的 <b style="color:#bb8fce;font-size:16px">+</b> 按钮<br>将文章加入当前编组</div>
+  </div>
+  <div class="group-panel-footer">
+    <button class="gp-btn-cancel" onclick="clearGroup()">清空</button>
+    <button class="gp-btn-save" id="gpBtnSave" onclick="saveGroup()" disabled>保存编组 (0)</button>
+  </div>
 </div>
 
 <div class="bottom-bar">
@@ -598,7 +805,6 @@ document.querySelectorAll('.article-cb').forEach(cb => {{
     const seriesId = item ? item.getAttribute('data-series') : null;
     if (!seriesId) return;
     
-    // 找到同系列的其他未勾选文章
     const siblings = document.querySelectorAll(`.article-item[data-series="${{seriesId}}"] .article-cb:not(:checked)`);
     if (siblings.length === 0) return;
     
@@ -612,16 +818,11 @@ document.querySelectorAll('.article-cb').forEach(cb => {{
   }});
 }});
 
-// ====== 手动编组 ======
-let _groupMode = false;
+// ====== 编组（常驻） ======
+const _GROUP_COLORS = ['#e74c3c','#3498db','#2ecc71','#9b59b6','#e67e22','#1abc9c','#f39c12','#e84393'];
+let _currentGroupItems = [];  // [{{ idx, title }}]
 
-function enterGroupMode() {{
-  const checked = document.querySelectorAll('.article-cb:checked');
-  if (checked.length < 2) {{
-    alert('请先勾选至少 2 篇文章，再进行编组操作。');
-    return;
-  }}
-  // 自动生成带时间戳的编组名称
+function _generateGroupName() {{
   const now = new Date();
   const ts = now.getFullYear().toString() +
     String(now.getMonth()+1).padStart(2,'0') +
@@ -629,29 +830,131 @@ function enterGroupMode() {{
     String(now.getHours()).padStart(2,'0') +
     String(now.getMinutes()).padStart(2,'0');
   const seq = String(window._manualGroups.length + 1).padStart(2, '0');
-  const defaultName = `编组_${{ts}}_${{seq}}`;
+  return `编组_${{ts}}_${{seq}}`;
+}}
+
+// 页面加载时自动初始化
+(function initGroupUI() {{
+  document.getElementById('groupNameInput').value = _generateGroupName();
   
-  const name = prompt('编组名称（可直接确认或修改）：', defaultName);
-  if (!name || !name.trim()) return;
-  
-  const indices = [];
-  checked.forEach(cb => indices.push(parseInt(cb.value)));
-  window._manualGroups.push({{ name: name.trim(), indices: indices }});
-  
-  // 为选中的文章添加视觉标记
-  const colors = ['#e74c3c','#3498db','#2ecc71','#9b59b6','#e67e22','#1abc9c','#f39c12','#e84393'];
-  const color = colors[(window._manualGroups.length - 1) % colors.length];
-  checked.forEach(cb => {{
-    const item = cb.closest('.article-item');
-    if (item && !item.querySelector('.badge.series')) {{
-      const badge = document.createElement('span');
-      badge.className = 'badge series';
-      badge.style.cssText = `background:${{color}}20;color:${{color}};border:1px solid ${{color}}40`;
-      badge.textContent = '🔗 ' + name.trim();
-      item.appendChild(badge);
+  document.querySelectorAll('.article-item:not(.skipped)').forEach(el => {{
+    const cb = el.querySelector('.article-cb');
+    if (!cb) return;
+    const idx = parseInt(cb.value);
+    const titleEl = el.querySelector('.title');
+    const title = titleEl ? titleEl.textContent : '';
+    
+    const btn = document.createElement('span');
+    btn.className = 'group-toggle-btn';
+    btn.textContent = '+';
+    btn.addEventListener('click', function(e) {{
+      e.stopPropagation();
+      e.preventDefault();
+      toggleGroupItem(idx, title, el, btn);
+    }});
+    el.appendChild(btn);
+  }});
+}})();
+
+function toggleGroupItem(idx, title, el, btn) {{
+  const existIdx = _currentGroupItems.findIndex(g => g.idx === idx);
+  if (existIdx >= 0) {{
+    _currentGroupItems.splice(existIdx, 1);
+    el.classList.remove('in-group');
+    btn.textContent = '+';
+    btn.classList.remove('added');
+  }} else {{
+    _currentGroupItems.push({{ idx, title }});
+    el.classList.add('in-group');
+    btn.textContent = '\u2212';
+    btn.classList.add('added');
+  }}
+  renderGroupPanel();
+}}
+
+function clearGroup() {{
+  document.querySelectorAll('.article-item.in-group').forEach(el => el.classList.remove('in-group'));
+  document.querySelectorAll('.group-toggle-btn.added').forEach(btn => {{
+    btn.textContent = '+';
+    btn.classList.remove('added');
+  }});
+  _currentGroupItems = [];
+  document.getElementById('groupNameInput').value = _generateGroupName();
+  renderGroupPanel();
+}}
+
+function removeFromGroup(idx) {{
+  _currentGroupItems = _currentGroupItems.filter(g => g.idx !== idx);
+  document.querySelectorAll('.article-item:not(.skipped)').forEach(el => {{
+    const cb = el.querySelector('.article-cb');
+    if (cb && parseInt(cb.value) === idx) {{
+      el.classList.remove('in-group');
+      const btn = el.querySelector('.group-toggle-btn');
+      if (btn) {{ btn.textContent = '+'; btn.classList.remove('added'); }}
     }}
   }});
-  alert(`已将 ${{indices.length}} 篇文章编为「${{name.trim()}}」组。`);
+  renderGroupPanel();
+}}
+
+function renderGroupPanel() {{
+  const body = document.getElementById('groupPanelBody');
+  const btn = document.getElementById('gpBtnSave');
+  
+  if (_currentGroupItems.length === 0) {{
+    body.innerHTML = '<div class="empty-hint">👈 点击左侧文章行末尾的 <b style="color:#bb8fce;font-size:16px">+</b> 按钮<br>将文章加入当前编组</div>';
+    btn.disabled = true;
+    btn.textContent = '保存编组 (0)';
+    return;
+  }}
+  
+  btn.disabled = _currentGroupItems.length < 2;
+  btn.textContent = `保存编组 (${{_currentGroupItems.length}})`;
+  
+  body.innerHTML = _currentGroupItems.map((g, i) => `
+    <div class="gp-item">
+      <span class="gp-num">${{i+1}}</span>
+      <span class="gp-title">${{g.title}}</span>
+      <span class="gp-remove" onclick="removeFromGroup(${{g.idx}})">\u2715</span>
+    </div>
+  `).join('');
+}}
+
+function saveGroup() {{
+  if (_currentGroupItems.length < 2) return;
+  const name = document.getElementById('groupNameInput').value.trim();
+  if (!name) {{ alert('请输入编组名称'); return; }}
+  
+  const indices = _currentGroupItems.map(g => g.idx);
+  const colorIdx = window._manualGroups.length % _GROUP_COLORS.length;
+  const color = _GROUP_COLORS[colorIdx];
+  
+  window._manualGroups.push({{ name, indices, color }});
+  
+  document.querySelectorAll('.article-item:not(.skipped)').forEach(el => {{
+    const cb = el.querySelector('.article-cb');
+    if (!cb) return;
+    const idx = parseInt(cb.value);
+    if (indices.includes(idx)) {{
+      const badge = document.createElement('span');
+      badge.className = 'badge group-saved';
+      badge.style.cssText = `background:${{color}}20;color:${{color}};border:1px solid ${{color}}40`;
+      badge.textContent = '🔗 ' + name;
+      el.appendChild(badge);
+      el.style.borderLeft = `4px solid ${{color}}`;
+      cb.checked = true;
+    }}
+  }});
+  updateCount();
+  
+  renderSavedGroupsBar();
+  clearGroup();
+}}
+
+function renderSavedGroupsBar() {{
+  const bar = document.getElementById('savedGroupsBar');
+  bar.innerHTML = window._manualGroups.map((g, i) => {{
+    return `<span class="saved-group-chip" style="background:${{g.color}}20;color:${{g.color}};border:1px solid ${{g.color}}40">🔗 ${{g.name}} (${{g.indices.length}}篇)</span>`;
+  }}).join('');
 }}
 </script>
 </body>
