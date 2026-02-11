@@ -136,11 +136,38 @@ class ContentParser:
                     i += 1
                     continue
                 
-                # 处理 h2 标签
+                # 处理 h2 标签（可能是空的，下一个兄弟是 p 标签）
                 elif tag == 'h2':
-                    if text:
+                    # 检查下一个兄弟节点是否是 p 标签
+                    h2_text = text
+                    if i + 1 < len(children):
+                        next_child = children[i + 1]
+                        if next_child.name == 'p':
+                            h2_text = next_child.get_text(strip=True)
+                            if h2_text:
+                                md_lines.append(f"## {h2_text}")
+                                md_lines.append("")
+                                # 尝试从 h2 文本中提取系列名称
+                                if not series_name:
+                                    # 清理 h2 文本，去除破折号等前缀
+                                    cleaned_h2 = h2_text.lstrip('—').strip()
+                                    # 检查是否符合系列名称模式
+                                    if self._is_series_name(cleaned_h2):
+                                        # 提取系列名称，去除序号
+                                        series_name = re.sub(r'[①②③④⑤⑥⑦⑧⑨⑩\d]+$', '', cleaned_h2).strip()
+                            i += 1  # 跳过下一个 p 标签
+                    elif text:
+                        # 如果 h2 标签本身有文本
                         md_lines.append(f"## {text}")
                         md_lines.append("")
+                        # 尝试从 h2 文本中提取系列名称
+                        if not series_name:
+                            # 清理 h2 文本，去除破折号等前缀
+                            cleaned_h2 = text.lstrip('—').strip()
+                            # 检查是否符合系列名称模式
+                            if self._is_series_name(cleaned_h2):
+                                # 提取系列名称，去除序号
+                                series_name = re.sub(r'[①②③④⑤⑥⑦⑧⑨⑩\d]+$', '', cleaned_h2).strip()
                     i += 1
                     continue
                 
@@ -317,6 +344,7 @@ class ContentParser:
             r'.*\（[上下中下]+\）',  # 带上中下
             r'.*之\d+',  # 带之X
             r'.*之[一二三四五六七八九十]+',  # 带之中文数字
+            r'透过.*看.*\d+',  # 透过X看X系列（如：透过数据看潜能②）
             r'追梦人.*',  # 特殊系列
             r'人文对话',  # 特殊系列
             r'记者手记',  # 特殊系列
