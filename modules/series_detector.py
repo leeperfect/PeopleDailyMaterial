@@ -70,7 +70,27 @@ class SeriesDetector:
             try:
                 with open(self.registry_path, 'r', encoding='utf-8') as f:
                     self.registry = json.load(f)
-                logging.info(f"已加载系列注册表：{len(self.registry)} 个系列")
+                
+                # 迁移：确保所有系列都有 int_id
+                max_id = 0
+                # 先找出已有的最大ID
+                for info in self.registry.values():
+                    if 'int_id' in info:
+                        max_id = max(max_id, info['int_id'])
+                
+                # 为缺失ID的系列补全
+                migrated_count = 0
+                for sid, info in self.registry.items():
+                    if 'int_id' not in info:
+                        max_id += 1
+                        info['int_id'] = max_id
+                        migrated_count += 1
+                
+                if migrated_count > 0:
+                    logging.info(f"已迁移系列注册表：为 {migrated_count} 个系列补充了编号")
+                    self.save_registry()
+
+                logging.info(f"已加载系列注册表：{len(self.registry)} 个系列 (Max ID: {max_id})")
             except Exception as e:
                 logging.warning(f"加载系列注册表失败: {e}")
                 self.registry = {}
@@ -83,6 +103,14 @@ class SeriesDetector:
         with open(self.registry_path, 'w', encoding='utf-8') as f:
             json.dump(self.registry, f, ensure_ascii=False, indent=2)
         logging.info(f"系列注册表已保存：{len(self.registry)} 个系列")
+
+    def _get_next_int_id(self) -> int:
+        """获取下一个可用的整数ID"""
+        max_id = 0
+        for info in self.registry.values():
+            if 'int_id' in info:
+                max_id = max(max_id, info['int_id'])
+        return max_id + 1
 
     # ============================================================
     #  标题模式检测
@@ -147,7 +175,8 @@ class SeriesDetector:
         对一组文章进行系列检测。
 
         为每篇文章添加：
-            article['series_id']   - 系列ID（无系列则为 None）
+            article['series_id']   - 系列唯一标识（series_md5）
+            article['series_int_id'] - 系列整数编号（自动递增，用于 Obsidian）
             article['series_name'] - 系列名称
             article['series_part'] - 序号
         
@@ -171,6 +200,7 @@ class SeriesDetector:
                 art['series_name'] = series_name
                 art['series_part'] = part
                 art['series_id'] = self._make_series_id(series_name)
+                # int_id 稍后统一处理
 
                 if series_name not in detected_groups:
                     detected_groups[series_name] = []
@@ -179,6 +209,7 @@ class SeriesDetector:
                 art['series_name'] = None
                 art['series_part'] = None
                 art['series_id'] = None
+                art['series_int_id'] = None
 
         # 第二轮：过滤掉只有一篇的"系列"（单篇不算系列）
         # 但如果注册表中已有该系列，保留（跨批次）
@@ -190,6 +221,7 @@ class SeriesDetector:
                     art['series_name'] = None
                     art['series_part'] = None
                     art['series_id'] = None
+                    art['series_int_id'] = None
 
         # 第三轮：匹配注册表中的已知系列（跨批次）
         for art in articles:
@@ -211,20 +243,25 @@ class SeriesDetector:
                     art['series_part'] = part
                     break
 
-        # 更新注册表
+        # 更新注册表并回填 int_id
         for art in articles:
             sid = art.get('series_id')
             if not sid:
                 continue
 
+            # 如果是新系列，注册并分配 int_id
             if sid not in self.registry:
                 self.registry[sid] = {
                     'name': art['series_name'],
+                    'int_id': self._get_next_int_id(),
                     'created': datetime.now().strftime('%Y-%m-%d %H:%M'),
                     'articles': []
                 }
+            
+            # 确保 article 对象有 int_id
+            art['series_int_id'] = self.registry[sid].get('int_id')
 
-            # 避免重复添加（通过 title+date 去重）
+            # 避免重复添加文章记录（通过 title+date 去重）
             entry = {
                 'title': art.get('title', ''),
                 'date': art.get('_date', datetime.now()).strftime('%Y-%m-%d')
@@ -250,23 +287,29 @@ class SeriesDetector:
         """
         sid = self._make_series_id(group_name)
 
-        for art in articles:
-            if art.get('index') in indices:
-                art['series_id'] = sid
-                art['series_name'] = group_name
-                # 如果已有序号保留，否则按顺序编号
-                if not art.get('series_part'):
-                    art['series_part'] = indices.index(art['index']) + 1
-
-        # 更新注册表
+        # 确保系列已注册
         if sid not in self.registry:
             self.registry[sid] = {
                 'name': group_name,
+                'int_id': self._get_next_int_id(),
                 'created': datetime.now().strftime('%Y-%m-%d %H:%M'),
                 'articles': [],
                 'manual': True,
             }
+        
+        series_int_id = self.registry[sid]['int_id']
 
+        for art in articles:
+            if art.get('index') in indices:
+                art['series_id'] = sid
+                art['series_name'] = group_name
+                art['series_int_id'] = series_int_id
+                
+                # 如果已有序号保留，否则按顺序编号
+                if not art.get('series_part'):
+                    art['series_part'] = indices.index(art['index']) + 1
+
+        # 更新注册表中的文章列表
         for art in articles:
             if art.get('series_id') == sid:
                 entry = {

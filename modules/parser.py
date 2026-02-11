@@ -75,6 +75,7 @@ class ContentParser:
             plate = ""
             content = ""         # 纯文本正文
             markdown_body = ""   # Markdown 格式正文
+            series_name = ""     # 系列名称
             
             if not article_div:
                 logging.warning(f"未找到 div.article: {url}")
@@ -88,53 +89,80 @@ class ContentParser:
             md_lines = []
             content_paragraphs = []
             
-            for child in article_div.children:
+            # 处理特殊结构：h3/h1 标签后跟着 p 标签的情况
+            children = list(article_div.children)
+            i = 0
+            while i < len(children):
+                child = children[i]
                 if not hasattr(child, 'name') or not child.name:
+                    i += 1
                     continue
                 
                 tag = child.name
                 text = child.get_text(strip=True)
                 classes = child.get('class', [])
                 
-                if not text:
+                # 处理 h3 标签（可能是空的，下一个兄弟是 p 标签）
+                if tag == 'h3':
+                    # 检查下一个兄弟节点是否是 p 标签
+                    if i + 1 < len(children):
+                        next_child = children[i + 1]
+                        if next_child.name == 'p':
+                            h3_text = next_child.get_text(strip=True)
+                            if h3_text:
+                                md_lines.append(f"### {h3_text}")
+                                md_lines.append("")
+                            i += 1  # 跳过下一个 p 标签
+                    i += 1
                     continue
                 
-                # <h3> = 引题（肩题）
-                if tag == 'h3':
-                    md_lines.append(f"### {text}")
-                    md_lines.append("")
-                
-                # <h1> = 主标题
+                # 处理 h1 标签（可能是空的，下一个兄弟是 p 标签）
                 elif tag == 'h1':
-                    title = text
-                    md_lines.append(f"# {text}")
-                    md_lines.append("")
+                    # 检查下一个兄弟节点是否是 p 标签
+                    if i + 1 < len(children):
+                        next_child = children[i + 1]
+                        if next_child.name == 'p':
+                            h1_text = next_child.get_text(strip=True)
+                            if h1_text:
+                                # 处理标题，提取主标题和系列名称
+                                title_parts = self._extract_title_and_series(h1_text)
+                                title = title_parts['main_title']
+                                series_name = title_parts['series_name']
+                                md_lines.append(f"# {title}")
+                                if series_name:
+                                    md_lines.append(f"> 系列：{series_name}")
+                                md_lines.append("")
+                            i += 1  # 跳过下一个 p 标签
+                    i += 1
+                    continue
                 
-                # <h2> = 副标题
+                # 处理 h2 标签
                 elif tag == 'h2':
-                    md_lines.append(f"## {text}")
-                    md_lines.append("")
-                
-                # <p class="sec"> = 作者署名
-                elif tag == 'p' and 'sec' in classes:
-                    # 提取作者名（去掉《人民日报》及之后的部分）
-                    author_match = re.match(r'(.+?)《人民日报》', text)
-                    if author_match:
-                        author = author_match.group(1).strip()
-                        # 清理 "本报记者" 等前缀
-                        author = re.sub(r'^(本报记者|本报通讯员|记者)\s*', '', author).strip()
-                    md_lines.append(f"> {text}")
-                    md_lines.append("")
-                
-                # <p> = 可能是目录标题行或其他（非正文div内的p）
-                elif tag == 'p':
-                    # 有些文章在 <p> 中放标题（没有 h1）
-                    if not title and len(text) < 100 and '《人民日报》' not in text:
-                        title = text
-                        md_lines.append(f"# {text}")
+                    if text:
+                        md_lines.append(f"## {text}")
                         md_lines.append("")
+                    i += 1
+                    continue
                 
-                # <div> = 正文容器
+                # 处理 p 标签
+                elif tag == 'p':
+                    # <p class="sec"> = 作者署名
+                    if 'sec' in classes:
+                        # 提取作者名（去掉《人民日报》及之后的部分）
+                        author_match = re.match(r'(.+?)《人民日报》', text)
+                        if author_match:
+                            author = author_match.group(1).strip()
+                            # 清理 "本报记者" 等前缀
+                            author = re.sub(r'^(本报记者|本报通讯员|记者)\s*', '', author).strip()
+                        md_lines.append(f"> {text}")
+                        md_lines.append("")
+                    # 普通 p 标签，不作为标题处理（避免将肩题作为主标题）
+                    else:
+                        pass
+                    i += 1
+                    continue
+                
+                # 处理 div 标签（正文容器）
                 elif tag == 'div':
                     for p in child.find_all('p'):
                         p_text = p.get_text(strip=True)
@@ -151,19 +179,55 @@ class ContentParser:
                         md_lines.append(md_p)
                         md_lines.append("")
                         content_paragraphs.append(p_text)
+                    i += 1
+                    continue
+                
+                # 其他标签
+                else:
+                    i += 1
+                    continue
             
             markdown_body = '\n'.join(md_lines).strip()
             content = '\n'.join(content_paragraphs)
             
-            # 后备标题提取
+            # 后备标题提取 - 确保优先使用h1标签作为主标题
             if not title:
+                # 查找 h1 标签及其后续的 p 标签
                 h1 = article_div.find('h1')
                 if h1:
-                    title = h1.get_text(strip=True)
+                    # 查找 h1 后的第一个 p 标签
+                    next_p = h1.find_next_sibling('p')
+                    if next_p:
+                        text = next_p.get_text(strip=True)
+                        if text:
+                            title_parts = self._extract_title_and_series(text)
+                            title = title_parts['main_title']
+                            series_name = title_parts['series_name']
+                    # 如果没有找到 p 标签，尝试直接从 h1 获取
+                    if not title:
+                        text = h1.get_text(strip=True)
+                        if text:
+                            title_parts = self._extract_title_and_series(text)
+                            title = title_parts['main_title']
+                            series_name = title_parts['series_name']
+            
+            # 最后尝试从 soup 中查找
             if not title:
                 h1 = soup.find('h1')
                 if h1:
-                    title = h1.get_text(strip=True)
+                    next_p = h1.find_next_sibling('p')
+                    if next_p:
+                        text = next_p.get_text(strip=True)
+                        if text:
+                            title_parts = self._extract_title_and_series(text)
+                            title = title_parts['main_title']
+                            series_name = title_parts['series_name']
+                    if not title:
+                        text = h1.get_text(strip=True)
+                        if text:
+                            title_parts = self._extract_title_and_series(text)
+                            title = title_parts['main_title']
+                            series_name = title_parts['series_name']
             
             # 提取版面名称
             try:
@@ -185,11 +249,86 @@ class ContentParser:
                 'markdown_body': markdown_body,
                 'author': author,
                 'plate': plate,
+                'series_name': series_name,
                 'url': url
             }
         except Exception as e:
             logging.error(f"解析文章 {url} 失败: {str(e)}")
             return None
+    
+    def _extract_title_and_series(self, text: str) -> Dict:
+        """提取主标题和系列名称
+        
+        Args:
+            text: 原始标题文本
+            
+        Returns:
+            Dict: 包含主标题和系列名称的字典
+        """
+        main_title = text
+        series_name = ""
+        
+        # 1. 处理破折号，优先提取主标题（破折号之后的内容）
+        if '——' in text:
+            parts = text.split('——')
+            if len(parts) >= 2:
+                main_title = parts[1].strip()
+        
+        # 2. 提取系列名称（从括号中提取）
+        # 匹配括号中的内容
+        series_patterns = [
+            r'\(([^)]+)\)',  # 匹配中文或英文括号中的内容
+            r'\（([^）]+)\）',  # 匹配中文括号中的内容
+        ]
+        
+        for pattern in series_patterns:
+            matches = re.findall(pattern, main_title)
+            for match in matches:
+                series_candidate = match.strip()
+                # 检查是否符合系列名称模式
+                if self._is_series_name(series_candidate):
+                    series_name = series_candidate
+                    # 从主标题中移除系列名称
+                    main_title = main_title.replace(f"({series_candidate})", "").replace(f"（{series_candidate}）", "").strip()
+                    break
+            if series_name:
+                break
+        
+        return {
+            'main_title': main_title,
+            'series_name': series_name
+        }
+    
+    def _is_series_name(self, text: str) -> bool:
+        """判断文本是否为系列名称
+        
+        Args:
+            text: 待判断的文本
+            
+        Returns:
+            bool: 是否为系列名称
+        """
+        # 系列名称模式
+        series_patterns = [
+            r'.*[①②③④⑤⑥⑦⑧⑨⑩]',  # 带圆圈序号
+            r'.*\(\d+\)',  # 带数字序号
+            r'.*\（\d+\）',  # 带中文数字序号
+            r'.*\（[一二三四五六七八九十]+\）',  # 带中文数字
+            r'.*\（[上下中下]+\）',  # 带上中下
+            r'.*之\d+',  # 带之X
+            r'.*之[一二三四五六七八九十]+',  # 带之中文数字
+            r'追梦人.*',  # 特殊系列
+            r'人文对话',  # 特殊系列
+            r'记者手记',  # 特殊系列
+            r'青年观',  # 特殊系列
+            r'深阅读',  # 特殊系列
+        ]
+        
+        for pattern in series_patterns:
+            if re.match(pattern, text):
+                return True
+        
+        return False
     
     def _convert_paragraph_to_markdown(self, p_tag) -> str:
         """将一个 <p> 标签转换为 Markdown，保留加粗等格式"""

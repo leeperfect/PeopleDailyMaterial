@@ -92,6 +92,7 @@ class MarkdownWriter:
         
         # 系列信息
         series_name = article.get('series_name', '') or ''
+        series_int_id = article.get('series_int_id')
         series_part = article.get('series_part')
         related_titles = article.get('related_titles', [])
         
@@ -116,8 +117,10 @@ class MarkdownWriter:
         ]
         
         # 系列字段（仅在有系列时添加）
-        if series_name:
-            lines.append(f'series: "{series_name}"')
+        if series_int_id:
+            lines.append(f"series: {series_int_id}")
+            if series_name:
+                lines.append(f'series_name: "{series_name}"')
             if series_part is not None:
                 lines.append(f"series_part: {series_part}")
         

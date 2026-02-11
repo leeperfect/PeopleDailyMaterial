@@ -9309,3 +9309,225 @@ body.properties.版面名称.select.name should be populated, instead was `""`.
 2026-02-11 13:11:08,234 - root - INFO - 成功导出 93 篇文章到 data/exports/claude_articles_20260121_20260123.json (Claude格式)
 2026-02-11 13:11:08,379 - root - INFO - 浏览器已关闭
 2026-02-11 13:11:08,379 - root - INFO - 程序结束，浏览器已关闭
+2026-02-11 14:54:22,323 - root - INFO - requests session 预热完成
+2026-02-11 14:54:22,471 - root - INFO - 已加载系列注册表：8 个系列
+2026-02-11 14:54:22,471 - root - INFO - 开始抓取 2026-02-14 的人民日报文章
+2026-02-11 14:54:25,658 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:28,673 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:31,389 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:33,946 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:38,298 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:40,949 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:43,379 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:46,942 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:50,737 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:54,586 - root - WARNING - 请求返回 404: https://paper.people.com.cn/rmrb/pc/layout/202602/14/node_01.html
+2026-02-11 14:54:54,586 - root - WARNING - 抓取版面 01 失败
+2026-02-11 14:54:54,586 - root - ERROR - 无法获取目录页
+2026-02-11 14:54:54,586 - root - INFO - 程序结束，浏览器已关闭
+2026-02-11 14:55:57,778 - root - INFO - requests session 预热完成
+2026-02-11 14:55:57,925 - root - INFO - 已加载系列注册表：8 个系列
+2026-02-11 14:55:57,925 - root - INFO - 开始抓取 2026-01-14 的人民日报文章
+2026-02-11 14:56:01,222 - root - INFO - 找到 20 个版面
+2026-02-11 14:57:14,156 - root - INFO - 目录页解析到 7 篇文章，版面：要闻
+2026-02-11 14:57:14,161 - root - INFO - 目录页解析到 7 篇文章，版面：要闻
+2026-02-11 14:57:14,165 - root - INFO - 目录页解析到 10 篇文章，版面：要闻
+2026-02-11 14:57:14,170 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-11 14:57:14,174 - root - INFO - 目录页解析到 6 篇文章，版面：特别报道
+2026-02-11 14:57:14,180 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-11 14:57:14,185 - root - INFO - 目录页解析到 8 篇文章，版面：要闻
+2026-02-11 14:57:14,189 - root - INFO - 目录页解析到 7 篇文章，版面：评论
+2026-02-11 14:57:14,196 - root - INFO - 目录页解析到 2 篇文章，版面：理论
+2026-02-11 14:57:14,199 - root - INFO - 目录页解析到 8 篇文章，版面：经济
+2026-02-11 14:57:14,203 - root - INFO - 目录页解析到 8 篇文章，版面：文化
+2026-02-11 14:57:14,205 - root - INFO - 目录页解析到 1 篇文章，版面：广告
+2026-02-11 14:57:14,208 - root - INFO - 目录页解析到 7 篇文章，版面：社会
+2026-02-11 14:57:14,212 - root - INFO - 目录页解析到 2 篇文章，版面：专题
+2026-02-11 14:57:14,216 - root - INFO - 目录页解析到 8 篇文章，版面：国际
+2026-02-11 14:57:14,219 - root - INFO - 目录页解析到 1 篇文章，版面：广告
+2026-02-11 14:57:14,222 - root - INFO - 目录页解析到 3 篇文章，版面：国际
+2026-02-11 14:57:14,225 - root - INFO - 目录页解析到 4 篇文章，版面：消费
+2026-02-11 14:57:14,227 - root - INFO - 目录页解析到 4 篇文章，版面：财经
+2026-02-11 14:57:14,231 - root - INFO - 目录页解析到 7 篇文章，版面：副刊
+2026-02-11 14:59:47,091 - root - INFO - requests session 预热完成
+2026-02-11 14:59:47,241 - root - INFO - 已加载系列注册表：8 个系列
+2026-02-11 14:59:47,241 - root - INFO - 开始抓取 2026-01-24 的人民日报文章
+2026-02-11 14:59:52,049 - root - INFO - 找到 8 个版面
+2026-02-11 15:00:24,771 - root - INFO - 目录页解析到 8 篇文章，版面：要闻
+2026-02-11 15:00:24,775 - root - INFO - 目录页解析到 5 篇文章，版面：要闻
+2026-02-11 15:00:24,778 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-11 15:00:24,781 - root - INFO - 目录页解析到 7 篇文章，版面：要闻
+2026-02-11 15:00:24,784 - root - INFO - 目录页解析到 11 篇文章，版面：要闻
+2026-02-11 15:00:24,787 - root - INFO - 目录页解析到 7 篇文章，版面：科技·新知
+2026-02-11 15:00:24,789 - root - INFO - 目录页解析到 4 篇文章，版面：假日生活
+2026-02-11 15:00:24,792 - root - INFO - 目录页解析到 6 篇文章，版面：文化遗产
+2026-02-11 15:05:42,627 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:44,293 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:45,569 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:47,703 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:48,906 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:50,061 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:51,303 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:52,676 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:53,892 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:55,709 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:56,833 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:58,179 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:05:59,395 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:01,057 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:02,298 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:03,749 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:05,263 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:07,145 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:08,678 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:15,457 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:16,735 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:20,696 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:24,566 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:25,199 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 15:06:25,306 - root - INFO - 正在启动 Chrome 浏览器（用于文章下载）...
+2026-02-11 15:06:25,306 - WDM - INFO - ====== WebDriver manager ======
+2026-02-11 15:06:25,997 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 15:06:26,149 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 15:06:26,307 - WDM - INFO - Driver [/Users/pf.macbookpro/.wdm/drivers/chromedriver/mac64/144.0.7559.133/chromedriver-mac-arm64/chromedriver] found in cache
+2026-02-11 15:06:36,450 - root - INFO - Chrome 浏览器启动成功
+2026-02-11 15:06:36,451 - root - INFO - 等待 19s 后请求: content_30135365.html
+2026-02-11 15:06:59,854 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-11 15:06:59,857 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-11 15:07:00,135 - jieba - DEBUG - Loading model cost 0.280 seconds.
+2026-02-11 15:07:00,135 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-11 15:07:00,155 - root - INFO - 创建新文章: 努力实现“十五五”良好开局
+2026-02-11 15:07:00,916 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:07:03,740 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-81f8-a1e0-cf208dd2959d/children "HTTP/1.1 200 OK"
+2026-02-11 15:07:03,742 - root - INFO - 成功创建Notion页面: 努力实现“十五五”良好开局
+2026-02-11 15:07:03,744 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/01-要闻/努力实现“十五五”良好开局.md
+2026-02-11 15:07:03,744 - root - INFO - 等待 20s 后请求: content_30135367.html
+2026-02-11 15:07:27,120 - root - INFO - 创建新文章: 实力更强  技术更新  市场更多元
+2026-02-11 15:07:27,813 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:07:29,743 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-8195-854c-ced6bb166ddf/children "HTTP/1.1 200 OK"
+2026-02-11 15:07:29,744 - root - INFO - 成功创建Notion页面: 实力更强  技术更新  市场更多元
+2026-02-11 15:07:29,745 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/01-要闻/实力更强 技术更新 市场更多元.md
+2026-02-11 15:07:29,745 - root - INFO - 等待 19s 后请求: content_30135369.html
+2026-02-11 15:07:53,098 - root - INFO - 创建新文章: 刘国中在贵州调研时强调
+2026-02-11 15:07:53,709 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:07:54,932 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-81ef-ba2f-c686b982a6a5/children "HTTP/1.1 200 OK"
+2026-02-11 15:07:54,956 - root - INFO - 成功创建Notion页面: 刘国中在贵州调研时强调
+2026-02-11 15:07:54,957 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/02-要闻/刘国中在贵州调研时强调.md
+2026-02-11 15:07:54,963 - root - INFO - 等待 29s 后请求: content_30135370.html
+2026-02-11 15:08:29,178 - root - INFO - 创建新文章: 抓好就业这个民生头等大事（权威访谈·开局“十五五”）
+2026-02-11 15:08:30,395 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:08:33,381 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-8136-bd6d-fc33257f2693/children "HTTP/1.1 200 OK"
+2026-02-11 15:08:33,389 - root - INFO - 成功创建Notion页面: 抓好就业这个民生头等大事（权威访谈·开局“十五五”）
+2026-02-11 15:08:33,392 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/02-要闻/抓好就业这个民生头等大事（权威访谈·开局“十五五”）.md
+2026-02-11 15:08:33,393 - root - INFO - 等待 27s 后请求: content_30135380.html
+2026-02-11 15:09:04,954 - root - INFO - 创建新文章: 提升人居环境，农家有了新面貌
+2026-02-11 15:09:05,685 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:09:09,509 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-81cd-b1a3-e4e3ded13298/children "HTTP/1.1 200 OK"
+2026-02-11 15:09:09,514 - root - INFO - 成功创建Notion页面: 提升人居环境，农家有了新面貌
+2026-02-11 15:09:09,514 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/04-要闻/提升人居环境，农家有了新面貌.md
+2026-02-11 15:09:09,514 - root - INFO - 等待 20s 后请求: content_30135387.html
+2026-02-11 15:09:34,012 - root - INFO - 创建新文章: 冰雪深度游、温泉配马戏、花海涮火锅……不断涌现的新场景新业态带来新体验
+2026-02-11 15:09:35,418 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:09:42,254 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-8182-8da2-f9a9c1cd32cb/children "HTTP/1.1 200 OK"
+2026-02-11 15:09:42,259 - root - INFO - 成功创建Notion页面: 冰雪深度游、温泉配马戏、花海涮火锅……不断涌现的新场景新业态带来新体验
+2026-02-11 15:09:42,262 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/05-要闻/冰雪深度游、温泉配马戏、花海涮火锅……不断涌现的新场景新业态带来新体验.md
+2026-02-11 15:09:42,265 - root - INFO - 等待 25s 后请求: content_30135388.html
+2026-02-11 15:10:11,055 - root - INFO - 创建新文章: 创新供给激发消费活力（专家点评）
+2026-02-11 15:10:11,665 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:10:14,909 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-8124-a826-e4a6cd9c8f50/children "HTTP/1.1 200 OK"
+2026-02-11 15:10:14,929 - root - INFO - 成功创建Notion页面: 创新供给激发消费活力（专家点评）
+2026-02-11 15:10:14,930 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/05-要闻/创新供给激发消费活力（专家点评）.md
+2026-02-11 15:10:14,930 - root - INFO - 等待 16s 后请求: content_30135409.html
+2026-02-11 15:10:35,870 - root - INFO - 创建新文章: 洞藏锦绣六百年（传承之光）
+2026-02-11 15:10:40,809 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:10:42,632 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-81a8-885b-f4ec434800a1/children "HTTP/1.1 200 OK"
+2026-02-11 15:10:42,645 - root - INFO - 成功创建Notion页面: 洞藏锦绣六百年（传承之光）
+2026-02-11 15:10:42,645 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/08-文化遗产/洞藏锦绣六百年（传承之光）.md
+2026-02-11 15:10:42,646 - root - INFO - 等待 19s 后请求: content_30135410.html
+2026-02-11 15:11:06,247 - root - INFO - 创建新文章: 用“新钥匙”直接进入母系社会内部（考古中国）
+2026-02-11 15:11:06,966 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:11:10,166 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-8182-9b88-e887a7477382/children "HTTP/1.1 200 OK"
+2026-02-11 15:11:10,211 - root - INFO - 成功创建Notion页面: 用“新钥匙”直接进入母系社会内部（考古中国）
+2026-02-11 15:11:10,212 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/08-文化遗产/用“新钥匙”直接进入母系社会内部（考古中国）.md
+2026-02-11 15:11:10,212 - root - INFO - 已请求 10 次，休息 29 秒...
+2026-02-11 15:11:39,309 - root - INFO - 等待 20s 后请求: content_30135411.html
+2026-02-11 15:12:03,732 - root - INFO - 创建新文章: 北方白瓷的岁月之歌（上新了）
+2026-02-11 15:12:05,496 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:12:08,209 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-81a0-b697-c899ab151745/children "HTTP/1.1 200 OK"
+2026-02-11 15:12:08,212 - root - INFO - 成功创建Notion页面: 北方白瓷的岁月之歌（上新了）
+2026-02-11 15:12:08,214 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/08-文化遗产/北方白瓷的岁月之歌（上新了）.md
+2026-02-11 15:12:08,214 - root - INFO - 等待 27s 后请求: content_30135412.html
+2026-02-11 15:12:38,601 - root - INFO - 创建新文章: “四普”新发现丰富嘉兴文物家底
+2026-02-11 15:12:39,415 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:12:41,233 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-81a7-ac99-effa989640cd/children "HTTP/1.1 200 OK"
+2026-02-11 15:12:41,241 - root - INFO - 成功创建Notion页面: “四普”新发现丰富嘉兴文物家底
+2026-02-11 15:12:41,243 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/08-文化遗产/“四普”新发现丰富嘉兴文物家底.md
+2026-02-11 15:12:41,243 - root - INFO - 等待 19s 后请求: content_30135413.html
+2026-02-11 15:13:05,414 - root - INFO - 创建新文章: 动物资源标本库中的文明史
+2026-02-11 15:13:07,669 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 15:13:10,017 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-814a-ae75-c328fb754bca/children "HTTP/1.1 200 OK"
+2026-02-11 15:13:11,290 - root - INFO - 成功创建Notion页面: 动物资源标本库中的文明史
+2026-02-11 15:13:11,292 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-24/08-文化遗产/动物资源标本库中的文明史.md
+2026-02-11 15:13:11,295 - root - INFO - 系列注册表已保存：8 个系列
+2026-02-11 15:13:11,298 - root - INFO - 成功保存 12 篇文章到本地
+2026-02-11 15:13:11,301 - root - INFO - 成功导出 12 篇文章到 data/exports/articles_20260124.json
+2026-02-11 15:13:11,337 - root - INFO - 成功导出 12 篇文章到 data/exports/articles_20260124.csv
+2026-02-11 15:13:11,338 - root - INFO - 成功导出 12 篇文章到 data/exports/claude_articles_20260124.json (Claude格式)
+2026-02-11 15:13:11,441 - root - INFO - 浏览器已关闭
+2026-02-11 15:13:11,442 - root - INFO - 程序结束，浏览器已关闭
+2026-02-11 17:57:11,388 - root - INFO - requests session 预热完成
+2026-02-11 17:57:11,553 - root - INFO - 已加载系列注册表：8 个系列
+2026-02-11 17:57:11,553 - root - INFO - 开始抓取日期范围: 2026-01-24 ~ 2026-01-25
+2026-02-11 17:57:15,935 - root - INFO - 找到 8 个版面
+2026-02-11 17:57:43,167 - root - INFO - 目录页解析到 8 篇文章，版面：要闻
+2026-02-11 17:57:43,171 - root - INFO - 目录页解析到 5 篇文章，版面：要闻
+2026-02-11 17:57:43,174 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-11 17:57:43,177 - root - INFO - 目录页解析到 7 篇文章，版面：要闻
+2026-02-11 17:57:43,181 - root - INFO - 目录页解析到 11 篇文章，版面：要闻
+2026-02-11 17:57:43,184 - root - INFO - 目录页解析到 7 篇文章，版面：科技·新知
+2026-02-11 17:57:43,187 - root - INFO - 目录页解析到 4 篇文章，版面：假日生活
+2026-02-11 17:57:43,192 - root - INFO - 目录页解析到 6 篇文章，版面：文化遗产
+2026-02-11 17:57:45,739 - root - INFO - 找到 8 个版面
+2026-02-11 17:58:18,420 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-11 17:58:18,430 - root - INFO - 目录页解析到 5 篇文章，版面：要闻
+2026-02-11 17:58:18,435 - root - INFO - 目录页解析到 7 篇文章，版面：要闻
+2026-02-11 17:58:18,440 - root - INFO - 目录页解析到 9 篇文章，版面：要闻
+2026-02-11 17:58:18,444 - root - INFO - 目录页解析到 5 篇文章，版面：教育
+2026-02-11 17:58:18,448 - root - INFO - 目录页解析到 7 篇文章，版面：港澳台侨
+2026-02-11 17:58:18,453 - root - INFO - 目录页解析到 4 篇文章，版面：人文
+2026-02-11 17:58:18,457 - root - INFO - 目录页解析到 9 篇文章，版面：副刊
+2026-02-11 18:54:29,601 - root - INFO - requests session 预热完成
+2026-02-11 18:54:29,764 - root - INFO - 已迁移系列注册表：为 8 个系列补充了编号
+2026-02-11 18:54:29,764 - root - INFO - 系列注册表已保存：8 个系列
+2026-02-11 18:54:29,764 - root - INFO - 已加载系列注册表：8 个系列 (Max ID: 8)
+2026-02-11 18:54:29,765 - root - INFO - 开始抓取日期范围: 2026-01-25 ~ 2026-01-26
+2026-02-11 18:54:33,236 - root - INFO - 找到 8 个版面
+2026-02-11 18:55:04,970 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-11 18:55:04,976 - root - INFO - 目录页解析到 5 篇文章，版面：要闻
+2026-02-11 18:55:04,980 - root - INFO - 目录页解析到 7 篇文章，版面：要闻
+2026-02-11 18:55:04,984 - root - INFO - 目录页解析到 9 篇文章，版面：要闻
+2026-02-11 18:55:04,991 - root - INFO - 目录页解析到 5 篇文章，版面：教育
+2026-02-11 18:55:04,994 - root - INFO - 目录页解析到 7 篇文章，版面：港澳台侨
+2026-02-11 18:55:04,997 - root - INFO - 目录页解析到 4 篇文章，版面：人文
+2026-02-11 18:55:05,000 - root - INFO - 目录页解析到 9 篇文章，版面：副刊
+2026-02-11 18:55:07,105 - root - INFO - 找到 20 个版面
+2026-02-11 18:56:14,882 - root - INFO - 目录页解析到 7 篇文章，版面：要闻
+2026-02-11 18:56:14,894 - root - INFO - 目录页解析到 8 篇文章，版面：要闻
+2026-02-11 18:56:14,899 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-11 18:56:14,902 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-11 18:56:14,906 - root - INFO - 目录页解析到 8 篇文章，版面：评论
+2026-02-11 18:56:14,911 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-11 18:56:14,915 - root - INFO - 目录页解析到 5 篇文章，版面：读者来信
+2026-02-11 18:56:14,918 - root - INFO - 目录页解析到 8 篇文章，版面：经济
+2026-02-11 18:56:14,921 - root - INFO - 目录页解析到 3 篇文章，版面：理论
+2026-02-11 18:56:14,925 - root - INFO - 目录页解析到 9 篇文章，版面：政治
+2026-02-11 18:56:14,928 - root - INFO - 目录页解析到 8 篇文章，版面：社会
+2026-02-11 18:56:14,932 - root - INFO - 目录页解析到 1 篇文章，版面：广告
+2026-02-11 18:56:14,936 - root - INFO - 目录页解析到 7 篇文章，版面：生态
+2026-02-11 18:56:14,939 - root - INFO - 目录页解析到 9 篇文章，版面：体育
+2026-02-11 18:56:14,942 - root - INFO - 目录页解析到 8 篇文章，版面：国际
+2026-02-11 18:56:14,945 - root - INFO - 目录页解析到 1 篇文章，版面：广告
+2026-02-11 18:56:14,949 - root - INFO - 目录页解析到 2 篇文章，版面：国际
+2026-02-11 18:56:14,951 - root - INFO - 目录页解析到 4 篇文章，版面：财经
+2026-02-11 18:56:14,955 - root - INFO - 目录页解析到 1 篇文章，版面：广告
+2026-02-11 18:56:14,959 - root - INFO - 目录页解析到 8 篇文章，版面：副刊

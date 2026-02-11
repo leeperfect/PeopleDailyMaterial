@@ -243,7 +243,7 @@ class PeopleDailyMaterialSystem:
                 continue
             
             articles_by_section = []
-            skip_titles = ['图片报道', '导读', '征集', '本版责编', '一版责编']
+            skip_titles = ['图片报道', '导读', '征集', '本版责编', '一版责编', '欢迎赐稿']
             
             for url, html in directories:
                 articles_info, section_name = self.parser.parse_directory(html)
