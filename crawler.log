@@ -9531,3 +9531,68 @@ body.properties.版面名称.select.name should be populated, instead was `""`.
 2026-02-11 18:56:14,951 - root - INFO - 目录页解析到 4 篇文章，版面：财经
 2026-02-11 18:56:14,955 - root - INFO - 目录页解析到 1 篇文章，版面：广告
 2026-02-11 18:56:14,959 - root - INFO - 目录页解析到 8 篇文章，版面：副刊
+2026-02-11 19:24:14,244 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:15,690 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:20,840 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:22,603 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:23,935 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:25,142 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:28,421 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:29,827 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:32,046 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:33,115 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:34,616 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:35,557 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:36,563 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:37,553 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:38,606 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:40,169 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:41,445 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:42,666 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:43,728 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:44,767 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:48,552 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:50,017 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:51,064 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:54,202 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-11 19:24:54,311 - root - INFO - 正在启动 Chrome 浏览器（用于文章下载）...
+2026-02-11 19:24:54,311 - WDM - INFO - ====== WebDriver manager ======
+2026-02-11 19:24:54,590 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 19:24:54,733 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 19:24:54,902 - WDM - INFO - Driver [/Users/pf.macbookpro/.wdm/drivers/chromedriver/mac64/144.0.7559.133/chromedriver-mac-arm64/chromedriver] found in cache
+2026-02-11 19:25:05,019 - root - INFO - Chrome 浏览器启动成功
+2026-02-11 19:25:05,021 - root - INFO - 等待 15s 后请求: content_30135514.html
+2026-02-11 19:25:24,327 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-11 19:25:24,330 - jieba - DEBUG - Loading model from cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-11 19:25:24,650 - jieba - DEBUG - Loading model cost 0.322 seconds.
+2026-02-11 19:25:24,650 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-11 19:25:24,678 - root - INFO - 创建新文章: “一步一步坚定走”
+2026-02-11 19:25:27,853 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 19:25:31,199 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-8142-93ed-ddc600548db3/children "HTTP/1.1 200 OK"
+2026-02-11 19:25:31,242 - root - INFO - 成功创建Notion页面: “一步一步坚定走”
+2026-02-11 19:25:31,248 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-25/01-要闻/“一步一步坚定走”.md
+2026-02-11 19:25:31,249 - root - INFO - 等待 19s 后请求: content_30135516.html
+2026-02-11 19:25:55,292 - root - INFO - 创建新文章: 努力把宏伟蓝图变为现实
+2026-02-11 19:25:55,898 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 19:25:59,252 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-816d-b938-e8a4467e95ce/children "HTTP/1.1 200 OK"
+2026-02-11 19:25:59,253 - root - INFO - 成功创建Notion页面: 努力把宏伟蓝图变为现实
+2026-02-11 19:25:59,261 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-25/01-要闻/努力把宏伟蓝图变为现实.md
+2026-02-11 19:25:59,262 - root - INFO - 等待 28s 后请求: content_30135520.html
+2026-02-11 19:26:32,039 - root - INFO - 创建新文章: “有多少汤泡多少馍”，这样量化考核（政策解读）
+2026-02-11 19:26:32,889 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 19:26:34,865 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-81f1-a69f-ebe6bf8144b5/children "HTTP/1.1 200 OK"
+2026-02-11 19:26:34,866 - root - INFO - 成功创建Notion页面: “有多少汤泡多少馍”，这样量化考核（政策解读）
+2026-02-11 19:26:34,868 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-25/02-要闻/“有多少汤泡多少馍”，这样量化考核（政策解读）.md
+2026-02-11 19:26:34,868 - root - INFO - 等待 26s 后请求: content_30135525.html
+2026-02-11 19:27:04,135 - root - INFO - 创建新文章: 绿色转型  资源共享
+2026-02-11 19:27:07,750 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 19:27:15,231 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-8107-881d-e98c117ea7c9/children "HTTP/1.1 200 OK"
+2026-02-11 19:27:15,233 - root - INFO - 成功创建Notion页面: 绿色转型  资源共享
+2026-02-11 19:27:15,234 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-25/04-要闻/绿色转型 资源共享.md
+2026-02-11 19:27:15,234 - root - INFO - 等待 17s 后请求: content_30135526.html
+2026-02-11 19:27:36,227 - root - INFO - 创建新文章: 向更高水平迈进（专家点评）
+2026-02-11 19:27:36,993 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-11 19:27:40,923 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3044c730-6e9e-81c5-9bb2-df214aa37f9c/children "HTTP/1.1 200 OK"
+2026-02-11 19:27:40,926 - root - INFO - 成功创建Notion页面: 向更高水平迈进（专家点评）
+2026-02-11 19:27:40,927 - root - INFO - Markdown 已保存: data/vault/2026/01/2026-01-25/04-要闻/向更高水平迈进（专家点评）.md
+2026-02-11 19:27:40,928 - root - INFO - 等待 16s 后请求: content_30135501.html
