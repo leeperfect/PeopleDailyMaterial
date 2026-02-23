@@ -9779,3 +9779,287 @@ body.properties.版面名称.select.name should be populated, instead was `""`.
 2026-02-11 19:44:40,330 - root - INFO - 成功导出 34 篇文章到 data/exports/claude_articles_20260125_20260126.json (Claude格式)
 2026-02-11 19:44:40,515 - root - INFO - 浏览器已关闭
 2026-02-11 19:44:40,516 - root - INFO - 程序结束，浏览器已关闭
+2026-02-23 14:59:50,476 - root - INFO - requests session 预热完成
+2026-02-23 14:59:50,614 - root - INFO - 已加载系列注册表：11 个系列 (Max ID: 11)
+2026-02-23 14:59:50,615 - root - INFO - 开始抓取日期范围: 2026-02-16 ~ 2026-02-18
+2026-02-23 14:59:55,009 - root - INFO - 找到 8 个版面
+2026-02-23 15:00:24,007 - root - INFO - 目录页解析到 7 篇文章，版面：要闻
+2026-02-23 15:00:24,013 - root - INFO - 目录页解析到 6 篇文章，版面：要闻
+2026-02-23 15:00:24,018 - root - INFO - 目录页解析到 8 篇文章，版面：要闻
+2026-02-23 15:00:24,022 - root - INFO - 目录页解析到 3 篇文章，版面：视觉
+2026-02-23 15:00:24,026 - root - INFO - 目录页解析到 3 篇文章，版面：特别报道
+2026-02-23 15:00:24,030 - root - INFO - 目录页解析到 1 篇文章，版面：广告
+2026-02-23 15:00:24,033 - root - INFO - 目录页解析到 1 篇文章，版面：广告
+2026-02-23 15:00:24,037 - root - INFO - 目录页解析到 2 篇文章，版面：副刊
+2026-02-23 15:00:27,644 - root - INFO - 找到 8 个版面
+2026-02-23 15:00:51,733 - root - INFO - 目录页解析到 7 篇文章，版面：要闻
+2026-02-23 15:00:51,744 - root - INFO - 目录页解析到 5 篇文章，版面：要闻
+2026-02-23 15:00:51,749 - root - INFO - 目录页解析到 9 篇文章，版面：要闻
+2026-02-23 15:00:51,754 - root - INFO - 目录页解析到 3 篇文章，版面：视觉
+2026-02-23 15:00:51,757 - root - INFO - 目录页解析到 3 篇文章，版面：绿色
+2026-02-23 15:00:51,762 - root - INFO - 目录页解析到 4 篇文章，版面：假日生活
+2026-02-23 15:00:51,765 - root - INFO - 目录页解析到 1 篇文章，版面：广告
+2026-02-23 15:00:51,770 - root - INFO - 目录页解析到 2 篇文章，版面：副刊
+2026-02-23 15:00:55,899 - root - INFO - 找到 8 个版面
+2026-02-23 15:01:22,667 - root - INFO - 目录页解析到 5 篇文章，版面：要闻
+2026-02-23 15:01:22,674 - root - INFO - 目录页解析到 8 篇文章，版面：要闻
+2026-02-23 15:01:22,680 - root - INFO - 目录页解析到 8 篇文章，版面：要闻
+2026-02-23 15:01:22,685 - root - INFO - 目录页解析到 3 篇文章，版面：视觉
+2026-02-23 15:01:22,689 - root - INFO - 目录页解析到 3 篇文章，版面：绿色
+2026-02-23 15:01:22,692 - root - INFO - 目录页解析到 5 篇文章，版面：假日生活
+2026-02-23 15:01:22,697 - root - INFO - 目录页解析到 5 篇文章，版面：假日生活
+2026-02-23 15:01:22,700 - root - INFO - 目录页解析到 2 篇文章，版面：副刊
+2026-02-23 15:07:33,198 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:34,653 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:36,124 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:37,183 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:38,223 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:39,742 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:41,305 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:42,903 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:44,292 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:46,564 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:51,518 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:52,731 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:54,157 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:55,256 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:56,565 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:07:57,569 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:08:00,275 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:08:01,664 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:08:03,116 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:08:04,417 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:08:16,027 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:08:17,444 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:08:18,763 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:08:29,346 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/search "HTTP/1.1 200 OK"
+2026-02-23 15:08:29,475 - root - INFO - 正在启动 Chrome 浏览器（用于文章下载）...
+2026-02-23 15:08:29,475 - WDM - INFO - ====== WebDriver manager ======
+2026-02-23 15:08:29,742 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-23 15:08:29,881 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-23 15:08:30,030 - WDM - INFO - There is no [mac64] chromedriver "145.0.7632.77" for browser google-chrome "145.0.7632" in cache
+2026-02-23 15:08:30,040 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-23 15:08:30,332 - WDM - INFO - WebDriver version 145.0.7632.77 selected
+2026-02-23 15:08:30,336 - WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.77/mac-arm64/chromedriver-mac-arm64.zip
+2026-02-23 15:08:30,336 - WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.77/mac-arm64/chromedriver-mac-arm64.zip
+2026-02-23 15:08:30,531 - WDM - INFO - Driver downloading response is 200
+2026-02-23 15:08:31,289 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-23 15:08:31,452 - WDM - INFO - Driver has been saved in cache [/Users/pf.macbookpro/.wdm/drivers/chromedriver/mac64/145.0.7632.77]
+2026-02-23 15:08:40,219 - root - INFO - Chrome 浏览器启动成功
+2026-02-23 15:08:40,219 - root - INFO - 等待 17s 后请求: content_30141112.html
+2026-02-23 15:09:01,385 - jieba - DEBUG - Building prefix dict from the default dictionary ...
+2026-02-23 15:09:01,676 - jieba - DEBUG - Dumping model to file cache /var/folders/gz/5wt33ct16fx38ldkhs6qdh200000gn/T/jieba.cache
+2026-02-23 15:09:01,701 - jieba - DEBUG - Loading model cost 0.316 seconds.
+2026-02-23 15:09:01,701 - jieba - DEBUG - Prefix dict has been built successfully.
+2026-02-23 15:09:01,706 - root - INFO - 创建新文章: 当前经济工作的重点任务
+2026-02-23 15:09:02,534 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:09:03,719 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81a9-8797-e653cacfa7c2/children "HTTP/1.1 200 OK"
+2026-02-23 15:09:03,720 - root - INFO - 成功创建Notion页面: 当前经济工作的重点任务
+2026-02-23 15:09:03,722 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/01-要闻/当前经济工作的重点任务.md
+2026-02-23 15:09:03,722 - root - INFO - 等待 26s 后请求: content_30141113.html
+2026-02-23 15:09:32,610 - root - INFO - 创建新文章: 策马扬鞭  奔腾在新时代壮阔征程上
+2026-02-23 15:09:33,209 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:09:34,962 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81b3-b58c-d67ad932523e/children "HTTP/1.1 200 OK"
+2026-02-23 15:09:34,981 - root - INFO - 成功创建Notion页面: 策马扬鞭  奔腾在新时代壮阔征程上
+2026-02-23 15:09:34,982 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/01-要闻/策马扬鞭 奔腾在新时代壮阔征程上.md
+2026-02-23 15:09:34,982 - root - INFO - 等待 25s 后请求: content_30141116.html
+2026-02-23 15:10:03,524 - root - INFO - 创建新文章: 国泰民安是最好年味（今日谈）
+2026-02-23 15:10:07,302 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:10:08,163 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8148-bc02-cffee28ac319/children "HTTP/1.1 200 OK"
+2026-02-23 15:10:08,164 - root - INFO - 成功创建Notion页面: 国泰民安是最好年味（今日谈）
+2026-02-23 15:10:08,164 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/01-要闻/国泰民安是最好年味（今日谈）.md
+2026-02-23 15:10:08,164 - root - INFO - 等待 27s 后请求: content_30141117.html
+2026-02-23 15:10:38,668 - root - INFO - 创建新文章: 于营村的幸福“三字经”（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:10:39,529 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:10:41,425 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8181-8681-e9ae64e917f1/children "HTTP/1.1 200 OK"
+2026-02-23 15:10:41,425 - root - INFO - 成功创建Notion页面: 于营村的幸福“三字经”（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:10:41,426 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/01-要闻/于营村的幸福“三字经”（新春走基层·建设宜居宜业和美乡村）.md
+2026-02-23 15:10:41,426 - root - INFO - 等待 17s 后请求: content_30141118.html
+2026-02-23 15:11:03,900 - root - INFO - 创建新文章: 中埂村变身记（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:11:04,388 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2026-02-23 15:11:04,389 - root - ERROR - 创建Notion页面失败: Provide a `parent.page_id` or `parent.database_id` parameter to create a page, or use a public integration with `insert_content` capability. Internal integrations aren't owned by a single user, so creating workspace-level private pages is not supported.
+2026-02-23 15:11:04,391 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/01-要闻/中埂村变身记（新春走基层·建设宜居宜业和美乡村）.md
+2026-02-23 15:11:04,391 - root - INFO - 等待 27s 后请求: content_30141124.html
+2026-02-23 15:11:35,628 - root - INFO - 创建新文章: 广告
+2026-02-23 15:11:36,977 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:11:42,809 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8195-852e-c457e7ac1288/children "HTTP/1.1 200 OK"
+2026-02-23 15:11:42,809 - root - INFO - 成功创建Notion页面: 广告
+2026-02-23 15:11:42,809 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/02-要闻/广告.md
+2026-02-23 15:11:42,809 - root - INFO - 等待 24s 后请求: content_30141125.html
+2026-02-23 15:12:10,772 - root - INFO - 创建新文章: 回家的路  写满幸福（新春走基层）
+2026-02-23 15:12:11,509 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:12:12,835 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-816f-a057-e7ce50936c0f/children "HTTP/1.1 200 OK"
+2026-02-23 15:12:12,843 - root - INFO - 成功创建Notion页面: 回家的路  写满幸福（新春走基层）
+2026-02-23 15:12:12,844 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/03-要闻/回家的路 写满幸福（新春走基层）.md
+2026-02-23 15:12:12,844 - root - INFO - 等待 27s 后请求: content_30141126.html
+2026-02-23 15:12:44,012 - root - INFO - 创建新文章: 在“未来之城”看见三抹红（新春走基层）
+2026-02-23 15:12:44,750 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:12:46,354 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8196-a6ec-ca2989a2ad6b/children "HTTP/1.1 200 OK"
+2026-02-23 15:12:46,356 - root - INFO - 成功创建Notion页面: 在“未来之城”看见三抹红（新春走基层）
+2026-02-23 15:12:46,357 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/03-要闻/在“未来之城”看见三抹红（新春走基层）.md
+2026-02-23 15:12:46,358 - root - INFO - 等待 17s 后请求: content_30141127.html
+2026-02-23 15:13:07,050 - root - INFO - 创建新文章: 老牛湾村，民宿生意好（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:13:07,729 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:13:10,009 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81cf-977b-d1e1fefe0b96/children "HTTP/1.1 200 OK"
+2026-02-23 15:13:10,010 - root - INFO - 成功创建Notion页面: 老牛湾村，民宿生意好（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:13:10,010 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/03-要闻/老牛湾村，民宿生意好（新春走基层·建设宜居宜业和美乡村）.md
+2026-02-23 15:13:10,010 - root - INFO - 已请求 10 次，休息 35 秒...
+2026-02-23 15:13:45,348 - root - INFO - 等待 16s 后请求: content_30141128.html
+2026-02-23 15:14:04,847 - root - INFO - 创建新文章: 东阿拉村，集市人气旺（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:14:07,958 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:14:09,329 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81bb-a01b-f5fce651819c/children "HTTP/1.1 200 OK"
+2026-02-23 15:14:09,330 - root - INFO - 成功创建Notion页面: 东阿拉村，集市人气旺（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:14:09,331 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/03-要闻/东阿拉村，集市人气旺（新春走基层·建设宜居宜业和美乡村）.md
+2026-02-23 15:14:09,332 - root - INFO - 等待 30s 后请求: content_30141129.html
+2026-02-23 15:14:43,312 - root - INFO - 创建新文章: 潜江四季都有小龙虾（新春走基层）
+2026-02-23 15:14:46,122 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:14:47,696 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8136-81b7-dce0e7dbe433/children "HTTP/1.1 200 OK"
+2026-02-23 15:14:47,699 - root - INFO - 成功创建Notion页面: 潜江四季都有小龙虾（新春走基层）
+2026-02-23 15:14:47,701 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/03-要闻/潜江四季都有小龙虾（新春走基层）.md
+2026-02-23 15:14:47,701 - root - INFO - 等待 21s 后请求: content_30141135.html
+2026-02-23 15:15:12,948 - root - INFO - 创建新文章: 年货盈门  物阜民丰（新时代画卷）
+2026-02-23 15:15:13,932 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:15:16,007 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8123-8101-c53d5d257df6/children "HTTP/1.1 200 OK"
+2026-02-23 15:15:16,009 - root - INFO - 成功创建Notion页面: 年货盈门  物阜民丰（新时代画卷）
+2026-02-23 15:15:16,009 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-16/04-视觉/年货盈门 物阜民丰（新时代画卷）.md
+2026-02-23 15:15:16,010 - root - INFO - 等待 19s 后请求: content_30141239.html
+2026-02-23 15:15:39,007 - root - INFO - 创建新文章: 万家灯火映团圆  锦绣山河沐春晖
+2026-02-23 15:15:40,838 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:15:43,582 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-819f-b75f-f07731f2d494/children "HTTP/1.1 200 OK"
+2026-02-23 15:15:43,584 - root - INFO - 成功创建Notion页面: 万家灯火映团圆  锦绣山河沐春晖
+2026-02-23 15:15:43,585 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/01-要闻/万家灯火映团圆 锦绣山河沐春晖.md
+2026-02-23 15:15:43,586 - root - INFO - 等待 21s 后请求: content_30141243.html
+2026-02-23 15:16:08,952 - root - INFO - 创建新文章: 长安社区长安宁（新春走基层·热气腾腾万家暖）
+2026-02-23 15:16:09,755 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:16:10,792 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81ab-97eb-e5dfaddabe43/children "HTTP/1.1 200 OK"
+2026-02-23 15:16:10,793 - root - INFO - 成功创建Notion页面: 长安社区长安宁（新春走基层·热气腾腾万家暖）
+2026-02-23 15:16:10,794 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/01-要闻/长安社区长安宁（新春走基层·热气腾腾万家暖）.md
+2026-02-23 15:16:10,794 - root - INFO - 等待 20s 后请求: content_30141244.html
+2026-02-23 15:16:35,610 - root - INFO - 创建新文章: “广货”吹风机这样行天下（新春走基层·开局之年新气象）
+2026-02-23 15:16:36,412 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:16:37,783 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8110-9d6f-c20587f9a1ae/children "HTTP/1.1 200 OK"
+2026-02-23 15:16:37,784 - root - INFO - 成功创建Notion页面: “广货”吹风机这样行天下（新春走基层·开局之年新气象）
+2026-02-23 15:16:37,785 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/01-要闻/“广货”吹风机这样行天下（新春走基层·开局之年新气象）.md
+2026-02-23 15:16:37,785 - root - INFO - 等待 21s 后请求: content_30141245.html
+2026-02-23 15:17:03,132 - root - INFO - 创建新文章: 霜花夫妻守边境（新春走基层·致敬奋斗者）
+2026-02-23 15:17:03,932 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:17:05,292 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81e0-ab09-ecb73719a615/children "HTTP/1.1 200 OK"
+2026-02-23 15:17:05,294 - root - INFO - 成功创建Notion页面: 霜花夫妻守边境（新春走基层·致敬奋斗者）
+2026-02-23 15:17:05,295 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/01-要闻/霜花夫妻守边境（新春走基层·致敬奋斗者）.md
+2026-02-23 15:17:05,295 - root - INFO - 等待 17s 后请求: content_30141252.html
+2026-02-23 15:17:26,495 - root - INFO - 创建新文章: 潮玩新年货走俏全球（新春走基层·开局之年新气象）
+2026-02-23 15:17:27,554 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:17:29,038 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81de-bb94-ca5bbbfd5305/children "HTTP/1.1 200 OK"
+2026-02-23 15:17:29,040 - root - INFO - 成功创建Notion页面: 潮玩新年货走俏全球（新春走基层·开局之年新气象）
+2026-02-23 15:17:29,041 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/03-要闻/潮玩新年货走俏全球（新春走基层·开局之年新气象）.md
+2026-02-23 15:17:29,042 - root - INFO - 等待 19s 后请求: content_30141253.html
+2026-02-23 15:17:52,304 - root - INFO - 创建新文章: 春节赶订单生产忙不停（新春走基层·新赛道迸发新活力）
+2026-02-23 15:17:53,147 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:17:54,700 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-815d-a381-c075057959d6/children "HTTP/1.1 200 OK"
+2026-02-23 15:17:54,702 - root - INFO - 成功创建Notion页面: 春节赶订单生产忙不停（新春走基层·新赛道迸发新活力）
+2026-02-23 15:17:54,703 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/03-要闻/春节赶订单生产忙不停（新春走基层·新赛道迸发新活力）.md
+2026-02-23 15:17:54,704 - root - INFO - 等待 17s 后请求: content_30141254.html
+2026-02-23 15:18:15,751 - root - INFO - 创建新文章: 老陈种蘑菇尝试新科技（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:18:16,622 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:18:18,312 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81c6-9ee3-f68bf48a77ea/children "HTTP/1.1 200 OK"
+2026-02-23 15:18:18,314 - root - INFO - 成功创建Notion页面: 老陈种蘑菇尝试新科技（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:18:18,315 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/03-要闻/老陈种蘑菇尝试新科技（新春走基层·建设宜居宜业和美乡村）.md
+2026-02-23 15:18:18,316 - root - INFO - 已请求 20 次，休息 34 秒...
+2026-02-23 15:18:52,758 - root - INFO - 等待 18s 后请求: content_30141141.html
+2026-02-23 15:19:13,989 - root - INFO - 创建新文章: 媒体艺术之都  数字美学增色（文化中国行·中国年味 时代气象）
+2026-02-23 15:19:18,786 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:19:20,777 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8193-a974-c5301591d872/children "HTTP/1.1 200 OK"
+2026-02-23 15:19:20,780 - root - INFO - 成功创建Notion页面: 媒体艺术之都  数字美学增色（文化中国行·中国年味 时代气象）
+2026-02-23 15:19:20,782 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/06-假日生活/媒体艺术之都 数字美学增色（文化中国行·中国年味 时代气象）.md
+2026-02-23 15:19:20,782 - root - INFO - 等待 22s 后请求: content_30141142.html
+2026-02-23 15:19:48,082 - root - INFO - 创建新文章: 春晚钟声来自这里（文物有话说）
+2026-02-23 15:19:48,995 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:19:50,085 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8109-a198-ea7d7f2e626f/children "HTTP/1.1 200 OK"
+2026-02-23 15:19:50,087 - root - INFO - 成功创建Notion页面: 春晚钟声来自这里（文物有话说）
+2026-02-23 15:19:50,089 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/06-假日生活/春晚钟声来自这里（文物有话说）.md
+2026-02-23 15:19:50,089 - root - INFO - 等待 28s 后请求: content_30141143.html
+2026-02-23 15:20:22,466 - root - INFO - 创建新文章: 青铜神树如何铸成（文物有话说）
+2026-02-23 15:20:25,140 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:20:26,619 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81a6-8db8-e67fecbf31a2/children "HTTP/1.1 200 OK"
+2026-02-23 15:20:26,629 - root - INFO - 成功创建Notion页面: 青铜神树如何铸成（文物有话说）
+2026-02-23 15:20:26,630 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-17/06-假日生活/青铜神树如何铸成（文物有话说）.md
+2026-02-23 15:20:26,630 - root - INFO - 等待 16s 后请求: content_30141208.html
+2026-02-23 15:20:48,028 - root - INFO - 创建新文章: 深海一号海底钻云上算（新春走基层·开局之年新气象）
+2026-02-23 15:20:48,849 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:20:51,497 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81f0-9945-c26bae2e6c8d/children "HTTP/1.1 200 OK"
+2026-02-23 15:20:51,499 - root - INFO - 成功创建Notion页面: 深海一号海底钻云上算（新春走基层·开局之年新气象）
+2026-02-23 15:20:51,503 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/01-要闻/深海一号海底钻云上算（新春走基层·开局之年新气象）.md
+2026-02-23 15:20:51,503 - root - INFO - 等待 17s 后请求: content_30141209.html
+2026-02-23 15:21:11,968 - root - INFO - 创建新文章: 社区食堂团年宴聚人心（新春走基层·热气腾腾万家暖）
+2026-02-23 15:21:12,721 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:21:14,089 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81fe-842d-d9c432e97a0f/children "HTTP/1.1 200 OK"
+2026-02-23 15:21:14,091 - root - INFO - 成功创建Notion页面: 社区食堂团年宴聚人心（新春走基层·热气腾腾万家暖）
+2026-02-23 15:21:14,093 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/01-要闻/社区食堂团年宴聚人心（新春走基层·热气腾腾万家暖）.md
+2026-02-23 15:21:14,093 - root - INFO - 等待 24s 后请求: content_30141210.html
+2026-02-23 15:21:42,830 - root - INFO - 创建新文章: “码头人少了，但更智能更高效了”（新春走基层·致敬奋斗者）
+2026-02-23 15:21:42,968 - root - ERROR - Notion API网络连接失败: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)
+2026-02-23 15:21:42,969 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/01-要闻/“码头人少了，但更智能更高效了”（新春走基层·致敬奋斗者）.md
+2026-02-23 15:21:42,970 - root - INFO - 等待 28s 后请求: content_30141213.html
+2026-02-23 15:22:15,788 - root - INFO - 创建新文章: 一位有远见的领导人，一位真正的朋友（大道之行）
+2026-02-23 15:22:16,944 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:22:17,707 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-810c-9412-cf383a81e793/children "HTTP/1.1 200 OK"
+2026-02-23 15:22:17,710 - root - INFO - 成功创建Notion页面: 一位有远见的领导人，一位真正的朋友（大道之行）
+2026-02-23 15:22:17,711 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/02-要闻/一位有远见的领导人，一位真正的朋友（大道之行）.md
+2026-02-23 15:22:17,712 - root - INFO - 等待 25s 后请求: content_30141214.html
+2026-02-23 15:22:47,476 - root - INFO - 创建新文章: 这个春节对中加关系意义非凡（大使随笔）
+2026-02-23 15:22:48,163 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:22:51,045 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8145-aa72-e86ffe2dbda2/children "HTTP/1.1 200 OK"
+2026-02-23 15:22:51,048 - root - INFO - 成功创建Notion页面: 这个春节对中加关系意义非凡（大使随笔）
+2026-02-23 15:22:51,049 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/02-要闻/这个春节对中加关系意义非凡（大使随笔）.md
+2026-02-23 15:22:51,049 - root - INFO - 等待 20s 后请求: content_30141215.html
+2026-02-23 15:23:14,644 - root - INFO - 创建新文章: 在中国，春节总是以“回家”为主题展开
+2026-02-23 15:23:15,408 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:23:18,353 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81a8-bc6e-d2b4607faca5/children "HTTP/1.1 200 OK"
+2026-02-23 15:23:18,355 - root - INFO - 成功创建Notion页面: 在中国，春节总是以“回家”为主题展开
+2026-02-23 15:23:18,357 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/02-要闻/在中国，春节总是以“回家”为主题展开.md
+2026-02-23 15:23:18,357 - root - INFO - 等待 27s 后请求: content_30141232.html
+2026-02-23 15:23:47,936 - root - INFO - 创建新文章: 这些00后，回到了滨海小村（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:23:51,502 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:23:52,720 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8101-804f-d75b7555b8ac/children "HTTP/1.1 200 OK"
+2026-02-23 15:23:52,725 - root - INFO - 成功创建Notion页面: 这些00后，回到了滨海小村（新春走基层·建设宜居宜业和美乡村）
+2026-02-23 15:23:52,728 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/03-要闻/这些00后，回到了滨海小村（新春走基层·建设宜居宜业和美乡村）.md
+2026-02-23 15:23:52,728 - root - INFO - 已请求 30 次，休息 21 秒...
+2026-02-23 15:24:13,989 - root - INFO - 等待 16s 后请求: content_30141237.html
+2026-02-23 15:24:33,484 - root - INFO - 创建新文章: 人工智能加速“嵌入”日常生活
+2026-02-23 15:24:34,353 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:24:35,929 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8183-b617-fd7b6b2b157b/children "HTTP/1.1 200 OK"
+2026-02-23 15:24:35,932 - root - INFO - 成功创建Notion页面: 人工智能加速“嵌入”日常生活
+2026-02-23 15:24:35,933 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/03-要闻/人工智能加速“嵌入”日常生活.md
+2026-02-23 15:24:35,934 - root - INFO - 等待 19s 后请求: content_30141194.html
+2026-02-23 15:24:59,736 - root - INFO - 创建新文章: 年味里，有气象人的守护
+2026-02-23 15:25:00,820 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:25:05,431 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-8137-aa0e-cbb36aa799c5/children "HTTP/1.1 200 OK"
+2026-02-23 15:25:05,434 - root - INFO - 成功创建Notion页面: 年味里，有气象人的守护
+2026-02-23 15:25:05,435 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/05-绿色/年味里，有气象人的守护.md
+2026-02-23 15:25:05,436 - root - INFO - 等待 18s 后请求: content_30141196.html
+2026-02-23 15:25:27,810 - root - INFO - 创建新文章: 冰雪与音符共谱春曲（文化中国行·中国年味 时代气象）
+2026-02-23 15:25:28,585 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:25:30,747 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81e6-b059-f17dbca2eb91/children "HTTP/1.1 200 OK"
+2026-02-23 15:25:30,751 - root - INFO - 成功创建Notion页面: 冰雪与音符共谱春曲（文化中国行·中国年味 时代气象）
+2026-02-23 15:25:30,753 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/06-假日生活/冰雪与音符共谱春曲（文化中国行·中国年味 时代气象）.md
+2026-02-23 15:25:30,753 - root - INFO - 等待 18s 后请求: content_30141197.html
+2026-02-23 15:25:53,162 - root - INFO - 创建新文章: 丝竹声中寻年味（文化中国行·中国年味 时代气象）
+2026-02-23 15:25:53,909 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:25:57,530 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81ab-8472-e95eafb530ce/children "HTTP/1.1 200 OK"
+2026-02-23 15:25:57,534 - root - INFO - 成功创建Notion页面: 丝竹声中寻年味（文化中国行·中国年味 时代气象）
+2026-02-23 15:25:57,536 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/06-假日生活/丝竹声中寻年味（文化中国行·中国年味 时代气象）.md
+2026-02-23 15:25:57,536 - root - INFO - 等待 18s 后请求: content_30141203.html
+2026-02-23 15:26:19,048 - root - INFO - 创建新文章: 四荤四素里的人间烟火（跟着味蕾去旅行）
+2026-02-23 15:26:21,469 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2026-02-23 15:26:27,525 - httpx - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/3104c730-6e9e-81a5-9e81-eff702f27901/children "HTTP/1.1 200 OK"
+2026-02-23 15:26:27,548 - root - INFO - 成功创建Notion页面: 四荤四素里的人间烟火（跟着味蕾去旅行）
+2026-02-23 15:26:27,551 - root - INFO - Markdown 已保存: data/vault/2026/02/2026-02-18/07-假日生活/四荤四素里的人间烟火（跟着味蕾去旅行）.md
+2026-02-23 15:26:27,554 - root - INFO - 系列注册表已保存：14 个系列
+2026-02-23 15:26:27,556 - root - INFO - 成功保存 12 篇文章到本地
+2026-02-23 15:26:27,560 - root - INFO - 成功保存 10 篇文章到本地
+2026-02-23 15:26:27,563 - root - INFO - 成功保存 12 篇文章到本地
+2026-02-23 15:26:27,567 - root - INFO - 成功导出 34 篇文章到 data/exports/articles_20260216_20260218.json
+2026-02-23 15:26:27,578 - root - INFO - 成功导出 34 篇文章到 data/exports/articles_20260216_20260218.csv
+2026-02-23 15:26:27,579 - root - INFO - 成功导出 34 篇文章到 data/exports/claude_articles_20260216_20260218.json (Claude格式)
+2026-02-23 15:26:27,690 - root - INFO - 浏览器已关闭
+2026-02-23 15:26:27,690 - root - INFO - 程序结束，浏览器已关闭
