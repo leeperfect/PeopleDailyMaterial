@@ -222,8 +222,15 @@ class PeopleDailyMaterialSystem:
         
         return processed_articles
     
-    def crawl_date_range(self, start_date: datetime, end_date: datetime, auto_select: bool = False):
-        """抓取日期范围内的文章（多日合并展示，一次性选择）"""
+    def crawl_date_range(self, start_date: datetime, end_date: datetime, auto_select: bool = False, sync_after_download: bool = True):
+        """抓取日期范围内的文章（多日合并展示，一次性选择）
+
+        Args:
+            start_date: 开始日期
+            end_date: 结束日期
+            auto_select: 是否自动选择所有可用文章
+            sync_after_download: 是否在下载完成后统一同步到 Notion
+        """
         import re
         logging.info(f"开始抓取日期范围: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
         
@@ -318,18 +325,19 @@ class PeopleDailyMaterialSystem:
             return []
         
         print(f"\n✅ 已选择 {len(selected_articles)} 篇文章，开始下载...\n")
-        
+
         # ====== 第三步：批量下载选中的文章 ======
         from modules.markdown_writer import MarkdownWriter
         md_writer = MarkdownWriter()
         md_saved_count = 0
-        
-        existing_articles = self.notion_api.get_existing_articles()
+
+        # 先下载所有文章，不立即同步到 Notion
         processed_articles = []
-        
+        download_failed = []
+
         for i, article_info in enumerate(selected_articles, 1):
             date = article_info['_date']  # 使用文章所属的日期
-            
+
             # 构建完整URL
             source_url = article_info.get('source_url', '')
             url_parts = source_url.split('/')
@@ -340,46 +348,36 @@ class PeopleDailyMaterialSystem:
             else:
                 base_url = source_url.rsplit('/', 1)[0]
                 article_url = f"{base_url}/{article_info['href']}"
-            
+
             print(f"  [{i}/{len(selected_articles)}] ({date.strftime('%m-%d')}) 正在下载: {article_info['title'][:40]}...")
-            
+
             # 抓取文章页
             article_html = self.crawler.crawl_article(article_url)
             if not article_html:
                 logging.error(f"无法获取文章: {article_url}")
+                download_failed.append(article_info['title'])
                 continue
-            
+
             # 解析文章
             article = self.parser.parse_article(article_html, article_url)
             if not article:
                 logging.error(f"无法解析文章: {article_url}")
+                download_failed.append(article_info['title'])
                 continue
-            
+
             # 处理文章
             article['content'] = self.processor.clean_content(article['content'])
             article['date'] = date.strftime('%Y-%m-%d')
             article['keywords'] = self.processor.extract_keywords(article['content'] + ' ' + article['title'])
             article['summary'] = self.processor.extract_summary(article['content'])
             article['category'] = self.processor.classify_article(article)
-            
+
             # 传递系列信息
             article['series_id'] = article_info.get('series_id')
             article['series_name'] = article_info.get('series_name')
             article['series_part'] = article_info.get('series_part')
             article['related_titles'] = self.series_detector.get_related_titles(article_info)
-            
-            # 检测重复
-            duplicate = self.processor.detect_duplicate(article, existing_articles)
-            if duplicate:
-                if self.processor.detect_content_change(article, duplicate):
-                    logging.info(f"文章内容发生变化，更新: {article['title']}")
-                    self.notion_api.update_page(duplicate['id'], article)
-                else:
-                    logging.info(f"文章已存在，跳过: {article['title']}")
-            else:
-                logging.info(f"创建新文章: {article['title']}")
-                self.notion_api.create_page(article, date)
-            
+
             # 保存 Markdown 文件
             md_path = md_writer.save_article(
                 article, date,
@@ -388,13 +386,13 @@ class PeopleDailyMaterialSystem:
             )
             if md_path:
                 md_saved_count += 1
-            
+
             processed_articles.append(article)
             print(f"         ✅ 完成")
-        
+
         # 保存系列注册表
         self.series_detector.save_registry()
-        
+
         # 按日期分组保存本地数据
         from collections import defaultdict
         by_date = defaultdict(list)
@@ -403,15 +401,57 @@ class PeopleDailyMaterialSystem:
         for d_str, arts in by_date.items():
             dt = datetime.strptime(d_str, '%Y-%m-%d')
             self.save_articles_local(arts, dt)
-        
-        # 导出汇总数据
-        if processed_articles:
-            self.export_articles(processed_articles, start_date, end_date)
-        
+
         print(f"\n{'='*60}")
-        print(f"  🎉 全部完成！共处理 {len(processed_articles)} 篇文章")
+        print(f"  📥 下载完成！共下载 {len(processed_articles)} 篇文章")
         print(f"  📁 Markdown 已保存 {md_saved_count} 篇到 data/vault/")
+        if download_failed:
+            print(f"  ⚠️ 下载失败 {len(download_failed)} 篇")
         print(f"{'='*60}\n")
+
+        # ====== 第四步：统一同步到 Notion ======
+        if sync_after_download and processed_articles:
+            print(f"\n{'='*60}")
+            print(f"  ☁️ 开始同步到 Notion...")
+            print(f"{'='*60}\n")
+
+            existing_articles = self.notion_api.get_existing_articles()
+            sync_count = 0
+            skip_count = 0
+
+            for article in processed_articles:
+                title = article.get('title', '')
+
+                if not title or title == '广告':
+                    continue
+
+                date = datetime.strptime(article['date'], '%Y-%m-%d')
+
+                duplicate = None
+                for exist in existing_articles:
+                    if exist.get('title') == title:
+                        duplicate = exist
+                        break
+
+                if duplicate:
+                    if self.processor.detect_content_change(article, duplicate):
+                        logging.info(f"文章内容发生变化，更新: {article['title']}")
+                        self.notion_api.update_page(duplicate['id'], article)
+                        sync_count += 1
+                    else:
+                        logging.info(f"文章已存在，跳过: {article['title']}")
+                        skip_count += 1
+                else:
+                    logging.info(f"创建新文章: {article['title']}")
+                    self.notion_api.create_page(article, date)
+                    sync_count += 1
+                    existing_articles.append({'title': title})
+
+            print(f"\n{'='*60}")
+            print(f"  ☁️ Notion 同步完成！")
+            print(f"     新增/更新: {sync_count} 篇")
+            print(f"     跳过: {skip_count} 篇")
+            print(f"{'='*60}\n")
         
         return processed_articles
     
