@@ -51,7 +51,7 @@ class PeopleDailyMaterialSystem:
         self.exporter = DataExporter(self.config.get('export', {}))
         self.series_detector = SeriesDetector()
     
-    def crawl_single_date(self, date: datetime):
+    def crawl_single_date(self, date: datetime, auto_select: bool = False):
         """抓取单个日期的文章（交互式：浏览器界面选择下载）"""
         logging.info(f"开始抓取 {date.strftime('%Y-%m-%d')} 的人民日报文章")
         
@@ -111,16 +111,20 @@ class PeopleDailyMaterialSystem:
         if '检测到' in series_summary:
             print(f"\n  {series_summary}")
         
-        # ====== 第二步：打开浏览器选择 ======
-        from modules.web_selector import ArticleSelector
-        selector = ArticleSelector(date.strftime('%Y-%m-%d'), articles_by_section)
-        selected_indices = selector.show_and_wait()
-        
-        # 处理手动编组
-        for group in selector.manual_groups:
-            self.series_detector.manual_group(
-                all_articles_info, group['name'], group['article_indices']
-            )
+        if auto_select:
+            selected_indices = [a['index'] for a in all_articles_info if not a.get('auto_skip')]
+            print(f"\n  🤖 自动模式：已选择所有 {len(selected_indices)} 篇可用文章")
+        else:
+            # ====== 第二步：打开浏览器选择 ======
+            from modules.web_selector import ArticleSelector
+            selector = ArticleSelector(date.strftime('%Y-%m-%d'), articles_by_section)
+            selected_indices = selector.show_and_wait()
+            
+            # 处理手动编组
+            for group in selector.manual_groups:
+                self.series_detector.manual_group(
+                    all_articles_info, group['name'], group['article_indices']
+                )
         
         # 过滤出用户选择的文章
         selected_articles = [a for a in all_articles_info if a['index'] in selected_indices]
@@ -218,7 +222,7 @@ class PeopleDailyMaterialSystem:
         
         return processed_articles
     
-    def crawl_date_range(self, start_date: datetime, end_date: datetime):
+    def crawl_date_range(self, start_date: datetime, end_date: datetime, auto_select: bool = False):
         """抓取日期范围内的文章（多日合并展示，一次性选择）"""
         import re
         logging.info(f"开始抓取日期范围: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
@@ -292,16 +296,20 @@ class PeopleDailyMaterialSystem:
         if '检测到' in series_summary:
             print(f"\n  {series_summary}")
         
-        # ====== 第二步：统一展示选择器（所有日期合并为一页） ======
-        from modules.web_selector import ArticleSelector
-        selector = ArticleSelector(dates_info=dates_info)
-        selected_indices = selector.show_and_wait()
-        
-        # 处理手动编组
-        for group in selector.manual_groups:
-            self.series_detector.manual_group(
-                all_articles_info, group['name'], group['article_indices']
-            )
+        if auto_select:
+            selected_indices = [a['index'] for a in all_articles_info if not a.get('auto_skip')]
+            print(f"\n  🤖 自动模式：已选择所有 {len(selected_indices)} 篇可用文章")
+        else:
+            # ====== 第二步：统一展示选择器（所有日期合并为一页） ======
+            from modules.web_selector import ArticleSelector
+            selector = ArticleSelector(dates_info=dates_info)
+            selected_indices = selector.show_and_wait()
+            
+            # 处理手动编组
+            for group in selector.manual_groups:
+                self.series_detector.manual_group(
+                    all_articles_info, group['name'], group['article_indices']
+                )
         
         selected_articles = [a for a in all_articles_info if a['index'] in selected_indices]
         
@@ -469,11 +477,13 @@ def main():
     # 解析命令行参数
     parser = argparse.ArgumentParser(description='人民日报爬虫与Notion存储脚本')
     parser.add_argument('--date-range', nargs=2, metavar=('START_DATE', 'END_DATE'),
-                        help='日期范围，格式: YYYY-MM-DD YYYY-MM-DD')
+                        help='日期范围，格式: YYYY-MM-DD YYYY-MM-DD（跳过日期选择界面）')
     parser.add_argument('--date', metavar='DATE',
-                        help='单个日期，格式: YYYY-MM-DD')
+                        help='单个日期，格式: YYYY-MM-DD（跳过日期选择界面）')
     parser.add_argument('--export', action='store_true',
                         help='导出数据')
+    parser.add_argument('--all', action='store_true',
+                        help='自动选择所有可用文章，跳过文章选择界面')
     
     args = parser.parse_args()
     
@@ -481,26 +491,47 @@ def main():
     system = PeopleDailyMaterialSystem()
     
     try:
-        # 处理命令行参数
         if args.date_range:
+            # 命令行直接指定了日期范围
             try:
                 start_date = datetime.strptime(args.date_range[0], '%Y-%m-%d')
                 end_date = datetime.strptime(args.date_range[1], '%Y-%m-%d')
-                system.crawl_date_range(start_date, end_date)
+                system.crawl_date_range(start_date, end_date, auto_select=args.all)
             except ValueError:
                 logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
                 sys.exit(1)
         elif args.date:
+            # 命令行直接指定了单个日期
             try:
                 date = datetime.strptime(args.date, '%Y-%m-%d')
-                system.crawl_single_date(date)
+                system.crawl_single_date(date, auto_select=args.all)
             except ValueError:
                 logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
                 sys.exit(1)
         else:
-            # 默认抓取当天
-            today = datetime.now()
-            system.crawl_single_date(today)
+            # ====== 默认模式：弹出日期选择界面 ======
+            from modules.date_selector import DateSelector
+            
+            print(f"\n{'='*60}")
+            print(f"  📰 人民日报素材系统")
+            print(f"{'='*60}")
+            print(f"  正在打开日期选择界面...\n")
+            
+            date_selector = DateSelector()
+            start_date, end_date = date_selector.show_and_wait()
+            
+            if not start_date:
+                print("\n未选择任何日期，退出。")
+                sys.exit(0)
+            
+            if end_date and end_date != start_date:
+                # 用户选择了日期范围
+                print(f"\n  📅 已选择日期范围: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
+                system.crawl_date_range(start_date, end_date, auto_select=args.all)
+            else:
+                # 用户选择了单个日期
+                print(f"\n  📅 已选择日期: {start_date.strftime('%Y-%m-%d')}")
+                system.crawl_single_date(start_date, auto_select=args.all)
     finally:
         # 确保关闭浏览器
         system.crawler.close()
