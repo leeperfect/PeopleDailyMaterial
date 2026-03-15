@@ -39,15 +39,28 @@ class ArticleSelector:
     
     def show_and_wait(self) -> Set[int]:
         """启动 Web 界面并等待用户选择，返回选中的文章编号"""
-        port = 18765
-        handler = self._make_handler()
-        self.server = HTTPServer(('127.0.0.1', port), handler)
-        self.server.allow_reuse_address = True
-        # 修复端口占用：允许端口复用
         import socket
-        self.server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         
-        # 后台启动服务器
+        handler = self._make_handler()
+        
+        start_port = 18765
+        max_attempts = 20
+        port = start_port
+        
+        for attempt in range(max_attempts):
+            try:
+                self.server = HTTPServer(('127.0.0.1', port), handler)
+                self.server.allow_reuse_address = True
+                self.server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                break
+            except OSError as e:
+                if e.errno == 48 or 'Address already in use' in str(e):
+                    port += 1
+                    continue
+                raise
+        else:
+            raise RuntimeError(f"无法找到可用端口 (尝试了 {start_port} ~ {port})")
+        
         server_thread = threading.Thread(target=self.server.serve_forever, daemon=True)
         server_thread.start()
         
