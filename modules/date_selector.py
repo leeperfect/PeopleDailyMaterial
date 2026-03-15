@@ -2,18 +2,68 @@
 # -*- coding: utf-8 -*-
 """
 Web UI 日期选择器 - 本地浏览器界面，选择要下载的日期/日期范围
-支持最近12个月的月历快捷选择
+固定显示近两年（当年+去年）的月历，标记已完成下载并同步 Notion 的日期
+默认连续选择模式，单日选择作为备选
 """
 
 import json
 import logging
+import os
 import webbrowser
 import threading
 import socket
 import calendar
 from datetime import datetime, timedelta
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Set
+
+
+# ====== 同步状态追踪 ======
+SYNC_STATUS_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'sync_status.json')
+
+
+def load_synced_dates() -> Set[str]:
+    """加载已完成同步的日期集合，格式 {'2026-01-01', '2026-01-02', ...}"""
+    try:
+        if os.path.exists(SYNC_STATUS_FILE):
+            with open(SYNC_STATUS_FILE, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                return set(data.get('synced_dates', []))
+    except Exception as e:
+        logging.error(f"加载同步状态失败: {e}")
+    return set()
+
+
+def save_synced_dates(dates: Set[str]):
+    """保存已完成同步的日期集合"""
+    try:
+        os.makedirs(os.path.dirname(SYNC_STATUS_FILE), exist_ok=True)
+        with open(SYNC_STATUS_FILE, 'w', encoding='utf-8') as f:
+            json.dump({'synced_dates': sorted(dates)}, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        logging.error(f"保存同步状态失败: {e}")
+
+
+def mark_date_synced(date_str: str):
+    """标记某日期已完成本地下载+Notion同步"""
+    dates = load_synced_dates()
+    dates.add(date_str)
+    save_synced_dates(dates)
+
+
+def get_downloaded_dates() -> Set[str]:
+    """检查 data/raw/ 目录中已有本地下载文件的日期"""
+    raw_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'raw')
+    downloaded = set()
+    if os.path.exists(raw_dir):
+        for fname in os.listdir(raw_dir):
+            # articles_20260101.json -> 2026-01-01
+            if fname.startswith('articles_') and fname.endswith('.json'):
+                date_part = fname[9:17]  # YYYYMMDD
+                if len(date_part) == 8 and date_part.isdigit():
+                    formatted = f"{date_part[:4]}-{date_part[4:6]}-{date_part[6:8]}"
+                    downloaded.add(formatted)
+    return downloaded
 
 
 class DateSelector:
@@ -106,74 +156,113 @@ class DateSelector:
         return Handler
 
     def _build_calendar_html(self) -> str:
-        """生成最近12个月的月历 HTML"""
+        """生成当年+去年（共两年）的月历 HTML，并标记已下载/同步的日期"""
         today = datetime.now()
         today_str = today.strftime('%Y-%m-%d')
+        
+        # 加载状态数据
+        synced_dates = load_synced_dates()
+        downloaded_dates = get_downloaded_dates()
+        
+        current_year = today.year
+        prev_year = current_year - 1
+        
+        month_names = ['一月', '二月', '三月', '四月', '五月', '六月',
+                       '七月', '八月', '九月', '十月', '十一月', '十二月']
+        
         months_html = ''
-
-        # 从当前月往前推11个月，共12个月，按时间倒序排列
-        for offset in range(12):
-            # 计算目标月份
-            y = today.year
-            m = today.month - offset
-            while m <= 0:
-                m += 12
-                y -= 1
-
-            month_names = ['一月', '二月', '三月', '四月', '五月', '六月',
-                           '七月', '八月', '九月', '十月', '十一月', '十二月']
-            month_label = f'{y}年{month_names[m - 1]}'
-            is_current_month = (y == today.year and m == today.month)
-
-            # 获取该月的天数和起始星期几（周一=0）
-            _, days_in_month = calendar.monthrange(y, m)
-            first_weekday = calendar.weekday(y, m, 1)  # 0=Monday
-
-            # 构建日期格子
-            cells_html = ''
-            # 填充前面的空格
-            for _ in range(first_weekday):
-                cells_html += '<div class="cal-cell empty"></div>'
-
-            for day in range(1, days_in_month + 1):
-                d = datetime(y, m, day)
-                date_str = d.strftime('%Y-%m-%d')
-                is_weekend = d.weekday() >= 5
-                is_today = (date_str == today_str)
-                is_future = d > today
-
-                cls = 'cal-cell'
-                if is_future:
-                    cls += ' future'
-                elif is_today:
-                    cls += ' today'
-                elif is_weekend:
-                    cls += ' weekend'
-
-                if is_future:
-                    cells_html += f'<div class="{cls}"><span>{day}</span></div>'
-                else:
-                    cells_html += f'<div class="{cls}" data-date="{date_str}" onclick="calSelect(\'{date_str}\')"><span>{day}</span></div>'
-
-            cur_cls = ' current-month' if is_current_month else ''
+        
+        # 按年份从近到远排列：先当年，再去年
+        for year in [current_year, prev_year]:
+            # 添加年份标题
+            is_current_year = (year == current_year)
+            year_cls = 'current-year' if is_current_year else ''
             months_html += f'''
-            <div class="cal-month{cur_cls}">
-                <div class="cal-month-title">{month_label}</div>
-                <div class="cal-weekdays">
-                    <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span class="we">六</span><span class="we">日</span>
-                </div>
-                <div class="cal-grid">{cells_html}</div>
+            <div class="year-divider {year_cls}">
+                <span class="year-label">{year}年</span>
+                <span class="year-line"></span>
             </div>'''
-
+            
+            # 当年显示到当前月，去年显示全部12个月
+            max_month = today.month if is_current_year else 12
+            
+            for m in range(max_month, 0, -1):
+                month_label = f'{month_names[m - 1]}'
+                is_current_month = (year == today.year and m == today.month)
+                
+                # 获取该月的天数和起始星期几（周一=0）
+                _, days_in_month = calendar.monthrange(year, m)
+                first_weekday = calendar.weekday(year, m, 1)  # 0=Monday
+                
+                # 构建日期格子
+                cells_html = ''
+                # 填充前面的空格
+                for _ in range(first_weekday):
+                    cells_html += '<div class="cal-cell empty"></div>'
+                
+                for day in range(1, days_in_month + 1):
+                    d = datetime(year, m, day)
+                    date_str = d.strftime('%Y-%m-%d')
+                    is_weekend = d.weekday() >= 5
+                    is_today = (date_str == today_str)
+                    is_future = d > today
+                    
+                    # 检查下载/同步状态
+                    is_synced = (date_str in synced_dates)
+                    is_downloaded = (date_str in downloaded_dates)
+                    
+                    cls = 'cal-cell'
+                    if is_future:
+                        cls += ' future'
+                    elif is_today:
+                        cls += ' today'
+                    elif is_weekend:
+                        cls += ' weekend'
+                    
+                    if is_synced:
+                        cls += ' synced'
+                    elif is_downloaded:
+                        cls += ' downloaded-only'
+                    
+                    if is_future:
+                        cells_html += f'<div class="{cls}"><span>{day}</span></div>'
+                    else:
+                        # 添加状态图标
+                        status_icon = ''
+                        if is_synced:
+                            status_icon = '<span class="status-dot synced-dot" title="已下载并同步"></span>'
+                        elif is_downloaded:
+                            status_icon = '<span class="status-dot dl-dot" title="仅本地下载，未同步Notion"></span>'
+                        
+                        cells_html += f'<div class="{cls}" data-date="{date_str}" onclick="calSelect(\'{date_str}\')">{status_icon}<span>{day}</span></div>'
+                
+                cur_cls = ' current-month' if is_current_month else ''
+                months_html += f'''
+                <div class="cal-month{cur_cls}">
+                    <div class="cal-month-title">{month_label}</div>
+                    <div class="cal-weekdays">
+                        <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span class="we">六</span><span class="we">日</span>
+                    </div>
+                    <div class="cal-grid">{cells_html}</div>
+                </div>'''
+        
         return months_html
 
     def _generate_html(self) -> str:
         """生成文章选择页面 HTML"""
         today = datetime.now()
         today_str = today.strftime('%Y-%m-%d')
-        min_date = '2020-06-01'
+        current_year = today.year
+        prev_year = current_year - 1
+        min_date = f'{prev_year}-01-01'
 
         calendar_html = self._build_calendar_html()
+        
+        # 统计已同步的日期数量
+        synced_dates = load_synced_dates()
+        downloaded_dates = get_downloaded_dates()
+        synced_count = len(synced_dates)
+        downloaded_only_count = len(downloaded_dates - synced_dates)
 
         return f'''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -220,6 +309,37 @@ class DateSelector:
     color: #888;
     font-size: 14px;
   }}
+
+  /* ====== 状态统计条 ====== */
+  .stats-bar {{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }}
+
+  .stat-item {{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #999;
+    background: rgba(255,255,255,0.04);
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }}
+
+  .stat-dot {{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }}
+
+  .stat-dot.synced {{ background: #2ecc71; box-shadow: 0 0 6px rgba(46,204,113,0.4); }}
+  .stat-dot.dl-only {{ background: #f39c12; box-shadow: 0 0 6px rgba(243,156,18,0.4); }}
+  .stat-dot.pending {{ background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); }}
 
   /* ====== 模式切换 ====== */
   .mode-switch {{
@@ -271,6 +391,37 @@ class DateSelector:
     transition: all 0.3s;
   }}
 
+  /* ====== 年份分隔 ====== */
+  .year-divider {{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 16px;
+    padding: 0 4px;
+  }}
+
+  .year-divider:first-child {{
+    margin-top: 0;
+  }}
+
+  .year-label {{
+    font-size: 18px;
+    font-weight: 700;
+    color: #888;
+    white-space: nowrap;
+    letter-spacing: 2px;
+  }}
+
+  .year-divider.current-year .year-label {{
+    color: #ffd200;
+  }}
+
+  .year-line {{
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.15), transparent);
+  }}
+
   /* ====== 月历面板 ====== */
   .panel {{
     background: rgba(255,255,255,0.03);
@@ -290,11 +441,11 @@ class DateSelector:
     gap: 8px;
   }}
 
-  /* 月历网格：3列 */
+  /* 月历网格：4列（两年各6行 * 2列 = 更紧凑） */
   .cal-container {{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
   }}
 
   .cal-month {{
@@ -380,6 +531,35 @@ class DateSelector:
 
   .cal-cell.weekend {{
     color: #b0707088;
+  }}
+
+  /* ====== 下载/同步状态标记 ====== */
+  .status-dot {{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    pointer-events: none;
+  }}
+
+  .synced-dot {{
+    background: #2ecc71;
+    box-shadow: 0 0 4px rgba(46,204,113,0.5);
+  }}
+
+  .dl-dot {{
+    background: #f39c12;
+    box-shadow: 0 0 4px rgba(243,156,18,0.5);
+  }}
+
+  .cal-cell.synced {{
+    border: 1px solid rgba(46,204,113,0.25);
+  }}
+
+  .cal-cell.downloaded-only {{
+    border: 1px solid rgba(243,156,18,0.2);
   }}
 
   /* 选中态 */
@@ -598,13 +778,19 @@ class DateSelector:
   }}
 
   /* 响应式 */
-  @media (max-width: 768px) {{
+  @media (max-width: 900px) {{
+    .cal-container {{
+      grid-template-columns: repeat(3, 1fr);
+    }}
+  }}
+
+  @media (max-width: 600px) {{
     .cal-container {{
       grid-template-columns: repeat(2, 1fr);
     }}
   }}
 
-  @media (max-width: 480px) {{
+  @media (max-width: 400px) {{
     .cal-container {{
       grid-template-columns: 1fr;
     }}
@@ -616,31 +802,47 @@ class DateSelector:
 <div class="container">
   <div class="header">
     <h1>📰 人民日报素材系统</h1>
-    <div class="subtitle">选择要下载的日期，支持单日或连续日期范围</div>
+    <div class="subtitle">选择要下载的日期，支持连续日期范围或单日选择 · {prev_year}年 ~ {current_year}年</div>
   </div>
 
-  <!-- 模式切换 -->
+  <!-- 状态统计 -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-dot synced"></span>
+      已同步 {synced_count} 天
+    </div>
+    <div class="stat-item">
+      <span class="stat-dot dl-only"></span>
+      仅下载 {downloaded_only_count} 天
+    </div>
+    <div class="stat-item">
+      <span class="stat-dot pending"></span>
+      未下载
+    </div>
+  </div>
+
+  <!-- 模式切换：默认连续选择 -->
   <div class="mode-switch">
-    <button class="mode-btn active" id="modeSingle" onclick="switchMode('single')">📅 单日下载</button>
-    <button class="mode-btn" id="modeRange" onclick="switchMode('range')">📆 日期范围</button>
+    <button class="mode-btn" id="modeSingle" onclick="switchMode('single')">📅 单日下载</button>
+    <button class="mode-btn active" id="modeRange" onclick="switchMode('range')">📆 连续选择</button>
   </div>
 
-  <div class="mode-hint" id="modeHint">点击日历中的日期即可选择</div>
+  <div class="mode-hint" id="modeHint">第一次点击选择起始日期，第二次点击选择结束日期</div>
 
   <!-- 月历面板 -->
   <div class="panel">
-    <div class="panel-title">📆 最近一年（点击日期选择）</div>
+    <div class="panel-title">📆 {prev_year} ~ {current_year} 年月历（点击日期选择）</div>
     <div class="cal-container">
       {calendar_html}
     </div>
 
     <div class="divider">或手动输入日期</div>
     <div class="date-input-row">
-      <label id="startLabel">日期</label>
-      <input type="date" id="startDate" value="{today_str}" min="{min_date}" max="{today_str}">
-      <span class="arrow hidden" id="inputArrow">→</span>
-      <label class="hidden" id="endLabel">至</label>
-      <input type="date" class="hidden" id="endDate" min="{min_date}" max="{today_str}">
+      <label id="startLabel">起始</label>
+      <input type="date" id="startDate" value="" min="{min_date}" max="{today_str}">
+      <span class="arrow" id="inputArrow">→</span>
+      <label id="endLabel">至</label>
+      <input type="date" id="endDate" min="{min_date}" max="{today_str}">
     </div>
   </div>
 </div>
@@ -661,8 +863,9 @@ class DateSelector:
 </div>
 
 <script>
-  let mode = 'single';
-  let selectedStart = '{today_str}';
+  // 默认模式：连续选择（range）
+  let mode = 'range';
+  let selectedStart = '';
   let selectedEnd = '';
   let rangeClickCount = 0;
 
@@ -848,8 +1051,7 @@ class DateSelector:
     }});
   }}
 
-  // 初始化高亮今天
-  highlightSingle('{today_str}');
+  // 初始化
   updatePreview();
 </script>
 </body>

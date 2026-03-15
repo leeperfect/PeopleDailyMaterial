@@ -27,6 +27,7 @@ from modules.processor import DataProcessor
 from modules.notion import NotionAPI
 from modules.exporter import DataExporter
 from modules.series_detector import SeriesDetector
+from modules.date_selector import mark_date_synced
 
 
 class PeopleDailyMaterialSystem:
@@ -214,6 +215,10 @@ class PeopleDailyMaterialSystem:
         
         # 导出数据
         self.export_articles(processed_articles, date)
+        
+        # 标记该日期已完成下载+同步
+        if processed_articles:
+            mark_date_synced(date.strftime('%Y-%m-%d'))
         
         print(f"\n{'='*60}")
         print(f"  🎉 下载完成！共处理 {len(processed_articles)} 篇文章")
@@ -446,6 +451,14 @@ class PeopleDailyMaterialSystem:
                     self.notion_api.create_page(article, date)
                     sync_count += 1
                     existing_articles.append({'title': title})
+
+            # 标记已同步的日期
+            from collections import defaultdict
+            synced_by_date = defaultdict(int)
+            for article in processed_articles:
+                synced_by_date[article['date']] += 1
+            for date_str in synced_by_date:
+                mark_date_synced(date_str)
 
             print(f"\n{'='*60}")
             print(f"  ☁️ Notion 同步完成！")
