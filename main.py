@@ -448,9 +448,10 @@ class PeopleDailyMaterialSystem:
                         skip_count += 1
                 else:
                     logging.info(f"创建新文章: {article['title']}")
-                    self.notion_api.create_page(article, date)
+                    page_id = self.notion_api.create_page(article, date)
                     sync_count += 1
-                    existing_articles.append({'title': title})
+                    if page_id:
+                        existing_articles.append({'id': page_id, 'title': title})
 
             # 标记已同步的日期
             from collections import defaultdict

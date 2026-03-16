@@ -63,5 +63,5 @@ def sync_articles(dates):
     print(f"\n✅ 同步完成！共上传 {total_synced} 篇文章")
 
 if __name__ == '__main__':
-    dates = ['2026-01-03', '2026-01-04', '2026-01-05', '2026-01-06']
+    dates = ['2026-01-10', '2026-01-11', '2026-01-12', '2026-01-13']
     sync_articles(dates)

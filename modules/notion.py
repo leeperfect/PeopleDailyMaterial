@@ -188,12 +188,16 @@ class NotionAPI:
                 )
             
             logging.info(f"成功创建Notion页面: {title}")
+            return page.get('id')
         except APIResponseError as e:
             logging.error(f"创建Notion页面失败: {str(e)}")
+            return None
         except httpx.RequestError as e:
             logging.error(f"Notion API网络连接失败: {str(e)}")
+            return None
         except Exception as e:
             logging.error(f"创建Notion页面时发生未知错误: {str(e)}")
+            return None
     
     def update_page(self, page_id: str, article: Dict):
         """更新Notion页面"""
