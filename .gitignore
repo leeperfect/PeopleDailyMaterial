@@ -1,0 +1,30 @@
+# 依赖文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 环境文件
+.env
+.env.local
+.env.*.local
+
+# 配置文件
+config.json
+
+# 数据文件
+data/
+!data/.gitkeep
+
+# 日志文件
+*.log
+
+# IDE文件
+.vscode/
+.idea/
+
+# 导出文件
+exports/
+
+# 操作系统文件
+.DS_Store
+Thumbs.db

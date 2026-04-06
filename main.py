@@ -9,8 +9,6 @@
 3. 支持日期范围查询
 4. 实现防反爬机制
 5. 数据去重和增量更新
-6. 数据分析和热点预测
-7. Claude Skill接口支持
 """
 
 import os
@@ -28,7 +26,8 @@ from modules.parser import ContentParser
 from modules.processor import DataProcessor
 from modules.notion import NotionAPI
 from modules.exporter import DataExporter
-from modules.analyzer import HotTopicAnalyzer, PolicyAnalyzer
+from modules.series_detector import SeriesDetector
+from modules.date_selector import mark_date_synced
 
 
 class PeopleDailyMaterialSystem:
@@ -51,57 +50,113 @@ class PeopleDailyMaterialSystem:
         self.processor = DataProcessor()
         self.notion_api = NotionAPI(self.config)
         self.exporter = DataExporter(self.config.get('export', {}))
-        self.hot_topic_analyzer = HotTopicAnalyzer(self.config.get('analyzer', {}))
-        self.policy_analyzer = PolicyAnalyzer(self.config.get('analyzer', {}))
+        self.series_detector = SeriesDetector()
     
-    def crawl_single_date(self, date: datetime):
-        """抓取单个日期的文章"""
+    def crawl_single_date(self, date: datetime, auto_select: bool = False):
+        """抓取单个日期的文章（交互式：浏览器界面选择下载）"""
         logging.info(f"开始抓取 {date.strftime('%Y-%m-%d')} 的人民日报文章")
         
-        # 抓取所有版面的目录页
+        # ====== 第一步：抓取所有版面目录 ======
+        print(f"\n{'='*60}")
+        print(f"  📰 人民日报 {date.strftime('%Y-%m-%d')} 版面目录")
+        print(f"{'='*60}")
+        print("正在获取版面目录，请稍候...\n")
+        
         directories = self.crawler.crawl_all_directories(date)
         if not directories:
-            logging.error(f"无法获取目录页")
+            logging.error("无法获取目录页")
             return []
         
-        logging.info(f"共抓取 {len(directories)} 个版面")
-        
-        # 解析所有版面的目录页，获取所有文章链接
+        # 解析所有版面目录，按版面分组
+        import re
         all_articles_info = []
+        articles_by_section = []
+        article_index = 1
+        
         for url, html in directories:
-            articles_info = self.parser.parse_directory(html)
-            # 为每个文章添加目录页URL，用于后续构建完整文章URL
+            articles_info, section_name = self.parser.parse_directory(html)
+            
+            node_match = re.search(r'node_(\d+)', url)
+            node_id = node_match.group(1) if node_match else '??'
+            
+            if not articles_info:
+                continue
+            
+            section_articles = []
+            skip_titles = ['图片报道', '导读', '征集', '本版责编', '一版责编']
+            
             for article in articles_info:
                 article['source_url'] = url
-            all_articles_info.extend(articles_info)
+                article['index'] = article_index
+                article['section_id'] = node_id
+                article['section_name'] = section_name or f'第{node_id}版'
+                article['auto_skip'] = any(skip in article.get('title', '') for skip in skip_titles)
+                
+                all_articles_info.append(article)
+                section_articles.append(article)
+                article_index += 1
+            
+            articles_by_section.append({
+                'section_id': node_id,
+                'section_name': section_name or f'第{node_id}版',
+                'articles': section_articles
+            })
         
-        logging.info(f"共找到 {len(all_articles_info)} 篇文章")
+        total = len(all_articles_info)
+        available = len([a for a in all_articles_info if not a.get('auto_skip')])
+        print(f"  ✅ 获取完成：{len(articles_by_section)} 个版面，{total} 篇文章（{available} 篇可选）")
         
-        # 获取已存在的文章
+        # ====== 系列文章检测 ======
+        self.series_detector.detect_and_register(all_articles_info)
+        series_summary = self.series_detector.get_summary()
+        if '检测到' in series_summary:
+            print(f"\n  {series_summary}")
+        
+        if auto_select:
+            selected_indices = [a['index'] for a in all_articles_info if not a.get('auto_skip')]
+            print(f"\n  🤖 自动模式：已选择所有 {len(selected_indices)} 篇可用文章")
+        else:
+            # ====== 第二步：打开浏览器选择 ======
+            from modules.web_selector import ArticleSelector
+            selector = ArticleSelector(date.strftime('%Y-%m-%d'), articles_by_section)
+            selected_indices = selector.show_and_wait()
+            
+            # 处理手动编组
+            for group in selector.manual_groups:
+                self.series_detector.manual_group(
+                    all_articles_info, group['name'], group['article_indices']
+                )
+        
+        # 过滤出用户选择的文章
+        selected_articles = [a for a in all_articles_info if a['index'] in selected_indices]
+        
+        if not selected_articles:
+            print("\n未选择任何文章，退出。")
+            return []
+        
+        print(f"\n✅ 已选择 {len(selected_articles)} 篇文章，开始下载...\n")
+        
+        # ====== 第三步：下载选中的文章 ======
+        from modules.markdown_writer import MarkdownWriter
+        md_writer = MarkdownWriter()
+        md_saved_count = 0
+        
         existing_articles = self.notion_api.get_existing_articles()
-        
-        # 处理每篇文章
         processed_articles = []
-        for article_info in all_articles_info:
+        
+        for i, article_info in enumerate(selected_articles, 1):
             # 构建完整URL
-            if article_info['href'].startswith('http'):
-                # 完整URL，直接使用
-                article_url = article_info['href']
+            source_url = article_info.get('source_url', '')
+            url_parts = source_url.split('/')
+            if len(url_parts) >= 8:
+                year_month = url_parts[-3]
+                day = url_parts[-2]
+                article_url = f"https://paper.people.com.cn/rmrb/pc/content/{year_month}/{day}/{article_info['href']}"
             else:
-                # 相对路径，构建完整URL
-                # 从目录页URL中提取日期信息
-                source_url = article_info.get('source_url', '')
-                url_parts = source_url.split('/')
-                if len(url_parts) >= 8:
-                    # 目录页URL格式: https://paper.people.com.cn/rmrb/pc/layout/202602/08/node_01.html
-                    year_month = url_parts[-3]  # 202602
-                    day = url_parts[-2]       # 08
-                    # 构建正确的内容URL
-                    article_url = f"https://paper.people.com.cn/rmrb/pc/content/{year_month}/{day}/{article_info['href']}"
-                else:
-                    # 回退到原始方法
-                    base_url = source_url.rsplit('/', 1)[0]  # 提取基础URL
-                    article_url = f"{base_url}/{article_info['href']}"
+                base_url = source_url.rsplit('/', 1)[0]
+                article_url = f"{base_url}/{article_info['href']}"
+            
+            print(f"  [{i}/{len(selected_articles)}] 正在下载: {article_info['title'][:40]}...")
             
             # 抓取文章页
             article_html = self.crawler.crawl_article(article_url)
@@ -122,10 +177,15 @@ class PeopleDailyMaterialSystem:
             article['summary'] = self.processor.extract_summary(article['content'])
             article['category'] = self.processor.classify_article(article)
             
+            # 传递系列信息
+            article['series_id'] = article_info.get('series_id')
+            article['series_name'] = article_info.get('series_name')
+            article['series_part'] = article_info.get('series_part')
+            article['related_titles'] = self.series_detector.get_related_titles(article_info)
+            
             # 检测重复
             duplicate = self.processor.detect_duplicate(article, existing_articles)
             if duplicate:
-                # 检测内容变化
                 if self.processor.detect_content_change(article, duplicate):
                     logging.info(f"文章内容发生变化，更新: {article['title']}")
                     self.notion_api.update_page(duplicate['id'], article)
@@ -135,7 +195,20 @@ class PeopleDailyMaterialSystem:
                 logging.info(f"创建新文章: {article['title']}")
                 self.notion_api.create_page(article, date)
             
+            # 保存 Markdown 文件
+            md_path = md_writer.save_article(
+                article, date,
+                section_id=article_info.get('section_id', ''),
+                section_name=article_info.get('section_name', '')
+            )
+            if md_path:
+                md_saved_count += 1
+            
             processed_articles.append(article)
+            print(f"         ✅ 完成")
+        
+        # 保存系列注册表
+        self.series_detector.save_registry()
         
         # 保存本地
         self.save_articles_local(processed_articles, date)
@@ -143,26 +216,258 @@ class PeopleDailyMaterialSystem:
         # 导出数据
         self.export_articles(processed_articles, date)
         
-        # 分析数据
-        self.analyze_articles(processed_articles, date)
+        # 标记该日期已完成下载+同步
+        if processed_articles:
+            mark_date_synced(date.strftime('%Y-%m-%d'))
+        
+        print(f"\n{'='*60}")
+        print(f"  🎉 下载完成！共处理 {len(processed_articles)} 篇文章")
+        print(f"  📁 Markdown 已保存 {md_saved_count} 篇到 data/vault/")
+        print(f"{'='*60}\n")
         
         return processed_articles
     
-    def crawl_date_range(self, start_date: datetime, end_date: datetime):
-        """抓取日期范围内的文章"""
-        all_articles = []
+    def crawl_date_range(self, start_date: datetime, end_date: datetime, auto_select: bool = False, sync_after_download: bool = True):
+        """抓取日期范围内的文章（多日合并展示，一次性选择）
+
+        Args:
+            start_date: 开始日期
+            end_date: 结束日期
+            auto_select: 是否自动选择所有可用文章
+            sync_after_download: 是否在下载完成后统一同步到 Notion
+        """
+        import re
+        logging.info(f"开始抓取日期范围: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
+        
+        # ====== 第一步：预先获取所有日期的目录 ======
+        all_articles_info = []   # 所有文章的平铺列表
+        dates_info = []          # 按日期分组（给 web_selector 用）
+        article_index = 1
+        
         current_date = start_date
         while current_date <= end_date:
-            articles = self.crawl_single_date(current_date)
-            all_articles.extend(articles)
+            date_str = current_date.strftime('%Y-%m-%d')
+            print(f"\n{'='*60}")
+            print(f"  📰 人民日报 {date_str} 版面目录")
+            print(f"{'='*60}")
+            print("正在获取版面目录，请稍候...\n")
+            
+            directories = self.crawler.crawl_all_directories(current_date)
+            if not directories:
+                logging.error(f"无法获取 {date_str} 的目录页")
+                current_date += timedelta(days=1)
+                continue
+            
+            articles_by_section = []
+            skip_titles = ['图片报道', '导读', '征集', '本版责编', '一版责编', '欢迎赐稿']
+            
+            for url, html in directories:
+                articles_info, section_name = self.parser.parse_directory(html)
+                node_match = re.search(r'node_(\d+)', url)
+                node_id = node_match.group(1) if node_match else '??'
+                
+                if not articles_info:
+                    continue
+                
+                section_articles = []
+                for article in articles_info:
+                    article['source_url'] = url
+                    article['index'] = article_index
+                    article['section_id'] = node_id
+                    article['section_name'] = section_name or f'第{node_id}版'
+                    article['auto_skip'] = any(skip in article.get('title', '') for skip in skip_titles)
+                    article['_date'] = current_date  # 记录所属日期
+                    
+                    all_articles_info.append(article)
+                    section_articles.append(article)
+                    article_index += 1
+                
+                articles_by_section.append({
+                    'section_id': node_id,
+                    'section_name': section_name or f'第{node_id}版',
+                    'articles': section_articles
+                })
+            
+            total = len([a for a in all_articles_info if a['_date'] == current_date])
+            available = len([a for a in all_articles_info if a['_date'] == current_date and not a.get('auto_skip')])
+            print(f"  ✅ 获取完成：{len(articles_by_section)} 个版面，{total} 篇文章（{available} 篇可选）")
+            
+            dates_info.append({
+                'date_str': date_str,
+                'articles_by_section': articles_by_section
+            })
             current_date += timedelta(days=1)
         
-        # 导出汇总数据
-        if all_articles:
-            self.export_articles(all_articles, start_date, end_date)
-            self.analyze_articles(all_articles, start_date, end_date)
+        if not dates_info:
+            print("\n未获取到任何文章目录，退出。")
+            return []
         
-        return all_articles
+        # ====== 系列文章检测 ======
+        self.series_detector.detect_and_register(all_articles_info)
+        series_summary = self.series_detector.get_summary()
+        if '检测到' in series_summary:
+            print(f"\n  {series_summary}")
+        
+        if auto_select:
+            selected_indices = [a['index'] for a in all_articles_info if not a.get('auto_skip')]
+            print(f"\n  🤖 自动模式：已选择所有 {len(selected_indices)} 篇可用文章")
+        else:
+            # ====== 第二步：统一展示选择器（所有日期合并为一页） ======
+            from modules.web_selector import ArticleSelector
+            selector = ArticleSelector(dates_info=dates_info)
+            selected_indices = selector.show_and_wait()
+            
+            # 处理手动编组
+            for group in selector.manual_groups:
+                self.series_detector.manual_group(
+                    all_articles_info, group['name'], group['article_indices']
+                )
+        
+        selected_articles = [a for a in all_articles_info if a['index'] in selected_indices]
+        
+        if not selected_articles:
+            print("\n未选择任何文章，退出。")
+            return []
+        
+        print(f"\n✅ 已选择 {len(selected_articles)} 篇文章，开始下载...\n")
+
+        # ====== 第三步：批量下载选中的文章 ======
+        from modules.markdown_writer import MarkdownWriter
+        md_writer = MarkdownWriter()
+        md_saved_count = 0
+
+        # 先下载所有文章，不立即同步到 Notion
+        processed_articles = []
+        download_failed = []
+
+        for i, article_info in enumerate(selected_articles, 1):
+            date = article_info['_date']  # 使用文章所属的日期
+
+            # 构建完整URL
+            source_url = article_info.get('source_url', '')
+            url_parts = source_url.split('/')
+            if len(url_parts) >= 8:
+                year_month = url_parts[-3]
+                day = url_parts[-2]
+                article_url = f"https://paper.people.com.cn/rmrb/pc/content/{year_month}/{day}/{article_info['href']}"
+            else:
+                base_url = source_url.rsplit('/', 1)[0]
+                article_url = f"{base_url}/{article_info['href']}"
+
+            print(f"  [{i}/{len(selected_articles)}] ({date.strftime('%m-%d')}) 正在下载: {article_info['title'][:40]}...")
+
+            # 抓取文章页
+            article_html = self.crawler.crawl_article(article_url)
+            if not article_html:
+                logging.error(f"无法获取文章: {article_url}")
+                download_failed.append(article_info['title'])
+                continue
+
+            # 解析文章
+            article = self.parser.parse_article(article_html, article_url)
+            if not article:
+                logging.error(f"无法解析文章: {article_url}")
+                download_failed.append(article_info['title'])
+                continue
+
+            # 处理文章
+            article['content'] = self.processor.clean_content(article['content'])
+            article['date'] = date.strftime('%Y-%m-%d')
+            article['keywords'] = self.processor.extract_keywords(article['content'] + ' ' + article['title'])
+            article['summary'] = self.processor.extract_summary(article['content'])
+            article['category'] = self.processor.classify_article(article)
+
+            # 传递系列信息
+            article['series_id'] = article_info.get('series_id')
+            article['series_name'] = article_info.get('series_name')
+            article['series_part'] = article_info.get('series_part')
+            article['related_titles'] = self.series_detector.get_related_titles(article_info)
+
+            # 保存 Markdown 文件
+            md_path = md_writer.save_article(
+                article, date,
+                section_id=article_info.get('section_id', ''),
+                section_name=article_info.get('section_name', '')
+            )
+            if md_path:
+                md_saved_count += 1
+
+            processed_articles.append(article)
+            print(f"         ✅ 完成")
+
+        # 保存系列注册表
+        self.series_detector.save_registry()
+
+        # 按日期分组保存本地数据
+        from collections import defaultdict
+        by_date = defaultdict(list)
+        for art in processed_articles:
+            by_date[art['date']].append(art)
+        for d_str, arts in by_date.items():
+            dt = datetime.strptime(d_str, '%Y-%m-%d')
+            self.save_articles_local(arts, dt)
+
+        print(f"\n{'='*60}")
+        print(f"  📥 下载完成！共下载 {len(processed_articles)} 篇文章")
+        print(f"  📁 Markdown 已保存 {md_saved_count} 篇到 data/vault/")
+        if download_failed:
+            print(f"  ⚠️ 下载失败 {len(download_failed)} 篇")
+        print(f"{'='*60}\n")
+
+        # ====== 第四步：统一同步到 Notion ======
+        if sync_after_download and processed_articles:
+            print(f"\n{'='*60}")
+            print(f"  ☁️ 开始同步到 Notion...")
+            print(f"{'='*60}\n")
+
+            existing_articles = self.notion_api.get_existing_articles()
+            sync_count = 0
+            skip_count = 0
+
+            for article in processed_articles:
+                title = article.get('title', '')
+
+                if not title or title == '广告':
+                    continue
+
+                date = datetime.strptime(article['date'], '%Y-%m-%d')
+
+                duplicate = None
+                for exist in existing_articles:
+                    if exist.get('title') == title:
+                        duplicate = exist
+                        break
+
+                if duplicate:
+                    if self.processor.detect_content_change(article, duplicate):
+                        logging.info(f"文章内容发生变化，更新: {article['title']}")
+                        self.notion_api.update_page(duplicate['id'], article)
+                        sync_count += 1
+                    else:
+                        logging.info(f"文章已存在，跳过: {article['title']}")
+                        skip_count += 1
+                else:
+                    logging.info(f"创建新文章: {article['title']}")
+                    page_id = self.notion_api.create_page(article, date)
+                    sync_count += 1
+                    if page_id:
+                        existing_articles.append({'id': page_id, 'title': title})
+
+            # 标记已同步的日期
+            from collections import defaultdict
+            synced_by_date = defaultdict(int)
+            for article in processed_articles:
+                synced_by_date[article['date']] += 1
+            for date_str in synced_by_date:
+                mark_date_synced(date_str)
+
+            print(f"\n{'='*60}")
+            print(f"  ☁️ Notion 同步完成！")
+            print(f"     新增/更新: {sync_count} 篇")
+            print(f"     跳过: {skip_count} 篇")
+            print(f"{'='*60}\n")
+        
+        return processed_articles
     
     def save_articles_local(self, articles: List[Dict], date: datetime):
         """保存文章到本地"""
@@ -215,44 +520,6 @@ class PeopleDailyMaterialSystem:
         else:
             filename = f"claude_articles_{start_date.strftime('%Y%m%d')}.json"
         self.exporter.export_for_claude(articles, filename)
-    
-    def analyze_articles(self, articles: List[Dict], start_date: datetime, end_date: Optional[datetime] = None):
-        """分析文章"""
-        if not articles:
-            return
-        
-        # 分析热点话题
-        hot_topics = self.hot_topic_analyzer.predict_hot_topics(articles)
-        logging.info(f"预测到 {len(hot_topics)} 个热点话题")
-        
-        # 保存热点话题
-        if end_date:
-            filename = f"hot_topics_{start_date.strftime('%Y%m%d')}_{end_date.strftime('%Y%m%d')}.json"
-        else:
-            filename = f"hot_topics_{start_date.strftime('%Y%m%d')}.json"
-        safe_json_dump(hot_topics, f"data/processed/{filename}")
-        
-        # 分析政策趋势
-        policy_trends = self.policy_analyzer.analyze_policy_trends(articles)
-        logging.info(f"分析到 {len(policy_trends)} 条政策趋势")
-        
-        # 保存政策趋势
-        if end_date:
-            filename = f"policy_trends_{start_date.strftime('%Y%m%d')}_{end_date.strftime('%Y%m%d')}.json"
-        else:
-            filename = f"policy_trends_{start_date.strftime('%Y%m%d')}.json"
-        safe_json_dump(policy_trends, f"data/processed/{filename}")
-        
-        # 文章聚类
-        clusters = self.hot_topic_analyzer.cluster_articles(articles)
-        logging.info(f"文章聚类为 {len(clusters)} 个主题")
-        
-        # 保存聚类结果
-        if end_date:
-            filename = f"article_clusters_{start_date.strftime('%Y%m%d')}_{end_date.strftime('%Y%m%d')}.json"
-        else:
-            filename = f"article_clusters_{start_date.strftime('%Y%m%d')}.json"
-        safe_json_dump(clusters, f"data/processed/{filename}")
 
 
 # 修复类型注解
@@ -264,39 +531,65 @@ def main():
     # 解析命令行参数
     parser = argparse.ArgumentParser(description='人民日报爬虫与Notion存储脚本')
     parser.add_argument('--date-range', nargs=2, metavar=('START_DATE', 'END_DATE'),
-                        help='日期范围，格式: YYYY-MM-DD YYYY-MM-DD')
+                        help='日期范围，格式: YYYY-MM-DD YYYY-MM-DD（跳过日期选择界面）')
     parser.add_argument('--date', metavar='DATE',
-                        help='单个日期，格式: YYYY-MM-DD')
+                        help='单个日期，格式: YYYY-MM-DD（跳过日期选择界面）')
     parser.add_argument('--export', action='store_true',
                         help='导出数据')
-    parser.add_argument('--analyze', action='store_true',
-                        help='分析数据')
+    parser.add_argument('--all', action='store_true',
+                        help='自动选择所有可用文章，跳过文章选择界面')
     
     args = parser.parse_args()
     
     # 初始化系统
     system = PeopleDailyMaterialSystem()
     
-    # 处理命令行参数
-    if args.date_range:
-        try:
-            start_date = datetime.strptime(args.date_range[0], '%Y-%m-%d')
-            end_date = datetime.strptime(args.date_range[1], '%Y-%m-%d')
-            system.crawl_date_range(start_date, end_date)
-        except ValueError:
-            logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
-            sys.exit(1)
-    elif args.date:
-        try:
-            date = datetime.strptime(args.date, '%Y-%m-%d')
-            system.crawl_single_date(date)
-        except ValueError:
-            logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
-            sys.exit(1)
-    else:
-        # 默认抓取当天
-        today = datetime.now()
-        system.crawl_single_date(today)
+    try:
+        if args.date_range:
+            # 命令行直接指定了日期范围
+            try:
+                start_date = datetime.strptime(args.date_range[0], '%Y-%m-%d')
+                end_date = datetime.strptime(args.date_range[1], '%Y-%m-%d')
+                system.crawl_date_range(start_date, end_date, auto_select=args.all)
+            except ValueError:
+                logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
+                sys.exit(1)
+        elif args.date:
+            # 命令行直接指定了单个日期
+            try:
+                date = datetime.strptime(args.date, '%Y-%m-%d')
+                system.crawl_single_date(date, auto_select=args.all)
+            except ValueError:
+                logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
+                sys.exit(1)
+        else:
+            # ====== 默认模式：弹出日期选择界面 ======
+            from modules.date_selector import DateSelector
+            
+            print(f"\n{'='*60}")
+            print(f"  📰 人民日报素材系统")
+            print(f"{'='*60}")
+            print(f"  正在打开日期选择界面...\n")
+            
+            date_selector = DateSelector()
+            start_date, end_date = date_selector.show_and_wait()
+            
+            if not start_date:
+                print("\n未选择任何日期，退出。")
+                sys.exit(0)
+            
+            if end_date and end_date != start_date:
+                # 用户选择了日期范围
+                print(f"\n  📅 已选择日期范围: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
+                system.crawl_date_range(start_date, end_date, auto_select=args.all)
+            else:
+                # 用户选择了单个日期
+                print(f"\n  📅 已选择日期: {start_date.strftime('%Y-%m-%d')}")
+                system.crawl_single_date(start_date, auto_select=args.all)
+    finally:
+        # 确保关闭浏览器
+        system.crawler.close()
+        logging.info("程序结束，浏览器已关闭")
 
 
 if __name__ == '__main__':
