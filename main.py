@@ -30,6 +30,7 @@ from modules.notion import NotionAPI
 from modules.exporter import DataExporter
 from modules.series_detector import SeriesDetector
 from modules.date_selector import mark_date_synced
+from modules.checkpoint import Checkpoint, list_pending_checkpoints
 
 
 class PeopleDailyMaterialSystem:
@@ -138,13 +139,19 @@ class PeopleDailyMaterialSystem:
         
         print(f"\n✅ 已选择 {len(selected_articles)} 篇文章，开始下载...\n")
         
-        # ====== 第三步：下载选中的文章 ======
+        # ====== 第三步：下载选中的文章（支持断点续传） ======
         from modules.markdown_writer import MarkdownWriter
         md_writer = MarkdownWriter()
         md_saved_count = 0
         
+        # 初始化断点续传
+        checkpoint = Checkpoint(date)
+        if checkpoint.has_checkpoint():
+            print(f"  🔄 发现未完成的任务（{checkpoint.get_summary()}），将自动跳过已完成文章")
+        
         existing_articles = self.notion_api.get_existing_articles()
         processed_articles = []
+        skipped_count = 0
         
         for i, article_info in enumerate(selected_articles, 1):
             # 构建完整URL
@@ -158,18 +165,26 @@ class PeopleDailyMaterialSystem:
                 base_url = source_url.rsplit('/', 1)[0]
                 article_url = f"{base_url}/{article_info['href']}"
             
+            # 断点续传：跳过已完成的文章
+            if checkpoint.is_completed(article_url):
+                skipped_count += 1
+                print(f"  [{i}/{len(selected_articles)}] ⏭️ 已完成，跳过: {article_info['title'][:40]}")
+                continue
+            
             print(f"  [{i}/{len(selected_articles)}] 正在下载: {article_info['title'][:40]}...")
             
             # 抓取文章页
             article_html = self.crawler.crawl_article(article_url)
             if not article_html:
                 logging.error(f"无法获取文章: {article_url}")
+                checkpoint.mark_failed(article_url, article_info.get('title', ''), '无法获取页面')
                 continue
             
             # 解析文章
             article = self.parser.parse_article(article_html, article_url)
             if not article:
                 logging.error(f"无法解析文章: {article_url}")
+                checkpoint.mark_failed(article_url, article_info.get('title', ''), '解析失败')
                 continue
             
             # 处理文章
@@ -207,6 +222,9 @@ class PeopleDailyMaterialSystem:
                 md_saved_count += 1
             
             processed_articles.append(article)
+            
+            # 断点续传：标记该文章已完成
+            checkpoint.mark_completed(article_url, article.get('title', ''), date.strftime('%Y-%m-%d'))
             print(f"         ✅ 完成")
         
         # 保存系列注册表
@@ -222,8 +240,13 @@ class PeopleDailyMaterialSystem:
         if processed_articles:
             mark_date_synced(date.strftime('%Y-%m-%d'))
         
+        # 任务完成，清理检查点
+        checkpoint.finish()
+        
         print(f"\n{'='*60}")
         print(f"  🎉 下载完成！共处理 {len(processed_articles)} 篇文章")
+        if skipped_count > 0:
+            print(f"  ⏭️ 断点续传跳过 {skipped_count} 篇已完成文章")
         print(f"  📁 Markdown 已保存 {md_saved_count} 篇到 data/vault/")
         print(f"{'='*60}\n")
         
@@ -333,14 +356,20 @@ class PeopleDailyMaterialSystem:
         
         print(f"\n✅ 已选择 {len(selected_articles)} 篇文章，开始下载...\n")
 
-        # ====== 第三步：批量下载选中的文章 ======
+        # ====== 第三步：批量下载选中的文章（支持断点续传） ======
         from modules.markdown_writer import MarkdownWriter
         md_writer = MarkdownWriter()
         md_saved_count = 0
 
+        # 初始化断点续传
+        checkpoint = Checkpoint(start_date, end_date)
+        if checkpoint.has_checkpoint():
+            print(f"  🔄 发现未完成的任务（{checkpoint.get_summary()}），将自动跳过已完成文章")
+
         # 先下载所有文章，不立即同步到 Notion
         processed_articles = []
         download_failed = []
+        skipped_count = 0
 
         for i, article_info in enumerate(selected_articles, 1):
             date = article_info['_date']  # 使用文章所属的日期
@@ -356,6 +385,12 @@ class PeopleDailyMaterialSystem:
                 base_url = source_url.rsplit('/', 1)[0]
                 article_url = f"{base_url}/{article_info['href']}"
 
+            # 断点续传：跳过已完成的文章
+            if checkpoint.is_completed(article_url):
+                skipped_count += 1
+                print(f"  [{i}/{len(selected_articles)}] ⏭️ 已完成，跳过: {article_info['title'][:40]}")
+                continue
+
             print(f"  [{i}/{len(selected_articles)}] ({date.strftime('%m-%d')}) 正在下载: {article_info['title'][:40]}...")
 
             # 抓取文章页
@@ -363,6 +398,7 @@ class PeopleDailyMaterialSystem:
             if not article_html:
                 logging.error(f"无法获取文章: {article_url}")
                 download_failed.append(article_info['title'])
+                checkpoint.mark_failed(article_url, article_info.get('title', ''), '无法获取页面')
                 continue
 
             # 解析文章
@@ -370,6 +406,7 @@ class PeopleDailyMaterialSystem:
             if not article:
                 logging.error(f"无法解析文章: {article_url}")
                 download_failed.append(article_info['title'])
+                checkpoint.mark_failed(article_url, article_info.get('title', ''), '解析失败')
                 continue
 
             # 处理文章
@@ -395,6 +432,9 @@ class PeopleDailyMaterialSystem:
                 md_saved_count += 1
 
             processed_articles.append(article)
+            
+            # 断点续传：标记该文章已完成
+            checkpoint.mark_completed(article_url, article.get('title', ''), date.strftime('%Y-%m-%d'))
             print(f"         ✅ 完成")
 
         # 保存系列注册表
@@ -411,6 +451,8 @@ class PeopleDailyMaterialSystem:
 
         print(f"\n{'='*60}")
         print(f"  📥 下载完成！共下载 {len(processed_articles)} 篇文章")
+        if skipped_count > 0:
+            print(f"  ⏭️ 断点续传跳过 {skipped_count} 篇已完成文章")
         print(f"  📁 Markdown 已保存 {md_saved_count} 篇到 data/vault/")
         if download_failed:
             print(f"  ⚠️ 下载失败 {len(download_failed)} 篇")
@@ -468,6 +510,9 @@ class PeopleDailyMaterialSystem:
             print(f"     新增/更新: {sync_count} 篇")
             print(f"     跳过: {skip_count} 篇")
             print(f"{'='*60}\n")
+        
+        # 任务完成，清理检查点
+        checkpoint.finish()
         
         return processed_articles
     
