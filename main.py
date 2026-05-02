@@ -16,6 +16,8 @@ import sys
 import json
 import logging
 import argparse
+import subprocess
+import platform
 from datetime import datetime, timedelta
 from typing import List, Dict
 
@@ -526,6 +528,40 @@ class PeopleDailyMaterialSystem:
 from typing import Optional
 
 
+class SleepPreventer:
+    """macOS 防休眠上下文管理器，使用 caffeinate 阻止系统息屏/休眠"""
+    
+    def __init__(self):
+        self.process = None
+    
+    def __enter__(self):
+        if platform.system() == 'Darwin':
+            try:
+                # -di: 阻止系统空闲休眠(-i)和显示器休眠(-d)
+                self.process = subprocess.Popen(
+                    ['caffeinate', '-di'],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL
+                )
+                logging.info("已启用 caffeinate 防休眠（系统将保持唤醒直到爬虫结束）")
+            except Exception as e:
+                logging.warning(f"启动 caffeinate 失败: {e}（程序仍会继续运行）")
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if self.process:
+            try:
+                self.process.terminate()
+                self.process.wait(timeout=5)
+                logging.info("已关闭 caffeinate 防休眠")
+            except Exception:
+                try:
+                    self.process.kill()
+                except Exception:
+                    pass
+        return False
+
+
 def main():
     """主函数"""
     # 解析命令行参数
@@ -545,47 +581,48 @@ def main():
     system = PeopleDailyMaterialSystem()
     
     try:
-        if args.date_range:
-            # 命令行直接指定了日期范围
-            try:
-                start_date = datetime.strptime(args.date_range[0], '%Y-%m-%d')
-                end_date = datetime.strptime(args.date_range[1], '%Y-%m-%d')
-                system.crawl_date_range(start_date, end_date, auto_select=args.all)
-            except ValueError:
-                logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
-                sys.exit(1)
-        elif args.date:
-            # 命令行直接指定了单个日期
-            try:
-                date = datetime.strptime(args.date, '%Y-%m-%d')
-                system.crawl_single_date(date, auto_select=args.all)
-            except ValueError:
-                logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
-                sys.exit(1)
-        else:
-            # ====== 默认模式：弹出日期选择界面 ======
-            from modules.date_selector import DateSelector
-            
-            print(f"\n{'='*60}")
-            print(f"  📰 人民日报素材系统")
-            print(f"{'='*60}")
-            print(f"  正在打开日期选择界面...\n")
-            
-            date_selector = DateSelector()
-            start_date, end_date = date_selector.show_and_wait()
-            
-            if not start_date:
-                print("\n未选择任何日期，退出。")
-                sys.exit(0)
-            
-            if end_date and end_date != start_date:
-                # 用户选择了日期范围
-                print(f"\n  📅 已选择日期范围: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
-                system.crawl_date_range(start_date, end_date, auto_select=args.all)
+        with SleepPreventer():
+            if args.date_range:
+                # 命令行直接指定了日期范围
+                try:
+                    start_date = datetime.strptime(args.date_range[0], '%Y-%m-%d')
+                    end_date = datetime.strptime(args.date_range[1], '%Y-%m-%d')
+                    system.crawl_date_range(start_date, end_date, auto_select=args.all)
+                except ValueError:
+                    logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
+                    sys.exit(1)
+            elif args.date:
+                # 命令行直接指定了单个日期
+                try:
+                    date = datetime.strptime(args.date, '%Y-%m-%d')
+                    system.crawl_single_date(date, auto_select=args.all)
+                except ValueError:
+                    logging.error("日期格式错误，请使用 YYYY-MM-DD 格式")
+                    sys.exit(1)
             else:
-                # 用户选择了单个日期
-                print(f"\n  📅 已选择日期: {start_date.strftime('%Y-%m-%d')}")
-                system.crawl_single_date(start_date, auto_select=args.all)
+                # ====== 默认模式：弹出日期选择界面 ======
+                from modules.date_selector import DateSelector
+                
+                print(f"\n{'='*60}")
+                print(f"  📰 人民日报素材系统")
+                print(f"{'='*60}")
+                print(f"  正在打开日期选择界面...\n")
+                
+                date_selector = DateSelector()
+                start_date, end_date = date_selector.show_and_wait()
+                
+                if not start_date:
+                    print("\n未选择任何日期，退出。")
+                    sys.exit(0)
+                
+                if end_date and end_date != start_date:
+                    # 用户选择了日期范围
+                    print(f"\n  📅 已选择日期范围: {start_date.strftime('%Y-%m-%d')} ~ {end_date.strftime('%Y-%m-%d')}")
+                    system.crawl_date_range(start_date, end_date, auto_select=args.all)
+                else:
+                    # 用户选择了单个日期
+                    print(f"\n  📅 已选择日期: {start_date.strftime('%Y-%m-%d')}")
+                    system.crawl_single_date(start_date, auto_select=args.all)
     finally:
         # 确保关闭浏览器
         system.crawler.close()

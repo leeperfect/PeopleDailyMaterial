@@ -102,7 +102,7 @@ class RequestsFetcher:
 
 
 class SeleniumBrowser:
-    """Selenium 浏览器管理类（延迟初始化，仅在需要时启动）"""
+    """Selenium 浏览器管理类（延迟初始化，仅在需要时启动，支持自动恢复）"""
     
     def __init__(self, config: Config):
         self.config = config
@@ -110,6 +110,29 @@ class SeleniumBrowser:
         self.max_retries = config.get('crawler.max_retries', 5)
         self.request_count = 0
         self.driver = None  # 延迟初始化
+    
+    def _is_alive(self) -> bool:
+        """检查浏览器连接是否存活（防止息屏后进程僵死）"""
+        if self.driver is None:
+            return False
+        try:
+            _ = self.driver.title
+            return True
+        except Exception:
+            logging.warning("检测到浏览器连接已断开")
+            return False
+    
+    def _restart_browser(self):
+        """强制关闭并重新启动浏览器"""
+        logging.info("正在重启浏览器...")
+        if self.driver:
+            try:
+                self.driver.quit()
+            except Exception:
+                pass
+        self.driver = None
+        self._ensure_browser()
+        logging.info("浏览器重启完成")
     
     def _ensure_browser(self):
         """确保浏览器已启动（延迟初始化）"""
@@ -169,8 +192,11 @@ class SeleniumBrowser:
             logging.warning(f"浏览器预热失败: {e}")
     
     def get_page(self, url: str) -> Optional[str]:
-        """获取页面内容（Selenium）"""
+        """获取页面内容（Selenium），含自动恢复机制"""
         self._ensure_browser()
+        # 健康检查：防止息屏/休眠后浏览器僵死
+        if not self._is_alive():
+            self._restart_browser()
         retries = 0
         
         while retries < self.max_retries:
@@ -209,6 +235,10 @@ class SeleniumBrowser:
                 extra_delay = retries * 15
                 logging.warning(f"请求失败，等待 {extra_delay}s 后第 {retries} 次重试: {e}")
                 time.sleep(extra_delay)
+                
+                # 如果浏览器连接已断，尝试重启
+                if not self._is_alive():
+                    self._restart_browser()
                 
                 if retries >= self.max_retries:
                     logging.error(f"请求 {url} 失败，已达到最大重试次数")
