@@ -12,7 +12,5 @@ matplotlib==3.8.2
 seaborn==0.13.1
 jieba==0.42.1
 cryptography==41.0.3
-# Playwright 替代 Selenium（更快更轻量）
+# Playwright stealth 模式用于文章页反爬
 playwright>=1.40.0
-# aiohttp 用于异步并发抓取目录页
-aiohttp>=3.9.0
