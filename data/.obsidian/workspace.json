@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "f19c9fbb41df3fc9",
+    "type": "split",
+    "children": [
+      {
+        "id": "bc3bd2b37a571439",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1c97492f825294bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "vault/2026/01/2026-01-06/19-党建/四川省达州市纪委监委——.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "四川省达州市纪委监委——"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "519d70d5eff208d8",
+    "type": "split",
+    "children": [
+      {
+        "id": "b51e96586a582a89",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a133bb5020bca6b6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "1f76813192dfae9a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "b8ecf47973bfd389",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7b5f3c0071b2f086",
+    "type": "split",
+    "children": [
+      {
+        "id": "188b20e617bc6820",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be20f425c2c8fc4b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "vault/2026/01/2026-01-06/19-党建/四川省达州市纪委监委——.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "四川省达州市纪委监委—— 的反向链接列表"
+            }
+          },
+          {
+            "id": "fc189439b71c57d1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "vault/2026/01/2026-01-06/19-党建/四川省达州市纪委监委——.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "四川省达州市纪委监委—— 的出链列表"
+            }
+          },
+          {
+            "id": "48eff970ba781957",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "f09057a5992ad15f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "b36c2779eef83371",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "vault/2026/01/2026-01-06/19-党建/四川省达州市纪委监委——.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "四川省达州市纪委监委—— 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "a133bb5020bca6b6",
+  "lastOpenFiles": [
+    "vault/2026/03/2026-03-19/09-理论/做好新时代信访工作的根本遵循（深入学习贯彻习近平新时代中国特色社会主义思想·习近平法治思想学习贯彻众论）.md",
+    "vault/2026/03/2026-03-19/09-理论",
+    "vault/2026/03/2026-03-19/07-要闻/田野上的工坊，富了乡亲美了村庄（大数据观察）.md",
+    "vault/2026/03/2026-03-19/07-要闻",
+    "vault/2026/03/2026-03-19/06-要闻/2026年“E法同行”全国网络法治主题宣传活动启动.md",
+    "vault/2026/03/2026-03-19/06-要闻",
+    "vault/2026/03/2026-03-19/05-评论/善以新声润旧调（微观）.md",
+    "vault/2026/03/2026-03-19/05-评论/读懂“中国好品”.md",
+    "vault/2026/03/2026-03-19/05-评论/汩汩活水海上来（现场评论）.md",
+    "vault/2026/03/2026-03-19/05-评论/特产里的发展门道（大家谈）.md",
+    "vault/2026/03/2026-03-19/05-评论/向新而行，以远见超越未见（评论员观察）.md",
+    "vault/2026/03/2026-03-19/05-评论",
+    "vault/2026/03/2026-03-19/04-要闻/深学细照笃行 校准政绩坐标（树立和践行正确政绩观）.md",
+    "vault/2026/03/2026-03-19/04-要闻/​心底无私天地宽（创造经得起实践、人民、历史检验的实绩）.md",
+    "vault/2026/03/2026-03-19/04-要闻/“瞻前顾后”与“空前绝后”（人民论坛）.md",
+    "vault/2026/03/2026-03-19/04-要闻/“树胡子”礼赞.md",
+    "vault/2026/03/2026-03-19/04-要闻",
+    "vault/2026/03/2026-03-19/03-要闻/中国的“冰雪经济”给世界送来“滚烫机遇”（和音）.md",
+    "vault/2026/03/2026-03-19/03-要闻/走出一条文化根脉与现代生活共生的道路（两会·读懂中国）.md",
+    "vault/2026/03/2026-03-19/03-要闻",
+    "vault/2026/03/2026-03-19/02-要闻/推动科技创新与产业创新深度融合（权威发布）.md",
+    "vault/2026/03/2026-03-19/02-要闻/为美丽中国建设筑牢法治基石（权威访谈）.md",
+    "vault/2026/03/2026-03-19/02-要闻/保持土地承包关系稳定并长久不变.md",
+    "vault/2026/03/2026-03-19/02-要闻",
+    "vault/2026/03/2026-03-19/01-要闻/深学细照笃行 校准政绩坐标（树立和践行正确政绩观）.md",
+    "vault/2026/03/2026-03-19/01-要闻/​心底无私天地宽（创造经得起实践、人民、历史检验的实绩）.md",
+    "vault/2026/03/2026-03-19/01-要闻/促进高校毕业生高质量充分就业 更好服务大局、服务民生、服务发展.md",
+    "vault/2026/03/2026-03-19/01-要闻",
+    "vault/2026/03/2026-03-19",
+    "vault/2026/03",
+    "vault/2026/01/2026-01-26/16-广告/重庆市两江新区 扛起新使命 奋进新征程 加快打造现代化新重庆建设重要增长极和动力源.md",
+    "vault/2026/01/2026-01-26/13-生态/一张“碳票”换来生态红利（美丽中国·拓展生态产品价值实现渠道）.md",
+    "vault/2026/01/2026-01-26/11-社会/“多跑一步”，诊疗服务显温度（民生一线）.md",
+    "vault/2026/01/2026-01-26/10-政治/福建福州推出“同心聚福”全年公益活动.md",
+    "vault/2026/01/2026-01-26/10-政治/管好用好专项债 提高群众获得感.md",
+    "vault/2026/01/2026-01-26/10-政治/让群众议事议得好、有成效（干部感言）.md"
+  ]
+}
