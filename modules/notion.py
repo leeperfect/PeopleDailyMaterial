@@ -25,15 +25,26 @@ class NotionAPI:
             sys.exit(1)
         
         self.notion = Client(auth=self.token)
+        self._data_source_id = None
 
     def _rich_text_plain(self, properties: Dict, *names: str) -> str:
         """读取 rich_text 属性，兼容英文和中文字段名。"""
         for name in names:
-            prop = properties.get(name, {})
+            prop = properties.get(name) or {}
             rich_text = prop.get('rich_text', [])
             if rich_text:
                 return ''.join(part.get('plain_text', '') for part in rich_text)
         return ''
+
+    def _select_name(self, properties: Dict, name: str) -> str:
+        prop = properties.get(name) or {}
+        selected = prop.get('select') or {}
+        return selected.get('name', '')
+
+    def _date_start(self, properties: Dict, name: str) -> str:
+        prop = properties.get(name) or {}
+        date_value = prop.get('date') or {}
+        return date_value.get('start', '')
 
     def _create_page_with_fallback(self, properties: Dict):
         """创建页面；如果 Notion 数据库还没加新字段，自动降级。"""
@@ -74,6 +85,20 @@ class NotionAPI:
                     properties.pop('关键词', None)
                     continue
                 raise
+
+    def _get_data_source_id(self) -> Optional[str]:
+        """新版 Notion API 中，数据库查询需要 data_source_id。"""
+        if self._data_source_id:
+            return self._data_source_id
+        try:
+            database = self.notion.databases.retrieve(database_id=self.database_id)
+            data_sources = database.get('data_sources') or []
+            if data_sources:
+                self._data_source_id = data_sources[0].get('id')
+            return self._data_source_id
+        except Exception as e:
+            logging.warning(f"获取 Notion data_source_id 失败，将回退 search API: {e}")
+            return None
     
     def get_existing_articles(self) -> List[Dict]:
         """获取已存在的文章"""
@@ -81,32 +106,44 @@ class NotionAPI:
             existing_articles = []
             has_more = True
             start_cursor = None
+            data_source_id = self._get_data_source_id()
             
             while has_more:
-                # 使用search API查询数据库中的内容
-                response = self.notion.search(
-                    filter={
-                        "property": "object",
-                        "value": "page"
-                    },
-                    start_cursor=start_cursor
-                )
+                if data_source_id:
+                    response = self.notion.data_sources.query(
+                        data_source_id=data_source_id,
+                        start_cursor=start_cursor,
+                        page_size=100
+                    )
+                else:
+                    response = self.notion.search(
+                        filter={
+                            "property": "object",
+                            "value": "page"
+                        },
+                        start_cursor=start_cursor
+                    )
                 
                 for page in response.get('results', []):
-                    # 检查页面是否属于目标数据库
-                    parent = page.get('parent', {})
-                    if parent.get('type') == 'database_id' and parent.get('database_id') == self.database_id:
-                        properties = page.get('properties', {})
-                        article = {
-                            'id': page.get('id'),
-                            'article_id': self._rich_text_plain(properties, 'Article ID', '文章ID'),
-                            'title': properties.get('标题', {}).get('title', [{}])[0].get('plain_text', ''),
-                            'url': properties.get('URL', {}).get('url', ''),
-                            'plate': properties.get('版面名称', {}).get('select', {}).get('name', ''),
-                            'date': properties.get('发布日期', {}).get('date', {}).get('start', ''),
-                            'content': ''  # 内容需要单独获取
-                        }
-                        existing_articles.append(article)
+                    if not data_source_id:
+                        parent = page.get('parent', {})
+                        parent_id = (parent.get('database_id') or '').replace('-', '')
+                        target_id = self.database_id.replace('-', '')
+                        if parent.get('type') == 'database_id' and parent_id != target_id:
+                            continue
+                    properties = page.get('properties', {})
+                    title_items = properties.get('标题', {}).get('title', [])
+                    title = ''.join(item.get('plain_text', '') for item in title_items)
+                    article = {
+                        'id': page.get('id'),
+                        'article_id': self._rich_text_plain(properties, 'Article ID', '文章ID'),
+                        'title': title,
+                        'url': (properties.get('URL') or {}).get('url', ''),
+                        'plate': self._select_name(properties, '版面名称'),
+                        'date': self._date_start(properties, '发布日期'),
+                        'content': ''  # 内容需要单独获取
+                    }
+                    existing_articles.append(article)
                 
                 has_more = response.get('has_more', False)
                 start_cursor = response.get('next_cursor')
@@ -151,11 +188,11 @@ class NotionAPI:
                     ]
                 },
                 'URL': {
-                    'url': article.get('url', '')
+                    'url': article.get('url') or article.get('source_url') or ''
                 },
                 '版面名称': {
                     'select': {
-                        'name': article.get('plate') or '其他'
+                        'name': article.get('plate') or article.get('section_name') or '其他'
                     }
                 },
                 '发布日期': {
@@ -276,11 +313,11 @@ class NotionAPI:
                     ]
                 },
                 'URL': {
-                    'url': article.get('url', '')
+                    'url': article.get('url') or article.get('source_url') or ''
                 },
                 '版面名称': {
                     'select': {
-                        'name': article.get('plate') or '其他'
+                        'name': article.get('plate') or article.get('section_name') or '其他'
                     }
                 },
                 '分类': {
@@ -292,6 +329,14 @@ class NotionAPI:
                     'multi_select': [{'name': keyword} for keyword in article.get('keywords', [])[:5]]
                 }
             }
+
+            date_str = article.get('date', '')
+            if date_str:
+                properties['发布日期'] = {
+                    'date': {
+                        'start': date_str
+                    }
+                }
 
             article_id = article.get('article_id')
             if article_id:
@@ -364,4 +409,84 @@ class NotionAPI:
             return False
         except Exception as e:
             logging.error(f"更新Notion页面时发生未知错误: {str(e)}")
+            return False
+
+    def build_page_properties(self, article: Dict, date: Optional[datetime] = None) -> Dict:
+        """构建 Notion 页面属性。"""
+        title = article.get('title', '').strip() or "无标题"
+        url = article.get('url') or article.get('source_url') or ''
+        plate = article.get('plate') or article.get('section_name') or '其他'
+
+        properties = {
+            '标题': {
+                'title': [
+                    {
+                        'text': {
+                            'content': title
+                        }
+                    }
+                ]
+            },
+            'URL': {
+                'url': url
+            },
+            '版面名称': {
+                'select': {
+                    'name': plate
+                }
+            },
+            '分类': {
+                'select': {
+                    'name': article.get('category', '其他') or '其他'
+                }
+            },
+            '关键词': {
+                'multi_select': [{'name': keyword} for keyword in article.get('keywords', [])[:5]]
+            }
+        }
+
+        date_str = article.get('date', '')
+        if date:
+            date_str = date.strftime('%Y-%m-%d')
+        if date_str:
+            properties['发布日期'] = {
+                'date': {
+                    'start': date_str
+                }
+            }
+
+        article_id = article.get('article_id')
+        if article_id:
+            properties['Article ID'] = {
+                'rich_text': [{'text': {'content': article_id}}]
+            }
+
+        series_name = article.get('series_name')
+        if series_name:
+            properties['系列'] = {
+                'rich_text': [{'text': {'content': series_name}}]
+            }
+            series_part = article.get('series_part')
+            if series_part is not None:
+                properties['系列序号'] = {
+                    'number': series_part
+                }
+
+        return properties
+
+    def update_page_metadata(self, page_id: str, article: Dict) -> bool:
+        """只更新 Notion 页面属性，不改正文。适合批量回填 Article ID。"""
+        try:
+            properties = self.build_page_properties(article)
+            self._update_page_with_fallback(page_id, properties)
+            logging.info(f"成功更新Notion页面属性: {article.get('title', '')}")
+            return True
+        except APIResponseError as e:
+            logging.error(f"更新Notion页面属性失败: {str(e)}")
+            return False
+        except httpx.RequestError as e:
+            logging.error(f"Notion API网络连接失败: {str(e)}")
+            return False
+        except Exception as e:
+            logging.error(f"更新Notion页面属性时发生未知错误: {str(e)}")
             return False
