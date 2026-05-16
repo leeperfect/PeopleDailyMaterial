@@ -25,6 +25,55 @@ class NotionAPI:
             sys.exit(1)
         
         self.notion = Client(auth=self.token)
+
+    def _rich_text_plain(self, properties: Dict, *names: str) -> str:
+        """读取 rich_text 属性，兼容英文和中文字段名。"""
+        for name in names:
+            prop = properties.get(name, {})
+            rich_text = prop.get('rich_text', [])
+            if rich_text:
+                return ''.join(part.get('plain_text', '') for part in rich_text)
+        return ''
+
+    def _create_page_with_fallback(self, properties: Dict):
+        """创建页面；如果 Notion 数据库还没加新字段，自动降级。"""
+        while True:
+            try:
+                return self.notion.pages.create(
+                    parent={"database_id": self.database_id},
+                    properties=properties
+                )
+            except APIResponseError as e:
+                message = str(e)
+                if 'Article ID' in message and 'Article ID' in properties:
+                    logging.warning("Notion 数据库缺少 Article ID 字段，本次同步将降级为 URL/标题去重")
+                    properties.pop('Article ID', None)
+                    continue
+                if 'schema has exceeded the maximum size' in message and '关键词' in properties:
+                    logging.warning("Notion schema 过大，去掉关键词后重试")
+                    properties.pop('关键词', None)
+                    continue
+                raise
+
+    def _update_page_with_fallback(self, page_id: str, properties: Dict):
+        """更新页面；如果 Notion 数据库还没加新字段，自动降级。"""
+        while True:
+            try:
+                return self.notion.pages.update(
+                    page_id=page_id,
+                    properties=properties
+                )
+            except APIResponseError as e:
+                message = str(e)
+                if 'Article ID' in message and 'Article ID' in properties:
+                    logging.warning("Notion 数据库缺少 Article ID 字段，本次更新将跳过该字段")
+                    properties.pop('Article ID', None)
+                    continue
+                if 'schema has exceeded the maximum size' in message and '关键词' in properties:
+                    logging.warning("Notion schema 过大，去掉关键词后重试")
+                    properties.pop('关键词', None)
+                    continue
+                raise
     
     def get_existing_articles(self) -> List[Dict]:
         """获取已存在的文章"""
@@ -50,6 +99,7 @@ class NotionAPI:
                         properties = page.get('properties', {})
                         article = {
                             'id': page.get('id'),
+                            'article_id': self._rich_text_plain(properties, 'Article ID', '文章ID'),
                             'title': properties.get('标题', {}).get('title', [{}])[0].get('plain_text', ''),
                             'url': properties.get('URL', {}).get('url', ''),
                             'plate': properties.get('版面名称', {}).get('select', {}).get('name', ''),
@@ -122,6 +172,12 @@ class NotionAPI:
                     'multi_select': [{'name': keyword} for keyword in article.get('keywords', [])[:5]]
                 }
             }
+
+            article_id = article.get('article_id')
+            if article_id:
+                properties['Article ID'] = {
+                    'rich_text': [{'text': {'content': article_id}}]
+                }
             
             # 系列信息（仅在有系列时添加）
             series_name = article.get('series_name')
@@ -136,22 +192,7 @@ class NotionAPI:
                     }
             
             # 创建页面（带 schema 大小降级重试）
-            page = None
-            try:
-                page = self.notion.pages.create(
-                    parent={"database_id": self.database_id},
-                    properties=properties
-                )
-            except APIResponseError as e:
-                if 'schema has exceeded the maximum size' in str(e) and '关键词' in properties:
-                    logging.warning(f"Notion schema 过大，去掉关键词后重试: {title}")
-                    properties.pop('关键词', None)
-                    page = self.notion.pages.create(
-                        parent={"database_id": self.database_id},
-                        properties=properties
-                    )
-                else:
-                    raise
+            page = self._create_page_with_fallback(properties)
             
             # 添加内容
             if content:
@@ -251,12 +292,15 @@ class NotionAPI:
                     'multi_select': [{'name': keyword} for keyword in article.get('keywords', [])[:5]]
                 }
             }
+
+            article_id = article.get('article_id')
+            if article_id:
+                properties['Article ID'] = {
+                    'rich_text': [{'text': {'content': article_id}}]
+                }
             
             # 更新页面
-            self.notion.pages.update(
-                page_id=page_id,
-                properties=properties
-            )
+            self._update_page_with_fallback(page_id, properties)
             
             # 清除现有内容
             blocks = self.notion.blocks.children.list(block_id=page_id)
@@ -311,9 +355,13 @@ class NotionAPI:
                 )
             
             logging.info(f"成功更新Notion页面: {title}")
+            return True
         except APIResponseError as e:
             logging.error(f"更新Notion页面失败: {str(e)}")
+            return False
         except httpx.RequestError as e:
             logging.error(f"Notion API网络连接失败: {str(e)}")
+            return False
         except Exception as e:
             logging.error(f"更新Notion页面时发生未知错误: {str(e)}")
+            return False

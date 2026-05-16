@@ -15,6 +15,14 @@ config.json
 # 运行时临时数据
 data/checkpoints/
 
+# 本地生成的核心库与索引（可由脚本重建）
+data/core/*.sqlite
+data/core/*.sqlite-*
+data/core/*.jsonl
+data/core/*.json
+data/index/fts/
+data/index/vector/
+
 # 日志文件
 *.log
 

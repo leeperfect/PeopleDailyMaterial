@@ -31,6 +31,7 @@ from modules.exporter import DataExporter
 from modules.series_detector import SeriesDetector
 from modules.date_selector import mark_date_synced
 from modules.checkpoint import Checkpoint, list_pending_checkpoints
+from modules.article_database import ArticleStore
 
 
 class PeopleDailyMaterialSystem:
@@ -46,6 +47,7 @@ class PeopleDailyMaterialSystem:
         ensure_directory('data/raw')
         ensure_directory('data/processed')
         ensure_directory('data/exports')
+        ensure_directory('data/core')
         
         # 初始化模块
         self.crawler = PeopleDailyCrawler(self.config)
@@ -54,6 +56,7 @@ class PeopleDailyMaterialSystem:
         self.notion_api = NotionAPI(self.config)
         self.exporter = DataExporter(self.config.get('export', {}))
         self.series_detector = SeriesDetector()
+        self.article_store = ArticleStore()
     
     def crawl_single_date(self, date: datetime, auto_select: bool = False):
         """抓取单个日期的文章（交互式：浏览器界面选择下载）"""
@@ -219,7 +222,10 @@ class PeopleDailyMaterialSystem:
                 section_name=article_info.get('section_name', '')
             )
             if md_path:
+                article['markdown_path'] = md_path
                 md_saved_count += 1
+            article['section_no'] = article_info.get('section_id', '')
+            article['section_name'] = article_info.get('section_name', '')
             
             processed_articles.append(article)
             
@@ -429,7 +435,10 @@ class PeopleDailyMaterialSystem:
                 section_name=article_info.get('section_name', '')
             )
             if md_path:
+                article['markdown_path'] = md_path
                 md_saved_count += 1
+            article['section_no'] = article_info.get('section_id', '')
+            article['section_name'] = article_info.get('section_name', '')
 
             processed_articles.append(article)
             
@@ -539,6 +548,12 @@ class PeopleDailyMaterialSystem:
                 }
                 processed_articles.append(processed_article)
             safe_json_dump(processed_articles, processed_file)
+
+            # 同步写入新的 SQLite 核心库。旧 JSON 继续保留，保证兼容。
+            try:
+                self.article_store.upsert_articles(articles)
+            except Exception as db_error:
+                logging.error(f"写入核心文章库失败: {str(db_error)}")
         except Exception as e:
             logging.error(f"保存文章到本地失败: {str(e)}")
     
@@ -671,6 +686,7 @@ def main():
     finally:
         # 确保关闭浏览器
         system.crawler.close()
+        system.article_store.close()
         logging.info("程序结束，浏览器已关闭")
 
 

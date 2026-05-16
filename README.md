@@ -134,6 +134,25 @@ python main.py --date 2024-01-15
 python main.py --date-range 2024-01-01 2024-01-07
 ```
 
+## 本地核心数据库
+
+项目已增加 SQLite 核心库，用来作为 AI 检索、Notion 同步和后续重分类的稳定事实索引层。旧的 `data/raw` 和 `data/vault` 仍然保留，避免破坏现有流程。
+
+常用命令：
+
+```bash
+# 重建核心库
+python3 scripts/rebuild_article_database.py
+
+# 查询文章
+python3 scripts/query_articles.py --search 基层治理
+
+# 从核心库同步到 Notion
+python3 scripts/sync_to_notion.py 2026-05-16
+```
+
+详细说明见 [docs/database.md](docs/database.md)。
+
 ## 模块说明
 
 ### 1. 爬虫模块 (`modules/crawler.py`)
