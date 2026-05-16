@@ -135,11 +135,23 @@ class NotionAPI:
                         'number': series_part
                     }
             
-            # 创建页面
-            page = self.notion.pages.create(
-                parent={"database_id": self.database_id},
-                properties=properties
-            )
+            # 创建页面（带 schema 大小降级重试）
+            page = None
+            try:
+                page = self.notion.pages.create(
+                    parent={"database_id": self.database_id},
+                    properties=properties
+                )
+            except APIResponseError as e:
+                if 'schema has exceeded the maximum size' in str(e) and '关键词' in properties:
+                    logging.warning(f"Notion schema 过大，去掉关键词后重试: {title}")
+                    properties.pop('关键词', None)
+                    page = self.notion.pages.create(
+                        parent={"database_id": self.database_id},
+                        properties=properties
+                    )
+                else:
+                    raise
             
             # 添加内容
             if content:

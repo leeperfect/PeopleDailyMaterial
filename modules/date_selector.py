@@ -52,17 +52,47 @@ def mark_date_synced(date_str: str):
 
 
 def get_downloaded_dates() -> Set[str]:
-    """检查 data/raw/ 目录中已有本地下载文件的日期"""
-    raw_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'raw')
+    """检查已有本地下载文件的日期（扫描 data/raw/ + data/vault/ + data/exports/）"""
+    import re as _re
+    base_dir = os.path.dirname(os.path.dirname(__file__))
     downloaded = set()
+
+    # 1. 从 data/raw/ 目录扫描 (articles_YYYYMMDD.json)
+    raw_dir = os.path.join(base_dir, 'data', 'raw')
     if os.path.exists(raw_dir):
         for fname in os.listdir(raw_dir):
-            # articles_20260101.json -> 2026-01-01
             if fname.startswith('articles_') and fname.endswith('.json'):
                 date_part = fname[9:17]  # YYYYMMDD
                 if len(date_part) == 8 and date_part.isdigit():
                     formatted = f"{date_part[:4]}-{date_part[4:6]}-{date_part[6:8]}"
                     downloaded.add(formatted)
+
+    # 2. 从 data/vault/ 目录扫描 (YYYY-MM-DD 文件夹且含 .md 文件)
+    vault_dir = os.path.join(base_dir, 'data', 'vault')
+    if os.path.exists(vault_dir):
+        for root, dirs, files in os.walk(vault_dir):
+            for d in dirs:
+                if _re.match(r'^\d{4}-\d{2}-\d{2}$', d):
+                    date_path = os.path.join(root, d)
+                    # 检查该日期文件夹下是否有 .md 文件
+                    has_md = any(
+                        f.endswith('.md')
+                        for _, _, fnames in os.walk(date_path)
+                        for f in fnames
+                    )
+                    if has_md:
+                        downloaded.add(d)
+
+    # 3. 从 data/exports/ 目录扫描 (articles_YYYYMMDD.json)
+    exports_dir = os.path.join(base_dir, 'data', 'exports')
+    if os.path.exists(exports_dir):
+        for fname in os.listdir(exports_dir):
+            if fname.startswith('articles_') and fname.endswith('.json'):
+                date_part = fname[9:17]  # YYYYMMDD
+                if len(date_part) == 8 and date_part.isdigit():
+                    formatted = f"{date_part[:4]}-{date_part[4:6]}-{date_part[6:8]}"
+                    downloaded.add(formatted)
+
     return downloaded
 
 
