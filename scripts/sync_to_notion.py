@@ -14,7 +14,7 @@ import os
 import time
 from datetime import datetime
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from modules.utils import Config, setup_logger
 from modules.notion import NotionAPI
@@ -23,7 +23,8 @@ from modules.processor import DataProcessor
 def load_articles(date_str):
     """加载本地文章数据"""
     date_normalized = date_str.replace('-', '')  # 2026-01-03 -> 20260103
-    file_path = f"data/raw/articles_{date_normalized}.json"
+    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_path = os.path.join(PROJECT_ROOT, "data", "raw", f"articles_{date_normalized}.json")
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             return json.load(f)

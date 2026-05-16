@@ -13,7 +13,7 @@ import sys
 import json
 
 # 添加项目根目录到 path
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from modules.date_selector import load_synced_dates, save_synced_dates, get_downloaded_dates
 

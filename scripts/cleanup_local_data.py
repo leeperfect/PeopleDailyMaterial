@@ -208,20 +208,22 @@ def main():
     print(f"\n保留日期范围: {start_date.strftime('%Y-%m-%d')} 至 {end_date.strftime('%Y-%m-%d')}")
     print("\n开始清理...\n")
     
+    PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
     # 清理 raw 目录
-    cleanup_json_files('data/raw', start_date, end_date)
+    cleanup_json_files(os.path.join(PROJECT_ROOT, 'data', 'raw'), start_date, end_date)
     
     # 清理 processed 目录
-    cleanup_json_files('data/processed', start_date, end_date)
+    cleanup_json_files(os.path.join(PROJECT_ROOT, 'data', 'processed'), start_date, end_date)
     
     # 清理 vault 目录
-    cleanup_vault('data/vault', start_date, end_date)
+    cleanup_vault(os.path.join(PROJECT_ROOT, 'data', 'vault'), start_date, end_date)
     
     # 更新 sync_status.json
-    update_sync_status('data/sync_status.json', start_date, end_date)
+    update_sync_status(os.path.join(PROJECT_ROOT, 'data', 'sync_status.json'), start_date, end_date)
     
     # 清理 series_registry.json
-    cleanup_series_registry('data/series_registry.json', start_date, end_date)
+    cleanup_series_registry(os.path.join(PROJECT_ROOT, 'data', 'series_registry.json'), start_date, end_date)
     
     print(f"\n{'='*60}")
     print("  ✅ 清理完成！")

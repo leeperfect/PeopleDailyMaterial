@@ -4,7 +4,12 @@
 测试系列名称提取功能
 """
 
+import sys
+import os
 import requests
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from modules.parser import ContentParser
 
 # 测试示例网页
