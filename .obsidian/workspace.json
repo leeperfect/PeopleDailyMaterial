@@ -1,0 +1,229 @@
+{
+  "main": {
+    "id": "aa14f75bbb71db4c",
+    "type": "split",
+    "children": [
+      {
+        "id": "a54ba729a1885225",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1dacc29cea869483",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "data/vault/2026/01/2026-01-01/02-要闻/拼搏奉献，铸就了欣欣向荣的中国.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "拼搏奉献，铸就了欣欣向荣的中国"
+            }
+          },
+          {
+            "id": "0afa08c464d3173a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "测试.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "测试"
+            }
+          },
+          {
+            "id": "98abc7d30c902d69",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "data/vault/_素材库/素材库首页.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "素材库首页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a88973016861cf24",
+    "type": "split",
+    "children": [
+      {
+        "id": "b179b4c5aa215adc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e0c05f028cfba79c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "a90f6a71be84645d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "闭环意识",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "5647b2ef36ffc3fc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1ad80539526a48b6",
+    "type": "split",
+    "children": [
+      {
+        "id": "a487b24f3d6fd658",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "76ac3f611d949416",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "data/vault/2026/01/2026-01-01/02-要闻/拼搏奉献，铸就了欣欣向荣的中国.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "拼搏奉献，铸就了欣欣向荣的中国 的反向链接列表"
+            }
+          },
+          {
+            "id": "70c61cfa9be5fbac",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "data/vault/2026/01/2026-01-01/02-要闻/拼搏奉献，铸就了欣欣向荣的中国.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "拼搏奉献，铸就了欣欣向荣的中国 的出链列表"
+            }
+          },
+          {
+            "id": "f8dda5b4b78b1bd8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "c7abb8e584c4a39b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "2597604ea5044138",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "data/vault/2026/01/2026-01-01/02-要闻/拼搏奉献，铸就了欣欣向荣的中国.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "拼搏奉献，铸就了欣欣向荣的中国 的大纲"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "random-note:开始漫游笔记": false
+    }
+  },
+  "active": "1dacc29cea869483",
+  "lastOpenFiles": [
+    "data/vault/2026/04/2026-04-20/04-要闻/养成“闭环意识”（人民论坛）.md",
+    "data/vault/_素材库/素材库首页.md",
+    "data/vault/_素材库/写作方法/排比句式.md",
+    "data/vault/_素材库/热点专题/党的建设.md",
+    "data/vault/_素材库/金句/法治建设-金句.md",
+    "data/vault/_素材库/金句/党的建设-金句.md",
+    "data/vault/_素材库/案例/案例汇总.md",
+    "测试.md",
+    "data/core/articles.sqlite-shm",
+    "data/core/articles.sqlite-wal"
+  ]
+}
