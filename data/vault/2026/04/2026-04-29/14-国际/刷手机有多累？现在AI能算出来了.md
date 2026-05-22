@@ -10,6 +10,16 @@ word_count: 298
 source_url: "https://paper.people.com.cn/rmrb/pc/content/202604/29/content_30153904.html"
 ---
 
+> [!tip] 批注汇总
+>
+
+> [!小话题]
+> 刷手机有多累？现在AI能算出来了
+>
+
+---
+
+
 # 刷手机有多累？现在AI能算出来了
 
 > 《人民日报》（2026年04月29日第 14 版）

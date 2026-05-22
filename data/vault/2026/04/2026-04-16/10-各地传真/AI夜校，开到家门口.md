@@ -10,6 +10,16 @@ word_count: 490
 source_url: "https://paper.people.com.cn/rmrb/pc/content/202604/16/content_30151398.html"
 ---
 
+> [!tip] 批注汇总
+>
+
+> [!小话题]
+> AI夜校，开到家门口
+>
+
+---
+
+
 # AI夜校，开到家门口
 
 > 人民网记者  王  星《人民日报》（2026年04月16日第 10 版）

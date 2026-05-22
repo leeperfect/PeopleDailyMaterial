@@ -10,6 +10,16 @@ word_count: 1020
 source_url: "https://paper.people.com.cn/rmrb/pc/content/202604/09/content_30150092.html"
 ---
 
+> [!tip] 批注汇总
+>
+
+> [!小话题]
+> “AI生成”是免责事由吗
+>
+
+---
+
+
 # “AI生成”是免责事由吗（金台锐评）
 
 > 魏哲哲《人民日报》（2026年04月09日第 19 版）

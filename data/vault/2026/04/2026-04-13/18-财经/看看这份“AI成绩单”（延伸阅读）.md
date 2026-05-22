@@ -10,6 +10,16 @@ word_count: 684
 source_url: "https://paper.people.com.cn/rmrb/pc/content/202604/13/content_30150776.html"
 ---
 
+> [!tip] 批注汇总
+>
+
+> [!小话题]
+> 看看这份“AI成绩单”
+>
+
+---
+
+
 # 看看这份“AI成绩单”（延伸阅读）
 
 > 本报记者  葛孟超《人民日报》（2026年04月13日第 18 版）
