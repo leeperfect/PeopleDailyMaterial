@@ -10,6 +10,16 @@ word_count: 1179
 source_url: "https://paper.people.com.cn/rmrb/pc/content/202605/21/content_30158099.html"
 ---
 
+> [!tip] 批注汇总
+>
+
+> [!小话题]
+> AI时代，更需保障劳动权益
+>
+
+---
+
+
 # AI时代，更需保障劳动权益（暖闻热评）
 
 > 李铁林《人民日报》（2026年05月21日第 08 版）
