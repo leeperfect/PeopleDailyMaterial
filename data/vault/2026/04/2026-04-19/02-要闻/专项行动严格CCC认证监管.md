@@ -13,17 +13,15 @@ source_url: "https://paper.people.com.cn/rmrb/pc/content/202604/19/content_30151
 > [!tip] 批注汇总
 >
 
-> [!政策]
+> [!info 政策]
 > 《强制性产品认证机构和实验室管理办法》
 >
 
-> [!小话题]
+> [!subtopic 小话题]
 > 专项行动严格CCC认证监管
 >
 
 ---
-
-
 ### 聚焦充电宝、电动自行车、燃气燃烧器具等
 
 # 专项行动严格CCC认证监管
