@@ -10,6 +10,16 @@ word_count: 1213
 source_url: "https://paper.people.com.cn/rmrb/pc/content/202601/22/content_30134836.html"
 ---
 
+> [!tip] 批注汇总
+>
+
+> [!小话题]
+> “AI生成”不可突破人格权边界
+>
+
+---
+
+
 # “AI生成”不可突破人格权边界（金台锐评）
 
 > 阮神裕《人民日报》（2026年01月22日第 19 版）

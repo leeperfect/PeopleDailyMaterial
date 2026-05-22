@@ -10,6 +10,16 @@ word_count: 315
 source_url: "https://paper.people.com.cn/rmrb/pc/content/202601/06/content_30129736.html"
 ---
 
+> [!tip] 批注汇总
+>
+
+> [!小话题]
+> AI赋能千行百业超级联赛举行
+>
+
+---
+
+
 # AI赋能千行百业超级联赛举行
 
 > 《人民日报》（2026年01月06日第 06 版）

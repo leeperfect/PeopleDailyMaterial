@@ -10,6 +10,16 @@ word_count: 590
 source_url: "https://paper.people.com.cn/rmrb/pc/content/202601/29/content_30136611.html"
 ---
 
+> [!tip] 批注汇总
+>
+
+> [!小话题]
+> 江苏县级及以下政务服务APP全部取消
+>
+
+---
+
+
 ### 从分散多端向一门集成转变
 
 # 江苏县级及以下政务服务APP全部取消
