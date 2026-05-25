@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1080px; height: 1440px; }
+    body {
+      font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif;
+      color: #173044;
+      background: #f6efe3;
+    }
+    .page {
+      position: relative;
+      width: 1080px;
+      height: 1440px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(31,79,119,.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(31,79,119,.08) 1px, transparent 1px),
+        radial-gradient(circle at 15% 18%, rgba(195,154,59,.16), transparent 28%),
+        linear-gradient(135deg, #fbf7ef, #f6efe3);
+      background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%;
+    }
+    .page.dark {
+      color: #f7efe2;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(135deg, #102334, #193a4e 52%, #102334);
+      background-size: 48px 48px, 48px 48px, 100% 100%;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid #b7c6d2;
+      color: #1f4f77;
+      background: rgba(255,255,255,.55);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .dark .label {
+      color: #f8df9c;
+      border-color: rgba(248,223,156,.48);
+      background: rgba(255,255,255,.06);
+    }
+    .caption {
+      color: #647582;
+      font-size: 23px;
+      line-height: 1.55;
+    }
+    .dark .caption { color: rgba(247,239,226,.74); }
+    .small {
+      color: #647582;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+    .dark .small { color: rgba(247,239,226,.68); }
+    .title {
+      margin: 0;
+      font-size: 88px;
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+    .title strong, .accent-red { color: #b54836; }
+    .accent-teal { color: #1f7972; }
+    .accent-gold { color: #c39a3b; }
+    .dark .accent-gold { color: #f8d77d; }
+    .panel {
+      border: 1.5px solid #b7c6d2;
+      background: rgba(255,255,255,.62);
+      box-shadow: 0 18px 40px rgba(23,48,68,.08);
+    }
+    .dark .panel {
+      border-color: rgba(248,223,156,.32);
+      background: rgba(255,255,255,.07);
+      box-shadow: none;
+    }
+    .node {
+      border: 2px solid #173044;
+      background: rgba(255,255,255,.72);
+      padding: 24px;
+    }
+    .node h3 {
+      margin: 0 0 10px 0;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+    .node p {
+      margin: 0;
+      color: #647582;
+      font-size: 24px;
+      line-height: 1.45;
+    }
+    .rule {
+      height: 2px;
+      background: #b7c6d2;
+    }
+    .kicker {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1f4f77;
+    }
+    .dark .kicker { color: #f8d77d; }
+    .source {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 40px;
+      color: #647582;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+    .dark .source { color: rgba(247,239,226,.62); }
+    .xhs-title {
+      margin: 0;
+      font-size: 72px;
+      line-height: 1.15;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+    .xhs-sub {
+      font-size: 34px;
+      line-height: 1.45;
+      color: #647582;
+    }
+    .xhs-card {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      border: 1.5px solid #b7c6d2;
+      background: rgba(255,255,255,.68);
+      padding: 34px 36px;
+    }
+    .xhs-card h3 {
+      margin: 0 0 12px 0;
+      font-size: 36px;
+      line-height: 1.25;
+      color: #173044;
+    }
+    .xhs-card p {
+      margin: 0;
+      font-size: 29px;
+      line-height: 1.48;
+      color: #647582;
+    }
+  </style>
+</head>
+<body><main class="page">
+    <div style="position:absolute; left:64px; top:54px;" class="label">面试示范</div>
+    <div style="position:absolute; right:64px; top:62px; color:#647582; font-size:24px; font-weight:800;">06 / 07</div>
+    <h1 class="xhs-title" style="position:absolute; left:72px; right:72px; top:148px;">街道协调题<br>这样答更有<br><span class="accent-teal">治理感</span></h1>
+    <div class="xhs-sub" style="position:absolute; left:72px; right:72px; top:360px;">群众反映小区出入口拥堵，不要只说“加强协调”。</div>
+    <div class="xhs-card" style="top:650px;">
+          <h3>答题顺序</h3>
+          <p>先接住诉求，再现场核实、组织会商、分类处理、公开回应、形成长效。</p>
+        </div>
+        <div class="xhs-card" style="top:980px;">
+          <h3>关键区别</h3>
+          <p>不是背流程，而是让考官听见你真的能把一个问题办下去。</p>
+        </div>
+    <div class="source" style="left:72px; right:72px; bottom:54px; font-size:22px;">人民日报 2026-05-22 教研转译</div>
+  </main></body>
+</html>

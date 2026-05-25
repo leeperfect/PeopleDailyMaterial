@@ -1,0 +1,8 @@
+task mode: create
+primary deck-profile: strategy-leadership
+secondary profile gates: consumer-facing teaching clarity, classroom readability, source-footnote discipline
+required proof objects: case facts, five-step governance framework, interview answer contrast, classroom exercise, reference appendix
+source/asset requirements: use only generated teaching cards and the cited People Daily article metadata; do not invent additional facts
+brand authenticity constraints: do not imitate the People's Daily logo or masthead; use text attribution only
+profile-specific QA gates: each slide has one teaching claim, readable Chinese text, no dense article copying, clear source notes on final slide
+known missing inputs: no school-provided PPT template supplied, so visual system is original and lightweight

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920, initial-scale=1">
+<style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1920px; height: 1080px; }
+    body {
+      font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif;
+      color: #173044;
+      background: #f6efe3;
+    }
+    .page {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(31,79,119,.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(31,79,119,.08) 1px, transparent 1px),
+        radial-gradient(circle at 15% 18%, rgba(195,154,59,.16), transparent 28%),
+        linear-gradient(135deg, #fbf7ef, #f6efe3);
+      background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%;
+    }
+    .page.dark {
+      color: #f7efe2;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(135deg, #102334, #193a4e 52%, #102334);
+      background-size: 48px 48px, 48px 48px, 100% 100%;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid #b7c6d2;
+      color: #1f4f77;
+      background: rgba(255,255,255,.55);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .dark .label {
+      color: #f8df9c;
+      border-color: rgba(248,223,156,.48);
+      background: rgba(255,255,255,.06);
+    }
+    .caption {
+      color: #647582;
+      font-size: 23px;
+      line-height: 1.55;
+    }
+    .dark .caption { color: rgba(247,239,226,.74); }
+    .small {
+      color: #647582;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+    .dark .small { color: rgba(247,239,226,.68); }
+    .title {
+      margin: 0;
+      font-size: 88px;
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+    .title strong, .accent-red { color: #b54836; }
+    .accent-teal { color: #1f7972; }
+    .accent-gold { color: #c39a3b; }
+    .dark .accent-gold { color: #f8d77d; }
+    .panel {
+      border: 1.5px solid #b7c6d2;
+      background: rgba(255,255,255,.62);
+      box-shadow: 0 18px 40px rgba(23,48,68,.08);
+    }
+    .dark .panel {
+      border-color: rgba(248,223,156,.32);
+      background: rgba(255,255,255,.07);
+      box-shadow: none;
+    }
+    .node {
+      border: 2px solid #173044;
+      background: rgba(255,255,255,.72);
+      padding: 24px;
+    }
+    .node h3 {
+      margin: 0 0 10px 0;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+    .node p {
+      margin: 0;
+      color: #647582;
+      font-size: 24px;
+      line-height: 1.45;
+    }
+    .rule {
+      height: 2px;
+      background: #b7c6d2;
+    }
+    .kicker {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1f4f77;
+    }
+    .dark .kicker { color: #f8d77d; }
+    .source {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 40px;
+      color: #647582;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+    .dark .source { color: rgba(247,239,226,.62); }
+    .xhs-title {
+      margin: 0;
+      font-size: 72px;
+      line-height: 1.15;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+    .xhs-sub {
+      font-size: 34px;
+      line-height: 1.45;
+      color: #647582;
+    }
+    .xhs-card {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      border: 1.5px solid #b7c6d2;
+      background: rgba(255,255,255,.68);
+      padding: 34px 36px;
+    }
+    .xhs-card h3 {
+      margin: 0 0 12px 0;
+      font-size: 36px;
+      line-height: 1.25;
+      color: #173044;
+    }
+    .xhs-card p {
+      margin: 0;
+      font-size: 29px;
+      line-height: 1.48;
+      color: #647582;
+    }
+  </style>
+</head>
+<body><main class="page">
+    <div style="position:absolute; left:88px; top:70px;" class="label">结构化面试转译</div>
+    <h1 class="title" style="position:absolute; left:88px; top:148px; font-size:66px; width:1220px;">
+      群众反映小区出入口拥堵，<span class="accent-red">你怎么接？</span>
+    </h1>
+    <div class="panel" style="position:absolute; left:92px; top:330px; width:560px; height:420px; padding:42px;">
+      <div class="kicker">题目场景</div>
+      <p style="margin:30px 0 0; font-size:38px; line-height:1.42; font-weight:800;">道路狭窄<br>早晚高峰拥堵<br>存在安全隐患</p>
+      <p class="caption" style="margin-top:30px;">不要只说“加强协调”，要把问题拆清楚。</p>
+    </div>
+    <div style="position:absolute; left:720px; top:400px; width:180px; height:180px; border:4px solid #b54836; display:flex; align-items:center; justify-content:center; text-align:center; color:#b54836; font-size:34px; line-height:1.25; font-weight:900; background:#fbf7ef;">先<br>接住</div>
+    <div style="position:absolute; left:965px; top:310px; width:820px; display:grid; gap:18px;">
+      
+        <div class="node" style="height:86px; padding:18px 24px; border-color:#1f7972;">
+          <div style="font-size:30px; font-weight:900;">1. 现场核实：时段、人群、隐患、停车</div>
+        </div>
+        <div class="node" style="height:86px; padding:18px 24px; border-color:#1f7972;">
+          <div style="font-size:30px; font-weight:900;">2. 多方会商：社区、物业、交警、住建</div>
+        </div>
+        <div class="node" style="height:86px; padding:18px 24px; border-color:#1f7972;">
+          <div style="font-size:30px; font-weight:900;">3. 分类处理：微改造、错峰、疏导、项目清单</div>
+        </div>
+        <div class="node" style="height:86px; padding:18px 24px; border-color:#1f7972;">
+          <div style="font-size:30px; font-weight:900;">4. 公开回应：进展、影响、时间表</div>
+        </div>
+        <div class="node" style="height:86px; padding:18px 24px; border-color:#c39a3b;">
+          <div style="font-size:30px; font-weight:900;">5. 长效维护：反馈观察、责任明确</div>
+        </div>
+    </div>
+    <div class="source">来源：人民日报 2026年05月22日；本图为申论与结构化面试教研转译。</div>
+  </main></body>
+</html>

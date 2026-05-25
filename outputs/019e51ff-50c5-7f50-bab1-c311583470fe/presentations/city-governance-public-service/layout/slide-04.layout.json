@@ -1,0 +1,1608 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/l69kjq",
+    "id": "l69kjq",
+    "slide": 4,
+    "layoutId": "10bfc2a0-ebc7-457a-b1d7-17fe390308a5",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "a230a371-0f1b-4cb1-bd5d-e6c03e551eb4",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "STHeiti"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "10bfc2a0-ebc7-457a-b1d7-17fe390308a5",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "a230a371-0f1b-4cb1-bd5d-e6c03e551eb4",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "a230a371-0f1b-4cb1-bd5d-e6c03e551eb4",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fu18jqh0",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F7F8F4",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fu18jqh",
+      "id": "2",
+      "bbox": [
+        72,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x0nuxc3y",
+      "id": "3",
+      "bbox": [
+        192,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxs72x4n",
+      "id": "4",
+      "bbox": [
+        312,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fil0rqd4",
+      "id": "5",
+      "bbox": [
+        432,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83itgfml",
+      "id": "6",
+      "bbox": [
+        552,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xobm58z2",
+      "id": "7",
+      "bbox": [
+        672,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mtwra5gb",
+      "id": "8",
+      "bbox": [
+        792,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fepkzupw",
+      "id": "9",
+      "bbox": [
+        912,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7adsji5s",
+      "id": "10",
+      "bbox": [
+        1032,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/epkzupwb",
+      "id": "11",
+      "bbox": [
+        1152,
+        78,
+        1,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#EDF0EC",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pg3ex0nu",
+      "id": "12",
+      "bbox": [
+        70,
+        42,
+        520,
+        34
+      ],
+      "geometry": "rect",
+      "text": "核心框架",
+      "textPreview": "核心框架",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "STHeiti",
+        "color": "#B42318",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "核心框架"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "核心框架",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#B42318",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "核心框架",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#B42318",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wval87ed",
+      "id": "13",
+      "bbox": [
+        70,
+        92,
+        720,
+        120
+      ],
+      "geometry": "rect",
+      "text": "把案例拆成五步治理动作",
+      "textPreview": "把案例拆成五步治理动作",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 44,
+        "typeface": "STHeiti",
+        "color": "#18212B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "把案例拆成五步治理动作"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "把案例拆成五步治理动作",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "STHeiti",
+            "color": "#18212B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "把案例拆成五步治理动作",
+              "fontSize": 44,
+              "typeface": "STHeiti",
+              "color": "#18212B",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7mp0bi9s",
+      "id": "14",
+      "bbox": [
+        72,
+        218,
+        650,
+        70
+      ],
+      "geometry": "rect",
+      "text": "这套框架可以同时服务申论对策段和结构化面试组织题。",
+      "textPreview": "这套框架可以同时服务申论对策段和结构化面试组织题。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 23,
+        "typeface": "STHeiti",
+        "color": "#667085",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "这套框架可以同时服务申论对策段和结构化面试组织题。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "这套框架可以同时服务申论对策段和结构化面试组织题。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "这套框架可以同时服务申论对策段和结构化面试组织题。",
+              "fontSize": 23,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e1w7mp0b",
+      "id": "15",
+      "bbox": [
+        82,
+        340,
+        178,
+        178
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D7DCE0",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/psfil0rq",
+      "id": "16",
+      "bbox": [
+        106,
+        372,
+        130,
+        30
+      ],
+      "geometry": "rect",
+      "text": "发现问题",
+      "textPreview": "发现问题",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 25,
+        "typeface": "STHeiti",
+        "color": "#18212B",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "发现问题"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "发现问题",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "STHeiti",
+            "color": "#18212B",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "发现问题",
+              "fontSize": 25,
+              "typeface": "STHeiti",
+              "color": "#18212B",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w7mp0bi9",
+      "id": "17",
+      "bbox": [
+        108,
+        428,
+        126,
+        70
+      ],
+      "geometry": "rect",
+      "text": "城市体检\n群众调查",
+      "textPreview": "城市体检 | 群众调查",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "STHeiti",
+        "color": "#667085",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "城市体检"
+          },
+          {
+            "index": 2,
+            "text": "群众调查"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "城市体检",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "城市体检",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "群众调查",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "群众调查",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7u54zido",
+      "id": "18",
+      "bbox": [
+        269,
+        424,
+        45,
+        5
+      ],
+      "geometry": "rect",
+      "fillColor": "#B42318",
+      "lineColor": "#B42318",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ed8bat47",
+      "id": "19",
+      "bbox": [
+        309,
+        414,
+        16,
+        24
+      ],
+      "geometry": "rect",
+      "fillColor": "#B42318",
+      "lineColor": "#B42318",
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mhk3q5o7",
+      "id": "20",
+      "bbox": [
+        307,
+        340,
+        178,
+        178
+      ],
+      "geometry": "rect",
+      "fillColor": "#EAF4F3",
+      "lineColor": "#A7D5D1",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b2hwfyxo",
+      "id": "21",
+      "bbox": [
+        331,
+        372,
+        130,
+        30
+      ],
+      "geometry": "rect",
+      "text": "确定优先",
+      "textPreview": "确定优先",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 25,
+        "typeface": "STHeiti",
+        "color": "#B42318",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "确定优先"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "确定优先",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "STHeiti",
+            "color": "#B42318",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "确定优先",
+              "fontSize": 25,
+              "typeface": "STHeiti",
+              "color": "#B42318",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4nap4r65",
+      "id": "22",
+      "bbox": [
+        333,
+        428,
+        126,
+        70
+      ],
+      "geometry": "rect",
+      "text": "安全底线\n高频需求",
+      "textPreview": "安全底线 | 高频需求",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "STHeiti",
+        "color": "#667085",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "安全底线"
+          },
+          {
+            "index": 2,
+            "text": "高频需求"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "安全底线",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "安全底线",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "高频需求",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "高频需求",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t83itgfm",
+      "id": "23",
+      "bbox": [
+        494,
+        424,
+        45,
+        5
+      ],
+      "geometry": "rect",
+      "fillColor": "#B42318",
+      "lineColor": "#B42318",
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m58z25kb",
+      "id": "24",
+      "bbox": [
+        534,
+        414,
+        16,
+        24
+      ],
+      "geometry": "rect",
+      "fillColor": "#B42318",
+      "lineColor": "#B42318",
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bq1oryts",
+      "id": "25",
+      "bbox": [
+        532,
+        340,
+        178,
+        178
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D7DCE0",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4byhgn29",
+      "id": "26",
+      "bbox": [
+        556,
+        372,
+        130,
+        30
+      ],
+      "geometry": "rect",
+      "text": "协同改造",
+      "textPreview": "协同改造",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 25,
+        "typeface": "STHeiti",
+        "color": "#18212B",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "协同改造"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "协同改造",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "STHeiti",
+            "color": "#18212B",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "协同改造",
+              "fontSize": 25,
+              "typeface": "STHeiti",
+              "color": "#18212B",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twra5gbq",
+      "id": "27",
+      "bbox": [
+        558,
+        428,
+        126,
+        70
+      ],
+      "geometry": "rect",
+      "text": "部门联动\n场景治理",
+      "textPreview": "部门联动 | 场景治理",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "STHeiti",
+        "color": "#667085",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "部门联动"
+          },
+          {
+            "index": 2,
+            "text": "场景治理"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "部门联动",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "部门联动",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "场景治理",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "场景治理",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1cfa9w3",
+      "id": "28",
+      "bbox": [
+        719,
+        424,
+        45,
+        5
+      ],
+      "geometry": "rect",
+      "fillColor": "#B42318",
+      "lineColor": "#B42318",
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bm58z25k",
+      "id": "29",
+      "bbox": [
+        759,
+        414,
+        16,
+        24
+      ],
+      "geometry": "rect",
+      "fillColor": "#B42318",
+      "lineColor": "#B42318",
+      "lineWidth": 0
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1kre1w7m",
+      "id": "30",
+      "bbox": [
+        757,
+        340,
+        178,
+        178
+      ],
+      "geometry": "rect",
+      "fillColor": "#EAF4F3",
+      "lineColor": "#A7D5D1",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c3ylc7u5",
+      "id": "31",
+      "bbox": [
+        781,
+        372,
+        130,
+        30
+      ],
+      "geometry": "rect",
+      "text": "功能复合",
+      "textPreview": "功能复合",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 25,
+        "typeface": "STHeiti",
+        "color": "#18212B",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "功能复合"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "功能复合",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "STHeiti",
+            "color": "#18212B",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "功能复合",
+              "fontSize": 25,
+              "typeface": "STHeiti",
+              "color": "#18212B",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ji5snelo",
+      "id": "32",
+      "bbox": [
+        783,
+        428,
+        126,
+        70
+      ],
+      "geometry": "rect",
+      "text": "通行+教育\n文化+审美",
+      "textPreview": "通行+教育 | 文化+审美",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "STHeiti",
+        "color": "#667085",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "通行+教育"
+          },
+          {
+            "index": 2,
+            "text": "文化+审美"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "通行+教育",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "通行+教育",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "文化+审美",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "文化+审美",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uxc3ylc7",
+      "id": "33",
+      "bbox": [
+        944,
+        424,
+        45,
+        5
+      ],
+      "geometry": "rect",
+      "fillColor": "#B42318",
+      "lineColor": "#B42318",
+      "lineWidth": 0
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cfa9w3m",
+      "id": "34",
+      "bbox": [
+        984,
+        414,
+        16,
+        24
+      ],
+      "geometry": "rect",
+      "fillColor": "#B42318",
+      "lineColor": "#B42318",
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/crmhk3q5",
+      "id": "35",
+      "bbox": [
+        982,
+        340,
+        178,
+        178
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D7DCE0",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j6tovaho",
+      "id": "36",
+      "bbox": [
+        1006,
+        372,
+        130,
+        30
+      ],
+      "geometry": "rect",
+      "text": "反馈长效",
+      "textPreview": "反馈长效",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 25,
+        "typeface": "STHeiti",
+        "color": "#18212B",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "反馈长效"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "反馈长效",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "STHeiti",
+            "color": "#18212B",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "反馈长效",
+              "fontSize": 25,
+              "typeface": "STHeiti",
+              "color": "#18212B",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ulwval87",
+      "id": "37",
+      "bbox": [
+        1008,
+        428,
+        126,
+        70
+      ],
+      "geometry": "rect",
+      "text": "评估效果\n维护责任",
+      "textPreview": "评估效果 | 维护责任",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "STHeiti",
+        "color": "#667085",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "评估效果"
+          },
+          {
+            "index": 2,
+            "text": "维护责任"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "评估效果",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "评估效果",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "维护责任",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "维护责任",
+              "fontSize": 20,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/18jqh0fe",
+      "id": "38",
+      "bbox": [
+        70,
+        665,
+        1140,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D7DCE0",
+      "lineColor": "#000000",
+      "lineWidth": 0
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8nqxs72x",
+      "id": "39",
+      "bbox": [
+        70,
+        678,
+        460,
+        24
+      ],
+      "geometry": "rect",
+      "text": "人民日报素材课｜城市治理与公共服务",
+      "textPreview": "人民日报素材课｜城市治理与公共服务",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 15,
+        "typeface": "STHeiti",
+        "color": "#667085",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "人民日报素材课｜城市治理与公共服务"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "人民日报素材课｜城市治理与公共服务",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "typeface": "STHeiti",
+            "color": "#667085",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "人民日报素材课｜城市治理与公共服务",
+              "fontSize": 15,
+              "typeface": "STHeiti",
+              "color": "#667085"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gbq1oryt",
+      "id": "40",
+      "bbox": [
+        1165,
+        676,
+        50,
+        28
+      ],
+      "geometry": "rect",
+      "text": "04",
+      "textPreview": "04",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 18,
+        "typeface": "STHeiti",
+        "color": "#0E7490",
+        "bold": true,
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "STHeiti",
+            "color": "#0E7490",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04",
+              "fontSize": 18,
+              "typeface": "STHeiti",
+              "color": "#0E7490",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

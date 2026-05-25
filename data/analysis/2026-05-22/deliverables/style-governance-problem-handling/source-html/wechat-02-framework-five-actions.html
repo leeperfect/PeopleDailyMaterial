@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920, initial-scale=1">
+<style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1920px; height: 1080px; }
+    body {
+      font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif;
+      color: #173044;
+      background: #f6efe3;
+    }
+    .page {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(31,79,119,.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(31,79,119,.08) 1px, transparent 1px),
+        radial-gradient(circle at 15% 18%, rgba(195,154,59,.16), transparent 28%),
+        linear-gradient(135deg, #fbf7ef, #f6efe3);
+      background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%;
+    }
+    .page.dark {
+      color: #f7efe2;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(135deg, #102334, #193a4e 52%, #102334);
+      background-size: 48px 48px, 48px 48px, 100% 100%;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid #b7c6d2;
+      color: #1f4f77;
+      background: rgba(255,255,255,.55);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .dark .label {
+      color: #f8df9c;
+      border-color: rgba(248,223,156,.48);
+      background: rgba(255,255,255,.06);
+    }
+    .caption {
+      color: #647582;
+      font-size: 23px;
+      line-height: 1.55;
+    }
+    .dark .caption { color: rgba(247,239,226,.74); }
+    .small {
+      color: #647582;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+    .dark .small { color: rgba(247,239,226,.68); }
+    .title {
+      margin: 0;
+      font-size: 88px;
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+    .title strong, .accent-red { color: #b54836; }
+    .accent-teal { color: #1f7972; }
+    .accent-gold { color: #c39a3b; }
+    .dark .accent-gold { color: #f8d77d; }
+    .panel {
+      border: 1.5px solid #b7c6d2;
+      background: rgba(255,255,255,.62);
+      box-shadow: 0 18px 40px rgba(23,48,68,.08);
+    }
+    .dark .panel {
+      border-color: rgba(248,223,156,.32);
+      background: rgba(255,255,255,.07);
+      box-shadow: none;
+    }
+    .node {
+      border: 2px solid #173044;
+      background: rgba(255,255,255,.72);
+      padding: 24px;
+    }
+    .node h3 {
+      margin: 0 0 10px 0;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+    .node p {
+      margin: 0;
+      color: #647582;
+      font-size: 24px;
+      line-height: 1.45;
+    }
+    .rule {
+      height: 2px;
+      background: #b7c6d2;
+    }
+    .kicker {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1f4f77;
+    }
+    .dark .kicker { color: #f8d77d; }
+    .source {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 40px;
+      color: #647582;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+    .dark .source { color: rgba(247,239,226,.62); }
+    .xhs-title {
+      margin: 0;
+      font-size: 72px;
+      line-height: 1.15;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+    .xhs-sub {
+      font-size: 34px;
+      line-height: 1.45;
+      color: #647582;
+    }
+    .xhs-card {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      border: 1.5px solid #b7c6d2;
+      background: rgba(255,255,255,.68);
+      padding: 34px 36px;
+    }
+    .xhs-card h3 {
+      margin: 0 0 12px 0;
+      font-size: 36px;
+      line-height: 1.25;
+      color: #173044;
+    }
+    .xhs-card p {
+      margin: 0;
+      font-size: 29px;
+      line-height: 1.48;
+      color: #647582;
+    }
+  </style>
+</head>
+<body><main class="page">
+    <div style="position:absolute; left:88px; top:70px;" class="label">五步治理链</div>
+    <h1 class="title" style="position:absolute; left:88px; top:146px; font-size:66px; width:1180px;">
+      把“正确政绩观”写实：<span class="accent-teal">先把问题接住</span>
+    </h1>
+    <div style="position:absolute; left:86px; top:360px; right:86px; height:300px;">
+      <div style="position:absolute; left:80px; right:80px; top:116px; height:6px; background:#b7c6d2;"></div>
+      
+        <div style="position:absolute; left:20px; top:0; width:270px; height:280px;">
+          <div style="margin:auto; width:92px; height:92px; border:4px solid #1f7972; background:#fbf7ef; display:flex; align-items:center; justify-content:center; font-size:42px; font-weight:900; color:#1f7972;">1</div>
+          <div style="margin-top:24px; text-align:center; font-size:38px; font-weight:900;">看见问题</div>
+          <div style="margin-top:12px; text-align:center; font-size:24px; color:#647582; line-height:1.35;">走访调研 / 数据监测</div>
+        </div>
+        <div style="position:absolute; left:370px; top:0; width:270px; height:280px;">
+          <div style="margin:auto; width:92px; height:92px; border:4px solid #b54836; background:#fbf7ef; display:flex; align-items:center; justify-content:center; font-size:42px; font-weight:900; color:#b54836;">2</div>
+          <div style="margin-top:24px; text-align:center; font-size:38px; font-weight:900;">接住问题</div>
+          <div style="margin-top:12px; text-align:center; font-size:24px; color:#647582; line-height:1.35;">不推开 / 不悬空</div>
+        </div>
+        <div style="position:absolute; left:720px; top:0; width:270px; height:280px;">
+          <div style="margin:auto; width:92px; height:92px; border:4px solid #1f7972; background:#fbf7ef; display:flex; align-items:center; justify-content:center; font-size:42px; font-weight:900; color:#1f7972;">3</div>
+          <div style="margin-top:24px; text-align:center; font-size:38px; font-weight:900;">拆解问题</div>
+          <div style="margin-top:12px; text-align:center; font-size:24px; color:#647582; line-height:1.35;">找环节 / 找症结</div>
+        </div>
+        <div style="position:absolute; left:1070px; top:0; width:270px; height:280px;">
+          <div style="margin:auto; width:92px; height:92px; border:4px solid #1f7972; background:#fbf7ef; display:flex; align-items:center; justify-content:center; font-size:42px; font-weight:900; color:#1f7972;">4</div>
+          <div style="margin-top:24px; text-align:center; font-size:38px; font-weight:900;">协同解决</div>
+          <div style="margin-top:12px; text-align:center; font-size:24px; color:#647582; line-height:1.35;">谁牵头 / 谁参与</div>
+        </div>
+        <div style="position:absolute; left:1420px; top:0; width:270px; height:280px;">
+          <div style="margin:auto; width:92px; height:92px; border:4px solid #c39a3b; background:#fbf7ef; display:flex; align-items:center; justify-content:center; font-size:42px; font-weight:900; color:#c39a3b;">5</div>
+          <div style="margin-top:24px; text-align:center; font-size:38px; font-weight:900;">反馈长效</div>
+          <div style="margin-top:12px; text-align:center; font-size:24px; color:#647582; line-height:1.35;">有回应 / 能固化</div>
+        </div>
+    </div>
+    <div class="panel" style="position:absolute; left:126px; right:126px; bottom:118px; height:210px; padding:32px 40px;">
+      <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap:24px;">
+        
+          <div>
+            <div class="kicker" style="font-size:25px;">案例 1</div>
+            <div style="margin-top:8px; font-size:31px; font-weight:900;">涉企执法</div>
+          </div>
+          <div>
+            <div class="kicker" style="font-size:25px;">案例 2</div>
+            <div style="margin-top:8px; font-size:31px; font-weight:900;">小区微改造</div>
+          </div>
+          <div>
+            <div class="kicker" style="font-size:25px;">案例 3</div>
+            <div style="margin-top:8px; font-size:31px; font-weight:900;">合约食堂</div>
+          </div>
+          <div>
+            <div class="kicker" style="font-size:25px;">案例 4</div>
+            <div style="margin-top:8px; font-size:31px; font-weight:900;">潮汐菜场</div>
+          </div>
+          <div>
+            <div class="kicker" style="font-size:25px;">案例 5</div>
+            <div style="margin-top:8px; font-size:31px; font-weight:900;">群众来论</div>
+          </div>
+      </div>
+    </div>
+    <div class="source">来源：人民日报 2026年05月22日；本图为申论与结构化面试教研转译。</div>
+  </main></body>
+</html>
