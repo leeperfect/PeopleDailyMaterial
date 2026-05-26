@@ -1,6 +1,6 @@
 ---
 type: codex_material_production_plan
-updated: 2026-05-23
+updated: 2026-05-26
 scope: PeopleDailyMaterial
 owner_ai: Codex
 ---
@@ -26,6 +26,20 @@ docs/cross-platform-content-package-workflow.md
 1. 单篇文章内的 Codex callout 标注：让下一个 AI 不读全文也能先抓住关键信息。
 2. 当天或专题复盘：把多篇文章串成申论、面试、公众号可用的主线。
 3. 公众号文章草稿：面向申论考生和结构化面试考生，读完要能带走框架、素材和答题方法。
+
+公众号文章成稿要统一放在：
+
+```text
+data/articles/公众号文章/
+```
+
+文件名优先使用中文标题，例如：
+
+```text
+《人民日报》讲透申论高分写法：正确政绩观，不能只写成口号.md
+```
+
+日期目录里的 `wechat-<topic-slug>.md` 可以继续作为过程稿或出品包引用文件；老师日常查找、复用、二次编辑时，以 `data/articles/公众号文章/` 里的中文标题稿为准。
 
 如果用户要求做跨平台出品包，则继续形成：
 

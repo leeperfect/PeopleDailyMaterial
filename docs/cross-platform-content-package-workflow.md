@@ -1,6 +1,6 @@
 ---
 type: cross_platform_content_package_workflow
-updated: 2026-05-23
+updated: 2026-05-26
 scope: PeopleDailyMaterial
 owner_ai: Codex
 ---
@@ -29,6 +29,8 @@ owner_ai: Codex
 主题筛选
   ↓
 公众号文章
+  ↓
+文章总目录中文归档
   ↓
 视觉设计 brief
   ↓
@@ -81,9 +83,26 @@ data/analysis/<period>/
 - `material-assets.json` 是结构化素材来源，可以导入 `data/core/material_assets.sqlite`。
 - `material-assets-view.md` 是方便人阅读的视图。
 - `theme-shortlist.md` 是选题池和优先级说明。
-- `wechat-<topic-slug>.md` 是公众号正文。
-- `wechat-<topic-slug>-illustrated.md` 是带配图版公众号文章。
+- `wechat-<topic-slug>.md` 是日期段目录里的过程稿，便于机器流程和出品包复用。
+- `wechat-<topic-slug>-illustrated.md` 是日期段目录里的带配图过程稿。
 - `deliverables/<topic-slug>/` 是最终出品包。
+
+### 3. 文章总目录
+
+公众号文章和可发布成稿，要同时集中放入：
+
+```text
+data/articles/公众号文章/
+```
+
+命名规则：
+
+```text
+《中文标题》.md
+《中文标题》（插图版）.md
+```
+
+这个目录是给老师人工查找、复用和二次编辑的成稿目录。日期段目录仍然保留，用来保存素材梳理、过程稿、图片、PPT、小红书等完整出品包。
 
 ## 三、第一步：日期段梳理
 
@@ -159,6 +178,7 @@ python3 scripts/import_material_assets.py data/analysis/<period>/<period>-materi
 3. 中段必须完成“案例 - 逻辑 - 考场转译”。
 4. 结尾必须把材料上升为一种可复用能力。
 5. 文末必须有 `## 参考文章`。
+6. 定稿后必须放入 `data/articles/公众号文章/`，文件名使用中文标题；日期段目录可继续保留英文过程稿。
 
 参考文章只列实际用到的人民日报材料，不把整段时间所有文章都塞进去。
 
@@ -368,6 +388,7 @@ Presentations：导出可编辑 PPTX
 - 是否有结构化素材 JSON 或可读视图。
 - 是否有主题筛选记录。
 - 公众号文章是否有参考文章。
+- 中文标题成稿是否已经放入 `data/articles/公众号文章/`。
 - 插图版公众号文章是否使用 16:9 图片。
 - 小红书图片是否为 3:4 竖版。
 - 小红书图片是否有配套发布文案。
