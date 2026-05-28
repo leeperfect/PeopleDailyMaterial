@@ -89,6 +89,35 @@ python3 scripts/query_material_assets.py --ideas
 python3 scripts/query_material_assets.py --questions
 ```
 
+把公众号选题导出成长期总表：
+
+```bash
+python3 scripts/export_content_ideas.py
+```
+
+默认生成：
+
+```text
+data/articles/公众号文章/选题库.md
+data/exports/content_ideas.csv
+```
+
+`选题库.md` 给人工挑选，`content_ideas.csv` 给后续按月、季度、年度做热点复盘。
+
+本地 HTML 选题工作台：
+
+```bash
+python3 scripts/serve_idea_magazine.py
+```
+
+默认地址：
+
+```text
+http://127.0.0.1:8765
+```
+
+工作台读取 `content_ideas`，并把人工精筛和备注写入 `content_idea_notes`。这样选题本身仍在核心库里，人的判断也能长期保存。
+
 ## 抓取新文章
 
 原来的抓取方式继续可用：

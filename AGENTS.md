@@ -36,6 +36,8 @@
 
 - 不要把标题当唯一标识。涉及文章去重、同步、更新时，优先使用 `article_id` / `Article ID`。
 - Notion 数据库已经有 `Article ID` 字段；同步、补齐、清理重复页时优先围绕这个字段判断。
+- 公众号选题统一进入 `data/core/material_assets.sqlite` 的 `content_ideas` 表；面向用户查看的总表是 `data/articles/公众号文章/选题库.md`，由 `scripts/export_content_ideas.py` 生成。
+- 本地 HTML 选题工作台由 `scripts/serve_idea_magazine.py` 启动，读取 `content_ideas`，并把精筛、备注等人工操作写入 `content_idea_notes`。
 - 不要为了“目录更清爽”删除 `data/raw/`、`data/core/`、`data/vault/`、`data/analysis/`、`data/articles/` 里的有效内容。
 - 可以清理的通常是本地缓存、日志、`.DS_Store`、`__pycache__`、虚拟环境、空占位目录。
 - `.trae/`、`api/`、`outputs/`、`node_modules/`、`docs/vercel-labsagent.md`、`未命名.base`、`未命名.canvas` 属于疑似旧工具或旧实验文件；删除前要明确取得用户确认。
@@ -54,6 +56,18 @@ python3 scripts/query_articles.py --date 2026-05-27
 ```bash
 python3 scripts/query_material_assets.py --search 城市治理
 python3 scripts/query_material_assets.py --topics
+```
+
+刷新公众号选题库：
+
+```bash
+python3 scripts/export_content_ideas.py
+```
+
+打开本地 HTML 选题工作台：
+
+```bash
+python3 scripts/serve_idea_magazine.py
 ```
 
 重建本地核心库：

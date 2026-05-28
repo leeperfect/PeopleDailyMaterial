@@ -25,6 +25,12 @@ python3 scripts/query_material_assets.py --search 城市治理
 
 # 按日期查文章
 python3 scripts/query_articles.py --date 2026-05-27
+
+# 刷新公众号选题库总表
+python3 scripts/export_content_ideas.py
+
+# 打开本地 HTML 选题工作台
+python3 scripts/serve_idea_magazine.py
 ```
 
 ## 当前保留的最小结构
@@ -58,6 +64,8 @@ PeopleDailyMaterial/
 `data/vault/` 是人类阅读层。它适合用 Obsidian 打开，按日期、版面、专题浏览，也适合人工做教研标注。
 
 `data/articles/公众号文章/` 是成品层。公众号稿、插图版、面向老师直接使用的文章，都放这里，文件名可以用中文标题。
+
+其中 `data/articles/公众号文章/选题库.md` 是长期选题池。每次完成文章梳理后，运行 `python3 scripts/export_content_ideas.py` 刷新，就能按月份、季度、状态查看可继续精筛的选题。
 
 `data/analysis/` 是工作过程层。复盘、选题拆解、PPT 文案、跨平台出品包放这里。它不是日常找原文的入口。
 
@@ -113,6 +121,37 @@ data/core/rebuild_manifest.json
 ```
 
 这一步不会改变 Notion；它只是把本地事实层重新整理成 AI 和脚本更容易读取的核心库。
+
+## 刷新选题库
+
+所有公众号选题会先进入 `data/core/material_assets.sqlite` 的 `content_ideas` 表。你平时不用打开数据库，只需要运行：
+
+```bash
+python3 scripts/export_content_ideas.py
+```
+
+它会生成：
+
+```text
+data/articles/公众号文章/选题库.md
+data/exports/content_ideas.csv
+```
+
+Markdown 表适合直接阅读和挑选，CSV 适合以后按月、季度、年度做热点复盘。
+
+如果你想用网页方式浏览和操作选题，运行：
+
+```bash
+python3 scripts/serve_idea_magazine.py
+```
+
+然后打开：
+
+```text
+http://127.0.0.1:8765
+```
+
+这个页面会直接读取本地数据库，支持搜索、按状态筛选、按月份/季度筛选、加入精筛池、调整状态、写个人备注，并同步刷新 Markdown 和 CSV 选题库。
 
 ## 抓取新文章
 
