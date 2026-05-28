@@ -348,7 +348,7 @@ data/analysis/YYYY-MM-DD/YYYY-MM-DD-teaching-content-review.md
 ## 三、把材料转成一道面试题
 
 给出题目。
-先展示普通答法为什么平。
+先展示普通答法为什么没有亮点。
 再给出有区分度的答题思路。
 
 ## 四、补一个关系辨析或反面提醒

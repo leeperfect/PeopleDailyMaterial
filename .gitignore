@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 venv/
+node_modules/
 
 # 环境文件
 .env
@@ -14,6 +15,9 @@ config.json
 
 # 运行时临时数据
 data/checkpoints/
+logs/
+outputs/
+.claude/
 
 # 本地生成的核心库与索引（可由脚本重建）
 data/core/*.sqlite

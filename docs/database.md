@@ -2,32 +2,32 @@
 
 ## 当前结构
 
-这个项目现在采用“事实层 + 检索层 + 阅读视图层”的结构：
+这个项目现在采用“事实留存层 + 机器检索层 + 人类阅读层 + 输出层”的结构：
 
 ```text
 data/
   core/
     articles.sqlite          # 核心 SQLite 数据库
     articles.jsonl           # 可读备份，适合 AI 批量读取
+    material_assets.sqlite    # 教研素材资产库
     rebuild_manifest.json    # 最近一次重建摘要
-  source/
-    people_daily/
-      raw_articles/          # 预留：新版原始文章归档
-      raw_html/              # 预留：原始网页证据
-  index/
-    fts/                     # 预留：全文索引文件
-    vector/                  # 预留：向量索引文件
-  vault/                     # 人类阅读视图，继续给 Obsidian 使用
-  raw/                       # 旧 JSON 格式，保留兼容
+  raw/                       # 原始 JSON，事实留存层
   processed/                 # 旧处理结果，保留兼容
-  exports/                   # 对外导出
+  vault/                     # 人类阅读视图，继续给 Obsidian 使用
+  analysis/                  # 教研分析、复盘、出品过程
+  articles/公众号文章/        # 公众号文章和成品稿
+  exports/                   # 对外导出和同步辅助文件
 ```
 
 核心原则：
 
 - `data/core/articles.sqlite` 是程序和 AI 优先读取的事实索引层。
+- `data/core/material_assets.sqlite` 是案例、框架、金句、题目等教研素材资产库。
 - `data/vault` 是人看的阅读视图，可以按日期、专题、系列继续整理。
-- `data/raw` 暂时保留，保证旧脚本和历史数据不被破坏。
+- `data/raw` 是原始数据留存层，保证重建和追溯能力。
+- `data/articles/公众号文章` 是面向老师和运营使用的成品稿入口。
+
+之前预留过的 `data/source/`、`data/index/`、`data/manifests/`、`data/checkpoints/` 已不作为日常常驻目录保留；如果未来确实接入单独向量库或外部索引，再由对应脚本生成。
 
 ## 重建数据库
 
@@ -68,6 +68,27 @@ python3 scripts/query_articles.py --search 基层治理
 python3 scripts/query_articles.py --start 2026-05-01 --end 2026-05-16 --limit 50
 ```
 
+## 查询教研素材
+
+按关键词查素材卡：
+
+```bash
+python3 scripts/query_material_assets.py --search 城市治理
+```
+
+查看专题分布：
+
+```bash
+python3 scripts/query_material_assets.py --topics
+```
+
+查看公众号选题或训练题：
+
+```bash
+python3 scripts/query_material_assets.py --ideas
+python3 scripts/query_material_assets.py --questions
+```
+
 ## 抓取新文章
 
 原来的抓取方式继续可用：
@@ -104,7 +125,19 @@ python3 scripts/sync_to_notion.py --from-raw 2026-05-16
 python3 scripts/sync_to_notion.py --update-existing 2026-05-16
 ```
 
-建议在 Notion 数据库中新增一个 `Article ID` 字段，类型用 `Text` / `Rich text`。同步脚本会优先用这个字段去重；如果暂时没加，脚本会自动降级为 URL、标题和日期去重。
+Notion 数据库中已经建立 `Article ID` 字段。同步脚本会优先用这个字段去重；如果遇到历史页面没有 `Article ID`，再降级用 URL、标题和日期判断。
+
+清理重复页和补齐缺失文章时，先预览：
+
+```bash
+python3 scripts/notion_maintenance.py --dry-run
+```
+
+确认后再执行：
+
+```bash
+python3 scripts/notion_maintenance.py --archive-duplicates --create-missing --delay 0.4
+```
 
 ## 核心 ID 规则
 
