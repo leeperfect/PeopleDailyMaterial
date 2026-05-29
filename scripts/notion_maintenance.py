@@ -23,6 +23,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
 from modules.article_database import DEFAULT_DB_PATH, ArticleStore
+from modules.article_identity import normalize_date
 from modules.notion import NotionAPI
 from modules.utils import Config, setup_logger
 
@@ -138,10 +139,18 @@ def query_pages(notion_api: NotionAPI) -> List[Dict]:
     return pages
 
 
-def load_local_articles() -> List[Dict]:
+def load_local_articles(
+    dates: Optional[List[str]] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
+) -> List[Dict]:
     store = ArticleStore(os.path.join(PROJECT_ROOT, DEFAULT_DB_PATH))
     try:
-        articles = store.get_articles()
+        articles = store.get_articles(
+            dates=[normalize_date(d) for d in dates] if dates else None,
+            start_date=normalize_date(start_date) if start_date else None,
+            end_date=normalize_date(end_date) if end_date else None,
+        )
     finally:
         store.close()
     return [a for a in articles if a.get("title") and a.get("title") != "广告"]
@@ -329,6 +338,9 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Only print the plan.")
     parser.add_argument("--limit", type=int, default=None, help="Limit pages/articles changed, useful for testing.")
     parser.add_argument("--delay", type=float, default=0.35, help="Delay between Notion writes.")
+    parser.add_argument("--date", action="append", help="Only maintain one date, format YYYY-MM-DD. Can be used more than once.")
+    parser.add_argument("--start", help="Only maintain articles on or after this date, format YYYY-MM-DD.")
+    parser.add_argument("--end", help="Only maintain articles on or before this date, format YYYY-MM-DD.")
     args = parser.parse_args()
 
     config = Config()
@@ -336,7 +348,10 @@ def main():
     notion_api = NotionAPI(config)
 
     pages = query_pages(notion_api)
-    articles = load_local_articles()
+    articles = load_local_articles(dates=args.date, start_date=args.start, end_date=args.end)
+    if args.date or args.start or args.end:
+        scope = ", ".join(args.date or []) or f"{args.start or '最早'} ~ {args.end or '最新'}"
+        print(f"本次只维护日期范围: {scope}")
     plan = classify(pages, articles)
     print_plan(plan, pages, articles)
 
