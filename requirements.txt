@@ -14,3 +14,4 @@ jieba==0.42.1
 cryptography==41.0.3
 # Playwright stealth 模式用于文章页反爬
 playwright>=1.40.0
+playwright
