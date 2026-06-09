@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="forest-ink">
+<head>
+  <meta charset="utf-8">
+  <title>县域发展，别再只会说"因地制宜" · 社交卡组</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    /* Theme tokens */
+    :root,
+    [data-theme="ink-classic"] {
+      --paper: #f3f0e8; --paper-2: #ebe6da; --ink: #0a0a0b;
+      --muted: #68625a; --line: rgba(10,10,11,.22); --accent: #111111;
+      --accent-soft: #d8d2c6; --ink-rgb: 10,10,11; --paper-rgb: 243,240,232; --accent-rgb: 17,17,17;
+    }
+    [data-theme="forest-ink"] {
+      --paper: #f5f1e8; --paper-2: #e8dfcf; --ink: #16251b;
+      --muted: #5d665d; --line: rgba(22,37,27,.22); --accent: #2e6b4f;
+      --accent-soft: #d4dfd2; --ink-rgb: 22,37,27; --paper-rgb: 245,241,232; --accent-rgb: 46,107,79;
+    }
+
+    /* Typography */
+    :root {
+      --serif-zh: "Noto Serif SC", "Songti SC", serif;
+      --serif-en: "Playfair Display", "Noto Serif SC", serif;
+      --sans-zh: "Noto Sans SC", -apple-system, "PingFang SC", sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    /* Reset */
+    *,*::before,*::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #1a1a1a; font-family: var(--sans-zh); color: var(--ink);
+      -webkit-font-smoothing: antialiased; padding: 64px 32px;
+    }
+    .sheet { display: flex; flex-direction: column; align-items: center; gap: 48px; }
+
+    /* Poster boards */
+    .poster { position: relative; background: var(--paper); color: var(--ink); overflow: hidden; isolation: isolate; }
+    .poster.xhs { width: 1080px; height: 1440px; }
+    .poster.square { width: 1080px; height: 1080px; }
+    .poster.wide { width: 2100px; height: 900px; }
+    .poster figure { margin: 0; }
+    .poster.xhs .content { padding: 96px 88px; }
+    .poster.square .content { padding: 88px 88px; }
+    .poster.wide .content { padding: 88px 120px; }
+    .content { position: relative; width: 100%; height: 100%; z-index: 2; }
+
+    /* Background layers */
+    .mag-bg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+    .grain {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: .35; mix-blend-mode: multiply;
+      background-image: radial-gradient(rgba(0,0,0,.045) 1px, transparent 1px); background-size: 3px 3px;
+    }
+    .paper-wash {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(180deg, rgba(var(--ink-rgb),.02), rgba(var(--ink-rgb),.05) 60%, rgba(var(--ink-rgb),.08));
+    }
+
+    /* Typography */
+    .kicker { font-family: var(--mono); font-size: 21px; letter-spacing: .22em; text-transform: uppercase; color: rgba(var(--ink-rgb), .55); margin: 0 0 18px; }
+    .h-display { font-family: var(--serif-zh); font-weight: 500; font-size: 124px; line-height: 1.06; letter-spacing: .04em; margin: 0 0 24px; color: var(--ink); }
+    .h-xl { font-family: var(--serif-zh); font-weight: 500; font-size: 88px; line-height: 1.10; letter-spacing: .03em; margin: 0 0 24px; color: var(--ink); }
+    .h-md { font-family: var(--serif-zh); font-weight: 500; font-size: 56px; line-height: 1.18; letter-spacing: .02em; margin: 0 0 18px; color: var(--ink); }
+    .h-sub { font-family: var(--serif-en); font-style: italic; font-weight: 400; font-size: 36px; color: var(--muted); margin: 0 0 24px; }
+    .lead { font-family: var(--serif-zh); font-weight: 400; font-size: 28px; line-height: 1.55; color: rgba(var(--ink-rgb), .82); margin: 0 0 24px; }
+    .body { font-family: var(--serif-zh); font-weight: 400; font-size: 24px; line-height: 1.65; color: rgba(var(--ink-rgb), .80); margin: 0 0 18px; }
+    .meta { font-family: var(--mono); font-size: 18px; letter-spacing: .20em; text-transform: uppercase; color: rgba(var(--ink-rgb), .55); }
+    .label { font-family: var(--mono); font-size: 18px; letter-spacing: .20em; text-transform: uppercase; color: rgba(var(--ink-rgb), .55); }
+    .pullquote { font-family: var(--serif-zh); font-style: italic; font-weight: 500; font-size: 64px; line-height: 1.28; color: var(--ink); margin: 0; }
+
+    /* Issue strip */
+    .issue-row { display: flex; align-items: center; gap: 16px; font-family: var(--mono); font-size: 20px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .issue-row .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .issue-strip {
+      position: absolute; left: 88px; right: 88px; bottom: 56px;
+      display: flex; justify-content: space-between; align-items: center; gap: 32px;
+      font-family: var(--mono); font-size: 18px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px;
+    }
+    .poster.wide .issue-strip { left: 120px; right: 120px; }
+    .issue-strip span { white-space: nowrap; }
+
+    /* Layout primitives */
+    .stack { display: flex; flex-direction: column; }
+    .gap-1 { gap: 12px; } .gap-2 { gap: 24px; } .gap-3 { gap: 36px; } .gap-4 { gap: 48px; } .gap-5 { gap: 64px; }
+    .row { display: flex; flex-direction: row; }
+    .col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .center { text-align: center; }
+    .grow { flex: 1; }
+    .rule { height: 1px; background: var(--line); border: 0; margin: 24px 0; }
+    .rule-accent { height: 2px; background: var(--accent); border: 0; margin: 24px 0; width: 96px; }
+
+    /* Image containers */
+    .frame-img { position: relative; overflow: hidden; background: var(--paper-2); display: block; margin: 0; }
+    .frame-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 50%; display: block; }
+    .frame-img.r-3x4 { aspect-ratio: 3/4; }
+    .frame-img.r-16x10 { aspect-ratio: 16/10; }
+    .frame-img.r-21x9 { aspect-ratio: 21/9; }
+
+    /* Components */
+    .callout {
+      border-left: 3px solid var(--accent); padding: 18px 28px;
+      font-family: var(--serif-zh); font-style: italic; font-size: 36px; line-height: 1.35;
+      color: var(--ink); background: var(--paper-2);
+    }
+    .callout .callout-src {
+      display: block; margin-top: 18px; font-style: normal;
+      font-family: var(--mono); font-size: 20px; letter-spacing: .12em; color: var(--muted);
+    }
+
+    .ledger { display: flex; flex-direction: column; }
+    .ledger-row {
+      display: grid; grid-template-columns: 96px 1fr auto; gap: 24px; align-items: baseline;
+      padding: 28px 0; border-bottom: 1px solid var(--line);
+    }
+    .ledger-row .ledger-nb { font-family: var(--mono); font-size: 28px; color: var(--accent); letter-spacing: .08em; }
+    .ledger-row .ledger-title { font-family: var(--serif-zh); font-weight: 500; font-size: 42px; letter-spacing: .02em; color: var(--ink); }
+    .ledger-row .ledger-note { font-family: var(--serif-zh); font-weight: 400; font-size: 22px; line-height: 1.55; color: rgba(var(--ink-rgb), .72); }
+
+    .pipeline-v { display: flex; flex-direction: column; gap: 28px; }
+    .pipeline-v .step {
+      display: grid; grid-template-columns: 80px 1fr; gap: 28px; align-items: baseline;
+      padding-bottom: 24px; border-bottom: 1px solid var(--line);
+    }
+    .pipeline-v .step:last-child { border-bottom: 0; }
+    .pipeline-v .step-nb { font-family: var(--mono); font-size: 32px; color: var(--accent); }
+    .pipeline-v .step-title { font-family: var(--serif-zh); font-weight: 500; font-size: 40px; letter-spacing: .02em; margin: 0 0 8px; }
+    .pipeline-v .step-desc { font-family: var(--serif-zh); font-weight: 400; font-size: 24px; line-height: 1.6; color: rgba(var(--ink-rgb), .72); margin: 0; }
+
+    .beforeafter { display: grid; grid-template-rows: 1fr 1fr; gap: 32px; height: 100%; }
+    .beforeafter .ba-block { padding: 32px; background: var(--paper-2); border-left: 3px solid var(--accent); }
+    .beforeafter .ba-block.before { opacity: .68; }
+
+    .marginalia { display: grid; grid-template-columns: 1fr 220px; gap: 48px; }
+    .marginalia .mg-col { border-left: 1px solid var(--line); padding-left: 24px; }
+    .marginalia .mg-col p { font-family: var(--mono); font-size: 20px; letter-spacing: .04em; color: var(--muted); margin: 0 0 16px; }
+
+    /* Pair preview */
+    .pair-preview {
+      width: 2400px; min-height: 1180px; background: var(--paper-2); padding: 48px;
+      display: grid; grid-template-columns: 2100px 1080px; grid-template-rows: 900px 1080px;
+      gap: 48px; align-content: center; justify-content: center;
+    }
+    .pair-preview .preview-wide { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-square { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-label { font-family: var(--mono); font-size: 20px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+
+    /* Hero bleed for image-led covers */
+    .hero-bleed { position: absolute; inset: 0; background-size: cover; background-position: center center; z-index: 0; }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+
+    <!-- ==================== 小红书轮播 (12 pages, 3:4) ==================== -->
+
+    <!-- Page 1: Cover — M01 Magazine Issue Cover -->
+    <section class="poster xhs" id="xhs-01">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row">
+          <span>Vol. 01</span><span class="dot"></span><span>2026.05</span><span class="dot"></span><span>申论专题</span>
+        </div>
+        <div class="stack gap-2">
+          <p class="kicker">人民日报，这样写</p>
+          <h1 class="h-display">县域发展<br>五个动作</h1>
+          <p class="h-sub">Beyond "Adapt to Local Conditions"</p>
+        </div>
+        <figure class="frame-img r-16x10">
+          <img src="assets/hero-field.jpg" alt="乡村田野" style="object-position: center 40%">
+        </figure>
+        <p class="lead">别再只会说"因地制宜"——人民日报给了五个可以落地的步骤。</p>
+      </div>
+      <div class="issue-strip">
+        <span>申论 · 县域经济</span>
+        <span>—</span>
+        <span>人民日报素材库</span>
+      </div>
+    </section>
+
+    <!-- Page 2: Data — M08 Tall Ledger -->
+    <section class="poster xhs" id="xhs-02">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <p class="kicker">County Economy · 基本盘</p>
+        <h2 class="h-xl">县域经济<br>不是小经济</h2>
+        <hr class="rule-accent">
+        <div class="ledger">
+          <div class="ledger-row">
+            <span class="ledger-nb">90%</span>
+            <div><span class="ledger-title">国土面积</span><br><span class="ledger-note">县域面积占全国九成</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb">50%</span>
+            <div><span class="ledger-title">人口占比</span><br><span class="ledger-note">县域人口占全国一半</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb">40%</span>
+            <div><span class="ledger-title">经济总量</span><br><span class="ledger-note">GDP 占全国四成</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb" style="font-size:22px; letter-spacing:0">差异化</span>
+            <div><span class="ledger-title">核心逻辑</span><br><span class="ledger-note">不可能找到"万金油"模式</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="issue-strip">
+        <span>数据 · 人民日报</span>
+        <span>—</span>
+        <span>02 / 12</span>
+      </div>
+    </section>
+
+    <!-- Page 3: Before/After — M15 -->
+    <section class="poster xhs" id="xhs-03">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <p class="kicker">Before · After</p>
+        <h2 class="h-xl">从空话到实招</h2>
+        <div class="beforeafter">
+          <div class="ba-block before">
+            <p class="kicker">Before · 旧写法</p>
+            <h3 class="h-md">"因地制宜"</h3>
+            <ul class="body" style="margin:0; padding-left:1.2em">
+              <li>要因地制宜发展特色产业</li>
+              <li>要优化营商环境</li>
+              <li>要释放消费潜力</li>
+            </ul>
+          </div>
+          <div class="ba-block">
+            <p class="kicker">After · 新写法</p>
+            <h3 class="h-md">五个动作</h3>
+            <ul class="body" style="margin:0; padding-left:1.2em">
+              <li>识别优势、做精产业、补齐链条</li>
+              <li>激活消费、留住青年</li>
+              <li>每一步都有具体落地方案</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="issue-strip">
+        <span>写法升级</span>
+        <span>—</span>
+        <span>03 / 12</span>
+      </div>
+    </section>
+
+    <!-- Page 4: Section Divider — M12 -->
+    <section class="poster xhs" id="xhs-04">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-4" style="justify-content:center; align-items:flex-start">
+        <p class="kicker">Act II · 五个动作</p>
+        <h1 class="h-display">拆解<br>"因地制宜"</h1>
+        <p class="h-sub">Five actionable steps.</p>
+      </div>
+      <div class="issue-strip">
+        <span>Section · 核心框架</span>
+        <span>—</span>
+        <span>5 pages</span>
+      </div>
+    </section>
+
+    <!-- Page 5: Action 1+2 — M14 Pipeline -->
+    <section class="poster xhs" id="xhs-05">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <p class="kicker">Step 01-02 · 前两步</p>
+        <h2 class="h-xl">识别优势<br>做精产业</h2>
+        <hr class="rule-accent">
+        <div class="pipeline-v">
+          <div class="step">
+            <div class="step-nb">01</div>
+            <div>
+              <h3 class="step-title">识别优势</h3>
+              <p class="step-desc">盘清资源禀赋、产业基础、区位条件和文化特色，找准差异化赛道，把比较优势转化为发展优势。</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-nb">02</div>
+            <div>
+              <h3 class="step-title">做精产业</h3>
+              <p class="step-desc">"有特产"和"有产业"差着一整条链。推动精深加工、品牌塑造、标准建设、文旅融合和数字营销。</p>
+            </div>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:auto">
+          "特色产业不能停留在初级产品和低水平扩张上。"
+          <span class="callout-src">— 人民日报</span>
+        </div>
+      </div>
+      <div class="issue-strip">
+        <span>Step 01-02</span>
+        <span>—</span>
+        <span>05 / 12</span>
+      </div>
+    </section>
+
+    <!-- Page 6: Action 3+4+5 — M14 Pipeline -->
+    <section class="poster xhs" id="xhs-06">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <p class="kicker">Step 03-05 · 后三步</p>
+        <h2 class="h-xl">补链 · 消费 · 青年</h2>
+        <hr class="rule-accent">
+        <div class="pipeline-v">
+          <div class="step">
+            <div class="step-nb">03</div>
+            <div>
+              <h3 class="step-title">补齐链条</h3>
+              <p class="step-desc">围绕企业需求搭建研发、设计、检测、融资、人才、销售等公共服务平台。</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-nb">04</div>
+            <div>
+              <h3 class="step-title">激活消费</h3>
+              <p class="step-desc">数字化、连锁化、标准化补齐商业短板，推动工业品下行和农产品上行双向畅通。</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-nb">05</div>
+            <div>
+              <h3 class="step-title">留住青年</h3>
+              <p class="step-desc">围绕就业创业、住房保障、公共服务、文化生活等需求，打造宜居宜业环境。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="issue-strip">
+        <span>Step 03-05</span>
+        <span>—</span>
+        <span>06 / 12</span>
+      </div>
+    </section>
+
+    <!-- Page 7: Core Insight — M04 Pull Quote -->
+    <section class="poster xhs" id="xhs-07">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-4" style="justify-content:center">
+        <p class="kicker">Insight · 核心观点</p>
+        <blockquote class="pullquote" style="font-size:52px; line-height:1.35">
+          "县域发展不是单个企业的独角戏，而是政府、企业、高校、平台、金融、人才共同参与的大合唱。"
+        </blockquote>
+        <hr class="rule">
+        <p class="meta">— 人民日报 · 创新突围看县域 · 2026.01</p>
+      </div>
+      <div class="issue-strip">
+        <span>Page 07 · 金句</span>
+        <span>—</span>
+        <span>07 / 12</span>
+      </div>
+    </section>
+
+    <!-- Page 8: Consumption — M05 Checklist -->
+    <section class="poster xhs" id="xhs-08">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <p class="kicker">Consumption · 县域商业</p>
+        <h2 class="h-xl">激活消费<br>四个方向</h2>
+        <hr class="rule-accent">
+        <div class="ledger">
+          <div class="ledger-row">
+            <span class="ledger-nb">01</span>
+            <div><span class="ledger-title">数字化</span><br><span class="ledger-note">让小店会经营、会补货、会触达顾客</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb">02</span>
+            <div><span class="ledger-title">连锁化</span><br><span class="ledger-note">让优质品牌和服务下沉县城</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb">03</span>
+            <div><span class="ledger-title">标准化</span><br><span class="ledger-note">让产品质量更稳定，群众买得更放心</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb">04</span>
+            <div><span class="ledger-title">双向流通</span><br><span class="ledger-note">工业品下得去，农产品上得来</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="issue-strip">
+        <span>消费 · 四方向</span>
+        <span>—</span>
+        <span>08 / 12</span>
+      </div>
+    </section>
+
+    <!-- Page 9: Cases — M11 Marginalia Essay -->
+    <section class="poster xhs" id="xhs-09">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <p class="kicker">Cases · 真实案例</p>
+        <h2 class="h-xl">他们怎么做的</h2>
+        <hr class="rule-accent">
+        <div class="marginalia" style="flex:1">
+          <div class="stack gap-2">
+            <p class="body" style="margin:0"><strong>江西芦溪</strong>：把拉瓷坯、闻虫鸣的体验做成文旅吸引力。</p>
+            <p class="body" style="margin:0"><strong>安徽无为</strong>：羽毛球产业从"单打独斗"走向"汇聚成链"。</p>
+            <p class="body" style="margin:0"><strong>内蒙古宁城</strong>：膨润土做猫砂产业链，产品远销百余国。</p>
+            <p class="body" style="margin:0"><strong>山东临朐</strong>：柿子统一收购、加工、销售，打造文化 IP。</p>
+            <p class="body" style="margin:0"><strong>河北唐县</strong>：给羊建立电子"身份证"，全生命周期可追溯。</p>
+            <p class="body" style="margin:0"><strong>慈溪</strong>：建设"全球智能家电创新中心"，补齐公共服务。</p>
+          </div>
+          <div class="mg-col">
+            <p>识别优势</p>
+            <p>做精产业</p>
+            <p>补齐链条</p>
+            <p>激活消费</p>
+            <p>留住青年</p>
+          </div>
+        </div>
+      </div>
+      <div class="issue-strip">
+        <span>案例 · 人民日报</span>
+        <span>—</span>
+        <span>09 / 12</span>
+      </div>
+    </section>
+
+    <!-- Page 10: Warning — M09 Atmospheric Thesis -->
+    <section class="poster xhs" id="xhs-10">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-4" style="justify-content:center">
+        <p class="kicker">Warning · 边界提醒</p>
+        <h1 class="h-display" style="font-size:100px">别把"特色"<br>做成"跟风"</h1>
+        <p class="lead" style="max-width:800px">特色小镇闲置、助农项目烂尾、耕地"非粮化"、园区"圈地空转"——县域发展须避免运动式突进、一窝蜂式上马。</p>
+        <hr class="rule">
+        <p class="meta">— 人民日报 · 让县域经济拔节生长</p>
+      </div>
+      <div class="issue-strip">
+        <span>Page 10 · 边界</span>
+        <span>—</span>
+        <span>10 / 12</span>
+      </div>
+    </section>
+
+    <!-- Page 11: Framework — M07 Closing Note -->
+    <section class="poster xhs" id="xhs-11">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <p class="kicker">Framework · 可带走的框架</p>
+        <h2 class="h-xl">县域发展<br>五步法</h2>
+        <hr class="rule-accent">
+        <div class="ledger">
+          <div class="ledger-row">
+            <span class="ledger-nb">01</span>
+            <div><span class="ledger-title">识别优势</span><br><span class="ledger-note">盘清资源禀赋，找准差异化赛道</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb">02</span>
+            <div><span class="ledger-title">做精产业</span><br><span class="ledger-note">精深加工、品牌塑造、标准建设</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb">03</span>
+            <div><span class="ledger-title">补齐链条</span><br><span class="ledger-note">搭建研发、设计、检测等公共平台</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb">04</span>
+            <div><span class="ledger-title">激活消费</span><br><span class="ledger-note">数字化、连锁化、标准化双向流通</span></div>
+          </div>
+          <div class="ledger-row">
+            <span class="ledger-nb">05</span>
+            <div><span class="ledger-title">留住青年</span><br><span class="ledger-note">宜居宜业，让青年与县域双向奔赴</span></div>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:auto">
+          "县域发展不是把别人的模式搬回来，而是把自己的优势做深。"
+          <span class="callout-src">— 核心结论</span>
+        </div>
+      </div>
+      <div class="issue-strip">
+        <span>五步法 · Framework</span>
+        <span>—</span>
+        <span>11 / 12</span>
+      </div>
+    </section>
+
+    <!-- Page 12: References — M01 adapted -->
+    <section class="poster xhs" id="xhs-12">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-2">
+        <p class="kicker">References · 参考文献</p>
+        <h2 class="h-md">本文参考的<br>人民日报文章</h2>
+        <hr class="rule-accent">
+        <div class="stack gap-1" style="margin-top:12px">
+          <div style="padding:16px 0; border-bottom:1px solid var(--line)">
+            <p class="meta" style="margin:0 0 8px">01</p>
+            <p class="body" style="margin:0; font-size:22px">陈炳旭：《让县域经济拔节生长（金台随笔）》<br><span style="color:var(--muted); font-size:18px">人民日报 2026.05.21 第 08 版</span></p>
+          </div>
+          <div style="padding:16px 0; border-bottom:1px solid var(--line)">
+            <p class="meta" style="margin:0 0 8px">02</p>
+            <p class="body" style="margin:0; font-size:22px">姚雪青等：《创新突围看县域（人民眼·县域经济）》<br><span style="color:var(--muted); font-size:18px">人民日报 2026.01.16 第 13 版</span></p>
+          </div>
+          <div style="padding:16px 0; border-bottom:1px solid var(--line)">
+            <p class="meta" style="margin:0 0 8px">03</p>
+            <p class="body" style="margin:0; font-size:22px">姚雪青：《县域创新的"三把钥匙"（有所思）》<br><span style="color:var(--muted); font-size:18px">人民日报 2026.01.16 第 13 版</span></p>
+          </div>
+          <div style="padding:16px 0; border-bottom:1px solid var(--line)">
+            <p class="meta" style="margin:0 0 8px">04</p>
+            <p class="body" style="margin:0; font-size:22px">张云河等：《提振消费看县域（人民眼·县域经济）》<br><span style="color:var(--muted); font-size:18px">人民日报 2026.01.23 第 13 版</span></p>
+          </div>
+          <div style="padding:16px 0; border-bottom:1px solid var(--line)">
+            <p class="meta" style="margin:0 0 8px">05</p>
+            <p class="body" style="margin:0; font-size:22px">郑智文等：《青年发展看县域（人民眼·县域经济）》<br><span style="color:var(--muted); font-size:18px">人民日报 2026.01.30 第 13 版</span></p>
+          </div>
+          <div style="padding:16px 0">
+            <p class="meta" style="margin:0 0 8px">06</p>
+            <p class="body" style="margin:0; font-size:22px">崔斌：《把握好个性与共性（编辑手记）》<br><span style="color:var(--muted); font-size:18px">人民日报 2026.02.10 第 02 版</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="issue-strip">
+        <span>参考文献</span>
+        <span>—</span>
+        <span>12 / 12</span>
+      </div>
+    </section>
+
+    <!-- ==================== 微信公众号封面 (21:9 + 1:1) ==================== -->
+
+    <!-- WeChat 21:9 Main Cover -->
+    <section class="poster wide" id="wechat-21x9">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-4" style="justify-content:center">
+        <div class="issue-row">
+          <span>申论专题</span><span class="dot"></span><span>2026.05</span>
+        </div>
+        <div class="stack gap-2">
+          <p class="kicker">人民日报，这样写</p>
+          <h1 class="h-display" style="font-size:128px">县域发展，别再只会说"因地制宜"</h1>
+          <p class="h-sub" style="font-size:32px">五个动作：识别优势、做精产业、补齐链条、激活消费、留住青年</p>
+        </div>
+      </div>
+      <div class="issue-strip">
+        <span>人民日报素材库</span>
+        <span>—</span>
+        <span>申论县域发展专题</span>
+      </div>
+    </section>
+
+    <!-- WeChat 1:1 Square Cover -->
+    <section class="poster square" id="wechat-1x1">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content stack gap-4" style="justify-content:center; text-align:center; align-items:center">
+        <p class="kicker">申论专题 · 2026.05</p>
+        <h1 class="h-display" style="font-size:116px; text-align:center">县域发展<br>五个动作</h1>
+        <hr class="rule-accent" style="margin:0 auto">
+        <p class="lead" style="text-align:center; max-width:700px">人民日报，这样写"因地制宜"</p>
+      </div>
+      <div class="issue-strip">
+        <span>人民日报素材库</span>
+        <span>—</span>
+        <span>—</span>
+      </div>
+    </section>
+
+    <!-- Pair Preview (for visual checking only) -->
+    <div style="font-family:var(--mono); font-size:20px; letter-spacing:.12em; text-transform:uppercase; color:#999; margin-top:48px; margin-bottom:14px">Pair Preview · 21:9 + 1:1 配对预览</div>
+    <section class="pair-preview">
+      <div class="preview-wide">
+        <div style="font-family:var(--mono); font-size:18px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:14px">21:9 · 微信主封面 · 2100×900</div>
+        <iframe src="#wechat-21x9" style="width:2100px; height:900px; border:1px solid var(--line); border-radius:4px"></iframe>
+      </div>
+      <div class="preview-square">
+        <div style="font-family:var(--mono); font-size:18px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:14px">1:1 · 微信方封面 · 1080×1080</div>
+        <iframe src="#wechat-1x1" style="width:1080px; height:1080px; border:1px solid var(--line); border-radius:4px"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Magazine WebGL background -->
+  <script src="assets/magazine-bg-webgl.js"></script>
+  <script>
+    (function () {
+      function cssVarRgb(name, fallback) {
+        var raw = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+        if (!raw) return fallback;
+        var parts = raw.split(',').map(function (x) { return parseInt(x.trim(), 10); });
+        return parts.length === 3 && parts.every(function (n) { return !isNaN(n); }) ? parts : fallback;
+      }
+      function mountAll() {
+        if (!window.MagazineBg || !window.MagazineBg.mount) return;
+        var ink    = cssVarRgb('--ink-rgb',    [22,37,27]);
+        var paper  = cssVarRgb('--paper-rgb',  [245,241,232]);
+        var accent = cssVarRgb('--accent-rgb', [46,107,79]);
+        document.querySelectorAll('canvas.mag-bg').forEach(function (c) {
+          window.MagazineBg.mount(c, { ink: ink, paper: paper, accent: accent, strength: 0.32, frozenTime: 12.5 });
+        });
+      }
+      if (document.readyState === 'complete') mountAll();
+      else window.addEventListener('load', mountAll);
+    })();
+  </script>
+</body>
+</html>
