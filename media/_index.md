@@ -20,6 +20,7 @@
 | 2026-06-07 | 《人民日报》这样写系列封面模板 | 公众号封面 / 分享卡 | `media/images/2026-06-07-peopledaily-writing-series-wechat-brand/` | 待上传 | 系列统一品牌模板；含 5 套 21:9 头图与 1:1 分享卡 |
 | 2026-06-08 | 全国统一大市场：规则、设施和要素一起通 | 小红书图 / 视频号封面 | `media/images/2026-06-08-unified-market-xhs-video/` | 待上传 | `data/articles/公众号文章/08-人民日报讲全国统一大市场：规则、设施和要素一起通.md`；含 14 张小红书图和 1 张 3:4 视频号封面 |
 | 2026-06-09 | 城市更新：先体检、再保护、再服务 | 小红书图 / 视频号封面 | `media/images/2026-06-09-city-renewal-xhs-video/` | 待上传 | `data/articles/公众号文章/09-人民日报讲城市更新：别急着拆，先体检、再保护、再服务.md`；含 16 张小红书图、2 张 3:4 视频号封面和 1 张预览图 |
+| 2026-06-09 | 2026 观点认知热点预测与背诵框架（上半年） | 公众号封面 | `media/images/2026-06-09-viewpoint-cognition-2026h1-wechat/` | 待上传 | `data/analysis/viewpoint-cognition-prediction-frameworks-2026H1.md`；含 21:9 主封面、1:1 方封面和配对预览，Editorial × Ink Classic 杂志风 |
 
 ## 类型写法
 

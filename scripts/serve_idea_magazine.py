@@ -26,8 +26,10 @@ sys.path.insert(0, str(SCRIPT_DIR))
 
 
 def connect(path: Path) -> sqlite3.Connection:
-    conn = sqlite3.connect(str(path))
+    conn = sqlite3.connect(str(path), timeout=10)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA journal_mode=WAL")
+    conn.execute("PRAGMA busy_timeout=10000")
     return conn
 
 
@@ -1218,8 +1220,26 @@ def main() -> None:
     if not args.no_sync_analysis:
         sync_analysis_ideas()
 
-    server = ThreadingHTTPServer((args.host, args.port), IdeaMagazineHandler)
-    print(f"选题工作台已启动: http://{args.host}:{args.port}")
+    import socket
+
+    port = args.port
+    max_attempts = 20
+    server = None
+    for _ in range(max_attempts):
+        try:
+            server = ThreadingHTTPServer((args.host, port), IdeaMagazineHandler)
+            server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            break
+        except OSError as e:
+            if e.errno == 48 or "Address already in use" in str(e):
+                port += 1
+                continue
+            raise
+    else:
+        print(f"无法找到可用端口 (尝试了 {args.port} ~ {port})，请关闭占用端口的程序后重试。")
+        sys.exit(1)
+
+    print(f"选题工作台已启动: http://{args.host}:{port}")
     print("按 Ctrl+C 停止。")
     try:
         server.serve_forever()
