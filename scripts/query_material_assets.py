@@ -115,9 +115,13 @@ def print_ideas(conn: sqlite3.Connection, date: str | None) -> None:
     result = rows(conn, f"SELECT * FROM content_ideas {where} ORDER BY date DESC, idea_id", params)
     print("公众号选题")
     for row in result:
-        print(f"\n[{row['date']}] {row['title']}（{row['status']}）")
+        priority = row["priority"] if "priority" in row.keys() else "B"
+        print(f"\n[{row['date']}] {row['title']}（{priority}级｜{row['status']}）")
         print(f"  平台：{row['platform']}")
         print(f"  角度：{row['angle']}")
+        support = "；".join(json_list(row["support_article_ids_json"]))
+        if support:
+            print(f"  参考文章 ID：{support}")
         outline = "；".join(json_list(row["outline_json"]))
         if outline:
             print(f"  结构：{outline}")

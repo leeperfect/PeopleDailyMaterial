@@ -1,6 +1,6 @@
 ---
 title: "项目档案"
-updated: 2026-05-28
+updated: 2026-06-06
 ---
 
 # 项目档案
@@ -12,9 +12,10 @@ updated: 2026-05-28
 事实留存层：`data/raw/` 原始抓取数据
 机器检索层：`data/core/` SQLite 核心库（稳定文章 ID、全文检索、教研素材资产库）
 人类阅读层：`data/vault/` Obsidian 格式文章 Markdown + `data/articles/公众号文章/` 成品稿
-过程分析层：`data/analysis/` 教研复盘、选题拆解、跨平台出品包
+过程分析层：`data/analysis/` 教研复盘、选题拆解、文案、讲稿、视觉 brief
+本地媒体层：`media/` 小红书图片、公众号配图、课件、视频、音频、压缩包，由网盘同步，不进入 GitHub
 外部分发层：`data/exports/` JSON/CSV 导出 + Notion 数据库视图
-外部同步对象：Notion 数据库、GitHub 仓库
+外部同步对象：Notion 数据库、GitHub 仓库、网盘多媒体目录
 
 ## Commit 优先标签
 
@@ -29,4 +30,5 @@ updated: 2026-05-28
 - 本次涉及哪些日期的文章数据变化
 - 是否涉及 SQLite 数据库结构或文章 ID 变动
 - 是否涉及 Notion 同步状态或字段更新
+- 是否涉及 `media/` 多媒体索引或 GitHub 忽略规则
 - 是否涉及爬虫脚本或采集流程的修改

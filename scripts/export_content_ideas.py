@@ -56,7 +56,7 @@ def period_parts(date_text: str) -> Dict[str, str]:
 
 
 def fetch_ideas(conn: sqlite3.Connection, start: Optional[str], end: Optional[str]) -> List[sqlite3.Row]:
-    ensure_note_table(conn)
+    ensure_schema(conn)
     filters: List[str] = []
     params: List[str] = []
     if start:
@@ -76,7 +76,8 @@ def fetch_ideas(conn: sqlite3.Connection, start: Optional[str], end: Optional[st
             LEFT JOIN content_idea_notes n ON n.idea_id = i.idea_id
             {where}
             ORDER BY i.date DESC,
-              CASE i.status WHEN '优先' THEN 1 WHEN '进行中' THEN 2 WHEN '已完成' THEN 3 WHEN '备选' THEN 4 ELSE 5 END,
+              CASE i.priority WHEN 'S' THEN 1 WHEN 'A' THEN 2 WHEN 'B' THEN 3 WHEN 'C' THEN 4 ELSE 5 END,
+              CASE i.status WHEN '进行中' THEN 1 WHEN '备选' THEN 2 WHEN '已完成' THEN 3 WHEN '暂缓' THEN 4 ELSE 5 END,
               i.idea_id
             """,
             params,
@@ -84,7 +85,34 @@ def fetch_ideas(conn: sqlite3.Connection, start: Optional[str], end: Optional[st
     )
 
 
-def ensure_note_table(conn: sqlite3.Connection) -> None:
+def ensure_schema(conn: sqlite3.Connection) -> None:
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS content_ideas (
+            idea_id TEXT PRIMARY KEY,
+            date TEXT NOT NULL,
+            title TEXT NOT NULL,
+            angle TEXT,
+            platform TEXT,
+            support_article_ids_json TEXT,
+            outline_json TEXT,
+            status TEXT NOT NULL DEFAULT '备选',
+            priority TEXT NOT NULL DEFAULT 'B',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+        """
+    )
+    columns = {row["name"] for row in conn.execute("PRAGMA table_info(content_ideas)")}
+    if "priority" not in columns:
+        conn.execute("ALTER TABLE content_ideas ADD COLUMN priority TEXT NOT NULL DEFAULT 'B'")
+        conn.execute("UPDATE content_ideas SET priority = 'S' WHERE status IN ('优先', '已完成')")
+        conn.execute("UPDATE content_ideas SET priority = 'A' WHERE status = '进行中'")
+        conn.execute("UPDATE content_ideas SET priority = 'C' WHERE status = '暂缓'")
+    conn.execute("UPDATE content_ideas SET priority = 'S' WHERE status = '优先'")
+    conn.execute("UPDATE content_ideas SET status = '备选' WHERE status = '优先'")
+    conn.execute("UPDATE content_ideas SET status = '备选' WHERE status NOT IN ('备选', '进行中', '已完成', '暂缓')")
+    conn.execute("UPDATE content_ideas SET priority = 'B' WHERE priority NOT IN ('S', 'A', 'B', 'C')")
     conn.execute(
         f"""
         CREATE TABLE IF NOT EXISTS {NOTE_TABLE} (
@@ -123,10 +151,12 @@ def idea_record(row: sqlite3.Row, article_titles: Dict[str, str]) -> Dict[str, A
         "date": row["date"],
         **parts,
         "status": row["status"],
+        "priority": row["priority"],
         "selected": "是" if row["selected"] else "",
         "platform": row["platform"] or "",
         "title": row["title"],
         "angle": row["angle"] or "",
+        "support_article_count": len(support_ids),
         "support_article_ids": "；".join(support_ids),
         "support_article_titles": "；".join(support_titles),
         "outline": "；".join(outline),
@@ -149,17 +179,23 @@ def markdown_table(headers: List[str], rows: Iterable[List[Any]]) -> List[str]:
 def build_markdown(records: List[Dict[str, Any]]) -> str:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     status_counts = Counter(record["status"] for record in records)
+    priority_counts = Counter(record["priority"] for record in records)
     month_status: Dict[str, Counter] = defaultdict(Counter)
     quarter_status: Dict[str, Counter] = defaultdict(Counter)
+    month_priority: Dict[str, Counter] = defaultdict(Counter)
+    quarter_priority: Dict[str, Counter] = defaultdict(Counter)
     for record in records:
         month_status[record["month"]][record["status"]] += 1
         quarter_status[record["quarter"]][record["status"]] += 1
+        month_priority[record["month"]][record["priority"]] += 1
+        quarter_priority[record["quarter"]][record["priority"]] += 1
 
     lines: List[str] = [
         "# 公众号选题库",
         "",
         f"> 自动生成于 {now}。数据来源：`data/core/material_assets.sqlite` 的 `content_ideas` 表。",
-        "> 每次完成文章梳理后，运行 `python3 scripts/export_content_ideas.py` 刷新本表。",
+        "> 精筛口径：每个主选题至少绑定 3 篇人民日报文章；重复度高的标题已合并；素材不足的标题不进入主表。",
+        "> 每次完成文章梳理后，先运行 `python3 scripts/import_analysis_content_ideas.py` 同步 analysis 选题，再运行 `python3 scripts/refine_content_ideas.py` 精筛去重并刷新本表。打开本地选题工作台时会自动同步和精筛一次。",
         "",
         "## 快速看板",
         "",
@@ -170,8 +206,10 @@ def build_markdown(records: List[Dict[str, Any]]) -> str:
             [
                 ["全部选题", len(records)],
                 ["已精筛", sum(1 for record in records if record["selected"])],
-                ["优先", status_counts.get("优先", 0)],
+                ["S级", priority_counts.get("S", 0)],
+                ["A/B/C级", f"{priority_counts.get('A', 0)} / {priority_counts.get('B', 0)} / {priority_counts.get('C', 0)}"],
                 ["备选", status_counts.get("备选", 0)],
+                ["进行中", status_counts.get("进行中", 0)],
                 ["已完成", status_counts.get("已完成", 0)],
                 ["涉及月份", "、".join(sorted(month_status.keys(), reverse=True))],
             ],
@@ -181,14 +219,19 @@ def build_markdown(records: List[Dict[str, Any]]) -> str:
     lines.extend(["", "## 按月统计", ""])
     lines.extend(
         markdown_table(
-            ["月份", "全部", "优先", "备选", "已完成"],
+            ["月份", "全部", "S", "A", "B", "C", "备选", "进行中", "已完成", "暂缓"],
             [
                 [
                     month,
                     sum(counter.values()),
-                    counter.get("优先", 0),
+                    month_priority[month].get("S", 0),
+                    month_priority[month].get("A", 0),
+                    month_priority[month].get("B", 0),
+                    month_priority[month].get("C", 0),
                     counter.get("备选", 0),
+                    counter.get("进行中", 0),
                     counter.get("已完成", 0),
+                    counter.get("暂缓", 0),
                 ]
                 for month, counter in sorted(month_status.items(), reverse=True)
             ],
@@ -198,14 +241,19 @@ def build_markdown(records: List[Dict[str, Any]]) -> str:
     lines.extend(["", "## 按季度统计", ""])
     lines.extend(
         markdown_table(
-            ["季度", "全部", "优先", "备选", "已完成"],
+            ["季度", "全部", "S", "A", "B", "C", "备选", "进行中", "已完成", "暂缓"],
             [
                 [
                     quarter,
                     sum(counter.values()),
-                    counter.get("优先", 0),
+                    quarter_priority[quarter].get("S", 0),
+                    quarter_priority[quarter].get("A", 0),
+                    quarter_priority[quarter].get("B", 0),
+                    quarter_priority[quarter].get("C", 0),
                     counter.get("备选", 0),
+                    counter.get("进行中", 0),
                     counter.get("已完成", 0),
+                    counter.get("暂缓", 0),
                 ]
                 for quarter, counter in sorted(quarter_status.items(), reverse=True)
             ],
@@ -215,17 +263,19 @@ def build_markdown(records: List[Dict[str, Any]]) -> str:
     lines.extend(["", "## 选题总表", ""])
     lines.extend(
         markdown_table(
-            ["日期", "月份", "季度", "精筛", "状态", "平台", "选题", "切入角度", "支撑文章", "大纲", "备注"],
+            ["日期", "月份", "季度", "精筛", "优先级", "状态", "平台", "选题", "切入角度", "支撑文章数", "支撑文章", "大纲", "备注"],
             [
                 [
                     record["date"],
                     record["month"],
                     record["quarter"],
                     record["selected"],
+                    record["priority"],
                     record["status"],
                     record["platform"],
                     record["title"],
                     record["angle"],
+                    record["support_article_count"],
                     record["support_article_titles"],
                     record["outline"],
                     record["user_note"],
@@ -247,10 +297,12 @@ def write_csv(path: Path, records: List[Dict[str, Any]]) -> None:
         "month",
         "quarter",
         "selected",
+        "priority",
         "status",
         "platform",
         "title",
         "angle",
+        "support_article_count",
         "support_article_ids",
         "support_article_titles",
         "outline",

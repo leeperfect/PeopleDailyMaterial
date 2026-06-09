@@ -19,7 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSET_DB = ROOT / "data" / "core" / "material_assets.sqlite"
 ARTICLE_DB = ROOT / "data" / "core" / "articles.sqlite"
 SCRIPT_DIR = ROOT / "scripts"
-STATUS_OPTIONS = ["优先", "备选", "进行中", "已完成", "暂缓"]
+STATUS_OPTIONS = ["备选", "进行中", "已完成", "暂缓"]
+PRIORITY_OPTIONS = ["S", "A", "B", "C"]
 
 sys.path.insert(0, str(SCRIPT_DIR))
 
@@ -42,6 +43,68 @@ def json_list(text: Optional[str]) -> List[str]:
     return [str(value)]
 
 
+def dumps(value: Any) -> str:
+    return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+
+
+def normalize_status(value: Any) -> str:
+    text = str(value or "").strip()
+    if text == "优先":
+        return "备选"
+    return text if text in STATUS_OPTIONS else "备选"
+
+
+def normalize_priority(value: Any, legacy_status: Any = "") -> str:
+    text = str(value or "").strip().upper()
+    if text.startswith("S"):
+        return "S"
+    if text.startswith("A"):
+        return "A"
+    if text.startswith("B"):
+        return "B"
+    if text.startswith("C"):
+        return "C"
+    legacy = str(legacy_status or "").strip()
+    if legacy in {"优先", "已完成"}:
+        return "S"
+    if legacy == "进行中":
+        return "A"
+    if legacy == "暂缓":
+        return "C"
+    return "B"
+
+
+def ensure_content_idea_schema(conn: sqlite3.Connection) -> None:
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS content_ideas (
+            idea_id TEXT PRIMARY KEY,
+            date TEXT NOT NULL,
+            title TEXT NOT NULL,
+            angle TEXT,
+            platform TEXT,
+            support_article_ids_json TEXT,
+            outline_json TEXT,
+            status TEXT NOT NULL DEFAULT '备选',
+            priority TEXT NOT NULL DEFAULT 'B',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL
+        )
+        """
+    )
+    columns = {row["name"] for row in conn.execute("PRAGMA table_info(content_ideas)")}
+    if "priority" not in columns:
+        conn.execute("ALTER TABLE content_ideas ADD COLUMN priority TEXT NOT NULL DEFAULT 'B'")
+        conn.execute("UPDATE content_ideas SET priority = 'S' WHERE status IN ('优先', '已完成')")
+        conn.execute("UPDATE content_ideas SET priority = 'A' WHERE status = '进行中'")
+        conn.execute("UPDATE content_ideas SET priority = 'C' WHERE status = '暂缓'")
+    conn.execute("UPDATE content_ideas SET priority = 'S' WHERE status = '优先'")
+    conn.execute("UPDATE content_ideas SET status = '备选' WHERE status = '优先'")
+    conn.execute("UPDATE content_ideas SET status = '备选' WHERE status NOT IN ('备选', '进行中', '已完成', '暂缓')")
+    conn.execute("UPDATE content_ideas SET priority = 'B' WHERE priority NOT IN ('S', 'A', 'B', 'C')")
+    conn.commit()
+
+
 def period_parts(date_text: str) -> Dict[str, str]:
     date = datetime.strptime(date_text, "%Y-%m-%d")
     quarter = (date.month - 1) // 3 + 1
@@ -53,6 +116,7 @@ def period_parts(date_text: str) -> Dict[str, str]:
 
 
 def ensure_note_table(conn: sqlite3.Connection) -> None:
+    ensure_content_idea_schema(conn)
     conn.execute(
         """
         CREATE TABLE IF NOT EXISTS content_idea_notes (
@@ -110,6 +174,7 @@ def row_to_idea(row: sqlite3.Row, article_map: Dict[str, Dict[str, str]]) -> Dic
             row["angle"] or "",
             row["platform"] or "",
             row["status"] or "",
+            row["priority"] or "",
             " ".join(outline),
             " ".join(article["title"] for article in support_articles),
             row["user_note"] or "",
@@ -122,7 +187,8 @@ def row_to_idea(row: sqlite3.Row, article_map: Dict[str, Dict[str, str]]) -> Dic
         "title": row["title"],
         "angle": row["angle"] or "",
         "platform": row["platform"] or "",
-        "status": row["status"],
+        "status": normalize_status(row["status"]),
+        "priority": normalize_priority(row["priority"], row["status"]),
         "selected": bool(row["selected"]),
         "user_note": row["user_note"] or "",
         "outline": outline,
@@ -149,7 +215,8 @@ def idea_payload() -> Dict[str, Any]:
                 FROM content_ideas i
                 LEFT JOIN content_idea_notes n ON n.idea_id = i.idea_id
                 ORDER BY i.date DESC,
-                  CASE i.status WHEN '优先' THEN 1 WHEN '进行中' THEN 2 WHEN '已完成' THEN 3 WHEN '备选' THEN 4 ELSE 5 END,
+                  CASE i.priority WHEN 'S' THEN 1 WHEN 'A' THEN 2 WHEN 'B' THEN 3 WHEN 'C' THEN 4 ELSE 5 END,
+                  CASE i.status WHEN '进行中' THEN 1 WHEN '备选' THEN 2 WHEN '已完成' THEN 3 WHEN '暂缓' THEN 4 ELSE 5 END,
                   i.idea_id
                 """
             )
@@ -159,11 +226,13 @@ def idea_payload() -> Dict[str, Any]:
 
     ideas = [row_to_idea(row, article_map) for row in rows]
     status_counts: Dict[str, int] = {}
+    priority_counts: Dict[str, int] = {}
     month_counts: Dict[str, int] = {}
     quarter_counts: Dict[str, int] = {}
     platforms = set()
     for idea in ideas:
         status_counts[idea["status"]] = status_counts.get(idea["status"], 0) + 1
+        priority_counts[idea["priority"]] = priority_counts.get(idea["priority"], 0) + 1
         month_counts[idea["month"]] = month_counts.get(idea["month"], 0) + 1
         quarter_counts[idea["quarter"]] = quarter_counts.get(idea["quarter"], 0) + 1
         for platform in idea["platform"].replace("，", "+").replace("/", "+").split("+"):
@@ -177,11 +246,13 @@ def idea_payload() -> Dict[str, Any]:
             "total": len(ideas),
             "selected": sum(1 for idea in ideas if idea["selected"]),
             "status_counts": status_counts,
+            "priority_counts": priority_counts,
             "month_counts": month_counts,
             "quarter_counts": quarter_counts,
         },
         "filters": {
             "statuses": STATUS_OPTIONS,
+            "priorities": PRIORITY_OPTIONS,
             "months": sorted(month_counts.keys(), reverse=True),
             "quarters": sorted(quarter_counts.keys(), reverse=True),
             "platforms": sorted(platforms),
@@ -233,6 +304,8 @@ def article_search(query: str, limit: int = 40) -> Dict[str, Any]:
 
 def update_idea(idea_id: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     status = payload.get("status")
+    priority = payload.get("priority")
+    support_article_ids = payload.get("support_article_ids")
     selected = payload.get("selected")
     user_note = payload.get("user_note")
     now = datetime.now().isoformat(timespec="seconds")
@@ -244,9 +317,30 @@ def update_idea(idea_id: str, payload: Dict[str, Any]) -> Dict[str, Any]:
         if not exists:
             raise KeyError(f"未找到选题: {idea_id}")
         if status is not None:
+            status = normalize_status(status)
             if status not in STATUS_OPTIONS:
                 raise ValueError(f"状态不支持: {status}")
             conn.execute("UPDATE content_ideas SET status = ?, updated_at = ? WHERE idea_id = ?", (status, now, idea_id))
+        if priority is not None:
+            priority = normalize_priority(priority)
+            if priority not in PRIORITY_OPTIONS:
+                raise ValueError(f"优先级不支持: {priority}")
+            conn.execute(
+                "UPDATE content_ideas SET priority = ?, updated_at = ? WHERE idea_id = ?",
+                (priority, now, idea_id),
+            )
+        if support_article_ids is not None:
+            if not isinstance(support_article_ids, list):
+                raise ValueError("参考文章必须是列表")
+            clean_ids = []
+            for article_id in support_article_ids:
+                text = str(article_id).strip()
+                if text and text not in clean_ids:
+                    clean_ids.append(text)
+            conn.execute(
+                "UPDATE content_ideas SET support_article_ids_json = ?, updated_at = ? WHERE idea_id = ?",
+                (dumps(clean_ids), now, idea_id),
+            )
 
         current = conn.execute("SELECT * FROM content_idea_notes WHERE idea_id = ?", (idea_id,)).fetchone()
         next_selected = int(bool(selected)) if selected is not None else (int(current["selected"]) if current else 0)
@@ -286,6 +380,30 @@ def refresh_exports() -> None:
         export_content_ideas.write_csv(export_content_ideas.DEFAULT_CSV_PATH, records)
     except Exception as exc:
         print(f"刷新 Markdown/CSV 失败: {exc}", file=sys.stderr)
+
+
+def sync_analysis_ideas() -> None:
+    try:
+        import import_analysis_content_ideas
+        import refine_content_ideas
+
+        import_result = import_analysis_content_ideas.sync_analysis_content_ideas(refresh=False)
+        refine_result = refine_content_ideas.refine_content_ideas(refresh=True)
+        changed = (
+            import_result.get("inserted", 0)
+            + import_result.get("updated", 0)
+            + refine_result.get("changed", 0)
+        )
+        if changed or import_result.get("skipped", 0):
+            print(
+                "已同步并精筛 analysis 选题: "
+                f"新增 {import_result.get('inserted', 0)} 条，"
+                f"补充 {import_result.get('updated', 0)} 条，"
+                f"过滤 {import_result.get('skipped', 0)} 条，"
+                f"精筛后 {refine_result.get('after', 0)} 条。"
+            )
+    except Exception as exc:
+        print(f"同步并精筛 analysis 选题失败: {exc}", file=sys.stderr)
 
 
 def json_response(handler: BaseHTTPRequestHandler, data: Dict[str, Any], status: int = 200) -> None:
@@ -435,7 +553,7 @@ HTML = r"""<!doctype html>
     .stat span { color: var(--muted); font-size: 13px; }
     .toolbar {
       display: grid;
-      grid-template-columns: minmax(260px, 1.4fr) repeat(4, minmax(120px, .55fr)) auto;
+      grid-template-columns: minmax(260px, 1.4fr) repeat(5, minmax(112px, .5fr)) auto;
       gap: 10px;
       align-items: stretch;
       margin-bottom: 22px;
@@ -655,6 +773,28 @@ HTML = r"""<!doctype html>
       padding-top: 16px;
       border-top: 1px solid var(--line);
     }
+    .article-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: stretch;
+    }
+    .mini-action {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.42);
+      color: var(--ink);
+      cursor: pointer;
+      padding: 0 10px;
+      min-width: 74px;
+    }
+    .mini-action:hover { border-color: var(--ink); }
+    .copy-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
     .article-results {
       max-height: 230px;
       overflow: auto;
@@ -675,7 +815,8 @@ HTML = r"""<!doctype html>
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .ideas { grid-template-columns: 1fr; }
       .toolbar { grid-template-columns: 1fr; }
-      .status-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .status-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -686,19 +827,20 @@ HTML = r"""<!doctype html>
         <div class="issue"><span>People Daily Material</span><span id="issueDate">Idea Desk</span></div>
         <h1>选题工作台</h1>
       </div>
-      <p class="deck">从人民日报素材库中抽取公众号选题，按月份、季度、状态和平台统一筛选。</p>
+      <p class="deck">从人民日报素材库中抽取公众号选题，按月份、季度、优先级、状态和平台统一筛选。</p>
     </header>
 
     <section class="stats" aria-label="选题统计">
       <div class="stat"><strong id="statTotal">0</strong><span>全部选题</span></div>
       <div class="stat"><strong id="statSelected">0</strong><span>精筛保留</span></div>
-      <div class="stat"><strong id="statPriority">0</strong><span>优先推进</span></div>
+      <div class="stat"><strong id="statPriority">0</strong><span>S级选题</span></div>
       <div class="stat"><strong id="statDone">0</strong><span>已完成</span></div>
     </section>
 
     <section class="toolbar" aria-label="筛选">
       <input class="field search" id="searchInput" placeholder="搜索选题、角度、文章、大纲" autocomplete="off">
       <select class="field" id="statusFilter"><option value="">全部状态</option></select>
+      <select class="field" id="priorityFilter"><option value="">全部优先级</option></select>
       <select class="field" id="monthFilter"><option value="">全部月份</option></select>
       <select class="field" id="quarterFilter"><option value="">全部季度</option></select>
       <select class="field" id="platformFilter"><option value="">全部平台</option></select>
@@ -714,9 +856,11 @@ HTML = r"""<!doctype html>
   <script>
     const state = {
       ideas: [],
-      filters: { statuses: [], months: [], quarters: [], platforms: [] },
+      filters: { statuses: [], priorities: [], months: [], quarters: [], platforms: [] },
       activeId: null,
       pendingStatus: null,
+      pendingPriority: null,
+      pendingSupportIds: [],
       pendingSelected: false,
       pendingNote: ""
     };
@@ -726,9 +870,12 @@ HTML = r"""<!doctype html>
     $("issueDate").textContent = `${today.getFullYear()}.${String(today.getMonth()+1).padStart(2, "0")}.${String(today.getDate()).padStart(2, "0")}`;
 
     function tagClass(status) {
-      if (status === "优先") return "priority";
       if (status === "已完成") return "done";
       return "";
+    }
+
+    function priorityClass(priority) {
+      return priority === "S" ? "priority" : "";
     }
 
     function escapeHtml(text) {
@@ -739,6 +886,7 @@ HTML = r"""<!doctype html>
 
     function fillSelect(id, values) {
       const node = $(id);
+      const selected = node.value;
       const first = node.firstElementChild;
       node.innerHTML = "";
       node.appendChild(first);
@@ -748,6 +896,9 @@ HTML = r"""<!doctype html>
         option.textContent = value;
         node.appendChild(option);
       });
+      if ([...node.options].some((option) => option.value === selected)) {
+        node.value = selected;
+      }
     }
 
     async function load() {
@@ -757,6 +908,7 @@ HTML = r"""<!doctype html>
       state.filters = payload.filters || state.filters;
       state.activeId = state.activeId || (state.ideas[0] && state.ideas[0].idea_id);
       fillSelect("statusFilter", state.filters.statuses || []);
+      fillSelect("priorityFilter", state.filters.priorities || []);
       fillSelect("monthFilter", state.filters.months || []);
       fillSelect("quarterFilter", state.filters.quarters || []);
       fillSelect("platformFilter", state.filters.platforms || []);
@@ -767,19 +919,21 @@ HTML = r"""<!doctype html>
     function updateStats(stats) {
       $("statTotal").textContent = stats.total || 0;
       $("statSelected").textContent = stats.selected || 0;
-      $("statPriority").textContent = (stats.status_counts || {})["优先"] || 0;
+      $("statPriority").textContent = (stats.priority_counts || {})["S"] || 0;
       $("statDone").textContent = (stats.status_counts || {})["已完成"] || 0;
     }
 
     function filteredIdeas() {
       const q = $("searchInput").value.trim().toLowerCase();
       const status = $("statusFilter").value;
+      const priority = $("priorityFilter").value;
       const month = $("monthFilter").value;
       const quarter = $("quarterFilter").value;
       const platform = $("platformFilter").value;
       return state.ideas.filter((idea) => {
         if (q && !idea.searchable.includes(q)) return false;
         if (status && idea.status !== status) return false;
+        if (priority && idea.priority !== priority) return false;
         if (month && idea.month !== month) return false;
         if (quarter && idea.quarter !== quarter) return false;
         if (platform && !idea.platform.includes(platform)) return false;
@@ -804,6 +958,7 @@ HTML = r"""<!doctype html>
           <article class="card ${idea.idea_id === state.activeId ? "active" : ""}" data-id="${escapeHtml(idea.idea_id)}">
             <div class="meta">
               <span>${escapeHtml(idea.date)}</span>
+              <span class="tag ${priorityClass(idea.priority)}">${escapeHtml(idea.priority)}级</span>
               <span class="tag ${tagClass(idea.status)}">${escapeHtml(idea.status)}</span>
               ${idea.selected ? '<span class="tag selected">精筛</span>' : ""}
               <span class="tag">${escapeHtml(idea.platform || "未标平台")}</span>
@@ -830,6 +985,8 @@ HTML = r"""<!doctype html>
         return;
       }
       state.pendingStatus = idea.status;
+      state.pendingPriority = idea.priority;
+      state.pendingSupportIds = idea.support_articles.map((article) => article.article_id);
       state.pendingSelected = idea.selected;
       state.pendingNote = idea.user_note || "";
       panel.innerHTML = `
@@ -838,6 +995,7 @@ HTML = r"""<!doctype html>
             <span class="tag">${escapeHtml(idea.date)}</span>
             <span class="tag">${escapeHtml(idea.month)}</span>
             <span class="tag">${escapeHtml(idea.quarter)}</span>
+            <span class="tag ${priorityClass(idea.priority)}">${escapeHtml(idea.priority)}级</span>
             <span class="tag ${tagClass(idea.status)}">${escapeHtml(idea.status)}</span>
           </div>
           <h3>${escapeHtml(idea.title)}</h3>
@@ -850,13 +1008,26 @@ HTML = r"""<!doctype html>
           <div class="section-title">支撑文章</div>
           <div class="article-list">
             ${idea.support_articles.map((article) => `
-              <a class="article" href="${escapeHtml(article.url || "#")}" target="_blank" rel="noreferrer">
-                ${escapeHtml(article.title)}
-                <small>${escapeHtml(article.date || article.article_id)} ${escapeHtml(article.section_name || "")}</small>
-              </a>
+              <div class="article-row">
+                <a class="article" href="${escapeHtml(article.url || "#")}" target="_blank" rel="noreferrer">
+                  ${escapeHtml(article.title)}
+                  <small>${escapeHtml(article.date || article.article_id)} ${escapeHtml(article.section_name || "")}</small>
+                </a>
+                <button class="mini-action remove-reference" data-article-id="${escapeHtml(article.article_id)}">移除</button>
+              </div>
             `).join("") || '<div class="article">暂无支撑文章</div>'}
           </div>
+          <div class="copy-row">
+            <button class="action" id="copyButton">复制选题和参考资料</button>
+          </div>
           <div class="ops">
+            <div class="section-title">优先级</div>
+            <div class="status-grid">
+              ${state.filters.priorities.map((priority) => `
+                <button class="status-button ${priority === idea.priority ? "active" : ""}" data-priority="${escapeHtml(priority)}">${escapeHtml(priority)}级</button>
+              `).join("")}
+            </div>
+            <div class="section-title">状态</div>
             <div class="status-grid">
               ${state.filters.statuses.map((status) => `
                 <button class="status-button ${status === idea.status ? "active" : ""}" data-status="${escapeHtml(status)}">${escapeHtml(status)}</button>
@@ -878,19 +1049,32 @@ HTML = r"""<!doctype html>
       `;
       panel.querySelectorAll(".status-button").forEach((button) => {
         button.addEventListener("click", () => {
+          if (button.dataset.priority) {
+            state.pendingPriority = button.dataset.priority;
+            panel.querySelectorAll("[data-priority]").forEach((item) => item.classList.remove("active"));
+            button.classList.add("active");
+            return;
+          }
           state.pendingStatus = button.dataset.status;
-          panel.querySelectorAll(".status-button").forEach((item) => item.classList.remove("active"));
+          panel.querySelectorAll("[data-status]").forEach((item) => item.classList.remove("active"));
           button.classList.add("active");
         });
       });
       $("selectedInput").addEventListener("change", (event) => {
         state.pendingSelected = event.target.checked;
       });
+      $("copyButton").addEventListener("click", copyActive);
+      panel.querySelectorAll(".remove-reference").forEach((button) => {
+        button.addEventListener("click", () => {
+          const nextIds = state.pendingSupportIds.filter((articleId) => articleId !== button.dataset.articleId);
+          saveActive({ support_article_ids: nextIds }, "已移除参考文章");
+        });
+      });
       $("saveButton").addEventListener("click", saveActive);
       $("articleSearch").addEventListener("input", debounce(searchArticles, 260));
     }
 
-    async function saveActive() {
+    async function saveActive(extraPayload = {}, successText = "已保存") {
       const idea = state.ideas.find((item) => item.idea_id === state.activeId);
       if (!idea) return;
       const response = await fetch(`/api/ideas/${encodeURIComponent(idea.idea_id)}`, {
@@ -898,8 +1082,11 @@ HTML = r"""<!doctype html>
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           status: state.pendingStatus,
+          priority: state.pendingPriority,
+          support_article_ids: state.pendingSupportIds,
           selected: $("selectedInput").checked,
-          user_note: $("noteInput").value
+          user_note: $("noteInput").value,
+          ...extraPayload
         })
       });
       const payload = await response.json();
@@ -907,9 +1094,64 @@ HTML = r"""<!doctype html>
         $("toast").textContent = payload.error || "保存失败";
         return;
       }
-      $("toast").textContent = "已保存";
+      $("toast").textContent = successText;
       state.activeId = idea.idea_id;
       await load();
+    }
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      const node = document.createElement("textarea");
+      node.value = text;
+      node.style.position = "fixed";
+      node.style.left = "-9999px";
+      document.body.appendChild(node);
+      node.focus();
+      node.select();
+      document.execCommand("copy");
+      node.remove();
+    }
+
+    async function copyActive() {
+      const idea = state.ideas.find((item) => item.idea_id === state.activeId);
+      if (!idea) return;
+      const outline = idea.outline.length
+        ? idea.outline.map((item, index) => `${index + 1}. ${item}`).join("\n")
+        : "暂无";
+      const articles = idea.support_articles.length
+        ? idea.support_articles.map((article, index) => [
+            `${index + 1}. 《${article.title}》`,
+            `   日期：${article.date || "未知"}${article.section_name ? `｜版面：${article.section_name}` : ""}`,
+            `   Article ID：${article.article_id}`,
+            article.url ? `   链接：${article.url}` : "",
+            article.markdown_path ? `   本地路径：${article.markdown_path}` : ""
+          ].filter(Boolean).join("\n")).join("\n")
+        : "暂无参考文章，需要先在下方文章库搜索后加入参考。";
+      const currentNote = $("noteInput") ? $("noteInput").value : idea.user_note || "";
+      const text = [
+        `选题：${idea.title}`,
+        `优先级：${idea.priority}级`,
+        `状态：${idea.status}`,
+        `日期：${idea.date}`,
+        `平台：${idea.platform || "未标平台"}`,
+        "",
+        "切入角度：",
+        idea.angle || "暂无",
+        "",
+        "展开结构：",
+        outline,
+        "",
+        "参考文章：",
+        articles,
+        "",
+        "备注：",
+        currentNote || "暂无"
+      ].join("\n");
+      await copyText(text);
+      $("toast").textContent = "已复制";
     }
 
     async function searchArticles() {
@@ -921,11 +1163,23 @@ HTML = r"""<!doctype html>
       const response = await fetch(`/api/articles?q=${encodeURIComponent(q)}&limit=20`);
       const payload = await response.json();
       $("articleResults").innerHTML = (payload.articles || []).map((article) => `
-        <a class="article" href="${escapeHtml(article.url || "#")}" target="_blank" rel="noreferrer">
-          ${escapeHtml(article.title)}
-          <small>${escapeHtml(article.date)} ${escapeHtml(article.section_name)} ${escapeHtml(article.summary).slice(0, 72)}</small>
-        </a>
+        <div class="article-row">
+          <a class="article" href="${escapeHtml(article.url || "#")}" target="_blank" rel="noreferrer">
+            ${escapeHtml(article.title)}
+            <small>${escapeHtml(article.date)} ${escapeHtml(article.section_name)} ${escapeHtml(article.summary).slice(0, 72)}</small>
+          </a>
+          <button class="mini-action add-reference" data-article-id="${escapeHtml(article.article_id)}">加入参考</button>
+        </div>
       `).join("") || '<div class="article">没有找到文章</div>';
+      $("articleResults").querySelectorAll(".add-reference").forEach((button) => {
+        button.addEventListener("click", () => {
+          const articleId = button.dataset.articleId;
+          const nextIds = state.pendingSupportIds.includes(articleId)
+            ? state.pendingSupportIds
+            : [...state.pendingSupportIds, articleId];
+          saveActive({ support_article_ids: nextIds }, "已加入参考文章");
+        });
+      });
     }
 
     function debounce(fn, wait) {
@@ -936,7 +1190,7 @@ HTML = r"""<!doctype html>
       };
     }
 
-    ["searchInput", "statusFilter", "monthFilter", "quarterFilter", "platformFilter"].forEach((id) => {
+    ["searchInput", "statusFilter", "priorityFilter", "monthFilter", "quarterFilter", "platformFilter"].forEach((id) => {
       $(id).addEventListener("input", render);
       $(id).addEventListener("change", render);
     });
@@ -958,7 +1212,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="启动人民日报选题工作台")
     parser.add_argument("--host", default="127.0.0.1", help="监听地址")
     parser.add_argument("--port", type=int, default=8765, help="监听端口")
+    parser.add_argument("--no-sync-analysis", action="store_true", help="启动时不自动同步 analysis 历史选题")
     args = parser.parse_args()
+
+    if not args.no_sync_analysis:
+        sync_analysis_ideas()
 
     server = ThreadingHTTPServer((args.host, args.port), IdeaMagazineHandler)
     print(f"选题工作台已启动: http://{args.host}:{args.port}")

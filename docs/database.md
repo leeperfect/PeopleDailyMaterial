@@ -17,6 +17,7 @@ data/
   analysis/                  # 教研分析、复盘、出品过程
   articles/公众号文章/        # 公众号文章和成品稿
   exports/                   # 对外导出和同步辅助文件
+media/                       # 图片、课件、音视频等本地多媒体资产，网盘同步
 ```
 
 核心原则：
@@ -26,6 +27,7 @@ data/
 - `data/vault` 是人看的阅读视图，可以按日期、专题、系列继续整理。
 - `data/raw` 是原始数据留存层，保证重建和追溯能力。
 - `data/articles/公众号文章` 是面向老师和运营使用的成品稿入口。
+- `media` 是非文本资产层，保存小红书图、公众号配图、课件、视频、音频和打包文件。它不参与核心库重建，不进入 GitHub，只通过 `media/_index.md` 保留可检索线索。
 
 之前预留过的 `data/source/`、`data/index/`、`data/manifests/`、`data/checkpoints/` 已不作为日常常驻目录保留；如果未来确实接入单独向量库或外部索引，再由对应脚本生成。
 
@@ -107,7 +109,7 @@ data/exports/content_ideas.csv
 本地 HTML 选题工作台：
 
 ```bash
-python3 scripts/serve_idea_magazine.py
+python3 idea_magazine.py
 ```
 
 默认地址：
@@ -116,7 +118,7 @@ python3 scripts/serve_idea_magazine.py
 http://127.0.0.1:8765
 ```
 
-工作台读取 `content_ideas`，并把人工精筛和备注写入 `content_idea_notes`。这样选题本身仍在核心库里，人的判断也能长期保存。
+工作台读取 `content_ideas`，并把人工精筛和备注写入 `content_idea_notes`。这样选题本身仍在核心库里，人的判断也能长期保存。原来的 `python3 scripts/serve_idea_magazine.py` 入口继续可用。
 
 ## 抓取新文章
 

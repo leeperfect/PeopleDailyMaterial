@@ -145,6 +145,7 @@ def init_schema(conn: sqlite3.Connection) -> None:
             support_article_ids_json TEXT,
             outline_json TEXT,
             status TEXT NOT NULL DEFAULT '备选',
+            priority TEXT NOT NULL DEFAULT 'B',
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL
         )
@@ -170,6 +171,14 @@ def init_schema(conn: sqlite3.Connection) -> None:
     cur.execute("CREATE INDEX IF NOT EXISTS idx_cards_article ON material_cards(article_id)")
     cur.execute("CREATE INDEX IF NOT EXISTS idx_cards_type ON material_cards(card_type)")
     cur.execute("CREATE INDEX IF NOT EXISTS idx_card_topic_topic ON card_topic_links(topic_id)")
+    content_idea_columns = {row[1] for row in cur.execute("PRAGMA table_info(content_ideas)")}
+    if "priority" not in content_idea_columns:
+        cur.execute("ALTER TABLE content_ideas ADD COLUMN priority TEXT NOT NULL DEFAULT 'B'")
+        cur.execute("UPDATE content_ideas SET priority = 'S' WHERE status IN ('优先', '已完成')")
+        cur.execute("UPDATE content_ideas SET priority = 'A' WHERE status = '进行中'")
+        cur.execute("UPDATE content_ideas SET priority = 'C' WHERE status = '暂缓'")
+    cur.execute("UPDATE content_ideas SET priority = 'S' WHERE status = '优先'")
+    cur.execute("UPDATE content_ideas SET status = '备选' WHERE status = '优先'")
     try:
         cur.execute(
             """
@@ -371,13 +380,34 @@ def upsert_cards(conn: sqlite3.Connection, payload: Dict[str, Any]) -> None:
 def upsert_content_ideas(conn: sqlite3.Connection, payload: Dict[str, Any]) -> None:
     stamp = now()
     for idea in payload.get("content_ideas", []):
+        raw_status = str(idea.get("status", "备选")).strip()
+        status = "备选" if raw_status == "优先" else raw_status
+        if status not in {"备选", "进行中", "已完成", "暂缓"}:
+            status = "备选"
+        raw_priority = str(idea.get("priority", "")).strip().upper()
+        if raw_priority.startswith("S"):
+            priority = "S"
+        elif raw_priority.startswith("A"):
+            priority = "A"
+        elif raw_priority.startswith("B"):
+            priority = "B"
+        elif raw_priority.startswith("C"):
+            priority = "C"
+        elif raw_status in {"优先", "已完成"}:
+            priority = "S"
+        elif raw_status == "进行中":
+            priority = "A"
+        elif raw_status == "暂缓":
+            priority = "C"
+        else:
+            priority = "B"
         conn.execute(
             """
             INSERT INTO content_ideas(
                 idea_id, date, title, angle, platform, support_article_ids_json,
-                outline_json, status, created_at, updated_at
+                outline_json, status, priority, created_at, updated_at
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(idea_id) DO UPDATE SET
                 title=excluded.title,
                 angle=excluded.angle,
@@ -385,6 +415,7 @@ def upsert_content_ideas(conn: sqlite3.Connection, payload: Dict[str, Any]) -> N
                 support_article_ids_json=excluded.support_article_ids_json,
                 outline_json=excluded.outline_json,
                 status=excluded.status,
+                priority=excluded.priority,
                 updated_at=excluded.updated_at
             """,
             (
@@ -395,7 +426,8 @@ def upsert_content_ideas(conn: sqlite3.Connection, payload: Dict[str, Any]) -> N
                 idea.get("platform", ""),
                 dumps(idea.get("support_article_ids", [])),
                 dumps(idea.get("outline", [])),
-                idea.get("status", "备选"),
+                status,
+                priority,
                 stamp,
                 stamp,
             ),
@@ -566,6 +598,7 @@ def export_markdown(conn: sqlite3.Connection, date: str, output_path: Path) -> N
                 f"- 角度：{idea['angle']}",
                 f"- 支撑文章 ID：{support}",
                 f"- 展开结构：{outline}",
+                f"- 优先级：{idea['priority']}",
                 f"- 状态：{idea['status']}",
                 "",
             ]

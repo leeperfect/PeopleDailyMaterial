@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>广西乡村振兴热点预测｜2026 事业单位面试</title>
+  <style>
+    :root {
+      --font-scale: 1;
+      --bg: #f7f8f5;
+      --ink: #17201b;
+      --muted: #66716c;
+      --line: #d9ded7;
+      --green: #1f6b4a;
+      --blue: #1d5f8c;
+      --red: #a9432c;
+      --gold: #b47a24;
+      --panel: #ffffff;
+      --shadow: 0 18px 48px rgba(28, 38, 32, .12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-size: calc(24px * var(--font-scale));
+      line-height: 1.52;
+      letter-spacing: 0;
+    }
+
+    .deck {
+      min-height: 100vh;
+    }
+
+    .slide {
+      min-height: 100vh;
+      padding: clamp(40px, 6vw, 84px);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 28px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(31, 107, 74, .08), transparent 36%),
+        var(--bg);
+    }
+
+    .slide:nth-child(even) {
+      background:
+        linear-gradient(90deg, rgba(29, 95, 140, .08), transparent 38%),
+        #f4f6f8;
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: calc(18px * var(--font-scale));
+      font-weight: 650;
+    }
+
+    .kicker span:first-child {
+      color: var(--green);
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 1180px;
+      font-size: calc(clamp(54px, 7vw, 108px) * var(--font-scale));
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      max-width: 1160px;
+      font-size: calc(clamp(42px, 5.2vw, 76px) * var(--font-scale));
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: calc(28px * var(--font-scale));
+      line-height: 1.22;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 1120px;
+      font-size: calc(32px * var(--font-scale));
+      line-height: 1.42;
+      color: #26342d;
+    }
+
+    .hero {
+      align-content: center;
+    }
+
+    .hero .lead {
+      margin-top: 28px;
+      font-size: calc(34px * var(--font-scale));
+    }
+
+    .hero-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 40px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 8px 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .72);
+      border-radius: 999px;
+      color: #31433a;
+      font-size: calc(19px * var(--font-scale));
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .chain {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .chain-item {
+      min-height: 136px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      display: grid;
+      align-content: space-between;
+    }
+
+    .chain-item strong {
+      display: block;
+      font-size: calc(30px * var(--font-scale));
+      line-height: 1.16;
+      color: var(--green);
+    }
+
+    .chain-item small {
+      display: block;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: calc(17px * var(--font-scale));
+      line-height: 1.35;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, .86);
+      border: 1px solid var(--line);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel.accent {
+      border-left: 8px solid var(--green);
+    }
+
+    .panel.blue {
+      border-left: 8px solid var(--blue);
+    }
+
+    .panel.gold {
+      border-left: 8px solid var(--gold);
+    }
+
+    .panel.red {
+      border-left: 8px solid var(--red);
+    }
+
+    .panel p {
+      color: #283a31;
+      font-size: calc(25px * var(--font-scale));
+    }
+
+    ul {
+      margin: 18px 0 0;
+      padding-left: 1.15em;
+    }
+
+    li {
+      margin: 8px 0;
+      font-size: calc(25px * var(--font-scale));
+      line-height: 1.42;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      padding: 24px;
+      border-top: 6px solid var(--green);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      min-height: 148px;
+    }
+
+    .stat b {
+      display: block;
+      font-size: calc(45px * var(--font-scale));
+      line-height: 1;
+      color: var(--green);
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: calc(18px * var(--font-scale));
+      line-height: 1.35;
+    }
+
+    figure {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .photo {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      border: 1px solid var(--line);
+      background: #e9ece8;
+      box-shadow: var(--shadow);
+    }
+
+    figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: calc(16px * var(--font-scale));
+      line-height: 1.35;
+    }
+
+    .quote {
+      max-width: 1180px;
+      padding: 28px 34px;
+      border-left: 10px solid var(--green);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      font-size: calc(31px * var(--font-scale));
+      line-height: 1.42;
+      font-weight: 750;
+      color: #21352b;
+    }
+
+    .answer {
+      font-size: calc(27px * var(--font-scale));
+      line-height: 1.55;
+      color: #1f3028;
+    }
+
+    .tagline {
+      align-self: end;
+      color: var(--muted);
+      font-size: calc(17px * var(--font-scale));
+    }
+
+    .toolbar {
+      position: fixed;
+      z-index: 20;
+      top: 18px;
+      right: 18px;
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid rgba(29, 38, 32, .16);
+      background: rgba(255, 255, 255, .88);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 26px rgba(28, 38, 32, .14);
+    }
+
+    .toolbar button {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .toolbar button:hover,
+    .toolbar button:focus-visible {
+      border-color: var(--green);
+      outline: 3px solid rgba(31, 107, 74, .16);
+    }
+
+    .progress {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 5px;
+      background: rgba(31, 107, 74, .12);
+      z-index: 21;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--green);
+      transition: width .2s ease;
+    }
+
+    .slide-index {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .compact-list li {
+      font-size: calc(23px * var(--font-scale));
+    }
+
+    @media (max-width: 980px) {
+      body { font-size: calc(21px * var(--font-scale)); }
+      .slide { padding: 82px 24px 36px; }
+      .grid-2, .grid-3, .chain, .stat-row {
+        grid-template-columns: 1fr;
+      }
+      .photo { aspect-ratio: 4 / 3; }
+      .toolbar { left: 12px; right: 12px; justify-content: center; }
+    }
+
+    @media print {
+      .toolbar, .progress { display: none; }
+      .slide {
+        min-height: 100vh;
+        break-after: page;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <nav class="toolbar" aria-label="展示控制">
+    <button type="button" data-action="prev" title="上一页">‹</button>
+    <button type="button" data-action="next" title="下一页">›</button>
+    <button type="button" data-action="smaller" title="减小字号">A-</button>
+    <button type="button" data-action="larger" title="增大字号">A+</button>
+    <button type="button" data-action="reset" title="恢复字号">A</button>
+    <button type="button" data-action="fullscreen" title="全屏">⛶</button>
+  </nav>
+
+  <main class="deck" id="deck">
+    <section class="slide hero" id="slide-1">
+      <div class="kicker"><span>2026 广西事业单位面试</span><span class="slide-index">01 / 16</span></div>
+      <div>
+        <h1>广西乡村振兴热点预测</h1>
+        <p class="lead">把“乡村振兴”讲成一条可上课、可预测、可背诵、可落到岗位的答题链。</p>
+        <div class="hero-bar">
+          <span class="pill">农业农村现代化</span>
+          <span class="pill">特色产业富民</span>
+          <span class="pill">科技赋农</span>
+          <span class="pill">生态文化活化</span>
+          <span class="pill">基层治理落地</span>
+        </div>
+      </div>
+      <p class="tagline">资料整理：PeopleDailyMaterial ｜ 2026-06-09</p>
+    </section>
+
+    <section class="slide" id="slide-2">
+      <div class="kicker"><span>总判断</span><span class="slide-index">02 / 16</span></div>
+      <div>
+        <h2>不要把它讲成“农村变美”</h2>
+        <p class="lead">2026 年广西事业单位面试，更可能考这条完整链：</p>
+        <div class="chain">
+          <div class="chain-item"><strong>开局部署</strong><small>农业农村现代化是十五五底座</small></div>
+          <div class="chain-item"><strong>产业富民</strong><small>茉莉花、螺蛳粉、糖料蔗等特色资源</small></div>
+          <div class="chain-item"><strong>科技赋农</strong><small>数字农业、无人机、智能灌溉、农业新质生产力</small></div>
+          <div class="chain-item"><strong>生态文化</strong><small>护林员、传统村落、移风易俗、农文旅</small></div>
+          <div class="chain-item"><strong>基层落地</strong><small>县域联动、群众参与、岗位执行</small></div>
+        </div>
+      </div>
+      <p class="tagline">上课提示：先讲主线，再讲案例，最后落到考场表达。</p>
+    </section>
+
+    <section class="slide" id="slide-3">
+      <div class="kicker"><span>政策高度</span><span class="slide-index">03 / 16</span></div>
+      <div class="grid-3">
+        <div class="panel accent">
+          <h3>中国式现代化的底座</h3>
+          <p>农业农村现代化关系全局和成色，不能当成单一农村工作来答。</p>
+        </div>
+        <div class="panel blue">
+          <h3>两条底线</h3>
+          <p>粮食安全，不发生规模性返贫致贫。这是所有乡村振兴题的底层逻辑。</p>
+        </div>
+        <div class="panel gold">
+          <h3>一体推进</h3>
+          <p>现代农业、和美乡村、公共服务、乡村治理、城乡融合要放在一起讲。</p>
+        </div>
+      </div>
+      <p class="quote">乡村振兴不是简单把村庄建漂亮，而是要让农业更强、农村更美、农民更富、治理更稳、县域更有活力。</p>
+      <p class="tagline">来源：人民日报 2026-06-03《加快农业农村现代化，“十五五”怎么干》</p>
+    </section>
+
+    <section class="slide" id="slide-4">
+      <div class="kicker"><span>主案例一</span><span class="slide-index">04 / 16</span></div>
+      <div class="grid-2">
+        <div>
+          <h2>横州茉莉花：一朵花做成富民链</h2>
+          <div class="stat-row">
+            <div class="stat"><b>18万亩</b><span>茉莉花种植面积</span></div>
+            <div class="stat"><b>190亿+</b><span>产业综合年产值</span></div>
+            <div class="stat"><b>34万</b><span>带动花农增收</span></div>
+            <div class="stat"><b>70+</b><span>出口国家和地区</span></div>
+          </div>
+        </div>
+        <figure>
+          <img class="photo" src="https://paper.people.com.cn/rmrb/pc/pic/202604/30/ecabcfa2-30e2-4f28-b430-cdff7c91370a.jpg.2" alt="广西横州中华茉莉园里花农采摘茉莉鲜花">
+          <figcaption>原文图：横州中华茉莉园，花农正在采摘茉莉鲜花。资料图片</figcaption>
+        </figure>
+      </div>
+      <p class="tagline">来源：人民日报 2026-04-30《全球每10朵茉莉花6朵来自广西横州》</p>
+    </section>
+
+    <section class="slide" id="slide-5">
+      <div class="kicker"><span>案例讲法</span><span class="slide-index">05 / 16</span></div>
+      <div>
+        <h2>横州茉莉花怎么转成答案</h2>
+        <div class="grid-3">
+          <div class="panel accent"><h3>不是地方特产</h3><p>而是特色资源变成富民产业的样板。</p></div>
+          <div class="panel blue"><h3>不是单点种植</h3><p>而是种植、加工、交易、电商、文旅、康养、出口一起走。</p></div>
+          <div class="panel gold"><h3>不是只看产值</h3><p>还要看脱贫人口稳定增收、花农持续受益和品牌价值。</p></div>
+        </div>
+      </div>
+      <p class="quote">一朵茉莉花，背后连着田间种植、标准加工、品牌营销、文旅消费和国际市场。乡村产业要真正兴旺，就要把小特产做成大产业，把好资源做成富民链。</p>
+      <p class="tagline">适用题：特色产业、品牌农业、数字农业、农文旅融合、面向东盟开放。</p>
+    </section>
+
+    <section class="slide" id="slide-6">
+      <div class="kicker"><span>主案例二</span><span class="slide-index">06 / 16</span></div>
+      <div class="grid-2">
+        <figure>
+          <img class="photo" src="https://paper.people.com.cn/rmrb/pc/pic/202605/03/44a77cd6-2ba8-4eef-84e1-69b3643a9bd7.jpg.2" alt="梁应广在稻田边调试植保无人机">
+          <figcaption>原文图：梁应广调试植保无人机。黎寒池摄（人民视觉）</figcaption>
+        </figure>
+        <div>
+          <h2>柳州粉用稻：新质生产力也在田埂上</h2>
+          <ul>
+            <li>从螺蛳粉口感需求倒推水稻品种。</li>
+            <li>无人机施肥从每亩 20 分钟降到两三分钟。</li>
+            <li>大棚育秧一小时近千盘，可种 40 亩地。</li>
+            <li>粉用稻比普通水稻多赚两三成。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="tagline">来源：人民日报 2026-05-03《推广粉用稻 专供螺蛳粉》</p>
+    </section>
+
+    <section class="slide" id="slide-7">
+      <div class="kicker"><span>案例讲法</span><span class="slide-index">07 / 16</span></div>
+      <div>
+        <h2>一碗螺蛳粉背后的答题链</h2>
+        <div class="chain">
+          <div class="chain-item"><strong>找需求</strong><small>消费者要爽滑、有弹性的米粉</small></div>
+          <div class="chain-item"><strong>选品种</strong><small>筛选适合米粉加工的粉用稻</small></div>
+          <div class="chain-item"><strong>强技术</strong><small>无人机、育秧棚、自动插秧</small></div>
+          <div class="chain-item"><strong>稳订单</strong><small>企业收购，科研院所提供方案</small></div>
+          <div class="chain-item"><strong>延加工</strong><small>湿粉、冰鲜粉、袋装产品升级</small></div>
+        </div>
+      </div>
+      <p class="quote">新质生产力不是只在实验室里，也在田埂上、育秧棚里、无人机下、产业链中。</p>
+      <p class="tagline">适用题：科技赋农、农业新质生产力、产业链升级、市场需求牵引。</p>
+    </section>
+
+    <section class="slide" id="slide-8">
+      <div class="kicker"><span>支撑案例</span><span class="slide-index">08 / 16</span></div>
+      <div>
+        <h2>水利春耕：粮食安全要落到基础设施</h2>
+        <div class="grid-2">
+          <div class="panel accent">
+            <h3>可用事实</h3>
+            <ul class="compact-list">
+              <li>广西新增恢复改善灌溉面积 106.58 万亩。</li>
+              <li>筹措资金 1.8 亿元支持中型灌区节水改造。</li>
+              <li>推进灌区维修养护和小型农业水利设施建设管护。</li>
+            </ul>
+          </div>
+          <div class="panel blue">
+            <h3>课堂转化</h3>
+            <p>水利春耕适合回答“基层如何保障粮食安全”“如何补齐农业基础设施短板”“如何做好春耕服务”。</p>
+          </div>
+        </div>
+      </div>
+      <p class="quote">粮食安全不能只停留在口号上，要落实到水渠能不能通、农田能不能灌、农机能不能下地、服务能不能到户。</p>
+      <p class="tagline">来源：人民日报 2026-04-14、2026-04-15 广西水利春耕报道</p>
+    </section>
+
+    <section class="slide" id="slide-9">
+      <div class="kicker"><span>支撑案例</span><span class="slide-index">09 / 16</span></div>
+      <div>
+        <h2>生态护林员：把保护和增收接起来</h2>
+        <div class="stat-row">
+          <div class="stat"><b>5.36万</b><span>2026 年选聘生态护林员</span></div>
+          <div class="stat"><b>14</b><span>覆盖设区市</span></div>
+          <div class="stat"><b>67</b><span>覆盖县市区</span></div>
+          <div class="stat"><b>759</b><span>覆盖乡镇</span></div>
+        </div>
+      </div>
+      <p class="quote">生态护林员让群众从生态保护的旁观者变成参与者，也让生态岗位成为增收渠道。保护绿水青山，也要让群众端稳生态饭碗。</p>
+      <p class="tagline">来源：人民日报 2026-05-08《广西今年选聘5.36万名生态护林员》</p>
+    </section>
+
+    <section class="slide" id="slide-10">
+      <div class="kicker"><span>支撑案例</span><span class="slide-index">10 / 16</span></div>
+      <div class="grid-2">
+        <div>
+          <h2>移风易俗：不是简单禁止</h2>
+          <p class="lead">广西桂林灵川县召开全国乡村文化建设暨移风易俗现场会，材料适合转成乡村治理题。</p>
+        </div>
+        <div class="panel red">
+          <h3>答题抓手</h3>
+          <ul>
+            <li>尊重地方习俗和群众意愿。</li>
+            <li>坚持疏堵结合、标本兼治。</li>
+            <li>群众性文体活动坚持农民主体、公益属性、节俭务实。</li>
+            <li>用彩调、家训门牌、村规民约涵养文明乡风。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="quote">移风易俗不能靠一纸通知，要用群众听得懂、愿参与、能坚持的方式，把文明新风融入日常生活。</p>
+      <p class="tagline">来源：人民日报 2026-04-02《全国乡村文化建设暨移风易俗现场会在广西召开》</p>
+    </section>
+
+    <section class="slide" id="slide-11">
+      <div class="kicker"><span>预测一</span><span class="slide-index">11 / 16</span></div>
+      <div>
+        <h2>农业农村现代化如何开好局</h2>
+        <div class="grid-2">
+          <div class="panel accent">
+            <h3>可能问法</h3>
+            <ul>
+              <li>如何理解“农业农村现代化是中国式现代化的底座”？</li>
+              <li>2026 年中央一号文件强调乡村全面振兴，你怎么看？</li>
+              <li>让你参与农业农村现代化调研，怎么开展？</li>
+            </ul>
+          </div>
+          <div class="panel blue">
+            <h3>答题框架</h3>
+            <p class="answer">提站位 -> 找短板 -> 抓产业 -> 补设施 -> 强治理 -> 促增收</p>
+          </div>
+        </div>
+      </div>
+      <p class="tagline">落点：农业更强、农村更美、农民更富、治理更稳。</p>
+    </section>
+
+    <section class="slide" id="slide-12">
+      <div class="kicker"><span>预测二</span><span class="slide-index">12 / 16</span></div>
+      <div>
+        <h2>广西特色产业如何带动乡村振兴</h2>
+        <div class="grid-2">
+          <div class="panel accent">
+            <h3>可能问法</h3>
+            <ul>
+              <li>横州茉莉花带动农民增收，有什么启示？</li>
+              <li>某村有特色农产品但卖不出、卖不贵，怎么办？</li>
+              <li>乡村振兴关键在产业还是人才？</li>
+            </ul>
+          </div>
+          <div class="panel gold">
+            <h3>答题框架</h3>
+            <p class="answer">找准特色 -> 做强标准 -> 延长链条 -> 打响品牌 -> 联农带农</p>
+          </div>
+        </div>
+      </div>
+      <p class="tagline">主案例：横州茉莉花。补充案例：柳州粉用稻、螺蛳粉原料基地。</p>
+    </section>
+
+    <section class="slide" id="slide-13">
+      <div class="kicker"><span>预测三</span><span class="slide-index">13 / 16</span></div>
+      <div>
+        <h2>农业新质生产力如何落到田间地头</h2>
+        <div class="grid-2">
+          <div class="panel blue">
+            <h3>可能问法</h3>
+            <ul>
+              <li>如何理解农业领域的新质生产力？</li>
+              <li>无人机、物联网、农业机器人进入农业生产，你怎么看？</li>
+              <li>农户担心不会用、成本高，你怎么推广智慧农业？</li>
+            </ul>
+          </div>
+          <div class="panel accent">
+            <h3>答题框架</h3>
+            <p class="answer">需求牵引 -> 科技支撑 -> 主体参与 -> 服务保障 -> 风险防控</p>
+          </div>
+        </div>
+      </div>
+      <p class="tagline">主案例：柳州粉用稻。关键词：市场需求、良种良法、订单收购、产业链升级。</p>
+    </section>
+
+    <section class="slide" id="slide-14">
+      <div class="kicker"><span>预测四、五</span><span class="slide-index">14 / 16</span></div>
+      <div>
+        <h2>生态保护、乡村文化、基层治理</h2>
+        <div class="grid-2">
+          <div class="panel accent">
+            <h3>生态和增收怎么统一</h3>
+            <p class="answer">守底线 -> 摸家底 -> 强管护 -> 促转化 -> 惠群众</p>
+            <ul>
+              <li>生态护林员</li>
+              <li>林长制</li>
+              <li>传统村落和生态产品价值实现</li>
+            </ul>
+          </div>
+          <div class="panel red">
+            <h3>移风易俗怎么做</h3>
+            <p class="answer">尊重习俗 -> 找准问题 -> 党员带头 -> 文化浸润 -> 制度长效</p>
+            <ul>
+              <li>红白事简办</li>
+              <li>村规民约</li>
+              <li>群众性文体活动</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="tagline">这两类题都要避免“一刀切”，关键是群众主体和长效机制。</p>
+    </section>
+
+    <section class="slide" id="slide-15">
+      <div class="kicker"><span>预测六</span><span class="slide-index">15 / 16</span></div>
+      <div>
+        <h2>青年人才和基层干部如何服务乡村振兴</h2>
+        <div class="grid-2">
+          <div class="panel gold">
+            <h3>可能问法</h3>
+            <ul>
+              <li>如果你被派到基层乡村岗位，你会怎么开展工作？</li>
+              <li>为什么说乡村振兴关键在人？</li>
+              <li>村产业发展思路不清、群众参与不高，你怎么办？</li>
+            </ul>
+          </div>
+          <div class="panel blue">
+            <h3>答题框架</h3>
+            <p class="answer">沉下去 -> 学政策 -> 找资源 -> 育能人 -> 建机制</p>
+          </div>
+        </div>
+      </div>
+      <p class="quote">基层干部的价值，不是自己忙得团团转，而是把政策、产业、人才和群众力量拧成一股绳。</p>
+    </section>
+
+    <section class="slide" id="slide-16">
+      <div class="kicker"><span>课堂训练</span><span class="slide-index">16 / 16</span></div>
+      <div>
+        <h2>一节课怎么用</h2>
+        <div class="grid-2">
+          <div class="panel accent">
+            <h3>40 分钟讲案例</h3>
+            <ul>
+              <li>横州茉莉花：特色产业和农文旅融合。</li>
+              <li>柳州粉用稻：农业新质生产力和产业链。</li>
+              <li>生态护林员：生态保护和群众增收。</li>
+              <li>桂林移风易俗：乡村治理和文明乡风。</li>
+            </ul>
+          </div>
+          <div class="panel blue">
+            <h3>40 分钟练口答</h3>
+            <ul>
+              <li>农业农村现代化是中国式现代化的底座，怎么看？</li>
+              <li>横州茉莉花对乡村振兴有什么启示？</li>
+              <li>数字技术进入农业生产，怎么看？</li>
+              <li>村里推进红白事简办，群众不理解，怎么办？</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="quote">统一口答结构：破题判断 -> 分点展开 -> 广西案例 -> 岗位落点。</p>
+      <p class="tagline">关联文字稿：guangxi-rural-revitalization-interview-prediction-2026.md</p>
+    </section>
+  </main>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const progressBar = document.getElementById("progressBar");
+    let scale = Number(localStorage.getItem("gxRuralFontScale") || "1");
+
+    function applyScale() {
+      scale = Math.max(0.82, Math.min(1.42, scale));
+      document.documentElement.style.setProperty("--font-scale", scale.toFixed(2));
+      localStorage.setItem("gxRuralFontScale", scale.toFixed(2));
+    }
+
+    function currentIndex() {
+      const y = window.scrollY + window.innerHeight * 0.45;
+      let index = 0;
+      slides.forEach((slide, i) => {
+        if (slide.offsetTop <= y) index = i;
+      });
+      return index;
+    }
+
+    function goTo(index) {
+      const next = slides[Math.max(0, Math.min(slides.length - 1, index))];
+      next.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function updateProgress() {
+      const index = currentIndex();
+      const width = ((index + 1) / slides.length) * 100;
+      progressBar.style.width = width + "%";
+    }
+
+    document.querySelector(".toolbar").addEventListener("click", (event) => {
+      const action = event.target.closest("button")?.dataset.action;
+      if (!action) return;
+      const index = currentIndex();
+      if (action === "prev") goTo(index - 1);
+      if (action === "next") goTo(index + 1);
+      if (action === "smaller") { scale -= 0.08; applyScale(); }
+      if (action === "larger") { scale += 0.08; applyScale(); }
+      if (action === "reset") { scale = 1; applyScale(); }
+      if (action === "fullscreen") {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+        else document.exitFullscreen?.();
+      }
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (["ArrowRight", "PageDown", " "].includes(event.key)) {
+        event.preventDefault();
+        goTo(currentIndex() + 1);
+      }
+      if (["ArrowLeft", "PageUp"].includes(event.key)) {
+        event.preventDefault();
+        goTo(currentIndex() - 1);
+      }
+      if (event.key === "+") {
+        scale += 0.08;
+        applyScale();
+      }
+      if (event.key === "-") {
+        scale -= 0.08;
+        applyScale();
+      }
+    });
+
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    applyScale();
+    updateProgress();
+  </script>
+</body>
+</html>

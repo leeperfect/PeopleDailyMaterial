@@ -1,17 +1,16 @@
-# 项目依赖包及其版本
-requests==2.31.0
-beautifulsoup4==4.12.3
-notion-client==2.2.1
-lxml==5.2.1
-python-dotenv==1.0.0
-pandas==2.2.2
-numpy==1.26.3
-scikit-learn==1.4.0
-Flask==2.0.1
-matplotlib==3.8.2
-seaborn==0.13.1
-jieba==0.42.1
-cryptography==41.0.3
+# 项目依赖包
+requests
+beautifulsoup4
+notion-client
+lxml
+python-dotenv
+pandas
+numpy
+scikit-learn
+Flask
+matplotlib
+seaborn
+jieba
+cryptography
 # Playwright stealth 模式用于文章页反爬
-playwright>=1.40.0
 playwright

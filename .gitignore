@@ -27,6 +27,38 @@ data/core/*.json
 data/index/fts/
 data/index/vector/
 
+# 本地多媒体资产（由网盘同步，不进入 GitHub）
+media/images/**
+media/courseware/**
+media/video/**
+media/audio/**
+media/packages/**
+!media/images/.gitkeep
+!media/courseware/.gitkeep
+!media/video/.gitkeep
+!media/audio/.gitkeep
+!media/packages/.gitkeep
+
+# 常见非文本成品，默认不入库；用 media/_index.md 记录位置
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.svg
+*.ppt
+*.pptx
+*.key
+*.pdf
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.m4a
+*.zip
+*.psd
+*.ai
+
 # 日志文件
 *.log
 
