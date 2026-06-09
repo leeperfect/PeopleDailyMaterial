@@ -1,0 +1,1729 @@
+<!doctype html>
+<html lang="zh-CN" data-accent="safety-orange">
+<head>
+  <meta charset="utf-8">
+  <title>人民日报讲营商环境：不是“不执法”，而是“规范执法” · 小红书卡片</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Noto+Sans+SC:wght@200;300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    /* =========================================================
+       Swiss International — Social Card Seed Template
+       ---------------------------------------------------------
+       Three boards built in one HTML:
+         .poster.xhs      1080×1440  (3:4   小红书)
+         .poster.square   1080×1080  (1:1   微信方封面)
+         .poster.wide     2100× 900  (21:9  微信主封面)
+         .pair-preview                       21:9 + 1:1 配对预览
+
+       Accent switching via <html data-accent="…">:
+         ikb (Klein Blue) | lemon-yellow | lemon-green | safety-orange
+
+       Fill posters where marked <!-- POSTERS_HERE -->.
+       Each poster carries one Layout Recipe (S01-S12) from
+       references/layout-recipes.md.
+       ========================================================= */
+
+    /* ---------- 1. Accent palettes (4 mutually exclusive) ---------- */
+    :root,
+    [data-accent="ikb"] {
+      --paper: #fafaf8;
+      --ink: #0a0a0a;
+      --grey-1: #f0f0ee;
+      --grey-2: #d4d4d2;
+      --grey-3: #737373;
+      --accent: #002FA7;
+      --accent-on: #ffffff;
+    }
+    [data-accent="lemon-yellow"] {
+      --paper: #fafaf8;
+      --ink: #0a0a0a;
+      --grey-1: #f0f0ee;
+      --grey-2: #d4d4d2;
+      --grey-3: #737373;
+      --accent: #FFD500;
+      --accent-on: #0a0a0a;
+    }
+    [data-accent="lemon-green"] {
+      --paper: #fafaf8;
+      --ink: #0a0a0a;
+      --grey-1: #f0f0ee;
+      --grey-2: #d4d4d2;
+      --grey-3: #737373;
+      --accent: #C5E803;
+      --accent-on: #0a0a0a;
+    }
+    [data-accent="safety-orange"] {
+      --paper: #fafaf8;
+      --ink: #0a0a0a;
+      --grey-1: #f0f0ee;
+      --grey-2: #d4d4d2;
+      --grey-3: #737373;
+      --accent: #FF6B35;
+      --accent-on: #ffffff;
+    }
+
+    /* ---------- 2. Typography stack ---------- */
+    :root {
+      --sans:    "Inter", "Helvetica Neue", Helvetica, "Noto Sans SC",
+                 -apple-system, "PingFang SC", "Microsoft YaHei UI", sans-serif;
+      --sans-zh: "Noto Sans SC", -apple-system, "PingFang SC",
+                 "Microsoft YaHei UI", "Inter", sans-serif;
+      --mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+    }
+
+    /* ---------- 3. Spacing tokens (8/12/16/24/32/40/48/64/80/96/160) ---------- */
+    :root {
+      --sp-3:   8px;
+      --sp-4:  12px;
+      --sp-5:  16px;
+      --sp-6:  24px;
+      --sp-7:  32px;
+      --sp-8:  40px;
+      --sp-9:  48px;
+      --sp-10: 64px;
+      --sp-11: 80px;
+      --sp-12: 96px;
+      --sp-13:160px;
+    }
+
+    /* ---------- 4. Reset & sheet ---------- */
+    *,*::before,*::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #1a1a1a;
+      font-family: var(--sans);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 64px 32px;
+    }
+    .sheet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+
+    /* ---------- 5. Poster boards (fixed export sizes) ---------- */
+    .poster {
+      position: relative;
+      background: var(--paper);
+      color: var(--ink);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .poster.xhs    { width: 1080px; height: 1440px; }
+    .poster.square { width: 1080px; height: 1080px; }
+    .poster.wide   { width: 2100px; height:  900px; }
+    .poster figure { margin: 0; }
+
+    .poster.xhs    .content { padding: var(--sp-12) var(--sp-11); }
+    .poster.square .content { padding: var(--sp-11) var(--sp-11); }
+    .poster.wide   .content { padding: var(--sp-11) var(--sp-13); }
+    .content { position: relative; width: 100%; height: 100%; z-index: 2; }
+
+    /* Optional decorative layers — opt in per poster */
+    .dot-mat,
+    .ring-mat,
+    .cross-mat {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .dot-mat {
+      opacity: .08;
+      background-image: radial-gradient(var(--ink) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+    }
+    .ring-mat {
+      opacity: .08;
+      background-image: radial-gradient(circle at 50% 50%, transparent 4px, var(--ink) 4.5px, var(--ink) 5px, transparent 5.5px);
+      background-size: 32px 32px;
+    }
+    .cross-mat {
+      opacity: .06;
+      background-image:
+        linear-gradient(var(--ink), var(--ink)),
+        linear-gradient(90deg, var(--ink), var(--ink));
+      background-size: 1px 14px, 14px 1px;
+      background-position: center, center;
+      background-repeat: repeat;
+    }
+
+    /* ---------- 6. Typography roles (Swiss extreme contrast) ----------
+       Hard rule: "the larger, the lighter"
+       ≥ 200px → weight 200 (ExtraLight)
+       Smaller text gets heavier weight (≥ 500). */
+    .h-hero {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 240px;
+      line-height: 1.02;
+      letter-spacing: -.02em;
+      margin: 0;
+      color: var(--ink);
+    }
+    .h-statement {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 180px;
+      line-height: 1.05;
+      letter-spacing: -.015em;
+      margin: 0;
+      color: var(--ink);
+    }
+    .h-xl {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 120px;
+      line-height: 1.08;
+      letter-spacing: -.01em;
+      margin: 0;
+      color: var(--ink);
+    }
+    .h-md {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 56px;
+      line-height: 1.18;
+      margin: 0;
+      color: var(--ink);
+    }
+    .lead {
+      font-family: var(--sans-zh);
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 1.55;
+      color: var(--ink);
+      margin: 0;
+    }
+    .body {
+      font-family: var(--sans-zh);
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 1.6;
+      color: var(--ink);
+      margin: 0;
+    }
+    .t-cat {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0;
+    }
+    .t-meta {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin: 0;
+    }
+    .num-mega {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 200px;
+      line-height: .92;
+      letter-spacing: -.03em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .num-xl {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 144px;
+      line-height: .96;
+      letter-spacing: -.02em;
+      margin: 0;
+    }
+    .mono { font-family: var(--mono); }
+
+    /* XHS (3:4) boards: 1080×1440 has the tightest vertical budget,
+       so display sizes step down vs the .wide default. These caps
+       were validated by the smoke-ai-tools deck — 2-line h-xl @96px
+       leaves room for matrix + hero-stat-bottom inside 1440px. */
+    .poster.xhs .h-hero          { font-size: 168px; }
+    .poster.xhs .h-statement     { font-size: 124px; }
+    .poster.xhs .h-xl            { font-size: 96px; }
+    .poster.xhs .num-mega        { font-size: 168px; }
+    .poster.xhs .num-xl          { font-size: 120px; }
+
+    /* Square boards tighten scales */
+    .poster.square .h-hero       { font-size: 180px; }
+    .poster.square .h-statement  { font-size: 140px; }
+    .poster.square .h-xl         { font-size: 88px; }
+    .poster.square .num-mega     { font-size: 168px; }
+    .poster.square .num-xl       { font-size: 112px; }
+
+    /* Wide boards rely on horizontal real estate */
+    .poster.wide .h-hero         { font-size: 200px; }
+    .poster.wide .h-statement    { font-size: 156px; }
+    .poster.wide .h-xl           { font-size: 104px; }
+
+    /* ---------- 7. Layout primitives ---------- */
+    .stack    { display: flex; flex-direction: column; }
+    .row      { display: flex; flex-direction: row; }
+    .gap-3    { gap: var(--sp-3); }
+    .gap-4    { gap: var(--sp-4); }
+    .gap-5    { gap: var(--sp-5); }
+    .gap-6    { gap: var(--sp-6); }
+    .gap-7    { gap: var(--sp-7); }
+    .gap-8    { gap: var(--sp-8); }
+    .gap-9    { gap: var(--sp-9); }
+    .gap-10   { gap: var(--sp-10); }
+    .grow     { flex: 1; }
+    .grid-12  { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--sp-7); }
+    .grid-2-9 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-9); }
+    .grid-3   { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-7); }
+    .grid-4   { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); }
+    .span-2   { grid-column: span 2; }
+    .span-3   { grid-column: span 3; }
+    .span-4   { grid-column: span 4; }
+    .span-6   { grid-column: span 6; }
+    .span-8   { grid-column: span 8; }
+    .span-9   { grid-column: span 9; }
+    .span-12  { grid-column: span 12; }
+    .center   { text-align: center; }
+    .right    { text-align: right; }
+    .uppercase{ text-transform: uppercase; }
+    .hr-hairline {
+      height: 1px;
+      background: var(--grey-2);
+      border: 0;
+      margin: 0;
+    }
+    .hr-accent {
+      height: 3px;
+      background: var(--accent);
+      border: 0;
+      width: 96px;
+      margin: 0;
+    }
+
+    /* ---------- 8. Card fills (mutually exclusive — pick ONE) ----------
+       Hard rule: never combine card-ink/card-accent/card-fill/card-outlined
+       on the same node. Multi-card grids must use the same class. */
+    .card-ink {
+      background: var(--ink);
+      color: var(--paper);
+      padding: var(--sp-8);
+    }
+    .card-ink .t-cat,
+    .card-ink .t-meta,
+    .card-ink .lead,
+    .card-ink .body,
+    .card-ink .h-md { color: var(--paper); }
+    .card-accent {
+      background: var(--accent);
+      color: var(--accent-on);
+      padding: var(--sp-8);
+    }
+    .card-accent .t-cat,
+    .card-accent .t-meta,
+    .card-accent .lead,
+    .card-accent .body,
+    .card-accent .h-md { color: var(--accent-on); }
+    .card-fill {
+      background: var(--grey-1);
+      color: var(--ink);
+      padding: var(--sp-8);
+    }
+    .card-outlined {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--grey-2);
+      padding: var(--sp-8);
+    }
+
+    /* ---------- 9. Frame containers (image holders) ---------- */
+    .frame-img {
+      position: relative;
+      overflow: hidden;
+      background: var(--grey-1);
+      display: block;
+      margin: 0;
+    }
+    .frame-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+    .frame-img.fit-contain img { object-fit: contain; background: var(--paper); }
+    .frame-img.r-3x4   { aspect-ratio: 3 / 4; }
+    .frame-img.r-1x1   { aspect-ratio: 1 / 1; }
+    .frame-img.r-4x3   { aspect-ratio: 4 / 3; }
+    .frame-img.r-16x9  { aspect-ratio: 16 / 9; }
+    .frame-img.r-16x10 { aspect-ratio: 16 / 10; }
+    .frame-img.r-21x9  { aspect-ratio: 21 / 9; }
+    .swiss-img-caption {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin-top: var(--sp-5);
+    }
+
+    /* ---------- 9b. Screenshot treatment (.frame-shot) ---------- */
+    /* Swiss is stricter than Editorial: corners default square, shadows default
+       none. Override only when the shot must literally float off the page.   */
+    .frame-shot {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      margin: 0;
+      background: var(--grey-1);
+      border-radius: 0;
+    }
+    .frame-shot.corners-sq { border-radius: 0; }
+    .frame-shot.corners-sm { border-radius: 4px; }
+    .frame-shot.corners-md { border-radius: 10px; }
+
+    /* Swiss shadows are flat — only the subtle outline scrim is welcome */
+    .frame-shot.shadow-soft { box-shadow: 0 12px 28px -16px rgba(0,0,0,.18); }
+    .frame-shot.shadow-ed   { box-shadow: 0 20px 40px -20px rgba(0,0,0,.22), 0 0 0 1px var(--grey-2); }
+
+    /* background tones — pure / dot / grid only. No accent colour fills. */
+    .frame-shot.bg-paper    { background: var(--paper); }
+    .frame-shot.bg-grey-1   { background: var(--grey-1); }
+    .frame-shot.bg-ink      { background: var(--ink); }
+    .frame-shot.bg-grid     {
+      background-color: var(--paper);
+      background-image:
+        linear-gradient(to right, var(--grey-2) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grey-2) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .frame-shot.bg-dot {
+      background-color: var(--paper);
+      background-image: radial-gradient(var(--grey-2) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+
+    /* asset backgrounds — ported from PPT skill, real texture for screenshot wells.
+       Use ONLY when current accent matches the asset's accent (don't mix oranges and IKB). */
+    .frame-shot.bg-asset-ikb-dot          { background: #0c1a3a url("../assets/screenshot-backgrounds/style-b/ikb-dot-gradient.webp")       center/cover no-repeat; }
+    .frame-shot.bg-asset-lemon-green-dot  { background: #d6e08a url("../assets/screenshot-backgrounds/style-b/lemon-green-dot-shadow.webp") center/cover no-repeat; }
+    .frame-shot.bg-asset-lemon-grid       { background: #e6e9b8 url("../assets/screenshot-backgrounds/style-b/lemon-grid.webp")             center/cover no-repeat; }
+    .frame-shot.bg-asset-safety-orange    { background: #ff5b1f url("../assets/screenshot-backgrounds/style-b/safety-orange-halftone.webp") center/cover no-repeat; }
+
+    .frame-shot.inset-none > img,
+    .frame-shot.inset-none > .shot-body { padding: 0; }
+    .frame-shot.inset-sub  { padding: 20px; }
+    .frame-shot.inset-bal  { padding: 48px; }
+
+    .frame-shot.r-3x4   { aspect-ratio: 3 / 4; }
+    .frame-shot.r-1x1   { aspect-ratio: 1 / 1; }
+    .frame-shot.r-4x3   { aspect-ratio: 4 / 3; }
+    .frame-shot.r-16x9  { aspect-ratio: 16 / 9; }
+    .frame-shot.r-16x10 { aspect-ratio: 16 / 10; }
+    .frame-shot.r-21x9  { aspect-ratio: 21 / 9; }
+    .frame-shot.r-3x2   { aspect-ratio: 3 / 2; }
+
+    .frame-shot > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      border-radius: inherit;
+    }
+    .frame-shot.fit-cover > img { object-fit: cover; }
+
+    /* device chrome — CSS-only, no SVG */
+    .device-browser {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--grey-2);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .device-browser::before {
+      content: '';
+      display: block;
+      height: 32px;
+      background: var(--grey-1);
+      border-bottom: 1px solid var(--grey-2);
+      background-image:
+        radial-gradient(circle at 16px 16px, var(--grey-3) 4px, transparent 4.5px),
+        radial-gradient(circle at 34px 16px, var(--grey-3) 4px, transparent 4.5px),
+        radial-gradient(circle at 52px 16px, var(--grey-3) 4px, transparent 4.5px);
+    }
+    .device-browser > .frame-shot,
+    .device-browser > img {
+      border-radius: 0;
+      display: block;
+      width: 100%;
+    }
+    .device-phone {
+      position: relative;
+      background: var(--ink);
+      border-radius: 28px;
+      padding: 12px;
+      box-shadow: 0 16px 36px -18px rgba(0,0,0,.32);
+    }
+    .device-phone > .frame-shot,
+    .device-phone > img {
+      border-radius: 18px;
+      display: block;
+      width: 100%;
+    }
+
+    /* ---------- 9c. Map block (.map-block) ---------- */
+    /* Static map for Swiss decks. Pins are pure HTML, no SVG text.
+       Use accent sparingly: at most one accent pin per board. */
+    .map-block {
+      position: relative;
+      background: var(--grey-1);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      width: 100%;
+    }
+    .map-block.r-16x10 { aspect-ratio: 16 / 10; }
+    .map-block.r-16x9  { aspect-ratio: 16 / 9; }
+    .map-block.r-1x1   { aspect-ratio: 1 / 1; }
+    .map-block.r-3x4   { aspect-ratio: 3 / 4; }
+    .map-block > img,
+    .map-block > svg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      display: block;
+    }
+    .map-block > img { object-fit: cover; }
+    /* desaturated tile filter to keep Swiss strict tone */
+    .map-block.tone-paper > img { filter: saturate(0) contrast(1.05) brightness(1.02); }
+    .map-block.tone-ink > img   { filter: saturate(0) brightness(.58); }
+    /* schematic SVG defaults */
+    .map-block > svg .map-coast { fill: none; stroke: var(--grey-2); stroke-width: .4; }
+    .map-block > svg .map-road  { fill: none; stroke: var(--grey-3); stroke-width: .28; stroke-dasharray: 1.2 .8; opacity: .7; }
+    .map-block > svg .map-water { fill: var(--grey-1); }
+    .map-block > svg .map-grid  { stroke: var(--grey-2); stroke-width: .15; opacity: .5; }
+
+    .map-pin {
+      position: absolute;
+      width: 0; height: 0;
+      transform: translate(-50%, -50%);
+    }
+    .map-pin .dot {
+      position: absolute;
+      left: -6px; top: -6px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 2px solid var(--paper);
+      box-shadow: 0 1px 3px rgba(0,0,0,.22);
+    }
+    .map-pin.accent .dot { background: var(--accent); }
+    .map-pin .line {
+      position: absolute;
+      left: 7px; top: 0;
+      width: 28px; height: 1px;
+      background: var(--ink);
+      opacity: .55;
+    }
+    .map-pin.left .line { left: auto; right: 7px; }
+    .map-pin .card {
+      position: absolute;
+      left: 38px; top: -20px;
+      min-width: 80px;
+      padding: 8px 10px;
+      background: rgba(250,250,248,.94);
+      box-shadow: 0 0 0 1px var(--grey-2);
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .map-pin.left .card { left: auto; right: 38px; }
+    .map-pin .card .name {
+      font-family: var(--sans-zh), var(--sans);
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+    .map-pin .card .meta {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+    }
+    .map-pin.accent .card .name { color: var(--accent); }
+
+    .map-legend {
+      position: absolute;
+      left: 14px; bottom: 14px;
+      z-index: 3;
+      background: rgba(250,250,248,.94);
+      padding: 8px 12px;
+      box-shadow: 0 0 0 1px var(--grey-2);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+    }
+    .map-legend.tr { left: auto; right: 14px; top: 14px; bottom: auto; }
+
+    /* ---------- 10. Swiss-specific components ---------- */
+
+    /* S08 Image Hero (port of S22) */
+    .image-hero {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: var(--sp-7);
+      height: 100%;
+    }
+    .image-hero .hero-img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--grey-1);
+    }
+    .image-hero .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+    .image-hero .hero-overlay-block {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: var(--paper);
+      padding: var(--sp-7) var(--sp-8);
+      max-width: 60%;
+    }
+    .image-hero .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-8);
+      align-items: end;
+      border-top: 1px solid var(--grey-2);
+      padding-top: var(--sp-7);
+    }
+    .image-hero .hero-stats .stat-block .num {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 96px;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      margin: 0 0 var(--sp-4);
+    }
+    .image-hero .hero-stats .stat-block .lbl {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin: 0;
+    }
+
+    /* S09 KPI Tower (port of S06) */
+    .kpi-tower-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-7);
+      align-items: end;
+      height: 100%;
+    }
+    .kpi-tower-row .tower-col {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-5);
+      align-items: flex-start;
+    }
+    .kpi-tower-row .tower-col .num {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 112px;
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin: 0;
+    }
+    .kpi-tower-row .tower-col .lbl {
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin: 0;
+    }
+    .kpi-tower-row .tower-col .bar-tower {
+      width: 100%;
+      height: var(--h, 240px);
+      background: var(--accent);
+      transform-origin: bottom;
+    }
+    .kpi-tower-row .tower-col.muted .bar-tower {
+      background: var(--grey-2);
+    }
+    .poster.xhs .kpi-tower-row { grid-template-columns: 1fr 1fr; gap: var(--sp-9); }
+    .poster.square .kpi-tower-row { grid-template-columns: 1fr 1fr; gap: var(--sp-9); }
+
+    /* S10 H-Bar Chart (port of S07) */
+    .h-bar-chart {
+      display: grid;
+      gap: var(--sp-6);
+    }
+    .h-bar-chart .bar-row {
+      display: grid;
+      grid-template-columns: 220px 1fr 120px;
+      gap: var(--sp-6);
+      align-items: center;
+    }
+    .h-bar-chart .bar-row .row-lbl {
+      font-family: var(--sans-zh);
+      font-weight: 500;
+      font-size: 26px;
+      color: var(--ink);
+    }
+    .h-bar-chart .bar-row .row-track {
+      position: relative;
+      height: 28px;
+      background: var(--grey-1);
+    }
+    .h-bar-chart .bar-row .row-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: var(--w, 50%);
+      background: var(--accent);
+    }
+    .h-bar-chart .bar-row .row-val {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 26px;
+      letter-spacing: .04em;
+      text-align: right;
+      color: var(--ink);
+    }
+    /* On portrait the labels move above the track */
+    .poster.xhs .h-bar-chart .bar-row {
+      grid-template-columns: 1fr;
+      gap: var(--sp-4);
+    }
+    .poster.xhs .h-bar-chart .bar-row .row-val {
+      text-align: left;
+    }
+
+    /* S11 Stacked Ledger (port of S20) */
+    .stacked-ledger {
+      display: flex;
+      flex-direction: column;
+    }
+    .stacked-ledger .ledger-row {
+      display: grid;
+      grid-template-columns: 280px 1fr auto;
+      gap: var(--sp-7);
+      align-items: baseline;
+      padding: var(--sp-7) 0;
+      border-bottom: 1px solid var(--grey-2);
+    }
+    .stacked-ledger .ledger-row:first-child { padding-top: 0; }
+    .stacked-ledger .ledger-row:last-child  { border-bottom: 0; }
+    .stacked-ledger .ledger-num {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 112px;
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin: 0;
+    }
+    .stacked-ledger .ledger-lbl {
+      font-family: var(--sans-zh);
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+    .stacked-ledger .ledger-lbl .sub {
+      display: block;
+      font-weight: 400;
+      font-size: 22px;
+      color: var(--grey-3);
+      margin-top: var(--sp-3);
+    }
+    .stacked-ledger .ledger-icn {
+      width: 56px;
+      height: 56px;
+      color: var(--accent);
+    }
+    .poster.square .stacked-ledger .ledger-num { font-size: 88px; }
+    .poster.square .stacked-ledger .ledger-row { grid-template-columns: 220px 1fr auto; }
+
+    /* S12 Matrix Fill (port of S15) */
+    .matrix-fill {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 1fr;
+      gap: var(--sp-5);
+    }
+    .matrix-fill .matrix-cell {
+      background: var(--grey-1);
+      padding: var(--sp-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+      min-height: 160px;
+    }
+    .matrix-fill .matrix-cell .cell-nb {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      color: var(--grey-3);
+    }
+    .matrix-fill .matrix-cell .cell-title {
+      font-family: var(--sans-zh);
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+    .matrix-fill .matrix-cell.is-accent {
+      background: var(--accent);
+      color: var(--accent-on);
+    }
+    .matrix-fill .matrix-cell.is-accent .cell-nb,
+    .matrix-fill .matrix-cell.is-accent .cell-title { color: var(--accent-on); }
+    .hero-stat-bottom {
+      margin-top: var(--sp-9);
+      padding-top: var(--sp-7);
+      border-top: 1px solid var(--grey-2);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: var(--sp-7);
+    }
+    /* xhs uses 2 columns; up to 8 cells = 4 rows. Switch to min-content
+       so rows don't stretch and crowd out hero-stat-bottom (validated
+       in smoke-ai-tools/xhs-04). When pairing matrix-fill with
+       hero-stat-bottom inside .poster.xhs, prefer 6 cells (3 rows). */
+    .poster.xhs .matrix-fill {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: min-content;
+      gap: var(--sp-4);
+    }
+    .poster.xhs .matrix-fill .matrix-cell { min-height: 0; padding: var(--sp-5); }
+    .poster.xhs .matrix-fill .matrix-cell .cell-title { font-size: 24px; }
+    .poster.xhs .hero-stat-bottom {
+      margin-top: var(--sp-6);
+      padding-top: var(--sp-5);
+      align-items: center;
+    }
+    .poster.xhs .hero-stat-bottom .num-mega { font-size: 128px; line-height: 1; }
+    .poster.square .matrix-fill{ grid-template-columns: repeat(3, 1fr); grid-auto-rows: auto; }
+    .poster.square .matrix-fill .matrix-cell { min-height: 0; }
+
+    /* ---------- 11. Issue label + corner metadata ---------- */
+    .chrome-min {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      padding-bottom: var(--sp-6);
+      border-bottom: 1px solid var(--grey-2);
+      margin-bottom: var(--sp-9);
+    }
+
+    /* ---------- 12. Pair preview frame ---------- */
+    .pair-preview {
+      width: 2400px;
+      min-height: 1180px;
+      background: var(--grey-1);
+      padding: var(--sp-9);
+      display: grid;
+      grid-template-columns: 2100px 1080px;
+      grid-template-rows: 900px 1080px;
+      gap: var(--sp-9);
+      align-content: center;
+      justify-content: center;
+    }
+    .pair-preview .preview-wide   { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-square { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-label {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin-bottom: var(--sp-5);
+    }
+
+    /* ---------- 13. Hard rules (visual guard rails) ----------
+       Swiss style refuses these — uncomment to find offenders.
+    .poster *[style*="border-radius"],
+    .poster *[style*="box-shadow"],
+    .poster *[style*="linear-gradient"] { outline: 4px solid red !important; }
+    */
+    /* ---------- Task scoped: business environment cards ---------- */
+    .poster.xhs .content { padding: 80px 76px 78px; }
+    .deck-mark {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--grey-2);
+      margin-bottom: 44px;
+    }
+    .deck-mark span {
+      font-family: var(--mono);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+    }
+    .deck-mark strong {
+      font-family: var(--mono);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .08em;
+    }
+    .task-title {
+      font-family: var(--sans);
+      font-weight: 260;
+      font-size: 100px;
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin: 0;
+      color: var(--ink);
+    }
+    .task-title.tight { font-size: 88px; }
+    .task-title.small { font-size: 72px; line-height: 1.12; }
+    .accent-word {
+      color: var(--accent);
+      font-weight: 300;
+    }
+    .visual-panel {
+      position: relative;
+      min-height: 420px;
+      background: var(--grey-1);
+      border: 1px solid var(--grey-2);
+      overflow: hidden;
+      margin: 44px 0;
+    }
+    .visual-panel.tall { min-height: 520px; }
+    .visual-panel.compact { min-height: 300px; margin: 28px 0; }
+    .visual-panel.photo {
+      min-height: 500px;
+      border: 0;
+      background: var(--grey-1);
+    }
+    .visual-panel.photo.short { min-height: 360px; }
+    .visual-panel.photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .photo-caption {
+      margin-top: -26px;
+      font-family: var(--mono);
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+    }
+    .file-stack {
+      position: absolute;
+      left: 76px;
+      top: 70px;
+      width: 390px;
+      height: 250px;
+      background: var(--paper);
+      border: 2px solid var(--ink);
+    }
+    .file-stack::before,
+    .file-stack::after {
+      content: "";
+      position: absolute;
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      width: 390px;
+      height: 250px;
+    }
+    .file-stack::before { left: 34px; top: 34px; }
+    .file-stack::after { left: 68px; top: 68px; background: var(--accent); border-color: var(--accent); }
+    .stamp-block {
+      position: absolute;
+      right: 76px;
+      bottom: 64px;
+      width: 250px;
+      height: 132px;
+      border: 6px solid var(--ink);
+      display: grid;
+      place-items: center;
+      font-family: var(--sans-zh);
+      font-size: 42px;
+      font-weight: 500;
+      color: var(--ink);
+      transform: rotate(-4deg);
+      background: var(--paper);
+    }
+    .scale-symbol {
+      position: absolute;
+      right: 88px;
+      top: 72px;
+      width: 285px;
+      height: 220px;
+    }
+    .scale-symbol .beam {
+      position: absolute;
+      top: 58px;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--ink);
+    }
+    .scale-symbol .stem {
+      position: absolute;
+      top: 18px;
+      left: 138px;
+      width: 8px;
+      height: 188px;
+      background: var(--ink);
+    }
+    .scale-symbol .pan {
+      position: absolute;
+      top: 106px;
+      width: 110px;
+      height: 46px;
+      border: 5px solid var(--ink);
+      border-top: 0;
+      background: var(--paper);
+    }
+    .scale-symbol .pan.left { left: 8px; }
+    .scale-symbol .pan.right { right: 8px; }
+    .issue-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 28px;
+      border-top: 1px solid var(--grey-2);
+    }
+    .issue-row span {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--grey-1);
+      font-family: var(--sans-zh);
+      font-size: 22px;
+      font-weight: 500;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 28px;
+      margin-top: 42px;
+    }
+    .compare-block {
+      min-height: 345px;
+      padding: 44px;
+      border: 1px solid var(--grey-2);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 22px;
+    }
+    .compare-block.bad { background: var(--grey-1); }
+    .compare-block.good { background: var(--accent); color: var(--accent-on); border-color: var(--accent); }
+    .compare-block.good .t-meta,
+    .compare-block.good .h-md,
+    .compare-block.good .body { color: var(--accent-on); }
+    .tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 42px;
+    }
+    .data-card {
+      min-height: 255px;
+      padding: 34px;
+      background: var(--grey-1);
+      border: 1px solid var(--grey-2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .data-card.accent { background: var(--accent); border-color: var(--accent); color: var(--accent-on); }
+    .data-card.accent .data-num,
+    .data-card.accent .data-label { color: var(--accent-on); }
+    .data-num {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 92px;
+      line-height: .96;
+      letter-spacing: -.03em;
+      margin: 0;
+    }
+    .data-label {
+      font-family: var(--sans-zh);
+      font-size: 25px;
+      line-height: 1.32;
+      font-weight: 500;
+      margin: 0;
+    }
+    .rule-list {
+      margin-top: 42px;
+      display: grid;
+      gap: 22px;
+    }
+    .rule-list.tight { gap: 8px; margin-top: 32px; }
+    .rule-list.tight .rule-item {
+      padding: 22px 0;
+      grid-template-columns: 78px 1fr;
+      gap: 20px;
+    }
+    .rule-list.tight .rule-copy h3 { font-size: 30px; }
+    .rule-list.tight .rule-copy p { font-size: 22px; }
+    .rule-item {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 26px;
+      align-items: start;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--grey-2);
+    }
+    .rule-item:first-child { border-top: 1px solid var(--grey-2); }
+    .rule-num {
+      font-family: var(--mono);
+      font-size: 42px;
+      font-weight: 500;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .rule-copy h3 {
+      font-family: var(--sans-zh);
+      font-size: 34px;
+      line-height: 1.22;
+      margin: 0 0 8px;
+      font-weight: 500;
+    }
+    .rule-copy p {
+      font-family: var(--sans-zh);
+      color: var(--grey-3);
+      font-size: 24px;
+      line-height: 1.46;
+      margin: 0;
+    }
+    .quote-block {
+      margin-top: 42px;
+      padding: 42px;
+      background: var(--ink);
+      color: var(--paper);
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      font-family: var(--sans-zh);
+      font-size: 42px;
+      line-height: 1.35;
+      font-weight: 400;
+    }
+    .quote-block.compact {
+      min-height: 168px;
+      padding: 34px;
+      font-size: 36px;
+      margin-top: 32px;
+    }
+    .boundary-matrix {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 42px;
+    }
+    .boundary-cell {
+      min-height: 245px;
+      border: 1px solid var(--grey-2);
+      padding: 30px;
+      background: var(--grey-1);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 18px;
+    }
+    .boundary-cell.accent { background: var(--accent); border-color: var(--accent); color: var(--accent-on); }
+    .boundary-cell.accent .t-meta,
+    .boundary-cell.accent .body { color: var(--accent-on); }
+    .service-strip {
+      margin-top: 42px;
+      display: grid;
+      gap: 18px;
+    }
+    .service-row {
+      min-height: 124px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      border: 1px solid var(--grey-2);
+    }
+    .service-row .service-num {
+      background: var(--accent);
+      color: var(--accent-on);
+      display: grid;
+      place-items: center;
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 68px;
+      letter-spacing: -.02em;
+    }
+    .service-row .service-copy {
+      padding: 25px 28px;
+      display: flex;
+      align-items: center;
+      font-family: var(--sans-zh);
+      font-size: 30px;
+      line-height: 1.32;
+      font-weight: 500;
+    }
+    .logic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 40px;
+    }
+    .logic-card {
+      min-height: 210px;
+      background: var(--grey-1);
+      border: 1px solid var(--grey-2);
+      padding: 30px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 18px;
+    }
+    .logic-card.accent {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-on);
+    }
+    .logic-card.accent .t-meta,
+    .logic-card.accent .body { color: var(--accent-on); }
+    .logic-card .body {
+      font-weight: 500;
+      font-size: 27px;
+      line-height: 1.42;
+    }
+    .answer-card {
+      margin-top: 38px;
+      border-top: 1px solid var(--grey-2);
+      border-bottom: 1px solid var(--grey-2);
+      padding: 34px 0;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .answer-card strong {
+      font-family: var(--sans);
+      font-size: 76px;
+      line-height: .95;
+      font-weight: 220;
+      color: var(--accent);
+    }
+    .answer-card p {
+      margin: 0;
+      font-family: var(--sans-zh);
+      font-size: 32px;
+      line-height: 1.42;
+      font-weight: 500;
+    }
+    .phrase-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 38px;
+    }
+    .phrase-item {
+      min-height: 134px;
+      background: var(--grey-1);
+      border-left: 12px solid var(--accent);
+      padding: 28px 34px;
+      display: flex;
+      align-items: center;
+      font-family: var(--sans-zh);
+      font-size: 31px;
+      line-height: 1.42;
+      font-weight: 500;
+    }
+    .question-box {
+      margin-top: 40px;
+      padding: 42px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--sans-zh);
+      font-size: 40px;
+      line-height: 1.35;
+      font-weight: 500;
+    }
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .check-item {
+      min-height: 154px;
+      padding: 28px;
+      border: 1px solid var(--grey-2);
+      background: var(--grey-1);
+      display: flex;
+      align-items: center;
+      font-family: var(--sans-zh);
+      font-size: 28px;
+      line-height: 1.36;
+      font-weight: 500;
+    }
+    .check-item.accent {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-on);
+    }
+    .final-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 42px;
+    }
+    .final-item {
+      min-height: 122px;
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      align-items: center;
+      border-bottom: 1px solid var(--grey-2);
+    }
+    .final-item:first-child { border-top: 1px solid var(--grey-2); }
+    .final-item strong {
+      font-family: var(--sans);
+      font-size: 54px;
+      font-weight: 250;
+      color: var(--accent);
+    }
+    .final-item span {
+      font-family: var(--sans-zh);
+      font-size: 33px;
+      font-weight: 500;
+    }
+    .footline {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--grey-2);
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      display: flex;
+      justify-content: space-between;
+    }
+    .poster.xhs { background: var(--paper); }
+    .poster.xhs::before {
+      content: "";
+      position: absolute;
+      left: 75px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255,107,53,.26);
+      z-index: 1;
+    }
+    .poster.xhs .lead { font-size: 29px; }
+    .poster.xhs .body { font-size: 25px; }
+    .poster.xhs .h-md { font-size: 48px; }
+  </style>
+</head>
+<body>
+  <!-- ACCENT_OVERRIDE
+       Change <html data-accent="…"> above to:
+       ikb | lemon-yellow | lemon-green | safety-orange
+       One deck — one accent. Never combine.
+  -->
+  <main class="sheet">
+
+    <section class="poster xhs" id="xhs-01">
+      <div class="content stack gap-9">
+        <div class="deck-mark">
+          <span>People's Daily · Business Environment</span>
+          <strong>01 / 14</strong>
+        </div>
+        <h1 class="h-xl task-title">营商环境<br>不是<span class="accent-word">不执法</span></h1>
+        <div class="visual-panel photo">
+          <img src="assets/legal-still-life.png" alt="">
+        </div>
+        <p class="photo-caption">AI-generated · no person · legal still life</p>
+        <p class="lead">不是让监管缺位，而是让权力有边界、检查有标准、处罚有尺度、服务有温度。</p>
+        <div class="issue-row">
+          <span>减干扰</span><span>明标准</span><span>重说理</span><span>强监督</span><span>守边界</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-02">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Misconception · 先破误区</span>
+          <strong>02 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title tight">企业怕的<br>不是<span class="accent-word">依法监管</span></h2>
+        <div class="compare-grid">
+          <div class="compare-block bad">
+            <span class="tag">Wrong</span>
+            <h3 class="h-md">把营商环境理解成：少查、少罚、少管。</h3>
+            <p class="body">这会把“服务企业”误写成“监管放松”。</p>
+          </div>
+          <div class="compare-block good">
+            <span class="tag">Right</span>
+            <h3 class="h-md">企业真正怕的是：乱查、乱罚、重复扰企。</h3>
+            <p class="body">规范执法，是给守法经营主体稳定预期。</p>
+          </div>
+        </div>
+        <div class="footline"><span>Keyword · 依法监管</span><span>PeopleDaily</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-03">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Evidence · 权威发布</span>
+          <strong>03 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">不是检查越多越好<br>而是监管越<span class="accent-word">精准</span>越好</h2>
+        <div class="data-grid">
+          <div class="data-card accent">
+            <p class="data-num">6.6万+</p>
+            <p class="data-label">查纠涉企行政执法突出问题案件线索</p>
+          </div>
+          <div class="data-card">
+            <p class="data-num">307亿</p>
+            <p class="data-label">为企业挽回经济损失</p>
+          </div>
+          <div class="data-card">
+            <p class="data-num">-34%</p>
+            <p class="data-label">行政检查总量同比下降</p>
+          </div>
+          <div class="data-card">
+            <p class="data-num">+19</p>
+            <p class="data-label">发现问题比例提高近 19 个百分点</p>
+          </div>
+        </div>
+        <div class="quote-block">少一点无效打扰，多一点问题导向。</div>
+        <div class="footline"><span>Source · 2026.05.22</span><span>04版</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-04">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Problem List · 专项治理</span>
+          <strong>04 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">规范执法<br>先治理这<span class="accent-word">六类问题</span></h2>
+        <div class="check-grid">
+          <div class="check-item accent">乱收费：把行政权力变成收费工具</div>
+          <div class="check-item">乱罚款：为罚而罚，简单粗暴</div>
+          <div class="check-item">乱检查：多头检查、重复检查、随意扰企</div>
+          <div class="check-item">乱查封：超范围、超权限、超时限</div>
+          <div class="check-item">违规异地执法：越界执法、程序失范</div>
+          <div class="check-item">趋利性执法：执法动机偏离公共利益</div>
+        </div>
+        <div class="quote-block compact">营商环境的关键，不是把执法拿掉，而是把任性执法关进制度笼子。</div>
+        <div class="footline"><span>Focus · 四乱 两违规</span><span>涉企执法</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-05">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Inspection · 精准监管</span>
+          <strong>05 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">少打扰企业<br>不等于<span class="accent-word">少发现问题</span></h2>
+        <div class="visual-panel photo short">
+          <img src="assets/enforcement-checklist.png" alt="">
+        </div>
+        <p class="photo-caption">AI-generated · checklist · no person</p>
+        <div class="check-grid">
+          <div class="check-item accent">综合查一次：能合并的检查尽量合并</div>
+          <div class="check-item">分级分类：按信用、风险、行业特点安排频次</div>
+          <div class="check-item">扫码入企：检查留痕，权力可追溯</div>
+          <div class="check-item">问题导向：少无效打扰，多精准发现</div>
+        </div>
+        <div class="footline"><span>Logic · 总量下降 质效提高</span><span>监管优化</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-06">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Flexible Enforcement · 柔性执法</span>
+          <strong>06 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title tight">轻微免罚<br>不是<span class="accent-word">违法不罚</span></h2>
+        <div class="rule-list tight">
+          <div class="rule-item">
+            <div class="rule-num">01</div>
+            <div class="rule-copy"><h3>先查事实</h3><p>首次？轻微？主动整改？有没有严重后果？</p></div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">02</div>
+            <div class="rule-copy"><h3>依法裁量</h3><p>符合条件才从轻、减轻或免罚，底线问题不能宽免。</p></div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">03</div>
+            <div class="rule-copy"><h3>说理指导</h3><p>讲清依据、裁量理由和整改要求，禁止“一罚了之”。</p></div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">04</div>
+            <div class="rule-copy"><h3>跟踪合规</h3><p>让企业知道错在哪里、怎么改、以后怎么防。</p></div>
+          </div>
+        </div>
+        <div class="footline"><span>Core · 处罚 教育 整改</span><span>闭环</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-07">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Purpose · 合规导向</span>
+          <strong>07 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">处罚只是手段<br>合规才是<span class="accent-word">目的</span></h2>
+        <div class="answer-card">
+          <strong>1</strong>
+          <p>对轻微违法，能教育整改的，尽量用说理式执法帮助企业纠偏。</p>
+        </div>
+        <div class="answer-card">
+          <strong>2</strong>
+          <p>对安全、质量、环境、食品药品等底线问题，必须依法严管。</p>
+        </div>
+        <div class="answer-card">
+          <strong>3</strong>
+          <p>对处罚结果，要讲清依据、裁量和整改路径，让企业知道以后怎么做。</p>
+        </div>
+        <div class="quote-block compact">好的执法，不只是让人“怕罚”，更要让人“会守法”。</div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-08">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Rule of Law · 民企保护</span>
+          <strong>08 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">保护企业<br>不是<span class="accent-word">偏袒企业</span></h2>
+        <div class="logic-grid">
+          <div class="logic-card accent">
+            <p class="t-meta">Stable Rules</p>
+            <p class="body">规则稳定：企业知道什么能做、什么不能做。</p>
+          </div>
+          <div class="logic-card">
+            <p class="t-meta">Equal Protection</p>
+            <p class="body">平等保护：国企民企、内资外资，一视同仁。</p>
+          </div>
+          <div class="logic-card">
+            <p class="t-meta">Relief</p>
+            <p class="body">权益可救济：合理诉求有人接、有人办、能反馈。</p>
+          </div>
+          <div class="logic-card">
+            <p class="t-meta">Credit Repair</p>
+            <p class="body">信用可修复：整改之后能重新出发，不是一错到底。</p>
+          </div>
+        </div>
+        <div class="quote-block compact">法治化营商环境，本质上是在给经营主体稳定预期。</div>
+        <div class="footline"><span>Law · 不是特殊照顾</span><span>是制度保护</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-09">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Policy · 民营经济促进法</span>
+          <strong>09 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">法治护航<br>让民企<span class="accent-word">敢投敢干</span></h2>
+        <div class="rule-list tight">
+          <div class="rule-item">
+            <div class="rule-num">01</div>
+            <div class="rule-copy"><h3>平等准入</h3><p>破除隐性壁垒，让市场机会更公平。</p></div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">02</div>
+            <div class="rule-copy"><h3>依法保护</h3><p>产权、人格权、经营自主权都要依法保护。</p></div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">03</div>
+            <div class="rule-copy"><h3>诉求响应</h3><p>政府部门不能只说“按流程”，还要有回应机制。</p></div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">04</div>
+            <div class="rule-copy"><h3>政策落地</h3><p>好政策不能停在文件里，要能到企业、到项目、到现场。</p></div>
+          </div>
+        </div>
+        <div class="quote-block compact">企业的信心，来自规则可预期、权益有保障、问题能解决。</div>
+        <div class="footline"><span>PeopleDaily · 2026.05.22</span><span>06版</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-10">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Boundary · 边界辨析</span>
+          <strong>10 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">正常维权要保护<br>恶意牟利要治理</h2>
+        <div class="visual-panel photo short">
+          <img src="assets/fair-market-order.png" alt="">
+        </div>
+        <p class="photo-caption">AI-generated · market order · no person</p>
+        <div class="boundary-matrix">
+          <div class="boundary-cell accent">
+            <p class="t-meta">Protect</p>
+            <p class="body">正常消费维权、公益举报、企业内部合规举报。</p>
+          </div>
+          <div class="boundary-cell">
+            <p class="t-meta">Identify</p>
+            <p class="body">识别以打假为名、行牟利之实的恶意行为。</p>
+          </div>
+          <div class="boundary-cell">
+            <p class="t-meta">Regulate</p>
+            <p class="body">依法审查、分类处置、公开判断标准。</p>
+          </div>
+          <div class="boundary-cell">
+            <p class="t-meta">Comply</p>
+            <p class="body">督促经营者提升质量、规范宣传、减少纠纷。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-11">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Service Forward · 服务前移</span>
+          <strong>11 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">营商环境<br>不只有<span class="accent-word">审批速度</span></h2>
+        <div class="service-strip">
+          <div class="service-row">
+            <div class="service-num">92%</div>
+            <div class="service-copy">市场矛盾纠纷化解率：把问题化在萌芽。</div>
+          </div>
+          <div class="service-row">
+            <div class="service-num">459</div>
+            <div class="service-copy">企业警务室：把服务送到企业身边。</div>
+          </div>
+          <div class="service-row">
+            <div class="service-num">4.1万</div>
+            <div class="service-copy">企业群众急难愁盼事项：有人接、有人办。</div>
+          </div>
+        </div>
+        <div class="quote-block">安全有保障，纠纷能化解，风险有人管。</div>
+        <div class="footline"><span>From reactive to preventive</span><span>前端治理</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-12">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Interview · 面试怎么答</span>
+          <strong>12 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">企业嫌检查多<br>怎么办</h2>
+        <div class="question-box">某地企业反映多部门频繁检查，影响正常经营。你作为相关部门工作人员，如何处理？</div>
+        <div class="rule-list tight">
+          <div class="rule-item">
+            <div class="rule-num">听</div>
+            <div class="rule-copy"><h3>先核实诉求</h3><p>听企业反映，调取检查记录，分清合理监管和重复扰企。</p></div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">合</div>
+            <div class="rule-copy"><h3>统筹检查计划</h3><p>推动跨部门联合检查，能合并的不分头进企。</p></div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">改</div>
+            <div class="rule-copy"><h3>问题闭环整改</h3><p>对发现的问题讲清依据，给出整改期限和合规建议。</p></div>
+          </div>
+          <div class="rule-item">
+            <div class="rule-num">督</div>
+            <div class="rule-copy"><h3>监督执法过程</h3><p>检查留痕、结果反馈、投诉渠道畅通。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-13">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Writing · 申论表达</span>
+          <strong>13 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">写进答案<br>就用这<span class="accent-word">四句话</span></h2>
+        <div class="phrase-list">
+          <div class="phrase-item">优化营商环境，不是降低监管标准，而是提高依法行政水平。</div>
+          <div class="phrase-item">对守法经营者少打扰，对违法违规者严监管，才能维护公平竞争。</div>
+          <div class="phrase-item">规范涉企执法，关键在于公开标准、严格程序、统一裁量、全程留痕。</div>
+          <div class="phrase-item">执法既要有力度，也要有温度；既要维护秩序，也要促进合规。</div>
+        </div>
+        <div class="footline"><span>Use in · 申论 综合分析 对策题</span><span>可直接转写</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-14">
+      <div class="content stack">
+        <div class="deck-mark">
+          <span>Framework · 考场带走</span>
+          <strong>14 / 14</strong>
+        </div>
+        <h2 class="h-xl task-title small">营商环境<br>看这<span class="accent-word">五个动作</span></h2>
+        <div class="final-list">
+          <div class="final-item"><strong>01</strong><span>减干扰：综合查一次</span></div>
+          <div class="final-item"><strong>02</strong><span>明标准：裁量有基准</span></div>
+          <div class="final-item"><strong>03</strong><span>重说理：处罚也指导</span></div>
+          <div class="final-item"><strong>04</strong><span>强监督：权力有记录</span></div>
+          <div class="final-item"><strong>05</strong><span>守边界：该宽则宽，该严则严</span></div>
+        </div>
+        <div class="quote-block">不是不管，而是依法管、精准管、文明管、有效管。</div>
+        <div class="footline"><span>End · 申论 + 面试</span><span>规范执法</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lucide icon initialization (used by stacked ledger / matrix accents) -->
+  <script>
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

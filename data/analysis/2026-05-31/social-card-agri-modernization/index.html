@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="ink-classic">
+<head>
+  <meta charset="utf-8">
+  <title>[必填] 替换为社交卡组标题 · Social Card Set</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    /* =========================================================
+       Editorial Magazine × E-ink — Social Card Seed Template
+       ---------------------------------------------------------
+       Three boards built in one HTML:
+         .poster.xhs      1080×1440  (3:4   小红书)
+         .poster.square   1080×1080  (1:1   微信方封面)
+         .poster.wide     2100× 900  (21:9  微信主封面)
+         .pair-preview                       21:9 + 1:1 配对预览
+
+       Theme switching via <html data-theme="…">:
+         ink-classic | indigo-porcelain | forest-ink | kraft-paper | dune | midnight-ink
+
+       Fill posters where marked <!-- POSTERS_HERE -->.
+       Each poster carries one Layout Recipe (M01-M15) from
+       references/layout-recipes.md.
+       ========================================================= */
+
+    /* ---------- 1. Theme tokens ---------- */
+    :root,
+    [data-theme="ink-classic"] {
+      --paper:     #f3f0e8;
+      --paper-2:   #ebe6da;
+      --ink:       #0a0a0b;
+      --muted:     #68625a;
+      --line:      rgba(10,10,11,.22);
+      --accent:    #111111;
+      --accent-soft: #d8d2c6;
+      --ink-rgb: 10,10,11;
+      --paper-rgb: 243,240,232;
+      --accent-rgb: 17,17,17;
+    }
+    [data-theme="indigo-porcelain"] {
+      --paper:     #f2f4f5;
+      --paper-2:   #e5ebef;
+      --ink:       #0a1f3d;
+      --muted:     #5f6d78;
+      --line:      rgba(10,31,61,.20);
+      --accent:    #315d93;
+      --accent-soft: #d7e1ec;
+      --ink-rgb: 10,31,61;
+      --paper-rgb: 242,244,245;
+      --accent-rgb: 49,93,147;
+    }
+    [data-theme="forest-ink"] {
+      --paper:     #f5f1e8;
+      --paper-2:   #e8dfcf;
+      --ink:       #16251b;
+      --muted:     #5d665d;
+      --line:      rgba(22,37,27,.22);
+      --accent:    #2e6b4f;
+      --accent-soft: #d4dfd2;
+      --ink-rgb: 22,37,27;
+      --paper-rgb: 245,241,232;
+      --accent-rgb: 46,107,79;
+    }
+    [data-theme="kraft-paper"] {
+      --paper:     #eedfc7;
+      --paper-2:   #dfc9a8;
+      --ink:       #2a1e13;
+      --muted:     #755f49;
+      --line:      rgba(42,30,19,.24);
+      --accent:    #9b5a2e;
+      --accent-soft: #d5b58f;
+      --ink-rgb: 42,30,19;
+      --paper-rgb: 238,223,199;
+      --accent-rgb: 155,90,46;
+    }
+    [data-theme="dune"] {
+      --paper:     #f0e6d2;
+      --paper-2:   #ded0b7;
+      --ink:       #1f1a14;
+      --muted:     #6f6557;
+      --line:      rgba(31,26,20,.22);
+      --accent:    #8f7650;
+      --accent-soft: #d4c2a4;
+      --ink-rgb: 31,26,20;
+      --paper-rgb: 240,230,210;
+      --accent-rgb: 143,118,80;
+    }
+    /* Midnight Ink — the ONLY official dark Editorial palette.
+       Use for game key art, night scenes, dark photography, cinematic covers.
+       Do not improvise other dark backgrounds. */
+    [data-theme="midnight-ink"] {
+      --paper:     #0e0d0c;
+      --paper-2:   #1a1714;
+      --ink:       #ece2cf;
+      --muted:     #9a8c75;
+      --line:      rgba(236,226,207,.22);
+      --accent:    #d4a04a;
+      --accent-soft: #3a2a14;
+      --ink-rgb: 236,226,207;
+      --paper-rgb: 14,13,12;
+      --accent-rgb: 212,160,74;
+    }
+
+    /* ---------- 2. Typography stack ---------- */
+    :root {
+      --serif-zh: "Noto Serif SC", "Songti SC", "STSong", serif;
+      --serif-en: "Playfair Display", "Noto Serif SC", serif;
+      --sans-zh: "Noto Sans SC", -apple-system, "PingFang SC", "Microsoft YaHei UI", sans-serif;
+      --sans-en: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+    }
+
+    /* ---------- 3. Reset & sheet ---------- */
+    *,*::before,*::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #1a1a1a;
+      font-family: var(--sans-zh);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 64px 32px;
+    }
+    .sheet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+
+    /* ---------- 4. Poster boards (fixed export sizes) ---------- */
+    .poster {
+      position: relative;
+      background: var(--paper);
+      color: var(--ink);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .poster.xhs    { width: 1080px; height: 1440px; }
+    .poster.square { width: 1080px; height: 1080px; }
+    .poster.wide   { width: 2100px; height:  900px; }
+    .poster figure { margin: 0; }
+
+    /* Default content padding by board */
+    .poster.xhs    .content { padding: 96px 88px; }
+    .poster.square .content { padding: 88px 88px; }
+    .poster.wide   .content { padding: 88px 120px; }
+    .content { position: relative; width: 100%; height: 100%; z-index: 2; }
+
+    /* ---------- 5. Background layers (paper grain + WebGL) ---------- */
+    .mag-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .35;
+      mix-blend-mode: multiply;
+      background-image: radial-gradient(rgba(0,0,0,.045) 1px, transparent 1px);
+      background-size: 3px 3px;
+    }
+    .paper-wash {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(var(--ink-rgb),.02), rgba(var(--ink-rgb),.05) 60%, rgba(var(--ink-rgb),.08));
+    }
+    /* Midnight Ink — flip grain to screen-mode warm specks, paper-wash to
+       gilt + shadow vignette. Light-paper math doesn't carry over. */
+    [data-theme="midnight-ink"] .grain {
+      opacity: .26;
+      mix-blend-mode: screen;
+      background-image: radial-gradient(rgba(255,244,214,.10) 1px, transparent 1px);
+    }
+    [data-theme="midnight-ink"] .paper-wash {
+      background:
+        radial-gradient(80% 50% at 28% 16%, rgba(212,160,74,.12), transparent 64%),
+        radial-gradient(70% 60% at 80% 86%, rgba(60,40,20,.20), transparent 72%),
+        linear-gradient(180deg, rgba(236,226,207,.02), rgba(0,0,0,.32));
+    }
+
+    /* ---------- 6. Typography roles ----------
+       Editorial Magazine values restored from demo-showcase/editorial.html:
+       light weights (500 not 900), serif body italic-tolerant, wide tracking
+       on kicker/meta (.20-.22em), positive tracking on display (+.04em).
+       Each card should still INLINE-tune font-size for the specific recipe;
+       these defaults are intentionally restrained, not maximal. */
+    .kicker {
+      font-family: var(--mono);
+      font-size: 21px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(var(--ink-rgb), .55);
+      margin: 0 0 18px;
+    }
+    .h-display {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 124px;
+      line-height: 1.06;
+      letter-spacing: .04em;
+      margin: 0 0 24px;
+      color: var(--ink);
+    }
+    .h-xl {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 88px;
+      line-height: 1.10;
+      letter-spacing: .03em;
+      margin: 0 0 24px;
+      color: var(--ink);
+    }
+    .h-md {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 56px;
+      line-height: 1.18;
+      letter-spacing: .02em;
+      margin: 0 0 18px;
+      color: var(--ink);
+    }
+    .h-sub {
+      font-family: var(--serif-en);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 36px;
+      color: var(--muted);
+      margin: 0 0 24px;
+    }
+    .lead {
+      font-family: var(--serif-zh);
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 1.55;
+      color: rgba(var(--ink-rgb), .82);
+      margin: 0 0 24px;
+    }
+    .body {
+      font-family: var(--serif-zh);
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.65;
+      color: rgba(var(--ink-rgb), .80);
+      margin: 0 0 18px;
+    }
+    .meta {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: rgba(var(--ink-rgb), .55);
+    }
+    .label {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: rgba(var(--ink-rgb), .55);
+    }
+    .pullquote {
+      font-family: var(--serif-zh);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 64px;
+      line-height: 1.28;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    /* Square boards usually need tighter scales */
+    .poster.square .h-display { font-size: 116px; }
+    .poster.square .h-xl      { font-size: 78px; }
+    .poster.square .h-md      { font-size: 48px; }
+    .poster.square .lead      { font-size: 28px; }
+    .poster.square .body      { font-size: 26px; }
+
+    /* Wide boards have horizontal headlines */
+    .poster.wide .h-display   { font-size: 128px; }
+    .poster.wide .h-xl        { font-size: 96px; }
+    .poster.wide .lead        { font-size: 34px; }
+
+    /* ---------- 7. Issue label + page metadata ---------- */
+    .issue-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .issue-row .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .issue-strip {
+      position: absolute;
+      left: 88px;
+      right: 88px;
+      bottom: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    .poster.wide .issue-strip { left: 120px; right: 120px; }
+    .issue-strip span { white-space: nowrap; }
+
+    /* ---------- 8. Layout primitives ---------- */
+    .stack    { display: flex; flex-direction: column; }
+    .gap-1    { gap: 12px; }
+    .gap-2    { gap: 24px; }
+    .gap-3    { gap: 36px; }
+    .gap-4    { gap: 48px; }
+    .gap-5    { gap: 64px; }
+    .row      { display: flex; flex-direction: row; }
+    .col-2    { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .col-3    { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+    .col-2-7-5 { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; }
+    .col-2-8-4 { display: grid; grid-template-columns: 8fr 4fr; gap: 48px; }
+    .center   { text-align: center; }
+    .grow     { flex: 1; }
+    .pad-y-md { padding-top: 36px; padding-bottom: 36px; }
+    .rule     { height: 1px; background: var(--line); border: 0; margin: 24px 0; }
+    .rule-accent { height: 2px; background: var(--accent); border: 0; margin: 24px 0; width: 96px; }
+
+    /* ---------- 9. Image containers (standard ratios) ---------- */
+    .frame-img {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper-2);
+      display: block;
+      margin: 0;
+    }
+    .frame-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 50%;
+      display: block;
+    }
+    .frame-img.fit-contain img { object-fit: contain; }
+    [data-theme="midnight-ink"] .frame-img {
+      background: #18120f;
+      box-shadow: 0 0 0 1px rgba(236,226,207,.10);
+    }
+    .frame-img.r-3x4   { aspect-ratio: 3 / 4; }
+    .frame-img.r-1x1   { aspect-ratio: 1 / 1; }
+    .frame-img.r-4x3   { aspect-ratio: 4 / 3; }
+    .frame-img.r-16x9  { aspect-ratio: 16 / 9; }
+    .frame-img.r-16x10 { aspect-ratio: 16 / 10; }
+    .frame-img.r-21x9  { aspect-ratio: 21 / 9; }
+    .frame-img.r-3x2   { aspect-ratio: 3 / 2; }
+    .img-cap {
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    /* ---------- 9b. Screenshot treatment (.frame-shot) ---------- */
+    /* Use for UI screenshots / web captures / code shots. Replaces .frame-img
+       when you need rounded corners, soft shadow, padded inset, or device chrome.
+       Stack: .frame-shot.r-{ratio}.bg-{tone}.inset-{none|sub|bal}.shadow-{none|soft|ed} */
+    .frame-shot {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      margin: 0;
+      background: var(--paper-2);
+      /* default corners — Editorial leans slight rounding to feel like a magazine cutout */
+      border-radius: 6px;
+    }
+    .frame-shot.corners-sq { border-radius: 0; }
+    .frame-shot.corners-sm { border-radius: 6px; }
+    .frame-shot.corners-md { border-radius: 14px; }
+
+    /* shadows — Editorial uses warm low-contrast drop */
+    .frame-shot.shadow-soft { box-shadow: 0 18px 36px -18px rgba(20,18,14,.22), 0 2px 6px rgba(20,18,14,.06); }
+    .frame-shot.shadow-ed   { box-shadow: 0 28px 60px -24px rgba(20,18,14,.32), 0 6px 14px rgba(20,18,14,.08); }
+
+    /* background tones — programmatic, no asset deps */
+    .frame-shot.bg-paper    { background: var(--paper); }
+    .frame-shot.bg-paper-2  { background: var(--paper-2); }
+    .frame-shot.bg-ink      { background: var(--ink); }
+    .frame-shot.bg-grid     {
+      background:
+        linear-gradient(var(--paper-2), var(--paper-2)),
+        repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 48px),
+        repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 48px);
+      background-blend-mode: multiply;
+    }
+    .frame-shot.bg-dot {
+      background-color: var(--paper-2);
+      background-image: radial-gradient(var(--line) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+
+    /* asset backgrounds — ported from PPT skill, real texture for screenshot wells */
+    /* path is relative to the deck's index.html — keep seed and final deck in same dir, or override */
+    .frame-shot.bg-asset-dune             { background: #d8c9a8 url("../assets/screenshot-backgrounds/style-a/dune.webp")             center/cover no-repeat; }
+    .frame-shot.bg-asset-forest-ink       { background: #1f2a24 url("../assets/screenshot-backgrounds/style-a/forest-ink.webp")       center/cover no-repeat; }
+    .frame-shot.bg-asset-indigo-porcelain { background: #cfd6dd url("../assets/screenshot-backgrounds/style-a/indigo-porcelain.webp") center/cover no-repeat; }
+    .frame-shot.bg-asset-kraft-paper      { background: #c9a983 url("../assets/screenshot-backgrounds/style-a/kraft-paper.webp")      center/cover no-repeat; }
+    .frame-shot.bg-asset-monocle-classic  { background: #e8e1d4 url("../assets/screenshot-backgrounds/style-a/monocle-classic.webp")  center/cover no-repeat; }
+
+    /* padding wraps the inner shot — content gets to "float" on the bg tone */
+    .frame-shot.inset-none > img,
+    .frame-shot.inset-none > .shot-body { padding: 0; }
+    .frame-shot.inset-sub  { padding: 24px; }
+    .frame-shot.inset-bal  { padding: 56px; }
+
+    /* aspect-ratio reused from .frame-img */
+    .frame-shot.r-3x4   { aspect-ratio: 3 / 4; }
+    .frame-shot.r-1x1   { aspect-ratio: 1 / 1; }
+    .frame-shot.r-4x3   { aspect-ratio: 4 / 3; }
+    .frame-shot.r-16x9  { aspect-ratio: 16 / 9; }
+    .frame-shot.r-16x10 { aspect-ratio: 16 / 10; }
+    .frame-shot.r-21x9  { aspect-ratio: 21 / 9; }
+    .frame-shot.r-3x2   { aspect-ratio: 3 / 2; }
+
+    /* inner img defaults to contain (screenshots must not crop UI) */
+    .frame-shot > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      border-radius: inherit;
+    }
+    .frame-shot.fit-cover > img { object-fit: cover; }
+
+    /* device-frame variants (CSS-only chrome, no SVG / images) */
+    .device-browser {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .device-browser::before {
+      content: '';
+      display: block;
+      height: 36px;
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+      background-image:
+        radial-gradient(circle at 18px 18px, #f08080 5px, transparent 5.5px),
+        radial-gradient(circle at 38px 18px, #f5c450 5px, transparent 5.5px),
+        radial-gradient(circle at 58px 18px, #7ec98f 5px, transparent 5.5px);
+    }
+    .device-browser > .frame-shot,
+    .device-browser > img {
+      border-radius: 0;
+      display: block;
+      width: 100%;
+    }
+    .device-phone {
+      position: relative;
+      background: var(--ink);
+      border-radius: 36px;
+      padding: 14px;
+      box-shadow: 0 24px 48px -20px rgba(20,18,14,.42);
+    }
+    .device-phone > .frame-shot,
+    .device-phone > img {
+      border-radius: 24px;
+      display: block;
+      width: 100%;
+    }
+
+    /* ---------- 9c. Map block (.map-block) ---------- */
+    /* Static map container — pure CSS frame, content is either an <img> from
+       Mapbox Static API or an SVG schematic. Pins overlay as absolute children. */
+    .map-block {
+      position: relative;
+      background: var(--paper-2);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      width: 100%;
+    }
+    .map-block.r-16x10 { aspect-ratio: 16 / 10; }
+    .map-block.r-16x9  { aspect-ratio: 16 / 9; }
+    .map-block.r-1x1   { aspect-ratio: 1 / 1; }
+    .map-block.r-3x4   { aspect-ratio: 3 / 4; }
+    .map-block > img,
+    .map-block > svg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      display: block;
+    }
+    .map-block > img { object-fit: cover; }
+    /* tint mapbox / OSM tiles to fit editorial paper tone */
+    .map-block.tone-paper > img { filter: saturate(.36) contrast(.92) brightness(1.04); mix-blend-mode: multiply; }
+    .map-block.tone-ink > img   { filter: saturate(.18) brightness(.62); }
+    /* schematic mode: SVG drawn at viewBox 0 0 100 100, lon/lat pre-mapped to 0-100 */
+    .map-block > svg .map-coast { fill: none; stroke: var(--line); stroke-width: .4; }
+    .map-block > svg .map-road  { fill: none; stroke: var(--muted); stroke-width: .28; stroke-dasharray: 1.2 .8; opacity: .65; }
+    .map-block > svg .map-water { fill: var(--paper-2); }
+    .map-block > svg .map-grid  { stroke: var(--line); stroke-width: .15; opacity: .55; }
+
+    /* pins overlay — positioned by % coordinates */
+    .map-pin {
+      position: absolute;
+      width: 0; height: 0;
+      transform: translate(-50%, -50%);
+    }
+    .map-pin .dot {
+      position: absolute;
+      left: -7px; top: -7px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 2px solid var(--paper);
+      box-shadow: 0 1px 4px rgba(20,18,14,.32);
+    }
+    .map-pin.accent .dot { background: var(--accent); }
+    .map-pin .line {
+      position: absolute;
+      left: 8px; top: 0;
+      width: 32px; height: 1px;
+      background: var(--ink);
+      opacity: .5;
+    }
+    .map-pin.left .line { left: auto; right: 8px; }
+    .map-pin .card {
+      position: absolute;
+      left: 44px; top: -22px;
+      min-width: 86px;
+      padding: 8px 10px;
+      background: rgba(245,241,232,.94);
+      box-shadow: 0 0 0 1px var(--line);
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .map-pin.left .card { left: auto; right: 44px; }
+    .map-pin .card .name {
+      font-family: var(--serif-zh);
+      font-size: 16px;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+    .map-pin .card .meta {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .map-pin.accent .card .name { color: var(--accent); }
+
+    .map-legend {
+      position: absolute;
+      left: 14px; bottom: 14px;
+      z-index: 3;
+      background: rgba(245,241,232,.92);
+      padding: 8px 12px;
+      box-shadow: 0 0 0 1px var(--line);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .map-legend.tr { left: auto; right: 14px; top: 14px; bottom: auto; }
+
+    /* ---------- 10. Editorial components ---------- */
+    .callout {
+      border-left: 3px solid var(--accent);
+      padding: 18px 28px;
+      font-family: var(--serif-zh);
+      font-style: italic;
+      font-size: 36px;
+      line-height: 1.35;
+      color: var(--ink);
+      background: var(--paper-2);
+    }
+    .callout .callout-src {
+      display: block;
+      margin-top: 18px;
+      font-style: normal;
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+
+    .ledger { display: flex; flex-direction: column; }
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 96px 1fr auto;
+      gap: 24px;
+      align-items: baseline;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .ledger-row .ledger-nb {
+      font-family: var(--mono);
+      font-size: 28px;
+      color: var(--accent);
+      letter-spacing: .08em;
+    }
+    .ledger-row .ledger-title {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 42px;
+      letter-spacing: .02em;
+      color: var(--ink);
+    }
+    .ledger-row .ledger-note {
+      font-family: var(--serif-zh);
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.55;
+      color: rgba(var(--ink-rgb), .72);
+    }
+
+    .marginalia {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 48px;
+    }
+    .marginalia .mg-col {
+      border-left: 1px solid var(--line);
+      padding-left: 24px;
+    }
+    .marginalia .mg-col p {
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .04em;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .pipeline-v { display: flex; flex-direction: column; gap: 28px; }
+    .pipeline-v .step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 28px;
+      align-items: baseline;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    .pipeline-v .step:last-child { border-bottom: 0; }
+    .pipeline-v .step-nb {
+      font-family: var(--mono);
+      font-size: 32px;
+      color: var(--accent);
+    }
+    .pipeline-v .step-title {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 40px;
+      letter-spacing: .02em;
+      margin: 0 0 8px;
+    }
+    .pipeline-v .step-desc {
+      font-family: var(--serif-zh);
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.6;
+      color: rgba(var(--ink-rgb), .72);
+      margin: 0;
+    }
+
+    .beforeafter {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 32px;
+      height: 100%;
+    }
+    .beforeafter .ba-block {
+      padding: 32px;
+      background: var(--paper-2);
+      border-left: 3px solid var(--accent);
+    }
+    .beforeafter .ba-block.before { opacity: .68; }
+
+    /* ---------- 11. Pair preview frame ---------- */
+    .pair-preview {
+      width: 2400px;
+      min-height: 1180px;
+      background: var(--paper-2);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 2100px 1080px;
+      grid-template-rows: 900px 1080px;
+      gap: 48px;
+      align-content: center;
+      justify-content: center;
+    }
+    .pair-preview .preview-wide   { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-square { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-label {
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    /* ---------- 12. Per-poster mounting helpers ---------- */
+    .poster .corner-tl,
+    .poster .corner-tr,
+    .poster .corner-bl,
+    .poster .corner-br {
+      position: absolute;
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      z-index: 3;
+    }
+    .poster.xhs .corner-tl,
+    .poster.square .corner-tl { left: 88px; top: 56px; }
+    .poster.xhs .corner-tr,
+    .poster.square .corner-tr { right: 88px; top: 56px; }
+    .poster.xhs .corner-bl,
+    .poster.square .corner-bl { left: 88px; bottom: 56px; }
+    .poster.xhs .corner-br,
+    .poster.square .corner-br { right: 88px; bottom: 56px; }
+    .poster.wide .corner-tl { left: 120px; top: 56px; }
+    .poster.wide .corner-tr { right: 120px; top: 56px; }
+    .poster.wide .corner-bl { left: 120px; bottom: 56px; }
+    .poster.wide .corner-br { right: 120px; bottom: 56px; }
+
+    /* ---------- Task scope: Central No.1 document carousel ---------- */
+    .poster.xhs .content { padding: 78px 82px; }
+    .page-frame {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      gap: 28px;
+    }
+    .page-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .page-title {
+      margin: 0;
+      font-family: var(--serif-zh);
+      font-size: 70px;
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: .03em;
+    }
+    .page-title.small { font-size: 58px; }
+    .page-no {
+      font-family: var(--mono);
+      font-size: 24px;
+      letter-spacing: .08em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .stamp {
+      display: inline-flex;
+      width: max-content;
+      padding: 12px 16px;
+      border: 1px solid var(--ink);
+      font-family: var(--mono);
+      font-size: 19px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .brand-stamp {
+      width: max-content;
+      padding: 14px 18px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--serif-zh);
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: .03em;
+    }
+    .big-title {
+      margin: 0;
+      font-family: var(--serif-zh);
+      font-size: 92px;
+      line-height: 1.08;
+      letter-spacing: .04em;
+      font-weight: 500;
+    }
+    .big-title strong {
+      font-weight: 500;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0 .08em .08em;
+    }
+    .thesis {
+      margin: 0;
+      font-family: var(--serif-zh);
+      font-size: 44px;
+      line-height: 1.38;
+      font-weight: 400;
+    }
+    .footline {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-family: var(--mono);
+      font-size: 17px;
+      letter-spacing: .1em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .cover-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      min-height: 100%;
+    }
+    .cover-photo {
+      height: 450px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: var(--paper-2);
+    }
+    .cover-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 52%;
+      display: block;
+    }
+    .keyword-band {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .keyword-band span {
+      background: var(--paper);
+      padding: 18px 12px;
+      text-align: center;
+      font-family: var(--serif-zh);
+      font-size: 28px;
+      line-height: 1.2;
+    }
+    .convert-diagram {
+      display: grid;
+      grid-template-columns: 1fr 70px 1fr 70px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+    .convert-box {
+      min-height: 158px;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+    }
+    .convert-box.dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .convert-box b {
+      font-family: var(--serif-zh);
+      font-size: 36px;
+      line-height: 1.18;
+      font-weight: 500;
+    }
+    .convert-box span {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 16px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .convert-box.dark span { color: rgba(var(--paper-rgb), .68); }
+    .arrow {
+      text-align: center;
+      font-family: var(--serif-zh);
+      font-size: 58px;
+      line-height: 1;
+    }
+    .keyword-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .keyword-card {
+      min-height: 130px;
+      background: var(--paper-2);
+      border-left: 4px solid var(--ink);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .keyword-card b {
+      font-family: var(--serif-zh);
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 500;
+    }
+    .keyword-card span {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 17px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .photo-caption-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .mini-ledger {
+      display: grid;
+      gap: 12px;
+    }
+    .mini-row {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .mini-row .num {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 20px;
+    }
+    .mini-row b {
+      font-family: var(--serif-zh);
+      font-size: 30px;
+      font-weight: 500;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .process-cell {
+      background: var(--paper);
+      min-height: 160px;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .process-cell.dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .process-cell b {
+      font-family: var(--serif-zh);
+      font-size: 30px;
+      line-height: 1.18;
+      font-weight: 500;
+    }
+    .process-cell span {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 15px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .process-cell.dark span { color: rgba(var(--paper-rgb), .68); }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .service-cell {
+      min-height: 156px;
+      background: var(--paper);
+      padding: 22px;
+    }
+    .service-cell b {
+      display: block;
+      font-family: var(--serif-zh);
+      font-size: 34px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .service-cell span {
+      font-family: var(--serif-zh);
+      font-size: 23px;
+      line-height: 1.42;
+      color: rgba(var(--ink-rgb), .70);
+    }
+    .governance-triangle {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .triangle-card {
+      min-height: 230px;
+      padding: 24px;
+      background: var(--paper-2);
+      border-top: 6px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .triangle-card b {
+      font-family: var(--serif-zh);
+      font-size: 42px;
+      font-weight: 500;
+    }
+    .triangle-card span {
+      font-family: var(--serif-zh);
+      font-size: 24px;
+      line-height: 1.36;
+      color: rgba(var(--ink-rgb), .70);
+    }
+    .income-ladder {
+      display: grid;
+      gap: 13px;
+    }
+    .income-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 20px;
+      background: var(--paper-2);
+      border-left: 4px solid var(--ink);
+    }
+    .income-row b {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 20px;
+      letter-spacing: .08em;
+    }
+    .income-row span {
+      font-family: var(--serif-zh);
+      font-size: 32px;
+      line-height: 1.22;
+    }
+    .logic-path {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .logic-node {
+      background: var(--paper);
+      min-height: 148px;
+      padding: 18px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .logic-node.dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .logic-node b {
+      font-family: var(--serif-zh);
+      font-size: 36px;
+      font-weight: 500;
+    }
+    .logic-node span {
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: .06em;
+    }
+    .logic-node.dark span { color: rgba(var(--paper-rgb), .68); }
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .question-card {
+      min-height: 155px;
+      border: 1px solid var(--line);
+      padding: 20px;
+      background: var(--paper);
+    }
+    .question-card b {
+      display: block;
+      font-family: var(--serif-zh);
+      font-size: 31px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .question-card span {
+      font-family: var(--serif-zh);
+      color: rgba(var(--ink-rgb), .70);
+      font-size: 22px;
+      line-height: 1.36;
+    }
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .quote-line {
+      padding: 22px 24px;
+      background: var(--paper-2);
+      border-left: 4px solid var(--ink);
+      font-family: var(--serif-zh);
+      font-size: 30px;
+      line-height: 1.36;
+    }
+    .ref-list {
+      display: grid;
+      gap: 14px;
+    }
+    .ref-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .ref-no {
+      font-family: var(--mono);
+      font-size: 21px;
+      color: var(--muted);
+    }
+    .ref-text {
+      font-family: var(--serif-zh);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+    .ref-link {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.35;
+      color: var(--muted);
+      word-break: break-all;
+    }
+    .wide-cover {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 56px;
+      height: 100%;
+      align-items: center;
+    }
+    .wide-title {
+      font-family: var(--serif-zh);
+      font-size: 92px;
+      line-height: 1.08;
+      font-weight: 500;
+      letter-spacing: .04em;
+      margin: 0;
+    }
+    .square-center {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 34px;
+    }
+    .square-title {
+      font-family: var(--serif-zh);
+      font-size: 104px;
+      line-height: 1.10;
+      font-weight: 500;
+      letter-spacing: .04em;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- THEME_OVERRIDE
+       Change <html data-theme="…"> above to:
+       ink-classic | indigo-porcelain | forest-ink | kraft-paper | dune | midnight-ink
+  -->
+  <main class="sheet">
+
+    <!-- POSTERS_HERE -->
+    <!--
+      Replace the placeholder posters below with real content.
+      Each poster carries one Layout Recipe (M01-M15) from
+      references/layout-recipes.md.
+
+      Available board sizes:
+        <section class="poster xhs"    id="xhs-01">…</section>   3:4
+        <section class="poster square" id="wechat-1x1">…</section> 1:1
+        <section class="poster wide"   id="wechat-21x9">…</section> 21:9
+
+      For WeChat covers, also include a <section class="pair-preview">
+      that places the 21:9 + 1:1 side-by-side for review.
+    -->
+
+    <section class="poster xhs" id="xhs-01">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div>
+      <div class="paper-wash"></div>
+      <div class="content cover-grid">
+        <div class="issue-row"><span>No.1 Document</span><span class="dot"></span><span>申论素材</span></div>
+        <div class="brand-stamp">《人民日报》这样写</div>
+        <h1 class="big-title">中央一号文件<br>怎么转成<br><strong>申论素材</strong></h1>
+        <figure class="cover-photo">
+          <!-- subject map: aerial rice-field pattern, no faces; safe because text is not overlaid on the image. -->
+          <img src="assets/rice-field-aerial.jpg" alt="航拍稻田纹理" style="object-position:center 48%">
+        </figure>
+        <div class="keyword-band">
+          <span>粮食安全</span><span>科技强农</span><span>乡村产业</span>
+          <span>公共服务</span><span>乡村治理</span><span>农民增收</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-02">
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title">别背目录</h2><div class="page-no">02 / 13</div></div>
+        <p class="thesis">中央一号文件不是拿来整段背的，而是要加工成“问题意识 + 治理动作”。</p>
+        <div class="convert-diagram">
+          <div class="convert-box"><b>政策名词</b><span>policy list</span></div>
+          <div class="arrow">→</div>
+          <div class="convert-box dark"><b>治理动作</b><span>action</span></div>
+          <div class="arrow">→</div>
+          <div class="convert-box"><b>申论表达</b><span>answer</span></div>
+        </div>
+        <div class="mini-ledger">
+          <div class="mini-row"><div class="num">01</div><b>农业靠什么稳？靠粮食安全。</b></div>
+          <div class="mini-row"><div class="num">02</div><b>农业靠什么强？靠科技强农。</b></div>
+          <div class="mini-row"><div class="num">03</div><b>农村靠什么兴？靠产业、服务和治理。</b></div>
+        </div>
+        <div class="footline"><span>FROM POLICY TO MATERIAL</span><span>PEOPLE DAILY STYLE</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-03">
+      <div class="grain"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title">六个关键词</h2><div class="page-no">03 / 13</div></div>
+        <p class="thesis">这不是六个并列口号，而是一条农业农村现代化的完整路径。</p>
+        <div class="keyword-grid">
+          <div class="keyword-card"><b>粮食安全</b><span>稳 · basic plate</span></div>
+          <div class="keyword-card"><b>科技强农</b><span>强 · productivity</span></div>
+          <div class="keyword-card"><b>乡村产业</b><span>兴 · industry</span></div>
+          <div class="keyword-card"><b>公共服务</b><span>好 · services</span></div>
+          <div class="keyword-card"><b>乡村治理</b><span>顺 · order</span></div>
+          <div class="keyword-card"><b>农民增收</b><span>富 · income</span></div>
+        </div>
+        <div class="callout">框架感来自顺序：先稳住基本盘，再培育新动能，最后落到农民生活。</div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-04">
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title small">01 粮食安全</h2><div class="page-no">04 / 13</div></div>
+        <div class="photo-caption-grid">
+          <figure class="frame-img r-3x4">
+            <img src="assets/rice-field-aerial.jpg" alt="航拍稻田" style="object-position:center 42%">
+          </figure>
+          <div class="stack gap-2">
+            <p class="thesis">写的是农业现代化的基本盘：饭碗端得稳不稳。</p>
+            <div class="mini-ledger">
+              <div class="mini-row"><div class="num">A</div><b>守住耕地红线</b></div>
+              <div class="mini-row"><div class="num">B</div><b>建设高标准农田</b></div>
+              <div class="mini-row"><div class="num">C</div><b>良田良种良机良法</b></div>
+              <div class="mini-row"><div class="num">D</div><b>防灾减灾和大食物观</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="callout">高分句：把产能建在平时，把韧性建在体系里。</div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-05">
+      <div class="grain"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title small">02 科技强农</h2><div class="page-no">05 / 13</div></div>
+        <div class="photo-caption-grid">
+          <div class="stack gap-2">
+            <p class="thesis">农业新质生产力，不是把 AI 标签贴到田里，而是改变生产方式。</p>
+            <div class="process-grid">
+              <div class="process-cell"><b>种业</b><span>seed</span></div>
+              <div class="process-cell dark"><b>农机</b><span>machine</span></div>
+              <div class="process-cell"><b>物联</b><span>iot</span></div>
+              <div class="process-cell"><b>防灾</b><span>resilience</span></div>
+            </div>
+          </div>
+          <figure class="frame-img r-3x4">
+            <img src="assets/drone-field.jpg" alt="无人机飞过农田" style="object-position:center 52%">
+          </figure>
+        </div>
+        <div class="callout">本质：用现代技术提升产能、效率、质量和抗风险能力。</div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-06">
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title small">03 乡村产业</h2><div class="page-no">06 / 13</div></div>
+        <p class="thesis">不能只写“因地制宜发展特色产业”，要写资源怎么变产品，产品怎么接市场，市场怎么带农户。</p>
+        <div class="convert-diagram">
+          <div class="convert-box"><b>本地资源</b><span>resource</span></div>
+          <div class="arrow">→</div>
+          <div class="convert-box dark"><b>产品品牌</b><span>brand</span></div>
+          <div class="arrow">→</div>
+          <div class="convert-box"><b>农民收益</b><span>income</span></div>
+        </div>
+        <div class="process-grid">
+          <div class="process-cell"><b>链条延伸</b><span>value chain</span></div>
+          <div class="process-cell"><b>订单带动</b><span>contract</span></div>
+          <div class="process-cell"><b>农文旅融合</b><span>tourism</span></div>
+          <div class="process-cell dark"><b>利益联结</b><span>share</span></div>
+        </div>
+        <div class="callout">好产业不是喊出来的，是通过市场和机制把群众带进去的。</div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-07">
+      <div class="grain"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title small">04 公共服务</h2><div class="page-no">07 / 13</div></div>
+        <p class="thesis">农村现代化不只看村庄漂不漂亮，还要看生活方便不方便。</p>
+        <div class="service-grid">
+          <div class="service-cell"><b>教育</b><span>乡村小规模学校、幼儿园、县域高中振兴。</span></div>
+          <div class="service-cell"><b>医疗</b><span>县域医共体，让看病更近、更稳。</span></div>
+          <div class="service-cell"><b>养老</b><span>养老服务、探访关爱到村到户。</span></div>
+          <div class="service-cell"><b>托育救助</b><span>对特殊群体形成长期照护网络。</span></div>
+        </div>
+        <div class="callout">公共服务向县乡村延伸，农村居民才能享有更有尊严的现代生活。</div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-08">
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title small">05 乡村治理</h2><div class="page-no">08 / 13</div></div>
+        <p class="thesis">乡村治理不是泛泛“加强基层治理”，而是把群众身边的风俗、矛盾、风险和负担纳入治理。</p>
+        <div class="governance-triangle">
+          <div class="triangle-card"><b>自治</b><span>议事协商、村规民约、村民参与。</span></div>
+          <div class="triangle-card"><b>法治</b><span>平安乡村、风险治理、纠纷化解。</span></div>
+          <div class="triangle-card"><b>德治</b><span>文明乡风、移风易俗、党员带头。</span></div>
+        </div>
+        <div class="process-grid">
+          <div class="process-cell"><b>反对层层加码</b><span>burden</span></div>
+          <div class="process-cell dark"><b>防止一刀切</b><span>method</span></div>
+          <div class="process-cell"><b>枫桥经验</b><span>mediation</span></div>
+          <div class="process-cell"><b>正确政绩观</b><span>governance</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-09">
+      <div class="grain"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title small">06 农民增收</h2><div class="page-no">09 / 13</div></div>
+        <p class="thesis">现代化最终成色，要落到农民生活更加富裕美好。</p>
+        <div class="income-ladder">
+          <div class="income-row"><b>01</b><span>种粮有收益，保护务农种粮积极性。</span></div>
+          <div class="income-row"><b>02</b><span>产业有带动，发展县域富民产业。</span></div>
+          <div class="income-row"><b>03</b><span>就业有支撑，促进农民工稳岗就业。</span></div>
+          <div class="income-row"><b>04</b><span>技能有提升，培育乡村工匠。</span></div>
+          <div class="income-row"><b>05</b><span>帮扶有兜底，守住返贫底线。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-10">
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title">答题路径</h2><div class="page-no">10 / 13</div></div>
+        <p class="thesis">把六个关键词压成六个字，就能形成一条稳定的申论骨架。</p>
+        <div class="logic-path">
+          <div class="logic-node dark"><b>稳</b><span>粮食安全</span></div>
+          <div class="logic-node"><b>强</b><span>科技强农</span></div>
+          <div class="logic-node"><b>兴</b><span>乡村产业</span></div>
+          <div class="logic-node"><b>好</b><span>公共服务</span></div>
+          <div class="logic-node"><b>顺</b><span>乡村治理</span></div>
+          <div class="logic-node"><b>富</b><span>农民增收</span></div>
+        </div>
+        <div class="callout">农业农村现代化不是一句大话，而是一条从基本盘到获得感的完整路径。</div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-11">
+      <div class="grain"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title small">考场怎么迁移</h2><div class="page-no">11 / 13</div></div>
+        <div class="question-grid">
+          <div class="question-card"><b>推进农业农村现代化</b><span>直接用六个关键词完整展开。</span></div>
+          <div class="question-card"><b>拟定落实清单</b><span>转成粮食、科技、产业、服务、治理、增收六张清单。</span></div>
+          <div class="question-card"><b>产业同质化怎么看</b><span>重点用乡村产业 + 乡村治理。</span></div>
+          <div class="question-card"><b>农业现代化只是机械化？</b><span>用科技强农 + 公共服务 + 农民增收回应。</span></div>
+        </div>
+        <div class="callout">技巧：题目再变，底层结构仍是“稳、强、兴、好、顺、富”。</div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-12">
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title">金句摘用</h2><div class="page-no">12 / 13</div></div>
+        <div class="quote-grid">
+          <div class="quote-line">中央一号文件不是拿来整段背的，而是拿来加工成框架、案例、句式和治理动作的。</div>
+          <div class="quote-line">粮食安全不是一句“端牢饭碗”的口号，而是一套综合生产能力。</div>
+          <div class="quote-line">农业新质生产力，不是把 AI 标签贴到田里，而是让科技真正进入农业全过程。</div>
+          <div class="quote-line">乡村治理既要有法治硬度，也要有自治温度和德治润泽。</div>
+        </div>
+        <div class="footline"><span>Reusable Lines</span><span>for Rednote Caption</span></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-13">
+      <div class="grain"></div>
+      <div class="content page-frame">
+        <div class="page-head"><h2 class="page-title">参考文献</h2><div class="page-no">13 / 13</div></div>
+        <div class="ref-list">
+          <div class="ref-item"><div class="ref-no">01</div><div class="ref-text">《中共中央 国务院关于锚定农业农村现代化 扎实推进乡村全面振兴的意见》，《人民日报》2026-02-04 第01版。<span class="ref-link">https://paper.people.com.cn/rmrb/pc/content/202602/04/content_30138215.html</span></div></div>
+          <div class="ref-item"><div class="ref-no">02</div><div class="ref-text">《夯实“压舱石”，加快农业农村现代化》，《人民日报》2026-02-04 第01版。<span class="ref-link">https://paper.people.com.cn/rmrb/pc/content/202602/04/content_30138216.html</span></div></div>
+          <div class="ref-item"><div class="ref-no">03</div><div class="ref-text">《朝着建设农业强国目标扎实迈进》，《人民日报》2026-02-04 第03版。<span class="ref-link">https://paper.people.com.cn/rmrb/pc/content/202602/04/content_30138228.html</span></div></div>
+          <div class="ref-item"><div class="ref-no">04</div><div class="ref-text">《山村藤编连通国际市场》，《人民日报》2026-02-24 第06版。<span class="ref-link">https://paper.people.com.cn/rmrb/pc/content/202602/24/content_30141633.html</span></div></div>
+          <div class="ref-item"><div class="ref-no">05</div><div class="ref-text">《不卖石头卖风景》，《人民日报》2026-02-24 第06版。<span class="ref-link">https://paper.people.com.cn/rmrb/pc/content/202602/24/content_30141627.html</span></div></div>
+          <div class="ref-item"><div class="ref-no">06</div><div class="ref-text">《让农民生活更加富裕美好》，《人民日报》2026-02-27 第01版。<span class="ref-link">https://paper.people.com.cn/rmrb/pc/content/202602/27/content_30142483.html</span></div></div>
+          <div class="ref-item"><div class="ref-no">07</div><div class="ref-text">《强化品牌建设 发展绿色农业》，《人民日报》2026-02-27 第04版。<span class="ref-link">https://paper.people.com.cn/rmrb/pc/content/202602/27/content_30142515.html</span></div></div>
+          <div class="ref-item"><div class="ref-no">08</div><div class="ref-text">配图：Unsplash 航拍稻田、Pexels 智慧农业无人机。来源见 assets/SOURCES.md。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster wide" id="wechat-21x9">
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content wide-cover">
+        <div class="stack gap-3">
+          <div class="brand-stamp">《人民日报》这样写</div>
+          <h1 class="wide-title">中央一号文件<br>怎么转成申论素材</h1>
+          <p class="lead">农业农村现代化的六个关键词：粮食安全、科技强农、乡村产业、公共服务、乡村治理、农民增收。</p>
+        </div>
+        <figure class="frame-img r-3x2">
+          <img src="assets/rice-field-aerial.jpg" alt="航拍稻田" style="object-position:center 46%">
+        </figure>
+      </div>
+    </section>
+
+    <section class="poster square" id="wechat-1x1">
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content square-center">
+        <div class="brand-stamp">《人民日报》这样写</div>
+        <h1 class="square-title">一号文件<br>这样转成<br>申论素材</h1>
+        <div class="keyword-band">
+          <span>稳</span><span>强</span><span>兴</span>
+          <span>好</span><span>顺</span><span>富</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Magazine WebGL background (deterministic ink-flow) -->
+  <script src="assets/magazine-bg-webgl.js"></script>
+  <script>
+    (function () {
+      function cssVarRgb(name, fallback) {
+        var raw = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+        if (!raw) return fallback;
+        var parts = raw.split(',').map(function (x) { return parseInt(x.trim(), 10); });
+        return parts.length === 3 && parts.every(function (n) { return !isNaN(n); }) ? parts : fallback;
+      }
+      function mountAll() {
+        if (!window.MagazineBg || !window.MagazineBg.mount) return;
+        var ink    = cssVarRgb('--ink-rgb',    [10, 10, 11]);
+        var paper  = cssVarRgb('--paper-rgb',  [243, 240, 232]);
+        var accent = cssVarRgb('--accent-rgb', [17, 17, 17]);
+        document.querySelectorAll('canvas.mag-bg').forEach(function (c) {
+          window.MagazineBg.mount(c, {
+            ink: ink,
+            paper: paper,
+            accent: accent,
+            strength: 0.32,
+            frozenTime: 12.5
+          });
+        });
+      }
+      if (document.readyState === 'complete') mountAll();
+      else window.addEventListener('load', mountAll);
+    })();
+  </script>
+</body>
+</html>

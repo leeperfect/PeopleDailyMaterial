@@ -1,0 +1,491 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, '../../../..');
+const mediaDir = path.join(repoRoot, 'media/images/2026-06-07-peopledaily-writing-series-wechat-brand');
+const htmlPath = path.join(__dirname, 'index.html');
+
+const renders = [
+  ['wide-01', 'style-01-frontpage-red-wide.png'],
+  ['square-01', 'style-01-frontpage-red-square.png'],
+  ['wide-02', 'style-02-policy-file-wide.png'],
+  ['square-02', 'style-02-policy-file-square.png'],
+  ['wide-03', 'style-03-flag-editorial-wide.png'],
+  ['square-03', 'style-03-flag-editorial-square.png'],
+  ['wide-04', 'style-04-commentary-column-wide.png'],
+  ['square-04', 'style-04-commentary-column-square.png'],
+  ['wide-05', 'style-05-red-manifesto-wide.png'],
+  ['square-05', 'style-05-red-manifesto-square.png'],
+  ['preview', 'preview-five-styles.png'],
+];
+
+const html = `<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>《人民日报》这样写系列公众号封面模板</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #240205;
+      color: #fff4dc;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+    .stage {
+      width: max-content;
+      display: grid;
+      gap: 56px;
+      padding: 56px;
+    }
+    .pair {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 28px;
+      background: #190204;
+      border: 1px solid rgba(255,215,119,.24);
+    }
+    .poster {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow: 0 24px 80px rgba(0,0,0,.30);
+    }
+    .wide { width: 2100px; height: 900px; }
+    .square { width: 1080px; height: 1080px; }
+    .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .grain,
+    .paper,
+    .fold,
+    .meander,
+    .seal,
+    .ink,
+    .fan,
+    .cloud,
+    .screen {
+      position: absolute;
+      pointer-events: none;
+    }
+    .grain {
+      inset: 0;
+      z-index: 3;
+      background-image: radial-gradient(rgba(255,255,255,.18) .55px, transparent .8px);
+      background-size: 4px 4px;
+      mix-blend-mode: soft-light;
+      opacity: .25;
+    }
+    .paper {
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(90deg, rgba(255,243,214,.055) 0 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,243,214,.045) 0 1px, transparent 1px);
+      background-size: 34px 34px;
+      mix-blend-mode: soft-light;
+      opacity: .55;
+    }
+    .brand {
+      margin: 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-weight: 900;
+      letter-spacing: 0;
+      color: #fff3d2;
+      text-shadow: 0 5px 34px rgba(63,0,0,.36);
+    }
+    .article-slot {
+      display: inline-grid;
+      place-items: center;
+      width: fit-content;
+      min-width: 420px;
+      max-width: 760px;
+      padding: 18px 28px 20px;
+      background: rgba(255,238,196,.95);
+      color: #8d0710;
+      font-weight: 900;
+      letter-spacing: .02em;
+      box-shadow: 0 18px 52px rgba(68,0,0,.20);
+    }
+    .line {
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255,215,119,.92), rgba(255,215,119,0));
+    }
+    .seal {
+      z-index: 4;
+      width: 220px;
+      height: 220px;
+      border: 18px solid rgba(255,215,119,.18);
+      transform: rotate(-9deg);
+    }
+    .seal::before,
+    .seal::after {
+      content: "";
+      position: absolute;
+      inset: 32px;
+      border: 4px solid rgba(255,215,119,.24);
+    }
+    .seal::after {
+      inset: 72px;
+      border-width: 12px;
+      opacity: .72;
+    }
+    .meander {
+      z-index: 4;
+      opacity: .40;
+      background:
+        linear-gradient(90deg, rgba(255,215,119,.72) 0 16px, transparent 16px 30px) 0 0 / 60px 16px repeat-x,
+        linear-gradient(90deg, transparent 0 14px, rgba(255,215,119,.72) 14px 30px, transparent 30px 60px) 0 16px / 60px 16px repeat-x;
+      height: 32px;
+    }
+    .fold {
+      z-index: 1;
+      inset: 0;
+      background:
+        linear-gradient(118deg, rgba(255,255,255,.13), transparent 16% 36%, rgba(86,0,8,.28) 48%, transparent 66%),
+        radial-gradient(circle at 80% 18%, rgba(255,215,119,.28), transparent 22%);
+      opacity: .90;
+    }
+    .ink {
+      z-index: 1;
+      filter: blur(1px);
+      opacity: .72;
+    }
+    .fan {
+      z-index: 1;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background:
+        conic-gradient(from 210deg, rgba(255,215,119,.18) 0deg 9deg, transparent 9deg 18deg),
+        radial-gradient(circle, transparent 0 46%, rgba(255,215,119,.18) 47% 48%, transparent 49%);
+      opacity: .76;
+    }
+    .screen {
+      z-index: 1;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,235,180,.12) 0 1px, transparent 1px 84px),
+        repeating-linear-gradient(0deg, rgba(255,235,180,.10) 0 1px, transparent 1px 84px);
+      opacity: .55;
+    }
+    .cloud {
+      z-index: 2;
+      width: 420px;
+      height: 150px;
+      border: 5px solid rgba(255,215,119,.20);
+      border-left: 0;
+      border-right: 0;
+      border-radius: 999px;
+      transform: rotate(-8deg);
+      opacity: .82;
+    }
+    .cloud::before,
+    .cloud::after {
+      content: "";
+      position: absolute;
+      border: 5px solid rgba(255,215,119,.20);
+      border-radius: 999px;
+    }
+    .cloud::before { width: 210px; height: 90px; left: 48px; top: 26px; }
+    .cloud::after { width: 150px; height: 68px; right: 52px; top: 42px; }
+
+    /* 01 / modern masthead */
+    .v1 {
+      background:
+        radial-gradient(circle at 86% 22%, rgba(255,219,129,.34), transparent 26%),
+        linear-gradient(135deg, #d31320 0%, #a10712 58%, #4a0206 100%);
+    }
+    .v1 .content { padding: 76px 86px 64px; }
+    .v1 .brand { margin-top: 34px; font-size: 168px; line-height: 1.02; max-width: 1320px; }
+    .v1 .article-slot { margin-top: auto; font-size: 44px; }
+    .v1 .line { width: 760px; margin-top: 34px; }
+    .v1 .seal { right: 128px; bottom: 96px; }
+    .v1 .meander { left: 86px; right: 86px; top: 54px; }
+    .v1s {
+      background:
+        radial-gradient(circle at 82% 16%, rgba(255,219,129,.32), transparent 30%),
+        linear-gradient(135deg, #d31320, #a10712 62%, #480206);
+    }
+    .v1s .content { padding: 76px 68px 66px; }
+    .v1s .brand { margin-top: auto; font-size: 136px; line-height: 1.04; }
+    .v1s .article-slot { margin-top: 40px; font-size: 38px; min-width: 430px; }
+    .v1s .seal { right: 62px; top: 70px; width: 172px; height: 172px; border-width: 14px; }
+    .v1s .meander { left: 68px; right: 68px; bottom: 58px; }
+
+    /* 02 / cream file */
+    .v2 {
+      background:
+        linear-gradient(112deg, #fff0cd 0 43%, #b00914 43% 100%);
+      color: #9d0711;
+    }
+    .v2 .content { padding: 72px 84px 66px; }
+    .v2 .file {
+      position: absolute;
+      left: 66px;
+      top: 58px;
+      bottom: 58px;
+      width: 760px;
+      border: 3px solid rgba(157,7,17,.70);
+      background: rgba(255,244,219,.68);
+      z-index: 2;
+      box-shadow: 28px 28px 0 rgba(157,7,17,.12);
+    }
+    .v2 .brand {
+      margin-left: 860px;
+      margin-top: auto;
+      margin-bottom: 40px;
+      font-size: 150px;
+      line-height: 1.02;
+      max-width: 980px;
+    }
+    .v2 .article-slot {
+      margin-left: 860px;
+      font-size: 42px;
+      color: #9d0711;
+    }
+    .v2 .seal { left: 196px; bottom: 132px; border-color: rgba(157,7,17,.16); }
+    .v2s {
+      background: #fff0cd;
+      color: #9d0711;
+    }
+    .v2s::before {
+      content: "";
+      position: absolute;
+      inset: 48px;
+      border: 4px solid #9d0711;
+      z-index: 1;
+    }
+    .v2s .content { padding: 84px 72px 72px; }
+    .v2s .brand { margin-top: auto; color: #9d0711; text-shadow: none; font-size: 126px; line-height: 1.05; }
+    .v2s .article-slot { margin-top: 34px; background: #9d0711; color: #fff0cd; font-size: 38px; }
+    .v2s .seal { right: 74px; top: 74px; width: 156px; height: 156px; border-width: 14px; border-color: rgba(157,7,17,.14); }
+
+    /* 03 / flag fold */
+    .v3 {
+      background:
+        radial-gradient(circle at 22% 18%, rgba(255,215,119,.30), transparent 22%),
+        linear-gradient(128deg, #e31a27 0%, #aa0813 46%, #580307 100%);
+    }
+    .v3 .content { padding: 78px 88px 66px; align-items: flex-start; }
+    .v3 .brand { margin-top: auto; font-size: 162px; line-height: 1.02; max-width: 1280px; }
+    .v3 .article-slot { margin-top: 32px; font-size: 42px; }
+    .v3 .fan { right: -140px; top: 82px; }
+    .v3 .cloud { right: 138px; bottom: 118px; }
+    .v3s {
+      background:
+        radial-gradient(circle at 26% 18%, rgba(255,215,119,.30), transparent 26%),
+        linear-gradient(138deg, #df1723, #9e0812 60%, #4b0306);
+    }
+    .v3s .content { padding: 78px 72px 68px; }
+    .v3s .brand { margin-top: auto; font-size: 132px; line-height: 1.04; }
+    .v3s .article-slot { margin-top: 36px; font-size: 38px; }
+    .v3s .fan { right: -260px; top: -110px; }
+    .v3s .cloud { left: 92px; top: 92px; transform: scale(.74) rotate(-8deg); transform-origin: left top; }
+
+    /* 04 / modern grid */
+    .v4 {
+      background:
+        linear-gradient(135deg, #be0d19 0%, #9b0711 62%, #4f0307 100%);
+    }
+    .v4 .screen { inset: 0; }
+    .v4 .content { padding: 76px 86px 66px; justify-content: center; }
+    .v4 .brand { font-size: 154px; line-height: 1.04; max-width: 1160px; }
+    .v4 .article-slot { margin-top: 42px; font-size: 42px; }
+    .v4 .seal { right: 120px; top: 110px; width: 300px; height: 300px; border-color: rgba(255,215,119,.13); }
+    .v4 .line { width: 1120px; margin-top: 42px; }
+    .v4s {
+      background:
+        linear-gradient(135deg, #be0d19 0%, #920711 62%, #460206 100%);
+    }
+    .v4s .screen { inset: 0; }
+    .v4s .content { padding: 78px 72px 68px; justify-content: center; }
+    .v4s .brand { font-size: 126px; line-height: 1.06; }
+    .v4s .article-slot { margin-top: 38px; font-size: 38px; }
+    .v4s .seal { right: 72px; bottom: 76px; width: 176px; height: 176px; border-width: 14px; }
+
+    /* 05 / ink manifesto */
+    .v5 {
+      background:
+        radial-gradient(circle at 78% 22%, rgba(255,215,119,.26), transparent 24%),
+        linear-gradient(90deg, #660408 0%, #b40d18 48%, #df1723 100%);
+    }
+    .v5 .ink {
+      right: -120px;
+      top: -210px;
+      width: 980px;
+      height: 980px;
+      border-radius: 48% 52% 44% 56%;
+      background: rgba(255,238,196,.10);
+      transform: rotate(24deg);
+    }
+    .v5 .content { padding: 80px 88px 66px; }
+    .v5 .brand { margin-top: auto; font-size: 178px; line-height: .98; max-width: 1220px; }
+    .v5 .article-slot { margin-top: 34px; font-size: 42px; }
+    .v5 .meander { left: 88px; right: 88px; bottom: 58px; }
+    .v5s {
+      background:
+        radial-gradient(circle at 74% 18%, rgba(255,215,119,.28), transparent 24%),
+        linear-gradient(135deg, #c70f1c, #8e0710 68%, #3b0205);
+    }
+    .v5s .ink {
+      right: -220px;
+      top: -150px;
+      width: 720px;
+      height: 720px;
+      border-radius: 48% 52% 44% 56%;
+      background: rgba(255,238,196,.10);
+      transform: rotate(22deg);
+    }
+    .v5s .content { padding: 78px 70px 66px; }
+    .v5s .brand { margin-top: auto; font-size: 132px; line-height: 1.02; }
+    .v5s .article-slot { margin-top: 38px; font-size: 38px; }
+    .v5s .meander { left: 70px; right: 70px; bottom: 58px; }
+
+    .preview {
+      width: 2400px;
+      background: #250305;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 22px;
+    }
+    .preview .tile {
+      height: 200px;
+      overflow: hidden;
+      border: 1px solid rgba(255,215,119,.32);
+      background: #3a0507;
+      position: relative;
+    }
+    .preview .tile .poster {
+      transform: scale(.205);
+      transform-origin: left top;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <div class="pair">
+      <section class="poster wide v1" id="wide-01">
+        <div class="fold"></div><div class="paper"></div><div class="grain"></div><div class="seal"></div><div class="meander"></div>
+        <div class="content">
+          <h1 class="brand">《人民日报》<br>这样写</h1>
+          <div class="article-slot">本期文章标题位</div>
+          <div class="line"></div>
+        </div>
+      </section>
+      <section class="poster square v1s" id="square-01">
+        <div class="fold"></div><div class="paper"></div><div class="grain"></div><div class="seal"></div><div class="meander"></div>
+        <div class="content">
+          <h2 class="brand">《人民日报》<br>这样写</h2>
+          <div class="article-slot">本期文章标题位</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="pair">
+      <section class="poster wide v2" id="wide-02">
+        <div class="file"></div><div class="paper"></div><div class="grain"></div><div class="seal"></div>
+        <div class="content">
+          <h1 class="brand">《人民日报》<br>这样写</h1>
+          <div class="article-slot">本期文章标题位</div>
+        </div>
+      </section>
+      <section class="poster square v2s" id="square-02">
+        <div class="paper"></div><div class="grain"></div><div class="seal"></div>
+        <div class="content">
+          <h2 class="brand">《人民日报》<br>这样写</h2>
+          <div class="article-slot">本期文章标题位</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="pair">
+      <section class="poster wide v3" id="wide-03">
+        <div class="fold"></div><div class="paper"></div><div class="grain"></div><div class="fan"></div><div class="cloud"></div>
+        <div class="content">
+          <h1 class="brand">《人民日报》<br>这样写</h1>
+          <div class="article-slot">本期文章标题位</div>
+        </div>
+      </section>
+      <section class="poster square v3s" id="square-03">
+        <div class="fold"></div><div class="paper"></div><div class="grain"></div><div class="fan"></div><div class="cloud"></div>
+        <div class="content">
+          <h2 class="brand">《人民日报》<br>这样写</h2>
+          <div class="article-slot">本期文章标题位</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="pair">
+      <section class="poster wide v4" id="wide-04">
+        <div class="screen"></div><div class="paper"></div><div class="grain"></div><div class="seal"></div>
+        <div class="content">
+          <h1 class="brand">《人民日报》<br>这样写</h1>
+          <div class="article-slot">本期文章标题位</div>
+          <div class="line"></div>
+        </div>
+      </section>
+      <section class="poster square v4s" id="square-04">
+        <div class="screen"></div><div class="paper"></div><div class="grain"></div><div class="seal"></div>
+        <div class="content">
+          <h2 class="brand">《人民日报》<br>这样写</h2>
+          <div class="article-slot">本期文章标题位</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="pair">
+      <section class="poster wide v5" id="wide-05">
+        <div class="ink"></div><div class="paper"></div><div class="grain"></div><div class="meander"></div>
+        <div class="content">
+          <h1 class="brand">《人民日报》<br>这样写</h1>
+          <div class="article-slot">本期文章标题位</div>
+        </div>
+      </section>
+      <section class="poster square v5s" id="square-05">
+        <div class="ink"></div><div class="paper"></div><div class="grain"></div><div class="meander"></div>
+        <div class="content">
+          <h2 class="brand">《人民日报》<br>这样写</h2>
+          <div class="article-slot">本期文章标题位</div>
+        </div>
+      </section>
+    </div>
+
+    <section class="preview" id="preview">
+      <div class="tile"><section class="poster wide v1"><div class="fold"></div><div class="paper"></div><div class="grain"></div><div class="seal"></div><div class="meander"></div><div class="content"><h1 class="brand">《人民日报》<br>这样写</h1><div class="article-slot">本期文章标题位</div></div></section></div>
+      <div class="tile"><section class="poster wide v2"><div class="file"></div><div class="paper"></div><div class="grain"></div><div class="seal"></div><div class="content"><h1 class="brand">《人民日报》<br>这样写</h1><div class="article-slot">本期文章标题位</div></div></section></div>
+      <div class="tile"><section class="poster wide v3"><div class="fold"></div><div class="paper"></div><div class="grain"></div><div class="fan"></div><div class="cloud"></div><div class="content"><h1 class="brand">《人民日报》<br>这样写</h1><div class="article-slot">本期文章标题位</div></div></section></div>
+      <div class="tile"><section class="poster wide v4"><div class="screen"></div><div class="paper"></div><div class="grain"></div><div class="seal"></div><div class="content"><h1 class="brand">《人民日报》<br>这样写</h1><div class="article-slot">本期文章标题位</div></div></section></div>
+      <div class="tile"><section class="poster wide v5"><div class="ink"></div><div class="paper"></div><div class="grain"></div><div class="meander"></div><div class="content"><h1 class="brand">《人民日报》<br>这样写</h1><div class="article-slot">本期文章标题位</div></div></section></div>
+    </section>
+  </main>
+</body>
+</html>`;
+
+fs.mkdirSync(mediaDir, { recursive: true });
+fs.writeFileSync(htmlPath, html);
+
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage({ viewport: { width: 3300, height: 1300 }, deviceScaleFactor: 1 });
+await page.goto(`file://${htmlPath}`, { waitUntil: 'load', timeout: 60000 });
+await page.waitForTimeout(1200);
+
+for (const [id, file] of renders) {
+  await page.locator(`#${id}`).screenshot({
+    path: path.join(mediaDir, file),
+    animations: 'disabled',
+  });
+}
+
+await browser.close();
+console.log(`Rendered ${renders.length} files to ${mediaDir}`);

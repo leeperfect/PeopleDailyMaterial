@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="zh-CN" data-accent="safety-orange">
+<head>
+  <meta charset="utf-8">
+  <title>人民日报讲公共服务均等化 · Social Card Set</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Noto+Sans+SC:wght@200;300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    /* =========================================================
+       Swiss International — Social Card Seed Template
+       ---------------------------------------------------------
+       Three boards built in one HTML:
+         .poster.xhs      1080×1440  (3:4   小红书)
+         .poster.square   1080×1080  (1:1   微信方封面)
+         .poster.wide     2100× 900  (21:9  微信主封面)
+         .pair-preview                       21:9 + 1:1 配对预览
+
+       Accent switching via <html data-accent="…">:
+         ikb (Klein Blue) | lemon-yellow | lemon-green | safety-orange
+
+       Fill posters where marked <!-- POSTERS_HERE -->.
+       Each poster carries one Layout Recipe (S01-S12) from
+       references/layout-recipes.md.
+       ========================================================= */
+
+    /* ---------- 1. Accent palettes (4 mutually exclusive) ---------- */
+    :root,
+    [data-accent="ikb"] {
+      --paper: #fafaf8;
+      --ink: #0a0a0a;
+      --grey-1: #f0f0ee;
+      --grey-2: #d4d4d2;
+      --grey-3: #737373;
+      --accent: #002FA7;
+      --accent-on: #ffffff;
+    }
+    [data-accent="lemon-yellow"] {
+      --paper: #fafaf8;
+      --ink: #0a0a0a;
+      --grey-1: #f0f0ee;
+      --grey-2: #d4d4d2;
+      --grey-3: #737373;
+      --accent: #FFD500;
+      --accent-on: #0a0a0a;
+    }
+    [data-accent="lemon-green"] {
+      --paper: #fafaf8;
+      --ink: #0a0a0a;
+      --grey-1: #f0f0ee;
+      --grey-2: #d4d4d2;
+      --grey-3: #737373;
+      --accent: #C5E803;
+      --accent-on: #0a0a0a;
+    }
+    [data-accent="safety-orange"] {
+      --paper: #fafaf8;
+      --ink: #0a0a0a;
+      --grey-1: #f0f0ee;
+      --grey-2: #d4d4d2;
+      --grey-3: #737373;
+      --accent: #FF6B35;
+      --accent-on: #ffffff;
+    }
+
+    /* ---------- 2. Typography stack ---------- */
+    :root {
+      --sans:    "Inter", "Helvetica Neue", Helvetica, "Noto Sans SC",
+                 -apple-system, "PingFang SC", "Microsoft YaHei UI", sans-serif;
+      --sans-zh: "Noto Sans SC", -apple-system, "PingFang SC",
+                 "Microsoft YaHei UI", "Inter", sans-serif;
+      --mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+    }
+
+    /* ---------- 3. Spacing tokens (8/12/16/24/32/40/48/64/80/96/160) ---------- */
+    :root {
+      --sp-3:   8px;
+      --sp-4:  12px;
+      --sp-5:  16px;
+      --sp-6:  24px;
+      --sp-7:  32px;
+      --sp-8:  40px;
+      --sp-9:  48px;
+      --sp-10: 64px;
+      --sp-11: 80px;
+      --sp-12: 96px;
+      --sp-13:160px;
+    }
+
+    /* ---------- 4. Reset & sheet ---------- */
+    *,*::before,*::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #1a1a1a;
+      font-family: var(--sans);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 64px 32px;
+    }
+    .sheet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+
+    /* ---------- 5. Poster boards (fixed export sizes) ---------- */
+    .poster {
+      position: relative;
+      background: var(--paper);
+      color: var(--ink);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .poster.xhs    { width: 1080px; height: 1440px; }
+    .poster.square { width: 1080px; height: 1080px; }
+    .poster.wide   { width: 2100px; height:  900px; }
+    .poster figure { margin: 0; }
+
+    .poster.xhs    .content { padding: var(--sp-12) var(--sp-11); }
+    .poster.square .content { padding: var(--sp-11) var(--sp-11); }
+    .poster.wide   .content { padding: var(--sp-11) var(--sp-13); }
+    .content { position: relative; width: 100%; height: 100%; z-index: 2; }
+
+    /* Optional decorative layers — opt in per poster */
+    .dot-mat,
+    .ring-mat,
+    .cross-mat {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .dot-mat {
+      opacity: .08;
+      background-image: radial-gradient(var(--ink) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+    }
+    .ring-mat {
+      opacity: .08;
+      background-image: radial-gradient(circle at 50% 50%, transparent 4px, var(--ink) 4.5px, var(--ink) 5px, transparent 5.5px);
+      background-size: 32px 32px;
+    }
+    .cross-mat {
+      opacity: .06;
+      background-image:
+        linear-gradient(var(--ink), var(--ink)),
+        linear-gradient(90deg, var(--ink), var(--ink));
+      background-size: 1px 14px, 14px 1px;
+      background-position: center, center;
+      background-repeat: repeat;
+    }
+
+    /* ---------- 6. Typography roles (Swiss extreme contrast) ----------
+       Hard rule: "the larger, the lighter"
+       ≥ 200px → weight 200 (ExtraLight)
+       Smaller text gets heavier weight (≥ 500). */
+    .h-hero {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 240px;
+      line-height: 1.02;
+      letter-spacing: -.02em;
+      margin: 0;
+      color: var(--ink);
+    }
+    .h-statement {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 180px;
+      line-height: 1.05;
+      letter-spacing: -.015em;
+      margin: 0;
+      color: var(--ink);
+    }
+    .h-xl {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 120px;
+      line-height: 1.08;
+      letter-spacing: -.01em;
+      margin: 0;
+      color: var(--ink);
+    }
+    .h-md {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 56px;
+      line-height: 1.18;
+      margin: 0;
+      color: var(--ink);
+    }
+    .lead {
+      font-family: var(--sans-zh);
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 1.55;
+      color: var(--ink);
+      margin: 0;
+    }
+    .body {
+      font-family: var(--sans-zh);
+      font-weight: 400;
+      font-size: 26px;
+      line-height: 1.6;
+      color: var(--ink);
+      margin: 0;
+    }
+    .t-cat {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0;
+    }
+    .t-meta {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin: 0;
+    }
+    .num-mega {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 200px;
+      line-height: .92;
+      letter-spacing: -.03em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .num-xl {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 144px;
+      line-height: .96;
+      letter-spacing: -.02em;
+      margin: 0;
+    }
+    .mono { font-family: var(--mono); }
+
+    /* XHS (3:4) boards: 1080×1440 has the tightest vertical budget,
+       so display sizes step down vs the .wide default. These caps
+       were validated by the smoke-ai-tools deck — 2-line h-xl @96px
+       leaves room for matrix + hero-stat-bottom inside 1440px. */
+    .poster.xhs .h-hero          { font-size: 168px; }
+    .poster.xhs .h-statement     { font-size: 124px; }
+    .poster.xhs .h-xl            { font-size: 96px; }
+    .poster.xhs .num-mega        { font-size: 168px; }
+    .poster.xhs .num-xl          { font-size: 120px; }
+
+    /* Square boards tighten scales */
+    .poster.square .h-hero       { font-size: 180px; }
+    .poster.square .h-statement  { font-size: 140px; }
+    .poster.square .h-xl         { font-size: 88px; }
+    .poster.square .num-mega     { font-size: 168px; }
+    .poster.square .num-xl       { font-size: 112px; }
+
+    /* Wide boards rely on horizontal real estate */
+    .poster.wide .h-hero         { font-size: 200px; }
+    .poster.wide .h-statement    { font-size: 156px; }
+    .poster.wide .h-xl           { font-size: 104px; }
+
+    /* ---------- 7. Layout primitives ---------- */
+    .stack    { display: flex; flex-direction: column; }
+    .row      { display: flex; flex-direction: row; }
+    .gap-3    { gap: var(--sp-3); }
+    .gap-4    { gap: var(--sp-4); }
+    .gap-5    { gap: var(--sp-5); }
+    .gap-6    { gap: var(--sp-6); }
+    .gap-7    { gap: var(--sp-7); }
+    .gap-8    { gap: var(--sp-8); }
+    .gap-9    { gap: var(--sp-9); }
+    .gap-10   { gap: var(--sp-10); }
+    .grow     { flex: 1; }
+    .grid-12  { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--sp-7); }
+    .grid-2-9 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-9); }
+    .grid-3   { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-7); }
+    .grid-4   { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); }
+    .span-2   { grid-column: span 2; }
+    .span-3   { grid-column: span 3; }
+    .span-4   { grid-column: span 4; }
+    .span-6   { grid-column: span 6; }
+    .span-8   { grid-column: span 8; }
+    .span-9   { grid-column: span 9; }
+    .span-12  { grid-column: span 12; }
+    .center   { text-align: center; }
+    .right    { text-align: right; }
+    .uppercase{ text-transform: uppercase; }
+    .hr-hairline {
+      height: 1px;
+      background: var(--grey-2);
+      border: 0;
+      margin: 0;
+    }
+    .hr-accent {
+      height: 3px;
+      background: var(--accent);
+      border: 0;
+      width: 96px;
+      margin: 0;
+    }
+
+    /* ---------- 8. Card fills (mutually exclusive — pick ONE) ----------
+       Hard rule: never combine card-ink/card-accent/card-fill/card-outlined
+       on the same node. Multi-card grids must use the same class. */
+    .card-ink {
+      background: var(--ink);
+      color: var(--paper);
+      padding: var(--sp-8);
+    }
+    .card-ink .t-cat,
+    .card-ink .t-meta,
+    .card-ink .lead,
+    .card-ink .body,
+    .card-ink .h-md { color: var(--paper); }
+    .card-accent {
+      background: var(--accent);
+      color: var(--accent-on);
+      padding: var(--sp-8);
+    }
+    .card-accent .t-cat,
+    .card-accent .t-meta,
+    .card-accent .lead,
+    .card-accent .body,
+    .card-accent .h-md { color: var(--accent-on); }
+    .card-fill {
+      background: var(--grey-1);
+      color: var(--ink);
+      padding: var(--sp-8);
+    }
+    .card-outlined {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--grey-2);
+      padding: var(--sp-8);
+    }
+
+    /* ---------- 9. Frame containers (image holders) ---------- */
+    .frame-img {
+      position: relative;
+      overflow: hidden;
+      background: var(--grey-1);
+      display: block;
+      margin: 0;
+    }
+    .frame-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+    .frame-img.fit-contain img { object-fit: contain; background: var(--paper); }
+    .frame-img.r-3x4   { aspect-ratio: 3 / 4; }
+    .frame-img.r-1x1   { aspect-ratio: 1 / 1; }
+    .frame-img.r-4x3   { aspect-ratio: 4 / 3; }
+    .frame-img.r-16x9  { aspect-ratio: 16 / 9; }
+    .frame-img.r-16x10 { aspect-ratio: 16 / 10; }
+    .frame-img.r-21x9  { aspect-ratio: 21 / 9; }
+    .swiss-img-caption {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin-top: var(--sp-5);
+    }
+
+    /* ---------- 9b. Screenshot treatment (.frame-shot) ---------- */
+    /* Swiss is stricter than Editorial: corners default square, shadows default
+       none. Override only when the shot must literally float off the page.   */
+    .frame-shot {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      margin: 0;
+      background: var(--grey-1);
+      border-radius: 0;
+    }
+    .frame-shot.corners-sq { border-radius: 0; }
+    .frame-shot.corners-sm { border-radius: 4px; }
+    .frame-shot.corners-md { border-radius: 10px; }
+
+    /* Swiss shadows are flat — only the subtle outline scrim is welcome */
+    .frame-shot.shadow-soft { box-shadow: 0 12px 28px -16px rgba(0,0,0,.18); }
+    .frame-shot.shadow-ed   { box-shadow: 0 20px 40px -20px rgba(0,0,0,.22), 0 0 0 1px var(--grey-2); }
+
+    /* background tones — pure / dot / grid only. No accent colour fills. */
+    .frame-shot.bg-paper    { background: var(--paper); }
+    .frame-shot.bg-grey-1   { background: var(--grey-1); }
+    .frame-shot.bg-ink      { background: var(--ink); }
+    .frame-shot.bg-grid     {
+      background-color: var(--paper);
+      background-image:
+        linear-gradient(to right, var(--grey-2) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grey-2) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .frame-shot.bg-dot {
+      background-color: var(--paper);
+      background-image: radial-gradient(var(--grey-2) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+
+    /* asset backgrounds — ported from PPT skill, real texture for screenshot wells.
+       Use ONLY when current accent matches the asset's accent (don't mix oranges and IKB). */
+    .frame-shot.bg-asset-ikb-dot          { background: #0c1a3a url("../assets/screenshot-backgrounds/style-b/ikb-dot-gradient.webp")       center/cover no-repeat; }
+    .frame-shot.bg-asset-lemon-green-dot  { background: #d6e08a url("../assets/screenshot-backgrounds/style-b/lemon-green-dot-shadow.webp") center/cover no-repeat; }
+    .frame-shot.bg-asset-lemon-grid       { background: #e6e9b8 url("../assets/screenshot-backgrounds/style-b/lemon-grid.webp")             center/cover no-repeat; }
+    .frame-shot.bg-asset-safety-orange    { background: #ff5b1f url("../assets/screenshot-backgrounds/style-b/safety-orange-halftone.webp") center/cover no-repeat; }
+
+    .frame-shot.inset-none > img,
+    .frame-shot.inset-none > .shot-body { padding: 0; }
+    .frame-shot.inset-sub  { padding: 20px; }
+    .frame-shot.inset-bal  { padding: 48px; }
+
+    .frame-shot.r-3x4   { aspect-ratio: 3 / 4; }
+    .frame-shot.r-1x1   { aspect-ratio: 1 / 1; }
+    .frame-shot.r-4x3   { aspect-ratio: 4 / 3; }
+    .frame-shot.r-16x9  { aspect-ratio: 16 / 9; }
+    .frame-shot.r-16x10 { aspect-ratio: 16 / 10; }
+    .frame-shot.r-21x9  { aspect-ratio: 21 / 9; }
+    .frame-shot.r-3x2   { aspect-ratio: 3 / 2; }
+
+    .frame-shot > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      border-radius: inherit;
+    }
+    .frame-shot.fit-cover > img { object-fit: cover; }
+
+    /* device chrome — CSS-only, no SVG */
+    .device-browser {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--grey-2);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .device-browser::before {
+      content: '';
+      display: block;
+      height: 32px;
+      background: var(--grey-1);
+      border-bottom: 1px solid var(--grey-2);
+      background-image:
+        radial-gradient(circle at 16px 16px, var(--grey-3) 4px, transparent 4.5px),
+        radial-gradient(circle at 34px 16px, var(--grey-3) 4px, transparent 4.5px),
+        radial-gradient(circle at 52px 16px, var(--grey-3) 4px, transparent 4.5px);
+    }
+    .device-browser > .frame-shot,
+    .device-browser > img {
+      border-radius: 0;
+      display: block;
+      width: 100%;
+    }
+    .device-phone {
+      position: relative;
+      background: var(--ink);
+      border-radius: 28px;
+      padding: 12px;
+      box-shadow: 0 16px 36px -18px rgba(0,0,0,.32);
+    }
+    .device-phone > .frame-shot,
+    .device-phone > img {
+      border-radius: 18px;
+      display: block;
+      width: 100%;
+    }
+
+    /* ---------- 9c. Map block (.map-block) ---------- */
+    /* Static map for Swiss decks. Pins are pure HTML, no SVG text.
+       Use accent sparingly: at most one accent pin per board. */
+    .map-block {
+      position: relative;
+      background: var(--grey-1);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      width: 100%;
+    }
+    .map-block.r-16x10 { aspect-ratio: 16 / 10; }
+    .map-block.r-16x9  { aspect-ratio: 16 / 9; }
+    .map-block.r-1x1   { aspect-ratio: 1 / 1; }
+    .map-block.r-3x4   { aspect-ratio: 3 / 4; }
+    .map-block > img,
+    .map-block > svg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      display: block;
+    }
+    .map-block > img { object-fit: cover; }
+    /* desaturated tile filter to keep Swiss strict tone */
+    .map-block.tone-paper > img { filter: saturate(0) contrast(1.05) brightness(1.02); }
+    .map-block.tone-ink > img   { filter: saturate(0) brightness(.58); }
+    /* schematic SVG defaults */
+    .map-block > svg .map-coast { fill: none; stroke: var(--grey-2); stroke-width: .4; }
+    .map-block > svg .map-road  { fill: none; stroke: var(--grey-3); stroke-width: .28; stroke-dasharray: 1.2 .8; opacity: .7; }
+    .map-block > svg .map-water { fill: var(--grey-1); }
+    .map-block > svg .map-grid  { stroke: var(--grey-2); stroke-width: .15; opacity: .5; }
+
+    .map-pin {
+      position: absolute;
+      width: 0; height: 0;
+      transform: translate(-50%, -50%);
+    }
+    .map-pin .dot {
+      position: absolute;
+      left: -6px; top: -6px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 2px solid var(--paper);
+      box-shadow: 0 1px 3px rgba(0,0,0,.22);
+    }
+    .map-pin.accent .dot { background: var(--accent); }
+    .map-pin .line {
+      position: absolute;
+      left: 7px; top: 0;
+      width: 28px; height: 1px;
+      background: var(--ink);
+      opacity: .55;
+    }
+    .map-pin.left .line { left: auto; right: 7px; }
+    .map-pin .card {
+      position: absolute;
+      left: 38px; top: -20px;
+      min-width: 80px;
+      padding: 8px 10px;
+      background: rgba(250,250,248,.94);
+      box-shadow: 0 0 0 1px var(--grey-2);
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .map-pin.left .card { left: auto; right: 38px; }
+    .map-pin .card .name {
+      font-family: var(--sans-zh), var(--sans);
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+    .map-pin .card .meta {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+    }
+    .map-pin.accent .card .name { color: var(--accent); }
+
+    .map-legend {
+      position: absolute;
+      left: 14px; bottom: 14px;
+      z-index: 3;
+      background: rgba(250,250,248,.94);
+      padding: 8px 12px;
+      box-shadow: 0 0 0 1px var(--grey-2);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+    }
+    .map-legend.tr { left: auto; right: 14px; top: 14px; bottom: auto; }
+
+    /* ---------- 10. Swiss-specific components ---------- */
+
+    /* S08 Image Hero (port of S22) */
+    .image-hero {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: var(--sp-7);
+      height: 100%;
+    }
+    .image-hero .hero-img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--grey-1);
+    }
+    .image-hero .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+    .image-hero .hero-overlay-block {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: var(--paper);
+      padding: var(--sp-7) var(--sp-8);
+      max-width: 60%;
+    }
+    .image-hero .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-8);
+      align-items: end;
+      border-top: 1px solid var(--grey-2);
+      padding-top: var(--sp-7);
+    }
+    .image-hero .hero-stats .stat-block .num {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 96px;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      margin: 0 0 var(--sp-4);
+    }
+    .image-hero .hero-stats .stat-block .lbl {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin: 0;
+    }
+
+    /* S09 KPI Tower (port of S06) */
+    .kpi-tower-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-7);
+      align-items: end;
+      height: 100%;
+    }
+    .kpi-tower-row .tower-col {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-5);
+      align-items: flex-start;
+    }
+    .kpi-tower-row .tower-col .num {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 112px;
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin: 0;
+    }
+    .kpi-tower-row .tower-col .lbl {
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin: 0;
+    }
+    .kpi-tower-row .tower-col .bar-tower {
+      width: 100%;
+      height: var(--h, 240px);
+      background: var(--accent);
+      transform-origin: bottom;
+    }
+    .kpi-tower-row .tower-col.muted .bar-tower {
+      background: var(--grey-2);
+    }
+    .poster.xhs .kpi-tower-row { grid-template-columns: 1fr 1fr; gap: var(--sp-9); }
+    .poster.square .kpi-tower-row { grid-template-columns: 1fr 1fr; gap: var(--sp-9); }
+
+    /* S10 H-Bar Chart (port of S07) */
+    .h-bar-chart {
+      display: grid;
+      gap: var(--sp-6);
+    }
+    .h-bar-chart .bar-row {
+      display: grid;
+      grid-template-columns: 220px 1fr 120px;
+      gap: var(--sp-6);
+      align-items: center;
+    }
+    .h-bar-chart .bar-row .row-lbl {
+      font-family: var(--sans-zh);
+      font-weight: 500;
+      font-size: 26px;
+      color: var(--ink);
+    }
+    .h-bar-chart .bar-row .row-track {
+      position: relative;
+      height: 28px;
+      background: var(--grey-1);
+    }
+    .h-bar-chart .bar-row .row-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: var(--w, 50%);
+      background: var(--accent);
+    }
+    .h-bar-chart .bar-row .row-val {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 26px;
+      letter-spacing: .04em;
+      text-align: right;
+      color: var(--ink);
+    }
+    /* On portrait the labels move above the track */
+    .poster.xhs .h-bar-chart .bar-row {
+      grid-template-columns: 1fr;
+      gap: var(--sp-4);
+    }
+    .poster.xhs .h-bar-chart .bar-row .row-val {
+      text-align: left;
+    }
+
+    /* S11 Stacked Ledger (port of S20) */
+    .stacked-ledger {
+      display: flex;
+      flex-direction: column;
+    }
+    .stacked-ledger .ledger-row {
+      display: grid;
+      grid-template-columns: 280px 1fr auto;
+      gap: var(--sp-7);
+      align-items: baseline;
+      padding: var(--sp-7) 0;
+      border-bottom: 1px solid var(--grey-2);
+    }
+    .stacked-ledger .ledger-row:first-child { padding-top: 0; }
+    .stacked-ledger .ledger-row:last-child  { border-bottom: 0; }
+    .stacked-ledger .ledger-num {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 112px;
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin: 0;
+    }
+    .stacked-ledger .ledger-lbl {
+      font-family: var(--sans-zh);
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+    .stacked-ledger .ledger-lbl .sub {
+      display: block;
+      font-weight: 400;
+      font-size: 22px;
+      color: var(--grey-3);
+      margin-top: var(--sp-3);
+    }
+    .stacked-ledger .ledger-icn {
+      width: 56px;
+      height: 56px;
+      color: var(--accent);
+    }
+    .poster.square .stacked-ledger .ledger-num { font-size: 88px; }
+    .poster.square .stacked-ledger .ledger-row { grid-template-columns: 220px 1fr auto; }
+
+    /* S12 Matrix Fill (port of S15) */
+    .matrix-fill {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 1fr;
+      gap: var(--sp-5);
+    }
+    .matrix-fill .matrix-cell {
+      background: var(--grey-1);
+      padding: var(--sp-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+      min-height: 160px;
+    }
+    .matrix-fill .matrix-cell .cell-nb {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      color: var(--grey-3);
+    }
+    .matrix-fill .matrix-cell .cell-title {
+      font-family: var(--sans-zh);
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+    .matrix-fill .matrix-cell.is-accent {
+      background: var(--accent);
+      color: var(--accent-on);
+    }
+    .matrix-fill .matrix-cell.is-accent .cell-nb,
+    .matrix-fill .matrix-cell.is-accent .cell-title { color: var(--accent-on); }
+    .hero-stat-bottom {
+      margin-top: var(--sp-9);
+      padding-top: var(--sp-7);
+      border-top: 1px solid var(--grey-2);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: var(--sp-7);
+    }
+    /* xhs uses 2 columns; up to 8 cells = 4 rows. Switch to min-content
+       so rows don't stretch and crowd out hero-stat-bottom (validated
+       in smoke-ai-tools/xhs-04). When pairing matrix-fill with
+       hero-stat-bottom inside .poster.xhs, prefer 6 cells (3 rows). */
+    .poster.xhs .matrix-fill {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: min-content;
+      gap: var(--sp-4);
+    }
+    .poster.xhs .matrix-fill .matrix-cell { min-height: 0; padding: var(--sp-5); }
+    .poster.xhs .matrix-fill .matrix-cell .cell-title { font-size: 24px; }
+    .poster.xhs .hero-stat-bottom {
+      margin-top: var(--sp-6);
+      padding-top: var(--sp-5);
+      align-items: center;
+    }
+    .poster.xhs .hero-stat-bottom .num-mega { font-size: 128px; line-height: 1; }
+    .poster.square .matrix-fill{ grid-template-columns: repeat(3, 1fr); grid-auto-rows: auto; }
+    .poster.square .matrix-fill .matrix-cell { min-height: 0; }
+
+    /* ---------- 11. Issue label + corner metadata ---------- */
+    .chrome-min {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      padding-bottom: var(--sp-6);
+      border-bottom: 1px solid var(--grey-2);
+      margin-bottom: var(--sp-9);
+    }
+
+    /* ---------- 12. Pair preview frame ---------- */
+    .pair-preview {
+      width: 2400px;
+      min-height: 1180px;
+      background: var(--grey-1);
+      padding: var(--sp-9);
+      display: grid;
+      grid-template-columns: 2100px 1080px;
+      grid-template-rows: 900px 1080px;
+      gap: var(--sp-9);
+      align-content: center;
+      justify-content: center;
+    }
+    .pair-preview .preview-wide   { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-square { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-label {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--grey-3);
+      margin-bottom: var(--sp-5);
+    }
+
+    /* ---------- 13. Hard rules (visual guard rails) ----------
+       Swiss style refuses these — uncomment to find offenders.
+    .poster *[style*="border-radius"],
+    .poster *[style*="box-shadow"],
+    .poster *[style*="linear-gradient"] { outline: 4px solid red !important; }
+    */
+
+    /* ---------- Task scope: public service equalization ---------- */
+    .poster { --line: var(--grey-2); }
+    .ps-title { font-size: 112px; line-height: 1.02; }
+    .ps-title-sm { font-size: 82px; line-height: 1.08; }
+    .poster.xhs .ps-title { font-size: 108px; }
+    .poster.xhs .ps-title-sm { font-size: 78px; }
+    .tagline {
+      display: inline-flex;
+      width: fit-content;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: var(--accent-on);
+      font-family: var(--mono);
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .photo-band {
+      position: relative;
+      overflow: hidden;
+      background: var(--grey-1);
+      border: 1px solid var(--grey-2);
+    }
+    .photo-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.70) contrast(1.04);
+    }
+    .photo-hero { height: 390px; }
+    .photo-mid { height: 420px; }
+    .photo-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-7);
+    }
+    .photo-split .photo-band { height: 440px; }
+    .quote-box {
+      border-left: 10px solid var(--accent);
+      background: var(--grey-1);
+      padding: 24px 28px;
+      font-family: var(--sans-zh);
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 1.48;
+      color: var(--ink);
+      margin: 0;
+    }
+    .quote-box.small { font-size: 22px; line-height: 1.44; padding: 20px 24px; }
+    .quote-box.large { font-size: 34px; line-height: 1.35; }
+    .quote-box::before {
+      content: ">";
+      display: inline-block;
+      margin-right: 10px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-weight: 600;
+    }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-5);
+    }
+    .metric {
+      border-top: 6px solid var(--accent);
+      background: var(--grey-1);
+      padding: 24px;
+      min-height: 146px;
+    }
+    .metric .num {
+      font-family: var(--sans);
+      font-size: 62px;
+      font-weight: 200;
+      line-height: 1;
+      letter-spacing: -.03em;
+      margin: 0 0 12px;
+    }
+    .metric .txt {
+      font-family: var(--sans-zh);
+      font-size: 22px;
+      line-height: 1.35;
+      margin: 0;
+    }
+    .action-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .action-row {
+      display: grid;
+      grid-template-columns: 138px 1fr;
+      align-items: stretch;
+      border: 1px solid var(--grey-2);
+      min-height: 138px;
+    }
+    .action-row .idx {
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: var(--accent-on);
+      font-family: var(--mono);
+      font-size: 34px;
+      font-weight: 600;
+    }
+    .action-row .copy {
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+    .action-row .main {
+      font-family: var(--sans-zh);
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .action-row .sub {
+      font-family: var(--sans-zh);
+      font-size: 22px;
+      color: var(--grey-3);
+      line-height: 1.35;
+      margin: 0;
+    }
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--grey-2);
+    }
+    .check-item {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 22px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--grey-2);
+      align-items: baseline;
+    }
+    .check-item .mark {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .check-item .text {
+      font-family: var(--sans-zh);
+      font-size: 27px;
+      line-height: 1.36;
+      margin: 0;
+    }
+    .ref-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ref-list li {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 18px;
+      border-bottom: 1px solid var(--grey-2);
+      padding-bottom: 12px;
+      font-family: var(--sans-zh);
+      font-size: 19px;
+      line-height: 1.34;
+    }
+    .ref-list b {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 18px;
+    }
+    .wide-cover-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 72px;
+      height: 100%;
+      align-items: center;
+    }
+    .wide-cover-grid .h-statement {
+      font-size: 104px;
+      line-height: 1.08;
+    }
+    .wide-cover-grid .photo-band { height: 610px; }
+    .square-cover {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+    }
+    .square-cover .photo-band {
+      width: 100%;
+      height: 240px;
+    }
+  </style>
+</head>
+<body>
+  <!-- ACCENT_OVERRIDE
+       Change <html data-accent="…"> above to:
+       ikb | lemon-yellow | lemon-green | safety-orange
+       One deck — one accent. Never combine.
+  -->
+  <main class="sheet">
+
+    <!-- POSTERS_HERE -->
+    <!--
+      Replace the placeholder poster below with real content.
+      Each poster carries one Layout Recipe (S01-S12) from
+      references/layout-recipes.md.
+
+      Available board sizes:
+        <section class="poster xhs"    id="xhs-01">…</section>   3:4
+        <section class="poster square" id="wechat-1x1">…</section> 1:1
+        <section class="poster wide"   id="wechat-21x9">…</section> 21:9
+
+      For WeChat covers, also include a <section class="pair-preview">
+      that places the 21:9 + 1:1 side-by-side for review.
+
+      Hard rules every poster must honor:
+        - exactly one --accent in the entire deck
+        - no border-radius, no box-shadow, no gradients
+        - card-ink / card-accent / card-fill / card-outlined are
+          mutually exclusive — never combine on one node
+        - "the larger, the lighter": ≥ 200px must use weight 200
+    -->
+
+    <section class="poster xhs" id="xhs-01-cover">
+      <div class="content stack gap-7">
+        <div class="chrome-min"><span>PUBLIC SERVICE · 01</span><span>2026.06</span></div>
+        <span class="tagline">《人民日报》这样写</span>
+        <h1 class="h-statement ps-title">公共服务<br>从有没有<br>到够得到</h1>
+        <figure class="photo-band photo-hero">
+          <img src="assets/reception-counter.jpg" alt="办事服务窗口" style="object-position:center 42%">
+        </figure>
+        <p class="quote-box small">公共服务均等化，正在从“有没有”走向“够得到”。</p>
+        <div class="row gap-6"><p class="t-meta">Swiss · Safety Orange</p><p class="t-meta">14 Cards</p></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-02-question">
+      <div class="content stack gap-8">
+        <div class="chrome-min"><span>QUESTION · 02</span><span>均等化误区</span></div>
+        <h2 class="h-xl ps-title-sm">公共服务到底<br>怎样才算“均等”？</h2>
+        <p class="quote-box large">公共服务到底怎样才算“均等”？</p>
+        <figure class="photo-band photo-mid">
+          <img src="assets/office-lobby.jpg" alt="公共服务等候区" style="object-position:center 52%">
+        </figure>
+        <p class="quote-box small">公共服务均等化的关键，不是把资源机械地平均分配，而是让服务供给与人口流动、需求结构和生活半径相匹配，让群众在最需要、最常用、最方便抵达的地方获得基本服务。</p>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-03-actions">
+      <div class="content stack gap-8">
+        <div class="chrome-min"><span>FRAME · 03</span><span>三个动作</span></div>
+        <h2 class="h-xl ps-title-sm">不要写平均化<br>要写精准可及</h2>
+        <div class="action-grid grow">
+          <div class="action-row"><div class="idx">01</div><div class="copy"><p class="main">服务跟着人走</p><p class="sub">常住地接续，流动人口不被户籍卡住。</p></div></div>
+          <div class="action-row"><div class="idx">02</div><div class="copy"><p class="main">资源跟着需求走</p><p class="sub">医疗、养老、托育、就业进入生活半径。</p></div></div>
+          <div class="action-row"><div class="idx">03</div><div class="copy"><p class="main">流程跟着问题走</p><p class="sub">从堵点倒逼流程再造和源头治理。</p></div></div>
+        </div>
+        <p class="lead">一句“推进均等化”太空；这三个动作才好写、好展开、好迁移。</p>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-04-people">
+      <div class="content stack gap-7">
+        <div class="chrome-min"><span>MOVE WITH PEOPLE · 04</span><span>服务跟着人走</span></div>
+        <h2 class="h-xl ps-title-sm">人已经流动<br>服务也要流动</h2>
+        <p class="quote-box">人已经流动起来了，服务也要跟着流动起来。</p>
+        <figure class="photo-band photo-mid">
+          <img src="assets/children-classroom.jpg" alt="课堂与儿童教育服务" style="object-position:center 48%">
+        </figure>
+        <p class="quote-box small">推进基本公共服务均等化，要从“户籍导向”转向“常住人口导向”。人在哪里长期生活，服务就要在哪里接续；需求在哪里集中，资源就要在哪里配置。让公共服务跟着人走，才能让流动人口在常住地安下心、扎下根、有奔头。</p>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-05-data">
+      <div class="content stack gap-8">
+        <div class="chrome-min"><span>DATA · 05</span><span>常住地供给</span></div>
+        <h2 class="h-xl ps-title-sm">公共服务<br>不能只盯户籍</h2>
+        <div class="metric-grid grow">
+          <div class="metric"><p class="num">1.3亿</p><p class="txt">城镇居住农民工</p></div>
+          <div class="metric"><p class="num">1.7亿</p><p class="txt">进城农民工及随迁家属</p></div>
+          <div class="metric"><p class="num">67.89%</p><p class="txt">常住人口城镇化率</p></div>
+          <div class="metric"><p class="num">约3/4</p><p class="txt">基本公共服务项目实现常住地提供</p></div>
+        </div>
+        <p class="lead">申论落点：从“户籍绑定”转向“常住地供给”。</p>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-06-radius">
+      <div class="content stack gap-7">
+        <div class="chrome-min"><span>LIFE RADIUS · 06</span><span>资源跟着需求走</span></div>
+        <h2 class="h-xl ps-title-sm">账面上有<br>不等于生活中够得到</h2>
+        <p class="quote-box large">账面上有，生活中够不到。</p>
+        <figure class="photo-band photo-mid">
+          <img src="assets/hospital-corridor.jpg" alt="基层医疗服务场景" style="object-position:center 50%">
+        </figure>
+        <p class="quote-box small">公共服务要从“群众追着资源跑”，转向“资源围着需求转”。要围绕儿童托育、基层医疗、农村养老、就业服务、新就业群体保障等实际需求，把有限资源配置到群众最需要、最常用、最方便抵达的生活半径内。</p>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-07-medical">
+      <div class="content stack gap-8">
+        <div class="chrome-min"><span>MEDICAL · 07</span><span>基层医疗</span></div>
+        <h2 class="h-xl ps-title-sm">资源下沉<br>群众会用脚投票</h2>
+        <div class="photo-split">
+          <figure class="photo-band"><img src="assets/hospital-corridor.jpg" alt="医院走廊" style="object-position:center 48%"></figure>
+          <div class="stack gap-5">
+            <div class="metric"><p class="num">10%+</p><p class="txt">乡镇卫生院门诊量提升</p></div>
+            <div class="metric"><p class="num">+6.6</p><p class="txt">县域内就诊率提高百分点</p></div>
+          </div>
+        </div>
+        <p class="quote-box">资中县医共体成立以来，乡镇卫生院门诊量提升 10% 以上，群众县域内就诊率提高 6.6 个百分点。</p>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-08-elderly">
+      <div class="content stack gap-7">
+        <div class="chrome-min"><span>CARE · 08</span><span>养老与托育</span></div>
+        <h2 class="h-xl ps-title-sm">服务进入村社<br>才叫够得到</h2>
+        <div class="photo-split">
+          <figure class="photo-band"><img src="assets/elderly-wheelchair-care.jpg" alt="养老照护服务" style="object-position:center 42%"></figure>
+          <figure class="photo-band"><img src="assets/kindergarten-classroom.jpg" alt="托育与幼儿课堂" style="object-position:center 55%"></figure>
+        </div>
+        <div class="checklist grow">
+          <div class="check-item"><span class="mark">01</span><p class="text">儿童托育：离家近、费用能承受、时间能衔接。</p></div>
+          <div class="check-item"><span class="mark">02</span><p class="text">农村养老：互助食堂、邻里结对、上门服务。</p></div>
+          <div class="check-item"><span class="mark">03</span><p class="text">新就业群体：休息、充电、政策咨询进入街区。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-09-process">
+      <div class="content stack gap-7">
+        <div class="chrome-min"><span>PROCESS · 09</span><span>流程跟着问题走</span></div>
+        <h2 class="h-xl ps-title-sm">不是多设窗口<br>而是闭环办成</h2>
+        <figure class="photo-band photo-mid">
+          <img src="assets/reception-counter.jpg" alt="政务服务窗口" style="object-position:center 44%">
+        </figure>
+        <p class="quote-box small">政务服务闭环的关键，不在于多设一个窗口，而在于让问题有人接、责任有人担、流程有人改、结果有反馈。要把群众办事中的堵点，转化为流程优化和源头治理的切入点。</p>
+        <div class="matrix-fill">
+          <div class="matrix-cell is-accent"><span class="cell-nb">01</span><span class="cell-title">有人接</span></div>
+          <div class="matrix-cell"><span class="cell-nb">02</span><span class="cell-title">有人担</span></div>
+          <div class="matrix-cell"><span class="cell-nb">03</span><span class="cell-title">有人改</span></div>
+          <div class="matrix-cell"><span class="cell-nb">04</span><span class="cell-title">有反馈</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-10-digital">
+      <div class="content stack gap-7">
+        <div class="chrome-min"><span>DIGITAL · 10</span><span>互联网医院</span></div>
+        <h2 class="h-xl ps-title-sm">平台上线<br>不等于服务到位</h2>
+        <figure class="photo-band photo-mid">
+          <img src="assets/online-consultation.jpg" alt="互联网诊疗与线上问诊" style="object-position:center 42%">
+        </figure>
+        <p class="quote-box small">数字公共服务不能止步于“平台上线”，而要围绕群众体验打通全流程。只有把咨询、办理、支付、配送、复诊、反馈、监管等环节衔接起来，才能让线上服务从“能用”变成“好用”。</p>
+        <div class="chips"></div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-11-framework">
+      <div class="content stack gap-8">
+        <div class="chrome-min"><span>RECITE · 11</span><span>申论框架</span></div>
+        <h2 class="h-xl ps-title-sm">这套框架<br>可以直接背</h2>
+        <div class="stacked-ledger grow">
+          <div class="ledger-row"><p class="ledger-num">01</p><div class="ledger-lbl">服务跟着人走<span class="sub">常住人口导向，接住流动需求。</span></div><i data-lucide="map-pin" class="ledger-icn"></i></div>
+          <div class="ledger-row"><p class="ledger-num">02</p><div class="ledger-lbl">资源跟着需求走<span class="sub">进入生活半径，少跑腿少折腾。</span></div><i data-lucide="activity" class="ledger-icn"></i></div>
+          <div class="ledger-row"><p class="ledger-num">03</p><div class="ledger-lbl">流程跟着问题走<span class="sub">从个案堵点倒逼机制优化。</span></div><i data-lucide="refresh-cw" class="ledger-icn"></i></div>
+          <div class="ledger-row"><p class="ledger-num">04</p><div class="ledger-lbl">评价跟着群众走<span class="sub">看能不能用上、用顺、用满意。</span></div><i data-lucide="check-circle" class="ledger-icn"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-12-interview">
+      <div class="content stack gap-7">
+        <div class="chrome-min"><span>INTERVIEW · 12</span><span>面试题迁移</span></div>
+        <h2 class="h-xl ps-title-sm">两类题目<br>可以这样拆</h2>
+        <p class="quote-box">外来常住人口较多，随迁子女入学、老人看病、就业服务需求增加，你怎么办？</p>
+        <p class="quote-box">互联网医院群众反映不好用，你怎么办？</p>
+        <div class="checklist grow">
+          <div class="check-item"><span class="mark">A</span><p class="text">先摸清人群底数和需求结构，再按生活半径优化布局。</p></div>
+          <div class="check-item"><span class="mark">B</span><p class="text">梳理问诊、支付、医保、配送、复诊全流程堵点。</p></div>
+          <div class="check-item"><span class="mark">C</span><p class="text">建立跨部门数据共享、事项通办和回访质控机制。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-13-golden">
+      <div class="content stack gap-7">
+        <div class="chrome-min"><span>CLOSING · 13</span><span>金句收束</span></div>
+        <h2 class="h-xl ps-title-sm">最后记住<br>这三句</h2>
+        <figure class="photo-band" style="height:300px">
+          <img src="assets/office-lobby.jpg" alt="公共服务空间" style="object-position:center 52%">
+        </figure>
+        <p class="quote-box">从“有没有”到“够得到”，这就是公共服务高质量发展的方向。</p>
+        <p class="quote-box">公共服务的温度，不在文件里，而在群众能不能少跑一趟路、少等一次号、少绕一个窗口、少填一张表。</p>
+        <p class="quote-box">公共服务的水平，也不只看建了多少设施、上线多少平台，而要看服务有没有进入群众真实的生活半径。</p>
+      </div>
+    </section>
+
+    <section class="poster xhs" id="xhs-14-references">
+      <div class="content stack gap-7">
+        <div class="chrome-min"><span>REFERENCES · 14</span><span>来源</span></div>
+        <h2 class="h-xl ps-title-sm">参考文献</h2>
+        <ol class="ref-list grow">
+          <li><b>01</b><span>王明峰：《让公共服务更贴近百姓的生活半径》，《人民日报》2026 年 3 月 20 日第 06 版。</span></li>
+          <li><b>02</b><span>张璁：《“办不成事”窗口最终是为办得成》，《人民日报》2026 年 4 月 2 日第 19 版。</span></li>
+          <li><b>03</b><span>王欣悦、靳博、姚雪青：《让更多基层群众在家门口享受优质医疗》，《人民日报》2026 年 4 月 18 日第 04 版。</span></li>
+          <li><b>04</b><span>孙秀艳：《让家门口就医看得上、看得起、看得好》，《人民日报》2026 年 4 月 19 日第 02 版。</span></li>
+          <li><b>05</b><span>陆凡冰、窦皓、游仪：《互联网医院，离建好用好还有多远》，《人民日报》2026 年 5 月 15 日第 19 版。</span></li>
+          <li><b>06</b><span>《保障流动儿童均等化享有基本公共服务》，《人民日报》2026 年 5 月 18 日第 11 版。</span></li>
+          <li><b>07</b><span>李增辉、姜峰、沈靖然：《守望邻里 老有所依》，《人民日报》2026 年 5 月 19 日第 14 版。</span></li>
+          <li><b>08</b><span>《国务院印发〈关于推行常住地提供基本公共服务的实施意见〉》，《人民日报》2026 年 5 月 23 日第 01 版。</span></li>
+          <li><b>09</b><span>刘志强：《因地制宜推行常住地提供基本公共服务》，《人民日报》2026 年 5 月 24 日第 02 版。</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="poster wide" id="wechat-21x9-cover">
+      <div class="content wide-cover-grid">
+        <div class="stack gap-6">
+          <span class="tagline">《人民日报》这样写</span>
+          <h1 class="h-statement">公共服务<br>均等化<br>从“有没有”到<br>“够得到”</h1>
+          <p class="lead">服务跟着人走，资源跟着需求走，流程跟着问题走。</p>
+          <hr class="hr-accent">
+        </div>
+        <figure class="photo-band">
+          <img src="assets/reception-counter.jpg" alt="办事服务窗口" style="object-position:center 42%">
+        </figure>
+      </div>
+    </section>
+
+    <section class="poster square" id="wechat-1x1-cover">
+      <div class="content square-cover">
+        <span class="tagline">《人民日报》这样写</span>
+        <h1 class="h-statement">公共服务<br>够得到</h1>
+        <hr class="hr-accent">
+        <p class="lead">不是平均铺摊子，而是精准配服务。</p>
+        <figure class="photo-band"><img src="assets/reception-counter.jpg" alt="办事服务窗口" style="object-position:center 42%"></figure>
+      </div>
+    </section>
+
+    <section class="pair-preview" id="wechat-cover-pair-preview">
+      <div class="preview-wide">
+        <div class="preview-label">21:9 MAIN COVER</div>
+        <section class="poster wide">
+          <div class="content wide-cover-grid">
+            <div class="stack gap-6">
+              <span class="tagline">《人民日报》这样写</span>
+              <h1 class="h-statement">公共服务<br>均等化<br>从“有没有”到<br>“够得到”</h1>
+              <p class="lead">服务跟着人走，资源跟着需求走，流程跟着问题走。</p>
+            </div>
+            <figure class="photo-band"><img src="assets/reception-counter.jpg" alt="办事服务窗口" style="object-position:center 42%"></figure>
+          </div>
+        </section>
+      </div>
+      <div class="preview-square">
+        <div class="preview-label">1:1 SHARE CARD</div>
+        <section class="poster square">
+          <div class="content square-cover">
+            <span class="tagline">《人民日报》这样写</span>
+            <h1 class="h-statement">公共服务<br>够得到</h1>
+            <hr class="hr-accent">
+            <p class="lead">不是平均铺摊子，而是精准配服务。</p>
+            <figure class="photo-band"><img src="assets/reception-counter.jpg" alt="办事服务窗口" style="object-position:center 42%"></figure>
+          </div>
+        </section>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lucide icon initialization (used by stacked ledger / matrix accents) -->
+  <script>
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

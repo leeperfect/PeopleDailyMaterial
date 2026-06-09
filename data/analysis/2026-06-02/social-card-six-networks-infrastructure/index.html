@@ -1,0 +1,1585 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="indigo-porcelain">
+<head>
+  <meta charset="utf-8">
+  <title>人民日报这样写基础设施六张网 · Social Card Set</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    /* =========================================================
+       Editorial Magazine × E-ink — Social Card Seed Template
+       ---------------------------------------------------------
+       Three boards built in one HTML:
+         .poster.xhs      1080×1440  (3:4   小红书)
+         .poster.square   1080×1080  (1:1   微信方封面)
+         .poster.wide     2100× 900  (21:9  微信主封面)
+         .pair-preview                       21:9 + 1:1 配对预览
+
+       Theme switching via <html data-theme="…">:
+         ink-classic | indigo-porcelain | forest-ink | kraft-paper | dune | midnight-ink
+
+       Fill posters where marked <!-- POSTERS_HERE -->.
+       Each poster carries one Layout Recipe (M01-M15) from
+       references/layout-recipes.md.
+       ========================================================= */
+
+    /* ---------- 1. Theme tokens ---------- */
+    :root,
+    [data-theme="ink-classic"] {
+      --paper:     #f3f0e8;
+      --paper-2:   #ebe6da;
+      --ink:       #0a0a0b;
+      --muted:     #68625a;
+      --line:      rgba(10,10,11,.22);
+      --accent:    #111111;
+      --accent-soft: #d8d2c6;
+      --ink-rgb: 10,10,11;
+      --paper-rgb: 243,240,232;
+      --accent-rgb: 17,17,17;
+    }
+    [data-theme="indigo-porcelain"] {
+      --paper:     #f2f4f5;
+      --paper-2:   #e5ebef;
+      --ink:       #0a1f3d;
+      --muted:     #5f6d78;
+      --line:      rgba(10,31,61,.20);
+      --accent:    #315d93;
+      --accent-soft: #d7e1ec;
+      --ink-rgb: 10,31,61;
+      --paper-rgb: 242,244,245;
+      --accent-rgb: 49,93,147;
+    }
+    [data-theme="forest-ink"] {
+      --paper:     #f5f1e8;
+      --paper-2:   #e8dfcf;
+      --ink:       #16251b;
+      --muted:     #5d665d;
+      --line:      rgba(22,37,27,.22);
+      --accent:    #2e6b4f;
+      --accent-soft: #d4dfd2;
+      --ink-rgb: 22,37,27;
+      --paper-rgb: 245,241,232;
+      --accent-rgb: 46,107,79;
+    }
+    [data-theme="kraft-paper"] {
+      --paper:     #eedfc7;
+      --paper-2:   #dfc9a8;
+      --ink:       #2a1e13;
+      --muted:     #755f49;
+      --line:      rgba(42,30,19,.24);
+      --accent:    #9b5a2e;
+      --accent-soft: #d5b58f;
+      --ink-rgb: 42,30,19;
+      --paper-rgb: 238,223,199;
+      --accent-rgb: 155,90,46;
+    }
+    [data-theme="dune"] {
+      --paper:     #f0e6d2;
+      --paper-2:   #ded0b7;
+      --ink:       #1f1a14;
+      --muted:     #6f6557;
+      --line:      rgba(31,26,20,.22);
+      --accent:    #8f7650;
+      --accent-soft: #d4c2a4;
+      --ink-rgb: 31,26,20;
+      --paper-rgb: 240,230,210;
+      --accent-rgb: 143,118,80;
+    }
+    /* Midnight Ink — the ONLY official dark Editorial palette.
+       Use for game key art, night scenes, dark photography, cinematic covers.
+       Do not improvise other dark backgrounds. */
+    [data-theme="midnight-ink"] {
+      --paper:     #0e0d0c;
+      --paper-2:   #1a1714;
+      --ink:       #ece2cf;
+      --muted:     #9a8c75;
+      --line:      rgba(236,226,207,.22);
+      --accent:    #d4a04a;
+      --accent-soft: #3a2a14;
+      --ink-rgb: 236,226,207;
+      --paper-rgb: 14,13,12;
+      --accent-rgb: 212,160,74;
+    }
+
+    /* ---------- 2. Typography stack ---------- */
+    :root {
+      --serif-zh: "Noto Serif SC", "Songti SC", "STSong", serif;
+      --serif-en: "Playfair Display", "Noto Serif SC", serif;
+      --sans-zh: "Noto Sans SC", -apple-system, "PingFang SC", "Microsoft YaHei UI", sans-serif;
+      --sans-en: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+    }
+
+    /* ---------- 3. Reset & sheet ---------- */
+    *,*::before,*::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #1a1a1a;
+      font-family: var(--sans-zh);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 64px 32px;
+    }
+    .sheet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+
+    /* ---------- 4. Poster boards (fixed export sizes) ---------- */
+    .poster {
+      position: relative;
+      background: var(--paper);
+      color: var(--ink);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .poster.xhs    { width: 1080px; height: 1440px; }
+    .poster.square { width: 1080px; height: 1080px; }
+    .poster.wide   { width: 2100px; height:  900px; }
+    .poster figure { margin: 0; }
+
+    /* Default content padding by board */
+    .poster.xhs    .content { padding: 96px 88px; }
+    .poster.square .content { padding: 88px 88px; }
+    .poster.wide   .content { padding: 88px 120px; }
+    .content { position: relative; width: 100%; height: 100%; z-index: 2; }
+
+    /* ---------- 5. Background layers (paper grain + WebGL) ---------- */
+    .mag-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .35;
+      mix-blend-mode: multiply;
+      background-image: radial-gradient(rgba(0,0,0,.045) 1px, transparent 1px);
+      background-size: 3px 3px;
+    }
+    .paper-wash {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(var(--ink-rgb),.02), rgba(var(--ink-rgb),.05) 60%, rgba(var(--ink-rgb),.08));
+    }
+    /* Midnight Ink — flip grain to screen-mode warm specks, paper-wash to
+       gilt + shadow vignette. Light-paper math doesn't carry over. */
+    [data-theme="midnight-ink"] .grain {
+      opacity: .26;
+      mix-blend-mode: screen;
+      background-image: radial-gradient(rgba(255,244,214,.10) 1px, transparent 1px);
+    }
+    [data-theme="midnight-ink"] .paper-wash {
+      background:
+        radial-gradient(80% 50% at 28% 16%, rgba(212,160,74,.12), transparent 64%),
+        radial-gradient(70% 60% at 80% 86%, rgba(60,40,20,.20), transparent 72%),
+        linear-gradient(180deg, rgba(236,226,207,.02), rgba(0,0,0,.32));
+    }
+
+    /* ---------- 6. Typography roles ----------
+       Editorial Magazine values restored from demo-showcase/editorial.html:
+       light weights (500 not 900), serif body italic-tolerant, wide tracking
+       on kicker/meta (.20-.22em), positive tracking on display (+.04em).
+       Each card should still INLINE-tune font-size for the specific recipe;
+       these defaults are intentionally restrained, not maximal. */
+    .kicker {
+      font-family: var(--mono);
+      font-size: 21px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(var(--ink-rgb), .55);
+      margin: 0 0 18px;
+    }
+    .h-display {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 124px;
+      line-height: 1.06;
+      letter-spacing: .04em;
+      margin: 0 0 24px;
+      color: var(--ink);
+    }
+    .h-xl {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 88px;
+      line-height: 1.10;
+      letter-spacing: .03em;
+      margin: 0 0 24px;
+      color: var(--ink);
+    }
+    .h-md {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 56px;
+      line-height: 1.18;
+      letter-spacing: .02em;
+      margin: 0 0 18px;
+      color: var(--ink);
+    }
+    .h-sub {
+      font-family: var(--serif-en);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 36px;
+      color: var(--muted);
+      margin: 0 0 24px;
+    }
+    .lead {
+      font-family: var(--serif-zh);
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 1.55;
+      color: rgba(var(--ink-rgb), .82);
+      margin: 0 0 24px;
+    }
+    .body {
+      font-family: var(--serif-zh);
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.65;
+      color: rgba(var(--ink-rgb), .80);
+      margin: 0 0 18px;
+    }
+    .meta {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: rgba(var(--ink-rgb), .55);
+    }
+    .label {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: rgba(var(--ink-rgb), .55);
+    }
+    .pullquote {
+      font-family: var(--serif-zh);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 64px;
+      line-height: 1.28;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    /* Square boards usually need tighter scales */
+    .poster.square .h-display { font-size: 116px; }
+    .poster.square .h-xl      { font-size: 78px; }
+    .poster.square .h-md      { font-size: 48px; }
+    .poster.square .lead      { font-size: 28px; }
+    .poster.square .body      { font-size: 26px; }
+
+    /* Wide boards have horizontal headlines */
+    .poster.wide .h-display   { font-size: 128px; }
+    .poster.wide .h-xl        { font-size: 96px; }
+    .poster.wide .lead        { font-size: 34px; }
+
+    /* ---------- 7. Issue label + page metadata ---------- */
+    .issue-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .issue-row .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .issue-strip {
+      position: absolute;
+      left: 88px;
+      right: 88px;
+      bottom: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    .poster.wide .issue-strip { left: 120px; right: 120px; }
+    .issue-strip span { white-space: nowrap; }
+
+    /* ---------- 8. Layout primitives ---------- */
+    .stack    { display: flex; flex-direction: column; }
+    .gap-1    { gap: 12px; }
+    .gap-2    { gap: 24px; }
+    .gap-3    { gap: 36px; }
+    .gap-4    { gap: 48px; }
+    .gap-5    { gap: 64px; }
+    .row      { display: flex; flex-direction: row; }
+    .col-2    { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .col-3    { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+    .col-2-7-5 { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; }
+    .col-2-8-4 { display: grid; grid-template-columns: 8fr 4fr; gap: 48px; }
+    .center   { text-align: center; }
+    .grow     { flex: 1; }
+    .pad-y-md { padding-top: 36px; padding-bottom: 36px; }
+    .rule     { height: 1px; background: var(--line); border: 0; margin: 24px 0; }
+    .rule-accent { height: 2px; background: var(--accent); border: 0; margin: 24px 0; width: 96px; }
+
+    /* ---------- 9. Image containers (standard ratios) ---------- */
+    .frame-img {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper-2);
+      display: block;
+      margin: 0;
+    }
+    .frame-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 50%;
+      display: block;
+    }
+    .frame-img.fit-contain img { object-fit: contain; }
+    [data-theme="midnight-ink"] .frame-img {
+      background: #18120f;
+      box-shadow: 0 0 0 1px rgba(236,226,207,.10);
+    }
+    .frame-img.r-3x4   { aspect-ratio: 3 / 4; }
+    .frame-img.r-1x1   { aspect-ratio: 1 / 1; }
+    .frame-img.r-4x3   { aspect-ratio: 4 / 3; }
+    .frame-img.r-16x9  { aspect-ratio: 16 / 9; }
+    .frame-img.r-16x10 { aspect-ratio: 16 / 10; }
+    .frame-img.r-21x9  { aspect-ratio: 21 / 9; }
+    .frame-img.r-3x2   { aspect-ratio: 3 / 2; }
+    .img-cap {
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    /* ---------- 9b. Screenshot treatment (.frame-shot) ---------- */
+    /* Use for UI screenshots / web captures / code shots. Replaces .frame-img
+       when you need rounded corners, soft shadow, padded inset, or device chrome.
+       Stack: .frame-shot.r-{ratio}.bg-{tone}.inset-{none|sub|bal}.shadow-{none|soft|ed} */
+    .frame-shot {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      margin: 0;
+      background: var(--paper-2);
+      /* default corners — Editorial leans slight rounding to feel like a magazine cutout */
+      border-radius: 6px;
+    }
+    .frame-shot.corners-sq { border-radius: 0; }
+    .frame-shot.corners-sm { border-radius: 6px; }
+    .frame-shot.corners-md { border-radius: 14px; }
+
+    /* shadows — Editorial uses warm low-contrast drop */
+    .frame-shot.shadow-soft { box-shadow: 0 18px 36px -18px rgba(20,18,14,.22), 0 2px 6px rgba(20,18,14,.06); }
+    .frame-shot.shadow-ed   { box-shadow: 0 28px 60px -24px rgba(20,18,14,.32), 0 6px 14px rgba(20,18,14,.08); }
+
+    /* background tones — programmatic, no asset deps */
+    .frame-shot.bg-paper    { background: var(--paper); }
+    .frame-shot.bg-paper-2  { background: var(--paper-2); }
+    .frame-shot.bg-ink      { background: var(--ink); }
+    .frame-shot.bg-grid     {
+      background:
+        linear-gradient(var(--paper-2), var(--paper-2)),
+        repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 48px),
+        repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 48px);
+      background-blend-mode: multiply;
+    }
+    .frame-shot.bg-dot {
+      background-color: var(--paper-2);
+      background-image: radial-gradient(var(--line) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+
+    /* asset backgrounds — ported from PPT skill, real texture for screenshot wells */
+    /* path is relative to the deck's index.html — keep seed and final deck in same dir, or override */
+    .frame-shot.bg-asset-dune             { background: #d8c9a8 url("../assets/screenshot-backgrounds/style-a/dune.webp")             center/cover no-repeat; }
+    .frame-shot.bg-asset-forest-ink       { background: #1f2a24 url("../assets/screenshot-backgrounds/style-a/forest-ink.webp")       center/cover no-repeat; }
+    .frame-shot.bg-asset-indigo-porcelain { background: #cfd6dd url("../assets/screenshot-backgrounds/style-a/indigo-porcelain.webp") center/cover no-repeat; }
+    .frame-shot.bg-asset-kraft-paper      { background: #c9a983 url("../assets/screenshot-backgrounds/style-a/kraft-paper.webp")      center/cover no-repeat; }
+    .frame-shot.bg-asset-monocle-classic  { background: #e8e1d4 url("../assets/screenshot-backgrounds/style-a/monocle-classic.webp")  center/cover no-repeat; }
+
+    /* padding wraps the inner shot — content gets to "float" on the bg tone */
+    .frame-shot.inset-none > img,
+    .frame-shot.inset-none > .shot-body { padding: 0; }
+    .frame-shot.inset-sub  { padding: 24px; }
+    .frame-shot.inset-bal  { padding: 56px; }
+
+    /* aspect-ratio reused from .frame-img */
+    .frame-shot.r-3x4   { aspect-ratio: 3 / 4; }
+    .frame-shot.r-1x1   { aspect-ratio: 1 / 1; }
+    .frame-shot.r-4x3   { aspect-ratio: 4 / 3; }
+    .frame-shot.r-16x9  { aspect-ratio: 16 / 9; }
+    .frame-shot.r-16x10 { aspect-ratio: 16 / 10; }
+    .frame-shot.r-21x9  { aspect-ratio: 21 / 9; }
+    .frame-shot.r-3x2   { aspect-ratio: 3 / 2; }
+
+    /* inner img defaults to contain (screenshots must not crop UI) */
+    .frame-shot > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      border-radius: inherit;
+    }
+    .frame-shot.fit-cover > img { object-fit: cover; }
+
+    /* device-frame variants (CSS-only chrome, no SVG / images) */
+    .device-browser {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .device-browser::before {
+      content: '';
+      display: block;
+      height: 36px;
+      background: var(--paper-2);
+      border-bottom: 1px solid var(--line);
+      background-image:
+        radial-gradient(circle at 18px 18px, #f08080 5px, transparent 5.5px),
+        radial-gradient(circle at 38px 18px, #f5c450 5px, transparent 5.5px),
+        radial-gradient(circle at 58px 18px, #7ec98f 5px, transparent 5.5px);
+    }
+    .device-browser > .frame-shot,
+    .device-browser > img {
+      border-radius: 0;
+      display: block;
+      width: 100%;
+    }
+    .device-phone {
+      position: relative;
+      background: var(--ink);
+      border-radius: 36px;
+      padding: 14px;
+      box-shadow: 0 24px 48px -20px rgba(20,18,14,.42);
+    }
+    .device-phone > .frame-shot,
+    .device-phone > img {
+      border-radius: 24px;
+      display: block;
+      width: 100%;
+    }
+
+    /* ---------- 9c. Map block (.map-block) ---------- */
+    /* Static map container — pure CSS frame, content is either an <img> from
+       Mapbox Static API or an SVG schematic. Pins overlay as absolute children. */
+    .map-block {
+      position: relative;
+      background: var(--paper-2);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      width: 100%;
+    }
+    .map-block.r-16x10 { aspect-ratio: 16 / 10; }
+    .map-block.r-16x9  { aspect-ratio: 16 / 9; }
+    .map-block.r-1x1   { aspect-ratio: 1 / 1; }
+    .map-block.r-3x4   { aspect-ratio: 3 / 4; }
+    .map-block > img,
+    .map-block > svg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      display: block;
+    }
+    .map-block > img { object-fit: cover; }
+    /* tint mapbox / OSM tiles to fit editorial paper tone */
+    .map-block.tone-paper > img { filter: saturate(.36) contrast(.92) brightness(1.04); mix-blend-mode: multiply; }
+    .map-block.tone-ink > img   { filter: saturate(.18) brightness(.62); }
+    /* schematic mode: SVG drawn at viewBox 0 0 100 100, lon/lat pre-mapped to 0-100 */
+    .map-block > svg .map-coast { fill: none; stroke: var(--line); stroke-width: .4; }
+    .map-block > svg .map-road  { fill: none; stroke: var(--muted); stroke-width: .28; stroke-dasharray: 1.2 .8; opacity: .65; }
+    .map-block > svg .map-water { fill: var(--paper-2); }
+    .map-block > svg .map-grid  { stroke: var(--line); stroke-width: .15; opacity: .55; }
+
+    /* pins overlay — positioned by % coordinates */
+    .map-pin {
+      position: absolute;
+      width: 0; height: 0;
+      transform: translate(-50%, -50%);
+    }
+    .map-pin .dot {
+      position: absolute;
+      left: -7px; top: -7px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 2px solid var(--paper);
+      box-shadow: 0 1px 4px rgba(20,18,14,.32);
+    }
+    .map-pin.accent .dot { background: var(--accent); }
+    .map-pin .line {
+      position: absolute;
+      left: 8px; top: 0;
+      width: 32px; height: 1px;
+      background: var(--ink);
+      opacity: .5;
+    }
+    .map-pin.left .line { left: auto; right: 8px; }
+    .map-pin .card {
+      position: absolute;
+      left: 44px; top: -22px;
+      min-width: 86px;
+      padding: 8px 10px;
+      background: rgba(245,241,232,.94);
+      box-shadow: 0 0 0 1px var(--line);
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .map-pin.left .card { left: auto; right: 44px; }
+    .map-pin .card .name {
+      font-family: var(--serif-zh);
+      font-size: 16px;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+    .map-pin .card .meta {
+      display: block;
+      margin-top: 4px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .map-pin.accent .card .name { color: var(--accent); }
+
+    .map-legend {
+      position: absolute;
+      left: 14px; bottom: 14px;
+      z-index: 3;
+      background: rgba(245,241,232,.92);
+      padding: 8px 12px;
+      box-shadow: 0 0 0 1px var(--line);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .map-legend.tr { left: auto; right: 14px; top: 14px; bottom: auto; }
+
+    /* ---------- 10. Editorial components ---------- */
+    .callout {
+      border-left: 3px solid var(--accent);
+      padding: 18px 28px;
+      font-family: var(--serif-zh);
+      font-style: italic;
+      font-size: 36px;
+      line-height: 1.35;
+      color: var(--ink);
+      background: var(--paper-2);
+    }
+    .callout .callout-src {
+      display: block;
+      margin-top: 18px;
+      font-style: normal;
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+
+    .ledger { display: flex; flex-direction: column; }
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 96px 1fr auto;
+      gap: 24px;
+      align-items: baseline;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .ledger-row .ledger-nb {
+      font-family: var(--mono);
+      font-size: 28px;
+      color: var(--accent);
+      letter-spacing: .08em;
+    }
+    .ledger-row .ledger-title {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 42px;
+      letter-spacing: .02em;
+      color: var(--ink);
+    }
+    .ledger-row .ledger-note {
+      font-family: var(--serif-zh);
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.55;
+      color: rgba(var(--ink-rgb), .72);
+    }
+
+    .marginalia {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 48px;
+    }
+    .marginalia .mg-col {
+      border-left: 1px solid var(--line);
+      padding-left: 24px;
+    }
+    .marginalia .mg-col p {
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .04em;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .pipeline-v { display: flex; flex-direction: column; gap: 28px; }
+    .pipeline-v .step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 28px;
+      align-items: baseline;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    .pipeline-v .step:last-child { border-bottom: 0; }
+    .pipeline-v .step-nb {
+      font-family: var(--mono);
+      font-size: 32px;
+      color: var(--accent);
+    }
+    .pipeline-v .step-title {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 40px;
+      letter-spacing: .02em;
+      margin: 0 0 8px;
+    }
+    .pipeline-v .step-desc {
+      font-family: var(--serif-zh);
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.6;
+      color: rgba(var(--ink-rgb), .72);
+      margin: 0;
+    }
+
+    .beforeafter {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 32px;
+      height: 100%;
+    }
+    .beforeafter .ba-block {
+      padding: 32px;
+      background: var(--paper-2);
+      border-left: 3px solid var(--accent);
+    }
+    .beforeafter .ba-block.before { opacity: .68; }
+
+    /* ---------- 11. Pair preview frame ---------- */
+    .pair-preview {
+      width: 2400px;
+      min-height: 1180px;
+      background: var(--paper-2);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 2100px 1080px;
+      grid-template-rows: 900px 1080px;
+      gap: 48px;
+      align-content: center;
+      justify-content: center;
+    }
+    .pair-preview .preview-wide   { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-square { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    .pair-preview .preview-label {
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    /* ---------- 12. Per-poster mounting helpers ---------- */
+    .poster .corner-tl,
+    .poster .corner-tr,
+    .poster .corner-bl,
+    .poster .corner-br {
+      position: absolute;
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      z-index: 3;
+    }
+    .poster.xhs .corner-tl,
+    .poster.square .corner-tl { left: 88px; top: 56px; }
+    .poster.xhs .corner-tr,
+    .poster.square .corner-tr { right: 88px; top: 56px; }
+    .poster.xhs .corner-bl,
+    .poster.square .corner-bl { left: 88px; bottom: 56px; }
+    .poster.xhs .corner-br,
+    .poster.square .corner-br { right: 88px; bottom: 56px; }
+    .poster.wide .corner-tl { left: 120px; top: 56px; }
+    .poster.wide .corner-tr { right: 120px; top: 56px; }
+    .poster.wide .corner-bl { left: 120px; bottom: 56px; }
+    .poster.wide .corner-br { right: 120px; bottom: 56px; }
+
+    /* ---------- Task scope: six networks infrastructure ---------- */
+    .pd-tag {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 18px;
+      border: 1px solid var(--line);
+      background: rgba(var(--paper-rgb), .72);
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      color: var(--accent);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 44px;
+      align-items: stretch;
+    }
+    .hero-photo {
+      position: relative;
+      height: 520px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+    .hero-photo img,
+    .photo-strip img,
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.72) contrast(.92) sepia(.08) hue-rotate(172deg);
+    }
+    .hero-photo::after,
+    .photo-card::after,
+    .photo-strip::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(242,244,245,.04), rgba(10,31,61,.20)),
+        radial-gradient(70% 70% at 18% 14%, rgba(215,225,236,.32), transparent 60%);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    .photo-strip {
+      position: relative;
+      height: 330px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+    .caption {
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .10em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 14px;
+    }
+    .cover-title {
+      font-size: 96px;
+      line-height: 1.08;
+      letter-spacing: .02em;
+    }
+    .cover-title .mark {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .page-title {
+      font-family: var(--serif-zh);
+      font-size: 72px;
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: .02em;
+      margin: 0;
+    }
+    .page-title.small { font-size: 62px; }
+    .page-title.tight { font-size: 56px; line-height: 1.16; }
+    .mono-line {
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .14em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .porcelain-box {
+      border: 1px solid var(--line);
+      background: rgba(229,235,239,.72);
+      padding: 28px;
+    }
+    .porcelain-box.dark {
+      background: rgba(10,31,61,.92);
+      color: var(--paper);
+      border-color: rgba(242,244,245,.22);
+    }
+    .porcelain-box.dark .body,
+    .porcelain-box.dark .mono-line,
+    .porcelain-box.dark .card-note { color: rgba(242,244,245,.78); }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .chip {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      background: rgba(242,244,245,.60);
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .10em;
+      color: var(--accent);
+    }
+    .quote-large {
+      font-family: var(--serif-zh);
+      font-size: 50px;
+      line-height: 1.35;
+      letter-spacing: .02em;
+      margin: 0;
+    }
+    .quote-card {
+      border-left: 4px solid var(--accent);
+      background: rgba(229,235,239,.76);
+      padding: 28px 32px;
+      font-family: var(--serif-zh);
+      font-size: 28px;
+      line-height: 1.55;
+      color: rgba(var(--ink-rgb), .90);
+      margin: 0;
+    }
+    .quote-card.compact { font-size: 24px; line-height: 1.48; padding: 24px 28px; }
+    .quote-card.dense { font-size: 21px; line-height: 1.42; padding: 20px 24px; }
+    .quote-card::before {
+      content: "“";
+      font-family: var(--serif-en);
+      color: var(--accent);
+      font-size: 56px;
+      line-height: 0;
+      vertical-align: -16px;
+      margin-right: 6px;
+    }
+    .photo-note-layout {
+      display: grid;
+      grid-template-columns: .96fr 1.04fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+    .photo-note-layout .photo-card { min-height: 492px; }
+    .photo-note-layout .quote-card { min-height: 492px; display: flex; align-items: center; }
+    .photo-tall {
+      position: relative;
+      height: 520px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+    .photo-tall img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.72) contrast(.92) sepia(.08) hue-rotate(172deg);
+    }
+    .photo-tall::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(242,244,245,.04), rgba(10,31,61,.18));
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    .quote-stack {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .network-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .network-card {
+      min-height: 172px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: rgba(229,235,239,.68);
+      position: relative;
+    }
+    .network-card::before {
+      content: attr(data-nb);
+      position: absolute;
+      right: 20px;
+      top: 14px;
+      font-family: var(--mono);
+      font-size: 24px;
+      color: rgba(var(--accent-rgb), .42);
+    }
+    .card-title {
+      font-family: var(--serif-zh);
+      font-size: 38px;
+      font-weight: 500;
+      line-height: 1.16;
+      margin: 0 0 12px;
+    }
+    .card-note {
+      font-family: var(--serif-zh);
+      font-size: 23px;
+      line-height: 1.55;
+      color: rgba(var(--ink-rgb), .74);
+      margin: 0;
+    }
+    .concept-flow {
+      display: grid;
+      grid-template-columns: 1fr 74px 1fr 74px 1fr;
+      gap: 0;
+      align-items: center;
+    }
+    .flow-card {
+      min-height: 214px;
+      border: 1px solid var(--line);
+      background: rgba(229,235,239,.68);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .flow-arrow {
+      height: 1px;
+      background: var(--accent);
+      position: relative;
+    }
+    .flow-arrow::after {
+      content: "";
+      position: absolute;
+      right: -2px;
+      top: -6px;
+      border-left: 10px solid var(--accent);
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+    }
+    .water-diagram,
+    .compute-diagram,
+    .pipe-diagram,
+    .logistics-diagram,
+    .ability-matrix,
+    .transfer-board {
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(10,31,61,.05) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(10,31,61,.05) 1px, transparent 1px),
+        rgba(229,235,239,.55);
+      background-size: 42px 42px;
+      position: relative;
+      overflow: hidden;
+    }
+    .water-diagram { height: 506px; }
+    .water-diagram .river {
+      position: absolute;
+      left: 64px;
+      right: 64px;
+      top: 210px;
+      height: 118px;
+      background: linear-gradient(90deg, rgba(49,93,147,.12), rgba(49,93,147,.42), rgba(49,93,147,.12));
+      border-top: 2px solid rgba(49,93,147,.50);
+      border-bottom: 2px solid rgba(49,93,147,.32);
+      transform: skewY(-4deg);
+    }
+    .water-diagram .node,
+    .compute-diagram .node,
+    .logistics-diagram .hub {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      background: rgba(242,244,245,.86);
+      font-family: var(--serif-zh);
+      font-size: 26px;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1.2;
+    }
+    .water-diagram .line,
+    .compute-diagram .line,
+    .logistics-diagram .line {
+      position: absolute;
+      height: 2px;
+      background: rgba(49,93,147,.46);
+      transform-origin: left center;
+    }
+    .data-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+    .data-card {
+      border-left: 4px solid var(--accent);
+      background: rgba(242,244,245,.70);
+      padding: 24px 28px;
+    }
+    .data-card strong {
+      display: block;
+      font-family: var(--serif-en);
+      font-size: 50px;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .compute-diagram { height: 530px; }
+    .compute-diagram .core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 210px;
+      height: 210px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--paper);
+      display: grid;
+      place-items: center;
+      font-family: var(--serif-zh);
+      font-size: 42px;
+      letter-spacing: .06em;
+      box-shadow: 0 0 0 22px rgba(49,93,147,.10);
+    }
+    .pipe-diagram { height: 520px; padding: 48px; }
+    .pipe-line {
+      position: absolute;
+      background: rgba(49,93,147,.55);
+      border: 2px solid rgba(10,31,61,.22);
+    }
+    .pipe-line.h { height: 42px; border-radius: 22px; }
+    .pipe-line.v { width: 42px; border-radius: 22px; }
+    .pipe-label {
+      position: absolute;
+      padding: 10px 14px;
+      background: rgba(242,244,245,.82);
+      border: 1px solid var(--line);
+      font-family: var(--serif-zh);
+      font-size: 26px;
+    }
+    .logistics-diagram { height: 520px; }
+    .ability-matrix {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 0;
+    }
+    .ability-row {
+      display: grid;
+      grid-template-columns: 172px 1fr;
+      min-height: 92px;
+      border-bottom: 1px solid var(--line);
+    }
+    .ability-row:last-child { border-bottom: 0; }
+    .ability-row .left {
+      display: grid;
+      place-items: center;
+      background: rgba(49,93,147,.14);
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .12em;
+      color: var(--accent);
+    }
+    .ability-row .right {
+      padding: 22px 28px;
+      font-family: var(--serif-zh);
+      font-size: 29px;
+      line-height: 1.35;
+    }
+    .transfer-board {
+      padding: 34px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .transfer-card {
+      padding: 24px;
+      min-height: 148px;
+      background: rgba(242,244,245,.74);
+      border-left: 3px solid var(--accent);
+    }
+    .list-clean {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .list-clean li {
+      font-family: var(--serif-zh);
+      font-size: 30px;
+      line-height: 1.42;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+    }
+    .ref-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .ref-list li {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      font-family: var(--serif-zh);
+      font-size: 22px;
+      line-height: 1.48;
+      color: rgba(var(--ink-rgb), .82);
+    }
+    .ref-list b {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 20px;
+      letter-spacing: .10em;
+    }
+    .wide-layout {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 72px;
+      height: 100%;
+      align-items: center;
+    }
+    .wide-photo {
+      position: relative;
+      height: 650px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .wide-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 45%;
+      filter: saturate(.70) contrast(.92) sepia(.08) hue-rotate(172deg);
+    }
+    .square-center {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 34px;
+    }
+    .square-center .h-display {
+      font-size: 128px;
+      line-height: 1.06;
+      margin: 0;
+    }
+    .wechat-display {
+      font-family: var(--serif-zh);
+      font-weight: 500;
+      font-size: 124px;
+      line-height: 1.08;
+      letter-spacing: .03em;
+      margin: 0 0 24px;
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+  <!-- THEME_OVERRIDE
+       Change <html data-theme="…"> above to:
+       ink-classic | indigo-porcelain | forest-ink | kraft-paper | dune | midnight-ink
+  -->
+  <main class="sheet">
+
+    <!-- POSTERS_HERE -->
+    <!--
+      Replace the placeholder posters below with real content.
+      Each poster carries one Layout Recipe (M01-M15) from
+      references/layout-recipes.md.
+
+      Available board sizes:
+        <section class="poster xhs"    id="xhs-01">…</section>   3:4
+        <section class="poster square" id="wechat-1x1">…</section> 1:1
+        <section class="poster wide"   id="wechat-21x9">…</section> 21:9
+
+      For WeChat covers, also include a <section class="pair-preview">
+      that places the 21:9 + 1:1 side-by-side for review.
+    -->
+
+    <section class="poster xhs" id="xhs-01-cover">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <div class="issue-row"><span>Vol. 01</span><span class="dot"></span><span>2026.06</span></div>
+        <span class="pd-tag">《人民日报》这样写</span>
+        <h1 class="h-display cover-title">基础设施<br><span class="mark">六张网</span></h1>
+        <p class="lead">别只写“修路架桥”：把基础设施写成发展底座、系统能力和长期竞争力。</p>
+        <figure class="photo-strip" style="height:392px;">
+          <!-- Subject map: elevated road and city traffic occupy full frame; title is placed outside image. -->
+          <img src="assets/infrastructure-city-bridge.jpg" alt="城市高架与交通基础设施" style="object-position:center 45%">
+        </figure>
+        <p class="quote-card dense">基础设施已经从“单个工程”，变成了“系统网络”。它不仅是扩大投资的抓手，也是新质生产力的底座；不仅关系经济增长，也关系能源安全、城市韧性、民生保障和统一大市场。</p>
+      </div>
+      <div class="issue-strip"><span>Infrastructure · Six Networks</span><span>01/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-02-shift">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>02</span><span class="dot"></span><span>总立意</span></div>
+        <h2 class="page-title tight">基础设施不是项目清单，<br>而是发展底座</h2>
+        <div class="photo-note-layout grow">
+          <figure class="photo-card">
+            <img src="assets/freight-train-containers.jpg" alt="货运列车与集装箱" style="object-position:center 55%">
+          </figure>
+          <p class="quote-card compact">现代化基础设施建设，不能只看工程数量和投资规模，更要看它能不能促进资源要素高效流动、支撑产业升级、增强安全韧性、改善群众生活。</p>
+        </div>
+        <div class="chips"><span class="chip">资源流动</span><span class="chip">产业升级</span><span class="chip">安全韧性</span><span class="chip">群众生活</span></div>
+      </div>
+      <div class="issue-strip"><span>Writing Logic</span><span>02/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-03-six-networks">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>03</span><span class="dot"></span><span>六张网总览</span></div>
+        <h2 class="page-title">六张网，<br>写成六种能力</h2>
+        <figure class="photo-strip" style="height:430px;">
+          <img src="assets/logistics-xiamen-port.jpg" alt="港口物流与城市基础设施" style="object-position:center 48%">
+        </figure>
+        <div class="network-grid grow">
+          <div class="network-card" data-nb="01"><p class="card-title">水网</p><p class="card-note">保资源，也保民生。</p></div>
+          <div class="network-card" data-nb="02"><p class="card-title">新型电网</p><p class="card-note">保能源，也保韧性。</p></div>
+          <div class="network-card" data-nb="03"><p class="card-title">算力网</p><p class="card-note">保智能，也保创新。</p></div>
+          <div class="network-card" data-nb="04"><p class="card-title">通信网</p><p class="card-note">保连接，也保协同。</p></div>
+          <div class="network-card" data-nb="05"><p class="card-title">地下管网</p><p class="card-note">保安全，也保秩序。</p></div>
+          <div class="network-card" data-nb="06"><p class="card-title">物流网</p><p class="card-note">保流通，也保市场。</p></div>
+        </div>
+      </div>
+      <div class="issue-strip"><span>System View</span><span>03/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-04-water">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>04</span><span class="dot"></span><span>水网</span></div>
+        <h2 class="page-title small">水网：从“大动脉”<br>到“毛细血管”</h2>
+        <figure class="photo-strip" style="height:420px;">
+          <img src="assets/water-dam-reservoir.jpg" alt="水库大坝与水利基础设施" style="object-position:center 52%">
+        </figure>
+        <p class="quote-card compact">水网建设的高分写法，不是停留在“兴修水利”，而是从水资源配置、水旱灾害防御、农业灌溉、城乡供水和生态治理等方面展开，让水利工程从单点建设变成系统能力。</p>
+        <div class="data-row">
+          <div class="data-card"><strong>80.3%</strong><p class="card-note">国家水网覆盖率。</p></div>
+          <div class="data-card"><strong>98%</strong><p class="card-note">2030 年农村自来水普及率目标。</p></div>
+        </div>
+      </div>
+      <div class="issue-strip"><span>Water Network</span><span>04/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-05-grid">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>05</span><span class="dot"></span><span>新型电网</span></div>
+        <h2 class="page-title small">电网：让绿色电力<br>消纳得更稳</h2>
+        <figure class="photo-strip" style="height:450px;">
+          <img src="assets/electric-grid-towers.jpg" alt="高压输电线路" style="object-position:center 48%">
+        </figure>
+        <p class="quote-card compact">新型电网的关键，不只是把电送得更远，而是把绿色电力消纳得更稳，把能源资源配置得更优，把极端场景下的供电保障做得更强。</p>
+        <div class="data-row">
+          <div class="data-card"><strong>5万亿+</strong><p class="card-note">“十五五”时期电网投资规模。</p></div>
+          <div class="data-card"><strong>4.2亿千瓦+</strong><p class="card-note">西电东送规模目标。</p></div>
+        </div>
+      </div>
+      <div class="issue-strip"><span>New Power Grid</span><span>05/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-06-compute">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>06</span><span class="dot"></span><span>算力网</span></div>
+        <h2 class="page-title small">算力网：不是炫技术，<br>而是调资源</h2>
+        <div class="photo-note-layout grow">
+          <figure class="photo-card">
+            <img src="assets/datacenter-server-racks.jpg" alt="数据中心服务器机架" style="object-position:center 52%">
+          </figure>
+          <p class="quote-card dense">算力网让计算任务找到最合适的资源，让中小企业不用自建昂贵算力，也能接入人工智能时代的创新资源。它支撑的不是一个个数据中心，而是数字经济和人工智能发展的底层能力。</p>
+        </div>
+        <div class="chips"><span class="chip">计算任务</span><span class="chip">资源匹配</span><span class="chip">中小企业</span><span class="chip">AI 底座</span></div>
+      </div>
+      <div class="issue-strip"><span>Computing Network</span><span>06/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-07-communication">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>07</span><span class="dot"></span><span>新一代通信网</span></div>
+        <h2 class="page-title tight">通信网：不是只快一点，<br>而是协同更深</h2>
+        <figure class="photo-strip" style="height:430px;">
+          <img src="assets/telecom-tower-city.jpg" alt="城市通信塔与网络设施" style="object-position:center 48%">
+        </figure>
+        <p class="quote-card compact">新一代通信网正在从基础连接管道，变成数字经济的核心支撑。它让数据流动更顺畅，让产业协同更高效，也让公共服务、应急治理和城乡融合有了更强的技术底座。</p>
+        <p class="lead">落点：连接人、设备、城乡、产业场景和应急治理。</p>
+      </div>
+      <div class="issue-strip"><span>Communication Network</span><span>07/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-08-pipe">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>08</span><span class="dot"></span><span>城市地下管网</span></div>
+        <h2 class="page-title small">地下管网：城市看不见的<br>生命线</h2>
+        <figure class="photo-strip" style="height:460px;">
+          <img src="assets/underground-cable-tunnel.jpg" alt="地下管线与城市基础设施通道" style="object-position:center 50%">
+        </figure>
+        <p class="quote-card compact">城市地下管网是看不见的城市生命线。提升地下管网建设和管理水平，不只是改善城市环境，更是增强城市安全韧性、保障群众生活秩序、提升精细化治理能力的重要抓手。</p>
+        <div class="chips"><span class="chip">排水</span><span class="chip">燃气</span><span class="chip">供水</span><span class="chip">供热</span><span class="chip">污水</span></div>
+      </div>
+      <div class="issue-strip"><span>Underground Pipe Network</span><span>08/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-09-logistics">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>09</span><span class="dot"></span><span>物流网</span></div>
+        <h2 class="page-title small">物流网：不是快递更快，<br>而是循环更顺</h2>
+        <figure class="photo-strip" style="height:438px;">
+          <img src="assets/logistics-warehouse.jpg" alt="仓储物流与供应链" style="object-position:center 50%">
+        </figure>
+        <p class="quote-card compact">建好物流网，就是让商品流、产业链、供应链更顺畅，让统一大市场真正从制度设计走向运行效率。物流网越通达，资源配置越高效，城乡循环越顺畅，经济活力也越容易释放。</p>
+        <div class="data-row">
+          <div class="data-card"><strong>181个</strong><p class="card-note">国家物流枢纽。</p></div>
+          <div class="data-card"><strong>2700+</strong><p class="card-note">规模以上物流园区。</p></div>
+        </div>
+      </div>
+      <div class="issue-strip"><span>Logistics Network</span><span>09/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-10-abilities">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>10</span><span class="dot"></span><span>合起来看</span></div>
+        <h2 class="page-title tight">六张网建设，<br>最后要落到实效</h2>
+        <figure class="photo-strip" style="height:430px;">
+          <img src="assets/logistics-xiamen-port.jpg" alt="港口和基础设施网络" style="object-position:center 46%">
+        </figure>
+        <p class="quote-card dense">六张网建设，既要适度超前，也要因地制宜；既要扩大有效投资，也要防止低效无效投资；既要形成实物工作量，也要形成长期支撑力。真正好的基础设施，不是建起来好看，而是用起来管用、长期好用、群众受用。</p>
+        <div class="chips"><span class="chip">适度超前</span><span class="chip">因地制宜</span><span class="chip">有效投资</span><span class="chip">长期支撑</span></div>
+      </div>
+      <div class="issue-strip"><span>Effective Investment</span><span>10/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-11-exam">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <div class="issue-row"><span>11</span><span class="dot"></span><span>考场迁移 01</span></div>
+        <h2 class="page-title tight">遇到“扩大内需”<br>和“新质生产力”</h2>
+        <figure class="photo-strip" style="height:340px;">
+          <img src="assets/datacenter-server-racks.jpg" alt="数据中心服务器" style="object-position:center 52%">
+        </figure>
+        <div class="quote-stack grow">
+          <p class="quote-card compact">建好六张网，能够扩大有效投资，带动相关产业链发展，同时形成面向未来的高质量供给。</p>
+          <p class="quote-card compact">新质生产力离不开现代基础设施支撑。算力网、新一代通信网、新型电网等，为人工智能、数字经济、绿色制造提供底层能力。</p>
+        </div>
+      </div>
+      <div class="issue-strip"><span>Exam Transfer</span><span>11/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-12-boundary">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <div class="issue-row"><span>12</span><span class="dot"></span><span>考场迁移 02</span></div>
+        <h2 class="page-title tight">遇到“城市治理”<br>和“统一大市场”</h2>
+        <figure class="photo-strip" style="height:340px;">
+          <img src="assets/underground-cable-tunnel.jpg" alt="城市地下管线通道" style="object-position:center 50%">
+        </figure>
+        <div class="quote-stack grow">
+          <p class="quote-card compact">城市治理既要看得见的道路、公园、建筑，也要看不见的地下管网、应急通信和能源保障。城市韧性，往往藏在这些“里子工程”里。</p>
+          <p class="quote-card compact">物流网、新一代通信网和算力网，能够促进商品流、信息流、数据流高效衔接，降低跨区域交易成本，提升市场运行效率。</p>
+        </div>
+      </div>
+      <div class="issue-strip"><span>Exam Transfer</span><span>12/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-13-golden-lines">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-4">
+        <div class="issue-row"><span>13</span><span class="dot"></span><span>政绩观</span></div>
+        <h2 class="page-title tight">写重大建设，<br>一定落到检验标准</h2>
+        <figure class="photo-strip" style="height:430px;">
+          <img src="assets/infrastructure-city-bridge.jpg" alt="城市交通基础设施" style="object-position:center 45%">
+        </figure>
+        <p class="quote-card compact">重大基础设施建设不能只看投资规模和开工数量，更要看是否符合实际、是否形成效益、是否服务长远、是否经得起群众和时间检验。</p>
+        <p class="lead">一句话收束：把基础设施写成发展底座，把项目建设写成系统能力，把扩大投资写成有效投资。</p>
+      </div>
+      <div class="issue-strip"><span>Governance Boundary</span><span>13/14</span></div>
+    </section>
+
+    <section class="poster xhs" id="xhs-14-references">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content stack gap-3">
+        <div class="issue-row"><span>14</span><span class="dot"></span><span>参考文献</span></div>
+        <h2 class="page-title tight">参考文献</h2>
+        <ol class="ref-list grow">
+          <li><b>01</b><span>吴秋余：《建好“六张网”，培育高质量发展新动能》，《人民日报》2026 年 5 月 18 日第 18 版。</span></li>
+          <li><b>02</b><span>刘志强：《统筹建设、动态推进“六张网”》，《人民日报》2026 年 5 月 25 日第 02 版。</span></li>
+          <li><b>03</b><span>王浩：《各级水网协同建 打开投资新空间》，《人民日报》2026 年 5 月 28 日第 02 版。</span></li>
+          <li><b>04</b><span>王云杉、窦皓：《新型电网 更强更绿更智能》，《人民日报》2026 年 5 月 29 日第 02 版。</span></li>
+          <li><b>05</b><span>王云杉、吴君：《全国一体化算力网怎么建》，《人民日报》2026 年 6 月 1 日第 02 版。</span></li>
+          <li><b>06</b><span>王俊岭：《“六张网”何以成扩大内需发力点？》，《人民日报海外版》2026 年 5 月 12 日第 11 版。</span></li>
+        </ol>
+      </div>
+      <div class="issue-strip"><span>References</span><span>14/14</span></div>
+    </section>
+
+    <section class="poster wide" id="wechat-21x9-cover">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content wide-layout">
+        <div class="stack gap-3">
+          <span class="pd-tag">《人民日报》这样写</span>
+          <h1 class="wechat-display">基础设施<br>别只写修路架桥</h1>
+          <p class="lead">用“六张网”写出现代化基础设施体系：发展底座、系统能力、有效投资、城市韧性。</p>
+          <div class="chips"><span class="chip">水网</span><span class="chip">电网</span><span class="chip">算力网</span><span class="chip">通信网</span><span class="chip">管网</span><span class="chip">物流网</span></div>
+        </div>
+        <figure class="wide-photo">
+          <img src="assets/infrastructure-city-bridge.jpg" alt="城市高架与基础设施">
+        </figure>
+      </div>
+      <div class="issue-strip"><span>WeChat 21:9 Cover</span><span>Editorial · Indigo Porcelain</span></div>
+    </section>
+
+    <section class="poster square" id="wechat-1x1-cover">
+      <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+      <div class="grain"></div><div class="paper-wash"></div>
+      <div class="content square-center">
+        <span class="pd-tag">《人民日报》这样写</span>
+        <h1 class="h-display">六张网<br>写基建</h1>
+        <div class="rule-accent"></div>
+        <p class="lead">基础设施不止修路架桥</p>
+      </div>
+    </section>
+
+    <section class="pair-preview" id="wechat-cover-pair-preview">
+      <div class="preview-wide">
+        <div class="preview-label">21:9 MAIN COVER</div>
+        <section class="poster wide">
+          <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+          <div class="grain"></div><div class="paper-wash"></div>
+          <div class="content wide-layout">
+            <div class="stack gap-3">
+              <span class="pd-tag">《人民日报》这样写</span>
+              <h1 class="wechat-display">基础设施<br>别只写修路架桥</h1>
+              <p class="lead">用“六张网”写出现代化基础设施体系。</p>
+            </div>
+            <figure class="wide-photo"><img src="assets/infrastructure-city-bridge.jpg" alt="城市高架与基础设施"></figure>
+          </div>
+        </section>
+      </div>
+      <div class="preview-square">
+        <div class="preview-label">1:1 SHARE CARD</div>
+        <section class="poster square">
+          <canvas class="mag-bg" data-bg="ink-flow"></canvas>
+          <div class="grain"></div><div class="paper-wash"></div>
+          <div class="content square-center">
+            <span class="pd-tag">《人民日报》这样写</span>
+            <h1 class="h-display">六张网<br>写基建</h1>
+            <div class="rule-accent"></div>
+            <p class="lead">基础设施不止修路架桥</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Magazine WebGL background (deterministic ink-flow) -->
+  <script src="assets/magazine-bg-webgl.js"></script>
+  <script>
+    (function () {
+      function cssVarRgb(name, fallback) {
+        var raw = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+        if (!raw) return fallback;
+        var parts = raw.split(',').map(function (x) { return parseInt(x.trim(), 10); });
+        return parts.length === 3 && parts.every(function (n) { return !isNaN(n); }) ? parts : fallback;
+      }
+      function mountAll() {
+        if (!window.MagazineBg || !window.MagazineBg.mount) return;
+        var ink    = cssVarRgb('--ink-rgb',    [10, 10, 11]);
+        var paper  = cssVarRgb('--paper-rgb',  [243, 240, 232]);
+        var accent = cssVarRgb('--accent-rgb', [17, 17, 17]);
+        document.querySelectorAll('canvas.mag-bg').forEach(function (c) {
+          window.MagazineBg.mount(c, {
+            ink: ink,
+            paper: paper,
+            accent: accent,
+            strength: 0.32,
+            frozenTime: 12.5
+          });
+        });
+      }
+      if (document.readyState === 'complete') mountAll();
+      else window.addEventListener('load', mountAll);
+    })();
+  </script>
+</body>
+</html>
