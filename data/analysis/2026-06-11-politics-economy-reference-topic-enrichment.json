@@ -1,0 +1,119 @@
+{
+  "created_date": "2026-06-11",
+  "source_dir": "data/source/马江博·政经参考（2026）",
+  "target_table": "data/core/material_assets.sqlite::content_ideas",
+  "export_markdown": "data/articles/公众号文章/选题库.md",
+  "selection_rules": {
+    "min_support_articles": 3,
+    "dedupe_rule": "与既有母题重复的只保留更强切口，支撑不足的不入库",
+    "source_pairing": "政经参考用于提炼政策方向，人民日报用于提供正式支撑文章"
+  },
+  "added_ideas": [
+    {
+      "idea_id": "idea_refined_20260611_six_networks",
+      "priority": "S",
+      "title": "“六张网”怎么写：不是大基建清单，而是发展底座重塑",
+      "support_article_count": 9,
+      "reference_sources": [
+        "73｜十五五终稿详解一：未来五年，产业硬信号.md",
+        "91｜最新政治局会议十大信号，看清年度经济重点进度条.md"
+      ]
+    },
+    {
+      "idea_id": "idea_refined_20260611_anti_involution",
+      "priority": "S",
+      "title": "反内卷不是反竞争：让竞争回到价值创造",
+      "support_article_count": 12,
+      "reference_sources": [
+        "91｜最新政治局会议十大信号，看清年度经济重点进度条.md",
+        "54｜互联网大厂被集体约谈背后，一个草莽时代的终结.md",
+        "55｜外卖和食品电商迎来强监管，行业分化将加速到来.md"
+      ]
+    },
+    {
+      "idea_id": "idea_refined_20260611_ocean_economy",
+      "priority": "A",
+      "title": "向海图强怎么写：不是“靠海吃海”，而是科技、生态和产业链",
+      "support_article_count": 9,
+      "reference_sources": [
+        "86｜大国向海一：历史时刻，中国决心向海图强.md",
+        "87｜大国向海二：关键湾区关键省份和前景城市.md",
+        "88｜大国向海三：看懂海洋产业的未来机会.md"
+      ]
+    },
+    {
+      "idea_id": "idea_refined_20260611_silver_economy",
+      "priority": "A",
+      "title": "银发经济不是养老负担：把老龄化写成服务供给和人力资源",
+      "support_article_count": 8,
+      "reference_sources": [
+        "63｜长护险成社保第六险：全民覆盖，影响有多大.md",
+        "90｜你有没有发现，国家正在大力鼓励老年人再就业.md",
+        "75｜十五五终稿详解三：消费与投资，看清大坐标.md"
+      ]
+    },
+    {
+      "idea_id": "idea_refined_20260611_service_consumption",
+      "priority": "A",
+      "title": "服务消费怎么写：不是发券促销，而是把好服务嵌入生活半径",
+      "support_article_count": 9,
+      "reference_sources": [
+        "75｜十五五终稿详解三：消费与投资，看清大坐标.md",
+        "81｜全国服务业大会召开，中国经济历史性转型.md",
+        "39｜洗浴业爆发背后，支持服务消费关键文件来了.md",
+        "40｜关注这七个服务消费红利领域，找到新机会.md"
+      ]
+    },
+    {
+      "idea_id": "idea_refined_20260611_ai_education",
+      "priority": "A",
+      "title": "AI时代教育怎么写：不是人人学工具，而是重塑思维和终身学习",
+      "support_article_count": 6,
+      "reference_sources": [
+        "80｜重磅文件：从小学到大学，人工智能全面介入教育下.md",
+        "52｜就业新趋势上：AI 冲击下的中国就业市场.md",
+        "53｜就业新趋势下：面对AI冲击，应该如何应对.md"
+      ]
+    },
+    {
+      "idea_id": "idea_refined_20260611_low_altitude",
+      "priority": "B",
+      "title": "低空经济别只追风口：先把“飞得起来”和“管得住”写清楚",
+      "support_article_count": 6,
+      "reference_sources": [
+        "57｜低空经济成新兴支柱产业，一文看懂整个产业链条.md",
+        "58｜低空经济里的岗位需求城市强弱，专业和院校.md"
+      ]
+    },
+    {
+      "idea_id": "idea_refined_20260611_accounts_confidence",
+      "priority": "A",
+      "title": "清欠账款怎么写：账款链也是信心链",
+      "support_article_count": 7,
+      "reference_sources": [
+        "91｜最新政治局会议十大信号，看清年度经济重点进度条.md",
+        "107｜司法新规反响巨大，企业负责人和从业者都该看一看.md"
+      ]
+    },
+    {
+      "idea_id": "idea_refined_20260611_resource_circulation",
+      "priority": "B",
+      "title": "资源循环怎么写：不是回收旧物，而是绿色消费和产业链再造",
+      "support_article_count": 6,
+      "reference_sources": [
+        "75｜十五五终稿详解三：消费与投资，看清大坐标.md",
+        "103｜十年来最大的政府投资改革，这是一次系统性影响事件.md"
+      ]
+    },
+    {
+      "idea_id": "idea_refined_20260611_westward_development",
+      "priority": "B",
+      "title": "大国向西怎么写：不是区域口号，而是通道、算力、产业和安全腹地",
+      "support_article_count": 8,
+      "reference_sources": [
+        "64｜大国向西上：陕西广西贵州云南的新机遇.md",
+        "65｜大国向西下：甘肃宁夏内蒙古西藏青海的新机遇.md"
+      ]
+    }
+  ]
+}

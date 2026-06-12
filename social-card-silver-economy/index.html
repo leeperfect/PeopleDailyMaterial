@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>银发经济：服务供给和人力资源</title>
+  <style>
+    :root {
+      --paper: #f0efeb;
+      --paper-deep: #dedbd2;
+      --ink: #222924;
+      --muted: #667067;
+      --sage: #6f9277;
+      --green: #476c56;
+      --terracotta: #b7785d;
+      --silver: #a7aaa3;
+      --white: #fffaf4;
+      --serif: "Songti SC", "Noto Serif CJK SC", "STSong", "SimSun", serif;
+      --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      --mono: "SFMono-Regular", "Menlo", "Consolas", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #d3d1ca;
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+
+    .deck {
+      display: grid;
+      grid-template-columns: repeat(2, 540px);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .poster {
+      position: relative;
+      width: 1080px;
+      height: 1440px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.55), transparent 45%),
+        radial-gradient(circle at 14% 15%, rgba(111,146,119,.18), transparent 30%),
+        var(--paper);
+      box-shadow: 0 18px 60px rgba(34,41,36,.2);
+      isolation: isolate;
+      transform-origin: top left;
+    }
+
+    @media screen {
+      .poster { transform: scale(.5); margin: 0 -540px -720px 0; }
+    }
+
+    .poster::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      opacity: .2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(90deg, rgba(34,41,36,.06) 1px, transparent 1px),
+        linear-gradient(rgba(34,41,36,.04) 1px, transparent 1px);
+      background-size: 90px 90px;
+      mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 86%, transparent);
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      opacity: .22;
+      mix-blend-mode: multiply;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(34,41,36,.035) 0 1px, transparent 1px 4px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 1px, transparent 1px 5px);
+    }
+
+    .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      padding: 70px 70px 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .photo-bg,
+    .photo-band {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .photo-bg img,
+    .photo-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(9,14,11,.08), rgba(9,14,11,.54)),
+        radial-gradient(circle at 25% 72%, rgba(9,14,11,.84), rgba(9,14,11,.45) 42%, transparent 72%);
+    }
+
+    .soft-bg::after {
+      background:
+        linear-gradient(90deg, rgba(240,239,235,.94), rgba(240,239,235,.78) 50%, rgba(240,239,235,.18)),
+        linear-gradient(180deg, rgba(34,41,36,.08), rgba(34,41,36,.18));
+    }
+
+    .band .photo-band {
+      height: 350px;
+      bottom: auto;
+      border-bottom: 2px solid rgba(34,41,36,.16);
+    }
+
+    .band .photo-band::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(34,41,36,.04), rgba(240,239,235,.38));
+    }
+
+    .band .content { padding-top: 405px; gap: 20px; }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .dark .kicker,
+    .cover .kicker,
+    .video .kicker { color: #f5e6c6; }
+
+    h1, h2, p { margin: 0; }
+
+    .title {
+      font-family: var(--serif);
+      font-weight: 560;
+      font-size: 82px;
+      line-height: 1.04;
+      letter-spacing: .02em;
+      text-wrap: balance;
+    }
+
+    .title.cover-title {
+      max-width: 850px;
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 94px;
+      line-height: 1.03;
+      font-weight: 850;
+      letter-spacing: 0;
+      text-shadow: 0 6px 28px rgba(0,0,0,.28);
+    }
+
+    .title.mid { font-size: 70px; }
+    .title.small { font-size: 60px; line-height: 1.08; }
+    .title.video-title { font-size: 98px; color: var(--white); font-family: var(--serif); line-height: .98; }
+
+    .subtitle {
+      max-width: 850px;
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1.52;
+      color: var(--muted);
+    }
+
+    .dark .subtitle,
+    .cover .subtitle,
+    .video .subtitle { color: rgba(255,250,244,.9); }
+
+    .lede {
+      padding-left: 24px;
+      border-left: 8px solid var(--sage);
+      font-size: 42px;
+      line-height: 1.36;
+      font-weight: 760;
+    }
+
+    .quote {
+      position: relative;
+      padding: 34px 36px 34px 44px;
+      background: rgba(255,250,244,.74);
+      border: 2px solid rgba(34,41,36,.12);
+      border-left: 10px solid var(--terracotta);
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1.52;
+      color: #2b302c;
+    }
+
+    .quote.compact { font-size: 30px; line-height: 1.46; padding: 28px 30px 30px 38px; }
+    .quote.dark {
+      color: var(--white);
+      background: rgba(21,28,23,.72);
+      border-color: rgba(255,250,244,.26);
+      border-left-color: #e1b47d;
+    }
+
+    .quote::before {
+      content: ">";
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      font-family: var(--mono);
+      font-size: 30px;
+      color: var(--terracotta);
+      font-weight: 800;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .cell {
+      min-height: 186px;
+      padding: 24px 22px;
+      background: rgba(255,250,244,.62);
+      border: 2px solid rgba(34,41,36,.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .num {
+      font-family: var(--mono);
+      font-size: 22px;
+      color: var(--terracotta);
+      font-weight: 800;
+    }
+
+    .cell strong {
+      font-size: 35px;
+      line-height: 1.15;
+    }
+
+    .cell span {
+      color: var(--muted);
+      font-size: 24px;
+      line-height: 1.35;
+    }
+
+    .list {
+      display: grid;
+      gap: 16px;
+      font-size: 34px;
+      line-height: 1.35;
+    }
+
+    .list p {
+      padding: 22px 24px;
+      background: rgba(255,250,244,.64);
+      border-left: 8px solid var(--sage);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 28px 28px 30px;
+      border: 2px solid rgba(34,41,36,.13);
+      background: rgba(255,250,244,.66);
+      min-height: 250px;
+    }
+
+    .panel h3 {
+      margin: 0 0 16px;
+      font-size: 34px;
+      line-height: 1.2;
+      color: var(--green);
+    }
+
+    .panel p {
+      font-size: 29px;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .large-num {
+      font-family: var(--serif);
+      font-size: 126px;
+      line-height: .88;
+      color: var(--green);
+    }
+
+    .formula {
+      display: grid;
+      gap: 16px;
+      font-size: 36px;
+      line-height: 1.25;
+      font-weight: 760;
+    }
+
+    .formula p {
+      padding: 22px 26px;
+      color: var(--white);
+      background: var(--green);
+    }
+
+    .formula p:nth-child(2) { background: var(--terracotta); }
+    .formula p:nth-child(3) { background: #7d817b; }
+
+    .tagline {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 2px solid rgba(34,41,36,.18);
+      padding-top: 22px;
+      color: var(--muted);
+      font-size: 24px;
+      line-height: 1.3;
+    }
+
+    .dark .tagline,
+    .cover .tagline,
+    .video .tagline {
+      border-top-color: rgba(255,250,244,.3);
+      color: rgba(255,250,244,.78);
+    }
+
+    .mark {
+      font-family: var(--mono);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      font-weight: 800;
+    }
+
+    .dark .mark,
+    .cover .mark,
+    .video .mark { color: #f5e6c6; }
+
+    .big-word {
+      margin-top: auto;
+      font-family: var(--serif);
+      font-size: 166px;
+      line-height: .9;
+      color: rgba(71,108,86,.16);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section id="xhs-01" class="poster cover dark" data-file="xhs-01-cover.png">
+      <figure class="photo-bg"><img src="assets/elderly-education.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">PEOPLE'S DAILY MATERIAL / SILVER ECONOMY</div>
+        <h1 class="title cover-title">银发经济<br>怎么写</h1>
+        <p class="subtitle">不是养老负担，而是服务供给和人力资源。</p>
+        <div class="grid-3">
+          <div class="cell"><strong>兜底</strong><span>基本保障托住生活</span></div>
+          <div class="cell"><strong>发展</strong><span>服务供给回应需求</span></div>
+          <div class="cell"><strong>参与</strong><span>老年经验转化资源</span></div>
+        </div>
+        <div class="tagline"><span>公务员考试·申论/面试素材</span><span class="mark">01/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-02" class="poster" data-file="xhs-02-mistake.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">COMMON MISTAKE</div>
+        <h2 class="title mid">很多人把<br>老龄化写窄了</h2>
+        <div class="list">
+          <p>只写“养老压力大”。</p>
+          <p>只写“财政负担重”。</p>
+          <p>只写“年轻人压力大”。</p>
+        </div>
+        <p class="lede">这些话都对，但只看见了“照护压力”。考试更想看到的是治理转化能力。</p>
+        <div class="big-word">不是负担</div>
+        <div class="tagline"><span>从压力叙事转向供给叙事</span><span class="mark">02/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-03" class="poster band" data-file="xhs-03-mainline.png">
+      <figure class="photo-band"><img src="assets/community-dining.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">MAINLINE</div>
+        <h2 class="title small">银发经济的主线：<br>兜底、发展、参与</h2>
+        <div class="quote compact">银发经济不是把老龄化当成负担兜住，而是把养老需求转化为服务供给，把银发消费转化为发展空间，把老年经验转化为社会资源。</div>
+        <p class="lede">不是把老人看成负担，而是把老龄化写成服务体系升级。</p>
+        <div class="tagline"><span>一句话打开全文</span><span class="mark">03/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-04" class="poster band" data-file="xhs-04-long-term-care.png">
+      <figure class="photo-band"><img src="assets/health-clinic.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">LONG-TERM CARE</div>
+        <h2 class="title small">长护险：<br>把家庭压力变成专业服务</h2>
+        <div class="split">
+          <div class="panel"><h3>福州案例</h3><p>失能老人月护理待遇：重度约 1800 元，中度约 1200 元。</p></div>
+          <div class="panel"><h3>答题落点</h3><p>制度筹资、等级评估、专业护理、动态监管。</p></div>
+        </div>
+        <div class="quote compact">以长期护理保险减轻失能家庭照护压力，以专业护理服务提升照护质量，以评估监管和动态筹资保障制度可持续。</div>
+        <div class="tagline"><span>长护险是养老服务的支付入口</span><span class="mark">04/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-05" class="poster" data-file="xhs-05-mutual-aid.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">RURAL MUTUAL AID</div>
+        <h2 class="title small">互助养老：<br>把服务送进熟悉的生活半径</h2>
+        <p class="lede">重庆农村互助养老的价值，不在“热心人很多”，而在把分散善意变成稳定机制。</p>
+        <div class="quote compact">养老兜底的关键，不是有没有一个养老项目，而是服务能不能进入老人熟悉的社区、村庄和生活半径。</div>
+        <div class="grid-3">
+          <div class="cell"><span class="num">A</span><strong>村社平台</strong><span>有人组织</span></div>
+          <div class="cell"><span class="num">B</span><strong>服务清单</strong><span>有人响应</span></div>
+          <div class="cell"><span class="num">C</span><strong>制度支持</strong><span>有人兜底</span></div>
+        </div>
+        <div class="tagline"><span>互助不是硬撑，是制度织网</span><span class="mark">05/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-06" class="poster band" data-file="xhs-06-community-service.png">
+      <figure class="photo-band"><img src="assets/community-dining.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">COMMUNITY SERVICE</div>
+        <h2 class="title small">社区养老服务<br>要写得具体</h2>
+        <div class="list">
+          <p>助餐、助洁、上门照护，把服务放到老人身边。</p>
+          <p>家庭医生、慢病随访、紧急救助，把健康风险提前接住。</p>
+          <p>基层议事、需求摸排、动态台账，把服务做成闭环。</p>
+        </div>
+        <p class="lede">养老服务不是离家越远越专业，而是越贴近生活越有效。</p>
+        <div class="tagline"><span>面试答题别只说“关心慰问”</span><span class="mark">06/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-07" class="poster band" data-file="xhs-07-education.png">
+      <figure class="photo-band"><img src="assets/elderly-education.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">LIFELONG LEARNING</div>
+        <h2 class="title small">老年教育：<br>不是兴趣班而已</h2>
+        <div class="split">
+          <div class="panel"><div class="large-num">8.2万</div><p>基层学习点</p></div>
+          <div class="panel"><div class="large-num">1237万</div><p>平台注册用户</p></div>
+        </div>
+        <div class="quote compact">老年教育是积极应对人口老龄化的重要公共服务，既满足精神文化需求，也提升健康管理能力、数字适应能力和社会参与能力。</div>
+        <div class="tagline"><span>精神文化需求也是公共服务</span><span class="mark">07/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-08" class="poster" data-file="xhs-08-active-health.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">ACTIVE HEALTH</div>
+        <h2 class="title small">主动健康：<br>服务要前移</h2>
+        <div class="list">
+          <p>慢病管理、营养运动，把健康风险管在平时。</p>
+          <p>急救实训、反诈防骗、数字技能，把安全能力补起来。</p>
+          <p>适老化服务、康复支持，把生活质量托起来。</p>
+        </div>
+        <div class="quote compact">银发经济的“经济”，不只是市场规模，更是服务供给能否精准回应老年人的真实需求。</div>
+        <div class="tagline"><span>健康服务前移，老年生活更有质量</span><span class="mark">08/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-09" class="poster band" data-file="xhs-09-human-resources.png">
+      <figure class="photo-band"><img src="assets/elderly-education.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">HUMAN RESOURCES</div>
+        <h2 class="title small">高能量老年人：<br>经验也是资源</h2>
+        <div class="split">
+          <div class="panel"><h3>靳震</h3><p>70 岁，做“标准化病人”20 多年。</p></div>
+          <div class="panel"><h3>服务场景</h3><p>参与医学教学，上万人次从中训练沟通和诊疗。</p></div>
+        </div>
+        <div class="quote compact">老年人不是天然退出社会生产和公共生活的人群。只要有合适的平台、培训和保障，老年经验也能转化为公共服务资源。</div>
+        <div class="tagline"><span>把“被服务者”写成“参与者”</span><span class="mark">09/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-10" class="poster" data-file="xhs-10-silver-volunteer.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">SILVER PARTICIPATION</div>
+        <h2 class="title small">银龄互助队：<br>老有所为也是积极养老</h2>
+        <div class="grid-3">
+          <div class="cell"><span class="num">01</span><strong>时间银行</strong><span>服务可记录</span></div>
+          <div class="cell"><span class="num">02</span><strong>积分激励</strong><span>参与可持续</span></div>
+          <div class="cell"><span class="num">03</span><strong>志愿平台</strong><span>经验可转化</span></div>
+        </div>
+        <div class="quote">积极老龄化不是让老人继续被消耗，而是让有能力、有意愿的老人继续被需要。</div>
+        <div class="tagline"><span>参与平台越清楚，治理答案越有力</span><span class="mark">10/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-11" class="poster" data-file="xhs-11-shenlun-formula.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">SHENLUN FORMULA</div>
+        <h2 class="title small">申论可以这样搭框架</h2>
+        <div class="formula">
+          <p>兜底保障：长护险、助餐、救助、适老化改造</p>
+          <p>服务供给：社区嵌入、专业护理、老年教育、健康管理</p>
+          <p>银发参与：志愿服务、经验传承、时间银行、技能再开发</p>
+        </div>
+        <div class="quote compact">积极应对人口老龄化，要从兜底保障、服务供给和银发参与三端发力，既托住基本生活，又拓展银发消费，还要开发老年人力资源。</div>
+        <div class="tagline"><span>适合大作文分论点</span><span class="mark">11/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-12" class="poster" data-file="xhs-12-interview-question.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">INTERVIEW QUESTION</div>
+        <h2 class="title small">面试题：<br>社区银发服务怎么做？</h2>
+        <div class="quote compact">某社区老年人口较多，存在独居老人照护难、助餐需求多、老年教育资源不足、部分低龄老人想参与志愿服务但缺少平台等问题。领导安排你牵头完善社区银发服务，你会怎么做？</div>
+        <p class="lede">题眼不是“慰问老人”，而是把需求摸排、服务供给和参与平台一起做出来。</p>
+        <div class="tagline"><span>组织管理题：抓台账、抓供给、抓闭环</span><span class="mark">12/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-13" class="poster band" data-file="xhs-13-interview-answer.png">
+      <figure class="photo-band"><img src="assets/community-dining.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">ANSWER STRUCTURE</div>
+        <h2 class="title small">答题别散：<br>按五步推进</h2>
+        <div class="list">
+          <p>摸底建账：独居、失能、助餐、就医、学习需求分类。</p>
+          <p>整合资源：社区、医院、养老机构、志愿组织一起入网。</p>
+          <p>补齐服务：助餐、上门、家庭医生、紧急呼叫先落地。</p>
+          <p>搭建平台：低龄老人参与志愿服务和互助积分。</p>
+          <p>评估反馈：定期回访、公开清单、动态调整。</p>
+        </div>
+        <div class="tagline"><span>不要只做慰问，要做服务体系</span><span class="mark">13/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-14" class="poster band" data-file="xhs-14-closing-quote.png">
+      <figure class="photo-band"><img src="assets/health-clinic.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">ENDING SENTENCE</div>
+        <h2 class="title small">结尾金句：<br>把治理温度写出来</h2>
+        <div class="quote">真正积极的老龄化治理，不是把老年人安置在社会边缘，而是让他们在保障中有尊严，在服务中有选择，在参与中有价值。</div>
+        <p class="lede">这句话适合放在申论结尾，也适合面试最后升华。</p>
+        <div class="tagline"><span>保障、服务、参与，三端合一</span><span class="mark">14/15</span></div>
+      </div>
+    </section>
+
+    <section id="xhs-15" class="poster cover dark" data-file="xhs-15-summary.png">
+      <figure class="photo-bg soft-bg"><img src="assets/community-dining.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">FINAL CARD</div>
+        <h2 class="title mid">银发经济<br>不是“养老负担”</h2>
+        <div class="quote dark compact">把养老需求转化为服务供给，把银发消费转化为发展空间，把老年经验转化为社会资源。</div>
+        <div class="grid-3">
+          <div class="cell"><strong>兜底有保障</strong><span>托住基本生活</span></div>
+          <div class="cell"><strong>服务有供给</strong><span>回应真实需求</span></div>
+          <div class="cell"><strong>参与有平台</strong><span>激活社会资源</span></div>
+        </div>
+        <div class="tagline"><span>背这条线，银发经济就写活了</span><span class="mark">15/15</span></div>
+      </div>
+    </section>
+
+    <section id="video-01" class="poster video dark" data-file="video-cover-01.png">
+      <figure class="photo-bg"><img src="assets/elderly-education.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">VIDEO COVER / 3:4</div>
+        <h2 class="title video-title">银发经济<br>怎么写</h2>
+        <p class="subtitle">不是养老负担，而是服务供给和人力资源。</p>
+        <div class="tagline"><span>申论高分框架</span><span class="mark">COVER A</span></div>
+      </div>
+    </section>
+
+    <section id="video-02" class="poster video dark" data-file="video-cover-02.png">
+      <figure class="photo-bg"><img src="assets/community-dining.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">VIDEO COVER / 3:4</div>
+        <h2 class="title video-title">把老龄化<br>写成服务体系升级</h2>
+        <p class="subtitle">兜底保障、服务供给、银发参与，三端发力。</p>
+        <div class="tagline"><span>人民日报素材拆解</span><span class="mark">COVER B</span></div>
+      </div>
+    </section>
+
+    <section id="video-03" class="poster video dark" data-file="video-cover-03.png">
+      <figure class="photo-bg"><img src="assets/health-clinic.jpg" alt=""></figure>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">VIDEO COVER / 3:4</div>
+        <h2 class="title video-title">养老不是<br>只写慰问</h2>
+        <p class="subtitle">社区服务题，要写台账、供给、平台和闭环。</p>
+        <div class="tagline"><span>面试答法模板</span><span class="mark">COVER C</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

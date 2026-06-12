@@ -1,0 +1,344 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, '../../../..');
+const mediaDir = path.join(repoRoot, 'media/images/2026-06-10-viewpoint-cognition-2026q1-wechat-cover');
+const htmlPath = path.join(__dirname, 'index.html');
+
+const title = '国考省考热点预测与背诵框架（2026年1-3月）';
+const shortTitle = '热点预测\\n背诵框架';
+
+const html = `<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${title}</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #d9d6cc;
+      font-family: "Inter", "Avenir Next", "Helvetica Neue", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      color: #10131a;
+    }
+    .stage {
+      width: max-content;
+      display: grid;
+      gap: 40px;
+      padding: 40px;
+    }
+    .cover {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: #f4f0e6;
+      color: #10131a;
+    }
+    .wide { width: 2100px; height: 900px; }
+    .square { width: 1080px; height: 1080px; }
+    .paper {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 24% 18%, rgba(255,255,255,.72), transparent 34%),
+        linear-gradient(90deg, rgba(12,22,35,.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(12,22,35,.035) 1px, transparent 1px),
+        #f4f0e6;
+      background-size: auto, 72px 72px, 72px 72px, auto;
+    }
+    .ink-wash {
+      position: absolute;
+      inset: -14% -8% auto auto;
+      width: 980px;
+      height: 900px;
+      z-index: 1;
+      background:
+        radial-gradient(circle at 45% 40%, rgba(12,22,35,.16), transparent 58%),
+        radial-gradient(circle at 62% 58%, rgba(199,62,53,.13), transparent 45%);
+      filter: blur(8px);
+      opacity: .72;
+    }
+    .wide .left {
+      position: absolute;
+      left: 104px;
+      top: 80px;
+      bottom: 72px;
+      width: 1120px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+    }
+    .meta {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      color: #6f6e68;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 760;
+      letter-spacing: .08em;
+    }
+    .meta::before {
+      content: "";
+      width: 82px;
+      height: 8px;
+      background: #c73e35;
+    }
+    .wide h1 {
+      margin: 86px 0 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: 118px;
+      line-height: 1.02;
+      font-weight: 740;
+      letter-spacing: 0;
+    }
+    .wide h1 .date {
+      display: block;
+      margin-top: 26px;
+      color: #0e1a2b;
+      font-size: 56px;
+      font-weight: 560;
+    }
+    .subline {
+      margin-top: auto;
+      padding-top: 34px;
+      border-top: 2px solid rgba(16,19,26,.22);
+      display: flex;
+      gap: 34px;
+      align-items: center;
+      color: #4f514f;
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 820;
+    }
+    .subline span {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .subline b {
+      font-size: 44px;
+      color: #10131a;
+    }
+    .panel {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 720px;
+      z-index: 2;
+      padding: 74px 72px;
+      background: #0e1a2b;
+      color: #f8f3e8;
+    }
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(248,243,232,.68);
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 820;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .topic-grid {
+      margin-top: 58px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .topic-grid span {
+      height: 84px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(248,243,232,.26);
+      color: #e9ff5a;
+      font-size: 26px;
+      font-weight: 860;
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    }
+    .ladder {
+      margin-top: 48px;
+      display: grid;
+      gap: 10px;
+    }
+    .ladder div {
+      min-height: 58px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(248,243,232,.08);
+      border-left: 6px solid #c73e35;
+      font-size: 24px;
+      font-weight: 800;
+    }
+    .ladder b {
+      color: rgba(248,243,232,.46);
+      font-size: 18px;
+    }
+    .panel-note {
+      margin: 26px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(248,243,232,.18);
+      color: rgba(248,243,232,.7);
+      font-size: 22px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+    .square .paper {
+      background:
+        radial-gradient(circle at 18% 22%, rgba(233,255,90,.22), transparent 28%),
+        radial-gradient(circle at 92% 12%, rgba(199,62,53,.16), transparent 26%),
+        linear-gradient(90deg, rgba(248,243,232,.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(248,243,232,.055) 1px, transparent 1px),
+        #0e1a2b;
+      background-size: auto, auto, 72px 72px, 72px 72px, auto;
+    }
+    .square .content {
+      position: relative;
+      z-index: 3;
+      height: 100%;
+      padding: 78px 76px;
+      display: flex;
+      flex-direction: column;
+      color: #f8f3e8;
+    }
+    .square .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      border-bottom: 2px solid rgba(248,243,232,.24);
+      color: rgba(248,243,232,.72);
+      font-size: 24px;
+      font-weight: 820;
+      letter-spacing: .10em;
+    }
+    .square h2 {
+      margin: 104px 0 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: 132px;
+      line-height: .96;
+      font-weight: 740;
+      letter-spacing: 0;
+    }
+    .square .date {
+      width: fit-content;
+      margin-top: 42px;
+      padding: 16px 22px;
+      background: #e9ff5a;
+      color: #0e1a2b;
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 880;
+    }
+    .square .bottom {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .square .bottom span {
+      min-height: 126px;
+      padding: 18px 16px;
+      display: grid;
+      align-content: space-between;
+      border: 1px solid rgba(248,243,232,.28);
+      background: rgba(248,243,232,.07);
+      font-size: 24px;
+      line-height: 1.12;
+      font-weight: 820;
+    }
+    .square .bottom b {
+      color: #e9ff5a;
+      font-size: 20px;
+    }
+    .preview {
+      width: 1900px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 34px;
+      align-items: center;
+      background: #d9d6cc;
+    }
+    .preview img {
+      width: 100%;
+      display: block;
+      box-shadow: 0 18px 50px rgba(16,19,26,.16);
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <section class="cover wide" id="wechat-21x9-cover">
+      <div class="paper"></div>
+      <div class="ink-wash"></div>
+      <div class="left">
+        <div class="meta"><span>观点认知题 · 2026 Q1</span></div>
+        <h1>国考省考<br>热点预测与背诵框架<span class="date">（2026年1-3月）</span></h1>
+        <div class="subline">
+          <span><b>16</b>类预测方向</span>
+          <span><b>5</b>步答题框架</span>
+          <span><b>4</b>句短句背诵</span>
+        </div>
+      </div>
+      <aside class="panel">
+        <div class="panel-head"><span>PEOPLE DAILY MATERIAL</span><span>2026</span></div>
+        <div class="topic-grid">
+          ${Array.from({ length: 16 }, (_, i) => `<span>${String(i + 1).padStart(2, '0')}</span>`).join('')}
+        </div>
+        <div class="ladder">
+          ${['表明态度', '说明价值', '指出边界', '提出路径', '回到岗位'].map((item, i) => `<div><span>${item}</span><b>${String(i + 1).padStart(2, '0')}</b></div>`).join('')}
+        </div>
+        <p class="panel-note">立场要正，辨析要清，边界要稳，落点要实。</p>
+      </aside>
+    </section>
+
+    <section class="cover square" id="wechat-1x1-cover">
+      <div class="paper"></div>
+      <div class="content">
+        <div class="top"><span>国考省考</span><span>2026 Q1</span></div>
+        <h2>${shortTitle.replaceAll('\\n', '<br>')}</h2>
+        <div class="date">2026年1-3月</div>
+        <div class="bottom">
+          <span><b>01</b>16类预测方向</span>
+          <span><b>02</b>五步框架</span>
+          <span><b>03</b>短句背诵</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>`;
+
+fs.writeFileSync(htmlPath, html, 'utf8');
+
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage({ viewport: { width: 2300, height: 1200 }, deviceScaleFactor: 1 });
+await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle' });
+
+await page.locator('#wechat-21x9-cover').screenshot({ path: path.join(mediaDir, 'wechat-21x9-cover.png') });
+await page.locator('#wechat-1x1-cover').screenshot({ path: path.join(mediaDir, 'wechat-1x1-cover.png') });
+
+const previewPath = path.join(__dirname, 'preview.html');
+const rel = (file) => path.relative(__dirname, path.join(mediaDir, file)).replaceAll(path.sep, '/');
+const css = html.split('<style>')[1].split('</style>')[0];
+fs.writeFileSync(previewPath, `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body><section class="preview" id="preview"><img src="${rel('wechat-21x9-cover.png')}" alt=""><img src="${rel('wechat-1x1-cover.png')}" alt=""></section></body></html>`, 'utf8');
+await page.setViewportSize({ width: 2000, height: 780 });
+await page.goto(`file://${previewPath}`, { waitUntil: 'networkidle' });
+await page.locator('#preview').screenshot({ path: path.join(mediaDir, 'wechat-cover-pair-preview.png') });
+
+await browser.close();
+
+console.log(JSON.stringify({
+  mediaDir,
+  files: ['wechat-21x9-cover.png', 'wechat-1x1-cover.png', 'wechat-cover-pair-preview.png']
+}, null, 2));

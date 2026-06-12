@@ -21,6 +21,14 @@
 | 2026-06-08 | 全国统一大市场：规则、设施和要素一起通 | 小红书图 / 视频号封面 | `media/images/2026-06-08-unified-market-xhs-video/` | 待上传 | `data/articles/公众号文章/08-人民日报讲全国统一大市场：规则、设施和要素一起通.md`；含 14 张小红书图和 1 张 3:4 视频号封面 |
 | 2026-06-09 | 城市更新：先体检、再保护、再服务 | 小红书图 / 视频号封面 | `media/images/2026-06-09-city-renewal-xhs-video/` | 待上传 | `data/articles/公众号文章/09-人民日报讲城市更新：别急着拆，先体检、再保护、再服务.md`；含 16 张小红书图、2 张 3:4 视频号封面和 1 张预览图 |
 | 2026-06-09 | 2026 观点认知热点预测与背诵框架（上半年） | 公众号封面 | `media/images/2026-06-09-viewpoint-cognition-2026h1-wechat/` | 待上传 | `data/analysis/viewpoint-cognition-prediction-frameworks-2026H1.md`；含 21:9 主封面、1:1 方封面和配对预览，Editorial × Ink Classic 杂志风 |
+| 2026-06-10 | 2026 观点认知热点预测与背诵框架（上半年） | 公众号封面 | `media/images/2026-06-10-viewpoint-cognition-2026h1-wechat-swiss/` | 待上传 | `data/analysis/viewpoint-cognition-prediction-frameworks-2026H1.md`；含 21:9 主封面、1:1 方封面和配对预览，Swiss × IKB Blue |
+| 2026-06-10 | 2026 观点认知热点预测与背诵框架（上半年） | 公众号封面 | `media/images/2026-06-10-viewpoint-cognition-2026h1-wechat-editorial-minimal/` | 待上传 | `data/analysis/viewpoint-cognition-prediction-frameworks-2026H1.md`；含 21:9 主封面、1:1 方封面和配对预览，Editorial × Ink Classic 极简版，仅突出标题 |
+| 2026-06-10 | 国考省考热点预测与背诵框架（2026年1-3月） | 公众号封面 | `media/images/2026-06-10-viewpoint-cognition-2026q1-wechat-cover/` | 待上传 | `data/analysis/viewpoint-cognition-prediction-frameworks-2026H1.md`；含 21:9 主封面、1:1 分享卡和配对预览，深墨蓝资料封面风 |
+| 2026-06-11 | AI治理：既给创新空间，也守伦理底线 | 小红书图 / 视频号封面 | `media/images/2026-06-11-ai-governance-innovation-ethics-xhs-video/` | 待上传 | `data/analysis/2026-06-10/xiaohongshu-ai-governance-innovation-ethics-card-script.md`；含 13 张小红书图、2 张 3:4 视频号封面和 1 张预览图，小米橙 × 高级灰 |
+| 2026-06-11 | 反内卷：让竞争回到价值创造 | 小红书图 / 视频号封面 | `media/images/2026-06-11-anti-involution-value-competition-xhs-video/` | 待上传 | `data/analysis/2026-06-11/xiaohongshu-anti-involution-value-competition-card-script.md`；含 14 张小红书图、2 张 3:4 视频号封面和 1 张预览图，汝窑蓝 |
+| 2026-06-11 | 向海图强：科技、生态和产业链 | 小红书图 / 视频号封面 | `media/images/2026-06-11-marine-economy-xhs-video/` | 待上传 | `data/analysis/2026-06-11/xiaohongshu-marine-economy-tech-ecology-industry-chain-card-script.md`；含 14 张小红书图、2 张 3:4 视频号封面和 1 张预览图，海军蓝 |
+| 2026-06-12 | 清欠企业账款：账款链也是信心链 | 小红书图 / 视频号封面 | `media/images/2026-06-12-arrears-payment-confidence-chain-xhs-video/` | 待上传 | `data/analysis/2026-06-11/xiaohongshu-arrears-payment-confidence-chain-card-script.md`；含 13 张小红书图、3 张 3:4 视频号封面和 1 张预览图，封面统一使用“《人民日报》这样写”无衬线大标题，主色 #419375 |
+| 2026-06-12 | 银发经济：服务供给和人力资源 | 小红书图 / 视频号封面 | `media/images/2026-06-12-silver-economy-service-human-resources-xhs-video/` | 待上传 | `data/analysis/2026-06-11/xiaohongshu-silver-economy-service-human-resources-card-script.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，暖白 #f0efeb Editorial 杂志风 |
 
 ## 类型写法
 

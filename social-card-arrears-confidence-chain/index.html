@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="forest-ink">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>清欠企业账款：账款链也是信心链</title>
+  <style>
+    :root {
+      --accent: #419375;
+      --accent-deep: #1f5f4c;
+      --accent-soft: #dcece4;
+      --ink: #17241d;
+      --muted: #67736b;
+      --paper: #f5f1e8;
+      --paper-2: #ebe3d4;
+      --gold: #c79b48;
+      --red: #c45145;
+      --white: #fffaf0;
+      --serif: "Songti SC", "Noto Serif CJK SC", "STSong", "SimSun", serif;
+      --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      --mono: "SFMono-Regular", "Menlo", "Consolas", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #d8d2c6;
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+
+    .deck {
+      display: grid;
+      grid-template-columns: repeat(2, 540px);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .poster {
+      position: relative;
+      width: 1080px;
+      height: 1440px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 14% 10%, rgba(65,147,117,.13), transparent 30%),
+        linear-gradient(140deg, rgba(255,255,255,.26), transparent 44%),
+        var(--paper);
+      color: var(--ink);
+      isolation: isolate;
+      transform-origin: top left;
+      box-shadow: 0 18px 60px rgba(20, 31, 26, .22);
+    }
+
+    @media screen {
+      .poster { transform: scale(.5); margin: 0 -540px -720px 0; }
+    }
+
+    .poster::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      opacity: .24;
+      mix-blend-mode: multiply;
+      background-image:
+        linear-gradient(90deg, rgba(23,36,29,.05) 1px, transparent 1px),
+        linear-gradient(rgba(23,36,29,.035) 1px, transparent 1px);
+      background-size: 82px 82px, 82px 82px;
+      mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      opacity: .26;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(23,36,29,.035) 0 1px, transparent 1px 4px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 1px, transparent 1px 5px);
+      mix-blend-mode: multiply;
+    }
+
+    .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      padding: 72px 72px 58px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .photo-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .photo-bg img,
+    .image-band img,
+    .image-block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(12,18,15,.12), rgba(12,18,15,.55)),
+        radial-gradient(circle at 28% 78%, rgba(7,16,12,.78), transparent 48%);
+    }
+
+    .soft-photo::after {
+      background:
+        linear-gradient(90deg, rgba(245,241,232,.92), rgba(245,241,232,.68) 52%, rgba(245,241,232,.18)),
+        linear-gradient(180deg, rgba(12,18,15,.08), rgba(12,18,15,.12));
+    }
+
+    .dark-photo::after {
+      background:
+        linear-gradient(180deg, rgba(6,11,9,.12), rgba(6,11,9,.35)),
+        radial-gradient(circle at 24% 70%, rgba(6,11,9,.86), rgba(6,11,9,.42) 42%, transparent 70%);
+    }
+
+    .image-band {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      height: 340px;
+      margin: 0;
+      overflow: hidden;
+      border-bottom: 2px solid rgba(23,36,29,.18);
+    }
+
+    .poster.band .content {
+      padding-top: 400px;
+      gap: 21px;
+    }
+
+    .image-block {
+      height: 520px;
+      margin: 0 -72px;
+      overflow: hidden;
+      border-top: 2px solid rgba(23,36,29,.14);
+      border-bottom: 2px solid rgba(23,36,29,.14);
+    }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 19px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+      line-height: 1.35;
+    }
+
+    .cover .kicker,
+    .dark .kicker,
+    .video .kicker { color: #f4dfb1; }
+
+    .title {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: .98;
+      letter-spacing: .04em;
+      font-size: 92px;
+      text-wrap: balance;
+    }
+
+    .title.cover-title {
+      font-family: var(--sans);
+      font-size: 88px;
+      font-weight: 800;
+      color: var(--white);
+      max-width: 860px;
+      text-shadow: 0 3px 24px rgba(0,0,0,.24);
+      letter-spacing: 0;
+      line-height: 1.06;
+    }
+
+    .title.mid { font-size: 76px; line-height: 1.05; }
+    .title.small { font-size: 62px; line-height: 1.08; }
+    .title.dark-title { color: var(--white); }
+
+    .series-title {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 104px;
+      line-height: 1.02;
+      font-weight: 850;
+      letter-spacing: 0;
+      color: var(--white);
+      text-shadow: 0 4px 28px rgba(0,0,0,.32);
+      text-wrap: balance;
+    }
+
+    .series-title.tight { font-size: 92px; }
+
+    .subtitle {
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 880px;
+    }
+
+    .cover .subtitle,
+    .dark .subtitle,
+    .video .subtitle {
+      color: rgba(255,250,240,.88);
+      text-shadow: 0 2px 14px rgba(0,0,0,.22);
+    }
+
+    .lead {
+      font-family: var(--serif);
+      font-size: 38px;
+      line-height: 1.52;
+      letter-spacing: .01em;
+    }
+
+    .body {
+      font-family: var(--serif);
+      font-size: 32px;
+      line-height: 1.58;
+      color: #24342c;
+    }
+
+    .body strong,
+    .lead strong,
+    .quote strong { color: var(--accent-deep); font-weight: 600; }
+
+    .quote {
+      position: relative;
+      font-family: var(--serif);
+      font-size: 38px;
+      line-height: 1.5;
+      padding: 28px 0 28px 34px;
+      border-left: 10px solid var(--accent);
+      color: #18261f;
+    }
+
+    .quote.compact { font-size: 31px; line-height: 1.52; }
+    .quote.large { font-size: 47px; line-height: 1.36; }
+    .quote.light { color: var(--white); border-color: #f4dfb1; text-shadow: 0 2px 14px rgba(0,0,0,.25); }
+
+    .statement {
+      margin-top: auto;
+      padding: 30px 0 0;
+      border-top: 2px solid rgba(65,147,117,.48);
+      font-family: var(--serif);
+      font-size: 40px;
+      line-height: 1.42;
+      color: var(--accent-deep);
+    }
+
+    .dark .statement,
+    .cover .statement,
+    .video .statement {
+      color: var(--white);
+      border-top-color: rgba(244,223,177,.68);
+    }
+
+    .ledger {
+      display: flex;
+      flex-direction: column;
+      border-top: 2px solid rgba(23,36,29,.22);
+      border-bottom: 2px solid rgba(23,36,29,.22);
+    }
+
+    .row {
+      min-height: 136px;
+      padding: 25px 0;
+      border-bottom: 1px solid rgba(23,36,29,.2);
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .row:last-child { border-bottom: 0; }
+
+    .num {
+      font-family: var(--serif);
+      font-size: 58px;
+      line-height: 1;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .row-title {
+      font-family: var(--serif);
+      font-size: 38px;
+      line-height: 1.25;
+      margin-bottom: 7px;
+    }
+
+    .row-note {
+      font-size: 25px;
+      line-height: 1.42;
+      color: var(--muted);
+    }
+
+    .bullets {
+      display: grid;
+      gap: 18px;
+      font-family: var(--serif);
+      font-size: 32px;
+      line-height: 1.48;
+    }
+
+    .bullet {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(23,36,29,.14);
+    }
+
+    .bullet::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      margin-top: 19px;
+    }
+
+    .bullet:last-child { border-bottom: 0; }
+
+    .chain {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .chain-node {
+      padding: 25px 0;
+      border-top: 2px solid rgba(65,147,117,.38);
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .chain-node span {
+      font-family: var(--mono);
+      font-size: 21px;
+      letter-spacing: .14em;
+      color: var(--accent-deep);
+    }
+
+    .chain-node strong {
+      font-family: var(--serif);
+      font-size: 43px;
+      font-weight: 500;
+      line-height: 1.18;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .metric {
+      border-top: 8px solid var(--accent);
+      padding: 22px 0 0;
+    }
+
+    .metric .value {
+      font-family: var(--serif);
+      font-size: 58px;
+      line-height: 1;
+      color: var(--accent-deep);
+      font-weight: 500;
+    }
+
+    .metric .label {
+      margin-top: 12px;
+      font-size: 22px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .formula {
+      display: grid;
+      gap: 16px;
+      margin-top: 8px;
+      border-top: 2px solid rgba(23,36,29,.2);
+      padding-top: 22px;
+    }
+
+    .formula div {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 24px;
+      align-items: baseline;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(23,36,29,.14);
+    }
+
+    .formula b {
+      font-family: var(--mono);
+      font-size: 22px;
+      letter-spacing: .1em;
+      color: var(--accent-deep);
+    }
+
+    .formula span {
+      font-family: var(--serif);
+      font-size: 35px;
+      line-height: 1.38;
+    }
+
+    .mini-cells {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px 28px;
+      margin-top: 6px;
+    }
+
+    .mini-cells div {
+      min-height: 118px;
+      padding: 20px 0 16px;
+      border-top: 6px solid rgba(65,147,117,.72);
+      font-family: var(--serif);
+      font-size: 31px;
+      line-height: 1.32;
+      color: #21342b;
+    }
+
+    .mini-cells b {
+      display: block;
+      margin-bottom: 8px;
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .16em;
+      color: var(--accent-deep);
+      font-weight: 500;
+    }
+
+    .foot {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(23,36,29,.22);
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .12em;
+      color: rgba(23,36,29,.54);
+    }
+
+    .cover .foot,
+    .dark .foot,
+    .video .foot {
+      border-top-color: rgba(255,250,240,.28);
+      color: rgba(255,250,240,.74);
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--accent-deep);
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: .14em;
+    }
+
+    .tagline::before {
+      content: "";
+      width: 52px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .cover-lockup {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      max-width: 860px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 13px;
+      margin-top: 6px;
+    }
+
+    .mini-grid div {
+      min-height: 132px;
+      display: flex;
+      align-items: end;
+      padding: 15px;
+      border: 1px solid rgba(255,250,240,.32);
+      color: rgba(255,250,240,.9);
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1.25;
+      background: rgba(10,22,17,.24);
+    }
+
+    .video .title.cover-title {
+      font-family: var(--sans);
+      font-size: 92px;
+      line-height: 1.04;
+      font-weight: 800;
+      max-width: 840px;
+    }
+
+    .video .series-title {
+      font-size: 108px;
+      max-width: 860px;
+    }
+
+    .video.alt .title.cover-title { font-size: 82px; line-height: 1.06; }
+
+    .video-label {
+      position: absolute;
+      z-index: 6;
+      top: 60px;
+      right: 60px;
+      writing-mode: vertical-rl;
+      font-family: var(--mono);
+      font-size: 18px;
+      letter-spacing: .24em;
+      color: rgba(255,250,240,.8);
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="poster cover dark" id="xhs-01" data-file="xhs-01-cover.png">
+      <!-- Subject map: government-building-china has strong vertical facade lines, emblem near upper center and flag in lower middle. Text placed in lower-left quiet/dark zone with localized dark tint, avoiding emblem and flag. -->
+      <div class="photo-bg dark-photo"><img src="assets/government-building-china.jpg" style="object-position:center 50%" alt=""></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">PEOPLE'S DAILY MATERIAL / 01</div>
+        <div class="cover-lockup">
+          <h1 class="series-title">《人民日报》<br>这样写</h1>
+          <div class="title cover-title">清欠账款怎么写</div>
+          <div class="subtitle">人民日报讲的是：账款链也是信心链</div>
+          <div class="mini-grid">
+            <div>旧账</div>
+            <div>现金流</div>
+            <div>信用</div>
+            <div>预期</div>
+          </div>
+          <div class="statement">不是财务小事，而是稳企业、稳就业、稳预期。</div>
+        </div>
+        <div class="foot"><span>ARREARS / CONFIDENCE CHAIN</span><span>01</span></div>
+      </div>
+    </section>
+
+    <section class="poster band" id="xhs-02" data-file="xhs-02-common-mistake.png">
+      <div class="image-band"><img src="assets/finance-documents-redmark.jpg" style="object-position:center 58%" alt=""></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">COMMON MISTAKE / 02</div>
+        <h2 class="title mid">很多人把清欠写小了</h2>
+        <div class="lead">只写“专项整治、督查问责、及时支付、优化环境”，话都对，但太像空泛对策。</div>
+        <div class="ledger">
+          <div class="row"><div class="num">01</div><div><div class="row-title">只见“欠钱还钱”</div><div class="row-note">没有看到企业现金流、就业和产业链。</div></div></div>
+          <div class="row"><div class="num">02</div><div><div class="row-title">只写“加大力度”</div><div class="row-note">没有区分无争议、待审计、争议款项。</div></div></div>
+          <div class="row"><div class="num">03</div><div><div class="row-title">只讲“营商环境”</div><div class="row-note">没有落到合同、承诺、救济和反馈闭环。</div></div></div>
+        </div>
+        <div class="statement">高分写法：把账款写成一条“信心链”。</div>
+        <div class="foot"><span>不要写成空泛对策</span><span>02</span></div>
+      </div>
+    </section>
+
+    <section class="poster" id="xhs-03" data-file="xhs-03-confidence-chain.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">MAIN LINE / 03</div>
+        <h2 class="title">记住这条信心链</h2>
+        <div class="chain">
+          <div class="chain-node"><span>OLD ACCOUNT</span><strong>旧账不清，损害政府公信力。</strong></div>
+          <div class="chain-node"><span>CASH FLOW</span><strong>款项拖欠，压住企业现金流。</strong></div>
+          <div class="chain-node"><span>EXPECTATION</span><strong>承诺兑现，稳住市场预期。</strong></div>
+        </div>
+        <div class="quote large">账款链也是信心链。旧账不清，损害的是政府公信力；款项拖欠，压住的是企业现金流；承诺兑现，稳住的是市场预期。</div>
+        <div class="mini-cells">
+          <div><b>写深一层</b>不是“欠钱还钱”，而是政府信用。</div>
+          <div><b>写实一层</b>不是“资金困难”，而是现金流被压住。</div>
+          <div><b>写远一层</b>不是“个案反馈”，而是市场预期。</div>
+          <div><b>写成主线</b>旧账清了，新信才会来。</div>
+        </div>
+        <div class="foot"><span>主线先立住，后面才有层次</span><span>03</span></div>
+      </div>
+    </section>
+
+    <section class="poster band" id="xhs-04" data-file="xhs-04-old-account.png">
+      <div class="image-band"><img src="assets/government-building-china.jpg" style="object-position:center 43%" alt=""></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">LAYER 01 / 04</div>
+        <h2 class="title mid">新官要理旧账</h2>
+        <div class="body">旧账不是前任私事，而是现任必须面对的履职条件。不理旧账，企业账款收不回，群众承诺落不了，政府信用也会被透支。</div>
+        <div class="quote">清欠账款，首先要算政绩观账。敢不敢接住旧账，体现的是干部担当；能不能依法兑现，体现的是政府信用。</div>
+        <div class="mini-cells">
+          <div><b>接续</b>不能因换人换届就推脱。</div>
+          <div><b>核验</b>手续不清的款项要加快审计。</div>
+          <div><b>回应</b>长期悬置问题要有台账反馈。</div>
+          <div><b>清障</b>把历史遗留问题变成发展条件。</div>
+        </div>
+        <div class="statement">理旧账，不是替前任收尾，而是为发展清障。</div>
+        <div class="foot"><span>政绩观账 / 接续履责</span><span>04</span></div>
+      </div>
+    </section>
+
+    <section class="poster band" id="xhs-05" data-file="xhs-05-cash-flow.png">
+      <div class="image-band"><img src="assets/finance-chart-desk.jpg" style="object-position:center 48%" alt=""></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">LAYER 02 / 05</div>
+        <h2 class="title small">账款拖欠，压住的是企业现金流</h2>
+        <div class="metrics">
+          <div class="metric"><div class="value">6000余万</div><div class="label">陕西久一实业有限公司曾反映被拖欠累计金额。</div></div>
+          <div class="metric"><div class="value">51万</div><div class="label">相关单位报道后支付款项之一。</div></div>
+          <div class="metric"><div class="value">140余万</div><div class="label">无争议部分推进结清的一项结果。</div></div>
+        </div>
+        <div class="lead">对小微企业来说，账款不是数字，是工资、材料款、贷款和订单。</div>
+        <div class="mini-cells">
+          <div><b>工资</b>现金流断裂，会传导到就业稳定。</div>
+          <div><b>材料</b>材料款拖住，上下游结算跟着卡住。</div>
+          <div><b>贷款</b>回款不及时，融资压力会被放大。</div>
+          <div><b>订单</b>周转慢了，新订单也可能接不住。</div>
+        </div>
+        <div class="statement">写营商环境，必须写到企业“能不能转起来”。</div>
+        <div class="foot"><span>现金流账 / 稳企业</span><span>05</span></div>
+      </div>
+    </section>
+
+    <section class="poster" id="xhs-06" data-file="xhs-06-classify-payment.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">CLASSIFY / 06</div>
+        <h2 class="title mid">清欠不能一刀切</h2>
+        <div class="lead">分类越细，越能体现治理不是喊口号，而是按事实、程序和争议性质推进。</div>
+        <div class="ledger">
+          <div class="row"><div class="num">01</div><div><div class="row-title">无争议款项</div><div class="row-note">先行支付，优先缓解企业现金流。</div></div></div>
+          <div class="row"><div class="num">02</div><div><div class="row-title">待审计款项</div><div class="row-note">加快审计，明确节点，不能无限期等待。</div></div></div>
+          <div class="row"><div class="num">03</div><div><div class="row-title">争议款项</div><div class="row-note">协商、调解、仲裁、诉讼，依法解纷。</div></div></div>
+          <div class="row"><div class="num">04</div><div><div class="row-title">困难企业</div><div class="row-note">同步纾困，必要时对接金融周转支持。</div></div></div>
+        </div>
+        <div class="statement">能付快付，应审快审，有争议就依法处理。</div>
+        <div class="foot"><span>分类越清楚，对策越有分</span><span>06</span></div>
+      </div>
+    </section>
+
+    <section class="poster band" id="xhs-07" data-file="xhs-07-rules-business-environment.png">
+      <div class="image-band"><img src="assets/courthouse-building.jpg" style="object-position:center 38%" alt=""></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">LAYER 03 / 07</div>
+        <h2 class="title small">营商环境看兑现</h2>
+        <div class="quote">营商环境不是企业遇到困难时多听几句安慰，而是合同能履行、承诺能兑现、权益能救济。</div>
+        <div class="bullets">
+          <div class="bullet">政府机关拖欠账款，要依法核实解决。</div>
+          <div class="bullet">行政允诺不能说变就变。</div>
+          <div class="bullet">大型企业不能把付款风险转嫁给中小企业。</div>
+        </div>
+        <div class="mini-cells">
+          <div><b>政务诚信</b>承诺和合同约定要依法兑现。</div>
+          <div><b>合同公平</b>不能把风险层层甩给弱势主体。</div>
+          <div><b>司法兜底</b>合法权益受损，要有救济通道。</div>
+          <div><b>稳定预期</b>规则兑现，企业才敢继续投入。</div>
+        </div>
+        <div class="statement">合同能履行、承诺能兑现，才是真营商环境。</div>
+        <div class="foot"><span>规则账 / 政务诚信</span><span>07</span></div>
+      </div>
+    </section>
+
+    <section class="poster dark" id="xhs-08" data-file="xhs-08-execution-confidence.png">
+      <!-- Subject map: assembly-hall-empty has bright circular window near upper center and rows of empty seats in lower half. Text is placed left/bottom over darker seating zone; title avoids the bright center. -->
+      <div class="photo-bg dark-photo"><img src="assets/assembly-hall-empty.jpg" style="object-position:center 52%" alt=""></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">LAYER 04 / 08</div>
+        <h2 class="title dark-title mid">执行也要托住信心</h2>
+        <div class="subtitle">规范文明执行不是“少执行”，而是更精准执行。</div>
+        <div class="quote light compact">规范文明执行，不是降低执行力度，而是让执行更精准、更有效、更有利于发展。</div>
+        <div class="statement">执行既要实现债权，也要尽量保住经营能力。</div>
+        <div class="foot"><span>执行账 / 权益与经营能力</span><span>08</span></div>
+      </div>
+    </section>
+
+    <section class="poster band" id="xhs-09" data-file="xhs-09-finance-adaptation.png">
+      <div class="image-band"><img src="assets/tax-finance-green.jpg" style="object-position:center 55%" alt=""></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">LAYER 05 / 09</div>
+        <h2 class="title small">金融适配能缓解周转</h2>
+        <div class="bullets">
+          <div class="bullet">供应链金融：依托链主信用，覆盖上下游。</div>
+          <div class="bullet">应收账款融资：把未到账款转成短期周转。</div>
+          <div class="bullet">订单贷、信用贷：匹配订单、生命周期和真实经营。</div>
+        </div>
+        <div class="mini-cells">
+          <div><b>可写</b>缓解周转压力。</div>
+          <div><b>不可写</b>替代付款责任。</div>
+          <div><b>要点</b>围绕真实订单和应收账款。</div>
+          <div><b>目标</b>让企业恢复经营能力。</div>
+        </div>
+        <div class="quote">金融支持不能替代付款责任。</div>
+        <div class="statement">金融是“缓冲垫”，不是把旧欠款变成企业新债务。</div>
+        <div class="foot"><span>金融账 / 适配性</span><span>09</span></div>
+      </div>
+    </section>
+
+    <section class="poster" id="xhs-10" data-file="xhs-10-governance-formula.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">GOVERNANCE CHAIN / 10</div>
+        <h2 class="title small">清欠不是催款，是治理链</h2>
+        <div class="quote compact">以台账清理压实责任，以法治规则保障权益，以规范执行盘活资产，以金融适配缓解周转，以信用约束防止新增拖欠。</div>
+        <div class="formula">
+          <div><b>台账</b><span>谁欠、欠多少、争议在哪、进度到哪。</span></div>
+          <div><b>规则</b><span>合同、承诺、司法救济一起兑现。</span></div>
+          <div><b>执行</b><span>分清恶意拖欠和暂时失能。</span></div>
+          <div><b>金融</b><span>缓解周转，但不替代付款责任。</span></div>
+          <div><b>信用</b><span>清存量，更要防新增。</span></div>
+        </div>
+        <div class="statement">把“加强协调”写成台账、规则、执行、金融、信用五个抓手。</div>
+        <div class="foot"><span>从动作写成机制</span><span>10</span></div>
+      </div>
+    </section>
+
+    <section class="poster" id="xhs-11" data-file="xhs-11-shenlun-formula.png">
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">SHENLUN / 11</div>
+        <h2 class="title mid">申论这样写</h2>
+        <div class="quote compact">解决拖欠企业账款，要把“清旧账”和“建新信”结合起来：以正确政绩观接续履责，以政务诚信兑现承诺，以规范执行保障权益，以金融适配缓解周转，以长效制度防止新增拖欠。</div>
+        <div class="lead">一句话里要有五个层次：政绩观、政务诚信、规范执行、金融适配、长效制度。</div>
+        <div class="formula">
+          <div><b>清旧账</b><span>接住历史遗留问题。</span></div>
+          <div><b>建新信</b><span>修复政府信用和市场预期。</span></div>
+          <div><b>保权益</b><span>用规范执行与法治救济兜底。</span></div>
+          <div><b>缓周转</b><span>用金融适配托住现金流。</span></div>
+          <div><b>防新增</b><span>用制度闭环防止反复拖欠。</span></div>
+        </div>
+        <div class="statement">别只写“及时支付”，要写“清旧账 + 建新信”。</div>
+        <div class="foot"><span>申论公式 / 可直接迁移</span><span>11</span></div>
+      </div>
+    </section>
+
+    <section class="poster band" id="xhs-12" data-file="xhs-12-interview-answer.png">
+      <div class="image-band"><img src="assets/business-documents-magnifier.jpg" style="object-position:center 58%" alt=""></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">INTERVIEW / 12</div>
+        <h2 class="title small">面试这样答</h2>
+        <div class="quote compact">某地多家民营企业反映，政府投资项目存在拖欠工程款、货款问题，影响企业现金流和员工工资发放。领导安排你牵头协调处理，你怎么办？</div>
+        <div class="ledger">
+          <div class="row"><div class="num">核</div><div><div class="row-title">先核账</div><div class="row-note">合同、金额、主体、争议。</div></div></div>
+          <div class="row"><div class="num">分</div><div><div class="row-title">再分类</div><div class="row-note">无争议快付，待审计快审。</div></div></div>
+          <div class="row"><div class="num">闭</div><div><div class="row-title">再闭环</div><div class="row-note">台账销号，反馈进度，防止新增。</div></div></div>
+        </div>
+        <div class="statement">不要只安抚企业，要给路径、时限和反馈。</div>
+        <div class="foot"><span>不要只安抚，要给路径、时限和反馈</span><span>12</span></div>
+      </div>
+    </section>
+
+    <section class="poster cover dark" id="xhs-13" data-file="xhs-13-closing.png">
+      <!-- Subject map: finance-documents-redmark has white documents across center/right and orange marker lower-left. Text placed upper-left and lower-left over darker wood/blue folder zones, avoiding dense document text. -->
+      <div class="photo-bg dark-photo"><img src="assets/finance-documents-redmark.jpg" style="object-position:center 57%" alt=""></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="kicker">FINAL SENTENCE / 13</div>
+        <div class="series-title tight">《人民日报》<br>这样写</div>
+        <h2 class="title cover-title">最后记住一句话</h2>
+        <div class="quote light compact">清旧账，不只是解决过去的问题；建新信，才是托住未来发展的关键。</div>
+        <div class="mini-grid">
+          <div>接续履责</div>
+          <div>分类清欠</div>
+          <div>规范执行</div>
+          <div>金融适配</div>
+        </div>
+        <div class="statement">清欠账款不是简单“把钱付了”，而是把旧账变成新信。</div>
+        <div class="foot"><span>清旧账 / 建新信</span><span>13</span></div>
+      </div>
+    </section>
+
+    <section class="poster video dark" id="video-01" data-file="video-cover-01.png">
+      <!-- Subject map: tax-finance-green has coins top-left, calculator upper-right and magnifier lower-left. Magazine title placed center-left over green paper zone with localized dark tint, avoiding calculator. -->
+      <div class="photo-bg dark-photo"><img src="assets/tax-finance-green.jpg" style="object-position:center 54%" alt=""></div>
+      <div class="grain"></div>
+      <div class="video-label">视频号封面 01</div>
+      <div class="content">
+        <div class="kicker">MAGAZINE COVER</div>
+        <div class="cover-lockup">
+          <div class="series-title">《人民日报》<br>这样写</div>
+          <h2 class="title cover-title">清欠账款怎么写</h2>
+          <div class="subtitle">账款链也是信心链</div>
+          <div class="statement">申论 / 面试 / 营商环境高分主线</div>
+        </div>
+        <div class="foot"><span>PEOPLE'S DAILY MATERIAL</span><span>3:4</span></div>
+      </div>
+    </section>
+
+    <section class="poster video dark alt" id="video-02" data-file="video-cover-02.png">
+      <!-- Subject map: assembly-hall-empty has bright focal window upper center; title set in lower-left dark seating zone and does not cross the bright circle. -->
+      <div class="photo-bg dark-photo"><img src="assets/assembly-hall-empty.jpg" style="object-position:center 50%" alt=""></div>
+      <div class="grain"></div>
+      <div class="video-label">视频号封面 02</div>
+      <div class="content">
+        <div class="kicker">GOVERNANCE FEATURE</div>
+        <div class="cover-lockup">
+          <div class="series-title">《人民日报》<br>这样写</div>
+          <h2 class="title cover-title">旧账清了<br>新信才会来</h2>
+          <div class="subtitle">从“欠钱还钱”写到政府信用和市场预期</div>
+          <div class="statement">清旧账，不只是解决过去的问题。</div>
+        </div>
+        <div class="foot"><span>CONFIDENCE CHAIN</span><span>3:4</span></div>
+      </div>
+    </section>
+
+    <section class="poster video dark alt" id="video-03" data-file="video-cover-03.png">
+      <!-- Subject map: courthouse-building has building mass in lower center and pale sky top. Title placed left/bottom with dark tint; sky remains breathing area. -->
+      <div class="photo-bg dark-photo"><img src="assets/courthouse-building.jpg" style="object-position:center 46%" alt=""></div>
+      <div class="grain"></div>
+      <div class="video-label">视频号封面 03</div>
+      <div class="content">
+        <div class="kicker">EXAM READY</div>
+        <div class="cover-lockup">
+          <div class="series-title">《人民日报》<br>这样写</div>
+          <h2 class="title cover-title">清欠企业账款</h2>
+          <div class="subtitle">申论公式 + 面试答法，一次讲透</div>
+          <div class="statement">以正确政绩观接续履责，以政务诚信兑现承诺。</div>
+        </div>
+        <div class="foot"><span>SHENLUN / INTERVIEW</span><span>3:4</span></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
