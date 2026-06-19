@@ -539,6 +539,155 @@ REFINED_IDEAS: List[Dict[str, Any]] = [
             "people_daily_20260608_30161711",
         ],
     },
+    {
+        "idea_id": "idea_refined_20260612_old_accounts_achievement",
+        "date": "2026-06-12",
+        "priority": "A",
+        "status": "备选",
+        "platform": "公众号 + 课堂讲解",
+        "title": "正确政绩观怎么写：新官理旧账，才是真担当",
+        "angle": "正确政绩观不能只看新项目、新口号，也要看敢不敢接住历史遗留问题、纠偏无效工程、把群众账和长远账算明白。",
+        "outline": ["接旧账：历史遗留问题不能一推了之", "纠偏账：项目建成后更要看能不能用、群众认不认", "长远账：克服大干快上冲动，把制度和生态账算进去"],
+        "support_article_ids": [
+            "people_daily_20260612_30162628",
+            "people_daily_20260612_30162670",
+            "people_daily_20260612_30162671",
+            "people_daily_20260612_30162685",
+            "people_daily_20260612_30162683",
+        ],
+    },
+    {
+        "idea_id": "idea_refined_20260612_services_follow_people",
+        "date": "2026-06-12",
+        "priority": "S",
+        "status": "备选",
+        "platform": "公众号 + 小红书",
+        "title": "新型城镇化怎么写：不是进城落脚，而是服务跟着人走",
+        "angle": "以人为本的新型城镇化，核心不是人口统计口径变化，而是让教育、就业、养老、权益保障等公共服务跟着常住人口和真实需求走。",
+        "outline": ["对象跟着人走：从户籍人口转向常住人口和新职业人群", "资源跟着需求走：教育、养老、就业、住房进入生活半径", "治理跟着风险走：权益保障和数智服务把新市民真正接住"],
+        "support_article_ids": [
+            "people_daily_20260608_30161752",
+            "people_daily_20260612_30162695",
+            "people_daily_20260612_30162696",
+            "people_daily_20260612_30162633",
+            "people_daily_20260614_30162849",
+            "people_daily_20260614_30162873",
+        ],
+    },
+    {
+        "idea_id": "idea_refined_20260612_tech_transfer_chain",
+        "date": "2026-06-12",
+        "priority": "S",
+        "status": "备选",
+        "platform": "公众号 + PPT",
+        "title": "科技成果转化别只写“产学研”：关键是打通最后一公里",
+        "angle": "科技成果转化不是论文自然变产品，而是政策松绑、平台服务、金融保险、技术经理人、市场需求和人才培养一起接上。",
+        "outline": ["从实验室到生产线：成果要有场景、有企业、有需求", "从政策到服务链：平台、金融、保险、技术经理人协同发力", "从创新到就业：微专业、创业服务和AI应用把成果转成产业机会"],
+        "support_article_ids": [
+            "people_daily_20260612_30162631",
+            "people_daily_20260613_30162793",
+            "people_daily_20260612_30162667",
+            "people_daily_20260612_30162693",
+            "people_daily_20260614_30162874",
+            "people_daily_20260614_30162873",
+        ],
+    },
+    {
+        "idea_id": "idea_refined_20260612_employment_chain",
+        "date": "2026-06-12",
+        "priority": "A",
+        "status": "备选",
+        "platform": "公众号 + 面试题卡",
+        "title": "破解就业难，不能只写“多给岗位”：产业、技能、服务和创业一起成链",
+        "angle": "破解就业难要把产业造岗、技能练岗、服务送岗、创业带岗连成就业链，而不是只停留在招聘和求职建议。",
+        "outline": ["产业端造岗：新质生产力、生产性服务业、数字经济创造新岗位", "教育端练岗：职业教育、技能培训、微专业精准对接岗位需求", "服务端送岗：国聘行动、岗位归集、AI匹配提高就业服务效率", "创业端带岗：陪跑服务、资金支持、订单对接让创业带动就业"],
+        "support_article_ids": [
+            "people_daily_20260529_30159831",
+            "people_daily_20260531_30159994",
+            "people_daily_20260601_30160088",
+            "people_daily_20260604_30160972",
+            "people_daily_20260605_30161066",
+            "people_daily_20260607_30161512",
+            "people_daily_20260608_30161711",
+            "people_daily_20260610_30162263",
+            "people_daily_20260611_30162450",
+            "people_daily_20260611_30162384",
+            "people_daily_20260612_30162655",
+            "people_daily_20260612_30162667",
+            "people_daily_20260614_30162873",
+            "people_daily_20260614_30162874",
+        ],
+    },
+    {
+        "idea_id": "idea_refined_20260612_modern_agri_service",
+        "date": "2026-06-12",
+        "priority": "A",
+        "status": "备选",
+        "platform": "公众号 + 课堂讲解",
+        "title": "现代农业不是只靠苦干：科技体检、田保姆和青年农机手一起上",
+        "angle": "农业现代化要写出科技下田、社会化服务和新农人队伍，不只是写农民辛苦、粮食增产。",
+        "outline": ["技术下田：给黑土地做体检，让施肥和管护更精准", "服务入田：田保姆、社会化服务把小农户接入现代农业", "青年到田：青年农机手、新农人让农业有技术也有人才"],
+        "support_article_ids": [
+            "people_daily_20260612_30162661",
+            "people_daily_20260612_30162613",
+            "people_daily_20260613_30162801",
+            "people_daily_20260614_30162853",
+        ],
+    },
+    {
+        "idea_id": "idea_refined_20260613_cultural_heritage_life",
+        "date": "2026-06-13",
+        "priority": "A",
+        "status": "备选",
+        "platform": "公众号 + 小红书",
+        "title": "文化遗产保护高分写法：先保护好，再让它回到日常",
+        "angle": "文化遗产不是静态摆设，也不是过度商业化的流量道具，而是要在保护第一的基础上进入生活、教育、消费和共同体记忆。",
+        "outline": ["保护第一：整体性、系统性保护守住文化根脉", "表达更新：用不同视角打开文化遗产，让公众看得懂、愿意亲近", "回到日常：文旅融合、门口文物和生活美学让文化成为共同记忆"],
+        "support_article_ids": [
+            "people_daily_20260613_30162792",
+            "people_daily_20260612_30162684",
+            "people_daily_20260613_30162786",
+            "people_daily_20260613_30162787",
+            "people_daily_20260613_30162788",
+            "people_daily_20260613_30162789",
+            "people_daily_20260614_30162845",
+        ],
+    },
+    {
+        "idea_id": "idea_refined_20260612_green_common_prosperity",
+        "date": "2026-06-12",
+        "priority": "B",
+        "status": "备选",
+        "platform": "公众号 + 课堂讲解",
+        "title": "绿色发展别只写生态好：要写出保护、转化和富民闭环",
+        "angle": "生态文明的可用写法，是把资源约束、系统保护、生态产品价值转化和群众增收连成一条链。",
+        "outline": ["先保护：水资源、绿水青山和生态系统是发展底座", "再转化：生态产品价值要进入产业、服务和市场", "能富民：绿色发展最终要让群众从保护中受益"],
+        "support_article_ids": [
+            "people_daily_20260612_30162654",
+            "people_daily_20260613_30162797",
+            "people_daily_20260612_30162683",
+            "people_daily_20260614_30162865",
+            "people_daily_20260612_30162661",
+        ],
+    },
+    {
+        "idea_id": "idea_refined_20260612_media_fusion_governance",
+        "date": "2026-06-12",
+        "priority": "B",
+        "status": "备选",
+        "platform": "公众号 + PPT",
+        "title": "主流媒体融合：不是多开账号，而是重构内容、技术和服务",
+        "angle": "媒体融合的重点不是形式相加，而是内容创新、机制再造、数智赋能、政务服务和国际传播能力同步提升。",
+        "outline": ["内容重构：主流表达要适配新传播场景", "技术赋能：数智建设提升生产、分发和互动能力", "服务延伸：媒体融合要连接政务、文化产业和国际传播"],
+        "support_article_ids": [
+            "people_daily_20260612_30162698",
+            "people_daily_20260612_30162605",
+            "people_daily_20260613_30162833",
+            "people_daily_20260614_30162884",
+            "people_daily_20260612_30162653",
+            "people_daily_20260612_30162686",
+        ],
+    },
 ]
 
 
@@ -699,9 +848,14 @@ def reject_old_titles(conn: sqlite3.Connection, rows: Iterable[sqlite3.Row], now
 
 
 def replace_content_ideas(conn: sqlite3.Connection, now: str) -> None:
+    existing_by_id = {row["idea_id"]: row for row in conn.execute("SELECT * FROM content_ideas")}
     conn.execute("DELETE FROM content_ideas")
     for idea in REFINED_IDEAS:
         support_ids = list(dict.fromkeys(idea["support_article_ids"]))
+        existing = existing_by_id.get(idea["idea_id"])
+        status = existing["status"] if existing else idea["status"]
+        priority = existing["priority"] if existing and existing["priority"] in {"S", "A", "B", "C"} else idea["priority"]
+        created_at = existing["created_at"] if existing else now
         conn.execute(
             """
             INSERT INTO content_ideas(
@@ -718,9 +872,9 @@ def replace_content_ideas(conn: sqlite3.Connection, now: str) -> None:
                 idea["platform"],
                 dumps(support_ids),
                 dumps(idea["outline"]),
-                idea["status"],
-                idea["priority"],
-                now,
+                status,
+                priority,
+                created_at,
                 now,
             ),
         )

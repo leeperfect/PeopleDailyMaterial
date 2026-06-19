@@ -1,0 +1,262 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>资源循环小红书与视频号封面</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d7ded9;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#12231e}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f3f1e8}
+.xhs,.video{width:1080px;height:1440px}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 86% 12%,rgba(76,130,150,.24),transparent 31%),
+  radial-gradient(circle at 9% 93%,rgba(223,125,82,.20),transparent 34%),
+  linear-gradient(90deg,rgba(18,35,30,.052) 1px,transparent 1px),
+  linear-gradient(180deg,rgba(18,35,30,.050) 1px,transparent 1px),
+  linear-gradient(180deg,#f8f4ea,#dfeee5);background-size:auto,auto,72px 72px,72px 72px,auto}
+.grain{position:absolute;inset:0;z-index:3;opacity:.26;background:repeating-linear-gradient(105deg,rgba(255,255,255,.10) 0 1px,transparent 1px 5px),radial-gradient(circle at 24% 18%,rgba(255,255,255,.28),transparent 28%);mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(18,35,30,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#3f8c6b;font-weight:900}
+.cover .top,.closing .top,.zeroCarbon .top{border-bottom-color:rgba(255,255,255,.45);color:#fffdf6}
+.cover .top span:first-child,.closing .top span:first-child,.zeroCarbon .top span:first-child{color:#ffbd74}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:82px;line-height:1.04;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,253,245,.92);border-left:10px solid #3f8c6b;font-size:35px;line-height:1.34;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:22px;line-height:1.45}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.06) brightness(.91)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(7,23,18,.86),rgba(7,23,18,.18) 66%,rgba(7,23,18,.40)),linear-gradient(180deg,rgba(7,23,18,.10),rgba(7,23,18,.40) 72%,rgba(7,23,18,.82))}
+.series{margin:36px 0 0;color:#ffbd74;font-size:35px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fffdf6;font-size:91px;max-width:910px}
+.coverLine{margin-top:30px;width:910px;padding:20px 24px;background:rgba(255,253,245,.90);color:#12231e;font-size:30px;font-weight:860}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#f3f1e8;color:#12231e;border-top:12px solid #df7d52;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#3f8c6b}.coverNodes span:nth-of-type(3){border-top-color:#4c8296}.coverNodes span:nth-of-type(4){border-top-color:#c4aa52}
+.coverNodes i{height:4px;background:#f3f1e8}
+.wrongList{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:172px;padding:22px;display:grid;align-content:space-between;background:#fffdf5;border:2px solid rgba(18,35,30,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#df7d52}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#12231e;color:#fffdf6;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:455px;z-index:1}
+.formulaPhoto:after,.industry:after{content:"";position:absolute;right:0;top:0;bottom:0;width:620px;z-index:2;background:linear-gradient(90deg,#f8f4ea 0%,rgba(248,244,234,.86) 46%,rgba(248,244,234,.18) 100%)}
+.formulaPhoto .content,.industry .content{padding-right:420px}
+.formulaPhoto .quote{font-size:30px;line-height:1.38}
+.valueChain{margin-top:auto;display:grid;gap:12px}
+.valueChain span{height:78px;padding:0 20px;display:flex;align-items:center;background:#12231e;color:#fffdf6;border-left:12px solid #df7d52;font-size:27px;font-weight:880}
+.valueChain i{display:none}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:405px;z-index:1;border:3px solid rgba(63,140,107,.32)}
+.consumer .content,.production .content,.scene .content,.governance .content{padding-bottom:535px}
+.numbered{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.numbered span{height:125px;padding:18px;display:grid;align-content:space-between;background:#fffdf5;border-top:12px solid #3f8c6b;font-size:25px;line-height:1.16;font-weight:850}
+.numbered b{font-size:20px;color:#df7d52}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:420px;height:560px;z-index:1;border:3px solid rgba(63,140,107,.32)}
+.chainCards .content{padding-right:520px}
+.chainCards .numbered{grid-template-columns:1fr;margin-top:auto}
+.chainCards .numbered span{height:94px}
+.productionWheel{margin-top:32px;position:relative;height:310px;background:linear-gradient(135deg,rgba(18,35,30,.08),rgba(63,140,107,.16));border:2px solid rgba(18,35,30,.20)}
+.productionWheel span{position:absolute;width:150px;height:74px;display:grid;place-items:center;text-align:center;background:#12231e;color:#fffdf6;font-size:23px;font-weight:860}
+.productionWheel .p1{left:54px;top:34px}.productionWheel .p2{left:316px;top:24px}.productionWheel .p3{right:54px;top:62px}.productionWheel .p4{left:170px;bottom:46px}.productionWheel .p5{right:170px;bottom:38px;background:#3f8c6b}
+.productionWheel em{position:absolute;left:50%;top:50%;width:142px;height:142px;margin:-71px 0 0 -71px;border:5px solid #df7d52;border-radius:50%}
+.topWide{position:absolute;left:58px;right:58px;bottom:58px;height:365px;z-index:1;border:3px solid rgba(63,140,107,.32)}
+.productionMap .content{padding-bottom:495px}
+.mapRows{margin-top:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.mapRows span{height:165px;padding:16px 10px;display:grid;align-content:space-between;text-align:center;background:#12231e;color:#fffdf6;font-size:23px;line-height:1.16;font-weight:880}
+.mapRows span:nth-child(2),.mapRows span:nth-child(4){background:#3f8c6b}.mapRows span:nth-child(5){background:#df7d52}
+.mapRows b{color:#ffda9c;font-size:19px}.mapRows i{height:4px;background:rgba(255,255,255,.25)}
+.softBleed img{filter:saturate(.75) contrast(1.08) brightness(.72)}
+.softTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(8,25,21,.86),rgba(8,25,21,.18) 68%),linear-gradient(180deg,rgba(8,25,21,.08),rgba(8,25,21,.72))}
+.zeroCarbon h1{color:#fffdf6;font-size:84px}
+.zeroCarbon .quote{font-size:27px;line-height:1.42}
+.sceneNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sceneNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#f3f1e8;color:#12231e;border-top:12px solid #df7d52;font-size:29px;font-weight:900}
+.sceneNodes span:nth-child(2),.sceneNodes span:nth-child(5){border-top-color:#3f8c6b}.sceneNodes span:nth-child(3),.sceneNodes span:nth-child(6){border-top-color:#4c8296}
+.chipLine{margin-top:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.chipLine span{height:178px;padding:14px 8px;display:grid;place-items:center;text-align:center;background:#12231e;color:#fffdf6;font-size:24px;font-weight:900}
+.chipLine span:nth-child(2),.chipLine span:nth-child(4){background:#3f8c6b}.chipLine span:nth-child(5){background:#df7d52}
+.wideSide{width:485px}
+.industry .content{padding-right:470px}
+.industry .quote{font-size:27px;line-height:1.42}
+.industryGrid{margin-top:auto;display:grid;grid-template-columns:1fr;gap:11px}
+.industryGrid span{height:76px;padding:0 20px;display:flex;align-items:center;background:#12231e;color:#fffdf6;border-left:12px solid #df7d52;font-size:26px;font-weight:860}
+.governanceGrid{margin-top:36px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.governanceGrid span{height:140px;display:grid;place-items:center;text-align:center;background:#fffdf5;border-top:12px solid #3f8c6b;font-size:29px;font-weight:900}
+.governanceGrid span:nth-child(2),.governanceGrid span:nth-child(4){border-top-color:#df7d52}
+.examFormula h1{font-size:83px}
+.examFormula:after{content:"价值链";position:absolute;left:58px;right:58px;top:620px;height:160px;z-index:1;display:grid;place-items:center;border-top:2px solid rgba(18,35,30,.20);border-bottom:2px solid rgba(18,35,30,.20);color:rgba(18,35,30,.18);font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:72px;font-weight:800}
+.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;align-items:center}
+.examFlow span{height:335px;padding:20px 12px;display:grid;align-content:space-between;text-align:center;background:#12231e;color:#fffdf6;font-size:24px;line-height:1.18;font-weight:900}
+.examFlow span:nth-of-type(2),.examFlow span:nth-of-type(4){background:#3f8c6b}.examFlow span:nth-of-type(3){background:#4c8296}
+.examFlow b{color:#ffda9c;font-size:22px}
+.examFlow i{height:4px;background:#3f8c6b}
+.argument .quote{font-size:22px;line-height:1.47}
+.argument:after{content:"";position:absolute;left:150px;right:150px;top:620px;height:255px;z-index:1;background:radial-gradient(circle at 50% 50%,transparent 0 58px,rgba(63,140,107,.28) 60px 63px,transparent 65px),linear-gradient(90deg,transparent 0 49%,rgba(18,35,30,.18) 49% 51%,transparent 51%),linear-gradient(180deg,transparent 0 49%,rgba(18,35,30,.18) 49% 51%,transparent 51%)}
+.argGrid{margin-top:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.argGrid span{height:180px;display:grid;place-items:center;text-align:center;background:#fffdf5;border-top:14px solid #3f8c6b;font-size:32px;font-weight:900}
+.argGrid span:nth-child(2),.argGrid span:nth-child(4){border-top-color:#df7d52}
+.interview .quote{font-size:35px}
+.answerSteps{margin-top:38px;display:grid;gap:14px}
+.answerSteps span{height:118px;padding:0 22px;display:flex;align-items:center;gap:18px;background:#fffdf5;border-left:12px solid #3f8c6b;font-size:27px;line-height:1.18;font-weight:850}
+.answerSteps b{font-size:22px;color:#df7d52}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(7,23,18,.86),rgba(7,23,18,.18) 66%,rgba(7,23,18,.40)),linear-gradient(180deg,rgba(7,23,18,.18),rgba(7,23,18,.76))}
+.closing h1{color:#fffdf6;font-size:78px}
+.closing .quote{margin-top:34px;background:rgba(255,253,245,.93);font-size:29px}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.closingNodes span{height:152px;display:grid;place-items:center;text-align:center;background:#f3f1e8;color:#12231e;border-top:12px solid #df7d52;font-size:30px;font-weight:900}
+.closingNodes span:nth-child(2){border-top-color:#3f8c6b}.closingNodes span:nth-child(3){border-top-color:#4c8296}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.82) contrast(1.08) brightness(.72)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(6,22,18,.90),rgba(6,22,18,.16) 70%),linear-gradient(180deg,rgba(6,22,18,.14),rgba(6,22,18,.28) 44%,rgba(6,22,18,.74))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.58);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:"CIRCULAR";position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:92px;z-index:4;color:#fffdf6}
+.v1 .videoTitle{top:116px;bottom:auto}.v2 .videoTitle{bottom:120px}.v3 .videoTitle{top:118px;bottom:auto}
+.videoTitle p{margin:0 0 28px;color:#ffbd74;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:90px;line-height:1.02;font-weight:780;letter-spacing:0}
+.videoTitle span{display:block;width:max-content;max-width:850px;margin-top:26px;padding:14px 18px;background:#df7d52;color:#fff;font-size:27px;font-weight:900}
+.preview{width:1800px;background:#d7ded9;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><main class="stage"><section class="poster xhs cover" id="xhs-01-cover">
+      <figure class="photo bleed">
+    <!-- Subject map: aerial circular park pattern sits in the middle; safe title zones are the upper-left and lower-left paths after soft mint tint. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/reuse-goods.jpg" alt="" style="object-position:center 48%;">
+  </figure><div class="coverTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>01</span><span>人民日报材料转申论</span></div>
+        <p class="series">《人民日报》这样写</p>
+        <h1>资源循环怎么写<br>不是回收旧物</h1>
+        <div class="coverLine">绿色消费 / 绿色生产 / 产业链再造</div>
+        <div class="coverNodes"><span>绿色消费</span><i></i><span>绿色生产</span><i></i><span>再生利用</span><i></i><span>产业链再造</span></div>
+      </div>
+    </section>
+<section class="poster xhs mistake" id="xhs-02-mistake">
+      <div class="paper"></div><div class="content"><div class="top"><span>02</span><span>常见误区</span></div><h1>别只写<br>垃圾分类</h1><blockquote class="quote">只写回收、节约、再利用，文章就停在了末端处理。</blockquote>
+      <div class="wrongList"><span><b>01</b>推进垃圾分类</span><span><b>02</b>加强废品回收</span><span><b>03</b>倡导节约资源</span><span><b>04</b>提高再利用效率</span></div>
+      <div class="aside"><p>这些能写，但不是主线</p><p>高分要写出：消费、生产、场景、产业如何连起来</p></div></div>
+    </section>
+<section class="poster xhs formulaPhoto" id="xhs-03-value-chain">
+      <div class="paper"></div><figure class="photo sidePhoto">
+    <!-- Subject map: aerial circular park pattern sits in the middle; safe title zones are the upper-left and lower-left paths after soft mint tint. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/reuse-goods.jpg" alt="" style="object-position:center 48%;">
+  </figure>
+      <div class="content"><div class="top"><span>03</span><span>核心公式</span></div><h1>先抓住<br>这条价值链</h1><blockquote class="quote">消费更新牵引需求 → 绿色生产重塑供给 → 再生利用延长价值 → 产业链再造形成增长点。</blockquote>
+      <div class="valueChain"><span>消费更新</span><i></i><span>绿色生产</span><i></i><span>再生利用</span><i></i><span>产业链再造</span></div></div>
+    </section>
+<section class="poster xhs consumer" id="xhs-04-consumption">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: EV charging plug occupies the center-right; keep text in the left column or upper-left panel. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/ev-charging.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>04</span><span>消费端</span></div><h1>以旧换新<br>不只是买新换旧</h1><blockquote class="quote">以旧换新不是简单的新老交替，而是以绿色消费牵引产品升级、服务延伸和资源循环。</blockquote><div class="numbered"><span><b>01</b>降低换新门槛</span><span><b>02</b>激活改善型需求</span><span><b>03</b>牵引绿色智能产品</span><span><b>04</b>带动回收服务</span></div></div>
+    </section>
+<section class="poster xhs chainCards" id="xhs-05-consumption-chain">
+      <div class="paper"></div><figure class="photo rightPhoto">
+    <!-- Subject map: EV charging plug occupies the center-right; keep text in the left column or upper-left panel. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/ev-charging.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>05</span><span>消费牵引</span></div><h1>换新背后<br>是产业链延伸</h1><blockquote class="quote">从新车销售到二手车评估、电池回收，从家电换新到研发升级，消费端正在倒逼供给端变化。</blockquote><div class="numbered"><span><b>01</b>消费者：降低成本</span><span><b>02</b>企业：产品升级</span><span><b>03</b>产业链：回收评估拆解</span><span><b>04</b>后市场：服务延伸</span></div></div>
+    </section>
+<section class="poster xhs production" id="xhs-06-production">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: manufacturing line and engineers sit in the lower-right; use image as bottom well or keep title upper-left. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/manufacturing-line.jpg" alt="" style="object-position:center 56%;">
+  </figure>
+      <div class="content"><div class="top"><span>06</span><span>生产端</span></div><h1>绿色产品<br>也要绿色生产</h1><blockquote class="quote">绿色制造不是末端减排，而是能源供给、生产工艺、资源循环、数字管碳和供应链协同的全链条再造。</blockquote>
+      <div class="productionWheel"><span class="p1">能源要绿</span><span class="p2">工艺要改</span><span class="p3">资源要循环</span><span class="p4">数据要管</span><span class="p5">供应链协同</span><em></em></div></div>
+    </section>
+<section class="poster xhs productionMap" id="xhs-07-green-manufacture">
+      <div class="paper"></div><figure class="photo topWide">
+    <!-- Subject map: solar panels form diagonal fields across the frame; safe text zone is upper-left and separate card blocks. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/solar-factory.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>07</span><span>生产链条</span></div><h1>把“节能减排”<br>写具体</h1><blockquote class="quote">绿电、节水、中水回用、固废资源化、能碳平台，才构成绿色制造的完整链条。</blockquote>
+      <div class="mapRows"><span><b>01</b>绿电供能<i></i></span><span><b>02</b>节能技改<i></i></span><span><b>03</b>中水回用<i></i></span><span><b>04</b>固废资源化<i></i></span><span><b>05</b>能碳平台<i></i></span></div></div>
+    </section>
+<section class="poster xhs zeroCarbon" id="xhs-08-zero-carbon">
+      <div class="paper"></div><figure class="photo bleed softBleed">
+    <!-- Subject map: wind turbines are small across lower-mid fields with clouds above; safe title zone is left and lower-left under dark tint. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/wind-turbine.jpg" alt="" style="object-position:center 50%;">
+  </figure><div class="softTint"></div>
+      <div class="content"><div class="top"><span>08</span><span>场景端</span></div><h1>零碳不是<br>一个项目</h1><blockquote class="quote">零碳场景的价值，不只在于少排放，更在于把能源、交通、固废、建筑、产业和生活方式重新组织起来。</blockquote>
+      <div class="sceneNodes"><span>能源</span><span>交通</span><span>固废</span><span>建筑</span><span>产业</span><span>生活方式</span></div></div>
+    </section>
+<section class="poster xhs scene" id="xhs-09-scene-extension">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: solar panels and blue sky create a low horizon; title can sit in upper sky or in separate panels. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/solar-field.jpg" alt="" style="object-position:center 58%;">
+  </figure>
+      <div class="content"><div class="top"><span>09</span><span>场景延伸</span></div><h1>循环要进<br>园区城市乡村</h1><blockquote class="quote">资源循环不是孤立动作，而是一个地方发展方式的变化。</blockquote><div class="chipLine"><span>零碳园区</span><span>零碳岛</span><span>无废城市</span><span>绿色交通</span><span>农旅融合</span></div></div>
+    </section>
+<section class="poster xhs industry" id="xhs-10-industry">
+      <div class="paper"></div><figure class="photo sidePhoto wideSide">
+    <!-- Subject map: baled recyclable material occupies the right and center, worker silhouette lower-left; title should stay above or in panels. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/recycling-plant.jpg" alt="" style="object-position:center 54%;">
+  </figure>
+      <div class="content"><div class="top"><span>10</span><span>产业端</span></div><h1>再生资源<br>不是低端回收</h1><blockquote class="quote">再生资源不是低端回收，而是推动资源型产业延链补链、城市治理绿色转型和新增长点培育的重要抓手。</blockquote>
+      <div class="industryGrid"><span>延链补链</span><span>精深加工</span><span>无废城市</span><span>绿色金融</span><span>数字治理</span></div></div>
+    </section>
+<section class="poster xhs governance" id="xhs-11-system-governance">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: industrial catwalk and cranes occupy left and right; center-right light area works as atmospheric background under tint. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/industrial-factory.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>11</span><span>系统治理</span></div><h1>从回收利用<br>走向系统治理</h1><blockquote class="quote">资源循环不是企业单点行为，也要靠无废城市、绿色金融、监测感知和闭环处置一起发力。</blockquote>
+      <div class="governanceGrid"><span>产业链再造</span><span>城市治理再造</span><span>金融支持再造</span><span>数字治理再造</span></div></div>
+    </section>
+<section class="poster xhs examFormula" id="xhs-12-exam-formula">
+      <div class="paper"></div><div class="content"><div class="top"><span>12</span><span>考场公式</span></div><h1>考场直接<br>套这条线</h1><blockquote class="quote">消费更新牵引需求 → 绿色生产重塑供给 → 再生利用延长价值 → 产业链再造形成增长点。</blockquote>
+      <div class="examFlow"><span><b>01</b>消费端：绿色消费牵引需求</span><i></i><span><b>02</b>生产端：绿色制造重塑供给</span><i></i><span><b>03</b>场景端：零碳无废嵌入生活</span><i></i><span><b>04</b>产业端：再生资源培育增长点</span></div></div>
+    </section>
+<section class="poster xhs argument" id="xhs-13-argument">
+      <div class="paper"></div><div class="content"><div class="top"><span>13</span><span>申论总论点</span></div><h1>一句话<br>写出深度</h1><blockquote class="quote long">推动资源循环利用，不能停留在末端回收，而要以绿色消费牵引需求升级，以绿色制造推动供给升级，以再生资源利用促进产业链升级，形成节约资源、减少排放、扩大内需和培育新动能的系统工程。</blockquote>
+      <div class="argGrid"><span>需求升级</span><span>供给升级</span><span>产业链升级</span><span>系统工程</span></div></div>
+    </section>
+<section class="poster xhs interview" id="xhs-14-interview">
+      <div class="paper"></div><div class="content"><div class="top"><span>14</span><span>面试题卡</span></div><h1>现象认知题<br>这样拆</h1><blockquote class="quote">有人说，资源循环就是把旧东西回收再利用。对此你怎么看？</blockquote>
+      <div class="answerSteps"><span><b>01</b>旧物回收只是末端环节</span><span><b>02</b>消费端要发挥牵引作用</span><span><b>03</b>生产端和产业端要形成闭环</span><span><b>04</b>地方治理要提供系统支撑</span></div></div>
+    </section>
+<section class="poster xhs closing" id="xhs-15-closing">
+      <figure class="photo bleed">
+    <!-- Subject map: wind turbines are small across lower-mid fields with clouds above; safe title zone is left and lower-left under dark tint. -->
+    <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/wind-turbine.jpg" alt="" style="object-position:center 50%;">
+  </figure><div class="closingTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>15</span><span>收束金句</span></div><h1>不是结束生命<br>而是重新创造价值</h1><blockquote class="quote">资源循环不是让旧物结束生命，而是让资源在新的消费、新的生产和新的产业链中重新创造价值。</blockquote>
+      <div class="closingNodes"><span>新的消费</span><span>新的生产</span><span>新的产业链</span></div></div>
+    </section><section class="poster video v1" id="video-cover-01">
+    <figure class="videoPhoto">
+      <!-- Subject map: aerial circular park pattern sits in the middle; safe title zones are the upper-left and lower-left paths after soft mint tint. Magazine title uses safe zone with localized dark tint. -->
+      <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/reuse-goods.jpg" alt="" style="object-position:center 48%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>资源循环<br>不是回收旧物</h2>
+      <span>绿色消费 / 绿色生产 / 产业链再造</span>
+    </div>
+  </section>
+<section class="poster video v2" id="video-cover-02">
+    <figure class="videoPhoto">
+      <!-- Subject map: EV charging plug occupies the center-right; keep text in the left column or upper-left panel. Magazine title uses safe zone with localized dark tint. -->
+      <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/ev-charging.jpg" alt="" style="object-position:center 52%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>以旧换新<br>不只是买新换旧</h2>
+      <span>绿色消费牵引产品升级和资源循环</span>
+    </div>
+  </section>
+<section class="poster video v3" id="video-cover-03">
+    <figure class="videoPhoto">
+      <!-- Subject map: industrial catwalk and cranes occupy left and right; center-right light area works as atmospheric background under tint. Magazine title uses safe zone with localized dark tint. -->
+      <img src="../../../../media/images/2026-06-19-resource-circulation-xhs-video/assets/industrial-factory.jpg" alt="" style="object-position:center 52%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>资源循环<br>写成产业链再造</h2>
+      <span>再生利用 / 延链补链 / 新增长点</span>
+    </div>
+  </section></main></body></html>

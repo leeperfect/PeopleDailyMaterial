@@ -365,6 +365,46 @@ def update_idea(idea_id: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     return {"success": True, "idea_id": idea_id}
 
 
+def batch_update(payload: Dict[str, Any]) -> Dict[str, Any]:
+    """Batch update status/priority for multiple idea_ids."""
+    idea_ids = payload.get("idea_ids", [])
+    if not isinstance(idea_ids, list) or not idea_ids:
+        raise ValueError("请选择至少一个选题")
+    status = payload.get("status")
+    priority = payload.get("priority")
+    if status is None and priority is None:
+        raise ValueError("请指定要修改的状态或优先级")
+    now = datetime.now().isoformat(timespec="seconds")
+    conn = connect(ASSET_DB)
+    try:
+        ensure_note_table(conn)
+        updated = 0
+        for idea_id in idea_ids:
+            exists = conn.execute(
+                "SELECT idea_id FROM content_ideas WHERE idea_id = ?", (idea_id,)
+            ).fetchone()
+            if not exists:
+                continue
+            if status is not None:
+                clean_status = normalize_status(status)
+                conn.execute(
+                    "UPDATE content_ideas SET status = ?, updated_at = ? WHERE idea_id = ?",
+                    (clean_status, now, idea_id),
+                )
+            if priority is not None:
+                clean_priority = normalize_priority(priority)
+                conn.execute(
+                    "UPDATE content_ideas SET priority = ?, updated_at = ? WHERE idea_id = ?",
+                    (clean_priority, now, idea_id),
+                )
+            updated += 1
+        conn.commit()
+    finally:
+        conn.close()
+    refresh_exports()
+    return {"success": True, "updated": updated}
+
+
 def refresh_exports() -> None:
     try:
         import export_content_ideas
@@ -458,6 +498,9 @@ class IdeaMagazineHandler(BaseHTTPRequestHandler):
             if parsed.path.startswith("/api/ideas/"):
                 idea_id = unquote(parsed.path.removeprefix("/api/ideas/"))
                 json_response(self, update_idea(idea_id, payload))
+                return
+            if parsed.path == "/api/batch":
+                json_response(self, batch_update(payload))
                 return
             if parsed.path == "/api/export":
                 refresh_exports()
@@ -555,7 +598,7 @@ HTML = r"""<!doctype html>
     .stat span { color: var(--muted); font-size: 13px; }
     .toolbar {
       display: grid;
-      grid-template-columns: minmax(260px, 1.4fr) repeat(5, minmax(112px, .5fr)) auto;
+      grid-template-columns: minmax(260px, 1.4fr) repeat(5, minmax(100px, .5fr)) auto auto;
       gap: 10px;
       align-items: stretch;
       margin-bottom: 22px;
@@ -576,6 +619,109 @@ HTML = r"""<!doctype html>
       cursor: pointer;
     }
     .action:hover, .status-button:hover { border-color: var(--ink); }
+    /* batch mode */
+    .batch-bar {
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 12px clamp(16px, 3vw, 40px);
+      background: rgba(23,19,15,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #e8e2d8;
+      font-size: 14px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.18);
+    }
+    .batch-bar.visible { display: flex; }
+    .batch-bar .batch-count {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-right: 4px;
+      color: #fff;
+    }
+    .batch-bar select, .batch-bar button {
+      min-height: 36px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.1);
+      color: #e8e2d8;
+      padding: 0 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+    .batch-bar select:hover, .batch-bar button:hover {
+      border-color: rgba(255,255,255,.5);
+      background: rgba(255,255,255,.18);
+    }
+    .batch-bar .batch-apply {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 0 18px;
+    }
+    .batch-bar .batch-apply:hover { background: #b52528; }
+    .batch-bar .batch-cancel {
+      margin-left: auto;
+      border-color: transparent;
+      background: transparent;
+      color: #a09888;
+    }
+    .batch-bar .batch-cancel:hover { color: #fff; }
+    .batch-bar .batch-toast { color: #8ec69a; font-size: 13px; min-width: 60px; }
+    .card .batch-check {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--line);
+      border-radius: 4px;
+      background: rgba(255,255,255,.6);
+      display: none;
+      place-items: center;
+      cursor: pointer;
+      z-index: 2;
+      transition: border-color .12s, background .12s;
+    }
+    body.batch-mode .card .batch-check { display: grid; }
+    .card .batch-check:hover { border-color: var(--ink); }
+    .card.batch-selected .batch-check {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .card.batch-selected .batch-check::after {
+      content: "✓";
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .card.batch-selected {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(157,31,34,.18), var(--shadow);
+    }
+    .batch-toggle {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.35);
+      min-height: 42px;
+      border-radius: var(--radius);
+      color: var(--ink);
+      padding: 0 14px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .batch-toggle:hover { border-color: var(--ink); }
+    .batch-toggle.active {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
     .layout {
       display: grid;
       grid-template-columns: minmax(0, 1.25fr) minmax(340px, .75fr);
@@ -846,8 +992,19 @@ HTML = r"""<!doctype html>
       <select class="field" id="monthFilter"><option value="">全部月份</option></select>
       <select class="field" id="quarterFilter"><option value="">全部季度</option></select>
       <select class="field" id="platformFilter"><option value="">全部平台</option></select>
+      <button class="batch-toggle" id="batchToggle">批量操作</button>
       <button class="action" id="exportButton">刷新总表</button>
     </section>
+
+    <div class="batch-bar" id="batchBar">
+      <span>已选 <span class="batch-count" id="batchCount">0</span> 项</span>
+      <button id="batchSelectAll">全选当前</button>
+      <select id="batchStatus"><option value="">设置状态…</option></select>
+      <select id="batchPriority"><option value="">设置优先级…</option></select>
+      <button class="batch-apply" id="batchApply">应用</button>
+      <span class="batch-toast" id="batchToast"></span>
+      <button class="batch-cancel" id="batchCancel">退出批量</button>
+    </div>
 
     <section class="layout">
       <div class="ideas" id="ideas"></div>
@@ -864,7 +1021,10 @@ HTML = r"""<!doctype html>
       pendingPriority: null,
       pendingSupportIds: [],
       pendingSelected: false,
-      pendingNote: ""
+      pendingNote: "",
+      batchMode: false,
+      batchIds: new Set(),
+      firstLoad: true
     };
 
     const $ = (id) => document.getElementById(id);
@@ -914,8 +1074,30 @@ HTML = r"""<!doctype html>
       fillSelect("monthFilter", state.filters.months || []);
       fillSelect("quarterFilter", state.filters.quarters || []);
       fillSelect("platformFilter", state.filters.platforms || []);
+      if (state.firstLoad) {
+        $("statusFilter").value = "备选";
+        state.firstLoad = false;
+      }
+      fillBatchSelects();
       updateStats(payload.stats || {});
       render();
+    }
+
+    function fillBatchSelects() {
+      const bs = $("batchStatus");
+      const bp = $("batchPriority");
+      bs.innerHTML = '<option value="">设置状态…</option>';
+      bp.innerHTML = '<option value="">设置优先级…</option>';
+      (state.filters.statuses || []).forEach((s) => {
+        const o = document.createElement("option");
+        o.value = s; o.textContent = s;
+        bs.appendChild(o);
+      });
+      (state.filters.priorities || []).forEach((p) => {
+        const o = document.createElement("option");
+        o.value = p; o.textContent = p + "级";
+        bp.appendChild(o);
+      });
     }
 
     function updateStats(stats) {
@@ -956,8 +1138,10 @@ HTML = r"""<!doctype html>
       }
       container.innerHTML = list.map((idea) => {
         const articles = idea.support_articles.slice(0, 2).map((article) => article.title).join("；");
+        const batchSel = state.batchIds.has(idea.idea_id) ? "batch-selected" : "";
         return `
-          <article class="card ${idea.idea_id === state.activeId ? "active" : ""}" data-id="${escapeHtml(idea.idea_id)}">
+          <article class="card ${idea.idea_id === state.activeId ? "active" : ""} ${batchSel}" data-id="${escapeHtml(idea.idea_id)}">
+            <div class="batch-check" data-batch-id="${escapeHtml(idea.idea_id)}"></div>
             <div class="meta">
               <span>${escapeHtml(idea.date)}</span>
               <span class="tag ${priorityClass(idea.priority)}">${escapeHtml(idea.priority)}级</span>
@@ -972,12 +1156,45 @@ HTML = r"""<!doctype html>
         `;
       }).join("");
       container.querySelectorAll(".card").forEach((card) => {
-        card.addEventListener("click", () => {
+        card.addEventListener("click", (e) => {
+          if (state.batchMode && (e.target.classList.contains("batch-check") || e.target.closest(".batch-check"))) {
+            toggleBatchId(card.dataset.id);
+            return;
+          }
+          if (state.batchMode) {
+            toggleBatchId(card.dataset.id);
+            return;
+          }
           state.activeId = card.dataset.id;
           render();
         });
       });
+      updateBatchBar();
       renderDetail(state.ideas.find((idea) => idea.idea_id === state.activeId));
+    }
+
+    function toggleBatchMode() {
+      state.batchMode = !state.batchMode;
+      if (!state.batchMode) state.batchIds.clear();
+      document.body.classList.toggle("batch-mode", state.batchMode);
+      $("batchToggle").classList.toggle("active", state.batchMode);
+      $("batchToggle").textContent = state.batchMode ? "退出批量" : "批量操作";
+      updateBatchBar();
+      render();
+    }
+
+    function toggleBatchId(id) {
+      if (state.batchIds.has(id)) state.batchIds.delete(id);
+      else state.batchIds.add(id);
+      updateBatchBar();
+      render();
+    }
+
+    function updateBatchBar() {
+      const bar = $("batchBar");
+      const count = state.batchIds.size;
+      $("batchCount").textContent = count;
+      bar.classList.toggle("visible", state.batchMode && count > 0);
     }
 
     function renderDetail(idea) {
@@ -1201,6 +1418,52 @@ HTML = r"""<!doctype html>
       await fetch("/api/export", { method: "POST" });
       $("exportButton").textContent = "已刷新";
       setTimeout(() => $("exportButton").textContent = "刷新总表", 1200);
+    });
+
+    $("batchToggle").addEventListener("click", toggleBatchMode);
+    $("batchCancel").addEventListener("click", toggleBatchMode);
+    $("batchSelectAll").addEventListener("click", () => {
+      const visible = filteredIdeas();
+      const allSelected = visible.every((idea) => state.batchIds.has(idea.idea_id));
+      if (allSelected) {
+        visible.forEach((idea) => state.batchIds.delete(idea.idea_id));
+      } else {
+        visible.forEach((idea) => state.batchIds.add(idea.idea_id));
+      }
+      updateBatchBar();
+      render();
+    });
+    $("batchApply").addEventListener("click", async () => {
+      const ids = [...state.batchIds];
+      if (!ids.length) return;
+      const batchPayload = { idea_ids: ids };
+      const bsVal = $("batchStatus").value;
+      const bpVal = $("batchPriority").value;
+      if (!bsVal && !bpVal) {
+        $("batchToast").textContent = "请先选择状态或优先级";
+        setTimeout(() => $("batchToast").textContent = "", 1600);
+        return;
+      }
+      if (bsVal) batchPayload.status = bsVal;
+      if (bpVal) batchPayload.priority = bpVal;
+      $("batchApply").textContent = "应用中…";
+      const resp = await fetch("/api/batch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(batchPayload)
+      });
+      const result = await resp.json();
+      if (result.error) {
+        $("batchToast").textContent = result.error;
+      } else {
+        $("batchToast").textContent = `已更新 ${result.updated} 项`;
+        state.batchIds.clear();
+        $("batchStatus").value = "";
+        $("batchPriority").value = "";
+        await load();
+      }
+      $("batchApply").textContent = "应用";
+      setTimeout(() => $("batchToast").textContent = "", 2000);
     });
 
     load();

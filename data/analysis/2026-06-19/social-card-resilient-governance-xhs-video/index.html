@@ -1,0 +1,264 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>韧性治理小红书与视频号封面</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d9ddd7;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#102723}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f3efe4}
+.xhs,.video{width:1080px;height:1440px}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 86% 9%,rgba(46,111,115,.28),transparent 30%),
+  radial-gradient(circle at 10% 94%,rgba(218,111,48,.20),transparent 32%),
+  linear-gradient(90deg,rgba(16,39,35,.055) 1px,transparent 1px),
+  linear-gradient(180deg,rgba(16,39,35,.052) 1px,transparent 1px),
+  linear-gradient(180deg,#f8f4ea,#e8eee8);background-size:auto,auto,72px 72px,72px 72px,auto}
+.grain{position:absolute;inset:0;z-index:3;opacity:.26;background:
+  repeating-linear-gradient(100deg,rgba(255,255,255,.08) 0 1px,transparent 1px 5px),
+  radial-gradient(circle at 22% 16%,rgba(255,255,255,.28),transparent 28%);
+  mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(16,39,35,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#2f6f73;font-weight:900}
+.cover .top,.closing .top{border-bottom-color:rgba(255,255,255,.48);color:#fffdf6}
+.cover .top span:first-child,.closing .top span:first-child{color:#ffb35c}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:82px;line-height:1.04;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,253,245,.92);border-left:10px solid #2f6f73;font-size:36px;line-height:1.34;font-weight:820}
+.quote.med{font-size:31px;line-height:1.38}
+.quote.long{font-size:25px;line-height:1.43}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.06) brightness(.91)}
+.bleed{position:absolute;inset:0;z-index:1}
+.photoTint{position:absolute;inset:0;z-index:2;background:
+  linear-gradient(90deg,rgba(7,24,27,.82),rgba(7,24,27,.20) 62%,rgba(7,24,27,.42)),
+  linear-gradient(180deg,rgba(7,24,27,.18),rgba(7,24,27,.52) 72%,rgba(7,24,27,.82))}
+.series{margin:36px 0 0;color:#ffb35c;font-size:35px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fffdf6;font-size:91px;max-width:890px}
+.coverLine{margin-top:30px;width:890px;padding:20px 24px;background:rgba(255,253,245,.90);color:#102723;font-size:30px;font-weight:860}
+.coverLine b{color:#b74f2a}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;align-items:center}
+.coverNodes span{height:152px;display:grid;place-items:center;background:#f3efe4;color:#102723;border-top:12px solid #d76f30;font-size:31px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#2f6f73}.coverNodes span:nth-of-type(3){border-top-color:#d4ad45}
+.coverNodes i{height:5px;background:#f3efe4}
+.wrongList{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:172px;padding:22px;display:grid;align-content:space-between;background:#fffdf5;border:2px solid rgba(16,39,35,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#d76f30}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#102723;color:#fffdf6;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:455px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:620px;z-index:2;background:linear-gradient(90deg,#f8f4ea 0%,rgba(248,244,234,.84) 46%,rgba(248,244,234,.16) 100%)}
+.quotePhoto .content{padding-right:420px}
+.quotePhoto .quote{font-size:31px;line-height:1.38}
+.chips{margin-top:auto;display:grid;grid-template-columns:1fr;gap:12px}
+.chips span{height:74px;padding:0 20px;display:flex;align-items:center;background:#102723;color:#fffdf6;border-left:12px solid #d76f30;font-size:28px;font-weight:860}
+.topWide{position:absolute;left:58px;right:58px;bottom:58px;height:370px;z-index:1;border:3px solid rgba(47,111,115,.32)}
+.radar .content{padding-bottom:505px}
+.loop{margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.loop span{height:152px;padding:18px;display:grid;align-content:space-between;background:#102723;color:#fffdf6;font-size:26px;font-weight:880}
+.loop span:nth-child(2),.loop span:nth-child(4){background:#2f6f73}
+.loop b{color:#ffcf8a;font-size:21px}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:430px;z-index:1;border:3px solid rgba(47,111,115,.32)}
+.riskChain .content{padding-bottom:560px}
+.chainGrid{margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.chainGrid span{height:132px;padding:16px;display:grid;align-content:space-between;background:#fffdf5;border-top:12px solid #2f6f73;font-size:24px;font-weight:850}
+.chainGrid b{color:#d76f30;font-size:20px}
+.resourcePhoto{position:absolute;left:58px;right:58px;bottom:58px;height:405px;z-index:1;border:3px solid rgba(47,111,115,.32)}
+.resource .content{padding-bottom:535px}
+.miniCards{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.miniCards span{height:150px;padding:16px;display:grid;align-content:space-between;text-align:center;background:#102723;color:#fffdf6;font-size:26px;font-weight:880}
+.miniCards span:nth-child(2),.miniCards span:nth-child(4){background:#2f6f73}
+.miniCards b{color:#ffcf8a;font-size:20px}
+.checkRows{margin-top:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.checkRows span{height:156px;padding:20px 22px;display:grid;grid-template-columns:54px 1fr 38px;align-items:center;background:#fffdf5;border-left:12px solid #2f6f73;font-size:31px;font-weight:880}
+.checkRows b{font-size:22px;color:#d76f30}
+.checkRows i{width:30px;height:30px;border:4px solid #2f6f73;border-radius:50%;position:relative}
+.checkRows i:after{content:"";position:absolute;left:6px;top:4px;width:13px;height:7px;border-left:4px solid #2f6f73;border-bottom:4px solid #2f6f73;transform:rotate(-45deg)}
+.networkPhoto{position:absolute;left:58px;right:58px;bottom:58px;height:345px;z-index:1;border:3px solid rgba(47,111,115,.32)}
+.network .content{padding-bottom:480px}
+.networkMap{margin-top:36px;position:relative;height:345px;background:linear-gradient(135deg,rgba(16,39,35,.08),rgba(47,111,115,.16));border:2px solid rgba(16,39,35,.20)}
+.networkMap span{position:absolute;width:152px;height:78px;display:grid;place-items:center;text-align:center;background:#102723;color:#fffdf6;font-size:24px;font-weight:860}
+.networkMap .n1{left:46px;top:36px}.networkMap .n2{left:276px;top:22px}.networkMap .n3{right:64px;top:52px}.networkMap .n4{left:84px;bottom:52px}.networkMap .n5{left:378px;bottom:38px}.networkMap .n6{right:76px;bottom:78px;background:#2f6f73}
+.networkMap em{position:absolute;left:50%;top:50%;width:190px;height:190px;margin:-95px 0 0 -95px;border:5px solid #d76f30;border-radius:50%}
+.signalPhoto{position:absolute;right:58px;bottom:58px;width:420px;height:560px;z-index:1;border:3px solid rgba(47,111,115,.32)}
+.social .content{padding-right:530px}
+.signalStack{margin-top:auto;display:grid;gap:12px}
+.signalStack span{height:82px;padding:0 22px;display:flex;align-items:center;background:#102723;color:#fffdf6;border-left:12px solid #d76f30;font-size:27px;font-weight:860}
+.publicQuote h1{font-size:82px}
+.publicQuote .quote{font-size:29px;line-height:1.45}
+.publicQuote:after{content:"";position:absolute;left:112px;right:112px;top:660px;height:285px;z-index:1;background:
+  linear-gradient(90deg,transparent 0 12%,rgba(47,111,115,.32) 12% 12.8%,transparent 12.8% 49.4%,rgba(47,111,115,.32) 49.4% 50.2%,transparent 50.2% 87%,rgba(47,111,115,.32) 87% 87.8%,transparent 87.8%),
+  linear-gradient(180deg,transparent 0 48%,rgba(215,111,48,.30) 48% 50%,transparent 50%);
+  border:2px solid rgba(16,39,35,.12)}
+.threeAnswers{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.threeAnswers span{height:325px;padding:26px 18px;display:grid;place-items:center;text-align:center;background:#102723;color:#fffdf6;font-size:34px;line-height:1.15;font-weight:900}
+.threeAnswers span:nth-child(2){background:#2f6f73}.threeAnswers span:nth-child(3){background:#d76f30}
+.fiveActions h1{font-size:86px}
+.fiveActions:after{content:"防灾减灾关口前移";position:absolute;left:58px;right:58px;top:620px;height:158px;z-index:1;display:grid;place-items:center;border-top:2px solid rgba(16,39,35,.22);border-bottom:2px solid rgba(16,39,35,.22);color:rgba(16,39,35,.18);font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:66px;font-weight:800}
+.actionFlow{margin-top:auto;display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr;align-items:center}
+.actionFlow span{height:375px;padding:18px 10px;display:grid;align-content:space-between;text-align:center;background:#102723;color:#fffdf6;font-size:25px;line-height:1.15;font-weight:900}
+.actionFlow span:nth-of-type(2),.actionFlow span:nth-of-type(4){background:#2f6f73}.actionFlow span:nth-of-type(5){background:#d76f30}
+.actionFlow b{color:#ffcf8a;font-size:22px}
+.actionFlow i{height:4px;background:#2f6f73}
+.argument .quote{font-size:25px;line-height:1.45}
+.argument:after{content:"";position:absolute;left:145px;right:145px;top:620px;height:275px;z-index:1;background:
+  radial-gradient(circle at 50% 50%,transparent 0 58px,rgba(47,111,115,.28) 60px 63px,transparent 65px),
+  linear-gradient(90deg,transparent 0 49%,rgba(16,39,35,.18) 49% 51%,transparent 51%),
+  linear-gradient(180deg,transparent 0 49%,rgba(16,39,35,.18) 49% 51%,transparent 51%)}
+.argGrid{margin-top:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.argGrid span{height:190px;display:grid;place-items:center;text-align:center;background:#fffdf5;border-top:14px solid #2f6f73;font-size:32px;font-weight:900}
+.argGrid span:nth-child(2),.argGrid span:nth-child(4){border-top-color:#d76f30}
+.interview .quote{font-size:24px;line-height:1.42}
+.answerSteps{margin-top:32px;display:grid;gap:12px}
+.answerSteps span{height:106px;padding:0 20px;display:flex;align-items:center;gap:18px;background:#fffdf5;border-left:12px solid #2f6f73;font-size:25px;line-height:1.2;font-weight:850}
+.answerSteps b{font-size:21px;color:#d76f30}
+.closingTint{position:absolute;inset:0;z-index:2;background:
+  linear-gradient(90deg,rgba(7,24,27,.86),rgba(7,24,27,.16) 64%,rgba(7,24,27,.42)),
+  linear-gradient(180deg,rgba(7,24,27,.20),rgba(7,24,27,.72))}
+.closing h1{color:#fffdf6;font-size:86px}
+.closing .quote{margin-top:34px;background:rgba(255,253,245,.93);font-size:30px}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.closingNodes span{height:152px;display:grid;place-items:center;text-align:center;background:#f3efe4;color:#102723;border-top:12px solid #d76f30;font-size:30px;font-weight:900}
+.closingNodes span:nth-child(2){border-top-color:#2f6f73}.closingNodes span:nth-child(3){border-top-color:#d4ad45}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.82) contrast(1.08) brightness(.72)}
+.videoTint{position:absolute;inset:0;z-index:2;background:
+  linear-gradient(90deg,rgba(6,22,24,.88),rgba(6,22,24,.18) 70%),
+  linear-gradient(180deg,rgba(6,22,24,.14),rgba(6,22,24,.26) 45%,rgba(6,22,24,.74))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.58);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:"RESILIENCE";position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:92px;z-index:4;color:#fffdf6}
+.v1 .videoTitle{top:120px;bottom:auto}.v2 .videoTitle{bottom:122px}.v3 .videoTitle{top:112px;bottom:auto}
+.videoTitle p{margin:0 0 28px;color:#ffb35c;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:90px;line-height:1.02;font-weight:780;letter-spacing:0}
+.videoTitle span{display:block;width:max-content;max-width:850px;margin-top:26px;padding:14px 18px;background:#d76f30;color:#fff;font-size:28px;font-weight:900}
+.v3 .videoTitle span{font-size:24px}
+.preview{width:1800px;background:#d9ddd7;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><main class="stage"><section class="poster xhs cover" id="xhs-01-cover">
+      <figure class="photo bleed">
+    <!-- Subject map: lightning sits in the upper-right sky, city skyline fills the lower half; safe title zones are upper-left and lower-left with localized dark tint. -->
+    <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/storm-city.jpg" alt="" style="object-position:center 47%;">
+  </figure><div class="photoTint"></div><div class="grain"></div>
+      <div class="content">
+        <div class="top"><span>01</span><span>人民日报材料转申论</span></div>
+        <p class="series">《人民日报》这样写</p>
+        <h1>韧性治理怎么写<br>不是灾后救急</h1>
+        <div class="coverLine">不是灾后救急，而是 <b>早识别 / 早前置 / 能联动</b></div>
+        <div class="coverNodes"><span>风险早识别</span><i></i><span>资源早前置</span><i></i><span>系统能联动</span></div>
+      </div>
+    </section>
+<section class="poster xhs mistake" id="xhs-02-mistake">
+      <div class="paper"></div><div class="content"><div class="top"><span>02</span><span>常见误区</span></div><h1>别把防灾减灾<br>写成救急清单</h1><blockquote class="quote">只写救援、预案、物资，容易漏掉“灾前系统怎么准备”。</blockquote>
+      <div class="wrongList"><span><b>01</b>完善应急预案</span><span><b>02</b>加强救援力量</span><span><b>03</b>做好物资保障</span><span><b>04</b>加强宣传教育</span></div>
+      <div class="aside"><p>这些话能写，但还不够高分</p><p>关键要问：风险来之前，系统准备好了什么？</p></div></div>
+    </section>
+<section class="poster xhs quotePhoto" id="xhs-03-core-quote">
+      <div class="paper"></div><figure class="photo sidePhoto">
+    <!-- Subject map: satellite storm spiral occupies the lower-left and center; safe text zone is the upper-right ocean/land edge after light paper overlay. -->
+    <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/flood-water.jpg" alt="" style="object-position:center 46%;">
+  </figure>
+      <div class="content"><div class="top"><span>03</span><span>核心判断</span></div><h1>先换一个<br>治理视角</h1><blockquote class="quote">韧性治理不是灾后救急，而是把风险识别、资源前置、预案演练、科技支撑和群众动员提前做成体系。</blockquote><div class="chips"><span>风险识别</span><span>资源前置</span><span>预案演练</span><span>科技支撑</span><span>群众动员</span></div></div>
+    </section>
+<section class="poster xhs radar" id="xhs-04-risk-early">
+      <div class="paper"></div><figure class="photo topWide">
+    <!-- Subject map: satellite hardware sits on the right edge and cloud field fills the center; keep text on the left and lower-left. -->
+    <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/weather-satellite.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>04</span><span>第一步</span></div><h1>风险<br>早识别</h1><blockquote class="quote">把风险识别关口前移，构建监测预警、综合研判、信息共享、快速叫应的风险治理闭环。</blockquote>
+      <div class="loop"><span style="--i:0"><b>01</b>监测预警</span><span style="--i:1"><b>02</b>综合研判</span><span style="--i:2"><b>03</b>信息共享</span><span style="--i:3"><b>04</b>快速叫应</span></div></div>
+    </section>
+<section class="poster xhs riskChain" id="xhs-05-risk-chain">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: flood water occupies the foreground and village buildings sit along the upper half; avoid covering the central water line and tower. -->
+    <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/flooded-street.jpg" alt="" style="object-position:center 58%;">
+  </figure>
+      <div class="content"><div class="top"><span>05</span><span>为什么要前移</span></div><h1>极端天气<br>不是单点风险</h1><blockquote class="quote">一场强降雨，可能连着内涝、山洪、交通中断、通信受阻和群众转移。</blockquote>
+      <div class="chainGrid"><span><b>01</b>城市内涝</span><span><b>02</b>山洪地灾</span><span><b>03</b>交通中断</span><span><b>04</b>通信受阻</span><span><b>05</b>群众转移</span><span><b>06</b>物资保障</span></div></div>
+    </section>
+<section class="poster xhs resource" id="xhs-06-resource-front">
+      <div class="paper"></div><figure class="photo resourcePhoto">
+    <!-- Subject map: gear is spread evenly across the frame; safe text zones are separate panels or the darker lower-left fabric areas. -->
+    <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/emergency-kit.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>06</span><span>第二步</span></div><h1>资源<br>早前置</h1><blockquote class="quote">预警发出去后，要有人接得住、叫得醒、转得出、安得下。</blockquote><div class="miniCards"><span><b>01</b>队伍能力</span><span><b>02</b>装备能力</span><span><b>03</b>场所能力</span><span><b>04</b>组织能力</span></div></div>
+    </section>
+<section class="poster xhs checklist" id="xhs-07-plan-live">
+      <div class="paper"></div><div class="content"><div class="top"><span>07</span><span>预案要能启动</span></div><h1>预案不能<br>停在纸面</h1><blockquote class="quote">预案不是纸面文本，而是人员、物资、场所、通信、路线和报告流程都能随时启动。</blockquote>
+      <div class="checkRows"><span><b>01</b>人员<i></i></span><span><b>02</b>物资<i></i></span><span><b>03</b>场所<i></i></span><span><b>04</b>通信<i></i></span><span><b>05</b>路线<i></i></span><span><b>06</b>报告流程<i></i></span></div></div>
+    </section>
+<section class="poster xhs network" id="xhs-08-system-linkage">
+      <div class="paper"></div><figure class="photo networkPhoto">
+    <!-- Subject map: car is centered with brake lights around the middle; text must stay in the lower-left or upper-left, away from the car body. -->
+    <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/car-rain.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>08</span><span>第三步</span></div><h1>系统<br>能联动</h1><blockquote class="quote">韧性治理的核心，是让系统在风险来临时不断线、不失灵、不慌乱。</blockquote>
+      <div class="networkMap"><span class="n1">气象</span><span class="n2">应急</span><span class="n3">水利</span><span class="n4">自然资源</span><span class="n5">交通</span><span class="n6">基层组织</span><em></em></div></div>
+    </section>
+<section class="poster xhs social" id="xhs-09-tech-social">
+      <div class="paper"></div><figure class="photo signalPhoto">
+    <!-- Subject map: red emergency pull button occupies center-left; use it as evidence image, not as title background. -->
+    <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/emergency-response.jpg" alt="" style="object-position:center 50%;">
+  </figure>
+      <div class="content"><div class="top"><span>09</span><span>支撑层</span></div><h1>科技支撑<br>群众动员</h1><blockquote class="quote">把“发通知”变成可理解、可体验、可行动的风险教育。</blockquote>
+      <div class="signalStack"><span>公开课</span><span>模拟体验</span><span>应急广播</span><span>入户动员</span><span>重点帮扶</span></div></div>
+    </section>
+<section class="poster xhs publicQuote" id="xhs-10-public-selfhelp">
+      <div class="paper"></div><div class="content"><div class="top"><span>10</span><span>群众能力</span></div><h1>宣传不是<br>发完就算</h1><blockquote class="quote">防灾减灾宣传的目的，不是让群众知道有风险，而是让群众在风险来临时知道往哪里走、找谁帮、怎么自救。</blockquote>
+      <div class="threeAnswers"><span>往哪里走</span><span>找谁帮</span><span>怎么自救</span></div></div>
+    </section>
+<section class="poster xhs fiveActions" id="xhs-11-five-actions">
+      <div class="paper"></div><div class="content"><div class="top"><span>11</span><span>国考省考公式</span></div><h1>韧性治理<br>五个动作</h1><blockquote class="quote">风险早识别 → 资源早前置 → 预案早演练 → 系统能联动 → 群众会自救。</blockquote>
+      <div class="actionFlow"><span><b>01</b>风险早识别</span><i></i><span><b>02</b>资源早前置</span><i></i><span><b>03</b>预案早演练</span><i></i><span><b>04</b>系统能联动</span><i></i><span><b>05</b>群众会自救</span></div></div>
+    </section>
+<section class="poster xhs argument" id="xhs-12-shenlun-argument">
+      <div class="paper"></div><div class="content"><div class="top"><span>12</span><span>申论总论点</span></div><h1>一句话<br>写出治理感</h1><blockquote class="quote med">提升韧性治理能力，关键是把防灾减灾关口前移，推动风险识别、资源配置、基层能力、科技支撑和群众参与协同发力，构建防抗救一体的全过程治理体系。</blockquote>
+      <div class="argGrid"><span>关口前移</span><span>协同发力</span><span>防抗救一体</span><span>全过程治理</span></div></div>
+    </section>
+<section class="poster xhs interview" id="xhs-13-interview">
+      <div class="paper"></div><div class="content"><div class="top"><span>13</span><span>面试题卡</span></div><h1>现象认知题<br>这样拆</h1><blockquote class="quote">近年来，极端天气增多。有人认为，防灾减灾关键是灾后救援要快；也有人认为，关键是平时把基础工作做扎实。对此你怎么看？</blockquote>
+      <div class="answerSteps"><span><b>01</b>纠正认识：不能只靠灾后救急</span><span><b>02</b>监测预警：提升识别和叫应能力</span><span><b>03</b>夯实基层：队伍、物资、场所下沉</span><span><b>04</b>系统协同：信息共享、行动联动</span><span><b>05</b>公众能力：懂预警、会避险、能互救</span></div></div>
+    </section>
+<section class="poster xhs closing" id="xhs-14-closing">
+      <figure class="photo bleed">
+    <!-- Subject map: lightning sits in the upper-right sky, city skyline fills the lower half; safe title zones are upper-left and lower-left with localized dark tint. -->
+    <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/storm-city.jpg" alt="" style="object-position:center 47%;">
+  </figure><div class="closingTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>14</span><span>收束金句</span></div><h1>高分表达<br>落在“平时”</h1><blockquote class="quote">好的韧性治理，不是灾害来了才临时加速，而是平时就让系统有准备、基层有能力、群众有意识。</blockquote>
+      <div class="closingNodes"><span>系统有准备</span><span>基层有能力</span><span>群众有意识</span></div></div>
+    </section><section class="poster video v1" id="video-cover-01">
+    <figure class="videoPhoto">
+      <!-- Subject map: lightning sits in the upper-right sky, city skyline fills the lower half; safe title zones are upper-left and lower-left with localized dark tint. Magazine title uses documented safe area with localized ink tint. -->
+      <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/storm-city.jpg" alt="" style="object-position:center 47%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>韧性治理怎么写<br>不是灾后救急</h2>
+      <span>早识别 / 早前置 / 能联动</span>
+    </div>
+  </section>
+<section class="poster video v2" id="video-cover-02">
+    <figure class="videoPhoto">
+      <!-- Subject map: flood water occupies the foreground and village buildings sit along the upper half; avoid covering the central water line and tower. Magazine title uses documented safe area with localized ink tint. -->
+      <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/flooded-street.jpg" alt="" style="object-position:center 58%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>防灾减灾<br>不是灾后救急</h2>
+      <span>平时把基础工作做扎实</span>
+    </div>
+  </section>
+<section class="poster video v3" id="video-cover-03">
+    <figure class="videoPhoto">
+      <!-- Subject map: gear is spread evenly across the frame; safe text zones are separate panels or the darker lower-left fabric areas. Magazine title uses documented safe area with localized ink tint. -->
+      <img src="../../../../media/images/2026-06-19-resilient-governance-xhs-video/assets/emergency-kit.jpg" alt="" style="object-position:center 52%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>韧性治理<br>五个动作</h2>
+      <span>风险早识别 → 资源早前置 → 群众会自救</span>
+    </div>
+  </section></main></body></html>

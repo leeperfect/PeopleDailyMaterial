@@ -30,6 +30,8 @@
 | 2026-06-12 | 清欠企业账款：账款链也是信心链 | 小红书图 / 视频号封面 | `media/images/2026-06-12-arrears-payment-confidence-chain-xhs-video/` | 待上传 | `data/analysis/2026-06-11/xiaohongshu-arrears-payment-confidence-chain-card-script.md`；含 13 张小红书图、3 张 3:4 视频号封面和 1 张预览图，封面统一使用“《人民日报》这样写”无衬线大标题，主色 #419375 |
 | 2026-06-12 | 银发经济：服务供给和人力资源 | 小红书图 / 视频号封面 | `media/images/2026-06-12-silver-economy-service-human-resources-xhs-video/` | 待上传 | `data/analysis/2026-06-11/xiaohongshu-silver-economy-service-human-resources-card-script.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，暖白 #f0efeb Editorial 杂志风 |
 | 2026-06-13 | 就业难：不能只写“多给岗位”，要写出就业链 | 小红书图 / 视频号封面 | `media/images/2026-06-13-employment-chain-xhs-video/` | 待上传 | `data/articles/公众号文章/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，小米橙 Editorial 杂志风，系列名“《人民日报》这样写”与主标题分层 |
+| 2026-06-19 | 韧性治理：早识别、早前置、能联动 | 小红书图 / 视频号封面 | `media/images/2026-06-19-resilient-governance-xhs-video/` | 待上传 | `data/articles/公众号文章/17-人民日报讲韧性治理：不是灾后救急，而是早识别、早前置、能联动.md`；含 14 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，公开图库配图 |
+| 2026-06-19 | 资源循环：绿色消费和产业链再造 | 小红书图 / 视频号封面 | `media/images/2026-06-19-resource-circulation-xhs-video/` | 待上传 | `data/articles/公众号文章/18-人民日报讲资源循环：不是回收旧物，而是绿色消费和产业链再造.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，公开图库配图 |
 
 ## 类型写法
 
