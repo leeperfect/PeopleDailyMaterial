@@ -1,0 +1,121 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d6d9d3;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#101421}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f4f0e8}
+.xhs,.video{width:1080px;height:1440px}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 86% 12%,rgba(0,180,216,.23),transparent 30%),
+  radial-gradient(circle at 9% 91%,rgba(217,70,143,.18),transparent 34%),
+  radial-gradient(circle at 75% 78%,rgba(245,184,75,.22),transparent 30%),
+  linear-gradient(90deg,rgba(16,20,33,.052) 1px,transparent 1px),
+  linear-gradient(180deg,rgba(16,20,33,.048) 1px,transparent 1px),
+  linear-gradient(180deg,#fbf7ec,#e6eef0);background-size:auto,auto,auto,72px 72px,72px 72px,auto}
+.grain{position:absolute;inset:0;z-index:3;opacity:.24;background:repeating-linear-gradient(105deg,rgba(255,255,255,.10) 0 1px,transparent 1px 5px),radial-gradient(circle at 24% 18%,rgba(255,255,255,.30),transparent 28%);mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(16,20,33,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#00a6c8;font-weight:900}
+.cover .top,.closing .top{border-bottom-color:rgba(255,255,255,.48);color:#fffdf6}
+.cover .top span:first-child,.closing .top span:first-child{color:#f5b84b}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:82px;line-height:1.04;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,253,245,.94);border-left:10px solid #00a6c8;font-size:35px;line-height:1.34;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:22px;line-height:1.46}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) contrast(1.06) brightness(.92)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(8,12,24,.90),rgba(8,12,24,.14) 67%,rgba(8,12,24,.42)),linear-gradient(180deg,rgba(8,12,24,.12),rgba(8,12,24,.44) 70%,rgba(8,12,24,.88))}
+.series{margin:36px 0 0;color:#f5b84b;font-size:35px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fffdf6;font-size:88px;max-width:925px}
+.coverLine{margin-top:30px;width:900px;padding:20px 24px;background:rgba(255,253,245,.92);color:#101421;font-size:30px;font-weight:860}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#f4f0e8;color:#101421;border-top:12px solid #00a6c8;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#d9468f}.coverNodes span:nth-of-type(3){border-top-color:#f5b84b}.coverNodes span:nth-of-type(4){border-top-color:#101421}
+.coverNodes i{height:4px;background:#f4f0e8}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fffdf5;border:2px solid rgba(16,20,33,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#d9468f}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#101421;color:#fffdf6;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:455px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:640px;z-index:2;background:linear-gradient(90deg,#fbf7ec 0%,rgba(251,247,236,.88) 47%,rgba(251,247,236,.10) 100%)}
+.quotePhoto .content{padding-right:420px}
+.quotePhoto .quote{font-size:28px;line-height:1.42}
+.miniCompare{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.miniCompare span{height:108px;padding:15px;display:grid;place-items:center;text-align:center;background:#101421;color:#fffdf6;border-top:12px solid #00a6c8;font-size:24px;font-weight:880}
+.miniCompare span:nth-child(2),.miniCompare span:nth-child(4){border-top-color:#d9468f}
+.formula .quote{font-size:32px}
+.formulaRail{margin-top:auto;display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr;align-items:center}
+.formulaRail span{height:310px;padding:20px 10px;display:grid;align-content:space-between;text-align:center;background:#101421;color:#fffdf6;font-size:25px;line-height:1.14;font-weight:900}
+.formulaRail span:nth-of-type(2),.formulaRail span:nth-of-type(4){background:#00a6c8}.formulaRail span:nth-of-type(3){background:#d9468f}.formulaRail span:nth-of-type(5){background:#f5b84b;color:#101421}
+.formulaRail b{color:#fff0bf;font-size:22px}
+.formulaRail i{height:4px;background:#101421}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:405px;z-index:1;border:3px solid rgba(0,166,200,.32)}
+.photoFeature .content,.lifePhoto .content,.socialPhoto .content{padding-bottom:535px}
+.numberCards{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.numberCards span{height:124px;padding:18px;display:grid;align-content:space-between;background:#fffdf5;border-top:12px solid #00a6c8;font-size:25px;line-height:1.16;font-weight:850}
+.numberCards span:nth-child(2),.numberCards span:nth-child(3){border-top-color:#d9468f}
+.numberCards b{font-size:20px;color:#101421}
+.trapCards{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.trapCards span{height:205px;padding:22px;display:grid;align-content:space-between;background:#fffdf5;border:2px solid rgba(16,20,33,.18);font-size:30px;line-height:1.15;font-weight:890}
+.trapCards b{font-size:23px;color:#d9468f}
+.note{margin:auto 0 0;padding:26px 28px;background:#101421;color:#fffdf6;font-size:30px;line-height:1.25;font-weight:880}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:560px;z-index:1;border:3px solid rgba(0,166,200,.32)}
+.questionPhoto .content{padding-right:500px}
+.questionPhoto .quote{font-size:28px;line-height:1.42}
+.questionSteps{margin-top:auto;display:grid;gap:12px}
+.questionSteps span{height:86px;padding:0 20px;display:flex;align-items:center;background:#101421;color:#fffdf6;border-left:12px solid #00a6c8;font-size:27px;font-weight:860}
+.questionSteps span:nth-child(2),.questionSteps span:nth-child(4){border-left-color:#d9468f}
+.matrix{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.matrix span{min-height:235px;padding:22px;display:grid;align-content:space-between;background:#fffdf5;border-top:14px solid #00a6c8;font-size:26px;line-height:1.22;font-weight:840}
+.matrix span:nth-child(2),.matrix span:nth-child(3){border-top-color:#d9468f}.matrix span:nth-child(4){border-top-color:#f5b84b}
+.matrix b{font-size:35px;color:#101421;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif}
+.lifeLine,.socialChain{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.lifeLine span,.socialChain span{height:138px;display:grid;place-items:center;text-align:center;background:#101421;color:#fffdf6;border-top:12px solid #00a6c8;font-size:28px;font-weight:900}
+.lifeLine span:nth-of-type(2),.socialChain span:nth-of-type(2){border-top-color:#d9468f}.lifeLine span:nth-of-type(3),.socialChain span:nth-of-type(3){border-top-color:#f5b84b}.lifeLine span:nth-of-type(4),.socialChain span:nth-of-type(4){border-top-color:#00a6c8}
+.lifeLine i,.socialChain i{height:4px;background:#101421}
+.supportNodes{margin-top:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.supportNodes span{height:255px;padding:14px 10px;display:grid;place-items:center;text-align:center;background:#101421;color:#fffdf6;font-size:25px;line-height:1.15;font-weight:900}
+.supportNodes span:nth-child(2),.supportNodes span:nth-child(4){background:#00a6c8}.supportNodes span:nth-child(3){background:#d9468f}.supportNodes span:nth-child(5){background:#f5b84b;color:#101421}
+.socialPhoto .quote{font-size:27px;line-height:1.42}
+.examFlow .quote{font-size:32px}
+.examRows{margin-top:34px;display:grid;gap:12px}
+.examRows span{height:105px;padding:0 22px;display:flex;align-items:center;gap:18px;background:#fffdf5;border-left:12px solid #00a6c8;font-size:26px;line-height:1.16;font-weight:860}
+.examRows span:nth-child(2),.examRows span:nth-child(4){border-left-color:#d9468f}.examRows span:nth-child(5){border-left-color:#f5b84b}
+.examRows b{font-size:22px;color:#101421}
+.argument .quote{font-size:23px;line-height:1.47}
+.argument:after{content:"";position:absolute;left:150px;right:150px;top:625px;height:240px;z-index:1;background:radial-gradient(circle at 50% 50%,transparent 0 58px,rgba(0,166,200,.28) 60px 63px,transparent 65px),linear-gradient(90deg,transparent 0 49%,rgba(16,20,33,.18) 49% 51%,transparent 51%),linear-gradient(180deg,transparent 0 49%,rgba(16,20,33,.18) 49% 51%,transparent 51%)}
+.argGrid{margin-top:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.argGrid span{height:180px;display:grid;place-items:center;text-align:center;background:#fffdf5;border-top:14px solid #00a6c8;font-size:32px;font-weight:900}
+.argGrid span:nth-child(2),.argGrid span:nth-child(4){border-top-color:#d9468f}
+.interview .quote{font-size:30px;line-height:1.4}
+.answerSteps{margin-top:38px;display:grid;gap:14px}
+.answerSteps span{height:118px;padding:0 22px;display:flex;align-items:center;gap:18px;background:#fffdf5;border-left:12px solid #00a6c8;font-size:27px;line-height:1.18;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#d9468f}
+.answerSteps b{font-size:22px;color:#101421}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(8,12,24,.90),rgba(8,12,24,.18) 67%,rgba(8,12,24,.44)),linear-gradient(180deg,rgba(8,12,24,.22),rgba(8,12,24,.80))}
+.closing h1{color:#fffdf6;font-size:80px}
+.closing .quote{margin-top:34px;background:rgba(255,253,245,.94);font-size:31px}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.closingNodes span{height:152px;display:grid;place-items:center;text-align:center;background:#f4f0e8;color:#101421;border-top:12px solid #00a6c8;font-size:30px;font-weight:900}
+.closingNodes span:nth-child(2){border-top-color:#d9468f}.closingNodes span:nth-child(3){border-top-color:#f5b84b}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.84) contrast(1.08) brightness(.72)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(6,10,20,.92),rgba(6,10,20,.16) 70%),linear-gradient(180deg,rgba(6,10,20,.10),rgba(6,10,20,.28) 44%,rgba(6,10,20,.78))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.58);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:"AI EDUCATION";position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:92px;z-index:4;color:#fffdf6}
+.v1 .videoTitle{bottom:100px}.v2 .videoTitle{bottom:104px}.v3 .videoTitle{bottom:94px}
+.videoTitle p{margin:0 0 28px;color:#f5b84b;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:86px;line-height:1.03;font-weight:780;letter-spacing:0;max-width:880px}
+.v3 .videoTitle h2{font-size:79px}
+.videoTitle span{display:block;width:max-content;max-width:850px;margin-top:26px;padding:14px 18px;background:#d9468f;color:#fff;font-size:27px;font-weight:900}
+.v1 .videoTitle span{background:#00a6c8}.v3 .videoTitle span{background:#f5b84b;color:#101421;font-size:25px}
+.preview{width:1800px;background:#d6d9d3;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><section class="preview"><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-01-cover.png" alt=""><figcaption>xhs-01-cover.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-02-mistake.png" alt=""><figcaption>xhs-02-mistake.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-03-core-judgement.png" alt=""><figcaption>xhs-03-core-judgement.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-04-core-formula.png" alt=""><figcaption>xhs-04-core-formula.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-05-student-side.png" alt=""><figcaption>xhs-05-student-side.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-06-thinking-traps.png" alt=""><figcaption>xhs-06-thinking-traps.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-07-digital-reading.png" alt=""><figcaption>xhs-07-digital-reading.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-08-judgement.png" alt=""><figcaption>xhs-08-judgement.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-09-lifelong-learning.png" alt=""><figcaption>xhs-09-lifelong-learning.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-10-system-support.png" alt=""><figcaption>xhs-10-system-support.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-11-social-side.png" alt=""><figcaption>xhs-11-social-side.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-12-exam-formula.png" alt=""><figcaption>xhs-12-exam-formula.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-13-argument.png" alt=""><figcaption>xhs-13-argument.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-14-interview.png" alt=""><figcaption>xhs-14-interview.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/xhs-15-closing.png" alt=""><figcaption>xhs-15-closing.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/video-cover-01.png" alt=""><figcaption>video-cover-01.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/video-cover-02.png" alt=""><figcaption>video-cover-02.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/video-cover-03.png" alt=""><figcaption>video-cover-03.png</figcaption></figure></section></body></html>

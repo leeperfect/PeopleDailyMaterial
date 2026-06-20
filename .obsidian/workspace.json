@@ -22,35 +22,21 @@
             }
           },
           {
-            "id": "ae617684f98807ad",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/政策文件/上海市人民政府办公厅关于印发《上海市深化“一网通办”改革.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "上海市人民政府办公厅关于印发《上海市深化“一网通办”改革"
-            }
-          },
-          {
             "id": "98abc7d30c902d69",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data/articles/公众号文章/17-人民日报讲韧性治理：不是灾后救急，而是早识别、早前置、能联动.md",
+                "file": "data/articles/公众号文章/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "17-人民日报讲韧性治理：不是灾后救急，而是早识别、早前置、能联动"
+              "title": "22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304.5
+    "width": 464.5
   },
   "right": {
     "id": "1ad80539526a48b6",
@@ -199,8 +185,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,50 +202,49 @@
   "lastOpenFiles": [
     "data/core/articles.sqlite-shm",
     "data/core/articles.sqlite-wal",
-    "data/core/material_assets.sqlite-wal",
-    "data/core/material_assets.sqlite-shm",
-    "data/articles/公众号文章/02-人民日报讲基层治理：不是“万能基层”，而是权责清、群众进、部门协同.md",
-    "data/analysis/2026-06-19/lecture-grassroots-governance-responsibility-collaboration.md",
-    "data/analysis/2026-06-19/wechat-grassroots-governance-responsibility-collaboration.md",
-    "data/analysis/2026-06-19/2026-06-19-grassroots-governance-responsibility-collaboration-topic-review.md",
-    "data/vault/2026/05/2026-05-11/07-读者来信/热线电话“打通难”，难在哪（百姓关注）.md",
-    "data/vault/2026/05/2026-05-11/09-理论/以数智技术赋能“高效办成一件事”（治理之道）.md",
-    "data/vault/2026/05/2026-05-11/09-理论",
-    "media/images/2026-06-19-resource-circulation-xhs-video/preview-grid.png",
-    "data/analysis/2026-06-19/social-card-resource-circulation-xhs-video/preview.html",
-    "media/images/2026-06-19-resource-circulation-xhs-video/video-cover-03.png",
-    "media/images/2026-06-19-resource-circulation-xhs-video/video-cover-02.png",
-    "media/images/2026-06-19-resource-circulation-xhs-video/video-cover-01.png",
-    "media/images/2026-06-19-resource-circulation-xhs-video/xhs-15-closing.png",
-    "media/images/2026-06-19-resource-circulation-xhs-video/xhs-14-interview.png",
-    "media/images/2026-06-19-resource-circulation-xhs-video/xhs-13-argument.png",
-    "media/images/2026-06-19-resource-circulation-xhs-video/xhs-12-exam-formula.png",
-    "media/images/2026-06-19-resource-circulation-xhs-video/xhs-11-system-governance.png",
-    "media/images/2026-06-19-resource-circulation-xhs-video/xhs-10-industry.png",
-    "data/analysis/2026-06-19/social-card-resource-circulation-xhs-video/index.html",
-    "data/analysis/2026-06-19/social-card-resource-circulation-xhs-video/render.mjs",
-    "media/images/2026-06-19-resource-circulation-xhs-video/SOURCES.md",
     "data/articles/公众号文章/21-人民日报讲服务消费：不是发券促销，而是把好服务嵌入生活半径.md",
-    "data/analysis/2026-06-19/xiaohongshu-service-consumption-life-radius-card-script.md",
-    "data/analysis/2026-06-19/wechat-service-consumption-life-radius.md",
-    "data/analysis/2026-06-19/2026-06-19-service-consumption-life-radius-topic-review.md",
-    "media/images/2026-06-19-resource-circulation-xhs-video/assets",
-    "media/images/2026-06-19-resource-circulation-xhs-video",
-    "data/analysis/2026-06-19/social-card-resource-circulation-xhs-video",
-    "media/images/2026-06-19-resilient-governance-xhs-video/SOURCES.md",
+    "data/core/material_assets.sqlite-shm",
+    "data/core/material_assets.sqlite-wal",
+    "data/articles/公众号文章/25-人民日报讲现代农业：不是只靠苦干，而是科技体检、田保姆和青年农机手一起上.md",
+    "data/analysis/2026-06-20/lecture-modern-agriculture-tech-service-youth.md",
+    "data/analysis/2026-06-20/wechat-modern-agriculture-tech-service-youth.md",
+    "data/analysis/2026-06-20/2026-06-20-modern-agriculture-tech-service-youth-topic-review.md",
+    "data/articles/公众号文章/05-人民日报讲生态文明：把绿色发展写成法治、治理和长期主义.md",
+    "data/analysis/2026-06-20/lecture-ecological-civilization-law-governance-longterm.md",
+    "data/analysis/2026-06-20/wechat-ecological-civilization-law-governance-longterm.md",
+    "data/analysis/2026-06-20/2026-06-20-ecological-civilization-law-governance-longterm-topic-review.md",
+    "data/analysis/2026-06-20/ppt-mainstream-media-integration-content-tech-service-outline.md",
+    "data/articles/公众号文章/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md",
+    "data/analysis/2026-06-20/wechat-mainstream-media-integration-content-tech-service.md",
+    "data/analysis/2026-06-20/2026-06-20-mainstream-media-integration-content-tech-service-topic-review.md",
+    "data/analysis/2026-06-20/ppt-tech-transfer-last-mile-outline.md",
+    "data/articles/公众号文章/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md",
+    "data/analysis/2026-06-20/wechat-tech-transfer-last-mile.md",
+    "data/analysis/2026-06-20/2026-06-20-tech-transfer-last-mile-topic-review.md",
+    "data/analysis/2026-06-20/xiaohongshu-new-urbanization-service-follows-people-card-script.md",
+    "data/articles/公众号文章/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md",
+    "data/analysis/2026-06-20/wechat-new-urbanization-service-follows-people.md",
+    "data/analysis/2026-06-20/2026-06-20-new-urbanization-service-follows-people-topic-review.md",
+    "docs/政策文件/上海市人民政府办公厅关于印发《上海市深化“一网通办”改革.md",
     "data/articles/公众号文章/20-人民日报讲大国向西：不是区域口号，而是通道、算力、产业和安全腹地.md",
-    "data/analysis/2026-06-19/ppt-westward-development-channel-computing-industry-security-outline.md",
-    "data/analysis/2026-06-19/wechat-westward-development-channel-computing-industry-security.md",
-    "data/analysis/2026-06-19/2026-06-19-westward-development-channel-computing-industry-security-topic-review.md",
+    "Pasted image 20260620085710.png",
     "data/articles/公众号文章/19-人民日报讲AI时代教育：不是人人学工具，而是重塑思维和终身学习.md",
-    "data/analysis/2026-06-19/lecture-ai-era-education-thinking-lifelong-learning.md",
-    "data/analysis/2026-06-19/wechat-ai-era-education-thinking-lifelong-learning.md",
-    "data/analysis/2026-06-19/2026-06-19-ai-era-education-thinking-lifelong-learning-topic-review.md",
-    "data/articles/公众号文章/18-人民日报讲资源循环：不是回收旧物，而是绿色消费和产业链再造.md",
-    "data/analysis/2026-06-19/lecture-resource-circulation-green-consumption-industry-chain.md",
-    "data/analysis/2026-06-19/wechat-resource-circulation-green-consumption-industry-chain.md",
-    "data/analysis/2026-06-19/2026-06-19-resource-circulation-green-consumption-industry-chain-topic-review.md",
-    "data/articles/公众号文章/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md",
+    "media/images/2026-06-20-ai-era-education-xhs-video/preview-grid.png",
+    "data/analysis/2026-06-20/social-card-ai-era-education-xhs-video/preview.html",
+    "media/images/2026-06-20-ai-era-education-xhs-video/video-cover-03.png",
+    "media/images/2026-06-20-ai-era-education-xhs-video/video-cover-02.png",
+    "media/images/2026-06-20-ai-era-education-xhs-video/video-cover-01.png",
+    "media/images/2026-06-20-ai-era-education-xhs-video/xhs-15-closing.png",
+    "media/images/2026-06-20-ai-era-education-xhs-video/xhs-14-interview.png",
+    "media/images/2026-06-20-ai-era-education-xhs-video/xhs-13-argument.png",
+    "media/images/2026-06-20-ai-era-education-xhs-video/xhs-12-exam-formula.png",
+    "media/images/2026-06-20-ai-era-education-xhs-video/xhs-11-social-side.png",
+    "data/analysis/2026-06-20/social-card-ai-era-education-xhs-video/index.html",
+    "media/images/2026-06-20-ai-era-education-xhs-video/SOURCES.md",
+    "data/analysis/2026-06-20/social-card-ai-era-education-xhs-video/render.mjs",
+    "media/images/2026-06-20-ai-era-education-xhs-video/assets",
+    "media/images/2026-06-20-ai-era-education-xhs-video",
+    "data/analysis/2026-06-20/social-card-ai-era-education-xhs-video",
     "未命名.canvas"
   ]
 }

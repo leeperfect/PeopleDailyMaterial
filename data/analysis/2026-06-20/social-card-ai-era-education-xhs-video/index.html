@@ -1,0 +1,248 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI时代教育小红书与视频号封面</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d6d9d3;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#101421}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f4f0e8}
+.xhs,.video{width:1080px;height:1440px}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 86% 12%,rgba(0,180,216,.23),transparent 30%),
+  radial-gradient(circle at 9% 91%,rgba(217,70,143,.18),transparent 34%),
+  radial-gradient(circle at 75% 78%,rgba(245,184,75,.22),transparent 30%),
+  linear-gradient(90deg,rgba(16,20,33,.052) 1px,transparent 1px),
+  linear-gradient(180deg,rgba(16,20,33,.048) 1px,transparent 1px),
+  linear-gradient(180deg,#fbf7ec,#e6eef0);background-size:auto,auto,auto,72px 72px,72px 72px,auto}
+.grain{position:absolute;inset:0;z-index:3;opacity:.24;background:repeating-linear-gradient(105deg,rgba(255,255,255,.10) 0 1px,transparent 1px 5px),radial-gradient(circle at 24% 18%,rgba(255,255,255,.30),transparent 28%);mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(16,20,33,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#00a6c8;font-weight:900}
+.cover .top,.closing .top{border-bottom-color:rgba(255,255,255,.48);color:#fffdf6}
+.cover .top span:first-child,.closing .top span:first-child{color:#f5b84b}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:82px;line-height:1.04;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,253,245,.94);border-left:10px solid #00a6c8;font-size:35px;line-height:1.34;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:22px;line-height:1.46}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) contrast(1.06) brightness(.92)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(8,12,24,.90),rgba(8,12,24,.14) 67%,rgba(8,12,24,.42)),linear-gradient(180deg,rgba(8,12,24,.12),rgba(8,12,24,.44) 70%,rgba(8,12,24,.88))}
+.series{margin:36px 0 0;color:#f5b84b;font-size:35px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fffdf6;font-size:88px;max-width:925px}
+.coverLine{margin-top:30px;width:900px;padding:20px 24px;background:rgba(255,253,245,.92);color:#101421;font-size:30px;font-weight:860}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#f4f0e8;color:#101421;border-top:12px solid #00a6c8;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#d9468f}.coverNodes span:nth-of-type(3){border-top-color:#f5b84b}.coverNodes span:nth-of-type(4){border-top-color:#101421}
+.coverNodes i{height:4px;background:#f4f0e8}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fffdf5;border:2px solid rgba(16,20,33,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#d9468f}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#101421;color:#fffdf6;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:455px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:640px;z-index:2;background:linear-gradient(90deg,#fbf7ec 0%,rgba(251,247,236,.88) 47%,rgba(251,247,236,.10) 100%)}
+.quotePhoto .content{padding-right:420px}
+.quotePhoto .quote{font-size:28px;line-height:1.42}
+.miniCompare{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.miniCompare span{height:108px;padding:15px;display:grid;place-items:center;text-align:center;background:#101421;color:#fffdf6;border-top:12px solid #00a6c8;font-size:24px;font-weight:880}
+.miniCompare span:nth-child(2),.miniCompare span:nth-child(4){border-top-color:#d9468f}
+.formula .quote{font-size:32px}
+.formulaRail{margin-top:auto;display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr;align-items:center}
+.formulaRail span{height:310px;padding:20px 10px;display:grid;align-content:space-between;text-align:center;background:#101421;color:#fffdf6;font-size:25px;line-height:1.14;font-weight:900}
+.formulaRail span:nth-of-type(2),.formulaRail span:nth-of-type(4){background:#00a6c8}.formulaRail span:nth-of-type(3){background:#d9468f}.formulaRail span:nth-of-type(5){background:#f5b84b;color:#101421}
+.formulaRail b{color:#fff0bf;font-size:22px}
+.formulaRail i{height:4px;background:#101421}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:405px;z-index:1;border:3px solid rgba(0,166,200,.32)}
+.photoFeature .content,.lifePhoto .content,.socialPhoto .content{padding-bottom:535px}
+.numberCards{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.numberCards span{height:124px;padding:18px;display:grid;align-content:space-between;background:#fffdf5;border-top:12px solid #00a6c8;font-size:25px;line-height:1.16;font-weight:850}
+.numberCards span:nth-child(2),.numberCards span:nth-child(3){border-top-color:#d9468f}
+.numberCards b{font-size:20px;color:#101421}
+.trapCards{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.trapCards span{height:205px;padding:22px;display:grid;align-content:space-between;background:#fffdf5;border:2px solid rgba(16,20,33,.18);font-size:30px;line-height:1.15;font-weight:890}
+.trapCards b{font-size:23px;color:#d9468f}
+.note{margin:auto 0 0;padding:26px 28px;background:#101421;color:#fffdf6;font-size:30px;line-height:1.25;font-weight:880}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:560px;z-index:1;border:3px solid rgba(0,166,200,.32)}
+.questionPhoto .content{padding-right:500px}
+.questionPhoto .quote{font-size:28px;line-height:1.42}
+.questionSteps{margin-top:auto;display:grid;gap:12px}
+.questionSteps span{height:86px;padding:0 20px;display:flex;align-items:center;background:#101421;color:#fffdf6;border-left:12px solid #00a6c8;font-size:27px;font-weight:860}
+.questionSteps span:nth-child(2),.questionSteps span:nth-child(4){border-left-color:#d9468f}
+.matrix{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.matrix span{min-height:235px;padding:22px;display:grid;align-content:space-between;background:#fffdf5;border-top:14px solid #00a6c8;font-size:26px;line-height:1.22;font-weight:840}
+.matrix span:nth-child(2),.matrix span:nth-child(3){border-top-color:#d9468f}.matrix span:nth-child(4){border-top-color:#f5b84b}
+.matrix b{font-size:35px;color:#101421;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif}
+.lifeLine,.socialChain{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.lifeLine span,.socialChain span{height:138px;display:grid;place-items:center;text-align:center;background:#101421;color:#fffdf6;border-top:12px solid #00a6c8;font-size:28px;font-weight:900}
+.lifeLine span:nth-of-type(2),.socialChain span:nth-of-type(2){border-top-color:#d9468f}.lifeLine span:nth-of-type(3),.socialChain span:nth-of-type(3){border-top-color:#f5b84b}.lifeLine span:nth-of-type(4),.socialChain span:nth-of-type(4){border-top-color:#00a6c8}
+.lifeLine i,.socialChain i{height:4px;background:#101421}
+.supportNodes{margin-top:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.supportNodes span{height:255px;padding:14px 10px;display:grid;place-items:center;text-align:center;background:#101421;color:#fffdf6;font-size:25px;line-height:1.15;font-weight:900}
+.supportNodes span:nth-child(2),.supportNodes span:nth-child(4){background:#00a6c8}.supportNodes span:nth-child(3){background:#d9468f}.supportNodes span:nth-child(5){background:#f5b84b;color:#101421}
+.socialPhoto .quote{font-size:27px;line-height:1.42}
+.examFlow .quote{font-size:32px}
+.examRows{margin-top:34px;display:grid;gap:12px}
+.examRows span{height:105px;padding:0 22px;display:flex;align-items:center;gap:18px;background:#fffdf5;border-left:12px solid #00a6c8;font-size:26px;line-height:1.16;font-weight:860}
+.examRows span:nth-child(2),.examRows span:nth-child(4){border-left-color:#d9468f}.examRows span:nth-child(5){border-left-color:#f5b84b}
+.examRows b{font-size:22px;color:#101421}
+.argument .quote{font-size:23px;line-height:1.47}
+.argument:after{content:"";position:absolute;left:150px;right:150px;top:625px;height:240px;z-index:1;background:radial-gradient(circle at 50% 50%,transparent 0 58px,rgba(0,166,200,.28) 60px 63px,transparent 65px),linear-gradient(90deg,transparent 0 49%,rgba(16,20,33,.18) 49% 51%,transparent 51%),linear-gradient(180deg,transparent 0 49%,rgba(16,20,33,.18) 49% 51%,transparent 51%)}
+.argGrid{margin-top:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.argGrid span{height:180px;display:grid;place-items:center;text-align:center;background:#fffdf5;border-top:14px solid #00a6c8;font-size:32px;font-weight:900}
+.argGrid span:nth-child(2),.argGrid span:nth-child(4){border-top-color:#d9468f}
+.interview .quote{font-size:30px;line-height:1.4}
+.answerSteps{margin-top:38px;display:grid;gap:14px}
+.answerSteps span{height:118px;padding:0 22px;display:flex;align-items:center;gap:18px;background:#fffdf5;border-left:12px solid #00a6c8;font-size:27px;line-height:1.18;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#d9468f}
+.answerSteps b{font-size:22px;color:#101421}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(8,12,24,.90),rgba(8,12,24,.18) 67%,rgba(8,12,24,.44)),linear-gradient(180deg,rgba(8,12,24,.22),rgba(8,12,24,.80))}
+.closing h1{color:#fffdf6;font-size:80px}
+.closing .quote{margin-top:34px;background:rgba(255,253,245,.94);font-size:31px}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.closingNodes span{height:152px;display:grid;place-items:center;text-align:center;background:#f4f0e8;color:#101421;border-top:12px solid #00a6c8;font-size:30px;font-weight:900}
+.closingNodes span:nth-child(2){border-top-color:#d9468f}.closingNodes span:nth-child(3){border-top-color:#f5b84b}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.84) contrast(1.08) brightness(.72)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(6,10,20,.92),rgba(6,10,20,.16) 70%),linear-gradient(180deg,rgba(6,10,20,.10),rgba(6,10,20,.28) 44%,rgba(6,10,20,.78))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.58);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:"AI EDUCATION";position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:92px;z-index:4;color:#fffdf6}
+.v1 .videoTitle{bottom:100px}.v2 .videoTitle{bottom:104px}.v3 .videoTitle{bottom:94px}
+.videoTitle p{margin:0 0 28px;color:#f5b84b;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:86px;line-height:1.03;font-weight:780;letter-spacing:0;max-width:880px}
+.v3 .videoTitle h2{font-size:79px}
+.videoTitle span{display:block;width:max-content;max-width:850px;margin-top:26px;padding:14px 18px;background:#d9468f;color:#fff;font-size:27px;font-weight:900}
+.v1 .videoTitle span{background:#00a6c8}.v3 .videoTitle span{background:#f5b84b;color:#101421;font-size:25px}
+.preview{width:1800px;background:#d6d9d3;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><main class="stage"><section class="poster xhs cover" id="xhs-01-cover">
+      <figure class="photo bleed">
+    <!-- Subject map: earth horizon and lights are low and wide; title can sit on the left without covering a face or object. -->
+    <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/data-center.jpg" alt="" style="object-position:center 52%;">
+  </figure><div class="coverTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>01</span><span>人民日报材料转申论</span></div>
+        <p class="series">《人民日报》这样写</p>
+        <h1>AI时代教育怎么写<br>不是人人学工具</h1>
+        <div class="coverLine">重塑思维 / 终身学习 / 协同育人</div>
+        <div class="coverNodes"><span>会提问</span><i></i><span>会判断</span><i></i><span>会协作</span><i></i><span>终身学习</span></div>
+      </div>
+    </section>
+<section class="poster xhs mistake" id="xhs-02-mistake">
+      <div class="paper"></div><div class="content"><div class="top"><span>02</span><span>常见误区</span></div><h1>别把AI教育<br>写成工具培训</h1><blockquote class="quote">写“开设AI课、推广AI工具、建设智慧课堂”，只能说明技术进校园，不能说明教育怎么变。</blockquote>
+      <div class="wrongList"><span><b>01</b>工具会用</span><span><b>02</b>流程会点</span><span><b>03</b>平台会登</span><span><b>04</b>答案会抄</span></div>
+      <div class="aside"><p>这些能写，但不是主线</p><p>高分要写出：思维、判断、迁移和终身学习</p></div></div>
+    </section>
+<section class="poster xhs quotePhoto" id="xhs-03-core-judgement">
+      <div class="paper"></div><figure class="photo sidePhoto">
+    <!-- Subject map: students sit around center-right; keep large title on left and avoid covering faces. -->
+    <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/students-laptop.jpg" alt="" style="object-position:center 54%;">
+  </figure>
+      <div class="content"><div class="top"><span>03</span><span>核心判断</span></div><h1>先把立意<br>抬高一层</h1><blockquote class="quote">AI时代教育的重点，不是人人学工具，而是让人更会提问、更会判断、更会协作、更能持续学习。</blockquote>
+      <div class="miniCompare"><span>不是工具操作</span><span>而是育人目标</span><span>不是一次培训</span><span>而是能力更新</span></div></div>
+    </section>
+<section class="poster xhs formula" id="xhs-04-core-formula">
+      <div class="paper"></div><div class="content"><div class="top"><span>04</span><span>核心公式</span></div><h1>考场直接<br>抓这条链</h1><blockquote class="quote">工具会用 → 问题会提 → 信息会辨 → 能力会迁移 → 终身会学习。</blockquote>
+      <div class="formulaRail"><span><b>01</b>工具会用</span><i></i><span><b>02</b>问题会提</span><i></i><span><b>03</b>信息会辨</span><i></i><span><b>04</b>能力会迁移</span><i></i><span><b>05</b>终身会学习</span></div></div>
+    </section>
+<section class="poster xhs photoFeature" id="xhs-05-student-side">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: robotics materials spread across the table, with clean top-down composition; text can overlay separated panels. -->
+    <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/robotics-class.jpg" alt="" style="object-position:center 50%;">
+  </figure>
+      <div class="content"><div class="top"><span>05</span><span>学生端</span></div><h1>AI能给答案<br>教育更要培养问题</h1><blockquote class="quote">真正重要的，是让AI成为思维的脚手架，而不是替代思考的拐杖。</blockquote><div class="numberCards"><span><b>01</b>提出问题</span><span><b>02</b>拆解问题</span><span><b>03</b>验证答案</span><span><b>04</b>表达观点</span></div></div>
+    </section>
+<section class="poster xhs trapGrid" id="xhs-06-thinking-traps">
+      <div class="paper"></div><div class="content"><div class="top"><span>06</span><span>思维训练</span></div><h1>要防住<br>三个新陷阱</h1><blockquote class="quote">AI会让答案更快出现，也会让懒思考更容易发生。</blockquote>
+      <div class="trapCards"><span><b>01</b>流畅性陷阱</span><span><b>02</b>认知外包</span><span><b>03</b>标准答案惯性</span><span><b>04</b>复杂问题能力下降</span></div>
+      <p class="note">能问、能辨、能改，才是AI时代的学习力</p></div>
+    </section>
+<section class="poster xhs questionPhoto" id="xhs-07-digital-reading">
+      <div class="paper"></div><figure class="photo rightPhoto">
+    <!-- Subject map: tablet reader occupies center-left; keep headline in the upper-left dark field and preserve the screen. -->
+    <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/digital-reading.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>07</span><span>阅读端</span></div><h1>刷到信息<br>不等于读懂世界</h1><blockquote class="quote">会问AI，等于会学习吗？会刷信息，等于会阅读吗？会复制答案，等于会理解吗？</blockquote>
+      <div class="questionSteps"><span>会检索</span><span>会筛选</span><span>会吸收</span><span>会创造</span></div></div>
+    </section>
+<section class="poster xhs skillMatrix" id="xhs-08-judgement">
+      <div class="paper"></div><div class="content"><div class="top"><span>08</span><span>判断力</span></div><h1>数字阅读能力<br>就是判断力</h1><blockquote class="quote">数字阅读能力，本质上是AI时代的判断力。</blockquote>
+      <div class="matrix"><span><b>价值定力</b>面对海量信息有价值定力</span><span><b>辨别力</b>面对算法推荐有辨别力</span><span><b>创造力</b>面对碎片内容有创造力</span><span><b>敬畏力</b>面对未知技术有敬畏力</span></div></div>
+    </section>
+<section class="poster xhs lifePhoto" id="xhs-09-lifelong-learning">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: writing hand and laptop stay in the left and center; use top text blocks and keep lower-right photo visible. -->
+    <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/adult-learning.jpg" alt="" style="object-position:center 50%;">
+  </figure>
+      <div class="content"><div class="top"><span>09</span><span>成人端</span></div><h1>教育不能<br>停在毕业那天</h1><blockquote class="quote">AI时代的教育，不再只是一次性学历供给，而是贯穿全生命周期的能力更新服务。</blockquote>
+      <div class="lifeLine"><span>在校学习</span><i></i><span>岗位学习</span><i></i><span>转岗学习</span><i></i><span>终身学习</span></div></div>
+    </section>
+<section class="poster xhs supportMap" id="xhs-10-system-support">
+      <div class="paper"></div><div class="content"><div class="top"><span>10</span><span>体系支撑</span></div><h1>终身学习<br>要有制度入口</h1><blockquote class="quote">写成人教育，不能只写“鼓励学习”，要写出制度、平台和场景。</blockquote>
+      <div class="supportNodes"><span>国家资历框架</span><span>学分银行</span><span>高校开放课程</span><span>智慧学习平台</span><span>基层学习中心</span></div></div>
+    </section>
+<section class="poster xhs socialPhoto" id="xhs-11-social-side">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: workers and sparks occupy lower and right areas; video title uses lower-left dark zone. -->
+    <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/vocational-training.jpg" alt="" style="object-position:center 53%;">
+  </figure>
+      <div class="content"><div class="top"><span>11</span><span>社会端</span></div><h1>岗位变了<br>学习体系也要变</h1><blockquote class="quote">AI时代教育的社会意义，是让学习体系跟上岗位变化，让劳动者不被技术甩下。</blockquote>
+      <div class="socialChain"><span>产业升级</span><i></i><span>岗位重塑</span><i></i><span>技能更新</span><i></i><span>就业韧性</span></div></div>
+    </section>
+<section class="poster xhs examFlow" id="xhs-12-exam-formula">
+      <div class="paper"></div><div class="content"><div class="top"><span>12</span><span>考场框架</span></div><h1>答题就按<br>这五步展开</h1><blockquote class="quote">工具会用 → 问题会提 → 信息会辨 → 能力会迁移 → 终身会学习。</blockquote>
+      <div class="examRows"><span><b>01</b>工具是入口，不是终点</span><span><b>02</b>问题意识是学习起点</span><span><b>03</b>信息辨别决定判断质量</span><span><b>04</b>能力迁移适应岗位变化</span><span><b>05</b>终身学习托住人的发展</span></div></div>
+    </section>
+<section class="poster xhs argument" id="xhs-13-argument">
+      <div class="paper"></div><div class="content"><div class="top"><span>13</span><span>申论总论点</span></div><h1>一句话<br>写出深度</h1><blockquote class="quote med">AI时代教育的关键，不是简单普及工具操作，而是推动育人目标从知识传授转向能力提升，从阶段性学习转向终身学习，从单一课堂转向学校、社会、产业协同育人。</blockquote>
+      <div class="argGrid"><span>知识传授</span><span>能力提升</span><span>终身学习</span><span>协同育人</span></div></div>
+    </section>
+<section class="poster xhs interview" id="xhs-14-interview">
+      <div class="paper"></div><div class="content"><div class="top"><span>14</span><span>面试题卡</span></div><h1>现象认知题<br>这样答</h1><blockquote class="quote">有人认为，AI时代教育的重点就是让学生尽快学会使用各种AI工具。对此你怎么看？</blockquote>
+      <div class="answerSteps"><span><b>01</b>肯定工具学习的必要性</span><span><b>02</b>指出只会工具会造成浅层学习</span><span><b>03</b>强调问题意识、判断力和创造力</span><span><b>04</b>落到学校、社会、产业协同培养</span></div></div>
+    </section>
+<section class="poster xhs closing" id="xhs-15-closing">
+      <figure class="photo bleed">
+    <!-- Subject map: laptops and notes occupy the right and lower center; closing title should sit in the left safe zone. -->
+    <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/online-learning.jpg" alt="" style="object-position:center 48%;">
+  </figure><div class="closingTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>15</span><span>收束金句</span></div><h1>不是让人<br>追着机器跑</h1><blockquote class="quote">AI时代教育的价值，是用技术释放人、发展人、成就人。</blockquote>
+      <div class="closingNodes"><span>释放人</span><span>发展人</span><span>成就人</span></div></div>
+    </section><section class="poster video v1" id="video-cover-01">
+    <figure class="videoPhoto">
+      <!-- Subject map: earth horizon and lights are low and wide; title can sit on the left without covering a face or object. Magazine title uses safe lower-left or upper-left editorial zone. -->
+      <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/data-center.jpg" alt="" style="object-position:center 52%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>AI时代教育<br>不是人人学工具</h2>
+      <span>重塑思维 / 终身学习 / 协同育人</span>
+    </div>
+  </section>
+<section class="poster video v2" id="video-cover-02">
+    <figure class="videoPhoto">
+      <!-- Subject map: students sit around center-right; keep large title on left and avoid covering faces. Magazine title uses safe lower-left or upper-left editorial zone. -->
+      <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/students-laptop.jpg" alt="" style="object-position:center 54%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>让AI成为<br>思维脚手架</h2>
+      <span>不是替代思考的拐杖</span>
+    </div>
+  </section>
+<section class="poster video v3" id="video-cover-03">
+    <figure class="videoPhoto">
+      <!-- Subject map: workers and sparks occupy lower and right areas; video title uses lower-left dark zone. Magazine title uses safe lower-left or upper-left editorial zone. -->
+      <img src="../../../../media/images/2026-06-20-ai-era-education-xhs-video/assets/vocational-training.jpg" alt="" style="object-position:center 53%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>AI时代教育<br>写成能力更新体系</h2>
+      <span>工具会用 → 问题会提 → 终身会学习</span>
+    </div>
+  </section></main></body></html>
