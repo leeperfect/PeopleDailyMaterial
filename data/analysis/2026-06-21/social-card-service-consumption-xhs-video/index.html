@@ -1,0 +1,262 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>服务消费小红书与视频号封面</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d7cec5;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#26322d}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f4e7dc}
+.xhs,.video{width:1080px;height:1440px}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 82% 12%,rgba(240,107,79,.22),transparent 30%),
+  radial-gradient(circle at 12% 88%,rgba(79,141,116,.22),transparent 35%),
+  radial-gradient(circle at 78% 80%,rgba(225,162,71,.22),transparent 30%),
+  repeating-linear-gradient(100deg,rgba(255,255,255,.08) 0 1px,transparent 1px 5px),
+  linear-gradient(180deg,#fbefe4,#eadccf);background-size:auto,auto,auto,auto,auto}
+.grain{position:absolute;inset:0;z-index:3;opacity:.24;background:repeating-linear-gradient(105deg,rgba(255,255,255,.10) 0 1px,transparent 1px 5px),radial-gradient(circle at 24% 18%,rgba(255,255,255,.28),transparent 28%);mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(38,50,45,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#f06b4f;font-weight:900}
+.cover .top,.darkQuote .top,.closing .top{border-bottom-color:rgba(255,255,255,.46);color:#fff8ef}
+.cover .top span:first-child,.darkQuote .top span:first-child,.closing .top span:first-child{color:#ffd085}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:82px;line-height:1.04;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,248,239,.94);border-left:10px solid #f06b4f;font-size:35px;line-height:1.34;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:22px;line-height:1.46}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.04) brightness(.93)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(22,31,28,.88),rgba(22,31,28,.16) 68%,rgba(22,31,28,.42)),linear-gradient(180deg,rgba(22,31,28,.18),rgba(22,31,28,.40) 58%,rgba(22,31,28,.88))}
+.series{margin:36px 0 0;color:#ffd085;font-size:35px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fff8ef;font-size:91px;max-width:880px}
+.coverLine{margin-top:30px;width:880px;padding:20px 24px;background:rgba(255,248,239,.92);color:#26322d;font-size:30px;font-weight:860}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#fbefe4;color:#26322d;border-top:12px solid #f06b4f;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#4f8d74}.coverNodes span:nth-of-type(3){border-top-color:#e1a247}.coverNodes span:nth-of-type(4){border-top-color:#26322d}
+.coverNodes i{height:4px;background:#fbefe4}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fff8ef;border:2px solid rgba(38,50,45,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#f06b4f}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#26322d;color:#fff8ef;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:470px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:670px;z-index:2;background:linear-gradient(90deg,#fbefe4 0%,rgba(251,239,228,.90) 49%,rgba(251,239,228,.10) 100%)}
+.quotePhoto .content{padding-right:430px}
+.quotePhoto .quote{font-size:25px;line-height:1.43}
+.keywordRail{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.keywordRail span{height:132px;display:grid;place-items:center;text-align:center;background:#26322d;color:#fff8ef;border-top:12px solid #f06b4f;font-size:26px;font-weight:900}
+.keywordRail span:nth-child(2),.keywordRail span:nth-child(4){border-top-color:#4f8d74}.keywordRail span:nth-child(3){border-top-color:#e1a247}
+.formula .quote{font-size:32px}
+.formulaRail{margin-top:auto;display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr;align-items:center}
+.formulaRail span{height:335px;padding:20px 16px;display:grid;align-content:space-between;text-align:center;background:#26322d;color:#fff8ef;font-size:31px;line-height:1.14;font-weight:900}
+.formulaRail span:nth-of-type(2){background:#4f8d74}.formulaRail span:nth-of-type(3){background:#f06b4f}
+.formulaRail b{color:#ffe1ad;font-size:22px}
+.formulaRail i{height:4px;background:#26322d}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:405px;z-index:1;border:3px solid rgba(240,107,79,.32)}
+.photoFeature .content,.serviceMap .content,.supply .content,.material .content{padding-bottom:535px}
+.triad{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.triad span{height:150px;display:grid;place-items:center;text-align:center;background:#26322d;color:#fff8ef;border-top:12px solid #f06b4f;font-size:29px;font-weight:900}
+.triad span:nth-child(2){border-top-color:#4f8d74}.triad span:nth-child(3){border-top-color:#e1a247}
+.serviceMap .quote{font-size:23px;line-height:1.45}
+.serviceNodes{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.serviceNodes span{height:104px;display:grid;place-items:center;text-align:center;background:#fff8ef;border-top:12px solid #f06b4f;font-size:25px;font-weight:900}
+.serviceNodes span:nth-child(2),.serviceNodes span:nth-child(5){border-top-color:#4f8d74}.serviceNodes span:nth-child(3),.serviceNodes span:nth-child(6){border-top-color:#e1a247}
+.darkTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(21,29,27,.90),rgba(21,29,27,.16) 67%,rgba(21,29,27,.46)),linear-gradient(180deg,rgba(21,29,27,.16),rgba(21,29,27,.82))}
+.darkQuote h1{color:#fff8ef;font-size:82px}
+.darkQuote .quote{font-size:30px;line-height:1.4}
+.darkNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.darkNodes span{height:155px;display:grid;place-items:center;text-align:center;background:#fbefe4;color:#26322d;border-top:12px solid #f06b4f;font-size:28px;font-weight:900}
+.darkNodes span:nth-child(2){border-top-color:#4f8d74}.darkNodes span:nth-child(3){border-top-color:#e1a247}
+.topWide{position:absolute;left:58px;right:58px;bottom:58px;height:375px;z-index:1;border:3px solid rgba(240,107,79,.32)}
+.sceneGrid .content{padding-bottom:505px}
+.sceneNodes{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sceneNodes span{height:110px;padding:12px;display:grid;place-items:center;text-align:center;background:#fff8ef;border-top:12px solid #f06b4f;font-size:24px;line-height:1.14;font-weight:880}
+.sceneNodes span:nth-child(2),.sceneNodes span:nth-child(5){border-top-color:#4f8d74}.sceneNodes span:nth-child(3),.sceneNodes span:nth-child(6){border-top-color:#e1a247}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:585px;z-index:1;border:3px solid rgba(240,107,79,.32)}
+.quality .content{padding-right:500px}
+.quality .quote{font-size:28px;line-height:1.4}
+.qualityTriad{margin-top:auto;display:grid;gap:12px}
+.qualityTriad span{height:92px;display:grid;place-items:center;text-align:center;background:#26322d;color:#fff8ef;border-left:12px solid #f06b4f;font-size:26px;font-weight:900}
+.qualityTriad span:nth-child(2){border-left-color:#4f8d74}.qualityTriad span:nth-child(3){border-left-color:#e1a247}
+.cards{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cards span{height:118px;padding:18px;display:grid;align-content:space-between;background:#fff8ef;border-top:12px solid #f06b4f;font-size:25px;line-height:1.16;font-weight:850}
+.cards span:nth-child(2),.cards span:nth-child(3){border-top-color:#4f8d74}.cards span:nth-child(4){border-top-color:#e1a247}
+.cards b{font-size:20px;color:#26322d}
+.exam .quote{font-size:32px}
+.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr;align-items:center}
+.examFlow span{height:335px;padding:20px 16px;display:grid;align-content:space-between;text-align:center;background:#26322d;color:#fff8ef;font-size:28px;line-height:1.14;font-weight:900}
+.examFlow span:nth-of-type(2){background:#4f8d74}.examFlow span:nth-of-type(3){background:#f06b4f}
+.examFlow b{color:#ffe1ad;font-size:22px}
+.examFlow i{height:4px;background:#26322d}
+.interview .quote{font-size:30px;line-height:1.4}
+.answerSteps{margin-top:34px;display:grid;gap:12px}
+.answerSteps span{height:94px;padding:0 20px;display:flex;align-items:center;gap:16px;background:#fff8ef;border-left:12px solid #f06b4f;font-size:25px;line-height:1.16;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#4f8d74}.answerSteps span:nth-child(3),.answerSteps span:nth-child(5){border-left-color:#e1a247}
+.answerSteps b{font-size:20px;color:#26322d}
+.answerGrid{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.answerGrid span{height:198px;padding:20px;display:grid;place-items:center;text-align:center;background:#fff8ef;border-top:14px solid #f06b4f;font-size:29px;line-height:1.16;font-weight:900}
+.answerGrid span:nth-child(2),.answerGrid span:nth-child(3){border-top-color:#4f8d74}.answerGrid span:nth-child(4){border-top-color:#e1a247}
+.material .quote{font-size:25px;line-height:1.42}
+.materialGrid{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.materialGrid span{height:112px;padding:12px;display:grid;place-items:center;text-align:center;background:#fff8ef;border-top:12px solid #f06b4f;font-size:23px;line-height:1.14;font-weight:880}
+.materialGrid span:nth-child(2),.materialGrid span:nth-child(5){border-top-color:#4f8d74}.materialGrid span:nth-child(3),.materialGrid span:nth-child(6){border-top-color:#e1a247}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(21,29,27,.90),rgba(21,29,27,.16) 67%,rgba(21,29,27,.46)),linear-gradient(180deg,rgba(21,29,27,.18),rgba(21,29,27,.80))}
+.closing h1{color:#fff8ef;font-size:82px}
+.closing .quote{font-size:29px;line-height:1.4}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.closingNodes span{height:146px;display:grid;place-items:center;text-align:center;background:#fbefe4;color:#26322d;border-top:12px solid #f06b4f;font-size:27px;font-weight:900}
+.closingNodes span:nth-child(2),.closingNodes span:nth-child(4){border-top-color:#4f8d74}.closingNodes span:nth-child(3){border-top-color:#e1a247}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.86) contrast(1.08) brightness(.72)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(21,29,27,.92),rgba(21,29,27,.12) 70%),linear-gradient(180deg,rgba(21,29,27,.12),rgba(21,29,27,.30) 44%,rgba(21,29,27,.80))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.58);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:"SERVICE";position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:96px;z-index:4;color:#fff8ef}
+.videoTitle p{margin:0 0 28px;color:#ffd085;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:84px;line-height:1.03;font-weight:780;letter-spacing:0;max-width:900px}
+.v2 .videoTitle h2{font-size:76px}.v3 .videoTitle h2{font-size:86px}
+.videoTitle span{display:block;width:max-content;max-width:875px;margin-top:26px;padding:14px 18px;background:#f06b4f;color:#fff8ef;font-size:27px;font-weight:900}
+.v2 .videoTitle span{background:#4f8d74;color:#fff8ef}.v3 .videoTitle span{background:#e1a247;color:#26322d}
+.preview{width:1800px;background:#d7cec5;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff8ef;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><main class="stage"><section class="poster xhs cover" id="xhs-01-cover">
+      <figure class="photo bleed">
+    <!-- Subject map: busy night market signage and crowd across lower half; keep title in left dark zone and avoid covering bright shop signs. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/night-market.jpg" alt="" style="object-position:center 54%;">
+  </figure><div class="coverTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>01</span><span>人民日报材料转申论</span></div>
+        <p class="series">《人民日报》这样写</p>
+        <h1>服务消费<br>不是发券促销</h1>
+        <div class="coverLine">把好服务嵌入生活半径</div>
+        <div class="coverNodes"><span>生活半径</span><i></i><span>新场景</span><i></i><span>长期留量</span><i></i><span>优供给</span></div>
+      </div>
+    </section>
+<section class="poster xhs mistake" id="xhs-02-mistake">
+      <div class="paper"></div><div class="content"><div class="top"><span>02</span><span>常见误区</span></div><h1>别只写<br>发券打折夜市</h1><blockquote class="quote">这些能带来一次购买，但很难自动变成稳定消费意愿。</blockquote>
+      <div class="wrongList"><span><b>01</b>发消费券</span><span><b>02</b>打折促销</span><span><b>03</b>夜市活动</span><span><b>04</b>网红商圈</span></div>
+      <div class="aside"><p>短期刺激有用</p><p>但高分要写：服务供给、场景运营、质量规范</p></div></div>
+    </section>
+<section class="poster xhs quotePhoto" id="xhs-03-core-judgement">
+      <div class="paper"></div><figure class="photo sidePhoto">
+    <!-- Subject map: group dining scene with faces around center; keep text in left paper panel and image on the right. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/community-table.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>03</span><span>核心判断</span></div><h1>不是把人拉来<br>而是让人愿意留下</h1><blockquote class="quote med">服务消费不是靠一次性刺激把人拉来，而是把优质服务嵌入生活半径，把新场景做成可停留、可参与、可复购的长期供给。</blockquote>
+      <div class="keywordRail"><span>可停留</span><span>可参与</span><span>可复购</span><span>长期供给</span></div></div>
+    </section>
+<section class="poster xhs formula" id="xhs-04-formula">
+      <div class="paper"></div><div class="content"><div class="top"><span>04</span><span>核心公式</span></div><h1>考场先抓<br>这条供给链</h1><blockquote class="quote">服务进入生活半径 → 场景承接新需求 → 质量沉淀长期留量。</blockquote>
+      <div class="formulaRail"><span><b>01</b>生活半径</span><i></i><span><b>02</b>新需求</span><i></i><span><b>03</b>长期留量</span></div></div>
+    </section>
+<section class="poster xhs photoFeature" id="xhs-05-radius">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: small coffee table and street texture occupy right side; safe title zone is left and upper-left. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/neighborhood-cafe.jpg" alt="" style="object-position:center 56%;">
+  </figure>
+      <div class="content"><div class="top"><span>05</span><span>生活半径</span></div><h1>真正增量<br>就在家门口</h1><blockquote class="quote">服务消费的真正增量，不只在远方的打卡点，也在群众每天能走到、办到、体验到的生活半径里。</blockquote>
+      <div class="triad"><span>走到</span><span>办到</span><span>体验到</span></div></div>
+    </section>
+<section class="poster xhs serviceMap" id="xhs-06-embedded-service">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: people sit around a meeting table across the frame; use as image well, avoid placing text over faces. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/community-center.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>06</span><span>社区嵌入</span></div><h1>一刻钟生活圈<br>不是画半径</h1><blockquote class="quote med">提振服务消费，要推动优质服务向社区延伸、向生活嵌入、向品质升级，让养老、托幼、医疗、政务、文化、休闲等服务跟着人的日常半径走。</blockquote>
+      <div class="serviceNodes"><span>养老</span><span>托幼</span><span>医疗</span><span>政务</span><span>文化</span><span>休闲</span></div></div>
+    </section>
+<section class="poster xhs darkQuote" id="xhs-07-scene-upgrade">
+      <figure class="photo bleed">
+    <!-- Subject map: concert stage sits center-lower with crowd below; title can sit on left dark area without covering performers. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/live-performance.jpg" alt="" style="object-position:center 56%;">
+  </figure><div class="darkTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>07</span><span>场景升级</span></div><h1>消费升级<br>不是多买商品</h1><blockquote class="quote">从商品到服务，从价格到体验，从流量到留量，这是服务消费的三次升级。</blockquote>
+      <div class="darkNodes"><span>商品 → 服务</span><span>价格 → 体验</span><span>流量 → 留量</span></div></div>
+    </section>
+<section class="poster xhs sceneGrid" id="xhs-08-new-scenes">
+      <div class="paper"></div><figure class="photo topWide">
+    <!-- Subject map: amusement rides and skyline occupy lower and right half; left sky and lower-left tint are safe for title. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/theme-park-night.jpg" alt="" style="object-position:center 58%;">
+  </figure>
+      <div class="content"><div class="top"><span>08</span><span>新需求</span></div><h1>把城市<br>组织成体验链</h1><blockquote class="quote">服务消费不能只写“卖东西”，要写“组织体验”。</blockquote>
+      <div class="sceneNodes"><span>文旅演艺</span><span>赛事票根</span><span>夜游市集</span><span>康养疗愈</span><span>手作社群</span><span>主题乐园</span></div></div>
+    </section>
+<section class="poster xhs quality" id="xhs-09-quality">
+      <div class="paper"></div><figure class="photo rightPhoto">
+    <!-- Subject map: craft table and plants are viewed from above, people at edges; safe text zones are paper panels or upper-left overlay. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/craft-workshop.jpg" alt="" style="object-position:center 45%;">
+  </figure>
+      <div class="content"><div class="top"><span>09</span><span>长期留量</span></div><h1>爆红之后<br>要靠质量长红</h1><blockquote class="quote">服务消费从爆红到长红，拼的不是热闹，而是内容供给、运营能力和服务质量。</blockquote>
+      <div class="qualityTriad"><span>内容供给</span><span>运营能力</span><span>服务质量</span></div></div>
+    </section>
+<section class="poster xhs supply" id="xhs-10-good-supply">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: bright hospital beds with clean empty space; use as bottom evidence image or soft background for quality and health service. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/healthcare.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>10</span><span>高分写法</span></div><h1>把促消费<br>写成优供给</h1><blockquote class="quote">服务消费的高分写法，是把“促消费”写成“优供给”。</blockquote><div class="cards"><span><b>01</b>尊重新需求</span><span><b>02</b>扩大新供给</span><span><b>03</b>守住质量安全</span><span><b>04</b>引导理性消费</span></div></div>
+    </section>
+<section class="poster xhs exam" id="xhs-11-exam-framework">
+      <div class="paper"></div><div class="content"><div class="top"><span>11</span><span>考场框架</span></div><h1>遇到服务消费<br>直接套这三步</h1><blockquote class="quote">服务进入生活半径，场景承接新需求，质量沉淀长期留量。</blockquote>
+      <div class="examFlow"><span><b>01</b>服务进入生活半径</span><i></i><span><b>02</b>场景承接新需求</span><i></i><span><b>03</b>质量沉淀长期留量</span></div></div>
+    </section>
+<section class="poster xhs interview" id="xhs-12-interview">
+      <div class="paper"></div><div class="content"><div class="top"><span>12</span><span>面试题卡</span></div><h1>现象认知题<br>这样答</h1><blockquote class="quote">有人认为，提振消费主要靠发放消费券、开展促销活动。对此你怎么看？</blockquote>
+      <div class="answerSteps"><span><b>01</b>短期刺激有必要</span><span><b>02</b>但不能替代长期供给</span><span><b>03</b>服务要靠近群众生活</span><span><b>04</b>新场景承接新需求</span><span><b>05</b>质量规范支撑长效发展</span></div></div>
+    </section>
+<section class="poster xhs answer" id="xhs-13-answer-logic">
+      <div class="paper"></div><div class="content"><div class="top"><span>13</span><span>答题逻辑</span></div><h1>四句话<br>把层次答出来</h1><blockquote class="quote">消费券降低一次门槛，好服务形成长期意愿。</blockquote>
+      <div class="answerGrid"><span>便利性：把服务送到身边</span><span>体验感：把场景做得可参与</span><span>品质感：把内容运营做扎实</span><span>安全感：把标准监管补上</span></div></div>
+    </section>
+<section class="poster xhs material" id="xhs-14-material-bank">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: busy night market signage and crowd across lower half; keep title in left dark zone and avoid covering bright shop signs. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/night-market.jpg" alt="" style="object-position:center 54%;">
+  </figure>
+      <div class="content"><div class="top"><span>14</span><span>素材记忆</span></div><h1>材料怎么记<br>才不会散</h1><blockquote class="quote med">重庆看一刻钟生活圈，长沙看票根联动，萍乡看中医夜市，乐山看体卫融合，主题乐园看内容运营，情绪消费看规范监管。</blockquote>
+      <div class="materialGrid"><span>重庆：生活圈</span><span>长沙：票根联动</span><span>萍乡：中医夜市</span><span>乐山：体卫融合</span><span>主题乐园：运营</span><span>情绪消费：监管</span></div></div>
+    </section>
+<section class="poster xhs closing" id="xhs-15-closing">
+      <figure class="photo bleed">
+    <!-- Subject map: busy night market signage and crowd across lower half; keep title in left dark zone and avoid covering bright shop signs. -->
+    <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/night-market.jpg" alt="" style="object-position:center 54%;">
+  </figure><div class="closingTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>15</span><span>收束金句</span></div><h1>不是让人<br>多买一点</h1><blockquote class="quote">提振服务消费，不是让人多买一点，而是让生活更方便、更有趣、更健康、更有品质。</blockquote>
+      <div class="closingNodes"><span>更方便</span><span>更有趣</span><span>更健康</span><span>更有品质</span></div></div>
+    </section><section class="poster video v1" id="video-cover-01">
+    <figure class="videoPhoto">
+      <!-- Subject map: busy night market signage and crowd across lower half; keep title in left dark zone and avoid covering bright shop signs. Magazine title uses documented safe zone. -->
+      <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/night-market.jpg" alt="" style="object-position:center 54%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>服务消费<br>不是发券促销</h2>
+      <span>把好服务嵌入生活半径</span>
+    </div>
+  </section>
+<section class="poster video v2" id="video-cover-02">
+    <figure class="videoPhoto">
+      <!-- Subject map: concert stage sits center-lower with crowd below; title can sit on left dark area without covering performers. Magazine title uses documented safe zone. -->
+      <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/live-performance.jpg" alt="" style="object-position:center 56%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>从流量到留量<br>要靠场景和质量</h2>
+      <span>生活半径 / 体验场景 / 长期供给</span>
+    </div>
+  </section>
+<section class="poster video v3" id="video-cover-03">
+    <figure class="videoPhoto">
+      <!-- Subject map: amusement rides and skyline occupy lower and right half; left sky and lower-left tint are safe for title. Magazine title uses documented safe zone. -->
+      <img src="../../../../media/images/2026-06-21-service-consumption-xhs-video/assets/theme-park-night.jpg" alt="" style="object-position:center 58%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>把促消费<br>写成优供给</h2>
+      <span>可停留 / 可参与 / 可复购</span>
+    </div>
+  </section></main></body></html>

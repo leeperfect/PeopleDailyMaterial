@@ -1,0 +1,124 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d9dcdf;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#1b252d}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f3f1e8}
+.xhs,.video{width:1080px;height:1440px}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 84% 16%,rgba(36,105,160,.14),transparent 30%),
+  radial-gradient(circle at 12% 90%,rgba(202,46,42,.13),transparent 34%),
+  linear-gradient(116deg,rgba(27,37,45,.055) 0 1px,transparent 1px 18px),
+  linear-gradient(180deg,#f7f3e8 0%,#eef2f4 56%,#e6ecf1 100%)}
+.paper:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.12) 0 1px,transparent 1px 6px);opacity:.70}
+.grain{position:absolute;inset:0;z-index:3;opacity:.22;background:repeating-linear-gradient(105deg,rgba(255,255,255,.11) 0 1px,transparent 1px 5px),linear-gradient(180deg,rgba(255,255,255,.16),rgba(0,0,0,.10));mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(27,37,45,.20);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#2469a0;font-weight:900}
+.cover .top,.darkQuote .top,.closing .top{border-bottom-color:rgba(255,255,255,.46);color:#fff3df}
+.cover .top span:first-child,.darkQuote .top span:first-child,.closing .top span:first-child{color:#e8463a}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:78px;line-height:1.05;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,249,235,.94);border-left:10px solid #2469a0;font-size:34px;line-height:1.35;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:21px;line-height:1.46}
+.quote.xxl{font-size:19px;line-height:1.44}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.90) contrast(1.05) brightness(.94)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(15,26,36,.94),rgba(15,26,36,.18) 66%,rgba(15,26,36,.44)),linear-gradient(180deg,rgba(15,26,36,.10),rgba(15,26,36,.38) 62%,rgba(15,26,36,.90))}
+.series{margin:36px 0 0;color:#e8463a;font-size:36px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fff3df;font-size:86px;max-width:940px}
+.coverLine{margin-top:30px;width:900px;padding:20px 24px;background:rgba(255,249,235,.92);color:#1b252d;font-size:31px;font-weight:880}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#f7f3e8;color:#1b252d;border-top:12px solid #2469a0;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#e8463a}.coverNodes span:nth-of-type(3){border-top-color:#6e7f86}.coverNodes span:nth-of-type(4){border-top-color:#1b252d}
+.coverNodes i{height:4px;background:#f7f3e8}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fff9eb;border:2px solid rgba(27,37,45,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#2469a0}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#1b252d;color:#fff3df;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:460px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:690px;z-index:2;background:linear-gradient(90deg,#f3f1e8 0%,rgba(243,241,232,.92) 50%,rgba(243,241,232,.08) 100%)}
+.quotePhoto .content{padding-right:418px}
+.quotePhoto .quote{font-size:22px;line-height:1.46}
+.keywordRail{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.keywordRail span{height:112px;display:grid;place-items:center;text-align:center;background:#1b252d;color:#fff3df;border-top:12px solid #2469a0;font-size:22px;font-weight:900}
+.keywordRail span:nth-child(2){border-top-color:#e8463a}.keywordRail span:nth-child(3){border-top-color:#6e7f86}.keywordRail span:nth-child(4){border-top-color:#2469a0}
+.formula .quote,.exam .quote{font-size:33px}
+.formulaRail,.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr;align-items:center}
+.examFlow{grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr}
+.formulaRail span,.examFlow span{height:335px;padding:20px 16px;display:grid;align-content:space-between;text-align:center;background:#1b252d;color:#fff3df;font-size:29px;line-height:1.14;font-weight:900}
+.examFlow span{height:300px;font-size:25px}
+.formulaRail span:nth-of-type(2),.examFlow span:nth-of-type(2){background:#e8463a;color:#fff3df}.formulaRail span:nth-of-type(3),.examFlow span:nth-of-type(3){background:#2469a0}.examFlow span:nth-of-type(4){background:#6e7f86;color:#fff3df}
+.formulaRail b,.examFlow b{color:#ffd4b8;font-size:22px}
+.formulaRail i,.examFlow i{height:4px;background:#1b252d}
+#xhs-04-formula:after{content:"表达方式  →  生产流程  →  公共服务";position:absolute;left:58px;right:58px;top:572px;height:128px;z-index:1;display:grid;place-items:center;background:rgba(36,105,160,.10);border-top:3px solid rgba(36,105,160,.42);border-bottom:3px solid rgba(232,70,58,.36);color:#1b252d;font-size:34px;font-weight:900}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:410px;z-index:1;border:3px solid rgba(36,105,160,.30)}
+.objectPhoto .content,.photoFeature .content,.material .content{padding-bottom:540px}
+.objectPhoto .quote{font-size:30px;line-height:1.37}
+.cards{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cards span{height:100px;padding:14px 10px;display:grid;align-content:space-between;background:#fff9eb;border-top:12px solid #2469a0;font-size:20px;line-height:1.14;font-weight:860}
+.cards span:nth-child(2),.cards span:nth-child(4){border-top-color:#e8463a}.cards span:nth-child(3){border-top-color:#6e7f86}
+.cards b{font-size:18px;color:#1b252d}
+.matrix{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.matrix span{height:198px;padding:20px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #2469a0;font-size:29px;line-height:1.16;font-weight:900}
+.matrix span:nth-child(2),.matrix span:nth-child(4){border-top-color:#e8463a}.matrix span:nth-child(3){border-top-color:#6e7f86}
+.needMatrix:after{content:"信息传递 → 价值共鸣 → 公共参与";position:absolute;left:58px;right:58px;bottom:88px;height:158px;z-index:1;display:grid;place-items:center;background:#1b252d;color:#fff3df;border-top:14px solid #e8463a;font-size:34px;font-weight:900}
+.serviceStrip{margin-top:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.serviceStrip span{height:134px;padding:10px;display:grid;place-items:center;text-align:center;background:#1b252d;color:#fff3df;border-top:12px solid #2469a0;font-size:23px;font-weight:900}
+.serviceStrip span:nth-child(2),.serviceStrip span:nth-child(4){border-top-color:#e8463a}.serviceStrip span:nth-child(3),.serviceStrip span:nth-child(5){border-top-color:#6e7f86}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:585px;z-index:1;border:3px solid rgba(36,105,160,.30)}
+.extension .content{padding-right:500px}
+.extension .quote{font-size:19px;line-height:1.44}
+.extensionRows{margin-top:auto;display:grid;gap:12px}
+.extensionRows span{height:86px;display:grid;place-items:center;text-align:center;background:#1b252d;color:#fff3df;border-left:12px solid #2469a0;font-size:22px;font-weight:900}
+.extensionRows span:nth-child(2),.extensionRows span:nth-child(4){border-left-color:#e8463a}.extensionRows span:nth-child(3){border-left-color:#6e7f86}
+#xhs-07-content-long:after{content:"可感 / 可信 / 可亲";position:absolute;left:58px;top:642px;width:474px;height:112px;z-index:1;display:grid;place-items:center;background:rgba(255,249,235,.86);border-left:14px solid #e8463a;color:#1b252d;font-size:30px;font-weight:900}
+#xhs-11-service-long:after{content:"新闻 + 政务 + 服务 + 商务";position:absolute;left:58px;top:648px;width:474px;height:124px;z-index:1;display:grid;place-items:center;text-align:center;background:#1b252d;color:#fff3df;border-left:14px solid #e8463a;font-size:28px;line-height:1.18;font-weight:900}
+.darkTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(15,26,36,.93),rgba(15,26,36,.18) 67%,rgba(15,26,36,.54)),linear-gradient(180deg,rgba(15,26,36,.12),rgba(15,26,36,.82))}
+.darkQuote h1{color:#fff3df;font-size:78px}
+.darkQuote .quote{font-size:25px;line-height:1.43}
+.darkNodes{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.darkNodes span{height:146px;display:grid;place-items:center;text-align:center;background:#f7f3e8;color:#1b252d;border-top:12px solid #2469a0;font-size:26px;font-weight:900}
+.darkNodes span:nth-child(2),.darkNodes span:nth-child(4){border-top-color:#e8463a}.darkNodes span:nth-child(3){border-top-color:#6e7f86}
+.governance .quote{font-size:18px;line-height:1.43}
+.governGrid{margin-top:36px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.governGrid span{height:170px;padding:14px 10px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #2469a0;font-size:22px;line-height:1.16;font-weight:900}
+.governGrid span:nth-child(2),.governGrid span:nth-child(4){border-top-color:#e8463a}.governGrid span:nth-child(3),.governGrid span:nth-child(5){border-top-color:#6e7f86}
+.governance:after{content:"生产更高效 → 触达更精准 → 反馈更及时 → 声音更可见";position:absolute;left:58px;right:58px;bottom:88px;height:154px;z-index:1;display:grid;place-items:center;background:#1b252d;color:#fff3df;border-top:14px solid #e8463a;font-size:28px;font-weight:900}
+.interview .quote{font-size:27px;line-height:1.4}
+.answerSteps{margin-top:34px;display:grid;gap:14px}
+.answerSteps span{height:108px;padding:0 20px;display:flex;align-items:center;gap:16px;background:#fff9eb;border-left:12px solid #2469a0;font-size:23px;line-height:1.16;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#e8463a}.answerSteps span:nth-child(3){border-left-color:#6e7f86}
+.answerSteps b{font-size:20px;color:#1b252d}
+#xhs-12-exam-framework:after{content:"内容为王 / 技术为基 / 机制为梁 / 服务为径";position:absolute;left:58px;right:58px;top:622px;height:132px;z-index:1;display:grid;place-items:center;background:rgba(255,249,235,.86);border-left:14px solid #2469a0;border-right:14px solid #e8463a;color:#1b252d;font-size:30px;font-weight:900}
+#xhs-13-interview:after{content:"账号矩阵是外形，系统重构才是融合能力";position:absolute;left:58px;right:58px;bottom:92px;height:150px;z-index:1;display:grid;place-items:center;text-align:center;background:#1b252d;color:#fff3df;border-top:14px solid #e8463a;font-size:31px;line-height:1.18;font-weight:900}
+.material .quote{font-size:23px;line-height:1.42}
+.materialGrid{margin-top:30px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.materialGrid span{height:105px;padding:10px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:12px solid #2469a0;font-size:20px;line-height:1.14;font-weight:880}
+.materialGrid span:nth-child(2),.materialGrid span:nth-child(4){border-top-color:#e8463a}.materialGrid span:nth-child(3),.materialGrid span:nth-child(5){border-top-color:#6e7f86}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(15,26,36,.94),rgba(15,26,36,.20) 67%,rgba(15,26,36,.50)),linear-gradient(180deg,rgba(15,26,36,.14),rgba(15,26,36,.84))}
+.closing h1{color:#fff3df;font-size:74px}
+.closing .quote{font-size:25px;line-height:1.42}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.closingNodes span{height:140px;display:grid;place-items:center;text-align:center;background:#f7f3e8;color:#1b252d;border-top:12px solid #2469a0;font-size:24px;font-weight:900}
+.closingNodes span:nth-child(2){border-top-color:#e8463a}.closingNodes span:nth-child(3){border-top-color:#6e7f86}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.88) contrast(1.10) brightness(.70)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(15,26,36,.92),rgba(15,26,36,.12) 70%),linear-gradient(180deg,rgba(15,26,36,.10),rgba(15,26,36,.30) 44%,rgba(15,26,36,.86))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.60);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:attr(data-label);position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820;letter-spacing:0}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:92px;z-index:4;color:#fff3df}
+.videoTitle p{margin:0 0 28px;color:#e8463a;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:78px;line-height:1.04;font-weight:780;letter-spacing:0;max-width:920px}
+.v2 .videoTitle h2{font-size:70px}.v3 .videoTitle h2{font-size:74px}
+.videoTitle span{display:block;width:max-content;max-width:890px;margin-top:26px;padding:14px 18px;background:#2469a0;color:#fff3df;font-size:27px;font-weight:900}
+.v2 .videoTitle span{background:#e8463a;color:#fff3df}.v3 .videoTitle span{background:#6e7f86;color:#fff3df}
+.preview{width:1800px;background:#d9dcdf;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff9eb;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><section class="preview"><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-01-cover.png" alt=""><figcaption>xhs-01-cover.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-02-mistake.png" alt=""><figcaption>xhs-02-mistake.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-03-core-judgement.png" alt=""><figcaption>xhs-03-core-judgement.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-04-formula.png" alt=""><figcaption>xhs-04-formula.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-05-content-fit.png" alt=""><figcaption>xhs-05-content-fit.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-06-content-core.png" alt=""><figcaption>xhs-06-content-core.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-07-content-long.png" alt=""><figcaption>xhs-07-content-long.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-08-tech-core.png" alt=""><figcaption>xhs-08-tech-core.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-09-tech-long.png" alt=""><figcaption>xhs-09-tech-long.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-10-service-core.png" alt=""><figcaption>xhs-10-service-core.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-11-service-long.png" alt=""><figcaption>xhs-11-service-long.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-12-exam-framework.png" alt=""><figcaption>xhs-12-exam-framework.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-13-interview.png" alt=""><figcaption>xhs-13-interview.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-14-material-bank.png" alt=""><figcaption>xhs-14-material-bank.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/xhs-15-closing.png" alt=""><figcaption>xhs-15-closing.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/video-cover-01.png" alt=""><figcaption>video-cover-01.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/video-cover-02.png" alt=""><figcaption>video-cover-02.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-media-convergence-xhs-video/video-cover-03.png" alt=""><figcaption>video-cover-03.png</figcaption></figure></section></body></html>

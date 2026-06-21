@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#cfd8d2;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#173136}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#edf1e7}
+.xhs,.video{width:1080px;height:1440px}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 82% 12%,rgba(47,111,115,.22),transparent 30%),
+  radial-gradient(circle at 14% 88%,rgba(125,168,123,.24),transparent 35%),
+  radial-gradient(circle at 78% 80%,rgba(240,179,92,.20),transparent 30%),
+  repeating-linear-gradient(100deg,rgba(255,255,255,.08) 0 1px,transparent 1px 5px),
+  linear-gradient(180deg,#f4f5eb,#e1eadf);background-size:auto,auto,auto,auto,auto}
+.grain{position:absolute;inset:0;z-index:3;opacity:.24;background:repeating-linear-gradient(105deg,rgba(255,255,255,.10) 0 1px,transparent 1px 5px),radial-gradient(circle at 24% 18%,rgba(255,255,255,.28),transparent 28%);mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(23,49,54,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#2f6f73;font-weight:900}
+.cover .top,.darkQuote .top,.closing .top{border-bottom-color:rgba(255,255,255,.46);color:#f7f5e7}
+.cover .top span:first-child,.darkQuote .top span:first-child,.closing .top span:first-child{color:#f0b35c}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:82px;line-height:1.04;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(250,248,236,.94);border-left:10px solid #2f6f73;font-size:35px;line-height:1.34;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:21px;line-height:1.46}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.04) brightness(.93)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(16,37,43,.90),rgba(16,37,43,.16) 68%,rgba(16,37,43,.44)),linear-gradient(180deg,rgba(16,37,43,.18),rgba(16,37,43,.36) 58%,rgba(16,37,43,.88))}
+.series{margin:36px 0 0;color:#f0b35c;font-size:35px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#f7f5e7;font-size:88px;max-width:895px}
+.coverLine{margin-top:30px;width:870px;padding:20px 24px;background:rgba(250,248,236,.92);color:#173136;font-size:30px;font-weight:860}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#edf1e7;color:#173136;border-top:12px solid #2f6f73;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#7da87b}.coverNodes span:nth-of-type(3){border-top-color:#f0b35c}.coverNodes span:nth-of-type(4){border-top-color:#173136}
+.coverNodes i{height:4px;background:#edf1e7}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#faf8ec;border:2px solid rgba(23,49,54,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#2f6f73}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#173136;color:#f7f5e7;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:455px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:670px;z-index:2;background:linear-gradient(90deg,#edf1e7 0%,rgba(237,241,231,.90) 49%,rgba(237,241,231,.10) 100%)}
+.quotePhoto .content{padding-right:410px}
+.quotePhoto .quote{font-size:22px;line-height:1.46}
+.keywordRail{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.keywordRail span{height:108px;display:grid;place-items:center;text-align:center;background:#173136;color:#f7f5e7;border-top:12px solid #2f6f73;font-size:23px;font-weight:900}
+.keywordRail span:nth-child(2),.keywordRail span:nth-child(5){border-top-color:#7da87b}.keywordRail span:nth-child(3),.keywordRail span:nth-child(6){border-top-color:#f0b35c}
+.formula .quote{font-size:32px}
+.formulaRail,.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr;align-items:center}
+.formulaRail span,.examFlow span{height:335px;padding:20px 16px;display:grid;align-content:space-between;text-align:center;background:#173136;color:#f7f5e7;font-size:29px;line-height:1.14;font-weight:900}
+.formulaRail span:nth-of-type(2),.examFlow span:nth-of-type(2){background:#7da87b;color:#173136}.formulaRail span:nth-of-type(3),.examFlow span:nth-of-type(3){background:#2f6f73}
+.formulaRail b,.examFlow b{color:#ffe1ad;font-size:22px}
+.formulaRail i,.examFlow i{height:4px;background:#173136}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:405px;z-index:1;border:3px solid rgba(47,111,115,.32)}
+.objectPhoto .content,.photoFeature .content,.material .content{padding-bottom:535px}
+.objectPhoto .quote{font-size:20px;line-height:1.45}
+.cards{margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cards span{height:92px;padding:14px;display:grid;align-content:space-between;background:#faf8ec;border-top:12px solid #2f6f73;font-size:22px;line-height:1.14;font-weight:860}
+.cards span:nth-child(2),.cards span:nth-child(3){border-top-color:#7da87b}.cards span:nth-child(4){border-top-color:#f0b35c}
+.cards b{font-size:18px;color:#173136}
+.matrix{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.matrix span{height:200px;padding:20px;display:grid;place-items:center;text-align:center;background:#faf8ec;border-top:14px solid #2f6f73;font-size:28px;line-height:1.16;font-weight:900}
+.matrix span:nth-child(2),.matrix span:nth-child(3){border-top-color:#7da87b}.matrix span:nth-child(4){border-top-color:#f0b35c}
+.needMatrix:after{content:"户籍人口 → 常住人口 → 真实需求";position:absolute;left:58px;right:58px;bottom:86px;height:158px;z-index:1;display:grid;place-items:center;background:rgba(250,248,236,.78);border-top:3px solid rgba(47,111,115,.45);border-bottom:3px solid rgba(47,111,115,.24);color:#173136;font-size:34px;font-weight:900}
+.serviceStrip{margin-top:36px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.serviceStrip span{height:136px;padding:10px;display:grid;place-items:center;text-align:center;background:#173136;color:#f7f5e7;border-top:12px solid #2f6f73;font-size:25px;font-weight:900}
+.serviceStrip span:nth-child(2),.serviceStrip span:nth-child(4){border-top-color:#7da87b}.serviceStrip span:nth-child(3),.serviceStrip span:nth-child(5){border-top-color:#f0b35c}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:585px;z-index:1;border:3px solid rgba(47,111,115,.32)}
+.extension .content{padding-right:500px}
+.extension .quote{font-size:20px;line-height:1.45}
+.extensionRows{margin-top:auto;display:grid;gap:12px}
+.extensionRows span{height:88px;display:grid;place-items:center;text-align:center;background:#173136;color:#f7f5e7;border-left:12px solid #2f6f73;font-size:24px;font-weight:900}
+.extensionRows span:nth-child(2){border-left-color:#7da87b}.extensionRows span:nth-child(3){border-left-color:#f0b35c}
+.darkTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(16,37,43,.90),rgba(16,37,43,.16) 67%,rgba(16,37,43,.48)),linear-gradient(180deg,rgba(16,37,43,.14),rgba(16,37,43,.82))}
+.darkQuote h1{color:#f7f5e7;font-size:82px}
+.darkQuote .quote{font-size:25px;line-height:1.43}
+.darkNodes{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.darkNodes span{height:146px;display:grid;place-items:center;text-align:center;background:#edf1e7;color:#173136;border-top:12px solid #2f6f73;font-size:27px;font-weight:900}
+.darkNodes span:nth-child(2),.darkNodes span:nth-child(4){border-top-color:#7da87b}.darkNodes span:nth-child(3){border-top-color:#f0b35c}
+.governance .quote{font-size:20px;line-height:1.45}
+.governGrid{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.governGrid span{height:205px;padding:20px;display:grid;place-items:center;text-align:center;background:#faf8ec;border-top:14px solid #2f6f73;font-size:30px;line-height:1.16;font-weight:900}
+.governGrid span:nth-child(2),.governGrid span:nth-child(3){border-top-color:#7da87b}.governGrid span:nth-child(4){border-top-color:#f0b35c}
+.governance:after{content:"协同机制 · 数据共享 · 权益保障 · 线下兜底";position:absolute;left:58px;right:58px;bottom:94px;height:154px;z-index:1;display:grid;place-items:center;background:#173136;color:#f7f5e7;border-top:14px solid #f0b35c;font-size:31px;font-weight:900}
+.exam .quote{font-size:32px}
+.interview .quote{font-size:28px;line-height:1.4}
+.answerSteps{margin-top:34px;display:grid;gap:14px}
+.answerSteps span{height:108px;padding:0 20px;display:flex;align-items:center;gap:16px;background:#faf8ec;border-left:12px solid #2f6f73;font-size:25px;line-height:1.16;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#7da87b}.answerSteps span:nth-child(3){border-left-color:#f0b35c}
+.answerSteps b{font-size:20px;color:#173136}
+.answerGrid{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.answerGrid span{height:198px;padding:20px;display:grid;place-items:center;text-align:center;background:#faf8ec;border-top:14px solid #2f6f73;font-size:27px;line-height:1.16;font-weight:900}
+.answerGrid span:nth-child(2),.answerGrid span:nth-child(3){border-top-color:#7da87b}.answerGrid span:nth-child(4){border-top-color:#f0b35c}
+.material .quote{font-size:24px;line-height:1.42}
+.materialGrid{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.materialGrid span{height:112px;padding:12px;display:grid;place-items:center;text-align:center;background:#faf8ec;border-top:12px solid #2f6f73;font-size:23px;line-height:1.14;font-weight:880}
+.materialGrid span:nth-child(2),.materialGrid span:nth-child(5){border-top-color:#7da87b}.materialGrid span:nth-child(3),.materialGrid span:nth-child(6){border-top-color:#f0b35c}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(16,37,43,.90),rgba(16,37,43,.14) 67%,rgba(16,37,43,.46)),linear-gradient(180deg,rgba(16,37,43,.18),rgba(16,37,43,.80))}
+.closing h1{color:#f7f5e7;font-size:82px}
+.closing .quote{font-size:28px;line-height:1.4}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.closingNodes span{height:146px;display:grid;place-items:center;text-align:center;background:#edf1e7;color:#173136;border-top:12px solid #2f6f73;font-size:25px;font-weight:900}
+.closingNodes span:nth-child(2),.closingNodes span:nth-child(4){border-top-color:#7da87b}.closingNodes span:nth-child(3){border-top-color:#f0b35c}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.86) contrast(1.08) brightness(.72)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(16,37,43,.92),rgba(16,37,43,.12) 70%),linear-gradient(180deg,rgba(16,37,43,.12),rgba(16,37,43,.30) 44%,rgba(16,37,43,.82))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.58);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:"URBANIZATION";position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:96px;z-index:4;color:#f7f5e7}
+.videoTitle p{margin:0 0 28px;color:#f0b35c;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:82px;line-height:1.03;font-weight:780;letter-spacing:0;max-width:900px}
+.v3 .videoTitle h2{font-size:76px}
+.videoTitle span{display:block;width:max-content;max-width:875px;margin-top:26px;padding:14px 18px;background:#2f6f73;color:#f7f5e7;font-size:27px;font-weight:900}
+.v2 .videoTitle span{background:#7da87b;color:#173136}.v3 .videoTitle span{background:#f0b35c;color:#173136}
+.preview{width:1800px;background:#cfd8d2;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#faf8ec;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><section class="preview"><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-01-cover.png" alt=""><figcaption>xhs-01-cover.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-02-mistake.png" alt=""><figcaption>xhs-02-mistake.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-03-core-judgement.png" alt=""><figcaption>xhs-03-core-judgement.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-04-formula.png" alt=""><figcaption>xhs-04-formula.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-05-object.png" alt=""><figcaption>xhs-05-object.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-06-real-people.png" alt=""><figcaption>xhs-06-real-people.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-07-radius.png" alt=""><figcaption>xhs-07-radius.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-08-service-extension.png" alt=""><figcaption>xhs-08-service-extension.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-09-risk.png" alt=""><figcaption>xhs-09-risk.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-10-governance.png" alt=""><figcaption>xhs-10-governance.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-11-exam-framework.png" alt=""><figcaption>xhs-11-exam-framework.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-12-interview.png" alt=""><figcaption>xhs-12-interview.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-13-answer-logic.png" alt=""><figcaption>xhs-13-answer-logic.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-14-material-bank.png" alt=""><figcaption>xhs-14-material-bank.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/xhs-15-closing.png" alt=""><figcaption>xhs-15-closing.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/video-cover-01.png" alt=""><figcaption>video-cover-01.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/video-cover-02.png" alt=""><figcaption>video-cover-02.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-new-urbanization-xhs-video/video-cover-03.png" alt=""><figcaption>video-cover-03.png</figcaption></figure></section></body></html>

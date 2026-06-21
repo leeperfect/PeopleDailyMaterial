@@ -1,0 +1,122 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d8ddd8;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#1e2c34}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f1f3ec}
+.xhs,.video{width:1080px;height:1440px}
+.paper{position:absolute;inset:0;z-index:0;background:
+  linear-gradient(116deg,rgba(19,38,50,.055) 0 1px,transparent 1px 18px),
+  linear-gradient(180deg,#f5f4ea 0%,#edf2ef 54%,#e4ecec 100%)}
+.paper:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(19,38,50,.08),transparent 28%,transparent 72%,rgba(230,115,42,.10)),repeating-linear-gradient(0deg,rgba(255,255,255,.10) 0 1px,transparent 1px 6px);opacity:.72}
+.grain{position:absolute;inset:0;z-index:3;opacity:.22;background:repeating-linear-gradient(105deg,rgba(255,255,255,.10) 0 1px,transparent 1px 5px),linear-gradient(180deg,rgba(255,255,255,.16),rgba(0,0,0,.10));mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(30,44,52,.20);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#1f6f8b;font-weight:900}
+.cover .top,.darkQuote .top,.closing .top{border-bottom-color:rgba(255,255,255,.46);color:#fbf3df}
+.cover .top span:first-child,.darkQuote .top span:first-child,.closing .top span:first-child{color:#f1783c}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:78px;line-height:1.05;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,251,238,.94);border-left:10px solid #1f6f8b;font-size:34px;line-height:1.35;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:21px;line-height:1.46}
+.quote.xxl{font-size:19px;line-height:1.44}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.04) brightness(.94)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(17,34,45,.93),rgba(17,34,45,.18) 66%,rgba(17,34,45,.40)),linear-gradient(180deg,rgba(17,34,45,.10),rgba(17,34,45,.36) 62%,rgba(17,34,45,.88))}
+.series{margin:36px 0 0;color:#f1783c;font-size:36px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fbf3df;font-size:86px;max-width:940px}
+.coverLine{margin-top:30px;width:850px;padding:20px 24px;background:rgba(255,251,238,.92);color:#1e2c34;font-size:31px;font-weight:880}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#f5f4ea;color:#1e2c34;border-top:12px solid #1f6f8b;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#f1783c}.coverNodes span:nth-of-type(3){border-top-color:#5e8b7e}.coverNodes span:nth-of-type(4){border-top-color:#1e2c34}
+.coverNodes i{height:4px;background:#f5f4ea}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fffbee;border:2px solid rgba(30,44,52,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#1f6f8b}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#1e2c34;color:#fbf3df;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:460px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:690px;z-index:2;background:linear-gradient(90deg,#f1f3ec 0%,rgba(241,243,236,.92) 50%,rgba(241,243,236,.08) 100%)}
+.quotePhoto .content{padding-right:418px}
+.quotePhoto .quote{font-size:22px;line-height:1.46}
+.keywordRail{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.keywordRail span{height:118px;display:grid;place-items:center;text-align:center;background:#1e2c34;color:#fbf3df;border-top:12px solid #1f6f8b;font-size:25px;font-weight:900}
+.keywordRail span:nth-child(2){border-top-color:#f1783c}.keywordRail span:nth-child(3){border-top-color:#5e8b7e}
+.formula .quote,.exam .quote{font-size:33px}
+.formulaRail,.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr;align-items:center}
+.examFlow{grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr}
+.formulaRail span,.examFlow span{height:335px;padding:20px 16px;display:grid;align-content:space-between;text-align:center;background:#1e2c34;color:#fbf3df;font-size:29px;line-height:1.14;font-weight:900}
+.examFlow span{height:300px;font-size:26px}
+.formulaRail span:nth-of-type(2),.examFlow span:nth-of-type(2){background:#f1783c;color:#1e2c34}.formulaRail span:nth-of-type(3),.examFlow span:nth-of-type(3){background:#1f6f8b}.examFlow span:nth-of-type(4){background:#5e8b7e;color:#1e2c34}
+.formulaRail b,.examFlow b{color:#ffddb5;font-size:22px}
+.formulaRail i,.examFlow i{height:4px;background:#1e2c34}
+#xhs-04-formula:after{content:"论文 / 专利  →  样品 / 中试  →  产品 / 订单";position:absolute;left:58px;right:58px;top:572px;height:128px;z-index:1;display:grid;place-items:center;background:rgba(31,111,139,.10);border-top:3px solid rgba(31,111,139,.42);border-bottom:3px solid rgba(241,120,60,.36);color:#1e2c34;font-size:34px;font-weight:900}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:410px;z-index:1;border:3px solid rgba(31,111,139,.30)}
+.objectPhoto .content,.photoFeature .content,.material .content{padding-bottom:540px}
+.objectPhoto .quote{font-size:25px;line-height:1.42}
+.cards{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cards span{height:100px;padding:14px;display:grid;align-content:space-between;background:#fffbee;border-top:12px solid #1f6f8b;font-size:22px;line-height:1.14;font-weight:860}
+.cards span:nth-child(2){border-top-color:#f1783c}.cards span:nth-child(3){border-top-color:#5e8b7e}
+.cards b{font-size:18px;color:#1e2c34}
+.matrix{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.matrix span{height:198px;padding:20px;display:grid;place-items:center;text-align:center;background:#fffbee;border-top:14px solid #1f6f8b;font-size:29px;line-height:1.16;font-weight:900}
+.matrix span:nth-child(2),.matrix span:nth-child(3){border-top-color:#f1783c}.matrix span:nth-child(4){border-top-color:#5e8b7e}
+.needMatrix:after{content:"技术清单 → 问题清单 → 场景清单";position:absolute;left:58px;right:58px;bottom:88px;height:158px;z-index:1;display:grid;place-items:center;background:#1e2c34;color:#fbf3df;border-top:14px solid #f1783c;font-size:34px;font-weight:900}
+.serviceStrip{margin-top:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.serviceStrip span{height:134px;padding:10px;display:grid;place-items:center;text-align:center;background:#1e2c34;color:#fbf3df;border-top:12px solid #1f6f8b;font-size:24px;font-weight:900}
+.serviceStrip span:nth-child(2),.serviceStrip span:nth-child(4){border-top-color:#f1783c}.serviceStrip span:nth-child(3),.serviceStrip span:nth-child(5){border-top-color:#5e8b7e}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:585px;z-index:1;border:3px solid rgba(31,111,139,.30)}
+.extension .content{padding-right:500px}
+.extension .quote{font-size:19px;line-height:1.44}
+.extensionRows{margin-top:auto;display:grid;gap:12px}
+.extensionRows span{height:86px;display:grid;place-items:center;text-align:center;background:#1e2c34;color:#fbf3df;border-left:12px solid #1f6f8b;font-size:23px;font-weight:900}
+.extensionRows span:nth-child(2),.extensionRows span:nth-child(4){border-left-color:#f1783c}.extensionRows span:nth-child(3){border-left-color:#5e8b7e}
+#xhs-07-scene-long:after{content:"真实需求 → 中试验证 → 生产线";position:absolute;left:58px;top:642px;width:474px;height:112px;z-index:1;display:grid;place-items:center;background:rgba(255,251,238,.86);border-left:14px solid #f1783c;color:#1e2c34;font-size:27px;font-weight:900}
+#xhs-11-talent-market:after{content:"科技成果 + 创业 = 新企业 / 新岗位 / 新人才";position:absolute;left:58px;top:648px;width:474px;height:124px;z-index:1;display:grid;place-items:center;text-align:center;background:#1e2c34;color:#fbf3df;border-left:14px solid #f1783c;font-size:26px;line-height:1.18;font-weight:900}
+.darkTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(17,34,45,.92),rgba(17,34,45,.18) 67%,rgba(17,34,45,.52)),linear-gradient(180deg,rgba(17,34,45,.12),rgba(17,34,45,.82))}
+.darkQuote h1{color:#fbf3df;font-size:78px}
+.darkQuote .quote{font-size:24px;line-height:1.43}
+.darkNodes{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.darkNodes span{height:146px;display:grid;place-items:center;text-align:center;background:#f5f4ea;color:#1e2c34;border-top:12px solid #1f6f8b;font-size:26px;font-weight:900}
+.darkNodes span:nth-child(2),.darkNodes span:nth-child(4){border-top-color:#f1783c}.darkNodes span:nth-child(3){border-top-color:#5e8b7e}
+.governance .quote{font-size:19px;line-height:1.43}
+.governGrid{margin-top:36px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.governGrid span{height:190px;padding:20px;display:grid;place-items:center;text-align:center;background:#fffbee;border-top:14px solid #1f6f8b;font-size:31px;line-height:1.16;font-weight:900}
+.governGrid span:nth-child(2),.governGrid span:nth-child(3){border-top-color:#f1783c}.governGrid span:nth-child(4){border-top-color:#5e8b7e}
+.governance:after{content:"能不能转 → 转得快 → 转得稳 → 转得好";position:absolute;left:58px;right:58px;bottom:88px;height:154px;z-index:1;display:grid;place-items:center;background:#1e2c34;color:#fbf3df;border-top:14px solid #f1783c;font-size:31px;font-weight:900}
+.interview .quote{font-size:27px;line-height:1.4}
+.answerSteps{margin-top:34px;display:grid;gap:14px}
+.answerSteps span{height:108px;padding:0 20px;display:flex;align-items:center;gap:16px;background:#fffbee;border-left:12px solid #1f6f8b;font-size:24px;line-height:1.16;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#f1783c}.answerSteps span:nth-child(3){border-left-color:#5e8b7e}
+.answerSteps b{font-size:20px;color:#1e2c34}
+#xhs-12-exam-framework:after{content:"企业痛点  /  公共服务  /  产业链  /  市场订单";position:absolute;left:58px;right:58px;top:622px;height:132px;z-index:1;display:grid;place-items:center;background:rgba(255,251,238,.86);border-left:14px solid #1f6f8b;border-right:14px solid #f1783c;color:#1e2c34;font-size:30px;font-weight:900}
+#xhs-13-interview:after{content:"产学研合作是入口，转化成效要看链条能不能跑通";position:absolute;left:58px;right:58px;bottom:92px;height:150px;z-index:1;display:grid;place-items:center;text-align:center;background:#1e2c34;color:#fbf3df;border-top:14px solid #f1783c;font-size:31px;line-height:1.18;font-weight:900}
+.material .quote{font-size:23px;line-height:1.42}
+.materialGrid{margin-top:30px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.materialGrid span{height:105px;padding:10px;display:grid;place-items:center;text-align:center;background:#fffbee;border-top:12px solid #1f6f8b;font-size:20px;line-height:1.14;font-weight:880}
+.materialGrid span:nth-child(2),.materialGrid span:nth-child(4){border-top-color:#f1783c}.materialGrid span:nth-child(3),.materialGrid span:nth-child(5){border-top-color:#5e8b7e}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(17,34,45,.93),rgba(17,34,45,.20) 67%,rgba(17,34,45,.48)),linear-gradient(180deg,rgba(17,34,45,.14),rgba(17,34,45,.82))}
+.closing h1{color:#fbf3df;font-size:74px}
+.closing .quote{font-size:25px;line-height:1.42}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(6,1fr);gap:9px}
+.closingNodes span{height:128px;display:grid;place-items:center;text-align:center;background:#f5f4ea;color:#1e2c34;border-top:12px solid #1f6f8b;font-size:22px;font-weight:900}
+.closingNodes span:nth-child(2),.closingNodes span:nth-child(5){border-top-color:#f1783c}.closingNodes span:nth-child(3),.closingNodes span:nth-child(6){border-top-color:#5e8b7e}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.86) contrast(1.08) brightness(.72)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(17,34,45,.92),rgba(17,34,45,.12) 70%),linear-gradient(180deg,rgba(17,34,45,.10),rgba(17,34,45,.30) 44%,rgba(17,34,45,.84))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.60);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:attr(data-label);position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820;letter-spacing:0}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:92px;z-index:4;color:#fbf3df}
+.videoTitle p{margin:0 0 28px;color:#f1783c;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:78px;line-height:1.04;font-weight:780;letter-spacing:0;max-width:900px}
+.v2 .videoTitle h2{font-size:74px}.v3 .videoTitle h2{font-size:72px}
+.videoTitle span{display:block;width:max-content;max-width:890px;margin-top:26px;padding:14px 18px;background:#1f6f8b;color:#fbf3df;font-size:27px;font-weight:900}
+.v2 .videoTitle span{background:#f1783c;color:#1e2c34}.v3 .videoTitle span{background:#5e8b7e;color:#fbf3df}
+.preview{width:1800px;background:#d8ddd8;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fffbee;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><section class="preview"><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-01-cover.png" alt=""><figcaption>xhs-01-cover.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-02-mistake.png" alt=""><figcaption>xhs-02-mistake.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-03-core-judgement.png" alt=""><figcaption>xhs-03-core-judgement.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-04-formula.png" alt=""><figcaption>xhs-04-formula.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-05-scene-path.png" alt=""><figcaption>xhs-05-scene-path.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-06-first-layer.png" alt=""><figcaption>xhs-06-first-layer.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-07-scene-long.png" alt=""><figcaption>xhs-07-scene-long.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-08-service-relay.png" alt=""><figcaption>xhs-08-service-relay.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-09-service-long.png" alt=""><figcaption>xhs-09-service-long.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-10-ecosystem.png" alt=""><figcaption>xhs-10-ecosystem.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-11-talent-market.png" alt=""><figcaption>xhs-11-talent-market.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-12-exam-framework.png" alt=""><figcaption>xhs-12-exam-framework.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-13-interview.png" alt=""><figcaption>xhs-13-interview.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-14-material-bank.png" alt=""><figcaption>xhs-14-material-bank.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/xhs-15-closing.png" alt=""><figcaption>xhs-15-closing.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/video-cover-01.png" alt=""><figcaption>video-cover-01.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/video-cover-02.png" alt=""><figcaption>video-cover-02.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-tech-transfer-xhs-video/video-cover-03.png" alt=""><figcaption>video-cover-03.png</figcaption></figure></section></body></html>

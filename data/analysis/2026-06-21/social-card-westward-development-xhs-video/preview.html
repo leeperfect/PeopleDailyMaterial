@@ -1,0 +1,126 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d8cdbd;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#172033}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#efe3cf}
+.xhs,.video{width:1080px;height:1440px}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 85% 10%,rgba(191,53,39,.20),transparent 30%),
+  radial-gradient(circle at 14% 92%,rgba(54,111,90,.22),transparent 35%),
+  radial-gradient(circle at 78% 80%,rgba(199,129,43,.22),transparent 30%),
+  repeating-linear-gradient(100deg,rgba(255,255,255,.06) 0 1px,transparent 1px 5px),
+  linear-gradient(180deg,#f6ead6,#e7d9c3);background-size:auto,auto,auto,auto,auto}
+.grain{position:absolute;inset:0;z-index:3;opacity:.26;background:repeating-linear-gradient(105deg,rgba(255,255,255,.10) 0 1px,transparent 1px 5px),radial-gradient(circle at 24% 18%,rgba(255,255,255,.28),transparent 28%);mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(23,32,51,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#bc3327;font-weight:900}
+.cover .top,.darkQuote .top,.security .top,.closing .top{border-bottom-color:rgba(255,255,255,.46);color:#fff8e7}
+.cover .top span:first-child,.darkQuote .top span:first-child,.security .top span:first-child,.closing .top span:first-child{color:#f1b45b}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:82px;line-height:1.04;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,248,231,.94);border-left:10px solid #bc3327;font-size:35px;line-height:1.34;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:22px;line-height:1.46}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.86) contrast(1.06) brightness(.92)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(14,20,32,.90),rgba(14,20,32,.18) 70%,rgba(14,20,32,.44)),linear-gradient(180deg,rgba(14,20,32,.12),rgba(14,20,32,.40) 62%,rgba(14,20,32,.88))}
+.series{margin:36px 0 0;color:#f1b45b;font-size:35px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fff8e7;font-size:92px;max-width:880px}
+.coverLine{margin-top:30px;width:885px;padding:20px 24px;background:rgba(255,248,231,.92);color:#172033;font-size:30px;font-weight:860}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#f6ead6;color:#172033;border-top:12px solid #bc3327;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#c7812b}.coverNodes span:nth-of-type(3){border-top-color:#366f5a}.coverNodes span:nth-of-type(4){border-top-color:#172033}
+.coverNodes i{height:4px;background:#f6ead6}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fff8e7;border:2px solid rgba(23,32,51,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#bc3327}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#172033;color:#fff8e7;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:470px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:660px;z-index:2;background:linear-gradient(90deg,#f6ead6 0%,rgba(246,234,214,.90) 48%,rgba(246,234,214,.10) 100%)}
+.quotePhoto .content{padding-right:420px}
+.quotePhoto .quote{font-size:27px;line-height:1.42}
+.keywordRail{margin-top:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.keywordRail span{height:126px;display:grid;place-items:center;text-align:center;background:#172033;color:#fff8e7;border-top:12px solid #bc3327;font-size:25px;font-weight:900}
+.keywordRail span:nth-child(2),.keywordRail span:nth-child(4){border-top-color:#c7812b}.keywordRail span:nth-child(3),.keywordRail span:nth-child(5){border-top-color:#366f5a}
+.formula .quote{font-size:32px}
+.formulaRail{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.formulaRail span{height:330px;padding:20px 14px;display:grid;align-content:space-between;text-align:center;background:#172033;color:#fff8e7;font-size:28px;line-height:1.14;font-weight:900}
+.formulaRail span:nth-of-type(2){background:#c7812b}.formulaRail span:nth-of-type(3){background:#366f5a}.formulaRail span:nth-of-type(4){background:#bc3327}
+.formulaRail b{color:#ffe0a5;font-size:22px}
+.formulaRail i{height:4px;background:#172033}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:405px;z-index:1;border:3px solid rgba(188,51,39,.32)}
+.photoFeature .content,.systemPhoto .content,.material .content{padding-bottom:535px}
+.triad{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.triad span{height:150px;display:grid;place-items:center;text-align:center;background:#172033;color:#fff8e7;border-top:12px solid #bc3327;font-size:29px;font-weight:900}
+.triad span:nth-child(2){border-top-color:#c7812b}.triad span:nth-child(3){border-top-color:#366f5a}
+.cards{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cards span{height:118px;padding:18px;display:grid;align-content:space-between;background:#fff8e7;border-top:12px solid #bc3327;font-size:25px;line-height:1.16;font-weight:850}
+.cards span:nth-child(2),.cards span:nth-child(3){border-top-color:#c7812b}.cards span:nth-child(4){border-top-color:#366f5a}
+.cards b{font-size:20px;color:#172033}
+.darkTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(10,15,26,.90),rgba(10,15,26,.18) 67%,rgba(10,15,26,.52)),linear-gradient(180deg,rgba(10,15,26,.18),rgba(10,15,26,.82))}
+.darkQuote h1{color:#fff8e7;font-size:79px}
+.darkQuote .quote{font-size:28px;line-height:1.4}
+.darkNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.darkNodes span{height:152px;display:grid;place-items:center;text-align:center;background:#f6ead6;color:#172033;border-top:12px solid #bc3327;font-size:29px;font-weight:900}
+.darkNodes span:nth-child(2){border-top-color:#c7812b}.darkNodes span:nth-child(3){border-top-color:#366f5a}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:585px;z-index:1;border:3px solid rgba(188,51,39,.32)}
+.industry .content{padding-right:500px}
+.industry .quote{font-size:27px;line-height:1.42}
+.valueWheel{margin-top:auto;position:relative;height:338px;background:linear-gradient(135deg,rgba(23,32,51,.10),rgba(199,129,43,.16));border:2px solid rgba(23,32,51,.22)}
+.valueWheel span{position:absolute;width:142px;height:78px;display:grid;place-items:center;text-align:center;background:#172033;color:#fff8e7;font-size:23px;font-weight:880}
+.valueWheel .p1{left:40px;top:38px}.valueWheel .p2{right:40px;top:34px}.valueWheel .p3{left:40px;bottom:42px}.valueWheel .p4{right:40px;bottom:38px}.valueWheel .p5{left:50%;top:50%;transform:translate(-50%,-50%);background:#bc3327}
+.valueWheel em{position:absolute;left:50%;top:50%;width:138px;height:138px;margin:-69px 0 0 -69px;border:5px solid #c7812b;border-radius:50%;display:grid;place-items:center;color:#172033;font-size:22px;font-weight:900;font-style:normal}
+.securityTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(14,20,32,.86),rgba(14,20,32,.10) 70%,rgba(14,20,32,.36)),linear-gradient(180deg,rgba(14,20,32,.10),rgba(14,20,32,.42) 60%,rgba(14,20,32,.86))}
+.security h1{color:#fff8e7;font-size:80px}
+.security .quote{font-size:25px;line-height:1.43}
+.securityGrid{margin-top:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.securityGrid span{height:165px;padding:10px;display:grid;place-items:center;text-align:center;background:#f6ead6;color:#172033;border-top:12px solid #bc3327;font-size:24px;font-weight:900}
+.securityGrid span:nth-child(2),.securityGrid span:nth-child(4){border-top-color:#c7812b}.securityGrid span:nth-child(3),.securityGrid span:nth-child(5){border-top-color:#366f5a}
+.exam .quote{font-size:31px}
+.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.examFlow span{height:330px;padding:20px 14px;display:grid;align-content:space-between;text-align:center;background:#172033;color:#fff8e7;font-size:28px;line-height:1.14;font-weight:900}
+.examFlow span:nth-of-type(2){background:#c7812b}.examFlow span:nth-of-type(3){background:#366f5a}.examFlow span:nth-of-type(4){background:#bc3327}
+.examFlow b{color:#ffe0a5;font-size:22px}
+.examFlow i{height:4px;background:#172033}
+.matrix{margin-top:42px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.matrix span{height:215px;display:grid;place-items:center;text-align:center;background:#fff8e7;border-top:14px solid #bc3327;font-size:31px;font-weight:900}
+.matrix span:nth-child(2),.matrix span:nth-child(3){border-top-color:#c7812b}.matrix span:nth-child(4){border-top-color:#366f5a}
+.interview .quote{font-size:27px;line-height:1.42}
+.answerSteps{margin-top:34px;display:grid;gap:12px}
+.answerSteps span{height:94px;padding:0 20px;display:flex;align-items:center;gap:16px;background:#fff8e7;border-left:12px solid #bc3327;font-size:25px;line-height:1.16;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#c7812b}.answerSteps span:nth-child(3),.answerSteps span:nth-child(5){border-left-color:#366f5a}
+.answerSteps b{font-size:20px;color:#172033}
+.answerGrid{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.answerGrid span{height:198px;padding:20px;display:grid;place-items:center;text-align:center;background:#fff8e7;border-top:14px solid #bc3327;font-size:29px;line-height:1.16;font-weight:900}
+.answerGrid span:nth-child(2),.answerGrid span:nth-child(3){border-top-color:#c7812b}.answerGrid span:nth-child(4){border-top-color:#366f5a}
+.topWide{position:absolute;left:58px;right:58px;bottom:58px;height:375px;z-index:1;border:3px solid rgba(188,51,39,.32)}
+.materialGrid{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.materialGrid span{height:112px;padding:12px;display:grid;place-items:center;text-align:center;background:#fff8e7;border-top:12px solid #bc3327;font-size:23px;line-height:1.14;font-weight:880}
+.materialGrid span:nth-child(2),.materialGrid span:nth-child(5){border-top-color:#c7812b}.materialGrid span:nth-child(3),.materialGrid span:nth-child(6){border-top-color:#366f5a}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(14,20,32,.90),rgba(14,20,32,.16) 67%,rgba(14,20,32,.46)),linear-gradient(180deg,rgba(14,20,32,.18),rgba(14,20,32,.80))}
+.closing h1{color:#fff8e7;font-size:80px}
+.closing .quote{font-size:28px;line-height:1.42}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.closingNodes span{height:146px;display:grid;place-items:center;text-align:center;background:#f6ead6;color:#172033;border-top:12px solid #bc3327;font-size:27px;font-weight:900}
+.closingNodes span:nth-child(2),.closingNodes span:nth-child(4){border-top-color:#c7812b}.closingNodes span:nth-child(3){border-top-color:#366f5a}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.86) contrast(1.08) brightness(.72)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(10,15,26,.92),rgba(10,15,26,.12) 70%),linear-gradient(180deg,rgba(10,15,26,.12),rgba(10,15,26,.30) 44%,rgba(10,15,26,.80))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.58);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:"WESTWARD";position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:96px;z-index:4;color:#fff8e7}
+.v2 .videoTitle{bottom:104px}.v3 .videoTitle{bottom:96px}
+.videoTitle p{margin:0 0 28px;color:#f1b45b;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:86px;line-height:1.03;font-weight:780;letter-spacing:0;max-width:900px}
+.v2 .videoTitle h2{font-size:73px}.v3 .videoTitle h2{font-size:82px}
+.videoTitle span{display:block;width:max-content;max-width:875px;margin-top:26px;padding:14px 18px;background:#bc3327;color:#fff8e7;font-size:27px;font-weight:900}
+.v2 .videoTitle span{background:#c7812b;color:#172033}.v3 .videoTitle span{background:#366f5a;color:#fff8e7}
+.preview{width:1800px;background:#d8cdbd;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff8e7;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><section class="preview"><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-01-cover.png" alt=""><figcaption>xhs-01-cover.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-02-mistake.png" alt=""><figcaption>xhs-02-mistake.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-03-strategic-point.png" alt=""><figcaption>xhs-03-strategic-point.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-04-core-formula.png" alt=""><figcaption>xhs-04-core-formula.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-05-channel.png" alt=""><figcaption>xhs-05-channel.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-06-channel-system.png" alt=""><figcaption>xhs-06-channel-system.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-07-computing.png" alt=""><figcaption>xhs-07-computing.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-08-industry.png" alt=""><figcaption>xhs-08-industry.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-09-security.png" alt=""><figcaption>xhs-09-security.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-10-exam-framework.png" alt=""><figcaption>xhs-10-exam-framework.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-11-application.png" alt=""><figcaption>xhs-11-application.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-12-interview.png" alt=""><figcaption>xhs-12-interview.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-13-answer-logic.png" alt=""><figcaption>xhs-13-answer-logic.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-14-material-bank.png" alt=""><figcaption>xhs-14-material-bank.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/xhs-15-closing.png" alt=""><figcaption>xhs-15-closing.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/video-cover-01.png" alt=""><figcaption>video-cover-01.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/video-cover-02.png" alt=""><figcaption>video-cover-02.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-21-westward-development-xhs-video/video-cover-03.png" alt=""><figcaption>video-cover-03.png</figcaption></figure></section></body></html>
