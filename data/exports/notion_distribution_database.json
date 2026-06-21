@@ -1,0 +1,17 @@
+{
+  "database_title": "自媒体内容分发台账",
+  "database_id": "0106ed1c-f8a2-423b-9b96-2366e6d90f9e",
+  "database_url": "https://app.notion.com/p/0106ed1cf8a2423b9b962366e6d90f9e",
+  "created_at": "2026-06-21T15:21:40",
+  "seeded_articles": 36,
+  "seeded_records": 216,
+  "platforms": [
+    "公众号",
+    "视频号",
+    "小红书",
+    "抖音",
+    "快手",
+    "微博"
+  ],
+  "source": "data/articles"
+}
