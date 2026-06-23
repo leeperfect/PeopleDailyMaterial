@@ -1,0 +1,395 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, '../../../..');
+const mediaDir = path.join(repoRoot, 'media/images/2026-06-23-yunnan-hotspots-policy-wechat-cover');
+const htmlPath = path.join(__dirname, 'index.html');
+
+const title = '2026年上半年云南热点整理｜官方政策版';
+const shortTitle = '云南热点\\n政策框架';
+
+const html = `<!doctype html>
+<html lang="zh-CN" data-theme="indigo-porcelain">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${title}</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #d4d9d9;
+      color: #122b31;
+      font-family: "Avenir Next", "Helvetica Neue", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+    .stage {
+      width: max-content;
+      display: grid;
+      gap: 40px;
+      padding: 40px;
+    }
+    .poster {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: #f2f0e5;
+      color: #122b31;
+    }
+    .wide { width: 2100px; height: 900px; }
+    .square { width: 1080px; height: 1080px; }
+    .paper {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(90deg, rgba(18,43,49,.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(18,43,49,.045) 1px, transparent 1px),
+        radial-gradient(circle at 14% 28%, rgba(43,127,143,.16), transparent 30%),
+        radial-gradient(circle at 72% 18%, rgba(210,151,51,.16), transparent 28%),
+        #f2f0e5;
+      background-size: 70px 70px, 70px 70px, auto, auto, auto;
+    }
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(255,255,255,.28) .55px, transparent .8px);
+      background-size: 4px 4px;
+      opacity: .24;
+      mix-blend-mode: soft-light;
+    }
+    .contour {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 670px;
+      height: 338px;
+      opacity: .36;
+      background:
+        repeating-linear-gradient(35deg, transparent 0 30px, rgba(43,127,143,.25) 30px 33px),
+        repeating-linear-gradient(145deg, transparent 0 42px, rgba(210,151,51,.18) 42px 45px);
+      clip-path: polygon(0 46%, 17% 14%, 42% 30%, 62% 8%, 91% 38%, 100% 86%, 72% 76%, 51% 100%, 29% 78%);
+    }
+    .wide .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      padding: 76px 90px 70px;
+      display: grid;
+      grid-template-columns: 1160px 1fr;
+      gap: 64px;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+    }
+    .label {
+      width: fit-content;
+      padding: 13px 22px 15px;
+      background: #122b31;
+      color: #f7efd8;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+    .label.accent {
+      background: #d29733;
+      color: #122b31;
+    }
+    .wide h1 {
+      margin: 46px 0 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: 126px;
+      line-height: .98;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+    .wide h1 span {
+      display: block;
+      margin-top: 24px;
+      color: #2b7f8f;
+      font-size: 62px;
+      font-weight: 650;
+    }
+    .subtitle {
+      margin-top: 36px;
+      width: 1060px;
+      padding: 21px 26px;
+      background: rgba(255,250,235,.94);
+      border-left: 12px solid #d29733;
+      font-size: 34px;
+      line-height: 1.18;
+      font-weight: 850;
+      color: #122b31;
+    }
+    .bottom-line {
+      margin-top: auto;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 2px solid rgba(18,43,49,.22);
+      font-size: 26px;
+      font-weight: 840;
+      color: #556465;
+    }
+    .bottom-line b {
+      color: #122b31;
+      font-size: 40px;
+    }
+    .right {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 42px;
+      background: #122b31;
+      color: #f7efd8;
+      min-height: 100%;
+    }
+    .right::before {
+      content: "POLICY";
+      position: absolute;
+      right: 26px;
+      top: 18px;
+      color: rgba(247,239,216,.06);
+      font-size: 142px;
+      line-height: .8;
+      font-weight: 900;
+      letter-spacing: .02em;
+      writing-mode: vertical-rl;
+    }
+    .right-head {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(247,239,216,.26);
+      color: rgba(247,239,216,.70);
+      font-size: 20px;
+      font-weight: 860;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .axis {
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .axis span {
+      height: 108px;
+      display: grid;
+      place-items: center;
+      background: rgba(247,239,216,.08);
+      border-top: 10px solid #2b7f8f;
+      font-size: 30px;
+      font-weight: 900;
+    }
+    .axis span:nth-child(2) { border-top-color: #4d8a62; }
+    .axis span:nth-child(3) { border-top-color: #d29733; }
+    .axis span:nth-child(4) { border-top-color: #b36b3f; }
+    .ladder {
+      position: relative;
+      z-index: 2;
+      margin-top: 36px;
+      display: grid;
+      gap: 10px;
+    }
+    .ladder div {
+      min-height: 58px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(247,239,216,.08);
+      border-left: 7px solid #d29733;
+      font-size: 24px;
+      font-weight: 850;
+    }
+    .ladder b {
+      color: rgba(247,239,216,.45);
+      font-size: 17px;
+    }
+    .note {
+      position: relative;
+      z-index: 2;
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(247,239,216,.20);
+      color: rgba(247,239,216,.78);
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 760;
+    }
+    .square .paper {
+      background:
+        linear-gradient(90deg, rgba(247,239,216,.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(247,239,216,.055) 1px, transparent 1px),
+        radial-gradient(circle at 18% 18%, rgba(43,127,143,.28), transparent 32%),
+        radial-gradient(circle at 82% 86%, rgba(210,151,51,.18), transparent 32%),
+        #122b31;
+      background-size: 70px 70px, 70px 70px, auto, auto, auto;
+    }
+    .square .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      padding: 76px;
+      display: flex;
+      flex-direction: column;
+      color: #f7efd8;
+    }
+    .square-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      border-bottom: 2px solid rgba(247,239,216,.24);
+      color: rgba(247,239,216,.74);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: .09em;
+    }
+    .square .custom {
+      width: fit-content;
+      margin-top: 70px;
+      padding: 14px 22px;
+      background: #d29733;
+      color: #122b31;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 900;
+    }
+    .square h2 {
+      margin: 48px 0 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: 144px;
+      line-height: .94;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+    .square .desc {
+      margin-top: 44px;
+      padding: 22px 26px;
+      background: rgba(247,239,216,.92);
+      color: #122b31;
+      border-left: 12px solid #2b7f8f;
+      font-size: 31px;
+      line-height: 1.22;
+      font-weight: 880;
+    }
+    .square-bottom {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .square-bottom span {
+      min-height: 112px;
+      display: grid;
+      place-items: center;
+      background: rgba(247,239,216,.08);
+      border-top: 10px solid #2b7f8f;
+      font-size: 25px;
+      font-weight: 900;
+    }
+    .square-bottom span:nth-child(2) { border-top-color: #4d8a62; }
+    .square-bottom span:nth-child(3) { border-top-color: #d29733; }
+    .square-bottom span:nth-child(4) { border-top-color: #b36b3f; }
+    .preview {
+      width: 1900px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 34px;
+      align-items: center;
+      background: #d4d9d9;
+    }
+    .preview figure { margin: 0; }
+    .preview img {
+      width: 100%;
+      display: block;
+      box-shadow: 0 18px 52px rgba(18,43,49,.20);
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <section class="poster wide" id="wechat-21x9-cover">
+      <div class="paper"></div>
+      <div class="contour"></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="left">
+          <div class="label accent">资料定制 · 结构化面试</div>
+          <h1>云南热点<br>政策预测框架<span>2026年上半年 · 官方政策版</span></h1>
+          <div class="subtitle">生态底色 → 开放牵引 → 数字低空 → 都市圈协同 → 公共服务 → 基层治理</div>
+          <div class="bottom-line">
+            <span><b>8</b> 个热点</span>
+            <span>南博会 / 绿色云南 / 数字通道 / 低空经济 / 昆明都市圈 / 民生保障 / 云品出滇 / 政务服务</span>
+          </div>
+        </div>
+        <aside class="right">
+          <div class="right-head"><span>Official Policy Edition</span><span>Yunnan 2026 H1</span></div>
+          <div class="axis">
+            <span>开放</span><span>绿色</span><span>数智</span><span>民生</span>
+          </div>
+          <div class="ladder">
+            ${['通道如何成势', '生态如何转化', '场景如何落地', '服务如何补短', '岗位如何闭环'].map((item, i) => `<div><span>${item}</span><b>${String(i + 1).padStart(2, '0')}</b></div>`).join('')}
+          </div>
+          <p class="note">适配结构化面试：综合分析、岗位服务、基层治理、新技术应用类题目。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="poster square" id="wechat-1x1-cover">
+      <div class="paper"></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="square-top"><span>云南 · 2026 H1</span><span>官方政策版</span></div>
+        <div class="custom">资料定制</div>
+        <h2>${shortTitle.replaceAll('\\n', '<br>')}</h2>
+        <div class="desc">结构化面试热点预测与答题抓手</div>
+        <div class="square-bottom">
+          <span>开放</span><span>绿色</span><span>数智</span><span>民生</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>`;
+
+fs.writeFileSync(htmlPath, html, 'utf8');
+
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage({ viewport: { width: 2300, height: 1200 }, deviceScaleFactor: 1 });
+await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle' });
+
+await page.locator('#wechat-21x9-cover').screenshot({ path: path.join(mediaDir, 'wechat-21x9-cover.png') });
+await page.locator('#wechat-1x1-cover').screenshot({ path: path.join(mediaDir, 'wechat-1x1-cover.png') });
+
+const previewPath = path.join(__dirname, 'preview.html');
+const rel = (file) => path.relative(__dirname, path.join(mediaDir, file)).replaceAll(path.sep, '/');
+const css = html.split('<style>')[1].split('</style>')[0];
+fs.writeFileSync(previewPath, `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>${css}</style></head><body><section class="preview" id="preview"><figure><img src="${rel('wechat-21x9-cover.png')}" alt=""></figure><figure><img src="${rel('wechat-1x1-cover.png')}" alt=""></figure></section></body></html>`, 'utf8');
+await page.setViewportSize({ width: 2000, height: 780 });
+await page.goto(`file://${previewPath}`, { waitUntil: 'networkidle' });
+await page.locator('#preview').screenshot({ path: path.join(mediaDir, 'wechat-cover-pair-preview.png') });
+
+await browser.close();
+
+console.log(JSON.stringify({
+  mediaDir,
+  files: ['wechat-21x9-cover.png', 'wechat-1x1-cover.png', 'wechat-cover-pair-preview.png']
+}, null, 2));

@@ -1,0 +1,129 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d6dac6;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#17281f}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f5f0df}
+.xhs,.video{width:1080px;height:1440px}
+.video{line-height:0}
+.poster figure{margin:0}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 84% 16%,rgba(77,123,56,.17),transparent 30%),
+  radial-gradient(circle at 12% 90%,rgba(216,166,58,.22),transparent 34%),
+  linear-gradient(116deg,rgba(23,40,31,.055) 0 1px,transparent 1px 18px),
+  linear-gradient(180deg,#f7f1de 0%,#edf0d7 56%,#dfe7ca 100%)}
+.paper:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.12) 0 1px,transparent 1px 6px);opacity:.70}
+.grain{position:absolute;inset:0;z-index:3;opacity:.22;background:repeating-linear-gradient(105deg,rgba(255,255,255,.12) 0 1px,transparent 1px 5px),linear-gradient(180deg,rgba(255,255,255,.15),rgba(0,0,0,.12));mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(23,40,31,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#4d7b38;font-weight:900}
+.cover .top,.darkQuote .top,.closing .top{border-bottom-color:rgba(255,255,255,.46);color:#f5f0df}
+.cover .top span:first-child,.darkQuote .top span:first-child,.closing .top span:first-child{color:#d8a63a}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:76px;line-height:1.05;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,249,235,.94);border-left:10px solid #4d7b38;font-size:34px;line-height:1.35;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:21px;line-height:1.46}
+.quote.xxl{font-size:18px;line-height:1.44}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.94) contrast(1.06) brightness(.94)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(19,34,25,.94),rgba(19,34,25,.18) 66%,rgba(19,34,25,.46)),linear-gradient(180deg,rgba(19,34,25,.12),rgba(19,34,25,.38) 62%,rgba(19,34,25,.90))}
+.series{margin:36px 0 0;color:#d8a63a;font-size:36px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#f7f1de;font-size:88px;max-width:940px}
+.coverLine{margin-top:30px;width:900px;padding:20px 24px;background:rgba(255,249,235,.92);color:#17281f;font-size:30px;font-weight:880}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#f7f1de;color:#17281f;border-top:12px solid #4d7b38;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#d8a63a}.coverNodes span:nth-of-type(3){border-top-color:#8a5a2b}.coverNodes span:nth-of-type(4){border-top-color:#17281f}
+.coverNodes i{height:4px;background:#f7f1de}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fff9eb;border:2px solid rgba(23,40,31,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#4d7b38}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#17281f;color:#f7f1de;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:460px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:690px;z-index:2;background:linear-gradient(90deg,#f5f0df 0%,rgba(245,240,223,.92) 50%,rgba(245,240,223,.08) 100%)}
+.quotePhoto .content{padding-right:418px}
+.quotePhoto .quote{font-size:24px;line-height:1.46}
+.keywordRail{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.keywordRail span{height:124px;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-top:12px solid #4d7b38;font-size:22px;font-weight:900}
+.keywordRail span:nth-child(2){border-top-color:#d8a63a}.keywordRail span:nth-child(3){border-top-color:#8a5a2b}
+.formula .quote,.exam .quote{font-size:31px}
+.formulaRail,.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;align-items:center}
+.formulaRail span,.examFlow span{height:300px;padding:20px 14px;display:grid;align-content:space-between;text-align:center;background:#17281f;color:#f7f1de;font-size:27px;line-height:1.14;font-weight:900}
+.examFlow span{height:260px;font-size:22px}
+.formulaRail span:nth-of-type(2),.examFlow span:nth-of-type(2){background:#d8a63a;color:#17281f}.formulaRail span:nth-of-type(3),.examFlow span:nth-of-type(3){background:#4d7b38}.formulaRail span:nth-of-type(4),.examFlow span:nth-of-type(4){background:#8a5a2b}
+.formulaRail b,.examFlow b{color:#f6d58a;font-size:22px}.formulaRail span:nth-of-type(2) b,.examFlow span:nth-of-type(2) b{color:#17281f}
+.formulaRail i,.examFlow i{height:4px;background:#17281f}
+#xhs-04-chain:after{content:"土地  →  农户  →  风险  →  未来";position:absolute;left:58px;right:58px;top:596px;height:128px;z-index:1;display:grid;place-items:center;background:rgba(216,166,58,.18);border-top:3px solid rgba(77,123,56,.45);border-bottom:3px solid rgba(138,90,43,.38);color:#17281f;font-size:34px;font-weight:900}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:410px;z-index:1;border:3px solid rgba(77,123,56,.32)}
+.objectPhoto .content,.photoFeature .content,.material .content{padding-bottom:540px}
+.objectPhoto .quote{font-size:19px;line-height:1.44}
+.cards{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cards span{height:100px;padding:14px 10px;display:grid;align-content:space-between;background:#fff9eb;border-top:12px solid #4d7b38;font-size:20px;line-height:1.14;font-weight:860}
+.cards span:nth-child(2),.cards span:nth-child(4){border-top-color:#d8a63a}.cards span:nth-child(3){border-top-color:#8a5a2b}
+.cards b{font-size:18px;color:#17281f}
+.matrix{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.matrix span{height:178px;padding:18px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #4d7b38;font-size:28px;line-height:1.16;font-weight:900}
+.matrix span:nth-child(2),.matrix span:nth-child(5){border-top-color:#d8a63a}.matrix span:nth-child(3),.matrix span:nth-child(6){border-top-color:#8a5a2b}
+.matrixPage:after{content:"看数据 / 按处方 / 精准管护";position:absolute;left:58px;right:58px;bottom:86px;height:150px;z-index:1;display:grid;place-items:center;background:#17281f;color:#f7f1de;border-top:14px solid #d8a63a;font-size:34px;font-weight:900}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:585px;z-index:1;border:3px solid rgba(77,123,56,.32)}
+.extension .content{padding-right:500px}
+.extension .quote{font-size:17px;line-height:1.43}
+.extensionRows{margin-top:auto;display:grid;gap:12px}
+.extensionRows span{height:78px;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-left:12px solid #4d7b38;font-size:22px;font-weight:900}
+.extensionRows span:nth-child(2),.extensionRows span:nth-child(4){border-left-color:#d8a63a}.extensionRows span:nth-child(3),.extensionRows span:nth-child(5){border-left-color:#8a5a2b}
+#xhs-07-service:after{content:"小农户不是独自追赶，而是被服务体系接上来";position:absolute;left:58px;top:620px;width:474px;height:118px;z-index:1;display:grid;place-items:center;text-align:center;background:#fff9eb;border-left:14px solid #d8a63a;color:#17281f;font-size:27px;line-height:1.18;font-weight:900}
+.serviceBoxes{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.serviceBoxes span{height:178px;padding:18px;display:grid;align-content:space-between;background:#fff9eb;border-left:14px solid #4d7b38;font-size:26px;line-height:1.16;font-weight:880}
+.serviceBoxes span:nth-child(2),.serviceBoxes span:nth-child(4){border-left-color:#d8a63a}
+.serviceBoxes b{font-size:20px;color:#8a5a2b}
+.serviceMap:after{content:"农机作业 / 农资供应 / 金融支持 / 储运销售 / 防灾预警";position:absolute;left:58px;right:58px;bottom:86px;height:150px;z-index:1;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-top:14px solid #4d7b38;font-size:29px;font-weight:900}
+.serviceStrip{margin-top:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.serviceStrip span{height:124px;padding:10px;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-top:12px solid #4d7b38;font-size:23px;font-weight:900}
+.serviceStrip span:nth-child(2),.serviceStrip span:nth-child(4){border-top-color:#d8a63a}.serviceStrip span:nth-child(3),.serviceStrip span:nth-child(5){border-top-color:#8a5a2b}
+.photoFeature .quote{font-size:18px;line-height:1.43}
+.governance .quote{font-size:27px;line-height:1.39}
+.governGrid{margin-top:36px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.governGrid span{height:170px;padding:14px 10px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #4d7b38;font-size:22px;line-height:1.16;font-weight:900}
+.governGrid span:nth-child(2),.governGrid span:nth-child(4){border-top-color:#d8a63a}.governGrid span:nth-child(3),.governGrid span:nth-child(5){border-top-color:#8a5a2b}
+.governance:after{content:"把不确定性转化为稳产能力";position:absolute;left:58px;right:58px;bottom:88px;height:154px;z-index:1;display:grid;place-items:center;background:#17281f;color:#f7f1de;border-top:14px solid #d8a63a;font-size:34px;font-weight:900}
+.darkTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(19,34,25,.94),rgba(19,34,25,.22) 66%,rgba(19,34,25,.52)),linear-gradient(180deg,rgba(19,34,25,.16),rgba(19,34,25,.82))}
+.darkQuote h1{color:#f7f1de;font-size:76px}
+.darkQuote .quote{font-size:18px;line-height:1.43}
+.darkNodes{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.darkNodes span{height:146px;display:grid;place-items:center;text-align:center;background:#f7f1de;color:#17281f;border-top:12px solid #4d7b38;font-size:26px;font-weight:900}
+.darkNodes span:nth-child(2),.darkNodes span:nth-child(4){border-top-color:#d8a63a}.darkNodes span:nth-child(3){border-top-color:#8a5a2b}
+.interview .quote{font-size:27px;line-height:1.4}
+.answerSteps{margin-top:30px;display:grid;gap:12px}
+.answerSteps span{height:98px;padding:0 18px;display:flex;align-items:center;gap:16px;background:#fff9eb;border-left:12px solid #4d7b38;font-size:22px;line-height:1.13;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#d8a63a}.answerSteps span:nth-child(3),.answerSteps span:nth-child(5){border-left-color:#8a5a2b}
+.answerSteps b{font-size:20px;color:#17281f}
+#xhs-13-interview:after{content:"设备是工具，配套体系才是现代农业能力";position:absolute;left:58px;right:58px;bottom:80px;height:130px;z-index:1;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-top:14px solid #d8a63a;font-size:30px;line-height:1.18;font-weight:900}
+.material .quote{font-size:26px;line-height:1.4}
+.materialGrid{margin-top:30px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.materialGrid span{height:105px;padding:10px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:12px solid #4d7b38;font-size:20px;line-height:1.14;font-weight:880}
+.materialGrid span:nth-child(2),.materialGrid span:nth-child(4){border-top-color:#d8a63a}.materialGrid span:nth-child(3),.materialGrid span:nth-child(5){border-top-color:#8a5a2b}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(19,34,25,.94),rgba(19,34,25,.20) 67%,rgba(19,34,25,.50)),linear-gradient(180deg,rgba(19,34,25,.14),rgba(19,34,25,.84))}
+.closing h1{color:#f7f1de;font-size:72px}
+.closing .quote{font-size:32px;line-height:1.35}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.closingNodes span{height:140px;display:grid;place-items:center;text-align:center;background:#f7f1de;color:#17281f;border-top:12px solid #4d7b38;font-size:24px;font-weight:900}
+.closingNodes span:nth-child(2){border-top-color:#d8a63a}.closingNodes span:nth-child(3){border-top-color:#8a5a2b}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.92) contrast(1.10) brightness(.70)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(19,34,25,.92),rgba(19,34,25,.12) 70%),linear-gradient(180deg,rgba(19,34,25,.10),rgba(19,34,25,.32) 44%,rgba(19,34,25,.88))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.60);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:attr(data-label);position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820;letter-spacing:0}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:112px;z-index:4;color:#f7f1de;line-height:1.2}
+.videoTitle p{margin:0 0 28px;color:#d8a63a;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:78px;line-height:1.04;font-weight:780;letter-spacing:0;max-width:920px}
+.v2 .videoTitle h2{font-size:72px}.v3 .videoTitle h2{font-size:68px}
+.videoTitle span{display:block;width:max-content;max-width:890px;margin-top:26px;padding:14px 18px;background:#4d7b38;color:#f7f1de;font-size:26px;font-weight:900}
+.v2 .videoTitle span{background:#d8a63a;color:#17281f}.v3 .videoTitle span{background:#8a5a2b;color:#f7f1de}
+.preview{width:1800px;background:#d6dac6;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff9eb;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><section class="preview"><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-01-cover.png" alt=""><figcaption>xhs-01-cover.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-02-mistake.png" alt=""><figcaption>xhs-02-mistake.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-03-core.png" alt=""><figcaption>xhs-03-core.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-04-chain.png" alt=""><figcaption>xhs-04-chain.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-05-tech.png" alt=""><figcaption>xhs-05-tech.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-06-precision.png" alt=""><figcaption>xhs-06-precision.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-07-service.png" alt=""><figcaption>xhs-07-service.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-08-service-chain.png" alt=""><figcaption>xhs-08-service-chain.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-09-expert.png" alt=""><figcaption>xhs-09-expert.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-10-risk.png" alt=""><figcaption>xhs-10-risk.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-11-youth.png" alt=""><figcaption>xhs-11-youth.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-12-people.png" alt=""><figcaption>xhs-12-people.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-13-interview.png" alt=""><figcaption>xhs-13-interview.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-14-material.png" alt=""><figcaption>xhs-14-material.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/xhs-15-closing.png" alt=""><figcaption>xhs-15-closing.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/video-cover-01.png" alt=""><figcaption>video-cover-01.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/video-cover-02.png" alt=""><figcaption>video-cover-02.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/video-cover-03.png" alt=""><figcaption>video-cover-03.png</figcaption></figure></section></body></html>

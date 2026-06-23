@@ -39,6 +39,8 @@
 - 不要把标题当唯一标识。涉及文章去重、同步、更新时，优先使用 `article_id` / `Article ID`。
 - Notion 数据库已经有 `Article ID` 字段；同步、补齐、清理重复页时优先围绕这个字段判断。
 - 公众号选题统一进入 `data/core/material_assets.sqlite` 的 `content_ideas` 表；面向用户查看的总表是 `data/articles/公众号文章/选题库.md`，由 `scripts/export_content_ideas.py` 生成。
+- 公众号要服务日更，筛选选题时允许同一母题拆成多个不同角度和切入点，只要每个切口都有独立表达价值、明确读者收益，并且至少有 3 篇人民日报文章支撑。
+- 以后梳理日报、周报、月报或政经参考补充选题时，一旦形成符合标准的新选题，默认直接写入 `content_ideas` 并刷新 `data/articles/公众号文章/选题库.md` 和 `data/exports/content_ideas.csv`，不再等待用户二次确认。
 - 本地 HTML 选题工作台由 `scripts/serve_idea_magazine.py` 启动，读取 `content_ideas`，并把精筛、备注等人工操作写入 `content_idea_notes`。
 - 非文本成品默认进入 `media/`，不要继续散放在 `data/analysis/**/deliverables/` 里；分析目录只保留可追溯的文字稿、视觉 brief、讲稿提示和清单。
 - 新增小红书图、公众号配图、课件、视频、音频后，要同步补 `media/_index.md`，记录主题、类型、本地路径和网盘位置。
@@ -104,6 +106,7 @@ python3 scripts/sync_to_notion.py 2026-05-27
 - 公众号文章、成品稿、面向老师人工查找的文章文件，统一放在 `data/articles/公众号文章/`，文件名优先使用中文标题。
 - 做单篇文章教研标注时，优先增量补充，不删旧批注。
 - 如果要写公众号、小红书、PPT、视觉 brief，默认按“教学可用 + 运营可用”的完整出品包理解；文字过程入 `data/analysis/`，非文本成品入 `media/`。
+- 生成小红书图文、视频号封面、公众号封面等视觉成品时，初稿渲染完成后默认自动完成质量审查；发现溢出、遮挡、密度不足、引用遗漏、尺寸错误或风格不统一时，先修正并复查，再交付给用户预览，不再等待用户额外指令。
 - 敏感信息不入 Git，尤其是 `config.json` 中的 Notion Token。
 - 不自动提交，除非用户明确要求。
 

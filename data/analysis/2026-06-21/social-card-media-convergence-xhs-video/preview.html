@@ -5,6 +5,7 @@ body{background:#d9dcdf;font-family:"Avenir Next","Helvetica Neue","PingFang SC"
 .stage{width:max-content;display:grid;gap:34px;padding:34px}
 .poster{position:relative;overflow:hidden;isolation:isolate;background:#f3f1e8}
 .xhs,.video{width:1080px;height:1440px}
+.video{line-height:0}
 .paper{position:absolute;inset:0;z-index:0;background:
   radial-gradient(circle at 84% 16%,rgba(36,105,160,.14),transparent 30%),
   radial-gradient(circle at 12% 90%,rgba(202,46,42,.13),transparent 34%),
@@ -111,7 +112,7 @@ body{background:#d9dcdf;font-family:"Avenir Next","Helvetica Neue","PingFang SC"
 .magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.60);border-bottom:2px solid rgba(255,255,255,.42)}
 .magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
 .magLines:after{content:attr(data-label);position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820;letter-spacing:0}
-.videoTitle{position:absolute;left:64px;right:76px;bottom:92px;z-index:4;color:#fff3df}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:112px;z-index:4;color:#fff3df;line-height:1.2}
 .videoTitle p{margin:0 0 28px;color:#e8463a;font-size:34px;line-height:1;font-weight:900}
 .videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:78px;line-height:1.04;font-weight:780;letter-spacing:0;max-width:920px}
 .v2 .videoTitle h2{font-size:70px}.v3 .videoTitle h2{font-size:74px}

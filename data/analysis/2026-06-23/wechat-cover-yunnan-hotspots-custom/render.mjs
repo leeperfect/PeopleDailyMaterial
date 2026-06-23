@@ -1,0 +1,393 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, '../../../..');
+const mediaDir = path.join(repoRoot, 'media/images/2026-06-23-yunnan-hotspots-wechat-cover');
+const htmlPath = path.join(__dirname, 'index.html');
+
+const title = '2026年上半年云南热点整理｜人民日报数据库参考版';
+const shortTitle = '云南热点\\n面试框架';
+
+const html = `<!doctype html>
+<html lang="zh-CN" data-theme="forest-ink">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${title}</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #d7dbcf;
+      color: #142720;
+      font-family: "Avenir Next", "Helvetica Neue", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+    .stage {
+      width: max-content;
+      display: grid;
+      gap: 40px;
+      padding: 40px;
+    }
+    .poster {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: #f4f0df;
+      color: #142720;
+    }
+    .wide { width: 2100px; height: 900px; }
+    .square { width: 1080px; height: 1080px; }
+    .paper {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(90deg, rgba(20,39,32,.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(20,39,32,.045) 1px, transparent 1px),
+        linear-gradient(135deg, rgba(46,117,85,.13), transparent 38%),
+        #f4f0df;
+      background-size: 70px 70px, 70px 70px, auto, auto;
+    }
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(255,255,255,.28) .55px, transparent .8px);
+      background-size: 4px 4px;
+      opacity: .24;
+      mix-blend-mode: soft-light;
+    }
+    .wide .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      padding: 78px 92px 70px;
+      display: grid;
+      grid-template-columns: 1180px 1fr;
+      gap: 64px;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+    }
+    .label {
+      width: fit-content;
+      padding: 13px 22px 15px;
+      background: #142720;
+      color: #f7eecf;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+    .label.accent {
+      background: #d59a2f;
+      color: #142720;
+    }
+    .wide h1 {
+      margin: 46px 0 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: 128px;
+      line-height: .98;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+    .wide h1 span {
+      display: block;
+      margin-top: 24px;
+      color: #2e7555;
+      font-size: 62px;
+      font-weight: 650;
+    }
+    .subtitle {
+      margin-top: 36px;
+      width: 1060px;
+      padding: 21px 26px;
+      background: rgba(255,250,235,.94);
+      border-left: 12px solid #d59a2f;
+      font-size: 34px;
+      line-height: 1.18;
+      font-weight: 850;
+      color: #142720;
+    }
+    .bottom-line {
+      margin-top: auto;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 2px solid rgba(20,39,32,.22);
+      font-size: 26px;
+      font-weight: 840;
+      color: #4f5d51;
+    }
+    .bottom-line b {
+      color: #142720;
+      font-size: 40px;
+    }
+    .right {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 42px;
+      background: #142720;
+      color: #f7eecf;
+      min-height: 100%;
+    }
+    .right::before {
+      content: "YUNNAN";
+      position: absolute;
+      right: 26px;
+      top: 18px;
+      color: rgba(247,238,207,.06);
+      font-size: 142px;
+      line-height: .8;
+      font-weight: 900;
+      letter-spacing: .02em;
+      writing-mode: vertical-rl;
+    }
+    .right-head {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(247,238,207,.26);
+      color: rgba(247,238,207,.70);
+      font-size: 20px;
+      font-weight: 860;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .axis {
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .axis span {
+      height: 108px;
+      display: grid;
+      place-items: center;
+      background: rgba(247,238,207,.08);
+      border-top: 10px solid #2e7555;
+      font-size: 30px;
+      font-weight: 900;
+    }
+    .axis span:nth-child(2) { border-top-color: #69a76f; }
+    .axis span:nth-child(3) { border-top-color: #d59a2f; }
+    .axis span:nth-child(4) { border-top-color: #b66637; }
+    .ladder {
+      position: relative;
+      z-index: 2;
+      margin-top: 36px;
+      display: grid;
+      gap: 10px;
+    }
+    .ladder div {
+      min-height: 58px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(247,238,207,.08);
+      border-left: 7px solid #d59a2f;
+      font-size: 24px;
+      font-weight: 850;
+    }
+    .ladder b {
+      color: rgba(247,238,207,.45);
+      font-size: 17px;
+    }
+    .note {
+      position: relative;
+      z-index: 2;
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(247,238,207,.20);
+      color: rgba(247,238,207,.78);
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 760;
+    }
+    .topo {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 620px;
+      height: 330px;
+      opacity: .34;
+      background:
+        repeating-linear-gradient(28deg, transparent 0 28px, rgba(46,117,85,.28) 28px 31px),
+        repeating-linear-gradient(151deg, transparent 0 38px, rgba(181,102,55,.20) 38px 41px);
+      clip-path: polygon(0 52%, 24% 18%, 46% 32%, 70% 0, 100% 42%, 88% 88%, 52% 74%, 32% 100%);
+    }
+    .square .paper {
+      background:
+        linear-gradient(90deg, rgba(247,238,207,.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(247,238,207,.055) 1px, transparent 1px),
+        linear-gradient(145deg, rgba(46,117,85,.34), transparent 45%),
+        #142720;
+      background-size: 70px 70px, 70px 70px, auto, auto;
+    }
+    .square .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      padding: 76px;
+      display: flex;
+      flex-direction: column;
+      color: #f7eecf;
+    }
+    .square-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      border-bottom: 2px solid rgba(247,238,207,.24);
+      color: rgba(247,238,207,.74);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: .09em;
+    }
+    .square .custom {
+      width: fit-content;
+      margin-top: 70px;
+      padding: 14px 22px;
+      background: #d59a2f;
+      color: #142720;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 900;
+    }
+    .square h2 {
+      margin: 48px 0 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: 144px;
+      line-height: .94;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+    .square .desc {
+      margin-top: 44px;
+      padding: 22px 26px;
+      background: rgba(247,238,207,.92);
+      color: #142720;
+      border-left: 12px solid #69a76f;
+      font-size: 31px;
+      line-height: 1.22;
+      font-weight: 880;
+    }
+    .square-bottom {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .square-bottom span {
+      min-height: 112px;
+      display: grid;
+      place-items: center;
+      background: rgba(247,238,207,.08);
+      border-top: 10px solid #2e7555;
+      font-size: 25px;
+      font-weight: 900;
+    }
+    .square-bottom span:nth-child(2) { border-top-color: #69a76f; }
+    .square-bottom span:nth-child(3) { border-top-color: #d59a2f; }
+    .square-bottom span:nth-child(4) { border-top-color: #b66637; }
+    .preview {
+      width: 1900px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 34px;
+      align-items: center;
+      background: #d7dbcf;
+    }
+    .preview figure { margin: 0; }
+    .preview img {
+      width: 100%;
+      display: block;
+      box-shadow: 0 18px 52px rgba(20,39,32,.20);
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <section class="poster wide" id="wechat-21x9-cover">
+      <div class="paper"></div>
+      <div class="topo"></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="left">
+          <div class="label accent">资料订制 · 事业单位面试</div>
+          <h1>云南热点<br>面试预测框架<span>2026年上半年 · 人民日报数据库参考版</span></h1>
+          <div class="subtitle">比较优势 → 产业转化 → 生态约束 → 开放通道 → 民生落点 → 基层执行</div>
+          <div class="bottom-line">
+            <span><b>9</b> 个热点</span>
+            <span>资源产业 / 绿色发展 / 旅居云南 / 云品出滇 / 数字云南 / 开放通道 / 民生服务 / 基层治理 / 低空经济</span>
+          </div>
+        </div>
+        <aside class="right">
+          <div class="right-head"><span>PEOPLE DAILY MATERIAL</span><span>Yunnan 2026 H1</span></div>
+          <div class="axis">
+            <span>向新</span><span>向绿</span><span>向优</span><span>向好</span>
+          </div>
+          <div class="ladder">
+            ${['资源如何转化', '生态如何增值', '服务如何承载', '开放如何成势', '岗位如何落地'].map((item, i) => `<div><span>${item}</span><b>${String(i + 1).padStart(2, '0')}</b></div>`).join('')}
+          </div>
+          <p class="note">适配结构化面试：综合分析、现象评价、岗位结合、基层服务类题目。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="poster square" id="wechat-1x1-cover">
+      <div class="paper"></div>
+      <div class="grain"></div>
+      <div class="content">
+        <div class="square-top"><span>云南 · 2026 H1</span><span>人民日报数据库参考版</span></div>
+        <div class="custom">资料订制</div>
+        <h2>${shortTitle.replaceAll('\\n', '<br>')}</h2>
+        <div class="desc">事业单位面试热点预测与背诵框架</div>
+        <div class="square-bottom">
+          <span>向新</span><span>向绿</span><span>向优</span><span>向好</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>`;
+
+fs.writeFileSync(htmlPath, html, 'utf8');
+
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage({ viewport: { width: 2300, height: 1200 }, deviceScaleFactor: 1 });
+await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle' });
+
+await page.locator('#wechat-21x9-cover').screenshot({ path: path.join(mediaDir, 'wechat-21x9-cover.png') });
+await page.locator('#wechat-1x1-cover').screenshot({ path: path.join(mediaDir, 'wechat-1x1-cover.png') });
+
+const previewPath = path.join(__dirname, 'preview.html');
+const rel = (file) => path.relative(__dirname, path.join(mediaDir, file)).replaceAll(path.sep, '/');
+const css = html.split('<style>')[1].split('</style>')[0];
+fs.writeFileSync(previewPath, `<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>${css}</style></head><body><section class="preview" id="preview"><figure><img src="${rel('wechat-21x9-cover.png')}" alt=""></figure><figure><img src="${rel('wechat-1x1-cover.png')}" alt=""></figure></section></body></html>`, 'utf8');
+await page.setViewportSize({ width: 2000, height: 780 });
+await page.goto(`file://${previewPath}`, { waitUntil: 'networkidle' });
+await page.locator('#preview').screenshot({ path: path.join(mediaDir, 'wechat-cover-pair-preview.png') });
+
+await browser.close();
+
+console.log(JSON.stringify({
+  mediaDir,
+  files: ['wechat-21x9-cover.png', 'wechat-1x1-cover.png', 'wechat-cover-pair-preview.png']
+}, null, 2));

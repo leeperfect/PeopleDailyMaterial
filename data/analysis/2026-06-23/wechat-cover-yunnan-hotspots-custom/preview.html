@@ -1,0 +1,304 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #d7dbcf;
+      color: #142720;
+      font-family: "Avenir Next", "Helvetica Neue", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+    .stage {
+      width: max-content;
+      display: grid;
+      gap: 40px;
+      padding: 40px;
+    }
+    .poster {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: #f4f0df;
+      color: #142720;
+    }
+    .wide { width: 2100px; height: 900px; }
+    .square { width: 1080px; height: 1080px; }
+    .paper {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(90deg, rgba(20,39,32,.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(20,39,32,.045) 1px, transparent 1px),
+        linear-gradient(135deg, rgba(46,117,85,.13), transparent 38%),
+        #f4f0df;
+      background-size: 70px 70px, 70px 70px, auto, auto;
+    }
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(255,255,255,.28) .55px, transparent .8px);
+      background-size: 4px 4px;
+      opacity: .24;
+      mix-blend-mode: soft-light;
+    }
+    .wide .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      padding: 78px 92px 70px;
+      display: grid;
+      grid-template-columns: 1180px 1fr;
+      gap: 64px;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+    }
+    .label {
+      width: fit-content;
+      padding: 13px 22px 15px;
+      background: #142720;
+      color: #f7eecf;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+    .label.accent {
+      background: #d59a2f;
+      color: #142720;
+    }
+    .wide h1 {
+      margin: 46px 0 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: 128px;
+      line-height: .98;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+    .wide h1 span {
+      display: block;
+      margin-top: 24px;
+      color: #2e7555;
+      font-size: 62px;
+      font-weight: 650;
+    }
+    .subtitle {
+      margin-top: 36px;
+      width: 1060px;
+      padding: 21px 26px;
+      background: rgba(255,250,235,.94);
+      border-left: 12px solid #d59a2f;
+      font-size: 34px;
+      line-height: 1.18;
+      font-weight: 850;
+      color: #142720;
+    }
+    .bottom-line {
+      margin-top: auto;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 2px solid rgba(20,39,32,.22);
+      font-size: 26px;
+      font-weight: 840;
+      color: #4f5d51;
+    }
+    .bottom-line b {
+      color: #142720;
+      font-size: 40px;
+    }
+    .right {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 42px;
+      background: #142720;
+      color: #f7eecf;
+      min-height: 100%;
+    }
+    .right::before {
+      content: "YUNNAN";
+      position: absolute;
+      right: 26px;
+      top: 18px;
+      color: rgba(247,238,207,.06);
+      font-size: 142px;
+      line-height: .8;
+      font-weight: 900;
+      letter-spacing: .02em;
+      writing-mode: vertical-rl;
+    }
+    .right-head {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(247,238,207,.26);
+      color: rgba(247,238,207,.70);
+      font-size: 20px;
+      font-weight: 860;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .axis {
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .axis span {
+      height: 108px;
+      display: grid;
+      place-items: center;
+      background: rgba(247,238,207,.08);
+      border-top: 10px solid #2e7555;
+      font-size: 30px;
+      font-weight: 900;
+    }
+    .axis span:nth-child(2) { border-top-color: #69a76f; }
+    .axis span:nth-child(3) { border-top-color: #d59a2f; }
+    .axis span:nth-child(4) { border-top-color: #b66637; }
+    .ladder {
+      position: relative;
+      z-index: 2;
+      margin-top: 36px;
+      display: grid;
+      gap: 10px;
+    }
+    .ladder div {
+      min-height: 58px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(247,238,207,.08);
+      border-left: 7px solid #d59a2f;
+      font-size: 24px;
+      font-weight: 850;
+    }
+    .ladder b {
+      color: rgba(247,238,207,.45);
+      font-size: 17px;
+    }
+    .note {
+      position: relative;
+      z-index: 2;
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(247,238,207,.20);
+      color: rgba(247,238,207,.78);
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 760;
+    }
+    .topo {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 620px;
+      height: 330px;
+      opacity: .34;
+      background:
+        repeating-linear-gradient(28deg, transparent 0 28px, rgba(46,117,85,.28) 28px 31px),
+        repeating-linear-gradient(151deg, transparent 0 38px, rgba(181,102,55,.20) 38px 41px);
+      clip-path: polygon(0 52%, 24% 18%, 46% 32%, 70% 0, 100% 42%, 88% 88%, 52% 74%, 32% 100%);
+    }
+    .square .paper {
+      background:
+        linear-gradient(90deg, rgba(247,238,207,.055) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(247,238,207,.055) 1px, transparent 1px),
+        linear-gradient(145deg, rgba(46,117,85,.34), transparent 45%),
+        #142720;
+      background-size: 70px 70px, 70px 70px, auto, auto;
+    }
+    .square .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      padding: 76px;
+      display: flex;
+      flex-direction: column;
+      color: #f7eecf;
+    }
+    .square-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      border-bottom: 2px solid rgba(247,238,207,.24);
+      color: rgba(247,238,207,.74);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: .09em;
+    }
+    .square .custom {
+      width: fit-content;
+      margin-top: 70px;
+      padding: 14px 22px;
+      background: #d59a2f;
+      color: #142720;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 900;
+    }
+    .square h2 {
+      margin: 48px 0 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: 144px;
+      line-height: .94;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+    .square .desc {
+      margin-top: 44px;
+      padding: 22px 26px;
+      background: rgba(247,238,207,.92);
+      color: #142720;
+      border-left: 12px solid #69a76f;
+      font-size: 31px;
+      line-height: 1.22;
+      font-weight: 880;
+    }
+    .square-bottom {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .square-bottom span {
+      min-height: 112px;
+      display: grid;
+      place-items: center;
+      background: rgba(247,238,207,.08);
+      border-top: 10px solid #2e7555;
+      font-size: 25px;
+      font-weight: 900;
+    }
+    .square-bottom span:nth-child(2) { border-top-color: #69a76f; }
+    .square-bottom span:nth-child(3) { border-top-color: #d59a2f; }
+    .square-bottom span:nth-child(4) { border-top-color: #b66637; }
+    .preview {
+      width: 1900px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 34px;
+      align-items: center;
+      background: #d7dbcf;
+    }
+    .preview figure { margin: 0; }
+    .preview img {
+      width: 100%;
+      display: block;
+      box-shadow: 0 18px 52px rgba(20,39,32,.20);
+    }
+  </style></head><body><section class="preview" id="preview"><figure><img src="../../../../media/images/2026-06-23-yunnan-hotspots-wechat-cover/wechat-21x9-cover.png" alt=""></figure><figure><img src="../../../../media/images/2026-06-23-yunnan-hotspots-wechat-cover/wechat-1x1-cover.png" alt=""></figure></section></body></html>

@@ -38,6 +38,9 @@
 | 2026-06-21 | 新型城镇化：服务跟着人走 | 小红书图 / 视频号封面 | `media/images/2026-06-21-new-urbanization-xhs-video/` | 待上传 | `data/articles/公众号文章/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，城市青绿 × 暖米白 × 公共服务蓝，公开图库配图 |
 | 2026-06-21 | 科技成果转化：打通最后一公里 | 小红书图 / 视频号封面 | `media/images/2026-06-21-tech-transfer-xhs-video/` | 待上传 | `data/articles/公众号文章/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，实验室冷蓝 × 转化橙 × 深墨灰，公开图库配图 |
 | 2026-06-21 | 主流媒体融合：内容、技术和服务重构 | 小红书图 / 视频号封面 | `media/images/2026-06-21-media-convergence-xhs-video/` | 待上传 | `data/articles/公众号文章/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，媒体红 × 数智蓝 × 深墨灰，公开图库配图 |
+| 2026-06-22 | 现代农业：科技体检、田保姆和青年农机手 | 小红书图 / 视频号封面 | `media/images/2026-06-22-modern-agriculture-xhs-video/` | 待上传 | `data/articles/公众号文章/25-人民日报讲现代农业：不是只靠苦干，而是科技体检、田保姆和青年农机手一起上.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，麦穗金 × 稻田绿 × 土壤棕 × 深墨绿，公开图库配图，已自动审查 |
+| 2026-06-23 | 云南热点面试预测框架 | 公众号封面 / 分享卡 | `media/images/2026-06-23-yunnan-hotspots-wechat-cover/` | 待上传 | `data/analysis/2026-06-22/2026-h1-yunnan-hotspots-interview-peopledaily.md`；含 21:9 头图、1:1 分享卡和配对预览，Editorial 资料订制风，云南绿 × 普洱墨绿 × 茶金，已自动审查 |
+| 2026-06-23 | 云南热点政策预测框架 | 公众号封面 / 分享卡 | `media/images/2026-06-23-yunnan-hotspots-policy-wechat-cover/` | 待上传 | `data/analysis/2026-06-22/2026-h1-yunnan-hotspots-interview.md`；含 21:9 头图、1:1 分享卡和配对预览，Editorial 资料定制风，滇池青 × 政策蓝绿 × 茶金，已自动审查 |
 
 ## 类型写法
 

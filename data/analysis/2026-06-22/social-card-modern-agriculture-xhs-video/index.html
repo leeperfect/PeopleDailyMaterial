@@ -1,0 +1,259 @@
+<!doctype html><html lang="zh-CN" data-theme="editorial"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>现代农业小红书与视频号封面</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#d6dac6;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#17281f}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f5f0df}
+.xhs,.video{width:1080px;height:1440px}
+.video{line-height:0}
+.poster figure{margin:0}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 84% 16%,rgba(77,123,56,.17),transparent 30%),
+  radial-gradient(circle at 12% 90%,rgba(216,166,58,.22),transparent 34%),
+  linear-gradient(116deg,rgba(23,40,31,.055) 0 1px,transparent 1px 18px),
+  linear-gradient(180deg,#f7f1de 0%,#edf0d7 56%,#dfe7ca 100%)}
+.paper:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.12) 0 1px,transparent 1px 6px);opacity:.70}
+.grain{position:absolute;inset:0;z-index:3;opacity:.22;background:repeating-linear-gradient(105deg,rgba(255,255,255,.12) 0 1px,transparent 1px 5px),linear-gradient(180deg,rgba(255,255,255,.15),rgba(0,0,0,.12));mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(23,40,31,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#4d7b38;font-weight:900}
+.cover .top,.darkQuote .top,.closing .top{border-bottom-color:rgba(255,255,255,.46);color:#f5f0df}
+.cover .top span:first-child,.darkQuote .top span:first-child,.closing .top span:first-child{color:#d8a63a}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:76px;line-height:1.05;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,249,235,.94);border-left:10px solid #4d7b38;font-size:34px;line-height:1.35;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:21px;line-height:1.46}
+.quote.xxl{font-size:18px;line-height:1.44}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.94) contrast(1.06) brightness(.94)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(19,34,25,.94),rgba(19,34,25,.18) 66%,rgba(19,34,25,.46)),linear-gradient(180deg,rgba(19,34,25,.12),rgba(19,34,25,.38) 62%,rgba(19,34,25,.90))}
+.series{margin:36px 0 0;color:#d8a63a;font-size:36px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#f7f1de;font-size:88px;max-width:940px}
+.coverLine{margin-top:30px;width:900px;padding:20px 24px;background:rgba(255,249,235,.92);color:#17281f;font-size:30px;font-weight:880}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;align-items:center}
+.coverNodes span{height:132px;display:grid;place-items:center;text-align:center;background:#f7f1de;color:#17281f;border-top:12px solid #4d7b38;font-size:28px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#d8a63a}.coverNodes span:nth-of-type(3){border-top-color:#8a5a2b}.coverNodes span:nth-of-type(4){border-top-color:#17281f}
+.coverNodes i{height:4px;background:#f7f1de}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fff9eb;border:2px solid rgba(23,40,31,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#4d7b38}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#17281f;color:#f7f1de;font-size:28px;line-height:1.22;font-weight:850}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:460px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:690px;z-index:2;background:linear-gradient(90deg,#f5f0df 0%,rgba(245,240,223,.92) 50%,rgba(245,240,223,.08) 100%)}
+.quotePhoto .content{padding-right:418px}
+.quotePhoto .quote{font-size:24px;line-height:1.46}
+.keywordRail{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.keywordRail span{height:124px;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-top:12px solid #4d7b38;font-size:22px;font-weight:900}
+.keywordRail span:nth-child(2){border-top-color:#d8a63a}.keywordRail span:nth-child(3){border-top-color:#8a5a2b}
+.formula .quote,.exam .quote{font-size:31px}
+.formulaRail,.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;align-items:center}
+.formulaRail span,.examFlow span{height:300px;padding:20px 14px;display:grid;align-content:space-between;text-align:center;background:#17281f;color:#f7f1de;font-size:27px;line-height:1.14;font-weight:900}
+.examFlow span{height:260px;font-size:22px}
+.formulaRail span:nth-of-type(2),.examFlow span:nth-of-type(2){background:#d8a63a;color:#17281f}.formulaRail span:nth-of-type(3),.examFlow span:nth-of-type(3){background:#4d7b38}.formulaRail span:nth-of-type(4),.examFlow span:nth-of-type(4){background:#8a5a2b}
+.formulaRail b,.examFlow b{color:#f6d58a;font-size:22px}.formulaRail span:nth-of-type(2) b,.examFlow span:nth-of-type(2) b{color:#17281f}
+.formulaRail i,.examFlow i{height:4px;background:#17281f}
+#xhs-04-chain:after{content:"土地  →  农户  →  风险  →  未来";position:absolute;left:58px;right:58px;top:596px;height:128px;z-index:1;display:grid;place-items:center;background:rgba(216,166,58,.18);border-top:3px solid rgba(77,123,56,.45);border-bottom:3px solid rgba(138,90,43,.38);color:#17281f;font-size:34px;font-weight:900}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:410px;z-index:1;border:3px solid rgba(77,123,56,.32)}
+.objectPhoto .content,.photoFeature .content,.material .content{padding-bottom:540px}
+.objectPhoto .quote{font-size:19px;line-height:1.44}
+.cards{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cards span{height:100px;padding:14px 10px;display:grid;align-content:space-between;background:#fff9eb;border-top:12px solid #4d7b38;font-size:20px;line-height:1.14;font-weight:860}
+.cards span:nth-child(2),.cards span:nth-child(4){border-top-color:#d8a63a}.cards span:nth-child(3){border-top-color:#8a5a2b}
+.cards b{font-size:18px;color:#17281f}
+.matrix{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.matrix span{height:178px;padding:18px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #4d7b38;font-size:28px;line-height:1.16;font-weight:900}
+.matrix span:nth-child(2),.matrix span:nth-child(5){border-top-color:#d8a63a}.matrix span:nth-child(3),.matrix span:nth-child(6){border-top-color:#8a5a2b}
+.matrixPage:after{content:"看数据 / 按处方 / 精准管护";position:absolute;left:58px;right:58px;bottom:86px;height:150px;z-index:1;display:grid;place-items:center;background:#17281f;color:#f7f1de;border-top:14px solid #d8a63a;font-size:34px;font-weight:900}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:585px;z-index:1;border:3px solid rgba(77,123,56,.32)}
+.extension .content{padding-right:500px}
+.extension .quote{font-size:17px;line-height:1.43}
+.extensionRows{margin-top:auto;display:grid;gap:12px}
+.extensionRows span{height:78px;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-left:12px solid #4d7b38;font-size:22px;font-weight:900}
+.extensionRows span:nth-child(2),.extensionRows span:nth-child(4){border-left-color:#d8a63a}.extensionRows span:nth-child(3),.extensionRows span:nth-child(5){border-left-color:#8a5a2b}
+#xhs-07-service:after{content:"小农户不是独自追赶，而是被服务体系接上来";position:absolute;left:58px;top:620px;width:474px;height:118px;z-index:1;display:grid;place-items:center;text-align:center;background:#fff9eb;border-left:14px solid #d8a63a;color:#17281f;font-size:27px;line-height:1.18;font-weight:900}
+.serviceBoxes{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.serviceBoxes span{height:178px;padding:18px;display:grid;align-content:space-between;background:#fff9eb;border-left:14px solid #4d7b38;font-size:26px;line-height:1.16;font-weight:880}
+.serviceBoxes span:nth-child(2),.serviceBoxes span:nth-child(4){border-left-color:#d8a63a}
+.serviceBoxes b{font-size:20px;color:#8a5a2b}
+.serviceMap:after{content:"农机作业 / 农资供应 / 金融支持 / 储运销售 / 防灾预警";position:absolute;left:58px;right:58px;bottom:86px;height:150px;z-index:1;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-top:14px solid #4d7b38;font-size:29px;font-weight:900}
+.serviceStrip{margin-top:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.serviceStrip span{height:124px;padding:10px;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-top:12px solid #4d7b38;font-size:23px;font-weight:900}
+.serviceStrip span:nth-child(2),.serviceStrip span:nth-child(4){border-top-color:#d8a63a}.serviceStrip span:nth-child(3),.serviceStrip span:nth-child(5){border-top-color:#8a5a2b}
+.photoFeature .quote{font-size:18px;line-height:1.43}
+.governance .quote{font-size:27px;line-height:1.39}
+.governGrid{margin-top:36px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.governGrid span{height:170px;padding:14px 10px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #4d7b38;font-size:22px;line-height:1.16;font-weight:900}
+.governGrid span:nth-child(2),.governGrid span:nth-child(4){border-top-color:#d8a63a}.governGrid span:nth-child(3),.governGrid span:nth-child(5){border-top-color:#8a5a2b}
+.governance:after{content:"把不确定性转化为稳产能力";position:absolute;left:58px;right:58px;bottom:88px;height:154px;z-index:1;display:grid;place-items:center;background:#17281f;color:#f7f1de;border-top:14px solid #d8a63a;font-size:34px;font-weight:900}
+.darkTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(19,34,25,.94),rgba(19,34,25,.22) 66%,rgba(19,34,25,.52)),linear-gradient(180deg,rgba(19,34,25,.16),rgba(19,34,25,.82))}
+.darkQuote h1{color:#f7f1de;font-size:76px}
+.darkQuote .quote{font-size:18px;line-height:1.43}
+.darkNodes{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.darkNodes span{height:146px;display:grid;place-items:center;text-align:center;background:#f7f1de;color:#17281f;border-top:12px solid #4d7b38;font-size:26px;font-weight:900}
+.darkNodes span:nth-child(2),.darkNodes span:nth-child(4){border-top-color:#d8a63a}.darkNodes span:nth-child(3){border-top-color:#8a5a2b}
+.interview .quote{font-size:27px;line-height:1.4}
+.answerSteps{margin-top:30px;display:grid;gap:12px}
+.answerSteps span{height:98px;padding:0 18px;display:flex;align-items:center;gap:16px;background:#fff9eb;border-left:12px solid #4d7b38;font-size:22px;line-height:1.13;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#d8a63a}.answerSteps span:nth-child(3),.answerSteps span:nth-child(5){border-left-color:#8a5a2b}
+.answerSteps b{font-size:20px;color:#17281f}
+#xhs-13-interview:after{content:"设备是工具，配套体系才是现代农业能力";position:absolute;left:58px;right:58px;bottom:80px;height:130px;z-index:1;display:grid;place-items:center;text-align:center;background:#17281f;color:#f7f1de;border-top:14px solid #d8a63a;font-size:30px;line-height:1.18;font-weight:900}
+.material .quote{font-size:26px;line-height:1.4}
+.materialGrid{margin-top:30px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.materialGrid span{height:105px;padding:10px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:12px solid #4d7b38;font-size:20px;line-height:1.14;font-weight:880}
+.materialGrid span:nth-child(2),.materialGrid span:nth-child(4){border-top-color:#d8a63a}.materialGrid span:nth-child(3),.materialGrid span:nth-child(5){border-top-color:#8a5a2b}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(19,34,25,.94),rgba(19,34,25,.20) 67%,rgba(19,34,25,.50)),linear-gradient(180deg,rgba(19,34,25,.14),rgba(19,34,25,.84))}
+.closing h1{color:#f7f1de;font-size:72px}
+.closing .quote{font-size:32px;line-height:1.35}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.closingNodes span{height:140px;display:grid;place-items:center;text-align:center;background:#f7f1de;color:#17281f;border-top:12px solid #4d7b38;font-size:24px;font-weight:900}
+.closingNodes span:nth-child(2){border-top-color:#d8a63a}.closingNodes span:nth-child(3){border-top-color:#8a5a2b}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.92) contrast(1.10) brightness(.70)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(19,34,25,.92),rgba(19,34,25,.12) 70%),linear-gradient(180deg,rgba(19,34,25,.10),rgba(19,34,25,.32) 44%,rgba(19,34,25,.88))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.60);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:attr(data-label);position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820;letter-spacing:0}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:112px;z-index:4;color:#f7f1de;line-height:1.2}
+.videoTitle p{margin:0 0 28px;color:#d8a63a;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:78px;line-height:1.04;font-weight:780;letter-spacing:0;max-width:920px}
+.v2 .videoTitle h2{font-size:72px}.v3 .videoTitle h2{font-size:68px}
+.videoTitle span{display:block;width:max-content;max-width:890px;margin-top:26px;padding:14px 18px;background:#4d7b38;color:#f7f1de;font-size:26px;font-weight:900}
+.v2 .videoTitle span{background:#d8a63a;color:#17281f}.v3 .videoTitle span{background:#8a5a2b;color:#f7f1de}
+.preview{width:1800px;background:#d6dac6;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff9eb;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><main class="stage"><section class="poster xhs cover" id="xhs-01-cover">
+      <figure class="photo bleed">
+    <!-- Subject map: green field rows fill the image, bright horizon at top; title can sit on dark left overlay. -->
+    <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/field-drone.jpg" alt="" style="object-position:center 50%;">
+  </figure><div class="coverTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>01</span><span>人民日报材料转申论</span></div>
+        <p class="series">《人民日报》这样写</p>
+        <h1>现代农业<br>不是只靠苦干</h1>
+        <div class="coverLine">科技体检、田保姆和青年农机手一起上</div>
+        <div class="coverNodes"><span>科技识田</span><i></i><span>服务入田</span><i></i><span>专家跟田</span><i></i><span>青年到田</span></div>
+      </div>
+    </section>
+<section class="poster xhs mistake" id="xhs-02-mistake">
+      <div class="paper"></div><div class="content"><div class="top"><span>02</span><span>常见误区</span></div><h1>别再只写<br>农民辛苦</h1><blockquote class="quote">“辛苦”只能说明态度，“增产”只能说明结果。真正能拉开分差的，是写清农业生产方式正在怎么变。</blockquote>
+      <div class="wrongList"><span><b>01</b>只写苦干</span><span><b>02</b>只写增产</span><span><b>03</b>只写口号</span><span><b>04</b>只写投入</span></div>
+      <div class="aside"><p>要写土地如何被精准识别</p><p>要写农户如何接上服务体系</p></div></div>
+    </section>
+<section class="poster xhs quotePhoto" id="xhs-03-core">
+      <div class="paper"></div><figure class="photo sidePhoto">
+    <!-- Subject map: wheat close-up fills lower frame, open sky at top; safe right-side evidence image. -->
+    <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/wheat-field.jpg" alt="" style="object-position:center 50%;">
+  </figure>
+      <div class="content"><div class="top"><span>03</span><span>核心判断</span></div><h1>不是更辛苦<br>而是支撑更强</h1><blockquote class="quote">现代农业不是让农民更辛苦，而是让土地被精准识别、农活被专业服务、人才被持续培养。</blockquote>
+      <div class="keywordRail"><span>土地被精准识别</span><span>农活被专业服务</span><span>人才被持续培养</span></div></div>
+    </section>
+<section class="poster xhs formula" id="xhs-04-chain">
+      <div class="paper"></div><div class="content"><div class="top"><span>04</span><span>高分链条</span></div><h1>先把现代农业<br>写成一条链</h1><blockquote class="quote">现代农业高分表达 = 科技识田 + 服务入田 + 专家跟田 + 青年到田。</blockquote>
+      <div class="formulaRail"><span><b>01</b>科技识田</span><i></i><span><b>02</b>服务入田</span><i></i><span><b>03</b>专家跟田</span><i></i><span><b>04</b>青年到田</span></div></div>
+    </section>
+<section class="poster xhs objectPhoto" id="xhs-05-tech">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: hands and soil sit near the center; keep text in upper paper area. -->
+    <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/soil-hands.jpg" alt="" style="object-position:center 48%;">
+  </figure>
+      <div class="content"><div class="top"><span>05</span><span>一、科技识田</span></div><h1>先给土地<br>做一次科技体检</h1><blockquote class="quote med">申论可用表达：推进农业现代化，不能只写“因地制宜”，更要写清如何用遥感监测、数据画像、处方管理和智能农机，把土地差异转化为精准管护方案。</blockquote><div class="cards"><span><b>01</b>遥感监测</span><span><b>02</b>数据画像</span><span><b>03</b>处方管理</span><span><b>04</b>智能农机</span></div></div>
+    </section>
+<section class="poster xhs matrixPage" id="xhs-06-precision">
+      <div class="paper"></div><div class="content"><div class="top"><span>06</span><span>科技落点</span></div><h1>土地先被看见<br>管理才会精准</h1><blockquote class="quote">手机上的“处方图”显示土壤类型、坡度、推荐施肥用量，再发送到农机，配合变量施肥和北斗导航。</blockquote>
+      <div class="matrix"><span>土壤类型</span><span>坡度差异</span><span>施肥用量</span><span>北斗导航</span><span>变量作业</span><span>污染减量</span></div></div>
+    </section>
+<section class="poster xhs extension" id="xhs-07-service">
+      <div class="paper"></div><figure class="photo rightPhoto">
+    <!-- Subject map: tractor is center-right in the field; text stays in the left paper panel. -->
+    <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/tractor-field.jpg" alt="" style="object-position:center 52%;">
+  </figure>
+      <div class="content"><div class="top"><span>07</span><span>二、服务入田</span></div><h1>小农户接上现代农业<br>靠服务体系</h1><blockquote class="quote long">申论可用表达：农业现代化不能只依靠单个农户扩大投入，而要完善农业社会化服务体系，通过农机作业、农资供应、金融支持、储运销售、防灾预警等全链条服务，促进小农户和现代农业有机衔接。</blockquote>
+      <div class="extensionRows"><span>农机作业</span><span>农资供应</span><span>金融支持</span><span>储运销售</span><span>防灾预警</span></div></div>
+    </section>
+<section class="poster xhs serviceMap" id="xhs-08-service-chain">
+      <div class="paper"></div><div class="content"><div class="top"><span>08</span><span>服务链</span></div><h1>不是单户硬扛<br>而是全链托举</h1><blockquote class="quote">“田保姆”不是简单替农户干活，而是把技术、装备、管理和关键农时服务送到户、送到田。</blockquote>
+      <div class="serviceBoxes"><span><b>01</b>干不了：装备资金门槛高</span><span><b>02</b>干不好：灾害农时要专业判断</span><span><b>03</b>不划算：单户投入成本高</span><span><b>04</b>接得上：服务体系降低门槛</span></div></div>
+    </section>
+<section class="poster xhs photoFeature" id="xhs-09-expert">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: corn seedlings and soil close-up occupy the lower frame; use as evidence image. -->
+    <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/smart-farm.jpg" alt="" style="object-position:center 54%;">
+  </figure>
+      <div class="content"><div class="top"><span>09</span><span>三、专家跟田</span></div><h1>技术不能停在屏幕上<br>还要跟着问题走</h1><blockquote class="quote med">申论可用表达：农业科技不能停在实验室和屏幕上，必须围绕苗情、墒情、灾情、病虫害和农时变化，推动专家下田、农技到户、服务到点，把不确定性转化为稳产能力。</blockquote>
+      <div class="serviceStrip"><span>苗情</span><span>墒情</span><span>灾情</span><span>病虫害</span><span>农时变化</span></div></div>
+    </section>
+<section class="poster xhs governance" id="xhs-10-risk">
+      <div class="paper"></div><div class="content"><div class="top"><span>10</span><span>稳产能力</span></div><h1>数据看趋势<br>专家看现场</h1><blockquote class="quote">晚播、弱苗、病虫害、抢收抢烘，都不是一句“加强管理”能解决的，要把措施落实到田。</blockquote>
+      <div class="governGrid"><span>返青拔节期追肥</span><span>一喷三防</span><span>分类指导</span><span>包市包县</span><span>下沉一线</span></div></div>
+    </section>
+<section class="poster xhs darkQuote" id="xhs-11-youth">
+      <figure class="photo bleed">
+    <!-- Subject map: young farmer stands on right-center; title is placed on dark left overlay. -->
+    <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/young-farmer.jpg" alt="" style="object-position:center 50%;">
+  </figure><div class="darkTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>11</span><span>四、青年到田</span></div><h1>装备升级以后<br>还要有人会用</h1><blockquote class="quote med">申论可用表达：现代农业不仅要推动装备升级，更要培养懂技术、会经营、能组织的新农人队伍，让青年农机手、农技人员和社会化服务主体成为粮食稳产保供的重要力量。</blockquote>
+      <div class="darkNodes"><span>懂技术</span><span>会经营</span><span>能组织</span><span>会调度</span></div></div>
+    </section>
+<section class="poster xhs exam" id="xhs-12-people">
+      <div class="paper"></div><div class="content"><div class="top"><span>12</span><span>人才结构</span></div><h1>年轻人到田间<br>带来新组织方式</h1><blockquote class="quote">青年农机手不只是会开机器，还能用平台接单、用系统调度、用无人机植保、用数字化平台统筹地块和农时。</blockquote>
+      <div class="examFlow"><span><b>01</b>组织管理规范化</span><i></i><span><b>02</b>作业接单网络化</span><i></i><span><b>03</b>农机调配共享化</span><i></i><span><b>04</b>平台服务协同化</span></div></div>
+    </section>
+<section class="poster xhs interview" id="xhs-13-interview">
+      <div class="paper"></div><div class="content"><div class="top"><span>13</span><span>面试题卡</span></div><h1>农户担心跟不上<br>这样答</h1><blockquote class="quote">有地方推进农业现代化，一些农户觉得新技术成本高、不会用，也担心小农户跟不上。对此你怎么看？</blockquote>
+      <div class="answerSteps"><span><b>01</b>不能把现代农业理解成单纯上设备</span><span><b>02</b>科技要到田：精准识别和分类管理</span><span><b>03</b>服务要到户：解决一家一户干不了</span><span><b>04</b>人才要到位：技术有人推广、平台有人运营</span><span><b>05</b>风险要兜住：防灾预警、抢收抢烘、金融保险</span></div></div>
+    </section>
+<section class="poster xhs material" id="xhs-14-material">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: aerial farm machines line up across the upper field; safe text zone is left paper panel. -->
+    <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/farmer-tablet.jpg" alt="" style="object-position:center 46%;">
+  </figure>
+      <div class="content"><div class="top"><span>14</span><span>素材记忆</span></div><h1>材料怎么记<br>才不会散</h1><blockquote class="quote">黑土地体检看科技识田，“田保姆”看服务入田，“郭小麦”看专家跟田，青年农机手看人才到田。</blockquote>
+      <div class="materialGrid"><span>黑土地体检</span><span>变量施肥</span><span>田保姆</span><span>郭小麦</span><span>青年农机手</span></div></div>
+    </section>
+<section class="poster xhs closing" id="xhs-15-closing">
+      <figure class="photo bleed">
+    <!-- Subject map: wide wheat field with broad sky, no close face; safe for full bleed closing. -->
+    <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/harvest-machine.jpg" alt="" style="object-position:center 50%;">
+  </figure><div class="closingTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>15</span><span>收束金句</span></div><h1>真正的现代农业<br>是多一套支撑系统</h1><blockquote class="quote">科技看见土地，服务接住农户，专家解决问题，青年承接未来。</blockquote>
+      <div class="closingNodes"><span>科技下田</span><span>服务入田</span><span>人才到田</span></div></div>
+    </section><section class="poster video v1" id="video-cover-01">
+    <figure class="videoPhoto">
+      <!-- Subject map: green field rows fill the image, bright horizon at top; title can sit on dark left overlay. Magazine title uses documented safe zone. -->
+      <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/field-drone.jpg" alt="" style="object-position:center 50%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines" data-label="MODERN AGRICULTURE"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>现代农业<br>不是只靠苦干</h2>
+      <span>科技体检、田保姆和青年农机手一起上</span>
+    </div>
+  </section>
+<section class="poster video v2" id="video-cover-02">
+    <figure class="videoPhoto">
+      <!-- Subject map: wheat close-up fills lower frame, open sky at top; safe right-side evidence image. Magazine title uses documented safe zone. -->
+      <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/wheat-field.jpg" alt="" style="object-position:center 50%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines" data-label="TECH · SERVICE · YOUTH"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>科技识田<br>服务入田<br>青年到田</h2>
+      <span>农业现代化高分表达链条</span>
+    </div>
+  </section>
+<section class="poster video v3" id="video-cover-03">
+    <figure class="videoPhoto">
+      <!-- Subject map: young farmer stands on right-center; title is placed on dark left overlay. Magazine title uses documented safe zone. -->
+      <img src="../../../../media/images/2026-06-22-modern-agriculture-xhs-video/assets/young-farmer.jpg" alt="" style="object-position:center 50%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines" data-label="FIELD SUPPORT SYSTEM"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>不是农民更辛苦<br>而是系统更会托举</h2>
+      <span>土地 / 服务 / 专家 / 青年</span>
+    </div>
+  </section></main></body></html>
