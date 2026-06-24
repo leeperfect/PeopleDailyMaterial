@@ -1,0 +1,128 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#e4ddd3;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#201b17}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f4ecdf}
+.xhs,.video{width:1080px;height:1440px}
+.video{line-height:0}
+.poster figure{margin:0}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 86% 16%,rgba(255,105,0,.15),transparent 30%),
+  radial-gradient(circle at 12% 88%,rgba(24,29,36,.12),transparent 34%),
+  linear-gradient(116deg,rgba(32,27,23,.055) 0 1px,transparent 1px 18px),
+  linear-gradient(180deg,#f7efe4 0%,#f4e7da 56%,#eaded2 100%)}
+.paper:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.13) 0 1px,transparent 1px 6px);opacity:.70}
+.grain{position:absolute;inset:0;z-index:3;opacity:.22;background:repeating-linear-gradient(105deg,rgba(255,255,255,.12) 0 1px,transparent 1px 5px),linear-gradient(180deg,rgba(255,255,255,.16),rgba(0,0,0,.12));mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(32,27,23,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#ff6900;font-weight:900}
+.cover .top,.darkQuote .top,.closing .top{border-bottom-color:rgba(255,255,255,.48);color:#fff3df}
+.cover .top span:first-child,.darkQuote .top span:first-child,.closing .top span:first-child{color:#ff6900}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:76px;line-height:1.05;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,249,235,.94);border-left:10px solid #ff6900;font-size:34px;line-height:1.35;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:21px;line-height:1.46}
+.quote.xxl{font-size:18px;line-height:1.44}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.06) brightness(.94)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(25,23,22,.95),rgba(25,23,22,.22) 66%,rgba(25,23,22,.52)),linear-gradient(180deg,rgba(25,23,22,.12),rgba(25,23,22,.42) 62%,rgba(25,23,22,.91))}
+.series{margin:36px 0 0;color:#ff6900;font-size:36px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fff3df;font-size:86px;max-width:960px}
+.coverLine{margin-top:30px;width:860px;padding:20px 24px;background:rgba(255,249,235,.92);color:#201b17;font-size:32px;font-weight:900}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr 18px 1fr 18px 1fr;align-items:center}
+.coverNodes span{height:120px;display:grid;place-items:center;text-align:center;background:#f7efe4;color:#201b17;border-top:12px solid #ff6900;font-size:24px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#333942}.coverNodes span:nth-of-type(3){border-top-color:#e7a13b}.coverNodes span:nth-of-type(4){border-top-color:#7c573a}.coverNodes span:nth-of-type(5){border-top-color:#201b17}
+.coverNodes i{height:4px;background:#f7efe4}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fff9eb;border:2px solid rgba(32,27,23,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#ff6900}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#201b17;color:#fff3df;font-size:27px;line-height:1.22;font-weight:850}
+.formula .quote,.exam .quote{font-size:29px}
+.formulaRail,.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr 18px 1fr 18px 1fr;align-items:center}
+.formulaRail span,.examFlow span{height:280px;padding:18px 10px;display:grid;align-content:space-between;text-align:center;background:#201b17;color:#fff3df;font-size:23px;line-height:1.14;font-weight:900}
+.examFlow span{height:258px;font-size:20px}
+.formulaRail span:nth-of-type(2),.examFlow span:nth-of-type(2){background:#ff6900}.formulaRail span:nth-of-type(3),.examFlow span:nth-of-type(3){background:#333942}.formulaRail span:nth-of-type(4),.examFlow span:nth-of-type(4){background:#e7a13b;color:#201b17}.formulaRail span:nth-of-type(5),.examFlow span:nth-of-type(5){background:#7c573a}
+.formulaRail b,.examFlow b{color:#ffd3ad;font-size:20px}.formulaRail span:nth-of-type(4) b,.examFlow span:nth-of-type(4) b{color:#201b17}
+.formulaRail i,.examFlow i{height:4px;background:#201b17}
+#xhs-03-core-chain:after{content:"岗位不是孤点，能力、服务、创业和保障要一起接上";position:absolute;left:58px;right:58px;top:596px;height:128px;z-index:1;display:grid;place-items:center;text-align:center;background:rgba(255,105,0,.12);border-top:3px solid rgba(255,105,0,.42);border-bottom:3px solid rgba(32,27,23,.28);color:#201b17;font-size:29px;font-weight:900}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:460px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:690px;z-index:2;background:linear-gradient(90deg,#f4ecdf 0%,rgba(244,236,223,.92) 50%,rgba(244,236,223,.08) 100%)}
+.quotePhoto .content{padding-right:418px}
+.quotePhoto .quote{font-size:24px;line-height:1.46}
+.keywordRail{margin-top:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.keywordRail span{height:108px;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-top:12px solid #ff6900;font-size:20px;font-weight:900}
+.keywordRail span:nth-child(2),.keywordRail span:nth-child(4){border-top-color:#333942}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:410px;z-index:1;border:3px solid rgba(255,105,0,.30)}
+.objectPhoto .content,.photoFeature .content{padding-bottom:540px}
+.objectPhoto .quote{font-size:28px;line-height:1.38}
+.cards{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cards span{height:105px;padding:14px 10px;display:grid;align-content:space-between;background:#fff9eb;border-top:12px solid #ff6900;font-size:19px;line-height:1.14;font-weight:860}
+.cards span:nth-child(2){border-top-color:#333942}.cards span:nth-child(3){border-top-color:#e7a13b}
+.cards b{font-size:18px;color:#201b17}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:585px;z-index:1;border:3px solid rgba(255,105,0,.32)}
+.extension .content{padding-right:500px}
+.extension .quote{font-size:20px;line-height:1.43}
+.extensionRows{margin-top:auto;display:grid;gap:12px}
+.extensionRows span{height:84px;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-left:12px solid #ff6900;font-size:22px;font-weight:900}
+.extensionRows span:nth-child(2),.extensionRows span:nth-child(4){border-left-color:#e7a13b}
+.matrix{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.matrix span{height:168px;padding:18px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #ff6900;font-size:27px;line-height:1.16;font-weight:900}
+.matrix span:nth-child(2),.matrix span:nth-child(4){border-top-color:#333942}
+.matrixPage:after{content:"培训的出口，是更稳地进入真实岗位";position:absolute;left:58px;right:58px;bottom:86px;height:150px;z-index:1;display:grid;place-items:center;background:#201b17;color:#fff3df;border-top:14px solid #ff6900;font-size:32px;font-weight:900}
+.photoFeature .quote{font-size:20px;line-height:1.43}
+.serviceStrip{margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.serviceStrip span{height:124px;padding:10px;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-top:12px solid #ff6900;font-size:23px;font-weight:900}
+.serviceStrip span:nth-child(2),.serviceStrip span:nth-child(4){border-top-color:#e7a13b}
+.serviceBoxes{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.serviceBoxes span{height:148px;padding:16px;display:grid;align-content:space-between;background:#fff9eb;border-left:14px solid #ff6900;font-size:24px;line-height:1.16;font-weight:880}
+.serviceBoxes span:nth-child(2),.serviceBoxes span:nth-child(5){border-left-color:#333942}.serviceBoxes span:nth-child(3),.serviceBoxes span:nth-child(6){border-left-color:#e7a13b}
+.serviceBoxes b{font-size:20px;color:#7c573a}
+.serviceMap:after{content:"把岗位、政策、补贴、维权和创业服务送到身边";position:absolute;left:58px;right:58px;bottom:86px;height:150px;z-index:1;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-top:14px solid #ff6900;font-size:29px;font-weight:900}
+.darkTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(25,23,22,.94),rgba(25,23,22,.22) 66%,rgba(25,23,22,.54)),linear-gradient(180deg,rgba(25,23,22,.16),rgba(25,23,22,.82))}
+.darkQuote h1{color:#fff3df;font-size:76px}
+.darkQuote .quote{font-size:22px;line-height:1.43}
+.darkNodes{margin-top:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.darkNodes span{height:130px;display:grid;place-items:center;text-align:center;background:#f7efe4;color:#201b17;border-top:12px solid #ff6900;font-size:21px;font-weight:900}
+.darkNodes span:nth-child(2),.darkNodes span:nth-child(4){border-top-color:#e7a13b}.darkNodes span:nth-child(3),.darkNodes span:nth-child(5){border-top-color:#333942}
+.governance .quote{font-size:29px;line-height:1.38}
+.governGrid{margin-top:36px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.governGrid span{height:170px;padding:14px 10px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #ff6900;font-size:20px;line-height:1.16;font-weight:900}
+.governGrid span:nth-child(2),.governGrid span:nth-child(4){border-top-color:#e7a13b}.governGrid span:nth-child(3),.governGrid span:nth-child(5){border-top-color:#333942}
+.governance:after{content:"愿意去、留得住、干得好";position:absolute;left:58px;right:58px;bottom:88px;height:154px;z-index:1;display:grid;place-items:center;background:#201b17;color:#fff3df;border-top:14px solid #ff6900;font-size:34px;font-weight:900}
+.material .quote{font-size:18px;line-height:1.43}
+.materialGrid{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.materialGrid span{height:160px;padding:16px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #ff6900;font-size:27px;line-height:1.16;font-weight:900}
+.materialGrid span:nth-child(2),.materialGrid span:nth-child(4){border-top-color:#333942}
+.interview .quote{font-size:22px;line-height:1.42}
+.answerSteps{margin-top:30px;display:grid;gap:12px}
+.answerSteps span{height:98px;padding:0 18px;display:flex;align-items:center;gap:16px;background:#fff9eb;border-left:12px solid #ff6900;font-size:22px;line-height:1.13;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#e7a13b}.answerSteps span:nth-child(3),.answerSteps span:nth-child(5){border-left-color:#333942}
+.answerSteps b{font-size:20px;color:#201b17}
+#xhs-14-interview:after{content:"答题不要选边站，要看到结构性矛盾";position:absolute;left:58px;right:58px;bottom:80px;height:130px;z-index:1;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-top:14px solid #ff6900;font-size:30px;line-height:1.18;font-weight:900}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(25,23,22,.94),rgba(25,23,22,.20) 67%,rgba(25,23,22,.50)),linear-gradient(180deg,rgba(25,23,22,.14),rgba(25,23,22,.84))}
+.closing h1{color:#fff3df;font-size:70px}
+.closing .quote{font-size:27px;line-height:1.4}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.closingNodes span{height:130px;display:grid;place-items:center;text-align:center;background:#f7efe4;color:#201b17;border-top:12px solid #ff6900;font-size:21px;font-weight:900}
+.closingNodes span:nth-child(2),.closingNodes span:nth-child(4){border-top-color:#e7a13b}.closingNodes span:nth-child(3),.closingNodes span:nth-child(5){border-top-color:#333942}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.88) contrast(1.10) brightness(.66)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(25,23,22,.92),rgba(25,23,22,.12) 70%),linear-gradient(180deg,rgba(25,23,22,.10),rgba(25,23,22,.32) 44%,rgba(25,23,22,.88))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.60);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:attr(data-label);position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820;letter-spacing:0}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:112px;z-index:4;color:#fff3df;line-height:1.2}
+.videoTitle p{margin:0 0 28px;color:#ff6900;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:76px;line-height:1.04;font-weight:780;letter-spacing:0;max-width:920px}
+.v2 .videoTitle h2{font-size:70px}.v3 .videoTitle h2{font-size:78px}
+.videoTitle span{display:block;width:max-content;max-width:890px;margin-top:26px;padding:14px 18px;background:#ff6900;color:#fff3df;font-size:24px;font-weight:900}
+.v2 .videoTitle span{background:#333942}.v3 .videoTitle span{background:#e7a13b;color:#201b17}
+.preview{width:1800px;background:#e4ddd3;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff9eb;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><section class="preview"><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-01-cover.png" alt=""><figcaption>xhs-01-cover.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-02-mistake.png" alt=""><figcaption>xhs-02-mistake.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-03-core-chain.png" alt=""><figcaption>xhs-03-core-chain.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-04-industry.png" alt=""><figcaption>xhs-04-industry.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-05-new-job.png" alt=""><figcaption>xhs-05-new-job.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-06-skill.png" alt=""><figcaption>xhs-06-skill.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-07-training.png" alt=""><figcaption>xhs-07-training.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-08-service.png" alt=""><figcaption>xhs-08-service.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-09-match.png" alt=""><figcaption>xhs-09-match.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-10-startup.png" alt=""><figcaption>xhs-10-startup.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-11-grassroots.png" alt=""><figcaption>xhs-11-grassroots.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-12-framework.png" alt=""><figcaption>xhs-12-framework.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-13-argument.png" alt=""><figcaption>xhs-13-argument.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-14-interview.png" alt=""><figcaption>xhs-14-interview.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/xhs-15-closing.png" alt=""><figcaption>xhs-15-closing.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/video-cover-01.png" alt=""><figcaption>video-cover-01.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/video-cover-02.png" alt=""><figcaption>video-cover-02.png</figcaption></figure><figure><img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/video-cover-03.png" alt=""><figcaption>video-cover-03.png</figcaption></figure></section></body></html>

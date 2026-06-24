@@ -41,6 +41,7 @@
 | 2026-06-22 | 现代农业：科技体检、田保姆和青年农机手 | 小红书图 / 视频号封面 | `media/images/2026-06-22-modern-agriculture-xhs-video/` | 待上传 | `data/articles/公众号文章/25-人民日报讲现代农业：不是只靠苦干，而是科技体检、田保姆和青年农机手一起上.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，麦穗金 × 稻田绿 × 土壤棕 × 深墨绿，公开图库配图，已自动审查 |
 | 2026-06-23 | 云南热点面试预测框架 | 公众号封面 / 分享卡 | `media/images/2026-06-23-yunnan-hotspots-wechat-cover/` | 待上传 | `data/analysis/2026-06-22/2026-h1-yunnan-hotspots-interview-peopledaily.md`；含 21:9 头图、1:1 分享卡和配对预览，Editorial 资料订制风，云南绿 × 普洱墨绿 × 茶金，已自动审查 |
 | 2026-06-23 | 云南热点政策预测框架 | 公众号封面 / 分享卡 | `media/images/2026-06-23-yunnan-hotspots-policy-wechat-cover/` | 待上传 | `data/analysis/2026-06-22/2026-h1-yunnan-hotspots-interview.md`；含 21:9 头图、1:1 分享卡和配对预览，Editorial 资料定制风，滇池青 × 政策蓝绿 × 茶金，已自动审查 |
+| 2026-06-23 | 就业难：就业链高分写法 | 小红书图 / 视频号封面 | `media/images/2026-06-23-employment-chain-xhs-video/` | 待上传 | `data/articles/公众号文章/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，就业橙 × 炭黑 × 暖米白，公开图库配图，8 条引用全覆盖，已自动审查 |
 
 ## 类型写法
 

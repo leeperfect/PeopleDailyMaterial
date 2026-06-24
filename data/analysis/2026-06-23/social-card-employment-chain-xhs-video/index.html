@@ -1,0 +1,254 @@
+<!doctype html><html lang="zh-CN" data-theme="editorial"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>就业链小红书与视频号封面</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#e4ddd3;font-family:"Avenir Next","Helvetica Neue","PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;color:#201b17}
+.stage{width:max-content;display:grid;gap:34px;padding:34px}
+.poster{position:relative;overflow:hidden;isolation:isolate;background:#f4ecdf}
+.xhs,.video{width:1080px;height:1440px}
+.video{line-height:0}
+.poster figure{margin:0}
+.paper{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(circle at 86% 16%,rgba(255,105,0,.15),transparent 30%),
+  radial-gradient(circle at 12% 88%,rgba(24,29,36,.12),transparent 34%),
+  linear-gradient(116deg,rgba(32,27,23,.055) 0 1px,transparent 1px 18px),
+  linear-gradient(180deg,#f7efe4 0%,#f4e7da 56%,#eaded2 100%)}
+.paper:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.13) 0 1px,transparent 1px 6px);opacity:.70}
+.grain{position:absolute;inset:0;z-index:3;opacity:.22;background:repeating-linear-gradient(105deg,rgba(255,255,255,.12) 0 1px,transparent 1px 5px),linear-gradient(180deg,rgba(255,255,255,.16),rgba(0,0,0,.12));mix-blend-mode:soft-light;pointer-events:none}
+.content{position:relative;z-index:5;height:100%;padding:58px;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid rgba(32,27,23,.22);padding-bottom:20px;font-size:24px;line-height:1;font-weight:840}
+.top span:first-child{font-size:38px;color:#ff6900;font-weight:900}
+.cover .top,.darkQuote .top,.closing .top{border-bottom-color:rgba(255,255,255,.48);color:#fff3df}
+.cover .top span:first-child,.darkQuote .top span:first-child,.closing .top span:first-child{color:#ff6900}
+.xhs h1{margin:28px 0 0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:76px;line-height:1.05;font-weight:760;letter-spacing:0}
+.quote{margin:28px 0 0;padding:24px 28px;background:rgba(255,249,235,.94);border-left:10px solid #ff6900;font-size:34px;line-height:1.35;font-weight:820}
+.quote.med{font-size:30px;line-height:1.39}
+.quote.long{font-size:25px;line-height:1.43}
+.quote.xl{font-size:21px;line-height:1.46}
+.quote.xxl{font-size:18px;line-height:1.44}
+.photo{margin:0;overflow:hidden}
+.photo img,.videoPhoto img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.06) brightness(.94)}
+.bleed{position:absolute;inset:0;z-index:1}
+.coverTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(25,23,22,.95),rgba(25,23,22,.22) 66%,rgba(25,23,22,.52)),linear-gradient(180deg,rgba(25,23,22,.12),rgba(25,23,22,.42) 62%,rgba(25,23,22,.91))}
+.series{margin:36px 0 0;color:#ff6900;font-size:36px;line-height:1;font-weight:900}
+.cover h1{margin-top:28px;color:#fff3df;font-size:86px;max-width:960px}
+.coverLine{margin-top:30px;width:860px;padding:20px 24px;background:rgba(255,249,235,.92);color:#201b17;font-size:32px;font-weight:900}
+.coverNodes{margin-top:auto;display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr 18px 1fr 18px 1fr;align-items:center}
+.coverNodes span{height:120px;display:grid;place-items:center;text-align:center;background:#f7efe4;color:#201b17;border-top:12px solid #ff6900;font-size:24px;font-weight:900}
+.coverNodes span:nth-of-type(2){border-top-color:#333942}.coverNodes span:nth-of-type(3){border-top-color:#e7a13b}.coverNodes span:nth-of-type(4){border-top-color:#7c573a}.coverNodes span:nth-of-type(5){border-top-color:#201b17}
+.coverNodes i{height:4px;background:#f7efe4}
+.wrongList{margin-top:38px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.wrongList span{height:168px;padding:22px;display:grid;align-content:space-between;background:#fff9eb;border:2px solid rgba(32,27,23,.18);font-size:31px;font-weight:820}
+.wrongList b{font-size:23px;color:#ff6900}
+.aside{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aside p{min-height:128px;margin:0;padding:22px;background:#201b17;color:#fff3df;font-size:27px;line-height:1.22;font-weight:850}
+.formula .quote,.exam .quote{font-size:29px}
+.formulaRail,.examFlow{margin-top:auto;display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr 18px 1fr 18px 1fr;align-items:center}
+.formulaRail span,.examFlow span{height:280px;padding:18px 10px;display:grid;align-content:space-between;text-align:center;background:#201b17;color:#fff3df;font-size:23px;line-height:1.14;font-weight:900}
+.examFlow span{height:258px;font-size:20px}
+.formulaRail span:nth-of-type(2),.examFlow span:nth-of-type(2){background:#ff6900}.formulaRail span:nth-of-type(3),.examFlow span:nth-of-type(3){background:#333942}.formulaRail span:nth-of-type(4),.examFlow span:nth-of-type(4){background:#e7a13b;color:#201b17}.formulaRail span:nth-of-type(5),.examFlow span:nth-of-type(5){background:#7c573a}
+.formulaRail b,.examFlow b{color:#ffd3ad;font-size:20px}.formulaRail span:nth-of-type(4) b,.examFlow span:nth-of-type(4) b{color:#201b17}
+.formulaRail i,.examFlow i{height:4px;background:#201b17}
+#xhs-03-core-chain:after{content:"岗位不是孤点，能力、服务、创业和保障要一起接上";position:absolute;left:58px;right:58px;top:596px;height:128px;z-index:1;display:grid;place-items:center;text-align:center;background:rgba(255,105,0,.12);border-top:3px solid rgba(255,105,0,.42);border-bottom:3px solid rgba(32,27,23,.28);color:#201b17;font-size:29px;font-weight:900}
+.sidePhoto{position:absolute;right:0;top:0;bottom:0;width:460px;z-index:1}
+.quotePhoto:after{content:"";position:absolute;right:0;top:0;bottom:0;width:690px;z-index:2;background:linear-gradient(90deg,#f4ecdf 0%,rgba(244,236,223,.92) 50%,rgba(244,236,223,.08) 100%)}
+.quotePhoto .content{padding-right:418px}
+.quotePhoto .quote{font-size:24px;line-height:1.46}
+.keywordRail{margin-top:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.keywordRail span{height:108px;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-top:12px solid #ff6900;font-size:20px;font-weight:900}
+.keywordRail span:nth-child(2),.keywordRail span:nth-child(4){border-top-color:#333942}
+.bottomWide{position:absolute;left:58px;right:58px;bottom:58px;height:410px;z-index:1;border:3px solid rgba(255,105,0,.30)}
+.objectPhoto .content,.photoFeature .content{padding-bottom:540px}
+.objectPhoto .quote{font-size:28px;line-height:1.38}
+.cards{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cards span{height:105px;padding:14px 10px;display:grid;align-content:space-between;background:#fff9eb;border-top:12px solid #ff6900;font-size:19px;line-height:1.14;font-weight:860}
+.cards span:nth-child(2){border-top-color:#333942}.cards span:nth-child(3){border-top-color:#e7a13b}
+.cards b{font-size:18px;color:#201b17}
+.rightPhoto{position:absolute;right:58px;bottom:58px;width:410px;height:585px;z-index:1;border:3px solid rgba(255,105,0,.32)}
+.extension .content{padding-right:500px}
+.extension .quote{font-size:20px;line-height:1.43}
+.extensionRows{margin-top:auto;display:grid;gap:12px}
+.extensionRows span{height:84px;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-left:12px solid #ff6900;font-size:22px;font-weight:900}
+.extensionRows span:nth-child(2),.extensionRows span:nth-child(4){border-left-color:#e7a13b}
+.matrix{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.matrix span{height:168px;padding:18px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #ff6900;font-size:27px;line-height:1.16;font-weight:900}
+.matrix span:nth-child(2),.matrix span:nth-child(4){border-top-color:#333942}
+.matrixPage:after{content:"培训的出口，是更稳地进入真实岗位";position:absolute;left:58px;right:58px;bottom:86px;height:150px;z-index:1;display:grid;place-items:center;background:#201b17;color:#fff3df;border-top:14px solid #ff6900;font-size:32px;font-weight:900}
+.photoFeature .quote{font-size:20px;line-height:1.43}
+.serviceStrip{margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.serviceStrip span{height:124px;padding:10px;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-top:12px solid #ff6900;font-size:23px;font-weight:900}
+.serviceStrip span:nth-child(2),.serviceStrip span:nth-child(4){border-top-color:#e7a13b}
+.serviceBoxes{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.serviceBoxes span{height:148px;padding:16px;display:grid;align-content:space-between;background:#fff9eb;border-left:14px solid #ff6900;font-size:24px;line-height:1.16;font-weight:880}
+.serviceBoxes span:nth-child(2),.serviceBoxes span:nth-child(5){border-left-color:#333942}.serviceBoxes span:nth-child(3),.serviceBoxes span:nth-child(6){border-left-color:#e7a13b}
+.serviceBoxes b{font-size:20px;color:#7c573a}
+.serviceMap:after{content:"把岗位、政策、补贴、维权和创业服务送到身边";position:absolute;left:58px;right:58px;bottom:86px;height:150px;z-index:1;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-top:14px solid #ff6900;font-size:29px;font-weight:900}
+.darkTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(25,23,22,.94),rgba(25,23,22,.22) 66%,rgba(25,23,22,.54)),linear-gradient(180deg,rgba(25,23,22,.16),rgba(25,23,22,.82))}
+.darkQuote h1{color:#fff3df;font-size:76px}
+.darkQuote .quote{font-size:22px;line-height:1.43}
+.darkNodes{margin-top:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.darkNodes span{height:130px;display:grid;place-items:center;text-align:center;background:#f7efe4;color:#201b17;border-top:12px solid #ff6900;font-size:21px;font-weight:900}
+.darkNodes span:nth-child(2),.darkNodes span:nth-child(4){border-top-color:#e7a13b}.darkNodes span:nth-child(3),.darkNodes span:nth-child(5){border-top-color:#333942}
+.governance .quote{font-size:29px;line-height:1.38}
+.governGrid{margin-top:36px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.governGrid span{height:170px;padding:14px 10px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #ff6900;font-size:20px;line-height:1.16;font-weight:900}
+.governGrid span:nth-child(2),.governGrid span:nth-child(4){border-top-color:#e7a13b}.governGrid span:nth-child(3),.governGrid span:nth-child(5){border-top-color:#333942}
+.governance:after{content:"愿意去、留得住、干得好";position:absolute;left:58px;right:58px;bottom:88px;height:154px;z-index:1;display:grid;place-items:center;background:#201b17;color:#fff3df;border-top:14px solid #ff6900;font-size:34px;font-weight:900}
+.material .quote{font-size:18px;line-height:1.43}
+.materialGrid{margin-top:34px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.materialGrid span{height:160px;padding:16px;display:grid;place-items:center;text-align:center;background:#fff9eb;border-top:14px solid #ff6900;font-size:27px;line-height:1.16;font-weight:900}
+.materialGrid span:nth-child(2),.materialGrid span:nth-child(4){border-top-color:#333942}
+.interview .quote{font-size:22px;line-height:1.42}
+.answerSteps{margin-top:30px;display:grid;gap:12px}
+.answerSteps span{height:98px;padding:0 18px;display:flex;align-items:center;gap:16px;background:#fff9eb;border-left:12px solid #ff6900;font-size:22px;line-height:1.13;font-weight:850}
+.answerSteps span:nth-child(2),.answerSteps span:nth-child(4){border-left-color:#e7a13b}.answerSteps span:nth-child(3),.answerSteps span:nth-child(5){border-left-color:#333942}
+.answerSteps b{font-size:20px;color:#201b17}
+#xhs-14-interview:after{content:"答题不要选边站，要看到结构性矛盾";position:absolute;left:58px;right:58px;bottom:80px;height:130px;z-index:1;display:grid;place-items:center;text-align:center;background:#201b17;color:#fff3df;border-top:14px solid #ff6900;font-size:30px;line-height:1.18;font-weight:900}
+.closingTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(25,23,22,.94),rgba(25,23,22,.20) 67%,rgba(25,23,22,.50)),linear-gradient(180deg,rgba(25,23,22,.14),rgba(25,23,22,.84))}
+.closing h1{color:#fff3df;font-size:70px}
+.closing .quote{font-size:27px;line-height:1.4}
+.closingNodes{margin-top:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.closingNodes span{height:130px;display:grid;place-items:center;text-align:center;background:#f7efe4;color:#201b17;border-top:12px solid #ff6900;font-size:21px;font-weight:900}
+.closingNodes span:nth-child(2),.closingNodes span:nth-child(4){border-top-color:#e7a13b}.closingNodes span:nth-child(3),.closingNodes span:nth-child(5){border-top-color:#333942}
+.videoPhoto{position:absolute;inset:0;margin:0;z-index:1}
+.videoPhoto img{filter:saturate(.88) contrast(1.10) brightness(.66)}
+.videoTint{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(25,23,22,.92),rgba(25,23,22,.12) 70%),linear-gradient(180deg,rgba(25,23,22,.10),rgba(25,23,22,.32) 44%,rgba(25,23,22,.88))}
+.magLines{position:absolute;inset:56px;z-index:3;border-top:2px solid rgba(255,255,255,.60);border-bottom:2px solid rgba(255,255,255,.42)}
+.magLines:before{content:"";position:absolute;left:0;top:94px;width:210px;height:2px;background:rgba(255,255,255,.58)}
+.magLines:after{content:attr(data-label);position:absolute;right:0;top:24px;color:rgba(255,255,255,.72);font-size:20px;font-weight:820;letter-spacing:0}
+.videoTitle{position:absolute;left:64px;right:76px;bottom:112px;z-index:4;color:#fff3df;line-height:1.2}
+.videoTitle p{margin:0 0 28px;color:#ff6900;font-size:34px;line-height:1;font-weight:900}
+.videoTitle h2{margin:0;font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-size:76px;line-height:1.04;font-weight:780;letter-spacing:0;max-width:920px}
+.v2 .videoTitle h2{font-size:70px}.v3 .videoTitle h2{font-size:78px}
+.videoTitle span{display:block;width:max-content;max-width:890px;margin-top:26px;padding:14px 18px;background:#ff6900;color:#fff3df;font-size:24px;font-weight:900}
+.v2 .videoTitle span{background:#333942}.v3 .videoTitle span{background:#e7a13b;color:#201b17}
+.preview{width:1800px;background:#e4ddd3;padding:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.preview figure{margin:0;background:#fff9eb;padding:8px}
+.preview img{width:100%;display:block}
+.preview figcaption{padding:8px 2px 0;font-size:16px;font-weight:780;color:#303030}
+</style></head><body><main class="stage"><section class="poster xhs cover" id="xhs-01-cover">
+      <figure class="photo bleed">
+    <!-- Subject map: job fair group scene has people across the lower center; title placed on dark left overlay, faces remain background. -->
+    <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/job-fair-wide.jpg" alt="" style="object-position:center 46%;">
+  </figure><div class="coverTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>01</span><span>人民日报材料转申论</span></div>
+        <p class="series">《人民日报》这样写</p>
+        <h1>就业难<br>不能只写多给岗位</h1>
+        <div class="coverLine">要写出一条就业链</div>
+        <div class="coverNodes"><span>产业造岗</span><i></i><span>技能练岗</span><i></i><span>服务送岗</span><i></i><span>创业带岗</span><i></i><span>权益稳岗</span></div>
+      </div>
+    </section>
+<section class="poster xhs mistake" id="xhs-02-mistake">
+      <div class="paper"></div><div class="content"><div class="top"><span>02</span><span>低分误区</span></div><h1>很多人写就业难<br>只会三句话</h1><blockquote class="quote med">增加就业岗位、加强职业培训、鼓励自主创业。这些话不能说错，但没有讲清岗位为什么难找、能力为什么接不上、服务为什么送不到。</blockquote>
+      <div class="wrongList"><span><b>01</b>岗位多一点</span><span><b>02</b>培训多一点</span><span><b>03</b>创业多一点</span><span><b>04</b>宣传多一点</span></div>
+      <div class="aside"><p>这些话都对，但停在结果层面。</p><p>高分要问：链条哪一环断了？</p></div></div>
+    </section>
+<section class="poster xhs formula" id="xhs-03-core-chain">
+      <div class="paper"></div><div class="content"><div class="top"><span>03</span><span>核心判断</span></div><h1>真正高分框架<br>把就业写成一条链</h1><blockquote class="quote">破解就业难，不是单点增加岗位供给，而是把产业造岗、技能练岗、服务送岗、创业带岗、权益稳岗连成一条就业链。</blockquote>
+      <div class="formulaRail"><span><b>01</b>产业造岗</span><i></i><span><b>02</b>技能练岗</span><i></i><span><b>03</b>服务送岗</span><i></i><span><b>04</b>创业带岗</span><i></i><span><b>05</b>权益稳岗</span></div></div>
+    </section>
+<section class="poster xhs quotePhoto" id="xhs-04-industry">
+      <div class="paper"></div><figure class="photo sidePhoto">
+    <!-- Subject map: server rack fills the vertical frame; no face, works as new-industry evidence image. -->
+    <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/data-center-server.jpg" alt="" style="object-position:center 50%;">
+  </figure>
+      <div class="content"><div class="top"><span>04</span><span>一、产业造岗</span></div><h1>就业难先看<br>岗位为什么变了</h1><blockquote class="quote">就业难的深层问题，是产业升级带来岗位结构变化，而劳动者的技能、信息和服务还没有完全跟上。</blockquote>
+      <div class="keywordRail"><span>数据标注员</span><span>无人驾驶集控员</span><span>工业软件岗位</span><span>AI服务商</span></div></div>
+    </section>
+<section class="poster xhs objectPhoto" id="xhs-05-new-job">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: hands on laptop and code occupy central frame; safe evidence image, no face. -->
+    <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/code-laptop.jpg" alt="" style="object-position:center 50%;">
+  </figure>
+      <div class="content"><div class="top"><span>05</span><span>岗位重塑</span></div><h1>技术变革<br>不只是机器替人</h1><blockquote class="quote">技术变革不是只有“机器替人”一面，也有“岗位重塑”一面。</blockquote><div class="cards"><span><b>01</b>新技术催生基础岗位</span><span><b>02</b>老岗位转向数据操控</span><span><b>03</b>软件嵌入千行百业</span></div></div>
+    </section>
+<section class="poster xhs extension" id="xhs-06-skill">
+      <div class="paper"></div><figure class="photo rightPhoto">
+    <!-- Subject map: training room computer station with people on right; keep overlaid text on left paper panel. -->
+    <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/computer-training.jpg" alt="" style="object-position:center 50%;">
+  </figure>
+      <div class="content"><div class="top"><span>06</span><span>二、技能练岗</span></div><h1>培训不能只写<br>加强培训</h1><blockquote class="quote">从学校到企业，从课程到项目，从个人技能到劳务品牌，培训的目的不是拿证，而是让劳动者更稳地进入真实岗位。</blockquote>
+      <div class="extensionRows"><span>校企协同</span><span>微专业微课程</span><span>项目制培养</span><span>订单式输出</span></div></div>
+    </section>
+<section class="poster xhs matrixPage" id="xhs-07-training">
+      <div class="paper"></div><div class="content"><div class="top"><span>07</span><span>能力适配</span></div><h1>培训要接岗位<br>接产业接收入</h1><blockquote class="quote">培训不是“学过就算”，而是要能接岗位、接产业、接收入。</blockquote>
+      <div class="matrix"><span>课程跟着产业走</span><span>项目跟着企业走</span><span>评价跟着岗位走</span><span>就业跟着能力走</span></div></div>
+    </section>
+<section class="poster xhs photoFeature" id="xhs-08-service">
+      <div class="paper"></div><figure class="photo bottomWide">
+    <!-- Subject map: office service staff with headsets sit in the center; keep text in upper paper panel. -->
+    <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/call-center-hotline.jpg" alt="" style="object-position:center 50%;">
+  </figure>
+      <div class="content"><div class="top"><span>08</span><span>三、服务送岗</span></div><h1>公共就业服务<br>不能只发布信息</h1><blockquote class="quote">就业服务的高质量，不只看发布了多少岗位，还要看岗位能不能被看见、被匹配、被触达、被承接。</blockquote>
+      <div class="serviceStrip"><span>岗位归集</span><span>精准推送</span><span>基层服务</span><span>权益闭环</span></div></div>
+    </section>
+<section class="poster xhs serviceMap" id="xhs-09-match">
+      <div class="paper"></div><div class="content"><div class="top"><span>09</span><span>精准匹配</span></div><h1>从信息发布<br>升级到精准匹配</h1><blockquote class="quote">公共就业服务要从“发布信息”升级为“精准匹配”。</blockquote>
+      <div class="serviceBoxes"><span><b>01</b>专业</span><span><b>02</b>技能</span><span><b>03</b>地区</span><span><b>04</b>群体</span><span><b>05</b>政策</span><span><b>06</b>维权</span></div></div>
+    </section>
+<section class="poster xhs darkQuote" id="xhs-10-startup">
+      <figure class="photo bleed">
+    <!-- Subject map: empty modern office lobby, no faces; safe for entrepreneurship service support page. -->
+    <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/office-lobby.jpg" alt="" style="object-position:center 52%;">
+  </figure><div class="darkTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>10</span><span>四、创业带岗</span></div><h1>创业不是<br>个体冒险</h1><blockquote class="quote">创业不是个体冒险，而是政策、平台、资金、导师、订单和市场共同托举的就业增量。</blockquote>
+      <div class="darkNodes"><span>场地</span><span>资金</span><span>导师</span><span>订单</span><span>市场</span></div></div>
+    </section>
+<section class="poster xhs governance" id="xhs-11-grassroots">
+      <div class="paper"></div><div class="content"><div class="top"><span>11</span><span>基层就业</span></div><h1>基层岗位<br>也要写保障</h1><blockquote class="quote">基层就业要让青年愿意去、留得住、干得好，不能只靠情怀动员。</blockquote>
+      <div class="governGrid"><span>工作生活补贴</span><span>岗位津贴</span><span>食宿保障</span><span>社会保险</span><span>职业发展</span></div></div>
+    </section>
+<section class="poster xhs exam" id="xhs-12-framework">
+      <div class="paper"></div><div class="content"><div class="top"><span>12</span><span>申论框架</span></div><h1>考场就记住<br>这条就业链</h1><blockquote class="quote">产业造岗 → 技能练岗 → 服务送岗 → 创业带岗 → 权益稳岗。</blockquote>
+      <div class="examFlow"><span><b>01</b>以产业升级拓空间</span><i></i><span><b>02</b>以技能培训强适配</span><i></i><span><b>03</b>以公共服务提效率</span><i></i><span><b>04</b>以创业生态增岗位</span><i></i><span><b>05</b>以权益保障稳预期</span></div></div>
+    </section>
+<section class="poster xhs material" id="xhs-13-argument">
+      <div class="paper"></div><div class="content"><div class="top"><span>13</span><span>总论点</span></div><h1>不要只说<br>多给岗位</h1><blockquote class="quote med">破解就业难，关键不是单点增加岗位供给，而是推动产业、技能、服务、创业和保障协同发力，构建更加充分、更高质量的就业支持体系。</blockquote>
+      <div class="materialGrid"><span>产业端拓空间</span><span>能力端强适配</span><span>服务端提效率</span><span>保障端稳预期</span></div></div>
+    </section>
+<section class="poster xhs interview" id="xhs-14-interview">
+      <div class="paper"></div><div class="content"><div class="top"><span>14</span><span>面试题卡</span></div><h1>青年就业难<br>这样答</h1><blockquote class="quote med">当前不少青年反映“就业难”，有人认为关键在于岗位不足，也有人认为关键在于求职观念和能力不匹配。对此你怎么看？</blockquote>
+      <div class="answerSteps"><span><b>01</b>不能简单归因</span><span><b>02</b>产业端拓空间</span><span><b>03</b>能力端强适配</span><span><b>04</b>服务端提效率</span><span><b>05</b>保障端稳预期</span></div></div>
+    </section>
+<section class="poster xhs closing" id="xhs-15-closing">
+      <figure class="photo bleed">
+    <!-- Subject map: job fair group scene has people across the lower center; title placed on dark left overlay, faces remain background. -->
+    <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/job-fair-wide.jpg" alt="" style="object-position:center 46%;">
+  </figure><div class="closingTint"></div><div class="grain"></div>
+      <div class="content"><div class="top"><span>15</span><span>收束金句</span></div><h1>就业不是一张招聘海报<br>而是一条支持链</h1><blockquote class="quote">把岗位背后的产业变化、能力变化、服务变化和保障变化写清楚，申论里的“就业难”才真正写深。</blockquote>
+      <div class="closingNodes"><span>看见岗位</span><span>匹配岗位</span><span>胜任岗位</span><span>有人陪跑</span><span>稳定发展</span></div></div>
+    </section><section class="poster video v1" id="video-cover-01">
+    <figure class="videoPhoto">
+      <!-- Subject map: job fair group scene has people across the lower center; title placed on dark left overlay, faces remain background. Magazine title uses documented safe zone. -->
+      <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/job-fair-wide.jpg" alt="" style="object-position:center 46%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines" data-label="EMPLOYMENT CHAIN"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>就业难<br>不能只写多给岗位</h2>
+      <span>产业造岗、技能练岗、服务送岗、创业带岗、权益稳岗</span>
+    </div>
+  </section>
+<section class="poster video v2" id="video-cover-02">
+    <figure class="videoPhoto">
+      <!-- Subject map: server rack fills the vertical frame; no face, works as new-industry evidence image. Magazine title uses documented safe zone. -->
+      <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/data-center-server.jpg" alt="" style="object-position:center 50%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines" data-label="INDUSTRY CREATES JOBS"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>别只说岗位不足<br>要看产业怎么造岗</h2>
+      <span>岗位结构变化，能力和服务要跟上</span>
+    </div>
+  </section>
+<section class="poster video v3" id="video-cover-03">
+    <figure class="videoPhoto">
+      <!-- Subject map: training room computer station with people on right; keep overlaid text on left paper panel. Magazine title uses documented safe zone. -->
+      <img src="../../../../media/images/2026-06-23-employment-chain-xhs-video/assets/computer-training.jpg" alt="" style="object-position:center 50%;">
+    </figure>
+    <div class="videoTint"></div><div class="magLines" data-label="FIVE-LINK METHOD"></div>
+    <div class="videoTitle">
+      <p>《人民日报》这样写</p>
+      <h2>就业题<br>背这条五环链</h2>
+      <span>产业 / 技能 / 服务 / 创业 / 权益</span>
+    </div>
+  </section></main></body></html>
