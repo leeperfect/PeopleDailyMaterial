@@ -1,7 +1,8 @@
 {
   "notion": {
     "token": "YOUR_NOTION_TOKEN",
-    "database_id": "YOUR_DATABASE_ID"
+    "database_id": "YOUR_DATABASE_ID",
+    "peopleapp_opinion_database_id": "YOUR_PEOPLEAPP_OPINION_DATABASE_ID"
   },
   "crawler": {
     "base_url": "http://paper.people.com.cn/rmrb/html",

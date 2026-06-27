@@ -26,6 +26,9 @@ data/core/*.jsonl
 data/core/*.json
 data/index/fts/
 data/index/vector/
+data/peopleapp_opinion/core/*.sqlite
+data/peopleapp_opinion/core/*.sqlite-*
+data/peopleapp_opinion/exports/run_logs/*.log
 
 # 本地多媒体资产（由网盘同步，不进入 GitHub）
 media/images/**
