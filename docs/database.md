@@ -123,6 +123,15 @@ http://127.0.0.1:8765
 
 工作台读取 `content_ideas`，并把人工精筛和备注写入 `content_idea_notes`。这样选题本身仍在核心库里，人的判断也能长期保存。原来的 `python3 scripts/serve_idea_magazine.py` 入口继续可用。
 
+APP 评论热点选题工作台：
+
+```bash
+python3 hotspot_magazine.py
+```
+
+默认地址是 `http://127.0.0.1:8766`。页面读取
+`data/peopleapp_opinion/core/hotspot_topics.sqlite`，可按热点状态、优先级、媒体来源和人工精筛状态挑选话题。精筛结果和个人备注直接保存在热点总库中，每日更新热点聚类时会保留。
+
 ## 抓取新文章
 
 原来的抓取方式继续可用：
