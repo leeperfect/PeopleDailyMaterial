@@ -2,531 +2,11 @@
   {
     "list_item": {
       "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/5d8ad82c540746649bc9f2b3d8e1eb6b.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 513,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/70e381a1248042d9bddbd34b45d9b99c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 488,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/42cd1f457c1f41dea431a1223d4264d2.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 545,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/7973fb02493e46f9a6348ce739dd87b4.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 536,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "梁昌杰"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "716*469",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/7c774f740c344fbcaff1c85fca1cab63.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782619987000",
-      "fullColumnImgUrls": [
-        {
-          "height": 469,
-          "landscape": 1,
-          "size": 1345937,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/7c774f740c344fbcaff1c85fca1cab63.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 716
-        }
-      ],
-      "keyArticle": 0,
-      "linkUrl": "",
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsSummary": "伊朗队，期待2030年世界杯再见。",
-      "newsTitle": "伊朗队，昂着头告别世界杯",
-      "objectId": "30052507936",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782636505000",
-      "readFlag": 1,
-      "relAskInfos": [],
-      "relId": 500007569411,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "人民日报客户端",
-      "sourceId": "41",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 513,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/5d8ad82c540746649bc9f2b3d8e1eb6b.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 26,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/5d8ad82c540746649bc9f2b3d8e1eb6b.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 513,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/70e381a1248042d9bddbd34b45d9b99c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 488,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/42cd1f457c1f41dea431a1223d4264d2.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 545,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/7973fb02493e46f9a6348ce739dd87b4.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 536,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "梁昌杰"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "张小鹏",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-28 15:43:15",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 469,
-          "landscape": 1,
-          "size": 1345937,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/7c774f740c344fbcaff1c85fca1cab63.png",
-          "weight": 716
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": false,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">北京时间6月28日，美加墨世界杯小组赛全部结束，32支进入淘汰赛的球队产生。G组的伊朗队三场比赛均战平对手积3分，最终以排名第九位的小组第三成绩未能晋级淘汰赛，遗憾告别本届世界杯。</p><p style=\"text-indent: 2em;\">虽然未能实现晋级淘汰赛‌的目标，但逼平强大的比利时队、与埃及队拼到最后一刻、克服世界杯历史上从未有过的不利比赛条件，伊朗队在本届赛事的表现足以赢得包括美国球迷在内的全世界球迷的尊重。伊朗队，完全可以高昂着头告别世界杯。</p><p style=\"text-indent: 2em;\">伊朗队的本届世界杯之旅，堪称魔幻。</p><p style=\"text-indent: 2em;\">根据世界杯赛程，伊朗队的三场小组赛均在美国进行。美国最初拒绝为伊朗队队员发放签证，伊朗向国际足联（FIFA）寻求协商并申请更换赛地未果。最终，伊朗队驻地改为墨西哥蒂华纳。伊朗队的球员和教练经过长时间等待后，则在世界杯开幕前10天才获得美国签证。</p><p style=\"text-indent: 2em;\">由于严格的行程限制，伊朗队仅被允许在比赛日前一天入境美国，并要求赛后当天离开，这给备战带来了极大不便。</p><p style=\"text-indent: 2em;\">伊朗队长迈赫迪·塔雷米透露，对阵新西兰的小组赛首战中，伊朗队从墨西哥蒂华纳包机飞往洛杉矶，全程仅204公里，却因安检、入境检查耗费长达五小时。</p><p style=\"text-indent: 2em;\" class=\"\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/c30453dbe82d482392df711a7997d2cd.png\" alt=\"\" class=\"331319939\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; text-indent: 36px;\">对战新西兰队前，伊朗队首发球员在赛前合影。 （新华社）</span></p><p style=\"text-indent: 2em;\">首战赛前，伊朗足协曾表示，伊朗队已获准在比赛当天可以在美国过夜。但赛后，伊朗国家队主教练加莱诺埃对媒体表示，球队突然被勒令必须立即离开美国。</p><p style=\"text-indent: 2em;\">“我们来到这里还不到16个小时，现在又要立刻飞回墨西哥，凌晨四点左右就要再次出发。”加莱诺埃说，“未来的人们回顾历史时，一定会记住这批球员为国家所做出的贡献和牺牲。”</p><p style=\"text-indent: 2em;\">以0:0逼平欧洲劲旅比利时队后，伊朗队离美临行前在球场更衣室内留下了一张便条，表示感谢洛杉矶，并称他们为荣誉而战，有尊严地离开。他们写道：“从数千年前的波斯，到今日的伊朗，伊朗的精神始终鲜活而坚定。”他们还感谢伊朗队的支持者在两场比赛中为球队倾注“心血、声音和灵魂”，并希望和平、尊重与友谊在所有国家之间长存。</p><p style=\"text-indent: 2em;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/29107d24d41d46589fac14c6552e546c.png\" alt=\"\" class=\"331319954\"></p><p style=\"text-indent: 2em;\">与埃及队赛后，伊朗队在离开美国西雅图时再次留下了一张纸条，上面写着：“我们来自伊朗，这是一片将荣誉看得高于胜利的土地。公平竞赛不只是文字，它是足球运动的灵魂。感谢西雅图的招待。伊朗，永远屹立不倒。”</p><p style=\"justify-content: center;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/9f6139727cc7465d9bac603317d49f13.png\" class=\"331319992\" style=\"max-width:100%\"></p><p style=\"text-indent: 2em;\">面对如此不利的比赛条件，伊朗队展现出了很高的技战术水平和强大意志力。表现优异的伊朗队后卫雷扎扬在与新西兰队和埃及队的比赛后均获得全场最佳球员称号，与比利时一战的全场最佳球员称号则授予了伊朗队门将贝兰万德。</p><p style=\"text-indent: 2em;\">对于昂着头离开世界杯的伊朗队，不少中国球迷的第一印象，始于大连金州体育场。</p><p style=\"text-indent: 2em;\">1997年9月13日，法国世界杯亚洲区十强赛的首轮比赛在大连金州体育场拉开帷幕。当时，中国足球正处于阶段性高点，范志毅、高峰、区楚良、孙继海等主力球员皆为中国足坛响当当的人物。</p><p style=\"text-indent: 2em;\">尽管伊朗队拥有不少在德甲效力的球员，如阿里·代伊、阿奇兹、巴盖里等，并曾在亚洲杯上大胜韩国男足，但中国球迷仍然相信主场作战的国足能与之匹敌。</p><p style=\"text-indent: 2em;\">比赛过程可谓跌宕起伏。开场之后，中国队取得完美开局，上半场范志毅罚进点球，54分钟李明接孙继海传球凌空抽射再下一城。中国队2:0领先伊朗队，金州体育场沸腾了。</p><p style=\"text-indent: 2em;\">随后形势急转直下，局势完全被伊朗队控制。先是巴盖里通过点球扳回一球，随后伊朗队右后卫马达维基亚开始了疯狂的表演。第68分钟，马达维基亚连过数人突入禁区劲射破门。第84分钟，马达维基亚在35米开外一脚石破天惊的远射攻破了区楚良的十指关。3分钟后伊朗队再下一城，最终中国队主场2:4输掉了比赛，痛失大好局面。最终中国队未能从十强赛中成功突围，伊朗队则在时隔20年后第二次挺进世界杯亮相法兰西。</p><p style=\"text-indent: 2em;\" class=\"\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/1733d852c801480dbfc043566c8c5108.png\" alt=\"\" class=\"331320038\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; text-indent: 36px;\">马达维基亚与中国队球员孙继海对抗中。（资料图片）</span></p><p style=\"text-indent: 2em;\"><span style=\"text-indent: 2em;\">马达维基亚在此战中一战成名，令许多中国球迷记住了这名小个子伊朗后卫，他日后在德甲大放异彩，成为了亚洲最优秀的球员之一。</span></p><p style=\"text-indent: 2em;\">那届十强赛后，一篇名为《金州不相信眼泪》的文章引发巨大轰动。1997年以后，伊朗队也一直是中国国足最难缠的对手之一。在双方十多次国际A级赛事交锋中，中国队负多胜少。</p><p style=\"text-indent: 2em;\">1998年法国世界杯上，阿齐兹与阿里·代伊搭档，帮助伊朗队以2:1击败美国队，这场比赛成为了伊朗黄金一代的标志性时刻。</p><p style=\"text-indent: 2em;\">随后，伊朗队虽然也曾短暂有过低谷，但整体实力一直处于亚洲足球前列。国际足联最新排名显示，伊朗队积1615分左右，位列世界第‌21名，在亚洲范围内仅次于日本队。伊朗队2006年、2014年、2018年、2022年、2026年五次成功进军世界杯，近两届亚洲杯伊朗队均成功晋级四强，涌现出了哈什米安、内科南、卡里米、贾汉巴赫什、塔雷米等在欧洲五大联赛有出色表现的实力球员。阿里·代伊、卡里米、哈什米安曾先后效力于德甲拜仁慕尼黑队，马达维基亚在2002-2003赛季荣膺德甲助攻王，伊朗足球一时成为了全亚洲的骄傲。</p><p style=\"text-indent: 2em;\" class=\"\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/16a2155cf69f44d0ae2d1f0d8c4471bc.png\" alt=\"\" class=\"331320039\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; text-indent: 36px;\">阿里·代伊为拜仁慕尼黑进球后庆祝。（资料图片）</span></p><p style=\"text-indent: 2em;\"><span style=\"text-indent: 2em;\">不过，纵观U系列国家队近年来战绩，伊朗队也面临着人才断层的风险。2025年11月，伊朗U17国家队负于印度U17国家队，极为罕见地未能晋级2026年U17亚洲杯正赛。2026年1月份进行的U23亚洲杯上，伊朗队小组赛0胜2平1负一球未进积分垫底‌未能出线。本届世界杯，伊朗国家队的平均年龄约为30.4岁‌，是本届赛事平均年龄最大的球队之一，仅有两名球员在23岁以下。</span></p><p style=\"text-indent: 2em;\">因持续的地缘冲突导致国内联赛多次停摆，德黑兰阿扎迪体育场等多个专业体育设施遭破坏，伊朗足球的训练环境恶化直接影响到球员竞技状态保持，球员选拔和培养计划均受到冲击，持续输出高质量人才越来越难。随着卡塔尔、沙特俱乐部崛起，伊朗俱乐部球队在亚冠西亚区竞争力也在逐渐减弱。</p><p style=\"text-indent: 2em;\">不可否认的是，伊朗足球正处于历史拐点，随着本届世界杯周期结束，一批老将退役将导致即战力下滑。除非破除地缘政治干扰、解决‌青训断层问题，否则未来几年伊朗队将面临更大的难题。</p><p style=\"text-indent: 2em;\">“不要悲伤，你失去的任何东西，都会以另一种形式回来。” 13世纪波斯诗人鲁米的这段诗句，千百年来曾疗愈了无数人的心灵。愿伊朗人民和伊朗足球也能如诗人所说的一般，在困境中找到前进的动力，勇敢面对未来的每一个挑战。</p><p style=\"text-indent: 2em;\">伊朗队，期待2030年世界杯再见。</p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052507936,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "41",
-      "newsSourceName": "人民日报客户端",
-      "newsSummary": "伊朗队，期待2030年世界杯再见。",
-      "newsTags": "",
-      "newsTitle": "伊朗队，昂着头告别世界杯",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 1,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [
-        {
-          "height": 469,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/12c8376264a6450cbbc054b2e171937e.png",
-          "size": 0,
-          "width": 716
-        },
-        {
-          "height": 469,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/c30453dbe82d482392df711a7997d2cd.png",
-          "size": 0,
-          "width": 716
-        },
-        {
-          "height": 480,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/29107d24d41d46589fac14c6552e546c.png",
-          "size": 0,
-          "width": 362
-        },
-        {
-          "height": 1582,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/9f6139727cc7465d9bac603317d49f13.png",
-          "size": 0,
-          "width": 1206
-        },
-        {
-          "height": 358,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/aef0efe765974aa18bbbb37c8b9e38c4.png",
-          "size": 0,
-          "width": 600
-        },
-        {
-          "height": 358,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/1733d852c801480dbfc043566c8c5108.png",
-          "size": 0,
-          "width": 600
-        },
-        {
-          "height": 490,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/16a2155cf69f44d0ae2d1f0d8c4471bc.png",
-          "size": 0,
-          "width": 693
-        }
-      ],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-28 16:48:25",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007569411",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 1,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/66ec003f26a146ab8dc4cecd0d1a5ed2.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/7c774f740c344fbcaff1c85fca1cab63.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 1,
-        "sharePosterStyle": 1,
-        "shareSummary": "伊朗队，期待2030年世界杯再见。",
-        "shareTitle": "伊朗队，昂着头告别世界杯",
-        "shareUrl": "https://www.peopleapp.com/column/30052507936-500007569411"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 311272,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
       "appStyle": "13",
       "askInfo": null,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/488fc8a460cd4cb189848636848c3115.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 264,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/e9349628bb30487a85af381107a85529.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 253,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ad2868925149401892eb5a322ad1595e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 284,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/27d1c7a4bf654a4d8d953bf0c45d64b1.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 279,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "2160*1440",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/07c0391a689e4c72a594c374a3e0473d.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782632221000",
-      "fullColumnImgUrls": [
-        {
-          "height": 1440,
-          "landscape": 1,
-          "size": 327652,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/07c0391a689e4c72a594c374a3e0473d.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 2160
-        }
-      ],
-      "keyArticle": 0,
-      "linkUrl": "",
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsSummary": "公共交通具有公益性和经营性双重属性，公交也被天然要求具有普惠性。",
-      "newsTitle": "广州公交多条线路停运，经济账外仍要兜住民生底线",
-      "objectId": "30052509022",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782633013000",
-      "readFlag": 0,
-      "relAskInfos": [],
-      "relId": 500007569396,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "南方都市报",
-      "sourceId": "41",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 264,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/488fc8a460cd4cb189848636848c3115.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 13,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/488fc8a460cd4cb189848636848c3115.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 264,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/e9349628bb30487a85af381107a85529.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 253,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ad2868925149401892eb5a322ad1595e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 284,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/27d1c7a4bf654a4d8d953bf0c45d64b1.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 279,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "王靖远",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-28 15:50:12",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 1440,
-          "landscape": 1,
-          "size": 327652,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/07c0391a689e4c72a594c374a3e0473d.png",
-          "weight": 2160
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": false,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">日前，广州公交多条线路停运的消息在社交媒体发酵。近三年，广州密集调整停运了一批公交线路，南都记者统计，2025年全市公交线路较之2022年缩减134条，缩减规模约占线路总量的10%。</p><p style=\"text-indent: 2em;\">广州市规划和自然资源局发布的《2025年广州市交通发展年度报告》显示，广州常规公交客流从2019年的611万人次/日，跌至2025年的249万人次/日，六年间降幅高达59%。与之对应的，是市民出行方式日趋多元。根据上述报告，自2021年广州电动自行车通行“由禁改限”后，全市电动自行车出行占全方式(即所有出行方式)的比例由9.1%升至17.9%，同期小客车保有量同样增至387.4万辆，增幅66.6%，地铁线网也仍在不断加密，公交客流在多重因素下被稀释。</p><p style=\"text-indent: 2em;\">鉴于其他出行方式挤压公交生存空间，广州公交在近三年动作频频，从提高起步价到压缩班次、优化和削减线路等，这些举措从经营角度并不难理解。然而，公交企业虽要解决生存问题，但作为一项服务民生的公共事业，单纯的降本增效和重新找到自身的位置，显然是两种截然不同的活法。</p><p style=\"text-indent: 2em;\"><strong>城市公共交通具有公益性和经营性的双重属性，公交也被天然要求具有普惠性和兜底性。</strong>比如，在地铁未能覆盖的片区，公交是居民日常出行的主力；外围城郊的村镇、产业园、保障房片区，公交也是普通务工者、低收入群体通勤的兜底保障；而对老年群体、学生等市民来说，公交同样是最普惠、最安全的出行选择。</p><p style=\"text-indent: 2em;\">因此，<strong>公交的价值不能简单用客流多少来衡量。客流下降并不意味着需求和价值的消失，许多线路本身承担的功能，可能不像以前那么重要，但却是刚需。</strong>一旦以单纯的经营逻辑缩减线路，就容易造成公共服务的断点，增加特定群体的出行成本。媒体报道提到，今年6月15日起，番禺一些线路停运后，就有部分偏远地区居民表示出行受到影响。与此同时，线路、班次变少，必然会导致乘客等候时间变长，服务质量也不如以往，进一步打击市民乘坐公交的积极性，实际上也会让公交企业的经营陷入恶性循环。从这个意义上说，<strong>思考如何更好地服务市民，恰恰也正是破解公交生存困局的重要方向。</strong></p><p style=\"text-indent: 2em;\"><strong>公交要生存，不能一味靠“减量”，更不能将“便民”与“生存”视作非此即彼的对立关系，关键是要及时因应市民新需求，优化路线、因地制宜提供差异化服务等。</strong>比如，一些城市公交就探索出“客货邮融合”的可持续运营模式，上海还推出市民个人定制公交线路。此外，近年广州公交行业也在试图重新匹配市民出行需求，尝试从“大而全”向“小而精”的接驳服务转变，比如网约巴士、地铁快巴等新型公交相继出现。但需要明确的是，这些新形式始终是传统公交的补充，且多为碎片化试点尝试，经验尚未成熟，不能因此就舍弃或代替公交。更进一步讲，一些公交路线的公益功能本就大过盈利目的，即便亏损，也有必要通过政府补贴等形式，为相应地区保留应有的公共服务供给。</p><p style=\"text-indent: 2em;\"><strong>说到底，公交自救面临的不是简单的减或不减，而是城市公共服务如何在变化中重新校准、定位的问题。让公交真正回到“以人为本”的轨道上来，满足市民需求、做好便民服务，生存困境也就自然破解。</strong></p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052509022,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "41",
-      "newsSourceName": "南方都市报",
-      "newsSummary": "公共交通具有公益性和经营性双重属性，公交也被天然要求具有普惠性。",
-      "newsTags": "",
-      "newsTitle": "广州公交多条线路停运，经济账外仍要兜住民生底线",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 1,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-28 15:50:13",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007569396",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 0,
-      "recallFrom": null,
-      "recommendShow": 1,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/cfcfbe7a3dfa462082c26aa4176b580c.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/07c0391a689e4c72a594c374a3e0473d.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 1,
-        "sharePosterStyle": 1,
-        "shareSummary": "公共交通具有公益性和经营性双重属性，公交也被天然要求具有普惠性。",
-        "shareTitle": "广州公交多条线路停运，经济账外仍要兜住民生底线",
-        "shareUrl": "https://www.peopleapp.com/column/30052509022-500007569396"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 9423,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "13",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/9d934368dbbd4f4095d97aa12c0f1014.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/3efefcb19b5a4696bf1ecc0538caadf8.mp3",
           "defaultMultiple": "1.0",
           "duration": 193,
           "openMultipleAdjustment": 1,
@@ -535,52 +15,52 @@
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/f712eb992b5245e6ad10e9bedda14975.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ac704d5ebbc14b0ab264c3b7ed0e89bc.mp3",
           "defaultMultiple": "1.0",
-          "duration": 183,
+          "duration": 206,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d232ea79a80b442c874f93e8b3ef06aa.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 187,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/27fb4b2949594154850259d8a9af23bd.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 200,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/6ff6c649f34248909d47f5716ecce1f5.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/7d07d0fb777b4193bb2945264dedf125.mp3",
           "defaultMultiple": "1.0",
           "duration": 203,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
-          "voicer": "zhida"
+          "voicer": "zhiyuan"
         }
       ],
       "authorList": [
         {
-          "authorName": "郑楚"
+          "authorName": "王瑞琳"
         }
       ],
       "channelId": 2003,
       "commentInfo": null,
       "corner": "",
-      "coverSize": "747*498",
+      "coverSize": "900*600",
       "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/f521b9f7f7c64431858159f77b3d20c7.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782632614000",
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782386273000",
       "fullColumnImgUrls": [
         {
-          "height": 498,
+          "height": 600,
           "landscape": 1,
-          "size": 718845,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/f521b9f7f7c64431858159f77b3d20c7.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 747
+          "size": 145898,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 900
         }
       ],
       "keyArticle": 0,
@@ -588,16 +68,15 @@
       "liveInfo": null,
       "menuShow": 1,
       "newTags": "",
-      "newsSummary": "尊重事实、敬畏专业，才能避免站在科学的对立面，也才能走得更远。",
-      "newsTitle": "百万粉丝网红诋毁袁老成果，农业科普不能哗众取宠",
-      "objectId": "30052509059",
+      "newsTitle": "AI脸看腻了？“活人感”该回来了",
+      "objectId": "30052489610",
       "objectType": "8",
       "openAudio": 1,
       "positionType": 1,
-      "publishTime": "1782632735000",
-      "readFlag": 0,
+      "publishTime": "1782651089000",
+      "readFlag": 1,
       "relAskInfos": [],
-      "relId": 500007569405,
+      "relId": 500007569609,
       "relObjectId": "2003",
       "relType": 1,
       "rmhInfo": null,
@@ -605,7 +84,7 @@
       "shareInfo": null,
       "shortDrama": null,
       "slideShows": [],
-      "source": " 红星评论微信公号",
+      "source": "人民日报客户端",
       "sourceId": "41",
       "tagIds": [],
       "topicWatchCover": null,
@@ -617,7 +96,7 @@
         "openMultipleAdjustment": 1,
         "type": 3,
         "voiceDuration": 193,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/9d934368dbbd4f4095d97aa12c0f1014.mp3"
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/3efefcb19b5a4696bf1ecc0538caadf8.mp3"
       }
     },
     "detail": {
@@ -625,7 +104,7 @@
       "appstyle": 13,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/9d934368dbbd4f4095d97aa12c0f1014.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/3efefcb19b5a4696bf1ecc0538caadf8.mp3",
           "defaultMultiple": "1.0",
           "duration": 193,
           "openMultipleAdjustment": 1,
@@ -634,52 +113,52 @@
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/f712eb992b5245e6ad10e9bedda14975.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ac704d5ebbc14b0ab264c3b7ed0e89bc.mp3",
           "defaultMultiple": "1.0",
-          "duration": 183,
+          "duration": 206,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d232ea79a80b442c874f93e8b3ef06aa.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 187,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/27fb4b2949594154850259d8a9af23bd.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 200,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/6ff6c649f34248909d47f5716ecce1f5.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/7d07d0fb777b4193bb2945264dedf125.mp3",
           "defaultMultiple": "1.0",
           "duration": 203,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
-          "voicer": "zhida"
+          "voicer": "zhiyuan"
         }
       ],
       "authorList": [
         {
-          "authorName": "郑楚"
+          "authorName": "王瑞琳"
         }
       ],
       "bestNoticer": 1,
       "commentDisplay": 1,
       "currentNum": null,
-      "editorName": "王靖远",
+      "editorName": "刘羿佟",
       "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-28 15:45:35",
+      "firstPublishTime": "2026-06-28 20:34:56",
       "fullColumnImgUrls": [
         {
           "format": null,
-          "height": 498,
+          "height": 600,
           "landscape": 1,
-          "size": 718845,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/f521b9f7f7c64431858159f77b3d20c7.png",
-          "weight": 747
+          "size": 145898,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg",
+          "weight": 900
         }
       ],
       "hasPopUp": null,
@@ -694,17 +173,17 @@
       "newIntroduction": "",
       "newLinkObject": null,
       "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">近日，一名在全平台粉丝量超过200万、打着“保卫老种子”旗号的农业网红，因在视频中公开发表针对现代育种技术的不当言论，引发社会关注。据中国食品报融媒体6月27日报道，该网红将“三系杂交技术”称为“变态杂交”“病态杂交”，并将“雄性不育”称为“怕吃完像骡子一样不生育”，对育种技术进行缺乏依据的负面评价。</p><p><img data-src=\"https://mmbiz.qpic.cn/mmbiz_png/kx8eCrcXU7QXI6nBLyQOJ8q3NamtCIib1hnandMTrOD73eLMYXB7U74bUWAmyaC1MusmGRVkic8IJcHHiciaee3WkaSYv8cYNeLHw0KMJwSUSBg/640?wx_fmt=png&amp;from=appmsg#imgIndex=0\" alt=\"ScreenShot_2026-06-28_135405_011.png\" class=\"331322804\" title=\"1782626055981188.png\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/c5d8e4b9e9744552b0b91b800ba7d6bf.png\"></p><p style=\"text-indent: 2em;\">公开信息显示，三系法是一种杂交水稻育种方法，指通过雄性不育系、保持系和恢复系三种亲本配套来实现杂种优势的大规模应用。该技术路线由科学家袁隆平于1960年代提出设想，并于1973年实现籼型杂交水稻的三系配套，这为后来的育种技术发展和粮食增产发挥了重要作用。在此背景下，将这一已被实践所证明的成熟技术动辄冠以“变态”“病态”等极端修辞，既不符合事实，也容易对公众产生不可小视的误导。</p><p style=\"text-indent: 2em;\">按理说，作为粉丝数量超过200万的农业网红，在涉及科学概念时理应严谨、理性，有几分证据说几分话。而此次的相关言论，明显带有语不惊人死不休、望文生义的倾向，特别是将“植株”与“蜘蛛”混为一谈，不仅非常离谱，也暴露了某种最基本的常识缺乏。很显然，这样的“科普”，已偏离了科学讨论的轨道，而更接近于利用信息不对称刻意制造争议性话题来博眼球。</p><p style=\"text-indent: 2em;\"><strong>任由这样的混淆视听的声音在网络舆论场大行其道，不仅构成对前人科研成果的否定，也很容易强化错误的信息传递，最终增加正常科普的难度</strong>。要知道，<strong>农业科普本身存在特殊性，信息不对称的情况比较明显，必须依赖系统性、长期性的投入，而极端化的声音却很容易被扩散，最终可能抵消正常科普的效力</strong><strong>，</strong><strong>加剧公众对现代农业技术的不必要恐慌，甚至还可能影响到种业市场的信心。</strong>特别是在粮食安全议题高度敏感的当下，对涉育种技术的非理性贬损，都需要引起足够重视。</p><p style=\"text-indent: 2em;\">当然，公众对农业科技的认知差异客观存在，<strong>部分农户和消费者对“老种子”怀有情感认同，这本身也并无过错。但是，情感偏好不应取代科学判断，更不是在无依据情况下就轻易否定既有科学成果的理由。</strong>同时，博主粉丝量越大，意味着社会责任越重，在相关发言时也该越审慎。相关平台也有必要加大把关力度，避免让这种“剑走偏锋”的声音在“黑红也是红”的心理下被创造、传播。</p><p style=\"text-indent: 2em;\"><strong>总之，农业科普容不得哗众取宠。尊重事实、敬畏专业，才能避免站在科学的对立面，也才能走得更远。</strong></p>",
+      "newsContent": "<p>AI“演员”刚进演艺圈时，公众还惊叹于其栩栩如生。最近，对AI脸生厌的相关词条却登上了热搜榜。AI脸这么快就惹人嫌了？</p><p>什么是AI脸？或是清一色的圆眼睛、高鼻梁、尖下巴，好看得千篇一律；或是表情夸张却神态僵硬，看再多遍也记不住。以微短剧为例，中国网络视听协会发布的2026年第一季度《微短剧创作指引》显示，2026年第一季度，AI微短剧数量在全行业上线微短剧的占比超95%。这意味着，你连刷好几部微短剧，可能一个“活人”都没见过，反而是AI脸充斥于你的视野。<strong>看多了，新鲜感和疲惫感此消彼长，包容度也难免降低。换个角度来说，即使是真人演员，反复出演人设相似的角色，可能同样让人腻味。</strong></p><p style=\"justify-content: center;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260625/image/content/d703e6a9b4714f21b5c15dee1441c978.png\" class=\"331262280\" style=\"max-width:100%\"></p><p>与此同时，“恐怖谷效应”一直是机器人、数字人的常见问题，就是当机器人等类人物形象的逼真性高到一定程度，但又未达100%真实时，受众对该形象的好感度就会断崖式跌入谷底，随之而生的是别扭、恐怖、诡异等感觉。<strong>AI脸也是如此，似人而非人、熟悉又陌生，该有的元素似乎都有，唯独没有“活人感”。</strong></p><p><strong>真人演员欢喜、怒斥、颤抖，背后是一个真实生存的人，在努力贴近另一个“人”，体会他者命运的起伏与挣扎。</strong>观众观看这一切，不只是在看演技、看剧情，更是从中完成生命体验的交换，进而确认人何以为人、情何以流转。AI“演员”可以理解外来指令，但没有基于实际生存的内在经验可以调动。</p><p>还记得AI“演员”入局时，“真人演员会不会失业”也曾引发讨论。《微短剧创作指引》的另一个数据显示，2026年春节档，真人剧上线量约为AI剧的1/50，但总播放量却达到AI剧的25倍。<strong>这种数据的反差也表明，人对人的理解、人心与人心的共振，才是文艺作品的魅力所在，才是影视行业的立身之本。</strong></p><p>对于微短剧行业而言，AI脸受到厌恶，既应引发反思，也应成为信号。其一，可以利用技术压缩经费与制作周期，但不能用流水线产能替代艺术性和人文性。其二，AI归根结底只是辅助性工具，专业的事还是要多交给专业的“人”。其三，生产一百个“差不多”的产品只能争抢存量，创作一件“被记住”的作品才能创造增量。</p><p><strong>真心换真心，观众愿意买单的，是被触动的感觉，它可能来自一句足够贴近生活的台词、一个会心一笑的动作，它的力量叫作真实。AI时代，有血有肉有“破绽”的内容，自有其珍贵。</strong></p><p><span style=\"color: rgb(127, 127, 127);\">策划：尚丹 邱耀洲 刘文欣</span></p><p><span style=\"color: rgb(127, 127, 127);\">海报：刘珂君</span></p>",
       "newsContentBak": "{}",
       "newsDownTitle": "",
-      "newsId": 30052509059,
+      "newsId": 30052489610,
       "newsLinkUrl": "",
       "newsShortTitle": "",
       "newsSource": "41",
-      "newsSourceName": " 红星评论微信公号",
-      "newsSummary": "尊重事实、敬畏专业，才能避免站在科学的对立面，也才能走得更远。",
+      "newsSourceName": "人民日报客户端",
+      "newsSummary": "",
       "newsTags": "",
-      "newsTitle": "百万粉丝网红诋毁袁老成果，农业科普不能哗众取宠",
+      "newsTitle": "AI脸看腻了？“活人感”该回来了",
       "newsType": 8,
       "oldNewsId": "",
       "openAudio": 1,
@@ -715,19 +194,19 @@
       "pcFirstFrameImageUri": "",
       "photoList": [
         {
-          "height": 431,
+          "height": 1920,
           "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/c5d8e4b9e9744552b0b91b800ba7d6bf.png",
-          "size": 157924,
-          "width": 259
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260625/image/content/d703e6a9b4714f21b5c15dee1441c978.png",
+          "size": 0,
+          "width": 1080
         }
       ],
       "popUps": [],
       "preCommentFlag": 0,
-      "publishTime": "2026-06-28 15:45:35",
+      "publishTime": "2026-06-28 20:51:29",
       "reLInfo": {
         "channelId": 2003,
-        "relId": "500007569405",
+        "relId": "500007569609",
         "relObjectId": 2003,
         "relType": "1"
       },
@@ -742,14 +221,14 @@
       "sceneId": "",
       "serials": null,
       "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/517a8f0b156f4966acf2c6258a44157d.png?x-oss-process=image/resize,w_120",
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260625/image/content/415ed0119e9048ceb1168fd211caea9e.png?x-oss-process=image/resize,w_120",
         "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/f521b9f7f7c64431858159f77b3d20c7.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
         "sharePosterOpen": 1,
         "sharePosterStyle": 1,
-        "shareSummary": "尊重事实、敬畏专业，才能避免站在科学的对立面，也才能走得更远。",
-        "shareTitle": "百万粉丝网红诋毁袁老成果，农业科普不能哗众取宠",
-        "shareUrl": "https://www.peopleapp.com/column/30052509059-500007569405"
+        "shareSummary": "人民日报，有品质的新闻",
+        "shareTitle": "AI脸看腻了？“活人感”该回来了",
+        "shareUrl": "https://www.peopleapp.com/column/30052489610-500007569609"
       },
       "shortDrama": null,
       "specialColumnId": null,
@@ -761,485 +240,7 @@
       "traceInfo": "",
       "userInfo": null,
       "videoInfo": [],
-      "viewCount": 10606,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/c2797b215e4c4273b55fc7efaab5bc1b.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 167,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/8c50fdd6e9c94c4898f78a11c5bfd52a.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 158,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d0950daf742e4900ba33f7eb07b32d5c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 172,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/151d7d44b3ce4e92bf0c65f90c64c568.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 179,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "朱永华"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "582*388",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/6e87a41467b249fda6af60cda98414c6.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782626576000",
-      "fullColumnImgUrls": [
-        {
-          "height": 388,
-          "landscape": 1,
-          "size": 235032,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/6e87a41467b249fda6af60cda98414c6.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 582
-        }
-      ],
-      "keyArticle": 0,
-      "linkUrl": "",
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsSummary": "阳光之下，没有捷径；程序之内，自有公义。",
-      "newsTitle": "“相信规则”是反招生诈骗第一道防线",
-      "objectId": "30052508435",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782627112000",
-      "readFlag": 1,
-      "relAskInfos": [],
-      "relId": 500007569359,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "新湖南客户端",
-      "sourceId": "41",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 167,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/c2797b215e4c4273b55fc7efaab5bc1b.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 26,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/c2797b215e4c4273b55fc7efaab5bc1b.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 167,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/8c50fdd6e9c94c4898f78a11c5bfd52a.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 158,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d0950daf742e4900ba33f7eb07b32d5c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 172,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/151d7d44b3ce4e92bf0c65f90c64c568.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 179,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "朱永华"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "刘文欣 ",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-28 14:11:52",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 388,
-          "landscape": 1,
-          "size": 235032,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/6e87a41467b249fda6af60cda98414c6.png",
-          "weight": 582
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": false,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">高考成绩刚刚揭晓，骗子们就“上岗”了。6月26日，中南大学本科生招生办公室发布严正声明：近期发现有机构和人员冒用我校名义，针对强基计划、综合评价录取面试考核开展营利性培训活动。该校明确表示，从未参与或委托任何社会机构组织考前培训、咨询和辅导。</p><p style=\"text-indent: 2em;\">比培训骗局更恶劣的，是另一种常见套路。查分前后，不法分子通过社交微信群、短信、弹窗等渠道散布“有内部渠道可修改高考成绩”等虚假信息，诱导考生和家长支付“改分费”“保密费”。</p><p style=\"text-indent: 2em;\">这些骗术其实并不高明。他们运用的其实就是一种“攻心术”——你越渴望走捷径，他们就越能编出以假乱真的故事。<strong>所谓“面试保过班”“改分内部渠道”乃至“补录名额”，统统建立在同一个逻辑上：规则是可以绕开的，关系是可以变现的。一旦你默许了这个前提，就等于主动卸下了防备。</strong></p><p style=\"text-indent: 2em;\">今天的高考招生已具备一套极其严密、全程可追溯的公开流程。从命题、阅卷到投档录取，每个环节都有严格的配套保密制度，成绩数据多重加密，不存在什么“花钱改分”的操作空间。高校也没有独立于系统之外的招生权。中南大学的声明重申了一个基本事实——所有以学校名义开展的收费培训、保录承诺，都与正规招生程序无关。其实，这些信息每年都向社会公布，只是很多人平时不关注，事到临头才慌了神，偏偏在最该冷静的时候听了最不该信的话。</p><p style=\"text-indent: 2em;\"><strong>反招生诈骗的第一道防线，不是辨别谎言的技巧，而是相信规则的存在。</strong>你信规则，就会主动去查官方文件，就会本能地对一切“绕开程序”的承诺产生怀疑。骗子的话术再逼真，也经不起一个简单动作的检验——登录省教育考试院官网，核对招生政策和录取流程。反诈的最高境界也正在于此。<strong>不是把每个人都训练成反诈专家，而是让“相信规则”成为整个社会的集体习惯</strong>——考生和家长拿到成绩后第一反应是打开官方渠道查询，考生听到“内部渠道”时下意识地反问一句“这符合哪条规定”，骗子的生存空间就被极大地压缩了。所以，与其在骗局面前比拼眼力，不如从一开始就认准一点——<strong>阳光之下，没有捷径；程序之内，自有公义。</strong></p><p><br></p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052508435,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "41",
-      "newsSourceName": "新湖南客户端",
-      "newsSummary": "阳光之下，没有捷径；程序之内，自有公义。",
-      "newsTags": "",
-      "newsTitle": "“相信规则”是反招生诈骗第一道防线",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 1,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-28 14:11:52",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007569359",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 1,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/727e0d25759244fb891551addf10c9b6.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/6e87a41467b249fda6af60cda98414c6.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 1,
-        "sharePosterStyle": 1,
-        "shareSummary": "阳光之下，没有捷径；程序之内，自有公义。",
-        "shareTitle": "“相信规则”是反招生诈骗第一道防线",
-        "shareUrl": "https://www.peopleapp.com/column/30052508435-500007569359"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 16262,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d23cf95490af48f18973b555ff1ede41.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 135,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/fb675a56d6464cd19df31994044844c4.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 129,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/c0922ed508fa4a6eb8d46ff32205c25a.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 143,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/73c0d52b9c374b65be517928f67b2561.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 144,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "林子璐"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "646*431",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/d50a9f924750405499e772c42ec58489.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782607637000",
-      "fullColumnImgUrls": [
-        {
-          "height": 431,
-          "landscape": 1,
-          "size": 383228,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/d50a9f924750405499e772c42ec58489.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 646
-        }
-      ],
-      "keyArticle": 0,
-      "linkUrl": "",
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsSummary": "过去几年，围绕演员署名及排名的争议层出不穷。",
-      "newsTitle": "艺人“痛失”艺名？好演员、好作品才能长久留在观众心中",
-      "objectId": "30052506932",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782627103000",
-      "readFlag": 1,
-      "relAskInfos": [],
-      "relId": 500007569192,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "上观新闻",
-      "sourceId": "41",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 135,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d23cf95490af48f18973b555ff1ede41.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 26,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d23cf95490af48f18973b555ff1ede41.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 135,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/fb675a56d6464cd19df31994044844c4.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 129,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/c0922ed508fa4a6eb8d46ff32205c25a.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 143,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/73c0d52b9c374b65be517928f67b2561.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 144,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "林子璐"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "刘文欣 ",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-28 14:11:43",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 431,
-          "landscape": 1,
-          "size": 383228,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/d50a9f924750405499e772c42ec58489.png",
-          "weight": 646
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": false,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">丁禹兮改回了“丁舟杰”，宋祖儿变回了“孙凡清”，孙俪用回了本名“孙丽”，冯绍峰原来叫“冯威”……日前某视频平台“2026年度发布”活动公布了节目单，多名艺人公布真名。</p><p style=\"text-indent: 2em;\">其实，这是对日前发布的《关于规范电视剧（网络剧）演员署名的通知》的响应，<strong>其中明确提到，演员署名原则上应使用法定姓名。</strong>如需使用已形成广泛认知的艺名，应采用“真名（艺名）”的规范格式，不得单独使用艺名、英文名或昵称等。</p><p style=\"text-indent: 2em;\">如果你关注内娱，就会发现，<strong>过去几年，围绕演员署名及排名的争议层出不穷。</strong>对于粉丝而言，排名意味着偶像“实绩”的高低；对于平台和制作方而言，演员排名又关系着招商、宣发、预售乃至项目融资。<strong>演员姓名不再只是创作者署名，而逐渐成为一种可以定价、可以竞争、可以营销的市场资源。</strong></p><p style=\"text-indent: 2em;\">要注意的是，这并不是粉丝文化单方面造成的结果，真正塑造这套规则的，是一段时间以来行业形成的路径依赖：<strong>投资方希望借助演员流量降低风险，演员则希望借助排名次序提升商业价值，粉丝则不断用各种数据巩固这种排序所能带来的价值。</strong>久而久之，一套围绕流量而非创作建立起来的评价体系逐渐成为心知肚明的行业潜规则。</p><p style=\"text-indent: 2em;\">但问题也恰恰出在这里。影视创作终究不同于流量生意。观众走进影院、打开视频平台，<strong>最终留在大众心里的关键，还是要看故事是否动人、角色是否立体、情感是否真挚。</strong></p><p style=\"text-indent: 2em;\">规范演员署名，规范的是几个字的排列，更是在纠正一种持续多年的行业误判——把流量当成价值，把热度当成市场，把数据当成创作。</p><p style=\"text-indent: 2em;\">毕竟，宣发海报上的名字顺序少有人记得，但好演员、好作品，却能长长久久留在观众心中。</p><p><br></p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052506932,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "41",
-      "newsSourceName": "上观新闻",
-      "newsSummary": "过去几年，围绕演员署名及排名的争议层出不穷。",
-      "newsTags": "",
-      "newsTitle": "艺人“痛失”艺名？好演员、好作品才能长久留在观众心中",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 1,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-28 14:11:43",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007569192",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 1,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/75f664f562ae4ccd8fd17497f4d4e154.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/d50a9f924750405499e772c42ec58489.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 1,
-        "sharePosterStyle": 1,
-        "shareSummary": "过去几年，围绕演员署名及排名的争议层出不穷。",
-        "shareTitle": "艺人“痛失”艺名？好演员、好作品才能长久留在观众心中",
-        "shareUrl": "https://www.peopleapp.com/column/30052506932-500007569192"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 20083,
+      "viewCount": 1180695,
       "visitorComment": 1,
       "voteInfo": null
     }
@@ -1251,300 +252,57 @@
       "askInfo": null,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ecd52b6ab8ae4cb7a9b9d37ce4573c04.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/04730aa6c7e74d80a7b459c1fafee7b9.mp3",
           "defaultMultiple": "1.0",
-          "duration": 208,
+          "duration": 183,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/df76f08f8d4a44299e2430f5d61aa0e8.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/4ac383555a1848a7bfee31ee3edbf601.mp3",
           "defaultMultiple": "1.0",
-          "duration": 220,
+          "duration": 173,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
-          "voicer": "zhida"
+          "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/3845c1ea2bdf407c9a58701f296f57ad.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/622afc54bb094047af4124be29b50680.mp3",
           "defaultMultiple": "1.0",
-          "duration": 213,
+          "duration": 190,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhiyuan"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/bf5f844b028a421a891f2f9aface4dd4.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/14a95229587a4e9f91d19330a42f6c89.mp3",
           "defaultMultiple": "1.0",
-          "duration": 196,
+          "duration": 194,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
-          "voicer": "zhistella"
+          "voicer": "zhida"
         }
       ],
-      "authorList": [
-        {
-          "authorName": "王东辉"
-        }
-      ],
+      "authorList": [],
       "channelId": 2003,
       "commentInfo": null,
       "corner": "",
-      "coverSize": "1024*683",
+      "coverSize": "380*275",
       "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/ec99c0add7504bd3a6e20489fd059b6d.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782619555000",
+      "coverUrl": "https://rmrbcmsonline.peopleapp.com/upload/show_type/201808/201808151832422294.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782653827000",
       "fullColumnImgUrls": [
         {
-          "height": 683,
+          "height": 275,
           "landscape": 1,
-          "size": 85160,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/ec99c0add7504bd3a6e20489fd059b6d.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 1024
-        }
-      ],
-      "keyArticle": 1,
-      "linkUrl": "",
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsSummary": "未来全球增长、产业创新与投资机遇的主要市场中，中国依然是必选项。",
-      "newsTitle": "经济热点快评丨麦肯锡：中国是“全球最硬核的健身房”",
-      "objectId": "30052507877",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782625443000",
-      "readFlag": 1,
-      "relAskInfos": [],
-      "relId": 500007569355,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "人民日报客户端",
-      "sourceId": "41",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 208,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ecd52b6ab8ae4cb7a9b9d37ce4573c04.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 13,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ecd52b6ab8ae4cb7a9b9d37ce4573c04.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 208,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/df76f08f8d4a44299e2430f5d61aa0e8.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 220,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/3845c1ea2bdf407c9a58701f296f57ad.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 213,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/bf5f844b028a421a891f2f9aface4dd4.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 196,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "王东辉"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "邱耀洲",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-28 13:44:03",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 683,
-          "landscape": 1,
-          "size": 85160,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/ec99c0add7504bd3a6e20489fd059b6d.png",
-          "weight": 1024
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": false,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 1,
-      "leaderArticle": 1,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">随着全球市场不确定增加、供应链重构，不少跨国企业寻找可替代的制造与消费市场，试图寻找 “下一个中国”。不过，麦肯锡中国区主席倪以理近日接受美国《财富》杂志采访时表示：“你听到了各种各样的声音。我们正试图从中国分散风险。我们正试图降低对中国的依赖。但你找不到另一个中国。如今世界上根本不存在第二个中国。”倪以理还将中国形容为“全球最硬核的健身房”，这里磨炼出了极具竞争力的企业。</p><p style=\"text-indent: 2em;\"><span style=\"text-indent: 2em;\">这句话并非否定其他经济体的发展潜力</span><span style=\"text-indent: 2em;\">，</span><span style=\"text-indent: 2em;\">而是指全球范围内</span><span style=\"text-indent: 2em;\">，</span><span style=\"text-indent: 2em;\">没有国家能</span><span style=\"text-indent: 2em;\">完美</span><span style=\"text-indent: 2em;\">复刻中国完整的产业</span><span style=\"text-indent: 2em;\">、</span><span style=\"text-indent: 2em;\">市场与创新综合优势</span><span style=\"text-indent: 2em;\">，</span><span style=\"text-indent: 2em;\">未来全球增长</span><span style=\"text-indent: 2em;\">、</span><span style=\"text-indent: 2em;\">产业创新与投资机遇的</span><span style=\"text-indent: 2em;\">主要市场中，</span><span style=\"text-indent: 2em;\">中国</span><span style=\"text-indent: 2em;\">依然是必选项</span><span style=\"text-indent: 2em;\">。</span></p><p style=\"text-indent: 2em;\">经过数十年发展，中国建成全球最完备工业体系，形成从原材料、核心零部件到终端产品的全链条配套。世界经济论坛近期公布的新一轮全球“灯塔工厂network”名单中，16家新晋企业，有一半来自中国。广东、深圳更是完成从世界工厂到全球工业标准制定的转型。对比其他新兴市场，中国的产业链更能实现高效闭环生产，承接高端制造。依托这套成熟的创新生态，在麦肯锡所筛选的人工智能基础设施、电气化、智能硬件、广义数字化四大高增长、高回报的赛道中，中国的创新速度与规模优势难以比拟。</p><p style=\"text-indent: 2em;\">超大规模市场优势与良性竞争环境，锻造出持续迭代的创新活力。中国市场是“全球最硬核的健身房”这一观点得到越来越多跨国企业的认同。消费者对新产品、新技术接受度高，倒逼企业持续迭代技术、优化产品。过去外资品牌可依靠产品溢价轻松盈利，如今华为、比亚迪、米哈游等本土企业快速崛起，倒逼跨国企业推行 “在中国、为中国” 本土化策略，深度融入本土供应链。激烈的市场竞争筛选出具备全球竞争力的企业，经过国内市场淬炼的品牌出海时，天然具备更强韧性。这也是中国产品在海外市场能够保持价优质优的重要原因。</p><p style=\"text-indent: 2em;\">规模红利与区域协作潜力，打开长期增长空间。中国拥有不可替代的规模和大市场优势，能够承担更具战略体量的创新研发；同时可作为生态聚合者的角色，搭建区域分工体系。面对全新格局，跨国企业的发展逻辑已然改写。唯有坚持 “在中国，为中国”，深耕本土市场、融入本地产业生态、携手合作伙伴协同创新，才能适配中国市场节奏、站稳发展脚跟，形成多方共赢的良好生态。</p><p style=\"text-indent: 2em;\">中国经济韧性足、创新动能充沛、产业底盘稳固，兼具制造、消费、创新三重价值。真正的增长机遇，始终扎根于持续升级的中国市场。</p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052507877,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "41",
-      "newsSourceName": "人民日报客户端",
-      "newsSummary": "未来全球增长、产业创新与投资机遇的主要市场中，中国依然是必选项。",
-      "newsTags": "",
-      "newsTitle": "经济热点快评丨麦肯锡：中国是“全球最硬核的健身房”",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 1,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-28 13:44:03",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007569355",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 2,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/8705b8365e55443c898b87aff182dc1c.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/ec99c0add7504bd3a6e20489fd059b6d.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 0,
-        "sharePosterStyle": 1,
-        "shareSummary": "未来全球增长、产业创新与投资机遇的主要市场中，中国依然是必选项。",
-        "shareTitle": "经济热点快评丨麦肯锡：中国是“全球最硬核的健身房”",
-        "shareUrl": "https://www.peopleapp.com/column/30052507877-500007569355"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 145772,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/85e63f8d745c404b80501ffc7645a5fb.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 439,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/44ed7edd4bbc48639a2c5e9be28d0c78.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 408,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/83c59d26296c4031b53f4b1b33623edf.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 446,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/08d8335ef1514fc2be210ab50ebf5fed.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 458,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "索朗卓玛"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "896*598",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/5b62144acfd948b7b8a6d49b050454c6.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782622003000",
-      "fullColumnImgUrls": [
-        {
-          "height": 598,
-          "landscape": 1,
-          "size": 37452,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/5b62144acfd948b7b8a6d49b050454c6.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 896
+          "size": 1,
+          "url": "https://rmrbcmsonline.peopleapp.com/upload/show_type/201808/201808151832422294.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 380
         }
       ],
       "keyArticle": 0,
@@ -1552,16 +310,16 @@
       "liveInfo": null,
       "menuShow": 1,
       "newTags": "",
-      "newsSummary": "西方从未看见真实的西藏，只看见自己虚构的幻想。",
-      "newsTitle": "真正的西藏，不在西方虚构的幻想里",
-      "objectId": "30052508140",
+      "newsSummary": "愿每一位毕业生，都能乘风破浪、逐光而行，在自己的领域闪闪发光。",
+      "newsTitle": "今晚，我们想把这几首歌唱给你听",
+      "objectId": "30052511008",
       "objectType": "8",
       "openAudio": 1,
       "positionType": 1,
-      "publishTime": "1782622788000",
-      "readFlag": 1,
+      "publishTime": "1782657584000",
+      "readFlag": 0,
       "relAskInfos": [],
-      "relId": 500007569313,
+      "relId": 500007569675,
       "relObjectId": "2003",
       "relType": 1,
       "rmhInfo": null,
@@ -1569,7 +327,7 @@
       "shareInfo": null,
       "shortDrama": null,
       "slideShows": [],
-      "source": "统战新语微信公号",
+      "source": "人民日报微信公号",
       "sourceId": "41",
       "tagIds": [],
       "topicWatchCover": null,
@@ -1580,70 +338,84 @@
         "defaultMultiple": "1.0",
         "openMultipleAdjustment": 1,
         "type": 3,
-        "voiceDuration": 439,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/85e63f8d745c404b80501ffc7645a5fb.mp3"
+        "voiceDuration": 183,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/04730aa6c7e74d80a7b459c1fafee7b9.mp3"
       }
     },
     "detail": {
       "activityInfos": [],
-      "appstyle": 26,
+      "appstyle": 13,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/85e63f8d745c404b80501ffc7645a5fb.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/3c77c73f38724d4c9faf8a5ce82794e7_opt.mp3",
           "defaultMultiple": "1.0",
-          "duration": 439,
+          "duration": 256,
+          "openMultipleAdjustment": 1,
+          "sourceType": 1,
+          "type": 2,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/d7064e0eb73b497696dfd54072913c42_opt.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 369,
+          "openMultipleAdjustment": 1,
+          "sourceType": 1,
+          "type": 2,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/04730aa6c7e74d80a7b459c1fafee7b9.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 183,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/44ed7edd4bbc48639a2c5e9be28d0c78.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/4ac383555a1848a7bfee31ee3edbf601.mp3",
           "defaultMultiple": "1.0",
-          "duration": 408,
+          "duration": 173,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/83c59d26296c4031b53f4b1b33623edf.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/622afc54bb094047af4124be29b50680.mp3",
           "defaultMultiple": "1.0",
-          "duration": 446,
+          "duration": 190,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhiyuan"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/08d8335ef1514fc2be210ab50ebf5fed.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/14a95229587a4e9f91d19330a42f6c89.mp3",
           "defaultMultiple": "1.0",
-          "duration": 458,
+          "duration": 194,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhida"
         }
       ],
-      "authorList": [
-        {
-          "authorName": "索朗卓玛"
-        }
-      ],
+      "authorList": [],
       "bestNoticer": 1,
       "commentDisplay": 1,
       "currentNum": null,
-      "editorName": "刘文欣 ",
+      "editorName": "冯雪芙",
       "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-28 12:59:48",
+      "firstPublishTime": "2026-06-28 22:29:35",
       "fullColumnImgUrls": [
         {
           "format": null,
-          "height": 598,
+          "height": 275,
           "landscape": 1,
-          "size": 37452,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/5b62144acfd948b7b8a6d49b050454c6.png",
-          "weight": 896
+          "size": 1,
+          "url": "https://rmrbcmsonline.peopleapp.com/upload/show_type/201808/201808151832422294.png",
+          "weight": 380
         }
       ],
       "hasPopUp": null,
@@ -1658,17 +430,17 @@
       "newIntroduction": "",
       "newLinkObject": null,
       "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">在国际舆论场，一个持续已久的荒诞叙事长期误导全球认知：西方大肆宣扬的“西藏”，并非历史与现实中的西藏，而是其凭空建构的“香格里拉”神话。这一浪漫化想象并非单纯文化误读，而是西方东方主义偏见、殖民文化遗产与政治操弄的合成品。更具说服力的是，众多西方知名藏学家早已通过学术研究，亲自戳破这一叙事骗局，为还原西藏真相提供了最有力的依据。</p><p style=\"text-indent: 2em;\"><strong>谎言！</strong></p><p style=\"text-indent: 2em;\">“香格里拉”从诞生起就是西方虚构的文化产物，与真实西藏毫无关联。1933年英国作家詹姆斯·希尔顿（James Hilton）在《消失的地平线》（Lost Horizon）中创造这一概念，将西藏描绘成与世隔绝、永恒宁静的乌托邦；1937年好莱坞电影将其推向全球，彻底固化了西方对西藏的虚假刻板印象。希尔顿从未踏足涉藏地区，其创作仅基于西方传教士、探险家的片面游记，以及对藏传佛教“香巴拉”传说的刻意曲解，是西方东方主义的典型产物。</p><p style=\"text-indent: 2em;\">西方对西藏的虚构并非偶然：从早期传教士进入涉藏地区开始，西方就鲜少关注真实的西藏历史、社会与民生，而是持续将自身的精神寄托、殖民需求、文化优越感投射到这片土地。他们刻意抹去西藏自古以来就是中国不可分割一部分的历史事实，屏蔽旧西藏封建农奴制的残酷真相，将西藏打造成满足西方精神猎奇、服务其殖民与政治图谋的“想象飞地”。</p><p style=\"text-indent: 2em;\"><strong>反转！</strong></p><p style=\"text-indent: 2em;\">最有力的批判，恰恰来自西方学者自身。他们跳出东方主义的偏见，用扎实的学术研究，亲手拆穿了这场延续已久的骗局，让西方建构的西藏幻象轰然倒塌。西方学者彼得·毕晓普（Peter Bishop）在《香格里拉的神话：西藏、游记和西方对圣地的创造》（The Myth of Shangri-La: Tibet, Travel Writing and the Western Creation of Sacred Landscape, 1989）中明确指出：西方旅行者的游记本质是心理文献，是西方人将自身幻想、无意识欲望投射到西藏的产物，与真实的西藏历史、社会、文化毫无关联。</p><p class=\"\"><img data-src=\"https://mmbiz.qpic.cn/mmbiz_jpg/ic9TjSUMVQGicAtsBffSZYgy25mbH1HSR4D7Clx1yjecEXF0SSrAuJKZlktA8PIia4vrytGjxibrKlib8GUCQaIBticUb9Tlsam8M3zRgDOCL2jgw/640?wx_fmt=jpeg&amp;from=appmsg#imgIndex=1\" class=\"331320481\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/845ae1f2b0d443c696d6bb5e1cafdcf2.jpg\" alt=\"图片\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; text-indent: 36px;\">彼得•毕晓普著《香格里拉的神话：西藏、游记和西方对圣地的创造》。</span></p><p style=\"text-indent: 2em;\"><span style=\"text-indent: 2em;\">毕晓普还在另一部权威著作《权力之梦：藏传佛教与西方的想象》（Dreams of Power: Tibetan Buddhism and the Western Imagination，1993）中进一步论证：西方对藏传佛教的接纳，从一开始就缺乏对跨文化问题的批判性反思，要么是盲目天真的崇拜，要么是傲慢的功利性取舍，这两种态度都源于文化帝国主义。他直言，西方眼中的藏传佛教，是西方为满足自身精神需求与权力幻想制造的“他者” 。</span></p><p style=\"text-indent: 2em;\">可以说，《权力之梦：藏传佛教与西方的想象》是西方学界反思“西藏神话”的里程碑之作，全书从富有想象力的分析（An Imaginative Analysis）、发现西藏（Tibet Discovered）、东方宗教：西方想象（Eastern Religion: Western Imagination）、《西藏度亡经》：西方幻想指南（The Tibetan Book of the Dead: A Guidebook to Western Fantasy）、精神科学与神圣技术（Spiritual Science, Sacred Technology）、新僧侣主义（The New Monasticism）、精神传承意象（Images of Spiritual Transmission）、藏传佛教：原型评估（Tibetan Buddhism: An Archetypal Appraisal）等多个维度戳破了西方建构的虚假幻象，剥离了“香格里拉”的虚假外衣。</p><p class=\"\"><img data-src=\"https://mmbiz.qpic.cn/sz_mmbiz_jpg/ic9TjSUMVQGicIbdRMUtlAicpEmch0KIrznI4qbM5uOcn9VBUx6mj86BfJGe2icXz7Aib5sDa9ia2C1cP9w9l7xPyAa0MaqnfztYuO7qeA1lia5u2k/640?wx_fmt=jpeg&amp;from=appmsg#imgIndex=2\" class=\"331320482\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/612afe2bd7744c17b984ac8fc8e2c8a5.jpg\" alt=\"图片\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; text-indent: 36px;\">彼得·毕晓普著《权力之梦：藏传佛教与西方的想象》。</span></p><p style=\"text-indent: 2em;\"><span style=\"text-indent: 2em;\">此外，美国学者唐纳德·洛佩兹（Donald S. Lopez Jr.）在《香格里拉的囚徒们：藏传佛教与西方》（Prisoners of Shangri-La: Tibetan Buddhism and the West, 1998）中也承认，西藏与藏传佛教长期以来都是西方幻想的对象，西方从未真正理解西藏，而是将其囚禁在“香格里拉”的乌托邦幻象中，与真实的西藏社会、历史与文化完全割裂。</span></p><p style=\"text-indent: 2em;\">这些西方学界的权威结论，绝非中国的“宣传”，而是来自他们自身的学术良知与扎实研究，直接瓦解了反华势力炒作涉藏议题的叙事根基。</p><p style=\"text-indent: 2em;\"><strong>警惕！</strong></p><p style=\"text-indent: 2em;\">长久以来，“香格里拉”幻象长盛不衰，既迎合了西方的精神猎奇心理，更被反华势力工具化。西方刻意屏蔽旧西藏封建农奴制的残酷真相：占人口95%以上的农奴无人身自由，旧西藏全社会文盲率超 95%、人均寿命不足36岁，与“世外桃源”天差地别。随着中国发展壮大，这一虚构叙事更被武器化：西藏现代化建设被污蔑为“同化”，依法保护宗教信仰被歪曲为“迫害”，民生改善被抹黑为“压迫”。所谓“西藏问题”，从来不是事实问题，而是西方编造的叙事陷阱。</p><p style=\"text-indent: 2em;\">西方媒体、影视与一些学者联手构建信息闭环，让虚假认知不断复制扩散。但西方学者的集体反思早已直指真相：西方从未看见真实的西藏，只看见自己虚构的幻想。</p><p style=\"text-indent: 2em;\"><strong>真相！</strong></p><p style=\"text-indent: 2em;\">真实的西藏，既不是虚构净土，也不是悲情符号，而是在中国大家庭中日新月异的现代家园。西藏主权归属有铁一般的历史与法理依据；封建农奴制被彻底废除，人民当家作主；15年公费教育全面普及，医疗养老全覆盖，脱贫攻坚全面胜利；宗教信仰自由依法保障，布达拉宫等文物得到空前保护；藏医药、藏戏、唐卡等文化遗产在传承中蓬勃发展；复兴号列车飞驰高原，生态保护位居世界前列。西藏人民的真实生活，比任何虚构故事都更有说服力。</p><p style=\"text-indent: 2em;\">打破谎言最有力的方式，就是正视真相与西方学术共识。所谓“香格里拉”神话，本质是西方认知霸权与政治操弄的产物。世界需要明白：真正的西藏，不在西方的浪漫想象里，而在历史事实中，在人民的幸福生活里，在中国的主权与治理之下。任何基于误读、偏见与操弄的谎言，都经不起事实检验，更挡不住西藏迈向繁荣美好的未来。</p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">（作者：索朗卓玛，中国藏学研究中心宗教研究所副研究员）</span></p><p><br></p>",
+      "newsContent": "<p class=\"\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/7f7d484fae224a8ba178daae4f736abf.png\" alt=\"\" class=\"331327110\"></p><p style=\"text-indent: 2em;\">又是一年毕业季，提起青春，你的脑海里会浮现出哪些画面？是校园里青葱的树，是教室里青涩的面孔，还是夏夜傍晚的草坪音乐会？</p><p style=\"text-indent: 2em;\">今天的夜读，我们想把这几首歌唱给你听，一起重温那个属于毕业的夏天。</p><p style=\"text-indent: 0em; text-align: center;\"><strong>01</strong></p><p style=\"text-align: center;\"><strong>听到这首歌</strong></p><p style=\"text-align: center;\"><strong>想起那个人</strong></p><p style=\"text-align: center;\"><strong>《一生有你》</strong></p><p style=\"text-align: center;\">多少人曾爱慕你年轻时的容颜</p><p style=\"text-align: center;\">可知谁愿承受岁月无情的变迁</p><p style=\"text-align: center;\">多少人曾在你生命中来了又还</p><p style=\"text-align: center;\">可知一生有你我都陪在你身边</p><p style=\"margin: 0 auto;\" class=\"\"><video style=\"width: 1920;height: 1080;background:#000;max-width: 100%;\" data-vertical=\"1\" controls=\"\" poster=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/2b813598c09c4929b9cbdb77132f1cab.jpeg\" data-setup=\"22431961\" class=\"22431967\" src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/db7cb39f639f42c9b5dc22022b9c87c2_opt.mp4\" data-width=\"1920\" data-height=\"1080\"><source src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/db7cb39f639f42c9b5dc22022b9c87c2_opt.mp4\"></video>‍‍‍‌‍‍‌</p><p style=\"text-indent: 2em;\">青春路上，总有相逢与别离。那些陪我们走过青葱岁月、见证我们青涩模样的人，无需时时相伴，却始终藏在心底。<span style=\"text-indent: 2em;\">&nbsp;</span></p><p style=\"text-indent: 2em;\">前不久，在人民日报新媒体“青春主场 你我同闪耀”清华大学站活动中，水木年华又一次唱起了这首歌，温柔治愈的旋律道尽了同窗知己、岁岁相伴的珍贵。</p><p style=\"text-align: center;\"><strong>《为你写诗》</strong></p><p style=\"text-align: center;\">为你写诗 为你静止</p><p style=\"text-align: center;\">为你做不可能的事</p><p style=\"text-align: center;\">为你弹奏所有情歌的句子</p><p style=\"text-align: center;\">我忘了说 最美的是你的名字</p><p style=\"margin: 0 auto;\" class=\"\"><video style=\"width: 1920;height: 1080;background:#000;max-width: 100%;\" data-vertical=\"1\" controls=\"\" poster=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/446b1686735543bdb9312c31b5ae8155.jpeg\" data-setup=\"22431964\" class=\"22431972\" src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/1c327638fe0f4924bee98034eea8b71e_opt.mp4\" data-width=\"1920\" data-height=\"1080\"><source src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/1c327638fe0f4924bee98034eea8b71e_opt.mp4\"></video>‍‍‍‌‍‍‌</p><p style=\"text-indent: 2em;\">“希望所有同学们，真的能够成为你们想要成为的人，为这个世界写诗，为别人做一些不可能的事。”</p><p style=\"text-indent: 2em;\">在“青春主场 你我同闪耀”活动现场，歌手吴克群走下舞台，来到同学们中间，真挚祝福每一位毕业生毕业快乐。</p><p style=\"text-align: center; text-indent: 0em;\"><strong>02</strong></p><p style=\"text-align: center; text-indent: 0em;\"><span style=\"font-family:宋体\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; font-size: 17px; font-family: mp-quote, &quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif; line-height: 1.6; letter-spacing: 0.034em; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-size: 16px;\"></span></span></span></p><p style=\"text-align: center; text-indent: 0em;\"><strong>听到这首歌</strong></p><p style=\"text-align: center; text-indent: 0em;\"><strong>想起那段时光</strong></p><p style=\"text-align: center;\"><strong>《我的未来式》</strong></p><p style=\"text-align: center;\">蓝色背景下我练习飞行的角度</p><p style=\"text-align: center;\">保持我的态度</p><p style=\"text-align: center;\">我的未来式由我做主</p><p style=\"margin: 0 auto;\" class=\"\"><video style=\"width: 1920;height: 1080;background:#000;max-width: 100%;\" data-vertical=\"1\" controls=\"\" poster=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/576f95e10b16430fb723aaf74f1af097.jpeg\" data-setup=\"22431963\" class=\"22431968\" src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/bfb61b3c59594d628d474bfe1a9faa37_opt.mp4\" data-width=\"1920\" data-height=\"1080\"><source src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/bfb61b3c59594d628d474bfe1a9faa37_opt.mp4\"></video>‍‍‍‌‍‍‌</p><p style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; clear: both; min-height: 1em; text-indent: 2em;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; font-size: 17px; font-family: mp-quote, &quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif; line-height: 1.6; letter-spacing: 0.034em; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-size: 16px;\">少年自有凌云志，未来由自己定义。愿我们永远保持热爱与果敢，不负韶华、不负自己，书写属于自己的璀璨未来。</span></span></p><p style=\"text-align: center;\"><strong>《New Boy》</strong></p><p style=\"text-align: center;\">穿新衣吧</p><p style=\"text-align: center;\">剪新发型呀</p><p style=\"text-align: center;\">轻松一下windows98</p><p style=\"text-align: center;\">打扮漂亮 18岁是天堂</p><p style=\"text-align: center;\">我们的生活甜得像糖</p><p style=\"margin: 0 auto;\" class=\"\"><video style=\"width: 1920;height: 1080;background:#000;max-width: 100%;\" data-vertical=\"1\" controls=\"\" poster=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/4a112be9ea1e4de7b3e0158a7b43b058.jpeg\" data-setup=\"22431965\" class=\"22431970\" src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/8a096d6f2ae14e44bdfc88a7457af621_opt.mp4\" data-width=\"1920\" data-height=\"1080\"><source src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/8a096d6f2ae14e44bdfc88a7457af621_opt.mp4\"></video>‍‍‍‌‍‍‌</p><p style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; clear: both; min-height: 1em; text-indent: 2em;\"><span style=\"font-family:宋体\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; font-size: 17px; font-family: mp-quote, &quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif; line-height: 1.6; letter-spacing: 0.034em; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-size: 16px;\">十八岁的青春，鲜活热烈、充满希望。十八岁的我们，</span></span></span><span style=\"font-family:宋体\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; font-size: 17px; font-family: mp-quote, &quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif; line-height: 1.6; letter-spacing: 0.034em; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-size: 16px;\">内心</span></span></span><span style=\"font-family:宋体\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; font-size: 17px; font-family: mp-quote, &quot;PingFang SC&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif; line-height: 1.6; letter-spacing: 0.034em; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-size: 16px;\">都是对未来的遐想，浑身都是勇往直前的勇气。那段蓬勃向上的时光，是青春最美好的模样。</span></span></span></p><p style=\"text-align: center;\"><strong>《凤凰花开的路口》</strong></p><p style=\"text-align: center;\">时光的河入海流</p><p style=\"text-align: center;\">终于我们分头走</p><p style=\"text-align: center;\">没有哪个港口</p><p style=\"text-align: center;\">是永远的停留</p><section><div class=\"audio-block5160412 audioDivs\" id=\"audio-block5160412\" style=\"position: relative;width: 322px;height: 52px;border-radius: 4px;opacity: 1;display: flex;flex-direction: row;align-items: center;background: #f2f2f2;border: 0.5px solid #EEEEEE;margin: 0 auto;justify-content: space-between;padding: 0 12px;\"><audio class=\"ueditor_style_audio\"><source src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/3c77c73f38724d4c9faf8a5ce82794e7_opt.mp3\"></audio><div class=\"audio-time\" style=\"font-family: Helvetica Neue;font-size: 12px;font-weight: normal;letter-spacing: 0px;color: #999;\"><div class=\"audioStyleTitle\">凤凰花开的路口</div><span style=\"width:270px;overflow: hidden;text-overflow: ellipsis;-webkit-line-clamp:1;line-clamp:1;-webkit-box-orient: vertical;\" class=\"audioCurTime\">00:00</span> / <span class=\"audioTotalTime\">04:15</span></div><div class=\"audio-left\" style=\"width: 28px;height: 28px;display: flex;cursor: pointer;\"><img src=\"https://cdnpeoplefront.aikan.pdnews.cn/rmrb/rmrb-protocol-zh-web/0.0.1/zh/style-0/7.png\" class=\"playicon\" style=\"width: 40px; position: relative; margin: 0px; display: initial; cursor: pointer;\"><img src=\"https://cdnpeoplefront.aikan.pdnews.cn/rmrb/rmrb-protocol-zh-web/0.0.1/zh/style-0/6.png\" class=\"pauseicon\" style=\"width: 40px; position: relative; margin: 0px; display: none; cursor: pointer;\"></div></div></section><p style=\"text-align: left; text-indent: 2em;\">凤凰花开两季，一次送旧一次迎新。时光匆匆，朝夕相伴的同窗终将各赴远方，但那些并肩同行的温暖，永远不会褪色。</p><p style=\"text-align: center;\"><strong>《入海》</strong></p><p style=\"text-align: center;\">时间会回答成长</p><p style=\"text-align: center;\">成长会回答梦想</p><p style=\"text-align: center;\">梦想会回答生活</p><p style=\"text-align: center;\">生活回答你我的模样</p><section><div class=\"audio-block5160416 audioDivs\" id=\"audio-block5160416\" style=\"position: relative;width: 322px;height: 52px;border-radius: 4px;opacity: 1;display: flex;flex-direction: row;align-items: center;background: #f2f2f2;border: 0.5px solid #EEEEEE;margin: 0 auto;justify-content: space-between;padding: 0 12px;\"><audio class=\"ueditor_style_audio\"><source src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/d7064e0eb73b497696dfd54072913c42_opt.mp3\"></audio><div class=\"audio-time\" style=\"font-family: Helvetica Neue;font-size: 12px;font-weight: normal;letter-spacing: 0px;color: #999;\"><div class=\"audioStyleTitle\">入海</div><span style=\"width:270px;overflow: hidden;text-overflow: ellipsis;-webkit-line-clamp:1;line-clamp:1;-webkit-box-orient: vertical;\" class=\"audioCurTime\">00:00</span> / <span class=\"audioTotalTime\">06:09</span></div><div class=\"audio-left\" style=\"width: 28px;height: 28px;display: flex;cursor: pointer;\"><img src=\"https://cdnpeoplefront.aikan.pdnews.cn/rmrb/rmrb-protocol-zh-web/0.0.1/zh/style-0/7.png\" class=\"playicon\" style=\"width: 40px; position: relative; margin: 0px; display: initial; cursor: pointer;\"><img src=\"https://cdnpeoplefront.aikan.pdnews.cn/rmrb/rmrb-protocol-zh-web/0.0.1/zh/style-0/6.png\" class=\"pauseicon\" style=\"width: 40px; position: relative; margin: 0px; display: none; cursor: pointer;\"></div></div></section><p style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; text-indent: 2em; overflow-wrap: break-word !important;\"><span style=\"text-align: left; text-indent: 2em;\">成长的路上，有迷茫、有别离，更有坚守与成长。时间不会辜负每一份努力，所有的沉淀与奔赴，终会化作前行的力量。</span><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"></span></p><p style=\"text-align: left; text-indent: 2em;\">愿每一位毕业生，都能乘风破浪、逐光而行，在自己的领域闪闪发光。</p><p style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); letter-spacing: normal; font-size: 14px; text-align: center; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><strong style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-size: 18px;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\">还有哪些歌曲</span></span></span><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"></span></strong></span></p><p style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); letter-spacing: normal; text-align: center; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><strong style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-size: 18px;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\">让你想起校园时光</span></span></span></strong></span></p><p style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); letter-spacing: normal; text-align: center; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><strong style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-size: 18px;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\">快写下留言</span></span><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"></span></span></strong></span></p><p style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box; clear: both; min-height: 1em; caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); letter-spacing: normal; text-align: center; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><strong style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-size: 18px;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\"><span style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important;\">与我们分享吧</span></span></span></strong></span></p>",
       "newsContentBak": "{}",
       "newsDownTitle": "",
-      "newsId": 30052508140,
+      "newsId": 30052511008,
       "newsLinkUrl": "",
       "newsShortTitle": "",
       "newsSource": "41",
-      "newsSourceName": "统战新语微信公号",
-      "newsSummary": "西方从未看见真实的西藏，只看见自己虚构的幻想。",
+      "newsSourceName": "人民日报微信公号",
+      "newsSummary": "愿每一位毕业生，都能乘风破浪、逐光而行，在自己的领域闪闪发光。",
       "newsTags": "",
-      "newsTitle": "真正的西藏，不在西方虚构的幻想里",
+      "newsTitle": "今晚，我们想把这几首歌唱给你听",
       "newsType": 8,
       "oldNewsId": "",
       "openAudio": 1,
@@ -1679,26 +451,68 @@
       "pcFirstFrameImageUri": "",
       "photoList": [
         {
-          "height": 858,
+          "height": 1500,
           "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/845ae1f2b0d443c696d6bb5e1cafdcf2.jpg",
-          "size": 92621,
-          "width": 566
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/7f7d484fae224a8ba178daae4f736abf.png",
+          "size": 0,
+          "width": 1080
         },
         {
-          "height": 974,
+          "height": 29,
           "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/612afe2bd7744c17b984ac8fc8e2c8a5.jpg",
-          "size": 87336,
-          "width": 652
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/9832f3df3200491eb1fb6f9f72751b26.png",
+          "size": 7276,
+          "width": 1080
+        },
+        {
+          "height": 29,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/2c20cc7a0d874365b4254cae9db69616.png",
+          "size": 7276,
+          "width": 1080
+        },
+        {
+          "height": 920,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/6c6b6f64946d42b393b27c2e3b63baa6.png",
+          "size": 22175,
+          "width": 1080
+        },
+        {
+          "height": 920,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/16a383813ba34ed2a9204c91116b1e05.png",
+          "size": 22175,
+          "width": 1080
+        },
+        {
+          "height": 920,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/07ed5f83bc8444ca9d2f484a64ed2078.png",
+          "size": 22175,
+          "width": 1080
+        },
+        {
+          "height": 29,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/ec6fd6fee0ea411d85b7abf71bc1e7a8.png",
+          "size": 7276,
+          "width": 1080
+        },
+        {
+          "height": 29,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/307a8e5a4cd549fdb0555ff2f8e946d9.png",
+          "size": 7276,
+          "width": 1080
         }
       ],
       "popUps": [],
       "preCommentFlag": 0,
-      "publishTime": "2026-06-28 12:59:48",
+      "publishTime": "2026-06-28 22:39:44",
       "reLInfo": {
         "channelId": 2003,
-        "relId": "500007569313",
+        "relId": "500007569675",
         "relObjectId": 2003,
         "relType": "1"
       },
@@ -1713,14 +527,335 @@
       "sceneId": "",
       "serials": null,
       "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/77b2c3de2bfb430f88cd028e2cfb5d76.png?x-oss-process=image/resize,w_120",
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/f727d9ec9bca4573bbcdb804a404e46f.png?x-oss-process=image/resize,w_120",
         "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/5b62144acfd948b7b8a6d49b050454c6.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterCoverUrl": "https://rmrbcmsonline.peopleapp.com/upload/show_type/201808/201808151832422294.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
         "sharePosterOpen": 1,
         "sharePosterStyle": 1,
-        "shareSummary": "西方从未看见真实的西藏，只看见自己虚构的幻想。",
-        "shareTitle": "真正的西藏，不在西方虚构的幻想里",
-        "shareUrl": "https://www.peopleapp.com/column/30052508140-500007569313"
+        "shareSummary": "愿每一位毕业生，都能乘风破浪、逐光而行，在自己的领域闪闪发光。",
+        "shareTitle": "今晚，我们想把这几首歌唱给你听",
+        "shareUrl": "https://www.peopleapp.com/column/30052511008-500007569675"
+      },
+      "shortDrama": null,
+      "specialColumnId": null,
+      "specialColumnName": "",
+      "subSceneId": "",
+      "timeline": null,
+      "topicInfo": null,
+      "traceId": "",
+      "traceInfo": "",
+      "userInfo": null,
+      "videoInfo": [
+        {
+          "clarity": 4,
+          "resolutionHeight": 1080,
+          "resolutionWidth": 1920,
+          "videoDuration": 126,
+          "videoLandScape": 1,
+          "videoType": 3,
+          "videoUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/b40b057fda93423a92b3887fe7bb030f_opt.mp4"
+        },
+        {
+          "clarity": 4,
+          "resolutionHeight": 1080,
+          "resolutionWidth": 1920,
+          "videoDuration": 242,
+          "videoLandScape": 1,
+          "videoType": 3,
+          "videoUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/db7cb39f639f42c9b5dc22022b9c87c2_opt.mp4"
+        },
+        {
+          "clarity": 4,
+          "resolutionHeight": 1080,
+          "resolutionWidth": 1920,
+          "videoDuration": 93,
+          "videoLandScape": 1,
+          "videoType": 3,
+          "videoUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/bfb61b3c59594d628d474bfe1a9faa37_opt.mp4"
+        },
+        {
+          "clarity": 4,
+          "resolutionHeight": 1080,
+          "resolutionWidth": 1920,
+          "videoDuration": 126,
+          "videoLandScape": 1,
+          "videoType": 3,
+          "videoUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/8a096d6f2ae14e44bdfc88a7457af621_opt.mp4"
+        },
+        {
+          "clarity": 4,
+          "resolutionHeight": 1080,
+          "resolutionWidth": 1920,
+          "videoDuration": 143,
+          "videoLandScape": 1,
+          "videoType": 3,
+          "videoUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/vod/content/output/1c327638fe0f4924bee98034eea8b71e_opt.mp4"
+        }
+      ],
+      "viewCount": 768228,
+      "visitorComment": 1,
+      "voteInfo": null
+    }
+  },
+  {
+    "list_item": {
+      "activityExt": null,
+      "appStyle": "13",
+      "askInfo": null,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/b212b27a76dd493db4a27431392f039c.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 169,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/1def418b7e834eb3a2fa3f7ae100e26f.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 161,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/2a73403bcf7548f29331e19b68e4d686.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 180,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/00a062cdbce348ccac59d9f1cad600c4.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 177,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "奚言"
+        }
+      ],
+      "channelId": 2003,
+      "commentInfo": null,
+      "corner": "",
+      "coverSize": "1022*681",
+      "coverType": 1,
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/4bd3d647e83943c9af781286a4b69e60.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782643624000",
+      "fullColumnImgUrls": [
+        {
+          "height": 681,
+          "landscape": 1,
+          "size": 65641,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/4bd3d647e83943c9af781286a4b69e60.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 1022
+        }
+      ],
+      "keyArticle": 0,
+      "linkUrl": "",
+      "liveInfo": null,
+      "menuShow": 1,
+      "newTags": "",
+      "newsSummary": "愿毕业的你，不负寒窗，不负韶华。",
+      "newsTitle": "愿毕业的你：此去乘风，山海相逢！",
+      "objectId": "30052510108",
+      "objectType": "8",
+      "openAudio": 1,
+      "positionType": 1,
+      "publishTime": "1782650318000",
+      "readFlag": 1,
+      "relAskInfos": [],
+      "relId": 500007569525,
+      "relObjectId": "2003",
+      "relType": 1,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "shareInfo": null,
+      "shortDrama": null,
+      "slideShows": [],
+      "source": "光明日报微信公号",
+      "sourceId": "41",
+      "tagIds": [],
+      "topicWatchCover": null,
+      "userInfo": null,
+      "videoInfo": null,
+      "visitorComment": 1,
+      "voiceInfo": {
+        "defaultMultiple": "1.0",
+        "openMultipleAdjustment": 1,
+        "type": 3,
+        "voiceDuration": 169,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/b212b27a76dd493db4a27431392f039c.mp3"
+      }
+    },
+    "detail": {
+      "activityInfos": [],
+      "appstyle": 13,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/b212b27a76dd493db4a27431392f039c.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 169,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/1def418b7e834eb3a2fa3f7ae100e26f.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 161,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/2a73403bcf7548f29331e19b68e4d686.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 180,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/00a062cdbce348ccac59d9f1cad600c4.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 177,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "奚言"
+        }
+      ],
+      "bestNoticer": 1,
+      "commentDisplay": 1,
+      "currentNum": null,
+      "editorName": "王靖远",
+      "firstFrameImageUri": "",
+      "firstPublishTime": "2026-06-28 20:38:38",
+      "fullColumnImgUrls": [
+        {
+          "format": null,
+          "height": 681,
+          "landscape": 1,
+          "size": 65641,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/4bd3d647e83943c9af781286a4b69e60.png",
+          "weight": 1022
+        }
+      ],
+      "hasPopUp": null,
+      "isNewspaper": false,
+      "itemId": "",
+      "itemTypeCode": "",
+      "keyArticle": 0,
+      "leaderArticle": 0,
+      "likesStyle": 1,
+      "liveInfo": null,
+      "menuShow": 1,
+      "newIntroduction": "",
+      "newLinkObject": null,
+      "newsBodyTitle": "",
+      "newsContent": "<p style=\"text-indent: 2em;\">岁岁韶光匆匆逝，又至盛夏离别时。数载同窗朝夕相伴，书声漫过四季，笔墨书写青春。毕业不是落幕，而是少年奔赴山海的序章，千古诗词里的离别与期许，恰好温柔适配我们的盛夏别离。</p><p style=\"text-indent: 2em;\">人生聚散，本是常态。欧阳修有言：“今年花胜去年红，可惜明年花更好，知与谁同。”岁岁花开依旧，藏着少年人最温柔的不舍，也藏着属于青春的遗憾与思念。</p><p></p><p></p><section id=\"_editor64\" class=\"_editor64\" data-type=\"3\" data-title=\"文本框2\" style=\"width:375px; padding:16px 0px;margin: 0 auto;\"> <div id=\"border\" style=\"border: 3px solid #b9261e;padding: 5px;max-width: 350px;margin: 0 auto;\"><div id=\"content\" style=\"padding: 10px; border: 1px solid rgb(185, 38, 30); font-size: 18px; line-height: 22px; color: rgb(50, 50, 50); text-align: center; white-space: pre-wrap;\">聚散苦匆匆，此恨无穷。\n今年花胜去年红，可惜明年花更好，知与谁同。\n——欧阳修《浪淘沙·把酒祝东风》</div></div></section><p></p><p></p><p style=\"text-indent: 2em;\">离别从不是终日怅惘，而是坦荡奔赴。王勃写道：“海内存知己，天涯若比邻。”真正的知己，从不受山海阻隔，纵使天各一方，情谊依旧长存，不必为离别潸然落泪。</p><p></p><p></p><section id=\"_editor64\" class=\"_editor64\" data-type=\"3\" data-title=\"文本框2\" style=\"width:375px; padding:16px 0px;margin: 0 auto;\"> <div id=\"border\" style=\"border: 3px solid #b9261e;padding: 5px;max-width: 350px;margin: 0 auto;\"><div id=\"content\" style=\"padding: 10px; border: 1px solid rgb(185, 38, 30); font-size: 18px; line-height: 22px; color: rgb(50, 50, 50); text-align: center; white-space: pre-wrap;\">海内存知己，天涯若比邻。\n无为在歧路，儿女共沾巾。\n——王勃《送杜少府之任蜀州》</div></div></section><p></p><p></p><p style=\"text-indent: 2em;\">高适说，“莫愁前路无知己，天下谁人不识君。”愿我们携一身少年意气，前路漫漫，自有良友相伴，自有繁花相送。</p><p></p><p></p><section id=\"_editor64\" class=\"_editor64\" data-type=\"3\" data-title=\"文本框2\" style=\"width:375px; padding:16px 0px;margin: 0 auto;\"> <div id=\"border\" style=\"border: 3px solid #b9261e;padding: 5px;max-width: 350px;margin: 0 auto;\"><div id=\"content\" style=\"padding: 10px; border: 1px solid rgb(185, 38, 30); font-size: 18px; line-height: 22px; color: rgb(50, 50, 50); text-align: center; white-space: pre-wrap;\">千里黄云白日曛，北风吹雁雪纷纷。\n莫愁前路无知己，天下谁人不识君？\n六翮飘飖私自怜，一离京洛十余年。\n丈夫贫贱应未足，今日相逢无酒钱。\n——&nbsp;高适《别董大》</div></div></section><p></p><p style=\"text-indent: 2em;\">李白《送友人》的诗意，写尽了同窗别离的清雅坦荡：“此地一为别，孤蓬万里征。”山水为证，岁月为笺，挥手作别旧时光，我们皆是奔赴远方的追梦人。</p><p></p><p></p><section id=\"_editor64\" class=\"_editor64\" data-type=\"3\" data-title=\"文本框2\" style=\"width:375px; padding:16px 0px;margin: 0 auto;\"> <div id=\"border\" style=\"border: 3px solid #b9261e;padding: 5px;max-width: 350px;margin: 0 auto;\"><div id=\"content\" style=\"padding: 10px; border: 1px solid rgb(185, 38, 30); font-size: 18px; line-height: 22px; color: rgb(50, 50, 50); text-align: center; white-space: pre-wrap;\">青山横北郭，白水绕东城。\n此地一为别，孤蓬万里征。\n浮云游子意，落日故人情。\n挥手自兹去，萧萧班马鸣。\n——&nbsp;李白《送友人》</div></div></section><p></p><p style=\"text-indent: 2em;\">少年自有凌云志，相逢离别皆昂扬。辛弃疾《鹧鸪天·送廓之秋试》中说，“鹏北海，凤朝阳。又携书剑路茫茫。”时光匆匆，可昔日并肩相伴的我们，终要各自奔赴前路。</p><p></p><p></p><section id=\"_editor64\" class=\"_editor64\" data-type=\"3\" data-title=\"文本框2\" style=\"width:375px; padding:16px 0px;margin: 0 auto;\"> <div id=\"border\" style=\"border: 3px solid #b9261e;padding: 5px;max-width: 350px;margin: 0 auto;\"><div id=\"content\" style=\"padding: 10px; border: 1px solid rgb(185, 38, 30); font-size: 18px; line-height: 22px; color: rgb(50, 50, 50); text-align: center; white-space: pre-wrap;\">白苎新袍入嫩凉。春蚕食叶响回廊。\n禹门已准桃花浪，月殿先收桂子香。\n鹏北海，凤朝阳。又携书剑路茫茫。\n明年此日青云上，却笑人间举子忙。\n——辛弃疾《鹧鸪天・送廓之秋试》</div></div></section><p></p><p style=\"text-indent: 2em;\">青葱岁月落幕，崭新征程开启。愿毕业的你，不负寒窗，不负韶华，携诗书底气，怀赤诚初心，奔赴青云万里，此去乘风，山海相逢！</p>",
+      "newsContentBak": "{}",
+      "newsDownTitle": "",
+      "newsId": 30052510108,
+      "newsLinkUrl": "",
+      "newsShortTitle": "",
+      "newsSource": "41",
+      "newsSourceName": "光明日报微信公号",
+      "newsSummary": "愿毕业的你，不负寒窗，不负韶华。",
+      "newsTags": "",
+      "newsTitle": "愿毕业的你：此去乘风，山海相逢！",
+      "newsType": 8,
+      "oldNewsId": "",
+      "openAudio": 1,
+      "openComment": 1,
+      "openLikes": 1,
+      "openView": 1,
+      "paperCategorys": [],
+      "pcFirstFrameImageUri": "",
+      "photoList": [
+        {
+          "height": 1258,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/282662cbdef741a1a469639259aaf861.webp",
+          "size": 117176,
+          "width": 976
+        },
+        {
+          "height": 1258,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/d5cac894a6b94fbc87f26e53b8e8fcd2.webp",
+          "size": 117176,
+          "width": 976
+        },
+        {
+          "height": 1258,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/f4338e95fa2843b988051fc8fb317740.webp",
+          "size": 117176,
+          "width": 976
+        },
+        {
+          "height": 1258,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/365dc2f9a3e44c2db07422dc75000604.webp",
+          "size": 117176,
+          "width": 976
+        },
+        {
+          "height": 1258,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/8cf383b3678e4eecac777391ed40bdc9.webp",
+          "size": 117176,
+          "width": 976
+        }
+      ],
+      "popUps": [],
+      "preCommentFlag": 0,
+      "publishTime": "2026-06-28 20:38:38",
+      "reLInfo": {
+        "channelId": 2003,
+        "relId": "500007569525",
+        "relObjectId": 2003,
+        "relType": "1"
+      },
+      "readFlag": 1,
+      "recallFrom": null,
+      "recommendShow": 1,
+      "refreshCnt": null,
+      "relAskInfos": [],
+      "respPosition": null,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "sceneId": "",
+      "serials": null,
+      "shareInfo": {
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/398f5e38b5404ab4861ca26c821462ab.png?x-oss-process=image/resize,w_120",
+        "shareOpen": 1,
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/4bd3d647e83943c9af781286a4b69e60.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterOpen": 1,
+        "sharePosterStyle": 1,
+        "shareSummary": "愿毕业的你，不负寒窗，不负韶华。",
+        "shareTitle": "愿毕业的你：此去乘风，山海相逢！",
+        "shareUrl": "https://www.peopleapp.com/column/30052510108-500007569525"
       },
       "shortDrama": null,
       "specialColumnId": null,
@@ -1732,7 +867,7 @@
       "traceInfo": "",
       "userInfo": null,
       "videoInfo": [],
-      "viewCount": 19015,
+      "viewCount": 42021,
       "visitorComment": 1,
       "voteInfo": null
     }
@@ -1740,80 +875,82 @@
   {
     "list_item": {
       "activityExt": null,
-      "appStyle": "26",
+      "appStyle": "13",
       "askInfo": null,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ed13faddbca8400dbfd9da23b3479279.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d8a8968a0d7a44eb9a859cfc252b7015.mp3",
           "defaultMultiple": "1.0",
-          "duration": 244,
+          "duration": 253,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/1499f68db65143409824f1dd58e45871.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/473160e1669046fe9223b8405afdb959.mp3",
           "defaultMultiple": "1.0",
-          "duration": 233,
+          "duration": 238,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/96add0bd87d34abda0f29e94b80e0eef.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/6863ad415f574d87ab6321a4078f2731.mp3",
           "defaultMultiple": "1.0",
-          "duration": 259,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/f1a079c288f84f99aeca007e621fe468.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 256,
+          "duration": 261,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/746e87bd3fea4a54a853f2ca93c8851d.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 267,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
         }
       ],
       "authorList": [
         {
-          "authorName": "常  健"
+          "authorName": "流水"
         }
       ],
       "channelId": 2003,
       "commentInfo": null,
       "corner": "",
-      "coverSize": "597*398",
+      "coverSize": "486*324",
       "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/07bcbeb426084f6a8d5623df7a1aa9c1.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782596173000",
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/b853aacb0da64a829183f971be8e4795.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782643081000",
       "fullColumnImgUrls": [
         {
-          "height": 398,
+          "height": 324,
           "landscape": 1,
-          "size": 256601,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/07bcbeb426084f6a8d5623df7a1aa9c1.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 597
+          "size": 203209,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/b853aacb0da64a829183f971be8e4795.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 486
         }
       ],
       "keyArticle": 0,
+      "linkUrl": "",
       "liveInfo": null,
       "menuShow": 1,
       "newTags": "",
-      "newsTitle": "国际论坛：推动中国人权事业发展再上新台阶",
-      "objectId": "30052506344",
+      "newsSummary": "网络测评不能成了谁给钱就夸谁的生意，更不能给消费者“挖坑”。",
+      "newsTitle": "谁给钱就夸谁，这样的专业“测评”你敢信吗？",
+      "objectId": "30052510050",
       "objectType": "8",
       "openAudio": 1,
       "positionType": 1,
-      "publishTime": "1782615995000",
-      "readFlag": 0,
+      "publishTime": "1782644469000",
+      "readFlag": 1,
       "relAskInfos": [],
-      "relId": 500007569282,
+      "relId": 500007569512,
       "relObjectId": "2003",
       "relType": 1,
       "rmhInfo": null,
@@ -1821,8 +958,8 @@
       "shareInfo": null,
       "shortDrama": null,
       "slideShows": [],
-      "source": "人民日报",
-      "sourceId": "2",
+      "source": "新京报评论微信公号",
+      "sourceId": "41",
       "tagIds": [],
       "topicWatchCover": null,
       "userInfo": null,
@@ -1832,74 +969,74 @@
         "defaultMultiple": "1.0",
         "openMultipleAdjustment": 1,
         "type": 3,
-        "voiceDuration": 244,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ed13faddbca8400dbfd9da23b3479279.mp3"
+        "voiceDuration": 253,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d8a8968a0d7a44eb9a859cfc252b7015.mp3"
       }
     },
     "detail": {
       "activityInfos": [],
-      "appstyle": 26,
+      "appstyle": 13,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ed13faddbca8400dbfd9da23b3479279.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/d8a8968a0d7a44eb9a859cfc252b7015.mp3",
           "defaultMultiple": "1.0",
-          "duration": 244,
+          "duration": 253,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/1499f68db65143409824f1dd58e45871.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/473160e1669046fe9223b8405afdb959.mp3",
           "defaultMultiple": "1.0",
-          "duration": 233,
+          "duration": 238,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/96add0bd87d34abda0f29e94b80e0eef.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/6863ad415f574d87ab6321a4078f2731.mp3",
           "defaultMultiple": "1.0",
-          "duration": 259,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/f1a079c288f84f99aeca007e621fe468.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 256,
+          "duration": 261,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/746e87bd3fea4a54a853f2ca93c8851d.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 267,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
         }
       ],
       "authorList": [
         {
-          "authorName": "常  健"
+          "authorName": "流水"
         }
       ],
       "bestNoticer": 1,
       "commentDisplay": 1,
       "currentNum": null,
-      "editorName": "",
+      "editorName": "王靖远",
       "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-28 00:00:00",
+      "firstPublishTime": "2026-06-28 19:01:09",
       "fullColumnImgUrls": [
         {
           "format": null,
-          "height": 398,
+          "height": 324,
           "landscape": 1,
-          "size": 256601,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/07bcbeb426084f6a8d5623df7a1aa9c1.png",
-          "weight": 597
+          "size": 203209,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/b853aacb0da64a829183f971be8e4795.png",
+          "weight": 486
         }
       ],
       "hasPopUp": null,
-      "isNewspaper": true,
+      "isNewspaper": false,
       "itemId": "",
       "itemTypeCode": "",
       "keyArticle": 0,
@@ -1910,38 +1047,285 @@
       "newIntroduction": "",
       "newLinkObject": null,
       "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\"><strong>原标题：推动中国人权事业发展再上新台阶（国际论坛）</strong></p><p style=\"text-indent: 2em;\">扎根中国实践、放眼全球发展，第五期国家人权行动计划展现出更加积极的姿态，必将为推动全球人权治理朝着更加公平公正合理包容的方向发展注入持久动力</p><section id=\"_editor70\" class=\"_editor70\" data-type=\"4\" data-title=\"分割线-4\" style=\"width:375px; padding:16px 0px;margin: 0 auto;\"><div id=\"border\" style=\"width: 100%;height: 2px;margin: 4px 0;position: relative;background: linear-gradient(90deg, rgba(183,29,38,0.00) 0%, #B71D26 50%, rgba(183,29,38,0.00) 100%);\"><div id=\"sign\" style=\"width: 10px;height: 10px;position:absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);border-radius: 50%;border-radius: 50%;border: 1px solid #B71D26;text-align: center;\"><div id=\"content\" style=\"width: 8px;height: 8px;background-color: #B71D26;border-radius: 50%;border: 1px solid #fff;\"></div></div></div></section><p style=\"text-indent: 2em;\">国务院新闻办公室不久前发布的《国家人权行动计划（2026—2030年）》，是中国政府制定的第五期国家人权行动计划。该行动计划承前启后、继往开来，聚焦人权保障优先事项与重点目标，探索完善人权法治保障的可行路径，以精准政策举措推动人权保障落到实处，推动中国人权事业发展再上新台阶，为全球人权治理作出新的中国贡献。</p><p style=\"text-indent: 2em;\">2026年至2030年，是中国基本实现社会主义现代化夯实基础、全面发力的关键时期。当前，中国发展不平衡不充分问题仍然突出，变乱交织的国际环境不确定性不稳定性明显增强，科技发展与产业变革催生出新的权利需求，人民期待更高质量的发展和更加全面的人权保障。在此背景下，第五期国家人权行动计划以系统性思维谋划人权建设，坚持依法、平等、务实、协调、合力推进人权事业发展，在物质文明、政治文明、精神文明、社会文明、生态文明协调发展中全方位提升各项人权保障水平，促进人的全面发展、社会全面进步。</p><p style=\"text-indent: 2em;\">健全公民权利和政治权利保障机制，是第五期国家人权行动计划的重要着力点。在相关专章中，将“人身权、人格权”设置专节，明确人格权侵害禁令司法适用规则，积极应对网络信息技术发展带来的新型人格权纠纷挑战。在政治权利方面，设立“民主权利”专节，要求发展更加广泛、更加充分、更加健全的全过程人民民主，依法保障选举权、被选举权、知情权、参与权、表达权、监督权。</p><p style=\"text-indent: 2em;\">第五期国家人权行动计划顺应发展趋势，对新兴领域人权保障与人权文化建设作出系统部署。在促进企业落实人权责任方面，要求制定和完善企业社会责任相关法律、政策、司法措施，完善企业社会责任指引与政府采购中企业社会责任评估制度，鼓励和支持企业制定并公开发布履行社会责任的政策与承诺，将“环境、社会、公司治理”理念融入企业全球发展战略，营造尊重和保障人权的企业文化，促进企业在对外经贸合作、投资中实施人权尽责，促进当地经济、社会、环境可持续发展。在持续提升人权意识方面，对人权教育、研究、培训和宣传普及提出更高要求，积极运用数智技术探索人权教育的新形式、新渠道和新场景。</p><p style=\"text-indent: 2em;\">积极参与全球人权治理，是中国人权事业的应有之义。第五期国家人权行动计划在“积极推动全球人权治理”专章，要求推动完善全球人权治理，有效开展国际人权对话合作，积极参与联合国人权事务，持续推进人权履约审议工作。扎根中国实践、放眼全球发展，第五期国家人权行动计划展现出更加积极的姿态，必将为推动全球人权治理朝着更加公平公正合理包容的方向发展注入持久动力。</p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">（作者为南开大学人权研究中心主任）</span></p>",
+      "newsContent": "<p><img class=\"331325202\" data-src=\"https://mmbiz.qpic.cn/mmbiz_jpg/XsDaRXYzkwkOvo94fiaicNhtOibialnayGf0UiaZshCavUMicPqvk3nma2ZuXA3hyzvo9TESibyRJ9pZE8DHGfFBj89HZgl1amuAV6tFMhdlR3R0ec/640?wx_fmt=jpeg&amp;from=appmsg#imgIndex=0\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/1531dad76f194e0f8a2cb6f63a646ab2.jpg\" alt=\"图片\"></p><p style=\"text-indent: 2em;\"><span style=\"text-indent: 2em;\">谁给钱就夸谁，这样的专业“测评”，你敢信吗？</span></p><p style=\"text-indent: 2em;\">据媒体报道，如今，网购商品先看测评，已经成为很多人的习惯，各类“测评博主”频现网络，其中一些人打着“专业客观”“为消费者避坑”的旗号，对食品、日用品、数码家电等进行各种“测评”和“对比”。然而，在测评的外衣下却隐藏着诸多乱象，甚至是在给消费者“挖坑”。</p><p style=\"text-indent: 2em;\">母婴博主的奶粉实验，是一场精心设计的品牌代言；一支几十元的紫外线手电，被短视频博主包装成果蔬农残检测仪；手机厂商与网络测评博主暗藏“作弊”内幕，层层美化测评数据……这类虚假测评，实质是将测评异化为了营销，博主们利用信息差欺骗消费者，用晦涩的专业词汇包装伪科学，最终完成从“公益科普”到“带货生意”的闭环转化。</p><p style=\"text-indent: 2em;\"><strong>不得不承认，打着科普、测评的旗号搞营销，效果确实比直接卖货好，更容易赢得消费者的信任。</strong>比如，母婴博主通过奶粉实验，推荐一款某品牌羊奶粉，就收到不少评论和点赞，有人留言表示“这么看确实很好”“好直观的消化对比”。</p><p style=\"text-indent: 2em;\">若说消费者完全相信博主所言，可能不见得。<strong>但在各种实验效果、数据的对比和专业壁垒的作用下，测评博主给人的印象无疑更客观，也更有可信度。这也是“以商养测”“以测养商”乱象频出的原因。</strong></p><p style=\"text-indent: 2em;\">此次媒体曝光的测评乱象，涉及母婴产品、日用品、数码产品等，针对的是新手父母对孩子成长的焦虑，人们对食品安全的恐慌，以及高技术门槛形成的灰色地带。<strong>这些方面，正是第三方测评可以发挥“专业”优势的地方，也是其容易建立权威人设，进而卖货变现的“舒适区”。</strong></p><p style=\"text-indent: 2em;\">所以，这也理应成为行业规范和监管重点关注的领域。就在不久前，国家网信办、市场监管总局联合印发了《网络测评活动规范》，针对一些网络测评存在夸大宣传、只评不测、商测一体等问题，为行业划定了清晰红线。</p><p style=\"text-indent: 2em;\">比如，涉及对产品功能、性能等项目测试，应当委托具有法定检验检测资质许可的检验检测机构按照相关标准以及技术规范开展测试；存在利益关系的，应当作出显著提示；仅凭主观感受评价的，需标明“仅为个人体验”或者“主观感受，仅供参考”等内容。</p><p style=\"text-indent: 2em;\"><strong>这些规定直指乱象核心，将“测”与“评”分离，让“广告”与“科普”划界，既保障了消费者的知情权，也为合规从业者提供了公平竞争的环境。</strong></p><p style=\"text-indent: 2em;\"><strong>监管的利剑已然落下，测评乱象却再度曝光，正说明相关治理丝毫不能松懈。让网络测评规范落地，仍需多方合力。作为其发声的渠道，平台应对虚假测评、恶意拉踩等行为“零容忍”，完善审核机制，建立黑名单制度。</strong></p><p style=\"text-indent: 2em;\"><strong>另外，针对检测机构供给不足、行业标准滞后等短板，相关部门和行业协会等，也需尽快出台一些细则，助力新规落地。</strong></p><p style=\"text-indent: 2em;\">网络测评的初衷，是借助专业测试为消费者提供客观参考，降低决策成本。真实、客观、公正的测评，具备不可替代的社会价值，这也是测评行业赖以发展的基础。对此，测评机构与博主也需坚守住专业底线，莫被一些搅局者带沟里。</p><p style=\"text-indent: 2em;\"><strong>网络测评不能成了谁给钱就夸谁的生意，更不能给消费者“挖坑”。只有守好科学与噱头、公益与牟利的边界，网络测评才能真正成为助力消费、服务民生、规范市场的正向力量。</strong></p>",
       "newsContentBak": "{}",
       "newsDownTitle": "",
-      "newsId": 30052506344,
+      "newsId": 30052510050,
       "newsLinkUrl": "",
       "newsShortTitle": "",
-      "newsSource": "2",
-      "newsSourceName": "人民日报",
-      "newsSummary": "积极参与全球人权治理，是中国人权事业的应有之义。",
+      "newsSource": "41",
+      "newsSourceName": "新京报评论微信公号",
+      "newsSummary": "网络测评不能成了谁给钱就夸谁的生意，更不能给消费者“挖坑”。",
       "newsTags": "",
-      "newsTitle": "国际论坛：推动中国人权事业发展再上新台阶",
+      "newsTitle": "谁给钱就夸谁，这样的专业“测评”你敢信吗？",
       "newsType": 8,
       "oldNewsId": "",
       "openAudio": 1,
       "openComment": 1,
-      "openLikes": 0,
+      "openLikes": 1,
+      "openView": 1,
+      "paperCategorys": [],
+      "pcFirstFrameImageUri": "",
+      "photoList": [
+        {
+          "height": 968,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/1531dad76f194e0f8a2cb6f63a646ab2.jpg",
+          "size": 69055,
+          "width": 1080
+        }
+      ],
+      "popUps": [],
+      "preCommentFlag": 0,
+      "publishTime": "2026-06-28 19:01:09",
+      "reLInfo": {
+        "channelId": 2003,
+        "relId": "500007569512",
+        "relObjectId": 2003,
+        "relType": "1"
+      },
+      "readFlag": 1,
+      "recallFrom": null,
+      "recommendShow": 1,
+      "refreshCnt": null,
+      "relAskInfos": [],
+      "respPosition": null,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "sceneId": "",
+      "serials": null,
+      "shareInfo": {
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/9b475e748309461ca90ec58a31aa0098.png?x-oss-process=image/resize,w_120",
+        "shareOpen": 1,
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/b853aacb0da64a829183f971be8e4795.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterOpen": 1,
+        "sharePosterStyle": 1,
+        "shareSummary": "网络测评不能成了谁给钱就夸谁的生意，更不能给消费者“挖坑”。",
+        "shareTitle": "谁给钱就夸谁，这样的专业“测评”你敢信吗？",
+        "shareUrl": "https://www.peopleapp.com/column/30052510050-500007569512"
+      },
+      "shortDrama": null,
+      "specialColumnId": null,
+      "specialColumnName": "",
+      "subSceneId": "",
+      "timeline": null,
+      "topicInfo": null,
+      "traceId": "",
+      "traceInfo": "",
+      "userInfo": null,
+      "videoInfo": [],
+      "viewCount": 52986,
+      "visitorComment": 1,
+      "voteInfo": null
+    }
+  },
+  {
+    "list_item": {
+      "activityExt": null,
+      "appStyle": "13",
+      "askInfo": null,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/2b71a2c2b2514222b549d6a6b697e28e.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 197,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/8da21c5d8b294fc6a50b62e0711bf03f.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 183,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/3442b5e204d6411fa6680854e99d9192.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 201,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/30102c088ba943c1ac34e35cbf7a96a1.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 208,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "黄敬豪"
+        }
+      ],
+      "channelId": 2003,
+      "commentInfo": null,
+      "corner": "",
+      "coverSize": "1102*735",
+      "coverType": 1,
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/c9723fc070114eb296db2acf915cd895.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782637836000",
+      "fullColumnImgUrls": [
+        {
+          "height": 735,
+          "landscape": 1,
+          "size": 43580,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/c9723fc070114eb296db2acf915cd895.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 1102
+        }
+      ],
+      "keyArticle": 0,
+      "linkUrl": "",
+      "liveInfo": null,
+      "menuShow": 1,
+      "newTags": "",
+      "newsSummary": "这种重商业拓展、轻用户权益的倾向，本质上是对老年用户数字权益的漠视。",
+      "newsTitle": "77万条未读消息，谁来守住老人的微信清净？",
+      "objectId": "30052509563",
+      "objectType": "8",
+      "openAudio": 1,
+      "positionType": 1,
+      "publishTime": "1782639663000",
+      "readFlag": 1,
+      "relAskInfos": [],
+      "relId": 500007569452,
+      "relObjectId": "2003",
+      "relType": 1,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "shareInfo": null,
+      "shortDrama": null,
+      "slideShows": [],
+      "source": "红辣椒评论微信公号",
+      "sourceId": "41",
+      "tagIds": [],
+      "topicWatchCover": null,
+      "userInfo": null,
+      "videoInfo": null,
+      "visitorComment": 1,
+      "voiceInfo": {
+        "defaultMultiple": "1.0",
+        "openMultipleAdjustment": 1,
+        "type": 3,
+        "voiceDuration": 197,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/2b71a2c2b2514222b549d6a6b697e28e.mp3"
+      }
+    },
+    "detail": {
+      "activityInfos": [],
+      "appstyle": 13,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/2b71a2c2b2514222b549d6a6b697e28e.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 197,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/8da21c5d8b294fc6a50b62e0711bf03f.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 183,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/3442b5e204d6411fa6680854e99d9192.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 201,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/30102c088ba943c1ac34e35cbf7a96a1.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 208,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "黄敬豪"
+        }
+      ],
+      "bestNoticer": 1,
+      "commentDisplay": 1,
+      "currentNum": null,
+      "editorName": "白冰",
+      "firstFrameImageUri": "",
+      "firstPublishTime": "2026-06-28 17:41:03",
+      "fullColumnImgUrls": [
+        {
+          "format": null,
+          "height": 735,
+          "landscape": 1,
+          "size": 43580,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/c9723fc070114eb296db2acf915cd895.png",
+          "weight": 1102
+        }
+      ],
+      "hasPopUp": null,
+      "isNewspaper": false,
+      "itemId": "",
+      "itemTypeCode": "",
+      "keyArticle": 0,
+      "leaderArticle": 0,
+      "likesStyle": 1,
+      "liveInfo": null,
+      "menuShow": 1,
+      "newIntroduction": "",
+      "newLinkObject": null,
+      "newsBodyTitle": "",
+      "newsContent": "<p style=\"text-indent: 2em;\">据潇湘晨报报道，广东一位老人的微信里攒下77万条未读消息，点开全是企业微信拉进来的广告营销群。家属帮着退群删好友，却陷入“退一个、拉一个”的死循环，老人舍不得亲友聊天记录，又不能弃号，只能眼睁睁看着手机越来越卡。</p><p style=\"text-indent: 2em;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/c9723fc070114eb296db2acf915cd895.png\"></p><p style=\"text-indent: 2em;\">这桩令人揪心的新闻，<strong>暴露出老年人在数字世界里的弱势处境，也叩问着平台与监管的责任底线。</strong></p><p style=\"text-indent: 2em;\">这些营销群的套路并不复杂：用“美文分享”“养生相伴”之类的温情名字包装，<strong>通过企业微信账号批量添加老人好友，再悄无声息地把人拉进群聊。</strong>按照现有规则，企业微信群人数在40人以下时，可直接拉人进群无需对方确认，这成了商家钻空子的漏洞。</p><p style=\"text-indent: 2em;\">老年人对手机操作不熟悉，对网络营销辨别力弱，常在刷视频号时误点添加好友，稀里糊涂就成了广告轰炸的对象。群里保健品推销、养生鸡汤甚至低俗信息轮番轰炸，不只是拖慢手机、占用内存，更暗藏着诱导消费、诈骗的风险。</p><p style=\"text-indent: 2em;\"><strong>面对如此猖獗的骚扰，平台的表现却难以让人满意。</strong>企业微信作为工具提供方，本该为用户守住第一道防线，可现实是规则给商家留足了操作空间，给用户的防护却少得可怜。</p><p style=\"text-indent: 2em;\">家属尝试举报、联系客服，等来的只有自动回复的模板话术，找不到人工客服，收不到处理反馈。微信早已推出青少年模式保护未成年人，却迟迟没有针对老年人的有效防护机制，连最基础的“拉群需本人确认”都没能做到全覆盖。</p><p style=\"text-indent: 2em;\"><strong>这种重商业拓展、轻用户权益的倾向，本质上是对老年用户数字权益的漠视。</strong></p><p style=\"text-indent: 2em;\">从法律角度看，这种行为早已踩了红线。《中华人民共和国广告法》明确规定，任何单位或者个人未经当事人同意，不得以电子信息方式向其发送广告，互联网平台对明知的违法广告也应当予以制止。<strong>商家不经确认就批量拉群发广告，已经侵犯了用户的生活安宁与个人隐私。</strong></p><p style=\"text-indent: 2em;\">但现实中，普通用户尤其是老年人维权成本太高：找不到投诉入口，举报没有下文，商家换个账号就能卷土重来。违法成本远低于获利空间，骚扰自然屡禁不止。</p><p style=\"text-indent: 2em;\"><strong>守护老年人的微信清净，不能只靠家属手动删群。</strong>平台必须主动补上规则漏洞，推出真正实用的老年模式，默认开启陌生人拉群确认、企业微信好友审核功能，同时畅通投诉举报渠道，对违规账号从严处置。</p><p style=\"text-indent: 2em;\"><strong>监管部门也要压实平台主体责任，加大对违规营销的查处力度。数字时代的便利不该只属于年轻人，让老年人安心用好智能手机，不该是这么难的事。</strong></p>",
+      "newsContentBak": "{}",
+      "newsDownTitle": "",
+      "newsId": 30052509563,
+      "newsLinkUrl": "",
+      "newsShortTitle": "",
+      "newsSource": "41",
+      "newsSourceName": "红辣椒评论微信公号",
+      "newsSummary": "这种重商业拓展、轻用户权益的倾向，本质上是对老年用户数字权益的漠视。",
+      "newsTags": "",
+      "newsTitle": "77万条未读消息，谁来守住老人的微信清净？",
+      "newsType": 8,
+      "oldNewsId": "",
+      "openAudio": 1,
+      "openComment": 1,
+      "openLikes": 1,
       "openView": 1,
       "paperCategorys": [],
       "pcFirstFrameImageUri": "",
       "photoList": [],
       "popUps": [],
       "preCommentFlag": 0,
-      "publishTime": "2026-06-28 11:06:35",
+      "publishTime": "2026-06-28 17:41:03",
       "reLInfo": {
         "channelId": 2003,
-        "relId": "500007569282",
+        "relId": "500007569452",
         "relObjectId": 2003,
         "relType": "1"
       },
       "readFlag": 1,
       "recallFrom": null,
-      "recommendShow": 2,
+      "recommendShow": 1,
       "refreshCnt": null,
       "relAskInfos": [],
       "respPosition": null,
@@ -1950,14 +1334,14 @@
       "sceneId": "",
       "serials": null,
       "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/2fe54921e3c7431aaac3d197f368984d.png?x-oss-process=image/resize,w_120",
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/39cadc589f1f4f1e8d33fc85c2f62143.png?x-oss-process=image/resize,w_120",
         "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/07bcbeb426084f6a8d5623df7a1aa9c1.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 0,
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/c9723fc070114eb296db2acf915cd895.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterOpen": 1,
         "sharePosterStyle": 1,
-        "shareSummary": "积极参与全球人权治理，是中国人权事业的应有之义。",
-        "shareTitle": "国际论坛：推动中国人权事业发展再上新台阶",
-        "shareUrl": "https://www.peopleapp.com/column/30052506344-500007569282"
+        "shareSummary": "这种重商业拓展、轻用户权益的倾向，本质上是对老年用户数字权益的漠视。",
+        "shareTitle": "77万条未读消息，谁来守住老人的微信清净？",
+        "shareUrl": "https://www.peopleapp.com/column/30052509563-500007569452"
       },
       "shortDrama": null,
       "specialColumnId": null,
@@ -1969,735 +1353,7 @@
       "traceInfo": "",
       "userInfo": null,
       "videoInfo": [],
-      "viewCount": 348449,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ea46e8891c6e4948a07f754fa034070e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 389,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/01e50535d490436d881f97dc386c6ba6.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 370,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/812d6a236720420e8fbc8e756b762d25.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 406,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/6fea3820c28f492c89da6a44f457dae3.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 414,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "尚  辉"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "400*267",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/696b48792cfc42e18e5b20b3323e5558.jpeg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782596178000",
-      "fullColumnImgUrls": [
-        {
-          "height": 267,
-          "landscape": 1,
-          "size": 230675,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/696b48792cfc42e18e5b20b3323e5558.jpeg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 400
-        }
-      ],
-      "keyArticle": 0,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsTitle": "不止复刻历史：红色美术经典，藏着中国式艺术叙事",
-      "objectId": "30052506366",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782611680000",
-      "readFlag": 0,
-      "relAskInfos": [],
-      "relId": 500007569254,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "人民日报文艺微信公号",
-      "sourceId": "2",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 389,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ea46e8891c6e4948a07f754fa034070e.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 26,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/ea46e8891c6e4948a07f754fa034070e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 389,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/01e50535d490436d881f97dc386c6ba6.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 370,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/812d6a236720420e8fbc8e756b762d25.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 406,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260628/voice/6fea3820c28f492c89da6a44f457dae3.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 414,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "尚  辉"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-28 00:00:00",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 267,
-          "landscape": 1,
-          "size": 230675,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/696b48792cfc42e18e5b20b3323e5558.jpeg",
-          "weight": 400
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": true,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\"><strong>原标题：信仰之美绘就精神史诗（大地风华·精魂）</strong></p><p class=\"\" style=\"white-space: normal;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/8644e2bad3b34e1e932c6a5b34b6dd5c.jpg\" class=\"331318656\" data-preview=\"\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"font-family: &quot;Droid Serif&quot;;\">油画《在党的一大会议上》，作者陈逸飞、邱瑞敏。</span></p><p style=\"text-indent: 2em;\">红色基因映照着中国现代美术的革新之路，铺就了美术创作的精神底色。关于党史题材有组织的美术图像建构，始自1951年为举办“中国共产党成立三十周年纪念展览会”所开展的美术作品征集活动。在此之前，有关党的峥嵘岁月的视觉记录只留下极其有限的长征速写，以及表现延安边区生产、战斗等内容的木刻作品。从1951年至今，75年间，党史题材美术创作迅速发展壮大，吸引无数美术工作者投身其间。他们以时代视角重新审视历史，以满腔赤诚塑造英模形象，展开一场跨越时空的精神接力。</p><p class=\"\" style=\"white-space: normal;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/4f8b6d6d738e4f408455284c67c60632.jpg\" class=\"331318661\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; font-family: &quot;Droid Serif&quot;;\">同心筑山河</span></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; font-family: &quot;Droid Serif&quot;;\">百废待兴的华夏大地上，中国共产党团结带领全国各族人民自力更生、发愤图强，创造无数人间奇迹。火热的建设岁月，更促生一批情感饱满、色彩明亮的现实题材佳作，人民的奋斗足迹连缀成壮丽的时代画卷。</span></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; font-family: &quot;Droid Serif&quot;;\">图为油画《开国大典·人民万岁》，作者李成民。</span></p><p style=\"text-indent: 2em;\"><strong>不同时代对党史的艺术书写，呈现出不同的创作模式、历史认知与审美追求。1951年至1970年，可谓党史题材美术创作的第一个高峰。</strong>中国革命博物馆、中国人民革命军事博物馆以建馆展陈需求为中心，组织开展选题规划和集中创作，促生了王式廓油画《井冈山会师》、潘鹤雕塑《艰苦岁月》等红色美术经典。此时的创作者大多经历过烽火岁月，对党史有着独特体悟，因此其创作偏重富有情节性、英雄主义式的历史叙事，着力彰显信仰之美、崇高之美。</p><p style=\"text-indent: 2em;\"><strong>在建党美展、建军美展等展览的带动下，1971年至2000年，党史题材美术创作进入第二个高潮期。</strong>这一时期，全国美展和各种主题展也涌现了众多党史题材佳作，如沈嘉蔚油画《为我们伟大祖国站岗》、汤小铭油画《抗日战歌响彻太行山》等。这些画作转向日常化描绘，在还原历史真实的基础上，注重艺术个性的发挥和表现方式的探索。</p><p class=\"\" style=\"white-space: normal;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/06eede68c7bb486a9ce13d915df69fa4.jpg\" class=\"331318663\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; font-family: &quot;Droid Serif&quot;;\">潮涌展宏图</span></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; font-family: &quot;Droid Serif&quot;;\">改革东风劲，画里春潮涌。时代发展砥砺艺术创新。美术工作者以蓬勃的创作活力，生动诠释解放思想、锐意进取的改革开拓，奏响社会进步与艺术革新的恢弘交响。</span></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; font-family: &quot;Droid Serif&quot;;\">图为油画《创办经济特区》，作者范勃、郭祖昌、林锋。</span></p><p style=\"text-indent: 2em;\"><strong>2001年以来，伴随多个国家级美术创作工程的实施，党史题材美术创作迎来新的春天。</strong>尤其是“不忘初心&nbsp;&nbsp;继续前进——庆祝中国共产党成立100周年大型美术创作工程”和庆祝中国共产党成立100周年重大主题雕塑工程，作为新中国成立以来组织规格最高、选题规模最大、参与创作人数最多的创作活动，以一批尺幅巨大、群组人物众多、风格多样的佳作，完整展现了党团结带领全国各族人民英勇奋进的精神史诗。</p><p style=\"text-indent: 2em;\">以美术再现党的光辉历程，既要对党史进行寻访考证，也要依托创作者的合理想象对事件、人物、情节、场景进行艺术还原。这种创作无疑属于历史画范畴，是绘画之中的宏大叙事。法国古典主义绘画大师普桑就曾把历史画视为最高贵的艺术，认为绘画的最高目标就是表现高贵和严肃的人类行为。</p><p style=\"text-indent: 2em;\">历史画创作，首要的是对史实的尊重。不过，“历史真实”并不等于“历史现场的视觉复制”。历史画的艺术生命在于从史实出发，对历史进行必要的艺术想象，并最大限度地发挥艺术语言的表现力与创造力，实现精神提炼、思想升华。历史画是为历史书写的诗篇，而不是史书；是以历史为题材进行的审美呈现，而不是新闻图片。<strong>建立在史实基础上的审美创造，才是历史画的灵魂所在。从这个角度看，党史题材美术创作正是不同时代美术工作者审美创造与人文精神的凝结。</strong></p><p class=\"\" style=\"white-space: normal;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/98b8e6bcd4a244b3b49812f7dd7a4083.jpg\" class=\"331318667\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; font-family: &quot;Droid Serif&quot;;\">聚力绘新篇</span></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; font-family: &quot;Droid Serif&quot;;\">新时代以来，我国经济实力、科技实力、国防实力、综合国力跃上新台阶。美术创作与时代浪潮同频共振，中国式现代化的万千气象在画卷中徐徐铺展，凝聚起接续奋进的精神力量。</span></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; font-family: &quot;Droid Serif&quot;;\">图为中国画《新时代伟大复兴之路》，作者董卓、马越、王雪莹、文晨、许尔之、连壬杰、刘室茗、林一铭、胡璟。</span></p><p style=\"text-indent: 2em;\"><strong>党史题材美术创作更深层地体现了现实主义美学品格，这是20世纪以来中国美术现代性的重要特征。</strong>在现实主义道路的开拓中，党史题材美术创作逐步构建起独树一帜的话语体系。从历史真实与艺术真实的平衡，到题材内容与形式语言的统一，再到主流叙事与个性表现的兼容，各个阶段的理论思考，都集中反映在党史题材美术创作中。尤其是新时代以来，各类美术创作工程中的党史题材作品以小切口呈现大历史，将表现性、象征性与叙事性融为一体，为党的红色图像志增添了当代视觉文化特质。</p><p style=\"text-indent: 2em;\">征程如画，丹青未休。<strong>纵观105年来的党史题材美术作品，虽然体现了创作者的艺术个性，但其所浓缩的审美品格，并不完全源于艺术家，而是一个民族精神史诗的凝铸，这正是党史题材美术创作不可复制的独特价值。</strong></p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">（作者为中国美术家协会理论与策展委员会主任）</span></p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052506366,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "2",
-      "newsSourceName": "人民日报文艺微信公号",
-      "newsSummary": "中国现代美术史的发展，始终紧扣党的百年奋斗历程。",
-      "newsTags": "",
-      "newsTitle": "不止复刻历史：红色美术经典，藏着中国式艺术叙事",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 0,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [
-        {
-          "height": 147,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/b727e23326c94da1a1793054319f6278.jpg",
-          "size": 79971,
-          "width": 400
-        },
-        {
-          "height": 343,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/8644e2bad3b34e1e932c6a5b34b6dd5c.jpg",
-          "size": 128983,
-          "width": 400
-        },
-        {
-          "height": 480,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/a3281c8516934366b23cf8f8a8c00861.jpg",
-          "size": 176749,
-          "width": 400
-        },
-        {
-          "height": 183,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/f00151e2b33847aa8eb7cecfb548f916.jpg",
-          "size": 83237,
-          "width": 400
-        },
-        {
-          "height": 167,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/b3cbd60e93fc40e291432ab7c492442d.jpg",
-          "size": 72324,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/b8b595166b024dc9846bb34a931035c1.jpg",
-          "size": 105152,
-          "width": 400
-        },
-        {
-          "height": 490,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/4f8b6d6d738e4f408455284c67c60632.jpg",
-          "size": 288821,
-          "width": 400
-        },
-        {
-          "height": 130,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/32934d3a0a4046738adacaaf16f571e5.jpg",
-          "size": 69955,
-          "width": 400
-        },
-        {
-          "height": 266,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/06eede68c7bb486a9ce13d915df69fa4.jpg",
-          "size": 119241,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/0e6f12dacc9845f1822acc8faa5ad297.jpg",
-          "size": 159306,
-          "width": 400
-        },
-        {
-          "height": 272,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/bbbaa477559b4971a84cf07ed6ccf289.jpg",
-          "size": 130307,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/af088646d6f748cbb183c5bdb4e19566.jpg",
-          "size": 156364,
-          "width": 400
-        },
-        {
-          "height": 389,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/98b8e6bcd4a244b3b49812f7dd7a4083.jpg",
-          "size": 216806,
-          "width": 400
-        },
-        {
-          "height": 353,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/a33648b39dee44cdbbb025356b65f687.jpg",
-          "size": 157600,
-          "width": 400
-        },
-        {
-          "height": 480,
-          "picDesc": "<p>　　星火启征程</p><p>　　105年间，诸多美术经典定格红色起点，描绘燎原星火。这些将革命现实主义与革命浪漫主义相结合的创作，本身便是一场跨越时空的精神对话，引导观者在历史重温中筑牢信仰之基。</p><p>　　图为油画《陈望道翻译〈共产党宣言〉》，作者张峻明。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/8cfcff1f-d5f4-4558-ac86-470c09b780d7.jpg",
-          "size": 176749,
-          "width": 400
-        },
-        {
-          "height": 480,
-          "picDesc": "<p>　　星火启征程</p><p>　　105年间，诸多美术经典定格红色起点，描绘燎原星火。这些将革命现实主义与革命浪漫主义相结合的创作，本身便是一场跨越时空的精神对话，引导观者在历史重温中筑牢信仰之基。</p><p>　　图为油画《陈望道翻译〈共产党宣言〉》，作者张峻明。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/8cfcff1f-d5f4-4558-ac86-470c09b780d7.jpg",
-          "size": 176749,
-          "width": 400
-        },
-        {
-          "height": 343,
-          "picDesc": "<p>　　油画《在党的一大会议上》，作者陈逸飞、邱瑞敏。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/160ff759-38e3-46eb-98ab-d80982553367.jpg",
-          "size": 128983,
-          "width": 400
-        },
-        {
-          "height": 343,
-          "picDesc": "<p>　　油画《在党的一大会议上》，作者陈逸飞、邱瑞敏。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/160ff759-38e3-46eb-98ab-d80982553367.jpg",
-          "size": 128983,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "<p>　　雕塑《艰苦岁月》，作者潘鹤。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/60e99d4c-26ee-43b9-916f-599ec85cf667.jpg",
-          "size": 105152,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "<p>　　雕塑《艰苦岁月》，作者潘鹤。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/60e99d4c-26ee-43b9-916f-599ec85cf667.jpg",
-          "size": 105152,
-          "width": 400
-        },
-        {
-          "height": 490,
-          "picDesc": "<p>　　同心筑山河</p><p>　　百废待兴的华夏大地上，中国共产党团结带领全国各族人民自力更生、发愤图强，创造无数人间奇迹。火热的建设岁月，更促生一批情感饱满、色彩明亮的现实题材佳作，人民的奋斗足迹连缀成壮丽的时代画卷。</p><p>　　图为油画《开国大典·人民万岁》，作者李成民。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/25ed4bd7-2d48-4a63-876f-698d7467782d.jpg",
-          "size": 288821,
-          "width": 400
-        },
-        {
-          "height": 490,
-          "picDesc": "<p>　　同心筑山河</p><p>　　百废待兴的华夏大地上，中国共产党团结带领全国各族人民自力更生、发愤图强，创造无数人间奇迹。火热的建设岁月，更促生一批情感饱满、色彩明亮的现实题材佳作，人民的奋斗足迹连缀成壮丽的时代画卷。</p><p>　　图为油画《开国大典·人民万岁》，作者李成民。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/25ed4bd7-2d48-4a63-876f-698d7467782d.jpg",
-          "size": 288821,
-          "width": 400
-        },
-        {
-          "height": 183,
-          "picDesc": "<p>　　油画《红旗渠》，作者王君瑞、梁佳卿。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/8b24dda3-85f4-4682-96c8-80229b200174.jpg",
-          "size": 83237,
-          "width": 400
-        },
-        {
-          "height": 183,
-          "picDesc": "<p>　　油画《红旗渠》，作者王君瑞、梁佳卿。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/8b24dda3-85f4-4682-96c8-80229b200174.jpg",
-          "size": 83237,
-          "width": 400
-        },
-        {
-          "height": 147,
-          "picDesc": "<p>　　油画《历史的星空——两弹一星功勋科学家们》，作者骆根兴。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/64aa694f-41e5-46f8-a2e3-d269a7717cf3.jpg",
-          "size": 79971,
-          "width": 400
-        },
-        {
-          "height": 147,
-          "picDesc": "<p>　　油画《历史的星空——两弹一星功勋科学家们》，作者骆根兴。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/64aa694f-41e5-46f8-a2e3-d269a7717cf3.jpg",
-          "size": 79971,
-          "width": 400
-        },
-        {
-          "height": 266,
-          "picDesc": "<p>　　潮涌展宏图</p><p>　　改革东风劲，画里春潮涌。时代发展砥砺艺术创新。美术工作者以蓬勃的创作活力，生动诠释解放思想、锐意进取的改革开拓，奏响社会进步与艺术革新的恢弘交响。</p><p>　　图为油画《创办经济特区》，作者范勃、郭祖昌、林锋。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/ab66f5fd-8c82-45a9-8c48-12078d97d275.jpg",
-          "size": 119241,
-          "width": 400
-        },
-        {
-          "height": 266,
-          "picDesc": "<p>　　潮涌展宏图</p><p>　　改革东风劲，画里春潮涌。时代发展砥砺艺术创新。美术工作者以蓬勃的创作活力，生动诠释解放思想、锐意进取的改革开拓，奏响社会进步与艺术革新的恢弘交响。</p><p>　　图为油画《创办经济特区》，作者范勃、郭祖昌、林锋。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/ab66f5fd-8c82-45a9-8c48-12078d97d275.jpg",
-          "size": 119241,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "<p>　　油画《中国加入世界贸易组织》（局部），作者邬大勇、陈洁。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/47f13716-8a32-4a7e-9e8c-66839b11f0a3.jpg",
-          "size": 159306,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "<p>　　油画《中国加入世界贸易组织》（局部），作者邬大勇、陈洁。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/47f13716-8a32-4a7e-9e8c-66839b11f0a3.jpg",
-          "size": 159306,
-          "width": 400
-        },
-        {
-          "height": 167,
-          "picDesc": "<p>　　油画《对外开放新格局》，作者孙洪敏、江哲、王雪、黄伟超、姜浩、孙广煦、黄皓璋、贾文广。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/3da54a2d-5303-4de2-93e2-256f846f292c.jpg",
-          "size": 72324,
-          "width": 400
-        },
-        {
-          "height": 167,
-          "picDesc": "<p>　　油画《对外开放新格局》，作者孙洪敏、江哲、王雪、黄伟超、姜浩、孙广煦、黄皓璋、贾文广。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/3da54a2d-5303-4de2-93e2-256f846f292c.jpg",
-          "size": 72324,
-          "width": 400
-        },
-        {
-          "height": 389,
-          "picDesc": "<p>　　聚力绘新篇</p><p>　　新时代以来，我国经济实力、科技实力、国防实力、综合国力跃上新台阶。美术创作与时代浪潮同频共振，中国式现代化的万千气象在画卷中徐徐铺展，凝聚起接续奋进的精神力量。</p><p>　　图为中国画《新时代伟大复兴之路》，作者董卓、马越、王雪莹、文晨、许尔之、连壬杰、刘室茗、林一铭、胡璟。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/c296cc57-d5a3-48db-a053-24801201f745.jpg",
-          "size": 216806,
-          "width": 400
-        },
-        {
-          "height": 389,
-          "picDesc": "<p>　　聚力绘新篇</p><p>　　新时代以来，我国经济实力、科技实力、国防实力、综合国力跃上新台阶。美术创作与时代浪潮同频共振，中国式现代化的万千气象在画卷中徐徐铺展，凝聚起接续奋进的精神力量。</p><p>　　图为中国画《新时代伟大复兴之路》，作者董卓、马越、王雪莹、文晨、许尔之、连壬杰、刘室茗、林一铭、胡璟。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/c296cc57-d5a3-48db-a053-24801201f745.jpg",
-          "size": 216806,
-          "width": 400
-        },
-        {
-          "height": 272,
-          "picDesc": "<p>　　油画《清澈的爱只为中国》，作者李卓。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/26665054-acf3-4ba2-80df-8845acd26564.jpg",
-          "size": 130307,
-          "width": 400
-        },
-        {
-          "height": 272,
-          "picDesc": "<p>　　油画《清澈的爱只为中国》，作者李卓。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/26665054-acf3-4ba2-80df-8845acd26564.jpg",
-          "size": 130307,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "<p>　　中国画《一半山海一半城》，作者梁宇、杨晓洋、郝强、方晓龙、颜晓萍、古秀玲、张钦、苗瀚文、贺海锋。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/f3895e08-daf9-4683-acda-81bbd346f6cd.jpg",
-          "size": 156364,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "<p>　　中国画《一半山海一半城》，作者梁宇、杨晓洋、郝强、方晓龙、颜晓萍、古秀玲、张钦、苗瀚文、贺海锋。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/f3895e08-daf9-4683-acda-81bbd346f6cd.jpg",
-          "size": 156364,
-          "width": 400
-        },
-        {
-          "height": 353,
-          "picDesc": "<p>　　中国画《飞天圆梦》（局部），作者安佳、夏荷生、赵云川、赵岳、许向群。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/bc514fe0-d96a-47b2-aedf-f30cde05d879.jpg",
-          "size": 157600,
-          "width": 400
-        },
-        {
-          "height": 353,
-          "picDesc": "<p>　　中国画《飞天圆梦》（局部），作者安佳、夏荷生、赵云川、赵岳、许向群。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/bc514fe0-d96a-47b2-aedf-f30cde05d879.jpg",
-          "size": 157600,
-          "width": 400
-        },
-        {
-          "height": 130,
-          "picDesc": "<p>　　油画《丝绸之路新篇章》，作者冯路敏、阳小毛、张延昭、燕娅娅。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/2e80d011-c74c-40fc-8239-c615acd7ff06.jpg",
-          "size": 69955,
-          "width": 400
-        },
-        {
-          "height": 130,
-          "picDesc": "<p>　　油画《丝绸之路新篇章》，作者冯路敏、阳小毛、张延昭、燕娅娅。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/2e80d011-c74c-40fc-8239-c615acd7ff06.jpg",
-          "size": 69955,
-          "width": 400
-        },
-        {
-          "height": 147,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/b727e23326c94da1a1793054319f6278.jpg",
-          "size": 79971,
-          "width": 400
-        },
-        {
-          "height": 343,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/8644e2bad3b34e1e932c6a5b34b6dd5c.jpg",
-          "size": 128983,
-          "width": 400
-        },
-        {
-          "height": 480,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/a3281c8516934366b23cf8f8a8c00861.jpg",
-          "size": 176749,
-          "width": 400
-        },
-        {
-          "height": 183,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/f00151e2b33847aa8eb7cecfb548f916.jpg",
-          "size": 83237,
-          "width": 400
-        },
-        {
-          "height": 167,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/b3cbd60e93fc40e291432ab7c492442d.jpg",
-          "size": 72324,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/b8b595166b024dc9846bb34a931035c1.jpg",
-          "size": 105152,
-          "width": 400
-        },
-        {
-          "height": 490,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/4f8b6d6d738e4f408455284c67c60632.jpg",
-          "size": 288821,
-          "width": 400
-        },
-        {
-          "height": 130,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/32934d3a0a4046738adacaaf16f571e5.jpg",
-          "size": 69955,
-          "width": 400
-        },
-        {
-          "height": 266,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/06eede68c7bb486a9ce13d915df69fa4.jpg",
-          "size": 119241,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/0e6f12dacc9845f1822acc8faa5ad297.jpg",
-          "size": 159306,
-          "width": 400
-        },
-        {
-          "height": 272,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/bbbaa477559b4971a84cf07ed6ccf289.jpg",
-          "size": 130307,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/af088646d6f748cbb183c5bdb4e19566.jpg",
-          "size": 156364,
-          "width": 400
-        },
-        {
-          "height": 389,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/98b8e6bcd4a244b3b49812f7dd7a4083.jpg",
-          "size": 216806,
-          "width": 400
-        },
-        {
-          "height": 353,
-          "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/a33648b39dee44cdbbb025356b65f687.jpg",
-          "size": 157600,
-          "width": 400
-        },
-        {
-          "height": 480,
-          "picDesc": "<p>　　星火启征程</p><p>　　105年间，诸多美术经典定格红色起点，描绘燎原星火。这些将革命现实主义与革命浪漫主义相结合的创作，本身便是一场跨越时空的精神对话，引导观者在历史重温中筑牢信仰之基。</p><p>　　图为油画《陈望道翻译〈共产党宣言〉》，作者张峻明。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/8cfcff1f-d5f4-4558-ac86-470c09b780d7.jpg",
-          "size": 176749,
-          "width": 400
-        },
-        {
-          "height": 343,
-          "picDesc": "<p>　　油画《在党的一大会议上》，作者陈逸飞、邱瑞敏。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/160ff759-38e3-46eb-98ab-d80982553367.jpg",
-          "size": 128983,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "<p>　　雕塑《艰苦岁月》，作者潘鹤。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/60e99d4c-26ee-43b9-916f-599ec85cf667.jpg",
-          "size": 105152,
-          "width": 400
-        },
-        {
-          "height": 490,
-          "picDesc": "<p>　　同心筑山河</p><p>　　百废待兴的华夏大地上，中国共产党团结带领全国各族人民自力更生、发愤图强，创造无数人间奇迹。火热的建设岁月，更促生一批情感饱满、色彩明亮的现实题材佳作，人民的奋斗足迹连缀成壮丽的时代画卷。</p><p>　　图为油画《开国大典·人民万岁》，作者李成民。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/25ed4bd7-2d48-4a63-876f-698d7467782d.jpg",
-          "size": 288821,
-          "width": 400
-        },
-        {
-          "height": 183,
-          "picDesc": "<p>　　油画《红旗渠》，作者王君瑞、梁佳卿。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/8b24dda3-85f4-4682-96c8-80229b200174.jpg",
-          "size": 83237,
-          "width": 400
-        },
-        {
-          "height": 147,
-          "picDesc": "<p>　　油画《历史的星空——两弹一星功勋科学家们》，作者骆根兴。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/64aa694f-41e5-46f8-a2e3-d269a7717cf3.jpg",
-          "size": 79971,
-          "width": 400
-        },
-        {
-          "height": 266,
-          "picDesc": "<p>　　潮涌展宏图</p><p>　　改革东风劲，画里春潮涌。时代发展砥砺艺术创新。美术工作者以蓬勃的创作活力，生动诠释解放思想、锐意进取的改革开拓，奏响社会进步与艺术革新的恢弘交响。</p><p>　　图为油画《创办经济特区》，作者范勃、郭祖昌、林锋。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/ab66f5fd-8c82-45a9-8c48-12078d97d275.jpg",
-          "size": 119241,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "<p>　　油画《中国加入世界贸易组织》（局部），作者邬大勇、陈洁。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/47f13716-8a32-4a7e-9e8c-66839b11f0a3.jpg",
-          "size": 159306,
-          "width": 400
-        },
-        {
-          "height": 167,
-          "picDesc": "<p>　　油画《对外开放新格局》，作者孙洪敏、江哲、王雪、黄伟超、姜浩、孙广煦、黄皓璋、贾文广。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/3da54a2d-5303-4de2-93e2-256f846f292c.jpg",
-          "size": 72324,
-          "width": 400
-        },
-        {
-          "height": 389,
-          "picDesc": "<p>　　聚力绘新篇</p><p>　　新时代以来，我国经济实力、科技实力、国防实力、综合国力跃上新台阶。美术创作与时代浪潮同频共振，中国式现代化的万千气象在画卷中徐徐铺展，凝聚起接续奋进的精神力量。</p><p>　　图为中国画《新时代伟大复兴之路》，作者董卓、马越、王雪莹、文晨、许尔之、连壬杰、刘室茗、林一铭、胡璟。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/c296cc57-d5a3-48db-a053-24801201f745.jpg",
-          "size": 216806,
-          "width": 400
-        },
-        {
-          "height": 272,
-          "picDesc": "<p>　　油画《清澈的爱只为中国》，作者李卓。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/26665054-acf3-4ba2-80df-8845acd26564.jpg",
-          "size": 130307,
-          "width": 400
-        },
-        {
-          "height": 398,
-          "picDesc": "<p>　　中国画《一半山海一半城》，作者梁宇、杨晓洋、郝强、方晓龙、颜晓萍、古秀玲、张钦、苗瀚文、贺海锋。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/f3895e08-daf9-4683-acda-81bbd346f6cd.jpg",
-          "size": 156364,
-          "width": 400
-        },
-        {
-          "height": 353,
-          "picDesc": "<p>　　中国画《飞天圆梦》（局部），作者安佳、夏荷生、赵云川、赵岳、许向群。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/bc514fe0-d96a-47b2-aedf-f30cde05d879.jpg",
-          "size": 157600,
-          "width": 400
-        },
-        {
-          "height": 130,
-          "picDesc": "<p>　　油画《丝绸之路新篇章》，作者冯路敏、阳小毛、张延昭、燕娅娅。</p>",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-2026-06-28/epaper/2e80d011-c74c-40fc-8239-c615acd7ff06.jpg",
-          "size": 69955,
-          "width": 400
-        }
-      ],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-28 09:54:40",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007569254",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 2,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260628/image/content/93b74547caa44849ad7f24aecfa7a55c.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260628/image/display/696b48792cfc42e18e5b20b3323e5558.jpeg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 0,
-        "sharePosterStyle": 1,
-        "shareSummary": "中国现代美术史的发展，始终紧扣党的百年奋斗历程。",
-        "shareTitle": "不止复刻历史：红色美术经典，藏着中国式艺术叙事",
-        "shareUrl": "https://www.peopleapp.com/column/30052506366-500007569254"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 531271,
+      "viewCount": 58079,
       "visitorComment": 1,
       "voteInfo": null
     }
