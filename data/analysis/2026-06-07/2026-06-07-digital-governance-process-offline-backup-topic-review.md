@@ -5,7 +5,7 @@ topic: 数字治理别写成“上系统”：关键是流程再造和线下兜�
 priority: A
 status: 备选
 platform: 公众号 + 面试题卡
-final_article: data/articles/公众号文章/07-人民日报讲数字治理：别写成“上系统”，关键是流程再造和线下兜底.md
+final_article: data/articles/往期文章/人民日报系列/07-人民日报讲数字治理：别写成“上系统”，关键是流程再造和线下兜底.md
 process_draft: data/analysis/2026-06-07/wechat-digital-governance-process-offline-backup.md
 ---
 

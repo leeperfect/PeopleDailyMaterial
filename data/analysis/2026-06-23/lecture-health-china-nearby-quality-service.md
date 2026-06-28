@@ -2,7 +2,7 @@
 type: lecture_script
 date: 2026-06-23
 topic: 健康中国怎么写：不是医院越大越好，而是优质服务离群众更近
-article: data/articles/公众号文章/26-人民日报讲健康中国：不是医院越大越好，而是优质服务离群众更近.md
+article: data/articles/人民日报系列/26-人民日报讲健康中国：不是医院越大越好，而是优质服务离群众更近.md
 platform: 课堂讲解
 ---
 

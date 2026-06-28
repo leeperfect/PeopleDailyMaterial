@@ -5,7 +5,7 @@ topic: 资源循环怎么写：不是回收旧物，而是绿色消费和产业�
 priority: B级
 status: 备选
 platform: 公众号 + 课堂讲解
-final_article: data/articles/公众号文章/18-人民日报讲资源循环：不是回收旧物，而是绿色消费和产业链再造.md
+final_article: data/articles/人民日报系列/18-人民日报讲资源循环：不是回收旧物，而是绿色消费和产业链再造.md
 process_draft: data/analysis/2026-06-19/wechat-resource-circulation-green-consumption-industry-chain.md
 lecture_script: data/analysis/2026-06-19/lecture-resource-circulation-green-consumption-industry-chain.md
 ---

@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-06-10
 topic: AI治理怎么写：既给创新空间，也守伦理底线
-article: data/articles/公众号文章/10-人民日报讲AI治理：既给创新空间，也守伦理底线.md
+article: data/articles/往期文章/人民日报系列/10-人民日报讲AI治理：既给创新空间，也守伦理底线.md
 image_rule: AI直接生成，无人物
 ---
 

@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-06-11
 topic: 清欠企业账款：不仅仅是财务题
-article: data/articles/公众号文章/13-人民日报讲清欠账款：账款链也是信心链.md
+article: data/articles/往期文章/人民日报系列/13-人民日报讲清欠账款：账款链也是信心链.md
 image_rule: AI直接生成，无人物
 card_count: 12
 ---

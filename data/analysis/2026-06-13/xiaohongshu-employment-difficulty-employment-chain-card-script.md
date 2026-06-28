@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-06-13
 topic: 破解就业难，不能只写“多给岗位”
-article: data/articles/公众号文章/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md
+article: data/articles/人民日报系列/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md
 image_rule: AI直接生成，无人物
 ---
 

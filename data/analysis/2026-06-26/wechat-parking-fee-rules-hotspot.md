@@ -2,12 +2,15 @@
 type: wechat_process_draft
 date: 2026-06-26
 topic: 停车计费规则热点分析
-title: "31｜官媒视角看停车计费：不是少收几块钱，而是把城市治理算成明白账"
+series: 热点系列
+series_no: 热点1
+title: "热点1｜官媒视角看停车计费：不是少收几块钱，而是把城市治理算成明白账"
 source_review: data/analysis/2026-06-26/2026-06-26-parking-fee-rules-hotspot-topic-review.md
+final_article: data/articles/热点系列/热点1-官媒视角看停车计费：不是少收几块钱，而是把城市治理算成明白账.md
 platform: 公众号
 ---
 
-# 31｜官媒视角看停车计费：不是少收几块钱，而是把城市治理算成明白账
+# 热点1｜官媒视角看停车计费：不是少收几块钱，而是把城市治理算成明白账
 
 很多同学看到“停车计费”这种热点，第一反应可能是：
 

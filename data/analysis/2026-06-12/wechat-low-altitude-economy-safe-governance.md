@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-06-12
 topic: 低空经济别只追风口：先把“飞得起来”和“管得住”写清楚
-final_article: data/articles/公众号文章/15-人民日报讲低空经济：别只追风口，先把“飞得起来”和“管得住”写清楚.md
+final_article: data/articles/人民日报系列/15-人民日报讲低空经济：别只追风口，先把“飞得起来”和“管得住”写清楚.md
 source_review: data/analysis/2026-06-12/2026-06-12-low-altitude-economy-safe-governance-topic-review.md
 platform: 公众号 + 小红书
 ---

@@ -17,7 +17,7 @@ data/core/wechat_official_account.sqlite
   公众号运营核心分析库，供后续复盘、检索和选题判断使用
 
 data/analysis/wechat-official-account/
-  每次导入的说明、人工复盘和阶段性分析结论
+  每次导入的说明、人工复盘、阶段性结论和连续运营总览
 ```
 
 ## 二、核心分析库表
@@ -47,8 +47,21 @@ python3 scripts/import_wechat_official_account_stats.py /path/to/wechat-export.x
 2. 把后台表拆成 CSV，放入 `data/exports/wechat_official_account/`。
 3. 写入 `data/core/wechat_official_account.sqlite`。
 4. 在 `data/analysis/wechat-official-account/` 生成导入记录。
+5. 更新 `data/analysis/wechat-official-account/overview.md`，自动与上一批比较。
 
-## 四、后续分析口径
+## 四、连续分析方式
+
+以后每周导入的数据不会孤立分析，而是按以下方式组成完整数据链：
+
+1. 每份后台原表作为一个独立快照永久保留。
+2. 最新快照与上一快照自动识别重叠日期和新增日期，避免把同一天重复累计。
+3. 对同一篇文章比较两次快照，观察长尾净增长。
+4. 对新出现的文章单独观察起量、推荐渠道和进入高阅读榜的速度。
+5. 所有批次共同更新一份长期总览，用于观察滚动周期的账号整体变化。
+
+公众号后台导出的“数据趋势概况”通常是滚动时间窗口，不一定只包含最近一周。因此，“本周新增”以最新批次比上一批多出的日期为准；两批重叠日期只用于核对，不重复计算。
+
+## 五、后续分析口径
 
 后续做选题复盘时，建议同时看三类指标：
 

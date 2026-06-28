@@ -2,7 +2,7 @@
 type: ppt_outline
 date: 2026-06-23
 topic: “六张网”怎么写：不是大基建清单，而是发展底座重塑
-article: data/articles/公众号文章/27-人民日报讲六张网：不是大基建清单，而是发展底座重塑.md
+article: data/articles/人民日报系列/27-人民日报讲六张网：不是大基建清单，而是发展底座重塑.md
 platform: PPT
 slide_count: 9
 ---

@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-06-20
 topic: 科技成果转化别只写“产学研”：关键是打通最后一公里
-final_article: data/articles/公众号文章/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md
+final_article: data/articles/人民日报系列/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md
 platform: 公众号 + PPT
 ---
 

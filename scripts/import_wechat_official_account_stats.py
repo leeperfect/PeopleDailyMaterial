@@ -18,6 +18,8 @@ import re
 import shutil
 import sqlite3
 import struct
+import subprocess
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -55,6 +57,13 @@ def sha256_file(path: Path) -> str:
 def safe_name(value: str) -> str:
     cleaned = re.sub(r"[\\/:*?\"<>|\\s]+", "_", value.strip())
     return cleaned.strip("_") or "sheet"
+
+
+def display_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
 
 
 def timestamp_to_date(value: str) -> str | None:
@@ -676,8 +685,8 @@ def import_to_db(
                 batch_id,
                 source.name,
                 source_hash,
-                str(raw_path.relative_to(ROOT)),
-                str(export_dir.relative_to(ROOT)),
+                display_path(raw_path),
+                display_path(export_dir),
                 now(),
                 json.dumps(summary, ensure_ascii=False),
             ),
@@ -780,9 +789,9 @@ def write_summary(
         "",
         "## 存放位置",
         "",
-        f"- 原始后台表：`{raw_path.relative_to(ROOT)}`",
-        f"- CSV 导出目录：`{export_dir.relative_to(ROOT)}`",
-        f"- 核心分析库：`{db_path.relative_to(ROOT)}`",
+        f"- 原始后台表：`{display_path(raw_path)}`",
+        f"- CSV 导出目录：`{display_path(export_dir)}`",
+        f"- 核心分析库：`{display_path(db_path)}`",
         "",
         "## 本次识别结果",
         "",
@@ -882,12 +891,27 @@ def main() -> None:
     )
     summary_path = Path(args.summary_root) / f"{batch_id}.md"
     write_summary(summary_path, batch_id, source, raw_path, export_dir, db_path, sheets, imported_counts)
+    overview_script = ROOT / "scripts" / "analyze_wechat_official_account_stats.py"
+    overview_path = Path(args.summary_root) / "overview.md"
+    subprocess.run(
+        [
+            sys.executable,
+            str(overview_script),
+            "--db-path",
+            str(db_path),
+            "--output",
+            str(overview_path),
+        ],
+        cwd=ROOT,
+        check=True,
+    )
 
     print(f"已导入批次：{batch_id}")
-    print(f"原始表：{raw_path.relative_to(ROOT)}")
-    print(f"CSV：{export_dir.relative_to(ROOT)}")
-    print(f"SQLite：{db_path.relative_to(ROOT)}")
-    print(f"说明：{summary_path.relative_to(ROOT)}")
+    print(f"原始表：{display_path(raw_path)}")
+    print(f"CSV：{display_path(export_dir)}")
+    print(f"SQLite：{display_path(db_path)}")
+    print(f"说明：{display_path(summary_path)}")
+    print(f"连续分析总览：{display_path(overview_path)}")
     print(f"每日趋势记录：{imported_counts.get('daily_trends', 0)}")
     print(f"每日渠道阅读记录：{imported_counts.get('channel_daily_reads', 0)}")
     print(f"阅读来源记录：{imported_counts.get('source_overview', 0)}")

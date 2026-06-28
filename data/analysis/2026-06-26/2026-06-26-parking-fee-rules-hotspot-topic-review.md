@@ -5,7 +5,9 @@ topic: 停车计费规则热点分析
 priority: A
 status: completed
 platform: 公众号
-final_article: data/articles/公众号文章/31-官媒视角看停车计费：不是少收几块钱，而是把城市治理算成明白账.md
+series: 热点系列
+series_no: 热点1
+final_article: data/articles/热点系列/热点1-官媒视角看停车计费：不是少收几块钱，而是把城市治理算成明白账.md
 process_draft: data/analysis/2026-06-26/wechat-parking-fee-rules-hotspot.md
 ---
 

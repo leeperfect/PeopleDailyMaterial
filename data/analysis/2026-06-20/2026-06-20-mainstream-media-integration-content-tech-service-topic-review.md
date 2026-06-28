@@ -5,7 +5,7 @@ topic: 主流媒体融合：不是多开账号，而是重构内容、技术和�
 priority: B级
 status: 备选
 platform: 公众号 + PPT
-final_article: data/articles/公众号文章/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md
+final_article: data/articles/人民日报系列/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md
 process_draft: data/analysis/2026-06-20/wechat-mainstream-media-integration-content-tech-service.md
 ppt_outline: data/analysis/2026-06-20/ppt-mainstream-media-integration-content-tech-service-outline.md
 ---

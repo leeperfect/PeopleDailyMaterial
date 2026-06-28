@@ -12,7 +12,8 @@
 - `core` 是机器检索和同步合同。
 - `vault` 是人看的阅读视图。
 - `analysis` 是教研分析和出品过程。
-- `articles/公众号文章` 是成品稿入口。
+- `articles/人民日报系列` 和 `articles/热点系列` 是两类当前成品稿入口。
+- `articles/往期文章` 是已发表文章的人工归档入口，内部按两个系列继续分类。
 - `media` 是图片、课件、音视频等本地多媒体资产库，由网盘同步，不进 GitHub。
 - Notion 是外部分发视图，不是本地唯一事实源。
 
@@ -26,7 +27,11 @@
 - `data/core/`：SQLite 核心库，稳定文章 ID 和素材资产库。
 - `data/vault/`：Obsidian 阅读视图，适合人工浏览和教研标注。
 - `data/analysis/`：教研复盘、选题拆解、文案、讲稿、视觉 brief。
-- `data/articles/公众号文章/`：公众号文章、成品稿、面向老师人工查找的文章。
+- `data/articles/人民日报系列/`：当前可编辑、待发布的人民日报选题文章。
+- `data/articles/热点系列/`：当前可编辑、待发布的热点分析文章。
+- `data/articles/往期文章/人民日报系列/`：已发表的人民日报选题文章。
+- `data/articles/往期文章/热点系列/`：已发表的热点分析文章。
+- `data/articles/文章索引.md`：两个系列及其往期归档的统一查找入口。
 - `data/exports/`：JSON/CSV/Notion 等外部同步或分发产物。
 - `media/`：小红书图片、公众号配图、课件、视频、音频、压缩包等非文本资产。真实文件不进入 GitHub，只通过网盘同步；GitHub 只保留 `media/_index.md` 索引。
 - `docs/`：数据库说明、内容生产流程、项目规范。
@@ -38,9 +43,9 @@
 
 - 不要把标题当唯一标识。涉及文章去重、同步、更新时，优先使用 `article_id` / `Article ID`。
 - Notion 数据库已经有 `Article ID` 字段；同步、补齐、清理重复页时优先围绕这个字段判断。
-- 公众号选题统一进入 `data/core/material_assets.sqlite` 的 `content_ideas` 表；面向用户查看的总表是 `data/articles/公众号文章/选题库.md`，由 `scripts/export_content_ideas.py` 生成。
+- 公众号选题统一进入 `data/core/material_assets.sqlite` 的 `content_ideas` 表；面向用户查看的总表是 `data/articles/选题库.md`，由 `scripts/export_content_ideas.py` 生成。
 - 公众号要服务日更，筛选选题时允许同一母题拆成多个不同角度和切入点，只要每个切口都有独立表达价值、明确读者收益，并且至少有 3 篇人民日报文章支撑。
-- 以后梳理日报、周报、月报或政经参考补充选题时，一旦形成符合标准的新选题，默认直接写入 `content_ideas` 并刷新 `data/articles/公众号文章/选题库.md` 和 `data/exports/content_ideas.csv`，不再等待用户二次确认。
+- 以后梳理日报、周报、月报或政经参考补充选题时，一旦形成符合标准的新选题，默认直接写入 `content_ideas` 并刷新 `data/articles/选题库.md` 和 `data/exports/content_ideas.csv`，不再等待用户二次确认。
 - 本地 HTML 选题工作台由 `scripts/serve_idea_magazine.py` 启动，读取 `content_ideas`，并把精筛、备注等人工操作写入 `content_idea_notes`。
 - 非文本成品默认进入 `media/`，不要继续散放在 `data/analysis/**/deliverables/` 里；分析目录只保留可追溯的文字稿、视觉 brief、讲稿提示和清单。
 - 新增小红书图、公众号配图、课件、视频、音频后，要同步补 `media/_index.md`，记录主题、类型、本地路径和网盘位置。
@@ -103,7 +108,9 @@ python3 scripts/sync_to_notion.py 2026-05-27
 ## 写作和资料规则
 
 - 文档使用中文；机器流程、脚本、结构化数据文件名仍使用英文。
-- 公众号文章、成品稿、面向老师人工查找的文章文件，统一放在 `data/articles/公众号文章/`，文件名优先使用中文标题。
+- 基于人民日报选题形成的成稿放在 `data/articles/人民日报系列/`，沿用数字编号；当前下一篇使用 `31`。
+- 基于近期公共热点和官媒评论形成的分析稿放在 `data/articles/热点系列/`，使用“热点1、热点2……”独立编号。
+- 文章发表后由老师手动移入 `data/articles/往期文章/` 下对应系列，保留原编号，并同步更新 `data/articles/文章索引.md`。
 - 做单篇文章教研标注时，优先增量补充，不删旧批注。
 - 如果要写公众号、小红书、PPT、视觉 brief，默认按“教学可用 + 运营可用”的完整出品包理解；文字过程入 `data/analysis/`，非文本成品入 `media/`。
 - 生成小红书图文、视频号封面、公众号封面等视觉成品时，初稿渲染完成后默认自动完成质量审查；发现溢出、遮挡、密度不足、引用遗漏、尺寸错误或风格不统一时，先修正并复查，再交付给用户预览，不再等待用户额外指令。

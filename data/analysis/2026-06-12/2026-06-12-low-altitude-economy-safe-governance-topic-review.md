@@ -5,7 +5,7 @@ topic: 低空经济别只追风口：先把“飞得起来”和“管得住”�
 priority: B
 status: 备选
 platform: 公众号 + 小红书
-final_article: data/articles/公众号文章/15-人民日报讲低空经济：别只追风口，先把“飞得起来”和“管得住”写清楚.md
+final_article: data/articles/人民日报系列/15-人民日报讲低空经济：别只追风口，先把“飞得起来”和“管得住”写清楚.md
 process_draft: data/analysis/2026-06-12/wechat-low-altitude-economy-safe-governance.md
 xiaohongshu_script: data/analysis/2026-06-12/xiaohongshu-low-altitude-economy-safe-governance-card-script.md
 ---

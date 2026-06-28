@@ -14,7 +14,7 @@ from typing import Any, Dict, Iterable, List
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_DB = ROOT / "data" / "core" / "material_assets.sqlite"
 ARTICLE_DB = ROOT / "data" / "core" / "articles.sqlite"
-REPORT_PATH = ROOT / "data" / "articles" / "公众号文章" / "选题库-精筛说明.md"
+REPORT_PATH = ROOT / "data" / "articles" / "选题库-精筛说明.md"
 MIN_SUPPORT_COUNT = 3
 
 

@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-06-11
 topic: 银发经济不是养老负担：把老龄化写成服务供给和人力资源
-final_article: data/articles/公众号文章/14-人民日报讲银发经济：不是养老负担，而是服务供给和人力资源.md
+final_article: data/articles/人民日报系列/14-人民日报讲银发经济：不是养老负担，而是服务供给和人力资源.md
 source_review: data/analysis/2026-06-11/2026-06-11-silver-economy-service-human-resources-topic-review.md
 platform: 公众号 + 面试题卡
 ---

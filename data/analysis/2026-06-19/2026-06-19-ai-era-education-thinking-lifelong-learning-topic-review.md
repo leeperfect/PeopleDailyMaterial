@@ -5,7 +5,7 @@ topic: AI时代教育怎么写：不是人人学工具，而是重塑思维和�
 priority: A级
 status: 备选
 platform: 公众号 + 课堂讲解
-final_article: data/articles/公众号文章/19-人民日报讲AI时代教育：不是人人学工具，而是重塑思维和终身学习.md
+final_article: data/articles/人民日报系列/19-人民日报讲AI时代教育：不是人人学工具，而是重塑思维和终身学习.md
 process_draft: data/analysis/2026-06-19/wechat-ai-era-education-thinking-lifelong-learning.md
 lecture_script: data/analysis/2026-06-19/lecture-ai-era-education-thinking-lifelong-learning.md
 ---

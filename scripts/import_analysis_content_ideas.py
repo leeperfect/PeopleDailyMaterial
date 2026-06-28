@@ -17,7 +17,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_ANALYSIS_DIR = ROOT / "data" / "analysis"
 DEFAULT_ASSET_DB = ROOT / "data" / "core" / "material_assets.sqlite"
-DEFAULT_MD_PATH = ROOT / "data" / "articles" / "公众号文章" / "选题库.md"
+DEFAULT_MD_PATH = ROOT / "data" / "articles" / "选题库.md"
 DEFAULT_CSV_PATH = ROOT / "data" / "exports" / "content_ideas.csv"
 
 STATUS_RANK = {

@@ -3,7 +3,7 @@ type: wechat_article_draft
 date: 2026-05-31
 topic: 中央一号文件与农业农村现代化
 title: "中央一号文件怎么转成申论素材：农业农村现代化的六个关键词"
-canonical_article: data/articles/公众号文章/中央一号文件怎么转成申论素材：农业农村现代化的六个关键词.md
+canonical_article: data/articles/往期文章/人民日报系列/中央一号文件怎么转成申论素材：农业农村现代化的六个关键词.md
 source_review: data/analysis/2026-05-31/2026-05-31-central-no1-agri-rural-modernization-topic-review.md
 source_package: data/analysis/2026-02-01_to_2026-02-28/2026-02-01_to_2026-02-28-theme-shortlist.md
 source_assets:
@@ -21,7 +21,7 @@ source_assets:
 本稿为过程稿。正式成稿见：
 
 ```text
-data/articles/公众号文章/中央一号文件怎么转成申论素材：农业农村现代化的六个关键词.md
+data/articles/往期文章/人民日报系列/中央一号文件怎么转成申论素材：农业农村现代化的六个关键词.md
 ```
 
 写作依据：

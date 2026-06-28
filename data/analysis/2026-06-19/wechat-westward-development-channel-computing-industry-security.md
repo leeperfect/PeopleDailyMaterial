@@ -2,7 +2,7 @@
 type: process_draft
 date: 2026-06-19
 topic: 大国向西怎么写：不是区域口号，而是通道、算力、产业和安全腹地
-final_article: data/articles/公众号文章/20-人民日报讲大国向西：不是区域口号，而是通道、算力、产业和安全腹地.md
+final_article: data/articles/人民日报系列/20-人民日报讲大国向西：不是区域口号，而是通道、算力、产业和安全腹地.md
 platform: 公众号 + PPT
 ---
 

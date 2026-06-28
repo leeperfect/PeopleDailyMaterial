@@ -5,7 +5,7 @@ topic: 文化传承新写法：既要守住根脉，也要走进生活、走向�
 priority: A
 status: 成稿
 platform: 公众号 + 小红书
-final_article: data/articles/公众号文章/28-人民日报讲文化传承：既要守住根脉，也要走进生活、走向世界.md
+final_article: data/articles/人民日报系列/28-人民日报讲文化传承：既要守住根脉，也要走进生活、走向世界.md
 process_draft: data/analysis/2026-06-23/wechat-cultural-heritage-root-life-world.md
 xiaohongshu_script: data/analysis/2026-06-23/xiaohongshu-cultural-heritage-root-life-world-card-script.md
 ---
@@ -58,7 +58,7 @@ xiaohongshu_script: data/analysis/2026-06-23/xiaohongshu-cultural-heritage-root-
 
 本次已形成：
 
-- 公众号成稿：`data/articles/公众号文章/28-人民日报讲文化传承：既要守住根脉，也要走进生活、走向世界.md`
+- 公众号成稿：`data/articles/人民日报系列/28-人民日报讲文化传承：既要守住根脉，也要走进生活、走向世界.md`
 - 过程稿：`data/analysis/2026-06-23/wechat-cultural-heritage-root-life-world.md`
 - 小红书脚本：`data/analysis/2026-06-23/xiaohongshu-cultural-heritage-root-life-world-card-script.md`
 

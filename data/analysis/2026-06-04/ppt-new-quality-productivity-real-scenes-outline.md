@@ -2,7 +2,7 @@
 type: ppt_outline
 date: 2026-06-04
 topic: 新质生产力别写空：从词元、农机到田间大模型
-source_article: data/articles/公众号文章/03-人民日报讲新质生产力：别写空，从词元、农机到田间大模型.md
+source_article: data/articles/往期文章/人民日报系列/03-人民日报讲新质生产力：别写空，从词元、农机到田间大模型.md
 ---
 
 # PPT 拆页提纲：新质生产力别写空

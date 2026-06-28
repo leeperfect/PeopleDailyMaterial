@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **core** (`data/core/`)：SQLite 核心库，稳定 `article_id` 作为唯一标识，服务机器检索和 Notion 同步
 - **vault** (`data/vault/`)：Obsidian 阅读视图，按日期/版面/专题组织，适合人工浏览和教研标注
 - **analysis** (`data/analysis/`)：教研复盘、选题拆解、跨平台出品包
-- **articles** (`data/articles/公众号文章/`)：公众号成品稿入口
+- **articles** (`data/articles/人民日报系列/`、`data/articles/热点系列/`)：两类公众号成品稿入口，已发表文章进入对应往期目录
 - **exports** (`data/exports/`)：JSON/CSV/Notion 导出产物，可重新生成
 
 数据流向：`main.py` 抓取 → `raw` → `modules/processor.py` 处理 → `core` + `vault` + `articles` → `exports`/Notion

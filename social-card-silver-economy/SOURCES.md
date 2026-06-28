@@ -3,7 +3,7 @@
 ## 内容来源
 
 - 小红书脚本：`data/analysis/2026-06-11/xiaohongshu-silver-economy-service-human-resources-card-script.md`
-- 对应文章：`data/articles/公众号文章/14-人民日报讲银发经济：不是养老负担，而是服务供给和人力资源.md`
+- 对应文章：`data/articles/人民日报系列/14-人民日报讲银发经济：不是养老负担，而是服务供给和人力资源.md`
 
 ## 公开图库图片
 

@@ -5,7 +5,7 @@ topic: AI治理怎么写：既给创新空间，也守伦理底线
 priority: S
 status: 备选
 platform: 公众号 + 小红书
-final_article: data/articles/公众号文章/10-人民日报讲AI治理：既给创新空间，也守伦理底线.md
+final_article: data/articles/往期文章/人民日报系列/10-人民日报讲AI治理：既给创新空间，也守伦理底线.md
 process_draft: data/analysis/2026-06-10/wechat-ai-governance-innovation-ethics.md
 xiaohongshu_script: data/analysis/2026-06-10/xiaohongshu-ai-governance-innovation-ethics-card-script.md
 ---

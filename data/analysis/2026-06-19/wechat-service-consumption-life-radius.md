@@ -2,7 +2,7 @@
 type: process_draft
 date: 2026-06-19
 topic: 服务消费怎么写：不是发券促销，而是把好服务嵌入生活半径
-final_article: data/articles/公众号文章/21-人民日报讲服务消费：不是发券促销，而是把好服务嵌入生活半径.md
+final_article: data/articles/人民日报系列/21-人民日报讲服务消费：不是发券促销，而是把好服务嵌入生活半径.md
 platform: 公众号 + 小红书
 ---
 

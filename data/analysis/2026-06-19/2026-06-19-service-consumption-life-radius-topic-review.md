@@ -5,7 +5,7 @@ topic: 服务消费怎么写：不是发券促销，而是把好服务嵌入生�
 priority: A级
 status: 备选
 platform: 公众号 + 小红书
-final_article: data/articles/公众号文章/21-人民日报讲服务消费：不是发券促销，而是把好服务嵌入生活半径.md
+final_article: data/articles/人民日报系列/21-人民日报讲服务消费：不是发券促销，而是把好服务嵌入生活半径.md
 process_draft: data/analysis/2026-06-19/wechat-service-consumption-life-radius.md
 xiaohongshu_script: data/analysis/2026-06-19/xiaohongshu-service-consumption-life-radius-card-script.md
 ---

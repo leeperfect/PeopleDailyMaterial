@@ -87,7 +87,19 @@ def database_properties() -> Dict:
         "发布链接": {"url": {}},
         "账号": {"rich_text": {}},
         "主题": {"rich_text": {}},
-        "来源目录": {"select": {"options": select_options(["公众号文章", "往期文章", "其他"])}},
+        "来源目录": {
+            "select": {
+                "options": select_options(
+                    [
+                        "人民日报系列",
+                        "热点系列",
+                        "往期文章/人民日报系列",
+                        "往期文章/热点系列",
+                        "其他",
+                    ]
+                )
+            }
+        },
         "本地正文路径": {"rich_text": {}},
         "素材包路径": {"rich_text": {}},
         "字数": {"number": {"format": "number"}},
@@ -124,12 +136,12 @@ def extract_h1(text: str) -> str:
 
 def clean_title_from_filename(path: Path) -> str:
     title = path.stem
-    title = re.sub(r"^\d+\s*[-｜|]\s*", "", title)
+    title = re.sub(r"^(?:\d+|热点\d+)\s*[-｜|]\s*", "", title)
     return title.strip()
 
 
 def content_key(title: str) -> str:
-    key = re.sub(r"^\d+\s*[-｜|]\s*", "", title)
+    key = re.sub(r"^(?:\d+|热点\d+)\s*[-｜|]\s*", "", title)
     key = key.replace("｜", "|")
     key = re.sub(r"\s+", "", key)
     return key
@@ -150,14 +162,22 @@ def count_words(text: str) -> int:
 
 def load_articles() -> List[Dict]:
     candidates: List[Dict] = []
-    for path in sorted(ARTICLES_ROOT.glob("*/*.md")):
+    for path in sorted(ARTICLES_ROOT.rglob("*.md")):
         if path.name in SKIP_FILENAMES:
+            continue
+        relative_parts = path.relative_to(ARTICLES_ROOT).parts
+        if path.name == "README.md":
             continue
         text = path.read_text(encoding="utf-8")
         frontmatter = parse_frontmatter(text)
         title = frontmatter.get("title") or extract_h1(text) or clean_title_from_filename(path)
         topic = frontmatter.get("topic") or ""
-        source_dir = path.parent.name if path.parent.name in {"公众号文章", "往期文章"} else "其他"
+        if relative_parts[0] in {"人民日报系列", "热点系列"}:
+            source_dir = relative_parts[0]
+        elif relative_parts[0] == "往期文章" and len(relative_parts) > 2:
+            source_dir = f"往期文章/{relative_parts[1]}"
+        else:
+            source_dir = "其他"
         candidates.append(
             {
                 "title": title,
@@ -169,8 +189,14 @@ def load_articles() -> List[Dict]:
             }
         )
 
-    # 同名内容优先保留“公众号文章”目录中的成稿版本。
-    priority = {"公众号文章": 0, "往期文章": 1, "其他": 2}
+    # 同名内容优先保留当前系列中的成稿版本。
+    priority = {
+        "人民日报系列": 0,
+        "热点系列": 0,
+        "往期文章/人民日报系列": 1,
+        "往期文章/热点系列": 1,
+        "其他": 2,
+    }
     deduped: Dict[str, Dict] = {}
     for item in candidates:
         existing = deduped.get(item["key"])

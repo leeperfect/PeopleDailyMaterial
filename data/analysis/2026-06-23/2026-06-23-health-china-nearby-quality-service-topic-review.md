@@ -5,7 +5,7 @@ topic: 健康中国怎么写：不是医院越大越好，而是优质服务离�
 priority: S
 status: 成稿
 platform: 公众号 + 课堂讲解
-final_article: data/articles/公众号文章/26-人民日报讲健康中国：不是医院越大越好，而是优质服务离群众更近.md
+final_article: data/articles/人民日报系列/26-人民日报讲健康中国：不是医院越大越好，而是优质服务离群众更近.md
 process_draft: data/analysis/2026-06-23/wechat-health-china-nearby-quality-service.md
 lecture_script: data/analysis/2026-06-23/lecture-health-china-nearby-quality-service.md
 ---

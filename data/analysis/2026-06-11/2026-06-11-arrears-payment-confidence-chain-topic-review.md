@@ -5,7 +5,7 @@ topic: 清欠账款怎么写：账款链也是信心链
 priority: A
 status: 备选
 platform: 公众号 + 面试题卡
-final_article: data/articles/公众号文章/13-人民日报讲清欠账款：账款链也是信心链.md
+final_article: data/articles/往期文章/人民日报系列/13-人民日报讲清欠账款：账款链也是信心链.md
 process_draft: data/analysis/2026-06-11/wechat-arrears-payment-confidence-chain.md
 interview_card: data/analysis/2026-06-11/interview-arrears-payment-confidence-chain-card.md
 xiaohongshu_script: data/analysis/2026-06-11/xiaohongshu-arrears-payment-confidence-chain-card-script.md

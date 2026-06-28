@@ -5,7 +5,7 @@ topic: 全国统一大市场怎么写具体：规则、设施和要素一起通
 priority: B
 status: 备选
 platform: 公众号 + PPT
-final_article: data/articles/公众号文章/08-人民日报讲全国统一大市场：规则、设施和要素一起通.md
+final_article: data/articles/往期文章/人民日报系列/08-人民日报讲全国统一大市场：规则、设施和要素一起通.md
 process_draft: data/analysis/2026-06-08/wechat-unified-market-rules-infrastructure-factors.md
 ppt_outline: data/analysis/2026-06-08/ppt-unified-market-rules-infrastructure-factors-outline.md
 ---

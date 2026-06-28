@@ -16,7 +16,7 @@ from typing import Any, Dict, Iterable, List, Optional
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_ASSET_DB = ROOT / "data" / "core" / "material_assets.sqlite"
 DEFAULT_ARTICLE_DB = ROOT / "data" / "core" / "articles.sqlite"
-DEFAULT_MD_PATH = ROOT / "data" / "articles" / "公众号文章" / "选题库.md"
+DEFAULT_MD_PATH = ROOT / "data" / "articles" / "选题库.md"
 DEFAULT_CSV_PATH = ROOT / "data" / "exports" / "content_ideas.csv"
 NOTE_TABLE = "content_idea_notes"
 

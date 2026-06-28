@@ -2,7 +2,7 @@
 type: process_draft
 date: 2026-06-05
 topic: 生态文明怎么写：把绿色发展写成法治、治理和长期主义
-final_article: data/articles/公众号文章/05-人民日报讲生态文明：把绿色发展写成法治、治理和长期主义.md
+final_article: data/articles/人民日报系列/05-人民日报讲生态文明：把绿色发展写成法治、治理和长期主义.md
 platform: 公众号 + 课堂讲解
 ---
 

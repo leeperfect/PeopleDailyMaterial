@@ -3,7 +3,7 @@ type: wechat_article_draft
 date: 2026-05-28
 topic: 新质生产力与传统产业升级
 title: "人民日报这组产业文章讲透：新质生产力不是只写 AI，传统产业也能写出高分"
-canonical_article: data/articles/公众号文章/人民日报这组产业文章讲透：新质生产力不是只写AI，传统产业也能写出高分.md
+canonical_article: data/articles/往期文章/人民日报系列/人民日报这组产业文章讲透：新质生产力不是只写AI，传统产业也能写出高分.md
 source_review: data/analysis/2026-05-28/2026-05-28-new-quality-productivity-traditional-industry-topic-review.md
 source_assets:
   - people_daily_20260203_30137848

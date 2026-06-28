@@ -3,7 +3,7 @@ type: wechat_article_draft
 date: 2026-05-30
 topic: 县域发展与申论高分写法
 title: "申论写县域发展，别再只会说“因地制宜”：人民日报给了五个动作"
-canonical_article: data/articles/公众号文章/申论写县域发展，别再只会说“因地制宜”：人民日报给了五个动作.md
+canonical_article: data/articles/往期文章/人民日报系列/申论写县域发展，别再只会说“因地制宜”：人民日报给了五个动作.md
 source_review: data/analysis/2026-05-30/2026-05-30-county-development-beyond-local-conditions-topic-review.md
 source_assets:
   - people_daily_20260521_30158095
@@ -19,7 +19,7 @@ source_assets:
 本稿为过程稿。正式成稿见：
 
 ```text
-data/articles/公众号文章/申论写县域发展，别再只会说“因地制宜”：人民日报给了五个动作.md
+data/articles/往期文章/人民日报系列/申论写县域发展，别再只会说“因地制宜”：人民日报给了五个动作.md
 ```
 
 写作依据：

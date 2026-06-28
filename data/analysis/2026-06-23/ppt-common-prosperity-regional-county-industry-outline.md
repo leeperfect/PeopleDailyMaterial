@@ -2,7 +2,7 @@
 type: ppt_outline
 date: 2026-06-23
 topic: 共同富裕不是平均用力：区域协作、县域工程和产业帮扶一起发力
-article: data/articles/公众号文章/30-人民日报讲共同富裕：不是平均用力，而是区域协作、县域工程和产业帮扶一起发力.md
+article: data/articles/人民日报系列/30-人民日报讲共同富裕：不是平均用力，而是区域协作、县域工程和产业帮扶一起发力.md
 platform: PPT
 ---
 

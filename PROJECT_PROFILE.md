@@ -11,7 +11,7 @@ updated: 2026-06-06
 
 事实留存层：`data/raw/` 原始抓取数据
 机器检索层：`data/core/` SQLite 核心库（稳定文章 ID、全文检索、教研素材资产库）
-人类阅读层：`data/vault/` Obsidian 格式文章 Markdown + `data/articles/公众号文章/` 成品稿
+人类阅读层：`data/vault/` Obsidian 格式文章 Markdown + `data/articles/人民日报系列/`、`data/articles/热点系列/` 成品稿
 过程分析层：`data/analysis/` 教研复盘、选题拆解、文案、讲稿、视觉 brief
 本地媒体层：`media/` 小红书图片、公众号配图、课件、视频、音频、压缩包，由网盘同步，不进入 GitHub
 外部分发层：`data/exports/` JSON/CSV 导出 + Notion 数据库视图

@@ -2,7 +2,7 @@
 type: lecture_script
 date: 2026-06-19
 topic: AI时代教育怎么写：不是人人学工具，而是重塑思维和终身学习
-article: data/articles/公众号文章/19-人民日报讲AI时代教育：不是人人学工具，而是重塑思维和终身学习.md
+article: data/articles/人民日报系列/19-人民日报讲AI时代教育：不是人人学工具，而是重塑思维和终身学习.md
 ---
 
 # 课堂讲解稿｜AI时代教育不是人人学工具

@@ -2,7 +2,7 @@
 type: process_draft
 date: 2026-06-06
 topic: 新就业群体治理：从服务对象到城市伙伴
-final_article: data/articles/公众号文章/06-人民日报讲新就业群体治理：从服务对象到城市伙伴.md
+final_article: data/articles/往期文章/人民日报系列/06-人民日报讲新就业群体治理：从服务对象到城市伙伴.md
 platform: 公众号 + 面试题卡
 ---
 

@@ -5,7 +5,7 @@ topic: 正确政绩观续写：让群众看到变化，靠考核、决策和旧�
 priority: A
 status: 成稿
 platform: 公众号 + 课堂讲解
-final_article: data/articles/公众号文章/29-人民日报讲正确政绩观：让群众看到变化，靠考核、决策和旧账闭环.md
+final_article: data/articles/人民日报系列/29-人民日报讲正确政绩观：让群众看到变化，靠考核、决策和旧账闭环.md
 process_draft: data/analysis/2026-06-23/wechat-performance-view-accountability-closed-loop.md
 lecture_script: data/analysis/2026-06-23/lecture-performance-view-accountability-closed-loop.md
 ---
@@ -65,7 +65,7 @@ lecture_script: data/analysis/2026-06-23/lecture-performance-view-accountability
 
 本次已形成：
 
-- 公众号成稿：`data/articles/公众号文章/29-人民日报讲正确政绩观：让群众看到变化，靠考核、决策和旧账闭环.md`
+- 公众号成稿：`data/articles/人民日报系列/29-人民日报讲正确政绩观：让群众看到变化，靠考核、决策和旧账闭环.md`
 - 过程稿：`data/analysis/2026-06-23/wechat-performance-view-accountability-closed-loop.md`
 - 课堂讲解稿：`data/analysis/2026-06-23/lecture-performance-view-accountability-closed-loop.md`
 

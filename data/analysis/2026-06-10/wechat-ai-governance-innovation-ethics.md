@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-06-10
 topic: AI治理怎么写：既给创新空间，也守伦理底线
-final_article: data/articles/公众号文章/10-人民日报讲AI治理：既给创新空间，也守伦理底线.md
+final_article: data/articles/往期文章/人民日报系列/10-人民日报讲AI治理：既给创新空间，也守伦理底线.md
 platform: 公众号 + 小红书
 ---
 

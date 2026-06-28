@@ -5,7 +5,7 @@ topic: 向海图强怎么写：不是“靠海吃海”，而是科技、生态�
 priority: A
 status: 备选
 platform: 公众号 + 小红书
-final_article: data/articles/公众号文章/12-人民日报讲向海图强：不是“靠海吃海”，而是科技、生态和产业链.md
+final_article: data/articles/往期文章/人民日报系列/12-人民日报讲向海图强：不是“靠海吃海”，而是科技、生态和产业链.md
 process_draft: data/analysis/2026-06-11/wechat-marine-economy-tech-ecology-industry-chain.md
 xiaohongshu_script: data/analysis/2026-06-11/xiaohongshu-marine-economy-tech-ecology-industry-chain-card-script.md
 ---

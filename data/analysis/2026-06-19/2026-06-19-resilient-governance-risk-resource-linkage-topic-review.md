@@ -5,7 +5,7 @@ topic: 韧性治理怎么写：风险早识别、资源早前置、系统能联�
 priority: B级
 status: 备选
 platform: 课堂讲解 + 面试题卡
-final_article: data/articles/公众号文章/17-人民日报讲韧性治理：不是灾后救急，而是早识别、早前置、能联动.md
+final_article: data/articles/人民日报系列/17-人民日报讲韧性治理：不是灾后救急，而是早识别、早前置、能联动.md
 process_draft: data/analysis/2026-06-19/wechat-resilient-governance-risk-resource-linkage.md
 lecture_script: data/analysis/2026-06-19/lecture-resilient-governance-risk-resource-linkage.md
 interview_card: data/analysis/2026-06-19/interview-resilient-governance-risk-resource-linkage-card.md

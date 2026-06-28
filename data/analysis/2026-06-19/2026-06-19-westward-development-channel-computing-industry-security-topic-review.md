@@ -5,7 +5,7 @@ topic: 大国向西怎么写：不是区域口号，而是通道、算力、产�
 priority: B级
 status: 备选
 platform: 公众号 + PPT
-final_article: data/articles/公众号文章/20-人民日报讲大国向西：不是区域口号，而是通道、算力、产业和安全腹地.md
+final_article: data/articles/人民日报系列/20-人民日报讲大国向西：不是区域口号，而是通道、算力、产业和安全腹地.md
 process_draft: data/analysis/2026-06-19/wechat-westward-development-channel-computing-industry-security.md
 ppt_outline: data/analysis/2026-06-19/ppt-westward-development-channel-computing-industry-security-outline.md
 ---

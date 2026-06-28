@@ -3,7 +3,7 @@ type: wechat_article_draft
 date: 2026-06-03
 topic: 公共服务均等化
 title: "01｜人民日报讲公共服务均等化：从“有没有”到“够得到”"
-canonical_article: data/articles/公众号文章/01-人民日报讲公共服务均等化：从“有没有”到“够得到”.md
+canonical_article: data/articles/往期文章/人民日报系列/01-人民日报讲公共服务均等化：从“有没有”到“够得到”.md
 source_review: data/analysis/2026-06-03/2026-06-03-public-service-accessibility-topic-review.md
 source_assets:
   - people_daily_20260320_30146278
@@ -22,7 +22,7 @@ source_assets:
 本稿为过程稿。正式成稿见：
 
 ```text
-data/articles/公众号文章/01-人民日报讲公共服务均等化：从“有没有”到“够得到”.md
+data/articles/往期文章/人民日报系列/01-人民日报讲公共服务均等化：从“有没有”到“够得到”.md
 ```
 
 写作依据：

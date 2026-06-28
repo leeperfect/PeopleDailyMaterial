@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-06-11
 topic: 向海图强怎么写：不是“靠海吃海”，而是科技、生态和产业链
-article: data/articles/公众号文章/12-人民日报讲向海图强：不是“靠海吃海”，而是科技、生态和产业链.md
+article: data/articles/往期文章/人民日报系列/12-人民日报讲向海图强：不是“靠海吃海”，而是科技、生态和产业链.md
 image_rule: AI直接生成，无人物
 ---
 

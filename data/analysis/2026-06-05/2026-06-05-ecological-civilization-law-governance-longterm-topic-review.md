@@ -5,7 +5,7 @@ topic: 生态文明怎么写：把绿色发展写成法治、治理和长期主�
 priority: A
 status: 备选
 platform: 公众号 + 课堂讲解
-final_article: data/articles/公众号文章/05-人民日报讲生态文明：把绿色发展写成法治、治理和长期主义.md
+final_article: data/articles/人民日报系列/05-人民日报讲生态文明：把绿色发展写成法治、治理和长期主义.md
 process_draft: data/analysis/2026-06-05/wechat-ecological-civilization-law-governance-longterm.md
 ---
 

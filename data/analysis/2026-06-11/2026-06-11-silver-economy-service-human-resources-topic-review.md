@@ -5,7 +5,7 @@ topic: 银发经济不是养老负担：把老龄化写成服务供给和人力�
 priority: A
 status: 备选
 platform: 公众号 + 面试题卡
-final_article: data/articles/公众号文章/14-人民日报讲银发经济：不是养老负担，而是服务供给和人力资源.md
+final_article: data/articles/人民日报系列/14-人民日报讲银发经济：不是养老负担，而是服务供给和人力资源.md
 process_draft: data/analysis/2026-06-11/wechat-silver-economy-service-human-resources.md
 interview_card: data/analysis/2026-06-11/interview-silver-economy-service-human-resources-card.md
 xiaohongshu_script: data/analysis/2026-06-11/xiaohongshu-silver-economy-service-human-resources-card-script.md

@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-06-20
 topic: 新型城镇化怎么写：不是进城落脚，而是服务跟着人走
-final_article: data/articles/公众号文章/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md
+final_article: data/articles/人民日报系列/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md
 platform: 公众号 + 小红书
 ---
 

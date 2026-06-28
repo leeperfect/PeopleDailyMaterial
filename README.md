@@ -9,7 +9,7 @@
 如果你只是想使用素材库，优先看这几个地方：
 
 ```text
-data/articles/公众号文章/文章索引.md      # 已整理的公众号文章和成品稿
+data/articles/文章索引.md      # 已整理的公众号文章和成品稿
 media/_index.md                         # 图片、课件、视频等网盘资产索引
 data/vault/_素材库/素材库首页.md          # Obsidian 里的教研素材首页
 data/core/articles.sqlite                 # AI、脚本、Notion 同步读取的核心库
@@ -51,7 +51,11 @@ PeopleDailyMaterial/
 │   ├── core/                     # SQLite 核心库和可读备份
 │   ├── vault/                    # Obsidian 阅读视图
 │   ├── analysis/                 # 教研分析、复盘、文案和视觉 brief
-│   ├── articles/公众号文章/       # 成品公众号文章
+│   ├── articles/                  # 公众号成品层
+│   │   ├── 人民日报系列/          # 当前人民日报选题文章
+│   │   ├── 热点系列/              # 当前热点分析文章
+│   │   ├── 往期文章/              # 已发表文章，内部继续按两个系列分类
+│   │   └── 文章索引.md            # 当前与往期文章统一入口
 │   └── exports/                  # 给 Notion、表格或外部工具的导出文件
 ├── docs/                         # 流程说明、数据库说明、内容生产规范
 └── tests/                        # 自动检查
@@ -65,9 +69,11 @@ PeopleDailyMaterial/
 
 `data/vault/` 是人类阅读层。它适合用 Obsidian 打开，按日期、版面、专题浏览，也适合人工做教研标注。
 
-`data/articles/公众号文章/` 是成品层。公众号稿、插图版、面向老师直接使用的文章，都放这里，文件名可以用中文标题。
+`data/articles/` 是成品层。基于人民日报选题的当前成稿放在 `人民日报系列/`，基于近期公共热点和官媒评论的当前成稿放在 `热点系列/`；已经发表的文章由老师手动移入 `往期文章/` 下的对应系列。
 
-其中 `data/articles/公众号文章/选题库.md` 是长期选题池。每次完成文章梳理后，运行 `python3 scripts/export_content_ideas.py` 刷新，就能按月份、季度、状态查看可继续精筛的选题。
+人民日报系列沿用数字编号，热点系列使用“热点1、热点2……”独立编号。两个系列及其往期文章统一通过 `data/articles/文章索引.md` 查找。
+
+其中 `data/articles/选题库.md` 是长期选题池。每次完成文章梳理后，运行 `python3 scripts/export_content_ideas.py` 刷新，就能按月份、季度、状态查看可继续精筛的选题。
 
 `data/analysis/` 是工作过程层。复盘、选题拆解、公众号文案、小红书文案、PPT 讲稿和视觉 brief 放这里。它不是日常找原文的入口。
 
@@ -158,7 +164,7 @@ python3 scripts/export_content_ideas.py
 它会生成：
 
 ```text
-data/articles/公众号文章/选题库.md
+data/articles/选题库.md
 data/exports/content_ideas.csv
 ```
 

@@ -2,7 +2,7 @@
   "created_date": "2026-06-11",
   "source_dir": "data/source/马江博·政经参考（2026）",
   "target_table": "data/core/material_assets.sqlite::content_ideas",
-  "export_markdown": "data/articles/公众号文章/选题库.md",
+  "export_markdown": "data/articles/选题库.md",
   "selection_rules": {
     "min_support_articles": 3,
     "dedupe_rule": "与既有母题重复的只保留更强切口，支撑不足的不入库",

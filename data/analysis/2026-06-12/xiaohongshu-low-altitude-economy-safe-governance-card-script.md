@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-06-12
 topic: 低空经济别只追风口：先把“飞得起来”和“管得住”写清楚
-article: data/articles/公众号文章/15-人民日报讲低空经济：别只追风口，先把“飞得起来”和“管得住”写清楚.md
+article: data/articles/人民日报系列/15-人民日报讲低空经济：别只追风口，先把“飞得起来”和“管得住”写清楚.md
 image_rule: AI直接生成，无人物
 card_count: 13
 ---

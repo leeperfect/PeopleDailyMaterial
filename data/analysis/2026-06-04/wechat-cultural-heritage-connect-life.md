@@ -3,7 +3,7 @@ type: wechat_article_draft
 date: 2026-06-04
 topic: 文化传承不是摆出来，而是连起来
 title: "04｜人民日报讲文化传承：不是摆出来，而是连起来"
-canonical_article: data/articles/公众号文章/04-人民日报讲文化传承：不是摆出来，而是连起来.md
+canonical_article: data/articles/往期文章/人民日报系列/04-人民日报讲文化传承：不是摆出来，而是连起来.md
 source_review: data/analysis/2026-06-04/2026-06-04-cultural-heritage-connect-life-topic-review.md
 source_assets:
   - people_daily_20260224_30141615
@@ -22,7 +22,7 @@ source_assets:
 本稿为过程稿。正式成稿见：
 
 ```text
-data/articles/公众号文章/04-人民日报讲文化传承：不是摆出来，而是连起来.md
+data/articles/往期文章/人民日报系列/04-人民日报讲文化传承：不是摆出来，而是连起来.md
 ```
 
 写作依据：

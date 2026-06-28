@@ -3,7 +3,7 @@ type: wechat_article_draft
 date: 2026-06-04
 topic: 新质生产力别写空：从词元、农机到田间大模型
 title: "03｜人民日报讲新质生产力：别写空，从词元、农机到田间大模型"
-canonical_article: data/articles/公众号文章/03-人民日报讲新质生产力：别写空，从词元、农机到田间大模型.md
+canonical_article: data/articles/往期文章/人民日报系列/03-人民日报讲新质生产力：别写空，从词元、农机到田间大模型.md
 source_review: data/analysis/2026-06-04/2026-06-04-new-quality-productivity-real-scenes-topic-review.md
 source_assets:
   - people_daily_20260202_30137423
@@ -23,7 +23,7 @@ source_assets:
 本稿为过程稿。正式成稿见：
 
 ```text
-data/articles/公众号文章/03-人民日报讲新质生产力：别写空，从词元、农机到田间大模型.md
+data/articles/往期文章/人民日报系列/03-人民日报讲新质生产力：别写空，从词元、农机到田间大模型.md
 ```
 
 写作依据：

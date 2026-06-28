@@ -2,7 +2,7 @@
 type: lecture_script
 date: 2026-06-19
 topic: 基层治理不是“万能基层”：权责清、群众进、部门协同
-article: data/articles/公众号文章/02-人民日报讲基层治理：不是“万能基层”，而是权责清、群众进、部门协同.md
+article: data/articles/人民日报系列/02-人民日报讲基层治理：不是“万能基层”，而是权责清、群众进、部门协同.md
 platform: 课堂讲解
 ---
 

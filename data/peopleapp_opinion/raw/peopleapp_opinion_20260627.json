@@ -1,0 +1,755 @@
+[
+  {
+    "list_item": {
+      "activityExt": null,
+      "appStyle": "13",
+      "askInfo": null,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/565e7ed38b3f46a38e6145f9b5208862.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 242,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/0e8bd8ab8a6544b08941f7088618eb81.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 228,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/9e8d76d194b0431e87cfd61e83cd79fe.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 256,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/21fa111e30d549bab6e065340964df79.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 246,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        }
+      ],
+      "authorList": [],
+      "channelId": 2003,
+      "commentInfo": null,
+      "corner": "",
+      "coverSize": "1029*686",
+      "coverType": 1,
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/042381915d5942c49c8891f983a92ee1.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782561734000",
+      "fullColumnImgUrls": [
+        {
+          "height": 686,
+          "landscape": 1,
+          "size": 128475,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/042381915d5942c49c8891f983a92ee1.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 1029
+        }
+      ],
+      "keyArticle": 0,
+      "linkUrl": "",
+      "liveInfo": null,
+      "menuShow": 1,
+      "newTags": "",
+      "newsSummary": "志愿填报终将尘埃落定，人生的长卷才刚刚展开。",
+      "newsTitle": "打破功利焦虑，让专业选择回归“自我实现”",
+      "objectId": "30052504924",
+      "objectType": "8",
+      "openAudio": 1,
+      "positionType": 1,
+      "publishTime": "1782563739000",
+      "readFlag": 1,
+      "relAskInfos": [],
+      "relId": 500007568469,
+      "relObjectId": "2003",
+      "relType": 1,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "shareInfo": null,
+      "shortDrama": null,
+      "slideShows": [],
+      "source": "南方都市报",
+      "sourceId": "41",
+      "tagIds": [],
+      "topicWatchCover": null,
+      "userInfo": null,
+      "videoInfo": null,
+      "visitorComment": 1,
+      "voiceInfo": {
+        "defaultMultiple": "1.0",
+        "openMultipleAdjustment": 1,
+        "type": 3,
+        "voiceDuration": 242,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/565e7ed38b3f46a38e6145f9b5208862.mp3"
+      }
+    },
+    "detail": {
+      "activityInfos": [],
+      "appstyle": 13,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/565e7ed38b3f46a38e6145f9b5208862.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 242,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/0e8bd8ab8a6544b08941f7088618eb81.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 228,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/9e8d76d194b0431e87cfd61e83cd79fe.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 256,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/21fa111e30d549bab6e065340964df79.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 246,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        }
+      ],
+      "authorList": [],
+      "bestNoticer": 1,
+      "commentDisplay": 1,
+      "currentNum": null,
+      "editorName": "韩文鋆",
+      "firstFrameImageUri": "",
+      "firstPublishTime": "2026-06-27 20:35:39",
+      "fullColumnImgUrls": [
+        {
+          "format": null,
+          "height": 686,
+          "landscape": 1,
+          "size": 128475,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/042381915d5942c49c8891f983a92ee1.png",
+          "weight": 1029
+        }
+      ],
+      "hasPopUp": null,
+      "isNewspaper": false,
+      "itemId": "",
+      "itemTypeCode": "",
+      "keyArticle": 0,
+      "leaderArticle": 0,
+      "likesStyle": 1,
+      "liveInfo": null,
+      "menuShow": 1,
+      "newIntroduction": "",
+      "newLinkObject": null,
+      "newsBodyTitle": "",
+      "newsContent": "<p style=\"text-indent: 2em;\">2026年高考放榜季，两条新闻在舆论场中激起了涟漪。广东广雅中学的吴子萌同学在知晓自己优异成绩时，正漫步于上海博物馆的考古展厅，即使接到了来自清华北大的电话，心情却平静如水；而“网红教授”郑强则对着镜头直言，<strong>考生家长不必在专业选择问题上执著于“四年后哪份工作能找钱”，因为产业的变化很快。</strong></p><p style=\"text-indent: 2em;\">两条看似不相干的消息，都与焦虑有关。只要家有学子，“学文还是学理”“究竟应该选择什么样的专业”这两个话题，相信在不少学生及其家庭中都曾引发争议、催生焦虑。</p><p style=\"text-indent: 2em;\">吴子萌的选择在当下语境中似乎有些另类。当“文科无用论”甚嚣尘上，历史、考古动辄就会被贴上“冷门”“难就业”的标签，这个姑娘却能在博物馆的古物前感受到“穿越古今的连接感”。</p><p style=\"text-indent: 2em;\"><strong>更令人动容的是她与父母的沟通。从最初的不被理解，到最终获得选择的权利，这不仅是家庭内部的和解，更是一场关于教育本质的微型启蒙。</strong>她说:“如果选了不喜欢的，即便取得了世俗意义上的成功，也不一定能体会到自己人生的价值和意义。”这番话之所以引发不少人共鸣，很大程度上是因为它刺破了弥漫在当代教育中的功利泡沫。</p><p style=\"text-indent: 2em;\">郑强教授的告诫则是从另一维度提供了佐证。他提醒家长“产业的变化很快”，<strong>今天的热门专业，四年后或许已是明日黄花；当下的高薪行业，未必经得起技术迭代的冲击。</strong></p><p style=\"text-indent: 2em;\">郑强的这种判断并非危言耸听，而是被反复验证的时代规律。从金融业的周期性震荡到互联网行业的结构性调整，从人工智能对传统岗位的替代到新兴职业的不断涌现，“铁饭碗”“金领职业”的概念正在被不断改写。在这样的背景下，将专业选择简化为“找钱”的算术题，随波逐流，又何异于在流沙上修筑长城?</p><p style=\"text-indent: 2em;\">一个是刚刚经历高考的青年学子，一个是阅历丰富的大学教授，不难看出，二者的观点在内核上高度契合，<strong>即在急功近利的社会氛围中，选择什么样的专业不应被短期的世俗利益所裹挟。</strong>作为学生，只有对自身兴趣和能力有明确的判断，并且愿意为此坚持，才可能在漫长的人生道路上实现自我价值。无数事实说明，当一个人将内心的热爱与自身的优势相结合时，他才会迸发出最大的内驱力。</p><p style=\"text-indent: 2em;\"><strong>当然，强调兴趣与自我实现，并非鼓励盲目追梦或完全不顾现实，而是要在“热爱”与“现实”之间寻找平衡。</strong>吴子萌并非只有一腔热血，她优秀的学业成绩给了她选择的权利；她也会在“自己能够接受的范围内选择专业”，这说明她具备理性的边界感。郑强教授强调进入大学首先要打好基础，可谓深中肯綮。基础学科或许不能立刻变现，但它培养的思维能力、学习能力和人文底蕴，却是应对未来一切不确定性的坚实铠甲。</p><p style=\"text-indent: 2em;\"><strong>志愿填报终将尘埃落定，人生的长卷才刚刚展开。</strong><strong>在这个加速变迁的时代，始终保持一份定力至关重要。</strong>那些能够在纷繁选择中听见内心声音，并愿意为之坚持的年轻人，或许才算是真正掌握了面对未来的能力。正如考古学需要耐心地拂去尘土才能发现文明真容，人生的价值也需要穿越功利迷雾，才能在时间的长河中显现其本真的光芒。</p>",
+      "newsContentBak": "{}",
+      "newsDownTitle": "",
+      "newsId": 30052504924,
+      "newsLinkUrl": "",
+      "newsShortTitle": "",
+      "newsSource": "41",
+      "newsSourceName": "南方都市报",
+      "newsSummary": "志愿填报终将尘埃落定，人生的长卷才刚刚展开。",
+      "newsTags": "",
+      "newsTitle": "打破功利焦虑，让专业选择回归“自我实现”",
+      "newsType": 8,
+      "oldNewsId": "",
+      "openAudio": 1,
+      "openComment": 1,
+      "openLikes": 1,
+      "openView": 1,
+      "paperCategorys": [],
+      "pcFirstFrameImageUri": "",
+      "photoList": [],
+      "popUps": [],
+      "preCommentFlag": 0,
+      "publishTime": "2026-06-27 20:35:39",
+      "reLInfo": {
+        "channelId": 2003,
+        "relId": "500007568469",
+        "relObjectId": 2003,
+        "relType": "1"
+      },
+      "readFlag": 1,
+      "recallFrom": null,
+      "recommendShow": 1,
+      "refreshCnt": null,
+      "relAskInfos": [],
+      "respPosition": null,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "sceneId": "",
+      "serials": null,
+      "shareInfo": {
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/ea97cead8019475eae59a6e7269d661f.png?x-oss-process=image/resize,w_120",
+        "shareOpen": 1,
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/042381915d5942c49c8891f983a92ee1.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterOpen": 1,
+        "sharePosterStyle": 1,
+        "shareSummary": "志愿填报终将尘埃落定，人生的长卷才刚刚展开。",
+        "shareTitle": "打破功利焦虑，让专业选择回归“自我实现”",
+        "shareUrl": "https://www.peopleapp.com/column/30052504924-500007568469"
+      },
+      "shortDrama": null,
+      "specialColumnId": null,
+      "specialColumnName": "",
+      "subSceneId": "",
+      "timeline": null,
+      "topicInfo": null,
+      "traceId": "",
+      "traceInfo": "",
+      "userInfo": null,
+      "videoInfo": [],
+      "viewCount": 114947,
+      "visitorComment": 1,
+      "voteInfo": null
+    }
+  },
+  {
+    "list_item": {
+      "activityExt": null,
+      "appStyle": "13",
+      "askInfo": null,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/1f6791e21cb049dd835441d0f1263814.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 333,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/73fda4b98df6409c9b8fbab4524d9d85.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 317,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/a5899a18ddc945ee8f3bea909fc7a7fd.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 349,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/7f2c1618d04f44659f99a593ee055959.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 355,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "外脚背"
+        }
+      ],
+      "channelId": 2003,
+      "commentInfo": null,
+      "corner": "",
+      "coverSize": "1000*667",
+      "coverType": 1,
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/d274ad7c6d154d308d4b537ddafef0d5.jpeg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782559621000",
+      "fullColumnImgUrls": [
+        {
+          "height": 667,
+          "landscape": 1,
+          "size": 1454026,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/d274ad7c6d154d308d4b537ddafef0d5.jpeg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 1000
+        }
+      ],
+      "keyArticle": 0,
+      "linkUrl": "",
+      "liveInfo": null,
+      "menuShow": 1,
+      "newTags": "",
+      "newsSummary": "佛得角队，实现了首次踏进世界杯决赛圈就小组出线的足坛奇迹。",
+      "newsTitle": "佛得角奇迹，“全球化”足球的成功密码",
+      "objectId": "30052504770",
+      "objectType": "8",
+      "openAudio": 1,
+      "positionType": 1,
+      "publishTime": "1782560847000",
+      "readFlag": 0,
+      "relAskInfos": [],
+      "relId": 500007568465,
+      "relObjectId": "2003",
+      "relType": 1,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "shareInfo": null,
+      "shortDrama": null,
+      "slideShows": [],
+      "source": "人民日报体育微信公号",
+      "sourceId": "41",
+      "tagIds": [],
+      "topicWatchCover": null,
+      "userInfo": null,
+      "videoInfo": null,
+      "visitorComment": 1,
+      "voiceInfo": {
+        "defaultMultiple": "1.0",
+        "openMultipleAdjustment": 1,
+        "type": 3,
+        "voiceDuration": 333,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/1f6791e21cb049dd835441d0f1263814.mp3"
+      }
+    },
+    "detail": {
+      "activityInfos": [],
+      "appstyle": 13,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/1f6791e21cb049dd835441d0f1263814.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 333,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/73fda4b98df6409c9b8fbab4524d9d85.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 317,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/a5899a18ddc945ee8f3bea909fc7a7fd.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 349,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/7f2c1618d04f44659f99a593ee055959.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 355,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "外脚背"
+        }
+      ],
+      "bestNoticer": 1,
+      "commentDisplay": 1,
+      "currentNum": null,
+      "editorName": "左潇",
+      "firstFrameImageUri": "",
+      "firstPublishTime": "2026-06-27 19:32:36",
+      "fullColumnImgUrls": [
+        {
+          "format": null,
+          "height": 667,
+          "landscape": 1,
+          "size": 1454026,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/d274ad7c6d154d308d4b537ddafef0d5.jpeg",
+          "weight": 1000
+        }
+      ],
+      "hasPopUp": null,
+      "isNewspaper": false,
+      "itemId": "",
+      "itemTypeCode": "",
+      "keyArticle": 0,
+      "leaderArticle": 0,
+      "likesStyle": 1,
+      "liveInfo": null,
+      "menuShow": 1,
+      "newIntroduction": "",
+      "newLinkObject": null,
+      "newsBodyTitle": "",
+      "newsContent": "<p class=\"\"><img class=\"331311807\" data-src=\"https://mmbiz.qpic.cn/mmbiz_jpg/ia8XsczfHmfqHXOPYVVSZajMlvicsm32sSSvwjibEZicCc1XSuhQJtPlS2iciaocUFjclFRuPbD5aA9zmoUaPRnYO0puSdQZ2RzaMadnyEa59nWbk/640?wx_fmt=jpeg&amp;from=appmsg#imgIndex=0\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/5001eb826b4c46ef9885ea22eefc31b9.jpg\" alt=\"图片\"></p><p style=\"text-indent: 2em;\">北京时间6月27日，美加墨世界杯继续以一天6场比赛的速度排定3个小组的最终座次。H组、G组和I组的12支球队或已定下“生死”、或仍在盼望“命运”的眷顾。绰号“蓝色鲨鱼”的佛得角队，实现了首次踏进世界杯决赛圈就小组出线的足坛奇迹。</p><p style=\"text-indent: 2em;\">“我们来到世界杯，就是为了让全世界看到佛得角。”在0比0战平沙特阿拉伯队之后，佛得角队主教练布比斯塔带领球队小组赛三战皆平，以小组第二名的身份晋级32强。这个和广东佛山市面积几乎相同的群岛国家，站上了世界杯的舞台中央。</p><p><img class=\"331311805\" data-src=\"https://mmbiz.qpic.cn/mmbiz_jpg/ia8XsczfHmfppo0sg1s6RlAb41GkIq4OKWhhve1wFS3ouURxhwNF2AEhdzaX4uGmHjPOnWz7ZWFN2XQTQrbicWUC4ZXRa0X1cRJ2LkiaCkrPx4/640?wx_fmt=jpeg&amp;from=appmsg#imgIndex=1\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/0ad58b70c7a14ac9a9735c9eedb56b46.jpg\" alt=\"图片\"></p><p style=\"text-indent: 2em;\">佛得角本土人口仅有55万左右，GDP总量29.2亿美元，支柱经济是旅游业，全国只有一座达到国际标准的球场。如果单纯依靠本土有限的青训设施和联赛体系，难以培养出可以抗衡西班牙、乌拉圭等世界级强队的职业球员。然而，足球全球化浪潮，为“蓝色鲨鱼”插上了可以跃出海面的翅膀。</p><p style=\"text-indent: 2em;\">佛得角队的26名球员，散布于葡萄牙、土耳其、美国、西班牙、保加利亚、塞浦路斯等14个国家的联赛之中，无一人在本国踢球。</p><p style=\"text-indent: 2em;\">这与佛得角的历史不无关系：由于群岛资源匮乏，大批佛得角人移居欧洲，目前居住在葡萄牙、荷兰、法国等地的佛得角后裔人口甚至超过了本土。这群庞大的海外移民群体，成为了佛得角足球取之不尽的“人才飞地”，阵中的绝大多数主力球员都在欧洲的职业青训体系中成长、淬炼。</p><p><img class=\"331311806\" data-src=\"https://mmbiz.qpic.cn/mmbiz_jpg/ia8XsczfHmfqDQHTIKZQhndDHZKYSb7jrS8XEUQPjOspxJ4vlzXgOXKreemUE0SUdVJIqiaxFjhuVWuMBSDz30kD4icv6foETXglFExblAs2zA/640?wx_fmt=jpeg&amp;from=appmsg#imgIndex=2\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/7e41805b6b3043ea861039f45591967c.jpg\" alt=\"图片\"></p><p style=\"text-indent: 2em;\">在对阵乌拉圭队时双双取得进球的凯文·皮纳和埃利奥·瓦雷拉，正是佛得角球员培养路径的典型代表：前者出自佛得角青训，20岁远赴葡萄牙追梦，在低级别联赛蛰伏5年才进入葡萄牙次级联赛，而后被俄罗斯超级联赛球队签下，实现职业生涯的跃升；后者生于葡萄牙的佛得角移民家庭，从小接受葡萄牙青训培养，从里斯本周边的小球会一路踢进葡萄牙顶级联赛，此后又在比利时和以色列联赛中闯荡。</p><p style=\"text-indent: 2em;\">可以说，佛得角队是一支“身披西非国家队战袍的欧洲职业化球队”。全球化打破了国界的限制，通过亲缘纽带，“足球小国”可以招募、吸纳由欧洲职业俱乐部青训体系培养的二代、三代移民球员，弥补本土在青训基础上的短板。</p><p style=\"text-indent: 2em;\">如果说移民球员的反哺，让佛得角队得到了人才支撑，那么美加墨世界杯扩军至48支球队，则成为佛得角队上演奇迹的“制度推手”。</p><p><img class=\"331311808\" data-src=\"https://mmbiz.qpic.cn/sz_mmbiz_jpg/ia8XsczfHmfqYBia3Kqgck5DC9wuEHibjTH7TNwNAiakLFtmVOXUny9aHZZMBcfsas1dYVnxxJLTwXzVcibalsM6XxXia4pAYDYQM5GH6omM39b90/640?wx_fmt=jpeg&amp;from=appmsg#imgIndex=3\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/8a54d7294ad14226b1493b9515fd2661.jpg\" alt=\"图片\"></p><p style=\"text-indent: 2em;\">在原有的32队赛制下，非洲区仅拥有5个出线名额。这意味着喀麦隆、塞内加尔、埃及、摩洛哥、尼日利亚、加纳等传统强队长期垄断入场券，佛得角队即便实力稳步提升，也极难从中突围。而在非洲区的出线名额增至9.5个之后，预选赛的新赛制彻底颠覆了过去的生态。佛得角队正是在预选赛中爆冷力压同组的喀麦隆队，历史性地首次拿到了世界杯入场券。</p><p style=\"text-indent: 2em;\">扩军还改变了“足球小国”的生存环境：过去，因为出线概率极低，小国足协往往缺乏资金和长期规划，扩军让世界杯决赛圈从一个遥不可及的梦想，变成了可以一搏的机遇，这极大刺激了佛得角、库拉索这类球队的政府部门和足协持续投入事业。</p><p style=\"text-indent: 2em;\">此外，世界杯正赛的12个小组、每组4队的赛制，让8支成绩较好的小组第三也能晋级。无形中鼓励了实力较弱的球队采取更加务实、稳健的防守反击战术。佛得角队正是依靠立足防守的战术获得三场平局，最终在乱局中找到生机。</p><p style=\"text-indent: 2em;\">佛得角队成功的背后，还有着深层的文化凝聚力与精神内核。</p><p><img class=\"331311809\" data-src=\"https://mmbiz.qpic.cn/mmbiz_jpg/ia8XsczfHmfontEdicKNzJibwzkz1nDGCBWB7uib9icAlYusqCtJ08wqyIiafic6UfcIiaXIfrMvYvAMrwvaO4kNl55Ejy31P8kLtQeExZpeEpgLZ4A/640?wx_fmt=jpeg&amp;from=appmsg#imgIndex=4\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/31de24f105e04903966ce7a53dcc2eda.jpg\" alt=\"图片\"></p><p style=\"text-indent: 2em;\">欧洲文化与非洲传统在佛得角群岛交融。在佛得角文化中，有一个核心词汇叫“莫拉贝萨”（Morabeza），它代表着开放、好客、坚韧与乐观。这种独特的文化让佛得角球员在场上面对身价数亿欧元的西班牙和乌拉圭巨星时，也能用享受足球的乐观从容应对。</p><p style=\"text-indent: 2em;\">正是这种文化纽带，让这群平时散落于欧洲各级联赛的球员，在国家队能够爆发出远超预期的凝聚力和执行力。</p><p style=\"text-indent: 2em;\">佛得角在美加墨世界杯上的惊艳突围，绝非单一因素的产物。全球化像一条传送带，将顶级足球的技战术养分输送给这个大西洋上的小岛；扩军像一扇大门，为这群怀揣梦想的球员提供了向世界展示韧性的舞台。佛得角队的奇迹向世界证明：在足球版图中，面积大小和人口多寡，再也无法锁死一支球队的上限——决定上限的，是对足球的热爱与梦想。</p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">图片来源：新华社</span></p>",
+      "newsContentBak": "{}",
+      "newsDownTitle": "",
+      "newsId": 30052504770,
+      "newsLinkUrl": "",
+      "newsShortTitle": "",
+      "newsSource": "41",
+      "newsSourceName": "人民日报体育微信公号",
+      "newsSummary": "佛得角队，实现了首次踏进世界杯决赛圈就小组出线的足坛奇迹。",
+      "newsTags": "",
+      "newsTitle": "美加墨世界杯｜佛得角奇迹，“全球化”足球的成功密码",
+      "newsType": 8,
+      "oldNewsId": "",
+      "openAudio": 1,
+      "openComment": 1,
+      "openLikes": 1,
+      "openView": 1,
+      "paperCategorys": [],
+      "pcFirstFrameImageUri": "",
+      "photoList": [
+        {
+          "height": 714,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/0ad58b70c7a14ac9a9735c9eedb56b46.jpg",
+          "size": 94597,
+          "width": 1000
+        },
+        {
+          "height": 722,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/7e41805b6b3043ea861039f45591967c.jpg",
+          "size": 120739,
+          "width": 1000
+        },
+        {
+          "height": 702,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/5001eb826b4c46ef9885ea22eefc31b9.jpg",
+          "size": 191149,
+          "width": 1000
+        },
+        {
+          "height": 729,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/8a54d7294ad14226b1493b9515fd2661.jpg",
+          "size": 96246,
+          "width": 1000
+        },
+        {
+          "height": 691,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/31de24f105e04903966ce7a53dcc2eda.jpg",
+          "size": 117283,
+          "width": 1000
+        }
+      ],
+      "popUps": [],
+      "preCommentFlag": 0,
+      "publishTime": "2026-06-27 19:47:27",
+      "reLInfo": {
+        "channelId": 2003,
+        "relId": "500007568465",
+        "relObjectId": 2003,
+        "relType": "1"
+      },
+      "readFlag": 1,
+      "recallFrom": null,
+      "recommendShow": 1,
+      "refreshCnt": null,
+      "relAskInfos": [],
+      "respPosition": null,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "sceneId": "",
+      "serials": null,
+      "shareInfo": {
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/2514ff8b99f94996b087f3e823291db7.png?x-oss-process=image/resize,w_120",
+        "shareOpen": 1,
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/d274ad7c6d154d308d4b537ddafef0d5.jpeg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterOpen": 1,
+        "sharePosterStyle": 1,
+        "shareSummary": "佛得角队，实现了首次踏进世界杯决赛圈就小组出线的足坛奇迹。",
+        "shareTitle": "佛得角奇迹，“全球化”足球的成功密码",
+        "shareUrl": "https://www.peopleapp.com/column/30052504770-500007568465"
+      },
+      "shortDrama": null,
+      "specialColumnId": null,
+      "specialColumnName": "",
+      "subSceneId": "",
+      "timeline": null,
+      "topicInfo": null,
+      "traceId": "",
+      "traceInfo": "",
+      "userInfo": null,
+      "videoInfo": [],
+      "viewCount": 903764,
+      "visitorComment": 1,
+      "voteInfo": null
+    }
+  },
+  {
+    "list_item": {
+      "activityExt": null,
+      "appStyle": "13",
+      "askInfo": null,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/443e540417844635a92752370dd6dfbf.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 148,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/e465821e9de34b2eb8cc5537e34080dd.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 139,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/5bbf985fb9e7495992fe28eb4c045998.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 152,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/7c397fea35fb45c1a8e078d366d4f1f3.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 157,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "关末"
+        }
+      ],
+      "channelId": 2003,
+      "commentInfo": null,
+      "corner": "",
+      "coverSize": "600*401",
+      "coverType": 1,
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/ec8f00aee5c1435691553d0c2c0a523a.jpeg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782557597000",
+      "fullColumnImgUrls": [
+        {
+          "height": 401,
+          "landscape": 1,
+          "size": 32133,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/ec8f00aee5c1435691553d0c2c0a523a.jpeg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 600
+        }
+      ],
+      "keyArticle": 0,
+      "linkUrl": "",
+      "liveInfo": null,
+      "menuShow": 1,
+      "newTags": "",
+      "newsSummary": "因为分数之外，还有太多有关青春的故事。",
+      "newsTitle": "考场很小，世界却很大",
+      "objectId": "30052504622",
+      "objectType": "8",
+      "openAudio": 1,
+      "positionType": 1,
+      "publishTime": "1782560044000",
+      "readFlag": 1,
+      "relAskInfos": [],
+      "relId": 500007568439,
+      "relObjectId": "2003",
+      "relType": 1,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "shareInfo": null,
+      "shortDrama": null,
+      "slideShows": [],
+      "source": "京报锐评微信公号",
+      "sourceId": "41",
+      "tagIds": [],
+      "topicWatchCover": null,
+      "userInfo": null,
+      "videoInfo": null,
+      "visitorComment": 1,
+      "voiceInfo": {
+        "defaultMultiple": "1.0",
+        "openMultipleAdjustment": 1,
+        "type": 3,
+        "voiceDuration": 148,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/443e540417844635a92752370dd6dfbf.mp3"
+      }
+    },
+    "detail": {
+      "activityInfos": [],
+      "appstyle": 13,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/443e540417844635a92752370dd6dfbf.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 148,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/e465821e9de34b2eb8cc5537e34080dd.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 139,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/5bbf985fb9e7495992fe28eb4c045998.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 152,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260627/voice/7c397fea35fb45c1a8e078d366d4f1f3.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 157,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "关末"
+        }
+      ],
+      "bestNoticer": 1,
+      "commentDisplay": 1,
+      "currentNum": null,
+      "editorName": "冯雪芙",
+      "firstFrameImageUri": "",
+      "firstPublishTime": "2026-06-27 19:34:04",
+      "fullColumnImgUrls": [
+        {
+          "format": null,
+          "height": 401,
+          "landscape": 1,
+          "size": 32133,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/ec8f00aee5c1435691553d0c2c0a523a.jpeg",
+          "weight": 600
+        }
+      ],
+      "hasPopUp": null,
+      "isNewspaper": false,
+      "itemId": "",
+      "itemTypeCode": "",
+      "keyArticle": 0,
+      "leaderArticle": 0,
+      "likesStyle": 1,
+      "liveInfo": null,
+      "menuShow": 1,
+      "newIntroduction": "",
+      "newLinkObject": null,
+      "newsBodyTitle": "",
+      "newsContent": "<p style=\"text-indent: 2em;\">随着各地高考出分，各种查分名场面如期刷屏。</p><p style=\"text-indent: 2em;\">高分考生的个性画像、家庭氛围等话题为人津津乐道的同时，舆论棱镜的不同侧面，还有更多五味杂陈的心情。</p><p style=\"text-indent: 2em;\">有考生分数不高，相较平时却已是惊喜突破；有考生发挥不佳，为重要一战失利而遗憾落寞；当然，大多数考生守着时间紧张查分，全家长舒一口气后，又开始为接下来的人生规划纠结忙碌……“终于结束了！”“这些年孩子太不容易了！”<strong>那些朋友圈里说出或没说出的感慨，可能显得没什么“新闻性”。可正是无数这样平凡的场景，构成了我们关于高考最真实的记忆。</strong></p><p><img data-src=\"https://mmbiz.qpic.cn/sz_mmbiz_jpg/gSxYT1tl9V49G3r0fulkgvv6zeibpdU0HYLxK3jf4ibxWliaTQjEIycaLGLBwhAlicv5jNYvR68HwhsC3uY4GKkp73z9UIaeTd8FrLBGIKKXqZ8/640?wx_fmt=jpeg&amp;from=appmsg#imgIndex=1\" class=\"331311313\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/d4f86f2cc87c4110bd9e16769063f990.jpg\" alt=\"图片\"></p><p style=\"text-indent: 2em;\"><strong>在高考这场全民叙事中，没有人是“分母”，因为分数之外，还有太多有关青春的故事。</strong></p><p style=\"text-indent: 2em;\">还记得吗？明明是你不擅长的学科，却非要把最后一道大题掰开揉碎，只为多拿几分；多少次感到迷茫焦虑，家人、老师和同学陪在身边为你加油打气……高考是全社会重要的选拔考试，而对于个人来说，更是一次成长的仪式。漫长的求学过程中，那些朗诵的清晨、挑灯的夜晚，磨砺着面对挫折的心性、解决问题的态度。<strong>流量的聚光灯外，所有考生都是主角，所有青春都意义非凡。</strong></p><p style=\"text-indent: 2em;\"><strong>教育的终极目的，不是为了制造耀眼的“成功样本”，而是为了点亮每一个独特的灵魂。</strong>如今，更多人开始以平常心看待高考分数，舆论场上理性、温暖的声音越来越多。人们为“挖眼案受害男孩”对抗命运绝境喝彩，也为盲校、高校的“接力托举”点赞；家长安慰分数不高的孩子，评论区里大家“现身说法”，讨论未来职业规划的诸多选择。教育改革持续深入，多元成才的道路愈发清晰，接纳不同节奏、不同方向的成长，本身也是社会心态的“提分”。</p><p style=\"text-indent: 2em;\"><strong>考场很小，世界却很大。这一战，终究只是这一站。这一刻，无论欢喜沮丧，你的青春都值得被看见；接下来，要面对的则是没有标准答案的人生。面朝大海、向阳生长，走过的每一步都算数！</strong></p>",
+      "newsContentBak": "{}",
+      "newsDownTitle": "",
+      "newsId": 30052504622,
+      "newsLinkUrl": "",
+      "newsShortTitle": "",
+      "newsSource": "41",
+      "newsSourceName": "京报锐评微信公号",
+      "newsSummary": "因为分数之外，还有太多有关青春的故事。",
+      "newsTags": "",
+      "newsTitle": "考场很小，世界却很大",
+      "newsType": 8,
+      "oldNewsId": "",
+      "openAudio": 1,
+      "openComment": 1,
+      "openLikes": 1,
+      "openView": 1,
+      "paperCategorys": [],
+      "pcFirstFrameImageUri": "",
+      "photoList": [
+        {
+          "height": 401,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/d4f86f2cc87c4110bd9e16769063f990.jpg",
+          "size": 32133,
+          "width": 600
+        }
+      ],
+      "popUps": [],
+      "preCommentFlag": 0,
+      "publishTime": "2026-06-27 19:34:04",
+      "reLInfo": {
+        "channelId": 2003,
+        "relId": "500007568439",
+        "relObjectId": 2003,
+        "relType": "1"
+      },
+      "readFlag": 1,
+      "recallFrom": null,
+      "recommendShow": 1,
+      "refreshCnt": null,
+      "relAskInfos": [],
+      "respPosition": null,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "sceneId": "",
+      "serials": null,
+      "shareInfo": {
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260627/image/content/45252e21ac0a4c9c9fa30d572baa88e9.png?x-oss-process=image/resize,w_120",
+        "shareOpen": 1,
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260627/image/display/ec8f00aee5c1435691553d0c2c0a523a.jpeg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterOpen": 1,
+        "sharePosterStyle": 1,
+        "shareSummary": "因为分数之外，还有太多有关青春的故事。",
+        "shareTitle": "考场很小，世界却很大",
+        "shareUrl": "https://www.peopleapp.com/column/30052504622-500007568439"
+      },
+      "shortDrama": null,
+      "specialColumnId": null,
+      "specialColumnName": "",
+      "subSceneId": "",
+      "timeline": null,
+      "topicInfo": null,
+      "traceId": "",
+      "traceInfo": "",
+      "userInfo": null,
+      "videoInfo": [],
+      "viewCount": 49951,
+      "visitorComment": 1,
+      "voteInfo": null
+    }
+  }
+]

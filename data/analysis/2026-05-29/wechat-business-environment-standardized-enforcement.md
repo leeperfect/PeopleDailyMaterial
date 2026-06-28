@@ -3,7 +3,7 @@ type: wechat_article_draft
 date: 2026-05-29
 topic: 法治化营商环境与规范涉企执法
 title: "人民日报讲营商环境：不是“不执法”，而是“规范执法”"
-canonical_article: data/articles/公众号文章/人民日报讲营商环境：不是“不执法”，而是“规范执法”.md
+canonical_article: data/articles/往期文章/人民日报系列/人民日报讲营商环境：不是“不执法”，而是“规范执法”.md
 source_review: data/analysis/2026-05-29/2026-05-29-business-environment-standardized-enforcement-topic-review.md
 source_assets:
   - people_daily_20260522_30158421

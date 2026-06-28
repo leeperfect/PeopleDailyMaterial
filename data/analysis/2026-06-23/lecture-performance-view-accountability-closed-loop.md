@@ -2,7 +2,7 @@
 type: lecture_script
 date: 2026-06-23
 topic: 正确政绩观续写：让群众看到变化，靠考核、决策和旧账闭环
-article: data/articles/公众号文章/29-人民日报讲正确政绩观：让群众看到变化，靠考核、决策和旧账闭环.md
+article: data/articles/人民日报系列/29-人民日报讲正确政绩观：让群众看到变化，靠考核、决策和旧账闭环.md
 platform: 课堂讲解
 ---
 

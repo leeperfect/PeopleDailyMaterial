@@ -3,7 +3,7 @@ type: wechat_article_draft
 date: 2026-06-02
 topic: 六张网与现代化基础设施体系
 title: "申论写基础设施，别只会写“修路架桥”：人民日报讲的是“六张网”"
-canonical_article: data/articles/公众号文章/申论写基础设施，别只会写“修路架桥”：人民日报讲的是“六张网”.md
+canonical_article: data/articles/往期文章/人民日报系列/申论写基础设施，别只会写“修路架桥”：人民日报讲的是“六张网”.md
 source_review: data/analysis/2026-06-02/2026-06-02-six-networks-infrastructure-topic-review.md
 source_assets:
   - content_30157445
@@ -19,7 +19,7 @@ source_assets:
 本稿为过程稿。正式成稿见：
 
 ```text
-data/articles/公众号文章/申论写基础设施，别只会写“修路架桥”：人民日报讲的是“六张网”.md
+data/articles/往期文章/人民日报系列/申论写基础设施，别只会写“修路架桥”：人民日报讲的是“六张网”.md
 ```
 
 写作依据：

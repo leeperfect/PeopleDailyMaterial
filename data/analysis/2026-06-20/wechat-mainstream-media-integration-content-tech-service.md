@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-06-20
 topic: 主流媒体融合：不是多开账号，而是重构内容、技术和服务
-final_article: data/articles/公众号文章/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md
+final_article: data/articles/人民日报系列/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md
 platform: 公众号 + PPT
 ---
 

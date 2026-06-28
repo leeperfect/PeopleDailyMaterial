@@ -5,7 +5,7 @@ topic: 新型城镇化怎么写：不是进城落脚，而是服务跟着人走
 priority: S级
 status: 备选
 platform: 公众号 + 小红书
-final_article: data/articles/公众号文章/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md
+final_article: data/articles/人民日报系列/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md
 process_draft: data/analysis/2026-06-20/wechat-new-urbanization-service-follows-people.md
 xiaohongshu_script: data/analysis/2026-06-20/xiaohongshu-new-urbanization-service-follows-people-card-script.md
 ---

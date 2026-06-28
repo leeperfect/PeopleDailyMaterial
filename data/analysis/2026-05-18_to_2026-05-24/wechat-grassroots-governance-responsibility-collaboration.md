@@ -4,7 +4,7 @@ period: 2026-05-18_to_2026-05-24
 topic: 基层治理不是“万能基层”：权责清、群众进、部门协同
 title: "基层治理不是“万能基层”：《人民日报》讲清权责清、群众进、部门协同"
 source_process_file: data/analysis/2026-05-18_to_2026-05-24/wechat-grassroots-governance-responsibility-collaboration.md
-canonical_article: data/articles/公众号文章/基层治理不是“万能基层”：《人民日报》讲清权责清、群众进、部门协同.md
+canonical_article: data/articles/人民日报系列/02-人民日报讲基层治理：不是“万能基层”，而是权责清、群众进、部门协同.md
 source_assets:
   - people_daily_20260519_30157694
   - people_daily_20260519_30157731

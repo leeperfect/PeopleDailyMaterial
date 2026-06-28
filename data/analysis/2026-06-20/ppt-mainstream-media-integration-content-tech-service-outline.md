@@ -2,7 +2,7 @@
 type: ppt_outline
 date: 2026-06-20
 topic: 主流媒体融合：不是多开账号，而是重构内容、技术和服务
-article: data/articles/公众号文章/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md
+article: data/articles/人民日报系列/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md
 platform: PPT
 slide_count: 9
 ---

@@ -5,7 +5,7 @@ topic: 共同富裕不是平均用力：区域协作、县域工程和产业帮�
 priority: A
 status: 成稿
 platform: 公众号 + PPT
-final_article: data/articles/公众号文章/30-人民日报讲共同富裕：不是平均用力，而是区域协作、县域工程和产业帮扶一起发力.md
+final_article: data/articles/人民日报系列/30-人民日报讲共同富裕：不是平均用力，而是区域协作、县域工程和产业帮扶一起发力.md
 process_draft: data/analysis/2026-06-23/wechat-common-prosperity-regional-county-industry.md
 ppt_outline: data/analysis/2026-06-23/ppt-common-prosperity-regional-county-industry-outline.md
 ---
@@ -65,7 +65,7 @@ ppt_outline: data/analysis/2026-06-23/ppt-common-prosperity-regional-county-indu
 
 本次已形成：
 
-- 公众号成稿：`data/articles/公众号文章/30-人民日报讲共同富裕：不是平均用力，而是区域协作、县域工程和产业帮扶一起发力.md`
+- 公众号成稿：`data/articles/人民日报系列/30-人民日报讲共同富裕：不是平均用力，而是区域协作、县域工程和产业帮扶一起发力.md`
 - 过程稿：`data/analysis/2026-06-23/wechat-common-prosperity-regional-county-industry.md`
 - PPT 大纲：`data/analysis/2026-06-23/ppt-common-prosperity-regional-county-industry-outline.md`
 

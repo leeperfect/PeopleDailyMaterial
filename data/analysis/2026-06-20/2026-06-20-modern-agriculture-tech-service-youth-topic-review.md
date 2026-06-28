@@ -5,7 +5,7 @@ topic: 现代农业不是只靠苦干：科技体检、田保姆和青年农机�
 priority: A
 status: 成稿
 platform: 公众号 + 课堂讲解
-final_article: data/articles/公众号文章/25-人民日报讲现代农业：不是只靠苦干，而是科技体检、田保姆和青年农机手一起上.md
+final_article: data/articles/人民日报系列/25-人民日报讲现代农业：不是只靠苦干，而是科技体检、田保姆和青年农机手一起上.md
 process_draft: data/analysis/2026-06-20/wechat-modern-agriculture-tech-service-youth.md
 lecture_script: data/analysis/2026-06-20/lecture-modern-agriculture-tech-service-youth.md
 ---

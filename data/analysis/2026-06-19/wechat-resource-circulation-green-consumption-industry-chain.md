@@ -2,7 +2,7 @@
 type: process_draft
 date: 2026-06-19
 topic: 资源循环怎么写：不是回收旧物，而是绿色消费和产业链再造
-final_article: data/articles/公众号文章/18-人民日报讲资源循环：不是回收旧物，而是绿色消费和产业链再造.md
+final_article: data/articles/人民日报系列/18-人民日报讲资源循环：不是回收旧物，而是绿色消费和产业链再造.md
 ---
 
 # 过程稿｜资源循环不是回收旧物

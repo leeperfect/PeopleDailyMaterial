@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-06-11
 topic: 清欠账款怎么写：账款链也是信心链
-final_article: data/articles/公众号文章/13-人民日报讲清欠账款：账款链也是信心链.md
+final_article: data/articles/往期文章/人民日报系列/13-人民日报讲清欠账款：账款链也是信心链.md
 source_review: data/analysis/2026-06-11/2026-06-11-arrears-payment-confidence-chain-topic-review.md
 platform: 公众号 + 面试题卡
 ---

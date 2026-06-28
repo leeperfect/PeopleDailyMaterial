@@ -4,7 +4,7 @@ period: 2026-05-18_to_2026-05-24
 topic: 公共服务均等化：让服务跟着人走
 title: "申论写公共服务，别只写“均等化”：《人民日报》给了四个动作"
 source_process_file: data/analysis/2026-05-18_to_2026-05-24/wechat-public-service-equalization.md
-canonical_article: data/articles/公众号文章/申论写公共服务，别只写“均等化”：《人民日报》给了四个动作.md
+canonical_article: data/articles/往期文章/人民日报系列/申论写公共服务，别只写“均等化”：《人民日报》给了四个动作.md
 source_assets:
   - people_daily_20260518_30157413
   - people_daily_20260519_30157745

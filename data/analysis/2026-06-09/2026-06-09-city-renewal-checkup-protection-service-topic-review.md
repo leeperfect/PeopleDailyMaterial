@@ -5,7 +5,7 @@ topic: 城市更新别急着拆：先体检、再保护、再服务
 priority: A
 status: 备选
 platform: 公众号 + 小红书
-final_article: data/articles/公众号文章/09-人民日报讲城市更新：别急着拆，先体检、再保护、再服务.md
+final_article: data/articles/往期文章/人民日报系列/09-人民日报讲城市更新：别急着拆，先体检、再保护、再服务.md
 process_draft: data/analysis/2026-06-09/wechat-city-renewal-checkup-protection-service.md
 xiaohongshu_script: data/analysis/2026-06-09/xiaohongshu-city-renewal-checkup-protection-service-card-script.md
 ---

@@ -5,7 +5,7 @@ topic: 反内卷不是反竞争：让竞争回到价值创造
 priority: S
 status: 备选
 platform: 公众号 + PPT + 小红书
-final_article: data/articles/公众号文章/11-人民日报讲反内卷：不是反竞争，而是让竞争回到价值创造.md
+final_article: data/articles/往期文章/人民日报系列/11-人民日报讲反内卷：不是反竞争，而是让竞争回到价值创造.md
 process_draft: data/analysis/2026-06-11/wechat-anti-involution-value-competition.md
 xiaohongshu_script: data/analysis/2026-06-11/xiaohongshu-anti-involution-value-competition-card-script.md
 ppt_outline: data/analysis/2026-06-11/ppt-anti-involution-value-competition-outline.md

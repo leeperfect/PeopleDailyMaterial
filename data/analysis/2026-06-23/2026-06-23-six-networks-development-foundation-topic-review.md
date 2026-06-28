@@ -5,7 +5,7 @@ topic: “六张网”怎么写：不是大基建清单，而是发展底座重�
 priority: S
 status: 成稿
 platform: 公众号 + PPT
-final_article: data/articles/公众号文章/27-人民日报讲六张网：不是大基建清单，而是发展底座重塑.md
+final_article: data/articles/人民日报系列/27-人民日报讲六张网：不是大基建清单，而是发展底座重塑.md
 process_draft: data/analysis/2026-06-23/wechat-six-networks-development-foundation.md
 ppt_outline: data/analysis/2026-06-23/ppt-six-networks-development-foundation-outline.md
 ---
@@ -64,7 +64,7 @@ ppt_outline: data/analysis/2026-06-23/ppt-six-networks-development-foundation-ou
 
 本次已形成：
 
-- 公众号成稿：`data/articles/公众号文章/27-人民日报讲六张网：不是大基建清单，而是发展底座重塑.md`
+- 公众号成稿：`data/articles/人民日报系列/27-人民日报讲六张网：不是大基建清单，而是发展底座重塑.md`
 - 过程稿：`data/analysis/2026-06-23/wechat-six-networks-development-foundation.md`
 - PPT 提纲：`data/analysis/2026-06-23/ppt-six-networks-development-foundation-outline.md`
 

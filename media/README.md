@@ -24,7 +24,7 @@ media/video/2026-06-06-new-quality-productivity-short-video/
 
 使用原则：
 
-- 文字稿、选题、视觉 brief、讲稿提示继续放在 `data/analysis/` 或 `data/articles/公众号文章/`。
+- 文字稿、选题、视觉 brief、讲稿提示继续放在 `data/analysis/` 或 `data/articles/` 下对应系列目录。
 - 小红书图片、公众号配图、PPTX、视频、音频、压缩包放在 `media/`。
 - 每新建一组多媒体资产，在 `_index.md` 里补一行，方便人和 AI 找到。
 - 如果已经上传网盘，在 `_index.md` 里记录网盘文件夹名或分享链接。

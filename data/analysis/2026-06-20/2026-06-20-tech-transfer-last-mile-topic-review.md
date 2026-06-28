@@ -5,7 +5,7 @@ topic: 科技成果转化别只写“产学研”：关键是打通最后一公�
 priority: S级
 status: 备选
 platform: 公众号 + PPT
-final_article: data/articles/公众号文章/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md
+final_article: data/articles/人民日报系列/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md
 process_draft: data/analysis/2026-06-20/wechat-tech-transfer-last-mile.md
 ppt_outline: data/analysis/2026-06-20/ppt-tech-transfer-last-mile-outline.md
 ---

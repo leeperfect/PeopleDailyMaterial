@@ -3,7 +3,7 @@ type: wechat_article_draft
 date: 2026-05-31
 topic: 稳就业与零工服务
 title: "人民日报讲稳就业：不是喊口号，是让零工今天就能安心上工"
-canonical_article: data/articles/公众号文章/人民日报讲稳就业：不是喊口号，是让零工今天就能安心上工.md
+canonical_article: data/articles/往期文章/人民日报系列/人民日报讲稳就业：不是喊口号，是让零工今天就能安心上工.md
 source_review: data/analysis/2026-05-31/2026-05-31-stable-employment-gig-worker-topic-review.md
 source_assets:
   - people_daily_20260517_30157307
@@ -19,7 +19,7 @@ source_assets:
 本稿为过程稿。正式成稿见：
 
 ```text
-data/articles/公众号文章/人民日报讲稳就业：不是喊口号，是让零工今天就能安心上工.md
+data/articles/往期文章/人民日报系列/人民日报讲稳就业：不是喊口号，是让零工今天就能安心上工.md
 ```
 
 写作依据：

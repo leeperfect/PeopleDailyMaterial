@@ -148,7 +148,7 @@ AI 负责第一轮粗读、归类、提炼、拟题。老师负责判断是否�
 形成符合标准的新公众号选题后，默认直接同步到正式选题库：
 
 - 写入 `data/core/material_assets.sqlite` 的 `content_ideas` 表。
-- 刷新 `data/articles/公众号文章/选题库.md`。
+- 刷新 `data/articles/选题库.md`。
 - 刷新 `data/exports/content_ideas.csv`。
 - 如存在精筛保留清单或去重脚本，也要同步补入，避免下次打开选题工作台时被自动筛掉。
 

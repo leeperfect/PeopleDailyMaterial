@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-06-20
 topic: 新型城镇化怎么写：不是进城落脚，而是服务跟着人走
-article: data/articles/公众号文章/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md
+article: data/articles/人民日报系列/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md
 image_rule: AI直接生成，无人物
 card_count: 8
 platform: 小红书

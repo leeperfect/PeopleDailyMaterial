@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-06-23
 topic: 文化传承新写法：既要守住根脉，也要走进生活、走向世界
-article: data/articles/公众号文章/28-人民日报讲文化传承：既要守住根脉，也要走进生活、走向世界.md
+article: data/articles/人民日报系列/28-人民日报讲文化传承：既要守住根脉，也要走进生活、走向世界.md
 image_rule: AI直接生成，无人物
 card_count: 12
 ---

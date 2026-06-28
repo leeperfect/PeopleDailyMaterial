@@ -5,7 +5,7 @@ topic: 破解就业难，不能只写“多给岗位”
 priority: A级
 status: 备选
 platform: 公众号 + 面试题卡 + 小红书脚本
-final_article: data/articles/公众号文章/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md
+final_article: data/articles/人民日报系列/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md
 process_draft: data/analysis/2026-06-13/wechat-employment-difficulty-employment-chain.md
 ---
 
