@@ -4,21 +4,24 @@
 
 ## 一、存放分层
 
-公众号运营数据不混入人民日报原文库，单独按以下四层保存：
+公众号运营数据不混入人民日报原文库，统一放在一个便于老师直接查看的目录：
 
 ```text
-data/raw/wechat_official_account/
-  后台导出的原始 .xls，作为事实留存，不直接改动
+data/data_analysis/
+  overview.md
+    连续汇总所有批次，比较本周与上周
 
-data/exports/wechat_official_account/
-  从原始表拆出的 CSV，方便人工查看和临时核对
+  reports/
+    每次导入后生成的详细运营数据分析报告
 
-data/core/wechat_official_account.sqlite
-  公众号运营核心分析库，供后续复盘、检索和选题判断使用
+  raw/
+    后台导出的原始 .xls，作为事实留存，不直接改动
 
-data/analysis/wechat-official-account/
-  每次导入的说明、人工复盘、阶段性结论和连续运营总览
+  exports/
+    从原始表拆出的 CSV，方便人工查看和临时核对
 ```
+
+机器连续计算仍使用 `data/core/wechat_official_account.sqlite`，不需要老师日常打开。
 
 ## 二、核心分析库表
 
@@ -43,11 +46,11 @@ python3 scripts/import_wechat_official_account_stats.py /path/to/wechat-export.x
 
 脚本会自动：
 
-1. 把原始 `.xls` 复制到 `data/raw/wechat_official_account/`。
-2. 把后台表拆成 CSV，放入 `data/exports/wechat_official_account/`。
+1. 把原始 `.xls` 复制到 `data/data_analysis/raw/`。
+2. 把后台表拆成 CSV，放入 `data/data_analysis/exports/`。
 3. 写入 `data/core/wechat_official_account.sqlite`。
-4. 在 `data/analysis/wechat-official-account/` 生成导入记录。
-5. 更新 `data/analysis/wechat-official-account/overview.md`，自动与上一批比较。
+4. 在 `data/data_analysis/reports/` 生成本批详细运营数据分析报告。
+5. 更新 `data/data_analysis/overview.md`，自动与上一批比较。
 
 ## 四、连续分析方式
 

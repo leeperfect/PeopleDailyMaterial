@@ -27,6 +27,7 @@
 - `data/core/`：SQLite 核心库，稳定文章 ID 和素材资产库。
 - `data/vault/`：Obsidian 阅读视图，适合人工浏览和教研标注。
 - `data/analysis/`：教研复盘、选题拆解、文案、讲稿、视觉 brief。
+- `data/data_analysis/`：自媒体后台原始数据、拆分明细、每期详细运营报告和长期运营总览，供老师直接查看。
 - `data/articles/人民日报系列/`：当前可编辑、待发布的人民日报选题文章。
 - `data/articles/热点系列/`：当前可编辑、待发布的热点分析文章。
 - `data/articles/往期文章/人民日报系列/`：已发表的人民日报选题文章。
@@ -45,8 +46,12 @@
 - Notion 数据库已经有 `Article ID` 字段；同步、补齐、清理重复页时优先围绕这个字段判断。
 - 公众号选题统一进入 `data/core/material_assets.sqlite` 的 `content_ideas` 表；面向用户查看的总表是 `data/articles/选题库.md`，由 `scripts/export_content_ideas.py` 生成。
 - 公众号要服务日更，筛选选题时允许同一母题拆成多个不同角度和切入点，只要每个切口都有独立表达价值、明确读者收益，并且至少有 3 篇人民日报文章支撑。
+- 每次形成新选题前，必须同时参考 `data/data_analysis/overview.md`、最新运营报告和既有选题库：既不能遗漏当下人民日报持续关注的政策热点，也要根据历史阅读、推荐、分享、收藏和长尾表现判断传播潜力。优先采用“考试高频母题 + 明确读者收益 + 纠正常见误区”的表达，但不能只换标题不换切口。
 - 以后梳理日报、周报、月报或政经参考补充选题时，一旦形成符合标准的新选题，默认直接写入 `content_ideas` 并刷新 `data/articles/选题库.md` 和 `data/exports/content_ideas.csv`，不再等待用户二次确认。
 - 本地 HTML 选题工作台由 `scripts/serve_idea_magazine.py` 启动，读取 `content_ideas`，并把精筛、备注等人工操作写入 `content_idea_notes`。
+- 自媒体运营数据统一放在 `data/data_analysis/`。其中原始后台表进 `raw/`，CSV 等拆分结果进 `exports/`，分析结果进 `reports/`，长期数据链更新 `overview.md`。
+- 每次用户提供新的自媒体后台数据后，必须生成一份对应批次的详细运营数据分析报告，并与上一批比较；不能只生成导入说明或只做当期孤立分析。
+- 每次自媒体数据导入后必须同步更新长期运营总览，连续观察新增日期、新文章、同篇文章长尾、渠道变化和滚动周期趋势。
 - 非文本成品默认进入 `media/`，不要继续散放在 `data/analysis/**/deliverables/` 里；分析目录只保留可追溯的文字稿、视觉 brief、讲稿提示和清单。
 - 新增小红书图、公众号配图、课件、视频、音频后，要同步补 `media/_index.md`，记录主题、类型、本地路径和网盘位置。
 - 不要为了“目录更清爽”删除 `data/raw/`、`data/core/`、`data/vault/`、`data/analysis/`、`data/articles/` 里的有效内容。

@@ -12,7 +12,9 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB_PATH = ROOT / "data" / "core" / "wechat_official_account.sqlite"
-DEFAULT_OUTPUT_PATH = ROOT / "data" / "analysis" / "wechat-official-account" / "overview.md"
+SELF_MEDIA_ROOT = ROOT / "data" / "data_analysis"
+DEFAULT_OUTPUT_PATH = SELF_MEDIA_ROOT / "overview.md"
+DEFAULT_REPORT_DIR = SELF_MEDIA_ROOT / "reports"
 
 
 @dataclass
@@ -321,17 +323,329 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
     return output_path
 
 
+def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
+    conn = sqlite3.connect(str(db_path))
+    conn.row_factory = sqlite3.Row
+    batches = fetch_batches(conn)
+    report_dir.mkdir(parents=True, exist_ok=True)
+    outputs: list[Path] = []
+
+    for index, batch in enumerate(batches):
+        previous = batches[index - 1] if index > 0 else None
+        current_daily = daily_rows(conn, batch.batch_id)
+        previous_daily = daily_rows(conn, previous.batch_id) if previous else {}
+        current_articles = article_rows(conn, batch.batch_id)
+        previous_articles = article_rows(conn, previous.batch_id) if previous else {}
+        new_dates = sorted(set(current_daily) - set(previous_daily)) if previous else []
+        new_daily = [current_daily[date] for date in new_dates]
+        top_articles = sorted(
+            current_articles.values(),
+            key=lambda row: row["read_users"] or 0,
+            reverse=True,
+        )[:15]
+        new_titles = sorted(
+            (row for title, row in current_articles.items() if title not in previous_articles),
+            key=lambda row: row["read_users"] or 0,
+            reverse=True,
+        )
+        growth_rows: list[tuple[int, str, int, int]] = []
+        for title, current in current_articles.items():
+            old = previous_articles.get(title)
+            if not old:
+                continue
+            delta = (current["read_users"] or 0) - (old["read_users"] or 0)
+            growth_rows.append((delta, title, old["read_users"] or 0, current["read_users"] or 0))
+        growth_rows.sort(reverse=True)
+
+        peak_days = sorted(
+            current_daily.values(),
+            key=lambda row: row["read_users"] or 0,
+            reverse=True,
+        )[:5]
+        channel_rows = conn.execute(
+            """
+            SELECT channel, SUM(read_users) AS read_users
+            FROM channel_daily_reads
+            WHERE batch_id = ? AND channel <> '全部'
+            GROUP BY channel
+            ORDER BY read_users DESC
+            """,
+            (batch.batch_id,),
+        ).fetchall()
+        source = conn.execute(
+            """
+            SELECT source_filename, raw_path, export_dir, imported_at
+            FROM import_batches
+            WHERE batch_id = ?
+            """,
+            (batch.batch_id,),
+        ).fetchone()
+
+        top = top_articles[0] if top_articles else None
+        top_new = new_titles[0] if new_titles else None
+        growth_leader = growth_rows[0] if growth_rows else None
+        lines = [
+            f"# 微信公众号详细运营分析报告：{batch.end_date}",
+            "",
+            f"> 统计范围：{batch.start_date} 至 {batch.end_date}。本报告对应批次 `{batch.batch_id}`，并与上一批连续比较。",
+            "",
+            "## 一、运营结论速读",
+            "",
+            f"- 本周期发表 {batch.published} 篇，日阅读人数合计 {fmt_int(batch.total_reads)}，日均 {fmt_float(batch.avg_reads)}。",
+            f"- 日均分享 {fmt_float(batch.avg_shares)}，日均微信收藏 {fmt_float(batch.avg_favorites)}。",
+        ]
+        if top:
+            lines.append(
+                f"- 当前阅读最高文章为 **{top['title']}**，阅读人数 {fmt_int(top['read_users'])}。"
+            )
+        if previous:
+            avg_delta = batch.avg_reads - previous.avg_reads
+            direction = "增加" if avg_delta >= 0 else "减少"
+            lines.append(
+                f"- 相比上一批滚动周期，日均阅读{direction} {fmt_float(abs(avg_delta))}；由于统计窗口移动，该数值用于判断近期热度，不作为严格同比。"
+            )
+            if new_dates:
+                new_reads = sum(row["read_users"] or 0 for row in new_daily)
+                new_posts = sum(row["published_count"] or 0 for row in new_daily)
+                lines.append(
+                    f"- 本次真正新增 {len(new_dates)} 个日期（{new_dates[0]} 至 {new_dates[-1]}），新增区间发表 {new_posts} 篇，日阅读人数合计 {fmt_int(new_reads)}。"
+                )
+        else:
+            lines.append("- 这是数据链的首个批次，作为后续周度比较的基线。")
+
+        lines.extend(
+            [
+                "",
+                "## 二、数据范围与归档",
+                "",
+                f"- 后台源文件：`{source['source_filename']}`",
+                f"- 原始表位置：`{source['raw_path']}`",
+                f"- 数据明细位置：`{source['export_dir']}`",
+                f"- 导入时间：{source['imported_at']}",
+                f"- 每日趋势：{batch.days} 天；来源概况收录文章：{len(current_articles)} 篇。",
+                "",
+                "## 三、核心指标",
+                "",
+            ]
+        )
+        metric_rows = [
+            ["统计天数", batch.days, previous.days if previous else "-", "-"],
+            ["发表篇数", batch.published, previous.published if previous else "-", "-"],
+            ["日阅读人数合计", fmt_int(batch.total_reads), fmt_int(previous.total_reads) if previous else "-", "-"],
+            [
+                "日均阅读",
+                fmt_float(batch.avg_reads),
+                fmt_float(previous.avg_reads) if previous else "-",
+                f"{batch.avg_reads - previous.avg_reads:+,.1f}" if previous else "-",
+            ],
+            [
+                "日均分享",
+                fmt_float(batch.avg_shares),
+                fmt_float(previous.avg_shares) if previous else "-",
+                f"{batch.avg_shares - previous.avg_shares:+,.1f}" if previous else "-",
+            ],
+            [
+                "日均收藏",
+                fmt_float(batch.avg_favorites),
+                fmt_float(previous.avg_favorites) if previous else "-",
+                f"{batch.avg_favorites - previous.avg_favorites:+,.1f}" if previous else "-",
+            ],
+        ]
+        lines.extend(
+            markdown_table(
+                ["指标", "本批", "上批", "变化"],
+                metric_rows,
+                ["---", "---:", "---:", "---:"],
+            )
+        )
+
+        lines.extend(["", "## 四、阅读高峰", ""])
+        lines.extend(
+            markdown_table(
+                ["日期", "阅读人数", "分享人数", "收藏人数", "发文篇数"],
+                [
+                    [
+                        row["date"],
+                        fmt_int(row["read_users"]),
+                        fmt_int(row["share_users"]),
+                        fmt_int(row["wechat_favorites"]),
+                        row["published_count"] or 0,
+                    ]
+                    for row in peak_days
+                ],
+                ["---", "---:", "---:", "---:", "---:"],
+            )
+        )
+
+        lines.extend(["", "## 五、本次新增日期表现", ""])
+        if previous and new_daily:
+            lines.extend(
+                markdown_table(
+                    ["日期", "阅读人数", "分享人数", "收藏人数", "发文篇数"],
+                    [
+                        [
+                            row["date"],
+                            fmt_int(row["read_users"]),
+                            fmt_int(row["share_users"]),
+                            fmt_int(row["wechat_favorites"]),
+                            row["published_count"] or 0,
+                        ]
+                        for row in new_daily
+                    ],
+                    ["---", "---:", "---:", "---:", "---:"],
+                )
+            )
+        elif previous:
+            lines.append("- 本批没有比上一批增加新的统计日期，请核对导出时间范围。")
+        else:
+            lines.append("- 首批数据作为连续分析基线，从下一批开始识别新增日期。")
+
+        lines.extend(["", "## 六、渠道表现", ""])
+        lines.extend(
+            markdown_table(
+                ["渠道", "周期阅读人数合计"],
+                [[row["channel"], fmt_int(row["read_users"])] for row in channel_rows],
+                ["---", "---:"],
+            )
+        )
+        lines.extend(
+            [
+                "",
+                "不同渠道可能存在重复读者，渠道数据用于判断传播来源强弱，不与“全部”简单相加。",
+                "",
+                "## 七、文章阅读排名",
+                "",
+            ]
+        )
+        lines.extend(
+            markdown_table(
+                ["排名", "发布日期", "文章", "阅读人数", "推荐阅读", "推荐约比"],
+                [
+                    [
+                        rank,
+                        row["publish_date"],
+                        row["title"],
+                        fmt_int(row["read_users"]),
+                        fmt_int(row["recommended_reads"]) if row["recommended_reads"] is not None else "-",
+                        (
+                            f"{100 * row['recommended_reads'] / row['read_users']:.1f}%"
+                            if row["recommended_reads"] is not None and row["read_users"]
+                            else "-"
+                        ),
+                    ]
+                    for rank, row in enumerate(top_articles, start=1)
+                ],
+                ["---:", "---", "---", "---:", "---:", "---:"],
+            )
+        )
+
+        lines.extend(["", "## 八、本批新出现文章", ""])
+        if previous and new_titles:
+            lines.extend(
+                markdown_table(
+                    ["发布日期", "文章", "阅读人数", "推荐阅读"],
+                    [
+                        [
+                            row["publish_date"],
+                            row["title"],
+                            fmt_int(row["read_users"]),
+                            fmt_int(row["recommended_reads"]) if row["recommended_reads"] is not None else "-",
+                        ]
+                        for row in new_titles
+                    ],
+                    ["---", "---", "---:", "---:"],
+                )
+            )
+        elif previous:
+            lines.append("- 来源概况中未识别到相对上一批新出现的文章。")
+        else:
+            lines.append("- 首批数据不区分新旧文章，后续批次开始连续追踪。")
+
+        lines.extend(
+            [
+                "",
+                "“本批新出现”表示首次进入后台来源概况，不一定等同于本周刚发布。来源概况通常只展示部分文章，不能替代完整的单篇内容明细。",
+                "",
+                "## 九、同篇文章长尾变化",
+                "",
+            ]
+        )
+        if growth_rows:
+            lines.extend(
+                markdown_table(
+                    ["文章", "上批阅读", "本批阅读", "净变化"],
+                    [
+                        [title, fmt_int(old), fmt_int(current), f"{delta:+,}"]
+                        for delta, title, old, current in growth_rows[:15]
+                    ],
+                    ["---", "---:", "---:", "---:"],
+                )
+            )
+            lines.extend(
+                [
+                    "",
+                    "后台数据为滚动窗口，较早文章的首发阅读可能逐步移出统计范围，因此这里记录的是快照净变化，不一定等于一周新增阅读。",
+                ]
+            )
+        else:
+            lines.append("- 暂无上一批同篇文章数据可供比较。")
+
+        lines.extend(["", "## 十、选题与运营判断", ""])
+        if top:
+            lines.append(
+                f"1. **当前最强样本**：{top['title']} 是本周期阅读最高的文章，应拆解它的母题、标题结构和读者收益，作为后续选题参照。"
+            )
+        if top_new:
+            lines.append(
+                f"2. **新内容观察**：{top_new['title']} 是本批新出现文章中阅读最高的一篇，当前阅读 {fmt_int(top_new['read_users'])}，下一批需继续观察其推荐和长尾增长。"
+            )
+        if growth_leader:
+            lines.append(
+                f"3. **长尾样本**：{growth_leader[1]} 较上批净增 {fmt_int(growth_leader[0])}，说明旧文仍有持续分发或转发价值。"
+            )
+        lines.extend(
+            [
+                "4. **选题方法**：优先复用“考试高频母题 + 明确读者收益 + 纠正常见答题误区”的组合，同时避免只更换标题、不更换分析切口。",
+                "5. **评价方法**：高阅读判断吸引力，高推荐判断平台扩散力，高分享和高收藏判断教学价值与读者留存价值。",
+                "",
+                "## 十一、下一期追踪清单",
+                "",
+                "- 检查本批新出现文章在下一批的净增长和推荐变化。",
+                "- 检查高阅读文章是否还能持续获得推荐、会话、朋友圈和搜索流量。",
+                "- 将表现稳定的母题拆成新角度，进入公众号选题池继续验证。",
+                "- 尽量补充“单篇内容分析”明细，以覆盖来源概况未展示的文章。",
+                "",
+                "## 十二、数据限制",
+                "",
+                "- 本报告依据公众号后台导出的滚动周期数据，不把重叠日期重复累计为本周新增。",
+                "- 来源概况未必覆盖期间全部发文，未出现的文章不能直接判定为零阅读。",
+                "- 推荐约比用于观察推荐渠道强弱；不同渠道可能存在读者交叉。",
+                "",
+            ]
+        )
+
+        output_path = report_dir / f"{batch.batch_id}.md"
+        output_path.write_text("\n".join(lines), encoding="utf-8")
+        outputs.append(output_path)
+
+    conn.close()
+    return outputs
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="生成微信公众号运营数据连续分析总览")
     parser.add_argument("--db-path", default=str(DEFAULT_DB_PATH), help="公众号运营核心分析库")
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT_PATH), help="总览 Markdown 输出路径")
+    parser.add_argument("--report-dir", default=str(DEFAULT_REPORT_DIR), help="每批详细运营报告目录")
     args = parser.parse_args()
     output = generate_report(Path(args.db_path), Path(args.output))
+    reports = generate_batch_reports(Path(args.db_path), Path(args.report_dir))
     try:
         display_path = output.relative_to(ROOT)
     except ValueError:
         display_path = output
     print(f"已更新连续分析总览：{display_path}")
+    print(f"已更新详细运营报告：{len(reports)} 份")
 
 
 if __name__ == "__main__":

@@ -28,9 +28,10 @@ from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB_PATH = ROOT / "data" / "core" / "wechat_official_account.sqlite"
-DEFAULT_RAW_ROOT = ROOT / "data" / "raw" / "wechat_official_account"
-DEFAULT_EXPORT_ROOT = ROOT / "data" / "exports" / "wechat_official_account"
-DEFAULT_SUMMARY_ROOT = ROOT / "data" / "analysis" / "wechat-official-account"
+SELF_MEDIA_ROOT = ROOT / "data" / "data_analysis"
+DEFAULT_RAW_ROOT = SELF_MEDIA_ROOT / "raw"
+DEFAULT_EXPORT_ROOT = SELF_MEDIA_ROOT / "exports"
+DEFAULT_SUMMARY_ROOT = SELF_MEDIA_ROOT / "reports"
 
 END_OF_CHAIN = 0xFFFFFFFE
 FREE_SECT = 0xFFFFFFFF
@@ -892,7 +893,7 @@ def main() -> None:
     summary_path = Path(args.summary_root) / f"{batch_id}.md"
     write_summary(summary_path, batch_id, source, raw_path, export_dir, db_path, sheets, imported_counts)
     overview_script = ROOT / "scripts" / "analyze_wechat_official_account_stats.py"
-    overview_path = Path(args.summary_root) / "overview.md"
+    overview_path = Path(args.summary_root).parent / "overview.md"
     subprocess.run(
         [
             sys.executable,
@@ -901,6 +902,8 @@ def main() -> None:
             str(db_path),
             "--output",
             str(overview_path),
+            "--report-dir",
+            str(Path(args.summary_root)),
         ],
         cwd=ROOT,
         check=True,
