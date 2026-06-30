@@ -130,7 +130,7 @@ python3 hotspot_magazine.py
 ```
 
 默认地址是 `http://127.0.0.1:8766`。页面读取
-`data/peopleapp_opinion/core/hotspot_topics.sqlite`，可按热点状态、优先级、媒体来源和人工精筛状态挑选话题。精筛结果和个人备注直接保存在热点总库中，每日更新热点聚类时会保留。
+`data/peopleapp_opinion/core/hotspot_topics.sqlite`，可按热点状态、优先级、媒体来源和人工精筛状态挑选话题。选题带有教研分类和核心角度；统计会排除同源同标题重复稿以及正文不足 200 字的残缺稿。精筛结果和个人备注直接保存在热点总库中，每日更新热点时会保留。
 
 ## 抓取新文章
 

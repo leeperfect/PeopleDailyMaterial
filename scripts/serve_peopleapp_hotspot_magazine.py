@@ -19,7 +19,7 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 TOPIC_DB = ROOT / "data" / "peopleapp_opinion" / "core" / "hotspot_topics.sqlite"
-STATUS_OPTIONS = ["热点", "候选"]
+STATUS_OPTIONS = ["热点", "候选", "专题"]
 PRIORITY_OPTIONS = ["S", "A", "B", "C"]
 
 
@@ -89,13 +89,18 @@ def topic_payload() -> dict[str, Any]:
 
     topics: list[dict[str, Any]] = []
     sources: set[str] = set()
+    categories: set[str] = set()
     for row in topic_rows:
         topic_sources = json_list(row["sources_json"])
         sources.update(topic_sources)
+        if row["category"]:
+            categories.add(row["category"])
         articles = articles_by_topic.get(row["topic_id"], [])
         searchable = " ".join(
             [
                 row["topic"] or "",
+                row["category"] or "",
+                row["angle"] or "",
                 row["status"] or "",
                 row["priority"] or "",
                 row["manual_note"] or "",
@@ -108,6 +113,8 @@ def topic_payload() -> dict[str, Any]:
             {
                 "topic_id": row["topic_id"],
                 "topic": row["topic"],
+                "category": row["category"] or "",
+                "angle": row["angle"] or "",
                 "status": row["status"],
                 "priority": row["priority"],
                 "media_count": row["media_count"],
@@ -132,11 +139,13 @@ def topic_payload() -> dict[str, Any]:
             "selected": sum(1 for topic in topics if topic["selected"]),
             "hotspots": status_counts["热点"],
             "candidates": status_counts["候选"],
+            "series": status_counts["专题"],
             "priority_counts": dict(priority_counts),
         },
         "filters": {
             "statuses": STATUS_OPTIONS,
             "priorities": PRIORITY_OPTIONS,
+            "categories": sorted(categories),
             "sources": sorted(sources),
         },
     }
@@ -274,7 +283,7 @@ HTML = r"""<!doctype html>
     .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--ink);margin:18px 0 22px}
     .stat{min-height:86px;border-right:1px solid var(--line);padding:12px 18px 14px 0}.stat:last-child{border:0}
     .stat strong{display:block;font-family:"Noto Serif SC","Songti SC",serif;font-size:34px;line-height:1;margin-bottom:8px}.stat span{color:var(--muted);font-size:13px}
-    .toolbar{display:grid;grid-template-columns:minmax(260px,1.5fr) repeat(4,minmax(118px,.55fr)) auto;gap:10px;margin-bottom:22px}
+    .toolbar{display:grid;grid-template-columns:minmax(260px,1.5fr) repeat(5,minmax(118px,.55fr)) auto;gap:10px;margin-bottom:22px}
     .field,.action{min-height:42px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.4);color:var(--ink)}
     .field{width:100%;padding:0 12px}.action{padding:0 14px;cursor:pointer}.action:hover{border-color:var(--ink)}
     .layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,.75fr);gap:24px;align-items:start}
@@ -324,6 +333,7 @@ HTML = r"""<!doctype html>
     <input class="field search" id="searchInput" placeholder="搜索热点、来源、文章或备注">
     <select class="field" id="statusFilter"><option value="">全部状态</option></select>
     <select class="field" id="priorityFilter"><option value="">全部优先级</option></select>
+    <select class="field" id="categoryFilter"><option value="">全部分类</option></select>
     <select class="field" id="sourceFilter"><option value="">全部来源</option></select>
     <select class="field" id="selectedFilter"><option value="">全部精筛状态</option><option value="yes">已精筛</option><option value="no">未精筛</option></select>
     <button class="action" id="batchToggle">批量选择</button>
@@ -342,22 +352,22 @@ HTML = r"""<!doctype html>
   </div>
 </main>
 <script>
-const state={topics:[],filters:{statuses:[],priorities:[],sources:[]},activeId:null,batchMode:false,batchIds:new Set(),firstLoad:true};
+const state={topics:[],filters:{statuses:[],priorities:[],categories:[],sources:[]},activeId:null,batchMode:false,batchIds:new Set(),firstLoad:true};
 const $=id=>document.getElementById(id);
 const today=new Date();$("issueDate").textContent=`${today.getFullYear()}.${String(today.getMonth()+1).padStart(2,"0")}.${String(today.getDate()).padStart(2,"0")}`;
 function escapeHtml(text){return String(text||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
 function fillSelect(id,values){const n=$(id),old=n.value,first=n.firstElementChild;n.innerHTML="";n.appendChild(first);values.forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;n.appendChild(o)});if([...n.options].some(o=>o.value===old))n.value=old}
-async function load(){const r=await fetch("/api/topics"),p=await r.json();if(!r.ok||p.error){$("topics").innerHTML=`<div class="empty">${escapeHtml(p.error||"读取失败")}</div>`;return}state.topics=p.topics||[];state.filters=p.filters||state.filters;state.activeId=state.activeId||(state.topics[0]&&state.topics[0].topic_id);fillSelect("statusFilter",state.filters.statuses||[]);fillSelect("priorityFilter",state.filters.priorities||[]);fillSelect("sourceFilter",state.filters.sources||[]);if(state.firstLoad){$("statusFilter").value="热点";state.firstLoad=false}$("statTotal").textContent=p.stats.total||0;$("statHotspot").textContent=p.stats.hotspots||0;$("statSelected").textContent=p.stats.selected||0;$("statCandidate").textContent=p.stats.candidates||0;render()}
-function filtered(){const q=$("searchInput").value.trim().toLowerCase(),status=$("statusFilter").value,priority=$("priorityFilter").value,source=$("sourceFilter").value,selected=$("selectedFilter").value;return state.topics.filter(t=>(!q||t.searchable.includes(q))&&(!status||t.status===status)&&(!priority||t.priority===priority)&&(!source||t.sources.includes(source))&&(!selected||(selected==="yes")===t.selected))}
-function render(){const list=filtered(),box=$("topics");if(!list.length){box.innerHTML='<div class="empty">没有匹配的热点选题</div>';renderDetail(null);return}if(!list.some(t=>t.topic_id===state.activeId))state.activeId=list[0].topic_id;box.innerHTML=list.map(t=>{const titles=t.articles.slice(0,2).map(a=>a.title).join("；");return `<article class="card ${t.topic_id===state.activeId?"active":""} ${state.batchIds.has(t.topic_id)?"batch-selected":""}" data-id="${escapeHtml(t.topic_id)}"><div class="batch-check"></div><div class="meta"><span class="tag ${t.status==="热点"?"hot":""}">${escapeHtml(t.status)}</span><span class="tag">${escapeHtml(t.priority)}级</span>${t.selected?'<span class="tag selected">已精筛</span>':""}<span>${escapeHtml(t.end_date)}</span></div><h2>${escapeHtml(t.topic)}</h2><div class="metrics"><span><strong>${t.media_count}</strong>家媒体</span><span><strong>${t.article_count}</strong>篇评论</span></div><div class="support">${escapeHtml(titles||"暂无支撑文章")}</div></article>`}).join("");box.querySelectorAll(".card").forEach(card=>card.addEventListener("click",()=>{if(state.batchMode){toggleBatch(card.dataset.id);return}state.activeId=card.dataset.id;render()}));updateBatch();renderDetail(state.topics.find(t=>t.topic_id===state.activeId))}
-function renderDetail(t){const panel=$("detail");if(!t){panel.innerHTML='<div class="panel-body">请选择一个热点选题</div>';return}panel.innerHTML=`<div class="panel-head"><div class="panel-kicker"><span class="tag ${t.status==="热点"?"hot":""}">${escapeHtml(t.status)}</span><span class="tag">${escapeHtml(t.priority)}级</span><span class="tag">${escapeHtml(t.start_date)} 至 ${escapeHtml(t.end_date)}</span></div><h3>${escapeHtml(t.topic)}</h3></div><div class="panel-body"><div class="section-title">关注规模</div><div class="source-line">${t.media_count} 家媒体、${t.article_count} 篇评论集中讨论</div><div class="section-title">媒体来源</div><div class="source-line">${escapeHtml(t.sources.join("、"))}</div><div class="section-title">支撑文章</div><div class="article-list">${t.articles.map(a=>`<a class="article" href="${escapeHtml(a.url||"#")}" target="_blank" rel="noreferrer">${escapeHtml(a.title)}<small>${escapeHtml(a.date)}｜${escapeHtml(a.source_name)}</small></a>`).join("")||'<div class="article">暂无文章</div>'}</div><div class="ops"><button class="action" id="copyButton">复制 AI 分析材料</button><label class="checkline"><input type="checkbox" id="selectedInput" ${t.selected?"checked":""}> 加入热点精筛池</label><textarea id="noteInput" placeholder="记录教学价值、传播角度或后续处理">${escapeHtml(t.manual_note)}</textarea><div class="save-row"><button class="action" id="saveButton">保存判断</button><span class="toast" id="toast"></span></div></div></div>`;$("saveButton").addEventListener("click",saveActive);$("copyButton").addEventListener("click",()=>copyText(t.ai_brief))}
+async function load(){const r=await fetch("/api/topics"),p=await r.json();if(!r.ok||p.error){$("topics").innerHTML=`<div class="empty">${escapeHtml(p.error||"读取失败")}</div>`;return}state.topics=p.topics||[];state.filters=p.filters||state.filters;state.activeId=state.activeId||(state.topics[0]&&state.topics[0].topic_id);fillSelect("statusFilter",state.filters.statuses||[]);fillSelect("priorityFilter",state.filters.priorities||[]);fillSelect("categoryFilter",state.filters.categories||[]);fillSelect("sourceFilter",state.filters.sources||[]);if(state.firstLoad){$("statusFilter").value="热点";state.firstLoad=false}$("statTotal").textContent=p.stats.total||0;$("statHotspot").textContent=p.stats.hotspots||0;$("statSelected").textContent=p.stats.selected||0;$("statCandidate").textContent=p.stats.candidates||0;render()}
+function filtered(){const q=$("searchInput").value.trim().toLowerCase(),status=$("statusFilter").value,priority=$("priorityFilter").value,category=$("categoryFilter").value,source=$("sourceFilter").value,selected=$("selectedFilter").value;return state.topics.filter(t=>(!q||t.searchable.includes(q))&&(!status||t.status===status)&&(!priority||t.priority===priority)&&(!category||t.category===category)&&(!source||t.sources.includes(source))&&(!selected||(selected==="yes")===t.selected))}
+function render(){const list=filtered(),box=$("topics");if(!list.length){box.innerHTML='<div class="empty">没有匹配的热点选题</div>';renderDetail(null);return}if(!list.some(t=>t.topic_id===state.activeId))state.activeId=list[0].topic_id;box.innerHTML=list.map(t=>{const titles=t.articles.slice(0,2).map(a=>a.title).join("；");return `<article class="card ${t.topic_id===state.activeId?"active":""} ${state.batchIds.has(t.topic_id)?"batch-selected":""}" data-id="${escapeHtml(t.topic_id)}"><div class="batch-check"></div><div class="meta"><span class="tag ${t.status==="热点"?"hot":""}">${escapeHtml(t.status)}</span><span class="tag">${escapeHtml(t.priority)}级</span><span class="tag">${escapeHtml(t.category)}</span>${t.selected?'<span class="tag selected">已精筛</span>':""}<span>${escapeHtml(t.end_date)}</span></div><h2>${escapeHtml(t.topic)}</h2><div class="metrics"><span><strong>${t.media_count}</strong>家媒体</span><span><strong>${t.article_count}</strong>篇评论</span></div><div class="support">${escapeHtml(titles||"暂无支撑文章")}</div></article>`}).join("");box.querySelectorAll(".card").forEach(card=>card.addEventListener("click",()=>{if(state.batchMode){toggleBatch(card.dataset.id);return}state.activeId=card.dataset.id;render()}));updateBatch();renderDetail(state.topics.find(t=>t.topic_id===state.activeId))}
+function renderDetail(t){const panel=$("detail");if(!t){panel.innerHTML='<div class="panel-body">请选择一个热点选题</div>';return}panel.innerHTML=`<div class="panel-head"><div class="panel-kicker"><span class="tag ${t.status==="热点"?"hot":""}">${escapeHtml(t.status)}</span><span class="tag">${escapeHtml(t.priority)}级</span><span class="tag">${escapeHtml(t.category)}</span><span class="tag">${escapeHtml(t.start_date)} 至 ${escapeHtml(t.end_date)}</span></div><h3>${escapeHtml(t.topic)}</h3></div><div class="panel-body"><div class="section-title">核心角度</div><div class="source-line">${escapeHtml(t.angle)}</div><div class="section-title">关注规模</div><div class="source-line">${t.media_count} 家媒体、${t.article_count} 篇评论集中讨论</div><div class="section-title">媒体来源</div><div class="source-line">${escapeHtml(t.sources.join("、"))}</div><div class="section-title">支撑文章</div><div class="article-list">${t.articles.map(a=>`<a class="article" href="${escapeHtml(a.url||"#")}" target="_blank" rel="noreferrer">${escapeHtml(a.title)}<small>${escapeHtml(a.date)}｜${escapeHtml(a.source_name)}</small></a>`).join("")||'<div class="article">暂无文章</div>'}</div><div class="ops"><button class="action" id="copyButton">复制 AI 分析材料</button><label class="checkline"><input type="checkbox" id="selectedInput" ${t.selected?"checked":""}> 加入热点精筛池</label><textarea id="noteInput" placeholder="记录教学价值、传播角度或后续处理">${escapeHtml(t.manual_note)}</textarea><div class="save-row"><button class="action" id="saveButton">保存判断</button><span class="toast" id="toast"></span></div></div></div>`;$("saveButton").addEventListener("click",saveActive);$("copyButton").addEventListener("click",()=>copyText(t.ai_brief))}
 async function saveActive(){const t=state.topics.find(x=>x.topic_id===state.activeId);if(!t)return;const r=await fetch(`/api/topics/${encodeURIComponent(t.topic_id)}`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({selected:$("selectedInput").checked,manual_note:$("noteInput").value})}),p=await r.json();if(!r.ok||p.error){$("toast").textContent=p.error||"保存失败";return}await load();if($("toast"))$("toast").textContent="已保存"}
 async function copyText(text){if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(text);else{const n=document.createElement("textarea");n.value=text;document.body.appendChild(n);n.select();document.execCommand("copy");n.remove()}$("toast").textContent="已复制"}
 function toggleBatch(id){state.batchIds.has(id)?state.batchIds.delete(id):state.batchIds.add(id);render()}
 function updateBatch(){$("batchCount").textContent=state.batchIds.size;$("batchBar").classList.toggle("visible",state.batchMode&&state.batchIds.size>0)}
 function toggleBatchMode(){state.batchMode=!state.batchMode;if(!state.batchMode)state.batchIds.clear();document.body.classList.toggle("batch-mode",state.batchMode);$("batchToggle").textContent=state.batchMode?"退出批量":"批量选择";render()}
 async function applyBatch(selected){if(!state.batchIds.size)return;const r=await fetch("/api/batch",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({topic_ids:[...state.batchIds],selected})}),p=await r.json();$("batchToast").textContent=p.error||`已更新 ${p.updated} 项`;if(!p.error){state.batchIds.clear();await load()}}
-["searchInput","statusFilter","priorityFilter","sourceFilter","selectedFilter"].forEach(id=>{$(id).addEventListener("input",render);$(id).addEventListener("change",render)});
+["searchInput","statusFilter","priorityFilter","categoryFilter","sourceFilter","selectedFilter"].forEach(id=>{$(id).addEventListener("input",render);$(id).addEventListener("change",render)});
 $("batchToggle").addEventListener("click",toggleBatchMode);$("batchCancel").addEventListener("click",toggleBatchMode);$("batchKeep").addEventListener("click",()=>applyBatch(true));$("batchRemove").addEventListener("click",()=>applyBatch(false));$("batchAll").addEventListener("click",()=>{const list=filtered(),all=list.every(t=>state.batchIds.has(t.topic_id));list.forEach(t=>all?state.batchIds.delete(t.topic_id):state.batchIds.add(t.topic_id));render()});
 load();
 </script>

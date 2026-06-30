@@ -4,7 +4,7 @@
 更新人民日报 APP 评论热点选题总库。
 
 用途：
-1. 扫描 APP 评论库文章，按事件/话题归并；
+1. 扫描 APP 评论库文章，按正文复核后的事件/话题规则归并；
 2. 把达到“至少 3 个不同来源媒体评论”的话题标记为热点；
 3. 保存 SQLite 统计总库，并导出便于复制给 AI 的 Markdown/CSV 选题库。
 """
@@ -25,14 +25,13 @@ SCRIPTS_ROOT = PROJECT_ROOT / "scripts"
 sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(SCRIPTS_ROOT))
 
-from export_peopleapp_opinion_hotspots import build_clusters, summarize_group
+from export_peopleapp_opinion_hotspots import build_curated_topics
 from modules.article_identity import normalize_date
 from modules.peopleapp_opinion import CORE_DIR, DATA_ROOT, EXPORT_DIR, TIMEZONE, load_articles
 
 TOPIC_DB_PATH = CORE_DIR / "hotspot_topics.sqlite"
 TOPIC_MD_PATH = DATA_ROOT / "hotspot_topic_library.md"
 TOPIC_CSV_PATH = EXPORT_DIR / "hotspot_topic_library.csv"
-LOW_VALUE_TOPICS = {"2025", "来之不易", "党员干部", "为民造福"}
 
 
 def connect(path: Path) -> sqlite3.Connection:
@@ -57,6 +56,8 @@ def ensure_schema(conn: sqlite3.Connection) -> None:
         CREATE TABLE IF NOT EXISTS hotspot_topics (
             topic_id TEXT PRIMARY KEY,
             topic TEXT NOT NULL,
+            category TEXT NOT NULL DEFAULT '',
+            angle TEXT NOT NULL DEFAULT '',
             normalized_topic TEXT NOT NULL,
             status TEXT NOT NULL,
             priority TEXT NOT NULL,
@@ -73,6 +74,11 @@ def ensure_schema(conn: sqlite3.Connection) -> None:
         )
         """
     )
+    columns = {row[1] for row in conn.execute("PRAGMA table_info(hotspot_topics)")}
+    if "category" not in columns:
+        conn.execute("ALTER TABLE hotspot_topics ADD COLUMN category TEXT NOT NULL DEFAULT ''")
+    if "angle" not in columns:
+        conn.execute("ALTER TABLE hotspot_topics ADD COLUMN angle TEXT NOT NULL DEFAULT ''")
     conn.execute(
         """
         CREATE TABLE IF NOT EXISTS hotspot_topic_articles (
@@ -97,7 +103,11 @@ def load_existing_topic_state(conn: sqlite3.Connection) -> Dict[str, sqlite3.Row
 
 
 def status_for(item: Dict, min_media: int) -> str:
-    return "热点" if item["media_count"] >= min_media else "候选"
+    if item["media_count"] >= min_media:
+        return "热点"
+    if item["media_count"] >= 2:
+        return "候选"
+    return "专题"
 
 
 def priority_for(item: Dict, min_media: int) -> str:
@@ -105,22 +115,28 @@ def priority_for(item: Dict, min_media: int) -> str:
         return "S"
     if item["media_count"] >= min_media:
         return "A"
-    if item["media_count"] == min_media - 1:
+    if item["media_count"] == min_media - 1 or item["article_count"] >= 4:
         return "B"
     return "C"
+
+
+def article_source(article: Dict) -> str:
+    return str(article.get("source_name") or article.get("source") or "未知来源").strip()
 
 
 def build_ai_brief(item: Dict) -> str:
     article_lines = []
     for article in item["articles"]:
         article_lines.append(
-            f"- {article.get('date', '')}｜{article.get('source_name') or article.get('source') or '未知来源'}｜"
+            f"- {article.get('date', '')}｜{article_source(article)}｜"
             f"{article.get('title', '无标题')}｜{article.get('source_url') or article.get('url') or ''}"
         )
 
     return "\n".join(
         [
             f"选题：{item['topic']}",
+            f"分类：{item['category']}",
+            f"核心角度：{item['angle']}",
             f"热点判断：{item['media_count']} 家媒体、{item['article_count']} 篇评论集中讨论。",
             f"时间范围：{item['start_date']} 至 {item['end_date']}",
             f"媒体来源：{'、'.join(item['sources'])}",
@@ -135,9 +151,7 @@ def build_ai_brief(item: Dict) -> str:
 def rows_from_clusters(clusters: List[Dict], min_media: int) -> List[Dict]:
     rows = []
     for item in clusters:
-        if item["topic"] in LOW_VALUE_TOPICS:
-            continue
-        if item["media_count"] < max(2, min_media - 1):
+        if item["article_count"] < 2:
             continue
         row = dict(item)
         row["topic_id"] = topic_id(row["topic"])
@@ -148,7 +162,7 @@ def rows_from_clusters(clusters: List[Dict], min_media: int) -> List[Dict]:
         rows.append(row)
     rows.sort(
         key=lambda item: (
-            0 if item["status"] == "热点" else 1,
+            {"热点": 0, "候选": 1, "专题": 2}.get(item["status"], 9),
             {"S": 0, "A": 1, "B": 2, "C": 3}.get(item["priority"], 9),
             -item["media_count"],
             -item["article_count"],
@@ -172,14 +186,16 @@ def refresh_database(conn: sqlite3.Connection, rows: List[Dict]) -> None:
         conn.execute(
             """
             INSERT OR REPLACE INTO hotspot_topics (
-                topic_id, topic, normalized_topic, status, priority, media_count,
+                topic_id, topic, category, angle, normalized_topic, status, priority, media_count,
                 article_count, start_date, end_date, sources_json, ai_brief,
                 manual_note, selected, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 row["topic_id"],
                 row["topic"],
+                row["category"],
+                row["angle"],
                 row["normalized_topic"],
                 row["status"],
                 row["priority"],
@@ -207,7 +223,7 @@ def refresh_database(conn: sqlite3.Connection, rows: List[Dict]) -> None:
                     row["topic_id"],
                     article.get("article_id", ""),
                     article.get("date", ""),
-                    article.get("source_name") or article.get("source") or "",
+                    article_source(article),
                     article.get("title", ""),
                     article.get("source_url") or article.get("url") or "",
                 ),
@@ -246,12 +262,12 @@ def markdown_table(headers: List[str], rows: Iterable[List[object]]) -> List[str
 
 def compact_titles(item: Dict) -> str:
     return "；".join(
-        f"{article.get('source_name') or article.get('source') or '未知来源'}《{article.get('title', '无标题')}》"
+        f"{article_source(article)}《{article.get('title', '无标题')}》"
         for article in item["articles"]
     )
 
 
-def build_markdown(rows: List[Dict], min_media: int) -> str:
+def build_markdown(rows: List[Dict], min_media: int, scanned_count: int) -> str:
     generated_at = datetime.now(TIMEZONE).strftime("%Y-%m-%d %H:%M")
     status_counter = Counter(row["status"] for row in rows)
     priority_counter = Counter(row["priority"] for row in rows)
@@ -260,7 +276,9 @@ def build_markdown(rows: List[Dict], min_media: int) -> str:
         "# APP 评论热点选题库",
         "",
         f"> 自动生成于 {generated_at}。数据来源：`data/peopleapp_opinion/core/articles.sqlite`。",
-        f"> 热点口径：同一事件或话题下，至少 {min_media} 个不同来源媒体发表评论，即视为热点。",
+        f"> 本次共复核 {scanned_count} 篇已下载正文。选题归并采用人工复核后的明确规则；未形成共同议题的文章不强行归类。",
+        f"> 热点口径：同一事件或明确母题下，至少 {min_media} 个不同来源媒体发表评论；2 家为候选，单一来源连续评论为专题。",
+        "> 统计口径：同来源、同标题的重复稿只计算一次；正文不足 200 字的跳转页或残缺稿不作为支撑；“中国”“消费者”“军事”等泛词不作为归并依据。",
         "> 使用方式：复制下方“AI 分析材料”代码块，交给 AI 写热点分析、申论素材拆解、面试答题框架或公众号选题。",
         "",
         "## 快速看板",
@@ -273,7 +291,24 @@ def build_markdown(rows: List[Dict], min_media: int) -> str:
                 ["全部话题", len(rows)],
                 ["已达热点标准", status_counter.get("热点", 0)],
                 ["候选话题", status_counter.get("候选", 0)],
+                ["单一来源专题", status_counter.get("专题", 0)],
                 ["S/A/B/C", f"{priority_counter.get('S', 0)} / {priority_counter.get('A', 0)} / {priority_counter.get('B', 0)} / {priority_counter.get('C', 0)}"],
+            ],
+        )
+    )
+
+    category_counter = Counter(row["category"] for row in rows)
+    lines.extend(["", "## 分类看板", ""])
+    lines.extend(
+        markdown_table(
+            ["分类", "选题数", "选题"],
+            [
+                [
+                    category,
+                    count,
+                    "；".join(row["topic"] for row in rows if row["category"] == category),
+                ]
+                for category, count in sorted(category_counter.items())
             ],
         )
     )
@@ -281,12 +316,14 @@ def build_markdown(rows: List[Dict], min_media: int) -> str:
     lines.extend(["", "## 热点选题总表", ""])
     lines.extend(
         markdown_table(
-            ["状态", "优先级", "选题", "媒体数", "文章数", "时间范围", "来源", "支撑文章"],
+            ["分类", "状态", "优先级", "选题", "核心角度", "媒体数", "文章数", "时间范围", "来源", "支撑文章"],
             [
                 [
+                    row["category"],
                     row["status"],
                     row["priority"],
                     row["topic"],
+                    row["angle"],
                     row["media_count"],
                     row["article_count"],
                     f"{row['start_date']} 至 {row['end_date']}",
@@ -305,6 +342,8 @@ def build_markdown(rows: List[Dict], min_media: int) -> str:
                 f"### {index}. {row['topic']}（{row['status']}｜{row['priority']}）",
                 "",
                 f"- 时间：{row['start_date']} 至 {row['end_date']}",
+                f"- 分类：{row['category']}",
+                f"- 核心角度：{row['angle']}",
                 f"- 媒体数：{row['media_count']}",
                 f"- 文章数：{row['article_count']}",
                 f"- 来源：{'、'.join(row['sources'])}",
@@ -321,13 +360,15 @@ def build_markdown(rows: List[Dict], min_media: int) -> str:
 def write_csv(rows: List[Dict]) -> None:
     TOPIC_CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
     with TOPIC_CSV_PATH.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(
             [
                 "topic_id",
                 "status",
                 "priority",
                 "topic",
+                "category",
+                "angle",
                 "media_count",
                 "article_count",
                 "start_date",
@@ -349,6 +390,8 @@ def write_csv(rows: List[Dict]) -> None:
                         row["status"],
                         row["priority"],
                         row["topic"],
+                        row["category"],
+                        row["angle"],
                         row["media_count"],
                         row["article_count"],
                         row["start_date"],
@@ -357,7 +400,7 @@ def write_csv(rows: List[Dict]) -> None:
                         row["ai_brief"],
                         article.get("article_id", ""),
                         article.get("date", ""),
-                        article.get("source_name") or article.get("source") or "",
+                        article_source(article),
                         article.get("title", ""),
                         article.get("source_url") or article.get("url") or "",
                     ]
@@ -376,7 +419,7 @@ def select_articles(args) -> List[Dict]:
 
 def update_topic_library(args) -> List[Dict]:
     articles = select_articles(args)
-    clusters = [summarize_group(group) for group in build_clusters(articles, args.min_similarity)]
+    clusters = build_curated_topics(articles)
     rows = rows_from_clusters(clusters, args.min_media)
 
     conn = connect(TOPIC_DB_PATH)
@@ -385,7 +428,10 @@ def update_topic_library(args) -> List[Dict]:
     finally:
         conn.close()
 
-    TOPIC_MD_PATH.write_text(build_markdown(rows, args.min_media), encoding="utf-8")
+    TOPIC_MD_PATH.write_text(
+        build_markdown(rows, args.min_media, scanned_count=len(articles)),
+        encoding="utf-8",
+    )
     write_csv(rows)
     return rows
 
@@ -397,7 +443,12 @@ def main() -> int:
     parser.add_argument("--end", help="结束日期 YYYY-MM-DD")
     parser.add_argument("--limit", type=int, help="限制参与分析的文章数量")
     parser.add_argument("--min-media", type=int, default=3, help="热点至少需要几个不同媒体，默认 3")
-    parser.add_argument("--min-similarity", type=float, default=0.22, help="文章归并最低相似度，默认 0.22")
+    parser.add_argument(
+        "--min-similarity",
+        type=float,
+        default=0.22,
+        help="兼容旧命令保留；当前使用正文复核规则，不再按相似度强行聚类",
+    )
     args = parser.parse_args()
 
     if not args.all and not args.start and not args.end:

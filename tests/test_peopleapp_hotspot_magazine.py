@@ -18,7 +18,7 @@ def build_db(path: Path) -> None:
     conn.executescript(
         """
         CREATE TABLE hotspot_topics (
-            topic_id TEXT PRIMARY KEY, topic TEXT, normalized_topic TEXT,
+            topic_id TEXT PRIMARY KEY, topic TEXT, category TEXT, angle TEXT, normalized_topic TEXT,
             status TEXT, priority TEXT, media_count INTEGER, article_count INTEGER,
             start_date TEXT, end_date TEXT, sources_json TEXT, ai_brief TEXT,
             manual_note TEXT, selected INTEGER, created_at TEXT, updated_at TEXT
@@ -32,7 +32,8 @@ def build_db(path: Path) -> None:
     conn.execute(
         """
         INSERT INTO hotspot_topics VALUES
-        ('topic-1', '停车计费规则', '停车计费规则', '热点', 'A', 3, 4,
+        ('topic-1', '停车计费规则', '城市治理与公共服务', '收费规则要透明',
+         '停车计费规则', '热点', 'A', 3, 4,
          '2026-06-24', '2026-06-26', ?, '选题分析材料', '', 0, 'now', 'now')
         """,
         (json.dumps(["人民日报客户端", "光明网"], ensure_ascii=False),),

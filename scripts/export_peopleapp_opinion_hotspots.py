@@ -74,6 +74,149 @@ MERGE_PATTERNS = [
     ("粮食安全", ["粮食", "丰收"]),
 ]
 
+# 以下规则来自对 2026-06-24 至 2026-06-30 已下载正文的逐篇复核。
+# 只使用事件或观点链中的辨识性短语，避免再用“中国”“消费者”“军事”等
+# 泛词把互不相关的文章错误归并。
+CURATED_TOPIC_RULES = [
+    {
+        "topic": "高考志愿填报治理",
+        "category": "教育与青年成长",
+        "angle": "从信息透明、AI辅助、家长责任和反招生诈骗四个层面，帮助考生把选择权握在自己手里。",
+        "title_any": [
+            "高考志愿填报",
+            "AI“改动”了你的高考志愿",
+            "规范志愿填报市场",
+            "打破功利焦虑，让专业选择",
+            "高考公平需要延伸到志愿填报",
+            "反招生诈骗",
+        ],
+    },
+    {
+        "topic": "教师减负落地",
+        "category": "教育与青年成长",
+        "angle": "教师减负不能停在文件和口号，要同步清理非教学任务、规范进校园事项并建立长效监督。",
+        "title_any": ["教师减负"],
+    },
+    {
+        "topic": "录取通知书回归育人本意",
+        "category": "教育与青年成长",
+        "angle": "录取通知书的价值不在豪华包装，而在信息准确、情感真挚和大学育人理念。",
+        "title_any": ["录取通知书"],
+    },
+    {
+        "topic": "研学回归教育与安全本位",
+        "category": "教育与青年成长",
+        "angle": "研学不能被打卡流量和冒险项目带偏，要把课程目标、风险评估和组织责任放在前面。",
+        "title_any": ["研学"],
+    },
+    {
+        "topic": "开屏广告与数字界面减负",
+        "category": "数字治理与消费权益",
+        "angle": "治理开屏广告不只是少看几秒广告，而是约束诱导触发、保障操作安全、把选择权还给用户。",
+        "title_any": ["开屏广告", "开屏摇一摇", "导航软件追求收益"],
+    },
+    {
+        "topic": "自动续费与隐性扣款治理",
+        "category": "数字治理与消费权益",
+        "angle": "平台应让开通与退出同样方便，以显著提示、便捷取消和责任追溯整治隐性扣款。",
+        "title_any": ["自动续费", "开通仅一秒但退订"],
+    },
+    {
+        "topic": "银发群体数字融入",
+        "category": "数字治理与消费权益",
+        "angle": "适老化不能只放大字体，还要同时解决信息骚扰、操作门槛、数字教育和安全防护。",
+        "title_any": ["77万条未读", "应用适老化", "银发族抢着学AI"],
+    },
+    {
+        "topic": "停车计费规则透明化",
+        "category": "城市治理与公共服务",
+        "angle": "停车收费要从模糊取整转向按规则精细计费，让小额公共服务也经得起公平检验。",
+        "title_any": ["停车费叫停", "停车计费"],
+    },
+    {
+        "topic": "新就业群体服务驿站提质",
+        "category": "城市治理与公共服务",
+        "angle": "服务驿站不能重建设轻使用，要跟着劳动者的时间、路线和真实需求调整服务。",
+        "title_any": ["新就业群体服务驿站", "城市驿站遇冷"],
+    },
+    {
+        "topic": "正确政绩观与主动治理",
+        "category": "城市治理与公共服务",
+        "angle": "把为民造福落到实事求是、前置谋划、接诉即办、类案治理和小处着手的行动链。",
+        "title_any": [
+            "实干的三重意涵",
+            "弘扬实事求是",
+            "最终要落到为民造福",
+            "较真书记",
+            "谋在先、干在前",
+            "发展的主动性从何而来",
+            "正确政绩观",
+            "接诉即办",
+        ],
+    },
+    {
+        "topic": "灭火器纸面维保治理",
+        "category": "公共安全与监管",
+        "angle": "消防维保不能只贴合格证，要打通检测、维保、抽查和责任追究的真实闭环。",
+        "title_any": ["灭火器“纸面维保”", "灭火器合格证"],
+    },
+    {
+        "topic": "中国制造出海与创新竞争力",
+        "category": "产业经济与开放发展",
+        "angle": "从空调等避暑产品走红欧洲，看中国制造如何靠产业链、技术迭代和市场适配形成竞争力。",
+        "title_any": ["避暑神器", "一台空调看欧洲"],
+    },
+    {
+        "topic": "粮食安全与农业现代化",
+        "category": "产业经济与开放发展",
+        "angle": "把粮食安全从丰收表态推进到资源节约、科技赋能和农业全产业链建设。",
+        "title_any": ["这个“重中之重”", "全年粮食丰收", "农业建成现代化大产业"],
+    },
+    {
+        "topic": "营商环境与市场秩序",
+        "category": "产业经济与开放发展",
+        "angle": "营商环境既要对劳动者友好，也要规范涉企检查、畅通市场退出和资源再配置。",
+        "title_any": ["打工友好", "市场“新陈代谢”", "涉企检查"],
+    },
+    {
+        "topic": "流量逐利与虚假内容治理",
+        "category": "网络生态与社会信任",
+        "angle": "从卖惨摆拍、付费测评到流量祛魅，治理重点是压实平台责任并修复内容公信力。",
+        "title_any": ["流量祛魅", "批量化卖惨营销", "又是摆拍", "谁给钱就夸谁"],
+    },
+    {
+        "topic": "诋毁袁隆平与无底线流量",
+        "category": "网络生态与社会信任",
+        "angle": "农业科普不能沦为流量生意，要用事实核验、平台治理和依法追责守住公共认知底线。",
+        "title_any": ["诋毁袁老成果", "诋毁袁隆平"],
+    },
+    {
+        "topic": "世界杯中的体育精神与人文价值",
+        "category": "体育文化与社会心态",
+        "angle": "把赛场胜负延伸到尊重弱者、全球流动、文化多样性和昂扬精神等公共价值。",
+        "title_any": ["世界杯", "伊朗队，昂着头告别世界杯", "小国弱旅"],
+    },
+    {
+        "topic": "理解中国发展与世界机遇",
+        "category": "国际观察与中国叙事",
+        "angle": "用制度优势、创新红利、市场竞争和历史纵深解释中国发展，而不是停留在抽象赞美。",
+        "title_any": [
+            "中国全球领导力",
+            "“创新红利”",
+            "“中国冲击2.0”",
+            "“全球最硬核的健身房”",
+            "中国发展的“制度密码”",
+            "理解当代中国",
+        ],
+    },
+    {
+        "topic": "历史正义与日本军事化警示",
+        "category": "国际观察与中国叙事",
+        "angle": "从二战记忆、慰安妇史实和日本军事转轨出发，说明守护历史真相也是维护和平秩序。",
+        "title_any": ["安保三文件", "守望历史正义", "慰安妇", "日本右翼"],
+    },
+]
+
 
 def clean_title(title: str) -> str:
     text = str(title or "")
@@ -225,6 +368,63 @@ def summarize_group(group: List[Dict]) -> Dict:
     }
 
 
+def canonical_title(title: str) -> str:
+    text = clean_title(title)
+    return re.sub(r"[\s“”\"《》|｜丨：:，,。！？!?·—\-]", "", text)
+
+
+def deduplicate_reposts(group: List[Dict]) -> List[Dict]:
+    """同来源、同标题的转载只保留正文更完整的一条。"""
+    best: Dict[Tuple[str, str], Dict] = {}
+    for article in group:
+        key = (
+            normalize_source(article.get("source_name") or article.get("source")),
+            canonical_title(article.get("title", "")),
+        )
+        current = best.get(key)
+        article_length = int(article.get("word_count") or len(article.get("content", "")))
+        current_length = (
+            int(current.get("word_count") or len(current.get("content", ""))) if current else -1
+        )
+        if current is None or article_length > current_length:
+            best[key] = article
+    return list(best.values())
+
+
+def article_matches_rule(article: Dict, rule: Dict) -> bool:
+    title = compact_text(article.get("title", ""))
+    return any(compact_text(phrase) in title for phrase in rule["title_any"])
+
+
+def has_usable_body(article: Dict) -> bool:
+    """过短的跳转页或残缺正文不作为选题支撑文章。"""
+    word_count = int(article.get("word_count") or 0)
+    body_length = len(compact_text(article.get("content", "")))
+    return max(word_count, body_length) >= 200
+
+
+def build_curated_topics(articles: List[Dict]) -> List[Dict]:
+    """按正文复核后的明确选题归并，未命中的素材不强行分类。"""
+    topics = []
+    for rule in CURATED_TOPIC_RULES:
+        matched = [
+            article
+            for article in articles
+            if has_usable_body(article) and article_matches_rule(article, rule)
+        ]
+        if len(matched) < 2:
+            continue
+        group = deduplicate_reposts(matched)
+        if len(group) < 2:
+            continue
+        item = summarize_group(group)
+        item["topic"] = rule["topic"]
+        item["category"] = rule["category"]
+        item["angle"] = rule["angle"]
+        topics.append(item)
+    return topics
+
+
 def default_range(days: int) -> Tuple[str, str]:
     today = datetime.now(TIMEZONE).date()
     start = today - timedelta(days=max(1, days) - 1)
@@ -250,7 +450,7 @@ def write_markdown(hotspots: List[Dict], candidates: List[Dict], args) -> Path:
         "",
         f"- 生成时间：{datetime.now(TIMEZONE).isoformat(timespec='seconds')}",
         f"- 热点标准：至少 {args.min_media} 个不同来源媒体发表评论",
-        f"- 最低相似度：{args.min_similarity}",
+        "- 归并方式：已下载正文复核后的明确选题规则",
         f"- 热点数量：{len(hotspots)}",
         f"- 候选数量：{len(candidates)}",
         "",
@@ -265,6 +465,8 @@ def write_markdown(hotspots: List[Dict], candidates: List[Dict], args) -> Path:
             [
                 f"### {index}. {item['topic']}",
                 "",
+                f"- 分类：{item['category']}",
+                f"- 核心角度：{item['angle']}",
                 f"- 时间：{item['start_date']} 至 {item['end_date']}",
                 f"- 媒体数：{item['media_count']}",
                 f"- 文章数：{item['article_count']}",
@@ -288,6 +490,8 @@ def write_markdown(hotspots: List[Dict], candidates: List[Dict], args) -> Path:
             [
                 f"### {index}. {item['topic']}",
                 "",
+                f"- 分类：{item['category']}",
+                f"- 核心角度：{item['angle']}",
                 f"- 时间：{item['start_date']} 至 {item['end_date']}",
                 f"- 媒体数：{item['media_count']}",
                 f"- 文章数：{item['article_count']}",
@@ -311,10 +515,12 @@ def write_csv(items: List[Dict]) -> Path:
     timestamp = datetime.now(TIMEZONE).strftime("%Y%m%d_%H%M%S")
     path = HOTSPOT_DIR / f"peopleapp_opinion_hotspots_{timestamp}.csv"
     with path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(
             [
                 "topic",
+                "category",
+                "angle",
                 "status",
                 "media_count",
                 "article_count",
@@ -333,6 +539,8 @@ def write_csv(items: List[Dict]) -> Path:
                 writer.writerow(
                     [
                         item["topic"],
+                        item["category"],
+                        item["angle"],
                         item["status"],
                         item["media_count"],
                         item["article_count"],
@@ -357,11 +565,16 @@ def main() -> int:
     parser.add_argument("--all", action="store_true", help="分析 APP 评论库全部文章")
     parser.add_argument("--limit", type=int, help="限制参与分析的文章数量")
     parser.add_argument("--min-media", type=int, default=3, help="热点至少需要几个不同媒体，默认 3")
-    parser.add_argument("--min-similarity", type=float, default=0.22, help="文章归并最低相似度，默认 0.22")
+    parser.add_argument(
+        "--min-similarity",
+        type=float,
+        default=0.22,
+        help="兼容旧命令保留；当前使用正文复核规则，不再按相似度强行聚类",
+    )
     args = parser.parse_args()
 
     articles = select_articles(args)
-    clusters = [summarize_group(group) for group in build_clusters(articles, args.min_similarity)]
+    clusters = build_curated_topics(articles)
     clusters.sort(key=lambda item: (-item["media_count"], -item["article_count"], item["topic"]))
 
     hotspots = [item for item in clusters if item["media_count"] >= args.min_media]
