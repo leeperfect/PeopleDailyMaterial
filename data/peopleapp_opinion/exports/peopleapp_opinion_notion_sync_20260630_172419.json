@@ -1,0 +1,20 @@
+{
+  "source": "peopleapp_opinion",
+  "database_id": "e091a3f1-0ee4-49da-adce-f92a25293d6a",
+  "db_path": "data/peopleapp_opinion/core/articles.sqlite",
+  "generated_at": "2026-06-30T17:16:39+08:00",
+  "candidate_count": 56,
+  "created": 11,
+  "updated": 0,
+  "skipped": 44,
+  "failed": 1,
+  "failures": [
+    {
+      "article_id": "peopleapp_opinion_20260630_30052522802_500007572444",
+      "title": "“假期急报”不应成常态",
+      "error": "Request to Notion API has timed out",
+      "url": "https://www.peopleapp.com/column/30052522802-500007572444"
+    }
+  ],
+  "dry_run": false
+}
