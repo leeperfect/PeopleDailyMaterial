@@ -6,57 +6,61 @@
       "askInfo": null,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ac1a97bd7c094facbf5c509333d85c94.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7e51889671fd4cfc9749268d5373d22f.mp3",
           "defaultMultiple": "1.0",
-          "duration": 57,
+          "duration": 285,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a1e18b679c68400bb8cfb423d5632934.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/e86d6300fb0e425aa74fef841a7aec66.mp3",
           "defaultMultiple": "1.0",
-          "duration": 53,
+          "duration": 296,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/58b7290faf434b2ea6356679f15f55ba.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 271,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/1662dcd71496456aa4e3c47f9187ab00.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/4479ec7264fe41bfb048f2959061e406.mp3",
           "defaultMultiple": "1.0",
-          "duration": 60,
+          "duration": 303,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/dbbcf77395644ca69b04ff8c443dfad7.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 58,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
         }
       ],
-      "authorList": [],
+      "authorList": [
+        {
+          "authorName": "舒圣祥"
+        }
+      ],
       "channelId": 2003,
       "commentInfo": null,
       "corner": "",
-      "coverSize": "1080*720",
+      "coverSize": "279*186",
       "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/7a0ad045e8f6466daabcd7ff08699513.jpeg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782797139000",
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/d507e7d9e7aa44e38485ee59e096e9cb.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782822494000",
       "fullColumnImgUrls": [
         {
-          "height": 720,
+          "height": 186,
           "landscape": 1,
-          "size": 0,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/7a0ad045e8f6466daabcd7ff08699513.jpeg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 1080
+          "size": 91068,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/d507e7d9e7aa44e38485ee59e096e9cb.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 279
         }
       ],
       "keyArticle": 0,
@@ -64,16 +68,16 @@
       "liveInfo": null,
       "menuShow": 1,
       "newTags": "",
-      "newsSummary": "期待更多黑马奔腾，属于足球的这个夏天，因为奇迹，更加闪亮。",
-      "newsTitle": "“小国弱旅”为何赢得全世界尊重",
-      "objectId": "30052526262",
+      "newsSummary": "真正的“护剧”，靠的是作品质量与观众口碑，而非交给敲诈者的“保护费”。",
+      "newsTitle": "“护剧”还是“劫剧”？",
+      "objectId": "30052530433",
       "objectType": "8",
       "openAudio": 1,
       "positionType": 1,
-      "publishTime": "1782809565000",
+      "publishTime": "1782828554000",
       "readFlag": 1,
       "relAskInfos": [],
-      "relId": 500007573763,
+      "relId": 500007574181,
       "relObjectId": "2003",
       "relType": 1,
       "rmhInfo": null,
@@ -81,7 +85,7 @@
       "shareInfo": null,
       "shortDrama": null,
       "slideShows": [],
-      "source": "人民日报客户端",
+      "source": "安徽时评",
       "sourceId": "41",
       "tagIds": [],
       "topicWatchCover": null,
@@ -92,8 +96,8 @@
         "defaultMultiple": "1.0",
         "openMultipleAdjustment": 1,
         "type": 3,
-        "voiceDuration": 57,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ac1a97bd7c094facbf5c509333d85c94.mp3"
+        "voiceDuration": 285,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7e51889671fd4cfc9749268d5373d22f.mp3"
       }
     },
     "detail": {
@@ -101,57 +105,61 @@
       "appstyle": 13,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ac1a97bd7c094facbf5c509333d85c94.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7e51889671fd4cfc9749268d5373d22f.mp3",
           "defaultMultiple": "1.0",
-          "duration": 57,
+          "duration": 285,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a1e18b679c68400bb8cfb423d5632934.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/e86d6300fb0e425aa74fef841a7aec66.mp3",
           "defaultMultiple": "1.0",
-          "duration": 53,
+          "duration": 296,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/58b7290faf434b2ea6356679f15f55ba.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 271,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/1662dcd71496456aa4e3c47f9187ab00.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/4479ec7264fe41bfb048f2959061e406.mp3",
           "defaultMultiple": "1.0",
-          "duration": 60,
+          "duration": 303,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/dbbcf77395644ca69b04ff8c443dfad7.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 58,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
         }
       ],
-      "authorList": [],
+      "authorList": [
+        {
+          "authorName": "舒圣祥"
+        }
+      ],
       "bestNoticer": 1,
       "commentDisplay": 1,
       "currentNum": null,
-      "editorName": "王萍萍",
+      "editorName": "白冰",
       "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 16:51:46",
+      "firstPublishTime": "2026-06-30 22:09:14",
       "fullColumnImgUrls": [
         {
           "format": null,
-          "height": 720,
+          "height": 186,
           "landscape": 1,
-          "size": 0,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/7a0ad045e8f6466daabcd7ff08699513.jpeg",
-          "weight": 1080
+          "size": 91068,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/d507e7d9e7aa44e38485ee59e096e9cb.png",
+          "weight": 279
         }
       ],
       "hasPopUp": null,
@@ -166,17 +174,17 @@
       "newIntroduction": "",
       "newLinkObject": null,
       "newsBodyTitle": "",
-      "newsContent": "\n      <p style=\"margin: 0 auto;\">\n          <video style=\"width: 1080;height: 1920;background:#000;max-width: 100%;\" data-vertical=\"1\" controls=\"\" poster=\"\" data-setup=\"22436085\" class=\"22436087\" src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/vod/content/output/90f29ff6af23407e88160dd19dd12c5f_opt.mp4\" data-width=\"1080\" data-height=\"1920\">\n              <source src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/vod/content/output/90f29ff6af23407e88160dd19dd12c5f_opt.mp4\">\n          </video>‍‍‍‌‍‍‌</p><p style=\"text-indent: 2em;\">美加墨世界杯，淘汰赛的哨声已经吹响。回顾过去70多场比赛，最令人难忘的并非豪门劲旅，而是佛得角、库拉索、波黑这些“小国弱旅”的逆袭与突破。</p><p style=\"text-indent: 2em;\">西非岛国佛得角，接连逼平前<span style=\"text-align: justify; text-indent: 36px;\">世界杯冠军</span>西班牙队、乌拉圭队，历史性闯入淘汰赛。欧洲小国波黑，展现出极强韧性，首次晋级淘汰赛。西亚小国约旦也是首次参赛，和阿根廷队交手时攻入一球。面对强队，这些“小国弱旅”不认命、不认输，用成绩赢得全世界的尊重，也给世界杯带来跌宕起伏的魅力。</p><p style=\"text-indent: 2em;\">世界杯不只有强队加冕，也有弱旅逆袭。16强席位正在激烈角逐，期待更多黑马奔腾，属于足球的这个夏天，因为奇迹，更加闪亮。</p>",
+      "newsContent": "<p style=\"text-indent: 2em;\">近日，在公安部网安局、广东省公安厅网安总队直接指挥下，河源警方成功收网，打掉以李某军为首的利用网络舆情实施敲诈犯罪团伙，抓获嫌疑人12名。该团伙注册文化传播公司<strong>实控多个微信公众号和微博账号，在影视剧播放期间故意制造负面舆论热点，要求影视平台、经纪公司高价购买所谓“护剧”服务，借此大肆牟利</strong>。</p><p style=\"margin: 0 auto;\"><video style=\"width: 1080;height: 1920;background:#000;max-width: 100%;\" data-vertical=\"1\" controls=\"\" poster=\"\" data-setup=\"22436671\" class=\"22436673\" src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/vod/content/output/48c61a0df34543258766c2e10eb85ae7_opt.mp4\" data-width=\"1080\" data-height=\"1920\"><source src=\"https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/vod/content/output/48c61a0df34543258766c2e10eb85ae7_opt.mp4\"></video>‍‍‍‌‍‍‌</p><p style=\"text-indent: 2em;\"><strong>所谓“护剧”服务，说白了就是收钱删帖、有偿沉默</strong>。先雇佣写手拼接搜罗明星、剧集负面素材，借助人工智能批量操控账号集中投放黑稿，刻意在影视剧宣发关键期制造舆论危机。<strong>待剧组方不堪舆情重压，再抛出付费“护剧”套餐。这种“商业模式”，俨然黑社会收保护费的翻版——只不过，收租的“地盘”换成了网络空间，行凶的“打手”换成了批量注册的营销账号</strong>。</p><p style=\"text-indent: 2em;\"><strong>此类以舆情为筹码的敲诈，并非影视行业独有</strong>。比如，车企在新车发布、融资等关键节点，常被部分车评自媒体围猎。针对拟IPO静默期的公司，一些自媒体发布“财务造假”等文章，借监管敏感期施压签“舆情服务协议”。载体在变，组织在变，但作案者借舆论影响力胁迫他人付费牟利的犯罪内核却并未改变。</p><p style=\"text-indent: 2em;\">凭借千万级粉丝账号矩阵，一条拼接、杜撰的八卦负面，可以短时间发酵登上热搜，冲击影视剧收视率、艺人商业价值与投资方收益。此前已有多名受害艺人、影视企业提起名誉侵权诉讼。但是，民事诉讼不仅举证难度较大，而且诉讼周期漫长，等到判决落地，剧集宣发窗口期可能早已错过，经济损失难以挽回。</p><p style=\"text-indent: 2em;\"><strong>拨开舆情服务的商业外衣，“付费护剧”契合敲诈勒索罪认定标准。行为人先行散布负面网络信息，再以删除帖文、停止发布新负面作为对价，威胁、要挟被害人交付财物，只要数额达标或多次实施，即构成敲诈勒索罪</strong>。</p><p style=\"text-indent: 2em;\">本案中，所谓“护剧”服务是典型的删帖型敲诈。涉案团伙主动炮制负面舆论，相对方被迫协商支付封口费，这并非平等自愿的市场服务交易，即便披上宣传推广的合同外壳，也无法掩盖非法占有财物的主观故意。</p><p style=\"text-indent: 2em;\"><strong>值得警惕的是，此类舆情敲诈乱象能够持续滋生，行业灰色需求是重要土壤</strong>。部分影视宣发方、经纪公司面对负面舆情，第一选择并非报警、平台投诉，而是私下付费消灾，客观上滋养了黑灰产的生存空间。更有甚者，某些市场主体为了打压竞品会主动购买黑稿，或者为了避免负面舆情主动付费换取“护剧”服务。公安机关查办此类案件，对某些付费主体应视情节追究共同违法乃至共犯责任。</p><p style=\"text-indent: 2em;\"><strong>网络不是法外之地。自媒体、MCN机构等必须强化法律意识，流量变现务必建立在合法经营服务之上，靠制造恐慌、胁迫交易收割利益，无论包装成何种“护剧”服务，一旦触碰刑法红线，必将付出沉重法律代价</strong>。</p><p style=\"text-indent: 2em;\">面对他人刻意制造的负面舆情，影视剧出品方、艺人经纪机构等务必摒弃花钱了事短视思维，第一时间固定证据、向平台举报并向公安机关报案，拒绝向舆情黑手输送利益。</p><p style=\"text-indent: 2em;\">面对舆情敲诈乱象，治理手段需同步升级。算法、AI、千万粉丝账号，不能成为肆意操控舆论、胁迫牟利的工具。平台应在正当宣发与恶意攻击之间划出清晰界限，完善多账号关联识别、AI批量发帖预警机制，快速拦截恶意集中抹黑内容。<strong>司法机关有必要细化网络舆情敲诈裁判标准，发布典型案例明确罪与非罪边界，消除“付费护剧”灰色操作空间</strong>。</p><p style=\"text-indent: 2em;\"><strong>“护法”是最好的“护剧”。真正的“护剧”，靠的是作品质量与观众口碑，而非交给敲诈者的“保护费”</strong>。唯有让违法成本远高于收益，才能震慑潜在效仿者。唯有斩断黑灰产供需两端链条，才能根治舆情敲诈乱象。</p>",
       "newsContentBak": "{}",
       "newsDownTitle": "",
-      "newsId": 30052526262,
+      "newsId": 30052530433,
       "newsLinkUrl": "",
       "newsShortTitle": "",
       "newsSource": "41",
-      "newsSourceName": "人民日报客户端",
-      "newsSummary": "期待更多黑马奔腾，属于足球的这个夏天，因为奇迹，更加闪亮。",
+      "newsSourceName": "安徽时评",
+      "newsSummary": "真正的“护剧”，靠的是作品质量与观众口碑，而非交给敲诈者的“保护费”。",
       "newsTags": "",
-      "newsTitle": "“小国弱旅”为何赢得全世界尊重",
+      "newsTitle": "“护剧”还是“劫剧”？",
       "newsType": 8,
       "oldNewsId": "",
       "openAudio": 1,
@@ -188,10 +196,10 @@
       "photoList": [],
       "popUps": [],
       "preCommentFlag": 0,
-      "publishTime": "2026-06-30 16:52:45",
+      "publishTime": "2026-06-30 22:09:14",
       "reLInfo": {
         "channelId": 2003,
-        "relId": "500007573763",
+        "relId": "500007574181",
         "relObjectId": 2003,
         "relType": "1"
       },
@@ -206,14 +214,14 @@
       "sceneId": "",
       "serials": null,
       "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj/img/sharecms01.png",
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/046e81ef691d4406aaf4fa6b37489d3c.png?x-oss-process=image/resize,w_120",
         "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/7a0ad045e8f6466daabcd7ff08699513.jpeg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/d507e7d9e7aa44e38485ee59e096e9cb.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
         "sharePosterOpen": 1,
         "sharePosterStyle": 1,
-        "shareSummary": "期待更多黑马奔腾，属于足球的这个夏天，因为奇迹，更加闪亮。",
-        "shareTitle": "“小国弱旅”为何赢得全世界尊重",
-        "shareUrl": "https://www.peopleapp.com/column/30052526262-500007573763"
+        "shareSummary": "真正的“护剧”，靠的是作品质量与观众口碑，而非交给敲诈者的“保护费”。",
+        "shareTitle": "“护剧”还是“劫剧”？",
+        "shareUrl": "https://www.peopleapp.com/column/30052530433-500007574181"
       },
       "shortDrama": null,
       "specialColumnId": null,
@@ -229,13 +237,13 @@
           "clarity": 4,
           "resolutionHeight": 1920,
           "resolutionWidth": 1080,
-          "videoDuration": 52,
+          "videoDuration": 28,
           "videoLandScape": 2,
           "videoType": 3,
-          "videoUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/vod/content/output/90f29ff6af23407e88160dd19dd12c5f_opt.mp4"
+          "videoUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/vod/content/output/48c61a0df34543258766c2e10eb85ae7_opt.mp4"
         }
       ],
-      "viewCount": 43547,
+      "viewCount": 191769,
       "visitorComment": 1,
       "voteInfo": null
     }
@@ -247,722 +255,7 @@
       "askInfo": null,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/beef29ff8fdb4fd69e95a4394cc4eee2.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 261,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/8ff7e9596ae54f38b9b62d50d0884584.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 248,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ace0e1b1f62b4af190f48ef49c8955dd.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 278,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/63162d65160f4fd59ec64f0ead4a8998.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 268,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "高健"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "672*448",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/81fc5d3319f3460db7ae198f6ee9b1d9.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782803925000",
-      "fullColumnImgUrls": [
-        {
-          "height": 448,
-          "landscape": 1,
-          "size": 38045,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/81fc5d3319f3460db7ae198f6ee9b1d9.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 672
-        }
-      ],
-      "keyArticle": 0,
-      "linkUrl": "",
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsSummary": "英国面临的难题，显然不是换个首相就能轻松化解的。",
-      "newsTitle": "零时差 | 唐宁街十年六任：换相，换不走英国的难题",
-      "objectId": "30052527373",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782808800000",
-      "readFlag": 1,
-      "relAskInfos": [],
-      "relId": 500007573742,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "人民日报客户端",
-      "sourceId": "41",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 261,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/beef29ff8fdb4fd69e95a4394cc4eee2.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 13,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/beef29ff8fdb4fd69e95a4394cc4eee2.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 261,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/8ff7e9596ae54f38b9b62d50d0884584.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 248,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ace0e1b1f62b4af190f48ef49c8955dd.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 278,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/63162d65160f4fd59ec64f0ead4a8998.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 268,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "高健"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "冯雪芙",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 16:39:08",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 448,
-          "landscape": 1,
-          "size": 38045,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/81fc5d3319f3460db7ae198f6ee9b1d9.jpg",
-          "weight": 672
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": false,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">英国工党新党首选举时间表已定：7月9日启动提名程序，候选人需闯过议员与附属组织两道提名门槛，最快7月17日即可产生新任党首。目前，大曼彻斯特市前市长安迪・伯纳姆已确认参选，被视为头号热门。</p><p style=\"text-indent: 2em;\">这将是2016年以来，唐宁街10号第六次易主。频率之密，让外界再度聚焦英国社会长期存在的治理挑战。如今，英国政治版图日趋碎片化，传统左右翼的分界被民族主义、身份政治等多元议题重塑，两大主流政党的合计支持率处于历史低位。面对右翼政党崛起带来的竞争压力，工党将领导层调整视为回应选民诉求、巩固选民基础的现实选择。</p><p style=\"text-indent: 2em;\">然而，英国面临的难题，显然不是换个首相就能轻松化解的。</p><p style=\"text-indent: 2em;\"><strong>经济增长与财政平衡的两难长期存在。</strong>受脱欧后续效应释放、生产率增长乏力、全球通胀传导等多重因素影响，英国经济复苏步伐偏缓。要补齐公共服务短板、改善民生，都需要稳定的财政投入支撑，但在政府债务高企的背景下，大幅加税容易引发民众不满，扩张举债又会面临市场压力。宏观政策腾挪空间有限，上台时许下的增长承诺注定落地很难。</p><p style=\"text-indent: 2em;\"><strong>民生领域的压力持续向社会传导。</strong>生活成本危机影响深远，普通家庭的实际收入增长承压。曾是英国福利制度名片的国民保健体系，长期面临医护人员不足、候诊周期偏长的问题；住房供需缺口也让年轻群体的安居压力与日俱增。近年铁路、医疗、教育等行业的罢工时有发生，从侧面反映出社会情绪的积累，民众对改善公共服务的诉求十分迫切。</p><p style=\"text-indent: 2em;\"><strong>移民议题则是一道难解的题目。</strong>英国脱欧时“收回边境控制权”的承诺，和当下的移民现状存在明显落差，合法移民规模与非法难民问题持续引发社会关注。叠加资源分配、文化融合等深层矛盾，移民议题早已超出边境管理范畴，成为牵扯身份认同、族裔关系的复杂社会议题。受制于法律规则与国内舆论的双重约束，相关政策往往进退两难，社会分歧也随之扩大。</p><p style=\"text-indent: 2em;\"><strong>工党希望借新党首打开新局面。</strong>以热门人选伯纳姆为例，他在地方任职期间靠加大公共投入、升级基础设施的思路积累了不错的口碑，也具备拉拢跨阶层选民的能力。可这套行之有效的地方治理经验，放到国家层面就会遇到不少现实阻碍：英国财政部长期秉持财政保守主义，不会轻易为大规模支出松绑；国际金融市场对赤字财政也十分敏感，施政理念的落地会受到多重制约。</p><p style=\"text-indent: 2em;\">说到底，人事更迭也绕不开深层的利益格局，新党首上任后大概率仍要面对相似的治理难题。由于英国民众对经济、民生、治安等领域的焦虑难解，简单化、极端化的政治主张正获得更多市场。这不仅冲击现有的选举格局，也将整个政治生态推向更极端的方向。素以“妥协政治”“渐进改良”为传统的英国社会，如今正眼睁睁看着共识消解、对立增多。</p><p style=\"text-indent: 2em;\">英国是现代代议制民主的发源地，其政治模式曾被很多国家参考借鉴。但在利益高度分化、全球挑战层出不穷的当下，这套运行数百年的治理框架，已显现出明显的适配性难题。英国能否凝聚跨阶层、跨族群的社会共识，真正回应民众诉求，将决定这场“换相游戏”，是否成为摆脱治理困局的转机。</p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">（作者为上海外国语大学中英人文交流研究中心主任）</span></p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052527373,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "41",
-      "newsSourceName": "人民日报客户端",
-      "newsSummary": "英国面临的难题，显然不是换个首相就能轻松化解的。",
-      "newsTags": "",
-      "newsTitle": "零时差 | 唐宁街十年六任：换相，换不走英国的难题",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 1,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-30 16:40:00",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007573742",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 1,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/7bec8ba5f60747e2be4ef5136d0c21bc.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/81fc5d3319f3460db7ae198f6ee9b1d9.jpg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 1,
-        "sharePosterStyle": 1,
-        "shareSummary": "英国面临的难题，显然不是换个首相就能轻松化解的。",
-        "shareTitle": "零时差 | 唐宁街十年六任：换相，换不走英国的难题",
-        "shareUrl": "https://www.peopleapp.com/column/30052527373-500007573742"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 29317,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/f9bd4f5cdb7c4b57bdb8d6493a91579f.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 242,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/70055df964234af8b1ab34b4f5751f10.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 228,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ff4f4d045e314778a934ccede1de9632.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 257,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/c5e8cc64d48c49e1a94488f5c6e3b849.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 249,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "舒朗秋"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "778*519",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/44a8790930b04b989439b33433980921.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782782007000",
-      "fullColumnImgUrls": [
-        {
-          "height": 519,
-          "landscape": 1,
-          "size": 378512,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/44a8790930b04b989439b33433980921.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 778
-        }
-      ],
-      "keyArticle": 0,
-      "linkUrl": "",
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsSummary": "牢牢守住消费者权益保护底线，彻底斩断强制“圈粉码”的利益链条。",
-      "newsTitle": "对强制“圈粉码”说不 让便民码回归便民本质",
-      "objectId": "30052523960",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782802664000",
-      "readFlag": 1,
-      "relAskInfos": [],
-      "relId": 500007572270,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "北京青年报",
-      "sourceId": "41",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 242,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/f9bd4f5cdb7c4b57bdb8d6493a91579f.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 26,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/f9bd4f5cdb7c4b57bdb8d6493a91579f.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 242,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/70055df964234af8b1ab34b4f5751f10.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 228,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ff4f4d045e314778a934ccede1de9632.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 257,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/c5e8cc64d48c49e1a94488f5c6e3b849.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 249,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "舒朗秋"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "郑晓宇",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 14:57:44",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 519,
-          "landscape": 1,
-          "size": 378512,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/44a8790930b04b989439b33433980921.png",
-          "weight": 778
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": false,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">出停车场交停车费需先扫码关注公众号或者注册会员，才能完成交费流程；连酒店Wi-Fi需扫二维码添加酒店管家微信才能连上；就餐后需要开发票，餐馆要求必须先扫码加店长微信……据媒体报道，一些商家强制“圈粉”引发消费者不满，让便民二维码变成消费“拦路码”。</p><p style=\"text-indent: 2em;\"><strong>原本为便民而生的二维码，在部分商家的不当操作下，异化为强制引流的“圈粉码”。</strong>从消费者权益保护视角审视，这类强制“圈粉”行为既违背市场交易的公平自愿原则，更涉嫌直接侵犯消费者合法权益，亟须予以规范整治。</p><p style=\"text-indent: 2em;\"><strong>首先，强制“圈粉”涉嫌侵犯消费者的自主选择权。</strong>根据《消费者权益保护法》，消费者享有自主选择商品或者服务的权利，有权自主决定是否接受某项服务。扫码缴费、连网、开票本是消费过程中的基础服务与法定后续权利，商家将其与“关注公众号”“添加微信”“注册会员”等行为捆绑，实质是设置不合理交易条件，变相剥夺了消费者的选择自由。消费者为了完成缴费、上网或报销等基本需求，不得不违背真实意愿接受商家“圈粉”要求，<strong>这种“要么关注，要么无法使用”的模式，是对消费者自主选择权的侵犯。</strong></p><p style=\"text-indent: 2em;\"><strong>其次，强制“圈粉”潜藏个人信息过度收集滥用的风险，直接威胁消费者的信息安全权。</strong>商家借扫码关注索要姓名、手机号等信息，大多并非实现缴费、上网、开票等基础服务的必要条件，突破了个人信息收集的“最小必要”原则。更令人担忧的是，这些被强制收集的个人信息，后续的存储、使用和保护机制往往不透明。商家既可能将其用于商业营销，频繁推送广告信息骚扰消费者；也可能因管理不善导致信息泄露，甚至被不法分子用于电信诈骗等违法犯罪活动。消费者在被动的情况下交出个人信息，信息安全几乎处于“裸奔”状态，这会加剧公众的个人信息保护焦虑。</p><p style=\"text-indent: 2em;\"><strong>此外，强制“圈粉”还会破坏公平诚信的市场交易环境。</strong>商家通过设置“拦路码”，把本应平等自愿的交易关系，异化为“用关注换服务”的强制模式，违背了诚实信用的商业原则。这种做法不仅严重损害消费者体验，还会透支商家自身的品牌形象。一旦强制“圈粉”成为行业潜规则，还会引发不良示范效应，导致更多商家跟风效仿，进一步恶化消费环境。</p><p style=\"text-indent: 2em;\"><strong>让便民码回归便民本质，必须对强制“圈粉码”说不。</strong>一方面，监管部门应加大执法力度，依据《消费者权益保护法》《个人信息保护法》等法律法规，严厉查处强制“圈粉”、过度收集个人信息等行为，明确商家合规边界，提高违法成本。</p><p style=\"text-indent: 2em;\">另一方面，行业协会应发挥自律引导作用，制定相关服务规范，引导商家摒弃强制引流的短视行为。更重要的是，商家自身应树立正确的经营理念，将消费者权益作为企业发展的根基，尊重用户的自主选择权和信息安全感。</p><p style=\"text-indent: 2em;\"><strong>二维码本应是连接商家与消费者的便捷桥梁，而非侵犯消费者权益的“拦路石”。</strong>牢牢守住消费者权益保护底线，彻底斩断强制“圈粉码”的利益链条，才能让便民工具真正服务于民，构建起公平、诚信、安全的消费环境。</p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052523960,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "41",
-      "newsSourceName": "北京青年报",
-      "newsSummary": "牢牢守住消费者权益保护底线，彻底斩断强制“圈粉码”的利益链条。",
-      "newsTags": "",
-      "newsTitle": "对强制“圈粉码”说不 让便民码回归便民本质",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 1,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-30 14:57:44",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007572270",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 1,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/4b4bf850b1324bd79f7ce5572f68f64c.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/44a8790930b04b989439b33433980921.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 1,
-        "sharePosterStyle": 1,
-        "shareSummary": "牢牢守住消费者权益保护底线，彻底斩断强制“圈粉码”的利益链条。",
-        "shareTitle": "对强制“圈粉码”说不 让便民码回归便民本质",
-        "shareUrl": "https://www.peopleapp.com/column/30052523960-500007572270"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 27362,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "13",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/5aeb847861f94690b81eb2db11eb3786.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 239,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7fed41c59afc4e53a15feeae122831f0.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 246,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/88cce879c0b2494ca8e4a70a5c0a188c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 227,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7c7008cf7d5046e49e29f69a6af4064c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 253,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "韩  博"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "873*582",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/5317341c8aa24f55bcaf8d2ec974b8d2.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782770375000",
-      "fullColumnImgUrls": [
-        {
-          "height": 582,
-          "landscape": 1,
-          "size": 434362,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/5317341c8aa24f55bcaf8d2ec974b8d2.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 873
-        }
-      ],
-      "keyArticle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsTitle": "正确政绩观，当“大处着眼”“小处着手”",
-      "objectId": "30052522838",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782800356000",
-      "readFlag": 0,
-      "relAskInfos": [],
-      "relId": 500007572935,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "人民日报",
-      "sourceId": "2",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 239,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/5aeb847861f94690b81eb2db11eb3786.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 13,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/5aeb847861f94690b81eb2db11eb3786.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 239,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7fed41c59afc4e53a15feeae122831f0.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 246,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/88cce879c0b2494ca8e4a70a5c0a188c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 227,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7c7008cf7d5046e49e29f69a6af4064c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 253,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "韩  博"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 00:00:00",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 582,
-          "landscape": 1,
-          "size": 434362,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/5317341c8aa24f55bcaf8d2ec974b8d2.png",
-          "weight": 873
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": true,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 1,
-      "leaderArticle": 1,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\"><strong>原标题：大处着眼与小处着手（金台潮声·政绩观系列谈）</strong></p><p>　　习近平总书记深刻指出：“坚持高质量发展要成为领导干部政绩观的重要内容”“决不能再回到简单以国内生产总值增长率论英雄的老路上去，决不能再回到以破坏环境为代价搞所谓发展的做法上去，更不能再回到粗放式发展的模式上去”。</p><p>　　然而回望过去，一些地方长期习惯于走粗放扩张、低效发展的老路。究其根源，政绩观偏差的表现形式主要有二：一是“只顾眼前”，埋头于事务性工作，缺少全局意识和长远眼光，东一榔头西一棒；二是“大而无当”——战略口号震天响，却落不到精准的切口上，政策悬在半空中。前者缺的是“大处着眼”的宏观视野，后者缺的是“小处着手”的务实精神。鉴于此，政绩观纠偏的方向，就在于把握“大处着眼”与“小处着手”的辩证统一。</p><p>　　正确政绩观，当有“大处着眼”的格局。格局之大，大在跳出局部看全局，大在超越当下看长远。</p><p>　　湖北黄冈遗爱湖，曾是夏季蓝藻泛滥、异味刺鼻的“城市伤疤”，其治理连续两轮被中央生态环保督察列为重点督办事项。治理难度大、易反复、投入持续，最考验地方发展定力。黄冈的选择是：不搞短期“面子工程”，历届班子一茬接着一茬干，完成截污、清淤、水系连通等系统工程。</p><p>　　好看的景观是“显绩”，常年稳定的水质、群众天天享有的好环境，才是留给城市的“潜绩”。遗爱湖从“污水塘”蜕变为2025年长江大保护优秀实践案例，正是因为历任班子甘愿为“潜绩”打基础、利长远。而放眼全局，长江沿线还有多少“遗爱湖”正在经历同样的蝶变？这正是“大处着眼”的时代回响。</p><p>　　但是，格局再宏大，落不到实处便是空中楼阁。正确政绩观，还须“小处着手”。小处之“小”，并非格局之小，而是切口之准、落点之实。</p><p>　　云南普洱市孟连傣族拉祜族佤族自治县，近20年来深耕牛油果产业。最动人的，不只“全国80%牛油果产自孟连”这一数字，而是“334”的利益联结机制：农户以土地入股占30%，企业以技术、种苗入股占30%，国有管理公司、合作社与村集体共享40%。当地村民算过细账，管理提成、管护费、采果费加土地分红，四项收入一年合计超10万元。</p><p>　　“小处着手”不是做样子，而是通过“小切口”精准破题。一个分配机制，解决了“农民不会种、种了卖不掉”的难题，让“洋种子”扎根本土成为“土特产”。如今全县牛油果产业每年稳定吸纳3000人以上就近务工，入股并参与基地管护的村民年收入最高可达20万元，这才是高质量发展的“温度”。</p><p>　　可见，“大处着眼”与“小处着手”是同一行动的两个面向，二者统一于正确政绩观的内在逻辑。“十五五”时期是夯实基础、全面发力的关键时期。政绩观是把尺子，量出发展的成色。新征程上，用高质量发展标尺校准政绩“坐标”——抬头看路，观大势抓大事；低头拉车，积跬步至千里。二者不可偏废，方能交出一份不负时代、不负人民的合格答卷。</p><p>　　<span style=\"color: rgb(165, 165, 165);\">（作者为云南省社会科学院研究员）</span></p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052522838,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "2",
-      "newsSourceName": "人民日报",
-      "newsSummary": "抬头看路，观大势抓大事；低头拉车，积跬步至千里。",
-      "newsTags": "",
-      "newsTitle": "正确政绩观，当“大处着眼”“小处着手”",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 0,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-30 14:19:16",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007572935",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 2,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/65669d2478e9422b9a25150559c57b88.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/5317341c8aa24f55bcaf8d2ec974b8d2.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 0,
-        "sharePosterStyle": 1,
-        "shareSummary": "抬头看路，观大势抓大事；低头拉车，积跬步至千里。",
-        "shareTitle": "正确政绩观，当“大处着眼”“小处着手”",
-        "shareUrl": "https://www.peopleapp.com/column/30052522838-500007572935"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 442908,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/066e5a41d54243408af253e78ad6c62d.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/e518dca57b144c1da54597e9d7e0e2fd.mp3",
           "defaultMultiple": "1.0",
           "duration": 175,
           "openMultipleAdjustment": 1,
@@ -971,7 +264,16 @@
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/08cad133f6dc4899b2985198c9845f82.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/8cc1beac95fc408b93e31b9cda26bd57.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 182,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/8d6d5d60e6d2485ab93de48504f318a0.mp3",
           "defaultMultiple": "1.0",
           "duration": 167,
           "openMultipleAdjustment": 1,
@@ -980,22 +282,13 @@
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/5c68e52f4e9b49a8addbf943e7124ff9.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/59c92c51cf9d46f1b70558ed7f09590d.mp3",
           "defaultMultiple": "1.0",
           "duration": 185,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/0c2d72d8c40b4070a801715bb8a1410c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 182,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
         }
       ],
       "authorList": [
@@ -1006,17 +299,17 @@
       "channelId": 2003,
       "commentInfo": null,
       "corner": "",
-      "coverSize": "1700*1133",
+      "coverSize": "1024*683",
       "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/d3f5e22bec49499abeadeb9e0017db97.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782789281000",
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/f7cb4ef310294c7cbf0ee182ad0713fd.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782821591000",
       "fullColumnImgUrls": [
         {
-          "height": 1133,
+          "height": 683,
           "landscape": 1,
-          "size": 107366,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/d3f5e22bec49499abeadeb9e0017db97.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 1700
+          "size": 69010,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/f7cb4ef310294c7cbf0ee182ad0713fd.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 1024
         }
       ],
       "keyArticle": 0,
@@ -1026,14 +319,14 @@
       "newTags": "",
       "newsSummary": "“配料表焦虑”是认知偏差、营销失范、监管短板交织的结果。",
       "newsTitle": "如何不被“配料表焦虑”裹挟？",
-      "objectId": "30052525282",
+      "objectId": "30052530332",
       "objectType": "8",
       "openAudio": 1,
       "positionType": 1,
-      "publishTime": "1782798745000",
+      "publishTime": "1782821981000",
       "readFlag": 1,
       "relAskInfos": [],
-      "relId": 500007572619,
+      "relId": 500007574173,
       "relObjectId": "2003",
       "relType": 1,
       "rmhInfo": null,
@@ -1053,15 +346,15 @@
         "openMultipleAdjustment": 1,
         "type": 3,
         "voiceDuration": 175,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/066e5a41d54243408af253e78ad6c62d.mp3"
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/e518dca57b144c1da54597e9d7e0e2fd.mp3"
       }
     },
     "detail": {
       "activityInfos": [],
-      "appstyle": 26,
+      "appstyle": 13,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/066e5a41d54243408af253e78ad6c62d.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/e518dca57b144c1da54597e9d7e0e2fd.mp3",
           "defaultMultiple": "1.0",
           "duration": 175,
           "openMultipleAdjustment": 1,
@@ -1070,7 +363,16 @@
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/08cad133f6dc4899b2985198c9845f82.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/8cc1beac95fc408b93e31b9cda26bd57.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 182,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/8d6d5d60e6d2485ab93de48504f318a0.mp3",
           "defaultMultiple": "1.0",
           "duration": 167,
           "openMultipleAdjustment": 1,
@@ -1079,22 +381,13 @@
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/5c68e52f4e9b49a8addbf943e7124ff9.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/59c92c51cf9d46f1b70558ed7f09590d.mp3",
           "defaultMultiple": "1.0",
           "duration": 185,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/0c2d72d8c40b4070a801715bb8a1410c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 182,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
         }
       ],
       "authorList": [
@@ -1105,17 +398,17 @@
       "bestNoticer": 1,
       "commentDisplay": 1,
       "currentNum": null,
-      "editorName": "郑晓宇",
+      "editorName": "白冰",
       "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 13:52:25",
+      "firstPublishTime": "2026-06-30 20:19:41",
       "fullColumnImgUrls": [
         {
           "format": null,
-          "height": 1133,
+          "height": 683,
           "landscape": 1,
-          "size": 107366,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/d3f5e22bec49499abeadeb9e0017db97.jpg",
-          "weight": 1700
+          "size": 69010,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/f7cb4ef310294c7cbf0ee182ad0713fd.jpg",
+          "weight": 1024
         }
       ],
       "hasPopUp": null,
@@ -1130,10 +423,10 @@
       "newIntroduction": "",
       "newLinkObject": null,
       "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">不少消费者选购食品时认为“配料表越短，食品越健康”。食品领域相关专家提醒，食品安全与配料表长短无关，消费者需理性甄别部分营销与伪科普内容，警惕被刻意催生的“配料表焦虑”。（见6月25日《中国消费者报》）</p><p style=\"text-indent: 2em;\">当前，一些消费者越来越关注配料表，偏好“配料干净”“零添加”的食品。但事实上，配料表看起来“干净”的食品，有时可能并不值得信赖。据市场监管部门多轮抽检结果，<strong>多款主打清洁标签的食品存在标签造假、成分隐瞒问题；部分产品添加剂含量合规却虚标“零添加”；还有产品偷偷添加甜味剂、色素却不予公示。</strong></p><p style=\"text-indent: 2em;\">过度关注食品配料表长度，本质上是“配料表焦虑”。不少人将配料表长短作为评判食品优劣的标准，片面排斥食品添加剂，这容易让消费者被商家营销套路裹挟。对此，消<strong>费者应摒弃极端认知，结合食品品类特性与营养数据综合判断，以科学理性心态看待食品配料，告别跟风式消费焦虑。</strong></p><p style=\"text-indent: 2em;\"><strong>针对标签标示与实测情况不符等问题，须强化市场监管常态化抽检。</strong>监管部门应聚焦重点品类，加大线下商超、门店及线上电商产品抽检力度，严查虚标、隐瞒等违法违规行为。同时，建立违规企业台账、公示曝光和联合惩戒机制，以刚性监管压实企业责任。</p><p style=\"text-indent: 2em;\">同时，食品行业协会应牵头建立完善诚信经营自律体系，引导企业摒弃配料表文字游戏式竞争，将研发重心放在食品安全管控、营养优化、工艺升级上。<strong>推动食品行业告别标签营销内卷，形成重品质、重诚信、轻噱头的良性竞争氛围。</strong></p><p style=\"text-indent: 2em;\">此外，整治网络伪科普内容，净化食品消费舆论环境，也十分必要。职能部门应开展联合专项整治，下架“伪科普真带货”“给钱就说好话”式测评等不良内容，明确食品科普传播底线。督促平台优化审核机制，推送权威专业的科普内容，引导公众客观、科学看待食品配料。</p><p style=\"text-indent: 2em;\"><strong>“配料表焦虑”是认知偏差、营销失范、监管短板交织的结果。</strong>呵护食品安全与消费理性，依托的是科学完善的行业标准、严格规范的市场监管以及大众理性的消费观念，期待多方同心协力，共同破除商家畸形竞争和消费盲从心理，让“舌尖安全”少一些噱头炒作，多一些科学安心。</p>",
+      "newsContent": "<p style=\"text-indent: 2em;\">不少消费者选购食品时认为“配料表越短，食品越健康”。食品领域相关专家提醒，<strong>食品安全与配料表长短无关，消费者需理性甄别部分营销与伪科普内容，警惕被刻意催生的“配料表焦虑”</strong>。<span style=\"color: rgb(165, 165, 165);\">（见6月25日《中国消费者报》）</span></p><p style=\"text-indent: 2em;\">当前，一些消费者越来越关注配料表，偏好“配料干净”“零添加”的食品。但事实上，配料表看起来“干净”的食品，有时可能并不值得信赖。据市场监管部门多轮抽检结果，多款主打清洁标签的食品存在标签造假、成分隐瞒问题；部分产品添加剂含量合规却虚标“零添加”；还有产品偷偷添加甜味剂、色素却不予公示。</p><p style=\"text-indent: 2em;\"><strong>过度关注食品配料表长度，本质上是“配料表焦虑”。</strong>不少人将配料表长短作为评判食品优劣的标准，片面排斥食品添加剂，这容易让消费者被商家营销套路裹挟。对此，<strong>消费者应摒弃极端认知，结合食品品类特性与营养数据综合判断，以科学理性心态看待食品配料，告别跟风式消费焦虑。</strong></p><p style=\"text-indent: 2em;\">针对标签标示与实测情况不符等问题，须强化市场监管常态化抽检。监管部门应聚焦重点品类，加大线下商超、门店及线上电商产品抽检力度，严查虚标、隐瞒等违法违规行为。同时，建立违规企业台账、公示曝光和联合惩戒机制，以刚性监管压实企业责任。</p><p style=\"text-indent: 2em;\">同时，食品行业协会应牵头建立完善诚信经营自律体系，引导企业摒弃配料表文字游戏式竞争，将研发重心放在食品安全管控、营养优化、工艺升级上。推动食品行业告别标签营销内卷，形成重品质、重诚信、轻噱头的良性竞争氛围。</p><p style=\"text-indent: 2em;\">此外，整治网络伪科普内容，净化食品消费舆论环境，也十分必要。职能部门应开展联合专项整治，下架“伪科普真带货”“给钱就说好话”式测评等不良内容，明确食品科普传播底线。督促平台优化审核机制，推送权威专业的科普内容，引导公众客观、科学看待食品配料。</p><p style=\"text-indent: 2em;\"><strong>“配料表焦虑”是认知偏差、营销失范、监管短板交织的结果。</strong>呵护食品安全与消费理性，依托的是科学完善的行业标准、严格规范的市场监管以及大众理性的消费观念，期待多方同心协力，共同破除商家畸形竞争和消费盲从心理，让“舌尖安全”少一些噱头炒作，多一些科学安心。</p>",
       "newsContentBak": "{}",
       "newsDownTitle": "",
-      "newsId": 30052525282,
+      "newsId": 30052530332,
       "newsLinkUrl": "",
       "newsShortTitle": "",
       "newsSource": "41",
@@ -1152,10 +445,10 @@
       "photoList": [],
       "popUps": [],
       "preCommentFlag": 0,
-      "publishTime": "2026-06-30 13:52:25",
+      "publishTime": "2026-06-30 20:19:41",
       "reLInfo": {
         "channelId": 2003,
-        "relId": "500007572619",
+        "relId": "500007574173",
         "relObjectId": 2003,
         "relType": "1"
       },
@@ -1170,14 +463,14 @@
       "sceneId": "",
       "serials": null,
       "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/ea3ca7f62f9d43c5ac29649b0e21cf6e.png?x-oss-process=image/resize,w_120",
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/cf93d4a00dbb450f9b6cfcbf481ff589.png?x-oss-process=image/resize,w_120",
         "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/d3f5e22bec49499abeadeb9e0017db97.jpg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/f7cb4ef310294c7cbf0ee182ad0713fd.jpg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
         "sharePosterOpen": 1,
         "sharePosterStyle": 1,
         "shareSummary": "“配料表焦虑”是认知偏差、营销失范、监管短板交织的结果。",
         "shareTitle": "如何不被“配料表焦虑”裹挟？",
-        "shareUrl": "https://www.peopleapp.com/column/30052525282-500007572619"
+        "shareUrl": "https://www.peopleapp.com/column/30052530332-500007574173"
       },
       "shortDrama": null,
       "specialColumnId": null,
@@ -1189,7 +482,7 @@
       "traceInfo": "",
       "userInfo": null,
       "videoInfo": [],
-      "viewCount": 32125,
+      "viewCount": 169133,
       "visitorComment": 1,
       "voteInfo": null
     }
@@ -1197,65 +490,75 @@
   {
     "list_item": {
       "activityExt": null,
-      "appStyle": "26",
+      "appStyle": "4",
       "askInfo": null,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/8624ee42ef1d4d709b68186c05a0cfb1.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a98a5391c45d43ca816ebbc16522eeac.mp3",
           "defaultMultiple": "1.0",
-          "duration": 221,
+          "duration": 357,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/e98c8a4e30c9455fbd2838c035ebbf1e.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ab571508408d440e8b166b3940804d87.mp3",
           "defaultMultiple": "1.0",
-          "duration": 207,
+          "duration": 333,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7d483d20d36e42a0813dac43e81680f2.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/34fb77a142224c2c811a8413db6166a9.mp3",
           "defaultMultiple": "1.0",
-          "duration": 234,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/aaf63d24bd824a90b5c8b3641609181e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 227,
+          "duration": 369,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
+        },
         {
-          "authorName": "余双之"
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/197dc5a707ad49a39f1d2901af9656c4.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 378,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
         }
       ],
+      "authorList": [],
       "channelId": 2003,
       "commentInfo": null,
       "corner": "",
-      "coverSize": "900*600",
+      "coverSize": "887*591",
       "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782790939000",
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/012117c8777a4efa996758c3f23fd66c.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782818046000",
       "fullColumnImgUrls": [
         {
-          "height": 600,
+          "height": 591,
           "landscape": 1,
-          "size": 145898,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 900
+          "size": 175059,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/012117c8777a4efa996758c3f23fd66c.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 887
+        },
+        {
+          "height": 643,
+          "landscape": 1,
+          "size": 63396,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/65b41b08804c4840a03f01c3e4d6efb2.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 965
+        },
+        {
+          "height": 667,
+          "landscape": 1,
+          "size": 88460,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/ea4867a391e749d8a8432cfe52d78619.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 1000
         }
       ],
       "keyArticle": 0,
@@ -1263,16 +566,16 @@
       "liveInfo": null,
       "menuShow": 1,
       "newTags": "",
-      "newsSummary": "让科普回归严谨，让流量恪守良知，让敬畏深入人心。",
-      "newsTitle": "诋毁袁隆平换流量，良心安在？",
-      "objectId": "30052525509",
+      "newsSummary": "关键在于建立起系统的青训体系，以及大力推进草根足球项目。",
+      "newsTitle": "“足球荒漠”加拿大为何进步神速",
+      "objectId": "30052529795",
       "objectType": "8",
       "openAudio": 1,
       "positionType": 1,
-      "publishTime": "1782794287000",
+      "publishTime": "1782820930000",
       "readFlag": 0,
       "relAskInfos": [],
-      "relId": 500007572735,
+      "relId": 500007574163,
       "relObjectId": "2003",
       "relType": 1,
       "rmhInfo": null,
@@ -1280,7 +583,7 @@
       "shareInfo": null,
       "shortDrama": null,
       "slideShows": [],
-      "source": "人民日报客户端",
+      "source": "新华社",
       "sourceId": "41",
       "tagIds": [],
       "topicWatchCover": null,
@@ -1291,70 +594,82 @@
         "defaultMultiple": "1.0",
         "openMultipleAdjustment": 1,
         "type": 3,
-        "voiceDuration": 221,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/8624ee42ef1d4d709b68186c05a0cfb1.mp3"
+        "voiceDuration": 357,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a98a5391c45d43ca816ebbc16522eeac.mp3"
       }
     },
     "detail": {
       "activityInfos": [],
-      "appstyle": 26,
+      "appstyle": 4,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/8624ee42ef1d4d709b68186c05a0cfb1.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a98a5391c45d43ca816ebbc16522eeac.mp3",
           "defaultMultiple": "1.0",
-          "duration": 221,
+          "duration": 357,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/e98c8a4e30c9455fbd2838c035ebbf1e.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ab571508408d440e8b166b3940804d87.mp3",
           "defaultMultiple": "1.0",
-          "duration": 207,
+          "duration": 333,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7d483d20d36e42a0813dac43e81680f2.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/34fb77a142224c2c811a8413db6166a9.mp3",
           "defaultMultiple": "1.0",
-          "duration": 234,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/aaf63d24bd824a90b5c8b3641609181e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 227,
+          "duration": 369,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
+        },
         {
-          "authorName": "余双之"
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/197dc5a707ad49a39f1d2901af9656c4.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 378,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
         }
       ],
+      "authorList": [],
       "bestNoticer": 1,
       "commentDisplay": 1,
       "currentNum": null,
-      "editorName": "罗新烨",
+      "editorName": "孙溪",
       "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 12:38:07",
+      "firstPublishTime": "2026-06-30 19:43:53",
       "fullColumnImgUrls": [
         {
           "format": null,
-          "height": 600,
+          "height": 591,
           "landscape": 1,
-          "size": 145898,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg",
-          "weight": 900
+          "size": 175059,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/012117c8777a4efa996758c3f23fd66c.png",
+          "weight": 887
+        },
+        {
+          "format": null,
+          "height": 643,
+          "landscape": 1,
+          "size": 63396,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/65b41b08804c4840a03f01c3e4d6efb2.png",
+          "weight": 965
+        },
+        {
+          "format": null,
+          "height": 667,
+          "landscape": 1,
+          "size": 88460,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/ea4867a391e749d8a8432cfe52d78619.png",
+          "weight": 1000
         }
       ],
       "hasPopUp": null,
@@ -1369,17 +684,17 @@
       "newIntroduction": "",
       "newLinkObject": null,
       "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">继账号被无限期封禁后，坐拥超过200万粉丝的网红杨某日前被依法刑拘。此前，这位打着“保卫老种子”旗号的农业网红，公然将“三系杂交技术”污称为“变态杂交”“病态杂交”，将“雄性不育”曲解为“怕吃完像骡子一样不生育”，贬低杂交水稻成果、诋毁袁隆平院士声誉，造成恶劣社会影响。</p><p style=\"text-indent: 2em;\">对于杨某的奇谈怪论，有网友愤然批评：“真是吃饱了撑的！”诚哉斯言。袁隆平院士穷尽一生致力于杂交水稻研究，研发出“三系法”籼型杂交水稻，又攻克“两系法”杂交水稻，为确保我国粮食安全、造福世界粮食供给作出了卓越贡献。如今，<strong>个别人吃饱了饭，却忘了粮种之恩，良心何在？对受人敬仰的国之脊梁大放厥词、恶意攻击，不仅触碰法律底线，也严重伤害公众情感。</strong></p><p style=\"justify-content: center;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/de21cbddfd8b42778cfe5ecf897b6806.png\" class=\"331361820\" style=\"max-width:100%\"></p><p style=\"text-indent: 2em;\">作为号称有一定专业背景的农业博主，杨某故意打着“保卫老种子”的幌子，大肆攻击杂交水稻育种技术，性质更为恶劣。<strong>他在直播中断章取义、望文生义，将严肃的科学问题娱乐化、妖魔化，利用信息不对称捏造争议性话题，不仅极具迷惑性，更易引发公众恐慌，扰乱社会经济秩序。</strong></p><p style=\"text-indent: 2em;\">杨某此举居心何在？答案无非四个字：流量变现。据披露，其账号橱窗销量达12万单，多款打着“老品种”旗号的产品售价不菲。正如警方通报所称，其行为是“为博取流量”。被刑拘前，杨某在直播间扬言“大不了就进去呗，我又不是没进去过”。<strong>可见他并非不知轻重好歹，而是明知信口开河、造谣抹黑的严重后果，却在利益的驱使下毫无敬畏。如今付出法律代价，实属咎由自取。</strong></p><p style=\"text-indent: 2em;\">值得追问的，还有平台的责任。杨某的账号粉丝量超过200万，其诋毁育种技术的视频能在平台长期存在并获得推荐，审核机制是否形同虚设？平台对农业、医疗等专业领域的内容，是否建立了足够严谨的核查机制？对打着“科普”旗号实则制造争议、造谣抹黑的账号，日常监管是否到位？封禁账号是事后补救，更需关口前移，在源头切断谣言的传播链。<strong>平台不能只做流量的收割者，更应做好内容的守门人。</strong></p><p style=\"text-indent: 2em;\"><strong>农业科普不容信口开河，法治社会岂容诋毁功勋。</strong><strong>敬重为国为民作出卓越贡献的科学家，是不容撼动的伦理底线，也是社会应有的价值坐标。</strong>谁挑战红线，谁就必遭法律严惩，谁冒犯大众情感，谁就会被千夫所指。这种以诋毁人民科学家来换取流量的“生意经”，最终只会沦为一场自取其辱的闹剧。</p><p style=\"text-indent: 2em;\">粮食安全是“国之大者”，“把饭碗牢牢端在自己手里”离不开科学指引，也离不开对科研先驱的敬重。网红作为公众意见的表达者之一，应成为知识的传播者而非谣言的制造机。<strong>让科普回归严谨，让流量恪守良知，让敬畏深入人心，这是健康社会应有的底线，也是对“谁来养活中国”这个问题最响亮的回答。</strong></p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">策划：岳小乔、雒健晴</span></p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">海报：刘珂君</span></p>",
+      "newsContent": "<p style=\"text-indent: 2em; text-align: justify;\">加拿大温哥华当地时间晚上8点半，太阳仍未落山。夕阳铺满休·博伊德社区足球场，一群孩子在绿茵之上奔跑，足球在他们脚下轻快滚动，清脆的笑闹和传球的叫喊声时不时传来。挥洒汗水之余，他们一直在谈论美加墨世界杯加拿大队的比赛。</p><p style=\"text-indent: 2em; text-align: justify;\">首场1/16决赛中，加拿大队球员欧斯塔奇欧在补时阶段打进远射，帮助球队以1<strong style=\"font-size: 16px; white-space: normal; caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;PingFang SC&quot;, &quot;Lantinghei SC&quot;, &quot;Microsoft YaHei&quot;, arial, 宋体, sans-serif, tahoma;\">∶</strong>0“绝杀”南非队，队史首次晋级世界杯16强。</p><p style=\"justify-content: center;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/15c4a82c78db4966a515110e7cb0abf9.jpeg\" class=\"331371839\" style=\"max-width:100%\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; text-indent: 36px; text-wrap-mode: wrap;\">6月28日，加拿大队球员欧斯塔奇欧（右四）在对阵南非队时破门得分。新华社记者 白雪飞 摄</span></p><p style=\"text-indent: 2em; text-align: justify;\">“加拿大队的晋级，既在意料之外，也在情理之中。”63岁的周秋名在温哥华居住多年，经常在休·博伊德社区足球场运动、参加业余比赛，也教邻居家的孩子们踢球。“加拿大最受关注和喜爱的项目是冰球。但近些年来，踢足球的孩子明显变多了。”他指着眼前的8块足球场地对记者说，这些场地从早到晚一直都有青少年足球训练和业余足球比赛，场边经常围满家长和足球爱好者。</p><p style=\"text-indent: 2em; text-align: justify;\">在加拿大，足球曾经被视为边缘运动，处于相对弱势地位。本届世界杯前，他们曾于1986年和2022年参加过两次世界杯，但六战皆负。2013年至2015年，加拿大队的国际足联排名长期在百名开外，这期间的第122名更是创下历史低谷。十几年过去，如今他们的排名大幅上升，并逐渐稳定在30名左右。在“东道主”身份加持下，他们有望在本届世界杯走得更远。</p><p style=\"justify-content: center;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/53e217e142c942efae3156713d3904fa.jpeg\" class=\"331371846\" style=\"max-width:100%\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; text-indent: 36px; text-wrap-mode: wrap;\">2022年11月23日，卡塔尔世界杯足球赛F组比赛中，比利时队以1<strong style=\"font-size: 16px; white-space: normal; caret-color: rgb(51, 51, 51); color: rgb(51, 51, 51); font-family: &quot;PingFang SC&quot;, &quot;Lantinghei SC&quot;, &quot;Microsoft YaHei&quot;, arial, 宋体, sans-serif, tahoma;\">∶</strong>0战胜加拿大队。加拿大队守门员米兰·博扬在比赛后。新华社记者 韩岩 摄</span></p><p style=\"text-indent: 2em; text-align: justify;\">在周秋名和球场上的基层足球教练看来，加拿大竞技足球成绩突飞猛进，是长期积淀的结果，关键在于建立起系统的青训体系，以及大力推进草根足球项目。世界杯比赛期间，加拿大队主教练杰西·马什也多次在新闻发布会上强调，各方正在采取多种措施，将足球运动发展的基础打牢。“我们正在为未来而努力，为更多年轻人喜欢上足球而努力。”</p><p style=\"justify-content: center;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/febde76c559e475b9685a20486af16cd.jpeg\" class=\"331371855\" style=\"max-width:100%\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; text-indent: 36px; text-wrap-mode: wrap;\">6月27日，加拿大队球员阿方索·戴维斯（左）与主教练杰西·马什出席新闻发布会。新华社记者 毛思倩 摄</span></p><figure><p style=\"text-indent: 2em; text-align: justify;\"><span style=\"text-indent: 2em;\">当地青训举措中的“精英培养计划”便是推手之一。该项目旨在助力美国职业足球大联盟旗下加拿大青训学院的球员培养工作，一方面输出统一的战术理念与球队文化，另一方面也跟踪评估球员成长情况，为后续精英培养计划选拔人才、输送至国家队打下基础。借助该项目，美职联青训学院的教练、工作人员与球员得以和加拿大男足教练组共事，充分理解国家级精英培养计划的理念以及国家队的技战术打法。与此同时，国家队教练组也得以深入了解各美职联青训学院的运营模式与训练条件。</span></p></figure><p style=\"text-indent: 2em; text-align: justify;\">与此同时，当地着力推进校园足球，并且重视校园足球与青训机构和社区的联动。加拿大足球协会官员萨拉·麦康纳吉在接受媒体采访时介绍，他们向全国各地学校分发战术手册，对学校老师进行培训，提供符合标准的教案和器材，创造条件让幼儿园至九年级的学生参与足球运动，并帮助学校和社区俱乐部建立联系。“来自各方的支持，让年轻人更加近距离接触足球。这有助于激励下一代球员、球迷和未来这项运动的领导者。”麦康纳吉说。</p><p style=\"text-indent: 2em; text-align: justify;\">另外，加拿大草根足球近年来也蓬勃开展。各地遵循名为“加拿大足球发展路径”的长期规划，鼓励民众以球员、教练员、裁判员和志愿者等多种身份参与到社区俱乐部和基层比赛中。“我参加了当地的50岁以上及60岁以上组业余足球联赛。这类比赛虽然与提升加拿大国家队足球水平没有直接关联，但当地通过多种形式营造良好足球氛围，有助于足球人才的发掘和成长。”周秋名说。</p><p style=\"justify-content: center;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/ac638f9a89204539bd6ed92e80f6fa60.jpeg\" class=\"331371874\" style=\"max-width:100%\"></p><p class=\"edit_img_input\" style=\"max-width: 100%;font-family: Source Han Sans CN;font-size: 18px;font-weight: normal;letter-spacing: 0px;color: #999999;position: relative;margin: auto;height: auto;line-height: 18px;min-height: 18px;border-left: 2px solid #B71D26;padding:2px;padding-left:6px;text-align: left;box-sizing: border-box;\"><span style=\"text-align: justify; text-indent: 36px; text-wrap-mode: wrap;\">当地足球爱好者在加拿大温哥华的休·博伊德社区足球场踢球。新华社记者 张武岳 摄</span></p><figure></figure><figure><p style=\"text-indent: 2em; text-align: justify;\"><span style=\"text-indent: 2em;\">记者采访过程中了解到，社区俱乐部大多与省级半职业联赛及加拿大超级联赛的俱乐部有直接联系，从业余到专业的上升路径相对通畅。从2025年起，加拿大足协还推行“俱乐部+”计划，为各级足球俱乐部提供发展所需的资源，帮助俱乐部拓展业务、融入社区，也着力将世界杯带来的足球热潮转化为持久的基层参与热情。</span></p></figure><p style=\"text-indent: 2em; text-align: justify;\">“我们重视草根足球、重视青训，很多球员从基层训练机构和学校中脱颖而出，成为职业运动员。那些喜欢足球的孩子，真正得到了通过足球改变人生的机会。”马什说，“足球的意义也远不止于胜负，它能凝聚人心、促进交流、弘扬团队精神。”</p>",
       "newsContentBak": "{}",
       "newsDownTitle": "",
-      "newsId": 30052525509,
+      "newsId": 30052529795,
       "newsLinkUrl": "",
       "newsShortTitle": "",
       "newsSource": "41",
-      "newsSourceName": "人民日报客户端",
-      "newsSummary": "让科普回归严谨，让流量恪守良知，让敬畏深入人心。",
+      "newsSourceName": "新华社",
+      "newsSummary": "关键在于建立起系统的青训体系，以及大力推进草根足球项目。",
       "newsTags": "",
-      "newsTitle": "诋毁袁隆平换流量，良心安在？",
+      "newsTitle": "“足球荒漠”加拿大为何进步神速",
       "newsType": 8,
       "oldNewsId": "",
       "openAudio": 1,
@@ -1390,19 +705,68 @@
       "pcFirstFrameImageUri": "",
       "photoList": [
         {
-          "height": 2560,
+          "height": 591,
           "picDesc": "",
-          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/de21cbddfd8b42778cfe5ecf897b6806.png",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/d77f8ea0230c4ccba524d7c91364fbda.jpg",
+          "size": 244769,
+          "width": 1000
+        },
+        {
+          "height": 750,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/fa8f0c11f16e46c0a282828622bdd43d.jpg",
+          "size": 132257,
+          "width": 1000
+        },
+        {
+          "height": 643,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/05e9fe3a198247158e1ed12549ef4520.jpg",
+          "size": 77936,
+          "width": 1000
+        },
+        {
+          "height": 667,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/bdc3d671389a4bc9bd748ab687d7f27a.jpg",
+          "size": 116049,
+          "width": 1000
+        },
+        {
+          "height": 591,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/15c4a82c78db4966a515110e7cb0abf9.jpeg",
           "size": 0,
-          "width": 1440
+          "width": 1000
+        },
+        {
+          "height": 643,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/53e217e142c942efae3156713d3904fa.jpeg",
+          "size": 0,
+          "width": 1000
+        },
+        {
+          "height": 667,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/febde76c559e475b9685a20486af16cd.jpeg",
+          "size": 0,
+          "width": 1000
+        },
+        {
+          "height": 750,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/ac638f9a89204539bd6ed92e80f6fa60.jpeg",
+          "size": 0,
+          "width": 1000
         }
       ],
       "popUps": [],
       "preCommentFlag": 0,
-      "publishTime": "2026-06-30 12:38:07",
+      "publishTime": "2026-06-30 20:02:10",
       "reLInfo": {
         "channelId": 2003,
-        "relId": "500007572735",
+        "relId": "500007574163",
         "relObjectId": 2003,
         "relType": "1"
       },
@@ -1417,14 +781,14 @@
       "sceneId": "",
       "serials": null,
       "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/8df9eb512c814d78a2361a7383137d84.png?x-oss-process=image/resize,w_120",
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/4ac46325f2554525a1aad099696ecdc9.png?x-oss-process=image/resize,w_120",
         "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/012117c8777a4efa996758c3f23fd66c.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
         "sharePosterOpen": 1,
         "sharePosterStyle": 1,
-        "shareSummary": "让科普回归严谨，让流量恪守良知，让敬畏深入人心。",
-        "shareTitle": "诋毁袁隆平换流量，良心安在？",
-        "shareUrl": "https://www.peopleapp.com/column/30052525509-500007572735"
+        "shareSummary": "关键在于建立起系统的青训体系，以及大力推进草根足球项目。",
+        "shareTitle": "“足球荒漠”加拿大为何进步神速",
+        "shareUrl": "https://www.peopleapp.com/column/30052529795-500007574163"
       },
       "shortDrama": null,
       "specialColumnId": null,
@@ -1436,7 +800,7 @@
       "traceInfo": "",
       "userInfo": null,
       "videoInfo": [],
-      "viewCount": 264212,
+      "viewCount": 346297,
       "visitorComment": 1,
       "voteInfo": null
     }
@@ -1448,286 +812,61 @@
       "askInfo": null,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/4c54329fa2484078a7d2642bf1926f2e.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/339bb82a30de43fe983eddbbd5863f25.mp3",
           "defaultMultiple": "1.0",
-          "duration": 98,
+          "duration": 197,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/b8d3d3d7fac6419680f389a4ab821f44.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/81415976e8164fd2b1adefa05bf87883.mp3",
           "defaultMultiple": "1.0",
-          "duration": 101,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/4ab33bfedf074c708bc139cad2098ffd.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 92,
+          "duration": 186,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/6cb6ae002302461cb36c2d394c68d32d.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/de410ea8db19467bb981001ecbcc3224.mp3",
           "defaultMultiple": "1.0",
-          "duration": 104,
+          "duration": 204,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/317ab4e4feff4d6da32de13fed1737e5.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 207,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhida"
         }
       ],
-      "authorList": [],
+      "authorList": [
+        {
+          "authorName": "鲁昱晖"
+        }
+      ],
       "channelId": 2003,
       "commentInfo": null,
       "corner": "",
-      "coverSize": "619*413",
+      "coverSize": "911*602",
       "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/4840fb78c4b54966a3cc777f7397e875.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782770369000",
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/4db81964dc824d8f88f96370f37355ef.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782812381000",
       "fullColumnImgUrls": [
         {
-          "height": 413,
+          "height": 602,
           "landscape": 1,
-          "size": 430330,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/4840fb78c4b54966a3cc777f7397e875.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 619
-        }
-      ],
-      "keyArticle": 0,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsTitle": "“假期急报”不应成常态",
-      "objectId": "30052522802",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782789632000",
-      "readFlag": 0,
-      "relAskInfos": [],
-      "relId": 500007572444,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "人民日报",
-      "sourceId": "2",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 98,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/4c54329fa2484078a7d2642bf1926f2e.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 26,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/4c54329fa2484078a7d2642bf1926f2e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 98,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/b8d3d3d7fac6419680f389a4ab821f44.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 101,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/4ab33bfedf074c708bc139cad2098ffd.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 92,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/6cb6ae002302461cb36c2d394c68d32d.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 104,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 00:00:00",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 413,
-          "landscape": 1,
-          "size": 430330,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/4840fb78c4b54966a3cc777f7397e875.png",
-          "weight": 619
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": true,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-align: left; text-indent: 2em;\">据媒体报道，每逢节假日，一些基层干部便陷入无奈：上级单位在节前突击下发通知，要求假期结束后第一天就上报各种材料。本该休整蓄力的法定假日，成了熬夜赶工、仓促迎检的加班季。</p><p style=\"text-align: left; text-indent: 2em;\">毋庸置疑，节假日许多部门确实需要有人在岗值班，以维持部门职能运转、守护经济和社会秩序，应对突发情况。急难险重任务面前，加班加点完成是担当任事的生动体现。但是，哪些工作内容属于急难险重任务、哪些岗位需应急值守，应当予以明确。</p><p style=\"text-align: left; text-indent: 2em;\">节前突击摊派任务，假期强令全员在岗加班，会让基层干部疲于应付，消解干事热情。以调研类任务为例，节假日期间企业休息、群众放假，基层干部很难如期完成走访摸排，最终只能闭门造车、借鉴过往材料，交上去一份“纸上数据”。可见，把“假期急报”搞成惯例，会导致基层负担加重、滋生形式主义，也是一种官僚主义。</p><p style=\"text-align: left; text-indent: 2em;\">节假日是调整状态、积蓄力量，更好履职尽责的必要保障。尊重工作开展的客观实际、尊重任务推进的内在规律、尊重节假日期间的休息权益，前置谋划工作进度，科学统筹时间分配，清除不合理的加班负担，一定能让广大基层干部更好卸下包袱，服务群众。</p><p style=\"text-align: left; text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">（<span style=\"text-align: justify; text-wrap-mode: wrap;\">贵州黄平县&nbsp;&nbsp;潘江平</span>）</span></p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052522802,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "2",
-      "newsSourceName": "人民日报",
-      "newsSummary": "节假日是调整状态、积蓄力量，更好履职尽责的必要保障。",
-      "newsTags": "",
-      "newsTitle": "“假期急报”不应成常态",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 0,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-30 11:20:32",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007572444",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 2,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/891e772be3214cad8a245ed2b25c3701.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/4840fb78c4b54966a3cc777f7397e875.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 0,
-        "sharePosterStyle": 1,
-        "shareSummary": "节假日是调整状态、积蓄力量，更好履职尽责的必要保障。",
-        "shareTitle": "“假期急报”不应成常态",
-        "shareUrl": "https://www.peopleapp.com/column/30052522802-500007572444"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 400090,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "13",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/2c2f0fded87b42a99444cfd867eb744c.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 98,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/9f7fb4d518a84892bea399468fa9108e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 100,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/71c4209aa53944fb880de347a095b850.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 92,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7c7e391dddfd4511aca6e19ff3aef7d3.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 102,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "634*423",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/86cbc90f6c9847e2b7aa972b69028520.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782789524000",
-      "fullColumnImgUrls": [
-        {
-          "height": 423,
-          "landscape": 1,
-          "size": 36099,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/86cbc90f6c9847e2b7aa972b69028520.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 634
+          "size": 374375,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/4db81964dc824d8f88f96370f37355ef.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 911
         }
       ],
       "keyArticle": 0,
@@ -1735,16 +874,16 @@
       "liveInfo": null,
       "menuShow": 1,
       "newTags": "",
-      "newsSummary": "解决这一问题，关键在干部沉下去、治理通起来、信任建起来。",
-      "newsTitle": "“接诉即办”更要“类案根治”",
-      "objectId": "30052525318",
+      "newsSummary": "怀旧经济的走红，本质上是年轻人的一次“心灵返乡”。",
+      "newsTitle": "怀旧经济要有新体验",
+      "objectId": "30052528927",
       "objectType": "8",
       "openAudio": 1,
       "positionType": 1,
-      "publishTime": "1782789524000",
+      "publishTime": "1782814463000",
       "readFlag": 1,
       "relAskInfos": [],
-      "relId": 500007572627,
+      "relId": 500007573928,
       "relObjectId": "2003",
       "relType": 1,
       "rmhInfo": null,
@@ -1752,7 +891,7 @@
       "shareInfo": null,
       "shortDrama": null,
       "slideShows": [],
-      "source": "人民日报",
+      "source": "经济日报",
       "sourceId": "41",
       "tagIds": [],
       "topicWatchCover": null,
@@ -1763,66 +902,70 @@
         "defaultMultiple": "1.0",
         "openMultipleAdjustment": 1,
         "type": 3,
-        "voiceDuration": 98,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/2c2f0fded87b42a99444cfd867eb744c.mp3"
+        "voiceDuration": 197,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/339bb82a30de43fe983eddbbd5863f25.mp3"
       }
     },
     "detail": {
       "activityInfos": [],
-      "appstyle": 13,
+      "appstyle": 26,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/2c2f0fded87b42a99444cfd867eb744c.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/339bb82a30de43fe983eddbbd5863f25.mp3",
           "defaultMultiple": "1.0",
-          "duration": 98,
+          "duration": 197,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/9f7fb4d518a84892bea399468fa9108e.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/81415976e8164fd2b1adefa05bf87883.mp3",
           "defaultMultiple": "1.0",
-          "duration": 100,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/71c4209aa53944fb880de347a095b850.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 92,
+          "duration": 186,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/7c7e391dddfd4511aca6e19ff3aef7d3.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/de410ea8db19467bb981001ecbcc3224.mp3",
           "defaultMultiple": "1.0",
-          "duration": 102,
+          "duration": 204,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/317ab4e4feff4d6da32de13fed1737e5.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 207,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhida"
         }
       ],
-      "authorList": [],
+      "authorList": [
+        {
+          "authorName": "鲁昱晖"
+        }
+      ],
       "bestNoticer": 1,
       "commentDisplay": 1,
       "currentNum": null,
-      "editorName": "郑晓宇",
+      "editorName": "孙溪",
       "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 11:18:44",
+      "firstPublishTime": "2026-06-30 18:14:23",
       "fullColumnImgUrls": [
         {
           "format": null,
-          "height": 423,
+          "height": 602,
           "landscape": 1,
-          "size": 36099,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/86cbc90f6c9847e2b7aa972b69028520.jpg",
-          "weight": 634
+          "size": 374375,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/4db81964dc824d8f88f96370f37355ef.png",
+          "weight": 911
         }
       ],
       "hasPopUp": null,
@@ -1837,17 +980,17 @@
       "newIntroduction": "",
       "newLinkObject": null,
       "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\"><span style=\"text-indent: 2em;\">某地对近一年2万件市民热线内容进行分析，发现有不少是重复投诉件，比如一小区物业服务收费被投诉91次，某广场噪声扰民被反映62次。</span></p><p style=\"text-indent: 2em;\">经回访了解，重复的原因有二：反映无果、线下未动，只能不断打电话催办；认为单独反映不受重视，便呼吁多人多次拨打。两种情形，指向同一种症结：没把群众的烦心事真正放在心上。</p><p style=\"text-indent: 2em;\">解决这一问题，关键在干部沉下去、治理通起来、信任建起来。一方面，要压实责任，对群众反映问题及时回访、跟踪问效，力求件件有回音、事事有着落。比如，安徽出台专项文件，确立“首接负责制”“管行业管领域必须管群众诉求”等原则，确保处置不推诿、回访不走过场。</p><p style=\"text-indent: 2em;\">另一方面，要分析规律，从回应一个诉求延伸到解决一类问题，推动“类案根治”。北京以12345海量工单为数据富矿，建立“每月一题”工作机制，聚焦高频共性难点问题，让被动接诉升级为主动治理。可见，“接诉即办”只是起点，摸清规律、未雨绸缪，方能更好从根源上化解矛盾隐患。</p><p style=\"text-indent: 2em;\">线下的干群关系贴近了、治理的毛细血管畅通了，市民热线的“热度”自然会降下来，群众的满意度也才能升上去。</p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">（<span style=\"text-align: justify; text-indent: 36px; text-wrap-mode: wrap;\">四川内江市&nbsp;&nbsp;文国云</span>）</span></p>",
+      "newsContent": "<p style=\"text-indent: 2em; text-align: justify;\">近期，“父母的青春也很新潮”“故地重游，是为了接回自己”“你终于醒啦，现在是2000年一个普通的午后”等话题在短视频平台走热。从社交媒体的复古潮流，到老物件、千禧风、童年味的回归，一场关于怀旧的商业热潮席卷线上线下，成为消费市场上备受瞩目的新热点与新增量。</p><p style=\"text-indent: 2em; text-align: justify;\">怀旧，是一种个人情愫，也是承载时代记忆的社交货币。经典港剧、CCD相机、老式水果等鲜明的代际标识，让人们经由对岁月的回味与重现，联结成紧密的情感共同体，更从容地面对现实的种种不确定性。怀旧经济的走红，本质上是年轻人的一次“心灵返乡”。面对快节奏生活中的各类精神负压，玩童年游戏、触摸老物件、逛复古集市等方式，能以熟悉的体验为中介，搭建情感缓冲地，帮助人们为当下的疲惫寻找抚慰，完成轻量化疗愈。</p><p style=\"text-indent: 2em; text-align: justify;\">然而，热闹背后也隐藏着不容忽视的乱象。不少商家盲目追逐风口、扎堆效仿爆款，导致产品与服务的低质量问题频出、同质化现象严重。当越来越多的儿时记忆成为“钱包刺客”，“情怀无价”这块金字招牌将难以长久支撑好生意与好口碑。也需警惕，回忆，这份被珍视的美好，正在成为机械流水线上的复制品，正在被符号化、标签化。当老故事被反复兜售，人们从中能收获的感怀与触动也必然会随之走向平淡。长此以往，怀旧经济依赖的信任土壤与情感根基可能被逐渐消解。</p><p style=\"text-indent: 2em; text-align: justify;\"><strong>怀旧消费的本质绝非简单的“炒冷饭”，而是面向用户内心的真实需求，将昨日的美好印象转化为当下的生活养料。</strong>老式糕点的减糖新品备受欢迎、经典游戏的手游版本火爆出圈、美颜相机的复古滤镜广受好评，均表明怀旧消费需要将品质与体验放在首位，在产品及服务的创造性、适应性与实用性上下功夫，才能让回忆的情怀真正融入日常的肌理。</p><p style=\"text-indent: 2em; text-align: justify;\">此外，依托人工智能生成内容（AIGC）技术推动怀旧与文创、旅游、教育等产业深度融合，着力开发年代场景体验、传统技艺研学、城市记忆展览等“怀旧+”项目，也有助于让怀旧消费不止于单纯的“买买买”，而是指向更深层的文化感知、情感共鸣与价值传承。</p><p style=\"text-indent: 2em; text-align: justify;\">可以说，怀旧经济既映照着人们对过往的眷恋与对未来的期待，也折射出资本逻辑与个体需求之间的复杂博弈。<strong>唯有扎根现实土壤、守住情感本真、深耕文化内核、平衡商业价值，让怀旧兼具“旧时光的温度”与“新时代的活力”，这场消费浪潮才能真正成为创新市场模式、涵养集体认同、润泽大众心灵、赋能美好生活的温暖力量。</strong></p>",
       "newsContentBak": "{}",
       "newsDownTitle": "",
-      "newsId": 30052525318,
+      "newsId": 30052528927,
       "newsLinkUrl": "",
       "newsShortTitle": "",
       "newsSource": "41",
-      "newsSourceName": "人民日报",
-      "newsSummary": "解决这一问题，关键在干部沉下去、治理通起来、信任建起来。",
+      "newsSourceName": "经济日报",
+      "newsSummary": "怀旧经济的走红，本质上是年轻人的一次“心灵返乡”。",
       "newsTags": "",
-      "newsTitle": "“接诉即办”更要“类案根治”",
+      "newsTitle": "怀旧经济要有新体验",
       "newsType": 8,
       "oldNewsId": "",
       "openAudio": 1,
@@ -1859,10 +1002,10 @@
       "photoList": [],
       "popUps": [],
       "preCommentFlag": 0,
-      "publishTime": "2026-06-30 11:18:44",
+      "publishTime": "2026-06-30 18:14:23",
       "reLInfo": {
         "channelId": 2003,
-        "relId": "500007572627",
+        "relId": "500007573928",
         "relObjectId": 2003,
         "relType": "1"
       },
@@ -1877,14 +1020,14 @@
       "sceneId": "",
       "serials": null,
       "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/270bc5162f7c43349bdb096406c17ea2.png?x-oss-process=image/resize,w_120",
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/eecad97046aa4138bf32bcbf589d4a72.png?x-oss-process=image/resize,w_120",
         "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/86cbc90f6c9847e2b7aa972b69028520.jpg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/4db81964dc824d8f88f96370f37355ef.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
         "sharePosterOpen": 1,
         "sharePosterStyle": 1,
-        "shareSummary": "解决这一问题，关键在干部沉下去、治理通起来、信任建起来。",
-        "shareTitle": "“接诉即办”更要“类案根治”",
-        "shareUrl": "https://www.peopleapp.com/column/30052525318-500007572627"
+        "shareSummary": "怀旧经济的走红，本质上是年轻人的一次“心灵返乡”。",
+        "shareTitle": "怀旧经济要有新体验",
+        "shareUrl": "https://www.peopleapp.com/column/30052528927-500007573928"
       },
       "shortDrama": null,
       "specialColumnId": null,
@@ -1896,7 +1039,7 @@
       "traceInfo": "",
       "userInfo": null,
       "videoInfo": [],
-      "viewCount": 40186,
+      "viewCount": 190874,
       "visitorComment": 1,
       "voteInfo": null
     }
@@ -1908,78 +1051,77 @@
       "askInfo": null,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/38a6d38d797a44f7979e4fcc7e7dd889.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/f5b52fbf43f54d5aa6b3eb8541264d69.mp3",
           "defaultMultiple": "1.0",
-          "duration": 204,
+          "duration": 2810,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a8ba5897f4a84396be8629da6ac9e082.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ed43bfb148054d63893b886a6a63b488.mp3",
           "defaultMultiple": "1.0",
-          "duration": 193,
+          "duration": 2665,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a9b19be05b5746f3963baddf6809ebf7.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/5e3a90cfd0af4fdc8a094cd2aefebf81.mp3",
           "defaultMultiple": "1.0",
-          "duration": 217,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/11cbcf9b35874f318353659fd78b0c91.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 214,
+          "duration": 2919,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/08e7b1c9887b4b74a1764c99d781e951.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 2983,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
         }
       ],
       "authorList": [
         {
-          "authorName": "王东辉"
+          "authorName": "王慧敏"
         }
       ],
       "channelId": 2003,
       "commentInfo": null,
       "corner": "",
-      "coverSize": "698*466",
+      "coverSize": "150*100",
       "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/2233a7ca706944418e9fa3d2fdd6dc38.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782782665000",
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/a0b81f469a454317898220c335751ec8.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1782801686000",
       "fullColumnImgUrls": [
         {
-          "height": 466,
+          "height": 100,
           "landscape": 1,
-          "size": 592220,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/2233a7ca706944418e9fa3d2fdd6dc38.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 698
+          "size": 22632,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/a0b81f469a454317898220c335751ec8.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 150
         }
       ],
-      "keyArticle": 0,
+      "keyArticle": 1,
       "linkUrl": "",
       "liveInfo": null,
       "menuShow": 1,
       "newTags": "",
-      "newsSummary": "通道通，则产业兴、开放活。",
-      "newsTitle": "经济热点快评 | 这场展会里，有丝路合作的新机遇",
-      "objectId": "30052524071",
+      "newsTitle": "时代呼唤“大新闻观”",
+      "objectId": "30052526985",
       "objectType": "8",
       "openAudio": 1,
       "positionType": 1,
-      "publishTime": "1782788710000",
-      "readFlag": 1,
+      "publishTime": "1782812072000",
+      "readFlag": 0,
       "relAskInfos": [],
-      "relId": 500007572633,
+      "relId": 500007573768,
       "relObjectId": "2003",
       "relType": 1,
       "rmhInfo": null,
@@ -1987,8 +1129,8 @@
       "shareInfo": null,
       "shortDrama": null,
       "slideShows": [],
-      "source": "人民日报客户端",
-      "sourceId": "41",
+      "source": "新闻战线微信公号",
+      "sourceId": "43",
       "tagIds": [],
       "topicWatchCover": null,
       "userInfo": null,
@@ -1998,8 +1140,8 @@
         "defaultMultiple": "1.0",
         "openMultipleAdjustment": 1,
         "type": 3,
-        "voiceDuration": 204,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/38a6d38d797a44f7979e4fcc7e7dd889.mp3"
+        "voiceDuration": 2810,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/f5b52fbf43f54d5aa6b3eb8541264d69.mp3"
       }
     },
     "detail": {
@@ -2007,45 +1149,45 @@
       "appstyle": 13,
       "audioList": [
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/38a6d38d797a44f7979e4fcc7e7dd889.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/f5b52fbf43f54d5aa6b3eb8541264d69.mp3",
           "defaultMultiple": "1.0",
-          "duration": 204,
+          "duration": 2810,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "stanley"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a8ba5897f4a84396be8629da6ac9e082.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ed43bfb148054d63893b886a6a63b488.mp3",
           "defaultMultiple": "1.0",
-          "duration": 193,
+          "duration": 2665,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhistella"
         },
         {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a9b19be05b5746f3963baddf6809ebf7.mp3",
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/5e3a90cfd0af4fdc8a094cd2aefebf81.mp3",
           "defaultMultiple": "1.0",
-          "duration": 217,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/11cbcf9b35874f318353659fd78b0c91.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 214,
+          "duration": 2919,
           "openMultipleAdjustment": 1,
           "sourceType": 2,
           "type": 3,
           "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/08e7b1c9887b4b74a1764c99d781e951.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 2983,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
         }
       ],
       "authorList": [
         {
-          "authorName": "王东辉"
+          "authorName": "王慧敏"
         }
       ],
       "bestNoticer": 1,
@@ -2053,40 +1195,40 @@
       "currentNum": null,
       "editorName": "王萍萍",
       "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 11:05:10",
+      "firstPublishTime": "2026-06-30 16:14:57",
       "fullColumnImgUrls": [
         {
           "format": null,
-          "height": 466,
+          "height": 100,
           "landscape": 1,
-          "size": 592220,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/2233a7ca706944418e9fa3d2fdd6dc38.png",
-          "weight": 698
+          "size": 22632,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/a0b81f469a454317898220c335751ec8.png",
+          "weight": 150
         }
       ],
       "hasPopUp": null,
       "isNewspaper": false,
       "itemId": "",
       "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
+      "keyArticle": 1,
+      "leaderArticle": 1,
       "likesStyle": 1,
       "liveInfo": null,
       "menuShow": 1,
       "newIntroduction": "",
       "newLinkObject": null,
       "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">6月25日至29日，第九届中国—亚欧博览会在新疆乌鲁木齐举办，49个国家、地区、国际组织的嘉宾云集天山脚下，以展会为纽带，搭建起联通亚欧、融通内外的合作桥梁。</p><p style=\"text-indent: 2em;\">这场历经十余载沉淀的国家级盛会，不仅集中展现了亚欧区域经贸合作的蓬勃活力，更生动诠释了新疆从内陆边陲到开放前沿的蝶变之路，映照出新时代中国协调发展、互利共赢的鲜活姿态。</p><p style=\"text-indent: 2em;\">不同于东部沿海开放地区，新疆依托独特地处亚欧大陆腹地的区位优势，聚焦特色优势产业，新疆积极培育沿边产业园区，拓展“保税+”等新业态，为对外开放筑牢产业根基。</p><p style=\"text-indent: 2em;\">本届博览会上，各国客商携特色产品、前沿技术亮相，能源、农牧、装备制造、数字经济等领域合作意向密集落地，充分彰显亚欧市场的互补性与包容性。不少外媒代表高度评价博览会对促进中国与亚欧合作的平台价值、开放活力。</p><p style=\"text-indent: 2em;\">通道通，则产业兴、开放活。曾经深居西北内陆的新疆，受地理条件限制，区位优势难以充分释放。如今，随着共建“一带一路”走深走实，新疆对外开放面貌焕然一新。</p><p style=\"text-indent: 2em;\">19个开放口岸高效运转、中欧（中亚）班列过境量连续六年突破万列、外贸进出口总值连续四年站稳千亿台阶……新疆以开放包容的姿态，打破地域壁垒，打通内陆开放堵点，让古老丝路在新时代焕发新生机。眼下，新疆已然蜕变成为联通亚欧的黄金通道、中国与亚欧国家互利共生的重要纽带。</p><p style=\"text-indent: 2em;\">纵观新疆的开放蝶变，最深层原因在于始终将区域协调发展深度融入国家发展大局。</p><p style=\"text-indent: 2em;\">作为丝绸之路经济带核心区，新疆牢牢锚定国家赋予的“五大战略定位”，将区域发展布局深度融入国家开放大局，跳出地域局限，担当战略支点角色。在新发展格局构建中，新疆发挥“东联西出、贯通欧亚”的枢纽功能，对内承接东部科创制造资源、联动内陆经济圈，对外辐射中亚、深耕亚欧市场，成为国内国际双循环的关键衔接点。这种立足新疆、服务全国、辐射亚欧的发展逻辑，让新疆的开放不再是单点突破，而是深度嵌入国家战略的系统性升级。</p><p style=\"text-indent: 2em;\">一场展会，窥见一城蜕变、映照一国开放。从中国—亚欧博览会，到中国—东盟博览会、再到中国—南亚博览会等，各地立足自身区位与资源禀赋，深耕差异化、特色化开放路径，一幅联通全球、活力迸发的中国开放全景图徐徐铺展。</p><p style=\"text-indent: 2em;\">从这场丝路之约出发，亚欧携手共赢的新篇章正在续写，世界也再次看到中国的开放是全方位、多层次、宽领域的开放，中国发展的机遇，始终与世界共享。</p>",
+      "newsContent": "<div class=\"rich_media_content js_underline_content&lt;/p&gt;&lt;p&gt;autoTypeSetting24psection&lt;/p&gt;&lt;p&gt;\" id=\"js_content\" style=\"opacity: 1; text-align: left;\"><section data-pm-slice=\"0 0 []\"><section><section powered-by=\"xiumi.us\"><section><section powered-by=\"xiumi.us\"><section><section powered-by=\"xiumi.us\"><section powered-by=\"xiumi.us\"><section><section><section><section powered-by=\"xiumi.us\"><h1 style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px 0px 14px; padding: 0px; outline: 0px; font-size: 22px; color: rgba(0, 0, 0, 0.9); line-height: 1.4; user-select: text; font-family: &quot;PingFang SC NEW&quot;, system-ui, -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei UI&quot;, &quot;Microsoft YaHei&quot;, Arial, sans-serif; letter-spacing: 0.544px; white-space: normal; background-color: rgb(255, 255, 255);\"><span class=\"js_title_inner\" style=\"-webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin: 0px; padding: 0px; outline: 0px;\"></span></h1><p style=\"text-align: center;\"><strong>时代呼唤“大新闻观”</strong></p><p style=\"text-align: center;\"><strong>—— 全媒体形势下新闻理念变革的思考（上）</strong></p><p style=\"text-indent: 2em;\">自从AI出现，新闻界不少同行就紧张了起来！最近，一位新闻同行和我闲聊，话语里透着落寞：“咱们这代新闻人，为采写一条新闻，城里乡里奔波，一笔一划‘爬格子’，得花费多少心血。现在，人家用AI写稿子，几秒钟就是一篇。接下来真不知道该怎么办了……”</p></section></section></section></section></section></section></section></section></section></section></section></section><p style=\"text-indent: 2em;\">的确，随着新技术的应用，传统媒体面临着越来越严峻的挑战。前些年，都市报纷纷停刊；近两年，电视台日子也不好过。其实，不光我们，国外媒体也是如此，就在不久前，英国广播公司（BBC）宣布将裁减2000多名员工，占英国本土总员工数的十分之一。</p><p style=\"text-indent: 2em;\">时代在不断进步，科技越来越发达，资讯传播也越来越便捷，“人人都有麦克风”“人人都有摄像机”，传统媒体人何去何从？</p><p style=\"text-indent: 2em;\">这已不再是一道选答题，而是一道必答题。</p><p style=\"text-indent: 0em; text-align: center;\"><strong>“大新闻观”概念的提出</strong></p><p style=\"text-indent: 2em;\">新闻这个行业，受新技术影响很大。新闻从业以来，有三件事让我印象深刻。</p><p style=\"text-indent: 2em;\">第一件事：我本科读的是新闻。那是上世纪八十年代，当时摄影课是新闻系的必修课，暗房技术是成像质量的关键一环。为了取得好成绩，我下了不少功夫，不光在课堂上认真听讲，还央求带课的刘老师在暗房技术上给我开小灶，譬如，如何精确掌握显影液和定影液的配比等。摄影课的成绩每次都名列前茅。可如今，人人都有手机、人人都成了摄影师，当年那些技术，哪还能派上用场？！</p><p style=\"text-indent: 2em;\">第二件事：刚参加工作时，还是铅字印刷。当时我在南方一家报社，领导要求年轻人要熟悉整个采编流程，把我派到印刷车间跟着排字工学了两个月的排字。而今，早已告别了铅与火，迎来了数和网，那些排字技术也早被淘汰了。</p><p style=\"text-indent: 2em;\">第三件事：二十多年前，我在人民日报社新疆记者站驻站。一天凌晨两点多，我正在赶写一篇稿子，突然间，房顶的吊灯晃了起来，桌椅也“嘎吱嘎吱”响个不停。我意识到，乌鲁木齐周边地震了。便马上通过邮箱，给人民网发了一条简讯，说：“X月X日2时许，乌鲁木齐周边发生地震。确切方位、震级，待记者向有关部门求证确定后发回。”</p><p style=\"text-indent: 2em;\">写完这些，我便匆匆下楼避险。过了约半个小时，没发现有进一步的险情，我又回到三楼的办公室。打开电脑一看，这条简讯已上了人民网的首页。编辑王一三还在邮箱里给我发了条回复，让我务必注意安全。</p><p style=\"text-indent: 2em;\">这条简讯，如果是报纸刊出，先要发回编辑部，编辑处理后再发到夜班，然后上版、校对、印刷、分送、投递……等这套流程走完，报纸到了读者手里，至少是两天之后了。</p><p style=\"text-indent: 2em;\">不管愿不愿意承认，论“新”和“快”，传统媒体怎么也比不过新媒体了。</p><p style=\"text-indent: 2em;\">同我在新疆工作时相比，现在的技术条件更不可同日而语：发微博、写公号、拍抖音、开直播、养“龙虾”……新闻发生与新闻报道几乎做到了同步。人人都成了新闻事实的报道者，“媒体写什么，读者就看什么”的时代，一去不复返了。</p><p style=\"text-indent: 2em;\">面对这种新形势，传统媒体在新闻理念和传播方式方面再不变革行吗？显然不行。那么，传统媒体应该如何校准自己的航向？</p><p style=\"text-indent: 2em;\">光明日报是一张创刊于新中国成立前夕的报纸。在创刊70周年时，习近平总书记曾要求我们“构建全媒体传播格局”。如何落实这一重要指示精神？推进媒体系统性变革的着力点在哪里？如何既发挥了新媒体的生产优势、平台优势、传播优势，又不丢失主流媒体“内容为王”的宗旨？</p><p style=\"text-indent: 2em;\">近年来，我们一直在探索，逐渐形成了“大新闻观”这一理念！</p><section><img class=\"rich_pages wxw-img\" data-aistatus=\"1\" data-imgfileid=\"502395965\" data-ratio=\"0.7888888888888889\" data-s=\"300,640\" data-type=\"png\" data-w=\"1080\" type=\"block\" src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/08210efe42e24dc880c9cc4f9ad87456.jpg\"></section><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">“大新闻观”理念框架图。</span></p><p style=\"text-indent: 2em;\"><strong>“大新闻观”认为，新闻不是明日黄花，也不是鸿爪雪泥，好的新闻，不仅要有“大流量”，还要有足够的“伫留量”。</strong>这就需要我们奉献给读者的作品，不仅要有受众关心的主题、饱满的新闻含量、独有的事实特质，还要有厚重的历史纹理、深湛隽永的哲思、向上向善的基调、言辞清丽的文字。</p><p style=\"text-indent: 2em;\"><strong>“大新闻观”认为，全媒体时代，新闻的理念，也要有所改变。</strong>长期以来，人们对新闻的定义是：“新近发生的事实的报道”。而今，只盯着新近已远远不够，新闻要“伫留”受众，就必须“耐嚼”“耐品”。记者也不只是被动反映世界的职业群体，一个优秀的记者，既要做时代风云的观察者、记录者和阐释者，更要做社会进步的参与者、引导者和推动者。</p><p style=\"text-indent: 2em;\"><strong>“大新闻观”要求，我们在处置新闻时，必须全力实现新闻价值最大化。</strong>作为一家面向知识分子的思想文化类媒体，新闻价值最大化体现在哪里？光明日报编委会提出了“秉持客观理性、强化思想内涵、注重文化传承、关心学人吁求、引领社会风尚”的办报思路。</p><p style=\"text-indent: 2em;\">怎样才能实现新闻价值最大化？实践告诉我们，须从三个方面发力：其一，不断深化认识问题的深度、拓展新闻思维的广度；其二，采写新闻时，力求深层次追踪、学理性阐发；其三，注重新闻事件的多维度表达、多层次扩散。三个方面齐发力，由此增加新闻的文化丰富度、历史纵深度、文字精准度、现实启发度。</p><p style=\"text-indent: 2em;\">我们认为，“大新闻观”是主流媒体系统性变革的一种选择，也是传统媒体在全媒体时代独擅胜场的“通关密码”。树立“大新闻观”，有助于主流媒体在守住意识形态阵地的基础上，不断扩大主流价值影响力版图。</p><p style=\"text-indent: 2em;\">那么，在具体工作中，怎样才能让“大新闻观”落到实处？我们认为，应从以下几个方面做起。</p><p style=\"text-indent: 0em; text-align: center;\"><strong>“大新闻观”的基石</strong></p><p style=\"text-indent: 2em;\">习近平总书记要求新闻舆论工作者，不断增强脚力、眼力、脑力、笔力。</p><p style=\"text-indent: 2em;\">“四力”，是新闻从业的基础，也是衡量记者水平高低的标尺。从这些年的新闻实践中，我们悟到：落实“大新闻观”，“四力”是根本遵循。</p><p style=\"text-indent: 2em;\">拿“脚力”来说，没有对事实真实、透彻的把握，记者笔下哪里会有鲜活的新闻？又怎能承担起“桥梁纽带”“耳目喉舌”的职能？感受时代脉动、体悟社会百态、追寻历史遗存、展望未来大势，无不要求记者深入基层、贴近群众、洞悉现实，无不要求记者将新闻现场当作自己的战场。</p><p style=\"text-indent: 2em;\">“云端”上闻不到泥土的气息，“算法”里算不出社会的晴雨。AI即使再智能，也生成不了记者对山河的那份情感，也写不出农人对陇亩的那份眷恋。无论媒介技术如何嬗变，记者的本职始终就是走南闯北，穷究万象。只有永远在路上心里才有时代，只有置身新闻现场心里才有感动，只有脚下沾满泥土笔尖才有温度。</p><p style=\"text-indent: 2em;\">脚要伸下去，眼睛还要看上去。这就牵涉到“眼力”问题。一位著名新闻学者曾说过：“一个不善于辨别色彩的人，不能成为一个画家；一个不懂得和谐的人，不能成为一个音乐家；一个没有新闻敏感的人，不能成为一个好记者。”</p><p style=\"text-indent: 2em;\">新闻敏感哪里来？靠的就是眼力！大千世界，瞬息万变，事实层出不穷。一一罗列报道，显然做不到，也不会引起受众的兴趣。</p><p style=\"text-indent: 2em;\">那么，记者怎样去抓新闻？该抓什么样的新闻？“大新闻观”认为，新闻工作者要不断提升自己的“眼力”，使之具有穿透性——不仅要看到事件本身，更要看到事件之间的内在联系；不仅要看到事件表象，更要看到表象背后的本质；不仅要看到当下的状况，更要看到历史脉络和未来趋势。</p><p style=\"text-indent: 2em;\">只有“脚力”“眼力”还不够，只有将“走实”和“看透”有机结合起来，才有可能抓住事物的本质，才能写出有思想的报道。这种结合，就是强化“脑力”。</p><p style=\"text-indent: 2em;\">曾有人对记者这个职业有一种误解，认为是个轻飘飘的行当，不如专家看问题深透。记得20多年前澳门回归时，我在一线采访，当地人竟这样称呼记者：“跑街的！”其实，一个出色的记者，绝不逊色于任何一个领域的学者——纵览世相，见多识广，记者分析起问题来，就不会囿于一隅，往往视野开阔，客观理性。记者当久了，对于所跑领域越钻越深，在业界也就越来越有发言权，称之为专家绝不为过。当然，越钻越深，需要的是不断提升“脑力”。</p><p style=\"text-indent: 2em;\">“大新闻观”认为，只有提升了“脑力”，认识问题才会有深度。而记者认识问题的深度，决定着站位的高度，而站位的高度，决定着新闻传播的力度和广度。</p><p style=\"text-indent: 2em;\">新闻界有位老前辈说得好：“要想做一个优秀的新闻工作者，必须是‘站在天安门上看全国、站在田埂上找感觉’。”</p><p style=\"text-indent: 2em;\">有了这“两站”，也便吃透了“两头”（“上头”与“下头”），也便上接“天线”，下接“地气”，采访有了方向，写作有了经纬，写全局性的新闻报道，每每透着浓浓的“基层泥土”的芬芳；而写地方新闻，则会有全国视野，新闻采访的内容——或经验、或困惑、或教训，也便都有了全国意义，稿件也就有了思想厚度。</p><p style=\"text-indent: 2em;\">有了“脚力”“眼力”“脑力”，也只是完成了前半程，记者所看所思所想，最终还是要通过“笔力”来实现。长期以来，新闻界似乎形成了一种成见：新闻只需把事实说明白就行了，文字没必要那么讲究。但是，我们不要忘记，再好的内容，再深邃的思想，都需要通过文字去表达。传统纸媒是这样，新媒体也一样。如果只是眼里有，心里有，笔下没有，行文驳杂，逻辑混乱，“红薯洋芋分不清”，又怎能将新闻事实传播给受众？更遑论以科学的理论武装人、以正确的舆论引导人、以高尚的精神塑造人、以优秀的作品鼓舞人。</p><p style=\"text-indent: 2em;\">新闻要中看、耐看，记者必须有好的“笔力”，必须讲究语言艺术，不断改进文风，让文字灵动起来。</p><p style=\"text-indent: 2em;\">记得当年刚新闻从业时，经常听到前辈问我，做到文字干净了吗？从业到今天，我深深意识到，文字干净，听来简单，做起来十分不易。“约其精蕴，无取繁词”“文章不写半句空”“删繁就简三秋树，领异标新二月花”……文字的简洁练达，历来被文人所推崇。即使是从业几十年的老编辑、老记者，也不敢轻言自己做到了“文字干净”。</p><p style=\"text-indent: 2em;\">就拿近年光明日报在一版开设的“我在现场”专栏来说，均是短文章，每篇两三百字。刚推出这个栏目时，真真难坏了大家，稿子经常被打回去修改，有的四五遍仍过不了关。连一些老记者也叫苦不迭。</p><p style=\"text-indent: 2em;\">经常写文章的人都知道，短文章比长文章更难写。要写出一篇“丰满”的短文章更是难上加难。因为你要在很短的篇幅里既展示“大气象”“深哲思”“妙启迪”，又要有足够吸引人的文字让读者读下去，那真真是“螺蛳壳里做道场”，没有足够的功力，是做不到的。这不但要求你深刻了解宏观政策、充分洞悉社情民意、敏锐把握新闻时度、巧妙楔入报道角度，还要求你有一支异常灵动的笔，叙述不枝不蔓，行文干净简洁，落字精准确切，且每个句读都能触动读者的心弦。</p><p style=\"text-indent: 2em;\">“我在现场”开设至今，我们始终按照这一标准要求大家，高标准“压”出了高质量，同志们也从不适应到适应。这个栏目广受好评，2025年获得中国新闻奖新闻专栏一等奖。</p><p style=\"text-indent: 2em;\">不光是这个栏目，光明日报一再强调，写新闻，要做到文字平实精准、恰到好处，不能一味堆砌辞藻，花里胡哨。譬如，光明日报刊发的《春光排闼而来，且潜心耕耘吧！》《建成科技强国，只争朝夕！》等“关铭闻”评论，讲的虽是高深的农村问题、艰涩的科研话题，但有不少读者反映：“读之有味，可当作美文去读。”</p><p style=\"text-indent: 2em;\">光明日报的实践证明，只有倾注深情，深入践行“四力”，让采访和思考不断地深下去、再深下去，才能在全媒体时代将主流媒体应有的影响力化作大流量、澎湃正能量；只有广博阅历、积淀知识、砥砺思想，才能锻造“大新闻观”的历史厚度、学理深度、思想高度、文学美度，才能牢牢占据舆论引导、思想引领、文化传承、服务人民的传播制高点。</p><p style=\"text-indent: 0em; text-align: center;\"><strong>“大新闻观”的四梁八柱</strong></p><p style=\"text-indent: 0em; text-align: center;\"><strong>（一）用“四度”架梁</strong></p><p style=\"text-indent: 2em;\">记者孜孜不倦践行“四力”，是为了写出有价值的新闻。这就要搞清楚，什么是有价值的新闻，这是树立“大新闻观”的出发点。</p><p style=\"text-indent: 2em;\">前文说过，全媒体时代，新闻工作者只盯着“新近发生的事实”已远远不够，新闻要“伫留”受众，必须“耐嚼”“耐品”。</p><p style=\"text-indent: 2em;\">这就决定了，采写新闻，应该在追求时效性、重要性、显著性、接近性、真实性以及趣味性的基础上，进一步提升衡量新闻价值的标准。我们将之总结为“四个度”：文化丰富度、历史纵深度、文字精准度、现实启发度。</p><p style=\"text-indent: 2em;\">能够达到这“四个度”，才算真正具备了“大新闻观”。</p><p style=\"text-indent: 2em;\"><strong>1.文化丰富度</strong></p><p style=\"text-indent: 2em;\">我们知道，新闻作品不等同于文学作品，因为新闻重在信息传播，文学重在艺术表达。但是，新闻作为传播人类生产生活的一种文化形态，它要发挥作用，必须借鉴文学手法。只有具备思想引领力、事实说服力、艺术感染力的新闻作品，才算得上好作品。</p><p style=\"text-indent: 2em;\">有经验的媒体人都会有这样的共识：如果报道缺乏文化含量，不讲究辞章文采，文字总是干巴巴的事实描述，它的传播力、引导力、影响力、公信力也会大打折扣。</p><p style=\"text-indent: 2em;\">范敬宜先生是公认的新闻大家，我的研究生导师。记得30多年前我第一次见他时，大半时间是询问我都读过哪些书，还挑了几首古典诗词让我背诵。背明末清初诗人吴伟业的《圆圆曲》时，我卡了壳。他严肃地对我说：“要想当个好记者，文化底蕴非常重要。一个人文笔的高低赖于文化的深浅厚薄。”</p><p style=\"text-indent: 2em;\">他还给我讲过这样一则“趣事”：有一位编辑请他为一本书写序。序言的第一句话是：“余束发受书于太仓唐文治先生。”意思是他在很小的年龄，头发刚刚梳起来的时候，到唐文治先生那里受教。这位编辑看完后问：“这个‘余束发’是谁？”</p><p style=\"text-indent: 2em;\">范老师认为：新闻从业者只懂新闻，没有文化底蕴，就像一个人如果只是整天吃“压缩饼干”，吃浓缩“维生素丸”，不吃五谷杂粮，不吃蔬菜鱼肉，就肯定会得贫血症。</p><p style=\"text-indent: 2em;\">时至今日，文化底蕴缺失，仍是新闻界一个尚待解决的问题。新闻媒体，不独是单纯的资讯工具，更是一种文化和价值观的载体。淡化以至抹煞新闻的文化属性，新闻作品就会缺乏感染力。失去了感染力，又何谈传播力、引导力、影响力、公信力？</p><p style=\"text-indent: 2em;\">由此，我们可以得出这样的结论：一篇稿件的文化丰富度，直接影响着它的新闻价值；一张报纸文化含量的多寡，直接影响着它的传播力的大小。</p><p style=\"text-indent: 2em;\">基于这个认识，光明日报大力提倡“新闻要有文化含量，记者要有人文情怀，报社要有书卷气息”。要求新闻策划不仅要给读者观点上的启发，还应体现文化层面的格调和美学意义的鉴赏，让读者读之有感、思之有理、嚼之有味、品之有情。</p><p style=\"text-indent: 2em;\">譬如，光明日报策划开设“中国好手艺”“国家地理标志产品探秘”“晒晒咱的镇馆之宝”等栏目，都是散发着浓郁文化味的报道。即使是“说说我家的小康故事”“晒晒咱的国之重器”这样的民生、科技类专栏，也处处闪耀着音乐、绘画、诗歌等方面的文化元素，给读者留下了深刻印象。</p><p style=\"text-indent: 2em;\"><strong>2.历史纵深度</strong></p><p style=\"text-indent: 2em;\">长期以来，“时效性”被视为新闻领域抢占先机的法宝。但正如前文所言，随着互联网兴起，传统媒体已不具备抢夺时效的绝对竞争力。</p><p style=\"text-indent: 2em;\">那么，传统媒体要在竞争中赢得先机，就必须有自己的“绝活”。“绝活”是什么？那就是新闻的历史纵深度。也就是说，一篇新闻作品，既“求新”又“怀旧”——用新闻由头衍生开去，贯通起古往今来，通过客观讲述沧桑演进，进而深层次解析时代风云、传播大政方针。如此，新闻便厚重起来，也便有了独特性。</p><p style=\"text-indent: 2em;\">2020年底，我去广州南沙科技湾区采访。眼前是一片喇叭口状的辽阔海域，翡翠色的大海向远方铺展，浟湙潋滟、浮天无岸。扑面而来的，是海风的腥咸。</p><p style=\"text-indent: 2em;\">当地工作人员介绍，前面这片海域，就是伶仃洋！</p><p style=\"text-indent: 2em;\">伶仃洋？我的思绪一下子回到七百多年前：元兵入侵，文天祥率兵殊死抵抗，因兵力悬殊不幸被俘。途经此地时，他以诗明志：“惶恐滩头说惶恐，零丁洋（即伶仃洋）里叹零丁。人生自古谁无死？留取丹心照汗青。”把铁血男儿的豪迈之气抒发得淋漓尽致。</p><p style=\"text-indent: 2em;\">斗转星移，沧海桑田。今天的伶仃洋，哪里还有半点“伶仃”的模样？！行走在伶仃洋畔，我感受着昔日战乱之地变身科创高地带来的震撼与惊喜——鼓角铮鸣早已远去，代之以鳞次栉比的楼房和林立的塔吊、巨型货轮。</p><p style=\"text-indent: 2em;\">中华大地该有多少像伶仃洋这样被写入诗词歌赋的文化遗存？这些文化遗存，在日新月异的新时代，都有着蓬蓬勃勃的风采。蓦地，我有了这样一个想法：在光明日报开设“这些文化遗存现今的模样”专栏，由记者到现场“打卡”，探寻文化遗存的前世今生，把“古”和“今”串起来。</p><p style=\"text-indent: 2em;\">近年来，无论是立足全局的宏观性报道，还是“小切口”式的微观性报道，光明日报都注重从今昔对比的历史纵深中体现新闻价值。譬如，“昔日贫困村现今的模样”“走进昔日的抗日战场”等专栏，《西海固：蓄足动能再出发》《苏皖两个相邻山村的岁月嬗变》等重磅报道，《春和景明，且读书去！》《新大众，你我谱写，你我拥有》等“关铭闻”评论，都体现了“延展新闻链条、贯通古往今来”的原则。</p><p style=\"text-indent: 2em;\">我们不妨再以2022年12月29日光明日报刊发的这则消息《黄河“地上悬河”历史正在被改写》来分析历史纵深对新闻价值的提升作用。</p><p style=\"text-indent: 2em;\">这篇只有900多字的消息，通过层层递进的历史纵深，解析了“地上悬河”被改写的历史。</p><p style=\"text-indent: 2em;\">消息向读者呈现了一个时间轴：</p><p style=\"text-indent: 2em;\">——历史上，由于泥沙淤积，黄河成了地上悬河，两岸人民头顶犹如放置了一个硕大的水盆；</p><p style=\"text-indent: 2em;\">——新中国成立后，一代代水利工作者孜矻探索，通过沿岸水土治理、水库层层拦蓄，下游河道淤积大大减轻；</p><p style=\"text-indent: 2em;\">——2001年年底，小浪底水库建成运行后，启动多水库联合调水调沙；</p><p style=\"text-indent: 2em;\">——截至2022年，经过20多年的河道冲刷，黄河下游主河槽平均下切已达3.1米。</p><p style=\"text-indent: 2em;\">这条“时间轴”的展示，让一篇篇幅不长的消息极具历史的厚重感，黄河问题的起源、实质、解决过程、巨大意义，在历史叙事中一一拆解。</p><p style=\"text-indent: 2em;\">水利部一位专家说，这一篇不足千字的消息，价值不让于一部大部头的水利专业著作。</p><p style=\"text-indent: 2em;\"><strong>3.文字精准度</strong></p><p style=\"text-indent: 2em;\">但凡新闻精品，一定是经得起反复咀嚼的美文。而要经得起咀嚼，必定经过了反复的打磨。</p><p style=\"text-indent: 2em;\">记得刚参加工作不久，有一次，和范敬宜先生聊天时，他告诉我：“现在新闻圈里有一种不好的现象——轻视文字。如果谁要鄙薄一个记者，会在数说了一顿不是之后来这么一句‘这人，文字还行’。其实，这是把本末闹拧了。文字是新闻从业的基础。没有过硬的文字基础，绝对当不成好记者。”</p><p style=\"text-indent: 2em;\">这些年，在新闻实践中，我发现，身边不少记者只顾马不停蹄地跑，很少停下来“充电”。如此，难免笔头越写越枯。随着生活节奏的加快和媒体竞争的加剧，许多单位不停地催促记者多发稿多发稿，但在提高记者学养方面重视不够。</p><p style=\"text-indent: 2em;\">鉴于此，近年来，光明日报在“敬惜文字”上狠下功夫，在采写、编辑、审稿各个环节，严把文字的精确度、精准度、精致度。尤其是重点稿件，要求必须反复打磨。</p><p style=\"text-indent: 2em;\">拿获得中国新闻奖一等奖的《神山村三日》为例，我们前后打磨了十多遍。一遍一遍细细地抠，尽可能一个瑕疵也不放过。信手举几个例子：</p><p style=\"text-indent: 2em;\">见报稿中有这样一个句子：“过了黄洋界，眼前豁然开朗，劈面跳出一个山冲，一排排错落有致的房舍散布在山间台地上。”</p><p style=\"text-indent: 2em;\">初稿中，最初是“出现”一个山冲；觉得没有表现出突然而来的惊喜感觉，换成了“映出”一个山冲；再磨稿时，又换成了“闪出”一个山冲；大家仍觉得不贴切，反复讨论，最终确定使用“跳出”一个山冲。</p><p style=\"text-indent: 2em;\">“台地”这个看似不起眼的词，同样让记者费尽思量。初稿先后换了三个词——坪、原、坝子。我们推敲了近半个小时，还是感到和我们看到的场景不符，最后才确定了“台地”一词（台地是指四周有陡崖的、直立于邻近低地、顶面基本平坦似台状的地貌）。</p><p style=\"text-indent: 2em;\">再如，写记者晚上走村串户，初稿写道：“深夜，小山村溪水哗哗，鸟啼蝉鸣。”磨稿时，有同志回忆道，那个时候，耳畔是蛙鸣声、犬吠声，鸟和蝉似乎已经睡去。于是，我们便果断地将“鸟啼蝉鸣”删去。</p><p style=\"text-indent: 2em;\">还如，《神山村三日》的最后一个小标题是“依别神山村”。第一次用的是“惜别”，有同志觉得太过凄怆，我们改成了“离别”；再磨稿时，又觉得过于浅白，改成了“告别”。最后一次磨稿时，觉得“告别”容易引起歧义，大家反复斟酌，最终使用了“依别”——依依不舍之意，贴切而生动。</p><p style=\"text-indent: 2em;\">在光明日报，这样的例子还有很多、很多……可以说，光明日报将“敬惜文字”融进了新闻生产的全过程、新闻表达的全体裁、新闻呈现的全媒体。</p><p style=\"text-indent: 2em;\"><strong>4.现实启发度</strong></p><p style=\"text-indent: 2em;\">新闻记者绝不是新闻事实的“搬运工”，新闻也绝不仅是对现实的复刻，有价值的新闻，应该反映现实、启发现实、能动地指导现实。</p><p style=\"text-indent: 2em;\">做到这一点，需要记者对自己报道的领域有着深刻、透彻的理解。如果对问题看得不深不透，己之昏昏，又怎能使人之昭昭？</p><p style=\"text-indent: 2em;\">这要求记者切实以“做学问”的态度来对待新闻——采写新闻，不仅是一个“看”的过程，更是一个“思”的过程、“学”的过程、“悟”的过程，必须具备强烈的问题意识和思辨能力。有了这个过程，记者才会对新闻事实产生深度认知，写出来的文字也才会准确生动、深刻厚重。</p><p style=\"text-indent: 2em;\">在这方面，光明日报也进行了诸多探索。譬如，《西海固：蓄足动能再出发》一稿，我们采访的主旨是反映脱贫攻坚任务完成后，宁夏在乡村振兴路上如何发力。宁夏起初给我们的材料中提出的是“四个提升”，我们跑遍了宁夏的山山水水，又与厅局、市县干部进行了多次座谈，充分调研，我们得出了这样一个结论：“四个提升”未能涵盖脱贫攻坚任务完成后宁夏农村面临的新情况。我们反复推研，提炼出“六个提升”。文章刊出后，自治区主要领导认为，“六个提升”更为合理、更为全面，将其吸纳进了相关文件。</p><p style=\"text-indent: 2em;\">西部人才流失，是近几十年来的痼疾。我上大学时，校园里流传着这样一句话：“‘天南海北’我都去，就是不去‘新西兰’。”（“天南海北”指天津、南京、上海、北京，“新西兰”指新疆、西藏、兰州）。最近这些年，甘肃的河西学院、兰州大学等高校，积极引导毕业生到西部“建功立业”。在西部扎根，成为学子们的新选择。我们深入调研后，采写了“昔日孔雀东南飞，今朝俊才西部栖”系列报道，有典型人物事迹介绍、有评论深度分析、有专家学者建言献策，一时间，“到西部去”成为社会热点。由此推动教育部、共青团中央等部门实施一系列教育、青年工作新政策，带动东部高校毕业生西部就业率大幅提升。</p><p style=\"text-indent: 2em;\">“四个度”一齐发力，犹如汽车的四个轮子一起高速转动，由此，带动了光明日报办报质量和美誉度的提升，也带动了光明日报传播力、影响力的提高。一次开会，新闻界一位老前辈对我说：“光明日报是一张可以让我带回家看的报纸，希望你们把这种状态保持下去。”</p><p style=\"text-indent: 0em; text-align: center;\"><strong>（二）用“四性”立柱</strong></p><p style=\"text-indent: 2em;\">过去，媒介资源相对匮乏，传媒市场高度集中，新闻传播大多秉持“点线思维”——“点”，即聚焦单一新闻点，挖掘新闻事实中最有价值和吸引力的内容；“线”，即单向瞄准报纸订阅者、电视收看者、广播收听者等聚合度较高的目标群体，进行无差别推送。</p><p style=\"text-indent: 2em;\">这种“点线思维”，曾以宣传目标准、操作效率高、传播效果快著称。但易造成新闻穿透浅弱、价值耗散过速等问题。互联网时代，公众对“新闻点”的接收已表现出泛化、极化态势，众声纷纭中，“一千个读者有一千个哈姆雷特”；“传播线”也渐趋消解，传播形态向网络状、互传式、发散型转变。</p><p style=\"text-indent: 2em;\">在这种态势下，“点线思维”就难以适应传播新形势，也难以满足受众需要。现实，呼唤一种适应新态势的新闻理念。我们倡导的“大新闻观”，正是基于这一呼唤。</p><p style=\"text-indent: 2em;\">按照这一理念，我们认为，一条真正的好新闻，不但能为受众提供资讯、解读政策、引导舆论，还应该由表及里、由此及彼、由浅入深，透过事实表象深刻反映社情民意与公序良俗，通过提炼事实本质深度挖掘历史演进规律与世相沧桑巨变，越过事实本身引发受众深入思考此事件在时代中的方位及对未来的影响，让新闻作品标注时代进程、刻进历史肌理，从而达到“写进历史的新闻千秋不朽”的效果。</p><p style=\"text-indent: 2em;\">如何实现这一目标？</p><p style=\"text-indent: 2em;\">我们认为，要从“新闻性、学理性、思想性、文学性”四方面的统一入手。</p><p style=\"text-indent: 2em;\"><strong>1.新闻性</strong></p><p style=\"text-indent: 2em;\">纵观世界新闻史，尽管新闻的“内容观”几经嬗变，但核心功能依然是“告知与沟通”。而要达到“通”，那么你告知的新闻必须是真实的、必须能引起受众的兴趣。</p><p style=\"text-indent: 2em;\">随着网络媒介的普及，信息铺天盖地。有些媒体为了吸引眼球，大肆“炒”“造”“搞”，炮制出类似“千年木乃伊出土后怀孕”等假新闻。更令人咋舌的是，还有人刻意将虚假信息注入AI大模型中，大泼污染信息环境的“数字泔水”。</p><p style=\"text-indent: 2em;\">凡此种种，严重损伤了公众的知情权和媒体的公信力。很多人不愿再轻易相信新闻报道。这些乱象警醒我们，作为主流媒体，必须坚定不移地捍卫新闻的真实性。</p><p style=\"text-indent: 2em;\">为此，光明日报编委会反复强调：刊布的新闻，内容上必须真实准确，观点上必须新颖深刻，逻辑上必须严谨缜密，效果上必须积极正面。不仅要追求“时效”，更要追求“实效”，让重点成为热点、让质量带来流量、让深度焕发热度。</p><p style=\"text-indent: 2em;\">在呈现方式上，我们有机协调“长与短”“快与慢”“点与面”“深与浅”的辩证关系。在报道内容上，要求记者在取舍新闻时，决不能一叶障目不见泰山。写人叙事，客观描摹不走样；说理抒情，求真务实不蹈空。</p><p style=\"text-indent: 2em;\">近些年，我们先后推出了“说说我家的小康故事”“精心呵护城镇‘微细胞’”“这些提振经济的好做法”等数十个栏目，无论哪个栏目，都要求努力做到“大稿不空泛，小稿不单薄，宏大叙事不忘彰显一花一叶，微观视角也能折射时代大局”。</p><p style=\"text-indent: 2em;\"><strong>2.学理性</strong></p><p style=\"text-indent: 2em;\">光明日报是一张面向知识分子的报纸。读者对象，决定了光明日报的报道必须具备一定的学术品位。77年来，光明日报秉持“与真理同行，与时代同步”，写下了一部厚厚的“学术日记”。</p><p style=\"text-indent: 2em;\">由此，也积淀出了这样一种品格：光明日报善于将深刻的学理融入新闻，向问题发现、原因探究、路径选择、方法应用、理论创新逐级“进阶”，实现新闻内容的深层次追踪、学理性阐发、学术性表达、破圈式传播。</p><p style=\"text-indent: 2em;\">在光明日报不久前推出的“昆仑石刻”学术争鸣中，这一点，体现得较为充分。</p><p style=\"text-indent: 2em;\">2025年6月7日晚，报纸付印前，我在审读“文化记忆”版《青海黄河源发现秦始皇遣使“采药昆仑”石刻：实证古代“昆仑”的地理位置》一文时，停住了。秦始皇？遣使？采药昆仑？每个词，都是那样的吸睛！刊发后，必定引起全社会关注。倘若失实，将会对报纸声誉造成不可估量的损害。发，还是不发？</p><p style=\"text-indent: 2em;\">我研判后，决定：如样刊出！理由有三：文章扎实，作者可靠，这是学术判断；支持学者发表新见，是光明日报的传统，这是办报初心；真相不怕检验，真知不怕论辩，这是历史自信。</p><p style=\"text-indent: 2em;\">文章发出后，“一石激起千层浪”，网络空间众声喧哗，赞誉者有之，质疑者亦有之。全面收集了各种情况后，我提议，作为一张思想文化大报，在这种情况下，有必要因势利导，展开一场健康的学术争鸣——不是充当裁判，而是当好主持；不是统一声音，而是守护规则。</p><p style=\"text-indent: 2em;\">编委会认真研究后决定，辟出专版就真伪问题展开讨论，开宗明义指出：争鸣以公心为要、公道为本、公正为基，对争鸣各方，不以身份论短长，不唯年资论高低，只要言之成理，持之有故，哪怕观点迥异，均十分欢迎。</p><p style=\"text-indent: 2em;\">于是乎，各领域专家并骋才思、互矜意匠，千万读者持续关注、共鉴雅事，参与讨论文章4500余篇,全网流量1.7个亿。我们还在头版连续刊发《于争鸣中见灼识》《于诤竞中求真知》等10篇评论员文章，将专业艰深的考古发现，转化为一场吸引知识界广泛参与的现象级文化事件。最终，国家文物局将此刻石认定为秦代刻石并正式命名。这场争鸣，历时三个多月，成为光明日报历史上规模最大的一次学术争鸣，有论者形容“极一时之盛”。</p><p style=\"text-indent: 2em;\">除“昆仑石刻”学术争鸣外，我们还推出了“新大众文艺”“新大众体育”等具备深刻学理性的系列报道。这些报道的共同特征是：通过调查研究，归纳出新现象、分析背后的深层次原因、探究深刻变化反映的趋势、提出未来发展的对策建议。</p><p style=\"text-indent: 2em;\">这些报道说明，有影响的重大主题报道策划，不是追着热点跑，而是从探赜钩沉中寻找规律，从分析研判中抓住本质。这就要求编辑和记者要有足够的学养和研究能力。</p><p style=\"text-indent: 2em;\">正是因为这种对学理性的孜矻追求，光明日报写就了一大批“外行不觉深，内行不觉浅”的学理性报道，涌现出一批学者型、专家型编辑记者。学界也给予光明日报“三友”称号——走进知识分子内心世界的挚友、推动知识分子学术创新的益友、与知识分子携手并肩共同奋斗的战友。</p><p style=\"text-indent: 2em;\"><strong>3.思想性</strong></p><p style=\"text-indent: 2em;\">新闻之所以常被视为速朽的“易碎品”，是因为大部分的新闻缺乏深邃的思想。其实，无论传播形式如何嬗变，受众习惯如何演变，公众对有思想、有温度、有品质作品的追求是不变的。</p><p style=\"text-indent: 2em;\">作为一张思想文化大报，光明日报始终把深邃的思想性作为追求目标。我们深知，主流媒体之所以“主流”，正是因为其事实准确、观点明确、导向正确，是群众心目中引领思想、正本清源的“定海神针”。社会需要主流媒体做到“透其面而窥其里，知其然更知其所以然”，从而展现强大的说服力、凝聚力和感召力。</p><p style=\"text-indent: 2em;\">近年来，光明日报不断强调，新闻工作者要具备辩证思维、系统思维、历史思维、逻辑思维。记者手中的笔应该是一支思想的笔，要透过现象看到本质，从偶然中看到必然，从个性中找到共性，从寻常中看到不寻常，努力做到“采访对象未必知，记者未必不知”。</p><p style=\"text-indent: 2em;\">我个人认为，记者大体分为三类：第一类是不称职的记者，不能到位地反映新闻事实，往往是采访对象看了文章后，连皱眉头；第二类是称职的记者，可以不走样地描摹新闻事实，采访对象看了文章后，会说“噢，是这么回事！”；而第三类记者，不满足于新闻事实本身，目光具有穿透力，能把采访对象潜意识里想表达而未能完整表达的思想挖掘出来，采访对象看了文章后禁不住称赞“对，这正是我想要说的！”</p><p style=\"text-indent: 2em;\">其中，第三类记者，就是我们重点培养的目标。</p><p style=\"text-indent: 2em;\">如何实现这一目标？我们提出三个原则——</p><p style=\"text-indent: 2em;\"><strong>一是承继实事求是思想传统，把握好“微观真实”与“宏观真实”的统一关系。做到“其文直、其事核、不虚美、不隐恶”。</strong>我经常这样告诫同事们：新闻从业，一定不要写自掌嘴巴的新闻。用一个极端例子来说明一个观点，或图解一项政策，并不难。但这种微观的真实，放在宏观背景下去考量，往往未必真实。所以，一位称职的记者应有大局观，判断新闻，既要见树木又要见森林，既要把握微观真实又决不能忽视宏观真实。譬如，我们刊发了不少聚焦粮食安全的稿子。包括“中央一号文件”系列“关铭闻”评论、《我国农业生产方式正在发生质变》深度调研报道等。这些报道，都体现了我国粮食生产实现连年丰收的“宏观真实”，也聚焦了农业“芯片”面临着“卡脖子”风险等“微观真实”，从两者结合中讲清楚这样的道理：我国粮食生产取得了历史上未曾有过的成就，但是粮食安全什么时候都不能轻言过关！使“中国饭碗”装得更满、把“中国饭碗”端得更牢、让“中国饭碗”成色更足，都是一场须臾不可松懈的持久战。</p><p style=\"text-indent: 2em;\"><strong>二是秉持引领风尚的思想自觉，把握好服务人民和引导人民的统一关系。</strong>以正确的观点、详实的资讯、缜密的逻辑、优美的文字，引领正确的价值取向，既做群众的贴心人，又做群众的引路人。</p><p style=\"text-indent: 2em;\">譬如，部分青年学子耽溺“躺平”，我们推出《连续报道·报效祖国 建功西部》《奋斗青春 无悔抉择》等专题报道和《躺平不可取》系列评论，倡导年轻人到基层去、到边疆去、到祖国最需要的地方去；畸形审美大行其道，我们推出“树立正确的美丑观”系列评论，倡导积极健康的审美观、劳动观、艺术观；劣迹艺人丑态百出，我们推出《人民需要这样的艺术家》栏目，倡导文艺界为社会存正气、为人间弘美德、为民族展形象……“引领社会风尚”，始终是光明日报矢志不渝的担当。</p><p style=\"text-indent: 2em;\">特别值得一提的是，2025年12月29日，光明日报刊发的万字通讯《只有荒凉的沙漠，没有荒凉的人生》这篇文章。</p><p style=\"text-indent: 2em;\">这是一场跨越20多年的调研。记得是2005年夏天，我在新疆塔里木油田一线采访，了解到了“三兄弟”的故事——蒋仁裕、韩易龙、王焕增是中国石油大学（华东）1991届毕业生。“三兄弟”同一个宿舍。毕业时，他们放弃了在内地不错的工作机会，携手奔赴塔里木，在列车开动前发出誓言：“好好干，干出点名堂才对得起父母、对得起师友、对得起国家培养。”</p><p style=\"text-indent: 2em;\">我深受感动，这是多么可贵的青春志向和人生选择！当时就进行了深入采访，遗憾的是，后因工作变动等原因，这篇文章搁置了。但“三兄弟”的故事一直印在我的脑海里。</p><p style=\"text-indent: 2em;\">2024年，在光明日报筹划《连续报道·报效祖国　建功西部》时，我想到了他们。20多年过去了，“三兄弟”是否守住了约定？是否依然坚守在塔里木？</p><p style=\"text-indent: 2em;\">我让人了解一下。消息很快传回来：“在，一个都没少！”我当即决定：成立报道组，去塔里木。</p><p style=\"text-indent: 2em;\">随着采访的深入，我们的思路得到了进一步拓展：“三兄弟”只是万千塔里木石油人中的普通代表，那里有很多不同年代的热血青年，都值得被看见、被书写。于是决定：把笔触对准以“三兄弟”为代表的老中青石油人群像。</p><p style=\"text-indent: 2em;\">在沙漠里跋涉了半个多月，用采访到的第一手资料展现了这个群体不计个人得失、爱国奉献的精神。</p><p style=\"text-indent: 2em;\">报道发出后，光明日报微信公众号推送的图文版本阅读量半天即突破10万。微博话题阅读量突破千万，多次跻身热搜榜单，形成“报道讲故事，读者忆故事”的情感联动。</p><p style=\"text-indent: 2em;\">有知名学者这样评价：在注意力稀缺的时代，读者并非不舍得为阅读一篇报道投入时间，而是要看这篇报道是否拥有值得他们投入时间的意义感与“精神净值”。这篇万字长文能够“出圈”，恰恰印证了这一点，体现了高质量、高浓度的精神内容所具有的强大的生命力。</p><p style=\"text-indent: 2em;\"><strong>三是涵养守正自持的思想定力，把握好当下与长远的统一关系。</strong>强调在热点事件面前，不能只追求数据上的“轰动效应”，更要看是否能够达到滋养人心的“浸润效应”。在实际操作中，我们不提倡亦步亦趋，而是要做到独辟蹊径；我们不提倡一鸣惊人，而是要做到掷地有声；我们不片面追求巨大声量，而是要做到经久不息。</p><p style=\"text-indent: 2em;\">譬如，2025年初，一部《哪吒之魔童闹海》，搅动银幕，一跃冲天，创下一百多项世界纪录。对此，光明日报没有急于追击热点用速成稿收割一波流量，而是组成一支十几个人的团队，对“哪吒现象”进行系统调研，推出深度报道《中国动画何以创造了世界第一》和“关铭闻”评论《让中国更具魅力让中国更加有趣》，从中华优秀传统文化提供的深层动能，改革推动的文化生产力的持续解放，技术进步与产业升级的水到渠成等层面，引导读者进行深层次的价值思考。</p><p style=\"text-indent: 2em;\"><strong>4.文学性</strong></p><p style=\"text-indent: 2em;\">《论语》有言：“质而无文，其行不远。”意思是说，文章内容质朴却没有文采，影响就不会深远。下一句：“文而无质，其行不久。”意思是说，文章光有文采却没有实在的内容，影响也就不会持久。</p><p style=\"text-indent: 2em;\">互联网时代，各类信息眼花缭乱，新闻业态日趋多元，报道手段五花八门，但高质量的新闻文本仍是受众渴望的。从这个角度来说，新闻工作者注重文采、经常磨练自己的笔，不但能使新闻事实传播到位，还能始终扣准受众的共情点与共鸣点。</p><p style=\"text-indent: 2em;\">细心的读者会发现，光明日报的新闻，无论是新闻版还是副刊，都很注重文采，甚至句与句、段与段之间都富有韵律感。这是因为，我们在打造“光明文风”上努力不懈，让我们的话语体系与时代的发展、受众的喜好同契合拍。</p><p style=\"text-indent: 2em;\">譬如，提倡文气、清雅气、书卷气，反对俗气、八股气、粗鄙气；</p><p style=\"text-indent: 2em;\">譬如，提出“用小角度讲大道理，用妙故事化硬题目，用好文采靓泛题材”；</p><p style=\"text-indent: 2em;\">譬如，强调用“受众关心的好主题、上下钩探的大历史、旁征博引的妙哲思、激情昂扬的亮基调、雅致清丽的美文字”创作评论文章；</p><p style=\"text-indent: 2em;\">譬如，提炼出“五个多与少”的新媒体写法：多一点人情味，少一点刻板味；多一点文化味，少一点粗俗味；多一点科学理性，少一点武断专横；多一点借嘴说话，少一点直来直去；多一点推心置腹，少一点油腔滑调；</p><p style=\"text-indent: 2em;\">…………</p><p style=\"text-indent: 2em;\">在这些原则指导下，光明日报的报道里，既有雄壮豪放的“铁绰板”，也有温婉低吟的“红牙板”；既理直气壮，也刚柔相济；既旗帜鲜明，也润物无声。以光明日报的重大主题报道《生产方式整个变了！瞧，夏收这些新鲜事》为例，这篇报道以三组人物故事为切入点，通过今昔对比，把农业生产方式变化这样的硬题材写得生动有趣。文中农事场景的描摹，大量乡土方言、农谚的运用，让整篇文章漾着浓浓的乡野之风。</p><p style=\"text-indent: 2em;\">纵观光明日报“烟火人间”“文艺经典的光明印迹”等专栏，《出发吧，为了下一季的收获》《奋斗，不懈奋斗，明天定会更好！》等社论，均通过新闻的切入、学理的思辨、散文的笔法，让文章辞旨渊雅，轩爽洞达，或有婉约清丽之风，或有峥嵘雄快之气。写情则沁人心脾，写景则在人耳目，述事则如出其口。</p><p style=\"text-indent: 2em;\">业内同行评价：“光明日报的报道，既有视通万里、思接千虑的气度，又有雅致清新、丽日光风的神采，‘以文载道’，光明日报为新闻界开辟了一抹亮色。”</p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">（作者系光明日报社社长兼总编辑）</span></p><section data-pm-slice=\"0 0 []\"><section><section><section><svg viewBox=\"0 0 1 1\" style=\"float: left;width: 0px;vertical-align: top;\" role=\"img\" aria-label=\"插图\"></svg></section></section></section><section><section><section><svg viewBox=\"0 0 1 1\" style=\"float: left;width: 0px;vertical-align: top;\" role=\"img\" aria-label=\"插图\"></svg></section></section></section><section><section><section><svg viewBox=\"0 0 1 1\" style=\"float: left;width: 0px;vertical-align: top;\" role=\"img\" aria-label=\"插图\"></svg></section></section></section></section><section><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">原文刊发于《新闻战线》2026年6月（下）。</span></p></section></div>",
       "newsContentBak": "{}",
       "newsDownTitle": "",
-      "newsId": 30052524071,
+      "newsId": 30052526985,
       "newsLinkUrl": "",
       "newsShortTitle": "",
-      "newsSource": "41",
-      "newsSourceName": "人民日报客户端",
-      "newsSummary": "通道通，则产业兴、开放活。",
+      "newsSource": "43",
+      "newsSourceName": "新闻战线微信公号",
+      "newsSummary": "",
       "newsTags": "",
-      "newsTitle": "经济热点快评 | 这场展会里，有丝路合作的新机遇",
+      "newsTitle": "时代呼唤“大新闻观”",
       "newsType": 8,
       "oldNewsId": "",
       "openAudio": 1,
@@ -2095,250 +1237,28 @@
       "openView": 1,
       "paperCategorys": [],
       "pcFirstFrameImageUri": "",
-      "photoList": [],
+      "photoList": [
+        {
+          "height": 852,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/08210efe42e24dc880c9cc4f9ad87456.jpg",
+          "size": 274889,
+          "width": 1080
+        },
+        {
+          "height": 93,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/db60bb4971134406a68e58159b8ea2ed.jpg",
+          "size": 4820,
+          "width": 640
+        }
+      ],
       "popUps": [],
       "preCommentFlag": 0,
-      "publishTime": "2026-06-30 11:05:10",
+      "publishTime": "2026-06-30 17:34:32",
       "reLInfo": {
         "channelId": 2003,
-        "relId": "500007572633",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 1,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/bd4dc55536b8428f95bf4714cf9c660e.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/2233a7ca706944418e9fa3d2fdd6dc38.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 1,
-        "sharePosterStyle": 1,
-        "shareSummary": "通道通，则产业兴、开放活。",
-        "shareTitle": "经济热点快评 | 这场展会里，有丝路合作的新机遇",
-        "shareUrl": "https://www.peopleapp.com/column/30052524071-500007572633"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 149020,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/89caafd95c084ebc85f11fdb6417871a.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 266,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/d9b06d06ea2e43aca7cc68657173cd6e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 252,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/08b7ceb405eb40838c5008565e066147.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 281,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/fa5639ecdf0b4fce90e60c1384539587.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 276,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "王云杉"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "845*563",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/7ac901dd385b451e9eee1be8a6ce28da.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782770368000",
-      "fullColumnImgUrls": [
-        {
-          "height": 563,
-          "landscape": 1,
-          "size": 110471,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/7ac901dd385b451e9eee1be8a6ce28da.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 845
-        }
-      ],
-      "keyArticle": 0,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsTitle": "人民时评：谋在先、干在前",
-      "objectId": "30052522798",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782788255000",
-      "readFlag": 0,
-      "relAskInfos": [],
-      "relId": 500007572440,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "人民日报",
-      "sourceId": "2",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 266,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/89caafd95c084ebc85f11fdb6417871a.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 26,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/89caafd95c084ebc85f11fdb6417871a.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 266,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/d9b06d06ea2e43aca7cc68657173cd6e.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 252,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/08b7ceb405eb40838c5008565e066147.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 281,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/fa5639ecdf0b4fce90e60c1384539587.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 276,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "王云杉"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 00:00:00",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 563,
-          "landscape": 1,
-          "size": 110471,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/7ac901dd385b451e9eee1be8a6ce28da.jpg",
-          "weight": 845
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": true,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">观察我国“新三样”发展会发现，产业在跑出加速度的同时，“如何提前做好后端利用规划”的课题也摆在了面前。</p><p style=\"text-indent: 2em;\">我国新能源汽车保有量已突破4300万辆，作为新能源汽车“心脏”的动力电池将迎来规模化退役阶段；光伏装机规模连续多年全球第一，早期光伏组件陆续达到使用年限，退役潮渐行渐近……</p><p style=\"text-indent: 2em;\">如何应对好这一课题？前不久，商务部召开“新三样”固废回收利用工作座谈会，部署加快完善顶层制度设计，推动出台政策文件。</p><p style=\"text-indent: 2em;\">前瞻布局应对“新三样”退役潮，简单看是部署发展固废回收产业，往深处看，则有着着眼全局的考量。一块标准的光伏组件富含银、铝、硅、铜等资源，退役的动力电池更是被视为蕴含锂、钴、镍等关键金属的“城市矿山”……这些有不少是我国对外依存度较高的资源。在产业蓬勃发展时、在新课题到来之前，就尽早着手构建闭环的回收体系，是提早布局的“远虑”，也是降低产业原料成本、保障产供链安全的“先手”。</p><p style=\"text-indent: 2em;\">前瞻布局“新三样”退役潮，体现这样一种清醒：发展越往前走，越需要把目光投向远方，把工作做到前头。推动高质量发展没有坦途，机遇与挑战并存，只有凡事谋在先、干在前，尽早行动才能牢牢掌握发展主动。</p><p style=\"text-indent: 2em;\">谋在先、干在前，首在“看得准”，增强前瞻性。尽早行动不是急躁冒进、盲目行动，而是在摸清发展规律、深入调查研究的基础上找准赛道，谋定后动。</p><p style=\"text-indent: 2em;\">比如，人工智能浪潮推动算力需求日益增长，地面数据中心正面临能源、土地、散热等多重挑战。在满足现有需求的同时，多地开始部署太空算力等新型算力，丰富未来算力的供给路径。又如，多年前，我国在存储芯片领域几乎一片空白，安徽合肥结合国家战略和地方比较优势，选定存储芯片赛道久久为功，在这一轮人工智能浪潮中实现本地产业的异军突起。</p><p style=\"text-indent: 2em;\">胸怀大局、登高望远，着眼发展全局、洞悉时代趋势，找到适合自己的发展路子，才能更好发挥比较优势，打开发展新空间。</p><p style=\"text-indent: 2em;\">谋在先、干在前，要着眼“留得足”，打足提前量。适度超前布局，留足冗余空间，是统筹发展和安全的必然举措。</p><p style=\"text-indent: 2em;\">加快构建多元清洁、安全韧性的能源供给新体系，让我们在面对国际地缘冲突造成的能源市场波动时，有充足底气和能力抵御冲击；推动建立适度超前的充换电基础设施体系，打通补能网络堵点，有力支撑新能源汽车产业快速迭代、市场渗透率稳步提升……</p><p style=\"text-indent: 2em;\">留足冗余空间，既体现居安思危的底线思维，也彰显谋远育新的前瞻考虑，既能为应对不确定性留出缓冲，也有利于为创新突破提供成长空间。</p><p style=\"text-indent: 2em;\">谋在先、干在前，落脚在行动。无论多前瞻的布局，最终都要靠真抓实干来绘就蓝图。</p><p style=\"text-indent: 2em;\">特斯拉上海超级工厂从开工到首批整车交付不到一年，以“当年开工、当年投产、当年交付”的效率跑出“中国速度”。正是这样的“中国速度”，推动新能源汽车供应链持续迭代升级，为国产新能源品牌崛起铺就更成熟的产业底座。</p><p style=\"text-indent: 2em;\">机遇稍纵即逝，增强行动力，看准了就抓紧干，方能把战略远见转化为实实在在的发展成效。</p><p style=\"text-indent: 2em;\">眼下，无论是建设现代化产业体系，还是加快高水平科技自立自强，都对我们长远谋划和落地执行的能力提出了更高要求。坚持谋在先、干在前，以前瞻布局夯实发展根基，我们定能在新一轮科技革命和产业变革中赢得更多主动。</p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052522798,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "2",
-      "newsSourceName": "人民日报",
-      "newsSummary": "无论多前瞻的布局，最终都要靠真抓实干来绘就蓝图。",
-      "newsTags": "",
-      "newsTitle": "人民时评：谋在先、干在前",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 0,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-30 10:57:35",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007572440",
+        "relId": "500007573768",
         "relObjectId": 2003,
         "relType": "1"
       },
@@ -2353,14 +1273,14 @@
       "sceneId": "",
       "serials": null,
       "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/ba1ae452ed2c4d65ba86f64704662311.png?x-oss-process=image/resize,w_120",
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/3e9931b6c6e646e7946c786cf5f1b555.png?x-oss-process=image/resize,w_120",
         "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/7ac901dd385b451e9eee1be8a6ce28da.jpg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/a0b81f469a454317898220c335751ec8.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
         "sharePosterOpen": 0,
         "sharePosterStyle": 1,
-        "shareSummary": "无论多前瞻的布局，最终都要靠真抓实干来绘就蓝图。",
-        "shareTitle": "人民时评：谋在先、干在前",
-        "shareUrl": "https://www.peopleapp.com/column/30052522798-500007572440"
+        "shareSummary": "人民日报，有品质的新闻",
+        "shareTitle": "时代呼唤“大新闻观”",
+        "shareUrl": "https://www.peopleapp.com/column/30052526985-500007573768"
       },
       "shortDrama": null,
       "specialColumnId": null,
@@ -2372,483 +1292,7 @@
       "traceInfo": "",
       "userInfo": null,
       "videoInfo": [],
-      "viewCount": 694677,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/9db26b00156f4786a8aefeed9129f794.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 191,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/07355594f699465a811f0ef5005bfe2b.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 199,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/750597b1e66e4fed9ab8cc3cbe3d4669.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 182,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/6d209436a6fd4b1bbe85b17a35c2f47b.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 204,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "陈江"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "1700*1133",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/a8eb2b389e1944eab8b4a6b327f7eb62.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782778097000",
-      "fullColumnImgUrls": [
-        {
-          "height": 1133,
-          "landscape": 1,
-          "size": 137751,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/a8eb2b389e1944eab8b4a6b327f7eb62.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 1700
-        }
-      ],
-      "keyArticle": 0,
-      "linkUrl": "",
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsSummary": "老年教育供需矛盾依然突出，银发族精神富养之路还很长。",
-      "newsTitle": "银发族抢着学AI，老年教育岂能慢半拍？",
-      "objectId": "30052523393",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782788040000",
-      "readFlag": 1,
-      "relAskInfos": [],
-      "relId": 500007572163,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "钱江晚报",
-      "sourceId": "41",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 191,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/9db26b00156f4786a8aefeed9129f794.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 26,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/9db26b00156f4786a8aefeed9129f794.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 191,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/07355594f699465a811f0ef5005bfe2b.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 199,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/750597b1e66e4fed9ab8cc3cbe3d4669.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 182,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/6d209436a6fd4b1bbe85b17a35c2f47b.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 204,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "陈江"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "郑晓宇",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 10:54:00",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 1133,
-          "landscape": 1,
-          "size": 137751,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/a8eb2b389e1944eab8b4a6b327f7eb62.png",
-          "weight": 1700
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": false,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\">近日，绍兴市老年大学2026学年招生现场，上演了一场火热的“抢课大战”。AI应用、AI影像、AI+PS修图、AI+电脑应用等6个班级共390个学位，半天内一抢而空。学校去年就开过4个AI班，今年又增加了两个班，但依然供不应求，正在考虑紧急扩班。其实这不是个别现象，放眼全国各地，银发族抢学AI已成燎原之势。</p><p style=\"text-indent: 2em;\">老年人挤破头学AI，到底图什么？71岁的江月美说：“等子女来教太慢，还是来学校系统学一下。”更深层的原因，是老年人不想被时代抛下<strong>。他们学AI，不是想当什么技术高手，只是想自己搞定医院自助挂号、会用手机软件打车，独居时能有个倾听者，是想夺回对生活的掌控权。</strong></p><p style=\"text-indent: 2em;\"><strong>旺盛的学习需求摆在眼前，老年教育供给却明显滞后。</strong>截至2024年末，全国老年大学约10.5万所，学员约3000万人，而我国60岁及以上老年人口已超3.1亿。即便算上所有老年教育机构，能覆盖的也只是极少部分。多数老年大学课程扎堆舞蹈、器乐、书画，能提升数字生活能力的少之又少。</p><p style=\"text-indent: 2em;\"><strong>为啥供给总是慢半拍？原因在于，很多地方办老年大学，认为老年人唱唱歌、跳跳舞、写写字就行了。</strong>但如今大批步入老年的60后、65后，需求早就不止休闲娱乐。两年前，国务院出台文件，提出要推动老年教育与银发经济融合发展。“十五五”规划纲要则明确“扩大老年教育资源供给，发展老年大学”。面对3亿多银发群体，老年教育已从补充型服务变为刚需型产业，其定位不该只是养老娱乐场所，而应成为老年人继续参与社会、创造价值的平台。</p><p style=\"text-indent: 2em;\"><strong>解决老年教育的供需矛盾，不能只靠公办老年大学单打独斗。</strong>一方面要盘活存量，把老年学校与社区活动中心“打包”整合，降低运营成本、方便就近上课；另一方面要引入增量，鼓励高校、职业院校、养老企业等社会力量参与老年教育。同时，课程开发必须建立动态更新机制，不能“一套教案用十年”，时代变了，课程内容就要跟着变。</p><p style=\"text-indent: 2em;\"><strong>老年教育要“适老”，先要“懂老”。不是老人抵触新科技，而是教学方没能把复杂技术转化成简单易学的内容。</strong>把AI课程从枯燥的理论科普，改成贴近日常的实用教学，看似只是授课内容调整，实则是老年教育理念的全面更新。390个AI学位半日抢空，信号已然十分清楚：<strong>老年教育供需矛盾依然突出，银发族精神富养之路还很长。</strong></p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052523393,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "41",
-      "newsSourceName": "钱江晚报",
-      "newsSummary": "老年教育供需矛盾依然突出，银发族精神富养之路还很长。",
-      "newsTags": "",
-      "newsTitle": "银发族抢着学AI，老年教育岂能慢半拍？",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 1,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-30 10:54:00",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007572163",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 1,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/ad2d4dacf75d41978caceb45b045b2d4.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/a8eb2b389e1944eab8b4a6b327f7eb62.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 1,
-        "sharePosterStyle": 1,
-        "shareSummary": "老年教育供需矛盾依然突出，银发族精神富养之路还很长。",
-        "shareTitle": "银发族抢着学AI，老年教育岂能慢半拍？",
-        "shareUrl": "https://www.peopleapp.com/column/30052523393-500007572163"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 31618,
-      "visitorComment": 1,
-      "voteInfo": null
-    }
-  },
-  {
-    "list_item": {
-      "activityExt": null,
-      "appStyle": "26",
-      "askInfo": null,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a84a906d4f1c4258af3d1111de3ff8ca.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 251,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/485a9cd0294042ff881faaf26902580f.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 236,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ab863412cceb4c4abf3fd9b2ae38639f.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 258,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/df9b8718ab704685b2d1d53d16e82ed2.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 265,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "余  璇"
-        }
-      ],
-      "channelId": 2003,
-      "commentInfo": null,
-      "corner": "",
-      "coverSize": "1705*1137",
-      "coverType": 1,
-      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/48f5a09adbaa4ccf991685679092f093.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-      "createTime": "1782770368000",
-      "fullColumnImgUrls": [
-        {
-          "height": 1137,
-          "landscape": 1,
-          "size": 220081,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/48f5a09adbaa4ccf991685679092f093.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
-          "weight": 1705
-        }
-      ],
-      "keyArticle": 0,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newTags": "",
-      "newsTitle": "发展的主动性从何而来",
-      "objectId": "30052522797",
-      "objectType": "8",
-      "openAudio": 1,
-      "positionType": 1,
-      "publishTime": "1782787867000",
-      "readFlag": 0,
-      "relAskInfos": [],
-      "relId": 500007572438,
-      "relObjectId": "2003",
-      "relType": 1,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "shareInfo": null,
-      "shortDrama": null,
-      "slideShows": [],
-      "source": "人民日报",
-      "sourceId": "2",
-      "tagIds": [],
-      "topicWatchCover": null,
-      "userInfo": null,
-      "videoInfo": null,
-      "visitorComment": 1,
-      "voiceInfo": {
-        "defaultMultiple": "1.0",
-        "openMultipleAdjustment": 1,
-        "type": 3,
-        "voiceDuration": 251,
-        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a84a906d4f1c4258af3d1111de3ff8ca.mp3"
-      }
-    },
-    "detail": {
-      "activityInfos": [],
-      "appstyle": 26,
-      "audioList": [
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/a84a906d4f1c4258af3d1111de3ff8ca.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 251,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "stanley"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/485a9cd0294042ff881faaf26902580f.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 236,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhistella"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/ab863412cceb4c4abf3fd9b2ae38639f.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 258,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhiyuan"
-        },
-        {
-          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260630/voice/df9b8718ab704685b2d1d53d16e82ed2.mp3",
-          "defaultMultiple": "1.0",
-          "duration": 265,
-          "openMultipleAdjustment": 1,
-          "sourceType": 2,
-          "type": 3,
-          "voicer": "zhida"
-        }
-      ],
-      "authorList": [
-        {
-          "authorName": "余  璇"
-        }
-      ],
-      "bestNoticer": 1,
-      "commentDisplay": 1,
-      "currentNum": null,
-      "editorName": "",
-      "firstFrameImageUri": "",
-      "firstPublishTime": "2026-06-30 00:00:00",
-      "fullColumnImgUrls": [
-        {
-          "format": null,
-          "height": 1137,
-          "landscape": 1,
-          "size": 220081,
-          "url": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/48f5a09adbaa4ccf991685679092f093.png",
-          "weight": 1705
-        }
-      ],
-      "hasPopUp": null,
-      "isNewspaper": true,
-      "itemId": "",
-      "itemTypeCode": "",
-      "keyArticle": 0,
-      "leaderArticle": 0,
-      "likesStyle": 1,
-      "liveInfo": null,
-      "menuShow": 1,
-      "newIntroduction": "",
-      "newLinkObject": null,
-      "newsBodyTitle": "",
-      "newsContent": "<p style=\"text-indent: 2em;\"><strong>原标题：发展的主动性从何而来（评论员观察）</strong></p><p style=\"text-indent: 2em;\">看似无关的事，合起来看，则耐人寻味。</p><p style=\"text-indent: 2em;\">北方，黑龙江黑河打造“科技冰堡”，将“冬至”锁定在红河谷四季低温试验场，让高寒测试不再“追着冬天跑”。</p><p style=\"text-indent: 2em;\">中部，河南洛阳孟津区智能化人工气候室，提供全年无间断、可重复的标准化试验环境，助瓜苗安稳生长。</p><p style=\"text-indent: 2em;\">南方，浙江台州仙居县打造杨梅深加工基地，开发杨梅酥、烘焙果酱等高附加值产品，让仙居杨梅从“一季红”实现“四季火”。</p><p style=\"text-indent: 2em;\">地域不同、产业各异，却有一个共同的特点：打破“靠天吃饭”的固有路径，实现“按需供给”，化被动为主动。</p><p style=\"text-indent: 2em;\">没有落后的产业，只有惰性的思维。有的地方坐拥独特资源禀赋，却不知挖掘转化；有的地方一度抢占先机，却缺乏向价值链高端攀升的勇气……凡此种种，看似受制于产业基础、市场周期等，实则是被陈旧观念捆住了手脚、被路径依赖锁住了步伐。</p><p style=\"text-indent: 2em;\">观念破冰，发展破题。从“靠天吃饭”走向“按需供给”，关键就在于打破思维定式、转变思想观念、跳出路径依赖。</p><p style=\"text-indent: 2em;\">比如，不固守现有资源、不被动等待机遇，坚持以需求为导向，把“靠天等条件”变为“造条件成事”。</p><p style=\"text-indent: 2em;\">浙江义乌为何能创造210多万种商品联通200多个国家和地区的传奇？不靠江、不临海、不沿边，就“借道出境”“借港出海”。正是在不断打破“常识”的过程中，义乌闯出了一条“莫名其妙”“无中生有”“点石成金”的发展道路。</p><p style=\"text-indent: 2em;\">事实上，许多地方并非没有潜力，而是困在“有什么才能干什么”的思维定式中。不被先天条件束缚，紧盯市场需求与发展方向，主动创造条件，才能把外部约束转化为内生动力，在看似无路之处闯出发展新路。</p><p style=\"text-indent: 2em;\">比如，不局限于一域的视野，而在更大格局中找准自身定位，敢于去更广阔的水域游泳，识得水性、畅游“大海”。</p><p style=\"text-indent: 2em;\">面对重峦叠嶂的地理环境和薄弱的工业基础，如何让产业发展更上一层楼？湖北十堰竹山县放眼全国，敏锐捕捉到东南沿海的水暖卫浴产业向内陆转移的机遇，结合自身“水电大县”的禀赋，果断进军新蓝海，同时坚持链式发展、集群攻坚，推动水暖卫浴产业产值破百亿元。</p><p style=\"text-indent: 2em;\">以更大视角审视自身，才能进一步找准比较优势。打破视野局限，从全局谋划一域，并坚持发展眼光，让比较优势实现动态升级，开辟的将会是更大的发展空间。</p><p style=\"text-indent: 2em;\">再比如，不坐等需求显现、被动追赶市场，而善于以前瞻眼光、世界眼光精准研判时代风向，科学锚定发展方向。</p><p style=\"text-indent: 2em;\">江苏溧阳，2012年七成产值还由水泥、钢铁产业贡献，如今已是千亿元级动力电池产业之城。这样的蝶变，靠的就是当地以长远眼光洞察产业发展大势，前瞻布局动力电池产业赛道，并在这一领域持续深耕。当新能源汽车产业发展如火如荼，溧阳已经布局“动力+储能”新赛道。</p><p style=\"text-indent: 2em;\">想要赢得未来，就要超越现在。跳出当下局限，敏锐捕捉时代脉搏，主动布局、抢先落子，才能在激烈竞争格局中抢占制高点、塑造新优势。</p><p style=\"text-indent: 2em;\">掌握发展主动，就是要打破“资源决定论”的桎梏，增强“需要什么就创造什么”的主动性。不做追赶季节的候鸟，不做依附风口的过客，而是以需求为导向、以格局定方向，才能真正把发展主动权牢牢握在自己手中。</p>",
-      "newsContentBak": "{}",
-      "newsDownTitle": "",
-      "newsId": 30052522797,
-      "newsLinkUrl": "",
-      "newsShortTitle": "",
-      "newsSource": "2",
-      "newsSourceName": "人民日报",
-      "newsSummary": "以需求为导向、以格局定方向，才能真正把发展主动权牢牢握在自己手中。",
-      "newsTags": "",
-      "newsTitle": "发展的主动性从何而来",
-      "newsType": 8,
-      "oldNewsId": "",
-      "openAudio": 1,
-      "openComment": 1,
-      "openLikes": 0,
-      "openView": 1,
-      "paperCategorys": [],
-      "pcFirstFrameImageUri": "",
-      "photoList": [],
-      "popUps": [],
-      "preCommentFlag": 0,
-      "publishTime": "2026-06-30 10:51:07",
-      "reLInfo": {
-        "channelId": 2003,
-        "relId": "500007572438",
-        "relObjectId": 2003,
-        "relType": "1"
-      },
-      "readFlag": 1,
-      "recallFrom": null,
-      "recommendShow": 2,
-      "refreshCnt": null,
-      "relAskInfos": [],
-      "respPosition": null,
-      "rmhInfo": null,
-      "rmhPlatform": 0,
-      "sceneId": "",
-      "serials": null,
-      "shareInfo": {
-        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260630/image/content/6338625569134c57bd27e2d5f95cf09c.png?x-oss-process=image/resize,w_120",
-        "shareOpen": 1,
-        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/sjbj-20260630/image/display/48f5a09adbaa4ccf991685679092f093.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
-        "sharePosterOpen": 0,
-        "sharePosterStyle": 1,
-        "shareSummary": "以需求为导向、以格局定方向，才能真正把发展主动权牢牢握在自己手中。",
-        "shareTitle": "发展的主动性从何而来",
-        "shareUrl": "https://www.peopleapp.com/column/30052522797-500007572438"
-      },
-      "shortDrama": null,
-      "specialColumnId": null,
-      "specialColumnName": "",
-      "subSceneId": "",
-      "timeline": null,
-      "topicInfo": null,
-      "traceId": "",
-      "traceInfo": "",
-      "userInfo": null,
-      "videoInfo": [],
-      "viewCount": 436659,
+      "viewCount": 337379,
       "visitorComment": 1,
       "voteInfo": null
     }
