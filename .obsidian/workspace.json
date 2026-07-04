@@ -41,16 +41,36 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data/articles/人民日报系列/29-人民日报讲正确政绩观：让群众看到变化，靠考核、决策和旧账闭环.md",
+                "file": "data/articles/人民日报系列/31-人民日报讲人民城市：评价一座城，不能只看GDP和地标.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "29-人民日报讲正确政绩观：让群众看到变化，靠考核、决策和旧账闭环"
+              "title": "31-人民日报讲人民城市：评价一座城，不能只看GDP和地标"
             }
           }
         ],
         "currentTab": 2
+      },
+      {
+        "id": "acf478a4252c1ea3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "03ece82fd29cd2cd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "data/articles/人民日报系列/【R】33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "【R】33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +127,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 464.5
+    "width": 256.5
   },
   "right": {
     "id": "1ad80539526a48b6",
@@ -212,44 +232,44 @@
       "bases:新建数据库": false
     }
   },
-  "active": "05f3a4488beb2974",
+  "active": "03ece82fd29cd2cd",
   "lastOpenFiles": [
+    "data/analysis/2026-07-04/wechat-safety-governance-preventive-investment.md",
+    "data/analysis/2026-07-04/classroom-safety-governance-preventive-investment.md",
+    "data/analysis/2026-07-04/2026-07-04-safety-governance-preventive-investment-topic-review.md",
+    "data/articles/人民日报系列/34-人民日报讲安全治理：安全不是成本，而是一项前置投资.md",
+    "data/articles/人民日报系列/33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
+    "data/articles/人民日报系列/31-r人民日报讲人民城市：评价一座城，不能只看GDP和地标.md",
     "data/core/articles.sqlite-shm",
     "data/core/articles.sqlite-wal",
-    "data/processed/articles_20260630.json",
-    "data/raw/articles_20260630.json",
-    "data/processed/articles_20260629.json",
-    "data/raw/articles_20260629.json",
-    "data/vault/2026/06/2026-06-30/17-党建/产业链党建激活发展新动能（党旗在基层一线高高飘扬）.md",
-    "data/vault/2026/06/2026-06-30/17-党建/常态监督有力度 助老服务有温度.md",
-    "data/vault/2026/06/2026-06-30/17-党建/铭记历史 感悟初心.md",
-    "data/vault/2026/06/2026-06-30/17-党建/大处着眼与小处着手（金台潮声·政绩观系列谈）.md",
-    "data/vault/2026/06/2026-06-30/17-党建/“考得准”助推“干得实”（前沿观察·用好考核指挥棒).md",
-    "data/vault/2026/06/2026-06-30/17-党建",
-    "data/vault/2026/06/2026-06-30/15-教育/打造人人参与的“大思政课”（师说）.md",
-    "data/vault/2026/06/2026-06-30/15-教育/让更多学生从“跟着学”到“挑大梁”（在一线）.md",
-    "data/vault/2026/06/2026-06-30/15-教育/这抹红色永远鲜艳（教育时评）.md",
-    "data/vault/2026/06/2026-06-30/15-教育/走进历史 读懂信仰（深聚焦）.md",
-    "data/vault/2026/06/2026-06-30/15-教育",
-    "data/vault/2026/06/2026-06-30/14-国际/货畅其流 人享其安.md",
-    "data/vault/2026/06/2026-06-30/14-国际/在霍尔果斯，外商从“客人”变“家人”（外国人眼中的中国城市）.md",
-    "data/vault/2026/06/2026-06-30/14-国际",
-    "data/vault/2026/06/2026-06-30/12-文件/温州市南浦实验中学 创新初中科学教育 探索“学思用合一”育人路径.md",
-    "data/vault/2026/06/2026-06-30/12-文件",
-    "data/vault/2026/06/2026-06-30/11-特别报道/永葆先锋本色，在新征程上建功立业.md",
-    "data/vault/2026/06/2026-06-30/11-特别报道",
-    "data/vault/2026/06/2026-06-30/10-特别报道/新时代共产党员的模样.md",
-    "data/vault/2026/06/2026-06-30/10-特别报道/一个党员就是一面旗帜.md",
-    "data/vault/2026/06/2026-06-30/09-文件/中华人民共和国商标法.md",
-    "data/vault/2026/06/2026-06-30/08-政治/最高检发布惩治知识产权恶意诉讼典型案例.md",
-    "data/vault/2026/06/2026-06-30/08-政治/传承弘扬青藏铁路精神座谈会召开.md",
-    "data/vault/2026/06/2026-06-30/08-政治/明确未来五年教育强国建设行动路线.md",
-    "data/vault/2026/06/2026-06-30/08-政治/党建阵地建好更要用好（编辑手记）.md",
-    "data/vault/2026/06/2026-06-30/08-政治/把为民服务做深做细做到位（基层治理新实践）.md",
-    "data/vault/2026/06/2026-06-30/07-评论/来论.md",
-    "data/vault/2026/06/2026-06-30/07-评论/让幼儿教育回归本真（纵横）.md",
-    "data/vault/2026/06/2026-06-30/07-评论/治水兴水 为民造福（现场评论）.md",
-    "data/vault/2026/06/2026-06-30/07-评论/谋在先、干在前（人民时评）.md",
+    "data/core/material_assets.sqlite-wal",
+    "data/core/material_assets.sqlite-shm",
+    "data/articles/人民日报系列/【R】33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
+    "data/articles/人民日报系列/31-人民日报讲人民城市：评价一座城，不能只看GDP和地标.md",
+    "data/articles/人民日报系列/32-r人民日报讲营商环境新写法：企业不仅要进得来，也要活得好、退得出.md",
+    "31-r人民日报讲人民城市：评价一座城，不能只看GDP和地标.md",
+    "data/articles/人民日报系列/30-人民日报讲共同富裕：不是平均用力，而是区域协作、县域工程和产业帮扶一起发力.md",
+    "data/analysis/2026-07-04/wechat-service-industry-quality-experience-brand-trust.md",
+    "data/analysis/2026-07-04/xiaohongshu-service-industry-quality-experience-brand-trust-script.md",
+    "data/analysis/2026-07-04/2026-07-04-service-industry-quality-experience-brand-trust-topic-review.md",
+    "data/articles/人民日报系列/33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
+    "data/analysis/2026-07-04/wechat-business-environment-lifecycle.md",
+    "data/analysis/2026-07-04/interview-business-environment-lifecycle-card.md",
+    "data/analysis/2026-07-04/2026-07-04-business-environment-lifecycle-topic-review.md",
+    "data/articles/人民日报系列/32-人民日报讲营商环境新写法：企业不仅要进得来，也要活得好、退得出.md",
+    "data/analysis/2026-07-04/wechat-people-city-scorecard.md",
+    "data/analysis/2026-07-04/xiaohongshu-people-city-scorecard-script.md",
+    "data/analysis/2026-07-04/2026-07-04-people-city-scorecard-topic-review.md",
+    "data/analysis/2026-07-04",
+    "data/peopleapp_opinion/exports/run_logs/peopleapp_opinion_daily_20260703_203241.log",
+    "data/peopleapp_opinion/core/articles.sqlite-shm",
+    "data/peopleapp_opinion/core/articles.sqlite-wal",
+    "data/peopleapp_opinion/exports/peopleapp_opinion_notion_sync_20260703_203616.json",
+    "data/peopleapp_opinion/exports/peopleapp_opinion_crawl_daily_20260703_203322.csv",
+    "data/peopleapp_opinion/vault/2026/07/2026-07-01/APP-锐评/目的地营销：从“有风景”到“有温度”.md",
+    "data/peopleapp_opinion/vault/2026/07/2026-07-01/APP-锐评/零时差 欧盟壁垒再多，挡不住一颗想凉快的心.md",
+    "data/peopleapp_opinion/vault/2026/07/2026-07-01/APP-锐评/这是我们的承诺！.md",
+    "data/peopleapp_opinion/vault/2026/07/2026-07-01/APP-锐评/外卖诗人王计兵：我终于是一名共产党员了.md",
     "media/images/2026-06-23-employment-chain-xhs-video/preview-grid.png",
     "media/images/2026-06-23-employment-chain-xhs-video/video-cover-03.png",
     "media/images/2026-06-23-employment-chain-xhs-video/video-cover-02.png",
