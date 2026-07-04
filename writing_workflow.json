@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "author": "LeePerfect",
+  "getnote": {
+    "title_prefix": "[公众号二润]",
+    "tags_waiting": [
+      "Codex写作",
+      "待二润"
+    ],
+    "tags_completed": [
+      "Codex写作",
+      "二润完成"
+    ]
+  },
+  "covers": {
+    "people_daily": "media/images/wechat-fixed-covers/people-daily-header.png",
+    "hotspot": "media/images/wechat-fixed-covers/hotspot-header.png"
+  },
+  "doocs": {
+    "repository": "https://github.com/doocs/md.git",
+    "revision": "18454939f831c42c26e8b6efa781b353d7b4f4f7",
+    "local_dir": ".local/doocs-md",
+    "editor_port": 8800,
+    "code_theme_css": "scripts/assets/stackoverflow-light.min.css",
+    "default_layout": {
+      "theme": "default",
+      "primaryColor": "#ff6a2a",
+      "fontFamily": "-apple-system-font,BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB , Microsoft YaHei UI , Microsoft YaHei ,Arial,sans-serif",
+      "fontSize": "16px",
+      "legend": "alt",
+      "isMacCodeBlock": true,
+      "isShowLineNumber": false,
+      "citeStatus": false,
+      "countStatus": false,
+      "themeMode": "light",
+      "isUseIndent": true,
+      "isUseJustify": true,
+      "headingStyles": {},
+      "customCSS": ""
+    }
+  },
+  "wechat": {
+    "token_cache": "data/exports/wechat_token_cache.json",
+    "setup_status": "data/core/wechat_setup_status.json",
+    "draft_count_endpoint": "https://api.weixin.qq.com/cgi-bin/draft/count"
+  },
+  "workflow_state": "data/core/writing_workflow_state.json",
+  "preview_root": "/tmp/peopledaily-writing-preview"
+}

@@ -18,5 +18,6 @@
   "logging": {
     "level": "INFO",
     "log_file": "crawler.log"
-  }
+  },
+  "writing_workflow_note": "公众号写作工作流的公开配置见 writing_workflow.json；公众号 AppID/AppSecret 仅写入被 Git 忽略的 .env"
 }

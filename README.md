@@ -176,6 +176,22 @@ Markdown 表适合直接阅读和挑选，CSV 适合以后按月、季度、年�
 python3 idea_magazine.py
 ```
 
+## 公众号写作工作流
+
+项目已接入“Codex 写作 → Humanizer-zh 一润 → 得到大脑二润 → doocs/md 排版 → 公众号草稿箱”流程。日常可以直接对 Codex说：
+
+```text
+把这篇文章写完并送去二润。
+我在得到改好了，拉回。
+预览一下公众号排版。
+打开完整排版编辑器。
+同步到公众号草稿箱。
+```
+
+固定作者为 `LeePerfect`，人民日报系列与热点系列会自动选择各自统一头图。第一次使用公众号接口时，Codex会逐步引导配置 AppID、AppSecret 和 IP 白名单；密钥只保存在被 Git 忽略的 `.env`。
+
+完整说明见 [docs/writing-workflow.md](docs/writing-workflow.md)。
+
 然后打开：
 
 ```text

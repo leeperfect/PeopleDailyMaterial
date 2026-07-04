@@ -123,6 +123,18 @@ python3 scripts/sync_to_notion.py 2026-05-27
 - 不自动提交，除非用户明确要求。
 - 以后安排定时采集、同步、提醒或巡检任务时，统一使用 Codex 的“已安排”自动任务；不要再使用 macOS `launchd`、系统日历或其他本机系统级定时任务，除非用户明确要求。
 
+## 公众号写作工作流
+
+- 用户说“写完并送去二润”时：先按正常教研流程完成文章，运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft` 保存初稿；再调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架。润色后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`，该命令会自动保存 humanizer 快照并送入得到大脑。
+- 用户说“我在得到改好了，拉回”时：根据当前文章运行 `python3 scripts/writing_workflow.py pull "<文章路径>"`。必须使用本地记录的精确 `note_id`；校验不通过时不得覆盖本地稿。
+- 用户说“预览公众号排版”时：运行 `python3 scripts/writing_workflow.py preview "<文章路径>"`，再用 Codex 内置浏览器打开输出的本地预览页。预览与发布必须使用同一份 doocs/md HTML。
+- 用户说“打开完整排版编辑器”时：运行 `python3 scripts/writing_workflow.py editor "<文章路径>"`，使用 Codex 内置浏览器打开本地 doocs/md；不要要求用户打开 IDE。
+- 用户说“保存本文排版”时：把完整编辑器中确定的参数保存为该文章的 `wechat_layout` 状态，再重新生成只读预览确认。
+- 用户说“同步到公众号草稿箱”时：先检查 `.env` 是否已经安全配置。未配置时启动 `scripts/wechat_setup.py` 本地私密配置页，并一次只引导用户完成一个步骤；不得要求用户把 AppSecret 粘贴到聊天。配置完成后先做只读 preflight，再创建草稿。
+- 当前账号无草稿接口权限时，使用 Codex 内置浏览器登录公众号后台代填；若页面变化导致代填失败，打开只读预览页让用户使用“一键复制公众号富文本”兜底。
+- 固定作者为 `LeePerfect`。热点系列使用 `media/images/wechat-fixed-covers/hotspot-header.png`；人民日报系列使用 `media/images/wechat-fixed-covers/people-daily-header.png`。
+- 公众号流程只允许创建草稿，不得自动群发。相同正文和排版已建草稿时，不得重复创建，除非用户明确要求。
+
 ## Git Commit 规范
 
 提交 Git commit 时必须遵守以下规则：

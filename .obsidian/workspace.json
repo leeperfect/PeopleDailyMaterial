@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data/articles/人民日报系列/31-人民日报讲人民城市：评价一座城，不能只看GDP和地标.md",
+                "file": "data/articles/人民日报系列/33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "31-人民日报讲人民城市：评价一座城，不能只看GDP和地标"
+              "title": "33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”"
             }
           }
         ],
@@ -62,12 +62,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data/articles/人民日报系列/【R】33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
+                "file": "data/articles/人民日报系列/33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【R】33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”"
+              "title": "33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”"
             }
           }
         ]
@@ -232,27 +232,37 @@
       "bases:新建数据库": false
     }
   },
-  "active": "03ece82fd29cd2cd",
+  "active": "05f3a4488beb2974",
   "lastOpenFiles": [
+    "scripts/assets/stackoverflow-light.min.css",
+    "data/core/writing_workflow_state.json",
+    "tests/__pycache__/test_wechat_setup.cpython-314.pyc",
+    "tests/test_wechat_setup.py",
+    "scripts/__pycache__/writing_workflow.cpython-314.pyc",
+    "tests/__pycache__/test_publish_wechat_draft.cpython-314.pyc",
+    "tests/__pycache__/test_getnote_sync.cpython-314.pyc",
+    "tests/__pycache__/test_writing_workflow.cpython-314.pyc",
+    "tests/test_publish_wechat_draft.py",
+    "tests/test_getnote_sync.py",
+    "tests/test_writing_workflow.py",
+    "media/images/wechat-fixed-covers/people-daily-header.png",
+    "media/images/wechat-fixed-covers/hotspot-header.png",
+    "docs/writing-workflow.md",
+    "data/articles/人民日报系列/33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
+    "data/articles/人民日报系列/33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
+    "data/articles/人民日报系列/31-人民日报讲人民城市：评价一座城，不能只看GDP和地标.md",
+    "data/articles/人民日报系列/33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
     "data/analysis/2026-07-04/wechat-safety-governance-preventive-investment.md",
     "data/analysis/2026-07-04/classroom-safety-governance-preventive-investment.md",
     "data/analysis/2026-07-04/2026-07-04-safety-governance-preventive-investment-topic-review.md",
     "data/articles/人民日报系列/34-人民日报讲安全治理：安全不是成本，而是一项前置投资.md",
-    "data/articles/人民日报系列/33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
     "data/articles/人民日报系列/31-r人民日报讲人民城市：评价一座城，不能只看GDP和地标.md",
-    "data/core/articles.sqlite-shm",
-    "data/core/articles.sqlite-wal",
-    "data/core/material_assets.sqlite-wal",
-    "data/core/material_assets.sqlite-shm",
-    "data/articles/人民日报系列/【R】33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
-    "data/articles/人民日报系列/31-人民日报讲人民城市：评价一座城，不能只看GDP和地标.md",
     "data/articles/人民日报系列/32-r人民日报讲营商环境新写法：企业不仅要进得来，也要活得好、退得出.md",
     "31-r人民日报讲人民城市：评价一座城，不能只看GDP和地标.md",
     "data/articles/人民日报系列/30-人民日报讲共同富裕：不是平均用力，而是区域协作、县域工程和产业帮扶一起发力.md",
     "data/analysis/2026-07-04/wechat-service-industry-quality-experience-brand-trust.md",
     "data/analysis/2026-07-04/xiaohongshu-service-industry-quality-experience-brand-trust-script.md",
     "data/analysis/2026-07-04/2026-07-04-service-industry-quality-experience-brand-trust-topic-review.md",
-    "data/articles/人民日报系列/33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
     "data/analysis/2026-07-04/wechat-business-environment-lifecycle.md",
     "data/analysis/2026-07-04/interview-business-environment-lifecycle-card.md",
     "data/analysis/2026-07-04/2026-07-04-business-environment-lifecycle-topic-review.md",
@@ -260,16 +270,8 @@
     "data/analysis/2026-07-04/wechat-people-city-scorecard.md",
     "data/analysis/2026-07-04/xiaohongshu-people-city-scorecard-script.md",
     "data/analysis/2026-07-04/2026-07-04-people-city-scorecard-topic-review.md",
-    "data/analysis/2026-07-04",
-    "data/peopleapp_opinion/exports/run_logs/peopleapp_opinion_daily_20260703_203241.log",
-    "data/peopleapp_opinion/core/articles.sqlite-shm",
-    "data/peopleapp_opinion/core/articles.sqlite-wal",
-    "data/peopleapp_opinion/exports/peopleapp_opinion_notion_sync_20260703_203616.json",
-    "data/peopleapp_opinion/exports/peopleapp_opinion_crawl_daily_20260703_203322.csv",
     "data/peopleapp_opinion/vault/2026/07/2026-07-01/APP-锐评/目的地营销：从“有风景”到“有温度”.md",
     "data/peopleapp_opinion/vault/2026/07/2026-07-01/APP-锐评/零时差 欧盟壁垒再多，挡不住一颗想凉快的心.md",
-    "data/peopleapp_opinion/vault/2026/07/2026-07-01/APP-锐评/这是我们的承诺！.md",
-    "data/peopleapp_opinion/vault/2026/07/2026-07-01/APP-锐评/外卖诗人王计兵：我终于是一名共产党员了.md",
     "media/images/2026-06-23-employment-chain-xhs-video/preview-grid.png",
     "media/images/2026-06-23-employment-chain-xhs-video/video-cover-03.png",
     "media/images/2026-06-23-employment-chain-xhs-video/video-cover-02.png",
@@ -278,8 +280,6 @@
     "media/images/2026-06-23-employment-chain-xhs-video/xhs-14-interview.png",
     "media/images/2026-06-23-employment-chain-xhs-video/xhs-13-argument.png",
     "media/images/2026-06-23-employment-chain-xhs-video/xhs-12-framework.png",
-    "media/images/2026-06-23-employment-chain-xhs-video/xhs-11-grassroots.png",
-    "media/images/2026-06-23-employment-chain-xhs-video/xhs-10-startup.png",
     "未命名.canvas"
   ]
 }

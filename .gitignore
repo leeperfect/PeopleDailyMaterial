@@ -72,3 +72,9 @@ media/packages/**
 # 操作系统文件
 .DS_Store
 Thumbs.db
+
+# 写作工作流：微信 access_token 缓存（临时凭证，敏感，不入库）
+data/exports/wechat_token_cache.json
+data/exports/getnote_article_map.json
+data/exports/wechat_html/
+.local/
