@@ -24,6 +24,8 @@ from modules.wechat_api import (
     add_draft,
     draft_count,
     file_hash,
+    get_draft,
+    update_draft,
     upload_content_image,
     upload_permanent_image,
     upload_remote_content_image,
@@ -105,6 +107,50 @@ def publication_fingerprint(article_hash: str, layout: dict) -> str:
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
+def truncate_utf8(text: str, max_bytes: int) -> str:
+    result: list[str] = []
+    size = 0
+    for character in text:
+        character_size = len(character.encode("utf-8"))
+        if size + character_size > max_bytes:
+            break
+        result.append(character)
+        size += character_size
+    return "".join(result)
+
+
+def validated_title(metadata: dict, body: str, article_path: Path) -> str:
+    title = title_from_article(article_path, metadata, body)
+    title_bytes = len(title.encode("utf-8"))
+    if title_bytes > 32:
+        raise RuntimeError(
+            f"公众号标题共 {len(title)} 个字符、占 {title_bytes} 字节，"
+            "超过接口的 32 字节限制；请先设置精简的 wechat_title"
+        )
+    return title
+
+
+def draft_article_payload(
+    *,
+    title: str,
+    author: str,
+    digest: str,
+    content: str,
+    metadata: dict,
+    thumb_media_id: str,
+) -> dict:
+    return {
+        "title": title,
+        "author": author,
+        "digest": digest,
+        "content": content,
+        "content_source_url": str(metadata.get("content_source_url", "")),
+        "thumb_media_id": thumb_media_id,
+        "need_open_comment": 1,
+        "only_fans_can_comment": 0,
+    }
+
+
 def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str | None:
     config = load_public_config()
     article_path = project_path(article).resolve()
@@ -112,12 +158,8 @@ def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str 
         raise RuntimeError(f"文章不存在：{article_path}")
     source = article_path.read_text(encoding="utf-8")
     _, body, metadata = split_frontmatter(source)
-    title = title_from_article(article_path, metadata, body)
-    if len(title) > 64:
-        raise RuntimeError(
-            f"公众号标题共 {len(title)} 字，超过 64 字；请先设置精简的 wechat_title"
-        )
-    digest = digest_from_article(metadata, body)
+    title = validated_title(metadata, body, article_path)
+    digest = truncate_utf8(digest_from_article(metadata, body), 120)
     rendered = render_article(str(article_path), fragment_only=True)
     series = detect_series(article_path, metadata)
     cover = cover_for_article(article_path, metadata, config)
@@ -128,10 +170,18 @@ def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str 
     assert entry is not None
     previous = entry.get("wechat_draft") or {}
     if not force and previous.get("fingerprint") == fingerprint:
-        raise RuntimeError(
-            "相同正文和排版已经创建过草稿，已停止重复同步。\n"
-            f"已有 media_id：{previous.get('media_id', '未知')}"
-        )
+        previous_media_id = str(previous.get("media_id") or "")
+        try:
+            if previous_media_id:
+                get_draft(previous_media_id)
+        except WechatApiError as error:
+            if error.code != 40007:
+                raise
+        else:
+            raise RuntimeError(
+                "相同正文和排版已经创建过草稿，已停止重复同步。\n"
+                f"已有 media_id：{previous_media_id or '未知'}"
+            )
 
     if dry_run:
         print("草稿同步预检（未调用公众号接口）")
@@ -153,16 +203,14 @@ def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str 
     )
     content = upload_body_images(rendered["html"], article_path)
     media_id = add_draft(
-        {
-            "title": title,
-            "author": config["author"],
-            "digest": digest,
-            "content": content,
-            "content_source_url": str(metadata.get("content_source_url", "")),
-            "thumb_media_id": thumb_media_id,
-            "need_open_comment": 0,
-            "only_fans_can_comment": 0,
-        }
+        draft_article_payload(
+            title=title,
+            author=config["author"],
+            digest=digest,
+            content=content,
+            metadata=metadata,
+            thumb_media_id=thumb_media_id,
+        )
     )
     entry["wechat_draft"] = {
         "media_id": media_id,
@@ -180,12 +228,78 @@ def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str 
     return media_id
 
 
+def replace_draft(article: str, media_id: str) -> str:
+    config = load_public_config()
+    article_path = project_path(article).resolve()
+    if not article_path.exists():
+        raise RuntimeError(f"文章不存在：{article_path}")
+    source = article_path.read_text(encoding="utf-8")
+    _, body, metadata = split_frontmatter(source)
+    title = validated_title(metadata, body, article_path)
+    digest = truncate_utf8(digest_from_article(metadata, body), 120)
+    rendered = render_article(str(article_path), fragment_only=True)
+    fingerprint = publication_fingerprint(rendered["article_hash"], rendered["layout"])
+
+    state = load_state(config)
+    entry = article_state(state, article_path, create=True)
+    assert entry is not None
+    thumb_media_id, cover_path = cover_media_id(
+        article_path,
+        metadata,
+        config,
+        state,
+    )
+    content = upload_body_images(rendered["html"], article_path)
+    update_draft(
+        media_id,
+        draft_article_payload(
+            title=title,
+            author=config["author"],
+            digest=digest,
+            content=content,
+            metadata=metadata,
+            thumb_media_id=thumb_media_id,
+        ),
+    )
+
+    now = datetime.now().isoformat(timespec="seconds")
+    draft_record = dict(entry.get("wechat_draft") or {})
+    draft_record.update(
+        {
+            "media_id": media_id,
+            "fingerprint": fingerprint,
+            "article_hash": body_hash(body),
+            "layout": rendered["layout"],
+            "cover": str(cover_path.relative_to(PROJECT_ROOT)),
+            "updated_at": now,
+            "status": "draft_only",
+        }
+    )
+    draft_record.setdefault("created_at", now)
+    entry.update(
+        {
+            "wechat_draft": draft_record,
+            "wechat_draft_media_id": media_id,
+            "wechat_draft_updated_at": now,
+            "status": "wechat_draft_created",
+        }
+    )
+    save_state(state, config)
+    print("公众号草稿已原位更新；没有执行群发。")
+    print(f"media_id：{media_id}")
+    return media_id
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="同步到公众号草稿箱")
     parser.add_argument("article", nargs="?")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--force", action="store_true", help="明确允许重复创建草稿")
     parser.add_argument("--preflight", action="store_true", help="只读检查草稿箱权限")
+    parser.add_argument(
+        "--replace-media-id",
+        help="原位更新指定草稿，不新建第二篇",
+    )
     # 保留旧参数但不再把 Get笔记拉回和发布绑成不可审查的一步。
     parser.add_argument("--pull-from-getnote", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--title", help=argparse.SUPPRESS)
@@ -200,7 +314,10 @@ def main() -> int:
             parser.error("请提供文章路径")
         if args.pull_from_getnote:
             raise RuntimeError("请先单独执行“拉回”并检查差异，再同步草稿箱")
-        publish(args.article, dry_run=args.dry_run, force=args.force)
+        if args.replace_media_id:
+            replace_draft(args.article, args.replace_media_id)
+        else:
+            publish(args.article, dry_run=args.dry_run, force=args.force)
     except (RuntimeError, WechatApiError) as error:
         print(str(error), file=sys.stderr)
         if isinstance(error, WechatApiError) and error.code == 48001:

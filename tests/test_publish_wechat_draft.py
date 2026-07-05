@@ -23,6 +23,23 @@ class PublishWechatDraftTest(unittest.TestCase):
         second = MODULE.publication_fingerprint("abc", {"theme": "grace"})
         self.assertNotEqual(first, second)
 
+    def test_digest_is_truncated_by_utf8_bytes(self):
+        truncated = MODULE.truncate_utf8("中国品牌走向世界", 12)
+        self.assertEqual(truncated, "中国品牌")
+        self.assertLessEqual(len(truncated.encode("utf-8")), 12)
+
+    def test_draft_comments_are_enabled_for_everyone(self):
+        payload = MODULE.draft_article_payload(
+            title="标题",
+            author="LeePerfect",
+            digest="摘要",
+            content="<p>正文</p>",
+            metadata={},
+            thumb_media_id="cover-id",
+        )
+        self.assertEqual(payload["need_open_comment"], 1)
+        self.assertEqual(payload["only_fans_can_comment"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

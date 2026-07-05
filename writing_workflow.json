@@ -21,6 +21,7 @@
     "revision": "18454939f831c42c26e8b6efa781b353d7b4f4f7",
     "local_dir": ".local/doocs-md",
     "editor_port": 8800,
+    "editor_bridge_port": 8788,
     "code_theme_css": "scripts/assets/stackoverflow-light.min.css",
     "default_layout": {
       "theme": "default",

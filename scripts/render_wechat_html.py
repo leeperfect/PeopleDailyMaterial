@@ -58,6 +58,23 @@ def layout_for_article(
         layout["customCSS"] = "\n".join(
             part for part in (code_theme_css, layout.get("customCSS", "")) if part
         )
+    # doocs/md 的 MCP 渲染结果使用 section.container，不包含编辑器里的
+    # #output 外层容器；原生缩进和两端对齐规则因此不会命中。把同一排版参数
+    # 显式写入导出片段，确保只读预览和公众号草稿使用完全一致的最终 HTML。
+    paragraph_rules: list[str] = []
+    if layout.get("isUseIndent"):
+        paragraph_rules.append("text-indent: 2em !important;")
+    if layout.get("isUseJustify"):
+        paragraph_rules.append("text-align: justify !important;")
+    if paragraph_rules:
+        paragraph_css = (
+            "section.container p {\n  "
+            + "\n  ".join(paragraph_rules)
+            + "\n}"
+        )
+        layout["customCSS"] = "\n".join(
+            part for part in (layout.get("customCSS", ""), paragraph_css) if part
+        )
     return layout
 
 

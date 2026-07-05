@@ -9,6 +9,7 @@ import json
 import shutil
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -16,12 +17,15 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from modules.writing_workflow import (
     article_state,
+    bold_phrases,
     cover_for_article,
+    emphasis_only_issues,
     load_dotenv_values,
     load_public_config,
     load_state,
     project_path,
     save_snapshot,
+    save_state,
     split_frontmatter,
 )
 
@@ -106,6 +110,71 @@ def snapshot(article: str, stage: str) -> None:
     print(f"已保存{stage}快照：{path}")
 
 
+def emphasis_check(article: str) -> None:
+    config = load_public_config()
+    article_path = project_path(article).resolve()
+    if not article_path.exists():
+        raise RuntimeError(f"文章不存在：{article_path}")
+    state = load_state(config)
+    entry = article_state(state, article_path)
+    if not entry or not entry.get("getnote_snapshot"):
+        raise RuntimeError("没有找到二润拉回候选稿，不能校验重点加粗")
+
+    baseline_path = project_path(str(entry["getnote_snapshot"])).resolve()
+    if not baseline_path.exists():
+        raise RuntimeError(f"二润拉回候选稿不存在：{baseline_path}")
+    current = article_path.read_text(encoding="utf-8")
+    baseline = baseline_path.read_text(encoding="utf-8")
+    _, current_body, metadata = split_frontmatter(current)
+    _, baseline_body, _ = split_frontmatter(baseline)
+    issues = emphasis_only_issues(baseline_body, current_body)
+    if issues:
+        raise RuntimeError("；".join(issues))
+
+    before = set(bold_phrases(baseline_body))
+    after = bold_phrases(current_body)
+    added = [phrase for phrase in after if phrase not in before]
+    snapshot_path = save_snapshot(
+        article_path,
+        metadata,
+        "04-emphasis-reviewed.md",
+        current,
+    )
+    report = "\n".join(
+        [
+            "# 二润重点加粗审查",
+            "",
+            f"- 审查时间：{datetime.now().isoformat(timespec='seconds')}",
+            f"- 新增加粗：{len(added)} 处",
+            "- 校验结果：除 Markdown 加粗标记外，正文文字与结构未变化。",
+            "",
+            "## 新增加粗内容",
+            "",
+            *[f"- {phrase}" for phrase in added],
+            "",
+        ]
+    )
+    report_path = save_snapshot(
+        article_path,
+        metadata,
+        "emphasis-review.md",
+        report,
+    )
+    entry.update(
+        {
+            "status": "second_polish_complete",
+            "emphasis_reviewed_at": datetime.now().isoformat(timespec="seconds"),
+            "emphasis_snapshot": str(snapshot_path.relative_to(PROJECT_ROOT)),
+            "emphasis_report": str(report_path.relative_to(PROJECT_ROOT)),
+            "emphasis_added_phrases": added,
+        }
+    )
+    save_state(state, config)
+    print(f"重点加粗审查通过：新增 {len(added)} 处加粗。")
+    print(f"审查快照：{snapshot_path}")
+    print(f"审查报告：{report_path}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="公众号写作工作流")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -121,6 +190,11 @@ def main() -> int:
     snapshot_parser.add_argument("--stage", choices=["draft", "humanizer"], required=True)
     pull_parser = subparsers.add_parser("pull", help="从得到大脑拉回")
     pull_parser.add_argument("article")
+    emphasis_parser = subparsers.add_parser(
+        "emphasis-check",
+        help="校验二润稿只新增重点加粗，没有改动文字",
+    )
+    emphasis_parser.add_argument("article")
     preview_parser = subparsers.add_parser("preview", help="生成 doocs/md 只读预览")
     preview_parser.add_argument("article")
     layout_parser = subparsers.add_parser("save-layout", help="保存本文排版设置")
@@ -160,6 +234,13 @@ def main() -> int:
         return 0
     if args.command == "pull":
         return run_script("getnote_sync.py", ["pull", args.article])
+    if args.command == "emphasis-check":
+        try:
+            emphasis_check(args.article)
+        except RuntimeError as error:
+            print(str(error), file=sys.stderr)
+            return 1
+        return 0
     if args.command == "preview":
         from render_wechat_html import render_article
 

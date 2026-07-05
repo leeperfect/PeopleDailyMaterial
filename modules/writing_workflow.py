@@ -243,6 +243,31 @@ def unified_diff(old_body: str, new_body: str) -> str:
     return "\n".join(lines) + "\n"
 
 
+def without_bold_markup(markdown: str) -> str:
+    """移除 Markdown 加粗标记，用于确认重点审查没有改动文字。"""
+    return markdown.replace("**", "")
+
+
+def bold_phrases(markdown: str) -> list[str]:
+    """提取单段内的 Markdown 加粗内容。"""
+    return [
+        match.strip()
+        for match in re.findall(r"\*\*([^\n]+?)\*\*", markdown)
+        if match.strip()
+    ]
+
+
+def emphasis_only_issues(before_body: str, after_body: str) -> list[str]:
+    issues: list[str] = []
+    if without_bold_markup(before_body) != without_bold_markup(after_body):
+        issues.append("重点审查除加粗标记外还改变了正文文字或结构")
+    before_phrases = set(bold_phrases(before_body))
+    after_phrases = set(bold_phrases(after_body))
+    if not (after_phrases - before_phrases):
+        issues.append("重点审查没有新增任何加粗内容")
+    return issues
+
+
 def load_dotenv_values() -> dict[str, str]:
     """读取项目 .env；不会输出任何值。"""
     path = PROJECT_ROOT / ".env"

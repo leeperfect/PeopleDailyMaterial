@@ -27,6 +27,8 @@ TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token"
 MATERIAL_ADD_URL = "https://api.weixin.qq.com/cgi-bin/material/add_material"
 CONTENT_IMAGE_URL = "https://api.weixin.qq.com/cgi-bin/media/uploadimg"
 DRAFT_ADD_URL = "https://api.weixin.qq.com/cgi-bin/draft/add"
+DRAFT_UPDATE_URL = "https://api.weixin.qq.com/cgi-bin/draft/update"
+DRAFT_GET_URL = "https://api.weixin.qq.com/cgi-bin/draft/get"
 
 
 class WechatApiError(RuntimeError):
@@ -47,6 +49,7 @@ def credentials() -> tuple[str, str]:
 def explain_error(code: int | None, message: str) -> str:
     known = {
         40001: "AppSecret 或 access_token 无效",
+        40007: "公众号草稿 media_id 已失效或不存在",
         40013: "AppID 无效",
         40164: "当前公网 IP 不在公众号白名单",
         48001: "当前公众号没有调用该接口的权限",
@@ -58,8 +61,8 @@ def explain_error(code: int | None, message: str) -> str:
 
 def response_json(response: requests.Response) -> dict[str, Any]:
     try:
-        data = response.json()
-    except ValueError as error:
+        data = json.loads(response.content.decode("utf-8-sig"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as error:
         raise WechatApiError(f"微信公众号返回非 JSON 数据（HTTP {response.status_code}）") from error
     if not isinstance(data, dict):
         raise WechatApiError("微信公众号返回结构异常")
@@ -214,13 +217,19 @@ def urlparse_safe_path(url: str) -> str:
     return urlparse(url).path
 
 
+def utf8_json_payload(data: dict[str, Any]) -> bytes:
+    return json.dumps(data, ensure_ascii=False).encode("utf-8")
+
+
 def add_draft(article: dict[str, Any]) -> str:
     token = get_access_token()
+    payload = utf8_json_payload({"articles": [article]})
     try:
         response = requests.post(
             DRAFT_ADD_URL,
             params={"access_token": token},
-            json={"articles": [article]},
+            data=payload,
+            headers={"Content-Type": "application/json; charset=utf-8"},
             timeout=60,
         )
     except requests.RequestException as error:
@@ -230,6 +239,44 @@ def add_draft(article: dict[str, Any]) -> str:
     if not media_id:
         raise WechatApiError("公众号没有返回草稿 media_id")
     return str(media_id)
+
+
+def update_draft(media_id: str, article: dict[str, Any], index: int = 0) -> None:
+    token = get_access_token()
+    payload = utf8_json_payload(
+        {
+            "media_id": media_id,
+            "index": index,
+            "articles": article,
+        }
+    )
+    try:
+        response = requests.post(
+            DRAFT_UPDATE_URL,
+            params={"access_token": token},
+            data=payload,
+            headers={"Content-Type": "application/json; charset=utf-8"},
+            timeout=60,
+        )
+    except requests.RequestException as error:
+        raise WechatApiError(f"更新公众号草稿时网络异常：{error}") from error
+    response_json(response)
+
+
+def get_draft(media_id: str) -> dict[str, Any]:
+    token = get_access_token()
+    payload = utf8_json_payload({"media_id": media_id})
+    try:
+        response = requests.post(
+            DRAFT_GET_URL,
+            params={"access_token": token},
+            data=payload,
+            headers={"Content-Type": "application/json; charset=utf-8"},
+            timeout=30,
+        )
+    except requests.RequestException as error:
+        raise WechatApiError(f"读取公众号草稿时网络异常：{error}") from error
+    return response_json(response)
 
 
 def file_hash(path: Path) -> str:

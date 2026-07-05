@@ -231,7 +231,7 @@ def pull(article: str, *, accept_risk: bool = False) -> None:
             "last_pulled_at": datetime.now().isoformat(timespec="seconds"),
             "note_updated_at_at_pull": note.get("updated_at"),
             "pulled_body_hash": new_hash,
-            "status": "second_polish_complete",
+            "status": "second_polish_pending_emphasis",
             "before_pull_snapshot": str(before_path.relative_to(PROJECT_ROOT)),
             "getnote_snapshot": str(candidate_path.relative_to(PROJECT_ROOT)),
             "diff_report": str(diff_path.relative_to(PROJECT_ROOT)),
@@ -254,6 +254,7 @@ def pull(article: str, *, accept_risk: bool = False) -> None:
     print(f"本地文章：{article_path}")
     print(f"拉回前快照：{before_path}")
     print(f"差异报告：{diff_path}")
+    print("下一步：审查核心判断、公式和考场表达，只增加 Markdown 加粗标记。")
     if issues:
         print("已按明确授权接受以下风险：")
         for issue in issues:

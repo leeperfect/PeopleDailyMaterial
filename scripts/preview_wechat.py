@@ -19,7 +19,7 @@ from urllib.parse import quote
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from modules.writing_workflow import load_public_config, project_path
+from modules.writing_workflow import load_public_config, project_path, workflow_id
 
 
 def editor_url(port: int) -> str:
@@ -37,7 +37,26 @@ def wait_until_ready(url: str, timeout: float = 20.0) -> bool:
     return False
 
 
-def start_editor() -> tuple[str, subprocess.Popen]:
+def stop_process(process: subprocess.Popen | None) -> None:
+    if not process or process.poll() is not None:
+        return
+    process.terminate()
+    try:
+        process.wait(timeout=5)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait(timeout=5)
+
+
+def port_is_in_use(port: int) -> bool:
+    with socket.socket() as probe:
+        probe.settimeout(0.3)
+        return probe.connect_ex(("127.0.0.1", port)) == 0
+
+
+def start_editor(
+    article: str | None = None,
+) -> tuple[str, subprocess.Popen, subprocess.Popen | None]:
     config = load_public_config()
     repo = project_path(config["doocs"]["local_dir"])
     if not (repo / ".peopledaily-revision").exists():
@@ -45,6 +64,10 @@ def start_editor() -> tuple[str, subprocess.Popen]:
     if not shutil.which("pnpm"):
         raise RuntimeError("未找到 pnpm，无法启动 doocs/md")
     port = int(config["doocs"]["editor_port"])
+    if port_is_in_use(port):
+        raise RuntimeError(
+            f"本地端口 {port} 已被旧编辑器占用，请先关闭旧编辑器再重试"
+        )
     log_dir = project_path(".local/logs")
     log_dir.mkdir(parents=True, exist_ok=True)
     log_file = (log_dir / "doocs-md.log").open("a", encoding="utf-8")
@@ -68,9 +91,52 @@ def start_editor() -> tuple[str, subprocess.Popen]:
     )
     url = editor_url(port)
     if not wait_until_ready(url):
-        process.terminate()
+        stop_process(process)
         raise RuntimeError(f"doocs/md 未能启动，请查看 {log_file.name}")
-    return url, process
+    bridge_process: subprocess.Popen | None = None
+    if article:
+        article_path = project_path(article).resolve()
+        bridge_port = int(config["doocs"].get("editor_bridge_port", 8810))
+        if port_is_in_use(bridge_port):
+            stop_process(process)
+            raise RuntimeError(
+                f"本地端口 {bridge_port} 已被旧桥接服务占用，"
+                "请先关闭旧编辑器再重试"
+            )
+        bridge_log = (log_dir / "wechat-editor-bridge.log").open(
+            "a",
+            encoding="utf-8",
+        )
+        bridge_process = subprocess.Popen(
+            [
+                sys.executable,
+                str(PROJECT_ROOT / "scripts" / "wechat_editor_bridge.py"),
+                "--article",
+                str(article_path),
+                "--port",
+                str(bridge_port),
+            ],
+            cwd=PROJECT_ROOT,
+            stdout=bridge_log,
+            stderr=subprocess.STDOUT,
+            start_new_session=True,
+        )
+        bridge_url = f"http://127.0.0.1:{bridge_port}"
+        if not wait_until_ready(f"{bridge_url}/status", timeout=10):
+            stop_process(bridge_process)
+            stop_process(process)
+            raise RuntimeError(
+                f"排版工作流桥接未能启动，请查看 {bridge_log.name}"
+            )
+        if bridge_process.poll() is not None:
+            stop_process(process)
+            raise RuntimeError(
+                f"排版工作流桥接启动后异常退出，请查看 {bridge_log.name}"
+            )
+        url = (
+            f"{url}?pdWorkflow={workflow_id(article_path)}"
+        )
+    return url, process, bridge_process
 
 
 def free_port(preferred: int = 8790) -> int:
@@ -110,13 +176,18 @@ def main() -> int:
     args = parser.parse_args()
     try:
         if args.doocs:
-            url, process = start_editor()
+            url, process, bridge_process = start_editor(args.article)
             print(f"完整 doocs/md 编辑器：{url}")
             print(f"运行进程：{process.pid}")
             if args.article:
                 print(f"待载入文章：{project_path(args.article).resolve()}")
+                print("“发布”按钮已接入保存排版与草稿同步的下一步。")
             print("Codex 可在内置浏览器中打开并导入文章，无需 IDE。")
-            process.wait()
+            try:
+                process.wait()
+            finally:
+                stop_process(bridge_process)
+                stop_process(process)
         elif args.html:
             path = project_path(args.html).resolve()
             if not path.exists():

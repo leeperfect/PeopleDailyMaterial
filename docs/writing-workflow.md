@@ -18,19 +18,36 @@ scope: PeopleDailyMaterial
 
 Codex会检查 Get笔记、固定封面和 doocs/md。doocs/md 固定在 `writing_workflow.json` 记录的版本，安装在被 Git 忽略的 `.local/doocs-md/`。
 
-### 写完并送去二润
+### 写稿
 
 对 Codex说：
 
-> 把这篇文章写完并送去二润。
+> 写稿。
 
 Codex执行：
 
-1. 完成文章初稿。
-2. 保存 `00-draft.md` 初稿快照。
-3. 调用 Humanizer-zh 润色正文，保留 YAML、事实、数字、来源和教学框架。
-4. 保存 `01-humanizer.md` 快照。
-5. 只把标题和正文送入得到大脑，并记录真实 `note_id`。
+1. 调用 `peopledaily-article-production` Skill。
+2. 按选题卡读取全部真实来源，补充 `Codex 教研速读`。
+3. 先建立递进逻辑，再生成选题复盘、过程稿和平台要求的文字产物。
+4. 成稿进入当前有效的 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，并更新统一文章索引。
+5. 按 Skill 验收清单检查参考文章、金句集合、Markdown 重点和考场迁移。
+
+这一步只完成可审查初稿，不自动送入得到大脑。
+
+### 送去二润
+
+对 Codex说：
+
+> 送去二润。
+
+Codex执行：
+
+1. 保存 `00-draft.md` 初稿快照。
+2. 调用 Humanizer-zh 润色正文，保留 YAML、事实、数字、来源和教学框架。
+3. 保存 `01-humanizer.md` 快照。
+4. 只把标题和正文送入得到大脑，并记录真实 `note_id`。
+
+原口令“把这篇文章写完并送去二润”继续可用，等同于依次执行“写稿”和“送去二润”。
 
 得到笔记标题包含 `[PD-工作流编号]`，不会靠标题猜测文章身份。
 
@@ -49,6 +66,18 @@ Codex执行：
 - 原有来源链接是否丢失。
 
 校验不通过时只保存候选稿和差异报告，不覆盖本地成稿。YAML 始终保留在本地，不参与 App 润色。
+
+拉回成功后，Codex还会完成一次“重点加粗审查”：
+
+- 只在得到版正文上增加 `**加粗**`，不再改写文字；
+- 优先标注核心判断、总公式、章节结论、申论表达和面试关键动作；
+- 避免整段加粗、普通事实加粗或每一项都加粗；
+- 通常保留 8—15 处重点，按文章长度调整；
+- 运行下面的校验，确认除加粗标记外文字与结构完全一致：
+
+  ```bash
+  python3 scripts/writing_workflow.py emphasis-check "<文章路径>"
+  ```
 
 ### 预览排版
 
@@ -75,6 +104,12 @@ Codex使用 doocs/md 生成只读成品页，通过仅监听 `127.0.0.1` 的临�
 
 Codex在后台启动 doocs/md 并在内置浏览器载入文章。确定后说“把这个排版保存为本文设置”，单篇设置会写入本地工作流状态；下一次预览和发布继续使用它。
 
+如果在完整编辑器中修改了正文，点击“发布（进入下一步）”后：
+
+- 结构检查通过：正文自动写回源 Markdown，并保存修改前快照；
+- 排版修改：主题、颜色、字号、缩进等保存到本文 `wechat_layout`；
+- 结构、参考文章或来源受损：只保存候选稿，暂停覆盖和草稿同步。
+
 ### 同步公众号草稿箱
 
 对 Codex说：
@@ -87,8 +122,9 @@ Codex在后台启动 doocs/md 并在内置浏览器载入文章。确定后说�
 2. 按文章系列自动选择固定封面；
 3. 上传本地正文图片并换成微信素材地址；
 4. 作者固定为 `LeePerfect`；
-5. 创建草稿并记录 `media_id`；
-6. 不调用群发接口。
+5. 默认开启评论，且所有读者均可评论；
+6. 创建草稿并记录 `media_id`；
+7. 不调用群发接口。
 
 相同正文和排版已创建过草稿时，流程会停止重复同步，除非你明确要求重新创建。
 
@@ -125,7 +161,7 @@ Codex在后台启动 doocs/md 并在内置浏览器载入文章。确定后说�
 
 - 本地机器状态：`data/core/writing_workflow_state.json`，已忽略。
 - access_token 缓存：`data/exports/wechat_token_cache.json`，已忽略。
-- 一润稿、拉回前稿、二润候选稿和差异报告：
+- 一润稿、拉回前稿、二润候选稿、重点加粗审查和差异报告：
   `data/analysis/日期/writing-workflow/工作流编号/`。
 - 临时 HTML 预览：`/tmp/peopledaily-writing-preview/`，不进入项目。
 
@@ -141,6 +177,7 @@ python3 scripts/writing_workflow.py setup-doocs
 python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft
 python3 scripts/writing_workflow.py send "<文章路径>"
 python3 scripts/writing_workflow.py pull "<文章路径>"
+python3 scripts/writing_workflow.py emphasis-check "<文章路径>"
 python3 scripts/writing_workflow.py preview "<文章路径>"
 python3 scripts/writing_workflow.py editor "<文章路径>"
 python3 scripts/writing_workflow.py save-layout "<文章路径>" --theme grace

@@ -50,7 +50,27 @@ async function main() {
     });
     const text = result.content?.find((item) => item.type === "text")?.text;
     if (!text) throw new Error("doocs/md 没有返回 HTML");
-    process.stdout.write(text);
+    const rendered = JSON.parse(text);
+    const webRequire = createRequire(
+      path.join(repo, "apps", "web", "package.json"),
+    );
+    const juiceModule = await import(
+      pathToFileURL(webRequire.resolve("juice")).href
+    );
+    const juice = juiceModule.default ?? juiceModule;
+    rendered.html = juice(rendered.html, {
+      inlinePseudoElements: true,
+      preserveImportant: true,
+      resolveCSSVariables: false,
+    })
+      .replace(/([^-])top:(.*?)em/g, "$1transform: translateY($2em)")
+      .replace(/hsl\(var\(--foreground\)\)/g, "#3f3f3f")
+      .replace(/var\(--blockquote-background\)/g, "#f7f7f7")
+      .replace(/var\(--md-primary-color\)/g, input.options.primaryColor)
+      .replace(/--md-primary-color:.+?;/g, "")
+      .replace(/--md-font-family:.+?;/g, "")
+      .replace(/--md-font-size:.+?;/g, "");
+    process.stdout.write(JSON.stringify(rendered));
   } finally {
     await client.close();
   }

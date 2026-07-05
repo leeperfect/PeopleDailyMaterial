@@ -125,14 +125,19 @@ python3 scripts/sync_to_notion.py 2026-05-27
 
 ## 公众号写作工作流
 
-- 用户说“写完并送去二润”时：先按正常教研流程完成文章，运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft` 保存初稿；再调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架。润色后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`，该命令会自动保存 humanizer 快照并送入得到大脑。
-- 用户说“我在得到改好了，拉回”时：根据当前文章运行 `python3 scripts/writing_workflow.py pull "<文章路径>"`。必须使用本地记录的精确 `note_id`；校验不通过时不得覆盖本地稿。
+- 用户说“写稿”时：必须调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑、生成过程稿和跨平台文字产物，并按本项目当前结构把成稿保存到 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，同步 `data/articles/文章索引.md`。这一步只完成可审查初稿，不自动送入得到大脑。
+- 用户说“送去二润”时：对已完成的成稿运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft`；再调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架；最后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`。用户仍说“写完并送去二润”时，按“写稿 → 送去二润”连续执行，保持兼容。
+- 用户说“我在得到改好了，拉回”时：根据当前文章运行 `python3 scripts/writing_workflow.py pull "<文章路径>"`。必须使用本地记录的精确 `note_id`；校验不通过时不得覆盖本地稿。拉回成功后必须继续审查重点，只在得到版原文上增加 `**加粗**`，不得改写任何文字或结构：
+  - 优先突出核心判断、总公式、章节递进结论、申论可用表达、面试答题关键动作和结尾认知升级。
+  - 不加粗标题、参考文章、普通事实、整段正文，也不要把每个列表项都加粗；通常保持 8—15 处，按文章长度调整。
+  - 完成后运行 `python3 scripts/writing_workflow.py emphasis-check "<文章路径>"`；只有“除加粗标记外正文完全一致”时，状态才进入 `second_polish_complete`。
 - 用户说“预览公众号排版”时：运行 `python3 scripts/writing_workflow.py preview "<文章路径>"`，再用 Codex 内置浏览器打开输出的本地预览页。预览与发布必须使用同一份 doocs/md HTML。
-- 用户说“打开完整排版编辑器”时：运行 `python3 scripts/writing_workflow.py editor "<文章路径>"`，使用 Codex 内置浏览器打开本地 doocs/md；不要要求用户打开 IDE。
+- 用户说“打开完整排版编辑器”时：运行 `python3 scripts/writing_workflow.py editor "<文章路径>"`，使用 Codex 内置浏览器打开本地 doocs/md；不要要求用户打开 IDE。用户在编辑器修改正文后，点击“发布（进入下一步）”会在结构检查通过后自动写回本地 Markdown，同时保留修改前快照；主题、颜色、字号等格式同步保存为该文章的 `wechat_layout`。结构或来源受损时只保存候选稿，不覆盖源文件。
 - 用户说“保存本文排版”时：把完整编辑器中确定的参数保存为该文章的 `wechat_layout` 状态，再重新生成只读预览确认。
 - 用户说“同步到公众号草稿箱”时：先检查 `.env` 是否已经安全配置。未配置时启动 `scripts/wechat_setup.py` 本地私密配置页，并一次只引导用户完成一个步骤；不得要求用户把 AppSecret 粘贴到聊天。配置完成后先做只读 preflight，再创建草稿。
 - 当前账号无草稿接口权限时，使用 Codex 内置浏览器登录公众号后台代填；若页面变化导致代填失败，打开只读预览页让用户使用“一键复制公众号富文本”兜底。
 - 固定作者为 `LeePerfect`。热点系列使用 `media/images/wechat-fixed-covers/hotspot-header.png`；人民日报系列使用 `media/images/wechat-fixed-covers/people-daily-header.png`。
+- 公众号草稿默认开启评论，且不限制为仅粉丝评论：`need_open_comment=1`、`only_fans_can_comment=0`。
 - 公众号流程只允许创建草稿，不得自动群发。相同正文和排版已建草稿时，不得重复创建，除非用户明确要求。
 
 ## Git Commit 规范

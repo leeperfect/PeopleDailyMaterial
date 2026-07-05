@@ -68,6 +68,176 @@ def apply_offline_patch(target: Path) -> None:
     )
     store_path.write_text(store_source, encoding="utf-8")
 
+    post_path = (
+        target
+        / "apps"
+        / "web"
+        / "src"
+        / "components"
+        / "editor"
+        / "editor-header"
+        / "PostInfo.vue"
+    )
+    post_source = post_path.read_text(encoding="utf-8")
+    if "advancePeopleDailyWorkflow" not in post_source:
+        post_source = post_source.replace(
+            "import { useEditorStore } from '@/stores/editor'\n"
+            "import { useRenderStore } from '@/stores/render'\n"
+            "import { useUIStore } from '@/stores/ui'",
+            "import { useEditorStore } from '@/stores/editor'\n"
+            "import { useCssEditorStore } from '@/stores/cssEditor'\n"
+            "import { useRenderStore } from '@/stores/render'\n"
+            "import { useThemeStore } from '@/stores/theme'\n"
+            "import { useUIStore } from '@/stores/ui'",
+            1,
+        )
+        post_source = post_source.replace(
+            "const renderStore = useRenderStore()\n"
+            "const { output } = storeToRefs(renderStore)\n\n"
+            "const uiStore = useUIStore()\n"
+            "const { isMobile } = storeToRefs(uiStore)\n\n"
+            "const dialogVisible = ref(false)",
+            "const renderStore = useRenderStore()\n"
+            "const { output } = storeToRefs(renderStore)\n\n"
+            "const themeStore = useThemeStore()\n"
+            "const cssEditorStore = useCssEditorStore()\n"
+            "const uiStore = useUIStore()\n"
+            "const { isMobile } = storeToRefs(uiStore)\n\n"
+            "const workflowParams = new URLSearchParams(window.location.search)\n"
+            "const peopleDailyWorkflowId = workflowParams.get(`pdWorkflow`) ?? ``\n"
+            "const peopleDailyBridge = `/pd-workflow`\n"
+            "const isPeopleDailyWorkflow = computed(() => Boolean(peopleDailyWorkflowId))\n"
+            "const workflowAdvancing = ref(false)\n"
+            "const workflowArticleLoaded = ref(false)\n\n"
+            "const dialogVisible = ref(false)",
+            1,
+        )
+        post_source = post_source.replace(
+            "const allowPost = computed(() => extensionInstalled.value && allAccounts.value.some(a => a.checked && a.loggedIn))",
+            """const allowPost = computed(() => extensionInstalled.value && allAccounts.value.some(a => a.checked && a.loggedIn))
+
+watch(editor, async (instance) => {
+  if (!isPeopleDailyWorkflow.value || !instance || workflowArticleLoaded.value)
+    return
+  try {
+    const response = await fetch(`${peopleDailyBridge}/article`)
+    const result = await response.json()
+    if (!response.ok || typeof result.markdown !== `string`)
+      throw new Error(result.error || `无法载入当前文章`)
+    instance.dispatch({
+      changes: {
+        from: 0,
+        to: instance.state.doc.length,
+        insert: result.markdown,
+      },
+    })
+    workflowArticleLoaded.value = true
+  }
+  catch (error) {
+    console.error(`载入公众号工作流文章失败`, error)
+  }
+}, { immediate: true })
+
+async function advancePeopleDailyWorkflow() {
+  if (!peopleDailyWorkflowId || workflowAdvancing.value)
+    return
+  workflowAdvancing.value = true
+  try {
+    const response = await fetch(`${peopleDailyBridge}/handoff`, {
+      method: `POST`,
+      headers: { 'Content-Type': `application/json` },
+      body: JSON.stringify({
+        workflow_id: peopleDailyWorkflowId,
+        markdown: editor.value?.state.doc.toString() ?? ``,
+        layout: {
+          theme: themeStore.theme,
+          primaryColor: themeStore.primaryColor,
+          fontFamily: themeStore.fontFamily,
+          fontSize: themeStore.fontSize,
+          legend: themeStore.legend,
+          isMacCodeBlock: themeStore.isMacCodeBlock,
+          isShowLineNumber: themeStore.isShowLineNumber,
+          citeStatus: themeStore.isCiteStatus,
+          countStatus: themeStore.isCountStatus,
+          themeMode: `light`,
+          isUseIndent: themeStore.isUseIndent,
+          isUseJustify: themeStore.isUseJustify,
+          headingStyles: themeStore.headingStyles,
+          customCSS: cssEditorStore.getCurrentTabContent(),
+        },
+      }),
+    })
+    const result = await response.json()
+    if (!response.ok)
+      throw new Error(result.error || `无法进入下一步`)
+    window.location.href = result.next_url
+  }
+  catch (error) {
+    workflowAdvancing.value = false
+    window.alert(error instanceof Error ? error.message : `无法进入下一步`)
+  }
+}""",
+            1,
+        )
+        post_source = post_source.replace(
+            """      <DialogTrigger>
+        <Button v-if="!isMobile" variant="outline" class="h-9">
+          <Send class="mr-2 h-4 w-4" />
+          {{ t('postInfo.publish') }}
+        </Button>
+      </DialogTrigger>""",
+            """      <DialogTrigger v-if="!isPeopleDailyWorkflow">
+        <Button v-if="!isMobile" variant="outline" class="h-9">
+          <Send class="mr-2 h-4 w-4" />
+          {{ t('postInfo.publish') }}
+        </Button>
+      </DialogTrigger>
+      <Button
+        v-else-if="!isMobile"
+        variant="outline"
+        class="h-9"
+        :disabled="workflowAdvancing"
+        @click="advancePeopleDailyWorkflow"
+      >
+        <Loader2 v-if="workflowAdvancing" class="mr-2 h-4 w-4 animate-spin" />
+        <Send v-else class="mr-2 h-4 w-4" />
+        {{ workflowAdvancing ? '正在进入下一步…' : '发布（进入下一步）' }}
+      </Button>""",
+            1,
+        )
+        if "advancePeopleDailyWorkflow" not in post_source:
+            raise RuntimeError("无法应用 doocs/md 公众号工作流入口补丁")
+        post_path.write_text(post_source, encoding="utf-8")
+
+    vite_path = target / "apps" / "web" / "vite.config.ts"
+    vite_source = vite_path.read_text(encoding="utf-8")
+    if "'/pd-workflow'" not in vite_source:
+        vite_source = vite_source.replace(
+            """    resolve: {
+      alias: { '@': path.resolve(__dirname, `./src`) },
+      dedupe: [`@codemirror/state`, `@codemirror/view`],
+    },
+    css: { devSourcemap: true },""",
+            """    resolve: {
+      alias: { '@': path.resolve(__dirname, `./src`) },
+      dedupe: [`@codemirror/state`, `@codemirror/view`],
+    },
+    server: {
+      proxy: {
+        '/pd-workflow': {
+          target: process.env.PEOPLED_EDITOR_BRIDGE || `http://127.0.0.1:8788`,
+          changeOrigin: true,
+          rewrite: requestPath => requestPath.replace(/^\\/pd-workflow/, ``),
+        },
+      },
+    },
+    css: { devSourcemap: true },""",
+            1,
+        )
+        if "'/pd-workflow'" not in vite_source:
+            raise RuntimeError("无法应用 doocs/md 工作流代理补丁")
+        vite_path.write_text(vite_source, encoding="utf-8")
+
 
 def download_source(target: Path, revision: str) -> None:
     url = f"https://codeload.github.com/doocs/md/tar.gz/{revision}"
