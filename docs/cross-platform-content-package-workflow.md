@@ -73,6 +73,9 @@ data/analysis/<period>/
       README.md
       visual-brief.md
       source-prompts.md
+
+data/xiaohongshu/
+  NN-xiaohongshu-<topic-slug>-card-script.md
 ```
 
 其中：
@@ -81,6 +84,7 @@ data/analysis/<period>/
 - `material-assets-view.md` 是方便人阅读的视图。
 - `theme-shortlist.md` 是选题池和优先级说明。
 - `wechat-<topic-slug>.md` 是日期段目录里的过程稿，便于机器流程和出品包复用。
+- `data/xiaohongshu/NN-xiaohongshu-<topic-slug>-card-script.md` 是集中管理的小红书卡片脚本，编号与公众号成稿一致。
 - `wechat-<topic-slug>-illustrated.md` 是日期段目录里的带配图过程稿。
 - `deliverables/<topic-slug>/` 只保留文字型出品说明、视觉 brief、提示词、讲稿提示和媒体清单。
 - 图片、PPTX、视频、音频等真实大文件统一放 `media/`，并在 `media/_index.md` 记录位置。
@@ -105,11 +109,11 @@ data/articles/热点系列/
 命名规则：
 
 ```text
-《中文标题》.md
-《中文标题》（插图版）.md
+NN-人民日报讲某主题：中文标题.md
+热点N-官媒视角看某热点：中文标题.md
 ```
 
-这个目录是给老师人工查找、复用和二次编辑的成稿目录。日期段目录仍然保留，用来保存素材梳理、过程稿、视觉 brief、小红书文案和课件讲稿；图片、PPTX、视频、音频等大文件放入 `media/`。
+这个目录是给老师人工查找、复用和二次编辑的成稿目录。日期段目录仍然保留，用来保存素材梳理、教研复盘、公众号过程稿、视觉 brief 和课件讲稿；小红书卡片脚本统一放入 `data/xiaohongshu/`；图片、PPTX、视频、音频等大文件放入 `media/`。
 
 ## 三、第一步：日期段梳理
 
@@ -414,7 +418,7 @@ Presentations：导出可编辑 PPTX
 4. 用户确定主题后，再写公众号文章。
 5. 文章定稿后，先写视觉 brief。
 6. 再生成公众号 16:9 配图、小红书 3:4 竖图、课堂 PPT。
-7. 文字说明归档到 `data/analysis/<period>/deliverables/<topic-slug>/`，图片和课件归档到 `media/`。
+7. 小红书卡片脚本归档到 `data/xiaohongshu/`；其他文字说明归档到 `data/analysis/<period>/` 或其 `deliverables/<topic-slug>/`，图片和课件归档到 `media/`。
 8. 最后在 `media/_index.md` 补一行，记录本地位置、网盘位置和关联文本。
 
 如果用户只要求其中一步，就只做那一步，但文件命名和规格仍按这份流程执行。

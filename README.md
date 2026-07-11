@@ -181,6 +181,7 @@ python3 idea_magazine.py
 项目已接入“Codex 写作 → Humanizer-zh 一润 → 得到大脑二润 → doocs/md 排版 → 公众号草稿箱”流程。日常可以直接对 Codex说：
 
 ```text
+写稿
 把这篇文章写完并送去二润。
 我在得到改好了，拉回。
 预览一下公众号排版。

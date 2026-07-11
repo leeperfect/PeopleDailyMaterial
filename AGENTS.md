@@ -27,6 +27,7 @@
 - `data/core/`：SQLite 核心库，稳定文章 ID 和素材资产库。
 - `data/vault/`：Obsidian 阅读视图，适合人工浏览和教研标注。
 - `data/analysis/`：教研复盘、选题拆解、文案、讲稿、视觉 brief。
+- `data/xiaohongshu/`：小红书卡片脚本的集中入口，编号与对应公众号成稿保持一致。
 - `data/data_analysis/`：自媒体后台原始数据、拆分明细、每期详细运营报告和长期运营总览，供老师直接查看。
 - `data/articles/人民日报系列/`：当前可编辑、待发布的人民日报选题文章。
 - `data/articles/热点系列/`：当前可编辑、待发布的热点分析文章。
@@ -113,11 +114,11 @@ python3 scripts/sync_to_notion.py 2026-05-27
 ## 写作和资料规则
 
 - 文档使用中文；机器流程、脚本、结构化数据文件名仍使用英文。
-- 基于人民日报选题形成的成稿放在 `data/articles/人民日报系列/`，沿用数字编号；当前下一篇使用 `31`。
+- 基于人民日报选题形成的成稿放在 `data/articles/人民日报系列/`，沿用数字编号；下一编号同时核对系列目录文件名和 `data/articles/文章索引.md` 后确定。
 - 基于近期公共热点和官媒评论形成的分析稿放在 `data/articles/热点系列/`，使用“热点1、热点2……”独立编号。
 - 文章发表后由老师手动移入 `data/articles/往期文章/` 下对应系列，保留原编号，并同步更新 `data/articles/文章索引.md`。
 - 做单篇文章教研标注时，优先增量补充，不删旧批注。
-- 如果要写公众号、小红书、PPT、视觉 brief，默认按“教学可用 + 运营可用”的完整出品包理解；文字过程入 `data/analysis/`，非文本成品入 `media/`。
+- 每次完成文章写作，固定生成四项：公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。小红书卡片脚本集中放入 `data/xiaohongshu/`；教研复盘和公众号过程稿放入 `data/analysis/`；非文本成品放入 `media/`。
 - 生成小红书图文、视频号封面、公众号封面等视觉成品时，初稿渲染完成后默认自动完成质量审查；发现溢出、遮挡、密度不足、引用遗漏、尺寸错误或风格不统一时，先修正并复查，再交付给用户预览，不再等待用户额外指令。
 - 敏感信息不入 Git，尤其是 `config.json` 中的 Notion Token。
 - 不自动提交，除非用户明确要求。
@@ -125,7 +126,7 @@ python3 scripts/sync_to_notion.py 2026-05-27
 
 ## 公众号写作工作流
 
-- 用户说“写稿”时：必须调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑、生成过程稿和跨平台文字产物，并按本项目当前结构把成稿保存到 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，同步 `data/articles/文章索引.md`。这一步只完成可审查初稿，不自动送入得到大脑。
+- 用户说“写稿”时：必须调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑，并固定生成公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。成稿保存到 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，小红书卡片脚本保存到 `data/xiaohongshu/`，其余过程文字保存到 `data/analysis/`，同时同步 `data/articles/文章索引.md`。这一步只完成可审查初稿，不自动送入得到大脑。
 - 用户说“送去二润”时：对已完成的成稿运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft`；再调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架；最后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`。用户仍说“写完并送去二润”时，按“写稿 → 送去二润”连续执行，保持兼容。
 - 用户说“我在得到改好了，拉回”时：根据当前文章运行 `python3 scripts/writing_workflow.py pull "<文章路径>"`。必须使用本地记录的精确 `note_id`；校验不通过时不得覆盖本地稿。拉回成功后必须继续审查重点，只在得到版原文上增加 `**加粗**`，不得改写任何文字或结构：
   - 优先突出核心判断、总公式、章节递进结论、申论可用表达、面试答题关键动作和结尾认知升级。

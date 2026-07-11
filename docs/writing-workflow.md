@@ -31,6 +31,14 @@ Codex执行：
 3. 先建立递进逻辑，再生成选题复盘、过程稿和平台要求的文字产物。
 4. 成稿进入当前有效的 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，并更新统一文章索引。
 5. 按 Skill 验收清单检查参考文章、金句集合、Markdown 重点和考场迁移。
+6. 同步到 Notion 自媒体内容分发台账：
+
+   ```bash
+   python3 scripts/sync_articles_to_notion_distribution.py --dry-run
+   python3 scripts/sync_articles_to_notion_distribution.py --delay 0.25
+   ```
+
+   为新文章创建内容库记录和 8 条分发记录（公众号文章/图文、视频号、小红书图文/视频、抖音、快手、微博）。已存在的记录不重复创建，不覆盖发布状态、发布时间和发布链接。
 
 这一步只完成可审查初稿，不自动送入得到大脑。
 

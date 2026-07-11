@@ -542,7 +542,10 @@ def rejected_title_keys(conn: sqlite3.Connection) -> set[str]:
 
 
 def refresh_exports() -> None:
-    import export_content_ideas
+    try:
+        from . import export_content_ideas
+    except ImportError:
+        import export_content_ideas
 
     conn = export_content_ideas.connect(export_content_ideas.DEFAULT_ASSET_DB)
     try:

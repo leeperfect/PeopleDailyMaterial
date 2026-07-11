@@ -1,0 +1,465 @@
+{
+  "period": "2026-06-29_to_2026-07-05",
+  "source": {
+    "article_database": "data/core/articles.sqlite",
+    "article_count": 280,
+    "operation_overview": "data/data_analysis/overview.md",
+    "operation_report": "data/data_analysis/reports/2026-05-29_to_2026-06-27_tendency.md",
+    "existing_idea_pool": "data/core/material_assets.sqlite"
+  },
+  "formal_pool_sync": {
+    "required": true,
+    "minimum_support_articles": 3,
+    "refresh_markdown": "data/articles/选题库.md",
+    "refresh_csv": "data/exports/content_ideas.csv",
+    "preserve_browser_visibility": true
+  },
+  "selection_rules": [
+    "先看头版、评论、理论、权威发布和连续专题，识别本周官方持续关注而非单篇偶发的主题。",
+    "对照现有57条选题，只有问题场景、治理链条或读者收益明显不同的切口才新增。",
+    "每个新选题至少绑定3篇内容不同的人民日报文章，同文异版不重复计数。",
+    "结合公众号历史阅读、推荐和长尾数据排序，优先使用高频政策母题、明确冲突和可带走框架。",
+    "对六张网、能源、品牌、反内卷、成果转化等高度相关材料，优先补强旧题而不是重复建题。"
+  ],
+  "operation_findings": [
+    "“因地制宜”历史阅读36019、推荐约比89.2%，县域经济的新切口仍应列为首选。",
+    "营商环境、全国统一大市场、城市更新、文化传承均有1.5万至1.8万级阅读，说明具体政策词加误区纠偏更容易获得推荐。",
+    "银发经济历史阅读12207，养老事业与产业协同具备成熟受众基础，但必须与已有“养老不是负担”区分。",
+    "公共服务和生态文明历史阅读相对中等，标题必须落到社会救助法、美丽中国十五五等新政策和具体机制。",
+    "党建是本周版面最强主线，但泛泛纪念不宜直接做流量题，应转译为“为什么能”的治理能力框架。"
+  ],
+  "theme_clusters": [
+    {
+      "cluster_id": "education_fifteen_five",
+      "title": "教育十五五与高质量育人体系",
+      "core_judgment": "教育强国不是让孩子更早学、更多学，而是根据人口和产业变化前瞻配置资源，促进公平、优化结构、提高质量并回归育人规律。",
+      "relation_to_existing": "区别于AI时代教育和教育科技人才一体，本题聚焦教育十五五规划、资源布局和育人方式。",
+      "representative_articles": [
+        "people_daily_20260630_30165669",
+        "people_daily_20260630_30165708",
+        "people_daily_20260630_30165703",
+        "people_daily_20260702_30166013"
+      ]
+    },
+    {
+      "cluster_id": "county_specialized_integrated",
+      "title": "县域经济特而强、融得进",
+      "core_judgment": "县域经济不能追求小而全、封闭循环，而要立足比较优势做强特色产业，延伸价值链，贯通城乡并主动融入全国发展大局。",
+      "relation_to_existing": "承接因地制宜强母题，但新增一域与全局、政府与市场、城乡融合三组关系。",
+      "representative_articles": [
+        "people_daily_20260629_30165412",
+        "people_daily_20260701_30165903",
+        "people_daily_20260703_30166422",
+        "people_daily_20260703_30166437"
+      ]
+    },
+    {
+      "cluster_id": "elderly_public_market",
+      "title": "养老事业与养老产业协同",
+      "core_judgment": "应对老龄化既要由政府兜住基本养老服务，也要发挥市场作用满足多层次需求，用清单、标准和监管划清边界、形成协同。",
+      "relation_to_existing": "区别于银发经济的一般性服务供给，本题专门讲公益事业和市场产业如何分工协同。",
+      "representative_articles": [
+        "people_daily_20260702_30165986",
+        "people_daily_20260705_30166666",
+        "people_daily_20260630_30165742",
+        "people_daily_20260702_30165993"
+      ]
+    },
+    {
+      "cluster_id": "ip_protection_balance",
+      "title": "知识产权保护的边界与创新激励",
+      "core_judgment": "知识产权既要保护真实创新和品牌信誉，也要惩治恶意抢注、误导使用和碰瓷式诉讼，避免维权工具异化为牟利工具。",
+      "relation_to_existing": "与营商环境和品牌出海有关，但本题聚焦知识产权制度的保护边界和创新激励。",
+      "representative_articles": [
+        "people_daily_20260630_30165715",
+        "people_daily_20260630_30165710",
+        "people_daily_20260702_30166043",
+        "people_daily_20260702_30166039"
+      ]
+    },
+    {
+      "cluster_id": "rural_public_culture",
+      "title": "乡村公共文化服务提质增效",
+      "core_judgment": "农家书屋和乡村文化阵地不能停在有场地、有图书，而要根据人口和需求变化优化内容、服务和活动，让文化资源真正直达基层。",
+      "relation_to_existing": "区别于文化传承和农文旅融合，本题聚焦乡村公共文化服务的使用效能和群众参与。",
+      "representative_articles": [
+        "people_daily_20260630_30165683",
+        "people_daily_20260630_30165684",
+        "people_daily_20260703_30166419",
+        "people_daily_20260702_30166021"
+      ]
+    },
+    {
+      "cluster_id": "performance_assessment_value",
+      "title": "政绩考核精准化与财政问效",
+      "core_judgment": "政绩考核不是指标越多越好，而要分类设置、差异评价、看群众感受和长期效果，并让公共资金花钱必问效、无效必问责。",
+      "relation_to_existing": "作为正确政绩观的新切口，聚焦考核设计和财政绩效，不重复办理链、真实数据和理旧账。",
+      "representative_articles": [
+        "people_daily_20260630_30165739",
+        "people_daily_20260630_30165740",
+        "people_daily_20260703_30166361",
+        "people_daily_20260629_30165390"
+      ]
+    },
+    {
+      "cluster_id": "beautiful_china_system",
+      "title": "美丽中国的系统治理",
+      "core_judgment": "美丽中国建设不能只靠末端治污，而要统筹产业结构、污染治理、生态保护、循环利用和气候应对，协同推进降碳、减污、扩绿、增长。",
+      "relation_to_existing": "承接生态文明母题，但由美丽中国十五五和循环经济十五五两个新规划形成系统治理新切口。",
+      "representative_articles": [
+        "people_daily_20260704_30166584",
+        "people_daily_20260704_30166540",
+        "people_daily_20260705_30166653",
+        "people_daily_20260702_30165979"
+      ]
+    },
+    {
+      "cluster_id": "social_assistance_rule_of_law",
+      "title": "社会救助法治化",
+      "core_judgment": "社会救助不只是临时给钱，而是把救助对象、权利义务、申请程序、部门协同、社会参与和监督责任纳入稳定法治轨道。",
+      "relation_to_existing": "与政策主动找人相关，但新增社会救助法正式施行后的权利、程序和责任框架。",
+      "representative_articles": [
+        "people_daily_20260630_30165695",
+        "people_daily_20260629_30165418",
+        "people_daily_20260703_30166429"
+      ]
+    },
+    {
+      "cluster_id": "why_party_can",
+      "title": "从优秀特质理解为什么能",
+      "core_judgment": "理解百年大党为什么能，不能停在纪念口号，而要看到真理引领、人民立场、战略主动、改革创新、斗争精神和自我革命形成的治理能力。",
+      "relation_to_existing": "本周七一报道的高频总纲，现有选题库尚无系统党建能力框架。",
+      "representative_articles": [
+        "people_daily_20260629_30165395",
+        "people_daily_20260629_30165384",
+        "people_daily_20260704_30166581",
+        "people_daily_20260703_30166334"
+      ]
+    }
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260629_0705_education_fifteen_five",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + PPT",
+      "title": "《人民日报》讲教育“十五五”：不是让孩子学得更多，而是让教育更公平、更适配、更有质量",
+      "angle": "教育十五五面对人口变化、区域差异和产业升级，重点不是继续做知识加法，而是前瞻配置资源、尊重成长规律、提升科学素养、完善家庭教育并构建终身学习体系。",
+      "relation_to_existing": "区别于AI教育和教育科技人才一体，本题聚焦教育资源布局和高质量育人体系。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "教育和数字治理类内容已有稳定受众；最新国家规划叠加“电子带娃”等生活痛点，兼具政策时效和家庭传播力。",
+      "reader_gain": "掌握教育强国的公平、结构、质量、规律和支撑发展五层框架。",
+      "support_article_ids": [
+        "people_daily_20260630_30165669",
+        "people_daily_20260630_30165708",
+        "people_daily_20260630_30165703",
+        "people_daily_20260630_30165722",
+        "people_daily_20260702_30166013",
+        "people_daily_20260703_30166410"
+      ],
+      "outline": [
+        "看公平：教育资源跟着学龄人口和真实需求走",
+        "看结构：各类教育办出特色，人才培养对接产业和国家战略",
+        "看质量：从知识灌输转向学思用合一和科学素养",
+        "守规律：幼儿教育回归游戏、陪伴和真实体验",
+        "建生态：学校、家庭、社区和终身学习共同育人"
+      ],
+      "teaching_value": "适合教育强国、公共服务、人口变化、人才培养、数字素养和家庭教育。"
+    },
+    {
+      "idea_id": "idea_20260629_0705_county_specialized_integrated",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + PPT",
+      "title": "《人民日报》再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”",
+      "angle": "县域经济要把地方资源禀赋转化为特色产业和市场优势，同时主动融入国家战略、区域分工和全球市场，推动城乡要素双向流动。",
+      "relation_to_existing": "延续历史表现最强的因地制宜母题，但新增县域如何处理一域与全局、政府与市场、县城与乡村的关系。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "因地制宜历史阅读36019、推荐约比89.2%，仍是账号最强母题；“小而全”与“特而强、融得进”具有清晰冲突。",
+      "reader_gain": "获得特色定位、产业延链、市场链接、城乡融合和长期主义五步县域发展框架。",
+      "support_article_ids": [
+        "people_daily_20260629_30165412",
+        "people_daily_20260701_30165903",
+        "people_daily_20260703_30166422",
+        "people_daily_20260630_30165666",
+        "people_daily_20260703_30166437"
+      ],
+      "outline": [
+        "不求小而全：立足资源禀赋做出不可替代的特色",
+        "不止卖原料：用科技、加工、标准和品牌延长价值链",
+        "不做封闭循环：主动融入全国大市场和区域产业分工",
+        "不割裂城乡：基础设施和公共服务先行，促进要素双向流动",
+        "不追短期风口：一张蓝图绘到底，尊重基层和群众首创"
+      ],
+      "teaching_value": "适合县域经济、因地制宜、全国统一大市场、城乡融合、乡村振兴和共同富裕。"
+    },
+    {
+      "idea_id": "idea_20260629_0705_elderly_public_market",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 面试题卡",
+      "title": "《人民日报》讲养老新命题：公益事业要兜底，银发产业要提质",
+      "angle": "养老事业负责保基本、兜底线，养老产业满足多层次、个性化需求；二者要靠清单划边界、政策激活供给、标准守住质量、监管保障权益。",
+      "relation_to_existing": "区别于“养老不是负担”的一般银发经济框架，本题专门解决政府与市场如何协同。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "银发经济历史阅读12207、推荐约比77.2%，养老母题已被验证；公益与市场的关系辨析能提供新的答题收益。",
+      "reader_gain": "学会区分基本养老服务与市场化养老产品，并形成清单、政策、标准、监管四步协同框架。",
+      "support_article_ids": [
+        "people_daily_20260702_30165986",
+        "people_daily_20260705_30166666",
+        "people_daily_20260630_30165742",
+        "people_daily_20260702_30165993"
+      ],
+      "outline": [
+        "事业兜底：基本养老服务必须普惠可及、覆盖城乡",
+        "产业提质：围绕多样化需求扩大产品和服务供给",
+        "清单划界：明确政府保什么、市场补什么",
+        "标准托底：统一服务标准，防止低质扩张",
+        "监督增温：把资金、设施和服务真正落实到老人身边"
+      ],
+      "teaching_value": "适合积极应对人口老龄化、银发经济、公共服务、政府与市场关系和社区治理。"
+    },
+    {
+      "idea_id": "idea_20260629_0705_ip_protection_balance",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 课堂讲解",
+      "title": "《人民日报》讲知识产权：既要保护真创新，也要防止“碰瓷式维权”",
+      "angle": "知识产权制度要保护真实创新、品牌信誉和消费者权益，同时治理恶意抢注、误导使用和恶意诉讼，让法律成为创新激励而不是牟利工具。",
+      "relation_to_existing": "与营商环境和品牌出海相连，但本题有独立的商标法、恶意诉讼和创新资源法治供给主线。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "营商环境和统一大市场均有1.8万级历史阅读；“真创新”对“碰瓷维权”的冲突更具体，适合推荐分发。",
+      "reader_gain": "掌握确权、保护、规范使用、惩治滥诉和激励创新的知识产权治理链。",
+      "support_article_ids": [
+        "people_daily_20260630_30165715",
+        "people_daily_20260630_30165710",
+        "people_daily_20260702_30166043",
+        "people_daily_20260702_30166039",
+        "people_daily_20260705_30166658"
+      ],
+      "outline": [
+        "保护什么：保护真实创新、品牌信誉和诚实经营",
+        "防止什么：恶意抢注、心机商标、误导公众和碰瓷诉讼",
+        "如何治理：行政、司法、检察监督形成协同",
+        "如何激励：用法治把科研资源和市场机会引向创新主体",
+        "最终目标：让竞争回到品质、技术和价值创造"
+      ],
+      "teaching_value": "适合知识产权、法治化营商环境、品牌建设、科技创新、公平竞争和消费者权益。"
+    },
+    {
+      "idea_id": "idea_20260629_0705_rural_public_culture",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 小红书",
+      "title": "《人民日报》讲乡村文化振兴：农家书屋不能只“有书”，关键要“有人来、有用处”",
+      "angle": "乡村公共文化服务要从建场地、配图书转向分类管理、需求选书、活动运营和资源直达，让农家书屋、村落文化和群众文艺真正进入乡村日常。",
+      "relation_to_existing": "区别于一般文化传承和农文旅开发，本题聚焦乡村公共文化设施的使用效能。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "文化传承历史阅读15589、推荐约比79.8%；“有书”到“有人来、有用处”具备明确场景和治理反差。",
+      "reader_gain": "掌握乡村文化振兴从设施建设转向内容供给、群众参与和长效运营的框架。",
+      "support_article_ids": [
+        "people_daily_20260630_30165683",
+        "people_daily_20260630_30165684",
+        "people_daily_20260703_30166419",
+        "people_daily_20260703_30166410",
+        "people_daily_20260702_30166021",
+        "people_daily_20260630_30165666"
+      ],
+      "outline": [
+        "从有到优：分类管理、差异投入，盘活现有文化设施",
+        "从配到选：依据人口结构和群众需求优化内容",
+        "从静到动：阅读、村舞、非遗和节庆活动带动参与",
+        "从输血到共创：让村民成为文化生产和传播主体",
+        "从文化到振兴：在守住底线的前提下连接教育、旅游和产业"
+      ],
+      "teaching_value": "适合乡村文化振兴、公共文化服务、基层治理、全民阅读和文旅融合。"
+    },
+    {
+      "idea_id": "idea_20260629_0705_performance_assessment_value",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 课堂讲解",
+      "title": "《人民日报》讲政绩考核：不是考得多，而是分类考、精准考、看长效",
+      "angle": "政绩考核要根据地区功能、岗位职责和发展阶段差异化设置指标，把群众评价、潜绩长效和财政资金效益纳入指挥棒，防止一把尺子量到底。",
+      "relation_to_existing": "作为正确政绩观的新切口，聚焦考核制度和财政问效，不重复办理链、数据求真和新官理旧账。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "正确政绩观是账号稳定教学母题；“考得多”与“考得准”的反差具体，适合公务员考试受众。",
+      "reader_gain": "获得分类考核、精准画像、群众评价、潜绩识别和财政问效五步框架。",
+      "support_article_ids": [
+        "people_daily_20260630_30165739",
+        "people_daily_20260630_30165740",
+        "people_daily_20260703_30166361",
+        "people_daily_20260629_30165390",
+        "people_daily_20260629_30165373"
+      ],
+      "outline": [
+        "分类考：不同地区、岗位和发展阶段不能一把尺子",
+        "精准考：定量与定性、考人与考事相结合",
+        "长效考：既看显绩，也识别生态、民生等潜绩",
+        "群众评：把获得感和实际问题解决情况纳入评价",
+        "资金问效：花钱必问效，无效必问责"
+      ],
+      "teaching_value": "适合正确政绩观、干部考核、财政绩效、基层减负、调查研究和作风建设。"
+    },
+    {
+      "idea_id": "idea_20260629_0705_beautiful_china_system",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + PPT",
+      "title": "《人民日报》讲美丽中国：不能只做末端治理，要把降碳减污扩绿增长一起谋划",
+      "angle": "美丽中国建设要从单项治污升级为产业结构、能源资源、循环利用、生态保护和气候应对协同推进的系统工程。",
+      "relation_to_existing": "承接生态文明母题，但由两个十五五专项规划形成降碳减污扩绿增长协同的新表达。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "生态文明历史阅读5585，纯概念吸引力一般；本题以最新规划和四个并列动作提高时效性与可复制性。",
+      "reader_gain": "掌握源头转型、过程减排、循环利用、生态修复和制度保障的系统治理链。",
+      "support_article_ids": [
+        "people_daily_20260704_30166584",
+        "people_daily_20260704_30166540",
+        "people_daily_20260705_30166653",
+        "people_daily_20260702_30165979",
+        "people_daily_20260629_30165396"
+      ],
+      "outline": [
+        "源头转型：调整产业、能源和交通结构",
+        "过程协同：降碳、减污、扩绿、增长一体推进",
+        "循环利用：贯通生产、消费、回收和再利用全链条",
+        "生态修复：提升生态系统多样性、稳定性和持续性",
+        "制度保障：精准科学依法治污，完善评价和责任机制"
+      ],
+      "teaching_value": "适合美丽中国、生态文明、循环经济、绿色转型、高质量发展和治理现代化。"
+    },
+    {
+      "idea_id": "idea_20260629_0705_social_assistance_rule_of_law",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 面试题卡",
+      "title": "《人民日报》讲社会救助法：救助不只是给钱，更是权利、程序和兜底责任",
+      "angle": "社会救助法把救助对象、措施、程序、社会参与、监督保障和法律责任固定下来，使困难群众求助有门、受助及时、权利可保障。",
+      "relation_to_existing": "与政策主动找人相连，但本题聚焦社会救助法正式施行后的法治框架。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "公共服务历史阅读4200，传播力中等；新法正式施行具有强时效，标题以“权利、程序、责任”提升专业收益。",
+      "reader_gain": "学会把社会救助写成对象识别、程序办理、协同救助、社会参与和监督追责。",
+      "support_article_ids": [
+        "people_daily_20260630_30165695",
+        "people_daily_20260629_30165418",
+        "people_daily_20260703_30166429"
+      ],
+      "outline": [
+        "对象扩围：从特定困难群体走向分层分类覆盖",
+        "程序规范：一门受理、协同办理、求助有门",
+        "权利保障：明确救助对象的权利和义务",
+        "力量协同：政府、社会组织、慈善和基层共同参与",
+        "责任闭环：监督保障和法律责任托住制度底线"
+      ],
+      "teaching_value": "适合社会救助、民生保障、法治政府、公共服务、基层治理和社会公平。"
+    },
+    {
+      "idea_id": "idea_20260629_0705_why_party_can",
+      "priority": "B",
+      "status": "备选",
+      "platform": "公众号 + 课堂讲解",
+      "title": "《人民日报》这一周反复追问“为什么能”：答案不在口号里",
+      "angle": "百年大党为什么能，要从真理引领、人民立场、战略主动、改革创新、斗争精神和自我革命六种能力理解，而不是只摘纪念性金句。",
+      "relation_to_existing": "本周七一报道的最高频总纲，现有选题库尚无党建治理能力的系统框架。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "战略价值和教学价值高，但缺少同类历史阅读样本，列为B级储备；标题用“答案不在口号里”降低抽象感。",
+      "reader_gain": "把党建理论转成可理解、可迁移的六种治理能力。",
+      "support_article_ids": [
+        "people_daily_20260629_30165395",
+        "people_daily_20260629_30165384",
+        "people_daily_20260701_30165902",
+        "people_daily_20260702_30165984",
+        "people_daily_20260704_30166581",
+        "people_daily_20260703_30166334"
+      ],
+      "outline": [
+        "真理引领：用科学理论把准方向、分析问题",
+        "人民立场：始终从群众利益和实际感受出发",
+        "战略主动：把长远目标分解为阶段任务",
+        "改革创新：根据新实践不断破题",
+        "自我革命：以优良作风和监督保持组织活力"
+      ],
+      "teaching_value": "适合党的建设、群众路线、历史主动、作风建设、自我革命和政治理论教学。"
+    }
+  ],
+  "existing_topic_updates": [
+    {
+      "idea_id": "idea_refined_20260611_six_networks",
+      "added_article_ids": [
+        "people_daily_20260705_30166645",
+        "people_daily_20260701_30165894"
+      ],
+      "reason": "补入六张网总纲和现代化水运体系最新材料。"
+    },
+    {
+      "idea_id": "idea_20260622_28_energy_system",
+      "added_article_ids": [
+        "people_daily_20260703_30166428",
+        "people_daily_20260705_30166645"
+      ],
+      "reason": "补入全国统一能源市场和基础设施体系材料。"
+    },
+    {
+      "idea_id": "idea_20260622_28_china_brand_global_value",
+      "added_article_ids": [
+        "people_daily_20260705_30166658",
+        "people_daily_20260703_30166422"
+      ],
+      "reason": "补入中国创造和县域产品质量出海案例。"
+    },
+    {
+      "idea_id": "idea_refined_20260611_anti_involution",
+      "added_article_ids": [
+        "people_daily_20260703_30166399"
+      ],
+      "reason": "补入平台经济从拼价格转向拼质量、拼创新的最新评论。"
+    },
+    {
+      "idea_id": "idea_refined_20260612_tech_transfer_chain",
+      "added_article_ids": [
+        "people_daily_20260703_30166448",
+        "people_daily_20260702_30166039",
+        "people_daily_20260705_30166654"
+      ],
+      "reason": "补入场景转化、法治引导创新资源和产业创新融合材料。"
+    }
+  ],
+  "recommended_order": [
+    {
+      "rank": 1,
+      "idea_id": "idea_20260629_0705_county_specialized_integrated",
+      "reason": "复用账号最强的因地制宜母题，又增加一域与全局、城乡融合的新框架。"
+    },
+    {
+      "rank": 2,
+      "idea_id": "idea_20260629_0705_education_fifteen_five",
+      "reason": "国家规划时效强，兼具教育公平、家庭育儿和人才培养三类读者入口。"
+    },
+    {
+      "rank": 3,
+      "idea_id": "idea_20260629_0705_ip_protection_balance",
+      "reason": "承接营商环境和品牌建设的高阅读基础，碰瓷式维权形成鲜明冲突。"
+    },
+    {
+      "rank": 4,
+      "idea_id": "idea_20260629_0705_elderly_public_market",
+      "reason": "银发经济已有高推荐验证，政府兜底与市场供给关系是新的教学收益。"
+    },
+    {
+      "rank": 5,
+      "idea_id": "idea_20260629_0705_rural_public_culture",
+      "reason": "文化母题历史表现稳定，农家书屋的使用效能场景具体、易传播。"
+    },
+    {
+      "rank": 6,
+      "idea_id": "idea_20260629_0705_performance_assessment_value",
+      "reason": "与公务员考试受众高度匹配，考得多与考得准的冲突清晰。"
+    }
+  ],
+  "not_prioritized": [
+    "六张网、全国统一能源市场、中国品牌出海、平台反内卷和科技成果转化均有新材料，但已有成熟选题，直接补强旧题，不重复新增。",
+    "七一纪念和伟大征程历史文章数量最多，但纯纪念、纯历史回顾不单独立项，只保留“为什么能”的治理能力总题。",
+    "一键支付、洗碗机体验、有奖发票等消费内容各有价值，但尚不足以形成三个以上同一治理链条的独立选题。",
+    "广告版和地方形象稿只作辅助案例，不作为独立选题的主要支撑。"
+  ]
+}
