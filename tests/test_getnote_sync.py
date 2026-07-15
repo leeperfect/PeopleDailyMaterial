@@ -31,6 +31,18 @@ class GetnoteSyncTest(unittest.TestCase):
         )
         self.assertEqual(note["content"], "正文")
 
+    def test_normalizes_only_first_markdown_heading_marker(self):
+        content = "#44｜标题\n\n正文里的#标签保持原样。\n\n## 二级标题"
+        normalized = MODULE.normalize_pulled_markdown(content)
+        self.assertEqual(
+            normalized,
+            "# 44｜标题\n\n正文里的#标签保持原样。\n\n## 二级标题",
+        )
+
+    def test_keeps_valid_heading_unchanged(self):
+        content = "# 44｜标题\n\n正文"
+        self.assertEqual(MODULE.normalize_pulled_markdown(content), content)
+
 
 if __name__ == "__main__":
     unittest.main()

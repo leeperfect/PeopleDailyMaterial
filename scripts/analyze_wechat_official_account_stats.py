@@ -95,6 +95,13 @@ def fmt_float(value: float | None) -> str:
     return f"{float(value or 0):,.1f}"
 
 
+def fmt_delta(current: float, previous: float) -> str:
+    delta = current - previous
+    if not previous:
+        return f"{delta:+,.1f}"
+    return f"{delta:+,.1f} ({delta / previous:+.1%})"
+
+
 def markdown_table(headers: list[str], rows: list[list[Any]], aligns: list[str]) -> list[str]:
     lines = [
         "| " + " | ".join(headers) + " |",
@@ -120,10 +127,15 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
 
     new_dates = sorted(set(latest_daily) - set(previous_daily))
     new_daily = [latest_daily[date] for date in new_dates]
+    removed_dates = sorted(set(previous_daily) - set(latest_daily))
+    removed_daily = [previous_daily[date] for date in removed_dates]
     new_reads = sum(row["read_users"] or 0 for row in new_daily)
     new_posts = sum(row["published_count"] or 0 for row in new_daily)
     new_shares = sum(row["share_users"] or 0 for row in new_daily)
     new_favorites = sum(row["wechat_favorites"] or 0 for row in new_daily)
+    removed_reads = sum(row["read_users"] or 0 for row in removed_daily)
+    removed_shares = sum(row["share_users"] or 0 for row in removed_daily)
+    removed_favorites = sum(row["wechat_favorites"] or 0 for row in removed_daily)
 
     top_articles = sorted(
         latest_articles.values(),
@@ -235,6 +247,22 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
                 "- 两批起止日期不同，这里反映滚动窗口热度变化，不作为严格同比增长率。",
             ]
         )
+        if new_daily and removed_daily:
+            new_avg = new_reads / len(new_daily)
+            removed_avg = removed_reads / len(removed_daily)
+            lines.extend(
+                [
+                    "",
+                    "### 滚动窗口替换拆解",
+                    "",
+                    f"- 移出区间：{removed_dates[0]} 至 {removed_dates[-1]}，{len(removed_dates)} 天，阅读 {fmt_int(removed_reads)}。",
+                    f"- 新增区间：{new_dates[0]} 至 {new_dates[-1]}，{len(new_dates)} 天，阅读 {fmt_int(new_reads)}。",
+                    f"- 新增区间日均阅读 {fmt_float(new_avg)}，相对移出区间日均阅读 {fmt_float(removed_avg)}，变化 {fmt_delta(new_avg, removed_avg)}。",
+                    f"- 分享由 {fmt_int(removed_shares)} 变为 {fmt_int(new_shares)}，收藏由 {fmt_int(removed_favorites)} 变为 {fmt_int(new_favorites)}。",
+                    "",
+                    "这个拆解用于判断滚动窗口回落究竟来自新一周走弱，还是仅由统计区间移动造成。",
+                ]
+            )
 
     lines.extend(["", "## 最新文章表现", ""])
     lines.extend(
@@ -338,6 +366,8 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
         previous_articles = article_rows(conn, previous.batch_id) if previous else {}
         new_dates = sorted(set(current_daily) - set(previous_daily)) if previous else []
         new_daily = [current_daily[date] for date in new_dates]
+        removed_dates = sorted(set(previous_daily) - set(current_daily)) if previous else []
+        removed_daily = [previous_daily[date] for date in removed_dates]
         top_articles = sorted(
             current_articles.values(),
             key=lambda row: row["read_users"] or 0,
@@ -410,6 +440,12 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 lines.append(
                     f"- 本次真正新增 {len(new_dates)} 个日期（{new_dates[0]} 至 {new_dates[-1]}），新增区间发表 {new_posts} 篇，日阅读人数合计 {fmt_int(new_reads)}。"
                 )
+                if removed_daily:
+                    removed_reads = sum(row["read_users"] or 0 for row in removed_daily)
+                    net_replacement = new_reads - removed_reads
+                    lines.append(
+                        f"- 滚动窗口中，新加入日期比移出日期少贡献 {fmt_int(abs(net_replacement))} 阅读；这是本周期回落的直接统计来源。"
+                    )
         else:
             lines.append("- 这是数据链的首个批次，作为后续周度比较的基线。")
 
@@ -436,19 +472,19 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 "日均阅读",
                 fmt_float(batch.avg_reads),
                 fmt_float(previous.avg_reads) if previous else "-",
-                f"{batch.avg_reads - previous.avg_reads:+,.1f}" if previous else "-",
+                fmt_delta(batch.avg_reads, previous.avg_reads) if previous else "-",
             ],
             [
                 "日均分享",
                 fmt_float(batch.avg_shares),
                 fmt_float(previous.avg_shares) if previous else "-",
-                f"{batch.avg_shares - previous.avg_shares:+,.1f}" if previous else "-",
+                fmt_delta(batch.avg_shares, previous.avg_shares) if previous else "-",
             ],
             [
                 "日均收藏",
                 fmt_float(batch.avg_favorites),
                 fmt_float(previous.avg_favorites) if previous else "-",
-                f"{batch.avg_favorites - previous.avg_favorites:+,.1f}" if previous else "-",
+                fmt_delta(batch.avg_favorites, previous.avg_favorites) if previous else "-",
             ],
         ]
         lines.extend(
@@ -459,7 +495,40 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             )
         )
 
-        lines.extend(["", "## 四、阅读高峰", ""])
+        lines.extend(["", "## 四、滚动窗口替换拆解", ""])
+        if previous and new_daily and removed_daily:
+            new_reads = sum(row["read_users"] or 0 for row in new_daily)
+            new_shares = sum(row["share_users"] or 0 for row in new_daily)
+            new_favorites = sum(row["wechat_favorites"] or 0 for row in new_daily)
+            new_posts = sum(row["published_count"] or 0 for row in new_daily)
+            removed_reads = sum(row["read_users"] or 0 for row in removed_daily)
+            removed_shares = sum(row["share_users"] or 0 for row in removed_daily)
+            removed_favorites = sum(row["wechat_favorites"] or 0 for row in removed_daily)
+            removed_posts = sum(row["published_count"] or 0 for row in removed_daily)
+            new_avg = new_reads / len(new_daily)
+            removed_avg = removed_reads / len(removed_daily)
+            lines.extend(
+                markdown_table(
+                    ["窗口区间", "日期", "天数", "发文", "阅读", "日均阅读", "分享", "收藏"],
+                    [
+                        ["移出本批", f"{removed_dates[0]} 至 {removed_dates[-1]}", len(removed_dates), removed_posts, fmt_int(removed_reads), fmt_float(removed_avg), fmt_int(removed_shares), fmt_int(removed_favorites)],
+                        ["新加入本批", f"{new_dates[0]} 至 {new_dates[-1]}", len(new_dates), new_posts, fmt_int(new_reads), fmt_float(new_avg), fmt_int(new_shares), fmt_int(new_favorites)],
+                    ],
+                    ["---", "---", "---:", "---:", "---:", "---:", "---:", "---:"],
+                )
+            )
+            lines.extend(
+                [
+                    "",
+                    f"新增区间比移出区间少 {fmt_int(removed_reads - new_reads)} 阅读；新增区间日均阅读变化 {fmt_delta(new_avg, removed_avg)}。因此，本批滚动周期回落主要由新加入日期的阅读强度低于被移出日期造成。",
+                ]
+            )
+        elif previous:
+            lines.append("- 两批没有形成可直接比较的移出区间与新增区间。")
+        else:
+            lines.append("- 首批数据暂不进行窗口替换拆解。")
+
+        lines.extend(["", "## 五、阅读高峰", ""])
         lines.extend(
             markdown_table(
                 ["日期", "阅读人数", "分享人数", "收藏人数", "发文篇数"],
@@ -477,7 +546,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             )
         )
 
-        lines.extend(["", "## 五、本次新增日期表现", ""])
+        lines.extend(["", "## 六、本次新增日期表现", ""])
         if previous and new_daily:
             lines.extend(
                 markdown_table(
@@ -500,7 +569,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
         else:
             lines.append("- 首批数据作为连续分析基线，从下一批开始识别新增日期。")
 
-        lines.extend(["", "## 六、渠道表现", ""])
+        lines.extend(["", "## 七、渠道表现", ""])
         lines.extend(
             markdown_table(
                 ["渠道", "周期阅读人数合计"],
@@ -513,7 +582,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 "",
                 "不同渠道可能存在重复读者，渠道数据用于判断传播来源强弱，不与“全部”简单相加。",
                 "",
-                "## 七、文章阅读排名",
+                "## 八、文章阅读排名",
                 "",
             ]
         )
@@ -539,7 +608,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             )
         )
 
-        lines.extend(["", "## 八、本批新出现文章", ""])
+        lines.extend(["", "## 九、本批新出现文章", ""])
         if previous and new_titles:
             lines.extend(
                 markdown_table(
@@ -566,7 +635,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 "",
                 "“本批新出现”表示首次进入后台来源概况，不一定等同于本周刚发布。来源概况通常只展示部分文章，不能替代完整的单篇内容明细。",
                 "",
-                "## 九、同篇文章长尾变化",
+                "## 十、同篇文章长尾变化",
                 "",
             ]
         )
@@ -590,7 +659,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
         else:
             lines.append("- 暂无上一批同篇文章数据可供比较。")
 
-        lines.extend(["", "## 十、选题与运营判断", ""])
+        lines.extend(["", "## 十一、选题与运营判断", ""])
         if top:
             lines.append(
                 f"1. **当前最强样本**：{top['title']} 是本周期阅读最高的文章，应拆解它的母题、标题结构和读者收益，作为后续选题参照。"
@@ -608,14 +677,14 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 "4. **选题方法**：优先复用“考试高频母题 + 明确读者收益 + 纠正常见答题误区”的组合，同时避免只更换标题、不更换分析切口。",
                 "5. **评价方法**：高阅读判断吸引力，高推荐判断平台扩散力，高分享和高收藏判断教学价值与读者留存价值。",
                 "",
-                "## 十一、下一期追踪清单",
+                "## 十二、下一期追踪清单",
                 "",
                 "- 检查本批新出现文章在下一批的净增长和推荐变化。",
                 "- 检查高阅读文章是否还能持续获得推荐、会话、朋友圈和搜索流量。",
                 "- 将表现稳定的母题拆成新角度，进入公众号选题池继续验证。",
                 "- 尽量补充“单篇内容分析”明细，以覆盖来源概况未展示的文章。",
                 "",
-                "## 十二、数据限制",
+                "## 十三、数据限制",
                 "",
                 "- 本报告依据公众号后台导出的滚动周期数据，不把重叠日期重复累计为本周新增。",
                 "- 来源概况未必覆盖期间全部发文，未出现的文章不能直接判定为零阅读。",

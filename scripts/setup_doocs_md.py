@@ -209,6 +209,52 @@ async function advancePeopleDailyWorkflow() {
             raise RuntimeError("无法应用 doocs/md 公众号工作流入口补丁")
         post_path.write_text(post_source, encoding="utf-8")
 
+    post_source = post_path.read_text(encoding="utf-8")
+    if "openPeopleDailyFigureTray" not in post_source:
+        post_source = post_source.replace(
+            "import { Check, ChevronDown, ChevronRight, Info, Loader2, Minus, Send } from '@lucide/vue'",
+            "import { Check, ChevronDown, ChevronRight, Images, Info, Loader2, Minus, Send } from '@lucide/vue'",
+            1,
+        )
+        post_source = post_source.replace(
+            "async function advancePeopleDailyWorkflow() {",
+            """function openPeopleDailyFigureTray() {
+  window.open(`${peopleDailyBridge}/figure-tray`, `pd-figure-tray`, `width=1180,height=900`)
+}
+
+async function advancePeopleDailyWorkflow() {""",
+            1,
+        )
+        post_source = post_source.replace(
+            """      <Button
+        v-else-if="!isMobile"
+        variant="outline"
+        class="h-9"
+        :disabled="workflowAdvancing"
+        @click="advancePeopleDailyWorkflow"
+      >""",
+            """      <Button
+        v-if="isPeopleDailyWorkflow && !isMobile"
+        variant="outline"
+        class="h-9"
+        @click="openPeopleDailyFigureTray"
+      >
+        <Images class="mr-2 h-4 w-4" />
+        公众号配图托盘
+      </Button>
+      <Button
+        v-if="isPeopleDailyWorkflow && !isMobile"
+        variant="outline"
+        class="h-9"
+        :disabled="workflowAdvancing"
+        @click="advancePeopleDailyWorkflow"
+      >""",
+            1,
+        )
+        if "openPeopleDailyFigureTray" not in post_source or "公众号配图托盘" not in post_source:
+            raise RuntimeError("无法应用 doocs/md 配图托盘入口补丁")
+        post_path.write_text(post_source, encoding="utf-8")
+
     vite_path = target / "apps" / "web" / "vite.config.ts"
     vite_source = vite_path.read_text(encoding="utf-8")
     if "'/pd-workflow'" not in vite_source:
@@ -303,6 +349,7 @@ def setup(force: bool = False) -> Path:
     mcp_modules = target / "packages" / "mcp-server" / "node_modules"
     if force or not mcp_modules.exists():
         install_dependencies(target)
+    apply_offline_patch(target)
     print(f"doocs/md 已就绪：{target}")
     print(f"固定版本：{revision}")
     return target

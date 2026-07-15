@@ -31,6 +31,15 @@ from modules.writing_workflow import (
     structural_issues,
     workflow_id,
 )
+from modules.figure_workflow import (
+    apply_plan,
+    article_headings,
+    canonical_markdown,
+    editor_markdown,
+    figure_by_id,
+    load_manifest,
+    sync_usage,
+)
 from publish_wechat_draft import publish
 from render_wechat_html import render_article, save_layout
 
@@ -75,7 +84,10 @@ class EditorWorkflow:
 
         source = self.article_path.read_text(encoding="utf-8")
         frontmatter, body, metadata = split_frontmatter(source)
-        editor_markdown = str(payload.get("markdown") or "").strip()
+        editor_markdown = canonical_markdown(
+            self.article_path,
+            str(payload.get("markdown") or "").strip(),
+        )
         if not editor_markdown:
             raise RuntimeError("编辑器正文为空，已停止保存")
 
@@ -120,6 +132,8 @@ class EditorWorkflow:
                     join_frontmatter(frontmatter, editor_markdown),
                 )
                 content_synced = True
+
+        sync_usage(self.article_path, editor_markdown if content_synced else body)
 
         rendered = render_article(str(self.article_path))
         state = load_state(self.config)
@@ -174,6 +188,7 @@ class EditorWorkflow:
                 "编辑器正文未通过结构检查，已保存为候选稿；"
                 "请先检查提示的问题，再同步草稿箱"
             )
+        sync_usage(self.article_path)
         media_id = publish(str(self.article_path))
         if not media_id:
             raise RuntimeError("公众号接口没有返回草稿 media_id")
@@ -191,6 +206,75 @@ class EditorWorkflow:
         )
         save_state(state, self.config)
         return media_id
+
+    def editor_body(self) -> str:
+        source = self.article_path.read_text(encoding="utf-8")
+        _, body, _ = split_frontmatter(source)
+        return editor_markdown(self.article_path, body)
+
+    def figure_data(self) -> dict[str, object]:
+        _, manifest = load_manifest(self.article_path)
+        _, body, _ = split_frontmatter(self.article_path.read_text(encoding="utf-8"))
+        return {
+            "figures": manifest["figures"],
+            "headings": article_headings(body),
+        }
+
+    def apply_figures(self, payload: dict[str, object]) -> dict[str, object]:
+        plan = payload.get("plan")
+        if not isinstance(plan, list):
+            raise RuntimeError("配图计划格式异常")
+        result = apply_plan(self.article_path, plan)
+        return {
+            **result,
+            "message": f"已保存{result['used_count']}张正文配图，请刷新排版编辑器。",
+        }
+
+    def figure_asset(self, figure_id: str) -> Path:
+        _, manifest = load_manifest(self.article_path)
+        figure = figure_by_id(manifest, figure_id)
+        path = project_path(str(figure["file"])).resolve()
+        if not path.exists() or not path.is_file():
+            raise RuntimeError(f"配图文件不存在：{path}")
+        return path
+
+    def figure_tray_html(self) -> str:
+        data = self.figure_data()
+        headings = data["headings"]
+        assert isinstance(headings, list)
+        options = "".join(
+            f'<option value="{html.escape(str(item["value"]))}">{html.escape(str(item["label"]))}</option>'
+            for item in headings
+        )
+        cards: list[str] = []
+        for figure in data["figures"]:
+            figure_id = str(figure["id"])
+            selected = "checked" if figure.get("used_in_wechat") else ""
+            current_position = str(figure.get("article_position") or "")
+            cards.append(
+                f"""<article class="figure" data-id="{html.escape(figure_id)}">
+<img src="/pd-workflow/asset/{html.escape(figure_id)}" alt="{html.escape(str(figure.get('title') or figure_id))}">
+<div class="body"><label class="pick"><input type="checkbox" {selected}>用于正文</label>
+<h2>{html.escape(str(figure.get('title') or figure_id))}</h2>
+<p>{figure.get('width_px')}×{figure.get('height_px')}｜出版：{html.escape(str(figure.get('publication_status') or ''))}</p>
+<select data-current="{html.escape(current_position)}">{options}</select></div></article>"""
+            )
+        return f"""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>公众号配图托盘</title>
+<style>body{{margin:0;background:#f3f4f6;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}}
+.shell{{max-width:1280px;margin:auto;padding:22px}}header{{position:sticky;top:0;z-index:5;background:#f3f4f6eF;padding:8px 0 16px;backdrop-filter:blur(12px)}}
+h1{{margin:0;font-size:26px}}header p{{color:#64748b}}button{{border:0;border-radius:9px;background:#ff6a2a;color:white;padding:11px 18px;font-size:15px;cursor:pointer}}
+.grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}.figure{{background:white;padding:13px;border-radius:14px;box-shadow:0 5px 22px #0f172a12}}
+img{{width:100%;display:block;border:1px solid #e5e7eb}}.body{{padding:10px 2px 2px}}h2{{font-size:17px;margin:8px 0}}p{{color:#64748b;font-size:13px}}
+.pick{{font-weight:700;color:#c2410c}}select{{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;background:white}}.notice{{margin-left:12px;color:#047857}}
+@media(max-width:760px){{.grid{{grid-template-columns:1fr}}}}</style></head><body><main class="shell"><header><h1>公众号配图托盘</h1>
+<p>勾选正文图片并选择插入位置；保存后自动记录实际使用顺序。PPT原图不会被改写。</p><button id="save">保存配图方案并刷新编辑器</button><span class="notice" id="notice"></span></header>
+<section class="grid">{''.join(cards)}</section></main><script>
+document.querySelectorAll('select').forEach(select=>{{const current=select.dataset.current||'';if(current){{const option=[...select.options].find(x=>current.startsWith(x.value));if(option)select.value=option.value}}}});
+document.getElementById('save').addEventListener('click',async()=>{{const plan=[...document.querySelectorAll('.figure')].filter(card=>card.querySelector('input').checked).map(card=>({{id:card.dataset.id,before_heading:card.querySelector('select').value}}));
+const response=await fetch('/pd-workflow/figures/apply',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{plan}})}});const result=await response.json();
+if(!response.ok){{alert(result.error||'保存失败');return}}document.getElementById('notice').textContent=result.message;if(window.opener)window.opener.location.reload();}});
+</script></body></html>"""
 
     def result_html(self, message: str = "", error: str = "") -> str:
         result = self.last_result
@@ -270,6 +354,7 @@ iframe{{width:100%;height:72vh;border:1px solid #e5e7eb;border-radius:12px;backg
     <ul>{detail_html}</ul>
     <div class="actions">
       <a class="button" href="{html.escape(editor_url)}">返回排版编辑器</a>
+      <a class="button" href="/pd-workflow/figure-tray" target="_blank">打开配图托盘</a>
       <form method="post" action="/pd-workflow/publish">
         <button type="submit" {disabled}>{html.escape(button_text)}</button>
       </form>
@@ -325,9 +410,21 @@ def make_handler(workflow: EditorWorkflow):
                 )
                 return
             if path == "/article":
-                source = workflow.article_path.read_text(encoding="utf-8")
-                _, body, _ = split_frontmatter(source)
-                self.send_json({"markdown": body})
+                self.send_json({"markdown": workflow.editor_body()})
+                return
+            if path == "/figure-tray":
+                try:
+                    self.send_bytes(workflow.figure_tray_html().encode("utf-8"))
+                except Exception as error:
+                    self.send_bytes(str(error).encode("utf-8"), status=400)
+                return
+            if path.startswith("/asset/"):
+                try:
+                    figure_id = path.rsplit("/", 1)[-1]
+                    asset = workflow.figure_asset(figure_id)
+                    self.send_bytes(asset.read_bytes(), content_type="image/png")
+                except Exception as error:
+                    self.send_bytes(str(error).encode("utf-8"), status=404)
                 return
             if path == "/preview":
                 preview_path = str(workflow.last_result.get("preview_path") or "")
@@ -353,6 +450,18 @@ def make_handler(workflow: EditorWorkflow):
                     if not isinstance(payload, dict):
                         raise RuntimeError("排版数据格式异常")
                     self.send_json(workflow.save_handoff(payload))
+                except Exception as error:
+                    self.send_json({"error": str(error)}, status=400)
+                return
+            if path == "/figures/apply":
+                try:
+                    length = int(self.headers.get("Content-Length", "0"))
+                    if length <= 0 or length > 500_000:
+                        raise RuntimeError("配图计划大小异常")
+                    payload = json.loads(self.rfile.read(length).decode("utf-8"))
+                    if not isinstance(payload, dict):
+                        raise RuntimeError("配图计划格式异常")
+                    self.send_json(workflow.apply_figures(payload))
                 except Exception as error:
                     self.send_json({"error": str(error)}, status=400)
                 return

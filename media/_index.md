@@ -44,6 +44,12 @@
 | 2026-06-23 | 云南热点政策预测框架 | 公众号封面 / 分享卡 | `media/images/2026-06-23-yunnan-hotspots-policy-wechat-cover/` | 待上传 | `data/analysis/2026-06-22/2026-h1-yunnan-hotspots-interview.md`；含 21:9 头图、1:1 分享卡和配对预览，Editorial 资料定制风，滇池青 × 政策蓝绿 × 茶金，已自动审查 |
 | 2026-06-23 | 就业难：就业链高分写法 | 小红书图 / 视频号封面 | `media/images/2026-06-23-employment-chain-xhs-video/` | 待上传 | `data/articles/人民日报系列/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，就业橙 × 炭黑 × 暖米白，公开图库配图，8 条引用全覆盖，已自动审查 |
 
+| 2026-07-11 | 县域经济因地制宜发展 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-11-county-economy-notebooklm/` | 待上传 | `data/articles/人民日报系列/44-人民日报再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”.md`；含10页PPT原图和1张独立信息图，已生成出版登记清单 |
+
+| 2026-07-12 | 政绩考核：分类考、精准考、看长效 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-performance-assessment-notebooklm/` | 待上传 | `data/articles/人民日报系列/45-人民日报讲政绩考核：不是考得多，而是分类考、精准考、看长效.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
+
+| 2026-07-12 | AI应用别只写"赋能"：真实场景、合理定价和安全规则要一起跟上 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-ai-application-scene-pricing-safety-notebooklm/` | 待上传 | `data/articles/人民日报系列/46-人民日报讲AI应用落地：场景要真、定价要公、安全要守.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
+
 ## 类型写法
 
 - 小红书图

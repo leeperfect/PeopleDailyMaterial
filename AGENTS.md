@@ -126,12 +126,17 @@ python3 scripts/sync_to_notion.py 2026-05-27
 
 ## 公众号写作工作流
 
-- 用户说“写稿”时：必须调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑，并固定生成公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。成稿保存到 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，小红书卡片脚本保存到 `data/xiaohongshu/`，其余过程文字保存到 `data/analysis/`，同时同步 `data/articles/文章索引.md`。这一步只完成可审查初稿，不自动送入得到大脑。
-- 用户说“送去二润”时：对已完成的成稿运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft`；再调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架；最后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`。用户仍说“写完并送去二润”时，按“写稿 → 送去二润”连续执行，保持兼容。
-- 用户说“我在得到改好了，拉回”时：根据当前文章运行 `python3 scripts/writing_workflow.py pull "<文章路径>"`。必须使用本地记录的精确 `note_id`；校验不通过时不得覆盖本地稿。拉回成功后必须继续审查重点，只在得到版原文上增加 `**加粗**`，不得改写任何文字或结构：
+- 用户说“写稿”时：按“写稿 → 送去二润”连续执行，不再等待第二条命令。必须先调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑，并固定生成公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。成稿保存到 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，小红书卡片脚本保存到 `data/xiaohongshu/`，其余过程文字保存到 `data/analysis/`，同时同步 `data/articles/文章索引.md`。四项产物及来源校验通过后，立即运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft`；再调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架；最后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`，把一润稿送入得到大脑并记录精确 `note_id`。
+- 用户单独说“送去二润”或“写完并送去二润”时：继续兼容。若文章尚未形成，完整执行“写稿 → 送去二润”；若已有可审查初稿，则从初稿快照和 Humanizer 一润开始执行，不重复写稿。
+- 用户说“拉回”或“我在得到改好了，拉回”时：按“拉回 → 重点加粗审查 → 登记 NotebookLM 配图 → 公众号配图托盘自动初排 → 公众号预检 → 同步公众号草稿箱”连续执行，不再等待后续命令。先根据当前文章运行 `python3 scripts/writing_workflow.py pull "<文章路径>"`，必须使用本地记录的精确 `note_id`；校验不通过时不得覆盖本地稿，也不得继续配图或上传草稿。拉回成功后必须继续审查重点，只在得到版原文上增加 `**加粗**`，不得改写任何文字或结构：
   - 优先突出核心判断、总公式、章节递进结论、申论可用表达、面试答题关键动作和结尾认知升级。
   - 不加粗标题、参考文章、普通事实、整段正文，也不要把每个列表项都加粗；通常保持 8—15 处，按文章长度调整。
   - 完成后运行 `python3 scripts/writing_workflow.py emphasis-check "<文章路径>"`；只有“除加粗标记外正文完全一致”时，状态才进入 `second_polish_complete`。
+  - 配图素材定位顺序固定为：本轮消息附件 → 文章已有 `figure_manifest` → `~/Downloads` 中与当前主题相符且最新的 PPTX 和信息图。必须同时确认素材主题与当前文章一致；有多个无法可靠判断的候选时停止并请用户选择，不得猜测。
+  - 找到素材后运行 `register-figures`，完成拆图、命名、尺寸检查、清单和审查页；已有且来源未变化的配图清单直接复用，避免重复登记。
+  - 运行 `apply-figures --initial` 形成公众号配图托盘初始方案，自动记录实际采用图片、顺序和章节位置。发现溢出、尺寸错误、主题不符或图片质量不足时，必须先修正；不得带问题上传。
+  - 配图缺失、登记失败或初排校验不通过时，流程停在对应环节并明确说明缺少什么，不得退化为无图草稿。
+  - 配图通过后，先渲染与发布一致的 doocs/md HTML，执行公众号 preflight 和发布 dry-run；全部通过后运行 `publish` 创建草稿。只允许创建草稿，不得自动群发。草稿成功后提醒用户手动设置原创声明、赞赏和合集。
 - 用户说“预览公众号排版”时：运行 `python3 scripts/writing_workflow.py preview "<文章路径>"`，再用 Codex 内置浏览器打开输出的本地预览页。预览与发布必须使用同一份 doocs/md HTML。
 - 用户说“打开完整排版编辑器”时：运行 `python3 scripts/writing_workflow.py editor "<文章路径>"`，使用 Codex 内置浏览器打开本地 doocs/md；不要要求用户打开 IDE。用户在编辑器修改正文后，点击“发布（进入下一步）”会在结构检查通过后自动写回本地 Markdown，同时保留修改前快照；主题、颜色、字号等格式同步保存为该文章的 `wechat_layout`。结构或来源受损时只保存候选稿，不覆盖源文件。
 - 用户说“保存本文排版”时：把完整编辑器中确定的参数保存为该文章的 `wechat_layout` 状态，再重新生成只读预览确认。

@@ -103,6 +103,17 @@ def note_id_from_output(output: str) -> str:
         raise
 
 
+def normalize_pulled_markdown(content: str) -> str:
+    """只修复得到编辑器偶尔产生的无空格首行 Markdown 标题。"""
+    lines = content.strip().splitlines()
+    for index, line in enumerate(lines):
+        if not line.strip():
+            continue
+        lines[index] = re.sub(r"^(#{1,6})([^\s#])", r"\1 \2", line, count=1)
+        break
+    return "\n".join(lines).strip()
+
+
 def push(article: str, *, force: bool = False) -> str:
     config = load_public_config()
     article_path = project_path(article).resolve()
@@ -183,7 +194,7 @@ def pull(article: str, *, accept_risk: bool = False) -> None:
             run_getnote(["note", str(entry["note_id"]), "-o", "json"])
         )
     )
-    new_body = str(note.get("content") or "").strip()
+    new_body = normalize_pulled_markdown(str(note.get("content") or ""))
     if not new_body:
         raise RuntimeError("得到大脑返回的正文为空，已停止拉回")
 

@@ -202,6 +202,20 @@ def main() -> int:
     layout_parser.add_argument("layout_args", nargs=argparse.REMAINDER)
     editor_parser = subparsers.add_parser("editor", help="启动完整 doocs/md")
     editor_parser.add_argument("article", nargs="?")
+    figures_parser = subparsers.add_parser(
+        "register-figures",
+        help="登记NotebookLM PPT和信息图",
+    )
+    figures_parser.add_argument("article")
+    figures_parser.add_argument("--pptx", required=True)
+    figures_parser.add_argument("--infographic", required=True)
+    figures_parser.add_argument("--slug", required=True)
+    apply_figures_parser = subparsers.add_parser(
+        "apply-figures",
+        help="应用公众号配图方案",
+    )
+    apply_figures_parser.add_argument("article")
+    apply_figures_parser.add_argument("--initial", action="store_true")
     setup_wechat_parser = subparsers.add_parser("setup-wechat", help="启动私密配置页")
     setup_wechat_parser.add_argument("--port", default="8788")
     subparsers.add_parser("wechat-preflight", help="验证公众号接口")
@@ -260,6 +274,24 @@ def main() -> int:
         if args.article:
             arguments.extend(["--article", args.article])
         return run_script("preview_wechat.py", arguments)
+    if args.command == "register-figures":
+        return run_script(
+            "register_notebooklm_assets.py",
+            [
+                args.article,
+                "--pptx",
+                args.pptx,
+                "--infographic",
+                args.infographic,
+                "--slug",
+                args.slug,
+            ],
+        )
+    if args.command == "apply-figures":
+        arguments = [args.article]
+        if args.initial:
+            arguments.append("--initial")
+        return run_script("apply_figure_plan.py", arguments)
     if args.command == "setup-wechat":
         return run_script("wechat_setup.py", ["serve", "--port", args.port])
     if args.command == "wechat-preflight":

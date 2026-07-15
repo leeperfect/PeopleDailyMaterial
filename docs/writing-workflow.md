@@ -1,12 +1,21 @@
 ---
 type: writing_workflow
-updated: 2026-07-04
+updated: 2026-07-12
 scope: PeopleDailyMaterial
 ---
 
 # 公众号写作、二次润色与草稿箱工作流
 
-这套流程把 Codex 写作、Humanizer-zh、得到大脑二润、doocs/md 排版和公众号草稿箱连成一条线。日常只需要用自然语言告诉 Codex当前要做哪一步，不需要打开 IDE。
+这套流程把 Codex 写作、Humanizer-zh、得到大脑二润、NotebookLM 配图、doocs/md 排版和公众号草稿箱连成一条线。日常只需要两条命令：“写稿”和“拉回”，不需要打开 IDE。
+
+## 两条命令完成全流程
+
+| 你说的话 | 自动完成的工作 | 停留位置 |
+|---|---|---|
+| `写稿` | 真实来源核验 → 四项文字产物 → Humanizer 一润 → 送入得到大脑 | 等待你在得到 App 完成二润 |
+| `拉回` | 得到稿拉回 → 重点加粗 → NotebookLM 配图登记 → 配图托盘初排 → 排版和接口预检 → 上传公众号草稿箱 | 等待你在公众号后台检查并设置原创、赞赏和合集 |
+
+说“拉回”前，只需把当前文章的 NotebookLM PPT 和信息图附在消息中，或者保存在 `Downloads`。流程会优先读取本轮附件；没有附件时，先复用本文已登记的素材，再从 `Downloads` 中识别与当前主题相符的最新 PPTX 和信息图。候选不唯一或主题无法确认时会停下来请你选择，不会猜测，也不会先上传无图稿。
 
 ## 日常操作
 
@@ -31,7 +40,9 @@ Codex执行：
 3. 先建立递进逻辑，再生成选题复盘、过程稿和平台要求的文字产物。
 4. 成稿进入当前有效的 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，并更新统一文章索引。
 5. 按 Skill 验收清单检查参考文章、金句集合、Markdown 重点和考场迁移。
-6. 同步到 Notion 自媒体内容分发台账：
+6. 保存初稿快照，调用 Humanizer-zh 完成一润并通过质量检查。
+7. 把一润稿送入得到大脑，记录该文章的精确 `note_id`。
+8. 同步到 Notion 自媒体内容分发台账：
 
    ```bash
    python3 scripts/sync_articles_to_notion_distribution.py --dry-run
@@ -40,9 +51,9 @@ Codex执行：
 
    为新文章创建内容库记录和 8 条分发记录（公众号文章/图文、视频号、小红书图文/视频、抖音、快手、微博）。已存在的记录不重复创建，不覆盖发布状态、发布时间和发布链接。
 
-这一步只完成可审查初稿，不自动送入得到大脑。
+这一步结束时，文章已经送入得到大脑。你只需要在得到 App 中完成二润，然后说“拉回”。
 
-### 送去二润
+### 兼容旧口令：送去二润
 
 对 Codex说：
 
@@ -55,15 +66,15 @@ Codex执行：
 3. 保存 `01-humanizer.md` 快照。
 4. 只把标题和正文送入得到大脑，并记录真实 `note_id`。
 
-原口令“把这篇文章写完并送去二润”继续可用，等同于依次执行“写稿”和“送去二润”。
+“送去二润”和“把这篇文章写完并送去二润”继续可用；但日常直接说“写稿”就会自动完成这一段。
 
 得到笔记标题包含 `[PD-工作流编号]`，不会靠标题猜测文章身份。
 
 ### 从得到大脑拉回
 
-你在 App 中完成二润后，对 Codex说：
+你在 App 中完成二润并准备好 NotebookLM PPT、信息图后，对 Codex说：
 
-> 我在得到改好了，拉回。
+> 拉回。
 
 拉回前会检查：
 
@@ -86,6 +97,17 @@ Codex执行：
   ```bash
   python3 scripts/writing_workflow.py emphasis-check "<文章路径>"
   ```
+
+重点审查通过后，流程继续自动完成：
+
+1. 从本轮附件、本文已有清单或 `Downloads` 定位当前文章的 NotebookLM PPT 和信息图；
+2. 拆分 PPT、统一命名、检查尺寸，生成配图清单和审查页；
+3. 用公众号配图托盘形成初始排图方案，记录采用图片、顺序和章节位置；
+4. 生成与正式发布一致的 doocs/md HTML；
+5. 执行公众号接口预检和发布模拟；
+6. 全部通过后创建公众号草稿，绝不自动群发。
+
+如果得到稿校验、素材识别、图片质量、排版或公众号接口任一环节没有通过，流程会停在该环节，不会覆盖正确版本，也不会上传缺图稿。
 
 ### 预览排版
 
@@ -118,11 +140,33 @@ Codex在后台启动 doocs/md 并在内置浏览器载入文章。确定后说�
 - 排版修改：主题、颜色、字号、缩进等保存到本文 `wechat_layout`；
 - 结构、参考文章或来源受损：只保存候选稿，暂停覆盖和草稿同步。
 
-### 同步公众号草稿箱
+### 公众号配图托盘（“拉回”时自动执行）
+
+NotebookLM 导出的 PPT 和信息图先登记为本文素材。对 Codex说：
+
+> 登记这篇文章的 NotebookLM 配图。
+
+登记时会拆分 PPT 页面、统一命名、检查尺寸，并生成配图清单和审查页；原图进入 `media/`，使用记录保存在文章对应的 `figure-manifest.yml`。
+
+如需在自动初排后人工调整，可以再说：
+
+> 开启公众号配图托盘。
+
+完整排版编辑器顶部会出现“公众号配图托盘”按钮。托盘可以预览全部候选图、勾选实际使用的图片，并指定插在某个二级标题之前或参考文章之前。保存后会同时完成三件事：
+
+1. 把图片引用写回公众号 Markdown；
+2. 在配图清单中记录使用状态、顺序和位置；
+3. 刷新编辑器预览，后续上传草稿继续使用同一组图片。
+
+“拉回”流程会默认按文章结构生成一版初始方案。每次应用新方案前都会保存文章快照，未采用的图片继续留在候选区，不会删除。
+
+### 同步公众号草稿箱（“拉回”时自动执行）
 
 对 Codex说：
 
 > 同步到公众号草稿箱。
+
+这个旧口令继续保留，适合单独重试上传；正常情况下说“拉回”已经会自动执行。
 
 同步过程：
 
@@ -194,6 +238,8 @@ python3 scripts/writing_workflow.py pull "<文章路径>"
 python3 scripts/writing_workflow.py emphasis-check "<文章路径>"
 python3 scripts/writing_workflow.py preview "<文章路径>"
 python3 scripts/writing_workflow.py editor "<文章路径>"
+python3 scripts/writing_workflow.py register-figures "<文章路径>" --pptx "<PPT路径>" --infographic "<信息图路径>" --slug "<英文主题标识>"
+python3 scripts/writing_workflow.py apply-figures "<文章路径>" --initial
 python3 scripts/writing_workflow.py save-layout "<文章路径>" --theme grace
 python3 scripts/writing_workflow.py setup-wechat
 python3 scripts/writing_workflow.py wechat-preflight
