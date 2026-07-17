@@ -4,6 +4,7 @@
 
 | 日期 | 主题 | 类型 | 本地位置 | 网盘位置 | 关联文本/说明 |
 |---|---|---|---|---|---|
+| 2026-07-16 | 乡村文化振兴：农家书屋提质五步法 | 公众号配图 | `media/images/article-42-rural-reading-room-five-steps.png` | 待上传 | `data/articles/人民日报系列/42-人民日报讲乡村文化振兴：农家书屋不能只"有书"，关键要"有人来、有用处".md`；手绘风信息图，展示五步法核心行动链条 |
 | 2026-07-04 | 公众号写作工作流固定头图 | 公众号封面 | `media/images/wechat-fixed-covers/` | 待上传 | `hotspot-header.png` 用于热点系列，`people-daily-header.png` 用于人民日报系列；由草稿同步流程自动选择 |
 | 2026-05-30 | 县域发展：人民日报五个动作 | 小红书图 | `media/images/2026-05-30-county-development-xhs/` | 待上传 | `data/articles/往期文章/人民日报系列/申论写县域发展，别再只会说“因地制宜”：人民日报给了五个动作.md`；含 10 张 |
 | 2026-05-31 | 农业农村现代化六个关键词 | 小红书图 / 公众号封面 | `media/images/2026-05-31-agri-modernization-xhs-wechat/` | 待上传 | `data/articles/往期文章/人民日报系列/中央一号文件怎么转成申论素材：农业农村现代化的六个关键词.md`；含 13 张小红书图和 2 张微信封面 |
