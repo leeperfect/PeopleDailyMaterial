@@ -1,0 +1,261 @@
+{
+  "period": "2026-07-06_to_2026-07-12",
+  "source": {
+    "article_database": "data/core/articles.sqlite",
+    "article_count": 278,
+    "operation_overview": "data/data_analysis/overview.md",
+    "operation_report": "data/data_analysis/reports/2026-06-14_to_2026-07-13_tendency.md",
+    "existing_idea_pool": "data/core/material_assets.sqlite"
+  },
+  "formal_pool_sync": {
+    "required": true,
+    "minimum_support_articles": 3,
+    "refresh_markdown": "data/articles/选题库.md",
+    "refresh_csv": "data/exports/content_ideas.csv",
+    "preserve_browser_visibility": true
+  },
+  "selection_rules": [
+    "以2026年7月6日至12日下载的278篇人民日报文章为范围，优先识别连续报道、评论、理论和权威发布形成的治理链条。",
+    "每个新增选题至少绑定3篇内容不同的人民日报文章，同文异版不重复计数。",
+    "对照既有67条选题，只有问题场景、核心关系和读者收益明显不同的切口才新增。",
+    "同时参考长期运营总览和最新运营报告，优先采用考试高频母题、明确误区纠偏和可带走框架。",
+    "与科技成果转化、就业、养老、品牌、乡村文化和政绩考核高度相关的材料只补强旧题，不重复立项。"
+  ],
+  "operation_findings": [
+    "科技成果转化累计阅读35730，是当前最强内容样本；科技金融选题承接创新母题，但转向资金如何识别、分担风险和全周期陪伴。",
+    "因地制宜累计阅读20661、推荐占比约87.7%，说明具体关系辨析和误区纠偏仍是高推荐表达。",
+    "银发经济、基层治理六张网和破解就业难均进入高阅读梯队，公共服务与治理类选题已有稳定受众。",
+    "教育十五五累计阅读7034、推荐占比约76.5%，最新权威规划加清晰框架具备持续传播能力。",
+    "安全治理累计阅读3504，单讲原则传播力有限；本周防灾题必须落到预警、叫应、转移和救援的行动闭环。"
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260706_0712_tech_finance_lifecycle",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + PPT",
+      "title": "《人民日报》讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期",
+      "angle": "科技金融不能沿用只看抵押物和过去财务数据的传统信贷逻辑，而要识别技术价值，组合股债租保等工具，分担试错风险，用耐心资本覆盖科技企业全生命周期。",
+      "relation_to_existing": "承接科技成果转化强母题，但独立回答金融为什么看不懂、怎么敢投、如何陪跑，不重复成果转化的一般机制。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "科技成果转化累计阅读35730，为当前最高；金融如何支持创新是同一高热母题中的独立政策切口。",
+      "reader_gain": "掌握看得懂、敢支持、工具全、陪得久、生态化五步科技金融框架。",
+      "support_article_ids": [
+        "people_daily_20260708_30167403",
+        "people_daily_20260709_30167654",
+        "people_daily_20260711_30168026",
+        "people_daily_20260711_30168031",
+        "people_daily_20260711_30168033"
+      ],
+      "outline": [
+        "看得懂：建立懂科技、懂产业的专业评价和翻译机制",
+        "敢支持：用保险、担保和尽职免责分担创新试错风险",
+        "工具全：形成股、债、租、保等多元融资组合",
+        "陪得久：依据技术和企业生命周期提供接续支持",
+        "生态化：推动政府、金融、科研机构和企业协同"
+      ],
+      "teaching_value": "适合科技创新、科技成果转化、金融五篇大文章、新质生产力和耐心资本。"
+    },
+    {
+      "idea_id": "idea_20260706_0712_agricultural_socialized_service",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 课堂讲解",
+      "title": "《人民日报》讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业",
+      "angle": "农业社会化服务不是替农民作主或改变土地经营权，而是通过托管、农技推广、科技特派员、标准服务和市场链接，破解小农户干不了、干不好、干得不经济的难题。",
+      "relation_to_existing": "区别于一般乡村振兴和农业科技题，本题聚焦小农户如何保留经营主体地位并接入现代农业。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "标题同时包含政策新词、农民利益边界和常见误解纠偏，适合乡村振兴与申论受众。",
+      "reader_gain": "理解服务托管与土地流转的边界，获得技术、生产、市场和利益联结的完整服务链。",
+      "support_article_ids": [
+        "people_daily_20260708_30167446",
+        "people_daily_20260708_30167447",
+        "people_daily_20260710_30167840",
+        "people_daily_20260710_30167841",
+        "people_daily_20260710_30167861",
+        "people_daily_20260710_30167862"
+      ],
+      "outline": [
+        "先识别难题：小农户缺技术、缺装备、缺市场和规模效益",
+        "守住边界：服务托管不等于土地流转，农民仍是经营主体",
+        "技术搭桥：让科研成果经过示范、培训和在地适配长进田里",
+        "服务成链：从耕种管收到加工销售提供专业化服务",
+        "利益落地：用节本增效和风险约束保护农民收益"
+      ],
+      "teaching_value": "适合乡村全面振兴、小农户与现代农业衔接、农业科技、社会化服务和共同富裕。"
+    },
+    {
+      "idea_id": "idea_20260706_0712_warning_to_action",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 面试题卡",
+      "title": "《人民日报》讲防灾救灾：预警不能只“发出去”，关键要有人接、马上动",
+      "angle": "有效防灾要把风险排查、精准预警、基层叫应、人员转移、物资前置和协同救援接成行动链，推动公共安全治理从重救灾向重预防转型。",
+      "relation_to_existing": "区别于既有韧性治理总题，本题专门拆解预警如何通过基层叫应变成具体行动。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "本周形成7篇连续报道；行动链比泛讲安全治理更具体，也更适合面试应急处置题。",
+      "reader_gain": "获得风险摸排、预警到人、叫应确认、力量前置和复盘提升的闭环。",
+      "support_article_ids": [
+        "people_daily_20260706_30166913",
+        "people_daily_20260707_30167236",
+        "people_daily_20260708_30167418",
+        "people_daily_20260708_30167419",
+        "people_daily_20260709_30167650",
+        "people_daily_20260711_30168080",
+        "people_daily_20260712_30168157"
+      ],
+      "outline": [
+        "风险前置：摸清风险点、重点区域和特殊群体",
+        "预警到人：从发布天气信息转向说明危险和行动要求",
+        "叫应闭环：明确县乡村谁接收、谁确认、谁组织行动",
+        "力量前置：人员、物资、设备和预案提前到位",
+        "复盘提升：以演练、科普和灾后评估补齐基层能力"
+      ],
+      "teaching_value": "适合防灾减灾、基层应急、风险治理、干部担当和突发事件面试题。"
+    },
+    {
+      "idea_id": "idea_20260706_0712_grassroots_burden_empowerment",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 课堂讲解",
+      "title": "《人民日报》讲基层减负：不是简单少干活，而要把权责、资源和能力一起配上",
+      "angle": "基层减负的目的不是让基层少作为，而是通过事项准入和负面清单划清边界，做到任务下沉时权力、资金、人员和培训同步下沉，让基层把精力用于服务群众。",
+      "relation_to_existing": "区别于万能基层的权责协同总题，本题聚焦减负与赋能必须同步，以及网格员任务摊派的具体场景。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "基层治理六张网累计阅读16217；减负不是少作为的反差能延续高频治理母题。",
+      "reader_gain": "掌握清事项、禁摊派、配资源、强能力、看成效五步减负赋能框架。",
+      "support_article_ids": [
+        "people_daily_20260707_30167267",
+        "people_daily_20260707_30167268",
+        "people_daily_20260708_30167450",
+        "people_daily_20260708_30167451"
+      ],
+      "outline": [
+        "清事项：明确基层和网格员该干什么、不该承担什么",
+        "禁摊派：用准入制度和负面清单拦住随意派单",
+        "配资源：任务下沉必须同步配置权限、资金和专业力量",
+        "强能力：以跟班学习、场景历练和专业培训提升本领",
+        "看成效：用群众感受和问题解决情况检验减负效果"
+      ],
+      "teaching_value": "适合基层减负、权责配置、网格治理、干部能力和整治形式主义。"
+    },
+    {
+      "idea_id": "idea_20260706_0712_carbon_peak_system_transition",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + PPT",
+      "title": "《人民日报》讲碳达峰：不是简单限产减排，而是能源、产业、生活方式一起转",
+      "angle": "实现碳达峰不能靠运动式限产，而要统筹能源安全和绿色转型，推动能源结构、产业体系、重点领域、循环利用、市场机制和全民行动协同变化。",
+      "relation_to_existing": "承接美丽中国系统治理，但聚焦碳达峰行动方案及能源安全与绿色转型的关系。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "最新十五五行动方案带来权威时效；简单限产与系统转型的纠偏可提升抽象生态题的可读性。",
+      "reader_gain": "掌握能源、产业、重点领域、循环经济和制度机制五层低碳转型框架。",
+      "support_article_ids": [
+        "people_daily_20260706_30166914",
+        "people_daily_20260707_30167249",
+        "people_daily_20260710_30167859",
+        "people_daily_20260710_30167893",
+        "people_daily_20260710_30167894"
+      ],
+      "outline": [
+        "能源转型：发展非化石能源并提升电力系统消纳能力",
+        "产业升级：传统产业节能改造，培育零碳园区和绿色增长点",
+        "领域协同：建筑、交通、算力和公共机构共同降碳",
+        "循环支撑：以减量化、资源化、再利用降低资源消耗",
+        "制度保障：完善核算、标准、价格、市场和责任机制"
+      ],
+      "teaching_value": "适合双碳、能源安全、绿色发展、循环经济、产业升级和生态文明。"
+    },
+    {
+      "idea_id": "idea_20260706_0712_online_consumption_rules",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 小红书",
+      "title": "《人民日报》讲网络消费治理：商家写了“概不退款”，不等于可以免责",
+      "angle": "网络消费治理要让规则跟上直播电商、社交电商和算法营销等新业态，明确平台和经营者责任，治理滤镜营销与文字游戏，依法否定侵害消费者权利的霸王条款。",
+      "relation_to_existing": "区别于一般平台治理和算法治理，本题从消费者日常遭遇切入电子商务法、广告规则和格式条款。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "滤镜营销、文字游戏和概不退款均是强生活场景，法律结论明确，适合公众号与小红书双平台。",
+      "reader_gain": "弄清信息真实、平台责任、格式条款效力和协同监管四类网络消费规则。",
+      "support_article_ids": [
+        "people_daily_20260706_30166900",
+        "people_daily_20260706_30166904",
+        "people_daily_20260709_30167616",
+        "people_daily_20260709_30167617"
+      ],
+      "outline": [
+        "规则跟新：把直播、短视频和社交电商纳入精细化责任体系",
+        "信息真实：治理AI滤镜、虚假引证和大字吸睛小字免责",
+        "平台担责：强化内容标注、商家管理和协同监管",
+        "条款有效：格式条款不能排除消费者法定权利",
+        "过罚相当：让处罚强度与平台规模和违法后果匹配"
+      ],
+      "teaching_value": "适合网络消费、平台责任、法治政府、消费者权益和数字经济治理。"
+    },
+    {
+      "idea_id": "idea_20260706_0712_accessibility_full_scenario",
+      "priority": "B",
+      "status": "备选",
+      "platform": "公众号 + 面试题卡",
+      "title": "《人民日报》讲无障碍环境：不是修一条坡道，而是让出行、阅读和服务都可及",
+      "angle": "无障碍环境建设不能停在零散设施改造，而要把空间通行、信息获取、公共服务、内容供给和长效管护纳入全场景、全链条法治保障。",
+      "relation_to_existing": "与公共服务均等化相连，但新增设施无障碍、信息无障碍和法治管护的完整场景。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "民生场景具体、价值立场清晰，但历史同类阅读样本较少，先列B级储备。",
+      "reader_gain": "从设施连贯、信息可达、服务可用、建管并重和法治托底理解无障碍环境。",
+      "support_article_ids": [
+        "people_daily_20260707_30167283",
+        "people_daily_20260709_30167609",
+        "people_daily_20260711_30168083"
+      ],
+      "outline": [
+        "设施连贯：消除坡道、盲道、公厕和公共空间断点",
+        "信息可达：提供盲文、有声、大字、字幕和手语等适配内容",
+        "服务可用：从建成率转向真实使用体验和权益保障",
+        "建管并重：设计审查、验收、巡查、维修形成闭环",
+        "法治托底：以执法检查和标准实施压实各方责任"
+      ],
+      "teaching_value": "适合公共服务均等化、残疾人权益、适老化、城市治理和法治保障。"
+    }
+  ],
+  "existing_topic_updates": [
+    {
+      "idea_id": "idea_refined_20260523_basic_research",
+      "new_support_article_ids": ["people_daily_20260707_30167193", "people_daily_20260707_30167196", "people_daily_20260712_30168163", "people_daily_20260712_30168164"]
+    },
+    {
+      "idea_id": "idea_20260615_21_employment_priority_people",
+      "new_support_article_ids": ["people_daily_20260709_30167691", "people_daily_20260710_30167895", "people_daily_20260708_30167455"]
+    },
+    {
+      "idea_id": "idea_20260622_28_china_brand_global_value",
+      "new_support_article_ids": ["people_daily_20260708_30167399", "people_daily_20260708_30167401", "people_daily_20260709_30167600", "people_daily_20260709_30167701"]
+    },
+    {
+      "idea_id": "idea_20260629_0705_elderly_public_market",
+      "new_support_article_ids": ["people_daily_20260706_30166931", "people_daily_20260709_30167681", "people_daily_20260709_30167685"]
+    },
+    {
+      "idea_id": "idea_20260629_0705_rural_public_culture",
+      "new_support_article_ids": ["people_daily_20260707_30167280", "people_daily_20260708_30167460", "people_daily_20260709_30167674", "people_daily_20260709_30167678"]
+    },
+    {
+      "idea_id": "idea_20260629_0705_performance_assessment_value",
+      "new_support_article_ids": ["people_daily_20260706_30166912", "people_daily_20260707_30167182", "people_daily_20260708_30167387", "people_daily_20260709_30167672", "people_daily_20260710_30167912", "people_daily_20260710_30167913"]
+    }
+  ],
+  "recommended_order": [
+    "idea_20260706_0712_tech_finance_lifecycle",
+    "idea_20260706_0712_agricultural_socialized_service",
+    "idea_20260706_0712_warning_to_action",
+    "idea_20260706_0712_online_consumption_rules",
+    "idea_20260706_0712_grassroots_burden_empowerment",
+    "idea_20260706_0712_carbon_peak_system_transition",
+    "idea_20260706_0712_accessibility_full_scenario"
+  ],
+  "not_prioritized": [
+    "基础研究、就业优先、中国品牌、养老服务、乡村文化和政绩观材料已分别补入既有选题，不重复新增。",
+    "泛化的科技强国、党建纪念和地方经验材料虽数量较多，但缺少区别于旧题的独立读者收益，暂不立项。",
+    "单篇消费现象和一般性科技新闻不足3篇同链条支撑，暂不作为正式选题。"
+  ]
+}
