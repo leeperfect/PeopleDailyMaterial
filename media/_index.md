@@ -52,6 +52,10 @@
 
 | 2026-07-12 | AI应用别只写"赋能"：真实场景、合理定价和安全规则要一起跟上 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-ai-application-scene-pricing-safety-notebooklm/` | 待上传 | `data/articles/人民日报系列/46-人民日报讲AI应用落地：场景要真、定价要公、安全要守.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
 
+| 2026-07-20 | 常态化帮扶 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-regular-assistance-governance-notebooklm/` | 待上传 | `data/articles/人民日报系列/47-【R】人民日报讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力.md`；含15页PPT原图和1张独立信息图，已生成出版登记清单 |
+
+| 2026-07-20 | 农业社会化服务 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-agricultural-socialized-service-notebooklm/` | 待上传 | `data/articles/人民日报系列/48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
+
 ## 类型写法
 
 - 小红书图

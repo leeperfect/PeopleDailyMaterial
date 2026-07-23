@@ -4,70 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "a54ba729a1885225",
+        "id": "6462ade267dfb1a8",
         "type": "tabs",
         "children": [
           {
-            "id": "0afa08c464d3173a",
+            "id": "888d28b7c2d69ad7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data/vault/2026/05/2026-05-18/11-政治/推动“一网通办”再升级.md",
+                "file": "data/articles/人民日报系列/48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "推动“一网通办”再升级"
-            }
-          },
-          {
-            "id": "98abc7d30c902d69",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "data/articles/人民日报系列/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务"
-            }
-          },
-          {
-            "id": "05f3a4488beb2974",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "data/articles/人民日报系列/32-人民日报讲营商环境新写法：企业不仅要进得来，也要活得好、退得出.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "32-人民日报讲营商环境新写法：企业不仅要进得来，也要活得好、退得出"
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "acf478a4252c1ea3",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "03ece82fd29cd2cd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "data/articles/人民日报系列/40-人民日报讲文化与科技融合：不是给传统文化套一层特效.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "40-人民日报讲文化与科技融合：不是给传统文化套一层特效"
+              "title": "48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业"
             }
           }
         ]
@@ -102,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "南京市溧水区",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -123,12 +74,11 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 314.5
+    "width": 491.5
   },
   "right": {
     "id": "1ad80539526a48b6",
@@ -233,53 +183,55 @@
       "bases:新建数据库": false
     }
   },
-  "active": "05f3a4488beb2974",
+  "active": "888d28b7c2d69ad7",
   "lastOpenFiles": [
-    "data/core/material_assets.sqlite-shm",
-    "data/core/material_assets.sqlite-wal",
-    "data/core/articles.sqlite-shm",
-    "data/core/articles.sqlite-wal",
-    "media/images/article-41-innovation-chain.png",
-    "data/analysis/2026-07-04/wechat-business-environment-lifecycle.md",
-    "data/articles/人民日报系列/32-r人民日报讲营商环境新写法：企业不仅要进得来，也要活得好、退得出.md",
-    "data/vault/2026/01/2026-01-09/07-评论/“以前怕你们，现在盼你们”（中国道路中国梦·青春为中国式现代化挺膺担当㉛）.md",
-    "data/analysis/january_2026/2026年1月分析报告.md",
-    "data/articles/人民日报系列/34-人民日报讲安全治理：安全不是成本，而是一项前置投资.md",
-    "data/analysis/2026-07-04/wechat-safety-governance-preventive-investment.md",
-    "data/analysis/2026-07-04/writing-workflow/cd697bed2011/00-draft.md",
-    "data/articles/人民日报系列/32-人民日报讲营商环境新写法：企业不仅要进得来，也要活得好、退得出.md",
-    "data/articles/人民日报系列/33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md",
-    "media/images/2026-07-12-performance-assessment-napkin/napkin-design-philosophy.md",
-    "media/images/2026-07-12-performance-assessment-napkin/napkin-06_fund.png",
-    "media/images/2026-07-12-performance-assessment-napkin/napkin-05_public.png",
-    "media/images/2026-07-12-performance-assessment-napkin/napkin-04_longterm.png",
-    "media/images/2026-07-12-performance-assessment-napkin/napkin-03_precise.png",
-    "media/images/2026-07-12-performance-assessment-napkin/napkin-02_classify.png",
-    "media/images/2026-07-12-performance-assessment-napkin/napkin-01_myth.png",
-    "media/images/2026-07-12-performance-assessment-napkin/napkin-00_overview.png",
-    "media/images/2026-07-12-performance-assessment-napkin",
-    "data/analysis/2026-07-12/writing-workflow/2753f6d3cf1a/05-before-figure-plan-20260712-164816-407888.md",
-    "data/analysis/2026-07-12/notebooklm-ai-application-scene-pricing-safety/gallery.html",
-    "media/images/2026-07-12-ai-application-scene-pricing-safety-notebooklm/preview/contact-sheet.png",
-    "data/analysis/2026-07-12/notebooklm-ai-application-scene-pricing-safety/figure-review.md",
-    "data/analysis/2026-07-12/notebooklm-ai-application-scene-pricing-safety/figure-manifest.yml",
-    "data/analysis/2026-07-12/notebooklm-ai-application-scene-pricing-safety",
-    "media/images/2026-07-12-ai-application-scene-pricing-safety-notebooklm/wechat/fig-46-infographic.png",
-    "media/images/2026-07-12-ai-application-scene-pricing-safety-notebooklm/source/notebooklm-slides.pptx",
-    "media/images/2026-07-12-ai-application-scene-pricing-safety-notebooklm/wechat",
-    "data/analysis/2026-07-12/writing-workflow/2753f6d3cf1a/emphasis-review.md",
-    "data/analysis/2026-07-12/writing-workflow/2753f6d3cf1a/04-emphasis-reviewed.md",
-    "data/analysis/2026-07-12/writing-workflow/2753f6d3cf1a/03-getnote-candidate.md",
-    "data/analysis/2026-07-12/writing-workflow/2753f6d3cf1a/02-before-getnote-pull.md",
-    "data/analysis/2026-07-12/writing-workflow/2753f6d3cf1a/01-humanizer.md",
-    "data/analysis/2026-07-12/writing-workflow/2753f6d3cf1a/00-draft.md",
-    "data/analysis/2026-07-12/lecture-ai-application-scene-pricing-safety.md",
-    "data/xiaohongshu/46-xiaohongshu-ai-application-scene-pricing-safety-card-script.md",
-    "data/articles/人民日报系列/46-人民日报讲AI应用落地：场景要真、定价要公、安全要守.md",
-    "data/analysis/2026-07-12/wechat-ai-application-scene-pricing-safety.md",
-    "data/analysis/2026-07-12/2026-07-12-ai-application-scene-pricing-safety-topic-review.md",
-    "data/analysis/2026-07-12/writing-workflow/f9e1b379ff42/05-before-figure-plan-20260712-151752-682983.md",
-    "data/analysis/2026-07-12/notebooklm-performance-assessment/figure-review.md",
+    "data/analysis/2026-07-20/writing-workflow/ac6d65d8d8d0/05-before-figure-plan-20260723-111037-698530.md",
+    "data/analysis/2026-07-20/notebooklm-agricultural-socialized-service/gallery.html",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/preview/contact-sheet.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/preview",
+    "data/analysis/2026-07-20/notebooklm-agricultural-socialized-service/figure-review.md",
+    "data/analysis/2026-07-20/notebooklm-agricultural-socialized-service/figure-manifest.yml",
+    "data/analysis/2026-07-20/notebooklm-agricultural-socialized-service",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat/fig-48-infographic.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat/fig-48-13.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat/fig-48-12.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat/fig-48-11.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat/fig-48-10.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat/fig-48-09.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat/fig-48-08.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat/fig-48-07.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat/fig-48-06.png",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/wechat",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/source/notebooklm-slides.pptx",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm/source",
+    "media/images/2026-07-20-agricultural-socialized-service-notebooklm",
+    "data/analysis/2026-07-20/writing-workflow/ac6d65d8d8d0/emphasis-review.md",
+    "data/analysis/2026-07-20/writing-workflow/ac6d65d8d8d0/04-emphasis-reviewed.md",
+    "data/analysis/2026-07-20/writing-workflow/ac6d65d8d8d0/getnote-diff.patch",
+    "data/analysis/2026-07-20/writing-workflow/ac6d65d8d8d0/03-getnote-candidate.md",
+    "data/analysis/2026-07-20/writing-workflow/ac6d65d8d8d0/02-before-getnote-pull.md",
+    "data/articles/人民日报系列/49-【R】人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md",
+    "data/articles/人民日报系列/48-人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md",
+    "data/analysis/2026-07-21/writing-workflow/c890288b79e5/01-humanizer.md",
+    "data/analysis/2026-07-21/writing-workflow/c890288b79e5",
+    "data/analysis/2026-07-20/writing-workflow/2f9025fdb188/01-humanizer.md",
+    "data/analysis/2026-07-20/writing-workflow/cb9cc44faa06/01-humanizer.md",
+    "data/analysis/2026-07-20/writing-workflow/2798f7396d57/01-humanizer.md",
+    "data/analysis/2026-07-20/writing-workflow/7f3a53a734f8/01-humanizer.md",
+    "data/analysis/2026-07-20/writing-workflow/ac6d65d8d8d0/01-humanizer.md",
+    "data/analysis/2026-07-20/writing-workflow/8ef1acfa97ad/01-humanizer.md",
+    "data/articles/人民日报系列/53-【R】人民日报讲防灾救灾：预警不能只“发出去”，关键要有人接、马上动.md",
+    "data/articles/人民日报系列/48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md",
+    "data/articles/人民日报系列/52-【R】人民日报讲城市治理：别只看“面子”，地下管网、适儿化空间和安全监管才是里子.md",
+    "data/articles/人民日报系列/50-【R】人民日报讲抓落实：不能挑肥拣瘦，更不能拿漂亮数据当政绩.md",
+    "data/articles/人民日报系列/47-【R】人民日报讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力.md",
+    "data/articles/人民日报系列/51-【R】人民日报讲民生服务：不能总等群众找政策，要让政策主动找人.md",
+    "data/data_analysis/reports/2026-06-21_to_2026-07-20_tendency.md",
+    "data/analysis/2026-07-21/writing-workflow/07b08a7f05e8/01-humanizer.md",
+    "data/analysis/2026-07-21/writing-workflow/07b08a7f05e8/00-draft.md",
+    "data/xiaohongshu/53-xiaohongshu-disaster-warning-action-chain-card-script.md",
+    "data/articles/人民日报系列/53-人民日报讲防灾救灾：预警不能只“发出去”，关键要有人接、马上动.md",
+    "未命名 1.canvas",
     "未命名.canvas"
   ]
 }

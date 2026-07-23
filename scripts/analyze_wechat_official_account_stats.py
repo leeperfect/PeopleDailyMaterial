@@ -87,6 +87,28 @@ def article_rows(conn: sqlite3.Connection, batch_id: str) -> dict[str, sqlite3.R
     return {row["title"]: row for row in rows}
 
 
+def channel_totals_for_dates(
+    conn: sqlite3.Connection,
+    batch_id: str,
+    dates: list[str],
+) -> dict[str, int]:
+    if not dates:
+        return {}
+    placeholders = ",".join("?" for _ in dates)
+    rows = conn.execute(
+        f"""
+        SELECT channel, SUM(read_users) AS read_users
+        FROM channel_daily_reads
+        WHERE batch_id = ?
+          AND date IN ({placeholders})
+          AND channel <> '全部'
+        GROUP BY channel
+        """,
+        (batch_id, *dates),
+    ).fetchall()
+    return {row["channel"]: int(row["read_users"] or 0) for row in rows}
+
+
 def fmt_int(value: int | float | None) -> str:
     return f"{int(value or 0):,}"
 
@@ -171,6 +193,12 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
             """,
             (latest.batch_id, *new_dates),
         ).fetchall()
+    new_channel_totals = {row["channel"]: int(row["read_users"] or 0) for row in channel_rows}
+    removed_channel_totals = (
+        channel_totals_for_dates(conn, previous.batch_id, removed_dates)
+        if previous
+        else {}
+    )
     conn.close()
 
     lines = [
@@ -219,13 +247,30 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
         )
         if channel_rows:
             lines.extend(["", "### 新增日期渠道表现", ""])
-            lines.extend(
-                markdown_table(
-                    ["渠道", "阅读人数合计"],
-                    [[row["channel"], fmt_int(row["read_users"])] for row in channel_rows],
-                    ["---", "---:"],
+            if removed_channel_totals:
+                lines.extend(
+                    markdown_table(
+                        ["渠道", "移出区间", "新增区间", "变化"],
+                        [
+                            [
+                                row["channel"],
+                                fmt_int(removed_channel_totals.get(row["channel"], 0)),
+                                fmt_int(new_channel_totals.get(row["channel"], 0)),
+                                f"{new_channel_totals.get(row['channel'], 0) - removed_channel_totals.get(row['channel'], 0):+,}",
+                            ]
+                            for row in channel_rows
+                        ],
+                        ["---", "---:", "---:", "---:"],
+                    )
                 )
-            )
+            else:
+                lines.extend(
+                    markdown_table(
+                        ["渠道", "阅读人数合计"],
+                        [[row["channel"], fmt_int(row["read_users"])] for row in channel_rows],
+                        ["---", "---:"],
+                    )
+                )
             lines.extend(
                 [
                     "",
@@ -260,7 +305,7 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
                     f"- 新增区间日均阅读 {fmt_float(new_avg)}，相对移出区间日均阅读 {fmt_float(removed_avg)}，变化 {fmt_delta(new_avg, removed_avg)}。",
                     f"- 分享由 {fmt_int(removed_shares)} 变为 {fmt_int(new_shares)}，收藏由 {fmt_int(removed_favorites)} 变为 {fmt_int(new_favorites)}。",
                     "",
-                    "这个拆解用于判断滚动窗口回落究竟来自新一周走弱，还是仅由统计区间移动造成。",
+                    "这个拆解用于判断滚动窗口变化究竟来自新一周走强或走弱，还是仅由统计区间移动造成。",
                 ]
             )
 
@@ -402,6 +447,12 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             """,
             (batch.batch_id,),
         ).fetchall()
+        new_channel_totals = channel_totals_for_dates(conn, batch.batch_id, new_dates)
+        removed_channel_totals = (
+            channel_totals_for_dates(conn, previous.batch_id, removed_dates)
+            if previous
+            else {}
+        )
         source = conn.execute(
             """
             SELECT source_filename, raw_path, export_dir, imported_at
@@ -443,8 +494,10 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 if removed_daily:
                     removed_reads = sum(row["read_users"] or 0 for row in removed_daily)
                     net_replacement = new_reads - removed_reads
+                    contribution = "多" if net_replacement >= 0 else "少"
+                    cycle_direction = "回升" if net_replacement >= 0 else "回落"
                     lines.append(
-                        f"- 滚动窗口中，新加入日期比移出日期少贡献 {fmt_int(abs(net_replacement))} 阅读；这是本周期回落的直接统计来源。"
+                        f"- 滚动窗口中，新加入日期比移出日期{contribution}贡献 {fmt_int(abs(net_replacement))} 阅读；这是本周期{cycle_direction}的直接统计来源。"
                     )
         else:
             lines.append("- 这是数据链的首个批次，作为后续周度比较的基线。")
@@ -507,6 +560,10 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             removed_posts = sum(row["published_count"] or 0 for row in removed_daily)
             new_avg = new_reads / len(new_daily)
             removed_avg = removed_reads / len(removed_daily)
+            replacement_delta = new_reads - removed_reads
+            contribution = "多" if replacement_delta >= 0 else "少"
+            cycle_direction = "回升" if replacement_delta >= 0 else "回落"
+            strength = "高于" if new_avg >= removed_avg else "低于"
             lines.extend(
                 markdown_table(
                     ["窗口区间", "日期", "天数", "发文", "阅读", "日均阅读", "分享", "收藏"],
@@ -520,7 +577,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             lines.extend(
                 [
                     "",
-                    f"新增区间比移出区间少 {fmt_int(removed_reads - new_reads)} 阅读；新增区间日均阅读变化 {fmt_delta(new_avg, removed_avg)}。因此，本批滚动周期回落主要由新加入日期的阅读强度低于被移出日期造成。",
+                    f"新增区间比移出区间{contribution} {fmt_int(abs(replacement_delta))} 阅读；新增区间日均阅读变化 {fmt_delta(new_avg, removed_avg)}。因此，本批滚动周期{cycle_direction}主要由新加入日期的阅读强度{strength}被移出日期造成。",
                 ]
             )
         elif previous:
@@ -581,11 +638,37 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             [
                 "",
                 "不同渠道可能存在重复读者，渠道数据用于判断传播来源强弱，不与“全部”简单相加。",
-                "",
-                "## 八、文章阅读排名",
-                "",
             ]
         )
+        if new_channel_totals and removed_channel_totals:
+            channels = sorted(
+                set(new_channel_totals) | set(removed_channel_totals),
+                key=lambda channel: new_channel_totals.get(channel, 0),
+                reverse=True,
+            )
+            lines.extend(["", "### 新增区间与移出区间渠道变化", ""])
+            lines.extend(
+                markdown_table(
+                    ["渠道", "移出区间", "新增区间", "变化"],
+                    [
+                        [
+                            channel,
+                            fmt_int(removed_channel_totals.get(channel, 0)),
+                            fmt_int(new_channel_totals.get(channel, 0)),
+                            f"{new_channel_totals.get(channel, 0) - removed_channel_totals.get(channel, 0):+,}",
+                        ]
+                        for channel in channels
+                    ],
+                    ["---", "---:", "---:", "---:"],
+                )
+            )
+            lines.extend(
+                [
+                    "",
+                    "该表比较等长的新增与移出日期区间，用于识别本次滚动窗口变化由哪些阅读来源推动。",
+                ]
+            )
+        lines.extend(["", "## 八、文章阅读排名", ""])
         lines.extend(
             markdown_table(
                 ["排名", "发布日期", "文章", "阅读人数", "推荐阅读", "推荐约比"],
