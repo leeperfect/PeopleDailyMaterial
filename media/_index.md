@@ -56,6 +56,8 @@
 
 | 2026-07-20 | 农业社会化服务 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-agricultural-socialized-service-notebooklm/` | 待上传 | `data/articles/人民日报系列/48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
 
+| 2026-07-20 | 科技金融 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-tech-finance-lifecycle-notebooklm/` | 待上传 | `data/articles/人民日报系列/49-【R】人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md`；含14页PPT原图和1张独立信息图，已生成出版登记清单 |
+
 ## 类型写法
 
 - 小红书图
