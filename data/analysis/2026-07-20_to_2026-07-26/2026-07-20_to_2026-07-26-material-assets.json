@@ -1,0 +1,163 @@
+{
+  "period": "2026-07-20_to_2026-07-26",
+  "source": {
+    "article_database": "data/core/articles.sqlite",
+    "article_count": 289,
+    "operation_overview": "data/data_analysis/overview.md",
+    "operation_report": "data/data_analysis/reports/2026-06-21_to_2026-07-20_tendency.md",
+    "existing_idea_pool": "data/core/material_assets.sqlite"
+  },
+  "formal_pool_sync": {
+    "required": true,
+    "minimum_support_articles": 3,
+    "refresh_markdown": "data/articles/选题库.md",
+    "refresh_csv": "data/exports/content_ideas.csv",
+    "preserve_browser_visibility": true
+  },
+  "selection_rules": [
+    "分析2026年7月20日至26日下载的289篇人民日报文章，优先识别权威文件、连续报道和可形成治理链条的民生主题。",
+    "每个新增选题至少绑定3篇内容不同的人民日报文章，同题异版不重复计数。",
+    "对照既有78条选题，核心问题、治理关系和读者收益没有明显变化的主题只补强旧题。",
+    "同时参考最新运营数据，优先采用考试高频母题、明确误区纠偏和可带走框架。",
+    "人工智能、新职业、就业、服务消费、反内卷、城市更新、政绩考核、防灾救灾等已有成熟选题只补充本周来源。"
+  ],
+  "operation_findings": [
+    "科技成果转化累计阅读38747，科技与产业仍是最强流量入口，但本周人工智能报道与既有全球治理选题高度一致，故补证而不重复立题。",
+    "破解就业难累计阅读14566、推荐占比约72.4%，新职业和就业服务报道继续补入原有就业链。",
+    "银发经济累计阅读9938、推荐占比约83.1%，养老母题具备稳定传播基础；本周从产业叙事进一步转向照护体系如何运转。",
+    "县域经济新稿阅读10384、推荐占比约73.1%，说明同一母题只要治理关系真正变化，仍可形成新的日更切口。",
+    "教育十五五、服务消费等政策加生活场景的题目表现稳定，本周物业治理和全民健身沿用这一表达方法。"
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260720_0726_elderly_care_system",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 小红书",
+      "title": "《人民日报》讲养老服务：不是“有床位”就够了，而要居家改造、专业照护和长期保障",
+      "angle": "养老服务体系不能只看机构床位数量，而要以居家为基础、社区为依托、机构为专业支撑，把适老化改造、家门口服务、专业人才、服务标准和长期护理保障接成链。",
+      "relation_to_existing": "区别于既有银发经济和养老公共服务与市场供给题，本题聚焦失能照护和养老服务体系的日常运行。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "银发经济累计阅读9938、推荐占比约83.1%；本周5篇文章覆盖居家、社区、人才、服务和保险，政策链完整。",
+      "reader_gain": "掌握居家适配、社区嵌入、人才专业、服务适老和长期保障五层养老服务框架。",
+      "support_article_ids": [
+        "people_daily_20260721_30169914",
+        "people_daily_20260721_30169932",
+        "people_daily_20260721_30169967",
+        "people_daily_20260722_30170115",
+        "people_daily_20260723_30170486"
+      ],
+      "outline": [
+        "居家适配：一户一策改造，并接入助餐、助浴和应急服务",
+        "社区嵌入：织密城乡家门口养老服务网络",
+        "人才专业：用职业资格、照护评估和服务计划提高质量",
+        "服务适老：线上线下并行，保留人工帮办和简明场景",
+        "制度保障：完善长期护理保险和可持续筹资机制"
+      ],
+      "teaching_value": "适合人口老龄化、公共服务、社会保障、社区治理和银发经济。"
+    },
+    {
+      "idea_id": "idea_20260720_0726_social_work_collaborative_governance",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 课堂讲解",
+      "title": "《人民日报》讲新时代社会工作：不是社区“兜底包办”，而是把党的领导、专业服务和多元参与连起来",
+      "angle": "新时代社会工作不是把所有问题都压给社区，而要在党的领导下理顺社会工作部门、职能部门、社会组织、志愿者、居民和新就业群体的关系，用专业服务和群众参与形成协同治理。",
+      "relation_to_existing": "区别于既有万能基层和基层减负题，本题依据中央新文件，聚焦新时代社会工作的组织体系、专业方法和多元参与。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "中央文件与配套权威阐释形成政策时效，社区一线报道提供生活场景，适合申论和面试教学。",
+      "reader_gain": "掌握党建引领、需求下沉、专业服务、多元协同和减负赋能五层社会工作框架。",
+      "support_article_ids": [
+        "people_daily_20260721_30169927",
+        "people_daily_20260721_30169950",
+        "people_daily_20260724_30170663",
+        "people_daily_20260724_30170727"
+      ],
+      "outline": [
+        "党建引领：把党的领导贯穿社会工作全过程",
+        "需求下沉：走进街巷和家庭，识别群众真实需求",
+        "专业服务：以社会工作方法提升服务的精准度",
+        "多元协同：连接部门、社会组织、志愿者和居民",
+        "减负赋能：用事项清单和机制整合理顺基层职责"
+      ],
+      "teaching_value": "适合党建引领基层治理、群众路线、社会工作、社区治理和志愿服务。"
+    },
+    {
+      "idea_id": "idea_20260720_0726_property_shared_governance",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 面试题卡",
+      "title": "《人民日报》讲物业治理：不是“有人扫地”就行，而要从收费公开走向协商共治",
+      "angle": "物业治理不能停留在保洁维修，而要解决老旧零散小区服务覆盖、收费和公共收益透明、居民协商参与、问题派单处置及监督问效，让物业服务成为基层共治的平台。",
+      "relation_to_existing": "区别于城市更新和一般基层治理题，本题聚焦物业服务这一高频生活矛盾，形成覆盖、透明、协商和闭环处置的具体机制。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "5篇文章连续覆盖农村物业、共享物业、集成治理、收费公开和协商共治，生活痛点明确，标题具备误区纠偏。",
+      "reader_gain": "获得服务覆盖、集零为整、账目透明、居民协商和闭环问效五步物业治理框架。",
+      "support_article_ids": [
+        "people_daily_20260721_30169936",
+        "people_daily_20260722_30170116",
+        "people_daily_20260722_30170117",
+        "people_daily_20260722_30170150",
+        "people_daily_20260723_30170552"
+      ],
+      "outline": [
+        "服务覆盖：让村庄和老旧零散小区都有基本物业服务",
+        "集零为整：以共享物业降低分散小区的治理成本",
+        "账目透明：公开收费、服务清单和公共收益",
+        "协商自治：由居民共同商定服务内容和付费规则",
+        "闭环问效：需求下单、部门协同、结果反馈形成闭环"
+      ],
+      "teaching_value": "适合基层治理、城市更新、全过程人民民主、民生服务和矛盾化解。"
+    },
+    {
+      "idea_id": "idea_20260720_0726_fitness_life_circle",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 小红书",
+      "title": "《人民日报》讲全民健身：不是多建几个场馆，而要让赛事、设施和服务进入生活圈",
+      "angle": "全民健身不能只比场馆数量，而要让场地设施、群众赛事、科学指导、重点人群适配和安全保障进入城乡生活圈，并与健康促进和体育消费协同发展。",
+      "relation_to_existing": "区别于一般公共服务和服务消费题，本题聚焦体育公共服务体系，强调从场馆建设转向可达、可用、可持续。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "体育强国规划和全民健身计划构成双重权威发布，消费报道补足服务体验和内需场景。",
+      "reader_gain": "掌握场地就近、活动常态、指导专业、人群适配和融合发展五层全民健身框架。",
+      "support_article_ids": [
+        "people_daily_20260723_30170453",
+        "people_daily_20260724_30170668",
+        "people_daily_20260722_30170189",
+        "people_daily_20260724_30170674"
+      ],
+      "outline": [
+        "场地就近：补齐社区、乡村和户外健身设施",
+        "活动常态：把群众赛事和日常锻炼连接起来",
+        "指导专业：完善社会体育指导和科学健身服务",
+        "人群适配：回应青少年、老年人和残疾人等差异需求",
+        "融合发展：联动健康管理、文旅场景和体育消费"
+      ],
+      "teaching_value": "适合健康中国、体育强国、公共服务、社区生活圈和扩大内需。"
+    }
+  ],
+  "existing_topic_updates": [
+    {"idea_id": "idea_refined_20260529_city_update", "new_support_article_ids": ["people_daily_20260720_30169685", "people_daily_20260721_30169935", "people_daily_20260722_30170116", "people_daily_20260723_30170548", "people_daily_20260725_30170867"]},
+    {"idea_id": "idea_refined_20260611_six_networks", "new_support_article_ids": ["people_daily_20260721_30169956", "people_daily_20260722_30170110", "people_daily_20260724_30170709", "people_daily_20260726_30170974"]},
+    {"idea_id": "idea_refined_20260611_anti_involution", "new_support_article_ids": ["people_daily_20260726_30170979", "people_daily_20260726_30170981"]},
+    {"idea_id": "idea_refined_20260611_service_consumption", "new_support_article_ids": ["people_daily_20260721_30169894", "people_daily_20260722_30170130", "people_daily_20260722_30170189", "people_daily_20260722_30170190", "people_daily_20260724_30170674"]},
+    {"idea_id": "idea_refined_20260612_employment_chain", "new_support_article_ids": ["people_daily_20260720_30169695", "people_daily_20260720_30169728", "people_daily_20260720_30169770", "people_daily_20260721_30169966", "people_daily_20260722_30170111", "people_daily_20260722_30170112", "people_daily_20260722_30170083", "people_daily_20260722_30170162"]},
+    {"idea_id": "idea_20260622_28_china_brand_global_value", "new_support_article_ids": ["people_daily_20260723_30170504", "people_daily_20260724_30170714"]},
+    {"idea_id": "idea_20260629_0705_performance_assessment_value", "new_support_article_ids": ["people_daily_20260720_30169675", "people_daily_20260720_30169676", "people_daily_20260721_30169920", "people_daily_20260722_30170107", "people_daily_20260723_30170484", "people_daily_20260724_30170725", "people_daily_20260724_30170746", "people_daily_20260725_30170879", "people_daily_20260725_30170906", "people_daily_20260726_30170976", "people_daily_20260726_30170983"]},
+    {"idea_id": "idea_20260706_0712_warning_to_action", "new_support_article_ids": ["people_daily_20260720_30169739", "people_daily_20260721_30169928", "people_daily_20260722_30170124", "people_daily_20260722_30170143", "people_daily_20260723_30170553", "people_daily_20260724_30170766", "people_daily_20260726_30170997"]},
+    {"idea_id": "idea_20260713_0719_ai_global_public_good", "new_support_article_ids": ["people_daily_20260720_30169682", "people_daily_20260720_30169689", "people_daily_20260720_30169691", "people_daily_20260723_30170442", "people_daily_20260723_30170446", "people_daily_20260724_30170678", "people_daily_20260724_30170699", "people_daily_20260725_30170891", "people_daily_20260725_30170900", "people_daily_20260726_30170988"]},
+    {"idea_id": "idea_20260713_0719_new_occupation_growth_chain", "new_support_article_ids": ["people_daily_20260720_30169683", "people_daily_20260720_30169684", "people_daily_20260720_30169728"]}
+  ],
+  "recommended_order": [
+    "idea_20260720_0726_elderly_care_system",
+    "idea_20260720_0726_property_shared_governance",
+    "idea_20260720_0726_social_work_collaborative_governance",
+    "idea_20260720_0726_fitness_life_circle"
+  ],
+  "not_prioritized": [
+    "人工智能全球治理、新职业、就业、服务消费、反内卷、城市更新、政绩考核、防灾救灾、六张网和中国品牌均已有成熟选题，只补本周来源。",
+    "教育高质量发展与既有教育十五五、公共服务选题高度重合，暂不重复立项。",
+    "未成年人保护只有2篇直接同题文章，未达到3篇最低支撑数。",
+    "单篇经济观察、地方经验和一般活动报道缺少独立治理链条，不进入正式选题库。"
+  ]
+}

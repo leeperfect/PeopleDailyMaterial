@@ -1,0 +1,174 @@
+{
+  "period": "2026-07-13_to_2026-07-19",
+  "source": {
+    "article_database": "data/core/articles.sqlite",
+    "article_count": 289,
+    "operation_overview": "data/data_analysis/overview.md",
+    "operation_report": "data/data_analysis/reports/2026-06-21_to_2026-07-20_tendency.md",
+    "existing_idea_pool": "data/core/material_assets.sqlite"
+  },
+  "formal_pool_sync": {
+    "required": true,
+    "minimum_support_articles": 3,
+    "refresh_markdown": "data/articles/选题库.md",
+    "refresh_csv": "data/exports/content_ideas.csv",
+    "preserve_browser_visibility": true
+  },
+  "selection_rules": [
+    "分析2026年7月13日至19日下载的289篇人民日报文章，优先识别连续报道、权威发布和评论形成的政策链条。",
+    "每个新增选题至少绑定3篇内容不同的人民日报文章，同题异版不重复计数。",
+    "对照既有74条选题，只有核心问题、治理关系和读者收益明显不同的切口才新增。",
+    "同时参考最新运营数据，优先采用考试高频母题、明确误区纠偏和可带走框架。",
+    "基础研究、防灾救灾、基层减负、城市更新、服务消费等已有成熟选题的主题只补强旧题。"
+  ],
+  "operation_findings": [
+    "科技成果转化累计阅读38747，继续位列第一；科技与产业议题仍是最强流量入口。",
+    "县域经济新稿阅读10384、推荐占比约73.1%，再次验证同一母题可以依靠新关系和新误区形成独立选题。",
+    "破解就业难累计阅读14566、推荐占比约72.4%，新职业成长链具有成熟受众基础。",
+    "教育十五五累计阅读8673、推荐占比约78.5%，权威规划加生活痛点的结构值得复用到普惠托育。",
+    "安全治理、服务消费、乡村文化均有稳定阅读，但新增切口必须比既有题目更具体。"
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260713_0719_ai_global_public_good",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + PPT",
+      "title": "《人民日报》讲人工智能全球治理：不能让AI成为“富国和富人的游戏”",
+      "angle": "人工智能全球治理不能由少数技术强国垄断规则和红利，而要坚持以人为本、智能向善，在多边框架下统筹创新与安全、开放与主权、能力建设与普惠共享。",
+      "relation_to_existing": "区别于国内AI创新监管和真实应用场景，本题聚焦全球智能鸿沟、多边治理与国际公共产品。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "本周形成9篇连续权威报道；科技成果转化仍为账号阅读第一，AI热点兼具政策级别与传播热度。",
+      "reader_gain": "掌握价值导向、创新开放、安全可控、弥合鸿沟和多边共治五层全球治理框架。",
+      "support_article_ids": [
+        "people_daily_20260714_30168610",
+        "people_daily_20260716_30169079",
+        "people_daily_20260717_30169287",
+        "people_daily_20260717_30169289",
+        "people_daily_20260718_30169468",
+        "people_daily_20260718_30169469",
+        "people_daily_20260718_30169470",
+        "people_daily_20260719_30169553",
+        "people_daily_20260719_30169561"
+      ],
+      "outline": [
+        "定价值：人工智能应是造福全人类的国际公共产品",
+        "促发展：鼓励开源开放、场景合作和能力建设",
+        "守安全：建立法律、监测、预警和应急体系",
+        "补鸿沟：帮助全球南方补技术、人才和治理短板",
+        "共治理：以多边主义推动规则、标准和责任协调"
+      ],
+      "teaching_value": "适合人工智能治理、全球治理、科技伦理、全球南方和人类命运共同体。"
+    },
+    {
+      "idea_id": "idea_20260713_0719_new_occupation_growth_chain",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 课堂讲解",
+      "title": "《人民日报》讲新职业：有了“新名字”还不够，标准、培训、评价和保障都要跟上",
+      "angle": "新技术、新业态和新消费能够创造岗位，但新职业从出现到成熟，必须完成职业确认、标准制定、专业调整、产教融合、技能评价和权益保障。",
+      "relation_to_existing": "承接破解就业难母题，但独立回答新职业如何从野蛮生长走向成熟职业，不重复一般产业造岗。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "就业难累计阅读14566、推荐占比约72.4%；新职业有生活场景，也有标准与权益的明确政策收益。",
+      "reader_gain": "获得职业产生、确认、培养、评价和保障的完整成长链。",
+      "support_article_ids": [
+        "people_daily_20260714_30168605",
+        "people_daily_20260714_30168606",
+        "people_daily_20260715_30168873",
+        "people_daily_20260716_30169100",
+        "people_daily_20260717_30169327",
+        "people_daily_20260717_30169243",
+        "people_daily_20260717_30169244"
+      ],
+      "outline": [
+        "看来源：新技术、新业态和新消费催生新岗位",
+        "给名分：职业目录把模糊岗位纳入规范治理",
+        "练技能：职教专业和企业培训跟着产业需求调整",
+        "建标准：完善职业标准、技能评价和晋升通道",
+        "保权益：让从业者、消费者和行业发展都有规则可依"
+      ],
+      "teaching_value": "适合高质量充分就业、新质生产力、职业教育、技能型社会和劳动者权益。"
+    },
+    {
+      "idea_id": "idea_20260713_0719_inclusive_childcare",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 面试题卡",
+      "title": "《人民日报》讲普惠托育：不是多建几个托班，而要让家庭“托得到、托得起、托得好”",
+      "angle": "普惠托育不能只追求托位数量，而要用社区嵌入、公建民营、多元投入、医育结合、人员标准和生育医疗保障，降低家庭养育成本。",
+      "relation_to_existing": "与公共服务均等化相关，但新增0至3岁照护、双职工家庭需求和生育友好型社会的独立链条。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "教育十五五推荐占比约78.5%；托育同时连接教育、民生、人口和消费，生活痛点清晰。",
+      "reader_gain": "掌握供给可及、价格可负担、质量可信赖、时间可匹配和生育保障协同五层框架。",
+      "support_article_ids": [
+        "people_daily_20260713_30168268",
+        "people_daily_20260714_30168604",
+        "people_daily_20260714_30168647",
+        "people_daily_20260714_30168648",
+        "people_daily_20260715_30168875"
+      ],
+      "outline": [
+        "托得到：社区、幼儿园、单位和家庭托育点多元供给",
+        "托得起：场地减免、运营补贴和普惠价格共同降成本",
+        "托得好：医育结合、人员持证和服务标准守住质量",
+        "托得稳：延时服务和数字记录回应双职工需求",
+        "系统支持：托育、生育医疗保障和教育衔接一起发力"
+      ],
+      "teaching_value": "适合人口高质量发展、生育友好、公共服务、社区治理和服务消费。"
+    },
+    {
+      "idea_id": "idea_20260713_0719_tourism_capacity_governance",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 小红书",
+      "title": "《人民日报》讲旅游强国：不是游客越多越好，而是供给、服务、保护和承载力一起提升",
+      "angle": "旅游强国不能只追求客流和门票收入，而要统筹政府与市场、供给与需求、保护与开发、发展与安全，实现游客与居民双赢。",
+      "relation_to_existing": "区别于一般文化传承和乡村文旅，本题聚焦旅游强国规划、公共服务和过度旅游治理。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "旅游十五五规划提供权威时效，过度旅游形成鲜明反差，适合政策解读和生活传播。",
+      "reader_gain": "掌握供给提质、服务补位、保护优先、承载治理和利益共享五步框架。",
+      "support_article_ids": [
+        "people_daily_20260713_30168303",
+        "people_daily_20260715_30168887",
+        "people_daily_20260716_30168990",
+        "people_daily_20260716_30169108",
+        "people_daily_20260718_30169451",
+        "people_daily_20260718_30169452"
+      ],
+      "outline": [
+        "供给提质：从景点打卡转向文化、乡村、美食和深度体验",
+        "服务补位：交通、信息、无障碍和公共空间提升满意度",
+        "保护优先：守住耕地、文脉、生态和居民生活边界",
+        "控制承载：用预约、分流、住宿管理和价格工具缓解过度旅游",
+        "利益共享：让村集体、居民和经营主体共同受益"
+      ],
+      "teaching_value": "适合旅游强国、文旅融合、城市治理、乡村振兴、生态保护和扩大内需。"
+    }
+  ],
+  "existing_topic_updates": [
+    {"idea_id": "idea_refined_20260529_city_update", "new_support_article_ids": ["people_daily_20260714_30168602", "people_daily_20260716_30169047", "people_daily_20260716_30169073", "people_daily_20260717_30169296", "people_daily_20260718_30169450"]},
+    {"idea_id": "idea_refined_20260523_basic_research", "new_support_article_ids": ["people_daily_20260715_30168809", "people_daily_20260715_30168810", "people_daily_20260715_30168831"]},
+    {"idea_id": "idea_refined_20260611_anti_involution", "new_support_article_ids": ["people_daily_20260715_30168815", "people_daily_20260715_30168852", "people_daily_20260717_30169218", "people_daily_20260717_30169312"]},
+    {"idea_id": "idea_refined_20260611_service_consumption", "new_support_article_ids": ["people_daily_20260714_30168601", "people_daily_20260714_30168604", "people_daily_20260715_30168795"]},
+    {"idea_id": "idea_refined_20260612_services_follow_people", "new_support_article_ids": ["people_daily_20260714_30168624", "people_daily_20260714_30168625", "people_daily_20260714_30168556", "people_daily_20260717_30169314"]},
+    {"idea_id": "idea_20260615_21_health_nearby_service", "new_support_article_ids": ["people_daily_20260714_30168600", "people_daily_20260714_30168525", "people_daily_20260716_30169027"]},
+    {"idea_id": "idea_20260622_28_china_brand_global_value", "new_support_article_ids": ["people_daily_20260714_30168543", "people_daily_20260715_30168791", "people_daily_20260715_30168792"]},
+    {"idea_id": "idea_20260629_0705_rural_public_culture", "new_support_article_ids": ["people_daily_20260714_30168560", "people_daily_20260715_30168846", "people_daily_20260716_30169040"]},
+    {"idea_id": "idea_20260629_0705_performance_assessment_value", "new_support_article_ids": ["people_daily_20260713_30168293", "people_daily_20260713_30168294", "people_daily_20260713_30168316", "people_daily_20260714_30168523", "people_daily_20260717_30169217", "people_daily_20260717_30169228", "people_daily_20260717_30169229"]},
+    {"idea_id": "idea_20260706_0712_warning_to_action", "new_support_article_ids": ["people_daily_20260713_30168297", "people_daily_20260713_30168311", "people_daily_20260714_30168621", "people_daily_20260715_30168836", "people_daily_20260715_30168838", "people_daily_20260716_30169028", "people_daily_20260716_30169088", "people_daily_20260716_30169089", "people_daily_20260717_30169324"]},
+    {"idea_id": "idea_20260706_0712_grassroots_burden_empowerment", "new_support_article_ids": ["people_daily_20260713_30168334", "people_daily_20260714_30168550", "people_daily_20260714_30168551", "people_daily_20260714_30168558", "people_daily_20260715_30168855", "people_daily_20260715_30168856", "people_daily_20260716_30169085", "people_daily_20260717_30169316"]},
+    {"idea_id": "idea_20260706_0712_online_consumption_rules", "new_support_article_ids": ["people_daily_20260716_30169036", "people_daily_20260716_30169000", "people_daily_20260716_30168996"]},
+    {"idea_id": "idea_20260706_0712_accessibility_full_scenario", "new_support_article_ids": ["people_daily_20260715_30168867", "people_daily_20260717_30169318"]}
+  ],
+  "recommended_order": [
+    "idea_20260713_0719_ai_global_public_good",
+    "idea_20260713_0719_new_occupation_growth_chain",
+    "idea_20260713_0719_inclusive_childcare",
+    "idea_20260713_0719_tourism_capacity_governance"
+  ],
+  "not_prioritized": [
+    "自然资源资产管理只有2篇直接同题文章，生态安全文章不能替代第三篇支撑，因此暂不立项。",
+    "扩大消费、健康中国、城市更新、基础研究、防灾救灾和基层减负均补入既有选题，不重复新增。",
+    "泛化经济年中观察、地方经验和单篇生活服务稿缺少独立治理链条，暂不进入正式选题库。"
+  ]
+}
