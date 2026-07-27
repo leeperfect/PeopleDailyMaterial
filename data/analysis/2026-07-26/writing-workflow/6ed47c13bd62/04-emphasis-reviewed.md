@@ -3,8 +3,6 @@ type: wechat_article
 date: 2026-07-26
 topic: 人工智能全球治理
 title: "54-【R】｜人民日报讲人工智能全球治理：不能让AI成为“富国和富人的游戏”"
-wechat_title: "AI治理不能成富人游戏"
-digest: "人工智能全球治理的核心不是给技术定规则，而是分配智能时代的发展机会。"
 source_review: data/analysis/2026-07-26/2026-07-26-ai-global-governance-public-good-topic-review.md
 process_draft: data/analysis/2026-07-26/wechat-ai-global-governance-public-good.md
 xiaohongshu_script: data/xiaohongshu/54-xiaohongshu-ai-global-governance-public-good-card-script.md

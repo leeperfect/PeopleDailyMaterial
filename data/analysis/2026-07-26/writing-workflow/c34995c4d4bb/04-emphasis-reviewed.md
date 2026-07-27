@@ -3,8 +3,6 @@ type: wechat_article
 date: 2026-07-26
 topic: 无障碍环境的全场景可及与全链条治理
 title: "60-【R】｜人民日报讲无障碍环境：不是修一条坡道，而是让出行、阅读和服务都可及"
-wechat_title: "无障碍环境让服务可及"
-digest: "无障碍环境不是修一条坡道，而是让出行、阅读和服务都可及。"
 source_review: data/analysis/2026-07-26/2026-07-26-accessible-environment-full-chain-topic-review.md
 process_draft: data/analysis/2026-07-26/wechat-accessible-environment-full-chain.md
 xiaohongshu_script: data/xiaohongshu/60-xiaohongshu-accessible-environment-full-chain-card-script.md

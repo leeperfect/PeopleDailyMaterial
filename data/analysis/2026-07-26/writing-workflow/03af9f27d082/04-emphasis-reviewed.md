@@ -3,8 +3,6 @@ type: wechat_article
 date: 2026-07-26
 topic: 就业优先战略升级
 title: "55-【R】｜人民日报讲就业优先战略升级：不是只保岗位，而是投资于人、匹配到岗、产业带岗"
-wechat_title: "就业优先投资于人带岗"
-digest: "就业优先战略升级：不只保岗位，更要投资于人、匹配到岗、产业带岗。"
 source_review: data/analysis/2026-07-26/2026-07-26-employment-priority-people-matching-industry-topic-review.md
 process_draft: data/analysis/2026-07-26/wechat-employment-priority-people-matching-industry.md
 xiaohongshu_script: data/xiaohongshu/55-xiaohongshu-employment-priority-people-matching-industry-card-script.md

@@ -3,8 +3,6 @@ type: wechat_article
 date: 2026-07-26
 topic: 新时代社会工作的党建统领、专业服务与协同治理
 title: "61-【R】｜人民日报讲新时代社会工作：不是社区“兜底包办”，而是把党的领导、专业服务和多元参与连起来"
-wechat_title: "新时代社会工作不包办"
-digest: "新时代社会工作不是社区兜底包办，而是把党的领导、专业服务和多元参与连起来。"
 source_review: data/analysis/2026-07-26/2026-07-26-new-era-social-work-collaborative-governance-topic-review.md
 process_draft: data/analysis/2026-07-26/wechat-new-era-social-work-collaborative-governance.md
 xiaohongshu_script: data/xiaohongshu/61-xiaohongshu-new-era-social-work-collaborative-governance-card-script.md

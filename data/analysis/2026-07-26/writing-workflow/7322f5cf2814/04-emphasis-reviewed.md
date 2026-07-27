@@ -3,8 +3,6 @@ type: wechat_article
 date: 2026-07-26
 topic: 社会救助法的权利保障、程序规范与兜底责任
 title: "62-【R】｜人民日报讲社会救助法：救助不只是给钱，更是权利、程序和兜底责任"
-wechat_title: "社会救助法：权利兜底"
-digest: "社会救助法：救助不只是给钱，更是权利、程序和兜底责任。"
 source_review: data/analysis/2026-07-26/2026-07-26-social-assistance-law-rights-procedure-responsibility-topic-review.md
 process_draft: data/analysis/2026-07-26/wechat-social-assistance-law-rights-procedure-responsibility.md
 xiaohongshu_script: data/xiaohongshu/62-xiaohongshu-social-assistance-law-rights-procedure-responsibility-card-script.md
