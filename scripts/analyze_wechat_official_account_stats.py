@@ -743,22 +743,100 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             lines.append("- 暂无上一批同篇文章数据可供比较。")
 
         lines.extend(["", "## 十一、选题与运营判断", ""])
+        judgment_items: list[str] = []
+        if previous and new_daily and removed_daily:
+            read_change = (
+                100 * (new_reads - removed_reads) / removed_reads
+                if removed_reads
+                else 0
+            )
+            share_change = (
+                100 * (new_shares - removed_shares) / removed_shares
+                if removed_shares
+                else 0
+            )
+            favorite_change = (
+                100 * (new_favorites - removed_favorites) / removed_favorites
+                if removed_favorites
+                else 0
+            )
+            post_comparison = (
+                f"少发 {removed_posts - new_posts} 篇"
+                if new_posts < removed_posts
+                else (
+                    f"多发 {new_posts - removed_posts} 篇"
+                    if new_posts > removed_posts
+                    else "发文数量相同"
+                )
+            )
+            judgment_items.append(
+                f"**发文效率**：新增区间在{post_comparison}的情况下，阅读较移出区间变化 {read_change:+.1f}%，"
+                f"分享变化 {share_change:+.1f}%，收藏变化 {favorite_change:+.1f}%。"
+            )
+
+        if new_channel_totals and removed_channel_totals:
+            channel_changes = sorted(
+                (
+                    (
+                        new_channel_totals.get(channel, 0)
+                        - removed_channel_totals.get(channel, 0),
+                        channel,
+                        removed_channel_totals.get(channel, 0),
+                        new_channel_totals.get(channel, 0),
+                    )
+                    for channel in set(new_channel_totals) | set(removed_channel_totals)
+                ),
+                reverse=True,
+            )
+            positive_changes = [row for row in channel_changes if row[0] > 0]
+            if positive_changes:
+                delta, channel, old_value, new_value = positive_changes[0]
+                rate = 100 * delta / old_value if old_value else 0
+                judgment_items.append(
+                    f"**最大渠道驱动**：{channel}阅读由 {fmt_int(old_value)} 增至 {fmt_int(new_value)}，"
+                    f"增加 {fmt_int(delta)}（{rate:+.1f}%），是新增区间最明显的渠道变化。"
+                )
+
+        no_post_days = [
+            row
+            for row in new_daily
+            if (row["published_count"] or 0) == 0 and (row["read_users"] or 0) > 0
+        ]
+        if no_post_days:
+            strongest_no_post_day = max(
+                no_post_days,
+                key=lambda row: row["read_users"] or 0,
+            )
+            judgment_items.append(
+                f"**长尾证据**：新增区间有 {len(no_post_days)} 个无发文日仍产生阅读，"
+                f"其中 {strongest_no_post_day['date']} 达到 {fmt_int(strongest_no_post_day['read_users'])}，"
+                "说明历史文章仍在持续获得推荐、转发或搜索流量。"
+            )
+
         if top:
-            lines.append(
-                f"1. **当前最强样本**：{top['title']} 是本周期阅读最高的文章，应拆解它的母题、标题结构和读者收益，作为后续选题参照。"
+            judgment_items.append(
+                f"**当前最强样本**：{top['title']} 是本周期阅读最高的文章，应拆解它的母题、标题结构和读者收益，作为后续选题参照。"
             )
         if top_new:
-            lines.append(
-                f"2. **新内容观察**：{top_new['title']} 是本批新出现文章中阅读最高的一篇，当前阅读 {fmt_int(top_new['read_users'])}，下一批需继续观察其推荐和长尾增长。"
+            judgment_items.append(
+                f"**新内容观察**：{top_new['title']} 是本批新出现文章中阅读最高的一篇，当前阅读 {fmt_int(top_new['read_users'])}，下一批需继续观察其推荐和长尾增长。"
             )
         if growth_leader:
-            lines.append(
-                f"3. **长尾样本**：{growth_leader[1]} 较上批净增 {fmt_int(growth_leader[0])}，说明旧文仍有持续分发或转发价值。"
+            judgment_items.append(
+                f"**长尾样本**：{growth_leader[1]} 较上批净增 {fmt_int(growth_leader[0])}，说明旧文仍有持续分发或转发价值。"
             )
+        judgment_items.extend(
+            [
+                "**选题方法**：优先复用“考试高频母题 + 明确读者收益 + 纠正常见答题误区”的组合，同时避免只更换标题、不更换分析切口。",
+                "**评价方法**：高阅读判断吸引力，高推荐判断平台扩散力，高分享和高收藏判断教学价值与读者留存价值。",
+            ]
+        )
         lines.extend(
             [
-                "4. **选题方法**：优先复用“考试高频母题 + 明确读者收益 + 纠正常见答题误区”的组合，同时避免只更换标题、不更换分析切口。",
-                "5. **评价方法**：高阅读判断吸引力，高推荐判断平台扩散力，高分享和高收藏判断教学价值与读者留存价值。",
+                *[
+                    f"{number}. {item}"
+                    for number, item in enumerate(judgment_items, start=1)
+                ],
                 "",
                 "## 十二、下一期追踪清单",
                 "",
