@@ -855,7 +855,20 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
         )
 
         output_path = report_dir / f"{batch.batch_id}.md"
-        output_path.write_text("\n".join(lines), encoding="utf-8")
+        deep_analysis_marker = "<!-- CODEX_DEEP_ANALYSIS -->"
+        deep_analysis = ""
+        if output_path.exists():
+            existing = output_path.read_text(encoding="utf-8")
+            if deep_analysis_marker in existing:
+                deep_analysis = existing.split(deep_analysis_marker, 1)[1].strip()
+
+        report_text = "\n".join(lines)
+        if deep_analysis:
+            report_text = (
+                f"{report_text.rstrip()}\n\n{deep_analysis_marker}\n\n"
+                f"{deep_analysis}\n"
+            )
+        output_path.write_text(report_text, encoding="utf-8")
         outputs.append(output_path)
 
     conn.close()

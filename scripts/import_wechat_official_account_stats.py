@@ -21,9 +21,10 @@ import struct
 import subprocess
 import sys
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Iterable
+from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,6 +33,7 @@ SELF_MEDIA_ROOT = ROOT / "data" / "data_analysis"
 DEFAULT_RAW_ROOT = SELF_MEDIA_ROOT / "raw"
 DEFAULT_EXPORT_ROOT = SELF_MEDIA_ROOT / "exports"
 DEFAULT_SUMMARY_ROOT = SELF_MEDIA_ROOT / "reports"
+WECHAT_TIMEZONE = ZoneInfo("Asia/Shanghai")
 
 END_OF_CHAIN = 0xFFFFFFFE
 FREE_SECT = 0xFFFFFFFF
@@ -74,7 +76,7 @@ def timestamp_to_date(value: str) -> str | None:
         return None
     if stamp < 946684800:
         return None
-    return datetime.fromtimestamp(stamp, timezone.utc).date().isoformat()
+    return datetime.fromtimestamp(stamp, WECHAT_TIMEZONE).date().isoformat()
 
 
 def batch_id_for(path: Path) -> str:
