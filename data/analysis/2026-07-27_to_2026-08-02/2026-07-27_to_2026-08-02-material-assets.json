@@ -1,0 +1,168 @@
+{
+  "period": "2026-07-27_to_2026-08-02",
+  "source": {
+    "article_database": "data/core/articles.sqlite",
+    "article_count": 293,
+    "distinct_title_count": 288,
+    "operation_overview": "data/data_analysis/overview.md",
+    "operation_report": "data/data_analysis/reports/2026-07-06_to_2026-08-04_tendency.md",
+    "existing_idea_pool": "data/core/material_assets.sqlite"
+  },
+  "formal_pool_sync": {
+    "required": true,
+    "minimum_support_articles": 3,
+    "refresh_markdown": "data/articles/选题库.md",
+    "refresh_csv": "data/exports/content_ideas.csv",
+    "preserve_browser_visibility": true
+  },
+  "selection_rules": [
+    "分析2026年7月27日至8月2日下载的293篇人民日报文章，并按288个不同标题去重核验。",
+    "每个新增选题至少绑定3篇内容不同的人民日报文章，同题异版不重复计数。",
+    "对照既有83条选题，只有核心问题、治理关系和读者收益发生明显变化时才新增选题。",
+    "同时参考最新运营数据，优先选择考试高频母题、明确读者收益、纠正常见误区的表达。",
+    "反内卷、县域经济、就业、新职业、六张网、人工智能全球治理等成熟母题只补充本周来源。"
+  ],
+  "operation_findings": [
+    "最新30天日均阅读6554，较上一批下降7.9%，分享下降11.8%，收藏下降16.8%，新选题需要增强可转发判断和可收藏框架。",
+    "搜一搜是新增区间唯一增长渠道，较移出区间增长27.4%，宜优先使用中试平台、完整社区、未成年人保护、健康优先等政策标准词。",
+    "物业治理新稿阅读10433、推荐占比78.7%，说明基层治理落到具体生活场景并纠正常见误区，仍有较强传播潜力。",
+    "县域经济阅读33576、推荐占比80.4%，且继续增长5660，说明成熟母题可从不同治理关系拆题，但不能只换标题。",
+    "科技成果转化仍处于账号高位主题，中试平台是成果产业化链条中可独立深挖的关键环节。"
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260727_0802_complete_community_resident_co_creation",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 小红书",
+      "title": "《人民日报》讲完整社区：不是把设施配齐，而是让居民参与、服务嵌入、运营长久",
+      "angle": "完整社区不是设施项目的简单拼盘，而要从居民真实需求出发，把需求清单、部门资源、建设项目、多元共治和可持续运营接成闭环，让群众既是受益者也是设计者和建设者。",
+      "relation_to_existing": "区别于物业治理的收费与服务矛盾，也区别于新时代社会工作的组织和专业体系，本题聚焦完整社区这一建设单元及居民全过程参与。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "物业治理新稿阅读10433、推荐占比78.7%，本题同样落到社区生活场景，并由6篇文章形成居民参与和长效运营链。",
+      "reader_gain": "掌握居民出题、清单对接、多元共建、服务嵌入和长效运营五步完整社区框架。",
+      "support_article_ids": [
+        "people_daily_20260727_30171093",
+        "people_daily_20260728_30171400",
+        "people_daily_20260729_30171751",
+        "people_daily_20260729_30171822",
+        "people_daily_20260730_30171928",
+        "people_daily_20260730_30172016"
+      ],
+      "outline": [
+        "居民出题：把议事会开到楼下，让真实需求进入设计",
+        "清单对接：将需求清单、资源清单转化为项目清单",
+        "多元共建：党组织协调居委会、业委会、物业、市场和居民",
+        "服务嵌入：围绕停车、晾晒、照明、养老等日常小事补功能",
+        "运营长久：建立资金共担、账目公开和志愿参与机制"
+      ],
+      "teaching_value": "适合完整社区、城市更新、基层治理、全过程人民民主和公共服务。"
+    },
+    {
+      "idea_id": "idea_20260727_0802_pilot_scale_validation",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + PPT",
+      "title": "《人民日报》讲中试平台：不是把实验室放大，而是让技术经得起量产和市场检验",
+      "angle": "中试处在实验室成果与产业化量产之间，既要完成数据采集、工艺放大和可靠性验证，也要连接真实场景、上下游企业、专业服务和风险保障，帮助新技术跨过产业化最容易卡住的一关。",
+      "relation_to_existing": "区别于既有科技成果转化题对全链条的概括，本题只深挖从样品到量产之间的中试验证关口。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "科技成果转化是历史高阅读母题；中试平台既是政策标准词，也符合搜一搜增长27.4%的渠道变化。",
+      "reader_gain": "理解技术验证、工艺放大、场景开放、资源共享和生态接力五层中试机制。",
+      "support_article_ids": [
+        "people_daily_20260727_30171053",
+        "people_daily_20260727_30171114",
+        "people_daily_20260731_30172190",
+        "people_daily_20260802_30172604"
+      ],
+      "outline": [
+        "验证技术：在接近真实的条件下暴露问题、迭代参数",
+        "放大工艺：把样品做成稳定、可复制、可量产的产品",
+        "开放场景：让终端需求反向校准研发方向",
+        "共享资源：降低初创团队获取算力、数据、设备和模型的成本",
+        "生态接力：连接企业、平台、资本、保险和产业链伙伴"
+      ],
+      "teaching_value": "适合新质生产力、科技成果转化、现代化产业体系、创新生态和营商环境。"
+    },
+    {
+      "idea_id": "idea_20260727_0802_minor_protection_front_prevention",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 面试题卡",
+      "title": "《人民日报》讲未成年人保护：不能等孩子“出事”后再管，要把风险发现和干预矫治做在前面",
+      "angle": "未成年人保护不能停留在案发后的惩戒，而要打通学籍、警情、心理健康和热线信息，推动家庭、学校、社区、公安司法和专业社工分层干预、精准矫治、持续跟踪。",
+      "relation_to_existing": "此前只有2篇直接材料，未达到入库标准；本周补足前端防治、专门矫治和权益保障材料后形成独立闭环。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "4篇文章覆盖中央部署、公安前端防治和专门矫治，兼具政策时效、民生痛点与面试情境。",
+      "reader_gain": "掌握风险早发现、问题早干预、教育重矫治、家庭同修复和回归有接续五步保护链。",
+      "support_article_ids": [
+        "people_daily_20260728_30171372",
+        "people_daily_20260730_30171943",
+        "people_daily_20260730_30171944",
+        "people_daily_20260731_30172395"
+      ],
+      "outline": [
+        "风险早发现：打通多源信息，识别辍学、欺凌和家庭失管等信号",
+        "问题早干预：针对不同风险程度开展分层分类处置",
+        "教育重矫治：以法治、心理、文化和职业教育帮助孩子重建方向",
+        "家庭同修复：通过家长课堂、亲情修复改变成长环境",
+        "回归有接续：学校、社区和司法社工持续跟踪，防止再次滑落"
+      ],
+      "teaching_value": "适合未成年人保护、法治政府、社会治理、家庭教育和公共安全。"
+    },
+    {
+      "idea_id": "idea_20260727_0802_health_priority_whole_policy",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 课堂讲解",
+      "title": "《人民日报》讲健康优先：不是卫生部门“单打独斗”，而要把预防融入学校、社区和日常生活",
+      "angle": "健康优先要求发展方式从以治病为中心转向以健康为中心，把健康理念纳入规划、教育、公共卫生、生活方式和绩效评价，用部门协同和全生命周期服务推动不得病、少得病。",
+      "relation_to_existing": "区别于既有健康服务可及性题，本题聚焦健康融入所有政策和预防关口前移。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "健康中国权威部署与学校、近视、传染病防控三个具体场景相互支撑，既有政策高度又有日常可感性。",
+      "reader_gain": "掌握理念转向、风险前移、场景融入、部门协同和绩效校准五层健康优先框架。",
+      "support_article_ids": [
+        "people_daily_20260728_30171317",
+        "people_daily_20260729_30171810",
+        "people_daily_20260730_30171920",
+        "people_daily_20260731_30172360"
+      ],
+      "outline": [
+        "理念转向：从有病治病转向全方位全周期健康管理",
+        "风险前移：强化监测预警、疫苗接种和早筛早诊",
+        "场景融入：把视力、体重、心理和体育纳入学校日常",
+        "部门协同：卫生、教育、疾控、社区和家庭共同负责",
+        "绩效校准：把健康影响和群众健康获得感纳入政策评价"
+      ],
+      "teaching_value": "适合健康中国、公共卫生、公共服务均等化、青少年健康和协同治理。"
+    }
+  ],
+  "existing_topic_updates": [
+    {"idea_id": "idea_refined_20260529_city_update", "new_support_article_ids": ["people_daily_20260728_30171400", "people_daily_20260729_30171751", "people_daily_20260801_30172537"]},
+    {"idea_id": "idea_refined_20260611_six_networks", "new_support_article_ids": ["people_daily_20260728_30171380", "people_daily_20260728_30171409", "people_daily_20260731_30172275", "people_daily_20260731_30172276"]},
+    {"idea_id": "idea_refined_20260611_anti_involution", "new_support_article_ids": ["people_daily_20260727_30171090", "people_daily_20260729_30171791"]},
+    {"idea_id": "idea_refined_20260611_service_consumption", "new_support_article_ids": ["people_daily_20260727_30171133", "people_daily_20260727_30171134", "people_daily_20260730_30171922", "people_daily_20260731_30172376"]},
+    {"idea_id": "idea_refined_20260612_tech_transfer_chain", "new_support_article_ids": ["people_daily_20260727_30171053", "people_daily_20260727_30171114", "people_daily_20260731_30172190", "people_daily_20260802_30172604"]},
+    {"idea_id": "idea_refined_20260612_employment_chain", "new_support_article_ids": ["people_daily_20260727_30171103", "people_daily_20260729_30171736", "people_daily_20260730_30171918", "people_daily_20260730_30171977", "people_daily_20260730_30172019", "people_daily_20260731_30172191"]},
+    {"idea_id": "idea_20260629_0705_county_specialized_integrated", "new_support_article_ids": ["people_daily_20260727_30171050", "people_daily_20260728_30171294", "people_daily_20260728_30171411", "people_daily_20260729_30171737", "people_daily_20260731_30172235"]},
+    {"idea_id": "idea_20260629_0705_performance_assessment_value", "new_support_article_ids": ["people_daily_20260727_30171089", "people_daily_20260727_30171093", "people_daily_20260728_30171320", "people_daily_20260728_30171366", "people_daily_20260731_30172285", "people_daily_20260802_30172602", "people_daily_20260802_30172605"]},
+    {"idea_id": "idea_20260629_0705_beautiful_china_system", "new_support_article_ids": ["people_daily_20260727_30171020", "people_daily_20260727_30171135", "people_daily_20260729_30171739", "people_daily_20260731_30172195"]},
+    {"idea_id": "idea_20260706_0712_warning_to_action", "new_support_article_ids": ["people_daily_20260728_30171350", "people_daily_20260728_30171367", "people_daily_20260728_30171397", "people_daily_20260729_30171779", "people_daily_20260802_30172621"]},
+    {"idea_id": "idea_20260713_0719_ai_global_public_good", "new_support_article_ids": ["people_daily_20260727_30171046", "people_daily_20260727_30171047"]},
+    {"idea_id": "idea_20260713_0719_new_occupation_growth_chain", "new_support_article_ids": ["people_daily_20260730_30171977", "people_daily_20260730_30172020", "people_daily_20260731_30172191", "people_daily_20260731_30172192"]},
+    {"idea_id": "idea_20260720_0726_social_work_collaborative_governance", "new_support_article_ids": ["people_daily_20260728_30171412", "people_daily_20260730_30171928", "people_daily_20260730_30172016"]},
+    {"idea_id": "idea_20260720_0726_property_shared_governance", "new_support_article_ids": ["people_daily_20260730_30171928"]}
+  ],
+  "recommended_order": [
+    "idea_20260727_0802_complete_community_resident_co_creation",
+    "idea_20260727_0802_pilot_scale_validation",
+    "idea_20260727_0802_minor_protection_front_prevention",
+    "idea_20260727_0802_health_priority_whole_policy"
+  ],
+  "not_prioritized": [
+    "气候适应材料充足，但与美丽中国、防灾救灾已有选题重合，且近期宏观防灾题表现偏弱，暂只补强旧题。",
+    "技能生态与就业、新职业选题高度重合，只补充来源。",
+    "县域经济、反内卷、六张网、人工智能全球治理已有成熟选题，继续补证，不重复立题。",
+    "单篇地方经验和活动报道未形成至少3篇文章支撑的独立治理链，不进入正式选题库。"
+  ]
+}
