@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把人民日报APP评论与人民日报正式版文章加工成教师可直接使用的热点教学日报。">
+  <title>热点教学日报</title>
+  <link rel="stylesheet" href="./styles.css?v=20260811-4">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="primary-sidebar" aria-label="主导航">
+      <a class="brand" href="#today" aria-label="热点教学日报首页">
+        <span class="brand-mark">教</span>
+        <span><strong>热点教学日报</strong><small>HOTSPOT TEACHING DAILY</small></span>
+      </a>
+
+      <nav class="primary-nav">
+        <p class="nav-label">内容</p>
+        <button class="nav-item active" data-view="today"><span>◈</span>今日精选</button>
+        <button class="nav-item" data-view="daily"><span>▤</span>热点日报</button>
+        <button class="nav-item" data-view="weekly"><span>◇</span>每周精选</button>
+        <button class="nav-item" data-view="themes"><span>▦</span>主题档案</button>
+        <button class="nav-item" data-view="ranking"><span>↗</span>热点排行</button>
+        <p class="nav-label">说明</p>
+        <button class="nav-item" data-view="sources"><span>◎</span>来源说明</button>
+        <button class="nav-item" data-view="guide"><span>?</span>使用指南</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button id="themeToggle" class="theme-toggle" aria-label="切换深浅主题">
+          <span data-theme-icon>☀</span><span data-theme-label>浅色阅读</span>
+        </button>
+        <p>版权归属属于华图教育培训学院。</p>
+      </div>
+    </aside>
+
+    <aside class="archive-sidebar" aria-label="内容档案">
+      <div class="archive-tabs" role="tablist" aria-label="切换日报、周报、主题">
+        <button class="archive-tab active" data-archive="daily">日报</button>
+        <button class="archive-tab" data-archive="weekly">周报</button>
+        <button class="archive-tab" data-archive="themes">主题</button>
+      </div>
+      <label class="search-box">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="搜索热点、观点或来源">
+      </label>
+      <div id="archiveList" class="archive-list" aria-live="polite"></div>
+    </aside>
+
+    <main id="mainContent" class="main-content" tabindex="-1">
+      <div class="loading-state">
+        <span class="loading-mark">教</span>
+        <p>正在整理今天的热点教学内容……</p>
+      </div>
+    </main>
+  </div>
+
+  <button id="mobileArchiveToggle" class="mobile-archive-toggle" aria-label="打开日期档案">日期</button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js?v=20260811-4" defer></script>
+</body>
+</html>

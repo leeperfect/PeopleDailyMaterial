@@ -32,6 +32,10 @@ python3 scripts/export_content_ideas.py
 
 # 打开本地 HTML 选题工作台
 python3 scripts/serve_idea_magazine.py
+
+# 生成并打开“热点教学日报”
+python3 scripts/build_hotspot_teaching_daily.py
+python3 hotspot_teaching_daily.py
 ```
 
 ## 当前保留的最小结构
@@ -214,6 +218,23 @@ http://127.0.0.1:8766
 ```
 
 热点工作台按已下载正文复核选题，支持按热点/候选/专题、优先级、媒体来源和人工精筛状态筛选，查看教研分类、核心角度和支撑评论，保存个人备注，批量加入或移出精筛池。人工判断保存在热点 SQLite 总库中，后续每日采集刷新时会继续保留。
+
+## 热点教学日报
+
+“热点教学日报”把 APP 评论热点与《人民日报》正式版文章分工使用：前者负责发现热点和观点，后者负责补充政策依据、治理案例与规范表达。它不会为了凑齐双来源强行关联文章。
+
+```bash
+# 采集完成后刷新双库融合数据、迁移备份和网页
+python3 scripts/build_hotspot_teaching_daily.py
+
+# 打开本地网页
+python3 hotspot_teaching_daily.py
+
+# 查看待审教学卡
+python3 scripts/review_hotspot_teaching_card.py
+```
+
+本地主库和固定迁移文件保存在 `data/hotspot_teaching/`，妙搭只承载可重新发布的展示副本。详细说明见 `docs/hotspot-teaching-daily.md`。
 
 ## 抓取新文章
 

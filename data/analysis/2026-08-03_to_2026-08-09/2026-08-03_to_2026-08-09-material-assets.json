@@ -1,0 +1,179 @@
+{
+  "period": "2026-08-03_to_2026-08-09",
+  "source": {
+    "article_database": "data/core/articles.sqlite",
+    "article_count": 279,
+    "distinct_title_count": 274,
+    "operation_overview": "data/data_analysis/overview.md",
+    "operation_report": "data/data_analysis/reports/2026-07-12_to_2026-08-10_tendency.md",
+    "existing_idea_pool": "data/core/material_assets.sqlite"
+  },
+  "formal_pool_sync": {
+    "required": true,
+    "minimum_support_articles": 3,
+    "refresh_markdown": "data/articles/选题库.md",
+    "refresh_csv": "data/exports/content_ideas.csv",
+    "preserve_browser_visibility": true
+  },
+  "selection_rules": [
+    "分析2026年8月3日至9日下载的279篇人民日报文章，并按274个不同标题去重核验。",
+    "每个新增选题至少绑定3篇内容不同的人民日报文章，同题异版不重复计数。",
+    "对照既有87条选题，只有核心问题、治理关系和读者收益明显变化时才新增。",
+    "同时参考最新运营数据，优先采用考试高频母题、责任边界纠偏和可直接带走的答题框架。",
+    "养老、县域经济、城市更新、科技成果转化、基层减负等成熟母题只补充本周来源。"
+  ],
+  "operation_findings": [
+    "最新30天日均阅读6923.7，较上一批增长5.6%，日均分享增长5.0%，日均收藏增长5.7%，近期内容基本盘有所回升。",
+    "新增6天阅读较紧邻前6天增长16.6%，但主要由社会工作单篇爆款拉动，尚未形成多篇共同抬升。",
+    "新时代社会工作阅读19141，朋友圈和聊天会话传播突出，验证了高频政策词加责任边界纠偏的标题结构。",
+    "物业治理累计13671且本批增长3238，说明贴近日常生活的具体治理关系仍有系列化价值。",
+    "科技成果转化累计14925，柔性制造、共享制造和场景适配构成可独立拆解的制造业新模式。",
+    "推荐、朋友圈和聊天会话是本批主要增量，新题既要适合平台分发，也要有清晰判断方便读者转发。"
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260803_0809_grassroots_responsibility_boundary",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 面试题卡",
+      "title": "《人民日报》讲基层责任边界：属地不是无限责任，牵头也不是全包全责",
+      "angle": "基层责任边界不是给干部卸责，而是用基本履职、配合履职和上级收回事项清单划清职责，通过数据共享、协同调度、考核赋权和资源匹配，让属地负责有边界、牵头协调有权限、部门配合有约束。",
+      "relation_to_existing": "区别于既有基层减负题的总体制度框架，也区别于万能基层题的多元协同，本题集中辨析属地、牵头和数据报送三类高频责任误区。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "社会工作爆款19141阅读验证了责任边界纠偏的传播力；本周10篇连续报道形成极强的政策密度。",
+      "reader_gain": "掌握清单明责、属地归位、牵头赋权、数据减负和考核协同五步责任边界框架。",
+      "support_article_ids": [
+        "people_daily_20260804_30172962",
+        "people_daily_20260805_30173183",
+        "people_daily_20260805_30173184",
+        "people_daily_20260805_30173185",
+        "people_daily_20260806_30173432",
+        "people_daily_20260806_30173433",
+        "people_daily_20260806_30173434",
+        "people_daily_20260807_30173573",
+        "people_daily_20260807_30173601",
+        "people_daily_20260807_30173602"
+      ],
+      "outline": [
+        "清单明责：区分基本履职、配合履职和上级收回事项",
+        "属地归位：谁有执法权、专业能力和资源，谁承担主责",
+        "牵头赋权：牵头部门负责统筹，但配合部门必须履责",
+        "数据减负：从反复向基层要数转向系统共享和一次采集",
+        "考核协同：用双向评价、过程督办和资源配置保障落实"
+      ],
+      "teaching_value": "适合基层减负、权责一致、部门协同、形式主义治理和面试组织协调题。"
+    },
+    {
+      "idea_id": "idea_20260803_0809_demand_driven_manufacturing",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + PPT",
+      "title": "《人民日报》讲制造业新模式：不是只追求“大批量”，而是让生产跟着需求变、资源围着企业转",
+      "angle": "制造业转型不只是更新设备，而是从以产定销转向以销定产，用柔性生产承接个性化需求，用共享工厂、共享检测和共享产线降低中小企业门槛，并推动供应链、服务链和应用场景协同响应。",
+      "relation_to_existing": "区别于新质生产力题对技术工具的概括，也区别于科技成果转化题对研发产业化链的讨论，本题聚焦生产组织方式如何因需求而变。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "科技成果转化仍有14925阅读，人民日报又连续推出柔性制造和共享制造专题，具备科技产业母题的延展价值。",
+      "reader_gain": "理解需求牵引、柔性生产、资源共享、链条协同和场景验证五层制造业转型逻辑。",
+      "support_article_ids": [
+        "people_daily_20260805_30173175",
+        "people_daily_20260805_30173215",
+        "people_daily_20260807_30173556",
+        "people_daily_20260807_30173557",
+        "people_daily_20260808_30173733",
+        "people_daily_20260809_30173779"
+      ],
+      "outline": [
+        "需求牵引：从预测备货转向订单驱动和参与式生产",
+        "柔性生产：快速换型，让小单急单也有大单效率",
+        "资源共享：共享设备、检测、产线和专业人才",
+        "链条协同：订单变化同步传导到供应链和物流端",
+        "场景验证：以真实需求检验稳定性、可靠性和交付能力"
+      ],
+      "teaching_value": "适合新质生产力、现代化产业体系、供给侧结构性改革、数字化转型和扩大内需。"
+    },
+    {
+      "idea_id": "idea_20260803_0809_public_culture_participatory_service",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 小红书",
+      "title": "《人民日报》讲公共文化服务：不是把节目“送下去”，而是让文化融入生活、让群众成为主角",
+      "angle": "公共文化服务不能停在建场馆、送演出，而要把文化空间嵌入群众生活半径，用需求清单提升供需匹配，以数字技术扩大优质资源覆盖，并通过培训、志愿服务和群众舞台实现从送文化到种文化。",
+      "relation_to_existing": "区别于乡村文化振兴的乡土文化生态和文化传承题的保护活化，本题聚焦公共文化服务的可及性、参与性和运营机制。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "物业治理和社会工作说明生活场景与群众参与具有传播优势；本题用从观众到主角的具体变化避免泛谈公共服务。",
+      "reader_gain": "掌握空间嵌入、供需匹配、资源直达、群众参与和长效运营五步公共文化服务框架。",
+      "support_article_ids": [
+        "people_daily_20260805_30173157",
+        "people_daily_20260806_30173411",
+        "people_daily_20260809_30173794",
+        "people_daily_20260809_30173795"
+      ],
+      "outline": [
+        "空间嵌入：让文化服务进入社区、商圈和线上生活场景",
+        "供需匹配：从统一配送转向菜单式、分众化服务",
+        "资源直达：专业院团和优质内容线上线下共同下沉",
+        "群众参与：让观众成为创作者、表演者和空间运营者",
+        "长效运营：用专业培训、社会力量和志愿机制持续供给"
+      ],
+      "teaching_value": "适合公共文化服务、文化强国、公共服务均等化、基层治理和共同精神生活。"
+    },
+    {
+      "idea_id": "idea_20260803_0809_science_popularization_innovation_wing",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 课堂讲解",
+      "title": "《人民日报》讲科学普及：不是把知识讲简单，而是为创新筑基础、为公众辨真伪",
+      "angle": "科学普及不是科研之外的附属工作，而是提升全民科学素质、培育创新人才、促进成果理解应用的基础工程；面对网络伪科普，还要压实专业机构、平台和监管部门责任，让权威内容跑得过谣言。",
+      "relation_to_existing": "区别于基础研究题关注从0到1，也区别于AI治理题关注创新与伦理，本题回答公众科学素质如何支撑创新并抵御伪科学。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "人民日报头版明确科普与创新同等重要，并由健康伪科普调查和院士科普栏目形成正反两类来源。",
+      "reader_gain": "掌握廓清认知、辨别真伪、播种创新、反哺科研和共同治理五层科普框架。",
+      "support_article_ids": [
+        "people_daily_20260803_30172743",
+        "people_daily_20260806_30173366",
+        "people_daily_20260808_30173757",
+        "people_daily_20260808_30173759"
+      ],
+      "outline": [
+        "廓清认知：用权威解释帮助公众理解前沿科技",
+        "辨别真伪：识别伪专家、伪概念和焦虑式营销",
+        "播种创新：以科学精神、思想和方法激发好奇心",
+        "反哺科研：让公众反馈和场景需求推动技术迭代",
+        "共同治理：专业机构、平台和监管部门守住内容质量"
+      ],
+      "teaching_value": "适合科技强国、全民科学素质、网络治理、青少年教育和科技伦理。"
+    }
+  ],
+  "existing_topic_updates": [
+    {"idea_id": "idea_refined_20260529_city_update", "new_support_article_ids": ["people_daily_20260803_30172706", "people_daily_20260803_30172729", "people_daily_20260809_30173776", "people_daily_20260809_30173777"]},
+    {"idea_id": "idea_refined_20260611_six_networks", "new_support_article_ids": ["people_daily_20260803_30172712", "people_daily_20260804_30172952", "people_daily_20260804_30172986", "people_daily_20260805_30173174", "people_daily_20260806_30173406"]},
+    {"idea_id": "idea_refined_20260611_service_consumption", "new_support_article_ids": ["people_daily_20260804_30173006", "people_daily_20260805_30173156", "people_daily_20260805_30173188", "people_daily_20260805_30173218", "people_daily_20260809_30173781", "people_daily_20260809_30173782"]},
+    {"idea_id": "idea_refined_20260612_tech_transfer_chain", "new_support_article_ids": ["people_daily_20260803_30172793", "people_daily_20260806_30173412", "people_daily_20260807_30173620", "people_daily_20260807_30173621", "people_daily_20260809_30173786"]},
+    {"idea_id": "idea_20260706_0712_grassroots_burden_empowerment", "new_support_article_ids": ["people_daily_20260804_30172962", "people_daily_20260805_30173183", "people_daily_20260805_30173184", "people_daily_20260805_30173185", "people_daily_20260806_30173432", "people_daily_20260806_30173433", "people_daily_20260806_30173434", "people_daily_20260807_30173573", "people_daily_20260807_30173601", "people_daily_20260807_30173602"]},
+    {"idea_id": "idea_20260629_0705_performance_assessment_value", "new_support_article_ids": ["people_daily_20260804_30172970", "people_daily_20260804_30173004", "people_daily_20260807_30173552", "people_daily_20260807_30173578", "people_daily_20260807_30173599"]},
+    {"idea_id": "idea_20260720_0726_elderly_care_system", "new_support_article_ids": ["people_daily_20260803_30172761", "people_daily_20260803_30172762", "people_daily_20260805_30173195", "people_daily_20260806_30173380", "people_daily_20260806_30173449", "people_daily_20260806_30173455", "people_daily_20260807_30173600", "people_daily_20260808_30173748"]},
+    {"idea_id": "idea_20260622_28_agriculture_big_industry", "new_support_article_ids": ["people_daily_20260804_30172950", "people_daily_20260804_30172984", "people_daily_20260806_30173370", "people_daily_20260807_30173636"]},
+    {"idea_id": "idea_20260629_0705_county_specialized_integrated", "new_support_article_ids": ["people_daily_20260805_30173177", "people_daily_20260806_30173401", "people_daily_20260806_30173424", "people_daily_20260807_30173637"]},
+    {"idea_id": "idea_refined_20260613_cultural_heritage_life", "new_support_article_ids": ["people_daily_20260804_30173009", "people_daily_20260804_30173010", "people_daily_20260808_30173771", "people_daily_20260808_30173772", "people_daily_20260808_30173773", "people_daily_20260808_30173774"]},
+    {"idea_id": "idea_20260720_0726_social_work_collaborative_governance", "new_support_article_ids": ["people_daily_20260804_30173044", "people_daily_20260805_30173164", "people_daily_20260806_30173479"]},
+    {"idea_id": "idea_20260727_0802_complete_community_resident_co_creation", "new_support_article_ids": ["people_daily_20260804_30173044", "people_daily_20260806_30173405"]},
+    {"idea_id": "idea_20260727_0802_health_priority_whole_policy", "new_support_article_ids": ["people_daily_20260803_30172743", "people_daily_20260805_30173131", "people_daily_20260807_30173588"]},
+    {"idea_id": "idea_20260706_0712_warning_to_action", "new_support_article_ids": ["people_daily_20260804_30172994", "people_daily_20260807_30173570", "people_daily_20260808_30173772", "people_daily_20260808_30173773"]},
+    {"idea_id": "idea_20260629_0705_ip_protection_balance", "new_support_article_ids": ["people_daily_20260803_30172750", "people_daily_20260804_30172945", "people_daily_20260806_30173437", "people_daily_20260806_30173445"]},
+    {"idea_id": "idea_20260713_0719_tourism_capacity_governance", "new_support_article_ids": ["people_daily_20260803_30172767", "people_daily_20260805_30173182", "people_daily_20260807_30173590"]},
+    {"idea_id": "idea_20260629_0705_social_assistance_rule_of_law", "new_support_article_ids": ["people_daily_20260803_30172702", "people_daily_20260805_30173195", "people_daily_20260808_30173748"]}
+  ],
+  "recommended_order": [
+    "idea_20260803_0809_grassroots_responsibility_boundary",
+    "idea_20260803_0809_demand_driven_manufacturing",
+    "idea_20260803_0809_public_culture_participatory_service",
+    "idea_20260803_0809_science_popularization_innovation_wing"
+  ],
+  "not_prioritized": [
+    "养老服务本周材料最密集，但既有养老服务体系题尚未完成，故补强为13篇支撑，不再重复立项。",
+    "先投后股、接力式赋能与既有耐心资本、科技金融和成果转化题高度重合，只补充来源。",
+    "属地责任系列同时补入既有基层减负题，新题只保留责任概念辨析这一独立读者收益。",
+    "城市更新、县域经济、服务消费、旅游、知识产权、文化遗产和防灾救灾均有成熟选题，只补本周来源。",
+    "气候变化下的文物保护材料集中在同一专版，切口较窄且传播潜力暂不及前四题，不单独入库。"
+  ]
+}
