@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民生服务 — 小红书卡片</title>
+<style>
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');
+  font-weight: 500; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');
+  font-weight: 900; font-display: swap;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #000000;
+  --bg-elevated: #141414;
+  --text: #ffffff;
+  --text-secondary: rgba(255,255,255,0.72);
+  --text-muted: rgba(255,255,255,0.50);
+  --rule: rgba(255,255,255,0.16);
+  --accent: #0ea5e9;
+  --accent-text: #ffffff;
+  --warn: #f59e0b;
+  --font: 'Alibaba PuHuiTi', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+}
+
+body {
+  background: #1a1a1a;
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+main.sheet {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 40px; padding: 40px 0;
+}
+
+.poster {
+  position: relative; overflow: hidden;
+  background: var(--bg); color: var(--text); font-family: var(--font);
+}
+.poster.xhs { width: 1080px; height: 1440px; }
+
+.bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+
+.overlay-full { position: absolute; inset: 0; z-index: 1; background: rgba(0,0,0,0.60); }
+.overlay-bottom {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.50) 35%, transparent 60%);
+}
+
+.content {
+  position: absolute; z-index: 2; inset: 0;
+  padding: 88px 80px 120px;
+  display: flex; flex-direction: column;
+}
+
+.kicker {
+  font-size: 22px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
+}
+.hero { font-size: 92px; font-weight: 900; line-height: 1.12; letter-spacing: -1px; color: var(--text); }
+.h2 { font-size: 56px; font-weight: 700; line-height: 1.22; color: var(--text); }
+.lead { font-size: 32px; font-weight: 500; line-height: 1.45; color: var(--text); margin-top: 24px; }
+.body { font-size: 27px; font-weight: 400; line-height: 1.65; color: var(--text-secondary); }
+.caption { font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--text-muted); }
+.big-number { font-size: 140px; font-weight: 900; line-height: 1; color: var(--accent); letter-spacing: -4px; }
+
+.rule { width: 100%; height: 2px; background: var(--rule); }
+
+.body-list { list-style: none; margin-top: 20px; }
+.body-list li {
+  font-size: 27px; font-weight: 400; line-height: 1.6; color: var(--text);
+  padding: 10px 0 10px 32px; position: relative;
+}
+.body-list li::before {
+  content: ''; position: absolute; left: 0; top: 24px;
+  width: 10px; height: 10px; background: var(--accent); border-radius: 2px;
+}
+
+.watermark {
+  position: absolute; z-index: 1;
+  font-size: 420px; font-weight: 900; line-height: 1;
+  color: var(--accent); opacity: 0.05;
+  user-select: none; pointer-events: none;
+}
+
+.key-sentence {
+  margin-top: auto;
+  border-left: 5px solid var(--accent);
+  background: rgba(14,165,233,0.10);
+  padding: 20px 28px;
+  font-size: 26px; font-weight: 500; line-height: 1.55; color: var(--text);
+}
+
+.compare-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px;
+}
+.compare-col {
+  border: 1px solid var(--rule); padding: 32px 28px;
+}
+.compare-col h3 { font-size: 30px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+.compare-col.accent-col { border-color: var(--accent); background: rgba(14,165,233,0.08); }
+.compare-col ul { list-style: none; }
+.compare-col li { font-size: 24px; font-weight: 400; line-height: 1.6; color: var(--text-secondary); padding: 6px 0; }
+
+.step-chain { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+.step-row {
+  display: flex; align-items: flex-start; gap: 24px;
+  padding: 22px 28px; border: 1px solid var(--rule);
+}
+.step-row .num { font-size: 40px; font-weight: 900; color: var(--accent); line-height: 1; min-width: 56px; }
+.step-row .info h3 { font-size: 30px; font-weight: 700; color: var(--text); }
+.step-row .info p { font-size: 23px; font-weight: 400; color: var(--text-secondary); line-height: 1.5; margin-top: 4px; }
+
+.data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.data-card {
+  border: 1px solid var(--rule); padding: 32px 28px; min-height: 200px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.data-card .num { font-size: 64px; font-weight: 900; color: var(--accent); line-height: 1; }
+.data-card .label { font-size: 24px; font-weight: 500; color: var(--text); margin-top: 10px; }
+.data-card .desc { font-size: 20px; font-weight: 400; color: var(--text-muted); margin-top: 6px; line-height: 1.45; }
+
+.ref-list { margin-top: 36px; }
+.ref-item {
+  display: flex; gap: 20px; padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ref-item .num { font-size: 28px; font-weight: 900; color: var(--accent); min-width: 36px; }
+.ref-item .text .title { font-size: 27px; font-weight: 700; color: var(--text); line-height: 1.4; }
+.ref-item .text .meta { font-size: 22px; font-weight: 400; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+
+.page-foot {
+  position: absolute; bottom: 36px; left: 80px; right: 80px; z-index: 3;
+  display: flex; justify-content: space-between;
+  font-size: 18px; font-weight: 500; color: var(--text-muted); letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+
+<!-- ========== 01 封面 ========== -->
+<section class="poster xhs" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content" style="justify-content:flex-end;">
+    <p class="kicker">人民日报系列 · 第51篇</p>
+    <h1 class="hero">不能总等<br>群众找政策</h1>
+    <p class="lead">要让政策主动找到需要的人</p>
+    <div class="key-sentence">最需要帮助的人，可能恰恰最难走进窗口。</div>
+  </div>
+  <div class="page-foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 02 盲区页 ========== -->
+<section class="poster xhs" id="xhs-02">
+  <div class="watermark" style="top:60px; right:-40px;">盲</div>
+  <div class="content">
+    <p class="kicker">盲区 · 申请制的隐含前提</p>
+    <h2 class="h2">知道政策、会判断<br>能备件、到得了窗口</h2>
+    <p class="body" style="margin-top:24px;">传统申请制默认群众能主动完成这四步。但恰恰是最需要帮助的人，可能在每一步都遇到障碍。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">①</div><div class="info"><h3>知道政策</h3><p>信息渠道不畅，独居老人和流动人口可能根本不知道有这项政策</p></div></div>
+      <div class="step-row"><div class="num">②</div><div class="info"><h3>会判断资格</h3><p>政策条件复杂，群众难以判断自己是否符合、该申请哪一项</p></div></div>
+      <div class="step-row"><div class="num">③</div><div class="info"><h3>能准备材料</h3><p>证明、证件、表格要求多，行动不便或文化程度低的群体难以完成</p></div></div>
+      <div class="step-row"><div class="num">④</div><div class="info"><h3>到得了窗口</h3><p>距离、交通、身体状况和属地衔接，可能把人挡在窗口之外</p></div></div>
+    </div>
+    <div class="key-sentence">政策已经有了，不代表需要的人已经进入政策视野。</div>
+  </div>
+  <div class="page-foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 03 总公式 ========== -->
+<section class="poster xhs" id="xhs-03">
+  <div class="watermark" style="top:80px; right:-20px; font-size:360px;">环</div>
+  <div class="content">
+    <p class="kicker">总公式 · 主动服务五步闭环</p>
+    <h2 class="h2">政策找人，不只是多走访</h2>
+    <p class="body" style="margin-top:20px;">五个环节相互依赖，缺一不可。只发现不分类会平均用力，分类后没资源下沉基层只能登记，没有协同复杂问题在部门间循环，没有反馈群众无法判断进度。</p>
+    <div class="step-chain">
+      <div class="step-row"><div class="num">1</div><div class="info"><h3>主动发现需求</h3><p>走访、巡查、监测、反映四路并进，看见沉默需求</p></div></div>
+      <div class="step-row"><div class="num">2</div><div class="info"><h3>分层识别风险</h3><p>按紧急程度、需求性质、服务周期分类匹配</p></div></div>
+      <div class="step-row"><div class="num">3</div><div class="info"><h3>服务能力下沉</h3><p>事项、权限、人员、系统、兜底一起到社区</p></div></div>
+      <div class="step-row"><div class="num">4</div><div class="info"><h3>复杂诉求协同</h3><p>一线受理、分级会商、限时办理，责任不模糊</p></div></div>
+      <div class="step-row"><div class="num">5</div><div class="info"><h3>办理结果反馈</h3><p>看得见进度、拿得到结果、评得了服务</p></div></div>
+    </div>
+    <div class="key-sentence">找到人只是入口，办成事才是结果。</div>
+  </div>
+  <div class="page-foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 04 主动发现·定义 ========== -->
+<section class="poster xhs" id="xhs-04">
+  <div class="watermark" style="top:100px; right:-30px;">找</div>
+  <div class="content">
+    <p class="kicker">第一步 · 主动发现</p>
+    <h2 class="h2">怎样看见沉默需求</h2>
+    <p class="body" style="margin-top:24px;">从"谁来申请服务谁"，转向"哪里有风险就及时核实"。四条渠道并行，覆盖不同类型的困难群体。</p>
+    <div class="data-grid" style="margin-top:24px;">
+      <div class="data-card" style="min-height:180px;">
+        <div class="num" style="font-size:48px;">常态入户</div>
+        <div class="label">社区网格走访</div>
+        <div class="desc">网格员定期入户，重点关注独居老人、残疾人家庭和突发困难户</div>
+      </div>
+      <div class="data-card" style="min-height:180px;">
+        <div class="num" style="font-size:48px;">重点巡查</div>
+        <div class="label">街面和专项巡访</div>
+        <div class="desc">对流浪乞讨、困境儿童等特殊群体开展针对性巡查和跨地救助</div>
+      </div>
+      <div class="data-card" style="min-height:180px;">
+        <div class="num" style="font-size:48px;">数据监测</div>
+        <div class="label">必要数据预警</div>
+        <div class="desc">医疗、教育、社保等数据提供风险线索，预警后人工核实</div>
+      </div>
+      <div class="data-card" style="min-height:180px;">
+        <div class="num" style="font-size:48px;">多方反映</div>
+        <div class="label">热线+邻里+社会组织</div>
+        <div class="desc">12345热线、邻里反映、物业和社会组织共同发现问题</div>
+      </div>
+    </div>
+    <div class="key-sentence">从"谁来申请服务谁"，转向"哪里有风险就及时核实"。</div>
+  </div>
+  <div class="page-foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 05 主动发现·案例 ========== -->
+<section class="poster xhs" id="xhs-05">
+  <div class="watermark" style="top:80px; left:-30px; font-size:360px;">案</div>
+  <div class="content">
+    <p class="kicker">第一步 · 实践案例</p>
+    <h2 class="h2">他们怎样主动找到人</h2>
+    <div class="data-grid" style="margin-top:28px;">
+      <div class="data-card">
+        <div class="num">13<span style="font-size:32px;">个工作日</span></div>
+        <div class="label">包头困难家庭救助</div>
+        <div class="desc">社区主动摸排发现，从受理、核验、公示到审批全程13个工作日完成</div>
+      </div>
+      <div class="data-card">
+        <div class="num">4.68<span style="font-size:32px;">万人</span></div>
+        <div class="label">包头低收入动态监测</div>
+        <div class="desc">截至2025年底，对4.68万名低收入人员实施动态监测，及时发现风险</div>
+      </div>
+      <div class="data-card">
+        <div class="num" style="font-size:48px; line-height:1.2;">常态化入户</div>
+        <div class="label">临潼基层救助</div>
+        <div class="desc">救助人员常态化入户走访，将兜底政策送到困难群众身边</div>
+      </div>
+      <div class="data-card">
+        <div class="num" style="font-size:48px; line-height:1.2;">跨地协调</div>
+        <div class="label">外地户籍困难学子</div>
+        <div class="desc">为外地户籍学生协调临时救助与户籍地低保，属地衔接不脱节</div>
+      </div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:24px; padding:20px 24px;">
+      <p style="font-size:23px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">共同启示：</strong>主动发现不是"多跑几趟"，而是建立常态化机制——有人走访、有数据预警、有渠道反映、有核实流程。</p>
+    </div>
+    <div class="compare-grid" style="margin-top:20px;">
+      <div class="compare-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; color:var(--warn); margin-bottom:8px;">被动受理的问题</h3>
+        <ul><li style="font-size:21px;">只服务走进窗口的人</li><li style="font-size:21px;">困难群体可能被遗漏</li><li style="font-size:21px;">问题积累到爆发才发现</li></ul>
+      </div>
+      <div class="compare-col accent-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; margin-bottom:8px;">主动发现的优势</h3>
+        <ul><li style="font-size:21px;">提前介入风险更早</li><li style="font-size:21px;">覆盖沉默的困难群体</li><li style="font-size:21px;">小问题化解在萌芽阶段</li></ul>
+      </div>
+    </div>
+    <div class="key-sentence">主动摸排+动态监测+入户走访，让政策在群众开口之前就到身边。</div>
+  </div>
+  <div class="page-foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 06 边界页 ========== -->
+<section class="poster xhs" id="xhs-06">
+  <div class="watermark" style="top:80px; right:-20px;">界</div>
+  <div class="content">
+    <p class="kicker">边界 · 隐私与判断</p>
+    <h2 class="h2">主动不等于无限采集</h2>
+    <p class="body" style="margin-top:24px;">数据只能报线索，不能自动给人贴标签。主动服务要有温度，也要有边界。四道安全门守住隐私和尊严。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">①</div><div class="info"><h3>必要采集</h3><p>围绕法定职责采集必要信息，不超范围收集个人数据</p></div></div>
+      <div class="step-row"><div class="num">②</div><div class="info"><h3>授权明确</h3><p>明确数据用途和访问权限，谁能看、用来做什么都要清楚</p></div></div>
+      <div class="step-row"><div class="num">③</div><div class="info"><h3>保密责任</h3><p>落实数据保密责任，防止个人信息泄露和滥用</p></div></div>
+      <div class="step-row"><div class="num">④</div><div class="info"><h3>人工核实</h3><p>数据预警只提供线索，救助资格和真实需求必须人工核实，与群众知情沟通，尊重求助意愿</p></div></div>
+    </div>
+    <div class="compare-grid" style="margin-top:20px;">
+      <div class="compare-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; color:var(--warn); margin-bottom:8px;">不能做的</h3>
+        <ul><li style="font-size:21px;">凭数据标签自动认定</li><li style="font-size:21px;">超范围采集个人信息</li><li style="font-size:21px;">不告知就强制服务</li></ul>
+      </div>
+      <div class="compare-col accent-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; margin-bottom:8px;">必须做的</h3>
+        <ul><li style="font-size:21px;">预警后上门人工核实</li><li style="font-size:21px;">知情沟通尊重意愿</li><li style="font-size:21px;">法定职责内提供服务</li></ul>
+      </div>
+    </div>
+    <div class="key-sentence">主动服务要有温度，也要有边界。数据是线索，不是判决书。</div>
+  </div>
+  <div class="page-foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 07 分类页 ========== -->
+<section class="poster xhs" id="xhs-07">
+  <div class="watermark" style="top:60px; left:-20px;">类</div>
+  <div class="content">
+    <p class="kicker">第二步 · 分层识别</p>
+    <h2 class="h2">找到人后<br>不能只发同一份政策包</h2>
+    <p class="body" style="margin-top:20px;">一老一小一困，需求并不相同。对象不同、风险不同，服务组合也应不同。三个维度精准匹配。</p>
+    <div class="compare-grid" style="margin-top:24px;">
+      <div class="compare-col accent-col">
+        <h3>按紧急程度</h3>
+        <ul>
+          <li><strong style="color:var(--text);">救急</strong> — 突发困难、临时救助，快速响应</li>
+          <li><strong style="color:var(--text);">长期支持</strong> — 低保、特困、持续跟踪</li>
+        </ul>
+      </div>
+      <div class="compare-col accent-col">
+        <h3>按需求性质</h3>
+        <ul>
+          <li><strong style="color:var(--text);">救助</strong> — 资金、物资、临时帮扶</li>
+          <li><strong style="color:var(--text);">照护/改造/康复/就业</strong> — 专业服务</li>
+        </ul>
+      </div>
+      <div class="compare-col accent-col">
+        <h3>按服务周期</h3>
+        <ul>
+          <li><strong style="color:var(--text);">一次办理</strong> — 补贴发放、资格认定</li>
+          <li><strong style="color:var(--text);">阶段帮扶/持续跟踪</strong> — 定期回访</li>
+        </ul>
+      </div>
+      <div class="compare-col accent-col">
+        <h3>案例：聊城</h3>
+        <ul>
+          <li><strong style="color:var(--text);">"一户一策"</strong>适老化改造</li>
+          <li>对符合条件的老年家庭实行智能化改造，低保特困动态监测</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-sentence">对象不同、风险不同，服务组合也应不同。精准匹配才能避免平均用力。</div>
+  </div>
+  <div class="page-foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 08 下沉页·定义 ========== -->
+<section class="poster xhs" id="xhs-08">
+  <div class="watermark" style="top:100px; right:-30px;">沉</div>
+  <div class="content">
+    <p class="kicker">第三步 · 服务下沉</p>
+    <h2 class="h2">窗口搬家为什么还不够</h2>
+    <p class="body" style="margin-top:24px;">只挂牌不开权限，群众仍要跑区县；只下放事项不培训人员，基层也接不住。真正的下沉是五件套一起下去。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">①</div><div class="info"><h3>事项下沉</h3><p>高频办理事项放到街道社区，群众就近能办</p></div></div>
+      <div class="step-row"><div class="num">②</div><div class="info"><h3>权限下放</h3><p>审批权限同步下放，不能只收件不审批</p></div></div>
+      <div class="step-row"><div class="num">③</div><div class="info"><h3>人员到位</h3><p>培训基层人员，确保接得住、办得好</p></div></div>
+      <div class="step-row"><div class="num">④</div><div class="info"><h3>系统连通</h3><p>业务系统延伸到基层，数据共享不脱节</p></div></div>
+      <div class="step-row"><div class="num">⑤</div><div class="info"><h3>兜底保障</h3><p>办不了的事项有转办渠道，不把群众推回去</p></div></div>
+    </div>
+    <div class="key-sentence">下沉的标准，是群众在附近能不能真正办成事。</div>
+  </div>
+  <div class="page-foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 09 下沉页·案例 ========== -->
+<section class="poster xhs" id="xhs-09">
+  <div class="watermark" style="top:80px; left:-30px; font-size:360px;">办</div>
+  <div class="content">
+    <p class="kicker">第三步 · 实践案例</p>
+    <h2 class="h2">下沉之后<br>群众在家门口办事</h2>
+    <div class="data-grid" style="margin-top:28px;">
+      <div class="data-card">
+        <div class="num">近90<span style="font-size:32px;">项</span></div>
+        <div class="label">济宁警务服务下沉</div>
+        <div class="desc">户政、出入境、车驾管等近90项高频服务整合下沉基层派出所</div>
+      </div>
+      <div class="data-card">
+        <div class="num">13.8<span style="font-size:32px;">万件</span></div>
+        <div class="label">54个派出所累计办理</div>
+        <div class="desc">下沉后54个派出所累计办理13.8万件业务，群众少跑区县</div>
+      </div>
+      <div class="data-card">
+        <div class="num">5<span style="font-size:32px;">项</span></div>
+        <div class="label">盱眙权力事项下放</div>
+        <div class="desc">汇总一年高频诉求，会同多部门将5项权力事项下放镇街办理</div>
+      </div>
+      <div class="data-card">
+        <div class="num" style="font-size:48px; line-height:1.2;">五件套同步</div>
+        <div class="label">真正下沉的标准</div>
+        <div class="desc">事项+权限+人员+系统+兜底，缺一样群众都可能白跑一趟</div>
+      </div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:24px; padding:20px 24px;">
+      <p style="font-size:23px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">辨析：</strong>服务下沉≠窗口搬家。窗口搬下去但权限没放、人员没培训、系统没连通，群众还是要回区县。真正的下沉是"能发现、能受理、能办理、能转办、能反馈"。</p>
+    </div>
+    <div class="compare-grid" style="margin-top:20px;">
+      <div class="compare-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; color:var(--warn); margin-bottom:8px;">假下沉</h3>
+        <ul><li style="font-size:21px;">只挂牌不开权限</li><li style="font-size:21px;">只收件不审批</li><li style="font-size:21px;">群众仍要跑区县</li></ul>
+      </div>
+      <div class="compare-col accent-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; margin-bottom:8px;">真下沉</h3>
+        <ul><li style="font-size:21px;">事项权限一起放</li><li style="font-size:21px;">人员系统同步配</li><li style="font-size:21px;">家门口能办成事</li></ul>
+      </div>
+    </div>
+    <div class="key-sentence">下沉不是把牌子挂到社区，而是把办事能力送到群众身边。</div>
+  </div>
+  <div class="page-foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 10 专业页 ========== -->
+<section class="poster xhs" id="xhs-10">
+  <img class="bg-img" src="assets/community.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">延伸 · 专业服务进社区</p>
+    <h2 class="h2">服务还要进入<br>生活半径</h2>
+    <p class="body" style="margin-top:20px;">行政事项下沉还不够，医疗、养老、康复等专业服务也要送到家门口。让行动不便者不必远距离寻找专业资源。</p>
+    <div class="data-grid" style="margin-top:24px;">
+      <div class="data-card" style="min-height:170px; background:rgba(0,0,0,0.4);">
+        <div class="num" style="font-size:44px;">家庭医生</div>
+        <div class="label">走村入户</div>
+        <div class="desc">签约家庭医生定期上门，慢病管理、健康监测在社区完成</div>
+      </div>
+      <div class="data-card" style="min-height:170px; background:rgba(0,0,0,0.4);">
+        <div class="num" style="font-size:44px;">嵌入式养老</div>
+        <div class="label">进入社区</div>
+        <div class="desc">社区养老服务中心提供日托、助餐、助浴、助医等服务</div>
+      </div>
+      <div class="data-card" style="min-height:170px; background:rgba(0,0,0,0.4);">
+        <div class="num" style="font-size:44px;">康复服务</div>
+        <div class="label">按需提供</div>
+        <div class="desc">残疾人康复、术后康复在社区站点进行，减少往返医院</div>
+      </div>
+      <div class="data-card" style="min-height:170px; background:rgba(0,0,0,0.4);">
+        <div class="num" style="font-size:44px;">助餐助浴</div>
+        <div class="label">生活照料</div>
+        <div class="desc">社区食堂、助浴点解决高龄和失能老人的日常照料需求</div>
+      </div>
+    </div>
+    <div class="key-sentence">服务靠近人，专业能力也要一起靠近。</div>
+  </div>
+  <div class="page-foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 11 协同页 ========== -->
+<section class="poster xhs" id="xhs-11">
+  <img class="bg-img" src="assets/collab.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第四步 · 复杂诉求协同</p>
+    <h2 class="h2">复杂问题<br>要有兜底入口</h2>
+    <p class="body" style="margin-top:20px;">跨层级、跨地区、跨部门事项不能在部门之间循环。一线受理、分级会商、限时办理，最终必须有人负责。</p>
+    <div class="data-grid" style="margin-top:24px;">
+      <div class="data-card" style="min-height:170px; background:rgba(0,0,0,0.4);">
+        <div class="num">97<span style="font-size:32px;">个</span></div>
+        <div class="label">淮安镇街"办不成事"专窗</div>
+        <div class="desc">在97个镇街设置专窗，统一接收跨部门复杂诉求</div>
+      </div>
+      <div class="data-card" style="min-height:170px; background:rgba(0,0,0,0.4);">
+        <div class="num">10<span style="font-size:32px;">天</span></div>
+        <div class="label">异地医保报销到账</div>
+        <div class="desc">通过县街协同，异地医保案例10天收到1.3万元报销款</div>
+      </div>
+      <div class="data-card" style="min-height:170px; background:rgba(0,0,0,0.4);">
+        <div class="num">2550<span style="font-size:32px;">余场</span></div>
+        <div class="label">宁波业主接待日</div>
+        <div class="desc">2025年以来开展2550余场，社区物业业委会共同处理</div>
+      </div>
+      <div class="data-card" style="min-height:170px; background:rgba(0,0,0,0.4);">
+        <div class="num">5700<span style="font-size:32px;">余件</span></div>
+        <div class="label">化解急难愁盼问题</div>
+        <div class="desc">建立破难项目库，持续协商推进复杂事项解决</div>
+      </div>
+    </div>
+    <div class="key-sentence">多方协同不等于责任模糊，最终必须有人负责。</div>
+  </div>
+  <div class="page-foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 12 反馈页 ========== -->
+<section class="poster xhs" id="xhs-12">
+  <div class="watermark" style="top:80px; right:-20px;">馈</div>
+  <div class="content">
+    <p class="kicker">第五步 · 结果反馈</p>
+    <h2 class="h2">办结后还要回到制度</h2>
+    <p class="body" style="margin-top:20px;">看得见进度、拿得到结果、评得了服务。兜底窗口接住一个问题，高频复盘要解决一类问题。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">①</div><div class="info"><h3>确认受理</h3><p>告诉群众"收到了"，明确谁在办</p></div></div>
+      <div class="step-row"><div class="num">②</div><div class="info"><h3>告知责任和时限</h3><p>明确责任主体和办理时限，不让群众干等</p></div></div>
+      <div class="step-row"><div class="num">③</div><div class="info"><h3>更新进度</h3><p>办理过程中主动告知进展，群众可查询</p></div></div>
+      <div class="step-row"><div class="num">④</div><div class="info"><h3>回访结果</h3><p>办结后回访评价；不能办理也要说明依据和替代路径</p></div></div>
+      <div class="step-row"><div class="num">⑤</div><div class="info"><h3>高频复盘</h3><p>汇总高频问题，推动代办、授权和流程再造，从解决一个到解决一类</p></div></div>
+    </div>
+    <div class="key-sentence">兜底窗口接住一个问题，高频复盘要解决一类问题。</div>
+  </div>
+  <div class="page-foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 13 考场应用 ========== -->
+<section class="poster xhs" id="xhs-13">
+  <div class="watermark" style="top:80px; right:-20px;">考</div>
+  <div class="content">
+    <p class="kicker">考场迁移 · 申论/面试直接用</p>
+    <h2 class="h2">主动民生服务<br>高分公式</h2>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">一</div><div class="info"><h3>发现要早</h3><p>健全入户走访、重点巡访、数据预警和群众反映相结合的主动发现机制</p></div></div>
+      <div class="step-row"><div class="num">二</div><div class="info"><h3>识别要准</h3><p>围绕一老一小一困，按风险、类型和频次实行分层分类服务</p></div></div>
+      <div class="step-row"><div class="num">三</div><div class="info"><h3>资源要近</h3><p>推动高频事项、审批权限、专业人员和信息系统向街道社区下沉</p></div></div>
+      <div class="step-row"><div class="num">四</div><div class="info"><h3>协同要顺</h3><p>完善兜底窗口、跨层级转办、多部门会商和社会专业力量参与机制</p></div></div>
+      <div class="step-row"><div class="num">五</div><div class="info"><h3>反馈要实</h3><p>公开办理主体、进度和结果，开展回访评价，以高频诉求推动流程再造</p></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:20px; padding:18px 24px;">
+      <p style="font-size:22px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">面试题：</strong>"困难群众不了解政策也不愿申请，怎么办？"→ ①摸排（网格+热线+数据）②核实（上门了解真实需求）③分类（紧急/基本/专业/长期）④帮办（解释政策+协助材料+代办转办）⑤反馈（告知时限进度）⑥回访（更新台账评估效果）</p>
+    </div>
+    <div class="key-sentence">政策找得到人、基层接得住事、部门办得成、结果看得见。</div>
+  </div>
+  <div class="page-foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 14 参考文献 ========== -->
+<section class="poster xhs" id="xhs-14">
+  <div class="content">
+    <p class="kicker">参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-top:16px; font-size:23px;">本卡片内容基于以下人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item">
+        <div class="num">1</div>
+        <div class="text">
+          <div class="title">民政系民生 服务暖民心</div>
+          <div class="meta">人民日报，2026年6月，常态入户、街面巡查、跨地救助和后续随访</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">2</div>
+        <div class="text">
+          <div class="title">在发展中保障和改善民生</div>
+          <div class="meta">人民日报，2026年6月，包头主动摸排、4.68万人动态监测、家庭医生和嵌入式养老</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">3</div>
+        <div class="text">
+          <div class="title">山东聊城努力提升普惠性兜底性民生保障</div>
+          <div class="meta">人民日报，2026年6月，儿童、老人、低保和特困人员差异化服务，"一户一策"改造</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">4</div>
+        <div class="text">
+          <div class="title">警务"集约办"</div>
+          <div class="meta">人民日报，2026年6月，近90项高频服务下沉派出所，54个所办理13.8万件</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">5</div>
+        <div class="text">
+          <div class="title">便民服务沉一线</div>
+          <div class="meta">人民日报，2026年6月，镇街专窗、县街会商、多部门转办和权限下放</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">6</div>
+        <div class="text">
+          <div class="title">合力守护家门口的幸福</div>
+          <div class="meta">人民日报，2026年6月，社区、物业、业委会和专业人才共同处理复杂事项</div>
+        </div>
+      </div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:24px; padding:20px 24px;">
+      <p style="font-size:22px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>"五步闭环"为教学提炼框架，非某单篇原文结构；13个工作日、4.68万人、近90项、97个专窗等数据为地方案例，不代表全国统一标准。</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+</main>
+</body>
+</html>

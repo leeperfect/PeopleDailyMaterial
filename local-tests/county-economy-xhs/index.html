@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>县域经济 — 小红书卡片</title>
+<style>
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');
+  font-weight: 500; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');
+  font-weight: 900; font-display: swap;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #000000;
+  --bg-elevated: #141414;
+  --text: #ffffff;
+  --text-secondary: rgba(255,255,255,0.72);
+  --text-muted: rgba(255,255,255,0.50);
+  --rule: rgba(255,255,255,0.16);
+  --accent: #1d4ed8;
+  --accent-text: #ffffff;
+  --warn: #f59e0b;
+  --font: 'Alibaba PuHuiTi', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+}
+
+body {
+  background: #1a1a1a;
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+main.sheet {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 40px; padding: 40px 0;
+}
+
+.poster {
+  position: relative; overflow: hidden;
+  background: var(--bg); color: var(--text); font-family: var(--font);
+}
+.poster.xhs { width: 1080px; height: 1440px; }
+
+.bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+
+.overlay-full { position: absolute; inset: 0; z-index: 1; background: rgba(0,0,0,0.60); }
+.overlay-bottom {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.50) 35%, transparent 60%);
+}
+
+.content {
+  position: absolute; z-index: 2; inset: 0;
+  padding: 88px 80px 120px;
+  display: flex; flex-direction: column;
+}
+
+.kicker {
+  font-size: 22px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
+}
+.hero { font-size: 92px; font-weight: 900; line-height: 1.12; letter-spacing: -1px; color: var(--text); }
+.h2 { font-size: 56px; font-weight: 700; line-height: 1.22; color: var(--text); }
+.lead { font-size: 32px; font-weight: 500; line-height: 1.45; color: var(--text); margin-top: 24px; }
+.body { font-size: 27px; font-weight: 400; line-height: 1.65; color: var(--text-secondary); }
+.caption { font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--text-muted); }
+.big-number { font-size: 140px; font-weight: 900; line-height: 1; color: var(--accent); letter-spacing: -4px; }
+
+.rule { width: 100%; height: 2px; background: var(--rule); }
+
+.body-list { list-style: none; margin-top: 20px; }
+.body-list li {
+  font-size: 27px; font-weight: 400; line-height: 1.6; color: var(--text);
+  padding: 10px 0 10px 32px; position: relative;
+}
+.body-list li::before {
+  content: ''; position: absolute; left: 0; top: 24px;
+  width: 10px; height: 10px; background: var(--accent); border-radius: 2px;
+}
+
+.watermark {
+  position: absolute; z-index: 1;
+  font-size: 420px; font-weight: 900; line-height: 1;
+  color: var(--accent); opacity: 0.05;
+  user-select: none; pointer-events: none;
+}
+
+.key-sentence {
+  margin-top: auto;
+  border-left: 5px solid var(--accent);
+  background: rgba(29,78,216,0.10);
+  padding: 20px 28px;
+  font-size: 26px; font-weight: 500; line-height: 1.55; color: var(--text);
+}
+
+.compare-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px;
+}
+.compare-col {
+  border: 1px solid var(--rule); padding: 32px 28px;
+}
+.compare-col h3 { font-size: 30px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+.compare-col.accent-col { border-color: var(--accent); background: rgba(29,78,216,0.08); }
+.compare-col ul { list-style: none; }
+.compare-col li { font-size: 24px; font-weight: 400; line-height: 1.6; color: var(--text-secondary); padding: 6px 0; }
+
+.step-chain { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+.step-row {
+  display: flex; align-items: flex-start; gap: 24px;
+  padding: 22px 28px; border: 1px solid var(--rule);
+}
+.step-row .num { font-size: 40px; font-weight: 900; color: var(--accent); line-height: 1; min-width: 56px; }
+.step-row .info h3 { font-size: 30px; font-weight: 700; color: var(--text); }
+.step-row .info p { font-size: 23px; font-weight: 400; color: var(--text-secondary); line-height: 1.5; margin-top: 4px; }
+
+.data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.data-card {
+  border: 1px solid var(--rule); padding: 32px 28px; min-height: 200px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.data-card .num { font-size: 64px; font-weight: 900; color: var(--accent); line-height: 1; }
+.data-card .label { font-size: 24px; font-weight: 500; color: var(--text); margin-top: 10px; }
+.data-card .desc { font-size: 20px; font-weight: 400; color: var(--text-muted); margin-top: 6px; line-height: 1.45; }
+
+.ref-list { margin-top: 36px; }
+.ref-item {
+  display: flex; gap: 20px; padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ref-item .num { font-size: 28px; font-weight: 900; color: var(--accent); min-width: 36px; }
+.ref-item .text .title { font-size: 27px; font-weight: 700; color: var(--text); line-height: 1.4; }
+.ref-item .text .meta { font-size: 22px; font-weight: 400; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+
+.page-foot {
+  position: absolute; bottom: 36px; left: 80px; right: 80px; z-index: 3;
+  display: flex; justify-content: space-between;
+  font-size: 18px; font-weight: 500; color: var(--text-muted); letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+
+<!-- ========== 01 封面 ========== -->
+<section class="poster xhs" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content" style="justify-content:flex-end;">
+    <p class="kicker">人民日报系列 · 第44篇</p>
+    <h1 class="hero">县域经济<br>不是"小而全"</h1>
+    <p class="lead">而要"特而强、融得进"</p>
+    <div class="key-sentence">县域的价值，不在于什么都有，而在于把最适合自己的事情做到谁也替代不了。</div>
+  </div>
+  <div class="page-foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 02 误区页 ========== -->
+<section class="poster xhs" id="xhs-02">
+  <div class="watermark" style="top:60px; right:-40px;">全</div>
+  <div class="content">
+    <p class="kicker">误区 · 常见低分答法</p>
+    <h2 class="h2">产业越多<br>竞争力越强？</h2>
+    <p class="body" style="margin-top:24px;">很多人写县域经济，会列一张产业清单。看起来很全面，但一个县资源、资金和人才都有限，为什么什么都要做？</p>
+    <div class="data-grid" style="margin-top:24px;">
+      <div class="data-card" style="min-height:160px;"><div class="num" style="font-size:44px;">现代农业</div><div class="desc">看似基础，实则需要技术和规模</div></div>
+      <div class="data-card" style="min-height:160px;"><div class="num" style="font-size:44px;">先进制造</div><div class="desc">需要产业链和人才支撑</div></div>
+      <div class="data-card" style="min-height:160px;"><div class="num" style="font-size:44px;">文旅融合</div><div class="desc">需要流量和服务承接能力</div></div>
+      <div class="data-card" style="min-height:160px;"><div class="num" style="font-size:44px;">数字经济</div><div class="desc">需要基础设施和应用场景</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:24px; padding:20px 24px;">
+      <p style="font-size:23px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">问题：</strong>每样都做 = 每样都做不精。资源分散造成"撒胡椒面"，同质化竞争和低效投入。</p>
+    </div>
+    <div class="key-sentence">产业门类齐全，不等于县域竞争力强。</div>
+  </div>
+  <div class="page-foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 03 总公式 ========== -->
+<section class="poster xhs" id="xhs-03">
+  <div class="watermark" style="top:80px; right:-20px; font-size:360px;">特</div>
+  <div class="content">
+    <p class="kicker">总公式 · 因地制宜五动作</p>
+    <h2 class="h2">因地制宜要写成5个动作</h2>
+    <p class="body" style="margin-top:20px;">"特而强"解决不可替代，"融得进"解决发展空间。五个动作不是平行清单，而是从选择到坚守的完整链条。</p>
+    <div class="step-chain">
+      <div class="step-row"><div class="num">1</div><div class="info"><h3>识别禀赋</h3><p>从本地条件中找比较优势，不从热词里挑产业</p></div></div>
+      <div class="step-row"><div class="num">2</div><div class="info"><h3>做强链条</h3><p>补科技、加工、标准、品牌、物流和公共平台</p></div></div>
+      <div class="step-row"><div class="num">3</div><div class="info"><h3>接入市场</h3><p>融入全国统一大市场、区域分工和全球贸易</p></div></div>
+      <div class="step-row"><div class="num">4</div><div class="info"><h3>融通城乡</h3><p>基础设施和公共服务先行，促进要素双向流动</p></div></div>
+      <div class="step-row"><div class="num">5</div><div class="info"><h3>长期坚守</h3><p>一张蓝图绘到底，尊重群众首创和市场规律</p></div></div>
+    </div>
+    <div class="key-sentence">特而强解决不可替代，融得进解决发展空间。</div>
+  </div>
+  <div class="page-foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 04 识别禀赋 ========== -->
+<section class="poster xhs" id="xhs-04">
+  <div class="watermark" style="top:100px; right:-30px;">辨</div>
+  <div class="content">
+    <p class="kicker">第一动作 · 识别禀赋</p>
+    <h2 class="h2">不求小而全<br>先找到真正长板</h2>
+    <p class="body" style="margin-top:24px;">因地制宜不是从热词里挑产业，而是从本地条件中找比较优势。回答五个问题，才能确定该做什么。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">①</div><div class="info"><h3>看资源和生态条件</h3><p>气候、土地、矿产、生态承载力决定能做什么</p></div></div>
+      <div class="step-row"><div class="num">②</div><div class="info"><h3>看产业传统和群众能力</h3><p>已有基础和技能积累是最可靠的起点</p></div></div>
+      <div class="step-row"><div class="num">③</div><div class="info"><h3>看区位和市场需求</h3><p>靠近什么市场、能服务什么需求决定空间</p></div></div>
+      <div class="step-row"><div class="num">④</div><div class="info"><h3>看技术与组织基础</h3><p>有没有研发能力、龙头企业和协作网络</p></div></div>
+      <div class="step-row"><div class="num">⑤</div><div class="info"><h3>看风险与承载边界</h3><p>生态、债务和社会承载力决定不能做什么</p></div></div>
+    </div>
+    <div class="key-sentence">因地制宜不是从热词里挑产业，而是从本地条件中找比较优势。</div>
+  </div>
+  <div class="page-foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 05 陕西苹果案例 ========== -->
+<section class="poster xhs" id="xhs-05">
+  <div class="watermark" style="top:80px; left:-30px; font-size:360px;">果</div>
+  <div class="content">
+    <p class="kicker">案例 · 农业禀赋转化</p>
+    <h2 class="h2">陕西苹果：<br>从"靠天吃饭"到"知天而作"</h2>
+    <p class="body" style="margin-top:20px;">资源禀赋只是产业的可能性，科技和管理才能把可能性变成可行性。陕西苹果用五步完成了转化。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">1</div><div class="info"><h3>识别气候适宜区变化</h3><p>适宜种植区向北移动约110公里、向西约80公里</p></div></div>
+      <div class="step-row"><div class="num">2</div><div class="info"><h3>推广抗寒品种</h3><p>用品种适应气候变化，而非被动承受</p></div></div>
+      <div class="step-row"><div class="num">3</div><div class="info"><h3>布设气象监测</h3><p>精准预报霜冻、冰雹等灾害，提前防御</p></div></div>
+      <div class="step-row"><div class="num">4</div><div class="info"><h3>配置防冻设施</h3><p>防霜风机、烟雾发生器等硬件保障稳产</p></div></div>
+      <div class="step-row"><div class="num">5</div><div class="info"><h3>延伸冷链与深加工</h3><p>从鲜果到果汁、果干，带动33.71万人增收</p></div></div>
+    </div>
+    <div class="key-sentence">资源禀赋只是可能性，科技和管理才能把它变成可行性。</div>
+  </div>
+  <div class="page-foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 06 价值链升级 ========== -->
+<section class="poster xhs" id="xhs-06">
+  <img class="bg-img" src="assets/valuechain.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第二动作 · 做强链条</p>
+    <h2 class="h2">不止卖原料<br>强在价值链</h2>
+    <p class="body" style="margin-top:20px;">特色产品要经历5次升级，才能从"有特色"变成"有竞争力"。每一步都需要配套能力支撑。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row" style="background:rgba(0,0,0,0.3);"><div class="num">→</div><div class="info"><h3>资源 → 产品</h3><p>从原料到标准化生产，解决"能产出"</p></div></div>
+      <div class="step-row" style="background:rgba(0,0,0,0.3);"><div class="num">→</div><div class="info"><h3>产品 → 标准</h3><p>统一质量规格，解决"能稳定交付"</p></div></div>
+      <div class="step-row" style="background:rgba(0,0,0,0.3);"><div class="num">→</div><div class="info"><h3>标准 → 品牌</h3><p>建立认知和信任，解决"能卖上好价"</p></div></div>
+      <div class="step-row" style="background:rgba(0,0,0,0.3);"><div class="num">→</div><div class="info"><h3>品牌 → 市场</h3><p>接入渠道和网络，解决"能持续销售"</p></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:20px; padding:18px 24px;">
+      <p style="font-size:22px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">配套能力：</strong>科技研发 · 精深加工 · 质量检测 · 仓储物流 · 公共平台</p>
+    </div>
+    <div class="key-sentence">县域的"强"，体现在稳定交付、质量标准、协同配套和市场适配上。</div>
+  </div>
+  <div class="page-foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 07 高阳毛巾案例 ========== -->
+<section class="poster xhs" id="xhs-07">
+  <div class="watermark" style="top:60px; left:-20px;">织</div>
+  <div class="content">
+    <p class="kicker">案例 · 制造业出海</p>
+    <h2 class="h2">高阳毛巾：<br>一条毛巾为什么能卖到海外</h2>
+    <div class="data-grid" style="margin-top:28px;">
+      <div class="data-card">
+        <div class="num">8<span style="font-size:32px;">道关</span></div>
+        <div class="label">出口质量检验</div>
+        <div class="desc">从原料到成品全过程质量管控，仅检测包含10余项指标</div>
+      </div>
+      <div class="data-card">
+        <div class="num">4200<span style="font-size:32px;">余家</span></div>
+        <div class="label">企业协同配套</div>
+        <div class="desc">纺纱、织造、印染、出口全链条企业形成半小时产业圈</div>
+      </div>
+      <div class="data-card">
+        <div class="num">89<span style="font-size:32px;">%</span></div>
+        <div class="label">产业链配套率</div>
+        <div class="desc">本地就能完成大部分配套，降低成本提高响应速度</div>
+      </div>
+      <div class="data-card">
+        <div class="num" style="font-size:48px; line-height:1.2;">半小时圈</div>
+        <div class="label">产业集群效应</div>
+        <div class="desc">企业之间距离近，协作效率高，形成不可复制的生态</div>
+      </div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:24px; padding:20px 24px;">
+      <p style="font-size:23px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">启示：</strong>走向全球靠的不是低价，而是整个县域产业生态的稳定交付能力——标准、集群、配套和平台缺一不可。</p>
+    </div>
+    <div class="compare-grid" style="margin-top:20px;">
+      <div class="compare-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; color:var(--warn); margin-bottom:8px;">低价竞争的局限</h3>
+        <ul><li style="font-size:21px;">利润薄，抗风险能力弱</li><li style="font-size:21px;">容易被替代，没有壁垒</li><li style="font-size:21px;">质量不稳定，口碑难积累</li></ul>
+      </div>
+      <div class="compare-col accent-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; margin-bottom:8px;">生态竞争的优势</h3>
+        <ul><li style="font-size:21px;">标准稳定，交付可靠</li><li style="font-size:21px;">集群配套，响应快速</li><li style="font-size:21px;">品牌溢价，不可替代</li></ul>
+      </div>
+    </div>
+    <div class="key-sentence">走向全球，靠的不是低价，而是整个县域产业生态的稳定交付。</div>
+  </div>
+  <div class="page-foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 08 接入市场 ========== -->
+<section class="poster xhs" id="xhs-08">
+  <div class="watermark" style="top:100px; right:-30px;">融</div>
+  <div class="content">
+    <p class="kicker">第三动作 · 接入市场</p>
+    <h2 class="h2">不做封闭循环<br>特色必须接入市场</h2>
+    <p class="body" style="margin-top:24px;">越有特色，越要连接外部。"特而强"不是封闭发展的理由，而是进入更大分工的基础。四类接口决定融得进不进得去。</p>
+    <div class="data-grid" style="margin-top:24px;">
+      <div class="data-card" style="min-height:180px;">
+        <div class="num" style="font-size:44px;">规则接口</div>
+        <div class="label">标准·信用·知识产权</div>
+        <div class="desc">与外部市场规则对齐，才能被认可和接受</div>
+      </div>
+      <div class="data-card" style="min-height:180px;">
+        <div class="num" style="font-size:44px;">设施接口</div>
+        <div class="label">交通·物流·支付·数据</div>
+        <div class="desc">物理和数字基础设施是连接的硬件基础</div>
+      </div>
+      <div class="data-card" style="min-height:180px;">
+        <div class="num" style="font-size:44px;">产业接口</div>
+        <div class="label">区域专业化分工</div>
+        <div class="desc">在区域产业链中找准位置，做不可替代的一环</div>
+      </div>
+      <div class="data-card" style="min-height:180px;">
+        <div class="num" style="font-size:44px;">开放接口</div>
+        <div class="label">展会·电商·全球贸易</div>
+        <div class="desc">主动走出去，接入全国统一大市场和全球网络</div>
+      </div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:20px; padding:18px 24px;">
+      <p style="font-size:22px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">义乌案例：</strong>2025年进出口总额8364.99亿元，与全球230多个国家和地区建立贸易往来——开放接口让小县城连接大世界。</p>
+    </div>
+    <div class="key-sentence">"特而强"不是封闭发展的理由，而是进入更大分工的基础。</div>
+  </div>
+  <div class="page-foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 09 村超案例 ========== -->
+<section class="poster xhs" id="xhs-09">
+  <div class="watermark" style="top:80px; left:-30px; font-size:360px;">超</div>
+  <div class="content">
+    <p class="kicker">案例 · 县域IP转化</p>
+    <h2 class="h2">"村超"：<br>流量怎样变成区域增量</h2>
+    <p class="body" style="margin-top:20px;">出圈只是起点，承接才是能力。群众创造真实内容，服务承接流量，区域协作放大价值。</p>
+    <div class="data-grid" style="margin-top:24px;">
+      <div class="data-card">
+        <div class="num">137<span style="font-size:32px;">支</span></div>
+        <div class="label">村级球队参赛</div>
+        <div class="desc">群众自发参与形成真实内容，不是刻意造节</div>
+      </div>
+      <div class="data-card">
+        <div class="num">2694<span style="font-size:32px;">名</span></div>
+        <div class="label">运动员参与</div>
+        <div class="desc">覆盖20个乡镇（街道），全民参与的基础广泛</div>
+      </div>
+      <div class="data-card">
+        <div class="num">9<span style="font-size:32px;">个县市</span></div>
+        <div class="label">州内旅游联动</div>
+        <div class="desc">与州内9个县市签署旅游联动协议，从单点走向全域</div>
+      </div>
+      <div class="data-card">
+        <div class="num" style="font-size:48px; line-height:1.2;">全域旅游</div>
+        <div class="label">流量转化路径</div>
+        <div class="desc">足球→交通→餐饮→民宿→民族文化→周边景区</div>
+      </div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:20px; padding:18px 24px;">
+      <p style="font-size:22px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">红安案例：</strong>文旅客流与三级物流、农产品加工连接，红薯形成120多种深加工产品、60多个品牌，带动12万余户增收。</p>
+    </div>
+    <div class="compare-grid" style="margin-top:20px;">
+      <div class="compare-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; color:var(--warn); margin-bottom:8px;">只有流量的问题</h3>
+        <ul><li style="font-size:21px;">人来了留不住</li><li style="font-size:21px;">消费转化低</li><li style="font-size:21px;">热度过后归零</li></ul>
+      </div>
+      <div class="compare-col accent-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; margin-bottom:8px;">承接流量的关键</h3>
+        <ul><li style="font-size:21px;">服务配套跟得上</li><li style="font-size:21px;">区域联动扩范围</li><li style="font-size:21px;">产业延伸变增量</li></ul>
+      </div>
+    </div>
+    <div class="key-sentence">群众创造真实内容，服务承接流量，区域协作放大价值。</div>
+  </div>
+  <div class="page-foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 10 融通城乡 ========== -->
+<section class="poster xhs" id="xhs-10">
+  <img class="bg-img" src="assets/urban-rural.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第四动作 · 融通城乡</p>
+    <h2 class="h2">不割裂城乡<br>服务要先行</h2>
+    <p class="body" style="margin-top:20px;">要素为什么愿意流向乡村？基础设施和公共服务不是产业之后的福利，而是要素流动的前置条件。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row" style="background:rgba(0,0,0,0.3);"><div class="num">①</div><div class="info"><h3>交通物流能否到达</h3><p>路通、货通，产品才能出得去、要素才能进得来</p></div></div>
+      <div class="step-row" style="background:rgba(0,0,0,0.3);"><div class="num">②</div><div class="info"><h3>教育医疗能否保障</h3><p>公共服务到位，人才和资本才愿意留下</p></div></div>
+      <div class="step-row" style="background:rgba(0,0,0,0.3);"><div class="num">③</div><div class="info"><h3>数字网络能否连接</h3><p>电商、远程服务、数据共享需要数字基础设施</p></div></div>
+      <div class="step-row" style="background:rgba(0,0,0,0.3);"><div class="num">④</div><div class="info"><h3>生活服务能否承载</h3><p>消费、文化、社交等生活品质决定留人能力</p></div></div>
+      <div class="step-row" style="background:rgba(0,0,0,0.3);"><div class="num">⑤</div><div class="info"><h3>产业收益能否共享</h3><p>让群众从发展中获益，形成正向循环</p></div></div>
+    </div>
+    <div class="key-sentence">基础设施和公共服务不是产业之后的福利，而是要素流动的前置条件。</div>
+  </div>
+  <div class="page-foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 11 长期坚守 ========== -->
+<section class="poster xhs" id="xhs-11">
+  <div class="watermark" style="top:80px; right:-20px;">久</div>
+  <div class="content">
+    <p class="kicker">第五动作 · 长期坚守</p>
+    <h2 class="h2">不追短期风口<br>一张蓝图绘到底</h2>
+    <p class="body" style="margin-top:24px;">方向稳定，办法迭代。一张蓝图绘到底，不是旧办法不变，而是正确方向不变、实现方式不断创新。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">①</div><div class="info"><h3>科学规划，接续推进</h3><p>不因换届换赛道，保持政策连续性和稳定性</p></div></div>
+      <div class="step-row"><div class="num">②</div><div class="info"><h3>尊重群众首创</h3><p>基层探索往往是最有效的创新来源</p></div></div>
+      <div class="step-row"><div class="num">③</div><div class="info"><h3>发挥市场主体作用</h3><p>企业和农户是产业主体，政府不越位不缺位</p></div></div>
+      <div class="step-row"><div class="num">④</div><div class="info"><h3>政府补设施、平台和规则</h3><p>做市场做不了的事：基础设施、公共平台、标准规则</p></div></div>
+      <div class="step-row"><div class="num">⑤</div><div class="info"><h3>建立评估与退出机制</h3><p>定期评估成效，该调整的调整，该退出的退出</p></div></div>
+    </div>
+    <div class="key-sentence">一张蓝图绘到底，不是旧办法不变，而是正确方向不变、实现方式不断创新。</div>
+  </div>
+  <div class="page-foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 12 考场应用 ========== -->
+<section class="poster xhs" id="xhs-12">
+  <div class="watermark" style="top:80px; right:-20px;">考</div>
+  <div class="content">
+    <p class="kicker">考场迁移 · 申论+面试</p>
+    <h2 class="h2">县域经济<br>高分表达框架</h2>
+    <div class="compare-col accent-col" style="margin-top:20px; padding:20px 24px;">
+      <p style="font-size:23px; color:var(--text); line-height:1.6;"><strong style="color:var(--accent);">申论总论点：</strong>发展县域经济，不能简单追求产业门类齐全，而应立足资源禀赋和比较优势培育特色产业，以科技创新、精深加工、质量标准和品牌建设延伸价值链，主动融入全国统一大市场和区域产业分工，完善城乡基础设施和公共服务，促进要素双向流动。</p>
+    </div>
+    <p class="kicker" style="margin-top:28px; margin-bottom:12px;">面试：面对"小而全"产业规划，怎么改？</p>
+    <div class="step-chain" style="margin-top:0; gap:14px;">
+      <div class="step-row" style="padding:16px 24px;"><div class="num" style="font-size:32px;">1</div><div class="info"><h3 style="font-size:26px;">重新评估资源和市场</h3></div></div>
+      <div class="step-row" style="padding:16px 24px;"><div class="num" style="font-size:32px;">2</div><div class="info"><h3 style="font-size:26px;">围绕主导产业补关键能力</h3></div></div>
+      <div class="step-row" style="padding:16px 24px;"><div class="num" style="font-size:32px;">3</div><div class="info"><h3 style="font-size:26px;">对接区域分工和全国市场</h3></div></div>
+      <div class="step-row" style="padding:16px 24px;"><div class="num" style="font-size:32px;">4</div><div class="info"><h3 style="font-size:26px;">把就业增收和城乡承载纳入评价</h3></div></div>
+      <div class="step-row" style="padding:16px 24px;"><div class="num" style="font-size:32px;">5</div><div class="info"><h3 style="font-size:26px;">建立长期评估与退出机制</h3></div></div>
+    </div>
+    <div class="key-sentence">不以产业数量评价规划质量，要以比较优势、价值创造和群众收益检验发展成效。</div>
+  </div>
+  <div class="page-foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 13 总结 ========== -->
+<section class="poster xhs" id="xhs-13">
+  <div class="watermark" style="top:40px; left:50%; transform:translateX(-50%); font-size:420px;">强</div>
+  <div class="content" style="justify-content:center; text-align:center; align-items:center;">
+    <p class="kicker" style="text-align:center;">总结 · 认知升级</p>
+    <h2 class="hero" style="font-size:80px; text-align:center; line-height:1.4; margin-top:16px;">
+      县域经济的完整逻辑
+    </h2>
+    <div class="compare-grid" style="margin-top:36px; width:100%;">
+      <div class="compare-col" style="text-align:left;">
+        <h3 style="color:var(--warn);">不是</h3>
+        <ul>
+          <li style="font-size:26px; padding:10px 0;">什么都有 — 小而全</li>
+          <li style="font-size:26px; padding:10px 0;">关门做特色 — 封闭循环</li>
+          <li style="font-size:26px; padding:10px 0;">追短期风口 — 频繁换赛道</li>
+          <li style="font-size:26px; padding:10px 0;">产业数量多 — 竞争力强</li>
+        </ul>
+      </div>
+      <div class="compare-col accent-col" style="text-align:left;">
+        <h3>而是</h3>
+        <ul>
+          <li style="font-size:26px; padding:10px 0;">谁也替代不了 — 特而强</li>
+          <li style="font-size:26px; padding:10px 0;">进入更大分工 — 融得进</li>
+          <li style="font-size:26px; padding:10px 0;">一张蓝图绘到底 — 长期坚守</li>
+          <li style="font-size:26px; padding:10px 0;">价值创造和群众收益 — 真发展</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-sentence" style="text-align:left; margin-top:36px;">县域经济要用专业化能力换取更大市场空间。</div>
+  </div>
+  <div class="page-foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 14 参考文献 ========== -->
+<section class="poster xhs" id="xhs-14">
+  <div class="content">
+    <p class="kicker">参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-top:16px; font-size:23px;">本卡片内容基于以下人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item">
+        <div class="num">1</div>
+        <div class="text">
+          <div class="title">走出符合自身实际的县域经济高质量发展之路</div>
+          <div class="meta">人民日报，2026年6月，义乌经验及县域经济处理特色与全局、城市与乡村、政府与市场、当前与长远关系</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">2</div>
+        <div class="text">
+          <div class="title">陕西苹果何以扩版图</div>
+          <div class="meta">人民日报，2026年6月，资源禀赋转化、品种气象标准化管理、冷链深加工带动33.71万人增收</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">3</div>
+        <div class="text">
+          <div class="title">毛巾出口，要过八道关</div>
+          <div class="meta">人民日报，2026年6月，高阳毛巾全过程质量标准、4200余家企业集群、配套率89%</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">4</div>
+        <div class="text">
+          <div class="title">融合农文旅 绘就新图景</div>
+          <div class="meta">人民日报，2026年6月，红安文旅客流与物流、农产品加工和品牌建设连接，红薯120余种产品</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">5</div>
+        <div class="text">
+          <div class="title">"村超"出圈 文旅出彩</div>
+          <div class="meta">人民日报，2026年6月，榕江137支球队、2694名运动员，与州内9个县市旅游联动</div>
+        </div>
+      </div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:24px; padding:20px 24px;">
+      <p style="font-size:22px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>"五动作"为教学提炼框架，非某单篇原文结构；义乌GDP、8364.99亿元进出口、33.71万人增收等数据为地方案例，不代表全国统一标准。</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+</main>
+</body>
+</html>

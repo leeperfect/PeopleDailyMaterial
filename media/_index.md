@@ -49,6 +49,7 @@
 | 2026-07-11 | 县域经济因地制宜发展 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-11-county-economy-notebooklm/` | 待上传 | `data/articles/人民日报系列/44-人民日报再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”.md`；含10页PPT原图和1张独立信息图，已生成出版登记清单 |
 
 | 2026-07-11 | 县域经济不是"小而全"，而要"特而强、融得进" | 小红书图 | `media/images/2026-07-11-county-economy-specialized-xhs/` | 待上传 | `data/xiaohongshu/44-xiaohongshu-county-economy-specialized-integrated-card-script.md`；含15张3:4小红书卡片（2160×2880），Editorial Magazine风格，暖米白×深墨蓝×编辑红，图示+真实照片混合视觉（龙脊梯田/苹果园/纺织厂/集装箱港/足球场/乡村公路/年轮，均来自Wikimedia Commons CC0/CC BY/公共领域），末页附参考文献，validate-social-deck 15/15 PASS |
+| 2026-07-11 | 县域经济特而强融得进（新版） | 小红书图 | `media/images/2026-07-11-county-economy-xhs/` | 待上传 | `data/xiaohongshu/44-xiaohongshu-county-economy-specialized-integrated-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+深靛蓝#1d4ed8，3张AI生成配图，末页参考文献） |
 
 | 2026-07-12 | 政绩考核：分类考、精准考、看长效 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-performance-assessment-notebooklm/` | 待上传 | `data/articles/人民日报系列/45-人民日报讲政绩考核：不是考得多，而是分类考、精准考、看长效.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
 
@@ -69,6 +70,7 @@
 | 2026-07-20 | 科技金融 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-tech-finance-lifecycle-notebooklm/` | 待上传 | `data/articles/人民日报系列/49-【R】人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md`；含14页PPT原图和1张独立信息图，已生成出版登记清单 |
 | 2026-07-20 | 科技金融不是多给一笔贷款 | 小红书图 | `media/images/2026-07-20-tech-finance-xhs/` | 待上传 | `data/xiaohongshu/49-xiaohongshu-tech-finance-lifecycle-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+亮蓝#00aaff，3张AI生成配图，末页参考文献） |
 | 2026-07-20 | 抓落实不能挑肥拣瘦 | 小红书图 | `media/images/2026-07-20-implementation-accountability-xhs/` | 待上传 | `data/xiaohongshu/50-xiaohongshu-implementation-accountability-results-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+政务蓝#2563eb，3张AI生成配图，末页参考文献） |
+| 2026-07-20 | 民生服务让政策主动找人 | 小红书图 | `media/images/2026-07-20-proactive-livelihood-xhs/` | 待上传 | `data/xiaohongshu/51-xiaohongshu-proactive-livelihood-service-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+天蓝#0ea5e9，3张AI生成配图，末页参考文献） |
 
 | 2026-08-17 | 票根经济：从观赛流量到城市消费链 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-08-17-ticket-stub-economy-city-consumption-chain-notebooklm/` | 待上传 | `data/articles/人民日报系列/75-【R】人民日报讲票根经济：不是赛后发优惠券，而是把赛事流量接成城市消费链.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
 
