@@ -95,6 +95,129 @@ DEFAULT_GUIDE = {
     "measure": "坚持问题导向，明确责任边界，以制度、技术和社会协同形成长效机制。",
 }
 
+# 已有热点的事件事实导语。这里不写文章来源、文章标题和统计口径，只保留
+# 能回答“到底发生了什么”的主体、行为、数据和处置结果。未来新增热点若
+# 暂无人工核定导语，则由 ``extract_event_facts`` 从正文中生成事实型导语。
+TOPIC_EVENT_FACTS = {
+    "AI应用风险与智能向善治理": (
+        "2026年暑期，AI主题研学订单同比增长370%，部分机构却把挖土、做手工、参观免费展馆包装成AI课程，"
+        "甚至以“6天创办AI公司”“速成AI神童”等话术招生。有家长花费1.5万元参加“大模型实战营”，实际内容主要是用AI生成PPT和文案。"
+        "与此同时，AI批量生成虚假测评、数字演员挤压真人岗位等现象，也使技术应用的真实性、授权边界和责任问题集中显现。"
+    ),
+    "研学回归教育与安全本位": (
+        "暑期研学市场持续升温，一些项目收费数千元甚至上万元，却存在课程与宣传不符、只游不学、用普通手工和参观活动冒充AI研学等问题。"
+        "还有机构以“自然教育”为名组织学生进山采石挖矿，造成林地破坏并带来滑坡、塌方和人身安全风险。"
+        "多地因此开始区分研学实践与普通旅游，并加强课程、收费、承办机构和安全责任管理。"
+    ),
+    "防汛救灾与涉灾谣言治理": (
+        "我国进入“七下八上”防汛关键期后，多地遭遇强降雨、洪涝和地质灾害。部分地方暴露出预警已经发布但人员转移慢、"
+        "防汛责任人不到岗、堤防巡查不细、应急通信和物资准备不足等问题；灾情发生后，虚假伤亡信息和救援谣言又干扰了公众判断。"
+        "这一系列情况把灾前预防、基层执行、抢险救援和权威信息发布同时推到公众面前。"
+    ),
+    "录取通知书回归育人本意": (
+        "兰州博文科技学院寄出的少量录取通知书把“身份证”错印为“身证份”，引发考生和家长关注。校方承认工作失误并致歉，"
+        "表示错误不影响新生报到，可免费更换通知书。类似的“录取”“报到”等低级错字此前也曾在其他高校出现，"
+        "问题由一处文字差错延伸到撰稿、校对、印刷和寄送环节是否真正履行审核责任。"
+    ),
+    "世界杯中的体育精神与人文价值": (
+        "2026年美加墨世界杯结束后，冠军球队球员佩德里来到苏州，在3万余名球迷见证下把世界杯比赛用球传递给江苏城市足球联赛球员。"
+        "本届赛事还出现3500多万人次参与AI预测、全球71个国家和地区的449家俱乐部输送参赛球员等现象。"
+        "赛场内外的故事把足球青训、职业体系、科技参与和尊重对手等议题连在了一起。"
+    ),
+    "理解中国发展与世界机遇": (
+        "一些西方政客和媒体把中国人工智能、新能源汽车、光伏和高端装备产业的发展描述成所谓“中国冲击2.0”。"
+        "但当年上半年中国货物贸易进口达到10.74万亿元，首次在历史同期突破10万亿元，同比增长22.1%，进口增速高于出口；"
+        "中国发展高层论坛、夏季达沃斯和链博会期间，多国企业继续来华寻求合作，形成了与“单向输出”叙事不同的现实图景。"
+    ),
+    "正确政绩观与主动治理": (
+        "上海老城区居民长期面临没有独立卫生设施、需要手拎马桶穿行弄堂的生活难题。经过30多年持续改造，2025年最后1.4万余户改造任务提前完成，"
+        "这项涉及上百万居民的民生工程告一段落。与此同时，多地也在通过接诉即办、未诉先办和类案治理，把群众反复反映的小事转化为主动治理项目。"
+    ),
+    "历史正义与日本军事化警示": (
+        "日本防卫大臣公开宣称应当毫无禁忌地讨论核武器相关政策，引发日本国内和国际社会警惕。近年来，日本政界还多次讨论修改“无核三原则”、"
+        "发展核动力潜艇和所谓“核共享”，并持续扩大军事能力。相关动向与南京大屠杀、慰安妇等历史事实遭到淡化甚至篡改的现象交织，"
+        "使日本能否正视侵略历史、是否突破战后秩序再次成为焦点。"
+    ),
+    "儿童网络保护与童年流量化治理": (
+        "短视频平台上，一些账号把儿童吃播、猎奇整蛊、冲突剧情和“儿童情侣人设”当作吸粉带货工具，甚至出现3岁儿童因长期拍摄吃播体重达到70斤的情况。"
+        "图书市场上，包装成漫画故事的成功学、狼性竞争类“伪童书”又进入少儿畅销榜。"
+        "儿童的肖像、隐私、健康和精神成长由此被同时卷入流量变现链条。"
+    ),
+    "文化遗产传承与公共创意边界": (
+        "路易威登诉茉莉奶白商标侵权案一审宣判，茉莉奶白被判赔偿1030万元。争议图案与路易威登已注册的四叶花商标相似，"
+        "但不少网友指出，这类构图与中国已有千年历史的柿蒂纹、宝相花纹也高度接近。案件由商业标识是否构成侵权，"
+        "进一步引出了传统纹样属于谁、公共文化母题如何被现代品牌使用的问题。"
+    ),
+    "AI深度合成与人格权保护": (
+        "有配音从业者发现自己的声音被大量用于AI配音视频，相关播放量超过1亿次，真实作品反而被平台误判限流。"
+        "电商平台上，花1.98元即可购买永久克隆他人声音的服务，不到100元就能定制明星AI仿冒推广视频。"
+        "低成本换脸、拟声和数字替身，使普通人和公众人物都可能在不知情的情况下“被出镜”“被发声”“被代言”。"
+    ),
+    "新就业群体服务驿站提质": (
+        "多地为快递员、外卖骑手等户外劳动者建设服务驿站，但近期调查发现，部分驿站出现建成后少有人用的情况。"
+        "有的站点偏离骑手日常路线，有的开放时间与劳动者休息时间错位，有的只有饮水、充电等单一功能，"
+        "还有站点被其他人员长期占用。原本用于解决休息难、充电难的民生设施，因供需错配陷入“建时热、用时冷”。"
+    ),
+    "流量逐利与虚假内容治理": (
+        "河南焦作两名人员自编自演“单亲妈妈带娃送外卖”等苦情视频，累计发布虚假内容90余条，转评赞超过千万，最终被依法处罚。"
+        "湖南汨罗另有人员为吸粉牟利，多次摆拍“女子被关铁笼游街”等低俗场景，策划者被刑事拘留、8名参与者被行政拘留。"
+        "这些案件显示，虚构身份、制造冲突、吸粉带货已经形成可以复制的流量变现路径。"
+    ),
+    "银发群体数字融入": (
+        "一名88岁老人手机中累计出现77万余条未读消息，家属清理后很快又新增3万余条。近三年，她添加了约1200个企业微信账号，"
+        "一年内被拉入1900多个群聊，内容主要是短剧推广和保健品营销。由于小型群聊可以在未经本人确认的情况下拉人，"
+        "不少老年人被海量信息包围，并面临诱导消费和诈骗风险。"
+    ),
+    "高考志愿填报治理": (
+        "高考成绩和录取分数线公布后，各类志愿填报机构、网红咨询师和AI填报工具集中涌入市场。部分所谓规划师仅经过短期培训，"
+        "却以“精准规划”“稳录名校”等承诺收取高额费用；一些机构为了制造成功案例，或一味保守填报，或鼓动考生盲目冲刺。"
+        "与此同时，困境家庭考生因缺少信息和家庭支持，更容易在复杂规则面前失去选择机会。"
+    ),
+    "自动续费与隐性扣款治理": (
+        "北京市市场监管部门查处了一起利用“低价试用+隐形捆绑”侵害消费者权益的案件。涉事平台把“7天试用期满后自动转为每月25元会员”"
+        "写成接近背景色的灰色小字，消费者不易发现，平台随后被责令整改并罚款。类似服务普遍存在开通容易、提醒隐蔽、取消入口难找和扣费后退款困难等问题。"
+    ),
+    "诋毁袁隆平与无底线流量": (
+        "沈阳警方通报，一名拥有200多万粉丝的农业网红恶意曲解杂交水稻技术，诋毁袁隆平院士科研成果，已被刑事拘留。"
+        "该账号把水稻“雄性不育”歪曲成食用杂交水稻会导致人体不孕不育，并借“保卫老种子”之名销售商品，橱窗销量一度达到12万单。"
+        "这起案件揭开了以伪科普制造恐慌、再通过带货获利的操作链条。"
+    ),
+    "中国制造出海与创新竞争力": (
+        "欧洲遭遇高温天气后，中国生产的移动分体式空调、手持风扇和便携制冰机销量快速增长，部分空调甚至出现二手价格高于新机的情况。"
+        "当年1至5月，中国对法国、荷兰和比利时的空调出口额同比均实现翻倍增长。"
+        "无需打孔、便于安装、节能降噪等针对当地住房条件的设计，是这些产品迅速走红的重要原因。"
+    ),
+    "开屏广告与数字界面减负": (
+        "多名用户发现百度地图、高德地图等应用取消了开屏广告，“开屏广告没了”随之成为热议话题。对20款常用购物、社交应用的测试显示，"
+        "14款打开后可以直接进入主页，仍有6款保留开屏广告。此前，虚假倒计时、极小关闭按钮和高灵敏度“摇一摇”广告频繁造成误触，"
+        "有关部门已要求企业自查整改。"
+    ),
+    "灭火器纸面维保治理": (
+        "调查发现，一些网店可以按需制作灭火器维修合格证，单张售价低至6角；部分维修商只擦拭外观、粘贴标签，"
+        "没有进行压力测试、药剂称重和筒体强度校验等必要工序。贴着“合格证”的灭火器可能并不具备正常灭火能力，"
+        "这类“纸面维保”已形成制假售假与逃避检测的链条。"
+    ),
+    "粮食安全与农业现代化": (
+        "《加快农业农村现代化“十五五”规划》提出，要推动把农业建成现代化大产业。我国粮食年产量已经连续两年超过1.4万亿斤，"
+        "农产品加工业年营业收入达到18万亿元，并形成国家级优势特色产业集群、农业产业强镇和现代农业产业园。"
+        "当前关注点已经从单纯增加产量，延伸到科技装备、精深加工、资源节约和全产业链增值。"
+    ),
+    "停车计费规则透明化": (
+        "“停车61分钟按2小时收费”等向上取整规则长期引发车主不满。上海公布道路停车收费优化方案征求意见，拟对同一路段15分钟以内停车免费，"
+        "每辆车每天可享受两次短时免费，并把夜间按次收费调整为按时计费、设置封顶。杭州、南昌、长沙等地也在推进按分钟计费、延长免费时段等改革。"
+    ),
+    "营商环境与市场秩序": (
+        "一名西安货车司机有1000多元运费被长期拖欠，途经浙江嘉兴时报警求助。在民警和街道工作人员督办下，欠款约10分钟便到账，"
+        "相关视频随后走红。与此同时，多地通过“综合查一次”“扫码入企”等方式减少重复涉企检查，"
+        "把劳动者权益保护和企业正常经营共同纳入营商环境评价。"
+    ),
+    "教师减负落地": (
+        "有地方在发生学生周末打架事件后，要求学校每天安排两名教师到街道、网吧和台球厅附近巡逻。"
+        "本应由多部门共同承担的社会治理任务被转嫁给一线教师，与进校园事项过多、填表留痕和迎检陪同等负担叠加，"
+        "挤占了教师备课、教学和休息时间，也暴露出教师减负要求在基层执行中仍存在落差。"
+    ),
+}
+
 CATEGORY_DEEP_ANALYSIS = {
     "城市治理与公共服务": {
         "问题": "群众感受往往集中在收费、流程、设施和服务细节上，小问题背后反映的是治理是否精细、规则是否透明。",
@@ -698,44 +821,101 @@ def build_media_viewpoints(app_articles: Sequence[dict[str, Any]]) -> list[dict[
     return viewpoints
 
 
+def clean_event_sentence(value: Any) -> str:
+    """Remove layout/source debris while preserving the factual sentence."""
+    sentence = clean_text(value)
+    sentence = re.sub(r"^[‍‌\u200b\ufeff]+", "", sentence)
+    sentence = re.sub(r"^(?:据[^，。]{2,24}(?:报道|调查|消息)[，,])", "", sentence)
+    sentence = re.sub(r"(?:图片来源|图源)[:：][^。！？；]*", "", sentence)
+    sentence = re.sub(r"^[一二三四五六七八九十]+\s*$", "", sentence)
+    return clean_text(sentence)
+
+
+def event_sentence_score(sentence: str) -> int:
+    """Prefer concrete event facts over judgments, slogans and rhetorical questions."""
+    score = 0
+    if re.search(r"\d|%|％|万|亿|元|条|人次|户|家|次", sentence):
+        score += 5
+    if any(word in sentence for word in (
+        "通报", "查处", "判决", "宣判", "回应", "发布", "印发", "出台", "整改",
+        "处罚", "拘留", "立案", "下架", "取消", "完成", "公开征求意见",
+    )):
+        score += 4
+    if any(word in sentence for word in ("近日", "近期", "今年", "暑期", "日前", "当前", "当年", "上半年")):
+        score += 3
+    if any(word in sentence for word in (
+        "发生", "出现", "引发", "曝光", "走红", "收到", "误将", "成为", "遭遇", "发现", "推出",
+    )):
+        score += 2
+    if any(word in sentence for word in (
+        "警方", "法院", "学校", "校方", "平台", "机构", "企业", "家长", "学生", "教师", "老人", "司机", "部门",
+    )):
+        score += 2
+    if "？" in sentence or any(word in sentence for word in ("应该", "需要", "必须", "不妨", "期待", "关键在于")):
+        score -= 3
+    if any(word in sentence for word in ("图源", "图片来源", "责任编辑", "本文作者", "原标题")):
+        score -= 8
+    return score
+
+
+def extract_event_facts(app_articles: Sequence[dict[str, Any]], limit_chars: int = 220) -> str:
+    """Extract a compact who-did-what lead for future topics without a curated lead."""
+    candidates: list[tuple[int, int, int, str, str]] = []
+    rows = sorted(app_articles, key=lambda row: row.get("date", ""), reverse=True)
+    for article_index, article in enumerate(rows[:8]):
+        title = clean_text(article.get("title"))
+        article_id = str(article.get("article_id") or article_index)
+        for sentence_index, raw_sentence in enumerate(split_sentences(article.get("content", ""))[:24]):
+            sentence = clean_event_sentence(raw_sentence)
+            if not 18 <= len(sentence) <= 170 or sentence == title or title in sentence:
+                continue
+            score = event_sentence_score(sentence)
+            if score >= 2:
+                candidates.append((score, -article_index, -sentence_index, article_id, sentence))
+
+    candidates.sort(reverse=True)
+    selected: list[str] = []
+    used_articles: Counter[str] = Counter()
+    normalized_seen: set[str] = set()
+    for _score, _article_order, _sentence_order, article_id, sentence in candidates:
+        normalized = re.sub(r"[^\w\u4e00-\u9fff]", "", sentence)
+        if any(normalized in old or old in normalized for old in normalized_seen):
+            continue
+        if used_articles[article_id] >= 2:
+            continue
+        if selected and len("".join(selected)) + len(sentence) > limit_chars:
+            continue
+        selected.append(sentence)
+        normalized_seen.add(normalized)
+        used_articles[article_id] += 1
+        if len(selected) >= 3 or len("".join(selected)) >= limit_chars - 30:
+            break
+
+    if selected:
+        return "".join(selected)
+    for article in rows:
+        sentences = split_sentences(article.get("content", ""))
+        if sentences:
+            return clip(clean_event_sentence(sentences[0]), limit_chars)
+    return ""
+
+
 def build_news_overview(topic: dict[str, Any], app_articles: list[dict[str, Any]]) -> str:
-    """Create a source-bounded introduction of roughly 300 Chinese characters."""
+    """Explain what happened first; keep source metadata in the later source sections."""
     guide = CATEGORY_GUIDES.get(topic.get("category"), DEFAULT_GUIDE)
     angle = clean_text(topic.get("angle")).rstrip("。！？；")
-    representatives: list[dict[str, Any]] = []
-    seen_sources: set[str] = set()
-    for article in sorted(app_articles, key=lambda row: row.get("date", ""), reverse=True):
-        source = clean_text(article.get("source_name") or article.get("source") or "人民日报APP")
-        if source in seen_sources and len(representatives) < 2:
-            continue
-        seen_sources.add(source)
-        representatives.append(article)
-        if len(representatives) == 2:
-            break
-    if len(representatives) < 2:
-        for article in sorted(app_articles, key=lambda row: row.get("date", ""), reverse=True):
-            if article not in representatives:
-                representatives.append(article)
-            if len(representatives) == 2:
-                break
+    event_facts = TOPIC_EVENT_FACTS.get(clean_text(topic.get("topic"))) or extract_event_facts(app_articles)
+    if not event_facts:
+        event_facts = f"围绕{clean_text(topic.get('topic'))}，近期出现了需要持续关注的公共事件和治理现象。"
 
-    reports = "；".join(
-        f"{clean_text(item.get('source_name') or item.get('source') or '人民日报APP')}围绕"
-        f"《{clip(item.get('title'), 30)}》展开评论"
-        for item in representatives
+    overview = (
+        f"{event_facts.rstrip('。！？；')}。"
+        f"当前争议的核心是：{angle}。"
+        f"其背后还涉及{guide['cause'].rstrip('。！？；')}，"
+        f"相关问题{guide['impact'].rstrip('。！？；')}。"
+        "因此，需要在讲清事件事实的基础上，进一步厘清相关主体的责任、现行规则的边界以及后续处置方向。"
     )
-    if not reports:
-        reports = "已收录评论围绕事件经过、社会影响和治理责任展开讨论"
-
-    return (
-        f"“{clean_text(topic.get('topic'))}”是{topic.get('start_date', '')}至{topic.get('end_date', '')}期间形成的热点议题。"
-        f"本地人民日报APP评论库共归集{topic.get('article_count', 0)}篇相关文章，涉及"
-        f"{topic.get('media_count', 0)}家媒体。已收录报道的主要内容包括：{reports}。"
-        f"综合这些材料，新闻关注点可以概括为：{angle}。"
-        f"讨论并不只停留在个别现象本身，还涉及{guide['cause'].rstrip('。！？；')}。"
-        f"由此带来的影响是，{guide['impact'].rstrip('。！？；')}。"
-        "理解这一热点，需要区分已经发生的事实、媒体提出的判断和后续治理主张。"
-    )
+    return clip(overview, 420)
 
 
 def build_detailed_analysis(

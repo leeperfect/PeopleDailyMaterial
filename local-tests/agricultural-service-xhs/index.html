@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>农业社会化服务 · 小红书卡片</title>
+<style>
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');
+  font-weight: 500; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');
+  font-weight: 900; font-display: swap;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:#000; --bg-elevated:#0c140e; --text:#fff;
+  --text-secondary:rgba(255,255,255,.70); --text-muted:rgba(255,255,255,.46);
+  --rule:rgba(255,255,255,.16); --accent:#00c853; --accent-text:#000;
+  --font:'Alibaba PuHuiTi','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;
+}
+body { background:#1a1a1a; font-family:var(--font); -webkit-font-smoothing:antialiased; }
+main.sheet { display:flex; flex-direction:column; align-items:center; gap:40px; padding:40px 0; }
+.poster { position:relative; overflow:hidden; background:var(--bg); color:var(--text); font-family:var(--font); }
+.poster.xhs { width:1080px; height:1440px; }
+.bg-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+.overlay-full { position:absolute; inset:0; z-index:1; background:rgba(0,0,0,.58); }
+.overlay-bottom { position:absolute; inset:0; z-index:1; background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.50) 30%,transparent 55%); }
+.content { position:absolute; z-index:2; inset:0; padding:80px 80px 116px; display:flex; flex-direction:column; }
+.kicker { font-size:22px; font-weight:500; letter-spacing:3px; color:var(--accent); margin-bottom:32px; text-transform:uppercase; }
+.hero { font-size:84px; font-weight:900; line-height:1.15; letter-spacing:-1px; color:var(--text); }
+.h2 { font-size:64px; font-weight:700; line-height:1.22; color:var(--text); }
+.lead { font-size:30px; font-weight:500; line-height:1.5; color:var(--text); margin-top:20px; }
+.body { font-size:28px; font-weight:400; line-height:1.6; color:var(--text-secondary); }
+.caption { font-size:20px; font-weight:500; line-height:1.5; color:var(--text-muted); }
+.rule { width:100%; height:2px; background:var(--rule); }
+.page-foot { position:absolute; bottom:40px; left:80px; right:80px; z-index:3; display:flex; justify-content:space-between; font-size:18px; font-weight:500; color:var(--text-muted); letter-spacing:1px; }
+
+/* Key sentence */
+.key-sentence { margin-top:auto; padding:28px 32px; border-left:6px solid var(--accent); background:rgba(0,200,83,.12); }
+.key-sentence p { font-size:28px; font-weight:700; line-height:1.5; color:var(--text); }
+
+/* Step list */
+.step-list { display:flex; flex-direction:column; gap:24px; margin-top:36px; }
+.step-row { display:flex; gap:24px; align-items:flex-start; }
+.step-num { font-size:38px; font-weight:900; color:var(--accent); line-height:1.1; min-width:64px; }
+.step-title { font-size:30px; font-weight:700; color:var(--text); line-height:1.3; }
+.step-desc { font-size:26px; font-weight:400; color:var(--text-secondary); line-height:1.45; margin-top:4px; }
+
+/* Callout */
+.callout { margin-top:32px; padding:28px 32px; background:var(--bg-elevated); border-radius:4px; }
+.callout p { font-size:26px; font-weight:500; color:var(--text-secondary); line-height:1.5; }
+.callout strong { color:var(--text); font-weight:700; }
+
+/* Data stat row */
+.stat-row { display:flex; gap:32px; margin-top:36px; }
+.stat-item { flex:1; }
+.stat-num { font-size:72px; font-weight:900; color:var(--accent); line-height:1; }
+.stat-label { font-size:22px; font-weight:500; color:var(--text-secondary); margin-top:8px; line-height:1.35; }
+
+/* Tag list */
+.tag-list { display:flex; flex-direction:column; gap:16px; margin-top:36px; }
+.tag-row { display:flex; align-items:center; gap:20px; padding:22px 26px; background:var(--bg-elevated); }
+.tag-label { font-size:26px; font-weight:700; color:var(--accent); min-width:130px; }
+.tag-text { font-size:26px; font-weight:400; color:var(--text); }
+
+/* Formula chain */
+.formula-chain { display:flex; align-items:center; gap:0; margin-top:36px; flex-wrap:wrap; justify-content:center; }
+.formula-step { display:flex; flex-direction:column; align-items:center; padding:16px 4px; flex:1; min-width:0; }
+.formula-num { font-size:48px; font-weight:900; color:var(--accent); line-height:1; }
+.formula-label { font-size:24px; font-weight:700; color:var(--text); margin-top:8px; text-align:center; line-height:1.25; }
+.formula-arrow { display:flex; align-items:center; color:var(--text-muted); font-size:24px; font-weight:700; padding:0 2px; }
+
+/* Formula desc list */
+.formula-desc { display:flex; flex-direction:column; gap:0; margin-top:36px; }
+.formula-desc-row { display:flex; align-items:baseline; gap:18px; padding:18px 0; border-bottom:1px solid var(--rule); }
+.formula-desc-row:last-child { border-bottom:none; }
+.formula-desc-tag { font-size:26px; font-weight:700; color:var(--accent); min-width:130px; }
+.formula-desc-text { font-size:26px; font-weight:400; color:var(--text-secondary); }
+
+/* Watermark */
+.watermark { position:absolute; z-index:1; font-size:480px; font-weight:900; color:var(--text); opacity:.04; line-height:1; pointer-events:none; user-select:none; }
+.watermark.accent { color:var(--accent); opacity:.08; }
+
+/* CTA */
+.cta { margin-top:28px; text-align:center; }
+.cta p { font-size:24px; font-weight:500; color:var(--text-muted); letter-spacing:2px; }
+
+/* Reference list */
+.ref-list { display:flex; flex-direction:column; gap:20px; margin-top:32px; }
+.ref-item { padding:18px 24px; background:var(--bg-elevated); border-left:4px solid var(--accent); }
+.ref-num { font-size:20px; font-weight:700; color:var(--accent); }
+.ref-title { font-size:24px; font-weight:700; color:var(--text); margin-top:4px; line-height:1.35; }
+.ref-meta { font-size:20px; font-weight:400; color:var(--text-muted); margin-top:4px; }
+
+/* Two-column */
+.col-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:36px; }
+.col-card { padding:24px; background:var(--bg-elevated); }
+.col-card h4 { font-size:26px; font-weight:700; color:var(--accent); margin-bottom:12px; }
+.col-card p { font-size:24px; font-weight:400; color:var(--text-secondary); line-height:1.45; }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <!-- ========== P01 封面 ========== -->
+  <section class="poster xhs" id="xhs-01">
+    <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+    <div class="overlay-bottom"></div>
+    <div class="content" style="justify-content:flex-end;">
+      <p class="kicker">人民日报 · 农业社会化服务</p>
+      <h1 class="hero">土地托管<br>不是把地"交出去"</h1>
+      <p class="lead">人民日报讲透农业社会化服务的边界、技术和收益</p>
+      <div class="key-sentence" style="margin-top:32px;">
+        <p>让小农户接上现代农业，不等于让农户退出经营。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 01 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P02 难题页 ========== -->
+  <section class="poster xhs" id="xhs-02">
+    <div class="watermark accent" style="right:20px; bottom:140px; font-size:440px;">缺</div>
+    <div class="content">
+      <p class="kicker">先识别难题</p>
+      <h2 class="h2">不是不勤劳<br>是有些事一家一户做不划算</h2>
+      <div class="step-list" style="gap:20px; margin-top:32px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:32px; min-width:90px;">干不了</span>
+          <div><p class="step-desc" style="font-size:24px;">大型农机买不起也用不满，烘干仓储、植保防疫难以独立承担</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:32px; min-width:90px;">干不好</span>
+          <div><p class="step-desc" style="font-size:24px;">新品种、新农机、新技术都有应用条件，不同土壤气候方案不同</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:32px; min-width:90px;">不经济</span>
+          <div><p class="step-desc" style="font-size:24px;">分散采购议价弱，单独对接市场交易成本高，农机闲置成本大</p></div>
+        </div>
+      </div>
+      <div class="callout">
+        <p>小农户需要的不是退出生产，而是获得<strong>共享装备、技术服务、生产标准、加工市场</strong>四项过去只有规模主体才能稳定使用的能力。</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat-item">
+          <p class="stat-num">491<span style="font-size:28px;">个</span></p>
+          <p class="stat-label">梨树县服务组织</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-num">47.8<span style="font-size:28px;">万亩</span></p>
+          <p class="stat-label">服务面积</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-num">1.9<span style="font-size:28px;">万户</span></p>
+          <p class="stat-label">服务小农户</p>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>要破解"干不了、干不好、干得不经济"。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 02 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P03 边界页 ========== -->
+  <section class="poster xhs" id="xhs-03">
+    <div class="watermark accent" style="right:20px; bottom:140px; font-size:440px;">界</div>
+    <div class="content">
+      <p class="kicker">守住边界</p>
+      <h2 class="h2">托管的是服务<br>不是土地权益</h2>
+      <p class="body" style="margin-top:28px;">土地流转涉及经营权主体变化；生产托管则是农户在<strong style="color:var(--text);">不流转土地经营权</strong>的前提下，委托服务组织完成部分或全部生产作业。</p>
+      <div class="callout">
+        <p>农户保留土地权益，决定<strong style="color:var(--text);">是否托管、托管哪些环节、选择哪家服务组织</strong>。服务组织按合同完成耕、种、防、收等作业。</p>
+      </div>
+      <p class="body" style="margin-top:24px; font-size:24px; color:var(--text-muted);">推广托管至少要把五件事写进合同：</p>
+      <div class="tag-list" style="gap:12px; margin-top:16px;">
+        <div class="tag-row" style="padding:16px 22px;"><span class="tag-label" style="font-size:24px; min-width:100px;">服务范围</span><span class="tag-text" style="font-size:24px;">单环节代耕代收，还是全程托管</span></div>
+        <div class="tag-row" style="padding:16px 22px;"><span class="tag-label" style="font-size:24px; min-width:100px;">价格标准</span><span class="tag-text" style="font-size:24px;">费用如何计算，是否有额外收费</span></div>
+        <div class="tag-row" style="padding:16px 22px;"><span class="tag-label" style="font-size:24px; min-width:100px;">质量要求</span><span class="tag-text" style="font-size:24px;">农资、作业时间和技术标准约定</span></div>
+        <div class="tag-row" style="padding:16px 22px;"><span class="tag-label" style="font-size:24px; min-width:100px;">责任承担</span><span class="tag-text" style="font-size:24px;">服务不到位造成损失如何认定</span></div>
+        <div class="tag-row" style="padding:16px 22px;"><span class="tag-label" style="font-size:24px; min-width:100px;">选择退出</span><span class="tag-text" style="font-size:24px;">能否变更服务或终止委托</span></div>
+      </div>
+      <div class="key-sentence">
+        <p>专业的人替你干专业的活，但不能替你作主。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 03 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P04 模式页 ========== -->
+  <section class="poster xhs" id="xhs-04">
+    <div class="watermark" style="right:30px; bottom:140px; font-size:400px;">统</div>
+    <div class="content">
+      <p class="kicker">梨树案例 · "双保全统"</p>
+      <h2 class="h2">双保管结果<br>全统管过程</h2>
+      <div class="col-2" style="margin-top:32px;">
+        <div class="col-card">
+          <h4>双保 · 管结果</h4>
+          <p>托管费用<strong style="color:var(--text);">不高于</strong>农户自己种植所需费用</p>
+          <p style="margin-top:10px;">产量<strong style="color:var(--text);">不低于</strong>邻近同等地力地块</p>
+        </div>
+        <div class="col-card">
+          <h4>全统 · 管过程</h4>
+          <p>统一生产资料、种植方式</p>
+          <p style="margin-top:10px;">统一播种、田间管理和收获</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p>这里的"统一"，指服务组织按约定提供<strong style="color:var(--text);">标准化作业</strong>，并不改变土地权益。作业内容、费用和保障写得越清楚，农户越明白自己买了什么。</p>
+      </div>
+      <p class="body" style="margin-top:24px; font-size:24px;">边界越清楚，农户越敢托；合同越规范，服务组织也越能稳定经营。</p>
+      <div class="key-sentence">
+        <p>统一的是服务标准，不是把土地权益拿走。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 04 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P05 技术页 ========== -->
+  <section class="poster xhs" id="xhs-05">
+    <div class="watermark accent" style="right:20px; bottom:140px; font-size:440px;">桥</div>
+    <div class="content">
+      <p class="kicker">技术要搭桥</p>
+      <h2 class="h2">实验室成果<br>不能直接复制到每块田</h2>
+      <div class="step-list" style="gap:20px; margin-top:32px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:32px; min-width:90px;">地形</span>
+          <div><p class="step-desc" style="font-size:24px;">平原农机到了丘陵可能下不了田</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:32px; min-width:90px;">品种</span>
+          <div><p class="step-desc" style="font-size:24px;">好品种遇到不同气候可能水土不服</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:32px; min-width:90px;">防疫</span>
+          <div><p class="step-desc" style="font-size:24px;">方案农户看不懂也无法独立执行</p></div>
+        </div>
+      </div>
+      <div class="formula-chain" style="margin-top:32px;">
+        <div class="formula-step"><span class="formula-label" style="font-size:22px;">田间诊断</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-label" style="font-size:22px;">试验示范</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-label" style="font-size:22px;">改造适配</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-label" style="font-size:22px;">培训推广</span></div>
+      </div>
+      <div class="callout">
+        <p>技术下沉不是单向输出，而是<strong style="color:var(--text);">田间问题上行、科研成果下行</strong>，再在生产中反复迭代。</p>
+      </div>
+      <div class="key-sentence">
+        <p>技术先进性，要经过生产适配性检验。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 05 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P06 案例页 ========== -->
+  <section class="poster xhs" id="xhs-06">
+    <img class="bg-img" src="assets/machinery.jpg" alt="" style="object-position:center 50%">
+    <div class="overlay-full"></div>
+    <div class="content">
+      <p class="kicker">案例 · 宣汉深泥脚田</p>
+      <h2 class="h2">一台插秧机<br>为什么改了三代</h2>
+      <div class="step-list" style="gap:16px; margin-top:28px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:30px; min-width:80px;">第一代</span>
+          <div><p class="step-desc" style="font-size:24px; color:rgba(255,255,255,.8);">效率低、耗人力，深泥田根本走不动</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:30px; min-width:80px;">第二代</span>
+          <div><p class="step-desc" style="font-size:24px; color:rgba(255,255,255,.8);">仍易侧翻下陷，农技人员把需求带回科研院所</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:30px; min-width:80px;">第三代</span>
+          <div><p class="step-desc" style="font-size:24px; color:rgba(255,255,255,.8);">支持遥控和乘坐，适配深泥脚田</p></div>
+        </div>
+      </div>
+      <div class="stat-row" style="margin-top:32px;">
+        <div class="stat-item">
+          <p class="stat-num">20<span style="font-size:28px;">台套</span></p>
+          <p class="stat-label">已推广</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-num">5800<span style="font-size:28px;">余亩</span></p>
+          <p class="stat-label">宣汉插秧面积</p>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>问题从田里来，技术改好后还要回田里验证。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 06 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P07 链条页 ========== -->
+  <section class="poster xhs" id="xhs-07">
+    <div class="watermark accent" style="right:20px; bottom:140px; font-size:440px;">链</div>
+    <div class="content">
+      <p class="kicker">完整服务链</p>
+      <h2 class="h2">服务不能只到"收割"</h2>
+      <div class="formula-chain" style="margin-top:32px;">
+        <div class="formula-step"><span class="formula-num" style="font-size:40px;">01</span><span class="formula-label" style="font-size:22px;">产前</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num" style="font-size:40px;">02</span><span class="formula-label" style="font-size:22px;">产中</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num" style="font-size:40px;">03</span><span class="formula-label" style="font-size:22px;">产后</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num" style="font-size:40px;">04</span><span class="formula-label" style="font-size:22px;">全程</span></div>
+      </div>
+      <div class="col-2" style="grid-template-columns:1fr 1fr; gap:16px; margin-top:28px;">
+        <div class="col-card" style="padding:20px;">
+          <h4 style="font-size:24px;">产前</h4>
+          <p style="font-size:22px;">品种选择、农资采购、种植方案</p>
+        </div>
+        <div class="col-card" style="padding:20px;">
+          <h4 style="font-size:24px;">产中</h4>
+          <p style="font-size:22px;">农机作业、植保防疫、水肥管理</p>
+        </div>
+        <div class="col-card" style="padding:20px;">
+          <h4 style="font-size:24px;">产后</h4>
+          <p style="font-size:22px;">烘干仓储、加工检测、品牌销售</p>
+        </div>
+        <div class="col-card" style="padding:20px;">
+          <h4 style="font-size:24px;">全程</h4>
+          <p style="font-size:22px;">技术培训、灾害预警、标准服务</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p>服务组织的价值不只是替农户完成某项劳动，更在于<strong style="color:var(--text);">组织一家一户难以独立配置的现代要素</strong>。</p>
+      </div>
+      <div class="key-sentence">
+        <p>增产能不能变增收，取决于后半条产业链。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 07 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P08 产前产中 ========== -->
+  <section class="poster xhs" id="xhs-08">
+    <div class="watermark accent" style="right:20px; bottom:140px; font-size:440px;">耕</div>
+    <div class="content">
+      <p class="kicker">服务链 · 产前与产中</p>
+      <h2 class="h2">从选种到田管<br>每个环节都可以托管</h2>
+      <div class="step-list" style="gap:18px; margin-top:28px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:30px; min-width:80px;">选种</span>
+          <div><p class="step-desc" style="font-size:24px;">根据土壤、气候和市场需求推荐适配品种，避免盲目跟风</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:30px; min-width:80px;">农资</span>
+          <div><p class="step-desc" style="font-size:24px;">集中采购种子、化肥、农药，降低单户成本，保证质量可追溯</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:30px; min-width:80px;">耕种</span>
+          <div><p class="step-desc" style="font-size:24px;">大型农机统一耕整地、播种，作业标准一致，效率远高于单户</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:30px; min-width:80px;">田管</span>
+          <div><p class="step-desc" style="font-size:24px;">植保无人机统防统治，水肥精准管理，灾害预警及时响应</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:30px; min-width:80px;">收获</span>
+          <div><p class="step-desc" style="font-size:24px;">联合收割机统一收获，减少损耗，抢抓农时避免天气风险</p></div>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>菜单式选择：农户可以只托一个环节，也可以全程托管。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 08 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P09 产后服务 ========== -->
+  <section class="poster xhs" id="xhs-09">
+    <img class="bg-img" src="assets/warehouse.jpg" alt="" style="object-position:center 50%">
+    <div class="overlay-full"></div>
+    <div class="content">
+      <p class="kicker">服务链 · 产后</p>
+      <h2 class="h2">丰收之后<br>才是增收的关键</h2>
+      <div class="step-list" style="gap:16px; margin-top:28px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:28px; min-width:70px;">烘干</span>
+          <div><p class="step-desc" style="font-size:24px; color:rgba(255,255,255,.8);">集中烘干避免霉变，减少靠天吃饭的损失</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:28px; min-width:70px;">仓储</span>
+          <div><p class="step-desc" style="font-size:24px; color:rgba(255,255,255,.8);">标准化粮仓存储，错峰销售卖出更好价格</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:28px; min-width:70px;">加工</span>
+          <div><p class="step-desc" style="font-size:24px; color:rgba(255,255,255,.8);">初加工和精深加工，提高农产品附加值</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:28px; min-width:70px;">检测</span>
+          <div><p class="step-desc" style="font-size:24px; color:rgba(255,255,255,.8);">质量检测和品牌认证，让好产品卖出好价钱</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:28px; min-width:70px;">销售</span>
+          <div><p class="step-desc" style="font-size:24px; color:rgba(255,255,255,.8);">统一对接加工企业和市场，增强议价能力</p></div>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>专业化服务的目的，是扩大农户的能力边界。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 09 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P10 两笔账 ========== -->
+  <section class="poster xhs" id="xhs-10">
+    <div class="watermark accent" style="right:20px; bottom:140px; font-size:440px;">账</div>
+    <div class="content">
+      <p class="kicker">利益检验 · 梨树案例</p>
+      <h2 class="h2">既算农户账<br>也算服务账</h2>
+      <div class="col-2" style="margin-top:28px;">
+        <div class="col-card">
+          <h4>农户账</h4>
+          <p style="font-size:22px;">每亩托管费<strong style="color:var(--text);">不到500元</strong></p>
+          <p style="font-size:22px; margin-top:8px;">每亩还能<strong style="color:var(--text);">多挣300元</strong></p>
+          <p style="font-size:22px; margin-top:8px;">专用免耕播种机每亩<strong style="color:var(--text);">节省80元</strong></p>
+        </div>
+        <div class="col-card">
+          <h4>服务账</h4>
+          <p style="font-size:22px;">合作社农资成本<strong style="color:var(--text);">降低约5%</strong></p>
+          <p style="font-size:22px; margin-top:8px;">托管地平均<strong style="color:var(--text);">增产约10%</strong></p>
+          <p style="font-size:22px; margin-top:8px;">规模作业摊薄设备闲置成本</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p>农户节本增效，服务组织稳定经营——<strong style="color:var(--text);">两笔账都算得过来，合作才能持续</strong>。如果只有一方受益，模式不可能长久。</p>
+      </div>
+      <p class="body" style="margin-top:20px; font-size:24px;">农业社会化服务的最终尺度，不是托管了多少亩地，而是农户有没有节本增效、经营选择是否得到尊重。</p>
+      <div class="key-sentence">
+        <p>两笔账都算得过来，合作才能持续。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 10 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P11 考场页 ========== -->
+  <section class="poster xhs" id="xhs-11">
+    <div class="watermark" style="right:30px; bottom:140px; font-size:400px;">考</div>
+    <div class="content">
+      <p class="kicker">申论 · 面试</p>
+      <h2 class="h2">农业社会化服务<br>五步公式</h2>
+      <div class="formula-desc" style="margin-top:28px;">
+        <div class="formula-desc-row"><span class="formula-desc-tag" style="font-size:24px; min-width:120px;">识别需求</span><span class="formula-desc-text" style="font-size:24px;">破解干不了、干不好、干得不经济</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag" style="font-size:24px; min-width:120px;">守住边界</span><span class="formula-desc-text" style="font-size:24px;">农户自愿、权责清晰、服务透明</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag" style="font-size:24px; min-width:120px;">技术适配</span><span class="formula-desc-text" style="font-size:24px;">田间诊断→试验改造→培训推广</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag" style="font-size:24px; min-width:120px;">拓展链条</span><span class="formula-desc-text" style="font-size:24px;">从耕种管收到加工销售全链条</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag" style="font-size:24px; min-width:120px;">保障收益</span><span class="formula-desc-text" style="font-size:24px;">农户节本增效，服务组织稳定经营</span></div>
+      </div>
+      <div class="callout">
+        <p>写对策要带上<strong style="color:var(--text);">合同、标准、价格、责任和退出机制</strong>，不能只写"成立合作社"。</p>
+      </div>
+      <div class="key-sentence">
+        <p>需求是起点，边界是前提，收益是尺度。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 11 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P12 收束页 ========== -->
+  <section class="poster xhs" id="xhs-12">
+    <div class="watermark accent" style="right:30px; bottom:140px; font-size:440px;">托</div>
+    <div class="content">
+      <p class="kicker">四问记住托管</p>
+      <h2 class="h2">谁作主？谁干活？<br>谁担风险？怎样评价？</h2>
+      <div class="formula-desc" style="margin-top:36px;">
+        <div class="formula-desc-row"><span class="formula-desc-tag">谁作主</span><span class="formula-desc-text">农户作主，保留土地权益和经营选择</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">谁干活</span><span class="formula-desc-text">服务组织干活，按合同完成专业作业</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">谁担风险</span><span class="formula-desc-text">合同分配责任，双保机制兜底结果</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">怎样评价</span><span class="formula-desc-text">农户增收和服务效率共同评价</span></div>
+      </div>
+      <div class="key-sentence">
+        <p>边界守得住、服务做得实、收益看得见，小农户才能真正接上现代农业。</p>
+      </div>
+      <div class="cta"><p>收藏 · 转发 · 申论面试直接用</p></div>
+    </div>
+    <div class="page-foot"><span>PAGE 12 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P13 参考文献 ========== -->
+  <section class="poster xhs" id="xhs-13">
+    <div class="content">
+      <p class="kicker">参考文章 · 来源</p>
+      <h2 class="h2">内容来自<br>人民日报6篇报道</h2>
+      <div class="ref-list">
+        <div class="ref-item">
+          <p class="ref-num">01</p>
+          <p class="ref-title">打通农业技术落地"最后一公里"（大数据观察）</p>
+          <p class="ref-meta">辛阳、秦瑞杰、施钰 · 2026年7月8日 · 第07版（要闻）</p>
+        </div>
+        <div class="ref-item">
+          <p class="ref-num">02</p>
+          <p class="ref-title">人才下沉 科技下乡 服务"三农"（链接）</p>
+          <p class="ref-meta">邓剑洋 · 2026年7月8日 · 第07版（要闻）</p>
+        </div>
+        <div class="ref-item">
+          <p class="ref-num">03</p>
+          <p class="ref-title">技术只有长在田里才算数</p>
+          <p class="ref-meta">李凯旋、李晓晴、刘晓宇、刘军国 · 2026年7月10日 · 第19版（新农村）</p>
+        </div>
+        <div class="ref-item">
+          <p class="ref-num">04</p>
+          <p class="ref-title">为农民当好"搭桥的人"（"三农"观察）</p>
+          <p class="ref-meta">晓熠 · 2026年7月10日 · 第19版（新农村）</p>
+        </div>
+        <div class="ref-item">
+          <p class="ref-num">05</p>
+          <p class="ref-title">从两笔账看新农事落地生根（经济新方位）</p>
+          <p class="ref-meta">邓剑洋 · 2026年7月10日 · 第02版（要闻）</p>
+        </div>
+        <div class="ref-item">
+          <p class="ref-num">06</p>
+          <p class="ref-title">完善便捷高效的农业社会化服务体系（专家点评）</p>
+          <p class="ref-meta">司伟 · 2026年7月10日 · 第02版（要闻）</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 13 / 13</span><span>LeePerfect</span></div>
+  </section>
+
+</main>
+</body>
+</html>

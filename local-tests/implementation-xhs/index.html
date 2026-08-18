@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抓落实 — 小红书卡片</title>
+<style>
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');
+  font-weight: 500; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');
+  font-weight: 900; font-display: swap;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #000000;
+  --bg-elevated: #141414;
+  --text: #ffffff;
+  --text-secondary: rgba(255,255,255,0.72);
+  --text-muted: rgba(255,255,255,0.50);
+  --rule: rgba(255,255,255,0.16);
+  --accent: #2563eb;
+  --accent-text: #ffffff;
+  --warn: #ef4444;
+  --font: 'Alibaba PuHuiTi', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+}
+
+body {
+  background: #1a1a1a;
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+main.sheet {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 40px; padding: 40px 0;
+}
+
+.poster {
+  position: relative; overflow: hidden;
+  background: var(--bg); color: var(--text); font-family: var(--font);
+}
+.poster.xhs { width: 1080px; height: 1440px; }
+
+.bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+
+.overlay-full { position: absolute; inset: 0; z-index: 1; background: rgba(0,0,0,0.60); }
+.overlay-bottom {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.50) 35%, transparent 60%);
+}
+
+.content {
+  position: absolute; z-index: 2; inset: 0;
+  padding: 88px 80px 120px;
+  display: flex; flex-direction: column;
+}
+
+.kicker {
+  font-size: 22px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
+}
+.hero { font-size: 92px; font-weight: 900; line-height: 1.12; letter-spacing: -1px; color: var(--text); }
+.h2 { font-size: 56px; font-weight: 700; line-height: 1.22; color: var(--text); }
+.lead { font-size: 32px; font-weight: 500; line-height: 1.45; color: var(--text); margin-top: 24px; }
+.body { font-size: 27px; font-weight: 400; line-height: 1.65; color: var(--text-secondary); }
+.caption { font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--text-muted); }
+.big-number { font-size: 140px; font-weight: 900; line-height: 1; color: var(--accent); letter-spacing: -4px; }
+
+.rule { width: 100%; height: 2px; background: var(--rule); }
+
+.body-list { list-style: none; margin-top: 20px; }
+.body-list li {
+  font-size: 27px; font-weight: 400; line-height: 1.6; color: var(--text);
+  padding: 10px 0 10px 32px; position: relative;
+}
+.body-list li::before {
+  content: ''; position: absolute; left: 0; top: 24px;
+  width: 10px; height: 10px; background: var(--accent); border-radius: 2px;
+}
+
+.watermark {
+  position: absolute; z-index: 1;
+  font-size: 420px; font-weight: 900; line-height: 1;
+  color: var(--accent); opacity: 0.05;
+  user-select: none; pointer-events: none;
+}
+
+.key-sentence {
+  margin-top: auto;
+  border-left: 5px solid var(--accent);
+  background: rgba(37,99,235,0.10);
+  padding: 20px 28px;
+  font-size: 26px; font-weight: 500; line-height: 1.55; color: var(--text);
+}
+
+.compare-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px;
+}
+.compare-col {
+  border: 1px solid var(--rule); padding: 32px 28px;
+}
+.compare-col h3 { font-size: 30px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+.compare-col.accent-col { border-color: var(--accent); background: rgba(37,99,235,0.08); }
+.compare-col ul { list-style: none; }
+.compare-col li { font-size: 24px; font-weight: 400; line-height: 1.6; color: var(--text-secondary); padding: 6px 0; }
+
+.step-chain { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+.step-row {
+  display: flex; align-items: flex-start; gap: 24px;
+  padding: 22px 28px; border: 1px solid var(--rule);
+}
+.step-row .num { font-size: 40px; font-weight: 900; color: var(--accent); line-height: 1; min-width: 56px; }
+.step-row .info h3 { font-size: 30px; font-weight: 700; color: var(--text); }
+.step-row .info p { font-size: 23px; font-weight: 400; color: var(--text-secondary); line-height: 1.5; margin-top: 4px; }
+
+.data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.data-card {
+  border: 1px solid var(--rule); padding: 32px 28px; min-height: 200px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.data-card .num { font-size: 64px; font-weight: 900; color: var(--accent); line-height: 1; }
+.data-card .label { font-size: 24px; font-weight: 500; color: var(--text); margin-top: 10px; }
+.data-card .desc { font-size: 20px; font-weight: 400; color: var(--text-muted); margin-top: 6px; line-height: 1.45; }
+
+.ref-list { margin-top: 36px; }
+.ref-item {
+  display: flex; gap: 20px; padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ref-item .num { font-size: 28px; font-weight: 900; color: var(--accent); min-width: 36px; }
+.ref-item .text .title { font-size: 27px; font-weight: 700; color: var(--text); line-height: 1.4; }
+.ref-item .text .meta { font-size: 22px; font-weight: 400; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+
+.page-foot {
+  position: absolute; bottom: 36px; left: 80px; right: 80px; z-index: 3;
+  display: flex; justify-content: space-between;
+  font-size: 18px; font-weight: 500; color: var(--text-muted); letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+<main class="sheet">
+
+<!-- ========== 01 封面 ========== -->
+<section class="poster xhs" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content" style="justify-content:flex-end;">
+    <p class="kicker">人民日报系列 · 第50篇</p>
+    <h1 class="hero">抓落实<br>不能挑肥拣瘦</h1>
+    <p class="lead">更不能拿漂亮数据当政绩</p>
+    <div class="key-sentence">真正的落实，要经得起现场、群众和时间检验。</div>
+  </div>
+  <div class="page-foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 02 误区页 ========== -->
+<section class="poster xhs" id="xhs-02">
+  <div class="watermark" style="top:60px; right:-40px;">忙</div>
+  <div class="content">
+    <p class="kicker">误区 · 常见答题套话</p>
+    <h2 class="h2">迅速部署、压实责任、强化督查<br>然后呢？</h2>
+    <p class="body" style="margin-top:24px;">很多人写抓落实，第一反应就是这三句话。但动作多不等于落实好，还要追问五个关键问题：</p>
+    <div class="body-list">
+      <li><strong style="color:var(--text);">任务有没有完整承接</strong> — 是不是只挑容易出彩的做</li>
+      <li><strong style="color:var(--text);">数据是否真实</strong> — 报表好看不等于问题解决</li>
+      <li><strong style="color:var(--text);">方法是否科学</strong> — 一刀切和层层加码不是有力</li>
+      <li><strong style="color:var(--text);">难题有没有解决</strong> — 硬骨头不能一直往后推</li>
+      <li><strong style="color:var(--text);">群众是否感到变化</strong> — 最终检验在群众感受</li>
+    </div>
+    <div class="key-sentence">抓落实不是比动作多，而是看结果真不真。</div>
+  </div>
+  <div class="page-foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 03 总公式 ========== -->
+<section class="poster xhs" id="xhs-03">
+  <div class="watermark" style="top:80px; right:-20px; font-size:360px;">链</div>
+  <div class="content">
+    <p class="kicker">总公式 · 五步责任链</p>
+    <h2 class="h2">落实要经过5道关</h2>
+    <p class="body" style="margin-top:20px;">不是平行要求，而是严格的前后关系。任何一环失真，漂亮完成率都可能失去意义。</p>
+    <div class="step-chain">
+      <div class="step-row"><div class="num">1</div><div class="info"><h3>任务完整承接</h3><p>政策目标、责任、底线全部接住，不挑易避难</p></div></div>
+      <div class="step-row"><div class="num">2</div><div class="info"><h3>过程如实记录</h3><p>数据统一口径、明确来源、全过程核验</p></div></div>
+      <div class="step-row"><div class="num">3</div><div class="info"><h3>方法遵循规律</h3><p>调查研究、分类施策，防止一刀切和层层加码</p></div></div>
+      <div class="step-row"><div class="num">4</div><div class="info"><h3>难题持续攻坚</h3><p>硬骨头、慢变量、历史旧账都要接</p></div></div>
+      <div class="step-row"><div class="num">5</div><div class="info"><h3>群众与长效验收</h3><p>群众感受、长期效果、过程表现共同评价</p></div></div>
+    </div>
+    <div class="key-sentence">任务没接全，数据就只记录"愿意干"的部分；数据失真，考核就会跑偏。</div>
+  </div>
+  <div class="page-foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 04 不选择·定义 ========== -->
+<section class="poster xhs" id="xhs-04">
+  <div class="watermark" style="top:100px; right:-30px;">选</div>
+  <div class="content">
+    <p class="kicker">第一关 · 完整承接</p>
+    <h2 class="h2">政策不是自选菜单</h2>
+    <p class="body" style="margin-top:24px;">选择性执行是抓落实的第一个大敌。执行者按个人得失挑选任务，容易出彩的抢着做，硬骨头能推就推。</p>
+    <div class="compare-grid">
+      <div class="compare-col">
+        <h3 style="color:var(--warn);">抢着做的</h3>
+        <ul>
+          <li>容易量化、立竿见影的任务</li>
+          <li>能出亮点、上新闻的项目</li>
+          <li>风险低、责任小的事项</li>
+          <li>短期能见成效的工作</li>
+        </ul>
+      </div>
+      <div class="compare-col accent-col">
+        <h3>推给别人的</h3>
+        <ul>
+          <li>跨部门协调的难事</li>
+          <li>见效慢、需要长期投入的</li>
+          <li>容易担责、有风险的</li>
+          <li>历史遗留问题和旧账</li>
+        </ul>
+      </div>
+    </div>
+    <p class="body" style="margin-top:24px; font-size:24px;">结果：局部出彩掩盖整体缺位，政策整体效果被破坏，群众真正需要解决的问题反而没人接。</p>
+    <div class="key-sentence">抓落实不是选择题，而是责任清单上的必答题。</div>
+  </div>
+  <div class="page-foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 05 不选择·辨析 ========== -->
+<section class="poster xhs" id="xhs-05">
+  <div class="watermark" style="top:80px; left:-30px;">辨</div>
+  <div class="content">
+    <p class="kicker">第一关 · 执行边界</p>
+    <h2 class="h2">不选择不等于一刀切</h2>
+    <p class="body" style="margin-top:24px;">完整承接和机械执行是两回事。政策目标不能打折，但实施方法应该因地制宜。关键是分清"什么不能变"和"什么可以优化"。</p>
+    <div class="compare-grid">
+      <div class="compare-col accent-col">
+        <h3>不能打折的</h3>
+        <ul>
+          <li><strong style="color:var(--text);">政策目标</strong> — 该达到的标准不能降</li>
+          <li><strong style="color:var(--text);">责任边界</strong> — 该负的责任不能推</li>
+          <li><strong style="color:var(--text);">底线要求</strong> — 法律和民生底线不能破</li>
+          <li><strong style="color:var(--text);">全部任务</strong> — 不能漏掉该做的事</li>
+        </ul>
+      </div>
+      <div class="compare-col">
+        <h3>可以优化的</h3>
+        <ul>
+          <li><strong style="color:var(--text);">实施路径</strong> — 结合地区条件选择方法</li>
+          <li><strong style="color:var(--text);">节奏安排</strong> — 急事快办、长期任务分阶段</li>
+          <li><strong style="color:var(--text);">资源配置</strong> — 根据实际情况调配力量</li>
+          <li><strong style="color:var(--text);">技术手段</strong> — 用更科学的方式达成目标</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-sentence">"干不干全"和"怎样干好"是两个问题。目标不打折，方法可以优化。</div>
+  </div>
+  <div class="page-foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 06 不造数·定义 ========== -->
+<section class="poster xhs" id="xhs-06">
+  <img class="bg-img" src="assets/data.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第二关 · 数据真实</p>
+    <h2 class="h2">数据不是政绩滤镜</h2>
+    <p class="body" style="margin-top:24px;">数据本应服务决策。一旦为了排名和政绩干预数据，就从"观察实情的镜子"变成了"装点成绩的滤镜"。</p>
+    <div class="body-list" style="margin-top:24px;">
+      <li><strong style="color:var(--warn);">造数字</strong> — 直接篡改、虚报统计数据</li>
+      <li><strong style="color:var(--warn);">追数字</strong> — 为排名短期冲高，不顾实际质量</li>
+      <li><strong style="color:var(--warn);">摆数字</strong> — 选择性展示有利数据，回避问题</li>
+      <li><strong style="color:var(--warn);">催数字</strong> — 向下压指标，逼基层造假</li>
+    </div>
+    <p class="body" style="margin-top:20px; font-size:24px;">后果：误导资源配置，把债务和低效项目留成旧账，真正的问题被漂亮曲线掩盖。</p>
+    <div class="key-sentence">数据是观察实情的镜子，不是装点成绩的滤镜。</div>
+  </div>
+  <div class="page-foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 07 不造数·核验 ========== -->
+<section class="poster xhs" id="xhs-07">
+  <div class="watermark" style="top:80px; right:-20px;">核</div>
+  <div class="content">
+    <p class="kicker">第二关 · 数据治理</p>
+    <h2 class="h2">数据不能只靠填报者自证</h2>
+    <p class="body" style="margin-top:20px;">让数据实打实，需要四道过滤器层层把关，同时落实数据质量责任制。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">①</div><div class="info"><h3>统一统计口径</h3><p>同一指标用同一标准，避免各算各的账</p></div></div>
+      <div class="step-row"><div class="num">②</div><div class="info"><h3>标明数据来源</h3><p>权威数据、部门采集、基层自报分级管理</p></div></div>
+      <div class="step-row"><div class="num">③</div><div class="info"><h3>关联信息交叉验证</h3><p>用多源数据比对，发现异常及时核查</p></div></div>
+      <div class="step-row"><div class="num">④</div><div class="info"><h3>回到现场复核</h3><p>关键数据必须实地验证，不能只看报表</p></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:24px; padding:20px 24px;">
+      <p style="font-size:23px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">案例：</strong>南通实施"凡考必核"，按数据来源分级核验；干部交接表含17项高质量发展监测指标，由市级部门统一调取，保证"交真账"。</p>
+    </div>
+    <div class="key-sentence">数据真实，考核才可能考得准。谁出数据，谁对质量负责。</div>
+  </div>
+  <div class="page-foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 08 不蛮干 ========== -->
+<section class="poster xhs" id="xhs-08">
+  <div class="watermark" style="top:60px; left:-20px;">蛮</div>
+  <div class="content">
+    <p class="kicker">第三关 · 科学方法</p>
+    <h2 class="h2">层层加码<br>不等于落实有力</h2>
+    <p class="body" style="margin-top:24px;">不选择不等于机械照搬。力度以规律为边界，速度以质量为约束。越用力可能偏得越远。</p>
+    <div class="body-list" style="margin-top:24px;">
+      <li><strong style="color:var(--text);">调查研究后分类施策</strong> — 先摸清情况，再对症下药，不搞一刀切</li>
+      <li><strong style="color:var(--text);">新机制先试点验证</strong> — 不确定的方法小范围试，成熟后再推广</li>
+      <li><strong style="color:var(--text);">执行中动态纠偏</strong> — 发现偏差及时调整，不一条道走到黑</li>
+      <li><strong style="color:var(--text);">急事紧抓快办</strong> — 紧急风险和当务之要立说立行</li>
+      <li><strong style="color:var(--text);">长期任务拆阶段</strong> — 设阶段目标、持续跟踪，不无限期搁置</li>
+    </div>
+    <div class="compare-grid" style="margin-top:20px;">
+      <div class="compare-col"><h3 style="color:var(--warn);">看似有力</h3><ul><li>一刀切、齐步走</li><li>层层加码、指标翻倍</li><li>只看速度不看质量</li></ul></div>
+      <div class="compare-col accent-col"><h3>真正有力</h3><ul><li>分类施策、精准发力</li><li>依法依规、责任清晰</li><li>速度质量双约束</li></ul></div>
+    </div>
+    <div class="key-sentence">力度以规律为边界，速度以质量为约束。</div>
+  </div>
+  <div class="page-foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 09 接难事·定义 ========== -->
+<section class="poster xhs" id="xhs-09">
+  <div class="watermark" style="top:100px; right:-30px;">难</div>
+  <div class="content">
+    <p class="kicker">第四关 · 难题攻坚</p>
+    <h2 class="h2">旧账也是群众考题</h2>
+    <p class="body" style="margin-top:24px;">落实能力最能在硬骨头、慢变量和历史旧账中显现。烂尾楼、历史纠纷、拖欠账款——这些不是"前任的事"，而是当前岗位必须接的群众考题。</p>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">1</div><div class="info"><h3>查清来龙去脉</h3><p>不回避、不推诿，把问题底数摸清楚</p></div></div>
+      <div class="step-row"><div class="num">2</div><div class="info"><h3>厘清主体责任</h3><p>分清谁该负责、谁来配合，责任链不能断</p></div></div>
+      <div class="step-row"><div class="num">3</div><div class="info"><h3>分类寻找解法</h3><p>不同问题用不同方法，不一锅煮</p></div></div>
+      <div class="step-row"><div class="num">4</div><div class="info"><h3>明确时限节点</h3><p>设时间表和责任人，不能无限期挂账</p></div></div>
+      <div class="step-row"><div class="num">5</div><div class="info"><h3>追查制度漏洞</h3><p>从个案到制度，防止同类问题再发生</p></div></div>
+    </div>
+    <div class="key-sentence">岗位可以变，责任链不能断；群众的问题不能重新排队。</div>
+  </div>
+  <div class="page-foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 10 接难事·案例 ========== -->
+<section class="poster xhs" id="xhs-10">
+  <div class="watermark" style="top:80px; left:-30px; font-size:360px;">案</div>
+  <div class="content">
+    <p class="kicker">第四关 · 实践案例</p>
+    <h2 class="h2">他们怎样把旧账<br>变成发展增量</h2>
+    <div class="data-grid" style="margin-top:28px;">
+      <div class="data-card">
+        <div class="num">720<span style="font-size:32px;">条</span></div>
+        <div class="label">丘北县民生诉求梳理</div>
+        <div class="desc">通过座谈会、12345和信访平台梳理，实行台账、分类转办、限时办结和闭环管理</div>
+      </div>
+      <div class="data-card">
+        <div class="num">49<span style="font-size:32px;">条</span></div>
+        <div class="label">达拉特旗干部交接事项</div>
+        <div class="desc">从9个方面细化，对难点问题和遗留工作明确时限、举措和责任人</div>
+      </div>
+      <div class="data-card">
+        <div class="num" style="font-size:48px; line-height:1.2;">70余年</div>
+        <div class="label">山西右玉接力治沙</div>
+        <div class="desc">一任接着一任干，长期任务需要跨周期接续，不能以"长期"为借口搁置</div>
+      </div>
+      <div class="data-card">
+        <div class="num" style="font-size:48px; line-height:1.2;">全生命周期</div>
+        <div class="label">淮安重大项目考核</div>
+        <div class="desc">招引、开工、投资、竣工、产出质效全程跟踪，把服务保障纳入评价</div>
+      </div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:24px; padding:20px 24px;">
+      <p style="font-size:23px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">共同启示：</strong>旧账治理不是"替前任擦屁股"，而是对群众负责、对发展负责。关键是建立跨任期交接和持续推进机制。</p>
+    </div>
+    <div class="compare-grid" style="margin-top:20px;">
+      <div class="compare-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; color:var(--warn); margin-bottom:8px;">不能做的</h3>
+        <ul><li style="font-size:21px;">以"历史遗留"为由搁置</li><li style="font-size:21px;">只接新项目不接旧账</li><li style="font-size:21px;">岗位变动责任就断档</li></ul>
+      </div>
+      <div class="compare-col accent-col" style="padding:20px 24px;">
+        <h3 style="font-size:24px; margin-bottom:8px;">必须做的</h3>
+        <ul><li style="font-size:21px;">交接清单明确时限责任人</li><li style="font-size:21px;">急事快办+长期分阶段</li><li style="font-size:21px;">从个案追查制度漏洞</li></ul>
+      </div>
+    </div>
+    <div class="key-sentence">久久为功不等于拖延。急事立说立行，长期任务设阶段目标持续跟踪。</div>
+  </div>
+  <div class="page-foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 11 真检验 ========== -->
+<section class="poster xhs" id="xhs-11">
+  <img class="bg-img" src="assets/verify.jpg" alt="" style="object-position:center 55%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第五关 · 多维验收</p>
+    <h2 class="h2">一张成绩单<br>要有四个维度</h2>
+    <p class="body" style="margin-top:20px;">看数字，但不能唯数字。真实成效需要结果、过程、群众、长效一起检验。</p>
+    <div class="compare-grid" style="margin-top:24px;">
+      <div class="compare-col accent-col">
+        <h3>结果 + 过程</h3>
+        <ul>
+          <li>看目标是否完成</li>
+          <li>也看程序是否合规</li>
+          <li>也看成本是否合理</li>
+        </ul>
+      </div>
+      <div class="compare-col accent-col">
+        <h3>客观 + 群众</h3>
+        <ul>
+          <li>看客观数据指标</li>
+          <li>也听群众真实评价</li>
+          <li>12345满意度作参考</li>
+        </ul>
+      </div>
+      <div class="compare-col accent-col">
+        <h3>短期 + 长效</h3>
+        <ul>
+          <li>看当期变化</li>
+          <li>也查有没有留下债务</li>
+          <li>也查风险和新旧账</li>
+        </ul>
+      </div>
+      <div class="compare-col accent-col">
+        <h3>考核 + 反馈</h3>
+        <ul>
+          <li>江苏"三张考卷"模式</li>
+          <li>绩效、党建、满意度</li>
+          <li>结果反馈促制度纠偏</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-sentence">看数字，但不能唯数字。群众、现场和时间共同验收，才是真落实。</div>
+  </div>
+  <div class="page-foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 12 考场应用 ========== -->
+<section class="poster xhs" id="xhs-12">
+  <div class="watermark" style="top:80px; right:-20px;">考</div>
+  <div class="content">
+    <p class="kicker">考场迁移 · 申论/面试直接用</p>
+    <h2 class="h2">抓落实<br>五分论点框架</h2>
+    <div class="step-chain" style="margin-top:24px;">
+      <div class="step-row"><div class="num">一</div><div class="info"><h3>完整承接守责任</h3><p>建立任务清单和责任链条，防止挑易避难、打折变通</p></div></div>
+      <div class="step-row"><div class="num">二</div><div class="info"><h3>真实数据掌握实情</h3><p>完善数据来源、口径、核验和责任制度，整治数字造假</p></div></div>
+      <div class="step-row"><div class="num">三</div><div class="info"><h3>科学方法提高效能</h3><p>加强调查研究和分类施策，防止一刀切、机械执行</p></div></div>
+      <div class="step-row"><div class="num">四</div><div class="info"><h3>攻坚精神破解难题</h3><p>健全跨部门、跨任期交接督办，持续化解硬骨头和旧账</p></div></div>
+      <div class="step-row"><div class="num">五</div><div class="info"><h3>群众长效检验成色</h3><p>把群众评价、过程表现、长期效果纳入考核，强化反馈纠偏</p></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:20px; padding:18px 24px;">
+      <p style="font-size:22px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">面试题：</strong>"基层数据好看但群众问题没解决，怎么办？"→ ①暂停单一数据结论 ②现场走访+交叉验证 ③纠正层层加码 ④建台账明责任 ⑤优化考核纳入群众感受</p>
+    </div>
+    <div class="key-sentence">记住公式：承接→记录→方法→攻坚→验收，考场直接套用。</div>
+  </div>
+  <div class="page-foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 13 收束页 ========== -->
+<section class="poster xhs" id="xhs-13">
+  <div class="watermark" style="top:40px; left:50%; transform:translateX(-50%); font-size:420px;">实</div>
+  <div class="content" style="justify-content:center; text-align:center; align-items:center;">
+    <p class="kicker" style="text-align:center;">收束 · 高分公式</p>
+    <h2 class="hero" style="font-size:84px; text-align:center; line-height:1.4; margin-top:16px;">
+      完整承接任务<br>
+      <span style="color:var(--accent); font-weight:900; font-size:60px;">→</span> 真实掌握情况<br>
+      <span style="color:var(--accent); font-weight:900; font-size:60px;">→</span> 科学分类施策<br>
+      <span style="color:var(--accent); font-weight:900; font-size:60px;">→</span> 持续攻坚难题<br>
+      <span style="color:var(--accent); font-weight:900; font-size:60px;">→</span> 多维检验成效
+    </h2>
+    <div style="display:flex; gap:14px; margin-top:36px; flex-wrap:wrap; justify-content:center;">
+      <span style="border:1px solid var(--accent); color:var(--accent); padding:8px 18px; font-size:22px; font-weight:500;">承接</span>
+      <span style="border:1px solid var(--accent); color:var(--accent); padding:8px 18px; font-size:22px; font-weight:500;">记录</span>
+      <span style="border:1px solid var(--accent); color:var(--accent); padding:8px 18px; font-size:22px; font-weight:500;">方法</span>
+      <span style="border:1px solid var(--accent); color:var(--accent); padding:8px 18px; font-size:22px; font-weight:500;">攻坚</span>
+      <span style="border:1px solid var(--accent); color:var(--accent); padding:8px 18px; font-size:22px; font-weight:500;">验收</span>
+    </div>
+    <div class="key-sentence" style="text-align:left; margin-top:36px;">落实的终点，不是材料里的"已完成"，而是问题真的解决。</div>
+  </div>
+  <div class="page-foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- ========== 14 参考文献 ========== -->
+<section class="poster xhs" id="xhs-14">
+  <div class="content">
+    <p class="kicker">参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-top:16px; font-size:23px;">本卡片内容基于以下人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item">
+        <div class="num">1</div>
+        <div class="text">
+          <div class="title">抓落实不能搞选择性执行</div>
+          <div class="meta">人民日报，2026年6月，政策落实不是选择题，不能抢抓出彩事项却推开硬骨头</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">2</div>
+        <div class="text">
+          <div class="title">数据必须实打实</div>
+          <div class="meta">人民日报，2026年6月，统计造假、追数摆数和短期冲高会制造数字政绩与发展旧账</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">3</div>
+        <div class="text">
+          <div class="title">想要"考"得好，就得真抓实干</div>
+          <div class="meta">人民日报，2026年6月，"三张考卷"、满意度评价、"凡考必核"、全生命周期和嵌入式考核</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">4</div>
+        <div class="text">
+          <div class="title">把政绩刻在群众心坎上</div>
+          <div class="meta">人民日报，2026年6月，问题收集、台账转办、限时办结、群众验收和跨任期交接</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">5</div>
+        <div class="text">
+          <div class="title">实干的三重意涵</div>
+          <div class="meta">人民日报，2026年6月，脚踏实地、尊重规律、久久为功，纠正一刀切和短平快倾向</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <div class="num">6</div>
+        <div class="text">
+          <div class="title">变"旧账"为发展增量</div>
+          <div class="meta">人民日报，2026年6月，烂尾楼、历史纠纷、拖欠账款等遗留问题也是必须完成的群众考题</div>
+        </div>
+      </div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:24px; padding:20px 24px;">
+      <p style="font-size:22px; color:var(--text); line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>"五步责任链"为教学提炼框架，非某单篇原文结构；720条事项、49条清单、17项指标等数据为地方案例，不代表全国统一标准。</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+</main>
+</body>
+</html>

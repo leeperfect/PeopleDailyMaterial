@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>常态化帮扶 · 小红书卡片</title>
+<style>
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');
+  font-weight: 500; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');
+  font-weight: 900; font-display: swap;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:#000; --bg-elevated:#14110c; --text:#fff;
+  --text-secondary:rgba(255,255,255,.70); --text-muted:rgba(255,255,255,.46);
+  --rule:rgba(255,255,255,.16); --accent:#f5a623; --accent-text:#000;
+  --font:'Alibaba PuHuiTi','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;
+}
+body { background:#1a1a1a; font-family:var(--font); -webkit-font-smoothing:antialiased; }
+main.sheet { display:flex; flex-direction:column; align-items:center; gap:40px; padding:40px 0; }
+.poster { position:relative; overflow:hidden; background:var(--bg); color:var(--text); font-family:var(--font); }
+.poster.xhs { width:1080px; height:1440px; }
+.bg-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+.overlay-full { position:absolute; inset:0; z-index:1; background:rgba(0,0,0,.58); }
+.overlay-bottom { position:absolute; inset:0; z-index:1; background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.50) 30%,transparent 55%); }
+.content { position:absolute; z-index:2; inset:0; padding:88px 88px 120px; display:flex; flex-direction:column; }
+.kicker { font-size:22px; font-weight:500; letter-spacing:3px; color:var(--accent); margin-bottom:36px; text-transform:uppercase; }
+.hero { font-size:88px; font-weight:900; line-height:1.15; letter-spacing:-1px; color:var(--text); }
+.h2 { font-size:72px; font-weight:700; line-height:1.22; color:var(--text); }
+.lead { font-size:32px; font-weight:500; line-height:1.5; color:var(--text); margin-top:24px; }
+.body { font-size:30px; font-weight:400; line-height:1.65; color:var(--text-secondary); }
+.caption { font-size:22px; font-weight:500; line-height:1.5; color:var(--text-muted); }
+.rule { width:100%; height:2px; background:var(--rule); }
+.page-foot { position:absolute; bottom:44px; left:88px; right:88px; z-index:3; display:flex; justify-content:space-between; font-size:20px; font-weight:500; color:var(--text-muted); letter-spacing:1px; }
+
+/* Key sentence */
+.key-sentence { margin-top:auto; padding:32px 36px; border-left:6px solid var(--accent); background:rgba(245,166,35,.12); }
+.key-sentence p { font-size:30px; font-weight:700; line-height:1.55; color:var(--text); }
+
+/* Step list */
+.step-list { display:flex; flex-direction:column; gap:32px; margin-top:48px; }
+.step-row { display:flex; gap:28px; align-items:flex-start; }
+.step-num { font-size:44px; font-weight:900; color:var(--accent); line-height:1.1; min-width:72px; }
+.step-title { font-size:32px; font-weight:700; color:var(--text); line-height:1.35; }
+.step-desc { font-size:28px; font-weight:400; color:var(--text-secondary); line-height:1.5; margin-top:6px; }
+
+/* Callout */
+.callout { margin-top:40px; padding:32px 36px; background:var(--bg-elevated); border-radius:4px; }
+.callout p { font-size:28px; font-weight:500; color:var(--text-secondary); line-height:1.55; }
+.callout strong { color:var(--text); font-weight:700; }
+
+/* Data stat row */
+.stat-row { display:flex; gap:40px; margin-top:48px; }
+.stat-item { flex:1; }
+.stat-num { font-size:80px; font-weight:900; color:var(--accent); line-height:1; }
+.stat-label { font-size:24px; font-weight:500; color:var(--text-secondary); margin-top:10px; line-height:1.4; }
+
+/* Tag list */
+.tag-list { display:flex; flex-direction:column; gap:20px; margin-top:48px; }
+.tag-row { display:flex; align-items:center; gap:24px; padding:26px 30px; background:var(--bg-elevated); }
+.tag-label { font-size:28px; font-weight:700; color:var(--accent); min-width:140px; }
+.tag-text { font-size:28px; font-weight:400; color:var(--text); }
+
+/* Formula chain (horizontal) */
+.formula-chain { display:flex; align-items:center; gap:0; margin-top:48px; flex-wrap:wrap; justify-content:center; }
+.formula-step { display:flex; flex-direction:column; align-items:center; padding:20px 6px; flex:1; min-width:0; }
+.formula-num { font-size:56px; font-weight:900; color:var(--accent); line-height:1; }
+.formula-label { font-size:26px; font-weight:700; color:var(--text); margin-top:10px; text-align:center; line-height:1.3; }
+.formula-arrow { display:flex; align-items:center; color:var(--text-muted); font-size:28px; font-weight:700; padding:0 2px; }
+
+/* Formula desc list */
+.formula-desc { display:flex; flex-direction:column; gap:0; margin-top:44px; }
+.formula-desc-row { display:flex; align-items:baseline; gap:20px; padding:20px 0; border-bottom:1px solid var(--rule); }
+.formula-desc-row:last-child { border-bottom:none; }
+.formula-desc-tag { font-size:28px; font-weight:700; color:var(--accent); min-width:140px; }
+.formula-desc-text { font-size:28px; font-weight:400; color:var(--text-secondary); }
+
+/* Watermark */
+.watermark { position:absolute; z-index:1; font-size:520px; font-weight:900; color:var(--text); opacity:.04; line-height:1; pointer-events:none; user-select:none; }
+.watermark.accent { color:var(--accent); opacity:.08; }
+
+/* CTA */
+.cta { margin-top:36px; text-align:center; }
+.cta p { font-size:26px; font-weight:500; color:var(--text-muted); letter-spacing:2px; }
+
+/* Tags row */
+.tag-strip { display:flex; gap:16px; margin-top:32px; flex-wrap:wrap; }
+.tag-pill { font-size:22px; font-weight:500; color:var(--accent); border:1.5px solid var(--accent); padding:8px 20px; border-radius:2px; }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <!-- ========== P01 封面 ========== -->
+  <section class="poster xhs" id="xhs-01">
+    <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 55%">
+    <div class="overlay-bottom"></div>
+    <div class="content" style="justify-content:flex-end;">
+      <p class="kicker">人民日报 · 常态化帮扶</p>
+      <h1 class="hero">常态化帮扶<br>不是继续"输血"</h1>
+      <p class="lead">监测、兜底、造血、问效，怎么连成一条链</p>
+      <div class="tag-strip">
+        <span class="tag-pill">申论</span>
+        <span class="tag-pill">面试</span>
+        <span class="tag-pill">乡村振兴</span>
+      </div>
+      <div class="key-sentence" style="margin-top:36px;">
+        <p>变化的不是帮扶底线，而是治理方式。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 01 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P02 误区页 ========== -->
+  <section class="poster xhs" id="xhs-02">
+    <div class="watermark accent" style="right:20px; bottom:160px; font-size:480px;">续</div>
+    <div class="content">
+      <p class="kicker">先纠正误区</p>
+      <h2 class="h2">很多人把"常态化"<br>写成了"继续"</h2>
+      <p class="body" style="margin-top:40px;">政策力度不减、资金投入不少、产业项目继续——这些都没错，但没有解释常态化改变了什么。</p>
+      <div class="callout">
+        <p>新阶段要面对的，是<strong>长期存在、随时变化</strong>的返贫致贫风险。疾病、失业、灾害和家庭负担不会因为脱贫就停止。</p>
+      </div>
+      <div class="key-sentence">
+        <p>从完成阶段任务，转向管理长期风险。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 02 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P03 总公式 ========== -->
+  <section class="poster xhs" id="xhs-03">
+    <div class="watermark" style="right:30px; bottom:160px; font-size:440px;">链</div>
+    <div class="content">
+      <p class="kicker">全文导航</p>
+      <h2 class="h2">常态化帮扶<br>完整公式</h2>
+      <div class="formula-chain">
+        <div class="formula-step"><span class="formula-num">01</span><span class="formula-label">动态监测</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">02</span><span class="formula-label">分层识别</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">03</span><span class="formula-label">兜底/开发</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">04</span><span class="formula-label">资金问效</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">05</span><span class="formula-label">跟踪回访</span></div>
+      </div>
+      <div class="formula-desc">
+        <div class="formula-desc-row"><span class="formula-desc-tag">监测</span><span class="formula-desc-text">决定谁需要帮助</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">识别</span><span class="formula-desc-text">决定用什么政策</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">兜底开发</span><span class="formula-desc-text">负责承接帮扶</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">问效回访</span><span class="formula-desc-text">检验结果，重新发现风险</span></div>
+      </div>
+      <div class="key-sentence">
+        <p>不要背五个词，要写出前后关系。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 03 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P04 监测页 ========== -->
+  <section class="poster xhs" id="xhs-04">
+    <div class="watermark accent" style="right:20px; bottom:160px; font-size:480px;">测</div>
+    <div class="content">
+      <p class="kicker">第一步</p>
+      <h2 class="h2">名单可以稳定<br>风险不会静止</h2>
+      <div class="step-list" style="gap:28px; margin-top:44px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:34px; min-width:140px;">自主申报</span>
+          <div><p class="step-desc" style="font-size:26px;">本人知道有困难，主动提出</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:34px; min-width:140px;">干部排查</span>
+          <div><p class="step-desc" style="font-size:26px;">发现不会申报、不敢申报的人</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:34px; min-width:140px;">数据预警</span>
+          <div><p class="step-desc" style="font-size:26px;">捕捉医疗、教育、就业异常</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:34px; min-width:140px;">平台分析</span>
+          <div><p class="step-desc" style="font-size:26px;">识别分散风险和变化趋势</p></div>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>精准帮扶的第一步，是让风险及时进入治理视野。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 04 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P05 分层页 ========== -->
+  <section class="poster xhs" id="xhs-05">
+    <div class="watermark accent" style="right:30px; bottom:160px; font-size:480px;">分</div>
+    <div class="content">
+      <p class="kicker">第二步</p>
+      <h2 class="h2">不是一套政策<br>帮所有人</h2>
+      <div class="tag-list" style="margin-top:44px;">
+        <div class="tag-row">
+          <span class="tag-label" style="min-width:160px;">无劳动能力</span>
+          <span class="tag-text">低保、社保、医疗、照护兜住基本生活</span>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label" style="min-width:160px;">有劳动能力</span>
+          <span class="tag-text">产业、就业、技能培训增强发展能力</span>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label" style="min-width:160px;">复合困难</span>
+          <span class="tag-text">康复、托养、教育、无障碍、法律服务组合</span>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:36px;">
+        <p>识别残疾人家庭时，要关注<strong>一户多残、老残一体、病残一体、以老养残</strong>。</p>
+      </div>
+      <div class="key-sentence">
+        <p>兜底解决"不能掉下去"，开发式帮扶解决"能够走上去"。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 05 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P06 造血页 ========== -->
+  <section class="poster xhs" id="xhs-06">
+    <div class="watermark accent" style="right:20px; bottom:160px; font-size:480px;">产</div>
+    <div class="content">
+      <p class="kicker">第三步 · 开发式帮扶</p>
+      <h2 class="h2">产业要接市场<br>也要接得住群众</h2>
+      <p class="body" style="margin-top:36px;">项目必须同时回答四个问题：</p>
+      <div class="step-list" style="gap:24px; margin-top:36px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px;">Q1</span>
+          <div><p class="step-title" style="font-size:30px;">谁来经营？</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px;">Q2</span>
+          <div><p class="step-title" style="font-size:30px;">产品卖给谁？</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px;">Q3</span>
+          <div><p class="step-title" style="font-size:30px;">群众怎样参与？</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px;">Q4</span>
+          <div><p class="step-title" style="font-size:30px;">收益能否持续？</p></div>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>产业帮扶的价值，不看项目多大，先看群众能不能进入产业链。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 06 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P07 案例页 ========== -->
+  <section class="poster xhs" id="xhs-07">
+    <img class="bg-img" src="assets/greenhouse.jpg" alt="" style="object-position:center 50%">
+    <div class="overlay-full"></div>
+    <div class="content">
+      <p class="kicker">案例 · 东乡暖棚</p>
+      <h2 class="h2">从200座到611座<br>靠的不只是建大棚</h2>
+      <div class="callout" style="margin-top:36px; background:rgba(0,0,0,.5);">
+        <p style="color:rgba(255,255,255,.85);">政府提供<strong style="color:#fff">技术、认证、专班代办和市场对接</strong>；企业组织生产、打通冷链并兜底收购；群众通过土地流转、基地务工和自主种植获得收益。</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat-item">
+          <p class="stat-num">611<span style="font-size:32px;">座</span></p>
+          <p class="stat-label">大棚规模</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-num">70<span style="font-size:32px;">+</span></p>
+          <p class="stat-label">长期用工（50+监测户）</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-num">1.8<span style="font-size:32px;">万</span></p>
+          <p class="stat-label">年人均增收</p>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>市场、企业和群众收益接成链，项目才有生命力。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 07 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P08 问效页 ========== -->
+  <section class="poster xhs" id="xhs-08">
+    <div class="watermark accent" style="right:20px; bottom:160px; font-size:480px;">效</div>
+    <div class="content">
+      <p class="kicker">第四步</p>
+      <h2 class="h2">从项目建成<br>追问到群众增收</h2>
+      <div class="step-list" style="gap:28px; margin-top:44px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:34px; min-width:100px;">前端</span>
+          <div><p class="step-title" style="font-size:30px;">资源禀赋、市场前景、带动增收能力</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:34px; min-width:100px;">中端</span>
+          <div><p class="step-title" style="font-size:30px;">资金使用、工程建设、资产运营</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:34px; min-width:100px;">后端</span>
+          <div><p class="step-title" style="font-size:30px;">群众参与、稳定收入、风险消除、项目持续</p></div>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>监管不只查有没有违规，还要查有没有效果。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 08 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P09 考场页 ========== -->
+  <section class="poster xhs" id="xhs-09">
+    <div class="watermark" style="right:30px; bottom:160px; font-size:440px;">考</div>
+    <div class="content">
+      <p class="kicker">申论 · 面试</p>
+      <h2 class="h2">考场上这样写<br>逻辑就完整了</h2>
+      <div class="formula-desc" style="margin-top:40px;">
+        <div class="formula-desc-row"><span class="formula-desc-tag">风险早发现</span><span class="formula-desc-text">监测四入口，让风险进入视野</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">对象分层次</span><span class="formula-desc-text">无能力兜底、有能力开发、复合困难组合</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">保障守底线</span><span class="formula-desc-text">低保社保医疗照护，不能掉下去</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">产业强能力</span><span class="formula-desc-text">接市场接群众，进入产业链</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">资金见实效</span><span class="formula-desc-text">前端中端后端，追问到群众增收</span></div>
+      </div>
+      <div class="callout" style="margin-top:32px;">
+        <p><strong style="color:var(--accent);">申论</strong>：每项对策写明对象、动作和结果。<br><strong style="color:var(--accent);">面试</strong>：先定性阶段转换，再讲监测、分类、产业和问效。</p>
+      </div>
+      <div class="key-sentence">
+        <p>常态化不是政策一直在，而是治理链一直转。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 09 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P10 收束页 ========== -->
+  <section class="poster xhs" id="xhs-10">
+    <div class="watermark accent" style="right:30px; bottom:160px; font-size:480px;">稳</div>
+    <div class="content">
+      <p class="kicker">四句话记住</p>
+      <h2 class="h2">常态化帮扶</h2>
+      <div class="formula-desc" style="margin-top:48px;">
+        <div class="formula-desc-row"><span class="formula-desc-tag">监测</span><span class="formula-desc-text">让风险被看见</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">兜底</span><span class="formula-desc-text">让生活不失守</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">造血</span><span class="formula-desc-text">让增收可持续</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">监管</span><span class="formula-desc-text">让政策真正见效</span></div>
+      </div>
+      <div class="key-sentence">
+        <p>该兜底的人稳稳接住，有能力的人获得机会，每一笔投入都接受检验。</p>
+      </div>
+      <div class="cta"><p>收藏 · 转发 · 申论面试直接用</p></div>
+    </div>
+    <div class="page-foot"><span>PAGE 10 / 10</span><span>LeePerfect</span></div>
+  </section>
+
+</main>
+</body>
+</html>

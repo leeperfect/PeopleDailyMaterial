@@ -1,0 +1,185 @@
+{
+  "period": "2026-08-10_to_2026-08-16",
+  "source": {
+    "article_database": "data/core/articles.sqlite",
+    "article_count": 307,
+    "distinct_title_count": 301,
+    "operation_overview": "data/data_analysis/overview.md",
+    "operation_report": "data/data_analysis/reports/2026-07-18_to_2026-08-16_tendency.md",
+    "existing_idea_pool": "data/core/material_assets.sqlite"
+  },
+  "formal_pool_sync": {
+    "required": true,
+    "minimum_support_articles": 3,
+    "refresh_markdown": "data/articles/选题库.md",
+    "refresh_csv": "data/exports/content_ideas.csv",
+    "preserve_browser_visibility": true
+  },
+  "selection_rules": [
+    "分析2026年8月10日至16日下载的307篇人民日报文章，并按301个不同标题去重核验。",
+    "每个新增选题至少绑定3篇内容不同的人民日报文章，同题异版不重复计数。",
+    "对照既有91条选题，只有核心问题、分析机制和读者收益均有独立价值时才新增。",
+    "同时参考最新运营数据，把高阅读潜力、教学收藏价值和国家重点方向放在同一张评价表中。",
+    "允许从县域经济、服务消费、未来产业等成熟母题拆分新切口，但不能只换标题不换分析角度。"
+  ],
+  "operation_findings": [
+    "最新30天日均阅读7083.9，较上一批增长2.3%；日均分享增长0.8%，日均收藏增长2.8%，账号基本盘继续修复。",
+    "最近6天与紧邻前6天相比阅读下降17.1%，其中约79.4%的阅读降幅来自推荐减少，说明当前缺少新的推荐型强文章。",
+    "县域经济文章累计34120阅读、推荐约比79.6%，是当前最强样本，适合拆出土特产全价值链这一独立切口。",
+    "社会工作、物业治理和社会救助均出现明显长尾，说明责任关系清楚、生活场景具体、机制答案完整的内容更耐传播。",
+    "中试平台首批阅读6735，验证了专业政策概念加产业化卡点加通俗纠偏的表达能够兼顾传播和教学。",
+    "本期阅读规模回落但分享率和收藏率提高，因此不削弱答题框架，而把优化重点放在政策词、冲突判断和读者收益上。"
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260810_0816_local_specialty_value_chain",
+      "priority": "S",
+      "status": "备选",
+      "platform": "公众号 + 申论题卡",
+      "title": "《人民日报》讲“土特产”：不是把特产卖出去，而是把一方资源做成标准、品牌和产业链",
+      "angle": "“土特产”的价值不只在一个土字或一场直播，而在于立足本地资源，以科技和标准稳定品质，以加工、冷链和品牌拉长价值链，以消费场景打开市场，并用利益联结机制让农户分享产业增值收益。",
+      "relation_to_existing": "既有县域经济题回答县域如何做到特而强、融得进，本题进一步聚焦一个地方产品如何完成品质标准化、链条延伸、市场塑造和联农带农。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "县域经济累计34120阅读、推荐约比79.6%，是当前最强样本；本周10篇连续案例足以支撑独立切口。",
+      "reader_gain": "掌握找资源、稳品质、延链条、开市场、联农户五步土特产产业化框架。",
+      "support_article_ids": [
+        "people_daily_20260811_30174236",
+        "people_daily_20260812_30174399",
+        "people_daily_20260813_30174617",
+        "people_daily_20260813_30174654",
+        "people_daily_20260814_30174893",
+        "people_daily_20260814_30174949",
+        "people_daily_20260814_30174950",
+        "people_daily_20260814_30174951",
+        "people_daily_20260814_30174969",
+        "people_daily_20260816_30175097"
+      ],
+      "outline": [
+        "找准资源：从生态禀赋、传统技艺和地方文化中找准独特性",
+        "稳住品质：用良种、技术、标准和数字追溯形成稳定供给",
+        "拉长链条：补齐加工、冷链、包装和衍生产品开发",
+        "打开市场：用品牌、电商、直播和消费场景连接需求",
+        "联农带农：让企业、合作社和农户共享产业增值收益"
+      ],
+      "teaching_value": "适合县域经济、乡村全面振兴、特色产业、共同富裕和因地制宜。"
+    },
+    {
+      "idea_id": "idea_20260810_0816_ticket_economy_consumption_chain",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 小红书",
+      "title": "《人民日报》讲票根经济：不是赛后发优惠券，而是把赛事流量接成城市消费链",
+      "angle": "票根经济不是简单折扣促销，而是以群众身边的赛事聚集人流，用一张票连接餐饮、住宿、交通、商业和文化资源，把一次观赛延伸为一段城市体验，并通过市场协同和持续运营把短期流量转为长期消费。",
+      "relation_to_existing": "既有全民健身题讲赛事、设施和服务进入生活圈，服务消费题讲优质服务供给；本题专门解释赛事流量如何跨场景转化为城市消费链。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "旅游强国已有5224阅读，全民健身持续获得长尾；票根这一具体对象更适合承载场景连接和扩大内需的机制解释。",
+      "reader_gain": "掌握赛事聚流、票根连接、场景串联、城市表达和长效运营五步消费转化框架。",
+      "support_article_ids": [
+        "people_daily_20260810_30173950",
+        "people_daily_20260810_30173963",
+        "people_daily_20260810_30173964",
+        "people_daily_20260811_30174270"
+      ],
+      "outline": [
+        "赛事聚流：用小而美、可参与的赛事形成稳定人气",
+        "票根连接：打通公共资源与商户权益，降低跨场景参与门槛",
+        "场景串联：把观赛延伸到吃住行游购娱",
+        "城市表达：让地方文化和情绪价值进入消费体验",
+        "长效运营：用主体协同、规则设计和复访机制沉淀流量"
+      ],
+      "teaching_value": "适合扩大内需、服务消费、文体旅融合、群众体育和城市治理。"
+    },
+    {
+      "idea_id": "idea_20260810_0816_hydrogen_full_chain_commercialization",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + PPT",
+      "title": "《人民日报》讲氢能：不是“制出氢”就够了，而要把制、储、运、用和场景验证接成链",
+      "angle": "氢能产业化不能只看制氢产能，还要同时破解绿色制氢成本、储运效率、基础设施、标准安全和终端应用问题，在交通、工业、储能等真实场景中持续验证，形成可复制、可规模化的商业闭环。",
+      "relation_to_existing": "新型能源体系题聚焦电源、电网、储能和消纳的系统协同，碳达峰题聚焦整体转型；本题专讲氢能从技术可用走向规模商用的全链条卡点。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "中试平台6735阅读表明专业概念通俗化具备传播空间；氢能同时属于未来产业和绿色转型重点。",
+      "reader_gain": "掌握绿色制氢、储运提效、设施筑基、场景验证和产业生态五层产业化逻辑。",
+      "support_article_ids": [
+        "people_daily_20260810_30173992",
+        "people_daily_20260814_30174953",
+        "people_daily_20260815_30175056"
+      ],
+      "outline": [
+        "绿色制氢：提高可再生能源制氢比重并持续降本",
+        "储运提效：破解高成本、长距离和多形态运输难题",
+        "设施筑基：完善加氢网络、标准体系和安全监管",
+        "场景验证：在交通、工业、储能等领域检验可靠性",
+        "生态成链：以协同创新和规模应用推动商业化闭环"
+      ],
+      "teaching_value": "适合未来产业、新质生产力、绿色低碳转型、现代化产业体系和科技创新。"
+    },
+    {
+      "idea_id": "idea_20260810_0816_ecological_code_implementation",
+      "priority": "A",
+      "status": "备选",
+      "platform": "公众号 + 申论题卡",
+      "title": "《人民日报》讲生态环境法典：不是“多了一部法”，而是用一部法统筹全域保护、全程治理和各方责任",
+      "angle": "生态环境法典的关键不只是法律数量增加，而是把污染防治、生态保护和绿色低碳发展纳入统一规范，把源头预防、过程控制、损害修复贯通起来，并明确政府、企业和公众责任，以协同执法、普法实施和群众评价推动法典落地。",
+      "relation_to_existing": "既有生态文明法治题较宏观，美丽中国题强调降碳减污扩绿增长；本题聚焦法典如何整合规范、贯通治理过程并形成实施闭环。",
+      "recommended_action": "new_candidate",
+      "operation_signal": "这一题不以短期流量为唯一依据，而以连续8篇权威报道和国家生态文明法治建设重点作为入选理由。",
+      "reader_gain": "掌握规范整合、全程治理、协同执法、责任闭环和实施评价五步法治框架。",
+      "support_article_ids": [
+        "people_daily_20260812_30174416",
+        "people_daily_20260813_30174664",
+        "people_daily_20260813_30174714",
+        "people_daily_20260814_30174883",
+        "people_daily_20260814_30174906",
+        "people_daily_20260814_30174932",
+        "people_daily_20260815_30175046",
+        "people_daily_20260815_30175050"
+      ],
+      "outline": [
+        "规范整合：把分散制度纳入统一、协调的法治框架",
+        "全程治理：贯通源头预防、过程控制和损害修复",
+        "协同执法：推动跨部门、跨区域信息共享和行动协同",
+        "责任闭环：明确政府监管、企业守法和公众参与边界",
+        "实施见效：以学习宣传、严格执行和群众满意检验成效"
+      ],
+      "teaching_value": "适合生态文明、依法治国、美丽中国、协同治理和政策执行。"
+    }
+  ],
+  "existing_topic_updates": [
+    {"idea_id": "idea_refined_20260612_employment_chain", "new_support_article_ids": ["people_daily_20260810_30173900", "people_daily_20260812_30174371", "people_daily_20260812_30174387", "people_daily_20260813_30174693"]},
+    {"idea_id": "idea_20260615_21_employment_priority_people", "new_support_article_ids": ["people_daily_20260810_30173900", "people_daily_20260812_30174371", "people_daily_20260812_30174387", "people_daily_20260813_30174693"]},
+    {"idea_id": "idea_20260706_0712_grassroots_burden_empowerment", "new_support_article_ids": ["people_daily_20260810_30174003", "people_daily_20260810_30174005", "people_daily_20260811_30174255", "people_daily_20260811_30174256", "people_daily_20260811_30174287", "people_daily_20260812_30174426", "people_daily_20260812_30174427"]},
+    {"idea_id": "idea_20260803_0809_grassroots_responsibility_boundary", "new_support_article_ids": ["people_daily_20260810_30174003", "people_daily_20260810_30174005", "people_daily_20260811_30174255", "people_daily_20260811_30174256", "people_daily_20260811_30174287", "people_daily_20260812_30174426", "people_daily_20260812_30174427"]},
+    {"idea_id": "idea_20260629_0705_county_specialized_integrated", "new_support_article_ids": ["people_daily_20260811_30174236", "people_daily_20260812_30174399", "people_daily_20260813_30174617", "people_daily_20260813_30174654", "people_daily_20260814_30174893", "people_daily_20260814_30174949", "people_daily_20260814_30174950", "people_daily_20260814_30174951", "people_daily_20260814_30174969", "people_daily_20260816_30175097"]},
+    {"idea_id": "idea_20260622_28_agriculture_big_industry", "new_support_article_ids": ["people_daily_20260810_30173904", "people_daily_20260810_30173919", "people_daily_20260811_30174212", "people_daily_20260811_30174213", "people_daily_20260812_30174399", "people_daily_20260812_30174421", "people_daily_20260813_30174621", "people_daily_20260813_30174677", "people_daily_20260814_30174949", "people_daily_20260816_30175097"]},
+    {"idea_id": "idea_refined_20260611_service_consumption", "new_support_article_ids": ["people_daily_20260810_30173950", "people_daily_20260810_30173963", "people_daily_20260810_30173964", "people_daily_20260811_30174270"]},
+    {"idea_id": "idea_20260720_0726_fitness_life_circle", "new_support_article_ids": ["people_daily_20260810_30173950", "people_daily_20260810_30173963", "people_daily_20260810_30173964", "people_daily_20260811_30174270"]},
+    {"idea_id": "idea_20260713_0719_tourism_capacity_governance", "new_support_article_ids": ["people_daily_20260810_30173963", "people_daily_20260811_30174312", "people_daily_20260812_30174396", "people_daily_20260812_30174398", "people_daily_20260814_30174918", "people_daily_20260815_30175033"]},
+    {"idea_id": "idea_20260622_28_energy_system", "new_support_article_ids": ["people_daily_20260810_30173972", "people_daily_20260810_30173976", "people_daily_20260811_30174268", "people_daily_20260812_30174443", "people_daily_20260813_30174635", "people_daily_20260814_30174885", "people_daily_20260814_30174946", "people_daily_20260814_30174947", "people_daily_20260814_30174953", "people_daily_20260815_30175056"]},
+    {"idea_id": "idea_20260706_0712_carbon_peak_system_transition", "new_support_article_ids": ["people_daily_20260810_30173971", "people_daily_20260810_30173974", "people_daily_20260810_30173976", "people_daily_20260811_30174268", "people_daily_20260812_30174443", "people_daily_20260813_30174635", "people_daily_20260814_30174885", "people_daily_20260814_30174946", "people_daily_20260814_30174947"]},
+    {"idea_id": "idea_20260713_0719_ai_global_public_good", "new_support_article_ids": ["people_daily_20260810_30173909", "people_daily_20260813_30174611"]},
+    {"idea_id": "idea_20260803_0809_science_popularization_innovation_wing", "new_support_article_ids": ["people_daily_20260814_30174899", "people_daily_20260815_30175056", "people_daily_20260815_30175057"]},
+    {"idea_id": "idea_refined_20260502_ecology_law", "new_support_article_ids": ["people_daily_20260812_30174416", "people_daily_20260813_30174664", "people_daily_20260813_30174714", "people_daily_20260814_30174883", "people_daily_20260814_30174906", "people_daily_20260814_30174932", "people_daily_20260815_30175046", "people_daily_20260815_30175050"]},
+    {"idea_id": "idea_20260629_0705_beautiful_china_system", "new_support_article_ids": ["people_daily_20260812_30174416", "people_daily_20260813_30174664", "people_daily_20260813_30174714", "people_daily_20260814_30174883", "people_daily_20260814_30174906", "people_daily_20260814_30174932", "people_daily_20260815_30175046", "people_daily_20260815_30175050"]},
+    {"idea_id": "idea_20260629_0705_social_assistance_rule_of_law", "new_support_article_ids": ["people_daily_20260814_30174921", "people_daily_20260814_30174940"]},
+    {"idea_id": "idea_20260727_0802_minor_protection_front_prevention", "new_support_article_ids": ["people_daily_20260814_30174913", "people_daily_20260814_30174935"]},
+    {"idea_id": "idea_20260720_0726_property_shared_governance", "new_support_article_ids": ["people_daily_20260813_30174679"]},
+    {"idea_id": "idea_20260629_0705_performance_assessment_value", "new_support_article_ids": ["people_daily_20260810_30173945", "people_daily_20260811_30174299", "people_daily_20260813_30174612", "people_daily_20260814_30174883"]},
+    {"idea_id": "idea_20260706_0712_tech_finance_lifecycle", "new_support_article_ids": ["people_daily_20260813_30174662", "people_daily_20260814_30174954"]},
+    {"idea_id": "idea_refined_20260529_city_update", "new_support_article_ids": ["people_daily_20260811_30174245", "people_daily_20260814_30174926", "people_daily_20260815_30175075"]},
+    {"idea_id": "idea_refined_20260613_cultural_heritage_life", "new_support_article_ids": ["people_daily_20260811_30174233", "people_daily_20260812_30174391", "people_daily_20260812_30174402", "people_daily_20260814_30174915"]}
+  ],
+  "recommended_order": [
+    "idea_20260810_0816_local_specialty_value_chain",
+    "idea_20260810_0816_ticket_economy_consumption_chain",
+    "idea_20260810_0816_ecological_code_implementation",
+    "idea_20260810_0816_hydrogen_full_chain_commercialization"
+  ],
+  "not_prioritized": [
+    "高质量充分就业本周材料密集，但既有就业优先和破解就业难选题仍可承接，故只补充本周来源。",
+    "基层减负连续报道继续补入基层减负和责任边界两个既有选题，不再建立第三个近似选题。",
+    "新型能源体系和碳达峰已有成熟选题，本周只把氢能从单项技术走向商业化的独立卡点拆出新题。",
+    "社会救助、物业治理、未成年人保护、科技金融、城市更新和文化遗产均已有明确选题，只补新证据。",
+    "标准、计量、数据产权和价格规范材料分属不同治理场景，尚未形成不少于3篇围绕同一核心问题的强支撑，暂不单列。"
+  ]
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>AI应用落地 · 小红书卡片</title>
+<style>
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');
+  font-weight: 500; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');
+  font-weight: 900; font-display: swap;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:#000; --bg-elevated:#0d1117; --text:#fff;
+  --text-secondary:rgba(255,255,255,.70); --text-muted:rgba(255,255,255,.46);
+  --rule:rgba(255,255,255,.16); --accent:#00c8ff; --accent-text:#000;
+  --font:'Alibaba PuHuiTi','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;
+}
+[data-theme="paper"] {
+  --bg:#fff; --bg-elevated:#f0f4f8; --text:#000;
+  --text-secondary:rgba(0,0,0,.68); --text-muted:rgba(0,0,0,.46);
+  --rule:rgba(0,0,0,.14); --accent:#0066cc; --accent-text:#fff;
+}
+body { background:#1a1a1a; font-family:var(--font); -webkit-font-smoothing:antialiased; }
+main.sheet { display:flex; flex-direction:column; align-items:center; gap:40px; padding:40px 0; }
+.poster { position:relative; overflow:hidden; background:var(--bg); color:var(--text); font-family:var(--font); }
+.poster.xhs { width:1080px; height:1440px; }
+.bg-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+.overlay-full { position:absolute; inset:0; z-index:1; background:rgba(0,0,0,.58); }
+.overlay-bottom { position:absolute; inset:0; z-index:1; background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.50) 30%,transparent 55%); }
+.content { position:absolute; z-index:2; inset:0; padding:88px 88px 120px; display:flex; flex-direction:column; }
+.kicker { font-size:22px; font-weight:500; letter-spacing:3px; color:var(--accent); margin-bottom:36px; text-transform:uppercase; }
+.hero { font-size:92px; font-weight:900; line-height:1.15; letter-spacing:-1px; color:var(--text); }
+.h2 { font-size:76px; font-weight:700; line-height:1.22; color:var(--text); }
+.lead { font-size:32px; font-weight:500; line-height:1.5; color:var(--text); margin-top:24px; }
+.body { font-size:30px; font-weight:400; line-height:1.65; color:var(--text-secondary); }
+.caption { font-size:22px; font-weight:500; line-height:1.5; color:var(--text-muted); }
+.big-number { font-size:160px; font-weight:900; line-height:1; color:var(--accent); letter-spacing:-4px; }
+.rule { width:100%; height:2px; background:var(--rule); }
+.page-foot { position:absolute; bottom:44px; left:88px; right:88px; z-index:3; display:flex; justify-content:space-between; font-size:20px; font-weight:500; color:var(--text-muted); letter-spacing:1px; }
+
+/* Key sentence */
+.key-sentence { margin-top:auto; padding:32px 36px; border-left:6px solid var(--accent); background:rgba(0,200,255,.10); }
+.key-sentence p { font-size:30px; font-weight:700; line-height:1.55; color:var(--text); }
+
+/* Step list */
+.step-list { display:flex; flex-direction:column; gap:40px; margin-top:56px; }
+.step-row { display:flex; gap:28px; align-items:flex-start; }
+.step-num { font-size:48px; font-weight:900; color:var(--accent); line-height:1.1; min-width:76px; }
+.step-title { font-size:34px; font-weight:700; color:var(--text); line-height:1.35; }
+.step-desc { font-size:28px; font-weight:400; color:var(--text-secondary); line-height:1.5; margin-top:6px; }
+
+/* Callout */
+.callout { margin-top:48px; padding:32px 36px; background:var(--bg-elevated); border-radius:4px; }
+.callout p { font-size:28px; font-weight:500; color:var(--text-secondary); line-height:1.55; }
+.callout strong { color:var(--text); font-weight:700; }
+
+/* Data stat row */
+.stat-row { display:flex; gap:48px; margin-top:56px; }
+.stat-item { flex:1; }
+.stat-num { font-size:88px; font-weight:900; color:var(--accent); line-height:1; }
+.stat-label { font-size:26px; font-weight:500; color:var(--text-secondary); margin-top:10px; line-height:1.4; }
+
+/* Tag list */
+.tag-list { display:flex; flex-direction:column; gap:24px; margin-top:56px; }
+.tag-row { display:flex; align-items:center; gap:24px; padding:28px 32px; background:var(--bg-elevated); }
+.tag-label { font-size:30px; font-weight:700; color:var(--accent); min-width:130px; }
+.tag-text { font-size:30px; font-weight:400; color:var(--text); }
+
+/* Formula chain */
+.formula-chain { display:flex; align-items:center; gap:0; margin-top:56px; flex-wrap:wrap; justify-content:center; }
+.formula-step { display:flex; flex-direction:column; align-items:center; padding:24px 8px; flex:1; min-width:0; }
+.formula-num { font-size:72px; font-weight:900; color:var(--accent); line-height:1; }
+.formula-label { font-size:32px; font-weight:700; color:var(--text); margin-top:12px; text-align:center; }
+.formula-arrow { display:flex; align-items:center; color:var(--text-muted); font-size:32px; font-weight:700; padding:0 4px; }
+.formula-desc { display:flex; flex-direction:column; gap:0; margin-top:56px; }
+.formula-desc-row { display:flex; align-items:baseline; gap:20px; padding:22px 0; border-bottom:1px solid var(--rule); }
+.formula-desc-row:last-child { border-bottom:none; }
+.formula-desc-tag { font-size:30px; font-weight:700; color:var(--accent); min-width:130px; }
+.formula-desc-text { font-size:30px; font-weight:400; color:var(--text-secondary); }
+
+/* Watermark */
+.watermark { position:absolute; z-index:1; font-size:520px; font-weight:900; color:var(--text); opacity:.04; line-height:1; pointer-events:none; user-select:none; }
+.watermark.accent { color:var(--accent); opacity:.08; }
+
+/* CTA */
+.cta { margin-top:48px; text-align:center; }
+.cta p { font-size:26px; font-weight:500; color:var(--text-muted); letter-spacing:2px; }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <!-- ========== P01 封面 ========== -->
+  <section class="poster xhs" id="xhs-01">
+    <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+    <div class="overlay-bottom"></div>
+    <div class="content" style="justify-content:flex-end;">
+      <p class="kicker">人民日报 · AI应用落地</p>
+      <h1 class="hero">写AI<br>别只会"赋能"</h1>
+      <p class="lead">真实场景、合理定价、安全规则要一起跟上</p>
+      <div class="key-sentence" style="margin-top:48px;">
+        <p>人民日报七天十篇文章，讲透 AI 落地的四个必答题。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 01 / 06</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P02 场景要真 ========== -->
+  <section class="poster xhs" id="xhs-02">
+    <div class="watermark accent" style="right:20px; bottom:160px; font-size:480px;">场</div>
+    <div class="content">
+      <p class="kicker">必答题一</p>
+      <h2 class="h2">场景要真</h2>
+      <p class="body" style="margin-top:40px;">物理 AI 从虚拟走向现实，不靠实验室演示，靠真实场景迭代。</p>
+      <div class="callout" style="margin-top:36px;">
+        <p>华晨驾校的系统上线就栽了跟头——太理想化，学员积极性受打击。后来团队发现不同场地画线有细微差别，系统要学会<strong>"入乡随俗"</strong>。</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat-item">
+          <p class="stat-num">60<span style="font-size:36px;">%</span></p>
+          <p class="stat-label">运营成本下降</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-num">500<span style="font-size:36px;">+</span></p>
+          <p class="stat-label">推广至10省驾校</p>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>场景中发现的问题，还需要放到场景中解决。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 02 / 06</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P03 定价要公 ========== -->
+  <section class="poster xhs" id="xhs-03">
+    <div class="watermark accent" style="right:30px; bottom:180px; font-size:480px;">¥</div>
+    <div class="content">
+      <p class="kicker">必答题二</p>
+      <h2 class="h2">定价要公</h2>
+      <p class="body" style="margin-top:40px;">大模型收费不能简单用"二分法"。豆包试点分层订阅，关键三件事：</p>
+      <div class="tag-list">
+        <div class="tag-row">
+          <span class="tag-label">规则意识</span>
+          <span class="tag-text">公开透明，让用户知道为什么付费</span>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">服务意识</span>
+          <span class="tag-text">物有所值，功能匹配价格</span>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">权益保障</span>
+          <span class="tag-text">"加法"不是"减法"，不损害已有权益</span>
+        </div>
+      </div>
+      <p class="body" style="margin-top:36px;">如果技术只增加"含智量"不解决真实问题，收费就没有合理性。</p>
+      <div class="key-sentence">
+        <p>从"流量思维"转向"价值思维"。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 03 / 06</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P04 安全要守 ========== -->
+  <section class="poster xhs" id="xhs-04">
+    <img class="bg-img" src="assets/security.jpg" alt="" style="object-position:center 50%">
+    <div class="overlay-full"></div>
+    <div class="content">
+      <p class="kicker">必答题三</p>
+      <h2 class="h2">安全要守</h2>
+      <div class="step-list" style="gap:24px; margin-top:40px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px; min-width:100px;">设计漏洞</span>
+          <div><p class="step-desc" style="font-size:26px;">智能眼镜偷拍——产品本身的风险</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px; min-width:100px;">审核漏洞</span>
+          <div><p class="step-desc" style="font-size:26px;">平台审核机制未能及时拦截</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px; min-width:100px;">监管漏洞</span>
+          <div><p class="step-desc" style="font-size:26px;">AI 诈骗用换脸和语音合成冒充亲友</p></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:36px; background:rgba(0,0,0,.5);">
+        <p style="color:rgba(255,255,255,.85);">张军院士提出<strong style="color:#fff">"前评估、强监测、可追溯"</strong>全周期风险控制。技术越近身，治理越要前置。</p>
+      </div>
+      <div class="key-sentence">
+        <p>安全不是发展的刹车片，而是发展的安全带。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 04 / 06</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P05 规则要跟 ========== -->
+  <section class="poster xhs" id="xhs-05">
+    <div class="watermark accent" style="right:30px; bottom:160px; font-size:480px;">规</div>
+    <div class="content">
+      <p class="kicker">必答题四</p>
+      <h2 class="h2">规则要跟</h2>
+      <p class="body" style="margin-top:40px;">交通运输部四项标准，推动从"点上示范"到"面上开花"：</p>
+      <div class="step-list" style="gap:28px; margin-top:40px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px;">01</span>
+          <div><p class="step-title" style="font-size:30px;">技术适配性与成熟度</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px;">02</span>
+          <div><p class="step-title" style="font-size:30px;">价值显著性与可量化</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px;">03</span>
+          <div><p class="step-title" style="font-size:30px;">安全可靠性与容错边界</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:36px;">04</span>
+          <div><p class="step-title" style="font-size:30px;">可复制性与推广潜力</p></div>
+        </div>
+      </div>
+      <div class="stat-row" style="margin-top:40px;">
+        <div class="stat-item">
+          <p class="stat-num">860<span style="font-size:36px;">+</span></p>
+          <p class="stat-label">梳理出场景应用</p>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>规则不是等出了事再补，而是与应用同步生长。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 05 / 06</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P06 总公式 ========== -->
+  <section class="poster xhs" id="xhs-06">
+    <div class="watermark" style="right:40px; bottom:160px; font-size:440px;">=</div>
+    <div class="content">
+      <p class="kicker">高分公式</p>
+      <h2 class="h2">AI 落地四步链</h2>
+      <div class="formula-chain">
+        <div class="formula-step"><span class="formula-num">01</span><span class="formula-label">场景真实</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">02</span><span class="formula-label">合理定价</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">03</span><span class="formula-label">安全底线</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">04</span><span class="formula-label">规则同步</span></div>
+      </div>
+      <div class="formula-desc">
+        <div class="formula-desc-row"><span class="formula-desc-tag">场景真实</span><span class="formula-desc-text">在真实环境中迭代，不靠实验室演示</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">合理定价</span><span class="formula-desc-text">从流量思维转向价值思维</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">安全底线</span><span class="formula-desc-text">前评估、强监测、可追溯</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">规则同步</span><span class="formula-desc-text">标准与应用同步生长</span></div>
+      </div>
+      <p class="body" style="margin-top:40px;">写 AI 不再只写"赋能"，而是写清楚：AI 在什么场景中解决了什么问题、价格是否合理、安全是否守得住、规则有没有跟上。</p>
+      <div class="key-sentence">
+        <p>AI 落地不是单选题。</p>
+      </div>
+      <div class="cta"><p>收藏 · 转发 · 申论面试直接用</p></div>
+    </div>
+    <div class="page-foot"><span>PAGE 06 / 06</span><span>LeePerfect</span></div>
+  </section>
+
+</main>
+</body>
+</html>

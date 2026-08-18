@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>政绩考核 · 小红书卡片</title>
+<style>
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+  font-weight: 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');
+  font-weight: 500; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');
+  font-weight: 700; font-display: swap;
+}
+@font-face {
+  font-family: 'Alibaba PuHuiTi';
+  src: url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');
+  font-weight: 900; font-display: swap;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:#000; --bg-elevated:#141414; --text:#fff;
+  --text-secondary:rgba(255,255,255,.70); --text-muted:rgba(255,255,255,.46);
+  --rule:rgba(255,255,255,.16); --accent:#e63946; --accent-text:#fff;
+  --font:'Alibaba PuHuiTi','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;
+}
+[data-theme="paper"] {
+  --bg:#fff; --bg-elevated:#f5f5f5; --text:#000;
+  --text-secondary:rgba(0,0,0,.68); --text-muted:rgba(0,0,0,.46);
+  --rule:rgba(0,0,0,.14); --accent:#e63946; --accent-text:#fff;
+}
+body { background:#1a1a1a; font-family:var(--font); -webkit-font-smoothing:antialiased; }
+main.sheet { display:flex; flex-direction:column; align-items:center; gap:40px; padding:40px 0; }
+.poster { position:relative; overflow:hidden; background:var(--bg); color:var(--text); font-family:var(--font); }
+.poster.xhs { width:1080px; height:1440px; }
+.bg-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+.overlay-full { position:absolute; inset:0; z-index:1; background:rgba(0,0,0,.58); }
+.overlay-bottom { position:absolute; inset:0; z-index:1; background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 30%,transparent 55%); }
+.content { position:absolute; z-index:2; inset:0; padding:88px 88px 120px; display:flex; flex-direction:column; }
+.kicker { font-size:22px; font-weight:500; letter-spacing:3px; color:var(--accent); margin-bottom:36px; text-transform:uppercase; }
+.hero { font-size:96px; font-weight:900; line-height:1.15; letter-spacing:-1px; color:var(--text); }
+.h2 { font-size:66px; font-weight:700; line-height:1.22; color:var(--text); }
+.lead { font-size:32px; font-weight:500; line-height:1.5; color:var(--text); margin-top:24px; }
+.body { font-size:30px; font-weight:400; line-height:1.65; color:var(--text-secondary); }
+.caption { font-size:22px; font-weight:500; line-height:1.5; color:var(--text-muted); }
+.big-number { font-size:160px; font-weight:900; line-height:1; color:var(--accent); letter-spacing:-4px; }
+.rule { width:100%; height:2px; background:var(--rule); }
+.page-foot { position:absolute; bottom:44px; left:88px; right:88px; z-index:3; display:flex; justify-content:space-between; font-size:20px; font-weight:500; color:var(--text-muted); letter-spacing:1px; }
+
+/* Error list (P02) */
+.err-list { list-style:none; margin-top:56px; }
+.err-list li { font-size:34px; font-weight:500; line-height:1.5; color:var(--text); padding:26px 0 26px 60px; position:relative; border-bottom:1px solid var(--rule); }
+.err-list li::before { content:'✕'; position:absolute; left:0; top:26px; font-size:30px; font-weight:700; color:var(--accent); }
+.err-list li:last-child { border-bottom:none; }
+
+/* Key sentence */
+.key-sentence { margin-top:auto; padding:32px 36px; border-left:6px solid var(--accent); background:rgba(230,57,70,.10); }
+.key-sentence p { font-size:30px; font-weight:700; line-height:1.55; color:var(--text); }
+
+/* Step list (P04, P09) */
+.step-list { display:flex; flex-direction:column; gap:36px; margin-top:56px; }
+.step-row { display:flex; gap:28px; align-items:flex-start; }
+.step-num { font-size:48px; font-weight:900; color:var(--accent); line-height:1.1; min-width:76px; }
+.step-title { font-size:34px; font-weight:700; color:var(--text); line-height:1.35; }
+.step-desc { font-size:28px; font-weight:400; color:var(--text-secondary); line-height:1.5; margin-top:6px; }
+
+/* Callout box */
+.callout { margin-top:48px; padding:32px 36px; background:var(--bg-elevated); border-radius:4px; }
+.callout p { font-size:28px; font-weight:500; color:var(--text-secondary); line-height:1.55; }
+.callout strong { color:var(--text); font-weight:700; }
+
+/* Big quote (P05) */
+.big-quote { font-size:72px; font-weight:900; line-height:1.3; color:var(--text); margin:20px 0 56px; }
+.big-quote .mark { color:var(--accent); font-size:88px; line-height:0; vertical-align:-14px; }
+
+/* Evidence pairs (P05) */
+.pair-list { display:flex; flex-direction:column; gap:24px; margin-top:48px; }
+.pair-row { display:flex; align-items:center; gap:24px; padding:28px 28px; background:var(--bg-elevated); }
+.pair-item { font-size:30px; font-weight:500; color:var(--text); flex:1; text-align:center; }
+.pair-plus { font-size:30px; font-weight:900; color:var(--accent); }
+
+/* Compare blocks (P06) */
+.compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px; }
+.compare-block { padding:36px 32px; background:rgba(0,0,0,.55); border-top:4px solid var(--accent); }
+.compare-block.alt { border-top-color:#3a9e7a; }
+.compare-label { font-size:22px; font-weight:700; letter-spacing:2px; color:var(--accent); margin-bottom:14px; }
+.compare-block.alt .compare-label { color:#3a9e7a; }
+.compare-text { font-size:28px; font-weight:500; line-height:1.5; color:var(--text); }
+
+/* Check list (P07) */
+.check-list { list-style:none; margin-top:56px; }
+.check-list li { font-size:34px; font-weight:500; line-height:1.5; color:var(--text); padding:26px 0 26px 60px; position:relative; border-bottom:1px solid var(--rule); }
+.check-list li::before { content:'✓'; position:absolute; left:0; top:26px; font-size:30px; font-weight:900; color:var(--accent); }
+.check-list li:last-child { border-bottom:none; }
+
+/* Chain (P08) */
+.chain { display:flex; flex-direction:column; gap:0; margin-top:64px; }
+.chain-step { display:flex; align-items:center; gap:32px; }
+.chain-dot { width:68px; height:68px; border-radius:50%; background:var(--accent); color:#fff; font-size:28px; font-weight:900; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.chain-line { width:68px; display:flex; justify-content:center; }
+.chain-line::after { content:''; width:3px; height:44px; background:var(--rule); }
+.chain-step:last-child .chain-line { display:none; }
+.chain-text { font-size:36px; font-weight:700; color:var(--text); }
+
+/* Formula chain (P10) */
+.formula-chain { display:flex; align-items:stretch; gap:0; margin-top:64px; flex-wrap:wrap; }
+.formula-step { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:28px 8px; flex:1; min-width:0; }
+.formula-num { font-size:52px; font-weight:900; color:var(--accent); line-height:1; }
+.formula-label { font-size:30px; font-weight:700; color:var(--text); margin-top:10px; text-align:center; }
+.formula-arrow { display:flex; align-items:center; color:var(--text-muted); font-size:26px; font-weight:700; }
+.formula-desc { display:flex; flex-direction:column; gap:20px; margin-top:56px; }
+.formula-desc-row { display:flex; align-items:baseline; gap:24px; padding-bottom:22px; border-bottom:1px solid var(--rule); }
+.formula-desc-row:last-child { border-bottom:none; }
+.formula-desc-tag { font-size:30px; font-weight:700; color:var(--accent); min-width:140px; }
+.formula-desc-text { font-size:30px; font-weight:400; color:var(--text-secondary); }
+
+/* Numbered answer list (P11) */
+.ans-list { display:flex; flex-direction:column; gap:30px; margin-top:56px; }
+.ans-row { display:flex; gap:28px; align-items:flex-start; }
+.ans-num { font-size:42px; font-weight:900; color:var(--text); line-height:1.1; min-width:60px; opacity:.3; }
+.ans-text { font-size:32px; font-weight:500; color:var(--text); line-height:1.45; }
+
+/* CTA */
+.cta { margin-top:48px; text-align:center; }
+.cta p { font-size:26px; font-weight:500; color:var(--text-muted); letter-spacing:2px; }
+
+/* Decorative watermark symbol */
+.watermark { position:absolute; z-index:1; font-size:520px; font-weight:900; color:var(--text); opacity:.04; line-height:1; pointer-events:none; user-select:none; }
+.watermark.accent { color:var(--accent); opacity:.08; }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <!-- ========== P01 封面 ========== -->
+  <section class="poster xhs" id="xhs-01">
+    <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+    <div class="overlay-bottom"></div>
+    <div class="content" style="justify-content:flex-end;">
+      <p class="kicker">《人民日报》政绩考核高分写法</p>
+      <h1 class="hero">政绩考核<br>不是考得多</h1>
+      <p class="lead">而是分类考、精准考、看长效</p>
+      <div class="key-sentence" style="margin-top:48px;">
+        <p>一张考卷是否有效，不看题目多少，要看是否对应职责。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 01 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P02 误区 ========== -->
+  <section class="poster xhs" id="xhs-02">
+    <div class="watermark accent" style="right:40px; bottom:200px;">✕</div>
+    <div class="content">
+      <p class="kicker">误区</p>
+      <h2 class="h2">考核最怕的，<br>不是少一项</h2>
+      <ul class="err-list">
+        <li>生态功能区和工业园区考同一张卷</li>
+        <li>基层街道和经济部门背同一套指标</li>
+        <li>长期治理与短期项目按一年排名</li>
+      </ul>
+      <p class="body" style="margin-top:44px; font-size:30px;">指标脱离功能职责，干部就可能围着分数转，而不是围着问题干。</p>
+      <div class="key-sentence">
+        <p>考核导向一旦偏了，越用力，可能离真实发展越远。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 02 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P03 反面案例 ========== -->
+  <section class="poster xhs" id="xhs-03">
+    <div class="watermark accent" style="right:20px; bottom:180px; font-size:440px;">!</div>
+    <div class="content">
+      <p class="kicker">反面案例</p>
+      <h2 class="h2">只看报表，<br>会漏掉什么？</h2>
+      <div style="margin-top:56px; display:flex; flex-direction:column; gap:48px;">
+        <div>
+          <p class="big-number" style="font-size:140px;">28.3<span style="font-size:56px;">亿</span></p>
+          <p class="body" style="margin-top:12px; font-size:30px;">循环空转虚增财政收入</p>
+        </div>
+        <div>
+          <p class="big-number" style="font-size:140px;">3816<span style="font-size:56px;">万</span></p>
+          <p class="body" style="margin-top:12px; font-size:30px;">景观工程反而妨碍雨洪行泄</p>
+        </div>
+        <div>
+          <p class="big-number" style="font-size:80px; letter-spacing:0;">隐性债务</p>
+          <p class="body" style="margin-top:12px; font-size:30px;">未清偿，却虚假报告退出</p>
+        </div>
+      </div>
+      <div class="key-sentence">
+        <p>政绩考核必须穿透报表，看资金流向、项目功能和真实风险。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 03 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P04 分类考 ========== -->
+  <section class="poster xhs" id="xhs-04">
+    <div class="content">
+      <p class="kicker">第一步</p>
+      <h2 class="h2">先分清<br>"谁该考什么"</h2>
+      <div class="step-list">
+        <div class="step-row">
+          <span class="step-num">01</span>
+          <div><p class="step-title">地区功能</p><p class="step-desc">生态区、城市区、产业园任务不同</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num">02</span>
+          <div><p class="step-title">单位职责</p><p class="step-desc">部门、高校、国企不能一套标准</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num">03</span>
+          <div><p class="step-title">岗位责任</p><p class="step-desc">班子成效与个人贡献分别识别</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num">04</span>
+          <div><p class="step-title">发展阶段</p><p class="step-desc">起步期、攻坚期、成熟期重点不同</p></div>
+        </div>
+      </div>
+      <div class="callout">
+        <p>重庆对 <strong>10 个生态功能区县</strong>取消 GDP 等指标，把生态安全保护纳入重点。</p>
+      </div>
+      <div class="key-sentence">
+        <p>分类考核不是挑容易的题，而是回答真正属于自己的难题。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 04 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P05 精准考 ========== -->
+  <section class="poster xhs" id="xhs-05">
+    <div class="watermark" style="right:60px; bottom:120px; font-size:600px;">"</div>
+    <div class="content">
+      <p class="kicker">第二步</p>
+      <h2 class="h2">不能只看总分</h2>
+      <p class="big-quote"><span class="mark">"</span>数字画像是证据，<br>不是裁判。</p>
+      <p class="body" style="margin-bottom:40px; font-size:30px;">精准考核要把几组证据接起来：</p>
+      <div class="pair-list">
+        <div class="pair-row">
+          <span class="pair-item">班子整体成效</span><span class="pair-plus">+</span><span class="pair-item">个人具体贡献</span>
+        </div>
+        <div class="pair-row">
+          <span class="pair-item">定量数据</span><span class="pair-plus">+</span><span class="pair-item">定性判断</span>
+        </div>
+        <div class="pair-row">
+          <span class="pair-item">日常表现</span><span class="pair-plus">+</span><span class="pair-item">年度结果</span>
+        </div>
+        <div class="pair-row" style="background:rgba(230,57,70,.12);">
+          <span class="pair-item" style="grid-column:1;">系统画像</span><span class="pair-plus">+</span><span class="pair-item">实地核查 + 组织研判</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 05 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P06 长效考 ========== -->
+  <section class="poster xhs" id="xhs-06">
+    <img class="bg-img" src="assets/lake.jpg" alt="" style="object-position:center 50%">
+    <div class="overlay-full"></div>
+    <div class="content">
+      <p class="kicker">第三步</p>
+      <h2 class="h2">把时间轴拉长</h2>
+      <div class="compare-grid">
+        <div class="compare-block">
+          <p class="compare-label">显绩</p>
+          <p class="compare-text">景观建成，当年就能拍照</p>
+        </div>
+        <div class="compare-block alt">
+          <p class="compare-label">潜绩</p>
+          <p class="compare-text">水体治理，要长期截污、清淤、防反弹</p>
+        </div>
+      </div>
+      <div class="callout" style="background:rgba(0,0,0,.5); margin-top:28px;">
+        <p style="color:rgba(255,255,255,.85);">遗爱湖由历届班子接续治理，最终入选 <strong style="color:#fff">2025 年长江大保护优秀实践案例</strong>。</p>
+      </div>
+      <p class="body" style="margin-top:40px; font-size:28px; color:rgba(255,255,255,.85);">长效考要看：阶段节点、生态指标、群众使用、后续运维、风险债务。</p>
+      <div class="key-sentence">
+        <p>好看的景观是显绩，常年稳定的水质才是潜绩。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 06 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P07 辨析（白底） ========== -->
+  <section class="poster xhs" id="xhs-07" data-theme="paper">
+    <div class="watermark accent" style="right:40px; bottom:200px;">✓</div>
+    <div class="content">
+      <p class="kicker">辨析</p>
+      <h2 class="h2">长期项目，<br>也要阶段验收</h2>
+      <p class="body" style="margin-top:32px; font-size:30px;">看潜绩不是无限等待，更不是用"以后会见效"回避责任。</p>
+      <ul class="check-list">
+        <li>长期目标拆成阶段结果</li>
+        <li>每年核验进度与风险</li>
+        <li>保护接续治理的战略连续性</li>
+        <li>防止给下一任留下债务和烂尾项目</li>
+      </ul>
+      <div class="key-sentence">
+        <p>看长效，是连续评价，不是延后评价。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 07 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P08 群众评 ========== -->
+  <section class="poster xhs" id="xhs-08">
+    <div class="watermark" style="right:40px; bottom:160px; font-size:480px;">→</div>
+    <div class="content">
+      <p class="kicker">第四步</p>
+      <h2 class="h2">让实际变化说话</h2>
+      <div class="chain">
+        <div class="chain-step"><div class="chain-dot">1</div><span class="chain-text">诉求进入</span></div>
+        <div class="chain-step"><div class="chain-line"></div></div>
+        <div class="chain-step"><div class="chain-dot">2</div><span class="chain-text">责任承接</span></div>
+        <div class="chain-step"><div class="chain-line"></div></div>
+        <div class="chain-step"><div class="chain-dot">3</div><span class="chain-text">分类办理</span></div>
+        <div class="chain-step"><div class="chain-line"></div></div>
+        <div class="chain-step"><div class="chain-dot">4</div><span class="chain-text">进度反馈</span></div>
+        <div class="chain-step"><div class="chain-line"></div></div>
+        <div class="chain-step"><div class="chain-dot">5</div><span class="chain-text">结果回访</span></div>
+      </div>
+      <p class="body" style="margin-top:56px; font-size:30px;">重点不在"打了多少分"，而在沟渠是否修好、电梯是否安全、养老医保是否真正解决。</p>
+      <div class="key-sentence">
+        <p>群众评价，是给干部自报成绩增加一道现实校验。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 08 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P09 资金问效 ========== -->
+  <section class="poster xhs" id="xhs-09">
+    <div class="watermark accent" style="right:30px; bottom:180px; font-size:480px;">¥</div>
+    <div class="content">
+      <p class="kicker">第五步</p>
+      <h2 class="h2">每一分钱<br>都要回答效果</h2>
+      <div class="step-list" style="gap:32px; margin-top:56px;">
+        <div class="step-row">
+          <span class="step-num" style="font-size:40px; min-width:90px;">事前</span>
+          <div><p class="step-title" style="font-size:34px;">需求真实吗？预算合理吗？</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:40px; min-width:90px;">事中</span>
+          <div><p class="step-title" style="font-size:34px;">用途偏了吗？采购异常吗？</p></div>
+        </div>
+        <div class="step-row">
+          <span class="step-num" style="font-size:40px; min-width:90px;">事后</span>
+          <div><p class="step-title" style="font-size:34px;">设施有人用吗？公共目标实现了吗？</p></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:40px;">
+        <p style="font-size:28px;"><strong>低效要调整，无效要问责。</strong>公共服务不能只算短期收益，还要看公平改善、风险降低和长期公共价值。</p>
+      </div>
+      <div class="key-sentence">
+        <p>问效不是只问赚了多少，而是问公共目标实现了多少。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 09 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P10 总公式 ========== -->
+  <section class="poster xhs" id="xhs-10">
+    <div class="watermark" style="right:40px; bottom:160px; font-size:440px;">=</div>
+    <div class="content">
+      <p class="kicker">高分公式</p>
+      <h2 class="h2">政绩考核链</h2>
+      <div class="formula-chain">
+        <div class="formula-step"><span class="formula-num">01</span><span class="formula-label">分类考</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">02</span><span class="formula-label">精准考</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">03</span><span class="formula-label">长效考</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">04</span><span class="formula-label">群众评</span></div>
+        <div class="formula-arrow">→</div>
+        <div class="formula-step"><span class="formula-num">05</span><span class="formula-label">资金问效</span></div>
+      </div>
+      <div class="formula-desc">
+        <div class="formula-desc-row"><span class="formula-desc-tag">分类考</span><span class="formula-desc-text">解决"标准是否公平"</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">精准考</span><span class="formula-desc-text">解决"成绩是否真实"</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">长效考</span><span class="formula-desc-text">解决"时间是否合理"</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">群众评</span><span class="formula-desc-text">解决"结果是否可感"</span></div>
+        <div class="formula-desc-row"><span class="formula-desc-tag">资金问效</span><span class="formula-desc-text">解决"资源是否有效"</span></div>
+      </div>
+      <div class="key-sentence">
+        <p>先对准职责，再核验事实，最后检验公共价值。</p>
+      </div>
+    </div>
+    <div class="page-foot"><span>PAGE 10 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+  <!-- ========== P11 考场页 ========== -->
+  <section class="poster xhs" id="xhs-11">
+    <div class="content">
+      <p class="kicker">考场应用</p>
+      <h2 class="h2">别只答"精简指标、<br>加强监督"</h2>
+      <div class="ans-list">
+        <div class="ans-row"><span class="ans-num">1</span><span class="ans-text">梳理功能、职责、岗位，取消万能指标</span></div>
+        <div class="ans-row"><span class="ans-num">2</span><span class="ans-text">建立履职事实链，减少重复报表</span></div>
+        <div class="ans-row"><span class="ans-num">3</span><span class="ans-text">长期任务设置阶段目标，连续跟踪</span></div>
+        <div class="ans-row"><span class="ans-num">4</span><span class="ans-text">群众诉求、办理、回访形成闭环</span></div>
+        <div class="ans-row"><span class="ans-num">5</span><span class="ans-text">重大项目和财政资金全周期问效</span></div>
+        <div class="ans-row"><span class="ans-num">6</span><span class="ans-text">结果进入激励、整改、调整和问责</span></div>
+      </div>
+      <div class="key-sentence">
+        <p>没有结果运用，考核只是打分；真正进入选用育管，考核才是指挥棒。</p>
+      </div>
+      <div class="cta"><p>收藏 · 转发 · 评论区交流</p></div>
+    </div>
+    <div class="page-foot"><span>PAGE 11 / 11</span><span>LeePerfect</span></div>
+  </section>
+
+</main>
+</body>
+</html>

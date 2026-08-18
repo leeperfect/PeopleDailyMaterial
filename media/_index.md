@@ -48,15 +48,29 @@
 
 | 2026-07-11 | 县域经济因地制宜发展 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-11-county-economy-notebooklm/` | 待上传 | `data/articles/人民日报系列/44-人民日报再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”.md`；含10页PPT原图和1张独立信息图，已生成出版登记清单 |
 
+| 2026-07-11 | 县域经济不是"小而全"，而要"特而强、融得进" | 小红书图 | `media/images/2026-07-11-county-economy-specialized-xhs/` | 待上传 | `data/xiaohongshu/44-xiaohongshu-county-economy-specialized-integrated-card-script.md`；含15张3:4小红书卡片（2160×2880），Editorial Magazine风格，暖米白×深墨蓝×编辑红，图示+真实照片混合视觉（龙脊梯田/苹果园/纺织厂/集装箱港/足球场/乡村公路/年轮，均来自Wikimedia Commons CC0/CC BY/公共领域），末页附参考文献，validate-social-deck 15/15 PASS |
+
 | 2026-07-12 | 政绩考核：分类考、精准考、看长效 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-performance-assessment-notebooklm/` | 待上传 | `data/articles/人民日报系列/45-人民日报讲政绩考核：不是考得多，而是分类考、精准考、看长效.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
+
+| 2026-07-12 | 政绩考核不是考得多，而是考得准 | 小红书图 | `media/images/2026-07-12-performance-assessment-xhs/` | 待上传 | `data/xiaohongshu/45-xiaohongshu-performance-assessment-card-script.md`；含11张3:4小红书卡片（2160×2880），Bold Contrast高对比风格，纯黑/白底×朱红强调色，阿里巴巴普惠体，AI生成封面（文件+卡尺+警示灯）和长效页（湖泊），含装饰性水印符号，validate通过 |
 
 | 2026-07-12 | AI应用别只写"赋能"：真实场景、合理定价和安全规则要一起跟上 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-ai-application-scene-pricing-safety-notebooklm/` | 待上传 | `data/articles/人民日报系列/46-人民日报讲AI应用落地：场景要真、定价要公、安全要守.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
 
+| 2026-07-12 | 写AI别只会"赋能" | 小红书图 | `media/images/2026-07-12-ai-application-scene-pricing-safety-xhs/` | 待上传 | `data/xiaohongshu/46-xiaohongshu-ai-application-scene-pricing-safety-card-script.md`；含6张3:4小红书卡片（2160×2880），Bold Contrast高对比风格，纯黑底×青色强调色(#00c8ff)，阿里巴巴普惠体，AI生成封面（发光芯片电路板）和安全页（数字锁），含装饰性水印符号，guizang validator 0 FAIL |
+
 | 2026-07-20 | 常态化帮扶 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-regular-assistance-governance-notebooklm/` | 待上传 | `data/articles/人民日报系列/47-【R】人民日报讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力.md`；含15页PPT原图和1张独立信息图，已生成出版登记清单 |
+
+| 2026-07-20 | 常态化帮扶不是继续"输血" | 小红书图 | `media/images/2026-07-20-regular-assistance-xhs/` | 待上传 | `data/xiaohongshu/47-xiaohongshu-regular-assistance-monitoring-safety-development-card-script.md`；含10张3:4小红书卡片（2160×2880），Bold Contrast高对比风格，纯黑底×暖琥珀强调色(#f5a623)，阿里巴巴普惠体，AI生成封面（黎明大棚）和案例页（暖棚内部），含装饰性水印符号 |
 
 | 2026-07-20 | 农业社会化服务 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-agricultural-socialized-service-notebooklm/` | 待上传 | `data/articles/人民日报系列/48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
 
+| 2026-07-20 | 土地托管不是把地"交出去" | 小红书图 | `media/images/2026-07-20-agricultural-socialized-service-xhs/` | 待上传 | `data/xiaohongshu/48-xiaohongshu-agricultural-socialized-service-card-script.md`；含13张3:4小红书卡片（2160×2880），Bold Contrast高对比风格，纯黑底×鲜绿强调色(#00c853)，阿里巴巴普惠体，AI生成封面（航拍农田）、案例页（插秧机泥田）、产后页（粮仓），含装饰性水印符号，末页为6篇人民日报参考文献 |
+
 | 2026-07-20 | 科技金融 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-tech-finance-lifecycle-notebooklm/` | 待上传 | `data/articles/人民日报系列/49-【R】人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md`；含14页PPT原图和1张独立信息图，已生成出版登记清单 |
+| 2026-07-20 | 科技金融不是多给一笔贷款 | 小红书图 | `media/images/2026-07-20-tech-finance-xhs/` | 待上传 | `data/xiaohongshu/49-xiaohongshu-tech-finance-lifecycle-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+亮蓝#00aaff，3张AI生成配图，末页参考文献） |
+| 2026-07-20 | 抓落实不能挑肥拣瘦 | 小红书图 | `media/images/2026-07-20-implementation-accountability-xhs/` | 待上传 | `data/xiaohongshu/50-xiaohongshu-implementation-accountability-results-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+政务蓝#2563eb，3张AI生成配图，末页参考文献） |
+
+| 2026-08-17 | 票根经济：从观赛流量到城市消费链 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-08-17-ticket-stub-economy-city-consumption-chain-notebooklm/` | 待上传 | `data/articles/人民日报系列/75-【R】人民日报讲票根经济：不是赛后发优惠券，而是把赛事流量接成城市消费链.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
 
 ## 类型写法
 

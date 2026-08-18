@@ -104,7 +104,10 @@ class HotspotTeachingDailyTest(unittest.TestCase):
         ]
         card = builder.build_card(topic, app_articles, supports)
         self.assertTrue(card["quick_intro"])
-        self.assertIn(topic["topic"], card["news_overview"])
+        self.assertIn("AI主题研学订单同比增长370%", card["news_overview"])
+        self.assertNotIn("本地人民日报APP评论库", card["news_overview"])
+        self.assertNotIn("人民日报客户端", card["news_overview"])
+        self.assertNotIn("《AI智能荐股？投资没有一键致富》", card["news_overview"])
         self.assertGreaterEqual(len(card["news_overview"]), 240)
         self.assertLessEqual(len(card["news_overview"]), 420)
         self.assertEqual(len(card["key_facts"]), 1)
