@@ -454,8 +454,24 @@ def register(article: str, pptx: str, infographic: str, slug: str) -> dict[str, 
     records.append(info_record)
 
     ppt_raster_only = all(not record["editable"] for record in records if record["kind"] == "ppt_slide")
+    existing_plans = existing_manifest.get("plans")
+    if not isinstance(existing_plans, dict):
+        legacy_items = [
+            {
+                "id": str(item["id"]),
+                "before_heading": str(item.get("article_position") or "").removesuffix("之前"),
+            }
+            for item in records
+            if item.get("used_in_wechat")
+            and str(item.get("article_position") or "").startswith("## ")
+        ]
+        existing_plans = {
+            "shared": {"items": legacy_items, "updated_at": None},
+            "wechat": {"inherit": "shared", "items": None, "updated_at": None},
+            "toutiao": {"inherit": "shared", "items": None, "updated_at": None},
+        }
     manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "type": "notebooklm_figure_manifest",
         "date": date_text,
         "registered_at": datetime.now().isoformat(timespec="seconds"),
@@ -478,6 +494,13 @@ def register(article: str, pptx: str, infographic: str, slug: str) -> dict[str, 
             "infographic_width_px": info_width,
             "infographic_height_px": info_height,
         },
+        "plans": existing_plans,
+        "confirmation": {
+            "status": "editing",
+            "confirmed_at": None,
+            "body_hash": None,
+            "plan_fingerprint": None,
+        },
         "figures": records,
     }
 
@@ -498,6 +521,7 @@ def register(article: str, pptx: str, infographic: str, slug: str) -> dict[str, 
     assert entry is not None
     entry.update(
         {
+            "status": "figures_editing",
             "figure_manifest": str(manifest_path.relative_to(PROJECT_ROOT)),
             "figure_asset_root": str(asset_root.relative_to(PROJECT_ROOT)),
             "figures_registered_at": manifest["registered_at"],

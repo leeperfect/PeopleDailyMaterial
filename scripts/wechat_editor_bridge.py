@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""承接 doocs/md 的“发布”按钮：保存排版、预览并进入草稿同步步骤。"""
+"""承接 doocs/md，提供本地双平台配图与预览工作台。"""
 
 from __future__ import annotations
 
 import argparse
 import html
 import json
+import mimetypes
 import sys
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -35,13 +36,17 @@ from modules.figure_workflow import (
     apply_plan,
     article_headings,
     canonical_markdown,
+    confirm_figures,
     editor_markdown,
+    effective_plan,
     figure_by_id,
+    invalidate_article_confirmation,
     load_manifest,
+    reset_platform_override,
     sync_usage,
 )
-from publish_wechat_draft import publish
 from render_wechat_html import render_article, save_layout
+from render_toutiao_html import render_toutiao
 
 
 class EditorWorkflow:
@@ -133,16 +138,27 @@ class EditorWorkflow:
                 )
                 content_synced = True
 
+        if content_synced:
+            try:
+                invalidate_article_confirmation(self.article_path)
+            except RuntimeError:
+                # 尚未登记配图时，正文仍可正常保存。
+                pass
+
         sync_usage(self.article_path, editor_markdown if content_synced else body)
 
         rendered = render_article(str(self.article_path))
         state = load_state(self.config)
         entry = article_state(state, self.article_path, create=True)
         assert entry is not None
+        previous_status = str(entry.get("status") or "")
+        next_status = previous_status or "figures_editing"
+        if content_synced:
+            next_status = "figures_editing"
         entry.update(
             {
                 "status": (
-                    "editor_sync_blocked" if sync_blocked else "layout_saved"
+                    "editor_sync_blocked" if sync_blocked else next_status
                 ),
                 "layout_saved_at": datetime.now().isoformat(timespec="seconds"),
                 "editor_content_changed": content_changed,
@@ -182,31 +198,6 @@ class EditorWorkflow:
             "next_url": "/pd-workflow/result",
         }
 
-    def publish_draft(self) -> str:
-        if self.last_result.get("sync_blocked"):
-            raise RuntimeError(
-                "编辑器正文未通过结构检查，已保存为候选稿；"
-                "请先检查提示的问题，再同步草稿箱"
-            )
-        sync_usage(self.article_path)
-        media_id = publish(str(self.article_path))
-        if not media_id:
-            raise RuntimeError("公众号接口没有返回草稿 media_id")
-        self.last_result["media_id"] = media_id
-        self.last_result["published_at"] = datetime.now().isoformat(timespec="seconds")
-        state = load_state(self.config)
-        entry = article_state(state, self.article_path, create=True)
-        assert entry is not None
-        entry.update(
-            {
-                "status": "wechat_draft_created",
-                "wechat_draft_media_id": media_id,
-                "wechat_draft_created_at": self.last_result["published_at"],
-            }
-        )
-        save_state(state, self.config)
-        return media_id
-
     def editor_body(self) -> str:
         source = self.article_path.read_text(encoding="utf-8")
         _, body, _ = split_frontmatter(source)
@@ -218,16 +209,50 @@ class EditorWorkflow:
         return {
             "figures": manifest["figures"],
             "headings": article_headings(body),
+            "plans": {
+                "shared": list(manifest["plans"]["shared"].get("items") or []),
+                "wechat": effective_plan(manifest, "wechat"),
+                "toutiao": effective_plan(manifest, "toutiao"),
+            },
+            "inherited": {
+                "wechat": manifest["plans"]["wechat"].get("items") is None,
+                "toutiao": manifest["plans"]["toutiao"].get("items") is None,
+            },
+            "confirmation": manifest.get("confirmation") or {},
         }
 
     def apply_figures(self, payload: dict[str, object]) -> dict[str, object]:
         plan = payload.get("plan")
         if not isinstance(plan, list):
             raise RuntimeError("配图计划格式异常")
-        result = apply_plan(self.article_path, plan)
+        platform = str(payload.get("platform") or "shared")
+        result = apply_plan(self.article_path, plan, platform=platform)
+        wechat = render_article(str(self.article_path))
+        toutiao = render_toutiao(str(self.article_path))
         return {
             **result,
-            "message": f"已保存{result['used_count']}张正文配图，请刷新排版编辑器。",
+            "wechat_preview": "/pd-workflow/preview/wechat",
+            "toutiao_preview": "/pd-workflow/preview/toutiao",
+            "message": f"已保存{result['used_count']}张配图，两个平台预览均已刷新。",
+        }
+
+    def reset_figures(self, payload: dict[str, object]) -> dict[str, object]:
+        platform = str(payload.get("platform") or "")
+        result = reset_platform_override(self.article_path, platform)
+        render_article(str(self.article_path))
+        render_toutiao(str(self.article_path))
+        return {**result, "message": "已恢复为共用配图方案。"}
+
+    def confirm_figure_plan(self) -> dict[str, object]:
+        # 只有两个正式预览都能生成时，才允许把人工确认写入状态。
+        wechat = render_article(str(self.article_path))
+        toutiao = render_toutiao(str(self.article_path))
+        result = confirm_figures(self.article_path)
+        return {
+            **result,
+            "wechat_preview": wechat["preview_path"],
+            "toutiao_preview": toutiao["preview_path"],
+            "message": "配图已人工确认，现在可以执行“同步双平台草稿”。",
         }
 
     def figure_asset(self, figure_id: str) -> Path:
@@ -249,31 +274,51 @@ class EditorWorkflow:
         cards: list[str] = []
         for figure in data["figures"]:
             figure_id = str(figure["id"])
-            selected = "checked" if figure.get("used_in_wechat") else ""
-            current_position = str(figure.get("article_position") or "")
             cards.append(
                 f"""<article class="figure" data-id="{html.escape(figure_id)}">
 <img src="/pd-workflow/asset/{html.escape(figure_id)}" alt="{html.escape(str(figure.get('title') or figure_id))}">
-<div class="body"><label class="pick"><input type="checkbox" {selected}>用于正文</label>
+<div class="body"><label class="pick"><input type="checkbox">用于正文</label>
 <h2>{html.escape(str(figure.get('title') or figure_id))}</h2>
 <p>{figure.get('width_px')}×{figure.get('height_px')}｜出版：{html.escape(str(figure.get('publication_status') or ''))}</p>
-<select data-current="{html.escape(current_position)}">{options}</select></div></article>"""
+<select>{options}</select></div></article>"""
             )
+        payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+        heading_list = "".join(
+            f'<li data-heading="{html.escape(str(item["value"]))}"><strong>{html.escape(str(item["label"]))}</strong><span></span></li>'
+            for item in headings
+        )
         return f"""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>公众号配图托盘</title>
-<style>body{{margin:0;background:#f3f4f6;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}}
-.shell{{max-width:1280px;margin:auto;padding:22px}}header{{position:sticky;top:0;z-index:5;background:#f3f4f6eF;padding:8px 0 16px;backdrop-filter:blur(12px)}}
-h1{{margin:0;font-size:26px}}header p{{color:#64748b}}button{{border:0;border-radius:9px;background:#ff6a2a;color:white;padding:11px 18px;font-size:15px;cursor:pointer}}
-.grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}.figure{{background:white;padding:13px;border-radius:14px;box-shadow:0 5px 22px #0f172a12}}
-img{{width:100%;display:block;border:1px solid #e5e7eb}}.body{{padding:10px 2px 2px}}h2{{font-size:17px;margin:8px 0}}p{{color:#64748b;font-size:13px}}
-.pick{{font-weight:700;color:#c2410c}}select{{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;background:white}}.notice{{margin-left:12px;color:#047857}}
-@media(max-width:760px){{.grid{{grid-template-columns:1fr}}}}</style></head><body><main class="shell"><header><h1>公众号配图托盘</h1>
-<p>勾选正文图片并选择插入位置；保存后自动记录实际使用顺序。PPT原图不会被改写。</p><button id="save">保存配图方案并刷新编辑器</button><span class="notice" id="notice"></span></header>
-<section class="grid">{''.join(cards)}</section></main><script>
-document.querySelectorAll('select').forEach(select=>{{const current=select.dataset.current||'';if(current){{const option=[...select.options].find(x=>current.startsWith(x.value));if(option)select.value=option.value}}}});
-document.getElementById('save').addEventListener('click',async()=>{{const plan=[...document.querySelectorAll('.figure')].filter(card=>card.querySelector('input').checked).map(card=>({{id:card.dataset.id,before_heading:card.querySelector('select').value}}));
-const response=await fetch('/pd-workflow/figures/apply',{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify({{plan}})}});const result=await response.json();
-if(!response.ok){{alert(result.error||'保存失败');return}}document.getElementById('notice').textContent=result.message;if(window.opener)window.opener.location.reload();}});
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>双平台配图工作台</title>
+<style>
+body{{margin:0;background:#f3f4f6;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}}
+header{{position:sticky;top:0;z-index:10;background:#fffffff2;padding:14px 18px;border-bottom:1px solid #e5e7eb;backdrop-filter:blur(12px)}}
+.top,.modes,.actions,.preview-tabs{{display:flex;gap:10px;align-items:center;flex-wrap:wrap}}.top h1{{font-size:23px;margin:0 12px 0 0}}header p{{margin:7px 0;color:#64748b}}
+button{{border:0;border-radius:9px;padding:10px 15px;cursor:pointer;background:#e5e7eb;color:#111827}}button.primary{{background:#ff6a2a;color:white}}button.confirm{{background:#047857;color:white}}button.active{{background:#111827;color:white}}button:disabled{{opacity:.5;cursor:not-allowed}}
+.notice{{color:#047857;font-weight:700}}.workspace{{display:grid;grid-template-columns:minmax(310px,0.9fr) minmax(270px,.75fr) minmax(420px,1.35fr);gap:14px;padding:14px;height:calc(100vh - 145px);box-sizing:border-box}}
+.panel{{background:white;border-radius:14px;box-shadow:0 5px 22px #0f172a10;overflow:auto}}.panel>h2{{position:sticky;top:0;background:white;margin:0;padding:15px;border-bottom:1px solid #e5e7eb;font-size:17px;z-index:2}}
+.figures{{padding:12px;display:grid;gap:12px}}.figure{{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}}.figure img{{width:100%;display:block;background:#f8fafc}}.figure .body{{padding:10px}}.figure h2{{font-size:15px;margin:7px 0}}.figure p{{font-size:12px;color:#64748b;margin:5px 0}}.pick{{color:#c2410c;font-weight:700}}select{{width:100%;padding:8px;border:1px solid #d1d5db;border-radius:8px;background:white}}
+.chapters{{list-style:none;padding:12px;margin:0;display:grid;gap:9px}}.chapters li{{padding:11px;border-radius:9px;background:#f8fafc}}.chapters strong,.chapters span{{display:block}}.chapters strong{{font-size:13px}}.chapters span{{font-size:12px;color:#c2410c;margin-top:5px}}
+.preview-head{{padding:10px;border-bottom:1px solid #e5e7eb}}iframe{{width:100%;height:calc(100% - 54px);border:0;background:#eef1f5}}.inherit{{font-size:12px;color:#64748b}}
+@media(max-width:1100px){{.workspace{{grid-template-columns:1fr 1fr;height:auto}}.preview-panel{{grid-column:1/-1;height:760px}}}}@media(max-width:720px){{.workspace{{display:block}}.panel{{margin-bottom:12px;max-height:none}}.preview-panel{{height:650px}}}}
+</style></head><body><header><div class="top"><h1>双平台配图工作台</h1><div class="modes">
+<button class="mode active" data-mode="shared">两端共用</button><button class="mode" data-mode="wechat">公众号微调</button><button class="mode" data-mode="toutiao">今日头条微调</button><span id="inherit" class="inherit"></span></div></div>
+<p>先调整共用方案；只有确有需要时再做平台微调。保存不会上传，点击“确认配图”后才允许同步草稿。</p>
+<div class="actions"><button id="save" class="primary">保存当前方案</button><button id="reset">恢复为共用方案</button><button id="confirm" class="confirm">确认配图</button><span class="notice" id="notice"></span></div></header>
+<main class="workspace"><section class="panel"><h2>候选图片</h2><div class="figures">{''.join(cards)}</div></section>
+<section class="panel"><h2>文章位置</h2><ul class="chapters">{heading_list}</ul></section>
+<section class="panel preview-panel"><div class="preview-head"><div class="preview-tabs"><button class="preview-tab active" data-src="/pd-workflow/preview/wechat">公众号预览</button><button class="preview-tab" data-src="/pd-workflow/preview/toutiao">今日头条预览</button></div></div><iframe id="preview" src="/pd-workflow/preview/wechat"></iframe></section></main>
+<script id="workflow-data" type="application/json">{payload}</script><script>
+const data=JSON.parse(document.getElementById('workflow-data').textContent);let mode='shared';
+const cards=[...document.querySelectorAll('.figure')];
+function loadMode(next){{mode=next;document.querySelectorAll('.mode').forEach(x=>x.classList.toggle('active',x.dataset.mode===mode));const plan=data.plans[mode]||[];const byId=new Map(plan.map(x=>[x.id,x]));cards.forEach(card=>{{const item=byId.get(card.dataset.id);card.querySelector('input').checked=!!item;if(item)card.querySelector('select').value=item.before_heading;}});document.getElementById('reset').style.display=mode==='shared'?'none':'';document.getElementById('inherit').textContent=mode!=='shared'&&data.inherited[mode]?'当前继承共用方案':'当前为独立微调';refreshChapters();}}
+function collect(){{return cards.filter(card=>card.querySelector('input').checked).map(card=>({{id:card.dataset.id,before_heading:card.querySelector('select').value}}));}}
+function refreshChapters(){{const groups={{}};collect().forEach(item=>(groups[item.before_heading]??=[]).push(item.id));document.querySelectorAll('.chapters li').forEach(li=>li.querySelector('span').textContent=(groups[li.dataset.heading]||[]).join('、'));}}
+cards.forEach(card=>{{card.querySelector('input').addEventListener('change',refreshChapters);card.querySelector('select').addEventListener('change',refreshChapters);}});document.querySelectorAll('.mode').forEach(button=>button.addEventListener('click',()=>loadMode(button.dataset.mode)));
+async function post(url,payload){{const response=await fetch(url,{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify(payload)}});const result=await response.json();if(!response.ok)throw new Error(result.error||'操作失败');return result;}}
+document.getElementById('save').addEventListener('click',async()=>{{try{{const result=await post('/pd-workflow/figures/apply',{{platform:mode,plan:collect()}});data.plans[mode]=collect();if(mode==='shared'){{if(data.inherited.wechat)data.plans.wechat=[...data.plans.shared];if(data.inherited.toutiao)data.plans.toutiao=[...data.plans.shared];}}else{{data.inherited[mode]=false}}document.getElementById('notice').textContent=result.message;document.getElementById('preview').contentWindow.location.reload();if(window.opener)window.opener.location.reload();loadMode(mode);}}catch(error){{alert(error.message)}}}});
+document.getElementById('reset').addEventListener('click',async()=>{{try{{const result=await post('/pd-workflow/figures/reset',{{platform:mode}});data.inherited[mode]=true;data.plans[mode]=[...data.plans.shared];document.getElementById('notice').textContent=result.message;loadMode(mode);document.getElementById('preview').contentWindow.location.reload();}}catch(error){{alert(error.message)}}}});
+document.getElementById('confirm').addEventListener('click',async()=>{{try{{const result=await post('/pd-workflow/figures/confirm',{{}});document.getElementById('notice').textContent=result.message;}}catch(error){{alert(error.message)}}}});
+document.querySelectorAll('.preview-tab').forEach(button=>button.addEventListener('click',()=>{{document.querySelectorAll('.preview-tab').forEach(x=>x.classList.remove('active'));button.classList.add('active');document.getElementById('preview').src=button.dataset.src;}}));loadMode('shared');
 </script></body></html>"""
 
     def result_html(self, message: str = "", error: str = "") -> str:
@@ -317,8 +362,6 @@ if(!response.ok){{alert(result.error||'保存失败');return}}document.getElemen
                 f"<li>{html.escape(str(issue))}</li>" for issue in sync_issues
             )
             notice += f'<div class="notice error"><strong>需要检查：</strong><ul>{issue_items}</ul></div>'
-        disabled = "disabled" if sync_blocked or result.get("media_id") else ""
-        button_text = "草稿已创建" if result.get("media_id") else "同步到公众号草稿箱（只创建草稿）"
         editor_url = (
             "http://127.0.0.1:8800/md/"
             f"?pdWorkflow={self.workflow_id}"
@@ -328,7 +371,7 @@ if(!response.ok){{alert(result.error||'保存失败');return}}document.getElemen
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>公众号工作流下一步</title>
+<title>双平台文章工作流</title>
 <style>
 body{{margin:0;background:#f4f5f7;color:#1f2937;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}}
 .shell{{max-width:1080px;margin:0 auto;padding:28px}}
@@ -348,16 +391,13 @@ iframe{{width:100%;height:72vh;border:1px solid #e5e7eb;border-radius:12px;backg
 <body>
 <main class="shell">
   <section class="card">
-    <h1>排版已进入下一步</h1>
+    <h1>本地排版已保存</h1>
     <p>{html.escape(status)}</p>
     {notice}
     <ul>{detail_html}</ul>
     <div class="actions">
       <a class="button" href="{html.escape(editor_url)}">返回排版编辑器</a>
-      <a class="button" href="/pd-workflow/figure-tray" target="_blank">打开配图托盘</a>
-      <form method="post" action="/pd-workflow/publish">
-        <button type="submit" {disabled}>{html.escape(button_text)}</button>
-      </form>
+      <a class="button" href="/pd-workflow/figure-tray" target="_blank">打开双平台配图工作台</a>
     </div>
     <iframe src="/pd-workflow/preview" title="最终公众号预览"></iframe>
   </section>
@@ -422,17 +462,24 @@ def make_handler(workflow: EditorWorkflow):
                 try:
                     figure_id = path.rsplit("/", 1)[-1]
                     asset = workflow.figure_asset(figure_id)
-                    self.send_bytes(asset.read_bytes(), content_type="image/png")
+                    content_type = mimetypes.guess_type(asset.name)[0] or "application/octet-stream"
+                    self.send_bytes(asset.read_bytes(), content_type=content_type)
                 except Exception as error:
                     self.send_bytes(str(error).encode("utf-8"), status=404)
                 return
-            if path == "/preview":
-                preview_path = str(workflow.last_result.get("preview_path") or "")
-                preview = Path(preview_path)
-                if not preview.exists():
-                    self.send_bytes("预览尚未生成".encode("utf-8"), status=404)
-                    return
-                self.send_bytes(preview.read_bytes())
+            if path in {"/preview", "/preview/wechat"}:
+                try:
+                    rendered = render_article(str(workflow.article_path))
+                    self.send_bytes(Path(rendered["preview_path"]).read_bytes())
+                except Exception as error:
+                    self.send_bytes(str(error).encode("utf-8"), status=400)
+                return
+            if path == "/preview/toutiao":
+                try:
+                    rendered = render_toutiao(str(workflow.article_path))
+                    self.send_bytes(Path(rendered["preview_path"]).read_bytes())
+                except Exception as error:
+                    self.send_bytes(str(error).encode("utf-8"), status=400)
                 return
             if path in {"/", "/result"}:
                 self.send_bytes(workflow.result_html().encode("utf-8"))
@@ -465,18 +512,27 @@ def make_handler(workflow: EditorWorkflow):
                 except Exception as error:
                     self.send_json({"error": str(error)}, status=400)
                 return
-            if path == "/publish":
+            if path == "/figures/reset":
                 try:
-                    media_id = workflow.publish_draft()
-                    page = workflow.result_html(
-                        message=f"公众号草稿创建成功；media_id：{media_id}"
-                    )
-                    self.send_bytes(page.encode("utf-8"))
+                    length = int(self.headers.get("Content-Length", "0"))
+                    payload = json.loads(self.rfile.read(length).decode("utf-8"))
+                    if not isinstance(payload, dict):
+                        raise RuntimeError("配图计划格式异常")
+                    self.send_json(workflow.reset_figures(payload))
                 except Exception as error:
-                    self.send_bytes(
-                        workflow.result_html(error=str(error)).encode("utf-8"),
-                        status=400,
-                    )
+                    self.send_json({"error": str(error)}, status=400)
+                return
+            if path == "/figures/confirm":
+                try:
+                    self.send_json(workflow.confirm_figure_plan())
+                except Exception as error:
+                    self.send_json({"error": str(error)}, status=400)
+                return
+            if path == "/publish":
+                self.send_json(
+                    {"error": "本地工作台不再直接上传；请先确认配图，再执行“同步双平台草稿”。"},
+                    status=409,
+                )
                 return
             self.send_bytes("页面不存在".encode("utf-8"), status=404)
 
@@ -484,7 +540,7 @@ def make_handler(workflow: EditorWorkflow):
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="doocs/md 与公众号工作流本地桥接")
+    parser = argparse.ArgumentParser(description="doocs/md 与双平台文章工作流本地桥接")
     parser.add_argument("--article", required=True)
     parser.add_argument("--port", type=int, default=8788)
     args = parser.parse_args()

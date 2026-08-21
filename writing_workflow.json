@@ -45,6 +45,11 @@
     "setup_status": "data/core/wechat_setup_status.json",
     "draft_count_endpoint": "https://api.weixin.qq.com/cgi-bin/draft/count"
   },
+  "toutiao": {
+    "creator_url": "https://mp.toutiao.com/profile_v4/graphic/publish",
+    "drafts_url": "https://mp.toutiao.com/profile_v4/manage/content",
+    "default_options": {}
+  },
   "workflow_state": "data/core/writing_workflow_state.json",
   "preview_root": "/tmp/peopledaily-writing-preview"
 }

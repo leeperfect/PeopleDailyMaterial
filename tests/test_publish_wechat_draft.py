@@ -23,6 +23,11 @@ class PublishWechatDraftTest(unittest.TestCase):
         second = MODULE.publication_fingerprint("abc", {"theme": "grace"})
         self.assertNotEqual(first, second)
 
+    def test_fingerprint_changes_when_figure_content_changes(self):
+        first = MODULE.publication_fingerprint("abc", {"theme": "default"}, "figure-a")
+        second = MODULE.publication_fingerprint("abc", {"theme": "default"}, "figure-b")
+        self.assertNotEqual(first, second)
+
     def test_digest_is_truncated_by_utf8_bytes(self):
         truncated = MODULE.truncate_utf8("中国品牌走向世界", 12)
         self.assertEqual(truncated, "中国品牌")

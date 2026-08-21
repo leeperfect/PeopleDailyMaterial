@@ -1,0 +1,227 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""从共用文章与头条配图方案生成今日头条富文本和浏览器交接包。"""
+
+from __future__ import annotations
+
+import argparse
+import base64
+import html
+import json
+import mimetypes
+import re
+import sys
+from pathlib import Path
+from typing import Any
+from urllib.parse import unquote, urlparse
+
+from bs4 import BeautifulSoup
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT))
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+
+from modules.figure_workflow import (  # noqa: E402
+    body_for_platform,
+    effective_plan,
+    figure_by_id,
+    load_manifest,
+    plan_fingerprint,
+)
+from modules.writing_workflow import (  # noqa: E402
+    atomic_write_json,
+    atomic_write_text,
+    body_hash,
+    load_public_config,
+    load_state,
+    project_path,
+    split_frontmatter,
+    title_from_article,
+    workflow_id,
+)
+from render_wechat_html import render_with_doocs  # noqa: E402
+
+
+ALLOWED_TAGS = {
+    "p", "h1", "h2", "h3", "strong", "em", "blockquote", "ul", "ol", "li",
+    "img", "a", "br", "hr", "pre", "code",
+}
+
+
+def toutiao_title(article_path: Path, metadata: dict[str, Any], body: str) -> str:
+    value = metadata.get("toutiao_title")
+    if not value:
+        match = re.search(r"^#\s+(.+)$", body, re.M)
+        value = match.group(1).strip() if match else metadata.get("title")
+    if not value:
+        neutral_metadata = {key: item for key, item in metadata.items() if key != "wechat_title"}
+        value = title_from_article(article_path, neutral_metadata, body)
+    title = str(value).strip()
+    return re.sub(r"^(?:热点)?\d+-?【R】\s*[｜|]?\s*", "", title).strip()
+
+
+def neutral_layout(config: dict[str, Any]) -> dict[str, Any]:
+    layout = dict(config["doocs"]["default_layout"])
+    layout.update(
+        {
+            "theme": "simple",
+            "customCSS": "",
+            "isUseIndent": False,
+            "isUseJustify": False,
+            "citeStatus": False,
+        }
+    )
+    return layout
+
+
+def sanitize_fragment(fragment: str) -> str:
+    soup = BeautifulSoup(fragment, "html.parser")
+    for tag in list(soup.find_all(True)):
+        if tag.name not in ALLOWED_TAGS:
+            tag.unwrap()
+            continue
+        allowed = {"href", "title"} if tag.name == "a" else ({"src", "alt"} if tag.name == "img" else set())
+        for attribute in list(tag.attrs):
+            if attribute not in allowed:
+                del tag.attrs[attribute]
+        if tag.name == "a":
+            href = str(tag.get("href") or "")
+            if not re.match(r"^https?://", href):
+                tag.unwrap()
+    return "".join(str(node) for node in soup.contents).strip()
+
+
+def fragment_without_images(fragment: str) -> str:
+    soup = BeautifulSoup(fragment, "html.parser")
+    for image in soup.find_all("img"):
+        image.decompose()
+    return "".join(str(node) for node in soup.contents).strip()
+
+
+def preview_images_as_data(fragment: str) -> str:
+    soup = BeautifulSoup(fragment, "html.parser")
+    for image in soup.find_all("img"):
+        source = str(image.get("src") or "")
+        parsed = urlparse(source)
+        if parsed.scheme in ("http", "https", "data"):
+            continue
+        candidate = project_path(unquote(parsed.path)).resolve()
+        if not candidate.exists() or not candidate.is_file():
+            continue
+        mime = mimetypes.guess_type(candidate.name)[0] or "image/png"
+        encoded = base64.b64encode(candidate.read_bytes()).decode("ascii")
+        image["src"] = f"data:{mime};base64,{encoded}"
+    return "".join(str(node) for node in soup.contents).strip()
+
+
+def preview_document(title: str, fragment: str, fingerprint: str) -> str:
+    return f"""<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{html.escape(title)}</title><style>
+body{{margin:0;background:#f2f4f7;color:#222;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}}
+.toolbar{{position:sticky;top:0;display:flex;gap:14px;align-items:center;padding:12px 18px;background:#1667ff;color:white}}
+.toolbar strong{{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.toolbar button{{border:0;border-radius:8px;padding:9px 14px;cursor:pointer}}
+article{{box-sizing:border-box;width:min(100%,760px);margin:18px auto;padding:30px 28px 60px;background:white;line-height:1.8}}
+article img{{display:block;max-width:100%;height:auto;margin:22px auto}}article h1{{font-size:28px}}article h2{{font-size:22px;margin-top:32px}}
+.meta{{font-size:12px;opacity:.8}}@media(max-width:780px){{article{{margin:0;padding:22px 18px 48px}}}}
+</style></head><body><div class="toolbar"><strong>今日头条预览｜{html.escape(title)}</strong>
+<span class="meta">配图指纹 {fingerprint[:10]}</span><button id="copy">复制头条富文本</button></div>
+<article id="article">{fragment}</article><script>
+document.getElementById('copy').addEventListener('click',async()=>{{const article=document.getElementById('article');
+try{{await navigator.clipboard.write([new ClipboardItem({{'text/html':new Blob([article.innerHTML],{{type:'text/html'}}),'text/plain':new Blob([article.innerText],{{type:'text/plain'}})}})]);document.getElementById('copy').textContent='已复制';}}
+catch(_){{const range=document.createRange();range.selectNodeContents(article);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);}}}});
+</script></body></html>"""
+
+
+def render_toutiao(article: str) -> dict[str, Any]:
+    config = load_public_config()
+    article_path = project_path(article).resolve()
+    if not article_path.exists():
+        raise RuntimeError(f"文章不存在：{article_path}")
+    source = article_path.read_text(encoding="utf-8")
+    _, original_body, metadata = split_frontmatter(source)
+    body = body_for_platform(article_path, "toutiao")
+    rendered = render_with_doocs(body, neutral_layout(config), config)
+    fragment = sanitize_fragment(str(rendered["html"]))
+    title = toutiao_title(article_path, metadata, original_body)
+    manifest_path, manifest = load_manifest(article_path)
+    plan = effective_plan(manifest, "toutiao")
+    assets: list[dict[str, Any]] = []
+    for order, item in enumerate(plan, 1):
+        figure = figure_by_id(manifest, str(item["id"]))
+        local_path = project_path(str(figure["file"])).resolve()
+        assets.append(
+            {
+                "order": order,
+                "id": figure["id"],
+                "path": str(local_path),
+                "before_heading": item["before_heading"],
+                "sha256": figure.get("sha256"),
+            }
+        )
+    fingerprint = plan_fingerprint(article_path, manifest)
+    output_dir = Path(config["preview_root"]) / workflow_id(article_path) / "toutiao"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    preview_path = output_dir / "index.html"
+    payload_path = output_dir / "draft-payload.json"
+    state = load_state(config)
+    saved_profile = state.get("toutiao_option_profile")
+    profile = saved_profile if isinstance(saved_profile, dict) else {}
+    options = dict(config["toutiao"]["default_options"])
+    options.update(profile)
+    result = {
+        "schema_version": 1,
+        "platform": "toutiao",
+        "mode": "save_draft_only",
+        "article_path": str(article_path),
+        "title": title,
+        "html": fragment,
+        "plain_text": BeautifulSoup(fragment, "html.parser").get_text("\n", strip=True),
+        "article_hash": body_hash(body),
+        "figure_fingerprint": fingerprint,
+        "figure_manifest": str(manifest_path.relative_to(PROJECT_ROOT)),
+        "images": assets,
+        "creator_url": config["toutiao"]["creator_url"],
+        "drafts_url": config["toutiao"]["drafts_url"],
+        "options": options,
+        "option_profile_configured": bool(profile),
+        "browser_steps": [
+            "打开 creator_url，并确认当前为文章编辑页；登录或验证码出现时暂停",
+            "填写 title，并用 html_without_images 填入正文",
+            "按照 images 的 order 上传本地图片，并插入 before_heading 指定标题之前",
+            "option_profile_configured 为 false 时请用户确认一次页面常用选项；否则逐项应用 options",
+            "页面找不到已保存的选项名称或值时暂停，不猜测替代选项",
+            "只点击保存草稿，随后在 drafts_url 核对标题和保存状态",
+        ],
+        "safety": {
+            "allow_save_draft": True,
+            "allow_publish": False,
+            "stop_on_unknown_page": True,
+        },
+    }
+    result["html_without_images"] = fragment_without_images(fragment)
+    preview_fragment = preview_images_as_data(fragment)
+    atomic_write_text(preview_path, preview_document(title, preview_fragment, fingerprint))
+    result["preview_path"] = str(preview_path)
+    result["payload_path"] = str(payload_path)
+    atomic_write_json(payload_path, result)
+    return result
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="生成今日头条富文本和浏览器交接包")
+    parser.add_argument("article")
+    args = parser.parse_args()
+    try:
+        result = render_toutiao(args.article)
+    except RuntimeError as error:
+        print(str(error), file=sys.stderr)
+        return 1
+    print(f"今日头条预览：{result['preview_path']}")
+    print(f"浏览器交接包：{result['payload_path']}")
+    print(f"正文图片：{len(result['images'])} 张")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

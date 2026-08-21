@@ -13,7 +13,8 @@ scope: PeopleDailyMaterial
 | 你说的话 | 自动完成的工作 | 停留位置 |
 |---|---|---|
 | `写稿` | 真实来源核验 → 四项文字产物 → Humanizer 一润 → 送入得到大脑 | 等待你在得到 App 完成二润 |
-| `拉回` | 得到稿拉回 → 重点加粗 → NotebookLM 配图登记 → 配图托盘初排 → 排版和接口预检 → 上传公众号草稿箱 | 等待你在公众号后台检查并设置原创、赞赏和合集 |
+| `拉回` | 得到稿拉回 → 重点加粗 → NotebookLM 配图登记 → 双平台配图初排 → 打开本地工作台 | 等待你人工检查并确认配图，不上传平台 |
+| `同步双平台草稿` | 统一预检 → 公众号草稿 → Chrome 代填今日头条 → 保存头条草稿 | 两个平台均等待人工正式发布 |
 
 说“拉回”前，只需把当前文章的 NotebookLM PPT 和信息图附在消息中，或者保存在 `Downloads`。流程会优先读取本轮附件；没有附件时，先复用本文已登记的素材，再从 `Downloads` 中识别与当前主题相符的最新 PPTX 和信息图。候选不唯一或主题无法确认时会停下来请你选择，不会猜测，也不会先上传无图稿。
 
@@ -98,16 +99,16 @@ Codex执行：
   python3 scripts/writing_workflow.py emphasis-check "<文章路径>"
   ```
 
-重点审查通过后，流程继续自动完成：
+重点审查通过后，“拉回”流程继续到本地配图，但不会上传平台：
 
 1. 从本轮附件、本文已有清单或 `Downloads` 定位当前文章的 NotebookLM PPT 和信息图；
 2. 拆分 PPT、统一命名、检查尺寸，生成配图清单和审查页；
-3. 用公众号配图托盘形成初始排图方案，记录采用图片、顺序和章节位置；
-4. 生成与正式发布一致的 doocs/md HTML；
-5. 执行公众号接口预检和发布模拟；
-6. 全部通过后创建公众号草稿，绝不自动群发。
+3. 形成公众号和今日头条共用的初始排图方案；
+4. 打开本地“双平台配图工作台”；
+5. 人工检查两个平台的图片、顺序和章节位置；
+6. 点击“确认配图”后停下，等待“同步双平台草稿”口令。
 
-如果得到稿校验、素材识别、图片质量、排版或公众号接口任一环节没有通过，流程会停在该环节，不会覆盖正确版本，也不会上传缺图稿。
+如果得到稿校验、素材识别、图片质量或排版任一环节没有通过，流程会停在该环节，不会覆盖正确版本，也不会上传缺图稿。
 
 ### 预览排版
 
@@ -134,13 +135,14 @@ Codex使用 doocs/md 生成只读成品页，通过仅监听 `127.0.0.1` 的临�
 
 Codex在后台启动 doocs/md 并在内置浏览器载入文章。确定后说“把这个排版保存为本文设置”，单篇设置会写入本地工作流状态；下一次预览和发布继续使用它。
 
-如果在完整编辑器中修改了正文，点击“发布（进入下一步）”后：
+如果在完整编辑器中修改了正文，点击“保存本地排版”后：
 
 - 结构检查通过：正文自动写回源 Markdown，并保存修改前快照；
 - 排版修改：主题、颜色、字号、缩进等保存到本文 `wechat_layout`；
+- 正文变化：撤销旧的配图确认，必须重新检查两个平台预览；
 - 结构、参考文章或来源受损：只保存候选稿，暂停覆盖和草稿同步。
 
-### 公众号配图托盘（“拉回”时自动执行）
+### 双平台配图工作台（“拉回”时自动打开）
 
 NotebookLM 导出的 PPT 和信息图先登记为本文素材。对 Codex说：
 
@@ -150,25 +152,27 @@ NotebookLM 导出的 PPT 和信息图先登记为本文素材。对 Codex说：
 
 如需在自动初排后人工调整，可以再说：
 
-> 开启公众号配图托盘。
+> 打开双平台配图工作台。
 
-完整排版编辑器顶部会出现“公众号配图托盘”按钮。托盘可以预览全部候选图、勾选实际使用的图片，并指定插在某个二级标题之前或参考文章之前。保存后会同时完成三件事：
+完整排版编辑器顶部会出现“双平台配图工作台”按钮。工作台分为候选图片、文章位置和平台预览三部分，可以切换“共用方案”“公众号微调”“今日头条微调”。保存后会同时完成：
 
-1. 把图片引用写回公众号 Markdown；
-2. 在配图清单中记录使用状态、顺序和位置；
-3. 刷新编辑器预览，后续上传草稿继续使用同一组图片。
+1. 把公众号实际采用的图片写回 Markdown，兼容现有 doocs/md；
+2. 在配图清单中分别记录 `shared`、`wechat`、`toutiao` 方案；
+3. 同时刷新公众号和今日头条预览；
+4. 今日头条微调不反向改变公众号正文；
+5. 点击“确认配图”后，把正文和配图指纹写入工作流状态。
 
-“拉回”流程会默认按文章结构生成一版初始方案。每次应用新方案前都会保存文章快照，未采用的图片继续留在候选区，不会删除。
+“拉回”流程会默认按文章结构生成一版初始方案。每次应用新方案前都会保存文章快照，未采用的图片继续留在候选区，不会删除。确认后的正文或配图再次变化时，确认自动失效。
 
-### 同步公众号草稿箱（“拉回”时自动执行）
+### 同步双平台草稿（配图确认后单独执行）
 
 对 Codex说：
 
-> 同步到公众号草稿箱。
+> 同步双平台草稿。
 
-这个旧口令继续保留，适合单独重试上传；正常情况下说“拉回”已经会自动执行。
+“拉回”不会再上传。只有本地配图确认后，双平台同步才会运行。
 
-同步过程：
+公众号同步过程保持原有接口方式：
 
 1. 使用同一份 doocs/md HTML；
 2. 按文章系列自动选择固定封面；
@@ -182,7 +186,16 @@ NotebookLM 导出的 PPT 和信息图先登记为本文素材。对 Codex说：
    - **赞赏**：确认账户为 `LeePerfect`；
    - **合集**：按文章系列选择对应合集（人民日报系列→"人民日报"，热点系列→"热点"）。
 
-相同正文和排版已创建过草稿时，流程会停止重复同步，除非你明确要求重新创建。
+今日头条同步使用已登录的 Chrome：
+
+1. 生成去除公众号专属样式的头条富文本；
+2. 自动进入头条号文章编辑页；
+3. 填写标题和正文，并按配图位置上传本地原图；
+4. 应用首次确认后保存的头条常用选项；
+5. 只点击“保存草稿”，绝不点击正式发布；
+6. 返回草稿管理页核对标题和保存状态，再登记 `toutiao_draft_saved`。
+
+相同正文和配图已经创建过草稿时默认复用，不重复创建。任一平台失败不会清除另一平台的成功记录，可以单独重试。
 
 公众号 API 不支持原创、赞赏和合集设置，这三项只能通过网页手动操作。草稿创建成功后，Codex会提醒你完成配置。
 
@@ -239,12 +252,17 @@ python3 scripts/writing_workflow.py emphasis-check "<文章路径>"
 python3 scripts/writing_workflow.py preview "<文章路径>"
 python3 scripts/writing_workflow.py editor "<文章路径>"
 python3 scripts/writing_workflow.py register-figures "<文章路径>" --pptx "<PPT路径>" --infographic "<信息图路径>" --slug "<英文主题标识>"
-python3 scripts/writing_workflow.py apply-figures "<文章路径>" --initial
+python3 scripts/writing_workflow.py apply-figures "<文章路径>" --initial --platform shared
+python3 scripts/writing_workflow.py confirm-figures "<文章路径>"
+python3 scripts/writing_workflow.py preview-toutiao "<文章路径>"
 python3 scripts/writing_workflow.py save-layout "<文章路径>" --theme grace
 python3 scripts/writing_workflow.py setup-wechat
 python3 scripts/writing_workflow.py wechat-preflight
 python3 scripts/writing_workflow.py publish "<文章路径>" --dry-run
 python3 scripts/writing_workflow.py publish "<文章路径>"
+python3 scripts/writing_workflow.py sync-dual "<文章路径>"
+python3 scripts/writing_workflow.py sync-dual "<文章路径>" --platform toutiao
+python3 scripts/writing_workflow.py mark-toutiao-saved "<文章路径>" --draft-url "<草稿页地址>"
 python3 scripts/writing_workflow.py status "<文章路径>"
 ```
 
@@ -253,4 +271,4 @@ python3 scripts/writing_workflow.py status "<文章路径>"
 - AppSecret、Get笔记密钥、access_token 不写入文章、日志或 Git。
 - 不自动 Git commit。
 - 不自动群发。
-- 浏览器自动代填只在你明确要求“同步草稿箱”后执行。
+- 浏览器自动代填只在你明确要求“同步双平台草稿”后执行，并且只保存草稿。

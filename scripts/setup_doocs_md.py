@@ -201,13 +201,18 @@ async function advancePeopleDailyWorkflow() {
       >
         <Loader2 v-if="workflowAdvancing" class="mr-2 h-4 w-4 animate-spin" />
         <Send v-else class="mr-2 h-4 w-4" />
-        {{ workflowAdvancing ? '正在进入下一步…' : '发布（进入下一步）' }}
+        {{ workflowAdvancing ? '正在保存…' : '保存本地排版' }}
       </Button>""",
             1,
         )
         if "advancePeopleDailyWorkflow" not in post_source:
             raise RuntimeError("无法应用 doocs/md 公众号工作流入口补丁")
         post_path.write_text(post_source, encoding="utf-8")
+
+    post_source = post_path.read_text(encoding="utf-8")
+    post_source = post_source.replace("公众号配图托盘", "双平台配图工作台")
+    post_source = post_source.replace("发布（进入下一步）", "保存本地排版")
+    post_path.write_text(post_source, encoding="utf-8")
 
     post_source = post_path.read_text(encoding="utf-8")
     if "openPeopleDailyFigureTray" not in post_source:
@@ -240,7 +245,7 @@ async function advancePeopleDailyWorkflow() {""",
         @click="openPeopleDailyFigureTray"
       >
         <Images class="mr-2 h-4 w-4" />
-        公众号配图托盘
+        双平台配图工作台
       </Button>
       <Button
         v-if="isPeopleDailyWorkflow && !isMobile"
@@ -251,9 +256,14 @@ async function advancePeopleDailyWorkflow() {""",
       >""",
             1,
         )
-        if "openPeopleDailyFigureTray" not in post_source or "公众号配图托盘" not in post_source:
+        if "openPeopleDailyFigureTray" not in post_source or "双平台配图工作台" not in post_source:
             raise RuntimeError("无法应用 doocs/md 配图托盘入口补丁")
         post_path.write_text(post_source, encoding="utf-8")
+
+    post_source = post_path.read_text(encoding="utf-8")
+    post_source = post_source.replace("公众号配图托盘", "双平台配图工作台")
+    post_source = post_source.replace("发布（进入下一步）", "保存本地排版")
+    post_path.write_text(post_source, encoding="utf-8")
 
     vite_path = target / "apps" / "web" / "vite.config.ts"
     vite_source = vite_path.read_text(encoding="utf-8")

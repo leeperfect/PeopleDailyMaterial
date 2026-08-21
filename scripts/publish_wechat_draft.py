@@ -43,6 +43,7 @@ from modules.writing_workflow import (
     split_frontmatter,
     title_from_article,
 )
+from modules.platform_workflow import require_publication_ready
 from render_wechat_html import render_article
 
 
@@ -102,8 +103,16 @@ def cover_media_id(
     return media_id, cover
 
 
-def publication_fingerprint(article_hash: str, layout: dict) -> str:
-    payload = article_hash + json.dumps(layout, ensure_ascii=False, sort_keys=True)
+def publication_fingerprint(
+    article_hash: str,
+    layout: dict,
+    figure_fingerprint: str = "",
+) -> str:
+    payload = (
+        article_hash
+        + json.dumps(layout, ensure_ascii=False, sort_keys=True)
+        + figure_fingerprint
+    )
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
@@ -156,6 +165,7 @@ def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str 
     article_path = project_path(article).resolve()
     if not article_path.exists():
         raise RuntimeError(f"文章不存在：{article_path}")
+    readiness = require_publication_ready(article_path)
     source = article_path.read_text(encoding="utf-8")
     _, body, metadata = split_frontmatter(source)
     title = validated_title(metadata, body, article_path)
@@ -163,7 +173,11 @@ def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str 
     rendered = render_article(str(article_path), fragment_only=True)
     series = detect_series(article_path, metadata)
     cover = cover_for_article(article_path, metadata, config)
-    fingerprint = publication_fingerprint(rendered["article_hash"], rendered["layout"])
+    fingerprint = publication_fingerprint(
+        rendered["article_hash"],
+        rendered["layout"],
+        str(readiness["figure_check"]["fingerprint"]),
+    )
 
     state = load_state(config)
     entry = article_state(state, article_path, create=True)
@@ -233,12 +247,17 @@ def replace_draft(article: str, media_id: str) -> str:
     article_path = project_path(article).resolve()
     if not article_path.exists():
         raise RuntimeError(f"文章不存在：{article_path}")
+    readiness = require_publication_ready(article_path)
     source = article_path.read_text(encoding="utf-8")
     _, body, metadata = split_frontmatter(source)
     title = validated_title(metadata, body, article_path)
     digest = truncate_utf8(digest_from_article(metadata, body), 120)
     rendered = render_article(str(article_path), fragment_only=True)
-    fingerprint = publication_fingerprint(rendered["article_hash"], rendered["layout"])
+    fingerprint = publication_fingerprint(
+        rendered["article_hash"],
+        rendered["layout"],
+        str(readiness["figure_check"]["fingerprint"]),
+    )
 
     state = load_state(config)
     entry = article_state(state, article_path, create=True)

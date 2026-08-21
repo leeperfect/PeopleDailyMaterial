@@ -212,10 +212,25 @@ def main() -> int:
     figures_parser.add_argument("--slug", required=True)
     apply_figures_parser = subparsers.add_parser(
         "apply-figures",
-        help="应用公众号配图方案",
+        help="应用共用或单个平台配图方案",
     )
     apply_figures_parser.add_argument("article")
     apply_figures_parser.add_argument("--initial", action="store_true")
+    apply_figures_parser.add_argument(
+        "--platform",
+        choices=["shared", "wechat", "toutiao"],
+        default="shared",
+    )
+    confirm_figures_parser = subparsers.add_parser(
+        "confirm-figures",
+        help="确认本地双平台配图",
+    )
+    confirm_figures_parser.add_argument("article")
+    toutiao_preview_parser = subparsers.add_parser(
+        "preview-toutiao",
+        help="生成今日头条预览和浏览器交接包",
+    )
+    toutiao_preview_parser.add_argument("article")
     setup_wechat_parser = subparsers.add_parser("setup-wechat", help="启动私密配置页")
     setup_wechat_parser.add_argument("--port", default="8788")
     subparsers.add_parser("wechat-preflight", help="验证公众号接口")
@@ -223,6 +238,26 @@ def main() -> int:
     publish_parser.add_argument("article")
     publish_parser.add_argument("--dry-run", action="store_true")
     publish_parser.add_argument("--force", action="store_true")
+    dual_parser = subparsers.add_parser(
+        "sync-dual",
+        help="同步公众号草稿并准备今日头条浏览器保存",
+    )
+    dual_parser.add_argument("article")
+    dual_parser.add_argument("--platform", choices=["both", "wechat", "toutiao"], default="both")
+    dual_parser.add_argument("--dry-run", action="store_true")
+    dual_parser.add_argument("--force-wechat", action="store_true")
+    saved_parser = subparsers.add_parser(
+        "mark-toutiao-saved",
+        help="浏览器保存成功后登记今日头条草稿",
+    )
+    saved_parser.add_argument("article")
+    saved_parser.add_argument("--draft-url", default="")
+    saved_parser.add_argument("--draft-id", default="")
+    profile_parser = subparsers.add_parser(
+        "save-toutiao-profile",
+        help="保存首次确认的今日头条常用选项",
+    )
+    profile_parser.add_argument("--profile-json", required=True)
     status_parser = subparsers.add_parser("status", help="查看状态")
     status_parser.add_argument("article", nargs="?")
     args = parser.parse_args()
@@ -288,10 +323,27 @@ def main() -> int:
             ],
         )
     if args.command == "apply-figures":
-        arguments = [args.article]
+        arguments = [args.article, "--platform", args.platform]
         if args.initial:
             arguments.append("--initial")
         return run_script("apply_figure_plan.py", arguments)
+    if args.command == "confirm-figures":
+        from modules.figure_workflow import confirm_figures
+        from render_toutiao_html import render_toutiao
+        from render_wechat_html import render_article
+
+        try:
+            article_path = project_path(args.article).resolve()
+            render_article(str(article_path))
+            render_toutiao(str(article_path))
+            result = confirm_figures(article_path)
+        except RuntimeError as error:
+            print(str(error), file=sys.stderr)
+            return 1
+        print(f"双平台配图已确认：{result['confirmed_at']}")
+        return 0
+    if args.command == "preview-toutiao":
+        return run_script("render_toutiao_html.py", [args.article])
     if args.command == "setup-wechat":
         return run_script("wechat_setup.py", ["serve", "--port", args.port])
     if args.command == "wechat-preflight":
@@ -303,6 +355,25 @@ def main() -> int:
         if args.force:
             arguments.append("--force")
         return run_script("publish_wechat_draft.py", arguments)
+    if args.command == "sync-dual":
+        arguments = ["prepare", args.article, "--platform", args.platform]
+        if args.dry_run:
+            arguments.append("--dry-run")
+        if args.force_wechat:
+            arguments.append("--force-wechat")
+        return run_script("sync_dual_drafts.py", arguments)
+    if args.command == "mark-toutiao-saved":
+        arguments = ["mark-toutiao-saved", args.article]
+        if args.draft_url:
+            arguments.extend(["--draft-url", args.draft_url])
+        if args.draft_id:
+            arguments.extend(["--draft-id", args.draft_id])
+        return run_script("sync_dual_drafts.py", arguments)
+    if args.command == "save-toutiao-profile":
+        return run_script(
+            "sync_dual_drafts.py",
+            ["save-toutiao-profile", "--profile-json", args.profile_json],
+        )
     status(args.article)
     return 0
 
