@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>防灾救灾行动链 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#ea580c;--accent-soft:rgba(234,88,12,.15);--warn:#f59e0b;--safe:#22c55e;--line:rgba(255,255,255,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.hero{font-size:88px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:56px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:36px;font-weight:700;margin-bottom:12px}
+.body{font-size:28px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.caption{font-size:22px;color:var(--text-secondary);font-weight:500}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:28px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:28px 24px;background:rgba(255,255,255,.02)}
+.data-num{font-size:64px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:32px;font-weight:700}
+.data-label{font-size:26px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:22px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:24px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:28px;margin-bottom:12px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:24px;line-height:1.6;color:var(--text-secondary);padding:4px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:36px;font-weight:900;color:var(--accent);min-width:48px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:28px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:24px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:32px;margin:24px 0;text-align:center}
+.formula-text{font-size:30px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:32px;font-weight:900;color:var(--accent);min-width:40px}
+.ref-content{flex:1}
+.ref-title{font-size:26px;font-weight:700;margin-bottom:6px}
+.ref-meta{font-size:22px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+.scene-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.scene-card{border:1px solid var(--line);padding:20px;background:rgba(255,255,255,.02)}
+.scene-card .scene-title{font-size:26px;font-weight:700;color:var(--accent);margin-bottom:6px}
+.scene-card .scene-action{font-size:22px;color:var(--text-secondary);line-height:1.5}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <p class="kicker">人民日报系列 · 第53篇</p>
+    <h1 class="hero">预警不能只<br>"发出去"</h1>
+    <p class="body" style="font-size:32px;color:var(--text);font-weight:500;margin-top:16px;">关键要有人接、马上动</p>
+  </div>
+  <div class="key-sentence">预警争取的是时间，行动才能把时间变成安全。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker">常见误区 · 预警≠安全</p>
+    <h2 class="h2">信息到了手机<br>不等于群众已经安全</h2>
+    <p class="body">可能有人没看懂、有人不愿走、有人行动不便、有人不知道由谁组织；车辆、路线和安置点也可能尚未启动。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">4<span>类</span></div><div class="data-label">信息送达后断点</div><div class="data-desc">理解障碍、意愿不足、行动困难、责任不明</div></div>
+      <div class="data-card"><div class="data-num">3<span>项</span></div><div class="data-label">转移资源未启动</div><div class="data-desc">车辆未调度、路线未确认、安置点未开放</div></div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">通知思维</h3><ul><li>发了短信就算完成</li><li>群众自行理解执行</li><li>不确认是否收到</li><li>不跟踪是否行动</li></ul></div>
+      <div class="compare-col accent-col"><h3>行动思维</h3><ul><li>预警是任务开始</li><li>逐户叫应确认</li><li>特殊群体点对点</li><li>全程跟踪到安置</li></ul></div>
+    </div>
+  </div>
+  <div class="key-sentence">预警不是通知完成，而是任务开始。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker">总公式 · 七环节行动链</p>
+    <h2 class="h2">从风险排查<br>到复盘改进</h2>
+    <div class="formula-box">
+      <p class="formula-text">风险排查<span class="arrow">→</span>影响预警<span class="arrow">→</span>叫应确认<span class="arrow">→</span><br>转移安置<span class="arrow">→</span>力量前置<span class="arrow">→</span>协同处置<span class="arrow">→</span>复盘改进</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">风险排查</div><div class="step-desc">预警之前先准备四张清单，动态更新风险底数</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">影响预警</div><div class="step-desc">不只报雨量，还要告诉人们危险在哪、现在做什么</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">叫应确认</div><div class="step-desc">发送→接收→复述→行动→回报，五级叫应有回执</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">转移安置</div><div class="step-desc">老弱病残孕幼逐户核对、点对点接送</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">力量前置</div><div class="step-desc">人先转、点先开、物先备、队先到</div></div></div>
+      <div class="step-item"><div class="step-num">6</div><div class="step-content"><div class="step-title">协同处置</div><div class="step-desc">一个风险信号启动多部门共同处置</div></div></div>
+      <div class="step-item"><div class="step-num">7</div><div class="step-content"><div class="step-title">复盘改进</div><div class="step-desc">灾后查行动链哪里断过，回写到预案</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">七个环节层层相接，任何一处断点都可能让预警失效。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 风险 四张清单 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">险</div>
+  <div class="content">
+    <p class="kicker">第一环节 · 风险排查</p>
+    <h2 class="h2">预警之前<br>先准备四张清单</h2>
+    <p class="body">精准预警建立在风险底数上。哪里危险、谁要先转、怎么转、谁负责——四张清单要动态更新，预警一响就知道先找谁。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">01</div><div class="data-label">风险点清单</div><div class="data-desc">地质灾害隐患点、易涝区、危旧房、山洪沟、尾矿库</div></div>
+      <div class="data-card"><div class="data-num">02</div><div class="data-label">重点人员清单</div><div class="data-desc">老人、儿童、残疾人、孕妇、病人、独居户、外来人员</div></div>
+      <div class="data-card"><div class="data-num">03</div><div class="data-label">转移资源清单</div><div class="data-desc">车辆、驾驶员、主备路线、安置点容量、物资储备</div></div>
+      <div class="data-card"><div class="data-num">04</div><div class="data-label">责任人员清单</div><div class="data-desc">包片干部、村组长、网格员、联络员、应急队伍</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">关键：</strong>风险排查不是多填一张表，而是预警一响就知道先找谁、怎么转、谁负责。</p>
+    </div>
+  </div>
+  <div class="key-sentence">风险排查不是多填一张表，而是预警一响就知道先找谁。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 转译 影响预警 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">译</div>
+  <div class="content">
+    <p class="kicker">第二环节 · 影响预警</p>
+    <h2 class="h2">不只报雨量<br>还要报危险和动作</h2>
+    <p class="body">同样雨量，短时集中降下风险更高。预警要说明危险地点、受影响对象、行动时限和避险要求。看得懂、能执行、可核验，预警才真正有效。</p>
+    <div class="scene-grid">
+      <div class="scene-card"><div class="scene-title">家中进水</div><div class="scene-action">先断电，切断电源总开关，不要触碰带电设备</div></div>
+      <div class="scene-card"><div class="scene-title">积水道路</div><div class="scene-action">要绕行，不要强行通过，水深未知风险极大</div></div>
+      <div class="scene-card"><div class="scene-title">山区异常</div><div class="scene-action">立即向高处转移，注意山体开裂、树木倾倒等前兆</div></div>
+      <div class="scene-card"><div class="scene-title">地下空间</div><div class="scene-action">进水马上离开，地下车库、地铁、地下室最危险</div></div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">天气预报式</h3><ul><li>只说降雨量级</li><li>不说明具体影响</li><li>群众不知道做什么</li><li>行动靠自行判断</li></ul></div>
+      <div class="compare-col accent-col"><h3>影响预警式</h3><ul><li>说明危险地点</li><li>明确受影响对象</li><li>给出具体动作指令</li><li>设定行动时限</li></ul></div>
+    </div>
+  </div>
+  <div class="key-sentence">看得懂、能执行、可核验，预警才真正有效。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 叫应 通信网络 -->
+<section class="poster photo-page" id="xhs-06">
+  <img class="bg-img" src="assets/comm-network.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第三环节 · 叫应确认</p>
+    <h2 class="h2">"收到"为什么<br>还不够</h2>
+    <p class="body">县级传到乡镇，乡镇叫应村和包片干部，村级逐户联系重点家庭；上级继续核对谁已转、谁失联、哪里需要支援。</p>
+    <div class="formula-box" style="background:rgba(0,0,0,.6);border-color:var(--accent);">
+      <p class="formula-text" style="font-size:26px;">发送<span class="arrow">→</span>接收<span class="arrow">→</span>复述<span class="arrow">→</span>行动<span class="arrow">→</span>回报</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">县</div><div class="step-content"><div class="step-title">县级发布</div><div class="step-desc">统一发布预警，传到乡镇和相关部门</div></div></div>
+      <div class="step-item"><div class="step-num">乡</div><div class="step-content"><div class="step-title">乡镇叫应</div><div class="step-desc">叫应村和包片干部，确认收到并理解</div></div></div>
+      <div class="step-item"><div class="step-num">村</div><div class="step-content"><div class="step-title">村级逐户</div><div class="step-desc">逐户联系重点家庭，上门叫应行动不便者</div></div></div>
+      <div class="step-item"><div class="step-num">核</div><div class="step-content"><div class="step-title">上级核对</div><div class="step-desc">谁已转、谁失联、哪里需要支援，持续跟踪</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">叫应的验收标准不是聊天框里的"收到"，而是人员已经行动。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 转移 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">转</div>
+  <div class="content">
+    <p class="kicker">第四环节 · 转移安置</p>
+    <h2 class="h2">先接住最难<br>自己离开的人</h2>
+    <p class="body">转移不是广播一响各自离开，要明确包片人员、车辆、主备路线，并把医疗和照护接到安置点。"应转尽转"之前，先回答行动不便者由谁来转。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">7458<span>人</span></div><div class="data-label">横州党员干部和专业力量</div><div class="data-desc">分片包村，逐户核对转移，确保不漏一人</div></div>
+      <div class="data-card"><div class="data-num">6<span>类</span></div><div class="data-label">优先转移群体</div><div class="data-desc">老、弱、病、残、孕、幼，逐户核对点对点接送</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">明确包片人员</div><div class="step-desc">每户重点家庭有指定责任人，责任到人</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">调度转移车辆</div><div class="step-desc">提前安排车辆和驾驶员，主备路线都要确认</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">开放安置点</div><div class="step-desc">提前开放安置点，配置床位、食品、药品和医护</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">医疗照护跟进</div><div class="step-desc">把医疗和照护服务接到安置点，特殊病人不中断治疗</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">"应转尽转"之前，先回答行动不便者由谁来转。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 前置 高地堡垒 -->
+<section class="poster photo-page" id="xhs-08">
+  <img class="bg-img" src="assets/shelter.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第五环节 · 力量前置</p>
+    <h2 class="h2">雨来之前<br>把最难的准备先做完</h2>
+    <p class="body">人先转、点先开、物先备、队先到。提前启用安置点，配置床位、食品、药品和医护；在高风险区域预置通信、发电、储水和救援装备。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">1052<span>个</span></div><div class="data-label">北京山区"高地堡垒"</div><div class="data-desc">已建成的高地应急安置设施，预置物资和通信设备</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">4<span>先</span></div><div class="data-label">力量前置原则</div><div class="data-desc">人先转、点先开、物先备、队先到</div></div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col" style="background:rgba(0,0,0,.4);"><h3 style="color:var(--warn);">临灾才找</h3><ul><li>临时找车找驾驶员</li><li>紧急开放安置点</li><li>四处筹措物资</li><li>队伍仓促赶赴</li></ul></div>
+      <div class="compare-col accent-col"><h3>提前预置</h3><ul><li>车辆人员提前到位</li><li>安置点提前开放</li><li>物资装备提前储备</li><li>救援队伍提前部署</li></ul></div>
+    </div>
+  </div>
+  <div class="key-sentence">临灾时才找车、找床位、找发电机，往往已经晚了。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 协同 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">协</div>
+  <div class="content">
+    <p class="kicker">第六环节 · 协同处置</p>
+    <h2 class="h2">让一条预警<br>触发一组动作</h2>
+    <p class="body">气象、水利、自然资源、应急、交通、海事和属地共享风险判断，按职责同步行动，并接收基层险情回报。协同不是多个部门各发一条信息，而是同一个风险信号启动共同处置。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">7<span>部门</span></div><div class="data-label">核心协同单位</div><div class="data-desc">气象、水利、自然资源、应急、交通、海事、属地政府</div></div>
+      <div class="data-card"><div class="data-num">5<span>动作</span></div><div class="data-label">同步启动响应</div><div class="data-desc">会商、响应、停工停航、撤离、救援同步启动</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">共享风险判断</div><div class="step-desc">多部门联合会商，形成统一的风险研判结论</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">按职责同步行动</div><div class="step-desc">交通管制、停工停航、人员撤离、救援预置同步启动</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">接收基层回报</div><div class="step-desc">基层险情实时上报，指挥中心动态调整处置方案</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">协同不是多个部门各发一条信息，而是同一个风险信号启动共同处置。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 复盘 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">复</div>
+  <div class="content">
+    <p class="kicker">第七环节 · 复盘改进</p>
+    <h2 class="h2">别只统计损失<br>还要追问七个断点</h2>
+    <p class="body">灾后复盘不能只统计损失数字，要沿着行动链逐环节检查哪里断过。风险是否漏人、预警是否易懂、叫应是否真实、路线是否可走、安置是否够用、通信是否有备份、部门信息是否互通。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">7<span>问</span></div><div class="data-label">行动链断点排查</div><div class="data-desc">风险/预警/叫应/路线/安置/通信/信息互通</div></div>
+      <div class="data-card"><div class="data-num">1<span>目标</span></div><div class="data-label">复盘最终目的</div><div class="data-desc">把发现的问题回写到预案，下一次不再犯同样错误</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">风险是否漏人</div><div class="step-desc">四张清单是否完整，有没有遗漏的重点人员和风险点</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">预警是否易懂</div><div class="step-desc">群众是否看得懂、知道做什么，有没有转译成行动指令</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">叫应是否真实</div><div class="step-desc">是真的逐户叫应还是只在群里发了消息，有没有回执确认</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">路线安置通信</div><div class="step-desc">转移路线是否可走、安置点是否够用、通信中断有没有备份方案</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">演练不是证明预案完整，而是提前暴露预案哪里会失灵。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 演练 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">练</div>
+  <div class="content">
+    <p class="kicker">能力建设 · 实战演练</p>
+    <h2 class="h2">演练不是演戏<br>而是压力测试</h2>
+    <p class="body">演练的目的不是展示预案多么完善，而是在安全环境中暴露预案的薄弱环节。要设置极端场景、打乱常规流程、检验通信中断后的备用方案，让每一次演练都能发现真问题。</p>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">表演式演练</h3><ul><li>按剧本走流程</li><li>一切顺利无意外</li><li>只展示不检验</li><li>问题被掩盖</li></ul></div>
+      <div class="compare-col accent-col"><h3>实战式演练</h3><ul><li>设置极端场景</li><li>故意制造断点</li><li>检验备用方案</li><li>发现真问题</li></ul></div>
+    </div>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">3<span>类</span></div><div class="data-label">必测极端场景</div><div class="data-desc">通信全中断、道路全阻断、夜间暴雨转移</div></div>
+      <div class="data-card"><div class="data-num">2<span>项</span></div><div class="data-label">备用方案检验</div><div class="data-desc">卫星电话/对讲机备份、人力传递信息备份</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">原则：</strong>演练中发现的问题越多，真实灾害中付出的代价越小。</p>
+    </div>
+  </div>
+  <div class="key-sentence">演练中发现的问题越多，真实灾害中付出的代价越小。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 考场应用 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker">考场迁移 · 申论+面试</p>
+    <h2 class="h2">防灾救灾<br>高分表达框架</h2>
+    <div class="compare-col accent-col" style="padding:24px;margin-bottom:20px;">
+      <p style="font-size:26px;line-height:1.7;"><strong style="color:var(--accent);">申论总论点：</strong>防灾减灾要从"加强监测预警"升级为完整的行动链建设，以风险排查夯实底数，以影响预警明确动作，以叫应机制确认到人，以转移安置接住特殊群体，以力量前置争取主动，以协同处置形成合力，以复盘改进持续提升。</p>
+    </div>
+    <p class="h3" style="color:var(--accent);margin-bottom:12px;">面试：预警发了但群众没转移，怎么办？</p>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">立即启动叫应机制，逐户确认收到</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">组织包片干部上门，点对点转移特殊群体</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">调度车辆开放安置点，确保转移有去处</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">事后复盘断点原因，更新清单和预案</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">把风险想在前、责任落到人、力量放到一线、特殊群体先接住。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">总</div>
+  <div class="content">
+    <p class="kicker">总结 · 完整逻辑</p>
+    <h2 class="h2">防灾救灾的<br>行动链逻辑</h2>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">不是</h3><ul><li>不是发了短信就算完成</li><li>不是群众自行理解执行</li><li>不是广播一响各自离开</li><li>不是临灾才找车找物资</li><li>不是灾后只统计损失</li></ul></div>
+      <div class="compare-col accent-col"><h3>而是</h3><ul><li>而是预警是任务开始</li><li>而是逐户叫应确认到人</li><li>而是特殊群体点对点接送</li><li>而是力量提前预置到位</li><li>而是复盘断点改进预案</li></ul></div>
+    </div>
+    <div class="formula-box" style="margin-top:20px;">
+      <p class="formula-text" style="font-size:26px;">排查有底数<span class="arrow">→</span>信息有指向<span class="arrow">→</span>叫应有反馈<span class="arrow">→</span><br>转移有组织<span class="arrow">→</span>救援有准备<span class="arrow">→</span>事后有复盘</p>
+    </div>
+  </div>
+  <div class="key-sentence">发得早只是争取到时间；有人接、马上动，才能把时间变成安全。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker">参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:20px;">本卡片内容基于以下人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">防灾减灾预警叫应机制建设</div><div class="ref-meta">人民日报，2026年7月，预警从"发出去"到"有人接、马上动"，县乡村三级叫应机制</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">风险隐患排查与四张清单管理</div><div class="ref-meta">人民日报，2026年7月，风险点/重点人员/转移资源/责任人员四张清单动态更新机制</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">影响预警与场景化避险指令</div><div class="ref-meta">人民日报，2026年7月，从天气预报到影响预警，家中进水/积水道路/山区/地下空间四类场景动作</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">横州防汛转移与党员干部包村</div><div class="ref-meta">人民日报，2026年7月，横州组织7458名党员干部和专业力量分片包村，逐户转移</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">北京山区"高地堡垒"建设</div><div class="ref-meta">人民日报，2026年7月，北京山区村建成1052个"高地堡垒"，预置通信、发电、储水和救援装备</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">多部门协同应急处置与灾后复盘</div><div class="ref-meta">人民日报，2026年7月，气象/水利/自然资源/应急/交通/海事协同，灾后七断点复盘机制</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:18px 24px;">
+      <p style="font-size:22px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>"七环节行动链"为教学提炼框架，非某单篇原文结构；7458人、1052个高地堡垒等数据为地方案例，不代表全国统一标准。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

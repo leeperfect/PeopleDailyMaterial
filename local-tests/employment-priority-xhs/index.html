@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>就业优先战略升级 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#059669;--accent-soft:rgba(5,150,105,.15);--warn:#f59e0b;--line:rgba(255,255,255,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:28px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:20px 0}
+.three-card{border:1px solid var(--line);padding:20px;background:rgba(255,255,255,.02)}
+.three-card .t-title{font-size:24px;font-weight:700;color:var(--accent);margin-bottom:8px}
+.three-card .t-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <p class="kicker">人民日报系列 · 第55篇</p>
+    <h1 class="hero">就业优先<br>不是只保岗位</h1>
+    <p class="body" style="font-size:30px;color:var(--text);font-weight:500;margin-top:14px;">投资于人、匹配到岗、产业带岗</p>
+  </div>
+  <div class="key-sentence">岗位从哪里来？劳动者为什么能干？上岗以后为什么愿意留下？</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker">常见误区 · 低分写法</p>
+    <h2 class="h2">四条对策都对<br>为什么还是不够？</h2>
+    <p class="body">发稳岗补贴、办专场招聘、做技能培训、设公益岗位——这些措施都需要，但四条措施之间没有供需关系。就业题不能只列工具，要说明岗位、能力、服务和权益怎样接起来。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">4<span>条</span></div><div class="data-label">常规对策工具</div><div class="data-desc">稳岗补贴、专场招聘、技能培训、公益岗位</div></div>
+      <div class="data-card"><div class="data-num">3<span>问</span></div><div class="data-label">必须回答的问题</div><div class="data-desc">岗位从哪来？劳动者为什么能干？上岗后为什么留下？</div></div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">工具罗列式</h3><ul><li>只列措施不说明关系</li><li>岗位和能力脱节</li><li>服务和权益割裂</li><li>缺乏完整逻辑链</li></ul></div>
+      <div class="compare-col accent-col"><h3>链条贯通式</h3><ul><li>产业识岗提供岗位来源</li><li>教育育能提升胜任力</li><li>服务匹岗促进人岗对接</li><li>权益稳岗保障稳定就业</li></ul></div>
+    </div>
+  </div>
+  <div class="key-sentence">就业题不能只列工具，要说明岗位、能力、服务和权益怎样接起来。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 政策升级 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">升</div>
+  <div class="content">
+    <p class="kicker">政策背景 · "十五五"升级</p>
+    <h2 class="h2">从稳岗位<br>走向高质量充分就业</h2>
+    <p class="body">《实施就业优先战略"十五五"规划》把就业题进一步指向人力资源供需不匹配，提出投资于物和投资于人紧密结合。就业评价从"有没有"升级到"匹不匹配、稳不稳定、有没有发展"。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">5<span>个</span></div><div class="data-label">高质量充分就业目标</div><div class="data-desc">机会更充分、环境更公平、结构更优化、匹配更高效、关系更和谐</div></div>
+      <div class="data-card"><div class="data-num">2<span>结合</span></div><div class="data-label">投资方向</div><div class="data-desc">投资于物（基础设施、产业项目）和投资于人（教育培训、能力提升）紧密结合</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">机会更加充分</div><div class="step-desc">扩大就业容量，创造更多高质量岗位</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">匹配更加高效</div><div class="step-desc">解决人力资源供需不匹配，人岗精准对接</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">劳动关系更加和谐</div><div class="step-desc">权益保障到位，就业稳定有发展</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">就业评价从"有没有"升级到"匹不匹配、稳不稳定、有没有发展"。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 总公式 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker">总公式 · 五动作就业链</p>
+    <h2 class="h2">五个动作<br>必须前后相接</h2>
+    <div class="formula-box">
+      <p class="formula-text">产业识岗<span class="arrow">→</span>教育育能<span class="arrow">→</span>服务匹岗<span class="arrow">→</span><br>权益稳岗<span class="arrow">→</span>监测防险</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">产业识岗</div><div class="step-desc">从产业发展中识别岗位需求，既看数量也看结构和质量</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">教育育能</div><div class="step-desc">从岗位需求倒推能力培养，不是多办班而是精准育人</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">服务匹岗</div><div class="step-desc">公共就业服务持续校准人岗匹配，不是一场招聘就完事</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">权益稳岗</div><div class="step-desc">权益保障是岗位质量的一部分，不是就业后的附加福利</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">监测防险</div><div class="step-desc">监测就业市场变化，预警结构性失业和规模性失业风险</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">就业优先要进入产业、教育和公共服务全过程。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 产业识岗 -->
+<section class="poster photo-page" id="xhs-05">
+  <img class="bg-img" src="assets/industry-skill.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第一动作 · 产业识岗</p>
+    <h2 class="h2">产业增长<br>不会自动变成好岗位</h2>
+    <p class="body">产业既提供岗位数量，也在改写岗位能力标准。服务业扩大就业容量，物流网络创造本地岗位，智能制造提高复合技能需求，高端装备带动研发、金融、运维和物流。</p>
+    <div class="four-standard" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0;">
+      <div style="border:1px solid var(--line);padding:18px;background:rgba(0,0,0,.4);"><p style="font-size:24px;font-weight:700;color:var(--accent);margin-bottom:6px;">服务业</p><p style="font-size:21px;color:var(--text-secondary);line-height:1.5;">扩大就业容量，吸纳大量劳动力</p></div>
+      <div style="border:1px solid var(--line);padding:18px;background:rgba(0,0,0,.4);"><p style="font-size:24px;font-weight:700;color:var(--accent);margin-bottom:6px;">物流网络</p><p style="font-size:21px;color:var(--text-secondary);line-height:1.5;">创造本地岗位，仓储配送运输就业</p></div>
+      <div style="border:1px solid var(--line);padding:18px;background:rgba(0,0,0,.4);"><p style="font-size:24px;font-weight:700;color:var(--accent);margin-bottom:6px;">智能制造</p><p style="font-size:21px;color:var(--text-secondary);line-height:1.5;">提高复合技能需求，操作+维护+编程</p></div>
+      <div style="border:1px solid var(--line);padding:18px;background:rgba(0,0,0,.4);"><p style="font-size:24px;font-weight:700;color:var(--accent);margin-bottom:6px;">高端装备</p><p style="font-size:21px;color:var(--text-secondary);line-height:1.5;">带动研发、金融、运维和物流配套就业</p></div>
+    </div>
+  </div>
+  <div class="key-sentence">产业既提供岗位数量，也在改写岗位能力标准。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 产业带岗三看 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">看</div>
+  <div class="content">
+    <p class="kicker">产业带岗 · 分析维度</p>
+    <h2 class="h2">不能只算<br>"新增多少人"</h2>
+    <p class="body">产值增长不等于就业质量同步提高。看产业带岗要看三件事：就业容量、岗位结构、就业质量。</p>
+    <div class="three-col">
+      <div class="three-card"><p class="t-title">就业容量</p><p class="t-desc">能承接多少劳动者，岗位总量是否充足</p></div>
+      <div class="three-card"><p class="t-title">岗位结构</p><p class="t-desc">需要什么知识技能，能力要求是否匹配</p></div>
+      <div class="three-card"><p class="t-title">就业质量</p><p class="t-desc">报酬、成长和保障如何，是否稳定有发展</p></div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">只看数量</h3><ul><li>只统计新增就业人数</li><li>不看岗位技能要求</li><li>不看工资和保障</li><li>产值增长≠就业质量</li></ul></div>
+      <div class="compare-col accent-col"><h3>三维评估</h3><ul><li>容量：能承接多少人</li><li>结构：需要什么技能</li><li>质量：报酬成长保障</li><li>产业与就业同步提升</li></ul></div>
+    </div>
+  </div>
+  <div class="key-sentence">产值增长不等于就业质量同步提高。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 投资于人 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">育</div>
+  <div class="content">
+    <p class="kicker">第二动作 · 教育育能</p>
+    <h2 class="h2">不是多办班<br>而是从岗位倒推能力</h2>
+    <p class="body">劳动者能不能把学到的能力带进岗位，才是培训效果。需求进入专业设置，标准进入课程实训，企业场景进入培养，学习贯穿职业周期。</p>
+    <div class="formula-box" style="padding:22px;">
+      <p class="formula-text" style="font-size:25px;">岗位需求<span class="arrow">←</span>课程设置<span class="arrow">←</span>实训标准<span class="arrow">←</span>企业场景<span class="arrow">←</span>终身学习</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">需求进入专业设置</div><div class="step-desc">根据产业岗位需求调整专业方向，不是闭门造车设专业</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">标准进入课程实训</div><div class="step-desc">把行业技能标准融入课程和实训，毕业即能上岗</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">企业场景进入培养</div><div class="step-desc">校企合作、产教融合，让学生在真实场景中学习</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">学习贯穿职业周期</div><div class="step-desc">终身学习体系，在岗培训、转岗培训、技能更新持续进行</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">劳动者能不能把学到的能力带进岗位，才是培训效果。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 匹配到岗 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">匹</div>
+  <div class="content">
+    <p class="kicker">第三动作 · 服务匹岗</p>
+    <h2 class="h2">一场招聘会<br>只解决一次见面</h2>
+    <p class="body">人岗匹配是一套持续校准机制。需求摸排→能力评估→岗位推荐→入职协助→适应回访→留任反馈，不是一场招聘就完事。</p>
+    <div class="formula-box" style="padding:22px;">
+      <p class="formula-text" style="font-size:24px;">需求摸排<span class="arrow">→</span>能力评估<span class="arrow">→</span>岗位推荐<span class="arrow">→</span><br>入职协助<span class="arrow">→</span>适应回访<span class="arrow">→</span>留任反馈</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">需求摸排与能力评估</div><div class="step-desc">摸清企业岗位需求，评估劳动者技能水平，建立双画像</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">岗位推荐与入职协助</div><div class="step-desc">精准推荐匹配岗位，协助办理入职手续，对接培训需求</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">适应回访与留任反馈</div><div class="step-desc">入职后跟踪适应情况，回访留任意愿，反馈匹配质量</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">人岗匹配是一套持续校准机制。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 服务下沉 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">服</div>
+  <div class="content">
+    <p class="kicker">服务延伸 · 15分钟就业圈</p>
+    <h2 class="h2">让岗位和服务<br>离劳动者更近</h2>
+    <p class="body">站、窗、点、员下沉，动态更新岗位清单，识别通勤和照护约束，困难人员有就业援助和兜底。服务下沉不是把牌子挂到社区，而是让真实岗位在基层持续更新。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">4<span>级</span></div><div class="data-label">服务下沉体系</div><div class="data-desc">站（就业服务站）、窗（服务窗口）、点（服务点）、员（网格员）</div></div>
+      <div class="data-card"><div class="data-num">15<span>分钟</span></div><div class="data-label">就业服务圈</div><div class="data-desc">劳动者15分钟内可达就业服务站点，获取岗位信息和服务</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">动态更新岗位清单</div><div class="step-desc">基层站点持续收集和更新辖区内岗位信息，不是一次性发布</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">识别通勤和照护约束</div><div class="step-desc">考虑劳动者的通勤距离、照护责任等实际约束，精准推荐</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">困难人员就业援助</div><div class="step-desc">对就业困难人员提供一对一援助、公益性岗位兜底和技能培训</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">服务下沉不是把牌子挂到社区，而是让真实岗位在基层持续更新。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 权益稳岗 -->
+<section class="poster photo-page" id="xhs-10">
+  <img class="bg-img" src="assets/rights.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第四动作 · 权益稳岗</p>
+    <h2 class="h2">找到工作<br>不等于高质量就业</h2>
+    <p class="body">权益不是就业后的附加福利，而是岗位质量的一部分。社会保险、职业伤害、劳动标准、争议化解、维权流程——五层护栏保障劳动者稳定就业。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">5<span>层</span></div><div class="data-label">权益保障护栏</div><div class="data-desc">社会保险、职业伤害、劳动标准、争议化解、维权流程</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">3<span>件事</span></div><div class="data-label">就业最终目标</div><div class="data-desc">产业有合适的人、人通过劳动获得成长、政策接住变化中的风险</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">关键：</strong>招聘会解决一次见面，人岗匹配解决能否胜任，权益保障解决能否稳定留下。</p>
+    </div>
+  </div>
+  <div class="key-sentence">权益不是就业后的附加福利，而是岗位质量的一部分。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 监测防险 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">监</div>
+  <div class="content">
+    <p class="kicker">第五动作 · 监测防险</p>
+    <h2 class="h2">就业市场变化<br>要提前预警</h2>
+    <p class="body">监测就业市场变化，预警结构性失业和规模性失业风险。不是等失业发生了才应对，而是提前监测、提前干预、提前准备。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">3<span>类</span></div><div class="data-label">就业风险监测</div><div class="data-desc">结构性失业、规模性失业、青年就业困难</div></div>
+      <div class="data-card"><div class="data-num">4<span>指标</span></div><div class="data-label">监测核心指标</div><div class="data-desc">城镇调查失业率、求人倍率、离职率、企业用工需求变化</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">动态监测</div><div class="step-desc">持续监测就业市场核心指标，建立大数据监测平台</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">风险预警</div><div class="step-desc">设置预警阈值，发现异常及时预警，启动应对预案</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">提前干预</div><div class="step-desc">对受影响行业和群体提前开展转岗培训、就业援助和兜底保障</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">不是等失业发生了才应对，而是提前监测、提前干预、提前准备。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 考场应用 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker">考场迁移 · 申论+面试</p>
+    <h2 class="h2">就业题这样写<br>逻辑更完整</h2>
+    <div class="compare-col accent-col" style="padding:22px;margin-bottom:18px;">
+      <p style="font-size:25px;line-height:1.7;"><strong style="color:var(--accent);">申论表达：</strong>把就业优先贯穿高质量发展全过程，以产业需求识别岗位，以教育培训提升能力，以公共服务促进匹配，以权益保障稳定就业，以监测预警防范风险。</p>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:0 0 18px 0;">
+      <p class="formula-text" style="font-size:25px;">以产业需求识别岗位<span class="arrow">→</span>以教育培训提升能力<span class="arrow">→</span><br>以公共服务促进匹配<span class="arrow">→</span>以权益保障稳定就业<span class="arrow">→</span>以监测预警防范风险</p>
+    </div>
+    <p class="h3" style="color:var(--accent);margin-bottom:10px;">面试：面对"就业难"和"招工难"并存，怎么办？</p>
+    <div class="step-chain" style="margin-top:8px;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">产业识岗：摸清岗位需求和技能要求</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">教育育能：从岗位倒推培训内容和标准</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">服务匹岗：持续校准人岗匹配，跟踪留任</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">把就业优先贯穿高质量发展全过程。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">总</div>
+  <div class="content">
+    <p class="kicker">总结 · 完整逻辑</p>
+    <h2 class="h2">就业优先的<br>完整逻辑</h2>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">不是</h3><ul><li>不是只保岗位数量</li><li>不是只发稳岗补贴</li><li>不是只办专场招聘</li><li>不是只做技能培训</li><li>不是只设公益岗位</li></ul></div>
+      <div class="compare-col accent-col"><h3>而是</h3><ul><li>而是投资于人提升能力</li><li>而是产业识岗提供来源</li><li>而是服务匹岗促进对接</li><li>而是权益稳岗保障质量</li><li>而是监测防险提前应对</li></ul></div>
+    </div>
+    <div class="formula-box" style="margin-top:18px;padding:22px;">
+      <p class="formula-text" style="font-size:26px;">产业识岗<span class="arrow">→</span>教育育能<span class="arrow">→</span>服务匹岗<span class="arrow">→</span>权益稳岗<span class="arrow">→</span>监测防险</p>
+    </div>
+    <div class="compare-col" style="margin-top:16px;padding:18px 24px;border-color:var(--accent);">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);">就业优先最终要实现三件事：<strong style="color:var(--accent);">产业发展有合适的人、人通过劳动获得成长、政策把变化中的风险接住。</strong></p>
+    </div>
+  </div>
+  <div class="key-sentence">招聘会解决一次见面，人岗匹配解决能否胜任，权益保障解决能否稳定留下。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker">参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:16px;">本卡片内容基于以下人民日报报道和政策文件整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">《实施就业优先战略"十五五"规划》</div><div class="ref-meta">国务院文件，2026年，高质量充分就业五目标，投资于物和投资于人紧密结合，人力资源供需不匹配</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">产业发展与就业扩容提质</div><div class="ref-meta">人民日报，2026年7月，服务业/物流/智能制造/高端装备带动就业，就业容量岗位结构就业质量三维评估</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">职业教育与技能人才培养</div><div class="ref-meta">人民日报，2026年7月，从岗位需求倒推能力培养，产教融合校企合作，终身学习体系</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">公共就业服务与15分钟就业圈</div><div class="ref-meta">人民日报，2026年7月，站窗点员四级下沉，人岗匹配六步服务链，困难人员就业援助</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">劳动者权益保障与和谐劳动关系</div><div class="ref-meta">人民日报，2026年7月，社会保险/职业伤害/劳动标准/争议化解/维权流程五层护栏，新就业形态权益保障</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">就业市场监测与风险预警</div><div class="ref-meta">人民日报，2026年7月，城镇调查失业率/求人倍率/离职率监测，结构性失业和规模性失业风险预警</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:16px 22px;">
+      <p style="font-size:21px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>"五动作就业链"为教学提炼框架，非某单篇原文结构；"十五五"规划为政策文件，具体目标以官方发布为准。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

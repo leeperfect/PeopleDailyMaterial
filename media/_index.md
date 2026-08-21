@@ -71,6 +71,11 @@
 | 2026-07-20 | 科技金融不是多给一笔贷款 | 小红书图 | `media/images/2026-07-20-tech-finance-xhs/` | 待上传 | `data/xiaohongshu/49-xiaohongshu-tech-finance-lifecycle-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+亮蓝#00aaff，3张AI生成配图，末页参考文献） |
 | 2026-07-20 | 抓落实不能挑肥拣瘦 | 小红书图 | `media/images/2026-07-20-implementation-accountability-xhs/` | 待上传 | `data/xiaohongshu/50-xiaohongshu-implementation-accountability-results-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+政务蓝#2563eb，3张AI生成配图，末页参考文献） |
 | 2026-07-20 | 民生服务让政策主动找人 | 小红书图 | `media/images/2026-07-20-proactive-livelihood-xhs/` | 待上传 | `data/xiaohongshu/51-xiaohongshu-proactive-livelihood-service-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+天蓝#0ea5e9，3张AI生成配图，末页参考文献） |
+| 2026-07-20 | 城市治理别只看"面子" | 小红书图 | `media/images/2026-07-20-city-governance-xhs/` | 待上传 | `data/xiaohongshu/52-xiaohongshu-city-governance-hidden-infrastructure-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+政务蓝#2563eb，3张AI生成配图，末页参考文献） |
+| 2026-07-21 | 预警不能只"发出去" | 小红书图 | `media/images/2026-07-21-disaster-warning-xhs/` | 待上传 | `data/xiaohongshu/53-xiaohongshu-disaster-warning-action-chain-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+预警橙#ea580c，3张AI生成配图，末页参考文献） |
+| 2026-07-26 | AI不能成为"富国和富人的游戏" | 小红书图 | `media/images/2026-07-26-ai-global-governance-xhs/` | 待上传 | `data/xiaohongshu/54-xiaohongshu-ai-global-governance-public-good-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+深海青#0891b2，3张AI生成配图，末页参考文献） |
+| 2026-07-26 | 就业优先不是只保岗位 | 小红书图 | `media/images/2026-07-26-employment-priority-xhs/` | 待上传 | `data/xiaohongshu/55-xiaohongshu-employment-priority-people-matching-industry-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+墨绿#059669，3张AI生成配图，末页参考文献） |
+| 2026-07-26 | 全民健身不是多建几个场馆 | 小红书图 | `media/images/2026-07-26-fitness-life-circle-xhs/` | 待上传 | `data/xiaohongshu/56-xiaohongshu-fitness-life-circle-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+草木绿#16a34a，3张AI生成配图，末页参考文献） |
 
 | 2026-08-17 | 票根经济：从观赛流量到城市消费链 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-08-17-ticket-stub-economy-city-consumption-chain-notebooklm/` | 待上传 | `data/articles/人民日报系列/75-【R】人民日报讲票根经济：不是赛后发优惠券，而是把赛事流量接成城市消费链.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
 

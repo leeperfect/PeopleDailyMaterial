@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>AI全球治理 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#0891b2;--accent-soft:rgba(8,145,178,.15);--warn:#f59e0b;--gold:#d4a04a;--line:rgba(255,255,255,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:28px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+.four-standard{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.std-card{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.std-card .std-num{font-size:42px;font-weight:900;color:var(--gold);margin-bottom:6px}
+.std-card .std-title{font-size:26px;font-weight:700;margin-bottom:6px}
+.std-card .std-desc{font-size:22px;color:var(--text-secondary);line-height:1.5}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <p class="kicker">人民日报系列 · 第54篇</p>
+    <h1 class="hero">AI不能成为<br>"富国和富人的游戏"</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">《人民日报》讲透人工智能全球治理的5层逻辑</p>
+  </div>
+  <div class="key-sentence">技术越强，越要回答红利归谁、风险谁担、规则谁定。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">问</div>
+  <div class="content">
+    <p class="kicker">常见误区 · 空写法</p>
+    <h2 class="h2">只写"加强合作"<br>为什么不够？</h2>
+    <p class="body">加强国际交流、完善伦理规则、防范技术风险、推动成果共享——这些都对，但没有回答最关键的四个问题。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">技术由谁掌握</div><div class="data-desc">模型、算力、数据是否被少数主体封闭垄断</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">收益由谁分享</div><div class="data-desc">技术红利是集中在富国富人，还是普惠全球</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">风险由谁承担</div><div class="data-desc">技术失控的代价，是否由没有话语权的人承担</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">规则由谁制定</div><div class="data-desc">全球南方能否坐到规则制定桌前，还是只能遵守</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">技术由谁掌握？收益由谁分享？风险由谁承担？规则由谁制定？</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker">总公式 · 五层治理链</p>
+    <h2 class="h2">人工智能全球治理<br>要接成一条链</h2>
+    <div class="formula-box">
+      <p class="formula-text">公共产品定方向<span class="arrow">→</span>开放合作扩机会<span class="arrow">→</span><br>全链治理守安全<span class="arrow">→</span>能力建设补鸿沟<span class="arrow">→</span>多边机制共规则</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">公共产品定方向</div><div class="step-desc">AI作为国际公共产品，可获得、可负担、会使用、能参与</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">开放合作扩机会</div><div class="step-desc">开源降低门槛，场景验证价值，可持续机制保障长期供给</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">全链治理守安全</div><div class="step-desc">从伦理原则走向法律法规、测试评估、技术监测、应急响应</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">能力建设补鸿沟</div><div class="step-desc">技术适配、人才培养、组织承接、治理提升，形成自主能力</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">多边机制共规则</div><div class="step-desc">发挥联合国主渠道，不同国家平等表达需求、共同承担责任</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">五个环节不是并列口号，后一环节负责让前一环节长期成立。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 公共产品1 可获得 -->
+<section class="poster photo-page" id="xhs-04">
+  <img class="bg-img" src="assets/open-network.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">公共产品 · 标准一</p>
+    <h2 class="h2">不是看得见<br>而是拿得到</h2>
+    <p class="body">模型、算力、数据、工具和基础设施不能长期被少数主体封闭垄断。开源开放的第一价值，是让更多国家拥有进入智能时代的入口。</p>
+    <div class="compare-grid">
+      <div class="compare-col" style="background:rgba(0,0,0,.4);"><h3 style="color:var(--warn);">封闭垄断</h3><ul><li>技术被少数主体控制</li><li>其他国家只能购买</li><li>没有进入智能时代入口</li><li>全球治理变成内部协商</li></ul></div>
+      <div class="compare-col accent-col"><h3>开放可获得</h3><ul><li>开源模型和工具开放</li><li>算力基础设施共享</li><li>更多国家拥有技术入口</li><li>全球治理有广泛基础</li></ul></div>
+    </div>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">5<span>类</span></div><div class="data-label">公共产品要素</div><div class="data-desc">模型、算力、数据、工具、基础设施</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">没有技术入口，所谓全球治理只是少数人的内部协商。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 公共产品2 可负担 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">负</div>
+  <div class="content">
+    <p class="kicker">公共产品 · 标准二</p>
+    <h2 class="h2">有模型<br>还要有算力和成本条件</h2>
+    <p class="body">部署模型需要网络、算力、能源和持续运维。门槛过高，就会出现"看得见、用不起"。技术普惠既要降低获取门槛，也要降低使用门槛。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">4<span>项</span></div><div class="data-label">使用成本构成</div><div class="data-desc">网络带宽、算力资源、能源消耗、持续运维</div></div>
+      <div class="data-card"><div class="data-num">2<span>层</span></div><div class="data-label">普惠门槛</div><div class="data-desc">获取门槛（能不能拿到）+ 使用门槛（用不用得起）</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">网络基础设施</div><div class="step-desc">稳定的宽带和移动网络覆盖，是使用AI的前提</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">算力资源共享</div><div class="step-desc">通过云服务、区域算力中心降低单个国家的算力投入</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">能源成本控制</div><div class="step-desc">模型训练和推理能耗巨大，需要绿色能源和效率优化</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">持续运维保障</div><div class="step-desc">模型不是一次性交付，需要持续更新、维护和技术支持</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">技术普惠既要降低获取门槛，也要降低使用门槛。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 公共产品3 会使用 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">能</div>
+  <div class="content">
+    <p class="kicker">公共产品 · 标准三</p>
+    <h2 class="h2">送一个系统<br>不等于长出一种能力</h2>
+    <p class="body">普惠不是"替你做"，而是帮助你形成"自己能做"的能力。要有本地语言和数据适配，要培养开发与运维人才，要建立高校、企业和公共部门承接平台，要能根据本国问题继续改造。</p>
+    <div class="four-standard">
+      <div class="std-card"><div class="std-num">01</div><div class="std-title">本地适配</div><div class="std-desc">本地语言、数据和产业场景适配，不是把英文模型直接搬过来</div></div>
+      <div class="std-card"><div class="std-num">02</div><div class="std-title">人才培养</div><div class="std-desc">覆盖开发、应用、运维和治理全链条的本土人才队伍</div></div>
+      <div class="std-card"><div class="std-num">03</div><div class="std-title">组织承接</div><div class="std-desc">建设联合实验室和合作中心，高校企业公共部门协同</div></div>
+      <div class="std-card"><div class="std-num">04</div><div class="std-title">自主改造</div><div class="std-desc">能根据本国问题继续改造优化，不是只能使用不能修改</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">普惠不是"替你做"，而是帮助你形成"自己能做"的能力。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 公共产品4 能参与 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">与</div>
+  <div class="content">
+    <p class="kicker">公共产品 · 标准四</p>
+    <h2 class="h2">全球南方不能<br>只做AI使用者</h2>
+    <p class="body">如果只能购买产品、提供市场，却不能参与测试标准、风险规则和责任划分，就仍没有真正的发展主动权。获得技术是第一步，坐到规则制定桌前才是更深一层的公平。</p>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">使用者地位</h3><ul><li>只能购买产品和服务</li><li>只能提供市场和数据</li><li>不能参与标准制定</li><li>不能参与风险规则划分</li><li>没有发展主动权</li></ul></div>
+      <div class="compare-col accent-col"><h3>参与者地位</h3><ul><li>参与测试标准制定</li><li>参与风险规则划分</li><li>参与责任机制设计</li><li>平等表达本国需求</li><li>拥有真正发展主动权</li></ul></div>
+    </div>
+    <div class="formula-box" style="margin-top:16px;padding:20px;">
+      <p class="formula-text" style="font-size:26px;">能获得<span class="arrow">→</span>用得起<span class="arrow">→</span>学得会<span class="arrow">→</span>改得好<span class="arrow">→</span>能参与制定规则</p>
+    </div>
+  </div>
+  <div class="key-sentence">获得技术是第一步，坐到规则制定桌前才是更深一层的公平。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 真实场景 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">用</div>
+  <div class="content">
+    <p class="kicker">开放合作 · 场景落地</p>
+    <h2 class="h2">技术只有进入真问题<br>才形成公共价值</h2>
+    <p class="body">开源降低门槛，场景验证价值，可持续机制保障长期供给。AI要进入智慧农业、气象预警、智能巡检、医疗科研等真实场景，解决具体难题。</p>
+    <div class="four-standard">
+      <div class="std-card"><div class="std-num">🌾</div><div class="std-title">智慧农业</div><div class="std-desc">AI进入田间，精准种植、病虫害识别、产量预测，帮助农民增产增收</div></div>
+      <div class="std-card"><div class="std-num">🌦</div><div class="std-title">气象预警</div><div class="std-desc">AI提升预报精度和提前量，服务防灾减灾，保护生命财产安全</div></div>
+      <div class="std-card"><div class="std-num">⚙</div><div class="std-title">智能巡检</div><div class="std-desc">AI保障生产安全，设备故障预测、异常检测，减少事故和停机损失</div></div>
+      <div class="std-card"><div class="std-num">🏥</div><div class="std-title">医疗科研</div><div class="std-desc">AI辅助诊断、药物研发、医学影像分析，解决医疗资源不均难题</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">开源降低门槛，场景验证价值，可持续机制保障长期供给。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 安全治理 -->
+<section class="poster photo-page" id="xhs-09">
+  <img class="bg-img" src="assets/security.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">全链治理 · 安全</p>
+    <h2 class="h2">安全治理不能<br>只喊伦理</h2>
+    <p class="body">从伦理原则走向可执行机制。安全不是创新的刹车，而是创新获得长期信任的基础设施。</p>
+    <div class="formula-box" style="background:rgba(0,0,0,.6);border-color:var(--accent);">
+      <p class="formula-text" style="font-size:25px;">法律法规<span class="arrow">→</span>测试评估<span class="arrow">→</span>技术监测<span class="arrow">→</span><br>风险预警<span class="arrow">→</span>应急响应<span class="arrow">→</span>责任追溯</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">法律法规</div><div class="step-desc">建立AI治理的法律框架，明确权利义务和责任边界</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">测试评估</div><div class="step-desc">建立AI系统的测试评估标准，上线前进行安全审查</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">监测预警响应</div><div class="step-desc">运行中持续技术监测，发现风险及时预警和应急响应</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">责任追溯</div><div class="step-desc">事故后可追溯责任，形成完整的安全治理闭环</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">安全不是创新的刹车，而是创新获得长期信任的基础设施。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 两个关系 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">辨</div>
+  <div class="content">
+    <p class="kicker">深度辨析 · 两个关系</p>
+    <h2 class="h2">开放不等于无边界<br>安全不等于筑高墙</h2>
+    <p class="body">既防止技术失控，也防止安全概念被滥用。开源合作仍要保护知识产权和个人信息，数据流动仍要尊重数字主权，不能泛化国家安全概念制造技术封锁，各国有权依据国情选择发展路径。</p>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">开放的边界</h3><ul><li>保护知识产权</li><li>保护个人信息</li><li>尊重数字主权</li><li>不是无边界流动</li></ul></div>
+      <div class="compare-col accent-col"><h3>安全的边界</h3><ul><li>不泛化国家安全概念</li><li>不制造技术封锁</li><li>各国自主选择路径</li><li>不是筑高墙封闭</li></ul></div>
+    </div>
+    <div class="formula-box" style="margin-top:16px;padding:20px;">
+      <p class="formula-text" style="font-size:26px;">开放有边界<span class="arrow">↔</span>安全不越界<span class="arrow">↔</span>规则与主权是中轴</p>
+    </div>
+  </div>
+  <div class="key-sentence">既防止技术失控，也防止安全概念被滥用。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 能力建设 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">建</div>
+  <div class="content">
+    <p class="kicker">能力建设 · 补鸿沟</p>
+    <h2 class="h2">弥合智能鸿沟<br>不是只给设备</h2>
+    <p class="body">技术合作的终点，是当地形成自主发展能力。技术适配、人才培养、组织承接、治理提升四个动作缺一不可。</p>
+    <div class="four-standard">
+      <div class="std-card"><div class="std-num">01</div><div class="std-title">技术适配</div><div class="std-desc">匹配当地语言、数据和产业，不是把现成模型直接搬过来</div></div>
+      <div class="std-card"><div class="std-num">02</div><div class="std-title">人才培养</div><div class="std-desc">覆盖开发、应用、运维和治理，形成本土人才梯队</div></div>
+      <div class="std-card"><div class="std-num">03</div><div class="std-title">组织承接</div><div class="std-desc">建设联合实验室和合作中心，建立持续的合作机制</div></div>
+      <div class="std-card"><div class="std-num">04</div><div class="std-title">治理提升</div><div class="std-desc">形成评估、保护和问责能力，能自主管理AI风险</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">目标：</strong>从"给设备"到"给能力"，从"替你做"到"帮你会"，最终实现自主发展。</p>
+    </div>
+  </div>
+  <div class="key-sentence">技术合作的终点，是当地形成自主发展能力。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 多边共治 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">治</div>
+  <div class="content">
+    <p class="kicker">多边机制 · 共规则</p>
+    <h2 class="h2">规则不能由<br>少数技术强国包办</h2>
+    <p class="body">发挥联合国主渠道作用，通过开放的国际组织和区域平台，对接发展战略、治理规则和技术标准，让不同国家平等表达需求、共同承担责任。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">4<span>共</span></div><div class="data-label">多边共治原则</div><div class="data-desc">收益共同创造、风险共同应对、规则共同商量、责任共同承担</div></div>
+      <div class="data-card"><div class="data-num">3<span>层</span></div><div class="data-label">治理平台架构</div><div class="data-desc">联合国主渠道 + 开放国际组织 + 区域合作平台</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">对接发展战略</div><div class="step-desc">各国发展战略与全球AI治理框架对接，不搞一刀切</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">对接治理规则</div><div class="step-desc">在多边框架下协商治理规则，不同国家平等参与</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">对接技术标准</div><div class="step-desc">技术标准开放协商，不被少数技术强国垄断制定</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">收益共同创造，风险共同应对，规则共同商量，责任共同承担。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 考场+结尾 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker">考场迁移 + 认知升级</p>
+    <h2 class="h2">一套可直接迁移的<br>答题公式</h2>
+    <div class="compare-col accent-col" style="padding:22px;margin-bottom:18px;">
+      <p style="font-size:25px;line-height:1.7;"><strong style="color:var(--accent);">申论表达：</strong>坚持以人为本、智能向善，把人工智能作为造福全人类的国际公共产品，以开放合作释放创新红利，以全周期治理防范技术风险，以能力建设弥合智能鸿沟，以多边机制推动规则共商、责任共担、成果共享。</p>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:0 0 18px 0;">
+      <p class="formula-text" style="font-size:25px;">公共价值定方向<span class="arrow">→</span>开放生态促创新<span class="arrow">→</span><br>全周期治理守安全<span class="arrow">→</span>能力建设补鸿沟<span class="arrow">→</span>多边机制共规则</p>
+    </div>
+    <div class="compare-col" style="padding:20px 24px;border-color:var(--gold);">
+      <p style="font-size:24px;line-height:1.6;color:var(--text);"><strong style="color:var(--gold);">什么才叫AI国际公共产品？</strong>不是一句"成果共享"，而是更多国家能获得、用得起、学得会、改得好，也能参与制定规则。当全球南方从使用者变成建设者和治理者，智能向善才真正有了世界尺度。</p>
+    </div>
+  </div>
+  <div class="key-sentence">把发展权、安全权、自主权和参与权统一起来。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker">参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:16px;">本卡片内容基于以下人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">人工智能国际公共产品的内涵与标准</div><div class="ref-meta">人民日报，2026年7月，AI作为国际公共产品的可获得、可负担、会使用、能参与四项标准</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">开源开放与AI技术普惠</div><div class="ref-meta">人民日报，2026年7月，开源降低技术门槛，智慧农业/气象预警/智能巡检/医疗科研场景落地</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">AI全周期安全治理机制</div><div class="ref-meta">人民日报，2026年7月，从伦理原则到法律法规、测试评估、技术监测、风险预警、应急响应、责任追溯</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">开放与安全的辩证关系</div><div class="ref-meta">人民日报，2026年7月，开放不等于无边界，安全不等于筑高墙，知识产权、个人信息、数字主权保护</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">AI能力建设与智能鸿沟弥合</div><div class="ref-meta">人民日报，2026年7月，技术适配、人才培养、组织承接、治理提升四动作，形成自主发展能力</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">AI全球治理多边机制与规则共商</div><div class="ref-meta">人民日报，2026年7月，联合国主渠道，国际组织和区域平台，规则共商责任共担成果共享</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:16px 22px;">
+      <p style="font-size:21px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>"五层治理链"和"公共产品四标准"为教学提炼框架，非某单篇原文结构；19篇人民日报相关报道为系列素材来源。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

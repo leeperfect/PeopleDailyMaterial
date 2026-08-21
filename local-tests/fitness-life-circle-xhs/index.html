@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>全民健身生活圈 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#16a34a;--accent-soft:rgba(22,163,74,.15);--warn:#f59e0b;--line:rgba(255,255,255,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+.four-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.four-card{border:1px solid var(--line);padding:18px;background:rgba(255,255,255,.02)}
+.four-card .f-title{font-size:24px;font-weight:700;color:var(--accent);margin-bottom:6px}
+.four-card .f-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <p class="kicker">人民日报系列 · 第56篇</p>
+    <h1 class="hero">全民健身<br>不是多建几个场馆</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">让赛事、设施和服务进入生活圈</p>
+  </div>
+  <div class="key-sentence">建起来只是起点，用起来、坚持练才是结果。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker">常见误区 · 三个不够</p>
+    <h2 class="h2">场馆、赛事、宣传<br>为什么还不够？</h2>
+    <p class="body">场馆建成不等于居民愿意来，比赛办完不等于参与者继续练，宣传做了不等于不同人群都有合适项目。全民健身要追踪群众从"第一次来"到"长期练"的全过程。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">3<span>个</span></div><div class="data-label">常见误区</div><div class="data-desc">重建设轻使用、重赛事轻常态、重宣传轻适配</div></div>
+      <div class="data-card"><div class="data-num">1<span>条</span></div><div class="data-label">全过程追踪</div><div class="data-desc">从"第一次来"到"长期练"，每个环节都要有服务承接</div></div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">建设思维</h3><ul><li>场馆建成即完成</li><li>比赛办完即结束</li><li>宣传做了即到位</li><li>不追踪使用效果</li></ul></div>
+      <div class="compare-col accent-col"><h3>服务思维</h3><ul><li>建成后看使用率</li><li>赛后有组织承接</li><li>分人群适配项目</li><li>追踪长期参与率</li></ul></div>
+    </div>
+  </div>
+  <div class="key-sentence">全民健身要追踪群众从"第一次来"到"长期练"的全过程。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">圈</div>
+  <div class="content">
+    <p class="kicker">总公式 · 六环节生活圈</p>
+    <h2 class="h2">六个环节<br>必须接起来</h2>
+    <div class="formula-box">
+      <p class="formula-text">设施可及<span class="arrow">→</span>活动引流<span class="arrow">→</span>指导提质<span class="arrow">→</span><br>分众适配<span class="arrow">→</span>安全托底<span class="arrow">→</span>健康与消费融合</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">设施可及</div><div class="step-desc">场地就近可达，距离时间项目管理四问评估</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">活动引流</div><div class="step-desc">赛事把人带进来，基层组织和日常服务让人留下来</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">指导提质</div><div class="step-desc">有器材还要有人教，科学指导让运动安全有效</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">分众适配</div><div class="step-desc">青少年/老年人/残疾人/慢性病人群各有合适项目</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">安全托底</div><div class="step-desc">设施巡检/健康评估/天气预警/医疗救护/应急复盘</div></div></div>
+      <div class="step-item"><div class="step-num">6</div><div class="step-content"><div class="step-title">健康消费融合</div><div class="step-desc">政府保基本，社会组织扩参与，市场提供多样化体验</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">运动服务要进入生活，而不是停在场馆里。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 场地可及 -->
+<section class="poster photo-page" id="xhs-04">
+  <img class="bg-img" src="assets/four-quadrant.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第一环节 · 设施可及</p>
+    <h2 class="h2">建成以后<br>再问四个问题</h2>
+    <p class="body">场地面积回答有没有，生活半径回答够不够得到。距离近不近、时间合不合适、项目适不适配、管理跟不跟得上。</p>
+    <div class="four-grid">
+      <div class="four-card" style="background:rgba(0,0,0,.5);"><p class="f-title">距离近不近</p><p class="f-desc">15分钟生活圈内可达，步行/骑行/公交方便</p></div>
+      <div class="four-card" style="background:rgba(0,0,0,.5);"><p class="f-title">时间合不合适</p><p class="f-desc">开放时间匹配上班族、老年人、学生等不同人群</p></div>
+      <div class="four-card" style="background:rgba(0,0,0,.5);"><p class="f-title">项目适不适配</p><p class="f-desc">场地项目匹配周边人群年龄结构和运动偏好</p></div>
+      <div class="four-card" style="background:rgba(0,0,0,.5);"><p class="f-title">管理跟不跟得上</p><p class="f-desc">设施维护、预约管理、秩序维护是否到位</p></div>
+    </div>
+  </div>
+  <div class="key-sentence">场地面积回答有没有，生活半径回答够不够得到。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 场地效能 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">效</div>
+  <div class="content">
+    <p class="kicker">设施可及 · 效能评价</p>
+    <h2 class="h2">别只看<br>竣工验收</h2>
+    <p class="body">场馆建成只是服务起点，群众经常使用才是建设结果。开放率、实际使用率、设施完好率、群众满意度——四率评估场地效能。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">4<span>率</span></div><div class="data-label">场地效能评估</div><div class="data-desc">开放率、实际使用率、设施完好率、群众满意度</div></div>
+      <div class="data-card"><div class="data-num">2<span>段</span></div><div class="data-label">建设vs使用</div><div class="data-desc">竣工验收是起点，群众经常使用才是结果</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">开放率</div><div class="step-desc">场馆是否按规定时间开放，有没有无故关闭</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">实际使用率</div><div class="step-desc">每天有多少人使用，高峰时段是否拥挤，低峰是否空置</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">设施完好率</div><div class="step-desc">器材是否损坏未修，场地是否维护到位</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">群众满意度</div><div class="step-desc">使用者对场地、服务、价格的综合评价</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">场馆建成只是服务起点，群众经常使用才是建设结果。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 赛事引流 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">赛</div>
+  <div class="content">
+    <p class="kicker">第二环节 · 活动引流</p>
+    <h2 class="h2">热闹一天<br>不等于常态健身</h2>
+    <p class="body">赛事把人带进来，基层组织和日常服务让人留下来。赛前有项目普及，赛中有分组和服务，赛后有组织承接，全年有活动日历。</p>
+    <div class="formula-box" style="padding:22px;">
+      <p class="formula-text" style="font-size:25px;">赛前普及<span class="arrow">→</span>赛中服务<span class="arrow">→</span>赛后承接<span class="arrow">→</span>全年日历</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">赛前有项目普及</div><div class="step-desc">比赛前开展项目体验和培训，让更多人了解和参与</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">赛中有分组和服务</div><div class="step-desc">按年龄/水平分组，提供裁判、医疗、安保等赛事服务</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">赛后有组织承接</div><div class="step-desc">比赛结束后有俱乐部、培训班、日常活动承接参与者</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">全年有活动日历</div><div class="step-desc">不是一年办一次比赛，而是全年有规律的活动安排</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">赛事把人带进来，基层组织和日常服务让人留下来。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 科学指导 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">教</div>
+  <div class="content">
+    <p class="kicker">第三环节 · 指导提质</p>
+    <h2 class="h2">有器材<br>还要有人教</h2>
+    <p class="body">科学健身，是在适合自己的强度里安全、有效地坚持。选择适合项目、控制运动强度、纠正错误动作、做好热身恢复、识别健康风险——五个要点缺一不可。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">5<span>点</span></div><div class="data-label">科学指导要点</div><div class="data-desc">选项目/控强度/纠动作/做恢复/识风险</div></div>
+      <div class="data-card"><div class="data-num">2<span>类</span></div><div class="data-label">指导力量</div><div class="data-desc">社会体育指导员 + 专业教练，线上线下结合</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">选择适合项目</div><div class="step-desc">根据年龄、身体状况、运动基础选择合适的运动项目</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">控制运动强度</div><div class="step-desc">不是越累越好，在适合自己的心率区间内运动</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">纠正错误动作</div><div class="step-desc">错误动作容易导致运动损伤，需要专业指导纠正</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">热身恢复与风险识别</div><div class="step-desc">运动前热身、运动后拉伸，识别胸闷头晕等健康风险信号</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">科学健身，是在适合自己的强度里安全、有效地坚持。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 AI辅助 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">数</div>
+  <div class="content">
+    <p class="kicker">数字工具 · 边界辨析</p>
+    <h2 class="h2">线上健身能扩大触达<br>但不能替代专业判断</h2>
+    <p class="body">数字服务负责覆盖更广，线下指导负责判断更准。记录运动数据、提供基础课程、提醒锻炼计划、辅助预约和管理——AI能做这些，但病史、动作变形和现场异常仍需专业人员判断。</p>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--accent);">AI能做</h3><ul><li>记录运动数据</li><li>提供基础课程</li><li>提醒锻炼计划</li><li>辅助预约管理</li><li>覆盖更广人群</li></ul></div>
+      <div class="compare-col accent-col"><h3>专业人员做</h3><ul><li>病史评估</li><li>动作变形纠正</li><li>现场异常判断</li><li>个性化方案制定</li><li>运动损伤处理</li></ul></div>
+    </div>
+    <div class="compare-col" style="margin-top:16px;padding:20px 24px;border-color:var(--warn);">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">注意：</strong>有慢性病、心脏病、高血压等病史的人群，运动前必须咨询专业医生或教练，不能只靠APP指导。</p>
+    </div>
+  </div>
+  <div class="key-sentence">数字服务负责覆盖更广，线下指导负责判断更准。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 分众适配 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">众</div>
+  <div class="content">
+    <p class="kicker">第四环节 · 分众适配</p>
+    <h2 class="h2">全民参与<br>不是所有人用同一套设施</h2>
+    <p class="body">真正的公平，是让不同人都有合适选择。青少年关注兴趣体能和安全，老年人关注强度易用和应急，残疾人关注无障碍信息和支持，慢性病人群关注评估建议和跟踪。</p>
+    <div class="four-grid">
+      <div class="four-card"><p class="f-title">青少年</p><p class="f-desc">兴趣培养、体能提升、安全防护，培养终身运动习惯</p></div>
+      <div class="four-card"><p class="f-title">老年人</p><p class="f-desc">低强度、易上手、有应急保障，广场舞/太极/健步走</p></div>
+      <div class="four-card"><p class="f-title">残疾人</p><p class="f-desc">无障碍设施、信息无障碍、专人支持，适配不同残障类型</p></div>
+      <div class="four-card"><p class="f-title">慢性病人群</p><p class="f-desc">运动前评估、个性化建议、运动中监测、长期跟踪</p></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">关键：</strong>不是建一个大场馆让所有人来，而是根据不同人群需求提供差异化的设施、项目和服务。</p>
+    </div>
+  </div>
+  <div class="key-sentence">真正的公平，是让不同人都有合适选择。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 安全托底 -->
+<section class="poster photo-page" id="xhs-10">
+  <img class="bg-img" src="assets/safety.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第五环节 · 安全托底</p>
+    <h2 class="h2">安全不能只在<br>比赛当天出现</h2>
+    <p class="body">安全不是限制运动，而是让更多人敢参与、能坚持。设施巡检、健康评估、天气预警、医疗救护、应急复盘——五环节安全闭环。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">5<span>环</span></div><div class="data-label">安全托底闭环</div><div class="data-desc">设施巡检/健康评估/天气预警/医疗救护/应急复盘</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">全<span>程</span></div><div class="data-label">安全覆盖</div><div class="data-desc">不是比赛当天才有安全，日常健身也要有安全保障</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">设施巡检与健康评估</div><div class="step-desc">定期检查器材安全，运动前评估健康状况</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">天气预警与医疗救护</div><div class="step-desc">极端天气及时预警停止活动，现场有医疗救护保障</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">应急复盘</div><div class="step-desc">事故后及时复盘，改进安全措施和应急预案</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">安全不是限制运动，而是让更多人敢参与、能坚持。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 健康消费融合 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">融</div>
+  <div class="content">
+    <p class="kicker">第六环节 · 健康消费融合</p>
+    <h2 class="h2">可以带动消费<br>但不能用消费替代服务</h2>
+    <p class="body">体育消费是增量供给，基本公共服务才是普惠底座。政府保障基本均衡和安全，社会组织扩大群众参与，市场提供多样化专业化体验。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">政<span>府</span></div><div class="data-label">保基本</div><div class="data-desc">保障基本公共服务的均衡、可及和安全</div></div>
+      <div class="data-card"><div class="data-num">社<span>会</span></div><div class="data-label">扩参与</div><div class="data-desc">社会组织、体育社团扩大群众参与覆盖面</div></div>
+      <div class="data-card"><div class="data-num">市<span>场</span></div><div class="data-label">提体验</div><div class="data-desc">市场提供多样化、专业化、个性化的体育消费体验</div></div>
+      <div class="data-card"><div class="data-num">3<span>方</span></div><div class="data-label">协同关系</div><div class="data-desc">不是互相替代，而是各有定位、协同发展</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">原则：</strong>不能因为发展体育消费就减少基本公共服务投入，也不能用市场化收费替代普惠性服务。</p>
+    </div>
+  </div>
+  <div class="key-sentence">体育消费是全民健身的增量供给，基本公共服务才是普惠参与的底座。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 考场应用 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker">考场迁移 · 申论+面试</p>
+    <h2 class="h2">全民健身这样写<br>才有服务闭环</h2>
+    <div class="compare-col accent-col" style="padding:22px;margin-bottom:18px;">
+      <p style="font-size:25px;line-height:1.7;"><strong style="color:var(--accent);">申论表达：</strong>完善全民健身公共服务体系，要以群众生活半径为尺度，推动场地设施就近可达、赛事活动常态开展、科学指导专业有效、重点人群服务适配、安全保障全程覆盖，并促进全民健身与全民健康、文旅场景和体育消费协同发展。</p>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:0 0 18px 0;">
+      <p class="formula-text" style="font-size:24px;">设施就近可达<span class="arrow">→</span>赛事常态开展<span class="arrow">→</span>指导专业有效<span class="arrow">→</span><br>人群服务适配<span class="arrow">→</span>安全全程覆盖<span class="arrow">→</span>健康消费协同</p>
+    </div>
+    <p class="h3" style="color:var(--accent);margin-bottom:10px;">面试：场馆建好了但没人来，怎么办？</p>
+    <div class="step-chain" style="margin-top:8px;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">调研：距离时间项目管理四问找原因</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">活动：赛事引流+日常组织承接，让人留下来</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">服务：科学指导+分众适配+安全托底，提升体验</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">从建起来，到用起来，再到人人愿意动、人人科学动。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">总</div>
+  <div class="content">
+    <p class="kicker">总结 · 完整逻辑</p>
+    <h2 class="h2">全民健身的<br>生活圈逻辑</h2>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">不是</h3><ul><li>不是多建几个场馆</li><li>不是多办几场比赛</li><li>不是多做几次宣传</li><li>不是所有人用同一套</li><li>不是安全只在比赛日</li></ul></div>
+      <div class="compare-col accent-col"><h3>而是</h3><ul><li>而是设施就近可达</li><li>而是赛事常态开展</li><li>而是科学指导专业有效</li><li>而是分人群适配项目</li><li>而是安全全程覆盖</li></ul></div>
+    </div>
+    <div class="formula-box" style="margin-top:18px;padding:22px;">
+      <p class="formula-text" style="font-size:25px;">设施可及<span class="arrow">→</span>活动引流<span class="arrow">→</span>指导提质<span class="arrow">→</span><br>分众适配<span class="arrow">→</span>安全托底<span class="arrow">→</span>健康消费融合</p>
+    </div>
+    <div class="compare-col" style="margin-top:16px;padding:18px 24px;border-color:var(--accent);">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);">最终目标：<strong style="color:var(--accent);">从建起来，到用起来，再到人人愿意动、人人科学动、人人能坚持。</strong></p>
+    </div>
+  </div>
+  <div class="key-sentence">体育消费是全民健身的增量供给，基本公共服务才是普惠参与的底座。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker">参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:16px;">本卡片内容基于以下人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">全民健身场地设施建设与15分钟健身圈</div><div class="ref-meta">人民日报，2026年7月，场地可及四问评估，距离/时间/项目/管理，15分钟生活圈</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">体育场馆开放使用与效能评价</div><div class="ref-meta">人民日报，2026年7月，开放率/实际使用率/设施完好率/群众满意度四率评估，建成vs使用</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">群众赛事活动与常态化健身服务</div><div class="ref-meta">人民日报，2026年7月，赛前普及/赛中服务/赛后承接/全年日历，赛事引流与常态健身</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">科学健身指导与社会体育指导员队伍</div><div class="ref-meta">人民日报，2026年7月，选项目/控强度/纠动作/做恢复/识风险五要点，线上线下指导结合</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">重点人群健身服务与分众适配</div><div class="ref-meta">人民日报，2026年7月，青少年/老年人/残疾人/慢性病人群差异化服务，无障碍设施</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">全民健身安全保障与体育消费协同</div><div class="ref-meta">人民日报，2026年7月，设施巡检/健康评估/天气预警/医疗救护/应急复盘，政府社会市场三方协同</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:16px 22px;">
+      <p style="font-size:21px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>"六环节生活圈"为教学提炼框架，非某单篇原文结构；15分钟健身圈、四率评估等为政策概念和地方实践，不代表全国统一标准。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

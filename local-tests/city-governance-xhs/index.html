@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>城市治理里子 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#2563eb;--accent-soft:rgba(37,99,235,.15);--warn:#f59e0b;--line:rgba(255,255,255,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.hero{font-size:88px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:56px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:36px;font-weight:700;margin-bottom:12px}
+.body{font-size:28px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.caption{font-size:22px;color:var(--text-secondary);font-weight:500}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:28px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:28px 24px;background:rgba(255,255,255,.02)}
+.data-num{font-size:64px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:32px;font-weight:700}
+.data-label{font-size:26px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:22px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:24px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:28px;margin-bottom:12px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:24px;line-height:1.6;color:var(--text-secondary);padding:4px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:36px;font-weight:900;color:var(--accent);min-width:48px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:28px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:24px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:32px;margin:24px 0;text-align:center}
+.formula-text{font-size:32px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 8px}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:32px;font-weight:900;color:var(--accent);min-width:40px}
+.ref-content{flex:1}
+.ref-title{font-size:26px;font-weight:700;margin-bottom:6px}
+.ref-meta{font-size:22px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+ul.plain{list-style:none;padding:0}
+ul.plain li{font-size:26px;line-height:1.6;color:var(--text-secondary);padding:6px 0;padding-left:24px;position:relative}
+ul.plain li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+.tag-row{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.tag{font-size:22px;font-weight:700;padding:8px 18px;border:1px solid var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <p class="kicker">人民日报系列 · 第52篇</p>
+    <h1 class="hero">城市治理<br>别只看"面子"</h1>
+    <p class="body" style="font-size:32px;color:var(--text);font-weight:500;margin-top:16px;">地下管网、适儿化空间和安全监管才是里子</p>
+  </div>
+  <div class="key-sentence">天际线决定第一眼，城市里子决定每一天。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker">常见误区 · 漂亮≠好治理</p>
+    <h2 class="h2">一场暴雨、一次绕行<br>就能看见真实成色</h2>
+    <p class="body">道路积水、燃气泄漏、非标车辆穿行、限高杆制造拥堵、儿童设施不好用——这些都会让漂亮的景观瞬间失去意义。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">5<span>类</span></div><div class="data-label">里子问题</div><div class="data-desc">管网老化、安全缺位、设施扰民、儿童不适、通勤断裂</div></div>
+      <div class="data-card"><div class="data-num">1<span>场</span></div><div class="data-label">极端天气检验</div><div class="data-desc">暴雨内涝暴露排水能力，高温暴露电力韧性，寒潮暴露供热保障</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心区别：</strong>看面子是看城市长什么样；看里子是看城市能不能稳定运行。</p>
+    </div>
+  </div>
+  <div class="key-sentence">面子是第一眼印象，里子是每一天的体验。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker">总公式 · 五步治理链</p>
+    <h2 class="h2">不是隐蔽工程清单<br>而是一套治理方法</h2>
+    <div class="formula-box">
+      <p class="formula-text">系统先托底<span class="arrow">→</span>规则再校准<span class="arrow">→</span><br>尺度要换位<span class="arrow">→</span>资源跨域协同<span class="arrow">→</span>反馈推动长效</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">系统先托底</div><div class="step-desc">管网、排水、安全等基础设施先保证稳定运行</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">规则再校准</div><div class="step-desc">车辆管理、设施设置等规则要在真实使用中检验调整</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">尺度要换位</div><div class="step-desc">用儿童、老人、残疾人等具体人群的视角检验服务</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">资源跨域协同</div><div class="step-content"><div class="step-desc">治理尺度跟着人的工作生活半径走，不停在行政边界</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">反馈推动长效</div><div class="step-desc">群众反映→现场核查→分类整改→结果反馈→高频复盘</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">先保证运行，再控制风险；再检验体验，最后持续改进。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 管网 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">管</div>
+  <div class="content">
+    <p class="kicker">第一动作 · 系统托底</p>
+    <h2 class="h2">城市体检先从脚下开始</h2>
+    <p class="body">我国城市地下管网总规模约<strong>390万公里</strong>，"十五五"计划建设改造约<strong>77万公里</strong>。真正难点不是加投资，而是摸清底数、识别风险、协调权属和持续维护。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">390<span>万km</span></div><div class="data-label">全国地下管网总规模</div><div class="data-desc">供水、排水、燃气、电力、通信等多类管线纵横交错</div></div>
+      <div class="data-card"><div class="data-num">77<span>万km</span></div><div class="data-label">"十五五"建设改造目标</div><div class="data-desc">不是新建更多，而是更新老化、消除隐患、提升效能</div></div>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">四大难题</h3><ul><li>底数不清：管线走向不明</li><li>设施老化：超期服役风险高</li><li>条块分割：权属单位难协调</li><li>重建轻管：维护投入不足</li></ul></div>
+      <div class="compare-col accent-col"><h3>解决原则</h3><ul><li>先体检后更新</li><li>无体检不更新</li><li>统一数据标准</li><li>全生命周期管理</li></ul></div>
+    </div>
+  </div>
+  <div class="key-sentence">先体检后更新、无体检不更新。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 系统 数字孪生 -->
+<section class="poster photo-page" id="xhs-05">
+  <img class="bg-img" src="assets/digital-twin.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">系统升级 · 从事后到事前</p>
+    <h2 class="h2">一张图、一张网<br>一次施工、长期监测</h2>
+    <p class="body">统一数据标准，归集权属信息；用传感器和生命线平台预警；道路与多类管线协同施工，减少反复开挖。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">523<span>家</span></div><div class="data-label">重庆归集权属单位</div><div class="data-desc">规范38类管线属性，建成地下管线一张图</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">38<span>类</span></div><div class="data-label">管线属性标准化</div><div class="data-desc">从供水到通信，每类管线有统一的数据字段</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">转变：</strong>城市更新要从事后抢修走向事前体检和实时预警。</p>
+    </div>
+  </div>
+  <div class="key-sentence">城市更新要从事后抢修走向事前体检和实时预警。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 水治理 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">水</div>
+  <div class="content">
+    <p class="kicker">系统托底 · 排水与循环</p>
+    <h2 class="h2">排得出去<br>还要循环得起来</h2>
+    <p class="body">一条排水沟连着民生，一座水厂连着绿色转型。群众反映排水不畅要现场核查整改；污水处理还要通过智能控制降低能耗药耗，推动再生利用。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">↓5<span>%</span></div><div class="data-label">智能控制平均能耗下降</div><div class="data-desc">通过AI优化曝气、投药等环节，降低运行电耗</div></div>
+      <div class="data-card"><div class="data-num">↓20<span>%</span></div><div class="data-label">药耗下降</div><div class="data-desc">精准投加混凝剂、消毒剂，减少药剂浪费和二次污染</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">雨水收集</div><div class="step-desc">管网排水、海绵城市渗滞蓄净用排</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">污水处理</div><div class="step-desc">智能控制降低能耗药耗，稳定达标排放</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">再生利用</div><div class="step-desc">回用于工业冷却、城市绿化、道路冲洗、生态补水</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">基础设施不能只看建没建，还要看雨天能不能排、运行是否高效。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 安全 老头乐 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">安</div>
+  <div class="content">
+    <p class="kicker">规则校准 · 安全监管</p>
+    <h2 class="h2">"老头乐"治理<br>为什么不能一禁了之</h2>
+    <p class="body">非标车辆存在无牌、安全配置和保险缺位等风险；但部分老年人的短途出行和城乡接合部公交不足也是真问题。安全治理不能在放任风险和简单禁止之间二选一。</p>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">风险侧</h3><ul><li>无牌无证，事故难追责</li><li>安全配置不足，碰撞防护弱</li><li>保险缺位，赔偿无保障</li><li>违规行驶，扰乱交通秩序</li></ul></div>
+      <div class="compare-col accent-col"><h3>需求侧</h3><ul><li>老年人短途出行刚需</li><li>城乡接合部公交覆盖不足</li><li>低成本出行方式难替代</li><li>简单禁止会引发新矛盾</li></ul></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin-top:16px;">
+      <p class="formula-text" style="font-size:26px;">生产立标准<span class="arrow">→</span>销售管误导<span class="arrow">→</span>使用明规则<span class="arrow">→</span>服务补替代</p>
+    </div>
+  </div>
+  <div class="key-sentence">安全治理不能在放任风险和简单禁止之间二选一。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 设施 限高杆 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">设</div>
+  <div class="content">
+    <p class="kicker">规则校准 · 动态评估</p>
+    <h2 class="h2">限高杆装上<br>不代表治理完成</h2>
+    <p class="body">设施设置前要调研道路功能和车辆需求；运行中监测碰撞、拥堵与绕行；群众反映后及时复核、解释和调整。政策效果要在真实使用场景中检验。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">2.6<span>m</span></div><div class="data-label">惠州一处限高杆</div><div class="data-desc">被反映导致货车绕行和碰撞，设置后未做使用评估</div></div>
+      <div class="data-card"><div class="data-num">3<span>阶段</span></div><div class="data-label">设施全周期评估</div><div class="data-desc">设置前调研→运行中监测→反映后复核调整</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">设置前：调研</div><div class="step-desc">道路功能定位、通行车辆类型、周边替代路线</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">运行中：监测</div><div class="step-desc">碰撞事故、拥堵指数、绕行路线、群众投诉</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">反映后：复核</div><div class="step-desc">现场核查、公开解释、及时调整、闭环反馈</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">政策效果要在真实使用场景中检验。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 儿童 一米视角 -->
+<section class="poster photo-page" id="xhs-09">
+  <img class="bg-img" src="assets/children-friendly.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">尺度换位 · 适儿化</p>
+    <h2 class="h2">用"一米视角"<br>重新量城市</h2>
+    <p class="body">适儿化不是给公园加点颜色。0—6岁关注柔性地面和圆角设施，6—15岁需要攀爬和协作空间，0—3岁托育要进入社区并提供灵活服务。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">0-6<span>岁</span></div><div class="data-label">安全优先</div><div class="data-desc">柔性地面、圆角设施、防护栏杆、视线无遮挡</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">6-15<span>岁</span></div><div class="data-label">发展优先</div><div class="data-desc">攀爬设施、协作空间、运动场地、探索性设计</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">托育：</strong>0—3岁托育要进入社区，提供灵活时段和普惠价格，不能只靠市场化机构。</p>
+    </div>
+  </div>
+  <div class="key-sentence">一座城市是否友好，要看身高最低、表达最弱的人是否被照顾。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 协同 都市圈 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">协</div>
+  <div class="content">
+    <p class="kicker">跨域协同 · 都市圈治理</p>
+    <h2 class="h2">线路相连<br>不等于通勤顺畅</h2>
+    <p class="body">城际铁路、快速路、定制公交、枢纽换乘、票制支付和高峰调度要接成完整链条。治理尺度应跟着人的工作和生活半径走，不能停在行政边界上。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">73<span>%</span></div><div class="data-label">3年目标覆盖率</div><div class="data-desc">主要都市圈1小时通勤条件人口覆盖率</div></div>
+      <div class="data-card"><div class="data-num">75<span>%</span></div><div class="data-label">2030年目标</div><div class="data-desc">更多人口享受1小时通勤条件，跨城出行更便捷</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">轨道衔接</div><div class="step-desc">城际铁路与城市地铁同站换乘，减少步行距离</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">票制互通</div><div class="step-desc">一卡通行、扫码互认，消除跨城支付障碍</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">调度协同</div><div class="step-desc">高峰时段跨城班次加密，末班时间衔接匹配</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">服务延伸</div><div class="step-desc">定制公交、通勤班车填补轨道覆盖空白区域</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">城市治理不能停在行政边界上。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 长效 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">长</div>
+  <div class="content">
+    <p class="kicker">反馈长效 · 持续管护</p>
+    <h2 class="h2">工程清淤只是开始<br>日常维护才是治理</h2>
+    <p class="body">主干管网是"大动脉"，城乡沟渠是"毛细血管"。源头治污、村规民约、监督员、保洁员和责任制要共同延伸到末梢。工程交付的是设施，治理交付的是持续可用的公共服务。</p>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">工程思维的局限</h3><ul><li>重建设轻维护</li><li>验收后无人管</li><li>问题反复出现</li><li>资金投入低效</li></ul></div>
+      <div class="compare-col accent-col"><h3>治理思维的要求</h3><ul><li>全生命周期管护</li><li>责任到人到段</li><li>群众监督参与</li><li>持续投入保障</li></ul></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin-top:16px;">
+      <p class="formula-text" style="font-size:24px;">群众反映<span class="arrow">→</span>现场核查<span class="arrow">→</span>明确责任<span class="arrow">→</span>分类整改<span class="arrow">→</span>结果反馈<span class="arrow">→</span>高频复盘</p>
+    </div>
+  </div>
+  <div class="key-sentence">工程交付的是设施，治理交付的是持续可用的公共服务。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 考场应用 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker">考场迁移 · 申论+面试</p>
+    <h2 class="h2">城市治理<br>高分表达框架</h2>
+    <div class="compare-col accent-col" style="padding:24px;margin-bottom:20px;">
+      <p style="font-size:26px;line-height:1.7;"><strong style="color:var(--accent);">申论总论点：</strong>城市治理要从"面子工程"转向"里子建设"，以系统思维托底基础设施，以动态校准完善规则标准，以人群视角检验服务质量，以跨域协同打破行政壁垒，以群众反馈推动长效治理。</p>
+    </div>
+    <p class="h3" style="color:var(--accent);margin-bottom:12px;">面试：面对"重面子轻里子"，怎么改？</p>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">开展城市体检，摸清基础设施底数</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">建立动态评估机制，规则在使用中校准</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">以特殊人群视角检验公共服务适切性</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">推动都市圈协同，治理尺度匹配生活半径</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">畅通群众反馈渠道，形成长效管护闭环</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">把看不见的系统建牢，把容易忽略的人放在心上，城市才真正既有面子更有里子。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">总</div>
+  <div class="content">
+    <p class="kicker">总结 · 完整逻辑</p>
+    <h2 class="h2">城市治理的<br>"里子"逻辑</h2>
+    <div class="compare-grid">
+      <div class="compare-col"><h3 style="color:var(--warn);">不是</h3><ul><li>不是只看地标天际线</li><li>不是只建不管的工程</li><li>不是一禁了之的管理</li><li>不是行政边界内的治理</li><li>不是验收即结束的项目</li></ul></div>
+      <div class="compare-col accent-col"><h3>而是</h3><ul><li>而是地下管网稳定运行</li><li>而是全生命周期管护</li><li>而是风险与需求平衡</li><li>而是都市圈协同治理</li><li>而是群众反馈推动改进</li></ul></div>
+    </div>
+    <div class="formula-box" style="margin-top:20px;">
+      <p class="formula-text" style="font-size:28px;">系统托底<span class="arrow">→</span>规则校准<span class="arrow">→</span>尺度换位<span class="arrow">→</span>跨域协同<span class="arrow">→</span>反馈长效</p>
+    </div>
+  </div>
+  <div class="key-sentence">面子是城市的名片，里子是城市的良心。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker">参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:20px;">本卡片内容基于以下人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">城市地下管网建设改造与智慧管理</div><div class="ref-meta">人民日报，2026年7月，全国地下管网390万公里、"十五五"77万公里改造目标、重庆523家权属单位归集经验</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">污水处理智能化与再生水利用</div><div class="ref-meta">人民日报，2026年7月，智能控制项目能耗下降5%以上、药耗下降20%以上，再生水利用路径</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">非标电动车辆治理与老年人出行保障</div><div class="ref-meta">人民日报，2026年7月，"老头乐"安全风险与出行需求辨析，生产、销售、使用、服务四环节治理</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">城市限高设施设置与动态评估</div><div class="ref-meta">人民日报，2026年7月，惠州2.6米限高杆案例，设施设置前调研、运行中监测、反映后复核机制</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">儿童友好城市建设与社区托育服务</div><div class="ref-meta">人民日报，2026年7月，"一米视角"城市设计，0-6岁/6-15岁分龄设施标准，0-3岁社区托育</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">都市圈通勤一体化与跨城协同治理</div><div class="ref-meta">人民日报，2026年7月，主要都市圈1小时通勤覆盖率3年目标73%、2030年75%，轨道/票制/调度协同</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:18px 24px;">
+      <p style="font-size:22px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>"五步治理链"为教学提炼框架，非某单篇原文结构；390万公里、77万公里、73%等数据为地方或全国规划案例，不代表统一标准。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>
