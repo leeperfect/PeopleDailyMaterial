@@ -79,6 +79,9 @@
 
 | 2026-08-17 | 票根经济：从观赛流量到城市消费链 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-08-17-ticket-stub-economy-city-consumption-chain-notebooklm/` | 待上传 | `data/articles/人民日报系列/75-【R】人民日报讲票根经济：不是赛后发优惠券，而是把赛事流量接成城市消费链.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
 
+| 2026-08-20 | 健康优先不是卫生部门"单打独斗" | 小红书图 | `media/images/2026-08-20-health-priority-xhs/` | 待上传 | `data/xiaohongshu/78-xiaohongshu-health-priority-prevention-daily-life-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+翡翠绿#059669，3张AI生成配图，末页7篇人民日报参考文献） |
+| 2026-08-22 | 带薪休假不是"放几天假"，而是让职工敢休、单位能排、消费接得住 | 小红书图 / 视频封面 | `media/images/2026-08-22-paid-leave-xhs/` | 待上传 | `data/xiaohongshu/80-xiaohongshu-paid-leave-rights-time-consumption-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+砖红#dc2626，3张AI生成配图，人民日报标识突出，末页6篇人民日报参考文献） |
+
 ## 类型写法
 
 - 小红书图

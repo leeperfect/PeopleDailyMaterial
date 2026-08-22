@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>带薪休假 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#dc2626;--accent-soft:rgba(220,38,38,.15);--warn:#f59e0b;--danger:#ef4444;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:104px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3.photo-page .content{justify-content:center}
+.cover-4x3 .key-sentence{margin-top:24px;font-size:28px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-bar"></span><span class="rm-text">人民日报</span><span class="rm-series">系列 · 第80篇</span></div>
+    <h1 class="hero">带薪休假<br>不是"放几天假"</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">要让职工敢休、单位能排、消费接得住</p>
+  </div>
+  <div class="key-sentence">先保障休息权，再讨论消费潜力。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>纠偏 · 这题最容易写错两次</p>
+    <h2 class="h2">别把休假<br>只写成福利或消费</h2>
+    <div class="compare-grid">
+      <div class="compare-col" style="border-color:var(--danger);"><h3 style="color:var(--danger);">误区一 ✗</h3><p class="body" style="font-size:24px;">单位多给几天假，职工自然能休。</p><p class="body" style="font-size:21px;margin-top:8px;">→ 忽视了"有假不敢休"的组织文化和个人成本</p></div>
+      <div class="compare-col" style="border-color:var(--danger);"><h3 style="color:var(--danger);">误区二 ✗</h3><p class="body" style="font-size:24px;">大家一休假，消费自然会增长。</p><p class="body" style="font-size:21px;margin-top:8px;">→ 忽视了收入、保障、服务供给等消费前提条件</p></div>
+    </div>
+    <p class="h3" style="color:var(--accent);margin:8px 0;">现实却是四个断点：</p>
+    <div class="data-grid" style="margin:12px 0;">
+      <div class="data-card"><div class="data-num">1</div><div class="data-label">有假不敢休</div><div class="data-desc">担心绩效、晋升、同事意见</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">单位不好排</div><div class="data-desc">业务忙、窗口不能停、缺替岗机制</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">家庭时间对不上</div><div class="data-desc">孩子放假家长上班，日历错位</div></div>
+      <div class="data-card"><div class="data-num">4</div><div class="data-label">服务供给接不住</div><div class="data-desc">交通、场馆、托管、价格不匹配</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">休假首先是劳动权益，其次才是组织安排和经济条件。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>总框架 · 五步看懂带薪休假</p>
+    <h2 class="h2">一条完整的<br>休假链</h2>
+    <div class="formula-box">
+      <p class="formula-text">权利确认<span class="arrow">→</span>组织排班<span class="arrow">→</span>时间协同<span class="arrow">→</span><br>服务承接<span class="arrow">→</span>结果评价</p>
+    </div>
+    <div class="five-grid">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">权利确认</div><div class="f-desc">休假是劳动者依法享有的制度化时间，不是福利赠与</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">组织排班</div><div class="f-desc">刚性保障权利，弹性安排时间，解决"不好排"</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">时间协同</div><div class="f-desc">职工、学生、公共服务日历减少冲突，减少"假期时差"</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">服务承接</div><div class="f-desc">收入、保障、交通、场馆、价格共同承接闲暇需求</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">结果评价</div><div class="f-desc">既看实际休假，也看单位运行、家庭体验和服务质量</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">权利是起点，排班是执行，家庭是协同，服务是承接，评价是闭环。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 权利 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">权</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>第一环节 · 权利确认</p>
+    <h2 class="h2">权利在制度里<br>成本可能在个人身上</h2>
+    <p class="body">纸面权利与真实选择之间存在差距。单个职工很难独自打破组织惯性。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">⚖</div><div class="data-label">担心绩效和晋升</div><div class="data-desc">休假可能被解读为"不够投入"，影响考核和职业发展</div></div>
+      <div class="data-card"><div class="data-num">🤝</div><div class="data-label">担心工作无人接</div><div class="data-desc">休假期间工作堆积，同事有意见，回来后加倍补</div></div>
+      <div class="data-card"><div class="data-num">👥</div><div class="data-label">"大家都不休"的隐性压力</div><div class="data-desc">群体博弈形成沉默规则，率先休假的人成为异类</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">!</div><div class="data-label">个人很难独自打破</div><div class="data-desc">不对等关系使职工处于弱势，需要制度和组织主动创造条件</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>不能只问职工有没有申请，还要问单位有没有创造可休条件。</p>
+    </div>
+  </div>
+  <div class="key-sentence">休假不是额外奖励，而是需要执行机制承接的劳动权益。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 执行 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">执</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>执行保障 · 从软倡导到硬保障</p>
+    <h2 class="h2">"不敢休"<br>要靠什么解决</h2>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">1</div><div class="data-label">规则明确</div><div class="data-desc">双方知道权利和责任，休假条件、程序、补偿写清楚</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">平等协商</div><div class="data-desc">时间可商量，权利不能被迫放弃，协商不成有救济渠道</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">投诉可达</div><div class="data-desc">问题有人接、能够处理，投诉不报复，处理有反馈</div></div>
+      <div class="data-card"><div class="data-num">4</div><div class="data-label">监督有效</div><div class="data-desc">不只查制度上墙，还看是否真正休到，执法检查常态化</div></div>
+    </div>
+    <div class="compare-col" style="margin-top:16px;padding:20px 24px;border-color:var(--warn);">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">地方实践（四川）：</strong>加强带薪休假专项执法检查，畅通投诉举报渠道。这是地方探索口径，非全国统一制度。</p>
+    </div>
+    <p class="body" style="margin-top:14px;font-size:24px;">人社事业"十五五"规划将完善带薪年休假制度纳入构建和谐劳动关系任务（未来五年部署，非已完成成果）。</p>
+  </div>
+  <div class="key-sentence">休假不是额外奖励，而是需要执行机制承接的劳动权益。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 排班 -->
+<section class="poster photo-page" id="xhs-06">
+  <img class="bg-img" src="assets/scheduling.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>第二环节 · 组织排班</p>
+    <h2 class="h2">单位能排<br>权利才落得下</h2>
+    <p class="body">回应"业务忙、窗口不能停"的现实顾虑：权利刚性，安排弹性。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">1</div><div class="data-label">年初摸排</div><div class="data-desc">纳入年度人员计划，提前掌握休假需求和业务周期</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">2</div><div class="data-label">轮岗替岗</div><div class="data-desc">关键岗位建立轮岗、替岗机制，每人休假有人接续</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">3</div><div class="data-label">交接清单</div><div class="data-desc">工作交接写清任务与责任，休假不丢工作，回来不堆积</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">4</div><div class="data-label">错峰安排</div><div class="data-desc">结合淡旺季、生产周期错峰，避免集中休假影响运行</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">浙江探索：</strong>部分地区和企业试行错峰休假、协同替岗、公益托管（案例，非全国统一规则）。</p>
+    </div>
+  </div>
+  <div class="key-sentence">成熟的制度，是每个人都有休息安排，每个岗位都有接续方案。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 边界 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">界</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>公平边界 · 不同岗位不同排法</p>
+    <h2 class="h2">不是一把尺子<br>也不是无限推迟</h2>
+    <p class="body">不同岗位可以有不同排法，但休息权不能因此有不同等级。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">🏢</div><div class="data-label">窗口岗位</div><div class="data-desc">重在保持服务连续，轮岗替岗+预约分流，不能一关了之</div></div>
+      <div class="data-card"><div class="data-num">🏭</div><div class="data-label">连续生产</div><div class="data-desc">重在轮班和安全交接，三班倒/四班倒保障设备不停</div></div>
+      <div class="data-card"><div class="data-num">🌾</div><div class="data-label">季节行业</div><div class="data-desc">重在结合淡旺季错峰，农忙/旺季后集中安排休假</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">⚖</div><div class="data-label">不同用工形式</div><div class="data-desc">正式工、劳务派遣、灵活就业都应关注权益覆盖，不能分层</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:16px 0;">
+      <p class="formula-text" style="font-size:25px;">排法可以不同 <span class="arrow">→</span> 休息权人人平等</p>
+    </div>
+    <p class="body" style="font-size:24px;">四条不同形态的轨道最终汇入同一枚"休息权"盾牌。</p>
+  </div>
+  <div class="key-sentence">不同岗位可以有不同排法，休息权不能因此有不同等级。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 家庭时间 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">家</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>第三环节 · 时间协同</p>
+    <h2 class="h2">真正稀缺的<br>是"共同时间"</h2>
+    <p class="body">带薪休假不只是一张个人日历，也是一项家庭时间政策。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">📅</div><div class="data-label">孩子有春秋假</div><div class="data-desc">家长未必能休，孩子在家无人照护，双职工困境突出</div></div>
+      <div class="data-card"><div class="data-num">🏫</div><div class="data-label">家长有假</div><div class="data-desc">学校日历未必匹配，想陪孩子却赶上正常上课日</div></div>
+      <div class="data-card"><div class="data-num">🎪</div><div class="data-label">场馆开放错时</div><div class="data-desc">托管服务、图书馆、场馆开放时间与假期不匹配</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">⚠</div><div class="data-label">单项政策叠加</div><div class="data-desc">各排各的日历，家庭反而更忙，"假期时差"消耗政策红利</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">2026年政府工作报告：</strong>支持有条件的地方推广中小学春秋假，落实职工带薪错峰休假制度。两项政策放在同一扩大内需框架中。</p>
+    </div>
+  </div>
+  <div class="key-sentence">带薪休假不只是一张个人日历，也是一项家庭时间政策。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 时间协同 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">协</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>协同机制 · 减少"假期时差"</p>
+    <h2 class="h2">别各排各的<br>日历</h2>
+    <p class="body">好的时间政策，是减少日历之间的冲突，而不是增加家庭协调成本。</p>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">错峰休假与学校假期适度衔接</div><div class="step-desc">职工休假安排参考学校春秋假，让家庭有共同时间窗口</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">对无法同步的家庭提供普惠托管</div><div class="step-desc">双职工、单亲家庭等无法同步休假时，社区和学校提供托管服务</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">图书馆、场馆、社区活动合理开放</div><div class="step-desc">公共文化资源在假期延长开放、增加活动，承接闲暇需求</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">交通与公共服务适配错峰需求</div><div class="step-desc">错峰出行减少拥堵，公共服务在非节假日也保持质量</div></div></div>
+    </div>
+    <div class="compare-col" style="margin-top:14px;padding:18px 22px;border-color:var(--warn);">
+      <p style="font-size:22px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">边界提醒：</strong>春秋假、错峰休假、公益托管均属于地方或阶段性实践，引用时必须带"地方探索"边界，不写成全国统一制度。</p>
+    </div>
+  </div>
+  <div class="key-sentence">好的时间政策，是减少日历之间的冲突。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 消费条件 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">消</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>第四环节 · 服务承接</p>
+    <h2 class="h2">有闲不等于<br>"会消费"</h2>
+    <p class="body">闲暇只是消费的时间前提。收入预期、社会保障、优质供给共同决定消费体验。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">💰</div><div class="data-label">有收入</div><div class="data-desc">具备支付能力，稳定收入是消费的基础</div></div>
+      <div class="data-card"><div class="data-num">🛡</div><div class="data-label">有保障</div><div class="data-desc">敢于安排未来支出，社保、医疗、养老降低后顾之忧</div></div>
+      <div class="data-card"><div class="data-num">⏰</div><div class="data-label">有闲暇</div><div class="data-desc">打开服务消费入口，时间是消费的必要条件</div></div>
+      <div class="data-card"><div class="data-num">⭐</div><div class="data-label">有好供给</div><div class="data-desc">形成满意体验，优质服务把需求变成信任和复购</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:16px 0;">
+      <p class="formula-text" style="font-size:25px;">有闲打开时间窗口 <span class="arrow">+</span> 有钱决定支付能力 <span class="arrow">+</span><br>好服务决定生活体验</p>
+    </div>
+    <p class="body" style="font-size:24px;">投资于人理论：收入分配、社会保障、带薪休假、文旅融合和消费场景创新放在同一链条中。</p>
+  </div>
+  <div class="key-sentence">有闲打开时间窗口，有钱决定支付能力，好服务决定生活体验。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 服务供给 -->
+<section class="poster photo-page" id="xhs-11">
+  <img class="bg-img" src="assets/service-map.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>供给提质 · 接住闲暇靠服务能力</p>
+    <h2 class="h2">地方不能只会<br>发券打折</h2>
+    <p class="body">休假释放需求，优质供给才能把需求变成信任。从流量刺激转向服务提质。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🚄</div><div class="data-label">交通便利、预约清晰</div><div class="data-desc">出行便捷，场馆预约透明，减少排队和信息不对称</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">💳</div><div class="data-label">价格透明、投诉顺畅</div><div class="data-desc">明码标价，不宰客，投诉渠道畅通，处理有反馈</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🎭</div><div class="data-label">分层适配供给</div><div class="data-desc">文旅、赛事、康养、文化供给分层适配不同人群需求</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🏘</div><div class="data-label">家门口休闲空间</div><div class="data-desc">社区公园、健身步道、文化活动室可达可及，不一定要远途</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">关键：</strong>不消费的休假同样实现了制度保障人的价值。闲暇的意义不只用消费来衡量。</p>
+    </div>
+  </div>
+  <div class="key-sentence">休假释放需求，优质供给才能把需求变成信任。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 考场应用 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>考场迁移 · 可直接复制的公式</p>
+    <h2 class="h2">带薪休假<br>高分表达</h2>
+    <div class="compare-col accent-col" style="padding:22px;margin-bottom:18px;">
+      <p style="font-size:27px;line-height:1.8;font-weight:700;"><strong style="color:var(--accent);">申论公式：</strong>权益有保障 <span style="color:var(--accent);">+</span> 安排有弹性 <span style="color:var(--accent);">+</span> 家庭能协同 <span style="color:var(--accent);">+</span> 服务有供给 <span style="color:var(--accent);">+</span> 执行可监督</p>
+    </div>
+    <p class="h3" style="color:var(--accent);margin-bottom:10px;">面试五问（评价"领导带头休假""弹性休假"等做法）：</p>
+    <div class="step-chain" style="margin-top:4px;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">是否符合现行制度和程序边界？</div><div class="step-desc">不能突破法律和政策框架，不能以创新为名规避责任</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">是否明确适用对象与岗位差异？</div><div class="step-desc">不同岗位排法不同，但休息权人人平等，不能分层</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">是否保障生产、窗口和公共服务连续运行？</div><div class="step-desc">轮岗替岗、交接清单、错峰安排确保服务不中断</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">是否让不同用工形式和家庭公平受益？</div><div class="step-desc">正式工、劳务派遣、灵活就业、双职工家庭都应覆盖</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">是否形成协商、替岗、补偿、投诉与监督闭环？</div><div class="step-desc">从倡导到制度，从申请到执行，从投诉到监督全链条</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">先守权利底线，再用组织与社会协同解决执行难题。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 总结+评价 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">评</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>第五环节 · 结果评价 + 认知升级</p>
+    <h2 class="h2">别只看文件<br>和休假率</h2>
+    <p class="body">既看劳动者有没有受益，也看组织有没有持续运行。防止休假率排名和台账形式主义。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">⚖</div><div class="data-label">权益</div><div class="data-desc">职工是否真正休到？投诉是否及时处理？</div></div>
+      <div class="data-card"><div class="data-num">⚙</div><div class="data-label">运行</div><div class="data-desc">单位和公共服务是否稳定运行？轮岗替岗是否有效？</div></div>
+      <div class="data-card"><div class="data-num">👨‍👩‍👧</div><div class="data-label">家庭</div><div class="data-desc">家庭时间是否更协调？托管服务是否可及？</div></div>
+      <div class="data-card"><div class="data-num">⭐</div><div class="data-label">服务</div><div class="data-desc">服务质量和生活体验是否改善？供给是否分层适配？</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:16px 0;">
+      <p class="formula-text" style="font-size:24px;">职工敢休 = 权利有保障<br>单位能排 = 管理更精细<br>家庭对得上 = 政策更协同<br>服务接得住 = 供给更有质量</p>
+    </div>
+    <p class="body" style="font-size:24px;font-weight:700;color:var(--text);">不是把每段闲暇都变成消费，而是让每个人拥有可支配、可预期、有尊严的生活时间。</p>
+  </div>
+  <div class="key-sentence">让每个人拥有可支配、可预期、有尊严的生活时间。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">人民日报</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:12px;">本卡片内容基于以下6篇人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">政府工作报告</div><div class="ref-meta">李强，人民日报，2026年3月，落实职工带薪错峰休假制度，支持有条件地方推广中小学春秋假，与服务消费提质、增收、权益保护同属扩大内需框架</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">今后五年，人社工作这样干</div><div class="ref-meta">李林蔚，人民日报，2026年，将完善带薪年休假制度纳入构建和谐劳动关系和劳动者权益保障任务（人社"十五五"规划部署，非已完成成果）</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">如何推动能消费敢消费愿消费</div><div class="ref-meta">王昊男等，人民日报，2026年，直面"有假难休"，给出监督执法和投诉举报的地方实践（四川专项执法检查），消费需要稳定收入、保障预期和优质环境共同作用</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">以系统思维解好"多元方程"</div><div class="ref-meta">常晋，人民日报，2026年，学校假期、职工休假、托管服务与资源开放的多元方程，"家庭时间"概念，单项政策不能"一放了之"</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">投资于物和投资于人不能割裂</div><div class="ref-meta">苟护生，人民日报，2026年，休假属于投资于人的制度条件，收入分配、社会保障、带薪休假、文旅融合和消费场景创新放在同一链条，权益第一、经济结果第二</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">春秋假，收好这份"季节的礼物"</div><div class="ref-meta">闫伊乔，人民日报，2026年，双职工家庭照护困难与公共空间开放，假期的育人价值，帮助避免把一切休息都等同于旅游</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:12px;padding:14px 20px;">
+      <p style="font-size:20px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>四川、浙江做法均为地方探索；人社"十五五"规划为未来五年部署；春秋假、错峰休假为地方或阶段性实践，均不代表全国统一制度。不构成个体就业或消费建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-bar"></span><span class="rm-text">人民日报</span><span class="rm-series">系列 · 第80篇</span></div>
+    <h1 class="hero">带薪休假<br>不是"放几天假"</h1>
+    <p class="body">让职工敢休、单位能排、消费接得住——一条完整的休假治理链。</p>
+    <div class="key-sentence">权利确认 → 组织排班 → 时间协同 → 服务承接 → 结果评价。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

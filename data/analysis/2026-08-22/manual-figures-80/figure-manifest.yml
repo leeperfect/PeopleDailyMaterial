@@ -1,0 +1,28 @@
+schema_version: 2
+type: manual_figure_manifest
+date: '2026-08-22'
+registered_at: '2026-08-22T08:20:26'
+article: data/articles/人民日报系列/80-人民日报讲带薪休假：不是“放几天假”，而是让职工敢休、单位能排、消费接得住.md
+topic: 带薪休假：让职工敢休、单位能排、消费接得住
+article_number: '80'
+asset_root: media/images/2026-08-22-article-80-manual
+manifest_path: data/analysis/2026-08-22/manual-figures-80/figure-manifest.yml
+plans:
+  shared:
+    items: []
+    updated_at: null
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: editing
+  confirmed_at: null
+  body_hash: null
+  plan_fingerprint: null
+figures: []
+updated_at: '2026-08-22T08:20:26'

@@ -2012,6 +2012,28 @@ REFINED_IDEAS.extend([
                              'people_daily_20260815_30175050']},
 ])
 
+# 2026-08-22：从带薪休假切入劳动权益、时间协同与服务消费。
+REFINED_IDEAS.extend([
+    {'idea_id': 'idea_20260822_paid_leave_rights_time_consumption',
+     'date': '2026-08-22',
+     'priority': 'S',
+     'status': '备选',
+     'platform': '公众号 + 小红书',
+     'title': '《人民日报》讲带薪休假：不是“放几天假”，而是让职工敢休、单位能排、消费接得住',
+     'angle': '带薪休假首先是劳动者依法享有的休息权，也是改善生活品质、反对工时内卷和扩大服务消费的重要条件。政策要破解有假不敢休、单位不好排、家庭时间对不上、休闲服务接不住等问题，形成权益保障、错峰安排和供给承接的完整链条。',
+     'outline': ['先把权利落到实处：用监督、补偿和申诉机制破解有假不敢休',
+                 '再让单位能够安排：按岗位建立计划、替补和错峰方案',
+                 '推动时间相互协同：衔接职工休假、学校假期和家庭照护',
+                 '用优质供给接住闲暇：让文旅、赛事、康养和文化服务匹配需求',
+                 '评价既看权益也看发展：兼顾休假落实、单位运行和服务消费'],
+     'support_article_ids': ['people_daily_20260128_30136197',
+                             'people_daily_20260314_30145213',
+                             'people_daily_20260407_30149453',
+                             'people_daily_20260424_30152868',
+                             'people_daily_20260715_30168873',
+                             'people_daily_20251102_30112590']},
+])
+
 WEEKLY_SUPPORT_UPDATES_20260810_0816: Dict[str, List[str]] = {
     'idea_refined_20260612_employment_chain': ['people_daily_20260810_30173900', 'people_daily_20260812_30174371', 'people_daily_20260812_30174387', 'people_daily_20260813_30174693'],
     'idea_20260615_21_employment_priority_people': ['people_daily_20260810_30173900', 'people_daily_20260812_30174371', 'people_daily_20260812_30174387', 'people_daily_20260813_30174693'],

@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import re
 from datetime import datetime
@@ -12,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+from PIL import Image
 
 from modules.writing_workflow import (
     PROJECT_ROOT,
@@ -23,10 +25,12 @@ from modules.writing_workflow import (
     save_snapshot,
     save_state,
     split_frontmatter,
+    workflow_id,
 )
 
 
 PLATFORMS = ("shared", "wechat", "toutiao")
+MANUAL_UPLOAD_LIMIT = 25 * 1024 * 1024
 
 
 def _now() -> str:
@@ -107,6 +111,205 @@ def save_manifest(path: Path, manifest: dict[str, Any]) -> None:
         path,
         yaml.safe_dump(manifest, allow_unicode=True, sort_keys=False, width=1000),
     )
+
+
+def _article_number(article_path: Path) -> str:
+    match = re.match(r"^(?:热点)?(\d+)-", article_path.name)
+    return match.group(1) if match else workflow_id(article_path)[:6]
+
+
+def _link_manifest(article_path: Path, manifest_path: Path) -> None:
+    source = article_path.read_text(encoding="utf-8")
+    frontmatter, body, _ = split_frontmatter(source)
+    relative = str(manifest_path.relative_to(PROJECT_ROOT))
+    line = f"figure_manifest: {relative}"
+    if re.search(r"^figure_manifest:\s*.*$", frontmatter, re.M):
+        frontmatter = re.sub(
+            r"^figure_manifest:\s*.*$", line, frontmatter, count=1, flags=re.M
+        )
+    else:
+        anchor = re.search(r"^platform:\s*.*$", frontmatter, re.M)
+        if anchor:
+            frontmatter = (
+                frontmatter[: anchor.start()] + line + "\n" + frontmatter[anchor.start() :]
+            )
+        else:
+            frontmatter = frontmatter[:-3].rstrip() + "\n" + line + "\n---"
+    atomic_write_text(article_path, f"{frontmatter}\n\n{body.rstrip()}\n")
+
+
+def ensure_manual_manifest(article_path: Path) -> tuple[Path, dict[str, Any]]:
+    """为本地工作台创建空配图清单，让用户可以直接上传自己的图片。"""
+    try:
+        return load_manifest(article_path)
+    except RuntimeError as error:
+        if "尚未登记配图清单" not in str(error):
+            raise
+
+    source = article_path.read_text(encoding="utf-8")
+    _, _, metadata = split_frontmatter(source)
+    date_text = str(metadata.get("date") or datetime.now().date().isoformat())
+    number = _article_number(article_path)
+    topic = str(metadata.get("topic") or article_path.stem)
+    asset_root = PROJECT_ROOT / "media" / "images" / f"{date_text}-article-{number}-manual"
+    analysis_dir = PROJECT_ROOT / "data" / "analysis" / date_text / f"manual-figures-{number}"
+    manifest_path = analysis_dir / "figure-manifest.yml"
+    manifest = {
+        "schema_version": 2,
+        "type": "manual_figure_manifest",
+        "date": date_text,
+        "registered_at": _now(),
+        "article": str(article_path.relative_to(PROJECT_ROOT)),
+        "topic": topic,
+        "article_number": number,
+        "asset_root": str(asset_root.relative_to(PROJECT_ROOT)),
+        "manifest_path": str(manifest_path.relative_to(PROJECT_ROOT)),
+        "plans": {
+            "shared": {"items": [], "updated_at": None},
+            "wechat": {"inherit": "shared", "items": None, "updated_at": None},
+            "toutiao": {"inherit": "shared", "items": None, "updated_at": None},
+        },
+        "confirmation": {
+            "status": "editing",
+            "confirmed_at": None,
+            "body_hash": None,
+            "plan_fingerprint": None,
+        },
+        "figures": [],
+    }
+    analysis_dir.mkdir(parents=True, exist_ok=True)
+    asset_root.mkdir(parents=True, exist_ok=True)
+    save_manifest(manifest_path, manifest)
+    _link_manifest(article_path, manifest_path)
+
+    config = load_public_config()
+    state = load_state(config)
+    entry = article_state(state, article_path, create=True)
+    assert entry is not None
+    entry.update(
+        {
+            "status": "figures_editing",
+            "figures_editing_at": _now(),
+            "figure_manifest": str(manifest_path.relative_to(PROJECT_ROOT)),
+            "figure_asset_root": str(asset_root.relative_to(PROJECT_ROOT)),
+            "figures_count": 0,
+        }
+    )
+    save_state(state, config)
+    return manifest_path, manifest
+
+
+def _update_manual_media_index(manifest: dict[str, Any]) -> None:
+    index_path = PROJECT_ROOT / "media" / "_index.md"
+    if not index_path.exists():
+        return
+    text = index_path.read_text(encoding="utf-8")
+    asset_root = str(manifest["asset_root"])
+    if asset_root in text:
+        return
+    row = (
+        f"| {manifest['date']} | {manifest['topic']} | 双平台手动配图 | "
+        f"`{asset_root}/` | 待上传 | `{manifest['article']}`；由本地双平台配图工作台登记 |\n"
+    )
+    marker = "\n## 类型写法\n"
+    if marker in text:
+        atomic_write_text(index_path, text.replace(marker, "\n" + row + marker, 1))
+
+
+def add_manual_figure(
+    article_path: Path,
+    *,
+    filename: str,
+    data: bytes,
+) -> dict[str, Any]:
+    """校验并登记用户在本地工作台选择的单张图片。"""
+    if not data:
+        raise RuntimeError("图片内容为空")
+    if len(data) > MANUAL_UPLOAD_LIMIT:
+        raise RuntimeError("单张图片不能超过25MB")
+    safe_name = Path(filename).name
+    if not safe_name or safe_name in {".", ".."}:
+        raise RuntimeError("图片文件名无效")
+    try:
+        with Image.open(io.BytesIO(data)) as image:
+            image.verify()
+        with Image.open(io.BytesIO(data)) as image:
+            width, height = image.size
+            image_format = str(image.format or "").upper()
+    except Exception as error:
+        raise RuntimeError("无法识别这张图片，请使用PNG、JPG、GIF或WebP") from error
+    if image_format not in {"PNG", "JPEG", "GIF", "WEBP"}:
+        raise RuntimeError("暂只支持PNG、JPG、GIF和WebP图片")
+    if width < 320 or height < 180:
+        raise RuntimeError(f"图片尺寸过小（{width}×{height}），请换一张更清晰的图片")
+
+    suffix = ".jpg" if image_format == "JPEG" else f".{image_format.lower()}"
+    output_data = data
+    if image_format == "WEBP":
+        suffix = ".png"
+        converted = io.BytesIO()
+        with Image.open(io.BytesIO(data)) as image:
+            image.convert("RGBA").save(converted, format="PNG")
+        output_data = converted.getvalue()
+    digest = hashlib.sha256(output_data).hexdigest()
+
+    manifest_path, manifest = ensure_manual_manifest(article_path)
+    for item in manifest["figures"]:
+        if str(item.get("sha256") or "") == digest:
+            return {"figure": item, "duplicate": True, "figure_count": len(manifest["figures"])}
+
+    number = str(manifest.get("article_number") or _article_number(article_path))
+    used_ids = {str(item.get("id") or "") for item in manifest["figures"]}
+    sequence = 1
+    while f"fig-{number}-manual-{sequence:02d}" in used_ids:
+        sequence += 1
+    figure_id = f"fig-{number}-manual-{sequence:02d}"
+    target = PROJECT_ROOT / str(manifest["asset_root"]) / f"{figure_id}{suffix}"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if target.exists():
+        raise RuntimeError(f"目标图片已经存在，已停止覆盖：{target.name}")
+    target.write_bytes(output_data)
+
+    figure = {
+        "id": figure_id,
+        "kind": "manual_upload",
+        "file": str(target.relative_to(PROJECT_ROOT)),
+        "width_px": width,
+        "height_px": height,
+        "sha256": digest,
+        "title": Path(safe_name).stem,
+        "caption": Path(safe_name).stem,
+        "wechat_status": "candidate",
+        "used_in_wechat": False,
+        "article_position": None,
+        "article_order": None,
+        "source_tool": "local_figure_workbench",
+        "publication_status": "manual_review",
+        "quality_status": "ok" if width >= 900 else "low_resolution_warning",
+        "uploaded_at": _now(),
+    }
+    manifest["figures"].append(figure)
+    invalidate_confirmation(manifest)
+    save_manifest(manifest_path, manifest)
+    _update_manual_media_index(manifest)
+
+    config = load_public_config()
+    state = load_state(config)
+    entry = article_state(state, article_path, create=True)
+    assert entry is not None
+    entry.update(
+        {
+            "status": "figures_editing",
+            "figures_editing_at": _now(),
+            "figures_confirmed_at": None,
+            "figure_plan_fingerprint": None,
+            "figure_manifest": str(manifest_path.relative_to(PROJECT_ROOT)),
+            "figure_asset_root": str(manifest["asset_root"]),
+            "figures_count": len(manifest["figures"]),
+        }
+    )
+    save_state(state, config)
+    return {"figure": figure, "duplicate": False, "figure_count": len(manifest["figures"])}
 
 
 def article_headings(body: str) -> list[dict[str, str]]:
@@ -437,7 +640,10 @@ def body_for_platform(article_path: Path, platform: str) -> str:
     _, manifest = load_manifest(article_path)
     _, body, _ = split_frontmatter(article_path.read_text(encoding="utf-8"))
     clean_body = strip_managed_figures(body, manifest)
-    return apply_plan_to_body(clean_body, effective_plan(manifest, platform), manifest)
+    plan = effective_plan(manifest, platform)
+    if not plan:
+        return clean_body
+    return apply_plan_to_body(clean_body, plan, manifest)
 
 
 def plan_fingerprint(article_path: Path, manifest: dict[str, Any]) -> str:

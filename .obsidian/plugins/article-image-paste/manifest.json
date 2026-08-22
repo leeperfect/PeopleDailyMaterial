@@ -1,0 +1,9 @@
+{
+  "id": "article-image-paste",
+  "name": "文章配图粘贴",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "从 PPT 复制图片后直接粘贴到成稿，自动按文章编号保存并插入标准 Markdown 图片链接。",
+  "author": "PeopleDailyMaterial",
+  "isDesktopOnly": true
+}

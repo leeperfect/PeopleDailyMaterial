@@ -2,13 +2,17 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+import io
 import json
 import tempfile
 from pathlib import Path
 from unittest.mock import patch
 
+from PIL import Image
+
 from modules.figure_workflow import (
     PROJECT_ROOT,
+    add_manual_figure,
     apply_plan,
     apply_plan_to_body,
     article_headings,
@@ -20,6 +24,38 @@ from modules.figure_workflow import (
 
 
 class FigureWorkflowTest(unittest.TestCase):
+    def test_manual_upload_creates_manifest_and_deduplicates_image(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary).resolve()
+            article = root / "80-test.md"
+            article.write_text(
+                "---\ndate: 2026-08-22\ntopic: 手动配图测试\nplatform: 公众号 + 今日头条\n---\n\n# 标题\n\n## 一、内容\n\n正文\n",
+                encoding="utf-8",
+            )
+            image_bytes = io.BytesIO()
+            Image.new("RGB", (960, 540), "#f97316").save(image_bytes, format="PNG")
+            config = {"workflow_state": str(root / "state.json")}
+            with (
+                patch("modules.figure_workflow.PROJECT_ROOT", root),
+                patch("modules.writing_workflow.PROJECT_ROOT", root),
+                patch("modules.figure_workflow.load_public_config", return_value=config),
+            ):
+                first = add_manual_figure(
+                    article,
+                    filename="我的配图.png",
+                    data=image_bytes.getvalue(),
+                )
+                second = add_manual_figure(
+                    article,
+                    filename="重复图片.png",
+                    data=image_bytes.getvalue(),
+                )
+            self.assertFalse(first["duplicate"])
+            self.assertTrue(second["duplicate"])
+            self.assertEqual(first["figure_count"], 1)
+            self.assertIn("figure_manifest:", article.read_text(encoding="utf-8"))
+            self.assertTrue(root.joinpath(first["figure"]["file"]).exists())
+
     def test_article_headings_keeps_exact_markdown(self):
         body = "# 标题\n\n## 一、内容\n\n正文\n\n## 参考文章"
         self.assertEqual(

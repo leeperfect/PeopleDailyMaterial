@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import html
 import json
 import mimetypes
@@ -33,11 +34,13 @@ from modules.writing_workflow import (
     workflow_id,
 )
 from modules.figure_workflow import (
+    add_manual_figure,
     apply_plan,
     article_headings,
     canonical_markdown,
     confirm_figures,
     editor_markdown,
+    ensure_manual_manifest,
     effective_plan,
     figure_by_id,
     invalidate_article_confirmation,
@@ -204,7 +207,7 @@ class EditorWorkflow:
         return editor_markdown(self.article_path, body)
 
     def figure_data(self) -> dict[str, object]:
-        _, manifest = load_manifest(self.article_path)
+        _, manifest = ensure_manual_manifest(self.article_path)
         _, body, _ = split_frontmatter(self.article_path.read_text(encoding="utf-8"))
         return {
             "figures": manifest["figures"],
@@ -220,6 +223,23 @@ class EditorWorkflow:
             },
             "confirmation": manifest.get("confirmation") or {},
         }
+
+    def upload_figure(self, payload: dict[str, object]) -> dict[str, object]:
+        filename = str(payload.get("filename") or "").strip()
+        encoded = str(payload.get("data_base64") or "")
+        if not filename or not encoded:
+            raise RuntimeError("没有收到可登记的图片")
+        try:
+            data = base64.b64decode(encoded, validate=True)
+        except Exception as error:
+            raise RuntimeError("图片传输数据无效") from error
+        result = add_manual_figure(self.article_path, filename=filename, data=data)
+        figure = result["figure"]
+        if result["duplicate"]:
+            message = f"“{figure['title']}”已经在候选图片中，无需重复添加。"
+        else:
+            message = f"已加入“{figure['title']}”，请选择插入位置并保存方案。"
+        return {**result, "message": message}
 
     def apply_figures(self, payload: dict[str, object]) -> dict[str, object]:
         plan = payload.get("plan")
@@ -279,7 +299,7 @@ class EditorWorkflow:
 <img src="/pd-workflow/asset/{html.escape(figure_id)}" alt="{html.escape(str(figure.get('title') or figure_id))}">
 <div class="body"><label class="pick"><input type="checkbox">用于正文</label>
 <h2>{html.escape(str(figure.get('title') or figure_id))}</h2>
-<p>{figure.get('width_px')}×{figure.get('height_px')}｜出版：{html.escape(str(figure.get('publication_status') or ''))}</p>
+<p>{figure.get('width_px')}×{figure.get('height_px')}｜清晰度：{html.escape('正常' if figure.get('quality_status') != 'low_resolution_warning' else '建议换更清晰图片')}</p>
 <select>{options}</select></div></article>"""
             )
         payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
@@ -296,15 +316,16 @@ header{{position:sticky;top:0;z-index:10;background:#fffffff2;padding:14px 18px;
 button{{border:0;border-radius:9px;padding:10px 15px;cursor:pointer;background:#e5e7eb;color:#111827}}button.primary{{background:#ff6a2a;color:white}}button.confirm{{background:#047857;color:white}}button.active{{background:#111827;color:white}}button:disabled{{opacity:.5;cursor:not-allowed}}
 .notice{{color:#047857;font-weight:700}}.workspace{{display:grid;grid-template-columns:minmax(310px,0.9fr) minmax(270px,.75fr) minmax(420px,1.35fr);gap:14px;padding:14px;height:calc(100vh - 145px);box-sizing:border-box}}
 .panel{{background:white;border-radius:14px;box-shadow:0 5px 22px #0f172a10;overflow:auto}}.panel>h2{{position:sticky;top:0;background:white;margin:0;padding:15px;border-bottom:1px solid #e5e7eb;font-size:17px;z-index:2}}
+.upload-box{{margin:12px;padding:18px;border:2px dashed #fdba74;border-radius:12px;background:#fff7ed;text-align:center;cursor:pointer}}.upload-box.dragging{{border-color:#f97316;background:#ffedd5}}.upload-box strong,.upload-box span{{display:block}}.upload-box span{{font-size:12px;color:#64748b;margin-top:6px}}.empty{{margin:12px;padding:24px;text-align:center;color:#64748b;background:#f8fafc;border-radius:12px}}
 .figures{{padding:12px;display:grid;gap:12px}}.figure{{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}}.figure img{{width:100%;display:block;background:#f8fafc}}.figure .body{{padding:10px}}.figure h2{{font-size:15px;margin:7px 0}}.figure p{{font-size:12px;color:#64748b;margin:5px 0}}.pick{{color:#c2410c;font-weight:700}}select{{width:100%;padding:8px;border:1px solid #d1d5db;border-radius:8px;background:white}}
 .chapters{{list-style:none;padding:12px;margin:0;display:grid;gap:9px}}.chapters li{{padding:11px;border-radius:9px;background:#f8fafc}}.chapters strong,.chapters span{{display:block}}.chapters strong{{font-size:13px}}.chapters span{{font-size:12px;color:#c2410c;margin-top:5px}}
 .preview-head{{padding:10px;border-bottom:1px solid #e5e7eb}}iframe{{width:100%;height:calc(100% - 54px);border:0;background:#eef1f5}}.inherit{{font-size:12px;color:#64748b}}
 @media(max-width:1100px){{.workspace{{grid-template-columns:1fr 1fr;height:auto}}.preview-panel{{grid-column:1/-1;height:760px}}}}@media(max-width:720px){{.workspace{{display:block}}.panel{{margin-bottom:12px;max-height:none}}.preview-panel{{height:650px}}}}
 </style></head><body><header><div class="top"><h1>双平台配图工作台</h1><div class="modes">
 <button class="mode active" data-mode="shared">两端共用</button><button class="mode" data-mode="wechat">公众号微调</button><button class="mode" data-mode="toutiao">今日头条微调</button><span id="inherit" class="inherit"></span></div></div>
-<p>先调整共用方案；只有确有需要时再做平台微调。保存不会上传，点击“确认配图”后才允许同步草稿。</p>
+<p>把图片拖到左侧或点击选择，勾选“用于正文”并指定位置。保存不会上传平台，点击“确认配图”后才允许同步草稿。</p>
 <div class="actions"><button id="save" class="primary">保存当前方案</button><button id="reset">恢复为共用方案</button><button id="confirm" class="confirm">确认配图</button><span class="notice" id="notice"></span></div></header>
-<main class="workspace"><section class="panel"><h2>候选图片</h2><div class="figures">{''.join(cards)}</div></section>
+<main class="workspace"><section class="panel"><h2>候选图片</h2><div id="upload" class="upload-box"><strong>点击选择图片，或拖到这里</strong><span>支持 PNG、JPG、GIF、WebP；单张不超过 25MB</span><input id="file-input" type="file" accept="image/png,image/jpeg,image/gif,image/webp" multiple hidden></div>{'' if cards else '<div class="empty">还没有图片，请先从电脑中选择。</div>'}<div class="figures">{''.join(cards)}</div></section>
 <section class="panel"><h2>文章位置</h2><ul class="chapters">{heading_list}</ul></section>
 <section class="panel preview-panel"><div class="preview-head"><div class="preview-tabs"><button class="preview-tab active" data-src="/pd-workflow/preview/wechat">公众号预览</button><button class="preview-tab" data-src="/pd-workflow/preview/toutiao">今日头条预览</button></div></div><iframe id="preview" src="/pd-workflow/preview/wechat"></iframe></section></main>
 <script id="workflow-data" type="application/json">{payload}</script><script>
@@ -315,6 +336,9 @@ function collect(){{return cards.filter(card=>card.querySelector('input').checke
 function refreshChapters(){{const groups={{}};collect().forEach(item=>(groups[item.before_heading]??=[]).push(item.id));document.querySelectorAll('.chapters li').forEach(li=>li.querySelector('span').textContent=(groups[li.dataset.heading]||[]).join('、'));}}
 cards.forEach(card=>{{card.querySelector('input').addEventListener('change',refreshChapters);card.querySelector('select').addEventListener('change',refreshChapters);}});document.querySelectorAll('.mode').forEach(button=>button.addEventListener('click',()=>loadMode(button.dataset.mode)));
 async function post(url,payload){{const response=await fetch(url,{{method:'POST',headers:{{'Content-Type':'application/json'}},body:JSON.stringify(payload)}});const result=await response.json();if(!response.ok)throw new Error(result.error||'操作失败');return result;}}
+function fileBase64(file){{return new Promise((resolve,reject)=>{{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',',2)[1]||'');reader.onerror=()=>reject(new Error('无法读取图片'));reader.readAsDataURL(file);}});}}
+async function uploadFiles(fileList){{const files=[...fileList];if(!files.length)return;const upload=document.getElementById('upload');const notice=document.getElementById('notice');upload.style.pointerEvents='none';try{{for(let i=0;i<files.length;i++){{const file=files[i];notice.textContent=`正在加入 ${{i+1}}/${{files.length}}：${{file.name}}`;if(file.size>25*1024*1024)throw new Error(`${{file.name}} 超过25MB`);await post('/pd-workflow/figures/upload',{{filename:file.name,data_base64:await fileBase64(file)}});}}notice.textContent=`已加入 ${{files.length}} 张图片，正在刷新……`;location.reload();}}catch(error){{alert(error.message);notice.textContent='';upload.style.pointerEvents='';}}}}
+const upload=document.getElementById('upload'),fileInput=document.getElementById('file-input');upload.addEventListener('click',()=>fileInput.click());fileInput.addEventListener('change',()=>uploadFiles(fileInput.files));['dragenter','dragover'].forEach(name=>upload.addEventListener(name,event=>{{event.preventDefault();upload.classList.add('dragging');}}));['dragleave','drop'].forEach(name=>upload.addEventListener(name,event=>{{event.preventDefault();upload.classList.remove('dragging');}}));upload.addEventListener('drop',event=>uploadFiles(event.dataTransfer.files));
 document.getElementById('save').addEventListener('click',async()=>{{try{{const result=await post('/pd-workflow/figures/apply',{{platform:mode,plan:collect()}});data.plans[mode]=collect();if(mode==='shared'){{if(data.inherited.wechat)data.plans.wechat=[...data.plans.shared];if(data.inherited.toutiao)data.plans.toutiao=[...data.plans.shared];}}else{{data.inherited[mode]=false}}document.getElementById('notice').textContent=result.message;document.getElementById('preview').contentWindow.location.reload();if(window.opener)window.opener.location.reload();loadMode(mode);}}catch(error){{alert(error.message)}}}});
 document.getElementById('reset').addEventListener('click',async()=>{{try{{const result=await post('/pd-workflow/figures/reset',{{platform:mode}});data.inherited[mode]=true;data.plans[mode]=[...data.plans.shared];document.getElementById('notice').textContent=result.message;loadMode(mode);document.getElementById('preview').contentWindow.location.reload();}}catch(error){{alert(error.message)}}}});
 document.getElementById('confirm').addEventListener('click',async()=>{{try{{const result=await post('/pd-workflow/figures/confirm',{{}});document.getElementById('notice').textContent=result.message;}}catch(error){{alert(error.message)}}}});
@@ -509,6 +533,18 @@ def make_handler(workflow: EditorWorkflow):
                     if not isinstance(payload, dict):
                         raise RuntimeError("配图计划格式异常")
                     self.send_json(workflow.apply_figures(payload))
+                except Exception as error:
+                    self.send_json({"error": str(error)}, status=400)
+                return
+            if path == "/figures/upload":
+                try:
+                    length = int(self.headers.get("Content-Length", "0"))
+                    if length <= 0 or length > 36_000_000:
+                        raise RuntimeError("图片传输大小异常")
+                    payload = json.loads(self.rfile.read(length).decode("utf-8"))
+                    if not isinstance(payload, dict):
+                        raise RuntimeError("图片数据格式异常")
+                    self.send_json(workflow.upload_figure(payload))
                 except Exception as error:
                     self.send_json({"error": str(error)}, status=400)
                 return

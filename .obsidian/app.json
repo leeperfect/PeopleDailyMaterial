@@ -1,4 +1,7 @@
 {
   "promptDelete": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "media/images/article-inbox",
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true
 }

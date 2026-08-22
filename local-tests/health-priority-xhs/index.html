@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>健康优先预防融入日常 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#059669;--accent-soft:rgba(5,150,105,.15);--warn:#f59e0b;--danger:#ef4444;--line:rgba(255,255,255,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:100px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <p class="kicker">人民日报系列 · 第78篇</p>
+    <h1 class="hero">健康优先<br>不是卫生部门<br>"单打独斗"</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">而要把预防融入学校、社区和日常生活</p>
+  </div>
+  <div class="key-sentence">健康，是不同发展政策共同交出的成绩单。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker">常见误区 · 低分写法</p>
+    <h2 class="h2">写健康中国<br>你是不是只会这3句？</h2>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">1</div><div class="data-label">建医院、添设备</div><div class="data-desc">只关注末端医疗资源，不关注疾病预防</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">引进优质医疗人才</div><div class="data-desc">只关注医生数量，不关注健康影响因素</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">加强健康知识宣传</div><div class="data-desc">只做宣传教育，不建立行动闭环</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">4.5<span>亿</span></div><div class="data-label">慢性病患者</div><div class="data-desc">慢性病死亡占居民总死亡88%，末端治疗压力巨大</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心问题：</strong>这些都重要，却主要回答"生病以后怎么办"，没有回答"怎样不得病、少得病"。</p>
+    </div>
+  </div>
+  <div class="key-sentence">从治病到健康，从医院到日常，从部门到社会，从投入到结果。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker">总公式 · 五环节治理链</p>
+    <h2 class="h2">健康优先<br>要接好5个环节</h2>
+    <div class="formula-box">
+      <p class="formula-text">理念入规划<span class="arrow">→</span>风险早识别<span class="arrow">→</span>服务进场景<span class="arrow">→</span><br>部门共担责<span class="arrow">→</span>结果进评价</p>
+    </div>
+    <div class="five-grid">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">理念入规划</div><div class="f-desc">健康目标进入教育、城建、公共服务布局</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">风险早识别</div><div class="f-desc">监测、早筛、评估、随访抓住干预窗口</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">服务进场景</div><div class="f-desc">学校改变课程评价，社区连续管理，网络改善信息</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">部门共担责</div><div class="f-desc">责任清单、数据共享、问题转办、结果反馈</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">结果进评价</div><div class="f-desc">从活动次数转向健康结果、风险变化和群众感受</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">健康优先不是卫生部门增加一项任务，而是让健康目标进入各领域政策。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 什么叫健康优先 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">优</div>
+  <div class="content">
+    <p class="kicker">第一环节 · 理念入规划</p>
+    <h2 class="h2">不是多办活动<br>而是改变决策起点</h2>
+    <p class="body">健康不是医疗政策的附录，而是发展政策的约束条件。作决策时先追问四个问题。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">会不会增加健康风险？</div><div class="data-desc">城市规划、交通建设、产业布局是否考虑健康影响</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">能不能促进运动和心理健康？</div><div class="data-desc">公共空间、学校课程、工作环境是否有利于身心健康</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">重点人群是否公平获得服务？</div><div class="data-desc">儿童、老人、残疾人、低收入群体是否被覆盖</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">风险出现后有没有接续机制？</div><div class="data-desc">筛查异常后是否有转诊、干预、随访的完整链条</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">转变：</strong>从"有病治病"转向"不得病、少得病"，用人的健康重新校准发展的质量。</p>
+    </div>
+  </div>
+  <div class="key-sentence">健康不是医疗政策的附录，而是发展政策的约束条件。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 五层政策含义 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">层</div>
+  <div class="content">
+    <p class="kicker">政策框架 · 五层含义</p>
+    <h2 class="h2">理念、规划、要素<br>治理、绩效</h2>
+    <p class="body">《加快建设健康中国》提出完善体现健康优先的政策法规体系，五个层次层层递进。</p>
+    <div class="five-grid">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">理念</div><div class="f-desc">从有病治病转向不得病、少得病，以健康为中心</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">规划</div><div class="f-desc">健康目标进入教育、城建和公共服务整体布局</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">要素</div><div class="f-desc">资金、人才适当前移到预防和基层，不只是投医院</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">治理</div><div class="f-desc">分散的健康风险有人管、能协同，不是卫生部门单打独斗</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">绩效</div><div class="f-desc">最终看健康是否改善，不是看建了多少医院、办了多少活动</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">用人的健康，重新校准发展的质量。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 预防四动作 -->
+<section class="poster photo-page" id="xhs-06">
+  <img class="bg-img" src="assets/prevention.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">第二环节 · 风险早识别</p>
+    <h2 class="h2">"提高意识"之后<br>还缺4个动作</h2>
+    <p class="body">没有行动闭环，预防就可能只停在通知和标语上。</p>
+    <div class="formula-box" style="background:rgba(0,0,0,.6);border-color:var(--accent);">
+      <p class="formula-text" style="font-size:26px;">发现信号<span class="arrow">→</span>识别风险<span class="arrow">→</span>分类干预<span class="arrow">→</span>持续随访</p>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">发现信号</div><div class="step-desc">监测数据、筛查结果、群众主诉中捕捉异常信号</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">识别风险</div><div class="step-desc">专业评估风险等级，区分高风险、中风险、低风险</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">分类干预</div><div class="step-desc">高风险立即转诊，中风险强化管理，低风险健康教育</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">持续随访</div><div class="step-desc">建立健康档案，定期复查，跟踪干预效果，动态调整</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">没有行动闭环，预防就可能只停在通知和标语上。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 传染病防控前移 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">疫</div>
+  <div class="content">
+    <p class="kicker">公共卫生 · 监测预警</p>
+    <h2 class="h2">预警不是"发出去"<br>就结束</h2>
+    <p class="body">疾控事业发展"十五五"规划由7部门联合印发，提出到2030年基本建成现代化疾控体系，推动多点触发、反应灵敏的监测预警体系高效运转。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">7<span>部门</span></div><div class="data-label">联合印发规划</div><div class="data-desc">疾控不是卫生部门一家事，多部门协同防控</div></div>
+      <div class="data-card"><div class="data-num">2030</div><div class="data-label">规划目标年</div><div class="data-desc">基本建成现代化疾控体系（规划目标，非当前成效）</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">多点触发监测</div><div class="step-desc">医疗机构、学校、社区、市场、网络多渠道监测异常信号</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">专业完成研判</div><div class="step-desc">疾控专业团队快速评估，确定风险等级和响应级别</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">基层和部门立即行动</div><div class="step-desc">隔离、流调、疫苗、物资、宣传同步启动，7部门协同</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">评估防控处置救治保障</div><div class="step-desc">五大能力同步提升，形成完整的公共卫生应急链条</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">监测发现异常，专业完成研判，基层和部门立即行动。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 早筛窗口期 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">筛</div>
+  <div class="content">
+    <p class="kicker">早期干预 · 儿童眼健康</p>
+    <h2 class="h2">不是多做一次检查<br>而是抓住窗口期</h2>
+    <p class="body">2026年版近视防治与斜弱视诊疗指南提出分年龄段筛查，风险越早发现，留给干预的时间越充足。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">0+</div><div class="data-label">新生儿期</div><div class="data-desc">起接受眼保健服务，先天性眼病早发现</div></div>
+      <div class="data-card"><div class="data-num">24<span>月</span></div><div class="data-label">屈光筛查起点</div><div class="data-desc">起开展屈光筛查，远视储备不足及时干预</div></div>
+      <div class="data-card"><div class="data-num">3-6<span>岁</span></div><div class="data-label">幼儿园阶段</div><div class="data-desc">定期检查视力、屈光度数，建立视力档案</div></div>
+      <div class="data-card"><div class="data-num">重点</div><div class="data-label">重点儿童加强随访</div><div class="data-desc">高度近视家族史、远视储备不足的儿童加密复查</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">关键：</strong>筛查不是目的，抓住窗口期及时干预才是目的。斜弱视在6岁前干预效果最好，错过窗口期难以逆转。</p>
+    </div>
+  </div>
+  <div class="key-sentence">风险越早发现，留给干预的时间越充足。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 学校健康治理 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">校</div>
+  <div class="content">
+    <p class="kicker">第三环节 · 服务进场景</p>
+    <h2 class="h2">健康学校<br>不是校医室单独加任务</h2>
+    <p class="body">学生健康要进入课程、膳食、运动和教育评价。新疆推进健康学校建设，明确不得挤占体育美育课时，并将"健康第一"纳入教育督导。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">5<span>维</span></div><div class="data-label">学校健康维度</div><div class="data-desc">体育与作息、视力与体重、心理支持、食品安全与营养、家校协同</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">新疆</div><div class="data-label">地方实践</div><div class="data-desc">不得挤占体育美育课时，"健康第一"纳入教育督导（地方实践，非全国统一进度）</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">体育与作息</div><div class="step-desc">保证体育课和户外活动时间，规范作息，防控近视和肥胖</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">心理与营养</div><div class="step-desc">心理支持进入日常，营养餐盘和食品安全纳入管理</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">家校协同+督导</div><div class="step-desc">家庭配合学校健康管理，教育督导确保"健康第一"不悬空</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">当健康进入督导，软任务才有机会变成硬约束。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 社区健康管理 -->
+<section class="poster photo-page" id="xhs-10">
+  <img class="bg-img" src="assets/community.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker">社区服务 · 第一触点</p>
+    <h2 class="h2">社区，是健康管理<br>的第一触点</h2>
+    <p class="body">医院解决一次诊疗，社区更适合做好长期陪伴。基层诊疗量占全国50%以上，但基层不是单独扛，而是上下协同。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">50<span>%+</span></div><div class="data-label">基层诊疗量占比</div><div class="data-desc">基层医疗卫生机构承担全国一半以上诊疗量</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">5<span>服务</span></div><div class="data-label">社区健康管理</div><div class="data-desc">健康教育、早期筛查、慢病随访、用药指导、规范转诊</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">专家和服务下沉</div><div class="step-desc">上级医院专家定期到社区坐诊，带动基层能力提升</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">基层检查、上级诊断</div><div class="step-desc">社区做初筛和常规检查，复杂病例上级医院远程或现场诊断</div></div></div>
+      <div class="step-item"><div class="step-num">→</div><div class="step-content"><div class="step-title">AI辅助+双向转诊+连续管理</div><div class="step-desc">人工智能辅助基层诊断，双向转诊畅通，慢病连续健康管理</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">基层质量可信、上下转诊顺畅，预防和治疗才能接起来。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 网络空间健康 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">网</div>
+  <div class="content">
+    <p class="kicker">信息环境 · 伪科普治理</p>
+    <h2 class="h2">伪科普<br>也会制造真实健康风险</h2>
+    <p class="body">2026年5月发布的抵制伪科普十大案例中，8条与健康直接相关。不能把辨别专业信息的成本全部交给普通群众。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">8/10</div><div class="data-label">伪科普案例与健康相关</div><div class="data-desc">2026年5月抵制伪科普十大案例，8条涉及健康医疗</div></div>
+      <div class="data-card"><div class="data-num">4<span>套路</span></div><div class="data-label">伪科普常见手法</div><div class="data-desc">相关性说成因果、抛开剂量谈危害、生造概念伪装专家、制造焦虑引流交易</div></div>
+    </div>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">资质核验</div><div class="step-desc">平台核验健康信息发布者的专业资质，非专业人员不得冒充专家</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">来源标注</div><div class="step-desc">健康信息标注来源和依据，区分个人经验和专业结论</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">内容审核+权威供给</div><div class="step-desc">平台审核虚假健康信息，专业机构和权威媒体提供可信科普</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">不能把辨别专业信息的成本全部交给普通群众。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 跨部门协同 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">协</div>
+  <div class="content">
+    <p class="kicker">第四环节 · 部门共担责</p>
+    <h2 class="h2">真正的协同<br>要接好4件事</h2>
+    <p class="body">一个健康问题往往跨过很多治理边界：学生视力涉及教育+卫生+学校+家庭，传染病涉及疾控+医疗+基层+社会，残疾预防涉及婚育+儿童+慢病+交通+康复。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">1</div><div class="data-label">责任清单化</div><div class="data-desc">不是平均分责任，而是在各自权限内接好同一条健康链</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">必要数据可共享</div><div class="data-desc">健康数据在部门间安全共享，打破信息孤岛</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">风险问题能转办</div><div class="data-desc">发现的健康风险能跨部门转办，有人接、有人办</div></div>
+      <div class="data-card"><div class="data-num">4</div><div class="data-label">服务结果有反馈</div><div class="data-desc">转办事项有反馈、有闭环，不是石沉大海</div></div>
+    </div>
+    <div class="compare-col" style="margin-top:16px;padding:18px 24px;border-color:var(--warn);">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">考核纠偏：</strong>讲座很多、签约率很高就够了吗？还要追问——体育课有没有被挤占？筛查异常有没有转诊？重点人群有没有持续随访？过程数据不能替代健康结果。</p>
+    </div>
+  </div>
+  <div class="key-sentence">健康影响因素在哪里，责任链就要延伸到哪里。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 考场应用+总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker">考场迁移 + 认知升级</p>
+    <h2 class="h2">健康中国<br>记住这条治理链</h2>
+    <div class="compare-col accent-col" style="padding:22px;margin-bottom:18px;">
+      <p style="font-size:25px;line-height:1.7;"><strong style="color:var(--accent);">申论总论点：</strong>推进健康优先，要把健康目标纳入相关规划和政策评价，完善风险监测、早筛早诊和连续随访机制，推动专业服务进入学校、社区和日常生活，明确多部门责任与转介流程，并以健康改善和群众获得感检验成效。</p>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:0 0 18px 0;">
+      <p class="formula-text" style="font-size:25px;">理念入规划<span class="arrow">→</span>风险早识别<span class="arrow">→</span>服务进场景<span class="arrow">→</span><br>部门共担责<span class="arrow">→</span>结果进评价</p>
+    </div>
+    <p class="h3" style="color:var(--accent);margin-bottom:10px;">判断健康治理水平的五问</p>
+    <div class="step-chain" style="margin-top:8px;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">健康目标是否进入规划、资源配置和政策制定？</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">风险是否能够早发现、早评估、早干预？</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">专业服务是否进入学校、社区和重点人群生活场景？</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">部门之间是否有清晰责任、数据接口和转办闭环？</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">评价是否同时关注健康结果、风险变化、服务质量和群众感受？</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">健康优先，不是看卫生部门做了多少事，而是看各领域的发展方式是否更有利于人的健康。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker">参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:16px;">本卡片内容基于以下7篇人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">加快建设健康中国</div><div class="ref-meta">白剑峰，人民日报，2026年7月，从"有病治病"转向全周期健康管理，理念/规划/要素/治理/绩效五层政策框架，4.5亿慢病患者、慢病死亡占88%</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">将健全社会广泛参与的传染病疫情防控工作格局</div><div class="ref-meta">申少铁，人民日报，2026年7月，监测预警、疫苗接种、多病同防，7部门协同，疾控"十五五"规划2030年目标</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">新版近视防治与斜弱视诊疗指南发布</div><div class="ref-meta">申少铁，人民日报，2026年7月，2026年版指南：新生儿期眼保健、24月龄屈光筛查、幼儿园定期检查、重点儿童随访</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">全面推进健康学校建设</div><div class="ref-meta">尚嵘峥，人民日报，2026年7月，体质/心理/视力/体重/膳食五维度，新疆健康学校地方实践，体育课时纳入教育督导</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">如何让基层首诊从"有"到"优"</div><div class="ref-meta">白剑峰，人民日报，2026年7月，基层诊疗量占50%+，专家下沉、基层检查上级诊断、AI辅助、双向转诊、连续健康管理</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">别再为健康医疗伪科普买单</div><div class="ref-meta">沈童睿，人民日报，2026年7月，2026年5月抵制伪科普十大案例8条与健康相关，资质核验/来源标注/平台管理/权威科普供给</div></div></div>
+      <div class="ref-item"><div class="ref-num">7</div><div class="ref-content"><div class="ref-title">实施残疾预防行动 共建共享健康中国</div><div class="ref-meta">易舒冉，人民日报，2026年7月，中国残联等15部门部署，婚前孕前/儿童筛查/慢病/安全生产/交通安全/康复跨部门链条</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:16px 22px;">
+      <p style="font-size:21px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>"五环节治理链"为教学提炼框架，非某单篇原文结构；疾控2030年目标为规划目标，新疆健康学校为地方实践，均不代表全国统一进度；健康信息不构成个体诊疗建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>
