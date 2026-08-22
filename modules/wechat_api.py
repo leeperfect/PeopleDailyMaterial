@@ -37,6 +37,11 @@ class WechatApiError(RuntimeError):
         self.code = code
 
 
+def safe_network_message(action: str, error: BaseException) -> str:
+    """避免 requests 把 URL 查询参数中的密钥或 access_token 带进日志。"""
+    return f"{action}（{error.__class__.__name__}）"
+
+
 def credentials() -> tuple[str, str]:
     values = load_dotenv_values()
     app_id = os.environ.get("WECHAT_APPID") or values.get("WECHAT_APPID", "")
@@ -99,7 +104,8 @@ def get_access_token(*, force: bool = False) -> str:
             timeout=15,
         )
     except requests.RequestException as error:
-        raise WechatApiError(f"获取 access_token 时网络异常：{error}") from error
+        # requests 的异常文本会包含完整查询参数，其中含 AppSecret；不得向日志或上层返回。
+        raise WechatApiError(safe_network_message("获取 access_token 时网络异常", error)) from error
     data = response_json(response)
     token = data.get("access_token")
     if not token:
@@ -137,7 +143,7 @@ def draft_count() -> int:
             timeout=15,
         )
     except requests.RequestException as error:
-        raise WechatApiError(f"检查草稿箱权限时网络异常：{error}") from error
+        raise WechatApiError(safe_network_message("检查草稿箱权限时网络异常", error)) from error
     data = response_json(response)
     return int(data.get("total_count", 0))
 
@@ -153,8 +159,10 @@ def upload_permanent_image(image_path: Path) -> str:
                 files={"media": (image_path.name, file, mime)},
                 timeout=60,
             )
-    except (OSError, requests.RequestException) as error:
-        raise WechatApiError(f"上传固定封面失败：{error}") from error
+    except requests.RequestException as error:
+        raise WechatApiError(safe_network_message("上传固定封面失败", error)) from error
+    except OSError as error:
+        raise WechatApiError(f"读取固定封面失败：{error}") from error
     data = response_json(response)
     media_id = data.get("media_id")
     if not media_id:
@@ -173,8 +181,10 @@ def upload_content_image(image_path: Path) -> str:
                 files={"media": (image_path.name, file, mime)},
                 timeout=60,
             )
-    except (OSError, requests.RequestException) as error:
-        raise WechatApiError(f"上传正文图片失败：{image_path.name}：{error}") from error
+    except requests.RequestException as error:
+        raise WechatApiError(safe_network_message(f"上传正文图片失败：{image_path.name}", error)) from error
+    except OSError as error:
+        raise WechatApiError(f"读取正文图片失败：{image_path.name}：{error}") from error
     data = response_json(response)
     url = data.get("url")
     if not url:
@@ -203,7 +213,7 @@ def upload_remote_content_image(source_url: str) -> str:
             timeout=60,
         )
     except requests.RequestException as error:
-        raise WechatApiError(f"上传正文远程图片失败：{source_url}：{error}") from error
+        raise WechatApiError(safe_network_message(f"上传正文远程图片失败：{source_url}", error)) from error
     data = response_json(upload_response)
     url = data.get("url")
     if not url:
@@ -233,7 +243,7 @@ def add_draft(article: dict[str, Any]) -> str:
             timeout=60,
         )
     except requests.RequestException as error:
-        raise WechatApiError(f"创建公众号草稿时网络异常：{error}") from error
+        raise WechatApiError(safe_network_message("创建公众号草稿时网络异常", error)) from error
     data = response_json(response)
     media_id = data.get("media_id")
     if not media_id:
@@ -259,7 +269,7 @@ def update_draft(media_id: str, article: dict[str, Any], index: int = 0) -> None
             timeout=60,
         )
     except requests.RequestException as error:
-        raise WechatApiError(f"更新公众号草稿时网络异常：{error}") from error
+        raise WechatApiError(safe_network_message("更新公众号草稿时网络异常", error)) from error
     response_json(response)
 
 
@@ -275,7 +285,7 @@ def get_draft(media_id: str) -> dict[str, Any]:
             timeout=30,
         )
     except requests.RequestException as error:
-        raise WechatApiError(f"读取公众号草稿时网络异常：{error}") from error
+        raise WechatApiError(safe_network_message("读取公众号草稿时网络异常", error)) from error
     return response_json(response)
 
 

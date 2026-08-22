@@ -16,7 +16,10 @@ from modules.figure_workflow import (
     apply_plan,
     apply_plan_to_body,
     article_headings,
+    body_for_platform,
     effective_plan,
+    import_inline_markdown_figures,
+    load_manifest,
     normalize_manifest,
     confirm_figures,
     strip_managed_figures,
@@ -24,6 +27,42 @@ from modules.figure_workflow import (
 
 
 class FigureWorkflowTest(unittest.TestCase):
+    def test_inline_markdown_import_preserves_order_and_ignores_unlinked_file(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary).resolve()
+            media = root / "media" / "images" / "article-80"
+            media.mkdir(parents=True)
+            for name, color in (
+                ("fig-80-02.png", "red"),
+                ("fig-80-07.png", "blue"),
+                ("fig-80-01.png", "gray"),
+            ):
+                Image.new("RGB", (960, 540), color).save(media / name)
+            article = root / "80-test.md"
+            article.write_text(
+                "---\ndate: 2026-08-22\ntopic: 正文配图测试\n---\n\n"
+                "# 标题\n\n开头\n\n![图二](media/images/article-80/fig-80-02.png)\n\n"
+                "过渡\n\n![图七](media/images/article-80/fig-80-07.png)\n\n"
+                "## 一、内容\n\n正文\n",
+                encoding="utf-8",
+            )
+            config = {"workflow_state": str(root / "state.json")}
+            with (
+                patch("modules.figure_workflow.PROJECT_ROOT", root),
+                patch("modules.writing_workflow.PROJECT_ROOT", root),
+                patch("modules.figure_workflow.load_public_config", return_value=config),
+            ):
+                result = import_inline_markdown_figures(article)
+                rendered = body_for_platform(article, "toutiao")
+                _, manifest = load_manifest(article)
+            self.assertEqual(result["figure_count"], 2)
+            self.assertEqual(
+                [item["id"] for item in manifest["figures"]],
+                ["fig-80-02", "fig-80-07"],
+            )
+            self.assertNotIn("fig-80-01", [item["id"] for item in manifest["figures"]])
+            self.assertLess(rendered.index("fig-80-02.png"), rendered.index("fig-80-07.png"))
+
     def test_manual_upload_creates_manifest_and_deduplicates_image(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary).resolve()

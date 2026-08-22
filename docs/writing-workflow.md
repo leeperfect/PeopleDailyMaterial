@@ -1,19 +1,20 @@
 ---
 type: writing_workflow
-updated: 2026-07-12
+updated: 2026-08-22
 scope: PeopleDailyMaterial
 ---
 
 # 公众号写作、二次润色与草稿箱工作流
 
-这套流程把 Codex 写作、Humanizer-zh、得到大脑二润、NotebookLM 配图、doocs/md 排版和公众号草稿箱连成一条线。日常只需要两条命令：“写稿”和“拉回”，不需要打开 IDE。
+这套流程把 Codex 写作、Humanizer-zh、得到大脑二润、Obsidian 本地配图、doocs/md 排版、公众号草稿箱和今日头条草稿连成一条线。日常只需要“写稿”“拉回”和“同步双平台草稿”三段口令，不需要打开 IDE。
 
-## 两条命令完成全流程
+## 三段口令完成全流程
 
 | 你说的话 | 自动完成的工作 | 停留位置 |
 |---|---|---|
 | `写稿` | 真实来源核验 → 四项文字产物 → Humanizer 一润 → 送入得到大脑 | 等待你在得到 App 完成二润 |
 | `拉回` | 得到稿拉回 → 重点加粗 → NotebookLM 配图登记 → 双平台配图初排 → 打开本地工作台 | 等待你人工检查并确认配图，不上传平台 |
+| `Obsidian 图片已插好，同步双平台草稿` | 登记 Markdown 正文图片 → 确认配图 → 同步公众号与今日头条草稿 | 两个平台均等待人工正式发布 |
 | `同步双平台草稿` | 统一预检 → 公众号草稿 → Chrome 代填今日头条 → 保存头条草稿 | 两个平台均等待人工正式发布 |
 
 说“拉回”前，只需把当前文章的 NotebookLM PPT 和信息图附在消息中，或者保存在 `Downloads`。流程会优先读取本轮附件；没有附件时，先复用本文已登记的素材，再从 `Downloads` 中识别与当前主题相符的最新 PPTX 和信息图。候选不唯一或主题无法确认时会停下来请你选择，不会猜测，也不会先上传无图稿。
@@ -164,6 +165,21 @@ NotebookLM 导出的 PPT 和信息图先登记为本文素材。对 Codex说：
 
 “拉回”流程会默认按文章结构生成一版初始方案。每次应用新方案前都会保存文章快照，未采用的图片继续留在候选区，不会删除。确认后的正文或配图再次变化时，确认自动失效。
 
+### 直接在 Obsidian 中配图（推荐手动模式）
+
+在正式文章中，可以直接从 PPT 复制图片并粘贴到 Markdown 正文。项目内的“文章配图粘贴”插件会自动：
+
+1. 将图片保存到 `media/images/YYYY-MM-DD-article-文章编号/`；
+2. 按 `fig-文章编号-两位序号.png` 连续编号；
+3. 在光标位置写入标准 Markdown 图片链接；
+4. 避免 Obsidian 默认粘贴再生成一份重复附件。
+
+图片位置确认后，对 Codex说：
+
+> Obsidian 图片已插好，同步双平台草稿。
+
+Codex会先执行 `confirm-inline-figures` 登记并确认 Markdown 正文图片，再进入双平台同步，不需要先打开本地配图工作台。详细操作和其他 Agent 的调用口令见 [双平台草稿同步操作方案](dual-platform-draft-sync.md)。
+
 ### 同步双平台草稿（配图确认后单独执行）
 
 对 Codex说：
@@ -191,9 +207,12 @@ NotebookLM 导出的 PPT 和信息图先登记为本文素材。对 Codex说：
 1. 生成去除公众号专属样式的头条富文本；
 2. 自动进入头条号文章编辑页；
 3. 填写标题和正文，并按配图位置上传本地原图；
-4. 应用首次确认后保存的头条常用选项；
-5. 只点击“保存草稿”，绝不点击正式发布；
-6. 返回草稿管理页核对标题和保存状态，再登记 `toutiao_draft_saved`。
+4. 应用本地固定选项模板：单图、投放广告、不勾首发、人民日报热点合集、同步微头条、仅勾选“取材网络”；
+5. 固定使用 `media/images/toutiao-fixed-covers/people-daily-cover.jpg` 作为单图封面；
+6. 检查有序列表没有双编号、无序列表没有双圆点，且正文没有残留 `**`；
+7. 只保存草稿，绝不点击正式发布；
+8. 刷新核对正文、图片和封面确已保存；头条重置发布选项时按本地模板重新套用；
+9. 登记 `toutiao_draft_saved`。
 
 相同正文和配图已经创建过草稿时默认复用，不重复创建。任一平台失败不会清除另一平台的成功记录，可以单独重试。
 
@@ -225,6 +244,7 @@ NotebookLM 导出的 PPT 和信息图先登记为本文素材。对 Codex说：
 |---|---|
 | 人民日报系列 | `media/images/wechat-fixed-covers/people-daily-header.png` |
 | 热点系列 | `media/images/wechat-fixed-covers/hotspot-header.png` |
+| 今日头条固定单图 | `media/images/toutiao-fixed-covers/people-daily-cover.jpg` |
 
 封面真实文件由网盘同步，不进入 Git；文字索引见 `media/_index.md`。
 
@@ -254,6 +274,7 @@ python3 scripts/writing_workflow.py editor "<文章路径>"
 python3 scripts/writing_workflow.py register-figures "<文章路径>" --pptx "<PPT路径>" --infographic "<信息图路径>" --slug "<英文主题标识>"
 python3 scripts/writing_workflow.py apply-figures "<文章路径>" --initial --platform shared
 python3 scripts/writing_workflow.py confirm-figures "<文章路径>"
+python3 scripts/writing_workflow.py confirm-inline-figures "<文章路径>"
 python3 scripts/writing_workflow.py preview-toutiao "<文章路径>"
 python3 scripts/writing_workflow.py save-layout "<文章路径>" --theme grace
 python3 scripts/writing_workflow.py setup-wechat

@@ -127,6 +127,8 @@ python3 scripts/sync_to_notion.py 2026-05-27
 
 ## 公众号写作工作流
 
+- 双平台草稿同步的可复用入口是项目 Skill：`.agents/skills/dual-platform-draft-sync/SKILL.md`。用户说“图片插好了”“Obsidian 配图完成”“同步双平台草稿”或要求其他 Agent 直接走完整同步流程时，必须调用该 Skill，并按 `docs/dual-platform-draft-sync.md` 执行。
+
 - 用户说“写稿”时：按“写稿 → 送去二润”连续执行，不再等待第二条命令。必须先调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑，并固定生成公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。成稿保存到 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，小红书卡片脚本保存到 `data/xiaohongshu/`，其余过程文字保存到 `data/analysis/`，同时同步 `data/articles/文章索引.md`。四项产物及来源校验通过后，立即运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft`；再调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架；最后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`，把一润稿送入得到大脑并记录精确 `note_id`。
 - 用户单独说“送去二润”或“写完并送去二润”时：继续兼容。若文章尚未形成，完整执行“写稿 → 送去二润”；若已有可审查初稿，则从初稿快照和 Humanizer 一润开始执行，不重复写稿。
 - 用户说“拉回”或“我在得到改好了，拉回”时：按“拉回 → 重点加粗审查 → 登记 NotebookLM 配图 → 双平台配图初排 → 打开本地双平台配图工作台”连续执行，并停在本地配图环节；不得在“拉回”阶段创建公众号或今日头条草稿。先根据当前文章运行 `python3 scripts/writing_workflow.py pull "<文章路径>"`，必须使用本地记录的精确 `note_id`；校验不通过时不得覆盖本地稿，也不得继续配图或上传草稿。拉回成功后必须继续审查重点，只在得到版原文上增加 `**加粗**`，不得改写任何文字或结构：
@@ -138,7 +140,11 @@ python3 scripts/sync_to_notion.py 2026-05-27
   - 运行 `apply-figures --initial --platform shared` 形成两端共用的初始方案，再打开“双平台配图工作台”；工作台默认让公众号和今日头条共用图片、顺序和章节位置，只有确有需要时才设置平台微调。
   - 配图缺失、登记失败或初排校验不通过时，流程停在对应环节并明确说明缺少什么，不得退化为无图草稿。
   - 用户必须在本地工作台查看公众号和今日头条预览并点击“确认配图”；确认后状态进入 `figures_confirmed`。确认前不得运行任何平台同步。
-- 用户说“同步双平台草稿”时：先运行 `python3 scripts/writing_workflow.py sync-dual "<文章路径>"`。统一检查得到拉回、重点加粗、配图清单、人工确认和确认后正文/配图是否变化；公众号创建草稿，今日头条生成浏览器交接包。随后必须使用已安装的 Chrome 控制能力，在用户现有登录状态中打开交接包记录的 `creator_url`，填写标题与无图富文本，按 `images` 的顺序及 `before_heading` 上传本地图片，应用已保存的头条选项模板并点击“保存草稿”。不得点击正式发布。页面字段、选项、登录状态、验证码或保存结果无法可靠确认时立即暂停并说明原因，不得猜测点击。确认草稿保存成功后运行 `mark-toutiao-saved` 登记结果。
+- 用户说“同步双平台草稿”时：先运行 `python3 scripts/writing_workflow.py sync-dual "<文章路径>"`。统一检查得到拉回、重点加粗、配图清单、人工确认和确认后正文/配图是否变化；公众号创建草稿，今日头条生成浏览器交接包。随后必须使用已安装的 Chrome 控制能力，在用户现有登录状态中打开交接包记录的 `creator_url`，填写标题与无图富文本，按 `images` 的顺序及 `before_heading` 上传本地图片，应用已保存的头条选项模板并等待页面显示“草稿已保存”。不得点击正式发布。页面字段、选项、登录状态、验证码或保存结果无法可靠确认时立即暂停并说明原因，不得猜测点击。确认草稿保存成功后运行 `mark-toutiao-saved` 登记结果。
+  - 如果用户说明图片已经在 Obsidian/Markdown 中插好，必须先运行 `python3 scripts/writing_workflow.py confirm-inline-figures "<文章路径>"`，登记正文图片、生成清单并确认配图，再运行 `sync-dual`；不得要求用户重复导入图片。
+  - 今日头条固定选项为：单图、位置留空、投放广告赚收益、不勾选头条首发、合集“人民日报热点”、勾选同步微头条、作品声明只勾选“取材网络”。固定单图封面为 `media/images/toutiao-fixed-covers/people-daily-cover.jpg`。
+  - 头条富文本必须检查有序列表无双编号、无序列表无双圆点、正文无残留 `**`。页面显示“草稿已保存”后刷新验证正文、图片和封面；头条刷新后可能重置发布选项，必须按本地模板重新套用并把页面保留给用户。
+  - Obsidian 正式文章配图由“文章配图粘贴”插件保存到 `media/images/YYYY-MM-DD-article-文章编号/fig-文章编号-两位序号.png`，Markdown 使用项目根目录相对链接；默认附件兜底目录 `media/images/article-inbox/` 不作为正式文章配图目录。
   - 今日头条首次同步且尚无选项模板时，在页面上请用户确认一次原创、首发、封面、广告等当前可见选项；用 `save-toutiao-profile --profile-json` 保存页面上的选项名称和值。“只保存草稿、禁止正式发布”是工作流强制安全边界，不作为页面选项保存。
   - 任一平台失败时保留另一平台成功结果，并使用 `sync-dual --platform wechat` 或 `sync-dual --platform toutiao` 单独重试。
 - 用户说“预览公众号排版”时：运行 `python3 scripts/writing_workflow.py preview "<文章路径>"`，再用 Codex 内置浏览器打开输出的本地预览页。预览与发布必须使用同一份 doocs/md HTML。

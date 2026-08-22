@@ -1,0 +1,4 @@
+interface:
+  display_name: "双平台草稿同步"
+  short_description: "将 Obsidian 配图稿同步为公众号和今日头条草稿"
+  default_prompt: "使用 $dual-platform-draft-sync，把已在 Obsidian 配好图片的文章同步到公众号和今日头条草稿箱，只保存草稿、不发布。"

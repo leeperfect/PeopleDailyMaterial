@@ -31,6 +31,7 @@ from modules.writing_workflow import (
 
 PLATFORMS = ("shared", "wechat", "toutiao")
 MANUAL_UPLOAD_LIMIT = 25 * 1024 * 1024
+MARKDOWN_IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)\n]+)\)")
 
 
 def _now() -> str:
@@ -379,6 +380,10 @@ def normalize_plan(
             continue
         figure_by_id(manifest, figure_id)
         record = {"id": figure_id, "before_heading": heading}
+        for key in ("anchor_before", "anchor_after", "inline_marker"):
+            value = str(item.get(key) or "").strip()
+            if value:
+                record[key] = value
         context = str(item.get("context_after") or "").strip()
         if body is not None:
             context = heading_context(body, heading)
@@ -387,6 +392,212 @@ def normalize_plan(
         normalized.append(record)
         seen.add(figure_id)
     return normalized
+
+
+def _plain_anchor(line: str) -> str:
+    """把 Markdown 单行变成浏览器正文中可查找的短锚点。"""
+    value = line.strip()
+    value = re.sub(r"^#{1,6}\s+", "", value)
+    value = re.sub(r"^>\s*", "", value)
+    value = re.sub(r"^[-*+]\s+", "", value)
+    value = re.sub(r"^\d+[.)]\s+", "", value)
+    value = re.sub(r"\[([^\]]+)]\([^)]+\)", r"\1", value)
+    value = value.replace("**", "").replace("__", "").replace("`", "")
+    value = value.replace(r"\*", "*")
+    return re.sub(r"\s+", " ", value).strip()[:160]
+
+
+def _inline_figure_context(body: str, start: int) -> dict[str, str]:
+    lines = body.splitlines(keepends=True)
+    offsets: list[tuple[int, int]] = []
+    cursor = 0
+    for line in lines:
+        offsets.append((cursor, cursor + len(line)))
+        cursor += len(line)
+    line_index = next(
+        (index for index, (line_start, line_end) in enumerate(offsets) if line_start <= start < line_end),
+        max(len(lines) - 1, 0),
+    )
+
+    def neighboring_text(indices: Any) -> str:
+        for index in indices:
+            line = lines[index].strip()
+            if not line or MARKDOWN_IMAGE_RE.fullmatch(line):
+                continue
+            anchor = _plain_anchor(line)
+            if anchor:
+                return anchor
+        return ""
+
+    following_heading = ""
+    for line in lines[line_index + 1 :]:
+        if re.match(r"^##\s+", line):
+            following_heading = line.strip()
+            break
+    if not following_heading:
+        for line in reversed(lines[:line_index]):
+            if re.match(r"^##\s+", line):
+                following_heading = line.strip()
+                break
+    if not following_heading:
+        headings = article_headings(body)
+        following_heading = headings[0]["value"] if headings else ""
+
+    return {
+        "before_heading": following_heading,
+        "anchor_before": neighboring_text(range(line_index - 1, -1, -1)),
+        "anchor_after": neighboring_text(range(line_index + 1, len(lines))),
+    }
+
+
+def _resolve_markdown_image(article_path: Path, raw_target: str) -> tuple[Path, str]:
+    target = raw_target.strip()
+    # 兼容 Markdown 可选标题：![说明](path "title")。
+    if target.startswith("<") and ">" in target:
+        target = target[1 : target.index(">")]
+    else:
+        target = re.split(r"\s+[\"']", target, maxsplit=1)[0]
+    target = target.replace("%20", " ")
+    if re.match(r"^(?:https?|data):", target, re.I):
+        raise RuntimeError(f"暂不支持远程图片链接：{target}")
+    raw_path = Path(target)
+    candidates = (
+        [raw_path]
+        if raw_path.is_absolute()
+        else [article_path.parent / raw_path, PROJECT_ROOT / raw_path]
+    )
+    resolved = next(
+        (candidate.resolve() for candidate in candidates if candidate.resolve().is_file()),
+        None,
+    )
+    if resolved is None:
+        raise RuntimeError(f"正文图片文件不存在：{target}")
+    try:
+        relative = str(resolved.relative_to(PROJECT_ROOT))
+    except ValueError as error:
+        raise RuntimeError(f"正文图片不在项目资料库内：{resolved}") from error
+    return resolved, relative
+
+
+def import_inline_markdown_figures(article_path: Path) -> dict[str, Any]:
+    """把 Obsidian 正文中手动粘贴的本地图片登记为双平台共用方案。"""
+    manifest_path, manifest = ensure_manual_manifest(article_path)
+    _, body, _ = split_frontmatter(article_path.read_text(encoding="utf-8"))
+    matches = list(MARKDOWN_IMAGE_RE.finditer(body))
+    if not matches:
+        raise RuntimeError("正文中没有找到 Markdown 图片，请先在 Obsidian 中粘贴配图")
+
+    figures: list[dict[str, Any]] = []
+    plan: list[dict[str, str]] = []
+    seen_files: set[str] = set()
+    seen_hashes: set[str] = set()
+    seen_ids: set[str] = set()
+    asset_parents: set[str] = set()
+    number = str(manifest.get("article_number") or _article_number(article_path))
+    for order, match in enumerate(matches, 1):
+        alt = match.group(1).strip()
+        local_path, relative = _resolve_markdown_image(article_path, match.group(2))
+        if relative in seen_files:
+            raise RuntimeError(f"正文重复插入了同一张图片：{relative}")
+        try:
+            with Image.open(local_path) as image:
+                width, height = image.size
+                image_format = str(image.format or "").upper()
+        except Exception as error:
+            raise RuntimeError(f"无法识别正文图片：{relative}") from error
+        if image_format not in {"PNG", "JPEG", "GIF", "WEBP"}:
+            raise RuntimeError(f"图片格式不支持：{relative}")
+        if width < 320 or height < 180:
+            raise RuntimeError(f"图片尺寸过小（{width}×{height}）：{relative}")
+        digest = hashlib.sha256(local_path.read_bytes()).hexdigest()
+        if digest in seen_hashes:
+            raise RuntimeError(f"正文存在内容重复的图片：{relative}")
+
+        base_id = local_path.stem
+        figure_id = (
+            base_id
+            if base_id and base_id not in seen_ids
+            else f"fig-{number}-inline-{order:02d}"
+        )
+        context = _inline_figure_context(body, match.start())
+        if not context["before_heading"]:
+            raise RuntimeError(f"无法为图片定位章节：{relative}")
+        marker = match.group(0)
+        figure = {
+            "id": figure_id,
+            "kind": "inline_markdown",
+            "file": relative,
+            "width_px": width,
+            "height_px": height,
+            "sha256": digest,
+            "title": alt or figure_id,
+            "caption": alt or figure_id,
+            "wechat_status": "selected",
+            "used_in_wechat": True,
+            "article_position": f"{context['before_heading']}附近（按正文内链接精确定位）",
+            "article_order": order,
+            "source_tool": "obsidian_article_image_paste",
+            "publication_status": "manual_review_confirmed",
+            "quality_status": "ok" if width >= 900 else "low_resolution_warning",
+            "registered_at": _now(),
+        }
+        item = {
+            "id": figure_id,
+            "before_heading": context["before_heading"],
+            "inline_marker": marker,
+        }
+        if context["anchor_before"]:
+            item["anchor_before"] = context["anchor_before"]
+        if context["anchor_after"]:
+            item["anchor_after"] = context["anchor_after"]
+        item["context_after"] = heading_context(
+            strip_managed_figures(body, {"figures": [figure]}),
+            context["before_heading"],
+        )
+        figures.append(figure)
+        plan.append(item)
+        seen_files.add(relative)
+        seen_hashes.add(digest)
+        seen_ids.add(figure_id)
+        asset_parents.add(str(Path(relative).parent))
+
+    manifest["type"] = "inline_markdown_figure_manifest"
+    manifest["placement_mode"] = "inline_markdown"
+    manifest["figures"] = figures
+    manifest["plans"] = {
+        "shared": {"items": plan, "updated_at": _now()},
+        "wechat": {"inherit": "shared", "items": None, "updated_at": None},
+        "toutiao": {"inherit": "shared", "items": None, "updated_at": None},
+    }
+    if len(asset_parents) == 1:
+        manifest["asset_root"] = next(iter(asset_parents))
+    manifest["inline_markdown_count"] = len(figures)
+    manifest["inline_imported_at"] = _now()
+    invalidate_confirmation(manifest)
+    save_manifest(manifest_path, manifest)
+    _update_manual_media_index(manifest)
+
+    config = load_public_config()
+    state = load_state(config)
+    entry = article_state(state, article_path, create=True)
+    assert entry is not None
+    entry.update(
+        {
+            "status": "figures_editing",
+            "figures_editing_at": _now(),
+            "figures_confirmed_at": None,
+            "figure_plan_fingerprint": None,
+            "figure_manifest": str(manifest_path.relative_to(PROJECT_ROOT)),
+            "figure_asset_root": str(manifest.get("asset_root") or ""),
+            "figures_count": len(figures),
+        }
+    )
+    save_state(state, config)
+    return {
+        "manifest_path": str(manifest_path.relative_to(PROJECT_ROOT)),
+        "figure_count": len(figures),
+        "asset_root": str(manifest.get("asset_root") or ""),
+    }
 
 
 def effective_plan(manifest: dict[str, Any], platform: str) -> list[dict[str, Any]]:
@@ -639,6 +850,12 @@ def sync_usage(
 def body_for_platform(article_path: Path, platform: str) -> str:
     _, manifest = load_manifest(article_path)
     _, body, _ = split_frontmatter(article_path.read_text(encoding="utf-8"))
+    platform_record = manifest["plans"].get(platform) or {}
+    if (
+        manifest.get("placement_mode") == "inline_markdown"
+        and platform_record.get("items") is None
+    ):
+        return body
     clean_body = strip_managed_figures(body, manifest)
     plan = effective_plan(manifest, platform)
     if not plan:
@@ -658,6 +875,9 @@ def plan_fingerprint(article_path: Path, manifest: dict[str, Any]) -> str:
             for item in manifest["figures"]
         ],
     }
+    if manifest.get("placement_mode") == "inline_markdown":
+        # 图片在正文中移动也必须撤销旧确认，不能只比较去图后的正文。
+        payload["inline_body_hash"] = body_hash(body)
     return hashlib.sha256(
         json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
     ).hexdigest()
@@ -672,6 +892,24 @@ def preflight_figures(article_path: Path, *, require_confirmed: bool = True) -> 
     actual_article = str(article_path.relative_to(PROJECT_ROOT))
     if expected_article and expected_article != actual_article:
         issues.append("配图清单登记的文章与当前文章不一致")
+    if manifest.get("placement_mode") == "inline_markdown":
+        current_links: list[str] = []
+        for match in MARKDOWN_IMAGE_RE.finditer(body):
+            try:
+                _, relative = _resolve_markdown_image(article_path, match.group(2))
+            except RuntimeError as error:
+                issues.append(str(error))
+                continue
+            current_links.append(relative)
+        expected_links = [str(item.get("file") or "") for item in manifest["figures"]]
+        if current_links != expected_links:
+            issues.append("正文图片的数量、顺序或位置在登记后发生变化，请重新确认配图")
+        for figure in manifest["figures"]:
+            file_path = PROJECT_ROOT / str(figure.get("file") or "")
+            if file_path.is_file():
+                digest = hashlib.sha256(file_path.read_bytes()).hexdigest()
+                if digest != str(figure.get("sha256") or ""):
+                    issues.append(f"配图文件内容在登记后发生变化：{figure.get('id')}")
     for platform, label in (("wechat", "公众号："), ("toutiao", "今日头条：")):
         issues.extend(
             _validate_plan(clean_body, effective_plan(manifest, platform), manifest, label)

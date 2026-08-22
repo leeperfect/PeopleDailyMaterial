@@ -1,0 +1,317 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-08-20'
+registered_at: '2026-08-22T20:20:04'
+article: data/articles/人民日报系列/78-人民日报讲健康优先：不是卫生部门“单打独斗”，而要把预防融入学校、社区和日常生活.md
+topic: 健康优先：把预防融入学校、社区和日常生活
+article_number: '78'
+asset_root: media/images/2026-08-20-article-78
+manifest_path: data/analysis/2026-08-20/manual-figures-78/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-78-04
+      before_heading: '## 一、理念入规划：健康不是医疗政策的附录，而是发展政策的约束条件'
+      inline_marker: '![第78篇配图04](media/images/2026-08-20-article-78/fig-78-04.png)'
+      anchor_before: 78｜人民日报谈健康优先：不是卫生部门“单打独斗”，而是要将预防融入学校、社区和日常生活
+      anchor_after: 在申论中写“健康中国”，很多答案会迅速落到三件事上：建医院、添设备、引人才。
+      context_after: '**健康优先，首先要改变公共决策看问题的起点。**多办几场讲座，只是其中很小的一部分。过去讨论卫生健康，常常把工作简化为医疗资源的配置：医院够不够、床位多不多、'
+    - id: fig-78-03
+      before_heading: '## 一、理念入规划：健康不是医疗政策的附录，而是发展政策的约束条件'
+      inline_marker: '![第78篇配图03](media/images/2026-08-20-article-78/fig-78-03.png)'
+      anchor_before: 这些当然重要。但如果文章只写到这里，健康就仍然只是医疗系统末端的一道题：人已经生病了，再想办法把病治好。
+      anchor_after: 真正的“健康优先”，要把问题往前追溯。孩子近视、肥胖、心理压力增大，不能只等医院诊治，还要看学校的课程设置、体育活动、膳食安排和家庭支持；慢性病高发，不能只增加专科床位，还要改变饮食结构、运动习惯、控烟措施和健康管理；传染病风险出现，不能只靠医院收治，还要依靠监测预警、疫苗接种、基层响应和社会参与；网络伪科普误导群众，
+      context_after: '**健康优先，首先要改变公共决策看问题的起点。**多办几场讲座，只是其中很小的一部分。过去讨论卫生健康，常常把工作简化为医疗资源的配置：医院够不够、床位多不多、'
+    - id: fig-78-02
+      before_heading: '## 一、理念入规划：健康不是医疗政策的附录，而是发展政策的约束条件'
+      inline_marker: '![第78篇配图02](media/images/2026-08-20-article-78/fig-78-02.png)'
+      anchor_before: 真正的“健康优先”，要把问题往前追溯。孩子近视、肥胖、心理压力增大，不能只等医院诊治，还要看学校的课程设置、体育活动、膳食安排和家庭支持；慢性病高发，不能只增加专科床位，还要改变饮食结构、运动习惯、控烟措施和健康管理；传染病风险出现，不能只靠医院收治，还要依靠监测预警、疫苗接种、基层响应和社会参与；网络伪科普误导群众，
+      anchor_after: 由此再看健康，它显然不只是卫生健康部门的业务结果。教育环境、社区治理、公共卫生、网络平台和每个人的日常选择，都在塑造居民的健康。
+      context_after: '**健康优先，首先要改变公共决策看问题的起点。**多办几场讲座，只是其中很小的一部分。过去讨论卫生健康，常常把工作简化为医疗资源的配置：医院够不够、床位多不多、'
+    - id: fig-78-01
+      before_heading: '## 一、理念入规划：健康不是医疗政策的附录，而是发展政策的约束条件'
+      inline_marker: '![第78篇配图01](media/images/2026-08-20-article-78/fig-78-01.png)'
+      anchor_before: 也可以记成四个转变：从治病到健康，从医院到日常，从部门到社会，从投入到结果。
+      anchor_after: 一、理念入规划：健康不是医疗政策的附录，而是发展政策的约束条件
+      context_after: '**健康优先，首先要改变公共决策看问题的起点。**多办几场讲座，只是其中很小的一部分。过去讨论卫生健康，常常把工作简化为医疗资源的配置：医院够不够、床位多不多、'
+    - id: fig-78-05
+      before_heading: '## 二、风险早识别：预防不是泛泛提醒，而是把干预窗口往前移'
+      inline_marker: '![第78篇配图05](media/images/2026-08-20-article-78/fig-78-05.png)'
+      anchor_before: 理念进入规划后，下一步就要改变资源投向：不能总在疾病发生后追赶，而要在风险形成前识别和干预。
+      anchor_after: 二、风险早识别：预防不是泛泛提醒，而是把干预窗口往前移
+      context_after: “预防为主”写进文章并不难，难的是写清楚怎样预防。有效预防至少要接上四个动作：**发现信号、识别风险、分类干预、持续随访。**少了任何一环，预防都可能停在宣传口
+    - id: fig-78-06
+      before_heading: '## 三、服务进场景：健康不能只在医院里发生，还要进入学校、社区和信息环境'
+      inline_marker: '![第78篇配图06](media/images/2026-08-20-article-78/fig-78-06.png)'
+      anchor_before: 风险被识别后，还要有人在日常生活中接住。否则，预防服务离群众再近，也可能只停在一张通知上。
+      anchor_after: 三、服务进场景：健康不能只在医院里发生，还要进入学校、社区和信息环境
+      context_after: '**人的健康状况，大部分并非在医院里形成，而是在课堂、家庭、社区、工作场所和网络空间中逐渐塑造的。**因此，健康优先的第三步，是将专业服务嵌入真实的生活场景。#'
+    - id: fig-78-08
+      before_heading: '## 四、部门共担责：协同不是一起签文件，而是把责任、数据和行动接起来'
+      inline_marker: '![第78篇配图08](media/images/2026-08-20-article-78/fig-78-08.png)'
+      anchor_before: 医院擅长解决一次诊疗，社区更适合做好长期陪伴；二者上下联通，才能把预防、治疗和康复接成全周期服务。
+      anchor_after: 网络空间不能只追求“有内容”，还要让权威信息跑得过伪科普
+      context_after: 健康优先必然是一道跨部门治理题。传染病防控涉及卫生健康、疾控、发展改革、财政、农业农村、海关和中医药等部门；残疾预防覆盖婚育保健、儿童筛查、慢病防治、安全生产、
+    - id: fig-78-09
+      before_heading: '## 四、部门共担责：协同不是一起签文件，而是把责任、数据和行动接起来'
+      inline_marker: '![第78篇配图09](media/images/2026-08-20-article-78/fig-78-09.png)'
+      anchor_before: 如果群众每天接触的都是夸大风险和虚假疗效的信息，那么即便拥有再多健康知识，也可能被错误信息所抵消。提升健康素养，一方面要帮助群众提高辨别能力，另一方面要增加权威内容的供给，核验专业账号的资质，标注信息来源，追踪违规交易，并压实平台的责任。
+      anchor_after: 学校、社区和网络空间看似分散，但背后的逻辑是一致的：服务要跟着健康影响因素走，专业能力要进入风险真实发生的地方。
+      context_after: 健康优先必然是一道跨部门治理题。传染病防控涉及卫生健康、疾控、发展改革、财政、农业农村、海关和中医药等部门；残疾预防覆盖婚育保健、儿童筛查、慢病防治、安全生产、
+    - id: fig-78-07
+      before_heading: '## 四、部门共担责：协同不是一起签文件，而是把责任、数据和行动接起来'
+      inline_marker: '![第78篇配图07](media/images/2026-08-20-article-78/fig-78-07.png)'
+      anchor_before: 但场景一多，最容易出现的新问题就是职责模糊：人人都说健康重要，最后却仍由卫生部门独自承担结果。
+      anchor_after: 四、部门共担责：协同不是一起签文件，而是把责任、数据和行动接起来
+      context_after: 健康优先必然是一道跨部门治理题。传染病防控涉及卫生健康、疾控、发展改革、财政、农业农村、海关和中医药等部门；残疾预防覆盖婚育保健、儿童筛查、慢病防治、安全生产、
+    - id: fig-78-10
+      before_heading: '## 五、结果进评价：不能只数医院、活动和筛查人次，还要看健康是否改善'
+      inline_marker: '![第78篇配图10](media/images/2026-08-20-article-78/fig-78-10.png)'
+      anchor_before: 在责任和流程衔接之后，还需要通过评价机制来纠偏。因为考核关注什么，资源就会流向什么，干部和机构也就会更重视什么。
+      anchor_after: 五、结果进评价：不能只数医院、活动和筛查人次，还要看健康是否改善
+      context_after: 健康工作很容易陷入“做了很多，效果却难以衡量”的困境。建了多少场馆、举办了多少讲座、完成了多少筛查、签约了多少家庭医生——这些数据便于统计，但主要反映的是投入和
+    - id: fig-78-11
+      before_heading: '## 六、国考省考申论和面试怎么迁移：把“健康中国”写成一套治理方法'
+      inline_marker: '![第78篇配图11](media/images/2026-08-20-article-78/fig-78-11.png)'
+      anchor_before: 健康优先最终不是看卫生部门做了多少事，而是看各领域的发展方式是否更有利于人的健康。
+      anchor_after: 六、国考省考申论和面试怎么迁移：把“健康中国”写成一套治理方法
+      context_after: 遇到健康中国、健康学校、慢性病防治、公共卫生、基层服务等题目，可以先判断材料卡在哪一环，再调用这套公式：>**理念入规划→风险早识别→服务进场景→部门共担责→结
+    - id: fig-78-12
+      before_heading: '## 金句集合'
+      inline_marker: '![第78篇配图12](media/images/2026-08-20-article-78/fig-78-12.png)'
+      anchor_before: 这便是“健康优先”的真正分量。
+      anchor_after: 金句集合
+      context_after: '```text1.教育环境、社区治理、公共卫生、网络平台乃至每个人的日常选择，都在塑造居民的健康。2.健康优先的完整链条是：理念入规划、风险早识别、服务进场景、'
+    - id: fig-78-13
+      before_heading: '## 金句集合'
+      inline_marker: '![第78篇配图13](media/images/2026-08-20-article-78/fig-78-13.png)'
+      anchor_before: 这便是“健康优先”的真正分量。
+      anchor_after: 金句集合
+      context_after: '```text1.教育环境、社区治理、公共卫生、网络平台乃至每个人的日常选择，都在塑造居民的健康。2.健康优先的完整链条是：理念入规划、风险早识别、服务进场景、'
+    updated_at: '2026-08-22T20:22:17'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-08-22T20:22:20'
+  body_hash: f6a1f3b2ca7bd97160e36c129481eb454d02b2e79e8533d4871bd4ef00dbcbee
+  plan_fingerprint: 562e11256751f0cca301c66ca7bf5b19a837aaed6ff81693c4592ac47215c617
+figures:
+- id: fig-78-04
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-04.png
+  width_px: 2560
+  height_px: 1428
+  sha256: e0acbcba5ef85f5c6ada2a27c73d89504d8604073801d90a6658449665d5bb25
+  title: 第78篇配图04
+  caption: 第78篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、理念入规划：健康不是医疗政策的附录，而是发展政策的约束条件附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-03
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-03.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 5e6a1e38a4a9344663baa4b99f93e7ead2ef66f40fe67816d5860c37300c1cad
+  title: 第78篇配图03
+  caption: 第78篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、理念入规划：健康不是医疗政策的附录，而是发展政策的约束条件附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-02
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-02.png
+  width_px: 2560
+  height_px: 1428
+  sha256: dd9d9178ea1a91d8036ecd0636d895b2e74cdd7e423d5e61e98ee3246b66e398
+  title: 第78篇配图02
+  caption: 第78篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、理念入规划：健康不是医疗政策的附录，而是发展政策的约束条件附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-01
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-01.png
+  width_px: 2560
+  height_px: 1428
+  sha256: e28c8840a15b293e2d6834d0e499979d96aa68a7fc2ad7095577c4718322e2c3
+  title: 第78篇配图01
+  caption: 第78篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、理念入规划：健康不是医疗政策的附录，而是发展政策的约束条件附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-05
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-05.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 16554ffc9c786e0140d859c65f7b3ce65fac3d6077d28855e70daedb7cc1010f
+  title: 第78篇配图05
+  caption: 第78篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、风险早识别：预防不是泛泛提醒，而是把干预窗口往前移附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-06
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-06.png
+  width_px: 2560
+  height_px: 1428
+  sha256: f4c4e047c879dbe7e135a734f5e79d68b0a663fc7f45605bbd820b7035e658c8
+  title: 第78篇配图06
+  caption: 第78篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、服务进场景：健康不能只在医院里发生，还要进入学校、社区和信息环境附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-08
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-08.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 91dd7353a5d05bccb7a39ac8e687ec4538659d3330db7b13ce047b0ed2a9706c
+  title: 第78篇配图08
+  caption: 第78篇配图08
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、部门共担责：协同不是一起签文件，而是把责任、数据和行动接起来附近（按正文内链接精确定位）'
+  article_order: 7
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-09
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-09.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 9804cb24204dac19cae0f5895a4a8bdd61683aec73311fd9e7956fba50219b76
+  title: 第78篇配图09
+  caption: 第78篇配图09
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、部门共担责：协同不是一起签文件，而是把责任、数据和行动接起来附近（按正文内链接精确定位）'
+  article_order: 8
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-07
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-07.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 01a3d956fb7a1c380d8de3d1909e1adabf9dd9bd29b4a9eeeacc4e29ca6f8b59
+  title: 第78篇配图07
+  caption: 第78篇配图07
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、部门共担责：协同不是一起签文件，而是把责任、数据和行动接起来附近（按正文内链接精确定位）'
+  article_order: 9
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-10
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-10.png
+  width_px: 2560
+  height_px: 1428
+  sha256: f9228923e9aac5215f990322c86bcca0a46545968d7a31a2009b374a1b3b9df6
+  title: 第78篇配图10
+  caption: 第78篇配图10
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、结果进评价：不能只数医院、活动和筛查人次，还要看健康是否改善附近（按正文内链接精确定位）'
+  article_order: 10
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-11
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-11.png
+  width_px: 2560
+  height_px: 1428
+  sha256: d9aed8ad4a5c84578079d70251b5275b84714fcdb3a7a616f49c53b7251dba5a
+  title: 第78篇配图11
+  caption: 第78篇配图11
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论和面试怎么迁移：把“健康中国”写成一套治理方法附近（按正文内链接精确定位）'
+  article_order: 11
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-12
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-12.png
+  width_px: 2560
+  height_px: 1428
+  sha256: a956e31420a2022a26a1aa6fddedb20e48551098326b14cda6c5aede6ca84432
+  title: 第78篇配图12
+  caption: 第78篇配图12
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 12
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+- id: fig-78-13
+  kind: inline_markdown
+  file: media/images/2026-08-20-article-78/fig-78-13.png
+  width_px: 2752
+  height_px: 1536
+  sha256: ecc2b7674665d3680469b8e010e96bdb435955f5eaa328a7b548d84215889f26
+  title: 第78篇配图13
+  caption: 第78篇配图13
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 13
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T20:22:17'
+updated_at: '2026-08-22T20:22:20'
+placement_mode: inline_markdown
+inline_markdown_count: 13
+inline_imported_at: '2026-08-22T20:22:17'

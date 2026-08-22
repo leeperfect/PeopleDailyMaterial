@@ -1,16 +1,82 @@
 schema_version: 2
-type: manual_figure_manifest
+type: inline_markdown_figure_manifest
 date: '2026-08-22'
 registered_at: '2026-08-22T08:20:26'
 article: data/articles/人民日报系列/80-人民日报讲带薪休假：不是“放几天假”，而是让职工敢休、单位能排、消费接得住.md
 topic: 带薪休假：让职工敢休、单位能排、消费接得住
 article_number: '80'
-asset_root: media/images/2026-08-22-article-80-manual
+asset_root: media/images/2026-08-22-article-80
 manifest_path: data/analysis/2026-08-22/manual-figures-80/figure-manifest.yml
 plans:
   shared:
-    items: []
-    updated_at: null
+    items:
+    - id: fig-80-02
+      before_heading: '## 一、先确认权利：有假不等于敢休，纸面规定还要跨过组织门槛'
+      inline_marker: '![第80篇配图02](media/images/2026-08-22-article-80/fig-80-02.png)'
+      anchor_before: 80｜人民日报谈带薪休假：不是“放几天假”，而是让职工敢休、单位能排、消费接得住
+      anchor_after: 讨论带薪休假，有两种常见的简单化理解。
+      context_after: 关于带薪年休假，一个常见的误区是认为“申请休假”只是职工个人的事。表面上看，休不休假取决于个人选择。但实际上，在劳动关系中，个人与单位掌握的资源并不对等。工作由
+    - id: fig-80-03
+      before_heading: '## 一、先确认权利：有假不等于敢休，纸面规定还要跨过组织门槛'
+      inline_marker: '![第80篇配图03](media/images/2026-08-22-article-80/fig-80-03.png)'
+      anchor_before: 一种是将其视为“福利题”：认为单位多给几天假，职工自然就能休息。另一种是将其视为“消费题”：认为只要大家休假，文旅消费就能被带动起来。
+      anchor_after: 但现实往往卡在中间。
+      context_after: 关于带薪年休假，一个常见的误区是认为“申请休假”只是职工个人的事。表面上看，休不休假取决于个人选择。但实际上，在劳动关系中，个人与单位掌握的资源并不对等。工作由
+    - id: fig-80-04
+      before_heading: '## 一、先确认权利：有假不等于敢休，纸面规定还要跨过组织门槛'
+      inline_marker: '![第80篇配图04](media/images/2026-08-22-article-80/fig-80-04.png)'
+      anchor_before: 制度上有假，职工却担心影响绩效、晋升和岗位评价；个人愿意休，单位却缺少轮岗、替补和交接安排；孩子放春秋假，家长的工作时间却对不上；群众有了闲暇，目的地的交通、价格、服务和体验又未必能接得住。
+      anchor_after: 所以，带薪休假从来不只是“多放几天假”。它首先是一项劳动权益，也是一套组织制度、一项时间政策，还是连接家庭生活与服务消费的社会安排。
+      context_after: 关于带薪年休假，一个常见的误区是认为“申请休假”只是职工个人的事。表面上看，休不休假取决于个人选择。但实际上，在劳动关系中，个人与单位掌握的资源并不对等。工作由
+    - id: fig-80-05
+      before_heading: '## 二、再解决排班：权益保障需要刚性，具体安排需要弹性'
+      inline_marker: '![第80篇配图05](media/images/2026-08-22-article-80/fig-80-05.png)'
+      anchor_before: 权利得到保障后，还需要回答一个现实问题：业务不能停、窗口不能关、生产不能断，假究竟该怎么排？
+      anchor_after: 二、再解决排班：权益保障需要刚性，具体安排需要弹性
+      context_after: “工作忙，所以休不了”不能成为长期搁置权利的理由；但“任何人想什么时候休就什么时候休”，同样不是成熟的组织方案。真正需要解决的，是**如何将职工的休息权与组织的
+    - id: fig-80-07
+      before_heading: '## 三、推动时间协同：个人有假，还要解决家庭“时间对不上”'
+      inline_marker: '![第80篇配图07](media/images/2026-08-22-article-80/fig-80-07.png)'
+      anchor_before: 有些地方和单位探索弹性错峰、同事协同替岗等做法，可以提供方法启发，但不能把某一地、某一家企业的安排直接复制为全国统一答案。不同岗位可以有不同排法，但休息权不能因此有不同等级。
+      anchor_after: 这里还要防止一种新的形式主义：为了证明“重视休假”，层层填表、每日统计、排名通报，最后给单位和职工增加新的台账负担。休假计划的目的，是让权利与工作有序衔接，而不是制造另一项数字任务。
+      context_after: 2026年政府工作报告将“支持有条件的地方推广中小学春秋假”与“落实职工带薪错峰休假制度”放在同一段部署。这种并列并非偶然，它指向一个常被忽视的治理对象：**家
+    - id: fig-80-06
+      before_heading: '## 三、推动时间协同：个人有假，还要解决家庭“时间对不上”'
+      inline_marker: '![第80篇配图06](media/images/2026-08-22-article-80/fig-80-06.png)'
+      anchor_before: 把单位内部的排班理顺，还只解决了一半问题。对许多家庭来说，真正稀缺的不是某个人单独空出一天，而是家长、孩子和公共服务能够共享一段时间。
+      anchor_after: 三、推动时间协同：个人有假，还要解决家庭“时间对不上”
+      context_after: 2026年政府工作报告将“支持有条件的地方推广中小学春秋假”与“落实职工带薪错峰休假制度”放在同一段部署。这种并列并非偶然，它指向一个常被忽视的治理对象：**家
+    - id: fig-80-08
+      before_heading: '## 四、用优质供给接住闲暇：有时间只是前提，好服务才决定体验'
+      inline_marker: '![第80篇配图08](media/images/2026-08-22-article-80/fig-80-08.png)'
+      anchor_before: 当权利、排班和家庭时间逐步接上以后，休假才可能释放出服务消费潜力。但这里仍要避免另一个跳跃：有闲，不等于一定有消费。
+      anchor_after: 四、用优质供给接住闲暇：有时间只是前提，好服务才决定体验
+      context_after: 为什么带薪休假经常与扩大内需、服务消费放在一起讨论？因为与购买一件商品相比，旅游、赛事、康养、文化体验、亲子活动等服务消费，更依赖一段完整且可预期的时间。没有时
+    - id: fig-80-09
+      before_heading: '## 五、评价既看权益也看运行：不能把休假异化成新的形式主义任务'
+      inline_marker: '![第80篇配图09](media/images/2026-08-22-article-80/fig-80-09.png)'
+      anchor_before: 带薪休假与消费的关系，到这里也就清楚了：不是让劳动权益为消费服务，而是在保障人的全面发展基础上，让休息、生活与发展形成正向循环。
+      anchor_after: 五、评价既看权益也看运行：不能把休假异化成新的形式主义任务
+      context_after: 一项休假政策是否真正落实，不能只看文件是否下发、制度是否上墙，或者单位填报了多少表格。判断制度是否落地，可以从三个层面的结果来考察。**第一，看劳动者是否真正受
+    - id: fig-80-10
+      before_heading: '## 六、国考省考申论面试怎么迁移：把“休假热点”答成一套制度方案'
+      inline_marker: '![第80篇配图10](media/images/2026-08-22-article-80/fig-80-10.png)'
+      anchor_before: 评价带薪休假，既要看职工有没有真正休到，也要看单位有没有稳定运转；既要看服务消费有没有活力，更要看人的生活品质有没有改善。
+      anchor_after: 六、国考省考申论面试怎么迁移：把“休假热点”答成一套制度方案
+      context_after: 以后遇到带薪休假、弹性休假、春秋假、服务消费、反工时内卷等材料，可以先判断题目卡在哪一环，再调用这套公式：**权益有保障+安排有弹性+家庭能协同+服务有供给+执
+    - id: fig-80-11
+      before_heading: '## 七、结尾：一个社会如何对待休息，也在定义如何理解发展'
+      inline_marker: '![第80篇配图11](media/images/2026-08-22-article-80/fig-80-11.png)'
+      anchor_before: 落实带薪休假，应坚持权益保障与组织运行并重，以刚性规则解决“不敢休”，以年度计划、轮岗替补和弹性错峰解决“不好排”，推动职工休假与学校假期、家庭照护和公共服务相互衔接，并以优质、便利、价格透明的服务供给承接多样化休闲需求。同时，完善投诉监督和分类评价机制，既保障劳动者休息权，也维护生产经营与公共服务的连续性，在改善生活
+      anchor_after: 七、结尾：一个社会如何对待休息，也在定义如何理解发展
+      context_after: 带薪休假不是生产之后剩余的一点时间，也不是单位可给可不给的额外奖励。它是劳动者依法享有的制度化时间，是对组织管理能力的一次检验，也是家庭生活与公共服务协同程度的
+    - id: fig-80-12
+      before_heading: '## 金句集合'
+      inline_marker: '![第80篇配图12](media/images/2026-08-22-article-80/fig-80-12.png)'
+      anchor_before: 落实带薪休假的最终目的，并非将每一段闲暇都转化为消费，而是让每个人都能拥有可支配、可预期、有尊严的生活时间。人的生活安顿好了，民生改善与扩大内需之间的正向循环才有稳固基础。
+      anchor_after: 金句集合
+      context_after: 1.带薪休假的完整链条是：权利确认、组织排班、时间协同、服务承接、结果评价。2.先让劳动者的休息权落地，再讨论它对生活品质和消费发展的带动作用。3.权利写在制度
+    updated_at: '2026-08-22T16:49:02'
   wechat:
     inherit: shared
     items: null
@@ -20,9 +86,188 @@ plans:
     items: null
     updated_at: null
 confirmation:
-  status: editing
-  confirmed_at: null
-  body_hash: null
-  plan_fingerprint: null
-figures: []
-updated_at: '2026-08-22T08:20:26'
+  status: confirmed
+  confirmed_at: '2026-08-22T16:49:05'
+  body_hash: 379b89536411985fea7658127f74e3ab714dab05a646ea0d2d77f6f94c4107e3
+  plan_fingerprint: 0c3f3e91c9b27da5ff6a1b8155057a178acd59df0034837b5ad5e35c6354023d
+figures:
+- id: fig-80-02
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-02.png
+  width_px: 2560
+  height_px: 1428
+  sha256: e6f04ab2b3a3fca587980a7042843143d442125dd1bd0dc6afbf5ccdbf1c23d6
+  title: 第80篇配图02
+  caption: 第80篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先确认权利：有假不等于敢休，纸面规定还要跨过组织门槛附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-03
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-03.png
+  width_px: 2560
+  height_px: 1428
+  sha256: e97d29e19589f5c04b510da63b7f89ba960f446ac1ae4ad2f38f4067b864be6e
+  title: 第80篇配图03
+  caption: 第80篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先确认权利：有假不等于敢休，纸面规定还要跨过组织门槛附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-04
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-04.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 4f3c9bef54a67b37c0ed55a8ca3cfb015bc1b750fe610ed1c7266bf96e723ca9
+  title: 第80篇配图04
+  caption: 第80篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先确认权利：有假不等于敢休，纸面规定还要跨过组织门槛附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-05
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-05.png
+  width_px: 2560
+  height_px: 1428
+  sha256: aec4cff303e63df5b71d07c0018f7ee219c7bf607810a5fd12555a51cd8a765d
+  title: 第80篇配图05
+  caption: 第80篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、再解决排班：权益保障需要刚性，具体安排需要弹性附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-07
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-07.png
+  width_px: 2560
+  height_px: 1428
+  sha256: f95d5a92d590c3507bed0b6d8c415eb7bfbc5af393f5cb2da57f92a489d14dcb
+  title: 第80篇配图07
+  caption: 第80篇配图07
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、推动时间协同：个人有假，还要解决家庭“时间对不上”附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-06
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-06.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 25ebee4676c1ff92e5f28d3e549d7aabe03be5de4a7f12f2cbb5ae520208f439
+  title: 第80篇配图06
+  caption: 第80篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、推动时间协同：个人有假，还要解决家庭“时间对不上”附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-08
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-08.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 4339b30144063b7023e9ce712bed4d99d898f39a68681cb53538a2afc6d624cb
+  title: 第80篇配图08
+  caption: 第80篇配图08
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、用优质供给接住闲暇：有时间只是前提，好服务才决定体验附近（按正文内链接精确定位）'
+  article_order: 7
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-09
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-09.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 3d713d8e39c00ce24767145f6781354ff73c0f365f6499765c796433aa58ddde
+  title: 第80篇配图09
+  caption: 第80篇配图09
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、评价既看权益也看运行：不能把休假异化成新的形式主义任务附近（按正文内链接精确定位）'
+  article_order: 8
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-10
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-10.png
+  width_px: 2560
+  height_px: 1428
+  sha256: df25c47a739cc16109a15a2f368fe05ae89925d539f2a4d1d10f31a9fead4600
+  title: 第80篇配图10
+  caption: 第80篇配图10
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试怎么迁移：把“休假热点”答成一套制度方案附近（按正文内链接精确定位）'
+  article_order: 9
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-11
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-11.png
+  width_px: 2560
+  height_px: 1428
+  sha256: f1fd6f840449c7640f92881c2f1c49adee90647d39ccb1d8f2f7eea97d4eeb7b
+  title: 第80篇配图11
+  caption: 第80篇配图11
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 七、结尾：一个社会如何对待休息，也在定义如何理解发展附近（按正文内链接精确定位）'
+  article_order: 10
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+- id: fig-80-12
+  kind: inline_markdown
+  file: media/images/2026-08-22-article-80/fig-80-12.png
+  width_px: 2752
+  height_px: 1536
+  sha256: f917688fc9b4593706c5751d758a17680930fb0a12726adc75b2f44f88befd6d
+  title: 第80篇配图12
+  caption: 第80篇配图12
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 11
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-22T16:49:02'
+updated_at: '2026-08-22T16:49:05'
+placement_mode: inline_markdown
+inline_markdown_count: 11
+inline_imported_at: '2026-08-22T16:49:02'

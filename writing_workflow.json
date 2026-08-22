@@ -48,7 +48,15 @@
   "toutiao": {
     "creator_url": "https://mp.toutiao.com/profile_v4/graphic/publish",
     "drafts_url": "https://mp.toutiao.com/profile_v4/manage/content",
-    "default_options": {}
+    "fixed_cover": "media/images/toutiao-fixed-covers/people-daily-cover.jpg",
+    "default_options": {
+      "cover_mode": "单图",
+      "advertising": "投放广告赚收益",
+      "headline_first": false,
+      "collection": "人民日报热点",
+      "crosspost_micro_post": true,
+      "statement_source_network": true
+    }
   },
   "workflow_state": "data/core/writing_workflow_state.json",
   "preview_root": "/tmp/peopledaily-writing-preview"

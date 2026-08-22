@@ -7,6 +7,7 @@
 | 2026-07-20 | 教育科技人才创新链 | 公众号配图 | `media/images/article-41-innovation-chain.png` | 待上传 | `data/articles/人民日报系列/41-人民日报讲教育科技人才一体发展：不是三个词并列，而是一条创新链.md`；信息图，展示五环节创新链逻辑架构 |
 | 2026-07-16 | 乡村文化振兴：农家书屋提质五步法 | 公众号配图 | `media/images/article-42-rural-reading-room-five-steps.png` | 待上传 | `data/articles/人民日报系列/42-人民日报讲乡村文化振兴：农家书屋不能只"有书"，关键要"有人来、有用处".md`；手绘风信息图，展示五步法核心行动链条 |
 | 2026-07-04 | 公众号写作工作流固定头图 | 公众号封面 | `media/images/wechat-fixed-covers/` | 待上传 | `hotspot-header.png` 用于热点系列，`people-daily-header.png` 用于人民日报系列；由草稿同步流程自动选择 |
+| 2026-08-22 | 今日头条固定头图 | 今日头条封面 | `media/images/toutiao-fixed-covers/people-daily-cover.jpg` | 待上传 | 人民日报系列今日头条草稿固定使用；单图封面 |
 | 2026-05-30 | 县域发展：人民日报五个动作 | 小红书图 | `media/images/2026-05-30-county-development-xhs/` | 待上传 | `data/articles/往期文章/人民日报系列/申论写县域发展，别再只会说“因地制宜”：人民日报给了五个动作.md`；含 10 张 |
 | 2026-05-31 | 农业农村现代化六个关键词 | 小红书图 / 公众号封面 | `media/images/2026-05-31-agri-modernization-xhs-wechat/` | 待上传 | `data/articles/往期文章/人民日报系列/中央一号文件怎么转成申论素材：农业农村现代化的六个关键词.md`；含 13 张小红书图和 2 张微信封面 |
 | 2026-05-31 | 稳就业：让零工安心上工 | 小红书图 | `media/images/2026-05-31-stable-employment-xhs/` | 待上传 | `data/articles/往期文章/人民日报系列/人民日报讲稳就业：不是喊口号，是让零工今天就能安心上工.md`；含 10 张 |
@@ -81,6 +82,10 @@
 
 | 2026-08-20 | 健康优先不是卫生部门"单打独斗" | 小红书图 | `media/images/2026-08-20-health-priority-xhs/` | 待上传 | `data/xiaohongshu/78-xiaohongshu-health-priority-prevention-daily-life-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+翡翠绿#059669，3张AI生成配图，末页7篇人民日报参考文献） |
 | 2026-08-22 | 带薪休假不是"放几天假"，而是让职工敢休、单位能排、消费接得住 | 小红书图 / 视频封面 | `media/images/2026-08-22-paid-leave-xhs/` | 待上传 | `data/xiaohongshu/80-xiaohongshu-paid-leave-rights-time-consumption-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+砖红#dc2626，3张AI生成配图，人民日报标识突出，末页6篇人民日报参考文献） |
+
+| 2026-08-22 | 带薪休假：让职工敢休、单位能排、消费接得住 | 双平台手动配图 | `media/images/2026-08-22-article-80/` | 待上传 | `data/articles/人民日报系列/80-人民日报讲带薪休假：不是“放几天假”，而是让职工敢休、单位能排、消费接得住.md`；由本地双平台配图工作台登记 |
+
+| 2026-08-20 | 健康优先：把预防融入学校、社区和日常生活 | 双平台手动配图 | `media/images/2026-08-20-article-78/` | 待上传 | `data/articles/人民日报系列/78-人民日报讲健康优先：不是卫生部门“单打独斗”，而要把预防融入学校、社区和日常生活.md`；由本地双平台配图工作台登记 |
 
 ## 类型写法
 

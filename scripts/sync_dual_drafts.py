@@ -115,11 +115,32 @@ def prepare(
             result["toutiao"] = {"status": "failed", "error": str(error)}
 
     if not dry_run:
+        stored_dual = entry.get("dual_sync") if isinstance(entry.get("dual_sync"), dict) else {}
+        wechat_record = result["wechat"]
+        toutiao_record = result["toutiao"]
+        if wechat_record.get("status") == "not_requested":
+            previous_wechat = stored_dual.get("wechat") if isinstance(stored_dual, dict) else None
+            if isinstance(previous_wechat, dict) and previous_wechat.get("status") not in (None, "not_requested"):
+                wechat_record = previous_wechat
+            elif isinstance(entry.get("wechat_draft"), dict):
+                wechat_record = {
+                    "status": "preserved",
+                    "media_id": entry["wechat_draft"].get("media_id"),
+                }
+        if toutiao_record.get("status") == "not_requested":
+            previous_toutiao = stored_dual.get("toutiao") if isinstance(stored_dual, dict) else None
+            if isinstance(previous_toutiao, dict) and previous_toutiao.get("status") not in (None, "not_requested"):
+                toutiao_record = previous_toutiao
+            elif isinstance(entry.get("toutiao_draft"), dict):
+                toutiao_record = {
+                    "status": "preserved",
+                    "draft_url": entry["toutiao_draft"].get("draft_url"),
+                }
         entry["dual_sync"] = {
             "prepared_at": _now(),
             "figure_fingerprint": figure_fingerprint,
-            "wechat": result["wechat"],
-            "toutiao": result["toutiao"],
+            "wechat": wechat_record,
+            "toutiao": toutiao_record,
         }
         save_state(state, config)
     return result

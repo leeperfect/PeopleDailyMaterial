@@ -226,6 +226,11 @@ def main() -> int:
         help="确认本地双平台配图",
     )
     confirm_figures_parser.add_argument("article")
+    confirm_inline_parser = subparsers.add_parser(
+        "confirm-inline-figures",
+        help="登记并确认 Obsidian 正文内手动插入的双平台配图",
+    )
+    confirm_inline_parser.add_argument("article")
     toutiao_preview_parser = subparsers.add_parser(
         "preview-toutiao",
         help="生成今日头条预览和浏览器交接包",
@@ -340,6 +345,23 @@ def main() -> int:
         except RuntimeError as error:
             print(str(error), file=sys.stderr)
             return 1
+        print(f"双平台配图已确认：{result['confirmed_at']}")
+        return 0
+    if args.command == "confirm-inline-figures":
+        from modules.figure_workflow import confirm_figures, import_inline_markdown_figures
+        from render_toutiao_html import render_toutiao
+        from render_wechat_html import render_article
+
+        try:
+            article_path = project_path(args.article).resolve()
+            imported = import_inline_markdown_figures(article_path)
+            render_article(str(article_path))
+            render_toutiao(str(article_path))
+            result = confirm_figures(article_path)
+        except RuntimeError as error:
+            print(str(error), file=sys.stderr)
+            return 1
+        print(f"已登记正文配图：{imported['figure_count']} 张")
         print(f"双平台配图已确认：{result['confirmed_at']}")
         return 0
     if args.command == "preview-toutiao":

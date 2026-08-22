@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import unquote, urlparse
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
@@ -76,6 +76,39 @@ def neutral_layout(config: dict[str, Any]) -> dict[str, Any]:
 
 def sanitize_fragment(fragment: str) -> str:
     soup = BeautifulSoup(fragment, "html.parser")
+    # doocs/md 会为 Markdown 图片生成图注；头条正文上传原图时不重复显示文件说明。
+    for caption in soup.find_all("figcaption"):
+        caption.decompose()
+    # doocs/md 的复制稿会把列表符号同时写进 li 文本；头条再渲染一次列表标记后，
+    # 会出现“1. 1.”或“双圆点”。这里只移除 li 开头的冗余文本标记。
+    for list_node in soup.find_all(["ol", "ul"]):
+        pattern = r"^\s*\d+\s*[.、]\s*" if list_node.name == "ol" else r"^\s*[•●▪◦]\s*"
+        for item in list_node.find_all("li", recursive=False):
+            for text_node in item.descendants:
+                if not isinstance(text_node, NavigableString) or not str(text_node).strip():
+                    continue
+                original = str(text_node)
+                cleaned = re.sub(pattern, "", original, count=1)
+                if cleaned != original:
+                    text_node.replace_with(cleaned)
+                break
+    # 少数相邻段落在 doocs/md 输出中仍会残留 Markdown 加粗标记；
+    # 头条不会再次解析 Markdown，因此在纯文本节点中补转为 strong。
+    for text_node in list(soup.find_all(string=re.compile(r"\*\*[^*\n]+\*\*"))):
+        if text_node.parent and text_node.parent.name in {"code", "pre"}:
+            continue
+        parts = re.split(r"(\*\*[^*\n]+\*\*)", str(text_node))
+        replacements = []
+        for part in parts:
+            if not part:
+                continue
+            if part.startswith("**") and part.endswith("**"):
+                strong = soup.new_tag("strong")
+                strong.string = part[2:-2]
+                replacements.append(strong)
+            else:
+                replacements.append(NavigableString(part))
+        text_node.replace_with(*replacements)
     for tag in list(soup.find_all(True)):
         if tag.name not in ALLOWED_TAGS:
             tag.unwrap()
@@ -88,6 +121,15 @@ def sanitize_fragment(fragment: str) -> str:
             href = str(tag.get("href") or "")
             if not re.match(r"^https?://", href):
                 tag.unwrap()
+    return "".join(str(node) for node in soup.contents).strip()
+
+
+def fragment_without_lead_title(fragment: str) -> str:
+    """今日头条已有独立标题输入框，正文不重复保留首个 H1。"""
+    soup = BeautifulSoup(fragment, "html.parser")
+    first = next((node for node in soup.contents if getattr(node, "name", None)), None)
+    if first is not None and first.name == "h1":
+        first.decompose()
     return "".join(str(node) for node in soup.contents).strip()
 
 
@@ -142,7 +184,7 @@ def render_toutiao(article: str) -> dict[str, Any]:
     _, original_body, metadata = split_frontmatter(source)
     body = body_for_platform(article_path, "toutiao")
     rendered = render_with_doocs(body, neutral_layout(config), config)
-    fragment = sanitize_fragment(str(rendered["html"]))
+    fragment = fragment_without_lead_title(sanitize_fragment(str(rendered["html"])))
     title = toutiao_title(article_path, metadata, original_body)
     manifest_path, manifest = load_manifest(article_path)
     plan = effective_plan(manifest, "toutiao")
@@ -156,6 +198,9 @@ def render_toutiao(article: str) -> dict[str, Any]:
                 "id": figure["id"],
                 "path": str(local_path),
                 "before_heading": item["before_heading"],
+                "anchor_before": item.get("anchor_before"),
+                "anchor_after": item.get("anchor_after"),
+                "inline_marker": item.get("inline_marker"),
                 "sha256": figure.get("sha256"),
             }
         )
@@ -188,7 +233,7 @@ def render_toutiao(article: str) -> dict[str, Any]:
         "browser_steps": [
             "打开 creator_url，并确认当前为文章编辑页；登录或验证码出现时暂停",
             "填写 title，并用 html_without_images 填入正文",
-            "按照 images 的 order 上传本地图片，并插入 before_heading 指定标题之前",
+            "按照 images 的 order 上传本地图片；优先用 anchor_before/anchor_after 还原正文内位置，before_heading 仅作章节核对",
             "option_profile_configured 为 false 时请用户确认一次页面常用选项；否则逐项应用 options",
             "页面找不到已保存的选项名称或值时暂停，不猜测替代选项",
             "只点击保存草稿，随后在 drafts_url 核对标题和保存状态",
