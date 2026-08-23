@@ -109,6 +109,51 @@ def channel_totals_for_dates(
     return {row["channel"]: int(row["read_users"] or 0) for row in rows}
 
 
+def comparison_dates(
+    current_daily: dict[str, sqlite3.Row],
+    previous_daily: dict[str, sqlite3.Row],
+    previous: Batch | None,
+) -> tuple[list[str], list[str], list[str], bool]:
+    """Return current, baseline, backfill dates and whether this is a long export."""
+    if not previous:
+        return [], [], [], False
+
+    is_extended = len(current_daily) > max(37, len(previous_daily) + 7)
+    if not is_extended:
+        return (
+            sorted(set(current_daily) - set(previous_daily)),
+            sorted(set(previous_daily) - set(current_daily)),
+            [],
+            False,
+        )
+
+    current_dates = sorted(date for date in current_daily if date > previous.end_date)
+    backfill_dates = sorted(date for date in current_daily if date < previous.start_date)
+    if not current_dates:
+        return [], [], backfill_dates, True
+    earlier_dates = sorted(date for date in current_daily if date < current_dates[0])
+    baseline_dates = earlier_dates[-len(current_dates) :]
+    return current_dates, baseline_dates, backfill_dates, True
+
+
+def period_metrics(rows: list[sqlite3.Row]) -> dict[str, float]:
+    days = len(rows)
+    reads = sum(row["read_users"] or 0 for row in rows)
+    shares = sum(row["share_users"] or 0 for row in rows)
+    favorites = sum(row["wechat_favorites"] or 0 for row in rows)
+    posts = sum(row["published_count"] or 0 for row in rows)
+    return {
+        "days": days,
+        "reads": reads,
+        "shares": shares,
+        "favorites": favorites,
+        "posts": posts,
+        "avg_reads": reads / days if days else 0,
+        "avg_shares": shares / days if days else 0,
+        "avg_favorites": favorites / days if days else 0,
+    }
+
+
 def fmt_int(value: int | float | None) -> str:
     return f"{int(value or 0):,}"
 
@@ -147,10 +192,12 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
     latest_articles = article_rows(conn, latest.batch_id)
     previous_articles = article_rows(conn, previous.batch_id) if previous else {}
 
-    new_dates = sorted(set(latest_daily) - set(previous_daily))
+    new_dates, removed_dates, backfill_dates, is_extended = comparison_dates(
+        latest_daily, previous_daily, previous
+    )
     new_daily = [latest_daily[date] for date in new_dates]
-    removed_dates = sorted(set(previous_daily) - set(latest_daily))
-    removed_daily = [previous_daily[date] for date in removed_dates]
+    baseline_source = latest_daily if is_extended else previous_daily
+    removed_daily = [baseline_source[date] for date in removed_dates]
     new_reads = sum(row["read_users"] or 0 for row in new_daily)
     new_posts = sum(row["published_count"] or 0 for row in new_daily)
     new_shares = sum(row["share_users"] or 0 for row in new_daily)
@@ -165,7 +212,16 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
         reverse=True,
     )[:10]
     new_titles = sorted(
-        (row for title, row in latest_articles.items() if title not in previous_articles),
+        (
+            row
+            for title, row in latest_articles.items()
+            if title not in previous_articles
+            and (
+                not is_extended
+                or not previous
+                or (row["publish_date"] or "") > previous.end_date
+            )
+        ),
         key=lambda row: row["read_users"] or 0,
         reverse=True,
     )
@@ -173,6 +229,8 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
     for title, current in latest_articles.items():
         old = previous_articles.get(title)
         if not old:
+            continue
+        if is_extended and previous and (current["publish_date"] or "") < previous.start_date:
             continue
         delta = (current["read_users"] or 0) - (old["read_users"] or 0)
         growth_rows.append((delta, title, old["read_users"] or 0, current["read_users"] or 0))
@@ -195,10 +253,20 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
         ).fetchall()
     new_channel_totals = {row["channel"]: int(row["read_users"] or 0) for row in channel_rows}
     removed_channel_totals = (
-        channel_totals_for_dates(conn, previous.batch_id, removed_dates)
+        channel_totals_for_dates(
+            conn,
+            latest.batch_id if is_extended else previous.batch_id,
+            removed_dates,
+        )
         if previous
         else {}
     )
+    latest_30 = period_metrics(
+        [latest_daily[date] for date in sorted(latest_daily)[-30:]]
+    )
+    previous_30 = period_metrics(
+        [previous_daily[date] for date in sorted(previous_daily)[-30:]]
+    ) if previous else {}
     conn.close()
 
     lines = [
@@ -233,16 +301,30 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
             ["---", "---", "---:", "---:", "---:", "---:", "---:", "---:"],
         )
     )
+    if is_extended:
+        lines.extend(
+            [
+                "",
+                f"> 最新批次是 {latest.days} 天长周期导出，表中合计和日均用于全周期回看；周度变化统一按相邻等长日期和最近30天计算。",
+            ]
+        )
 
     lines.extend(["", "## 本次新增日期", ""])
     if new_dates:
+        if is_extended and backfill_dates:
+            lines.extend(
+                [
+                    f"- 本批是 {latest.days} 天长周期回看；另补充 {backfill_dates[0]} 至 {backfill_dates[-1]} 的 {len(backfill_dates)} 个历史日期。",
+                    "- 历史补录只用于长期回看，不计入本周增长。",
+                ]
+            )
         lines.extend(
             [
                 f"- 新增日期：{new_dates[0]} 至 {new_dates[-1]}，共 {len(new_dates)} 天。",
                 f"- 新增日期内发表 {new_posts} 篇，日阅读人数合计 {fmt_int(new_reads)}。",
                 f"- 分享人数合计 {fmt_int(new_shares)}，微信收藏人数合计 {fmt_int(new_favorites)}。",
                 "",
-                "这里的“新增日期”是最新导出覆盖、上次导出尚未覆盖的日期，是周度复盘最可靠的新增区间。",
+                "这里的“新增日期”只保留上次截止日之后的日期，是周度复盘最可靠的新增区间。",
             ]
         )
         if channel_rows:
@@ -250,7 +332,7 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
             if removed_channel_totals:
                 lines.extend(
                     markdown_table(
-                        ["渠道", "移出区间", "新增区间", "变化"],
+                        ["渠道", "上期对照" if is_extended else "移出区间", "新增区间", "变化"],
                         [
                             [
                                 row["channel"],
@@ -281,15 +363,17 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
         lines.append("- 最新批次没有比上一批多出新的日期，需检查导出范围是否正确。")
 
     if previous:
-        avg_delta = latest.avg_reads - previous.avg_reads
+        current_avg = latest_30["avg_reads"] if is_extended else latest.avg_reads
+        previous_avg = previous_30["avg_reads"] if is_extended else previous.avg_reads
+        avg_delta = current_avg - previous_avg
         direction = "增加" if avg_delta >= 0 else "减少"
         lines.extend(
             [
                 "",
                 "## 滚动周期变化",
                 "",
-                f"- 最新周期日均阅读 {fmt_float(latest.avg_reads)}，较上一批{direction} {fmt_float(abs(avg_delta))}。",
-                "- 两批起止日期不同，这里反映滚动窗口热度变化，不作为严格同比增长率。",
+                f"- {'最新30天' if is_extended else '最新周期'}日均阅读 {fmt_float(current_avg)}，较上一批最近30天{direction} {fmt_float(abs(avg_delta))}。",
+                "- 长周期导出不直接与30天批次比较；本行统一使用最近30天口径。" if is_extended else "- 两批起止日期不同，这里反映滚动窗口热度变化，不作为严格同比增长率。",
             ]
         )
         if new_daily and removed_daily:
@@ -298,14 +382,14 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
             lines.extend(
                 [
                     "",
-                    "### 滚动窗口替换拆解",
+                    "### 相邻等长区间比较" if is_extended else "### 滚动窗口替换拆解",
                     "",
-                    f"- 移出区间：{removed_dates[0]} 至 {removed_dates[-1]}，{len(removed_dates)} 天，阅读 {fmt_int(removed_reads)}。",
+                    f"- {'上期对照' if is_extended else '移出区间'}：{removed_dates[0]} 至 {removed_dates[-1]}，{len(removed_dates)} 天，阅读 {fmt_int(removed_reads)}。",
                     f"- 新增区间：{new_dates[0]} 至 {new_dates[-1]}，{len(new_dates)} 天，阅读 {fmt_int(new_reads)}。",
-                    f"- 新增区间日均阅读 {fmt_float(new_avg)}，相对移出区间日均阅读 {fmt_float(removed_avg)}，变化 {fmt_delta(new_avg, removed_avg)}。",
+                    f"- 新增区间日均阅读 {fmt_float(new_avg)}，相对{'上期对照' if is_extended else '移出区间'}日均阅读 {fmt_float(removed_avg)}，变化 {fmt_delta(new_avg, removed_avg)}。",
                     f"- 分享由 {fmt_int(removed_shares)} 变为 {fmt_int(new_shares)}，收藏由 {fmt_int(removed_favorites)} 变为 {fmt_int(new_favorites)}。",
                     "",
-                    "这个拆解用于判断滚动窗口变化究竟来自新一周走强或走弱，还是仅由统计区间移动造成。",
+                    "这个比较使用相邻、等长日期，避免长周期历史补录影响周度判断。" if is_extended else "这个拆解用于判断滚动窗口变化究竟来自新一周走强或走弱，还是仅由统计区间移动造成。",
                 ]
             )
 
@@ -409,17 +493,34 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
         previous_daily = daily_rows(conn, previous.batch_id) if previous else {}
         current_articles = article_rows(conn, batch.batch_id)
         previous_articles = article_rows(conn, previous.batch_id) if previous else {}
-        new_dates = sorted(set(current_daily) - set(previous_daily)) if previous else []
+        new_dates, removed_dates, backfill_dates, is_extended = comparison_dates(
+            current_daily, previous_daily, previous
+        )
         new_daily = [current_daily[date] for date in new_dates]
-        removed_dates = sorted(set(previous_daily) - set(current_daily)) if previous else []
-        removed_daily = [previous_daily[date] for date in removed_dates]
+        baseline_source = current_daily if is_extended else previous_daily
+        removed_daily = [baseline_source[date] for date in removed_dates]
+        current_30 = period_metrics(
+            [current_daily[date] for date in sorted(current_daily)[-30:]]
+        )
+        previous_30 = period_metrics(
+            [previous_daily[date] for date in sorted(previous_daily)[-30:]]
+        ) if previous else {}
         top_articles = sorted(
             current_articles.values(),
             key=lambda row: row["read_users"] or 0,
             reverse=True,
         )[:15]
         new_titles = sorted(
-            (row for title, row in current_articles.items() if title not in previous_articles),
+            (
+                row
+                for title, row in current_articles.items()
+                if title not in previous_articles
+                and (
+                    not is_extended
+                    or not previous
+                    or (row["publish_date"] or "") > previous.end_date
+                )
+            ),
             key=lambda row: row["read_users"] or 0,
             reverse=True,
         )
@@ -428,28 +529,46 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             old = previous_articles.get(title)
             if not old:
                 continue
+            if is_extended and previous and (current["publish_date"] or "") < previous.start_date:
+                continue
             delta = (current["read_users"] or 0) - (old["read_users"] or 0)
             growth_rows.append((delta, title, old["read_users"] or 0, current["read_users"] or 0))
         growth_rows.sort(reverse=True)
 
+        peak_pool = (
+            [current_daily[date] for date in sorted(current_daily)[-30:]]
+            if is_extended
+            else list(current_daily.values())
+        )
         peak_days = sorted(
-            current_daily.values(),
+            peak_pool,
             key=lambda row: row["read_users"] or 0,
             reverse=True,
         )[:5]
+        channel_dates = sorted(current_daily)[-30:] if is_extended else []
+        channel_date_filter = ""
+        channel_params: tuple[Any, ...] = (batch.batch_id,)
+        if channel_dates:
+            placeholders = ",".join("?" for _ in channel_dates)
+            channel_date_filter = f" AND date IN ({placeholders})"
+            channel_params = (batch.batch_id, *channel_dates)
         channel_rows = conn.execute(
-            """
+            f"""
             SELECT channel, SUM(read_users) AS read_users
             FROM channel_daily_reads
-            WHERE batch_id = ? AND channel <> '全部'
+            WHERE batch_id = ? AND channel <> '全部'{channel_date_filter}
             GROUP BY channel
             ORDER BY read_users DESC
             """,
-            (batch.batch_id,),
+            channel_params,
         ).fetchall()
         new_channel_totals = channel_totals_for_dates(conn, batch.batch_id, new_dates)
         removed_channel_totals = (
-            channel_totals_for_dates(conn, previous.batch_id, removed_dates)
+            channel_totals_for_dates(
+                conn,
+                batch.batch_id if is_extended else previous.batch_id,
+                removed_dates,
+            )
             if previous
             else {}
         )
@@ -480,25 +599,37 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 f"- 当前阅读最高文章为 **{top['title']}**，阅读人数 {fmt_int(top['read_users'])}。"
             )
         if previous:
-            avg_delta = batch.avg_reads - previous.avg_reads
+            current_avg = current_30["avg_reads"] if is_extended else batch.avg_reads
+            previous_avg = previous_30["avg_reads"] if is_extended else previous.avg_reads
+            avg_delta = current_avg - previous_avg
             direction = "增加" if avg_delta >= 0 else "减少"
             lines.append(
-                f"- 相比上一批滚动周期，日均阅读{direction} {fmt_float(abs(avg_delta))}；由于统计窗口移动，该数值用于判断近期热度，不作为严格同比。"
+                f"- 相比上一批最近30天，日均阅读{direction} {fmt_float(abs(avg_delta))}；"
+                + ("本批为长周期回看，已统一到最近30天口径。" if is_extended else "由于统计窗口移动，该数值用于判断近期热度，不作为严格同比。")
             )
             if new_dates:
                 new_reads = sum(row["read_users"] or 0 for row in new_daily)
                 new_posts = sum(row["published_count"] or 0 for row in new_daily)
                 lines.append(
-                    f"- 本次真正新增 {len(new_dates)} 个日期（{new_dates[0]} 至 {new_dates[-1]}），新增区间发表 {new_posts} 篇，日阅读人数合计 {fmt_int(new_reads)}。"
+                    f"- 本次周度新增 {len(new_dates)} 个日期（{new_dates[0]} 至 {new_dates[-1]}），新增区间发表 {new_posts} 篇，日阅读人数合计 {fmt_int(new_reads)}。"
                 )
                 if removed_daily:
                     removed_reads = sum(row["read_users"] or 0 for row in removed_daily)
                     net_replacement = new_reads - removed_reads
                     contribution = "多" if net_replacement >= 0 else "少"
                     cycle_direction = "回升" if net_replacement >= 0 else "回落"
-                    lines.append(
-                        f"- 滚动窗口中，新加入日期比移出日期{contribution}贡献 {fmt_int(abs(net_replacement))} 阅读；这是本周期{cycle_direction}的直接统计来源。"
-                    )
+                    if is_extended:
+                        lines.append(
+                            f"- 与紧邻上一个等长区间相比，本周{contribution}贡献 {fmt_int(abs(net_replacement))} 阅读，近期表现{cycle_direction}。"
+                        )
+                    else:
+                        lines.append(
+                            f"- 滚动窗口中，新加入日期比移出日期{contribution}贡献 {fmt_int(abs(net_replacement))} 阅读；这是本周期{cycle_direction}的直接统计来源。"
+                        )
+            if is_extended and backfill_dates:
+                lines.append(
+                    f"- 本批另补录 {backfill_dates[0]} 至 {backfill_dates[-1]} 的 {len(backfill_dates)} 个历史日期，只用于长期回看，不计入本周增长。"
+                )
         else:
             lines.append("- 这是数据链的首个批次，作为后续周度比较的基线。")
 
@@ -518,28 +649,35 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             ]
         )
         metric_rows = [
-            ["统计天数", batch.days, previous.days if previous else "-", "-"],
-            ["发表篇数", batch.published, previous.published if previous else "-", "-"],
-            ["日阅读人数合计", fmt_int(batch.total_reads), fmt_int(previous.total_reads) if previous else "-", "-"],
+            ["统计天数", 30 if is_extended else batch.days, previous.days if previous else "-", "-"],
+            ["发表篇数", int(current_30["posts"]) if is_extended else batch.published, previous.published if previous else "-", "-"],
+            ["日阅读人数合计", fmt_int(current_30["reads"] if is_extended else batch.total_reads), fmt_int(previous.total_reads) if previous else "-", "-"],
             [
                 "日均阅读",
-                fmt_float(batch.avg_reads),
-                fmt_float(previous.avg_reads) if previous else "-",
-                fmt_delta(batch.avg_reads, previous.avg_reads) if previous else "-",
+                fmt_float(current_30["avg_reads"] if is_extended else batch.avg_reads),
+                fmt_float(previous_30["avg_reads"] if is_extended else previous.avg_reads) if previous else "-",
+                fmt_delta(current_30["avg_reads"] if is_extended else batch.avg_reads, previous_30["avg_reads"] if is_extended else previous.avg_reads) if previous else "-",
             ],
             [
                 "日均分享",
-                fmt_float(batch.avg_shares),
-                fmt_float(previous.avg_shares) if previous else "-",
-                fmt_delta(batch.avg_shares, previous.avg_shares) if previous else "-",
+                fmt_float(current_30["avg_shares"] if is_extended else batch.avg_shares),
+                fmt_float(previous_30["avg_shares"] if is_extended else previous.avg_shares) if previous else "-",
+                fmt_delta(current_30["avg_shares"] if is_extended else batch.avg_shares, previous_30["avg_shares"] if is_extended else previous.avg_shares) if previous else "-",
             ],
             [
                 "日均收藏",
-                fmt_float(batch.avg_favorites),
-                fmt_float(previous.avg_favorites) if previous else "-",
-                fmt_delta(batch.avg_favorites, previous.avg_favorites) if previous else "-",
+                fmt_float(current_30["avg_favorites"] if is_extended else batch.avg_favorites),
+                fmt_float(previous_30["avg_favorites"] if is_extended else previous.avg_favorites) if previous else "-",
+                fmt_delta(current_30["avg_favorites"] if is_extended else batch.avg_favorites, previous_30["avg_favorites"] if is_extended else previous.avg_favorites) if previous else "-",
             ],
         ]
+        if is_extended:
+            lines.extend(
+                [
+                    f"- 本批完整导出共 {batch.days} 天、发表 {batch.published} 篇、阅读 {fmt_int(batch.total_reads)}；下表统一展示最近30天可比口径。",
+                    "",
+                ]
+            )
         lines.extend(
             markdown_table(
                 ["指标", "本批", "上批", "变化"],
@@ -548,7 +686,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             )
         )
 
-        lines.extend(["", "## 四、滚动窗口替换拆解", ""])
+        lines.extend(["", "## 四、相邻等长区间比较" if is_extended else "## 四、滚动窗口替换拆解", ""])
         if previous and new_daily and removed_daily:
             new_reads = sum(row["read_users"] or 0 for row in new_daily)
             new_shares = sum(row["share_users"] or 0 for row in new_daily)
@@ -568,7 +706,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 markdown_table(
                     ["窗口区间", "日期", "天数", "发文", "阅读", "日均阅读", "分享", "收藏"],
                     [
-                        ["移出本批", f"{removed_dates[0]} 至 {removed_dates[-1]}", len(removed_dates), removed_posts, fmt_int(removed_reads), fmt_float(removed_avg), fmt_int(removed_shares), fmt_int(removed_favorites)],
+                        ["上期对照" if is_extended else "移出本批", f"{removed_dates[0]} 至 {removed_dates[-1]}", len(removed_dates), removed_posts, fmt_int(removed_reads), fmt_float(removed_avg), fmt_int(removed_shares), fmt_int(removed_favorites)],
                         ["新加入本批", f"{new_dates[0]} 至 {new_dates[-1]}", len(new_dates), new_posts, fmt_int(new_reads), fmt_float(new_avg), fmt_int(new_shares), fmt_int(new_favorites)],
                     ],
                     ["---", "---", "---:", "---:", "---:", "---:", "---:", "---:"],
@@ -577,7 +715,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             lines.extend(
                 [
                     "",
-                    f"新增区间比移出区间{contribution} {fmt_int(abs(replacement_delta))} 阅读；新增区间日均阅读变化 {fmt_delta(new_avg, removed_avg)}。因此，本批滚动周期{cycle_direction}主要由新加入日期的阅读强度{strength}被移出日期造成。",
+                    f"新增区间比{'上期对照' if is_extended else '移出区间'}{contribution} {fmt_int(abs(replacement_delta))} 阅读；新增区间日均阅读变化 {fmt_delta(new_avg, removed_avg)}。因此，近期表现{cycle_direction}，新增日期阅读强度{strength}{'上期对照区间' if is_extended else '被移出日期'}。",
                 ]
             )
         elif previous:
@@ -585,7 +723,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
         else:
             lines.append("- 首批数据暂不进行窗口替换拆解。")
 
-        lines.extend(["", "## 五、阅读高峰", ""])
+        lines.extend(["", "## 五、最近30天阅读高峰" if is_extended else "## 五、阅读高峰", ""])
         lines.extend(
             markdown_table(
                 ["日期", "阅读人数", "分享人数", "收藏人数", "发文篇数"],
@@ -626,7 +764,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
         else:
             lines.append("- 首批数据作为连续分析基线，从下一批开始识别新增日期。")
 
-        lines.extend(["", "## 七、渠道表现", ""])
+        lines.extend(["", "## 七、最近30天渠道表现" if is_extended else "## 七、渠道表现", ""])
         lines.extend(
             markdown_table(
                 ["渠道", "周期阅读人数合计"],
@@ -646,10 +784,10 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 key=lambda channel: new_channel_totals.get(channel, 0),
                 reverse=True,
             )
-            lines.extend(["", "### 新增区间与移出区间渠道变化", ""])
+            lines.extend(["", "### 新增区间与上期对照渠道变化" if is_extended else "### 新增区间与移出区间渠道变化", ""])
             lines.extend(
                 markdown_table(
-                    ["渠道", "移出区间", "新增区间", "变化"],
+                    ["渠道", "上期对照" if is_extended else "移出区间", "新增区间", "变化"],
                     [
                         [
                             channel,
@@ -665,7 +803,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             lines.extend(
                 [
                     "",
-                    "该表比较等长的新增与移出日期区间，用于识别本次滚动窗口变化由哪些阅读来源推动。",
+                    "该表比较相邻等长日期，用于识别本周变化由哪些阅读来源推动。" if is_extended else "该表比较等长的新增与移出日期区间，用于识别本次滚动窗口变化由哪些阅读来源推动。",
                 ]
             )
         lines.extend(["", "## 八、文章阅读排名", ""])
@@ -770,7 +908,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 )
             )
             judgment_items.append(
-                f"**发文效率**：新增区间在{post_comparison}的情况下，阅读较移出区间变化 {read_change:+.1f}%，"
+                f"**发文效率**：新增区间在{post_comparison}的情况下，阅读较{'上期对照' if is_extended else '移出区间'}变化 {read_change:+.1f}%，"
                 f"分享变化 {share_change:+.1f}%，收藏变化 {favorite_change:+.1f}%。"
             )
 
@@ -850,6 +988,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 "- 本报告依据公众号后台导出的滚动周期数据，不把重叠日期重复累计为本周新增。",
                 "- 来源概况未必覆盖期间全部发文，未出现的文章不能直接判定为零阅读。",
                 "- 推荐约比用于观察推荐渠道强弱；不同渠道可能存在读者交叉。",
+                *( ["- 本批为长周期导出，周度结论只使用上次截止日后的新增日期，并与紧邻等长区间比较；全周期合计不与30天批次直接环比。"] if is_extended else [] ),
                 "",
             ]
         )
