@@ -2063,6 +2063,158 @@ for _idea in REFINED_IDEAS:
     _idea['support_article_ids'].extend(WEEKLY_SUPPORT_UPDATES_20260810_0816.get(_idea['idea_id'], []))
 
 
+# 2026年1月月度复盘：结合截至2026-08-23的公众号运营数据，保留独立切口。
+REFINED_IDEAS.extend([
+    {
+        "idea_id": "idea_202601_revisit_county_youth_ecosystem",
+        "date": "2026-01-31",
+        "priority": "S",
+        "status": "备选",
+        "platform": "公众号 + 课堂讲解",
+        "title": "申论写县域青年发展：岗位、住房只是起点，关键是让青年有成长空间",
+        "angle": "县域吸引青年不能只靠低生活成本和返乡情怀，还要用产业岗位、创业平台、公共服务、公平环境和参与机会建设青年发展生态。",
+        "outline": [
+            "产业给岗位：让青年专业和县域主导产业真正匹配",
+            "服务降成本：住房、交通、教育和文化生活共同提升可留性",
+            "平台助创业：资金、场地、供需对接和数字工具降低起步门槛",
+            "机制促成长：公平竞争、岗位历练和资源链接形成发展通道",
+            "参与建认同：让青年成为县域建设者",
+        ],
+        "support_article_ids": [
+            "people_daily_20260130_30136917",
+            "people_daily_20260130_30136918",
+            "people_daily_20260116_30133097",
+            "people_daily_20260116_30133100",
+            "people_daily_20260116_30133101",
+        ],
+    },
+    {
+        "idea_id": "idea_202601_revisit_deliberation_to_results",
+        "date": "2026-01-31",
+        "priority": "S",
+        "status": "备选",
+        "platform": "公众号 + 面试题卡",
+        "title": "基层治理怎么写群众议事：从“听意见”到“见结果”的五个动作",
+        "angle": "群众议事不能止于开会征求意见，要把民情转成议题，把协商转成方案，把方案转成责任和结果，再由群众监督评价。",
+        "outline": [
+            "民情定议题：从热线、走访和日常生活中找真问题",
+            "规则保参与：明确谁能议、议什么、怎样公开",
+            "调研找方案：兼顾利益诉求、专业判断和成本约束",
+            "协同办结果：把议定事项落到责任、资金、时限和部门",
+            "公开再评价：反馈进度、接受监督、复盘规则",
+        ],
+        "support_article_ids": [
+            "people_daily_20260105_30129345",
+            "people_daily_20260111_30131064",
+            "people_daily_20260119_30133508",
+            "people_daily_20260120_30134027",
+            "people_daily_20260126_30135660",
+            "people_daily_20260126_30135661",
+            "people_daily_20260127_30135826",
+        ],
+    },
+    {
+        "idea_id": "idea_202601_revisit_consumption_confidence_supply",
+        "date": "2026-01-31",
+        "priority": "A",
+        "status": "备选",
+        "platform": "公众号 + 课堂讲解",
+        "title": "《人民日报》讲提振消费：让群众能消费、敢消费、愿消费，要补哪四块",
+        "angle": "提振消费不能只依赖发券和活动，要以就业增收增强消费能力，以社会保障稳定预期，以优质供给和新场景承接需求，以权益保护提升消费信心。",
+        "outline": [
+            "能消费：以稳定就业、居民增收和收入分配增强购买能力",
+            "敢消费：以养老、医疗、育幼、住房等保障减轻后顾之忧",
+            "愿消费：以优质商品服务、县域供给和融合场景满足新需求",
+            "放心消费：以信用监管、便捷退换和消费维权增强信任",
+            "长期机制：供需数据互通、物流补短板和公共服务共同发力",
+        ],
+        "support_article_ids": [
+            "people_daily_20260105_30129319",
+            "people_daily_20260110_30130985",
+            "people_daily_20260113_30131927",
+            "people_daily_20260114_30132228",
+            "people_daily_20260123_30135147",
+            "people_daily_20260126_30135649",
+            "people_daily_20260127_30135809",
+            "people_daily_20260128_30136197",
+            "people_daily_20260130_30136904",
+        ],
+    },
+    {
+        "idea_id": "idea_202601_revisit_public_service_fast_track",
+        "date": "2026-01-31",
+        "priority": "A",
+        "status": "备选",
+        "platform": "公众号 + 小红书",
+        "title": "民生服务为何要“分层快办”：从预住院、小伤快赔到小额快救",
+        "angle": "民生服务提速不是催窗口工作人员更快，而是按事项风险、紧急程度和事实复杂度分类，通过材料共享、流程并联和主动触达重做办理流程。",
+        "outline": [
+            "事项分类：区分事实清楚的简单事项与需要专业判断的复杂事项",
+            "风险分级：急难事项先响应，低争议事项走简易程序",
+            "材料共享：一次申报、数据复用，减少群众反复证明",
+            "流程并联：把能够合并的审核、确认和拨付同步办理",
+            "主动触达：用监测预警和上门服务发现未主动申请的人",
+            "守住边界：快办不能牺牲安全、资金规范和事后监督",
+        ],
+        "support_article_ids": [
+            "people_daily_20260106_30129740",
+            "people_daily_20260106_30129768",
+            "people_daily_20260107_30130247",
+            "people_daily_20260122_30134795",
+            "people_daily_20260126_30135669",
+            "people_daily_20260130_30136868",
+        ],
+    },
+    {
+        "idea_id": "idea_202601_revisit_fifteen_five_implementation",
+        "date": "2026-01-31",
+        "priority": "A",
+        "status": "备选",
+        "platform": "公众号 + 课堂讲解",
+        "title": "“十五五”开局如何落地：内需、创新、民生和风险要接成一条链",
+        "angle": "规划开局不能把任务平均分摊或写得越多越好，要围绕主要矛盾确定年度重点，把战略部署转成项目、政策、责任和资源清单，再由群众感受与风险底线校验。",
+        "outline": [
+            "规划定方向：把握内需主导、高质量发展和民生为大的主线",
+            "年度抓重点：围绕主要矛盾选择牵引性任务，避免平均用力",
+            "项目政策承接：把部署拆成项目、改革和公共服务安排",
+            "责任资源匹配：明确部门、时限、资金和要素保障",
+            "民生风险校验：既看发展成效，也看群众感受和底线风险",
+        ],
+        "support_article_ids": [
+            "people_daily_20260101_30128801",
+            "people_daily_20260104_30129034",
+            "people_daily_20260105_30129319",
+            "people_daily_20260106_30129723",
+            "people_daily_20260107_30130218",
+            "people_daily_20260109_30130808",
+            "people_daily_20260112_30131245",
+            "people_daily_20260113_30131904",
+            "people_daily_20260114_30132199",
+        ],
+    },
+])
+
+
+JANUARY_REANALYSIS_SUPPORT_UPDATES_20260824 = {
+    "idea_20260706_0712_grassroots_burden_empowerment": [
+        "people_daily_20260106_30129758",
+        "people_daily_20260106_30129759",
+        "people_daily_20260109_30130846",
+        "people_daily_20260112_30131258",
+        "people_daily_20260117_30133358",
+        "people_daily_20260123_30135104",
+        "people_daily_20260129_30136562",
+    ],
+}
+
+for _idea in REFINED_IDEAS:
+    _idea["support_article_ids"].extend(
+        JANUARY_REANALYSIS_SUPPORT_UPDATES_20260824.get(_idea["idea_id"], [])
+    )
+    if _idea["idea_id"] == "idea_20260706_0712_grassroots_burden_empowerment":
+        _idea["priority"] = "A"
+
+
 def connect(path: Path) -> sqlite3.Connection:
     conn = sqlite3.connect(str(path))
     conn.row_factory = sqlite3.Row
