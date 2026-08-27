@@ -120,6 +120,9 @@ python3 scripts/sync_to_notion.py 2026-05-27
 - 做单篇文章教研标注时，优先增量补充，不删旧批注。
 - 每次完成文章写作，固定生成四项：公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。小红书卡片脚本集中放入 `data/xiaohongshu/`；教研复盘和公众号过程稿放入 `data/analysis/`；非文本成品放入 `media/`。
 - 公众号成稿文末固定先放 `## 金句集合`，再放 `## 参考文章`；金句集中在一个可一次性复制的编号 `text` 代码块中。
+- 所有公开发布稿必须执行 `docs/public-content-wording-safety.md`。正文、标题、摘要、小红书卡片、公开课件、题卡、封面和参考文章都应规避用户指定的政治人物姓名、中央党组织名称及其他已配置高风险用语；优先换源或准确转述，不得使用错别字、谐音、拼音、拆字、插入符号、图片替字等方式绕过审核。
+- 用语规避只作用于公开成品层，不得改写 `data/raw/`、`data/core/`、`data/vault/` 的原始资料、原始标题、Article ID 和事实记录。若公开稿无法在不改变主体、责任或法律效力的前提下安全改写，应换用其他来源、仅保留在内部教研复盘，或停止并交由老师判断。
+- 四项写作产物形成后、送去二润前，以及得到拉回后、同步平台前，均须运行 `python3 scripts/check_public_wording.py "<公众号成稿路径>" "<小红书脚本路径>"`。所有“必须改写”项清零；“语境复核”项逐条核验并在教研复盘记录取舍。自动检查不能替代事实核验和人工终审。
 - 生成小红书图文、视频号封面、公众号封面等视觉成品时，初稿渲染完成后默认自动完成质量审查；发现溢出、遮挡、密度不足、引用遗漏、尺寸错误或风格不统一时，先修正并复查，再交付给用户预览，不再等待用户额外指令。
 - 敏感信息不入 Git，尤其是 `config.json` 中的 Notion Token。
 - 不自动提交，除非用户明确要求。
@@ -129,7 +132,7 @@ python3 scripts/sync_to_notion.py 2026-05-27
 
 - 双平台草稿同步的可复用入口是项目 Skill：`.agents/skills/dual-platform-draft-sync/SKILL.md`。用户说“图片插好了”“Obsidian 配图完成”“同步双平台草稿”或要求其他 Agent 直接走完整同步流程时，必须调用该 Skill，并按 `docs/dual-platform-draft-sync.md` 执行。
 
-- 用户说“写稿”时：按“写稿 → 送去二润”连续执行，不再等待第二条命令。必须先调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑，并固定生成公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。成稿保存到 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，小红书卡片脚本保存到 `data/xiaohongshu/`，其余过程文字保存到 `data/analysis/`，同时同步 `data/articles/文章索引.md`。四项产物及来源校验通过后，立即运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft`；再调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架；最后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`，把一润稿送入得到大脑并记录精确 `note_id`。
+- 用户说“写稿”时：按“写稿 → 送去二润”连续执行，不再等待第二条命令。必须先调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑，并固定生成公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。成稿保存到 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，小红书卡片脚本保存到 `data/xiaohongshu/`，其余过程文字保存到 `data/analysis/`，同时同步 `data/articles/文章索引.md`。四项产物及来源校验通过后，先按 `docs/public-content-wording-safety.md` 审查正文与参考文章，并运行 `python3 scripts/check_public_wording.py "<公众号成稿路径>" "<小红书脚本路径>"`；所有“必须改写”项清零后，再运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft`。随后调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架；润色后再次执行用语预检，最后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`，把一润稿送入得到大脑并记录精确 `note_id`。
 - 用户单独说“送去二润”或“写完并送去二润”时：继续兼容。若文章尚未形成，完整执行“写稿 → 送去二润”；若已有可审查初稿，则从初稿快照和 Humanizer 一润开始执行，不重复写稿。
 - 用户说“拉回”或“我在得到改好了，拉回”时：按“拉回 → 重点加粗审查 → 登记 NotebookLM 配图 → 双平台配图初排 → 打开本地双平台配图工作台”连续执行，并停在本地配图环节；不得在“拉回”阶段创建公众号或今日头条草稿。先根据当前文章运行 `python3 scripts/writing_workflow.py pull "<文章路径>"`，必须使用本地记录的精确 `note_id`；校验不通过时不得覆盖本地稿，也不得继续配图或上传草稿。拉回成功后必须继续审查重点，只在得到版原文上增加 `**加粗**`，不得改写任何文字或结构：
   - 优先突出核心判断、总公式、章节递进结论、申论可用表达、面试答题关键动作和结尾认知升级。

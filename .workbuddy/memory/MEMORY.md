@@ -22,7 +22,20 @@
 - 校验：`~/.workbuddy/skills/gzh-design/scripts/validate_gzh_html.py <html>` 必须「完全合规」；预览页用 `wrap_preview.py <html>` 生成带「复制」按钮的 `_预览.html`。
 - 同步方式：草稿箱 API 推送红白 HTML（`add_draft`，thumb 封面仍用 `people-daily-header.png`，作者 LeePerfect）。注意：旧 doocs 草稿的 media_id 可能已失效（用户会清掉），推送前先确认，失效则用 `add_draft` 新建而非 `update_draft`。
 
+## 双平台同步：今日头条只生成 docx、不再智能体浏览器代填（用户 2026-08-27 明确）
+
+- 公众号端仍走 `sync-dual --platform wechat --wechat-html <红白HTML>` 创建草稿。
+- **今日头条端只生成 `.docx`，不做 sync-dual 头条部分、不装 agent-browser、不浏览器代填**：用 `python3 scripts/build_toutiao_import_docx.py <md路径> <out.docx>` 生成即可（≤15 MB、图片嵌入、有序/无序列表用 Word 原生、H1 不进入正文），用户自己在已登录头条的浏览器里点「文档导入」上传。
+- 智能体角色止于「生成可手动导入的 Word 文档」，不再接管头条页面操作、登录态、验证码、固定选项套用。
+
+## 转换脚本（`.local/gzh_redwhite.py`）已修过的两个 bug
+
+- **有序列表项之间空行**：项与项之间留空是常见排版习惯，但会让 `parse_blocks` 把每项拆成独立 1 项列表（编号全"1"）。修复：olist 的 while 遇空行且下一行仍是 `^\d+\. ` 时跳过空行继续合并。
+- **代码块围栏未闭合吞后续章节**：当作者忘记写闭合 ```，代码块会一直延伸、把 "## 参考文章" 之类的下一章都吞进金句集合。修复：代码块 while 里遇 `## ` 强制 break 且**不**执行末尾 `i += 1`，让主循环能正常处理该 ## 章节。
+- 校对应顺手检查：① 有序列表编号是否从 1 开始且每个列表独立重置；② 章节标题 "金句集合 / 参考文章" 是否在 plain_text 中且有 subheading；③ 图片 src 是否与 Markdown 的 `![](...)` 一一对应。
+
 ## 环境备注
 
 - 系统 `python3` 缺 PyYAML，运行 `writing_workflow.py` 需用 managed venv `/Users/pf.macbookpro/.workbuddy/binaries/python/envs/default/bin/python`。
 - AGENTS.md 提到的 `peopledaily-article-production` Skill 实际不存在，写稿流程按 AGENTS.md 内嵌规则执行。
+- 用户公网 IP 频繁变化（一天一变），每次公众号同步都可能需要更新 IP 白名单。建议用户加常用 IP 段或固定代理，否则每次都得改。
