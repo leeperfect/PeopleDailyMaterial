@@ -1,6 +1,6 @@
 ---
 type: operating_procedure
-updated: 2026-08-22
+updated: 2026-08-26
 scope: PeopleDailyMaterial
 ---
 
@@ -10,7 +10,7 @@ scope: PeopleDailyMaterial
 
 日常最短说法：
 
-> 第 81 篇已经在 Obsidian 配好图片。使用 `$dual-platform-draft-sync`，登记正文图片并同步到公众号和今日头条草稿箱；只保存草稿，不发布。
+> 第 81 篇已经在 Obsidian 配好图片。使用 `$dual-platform-draft-sync`：公众号固定调用 `$gzh-design` 的“红白色系”，今日头条固定使用 Word 文档导入；只保存草稿，不发布。
 
 如果当前 Agent 已经能够准确识别文章，也可以直接说：
 
@@ -23,6 +23,7 @@ scope: PeopleDailyMaterial
 - 图片已经粘贴到正式文章 Markdown 的正确位置；
 - 公众号接口配置有效；
 - Chrome 已登录今日头条创作后台。
+- 全局已安装 `~/.codex/skills/gzh-design/`，且包含 `references/` 与 `scripts/`。
 
 ## 固定流程
 
@@ -52,31 +53,53 @@ python3 scripts/writing_workflow.py status "<文章路径>"
 
 必须确认：二润稿通过、重点加粗通过、配图清单存在、状态为 `figures_confirmed`、正文和配图在确认后没有变化。
 
-### 4. 准备并创建双平台草稿
+### 4. 生成公众号“红白色系”HTML
+
+显式调用 `$gzh-design`，主题固定为“红白色系”，不再逐篇询问主题。按该 Skill 的组件库生成纯 `<section>…</section>` 正文片段，并保证原文段落、配图、金句集合和参考文章完整。
+
+生成后强制运行：
 
 ```bash
-python3 scripts/writing_workflow.py sync-dual "<文章路径>"
+python3 ~/.codex/skills/gzh-design/scripts/component_lint.py ~/.codex/skills/gzh-design
+python3 ~/.codex/skills/gzh-design/scripts/validate_gzh_html.py "<红白色系正文HTML>"
+```
+
+组件库检查必须为 0 ERROR；最终 HTML 校验必须为 0 ERROR、0 WARNING。公众号后续上传与预览使用同一份已校验 HTML，不再以 doocs/md 为默认排版来源。
+
+### 5. 准备并创建双平台草稿
+
+```bash
+python3 scripts/writing_workflow.py sync-dual "<文章路径>" \
+  --wechat-html "<红白色系正文HTML>"
 ```
 
 公众号端：
 
-1. 用 doocs/md 生成公众号 HTML；
-2. 上传 Markdown 中的本地正文图片；
+1. 读取并复验 `$gzh-design` 生成的红白色系 HTML；
+2. 上传 HTML 中引用的本地正文图片；
 3. 按文章系列选择公众号固定封面；
 4. 作者使用 `LeePerfect`，开启评论且不限制粉丝；
 5. 只创建草稿并记录 `media_id`，不调用群发。
 
 今日头条端：
 
-1. 生成去除公众号专属样式的独立富文本；
-2. 使用已登录 Chrome 填写标题和正文；
-3. 按交接包顺序和文字锚点上传本地图片；
-4. 检查有序列表、无序列表、加粗和参考文章格式；
-5. 上传固定单图封面；
-6. 应用固定发布选项；
+1. 调用 `scripts/build_toutiao_import_docx.py` 生成包含正文图片的 `.docx`；
+2. 自动跳过 Markdown H1，避免标题重复进入正文；
+3. 生成 `import-payload.json`，记录标题、Word 路径、图片数、正文及配图指纹；
+4. 在已登录 Chrome 的新空白编辑页点击“文档导入”并选择该 Word；
+5. 单独填写标题栏，检查章节、列表、加粗、参考文章和正文图片；
+6. 上传固定单图封面并应用固定选项；
 7. 等待“草稿已保存”，不点击“预览并发布”。
 
-### 5. 今日头条固定设置
+生成的 Word 固定保存在 `data/exports/<文章文件名>-toutiao-import.docx`，便于人工复核和失败后重试。
+
+### 6. 今日头条 Word 导入规则与固定设置
+
+- 文件必须是 `.docx` 且不超过 15 MB；
+- 图片按 Markdown 原位置嵌入并压缩，数量必须与配图清单一致；
+- H1 不导入正文，标题由浏览器单独填写；
+- 有序列表、无序列表使用 Word 原生列表，加粗使用 Word 字符格式；
+- 只有文档导入不可用或明确失败时，才使用旧富文本逐图上传兜底，并说明原因。
 
 | 设置项 | 固定值 |
 |---|---|
@@ -91,7 +114,7 @@ python3 scripts/writing_workflow.py sync-dual "<文章路径>"
 
 头条可能在重新打开草稿后重置部分发布选项。因此，正文、图片和封面需要刷新验证；发布选项由本地模板在每次同步或继续发布前重新套用。
 
-### 6. 保存后验收
+### 7. 保存后验收
 
 - 公众号有草稿 `media_id`；
 - 头条标题正确；

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""使用 doocs/md 的同一份 HTML 创建公众号草稿；绝不自动群发。"""
+"""使用已校验 HTML 创建公众号草稿；双平台流程固定采用 gzh-design 红白色系。"""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 import re
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -44,7 +45,6 @@ from modules.writing_workflow import (
     title_from_article,
 )
 from modules.platform_workflow import require_publication_ready
-from render_wechat_html import render_article
 
 
 def local_image_path(source: str, article_path: Path) -> Path | None:
@@ -160,7 +160,82 @@ def draft_article_payload(
     }
 
 
-def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str | None:
+def load_gzh_design_html(html_path: str, article_path: Path, body: str) -> dict:
+    path = project_path(html_path).resolve()
+    if not path.exists() or path.suffix.lower() != ".html":
+        raise RuntimeError(f"红白色系公众号 HTML 不存在或格式不正确：{path}")
+    skill_root = Path.home() / ".codex" / "skills" / "gzh-design"
+    component_lint = skill_root / "scripts" / "component_lint.py"
+    validator = skill_root / "scripts" / "validate_gzh_html.py"
+    theme = skill_root / "references" / "theme-red-white.md"
+    for required in (component_lint, validator, theme):
+        if not required.exists():
+            raise RuntimeError(
+                "gzh-design Skill 安装不完整，请重新安装后再同步公众号草稿"
+            )
+    lint = subprocess.run(
+        [sys.executable, str(component_lint), str(skill_root)],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if lint.returncode != 0:
+        raise RuntimeError(f"gzh-design 组件库校验失败：\n{lint.stdout}{lint.stderr}")
+    validation = subprocess.run(
+        [sys.executable, str(validator), str(path)],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    report = f"{validation.stdout}{validation.stderr}"
+    if validation.returncode != 0 or "WARNING" in report:
+        raise RuntimeError(
+            "红白色系公众号 HTML 未通过零错误、零警告校验：\n" + report
+        )
+    fragment = path.read_text(encoding="utf-8").strip()
+    if not fragment.startswith("<section") or "<html" in fragment.lower():
+        raise RuntimeError("公众号 HTML 必须是从全局 <section> 开始的纯正文片段")
+    if "#DC2626" not in fragment or "#FECACA" not in fragment:
+        raise RuntimeError("公众号 HTML 未检测到“红白色系”的固定主色与标记色")
+    soup = BeautifulSoup(fragment, "html.parser")
+    markdown_images = re.findall(r"!\[[^]]*\]\(([^)]+)\)", body)
+    html_images = [str(image.get("src") or "") for image in soup.find_all("img")]
+    if markdown_images != html_images:
+        raise RuntimeError(
+            "红白色系 HTML 的图片数量、顺序或路径与 Markdown 不一致："
+            f"Markdown {len(markdown_images)} 张，HTML {len(html_images)} 张"
+        )
+    plain_text = soup.get_text(" ", strip=True)
+    missing_headings = [
+        heading
+        for heading in re.findall(r"^#{2,3}\s+(.+?)\s*$", body, re.M)
+        if re.sub(r"[*_`]+", "", heading).strip() not in plain_text
+    ]
+    if missing_headings:
+        raise RuntimeError(
+            "红白色系 HTML 遗漏章节标题：" + "、".join(missing_headings[:5])
+        )
+    return {
+        "article_hash": body_hash(body),
+        "layout": {
+            "engine": "gzh-design",
+            "theme": "红白色系",
+            "theme_id": "red-white",
+            "primaryColor": "#DC2626",
+            "html_sha256": hashlib.sha256(fragment.encode("utf-8")).hexdigest(),
+        },
+        "html": fragment,
+        "html_path": str(path),
+    }
+
+
+def publish(
+    article: str,
+    *,
+    dry_run: bool = False,
+    force: bool = False,
+    wechat_html: str | None = None,
+) -> str | None:
     config = load_public_config()
     article_path = project_path(article).resolve()
     if not article_path.exists():
@@ -170,7 +245,12 @@ def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str 
     _, body, metadata = split_frontmatter(source)
     title = validated_title(metadata, body, article_path)
     digest = truncate_utf8(digest_from_article(metadata, body), 120)
-    rendered = render_article(str(article_path), fragment_only=True)
+    if not wechat_html:
+        raise RuntimeError(
+            "公众号同步必须先调用 gzh-design Skill 生成“红白色系”HTML，"
+            "并通过 --wechat-html 传入"
+        )
+    rendered = load_gzh_design_html(wechat_html, article_path, body)
     series = detect_series(article_path, metadata)
     cover = cover_for_article(article_path, metadata, config)
     fingerprint = publication_fingerprint(
@@ -242,7 +322,7 @@ def publish(article: str, *, dry_run: bool = False, force: bool = False) -> str 
     return media_id
 
 
-def replace_draft(article: str, media_id: str) -> str:
+def replace_draft(article: str, media_id: str, *, wechat_html: str | None = None) -> str:
     config = load_public_config()
     article_path = project_path(article).resolve()
     if not article_path.exists():
@@ -252,7 +332,12 @@ def replace_draft(article: str, media_id: str) -> str:
     _, body, metadata = split_frontmatter(source)
     title = validated_title(metadata, body, article_path)
     digest = truncate_utf8(digest_from_article(metadata, body), 120)
-    rendered = render_article(str(article_path), fragment_only=True)
+    if not wechat_html:
+        raise RuntimeError(
+            "公众号同步必须先调用 gzh-design Skill 生成“红白色系”HTML，"
+            "并通过 --wechat-html 传入"
+        )
+    rendered = load_gzh_design_html(wechat_html, article_path, body)
     fingerprint = publication_fingerprint(
         rendered["article_hash"],
         rendered["layout"],
@@ -314,6 +399,10 @@ def main() -> int:
     parser.add_argument("article", nargs="?")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--force", action="store_true", help="明确允许重复创建草稿")
+    parser.add_argument(
+        "--wechat-html",
+        help="由 gzh-design 红白色系生成并通过校验的公众号正文 HTML",
+    )
     parser.add_argument("--preflight", action="store_true", help="只读检查草稿箱权限")
     parser.add_argument(
         "--replace-media-id",
@@ -334,9 +423,14 @@ def main() -> int:
         if args.pull_from_getnote:
             raise RuntimeError("请先单独执行“拉回”并检查差异，再同步草稿箱")
         if args.replace_media_id:
-            replace_draft(args.article, args.replace_media_id)
+            replace_draft(args.article, args.replace_media_id, wechat_html=args.wechat_html)
         else:
-            publish(args.article, dry_run=args.dry_run, force=args.force)
+            publish(
+                args.article,
+                dry_run=args.dry_run,
+                force=args.force,
+                wechat_html=args.wechat_html,
+            )
     except (RuntimeError, WechatApiError) as error:
         print(str(error), file=sys.stderr)
         if isinstance(error, WechatApiError) and error.code == 48001:

@@ -79,6 +79,35 @@ def sanitize_fragment(fragment: str) -> str:
     # doocs/md 会为 Markdown 图片生成图注；头条正文上传原图时不重复显示文件说明。
     for caption in soup.find_all("figcaption"):
         caption.decompose()
+    # 公众号成稿中的“金句集合”使用编号 text 代码块，doocs/md 会把它输出为
+    # pre/code。头条编辑器会再给代码块显示行号，形成“1. 1.”的双编号。
+    # 只有当代码块的每一行都明确带编号时，才转换为真正的有序列表；
+    # 普通代码示例继续保留 pre/code，避免误伤。
+    for pre in list(soup.find_all("pre")):
+        code = pre.find("code")
+        if code is None:
+            continue
+        lines = [line.strip() for line in code.get_text("\n").splitlines() if line.strip()]
+        numbered = [re.match(r"^\d+\s*[.、]\s*(.+)$", line) for line in lines]
+        if not lines or not all(numbered):
+            continue
+        ordered = soup.new_tag("ol")
+        for match in numbered:
+            item = soup.new_tag("li")
+            item.string = match.group(1).strip()
+            ordered.append(item)
+        pre.replace_with(ordered)
+    # 图片紧跟引用段落时，doocs/md 偶尔会把图片包进 blockquote。
+    # 头条会丢弃引用框内部的图片，因此把它们移到引用框之后，位置不变。
+    for quote in list(soup.find_all("blockquote")):
+        anchor = quote
+        for image in list(quote.find_all("img")):
+            previous = image.previous_sibling
+            if getattr(previous, "name", None) == "br":
+                previous.extract()
+            image.extract()
+            anchor.insert_after(image)
+            anchor = image
     # doocs/md 的复制稿会把列表符号同时写进 li 文本；头条再渲染一次列表标记后，
     # 会出现“1. 1.”或“双圆点”。这里只移除 li 开头的冗余文本标记。
     for list_node in soup.find_all(["ol", "ul"]):

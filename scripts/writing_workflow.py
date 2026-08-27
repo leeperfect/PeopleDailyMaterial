@@ -243,14 +243,22 @@ def main() -> int:
     publish_parser.add_argument("article")
     publish_parser.add_argument("--dry-run", action="store_true")
     publish_parser.add_argument("--force", action="store_true")
+    publish_parser.add_argument(
+        "--wechat-html",
+        help="gzh-design 红白色系生成并通过校验的公众号正文 HTML",
+    )
     dual_parser = subparsers.add_parser(
         "sync-dual",
-        help="同步公众号草稿并准备今日头条浏览器保存",
+        help="同步红白公众号草稿并准备今日头条 Word 导入",
     )
     dual_parser.add_argument("article")
     dual_parser.add_argument("--platform", choices=["both", "wechat", "toutiao"], default="both")
     dual_parser.add_argument("--dry-run", action="store_true")
     dual_parser.add_argument("--force-wechat", action="store_true")
+    dual_parser.add_argument(
+        "--wechat-html",
+        help="gzh-design 红白色系生成并通过校验的公众号正文 HTML",
+    )
     saved_parser = subparsers.add_parser(
         "mark-toutiao-saved",
         help="浏览器保存成功后登记今日头条草稿",
@@ -376,6 +384,8 @@ def main() -> int:
             arguments.append("--dry-run")
         if args.force:
             arguments.append("--force")
+        if args.wechat_html:
+            arguments.extend(["--wechat-html", args.wechat_html])
         return run_script("publish_wechat_draft.py", arguments)
     if args.command == "sync-dual":
         arguments = ["prepare", args.article, "--platform", args.platform]
@@ -383,6 +393,8 @@ def main() -> int:
             arguments.append("--dry-run")
         if args.force_wechat:
             arguments.append("--force-wechat")
+        if args.wechat_html:
+            arguments.extend(["--wechat-html", args.wechat_html])
         return run_script("sync_dual_drafts.py", arguments)
     if args.command == "mark-toutiao-saved":
         arguments = ["mark-toutiao-saved", args.article]

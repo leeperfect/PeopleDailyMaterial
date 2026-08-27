@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""编排公众号草稿与今日头条浏览器保存草稿，绝不自动正式发布。"""
+"""编排红白色系公众号草稿与今日头条 Word 导入草稿，绝不正式发布。"""
 
 from __future__ import annotations
 
@@ -17,15 +17,20 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 from modules.platform_workflow import require_publication_ready  # noqa: E402
 from modules.writing_workflow import (  # noqa: E402
+    atomic_write_json,
     article_state,
+    body_hash,
     load_public_config,
     load_state,
     project_path,
     save_state,
+    split_frontmatter,
+    workflow_id,
 )
+from build_toutiao_import_docx import build as build_toutiao_docx  # noqa: E402
 from publish_wechat_draft import publication_fingerprint, publish  # noqa: E402
-from render_toutiao_html import render_toutiao  # noqa: E402
-from render_wechat_html import render_article  # noqa: E402
+from publish_wechat_draft import load_gzh_design_html  # noqa: E402
+from render_toutiao_html import toutiao_title  # noqa: E402
 
 
 def _now() -> str:
@@ -38,6 +43,7 @@ def prepare(
     platform: str = "both",
     dry_run: bool = False,
     force_wechat: bool = False,
+    wechat_html: str | None = None,
 ) -> dict[str, Any]:
     config = load_public_config()
     article_path = project_path(article).resolve()
@@ -59,7 +65,13 @@ def prepare(
 
     if platform in ("both", "wechat"):
         try:
-            wechat_rendered = render_article(str(article_path), fragment_only=True)
+            if not wechat_html:
+                raise RuntimeError(
+                    "公众号同步必须先调用 gzh-design Skill 生成“红白色系”HTML，"
+                    "再通过 --wechat-html 传入；不再默认使用 doocs/md"
+                )
+            _, article_body, _ = split_frontmatter(article_path.read_text(encoding="utf-8"))
+            wechat_rendered = load_gzh_design_html(wechat_html, article_path, article_body)
             current_wechat_fingerprint = publication_fingerprint(
                 wechat_rendered["article_hash"],
                 wechat_rendered["layout"],
@@ -72,10 +84,19 @@ def prepare(
                     "media_id": previous.get("media_id"),
                 }
             elif dry_run:
-                publish(str(article_path), dry_run=True, force=force_wechat)
+                publish(
+                    str(article_path),
+                    dry_run=True,
+                    force=force_wechat,
+                    wechat_html=wechat_html,
+                )
                 result["wechat"] = {"status": "preflight_passed"}
             else:
-                media_id = publish(str(article_path), force=force_wechat)
+                media_id = publish(
+                    str(article_path),
+                    force=force_wechat,
+                    wechat_html=wechat_html,
+                )
                 result["wechat"] = {"status": "created", "media_id": media_id}
         except Exception as error:
             result["wechat"] = {"status": "failed", "error": str(error)}
@@ -87,9 +108,43 @@ def prepare(
 
     if platform in ("both", "toutiao"):
         try:
-            toutiao_rendered = render_toutiao(str(article_path))
+            source = article_path.read_text(encoding="utf-8")
+            _, article_body, metadata = split_frontmatter(source)
+            output_dir = Path(config["preview_root"]) / workflow_id(article_path) / "toutiao"
+            output_dir.mkdir(parents=True, exist_ok=True)
+            docx_path = PROJECT_ROOT / "data" / "exports" / f"{article_path.stem}-toutiao-import.docx"
+            docx_result = build_toutiao_docx(article_path, docx_path, PROJECT_ROOT)
+            payload_path = output_dir / "import-payload.json"
+            title = toutiao_title(article_path, metadata, article_body)
+            saved_profile = state.get("toutiao_option_profile")
+            options = dict(config["toutiao"]["default_options"])
+            if isinstance(saved_profile, dict):
+                options.update(saved_profile)
+            payload = {
+                "platform": "toutiao",
+                "mode": "document_import",
+                "creator_url": config["toutiao"]["creator_url"],
+                "drafts_url": config["toutiao"]["drafts_url"],
+                "title": title,
+                "docx_path": str(docx_path),
+                "docx_size_bytes": docx_result["size_bytes"],
+                "image_count": docx_result["image_count"],
+                "heading_count": docx_result["heading_count"],
+                "ordered_item_count": docx_result["ordered_item_count"],
+                "bullet_item_count": docx_result["bullet_item_count"],
+                "figure_fingerprint": figure_fingerprint,
+                "article_hash": body_hash(article_body),
+                "options": options,
+                "cover_path": str(project_path(config["toutiao"]["fixed_cover"])),
+            }
+            atomic_write_json(payload_path, payload)
             previous = entry.get("toutiao_draft") or {}
-            if previous.get("figure_fingerprint") == figure_fingerprint and previous.get("status") == "draft_only":
+            if (
+                previous.get("figure_fingerprint") == figure_fingerprint
+                and previous.get("article_hash") == payload["article_hash"]
+                and previous.get("title") == title
+                and previous.get("status") == "draft_only"
+            ):
                 result["toutiao"] = {
                     "status": "reused",
                     "draft_url": previous.get("draft_url"),
@@ -97,16 +152,17 @@ def prepare(
             else:
                 result["toutiao"] = {
                     "status": "preflight_passed" if dry_run else "browser_pending",
-                    "payload_path": toutiao_rendered["payload_path"],
-                    "preview_path": toutiao_rendered["preview_path"],
-                    "creator_url": toutiao_rendered["creator_url"],
-                    "image_count": len(toutiao_rendered["images"]),
+                    "payload_path": str(payload_path),
+                    "docx_path": str(docx_path),
+                    "creator_url": payload["creator_url"],
+                    "image_count": payload["image_count"],
                 }
                 if not dry_run:
                     entry["toutiao_pending"] = {
-                        "payload_path": toutiao_rendered["payload_path"],
+                        "payload_path": str(payload_path),
+                        "docx_path": str(docx_path),
                         "figure_fingerprint": figure_fingerprint,
-                        "article_hash": toutiao_rendered["article_hash"],
+                        "article_hash": payload["article_hash"],
                         "prepared_at": _now(),
                         "status": "browser_pending",
                     }
@@ -206,11 +262,12 @@ def save_toutiao_profile(profile_json: str) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="同步公众号与今日头条草稿")
     subparsers = parser.add_subparsers(dest="command", required=True)
-    prepare_parser = subparsers.add_parser("prepare", help="预检、创建公众号草稿并准备头条浏览器交接")
+    prepare_parser = subparsers.add_parser("prepare", help="创建红白公众号草稿并准备头条 Word 导入")
     prepare_parser.add_argument("article")
     prepare_parser.add_argument("--platform", choices=["both", "wechat", "toutiao"], default="both")
     prepare_parser.add_argument("--dry-run", action="store_true")
     prepare_parser.add_argument("--force-wechat", action="store_true")
+    prepare_parser.add_argument("--wechat-html")
     saved_parser = subparsers.add_parser("mark-toutiao-saved", help="浏览器确认保存后登记头条草稿")
     saved_parser.add_argument("article")
     saved_parser.add_argument("--draft-url", default="")
@@ -225,6 +282,7 @@ def main() -> int:
                 platform=args.platform,
                 dry_run=args.dry_run,
                 force_wechat=args.force_wechat,
+                wechat_html=args.wechat_html,
             )
         elif args.command == "mark-toutiao-saved":
             result = mark_toutiao_saved(

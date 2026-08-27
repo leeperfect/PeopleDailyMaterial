@@ -44,6 +44,22 @@ class RenderToutiaoHtmlTest(unittest.TestCase):
         self.assertNotIn("<li>1. ", result)
         self.assertNotIn("<li>• ", result)
 
+    def test_sanitize_converts_numbered_text_block_to_ordered_list(self):
+        source = "<h2>金句集合</h2><pre><code>1. 第一句<br/>2. 第二句</code></pre>"
+        result = sanitize_fragment(source)
+        self.assertIn("<ol><li>第一句</li><li>第二句</li></ol>", result)
+        self.assertNotIn("<pre>", result)
+
+    def test_sanitize_keeps_regular_code_block(self):
+        source = "<pre><code>print('hello')</code></pre>"
+        result = sanitize_fragment(source)
+        self.assertIn("<pre><code>print('hello')</code></pre>", result)
+
+    def test_sanitize_moves_image_out_of_blockquote(self):
+        source = '<blockquote><strong>重点</strong><br/><img src="a.png"/></blockquote><h2>下一节</h2>'
+        result = sanitize_fragment(source)
+        self.assertIn('<blockquote><strong>重点</strong></blockquote><img src="a.png"/>', result)
+
     def test_sanitize_converts_leftover_markdown_bold(self):
         source = "<p>前文**需要加粗的判断**后文</p><pre>**代码原样保留**</pre>"
         result = sanitize_fragment(source)

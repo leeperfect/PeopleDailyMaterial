@@ -140,18 +140,18 @@ python3 scripts/sync_to_notion.py 2026-05-27
   - 运行 `apply-figures --initial --platform shared` 形成两端共用的初始方案，再打开“双平台配图工作台”；工作台默认让公众号和今日头条共用图片、顺序和章节位置，只有确有需要时才设置平台微调。
   - 配图缺失、登记失败或初排校验不通过时，流程停在对应环节并明确说明缺少什么，不得退化为无图草稿。
   - 用户必须在本地工作台查看公众号和今日头条预览并点击“确认配图”；确认后状态进入 `figures_confirmed`。确认前不得运行任何平台同步。
-- 用户说“同步双平台草稿”时：先运行 `python3 scripts/writing_workflow.py sync-dual "<文章路径>"`。统一检查得到拉回、重点加粗、配图清单、人工确认和确认后正文/配图是否变化；公众号创建草稿，今日头条生成浏览器交接包。随后必须使用已安装的 Chrome 控制能力，在用户现有登录状态中打开交接包记录的 `creator_url`，填写标题与无图富文本，按 `images` 的顺序及 `before_heading` 上传本地图片，应用已保存的头条选项模板并等待页面显示“草稿已保存”。不得点击正式发布。页面字段、选项、登录状态、验证码或保存结果无法可靠确认时立即暂停并说明原因，不得猜测点击。确认草稿保存成功后运行 `mark-toutiao-saved` 登记结果。
+- 用户说“同步双平台草稿”时：必须先调用项目 `$dual-platform-draft-sync` Skill。统一检查得到拉回、重点加粗、配图清单、人工确认和确认后正文/配图是否变化。公众号端必须显式调用全局 `$gzh-design` Skill，固定选用“红白色系”，不再询问主题；完整读取它的 `theme-index.md`、`theme-red-white.md` 和 `common-components.md`，生成纯 `<section>…</section>` 正文 HTML，并运行 `component_lint.py` 与 `validate_gzh_html.py`；组件库必须为 0 ERROR，最终 HTML 必须为 0 ERROR、0 WARNING，才允许同步。然后运行 `python3 scripts/writing_workflow.py sync-dual "<文章路径>" --wechat-html "<红白色系正文HTML>"`：公众号使用这份已校验 HTML 创建草稿；今日头条生成 `.docx` 和 `import-payload.json`。随后使用已安装的 Chrome 控制能力打开新的空白头条编辑页，点击“文档导入”并选择交接记录中的 `docx_path`，标题单独填写，核对章节、加粗、列表、参考文章和正文图片数量，再应用固定选项并等待“草稿已保存”。不得点击正式发布。页面字段、登录状态、验证码、文档导入或保存结果无法可靠确认时立即暂停，不得猜测点击。确认草稿保存后运行 `mark-toutiao-saved` 登记结果。
   - 如果用户说明图片已经在 Obsidian/Markdown 中插好，必须先运行 `python3 scripts/writing_workflow.py confirm-inline-figures "<文章路径>"`，登记正文图片、生成清单并确认配图，再运行 `sync-dual`；不得要求用户重复导入图片。
   - 今日头条固定选项为：单图、位置留空、投放广告赚收益、不勾选头条首发、合集“人民日报热点”、勾选同步微头条、作品声明只勾选“取材网络”。固定单图封面为 `media/images/toutiao-fixed-covers/people-daily-cover.jpg`。
-  - 头条富文本必须检查有序列表无双编号、无序列表无双圆点、正文无残留 `**`。页面显示“草稿已保存”后刷新验证正文、图片和封面；头条刷新后可能重置发布选项，必须按本地模板重新套用并把页面保留给用户。
+  - 今日头条默认使用 `scripts/build_toutiao_import_docx.py` 生成 Word：`.docx` 不超过 15 MB，图片按 Markdown 原位置嵌入，H1 不进入正文，有序/无序列表使用 Word 原生列表，加粗使用 Word 字符格式。导入后必须检查图片数与清单一致、有序列表无双编号、无序列表无双圆点、正文无残留 `**`。只有“文档导入”不可用或明确失败时，才允许回退到旧富文本逐图上传，并说明原因。
+  - 页面显示“草稿已保存”后刷新验证正文、图片和封面；头条刷新后可能重置发布选项，必须按本地模板重新套用并把页面保留给用户。
   - Obsidian 正式文章配图由“文章配图粘贴”插件保存到 `media/images/YYYY-MM-DD-article-文章编号/fig-文章编号-两位序号.png`，Markdown 使用项目根目录相对链接；默认附件兜底目录 `media/images/article-inbox/` 不作为正式文章配图目录。
   - 今日头条首次同步且尚无选项模板时，在页面上请用户确认一次原创、首发、封面、广告等当前可见选项；用 `save-toutiao-profile --profile-json` 保存页面上的选项名称和值。“只保存草稿、禁止正式发布”是工作流强制安全边界，不作为页面选项保存。
   - 任一平台失败时保留另一平台成功结果，并使用 `sync-dual --platform wechat` 或 `sync-dual --platform toutiao` 单独重试。
-- 用户说“预览公众号排版”时：运行 `python3 scripts/writing_workflow.py preview "<文章路径>"`，再用 Codex 内置浏览器打开输出的本地预览页。预览与发布必须使用同一份 doocs/md HTML。
-- 用户说“打开完整排版编辑器”时：运行 `python3 scripts/writing_workflow.py editor "<文章路径>"`，使用 Codex 内置浏览器打开本地 doocs/md；不要要求用户打开 IDE。用户在编辑器修改正文后，点击“保存本地排版”会在结构检查通过后自动写回本地 Markdown，同时保留修改前快照；主题、颜色、字号等格式同步保存为该文章的 `wechat_layout`。正文变化会撤销旧的配图确认，必须重新检查并确认配图。结构或来源受损时只保存候选稿，不覆盖源文件。
-- 用户说“保存本文排版”时：把完整编辑器中确定的参数保存为该文章的 `wechat_layout` 状态，再重新生成只读预览确认。
+- 用户说“预览公众号排版”时：调用 `$gzh-design`，固定“红白色系”，生成并校验 HTML 后用 Codex 内置浏览器打开该 Skill 生成的预览页。预览与公众号草稿必须使用同一份已校验 HTML。
+- 用户说“打开完整排版编辑器”或“保存本文排版”时：`doocs/md` 仅作为兼容旧稿的手工编辑兜底，不再决定新稿默认主题。新稿仍须回到 `$gzh-design` 的“红白色系”重新生成、校验和预览；正文变化会撤销旧配图确认，必须重新确认配图。
 - 用户说“同步到公众号草稿箱”时：作为单平台重试口令兼容，但仍必须通过得到拉回、重点加粗和人工配图确认门槛。先检查 `.env` 是否已经安全配置；未配置时启动 `scripts/wechat_setup.py` 本地私密配置页，并一次只引导用户完成一个步骤；不得要求用户把 AppSecret 粘贴到聊天。
-- 当前账号无草稿接口权限时，使用 Codex 内置浏览器登录公众号后台代填；若页面变化导致代填失败，打开只读预览页让用户使用“一键复制公众号富文本”兜底。
+- 当前账号无草稿接口权限时，使用 Codex 内置浏览器登录公众号后台代填；若页面变化导致代填失败，打开 `$gzh-design` 生成的红白色系预览页，让用户使用“一键复制公众号富文本”兜底。
 - 固定作者为 `LeePerfect`。热点系列使用 `media/images/wechat-fixed-covers/hotspot-header.png`；人民日报系列使用 `media/images/wechat-fixed-covers/people-daily-header.png`。
 - 公众号草稿默认开启评论，且不限制为仅粉丝评论：`need_open_comment=1`、`only_fans_can_comment=0`。
 - 公众号流程只允许创建草稿，不得自动群发。相同正文和排版已建草稿时，不得重复创建，除非用户明确要求。
