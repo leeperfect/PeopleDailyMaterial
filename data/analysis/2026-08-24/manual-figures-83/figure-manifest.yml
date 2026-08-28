@@ -1,0 +1,295 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-08-24'
+registered_at: '2026-08-27T22:36:29'
+article: data/articles/人民日报系列/83-人民日报讲基层减负：不是简单少干活，而要把权责、资源和能力一起配上.md
+topic: 基层减负：权责、资源和能力一起配上
+article_number: '83'
+asset_root: media/images/2026-08-24-article-83
+manifest_path: data/analysis/2026-08-24/manual-figures-83/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-83-01
+      before_heading: '## 一、清事项：基层减负先要回答“谁该干”，不能笼统地说“少干”'
+      inline_marker: '![第83篇配图01](media/images/2026-08-24-article-83/fig-83-01.png)'
+      anchor_before: 83｜人民日报谈基层减负：不是简单少干活，而是要把权责、资源和能力一并配齐
+      anchor_after: 在申论中写“为基层减负”，很多同学会立刻列出一系列措施：精简文件会议、减少报表、压缩检查、整治指尖上的形式主义。
+      context_after: 基层离群众最近，能够最早发现问题，这是治理优势。但离现场近，不等于拥有全部执法权、专业资质、数据权限和财政资源。如果只用一句“属地负责”，就把安全生产、市场监管
+    - id: fig-83-02
+      before_heading: '## 一、清事项：基层减负先要回答“谁该干”，不能笼统地说“少干”'
+      inline_marker: '![第83篇配图02](media/images/2026-08-24-article-83/fig-83-02.png)'
+      anchor_before: 表面上负担减轻了，实际上可能只是换了一种负担，甚至把负担从基层转移给了群众。
+      anchor_after: 通读《人民日报》关于基层减负的一组报道，会发现这项工作的完整逻辑并非“让基层少干一点”，而是把不该基层承担的事务挡在外面，把该基层承担的责任说清楚，再把完成责任所需的条件配到位。
+      context_after: 基层离群众最近，能够最早发现问题，这是治理优势。但离现场近，不等于拥有全部执法权、专业资质、数据权限和财政资源。如果只用一句“属地负责”，就把安全生产、市场监管
+    - id: fig-83-03
+      before_heading: '## 一、清事项：基层减负先要回答“谁该干”，不能笼统地说“少干”'
+      inline_marker: '![第83篇配图03](media/images/2026-08-24-article-83/fig-83-03.png)'
+      anchor_before: 这五个步骤依次回答了五个问题：谁该干？新任务能不能派？凭什么干？会不会干？干得值不值？
+      anchor_after: 一、清事项：基层减负先要回答“谁该干”，不能笼统地说“少干”
+      context_after: 基层离群众最近，能够最早发现问题，这是治理优势。但离现场近，不等于拥有全部执法权、专业资质、数据权限和财政资源。如果只用一句“属地负责”，就把安全生产、市场监管
+    - id: fig-83-04
+      before_heading: '## 二、禁摊派：不只要有事项清单，还要管住新任务从哪里进来'
+      inline_marker: '![第83篇配图04](media/images/2026-08-24-article-83/fig-83-04.png)'
+      anchor_before: 不过，清单划清的是存量责任。如果任何部门都可以临时加任务、越过程序直接派单，再清楚的边界也会被重新冲破。
+      anchor_after: 二、禁摊派：不只要有事项清单，还要管住新任务从哪里进来
+      context_after: 基层负担往往不是一次性形成的。今天多报一张表，明天多建一个群，后天多承担一项宣传任务。每个部门单看自己的要求，都觉得任务不重。但当几十条线同时落到一个乡镇、一个
+    - id: fig-83-05
+      before_heading: '## 三、配资源：任务下沉不能只带责任，还要带着权限、资金、人员和专业力量'
+      inline_marker: '![第83篇配图05](media/images/2026-08-24-article-83/fig-83-05.png)'
+      anchor_before: 任务确有必要下沉，并不等于一纸文件下发就算完成赋能。下一步要问的是：基层靠什么把事情办成？
+      anchor_after: 三、配资源：任务下沉不能只带责任，还要带着权限、资金、人员和专业力量
+      context_after: 基层治理中有两类看似相反、实则同源的问题。一类是“有责无权”：基层负责最终结果，却没有执法权和调度权。另一类是“有权无能”：某项权力下放了，但基层没有专业人员、
+    - id: fig-83-06
+      before_heading: '## 四、强能力：基层本领不是靠“大水漫灌”长出来的，要在真实场景中练出来'
+      inline_marker: '![第83篇配图06](media/images/2026-08-24-article-83/fig-83-06.png)'
+      anchor_before: 一类是“有责无权”：基层负责最终结果，却没有执法权和调度权。另一类是“有权无能”：某项权力下放了，但基层没有专业人员、检测设备、专项预算和技术标准，仍然无法依法履职。
+      anchor_after: 云南曲靖沾益区的林草执法案例很典型。区级部门下放了执法权，但乡镇没有具备资质的测绘评估人员，无法出具合法有效的评估报告；委托第三方机构又缺少专项预算。立案难以作出规范处罚，不立案又可能面临问责。
+      context_after: 减负之后，基层干部有了更多时间，但服务需求并不会自动变简单。产业发展、矛盾调解、风险排查、数字治理等领域不断出现新情况。仅凭老经验和责任心，可能好心办不成事，甚
+    - id: fig-83-07
+      before_heading: '## 四、强能力：基层本领不是靠“大水漫灌”长出来的，要在真实场景中练出来'
+      inline_marker: '![第83篇配图07](media/images/2026-08-24-article-83/fig-83-07.png)'
+      anchor_before: 条件配齐以后，还要避免另一个误区：以为给基层上几次课、发几本手册，就算完成了能力建设。
+      anchor_after: 四、强能力：基层本领不是靠“大水漫灌”长出来的，要在真实场景中练出来
+      context_after: 减负之后，基层干部有了更多时间，但服务需求并不会自动变简单。产业发展、矛盾调解、风险排查、数字治理等领域不断出现新情况。仅凭老经验和责任心，可能好心办不成事，甚
+    - id: fig-83-08
+      before_heading: '## 五、看成效：既看基层是否少空转，更看群众是否少跑腿、问题是否真解决'
+      inline_marker: '![第83篇配图08](media/images/2026-08-24-article-83/fig-83-08.png)'
+      anchor_before: 权责清了，资源到了，能力强了，最后还要回答一个问题：基层减负究竟怎样才算有效？
+      anchor_after: 五、看成效：既看基层是否少空转，更看群众是否少跑腿、问题是否真解决
+      context_after: 基层减负最容易出现的偏差，是把“减了多少”当成全部成绩。少开多少会、少填多少表、少挂多少牌，这些当然可以统计。但它们只是过程指标。更应关注的，是基层干部能否把时
+    - id: fig-83-10
+      before_heading: '## 六、申论课堂怎么迁移：把“为基层减负”写成一套履职条件配置机制'
+      inline_marker: '![第83篇配图10](media/images/2026-08-24-article-83/fig-83-10.png)'
+      anchor_before: 这提醒我们，事项退出时必须回答“谁来接”。能够通过部门数据核验的，就不要让群众重复证明；需要线下办理的，应下沉表格、设置帮办或明确一次告知；社区依法不能出具的材料，也要说明替代路径，不能只说“不归我管”。
+      anchor_after: 评价基层减负，可以看四本账：
+      context_after: 以后遇到基层减负、小马拉大车、履职清单、数字形式主义、督查检查等题目，可以先使用“五问法”进行判断：-**职责问**：这件事依法该由谁承担？基层是主责还是配合？
+    - id: fig-83-09
+      before_heading: '## 六、申论课堂怎么迁移：把“为基层减负”写成一套履职条件配置机制'
+      inline_marker: '![第83篇配图09](media/images/2026-08-24-article-83/fig-83-09.png)'
+      anchor_before: 减负成效不能只看基层少做了什么，还要看部门多承担了什么、群众多获得了什么、治理多解决了什么。
+      anchor_after: 六、申论课堂怎么迁移：把“为基层减负”写成一套履职条件配置机制
+      context_after: 以后遇到基层减负、小马拉大车、履职清单、数字形式主义、督查检查等题目，可以先使用“五问法”进行判断：-**职责问**：这件事依法该由谁承担？基层是主责还是配合？
+    - id: fig-83-11
+      before_heading: '## 金句集合'
+      inline_marker: '![第83篇配图11](media/images/2026-08-24-article-83/fig-83-11.png)'
+      anchor_before: 七、结尾：基层减负，减的是无效消耗，增加的是治理能力
+      anchor_after: 基层减负从来不是一道“少干活”的题。
+      context_after: '```text1.基层减负不是让基层少干一点，而是把不该承担的事务挡在外面，把该承担的责任和履职条件一起配到位。2.清单定责、准入控量、资源随事、场景练兵、群众'
+    - id: fig-83-12
+      before_heading: '## 金句集合'
+      inline_marker: '![第83篇配图12](media/images/2026-08-24-article-83/fig-83-12.png)'
+      anchor_before: 当权责、资源和能力一起到位，基层干部才能既轻装上阵，又有力担当；群众感受到的，也不只是表格少了、牌子少了，而是事情有人管、问题有人解、服务更贴近。
+      anchor_after: 金句集合
+      context_after: '```text1.基层减负不是让基层少干一点，而是把不该承担的事务挡在外面，把该承担的责任和履职条件一起配到位。2.清单定责、准入控量、资源随事、场景练兵、群众'
+    updated_at: '2026-08-27T22:36:29'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-08-27T22:36:31'
+  body_hash: 3d98d60ef7e83ff7a4802f3cd8925a85394fe7049c09f41a71709117cb891a35
+  plan_fingerprint: 85567cfe2118e3fcffe4ed140e4baa08c7605a6f33bf812a97f86be0ff244c6a
+figures:
+- id: fig-83-01
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-01.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 198f720ca4371f420b8d3a8040c0d502f452df422ce6cd0ced8cf3717c9c577a
+  title: 第83篇配图01
+  caption: 第83篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、清事项：基层减负先要回答“谁该干”，不能笼统地说“少干”附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-02
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-02.png
+  width_px: 2560
+  height_px: 1428
+  sha256: b9e155b59246aa377bdf4ae039867ad46122881501fbf9d71099a927ec35c75a
+  title: 第83篇配图02
+  caption: 第83篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、清事项：基层减负先要回答“谁该干”，不能笼统地说“少干”附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-03
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-03.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 326456aff3a9d8cb313fbf34e060a90dee353478499700d2b8bf3cafad59faa8
+  title: 第83篇配图03
+  caption: 第83篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、清事项：基层减负先要回答“谁该干”，不能笼统地说“少干”附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-04
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-04.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 2f13e8c9b89ee8e5b0d6f6ec512e58eed5a73dfac6a7865c6559ddd64d5d8666
+  title: 第83篇配图04
+  caption: 第83篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、禁摊派：不只要有事项清单，还要管住新任务从哪里进来附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-05
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-05.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 70e0eef479bf79707cdf96fcc89809d30cc841b10744a34ba880a8ef899f088f
+  title: 第83篇配图05
+  caption: 第83篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、配资源：任务下沉不能只带责任，还要带着权限、资金、人员和专业力量附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-06
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-06.png
+  width_px: 2560
+  height_px: 1428
+  sha256: f0f094e861b015ffa46319289f9f6658cbb61ef23777bd5d5864b476c61a2b41
+  title: 第83篇配图06
+  caption: 第83篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、强能力：基层本领不是靠“大水漫灌”长出来的，要在真实场景中练出来附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-07
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-07.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 5a4aadbd0689a5bf6c5cfd283c35f67b10ed71d5302c90b2814e7f35fb391e08
+  title: 第83篇配图07
+  caption: 第83篇配图07
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、强能力：基层本领不是靠“大水漫灌”长出来的，要在真实场景中练出来附近（按正文内链接精确定位）'
+  article_order: 7
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-08
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-08.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 1ba1d000eb5a3c5022b2b61f960e59fe8d20e259df8c13ac7c90162fc3132162
+  title: 第83篇配图08
+  caption: 第83篇配图08
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、看成效：既看基层是否少空转，更看群众是否少跑腿、问题是否真解决附近（按正文内链接精确定位）'
+  article_order: 8
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-10
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-10.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 5019b2d51dd1f0c8152d9c174979330dc16ce8b7b2db1e54b12a19cfb62ed26c
+  title: 第83篇配图10
+  caption: 第83篇配图10
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、申论课堂怎么迁移：把“为基层减负”写成一套履职条件配置机制附近（按正文内链接精确定位）'
+  article_order: 9
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-09
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-09.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 3e7afacb0d1436067cd5dd85f1800954aecff373ff1a4c1714704cc0aca9b122
+  title: 第83篇配图09
+  caption: 第83篇配图09
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、申论课堂怎么迁移：把“为基层减负”写成一套履职条件配置机制附近（按正文内链接精确定位）'
+  article_order: 10
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-11
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-11.png
+  width_px: 2560
+  height_px: 1428
+  sha256: d38273a4a67f2980a988bdf67036d243a5c388cb51a29527dfe43a94e1ca9151
+  title: 第83篇配图11
+  caption: 第83篇配图11
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 11
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+- id: fig-83-12
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-83/fig-83-12.png
+  width_px: 2752
+  height_px: 1536
+  sha256: 22519016b7a462475d384a451d8664170e88311c8bea905b1f86792e71974382
+  title: 第83篇配图12
+  caption: 第83篇配图12
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 12
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:29'
+updated_at: '2026-08-27T22:36:31'
+placement_mode: inline_markdown
+inline_markdown_count: 12
+inline_imported_at: '2026-08-27T22:36:29'

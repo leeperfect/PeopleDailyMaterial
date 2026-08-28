@@ -1,0 +1,273 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-08-24'
+registered_at: '2026-08-27T22:36:23'
+article: data/articles/人民日报系列/82-人民日报讲基层群众议事：从“听意见”到“见结果”的五个动作.md
+topic: 基层群众议事：从听意见到见结果
+article_number: '82'
+asset_root: media/images/2026-08-24-article-82
+manifest_path: data/analysis/2026-08-24/manual-figures-82/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-82-01
+      before_heading: '## 一、民情定议题：不能只听会上谁声音大，还要找到真正需要共同解决的问题'
+      inline_marker: '![第82篇配图01](media/images/2026-08-24-article-82/fig-82-01.png)'
+      anchor_before: 82｜人民日报谈基层群众议事：从“听意见”到“见结果”的五个步骤
+      anchor_after: 在申论中写“群众参与基层治理”时，有一句话频繁出现：广泛征求群众意见，召开居民议事会，凝聚各方共识。
+      context_after: 群众议事的第一步，是确定究竟议什么，开会通知反而在后。基层每天都会涌现大量诉求：楼道灯坏了、停车位不够、物业费有争议、老人吃饭不便、村道需要维修。并非每一句抱怨
+    - id: fig-82-02
+      before_heading: '## 一、民情定议题：不能只听会上谁声音大，还要找到真正需要共同解决的问题'
+      inline_marker: '![第82篇配图02](media/images/2026-08-24-article-82/fig-82-02.png)'
+      anchor_before: 如果这些问题没有答案，议事会就可能陷入一种尴尬：会上人人发言，会后仍按老办法办；意见听了很多，生活却没有变化。
+      anchor_after: 群众议事的难点，在于让意见真正进入治理流程并产生结果。《人民日报》关于基层群众自治、协商监督和村社治理的一组文章，恰好串联起五个关键动作：
+      context_after: 群众议事的第一步，是确定究竟议什么，开会通知反而在后。基层每天都会涌现大量诉求：楼道灯坏了、停车位不够、物业费有争议、老人吃饭不便、村道需要维修。并非每一句抱怨
+    - id: fig-82-03
+      before_heading: '## 一、民情定议题：不能只听会上谁声音大，还要找到真正需要共同解决的问题'
+      inline_marker: '![第82篇配图03](media/images/2026-08-24-article-82/fig-82-03.png)'
+      anchor_before: 这五步前后相接。民情入口决定了治理是否找准了真问题，程序规则决定了参与是否公平有序，调查论证决定了方案是否可行，责任和资源决定了议定事项能否落地，公开评价则把一次办理沉淀为长期信任和制度改进。
+      anchor_after: 一、民情定议题：不能只听会上谁声音大，还要找到真正需要共同解决的问题
+      context_after: 群众议事的第一步，是确定究竟议什么，开会通知反而在后。基层每天都会涌现大量诉求：楼道灯坏了、停车位不够、物业费有争议、老人吃饭不便、村道需要维修。并非每一句抱怨
+    - id: fig-82-04
+      before_heading: '## 二、规则保参与：开门纳言不等于没有边界，程序公平才能让不同意见被认真对待'
+      inline_marker: '![第82篇配图04](media/images/2026-08-24-article-82/fig-82-04.png)'
+      anchor_before: 找到真问题，只解决了“议什么”。如果参与对象、议事边界和发言程序不清晰，会议仍可能被少数人主导，甚至让协商变成争吵。
+      anchor_after: 二、规则保参与：开门纳言不等于没有边界，程序公平才能让不同意见被认真对待
+      context_after: 群众议事既要开门纳言，也要有规则门槛；既要充分表达，也要依法有序。2026年1月1日起施行的修改后《村民委员会组织法》和新修订的《城市居民委员会组织法》，完善了
+    - id: fig-82-05
+      before_heading: '## 三、调研找方案：意见提供问题线索，事实、专业和成本决定方案能否落地'
+      inline_marker: '![第82篇配图05](media/images/2026-08-24-article-82/fig-82-05.png)'
+      anchor_before: 程序保证了大家能好好说话，但意见本身还不是方案。群众最熟悉生活中的痛点，专业部门最了解政策、技术和安全边界，只有把这两种知识结合起来，才可能找到可执行的解决办法。
+      anchor_after: 三、调研找方案：意见提供问题线索，事实、专业和成本决定方案能否落地
+      context_after: 群众议事最容易犯的第二个错误，是把“大家赞成”直接等同于“方案可行”。以北京延庆温泉小区的供水问题为例。村民希望尽快喝上干净的市政水，也希望水价与城区一致；但村
+    - id: fig-82-10
+      before_heading: '## 四、协同办结果：议定事项必须接上责任、资源、时限和监督'
+      inline_marker: '![第82篇配图10](media/images/2026-08-24-article-82/fig-82-10.png)'
+      anchor_before: 把分歧转成可谈条件：区分原则性边界、利益差异和信息误解，寻找能够调整的空间。
+      anchor_after: 桂花村坚持了53年的“党员学习议事日”，也有类似经验。当地探索出“三天议事法”：群众代表先提意见，支部委员带着问题去调查，三天后再作决定。例如，发展新产业遭遇质疑时，村干部会带着投资方和政策文件回来复议；早年产业选择失误后，又在议事日上公开检讨、重新研究方向。
+      context_after: “形成共识”不是议事的终点，而是办理的起点。《议事亭里的“治理三要”》提到，村民提出修缮灌溉水渠后，议事现场当场明确了“村干部牵头、村民出工、集体出资”，不到半
+    - id: fig-82-06
+      before_heading: '## 四、协同办结果：议定事项必须接上责任、资源、时限和监督'
+      inline_marker: '![第82篇配图06](media/images/2026-08-24-article-82/fig-82-06.png)'
+      anchor_before: 方案经过论证后，接下来要跨过最难的一关：明确谁负责、谁配合、钱从哪里来、多久能办完。少了这一步，再好的“金点子”也可能只停留在会议记录里。
+      anchor_after: 四、协同办结果：议定事项必须接上责任、资源、时限和监督
+      context_after: “形成共识”不是议事的终点，而是办理的起点。《议事亭里的“治理三要”》提到，村民提出修缮灌溉水渠后，议事现场当场明确了“村干部牵头、村民出工、集体出资”，不到半
+    - id: fig-82-07
+      before_heading: '## 五、公开再评价：不只公布最终结果，还要让过程可追问、错误能纠正'
+      inline_marker: '![第82篇配图07](media/images/2026-08-24-article-82/fig-82-07.png)'
+      anchor_before: 事情启动后，不能关闭信息窗口。群众可以理解解决问题需要时间，但很难接受办理过程失联——他们不知道事情进展到哪一步、遇到什么困难、钱花在了什么地方。
+      anchor_after: 五、公开再评价：不只公布最终结果，还要让过程可追问、错误能纠正
+      context_after: 公开不是项目完成后贴一张喜报。议题如何确定、意见如何处理、方案为何这样选择、资金怎样使用、进度为何调整，都应当在适当范围内让群众知晓。山背屯实行“一事一公开”，
+    - id: fig-82-08
+      before_heading: '## 六、国考省考申论面试迁移：将“群众参与”转化为一套结果转化机制'
+      inline_marker: '![第82篇配图08](media/images/2026-08-24-article-82/fig-82-08.png)'
+      anchor_before: 完整的闭环不能止于“办结销号”：群众要看得见过程、查得到资金、评得了结果，办理中产生的新问题还要能够重新进入下一轮议事。
+      anchor_after: 六、国考省考申论面试迁移：将“群众参与”转化为一套结果转化机制
+      context_after: 今后遇到涉及社区议事、村民自治、听证协商、群众诉求办理等题目时，可以先判断材料卡在哪一个环节：民情定议题→规则保参与→调研找方案→协同办结果→公开再评价。如果材
+    - id: fig-82-11
+      before_heading: '## 金句集合'
+      inline_marker: '![第82篇配图11](media/images/2026-08-24-article-82/fig-82-11.png)'
+      anchor_before: 面试作答到这里，才算把“耐心沟通、充分协商”落实为具体的工作步骤。
+      anchor_after: 评价群众议事，不能只看开了多少会、来了多少人。更应关注的是：议题是否源自真实民情，相关群体是否充分参与，方案是否经过事实和专业检验，议定事项是否按期办理，资金和过程是否公开透明，以及群众评价能否推动后续纠偏。
+      context_after: '```text1.群众议事的难点不只是让大家说话，而是建立一套把意见转化为治理结果的机制。2.民情不等于议题，要把零散表达、沉默需求和公共风险梳理成可协商的问题'
+    - id: fig-82-12
+      before_heading: '## 金句集合'
+      inline_marker: '![第82篇配图12](media/images/2026-08-24-article-82/fig-82-12.png)'
+      anchor_before: 从“听意见”到“见结果”，中间隔着的正是基层治理能力。 群众只有知道意见去了哪里、事情由谁来办、结果如何评价，才会愿意继续参与。一次次有回应、有结果的参与，又能积累信任，让“大家的事大家商量着办”成为日常的治理方式。
+      anchor_after: 金句集合
+      context_after: '```text1.群众议事的难点不只是让大家说话，而是建立一套把意见转化为治理结果的机制。2.民情不等于议题，要把零散表达、沉默需求和公共风险梳理成可协商的问题'
+    updated_at: '2026-08-27T22:36:23'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-08-27T22:36:27'
+  body_hash: 0eee82a01e90903ea6dd0eee55edbd2a0becb21d11124ede756fedf41a709a44
+  plan_fingerprint: 9cd8ecbc87578b0a21b241839fb442637071e0aa1d4dc01cfabbab954076904e
+figures:
+- id: fig-82-01
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-01.png
+  width_px: 2560
+  height_px: 1428
+  sha256: fdc6ab409ac110835639bfcc02e87472b812656efa753ab850e3c1e85323d58e
+  title: 第82篇配图01
+  caption: 第82篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、民情定议题：不能只听会上谁声音大，还要找到真正需要共同解决的问题附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-02
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-02.png
+  width_px: 2560
+  height_px: 1428
+  sha256: d74c908acb84d7f88efbafe902a33cf0af97e03850c7163c96a3585a3a368b14
+  title: 第82篇配图02
+  caption: 第82篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、民情定议题：不能只听会上谁声音大，还要找到真正需要共同解决的问题附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-03
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-03.png
+  width_px: 2560
+  height_px: 1428
+  sha256: c1f5637f7672be92c5a2da9f9e99a90dd6037051876d1ccaef817aeef16639c8
+  title: 第82篇配图03
+  caption: 第82篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、民情定议题：不能只听会上谁声音大，还要找到真正需要共同解决的问题附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-04
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-04.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 46c2ea879893da1ea3f17cd1042460464ed4f3a7a7a32d981c52b306c6e7e6a9
+  title: 第82篇配图04
+  caption: 第82篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、规则保参与：开门纳言不等于没有边界，程序公平才能让不同意见被认真对待附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-05
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-05.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 75fbd4e735118d0b308e0c4ca9e1ef74b9613c6d428570c700cb1da3fac80ccc
+  title: 第82篇配图05
+  caption: 第82篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、调研找方案：意见提供问题线索，事实、专业和成本决定方案能否落地附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-10
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-10.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 5c6a78813fa96d7321109f6867e70d9c1c279cbe50f5fef84ad3906a860f18c2
+  title: 第82篇配图10
+  caption: 第82篇配图10
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、协同办结果：议定事项必须接上责任、资源、时限和监督附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-06
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-06.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 6b9993d5053629e712bdcb8d8364804819fd0a338dda44825d736834543dded3
+  title: 第82篇配图06
+  caption: 第82篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、协同办结果：议定事项必须接上责任、资源、时限和监督附近（按正文内链接精确定位）'
+  article_order: 7
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-07
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-07.png
+  width_px: 2560
+  height_px: 1428
+  sha256: ed3741b705d7b6214165f22a1ddf85e94efebe8c0452fc6ee972b210bcdd64a0
+  title: 第82篇配图07
+  caption: 第82篇配图07
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、公开再评价：不只公布最终结果，还要让过程可追问、错误能纠正附近（按正文内链接精确定位）'
+  article_order: 8
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-08
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-08.png
+  width_px: 2560
+  height_px: 1428
+  sha256: be31d5eb444372334b67117d4c8d6ab10fdf61c7ee57486480f88baa4dc9aaad
+  title: 第82篇配图08
+  caption: 第82篇配图08
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试迁移：将“群众参与”转化为一套结果转化机制附近（按正文内链接精确定位）'
+  article_order: 9
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-11
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-11.png
+  width_px: 2560
+  height_px: 1428
+  sha256: f7d24573760a4f23e6aeeee58bac64f9fd05bcdcad733d3fada1b321bd374003
+  title: 第82篇配图11
+  caption: 第82篇配图11
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 10
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+- id: fig-82-12
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-82/fig-82-12.png
+  width_px: 2752
+  height_px: 1536
+  sha256: d8686afe061e5e08dcee09df7e2fc591d128dbec06b1142c45ddbd0715d6e419
+  title: 第82篇配图12
+  caption: 第82篇配图12
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 11
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-08-27T22:36:23'
+updated_at: '2026-08-27T22:36:27'
+placement_mode: inline_markdown
+inline_markdown_count: 11
+inline_imported_at: '2026-08-27T22:36:23'
