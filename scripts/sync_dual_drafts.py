@@ -44,12 +44,13 @@ def prepare(
     dry_run: bool = False,
     force_wechat: bool = False,
     wechat_html: str | None = None,
+    no_figures: bool = False,
 ) -> dict[str, Any]:
     config = load_public_config()
     article_path = project_path(article).resolve()
     if not article_path.exists():
         raise RuntimeError(f"文章不存在：{article_path}")
-    readiness = require_publication_ready(article_path)
+    readiness = require_publication_ready(article_path, allow_no_figures=no_figures)
     figure_fingerprint = str(readiness["figure_check"]["fingerprint"])
 
     state = load_state(config)
@@ -58,6 +59,7 @@ def prepare(
     result: dict[str, Any] = {
         "article": str(article_path),
         "mode": "draft_only",
+        "figures_mode": "no_figures" if no_figures else "figures",
         "figure_fingerprint": figure_fingerprint,
         "wechat": {"status": "not_requested"},
         "toutiao": {"status": "not_requested"},
@@ -89,6 +91,7 @@ def prepare(
                     dry_run=True,
                     force=force_wechat,
                     wechat_html=wechat_html,
+                    no_figures=no_figures,
                 )
                 result["wechat"] = {"status": "preflight_passed"}
             else:
@@ -96,6 +99,7 @@ def prepare(
                     str(article_path),
                     force=force_wechat,
                     wechat_html=wechat_html,
+                    no_figures=no_figures,
                 )
                 result["wechat"] = {"status": "created", "media_id": media_id}
         except Exception as error:
@@ -123,6 +127,7 @@ def prepare(
             payload = {
                 "platform": "toutiao",
                 "mode": "document_import",
+                "figures_mode": "no_figures" if no_figures else "figures",
                 "creator_url": config["toutiao"]["creator_url"],
                 "drafts_url": config["toutiao"]["drafts_url"],
                 "title": title,
@@ -268,6 +273,11 @@ def main() -> int:
     prepare_parser.add_argument("--dry-run", action="store_true")
     prepare_parser.add_argument("--force-wechat", action="store_true")
     prepare_parser.add_argument("--wechat-html")
+    prepare_parser.add_argument(
+        "--no-figures",
+        action="store_true",
+        help="无图文章模式：正文确无图片时豁免配图门槛（如热点系列）",
+    )
     saved_parser = subparsers.add_parser("mark-toutiao-saved", help="浏览器确认保存后登记头条草稿")
     saved_parser.add_argument("article")
     saved_parser.add_argument("--draft-url", default="")
@@ -283,6 +293,7 @@ def main() -> int:
                 dry_run=args.dry_run,
                 force_wechat=args.force_wechat,
                 wechat_html=args.wechat_html,
+                no_figures=args.no_figures,
             )
         elif args.command == "mark-toutiao-saved":
             result = mark_toutiao_saved(

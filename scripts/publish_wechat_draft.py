@@ -235,12 +235,13 @@ def publish(
     dry_run: bool = False,
     force: bool = False,
     wechat_html: str | None = None,
+    no_figures: bool = False,
 ) -> str | None:
     config = load_public_config()
     article_path = project_path(article).resolve()
     if not article_path.exists():
         raise RuntimeError(f"文章不存在：{article_path}")
-    readiness = require_publication_ready(article_path)
+    readiness = require_publication_ready(article_path, allow_no_figures=no_figures)
     source = article_path.read_text(encoding="utf-8")
     _, body, metadata = split_frontmatter(source)
     title = validated_title(metadata, body, article_path)

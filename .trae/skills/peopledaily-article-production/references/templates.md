@@ -63,15 +63,15 @@ process_draft: data/analysis/YYYY-MM-DD/wechat-<slug>.md
 type: wechat_article
 date: YYYY-MM-DD
 topic: <topic>
-title: "NN｜人民日报讲<主题>：<冲突或收益>"
+title: "NN｜《人民日报》深度分析【<主题>】：<冲突或收益>"
 source_review: data/analysis/YYYY-MM-DD/<topic-review>.md
 process_draft: data/analysis/YYYY-MM-DD/wechat-<slug>.md
 platform: <platform>
 ---
 
-# NN｜人民日报讲<主题>：<冲突或收益>
+# NN｜《人民日报》深度分析【<主题>】：<冲突或收益>
 
-开头：先写考生常见空话或误区。
+开头：面向普通读者，从一个具体事件、场景或悬念切入，吸引读者往下看；不用“很多同学”“考生”视角开场。事件引出真问题，再接核心判断。
 
 > **核心判断或总公式。**
 
@@ -89,7 +89,7 @@ platform: <platform>
 
 事实 + 逻辑 + 考场转译。
 
-## 四、考场怎么用
+## 四、国考省考申论面试怎么用
 
 > **总公式。**
 
@@ -151,7 +151,7 @@ platform: <platform>
 
 事实 + 逻辑 + 考场转译。
 
-## 四、考场怎么用
+## 四、国考省考申论面试怎么用
 
 > **总公式。**
 

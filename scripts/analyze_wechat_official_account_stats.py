@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import sqlite3
 from dataclasses import dataclass
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -87,6 +88,56 @@ def article_rows(conn: sqlite3.Connection, batch_id: str) -> dict[str, sqlite3.R
     return {row["title"]: row for row in rows}
 
 
+def table_exists(conn: sqlite3.Connection, table: str) -> bool:
+    return bool(
+        conn.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?", (table,)
+        ).fetchone()
+    )
+
+
+def supplemental_rows(conn: sqlite3.Connection, batch_id: str) -> dict[str, Any] | None:
+    if not table_exists(conn, "supplemental_imports"):
+        return None
+    info = conn.execute(
+        "SELECT * FROM supplemental_imports WHERE batch_id = ?", (batch_id,)
+    ).fetchone()
+    if not info:
+        return None
+    daily = conn.execute(
+        "SELECT * FROM search_daily_conversion WHERE batch_id = ? ORDER BY date", (batch_id,)
+    ).fetchall()
+    follower_sources = conn.execute(
+        "SELECT * FROM search_follower_sources WHERE batch_id = ? ORDER BY converted_followers DESC",
+        (batch_id,),
+    ).fetchall()
+    keywords = conn.execute(
+        "SELECT * FROM search_keywords WHERE batch_id = ? ORDER BY impressions DESC", (batch_id,)
+    ).fetchall()
+    articles = conn.execute(
+        "SELECT * FROM search_articles WHERE batch_id = ? ORDER BY clicks DESC", (batch_id,)
+    ).fetchall()
+    menus = conn.execute(
+        "SELECT * FROM search_service_menus WHERE batch_id = ? ORDER BY impressions DESC", (batch_id,)
+    ).fetchall()
+    expected_dates: list[str] = []
+    cursor = date.fromisoformat(info["start_date"])
+    end = date.fromisoformat(info["end_date"])
+    while cursor <= end:
+        expected_dates.append(cursor.isoformat())
+        cursor += timedelta(days=1)
+    present_dates = {row["date"] for row in daily}
+    return {
+        "info": info,
+        "daily": daily,
+        "follower_sources": follower_sources,
+        "keywords": keywords,
+        "articles": articles,
+        "menus": menus,
+        "missing_dates": [value for value in expected_dates if value not in present_dates],
+    }
+
+
 def channel_totals_for_dates(
     conn: sqlite3.Connection,
     batch_id: str,
@@ -113,27 +164,42 @@ def comparison_dates(
     current_daily: dict[str, sqlite3.Row],
     previous_daily: dict[str, sqlite3.Row],
     previous: Batch | None,
-) -> tuple[list[str], list[str], list[str], bool]:
-    """Return current, baseline, backfill dates and whether this is a long export."""
+) -> tuple[list[str], list[str], list[str], bool, bool]:
+    """Return current, baseline, backfill dates and comparison mode flags."""
     if not previous:
-        return [], [], [], False
+        return [], [], [], False, False
 
     is_extended = len(current_daily) > max(37, len(previous_daily) + 7)
-    if not is_extended:
+    current_dates = sorted(set(current_daily) - set(previous_daily))
+    removed_dates = sorted(set(previous_daily) - set(current_daily))
+    use_adjacent_baseline = bool(
+        current_dates
+        and (
+            is_extended
+            or len(previous_daily) > 37
+            or len(current_dates) != len(removed_dates)
+        )
+    )
+    if not use_adjacent_baseline:
         return (
-            sorted(set(current_daily) - set(previous_daily)),
-            sorted(set(previous_daily) - set(current_daily)),
+            current_dates,
+            removed_dates,
             [],
+            False,
             False,
         )
 
     current_dates = sorted(date for date in current_daily if date > previous.end_date)
-    backfill_dates = sorted(date for date in current_daily if date < previous.start_date)
+    backfill_dates = (
+        sorted(date for date in current_daily if date < previous.start_date)
+        if is_extended
+        else []
+    )
     if not current_dates:
-        return [], [], backfill_dates, True
+        return [], [], backfill_dates, is_extended, True
     earlier_dates = sorted(date for date in current_daily if date < current_dates[0])
     baseline_dates = earlier_dates[-len(current_dates) :]
-    return current_dates, baseline_dates, backfill_dates, True
+    return current_dates, baseline_dates, backfill_dates, is_extended, True
 
 
 def period_metrics(rows: list[sqlite3.Row]) -> dict[str, float]:
@@ -192,11 +258,12 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
     latest_articles = article_rows(conn, latest.batch_id)
     previous_articles = article_rows(conn, previous.batch_id) if previous else {}
 
-    new_dates, removed_dates, backfill_dates, is_extended = comparison_dates(
+    new_dates, removed_dates, backfill_dates, is_extended, use_adjacent = comparison_dates(
         latest_daily, previous_daily, previous
     )
+    normalize_period = is_extended or bool(previous and previous.days > 37)
     new_daily = [latest_daily[date] for date in new_dates]
-    baseline_source = latest_daily if is_extended else previous_daily
+    baseline_source = latest_daily if use_adjacent else previous_daily
     removed_daily = [baseline_source[date] for date in removed_dates]
     new_reads = sum(row["read_users"] or 0 for row in new_daily)
     new_posts = sum(row["published_count"] or 0 for row in new_daily)
@@ -217,7 +284,7 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
             for title, row in latest_articles.items()
             if title not in previous_articles
             and (
-                not is_extended
+                not use_adjacent
                 or not previous
                 or (row["publish_date"] or "") > previous.end_date
             )
@@ -255,7 +322,7 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
     removed_channel_totals = (
         channel_totals_for_dates(
             conn,
-            latest.batch_id if is_extended else previous.batch_id,
+            latest.batch_id if use_adjacent else previous.batch_id,
             removed_dates,
         )
         if previous
@@ -267,6 +334,7 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
     previous_30 = period_metrics(
         [previous_daily[date] for date in sorted(previous_daily)[-30:]]
     ) if previous else {}
+    supplemental = supplemental_rows(conn, latest.batch_id)
     conn.close()
 
     lines = [
@@ -332,7 +400,7 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
             if removed_channel_totals:
                 lines.extend(
                     markdown_table(
-                        ["渠道", "上期对照" if is_extended else "移出区间", "新增区间", "变化"],
+                        ["渠道", "上期对照" if use_adjacent else "移出区间", "新增区间", "变化"],
                         [
                             [
                                 row["channel"],
@@ -363,8 +431,8 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
         lines.append("- 最新批次没有比上一批多出新的日期，需检查导出范围是否正确。")
 
     if previous:
-        current_avg = latest_30["avg_reads"] if is_extended else latest.avg_reads
-        previous_avg = previous_30["avg_reads"] if is_extended else previous.avg_reads
+        current_avg = latest_30["avg_reads"] if normalize_period else latest.avg_reads
+        previous_avg = previous_30["avg_reads"] if normalize_period else previous.avg_reads
         avg_delta = current_avg - previous_avg
         direction = "增加" if avg_delta >= 0 else "减少"
         lines.extend(
@@ -372,8 +440,8 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
                 "",
                 "## 滚动周期变化",
                 "",
-                f"- {'最新30天' if is_extended else '最新周期'}日均阅读 {fmt_float(current_avg)}，较上一批最近30天{direction} {fmt_float(abs(avg_delta))}。",
-                "- 长周期导出不直接与30天批次比较；本行统一使用最近30天口径。" if is_extended else "- 两批起止日期不同，这里反映滚动窗口热度变化，不作为严格同比增长率。",
+                f"- {'最新30天' if normalize_period else '最新周期'}日均阅读 {fmt_float(current_avg)}，较上一批最近30天{direction} {fmt_float(abs(avg_delta))}。",
+                "- 长周期批次不直接与30天批次比较；本行统一使用最近30天口径。" if normalize_period else "- 两批起止日期不同，这里反映滚动窗口热度变化，不作为严格同比增长率。",
             ]
         )
         if new_daily and removed_daily:
@@ -382,14 +450,14 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
             lines.extend(
                 [
                     "",
-                    "### 相邻等长区间比较" if is_extended else "### 滚动窗口替换拆解",
+                    "### 相邻等长区间比较" if use_adjacent else "### 滚动窗口替换拆解",
                     "",
-                    f"- {'上期对照' if is_extended else '移出区间'}：{removed_dates[0]} 至 {removed_dates[-1]}，{len(removed_dates)} 天，阅读 {fmt_int(removed_reads)}。",
+                    f"- {'上期对照' if use_adjacent else '移出区间'}：{removed_dates[0]} 至 {removed_dates[-1]}，{len(removed_dates)} 天，阅读 {fmt_int(removed_reads)}。",
                     f"- 新增区间：{new_dates[0]} 至 {new_dates[-1]}，{len(new_dates)} 天，阅读 {fmt_int(new_reads)}。",
-                    f"- 新增区间日均阅读 {fmt_float(new_avg)}，相对{'上期对照' if is_extended else '移出区间'}日均阅读 {fmt_float(removed_avg)}，变化 {fmt_delta(new_avg, removed_avg)}。",
+                    f"- 新增区间日均阅读 {fmt_float(new_avg)}，相对{'上期对照' if use_adjacent else '移出区间'}日均阅读 {fmt_float(removed_avg)}，变化 {fmt_delta(new_avg, removed_avg)}。",
                     f"- 分享由 {fmt_int(removed_shares)} 变为 {fmt_int(new_shares)}，收藏由 {fmt_int(removed_favorites)} 变为 {fmt_int(new_favorites)}。",
                     "",
-                    "这个比较使用相邻、等长日期，避免长周期历史补录影响周度判断。" if is_extended else "这个拆解用于判断滚动窗口变化究竟来自新一周走强或走弱，还是仅由统计区间移动造成。",
+                    "这个比较使用相邻、等长日期，避免长周期批次影响周度判断。" if use_adjacent else "这个拆解用于判断滚动窗口变化究竟来自新一周走强或走弱，还是仅由统计区间移动造成。",
                 ]
             )
 
@@ -461,6 +529,63 @@ def generate_report(db_path: Path, output_path: Path) -> Path:
             ]
         )
 
+    if supplemental:
+        follower_total = sum(row["converted_followers"] or 0 for row in supplemental["daily"])
+        read_total = sum(row["read_users"] or 0 for row in supplemental["daily"])
+        lines.extend(
+            [
+                "",
+                "## 搜索与关注补充数据",
+                "",
+                f"- 统计范围：{supplemental['info']['start_date']} 至 {supplemental['info']['end_date']}。",
+                f"- 搜索转化粉丝合计 {fmt_int(follower_total)}，搜索阅读合计 {fmt_int(read_total)}。",
+                "",
+            ]
+        )
+        lines.extend(
+            markdown_table(
+                ["搜索版块", "展示", "点击", "曝光点击率", "转化粉丝", "点击转粉率"],
+                [
+                    [
+                        row["search_section"],
+                        fmt_int(row["impressions"]),
+                        fmt_int(row["clicks"]),
+                        f"{(row['click_rate'] or 0):.2%}",
+                        fmt_int(row["converted_followers"]),
+                        f"{(row['converted_followers'] or 0) / row['clicks']:.2%}" if row["clicks"] else "-",
+                    ]
+                    for row in supplemental["follower_sources"]
+                ],
+                ["---", "---:", "---:", "---:", "---:", "---:"],
+            )
+        )
+        article_keywords = [
+            row for row in supplemental["keywords"] if row["search_section"] == "文章"
+        ][:10]
+        lines.extend(["", "### 热门文章搜索词", ""])
+        lines.extend(
+            markdown_table(
+                ["搜索词", "展示", "点击", "曝光点击率", "关联词"],
+                [
+                    [
+                        row["keyword"],
+                        fmt_int(row["impressions"]),
+                        fmt_int(row["clicks"]),
+                        f"{(row['click_rate'] or 0):.2%}",
+                        row["related_terms"] or "-",
+                    ]
+                    for row in article_keywords
+                ],
+                ["---", "---:", "---:", "---:", "---"],
+            )
+        )
+        if supplemental["missing_dates"]:
+            lines.extend(
+                [
+                    "",
+                    f"注意：搜索日数据缺少 {', '.join(supplemental['missing_dates'])}，不能直接按零值处理。",
+                ]
+            )
     lines.extend(
         [
             "",
@@ -493,11 +618,13 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
         previous_daily = daily_rows(conn, previous.batch_id) if previous else {}
         current_articles = article_rows(conn, batch.batch_id)
         previous_articles = article_rows(conn, previous.batch_id) if previous else {}
-        new_dates, removed_dates, backfill_dates, is_extended = comparison_dates(
+        supplemental = supplemental_rows(conn, batch.batch_id)
+        new_dates, removed_dates, backfill_dates, is_extended, use_adjacent = comparison_dates(
             current_daily, previous_daily, previous
         )
+        normalize_period = is_extended or bool(previous and previous.days > 37)
         new_daily = [current_daily[date] for date in new_dates]
-        baseline_source = current_daily if is_extended else previous_daily
+        baseline_source = current_daily if use_adjacent else previous_daily
         removed_daily = [baseline_source[date] for date in removed_dates]
         current_30 = period_metrics(
             [current_daily[date] for date in sorted(current_daily)[-30:]]
@@ -516,7 +643,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 for title, row in current_articles.items()
                 if title not in previous_articles
                 and (
-                    not is_extended
+                    not use_adjacent
                     or not previous
                     or (row["publish_date"] or "") > previous.end_date
                 )
@@ -566,7 +693,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
         removed_channel_totals = (
             channel_totals_for_dates(
                 conn,
-                batch.batch_id if is_extended else previous.batch_id,
+                batch.batch_id if use_adjacent else previous.batch_id,
                 removed_dates,
             )
             if previous
@@ -599,13 +726,21 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 f"- 当前阅读最高文章为 **{top['title']}**，阅读人数 {fmt_int(top['read_users'])}。"
             )
         if previous:
-            current_avg = current_30["avg_reads"] if is_extended else batch.avg_reads
-            previous_avg = previous_30["avg_reads"] if is_extended else previous.avg_reads
+            current_avg = current_30["avg_reads"] if normalize_period else batch.avg_reads
+            previous_avg = previous_30["avg_reads"] if normalize_period else previous.avg_reads
             avg_delta = current_avg - previous_avg
             direction = "增加" if avg_delta >= 0 else "减少"
             lines.append(
                 f"- 相比上一批最近30天，日均阅读{direction} {fmt_float(abs(avg_delta))}；"
-                + ("本批为长周期回看，已统一到最近30天口径。" if is_extended else "由于统计窗口移动，该数值用于判断近期热度，不作为严格同比。")
+                + (
+                    "本批为长周期回看，已统一到最近30天口径。"
+                    if is_extended
+                    else (
+                        "上一批为长周期回看，已统一到最近30天口径。"
+                        if normalize_period
+                        else "由于统计窗口移动，该数值用于判断近期热度，不作为严格同比。"
+                    )
+                )
             )
             if new_dates:
                 new_reads = sum(row["read_users"] or 0 for row in new_daily)
@@ -649,26 +784,26 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             ]
         )
         metric_rows = [
-            ["统计天数", 30 if is_extended else batch.days, previous.days if previous else "-", "-"],
-            ["发表篇数", int(current_30["posts"]) if is_extended else batch.published, previous.published if previous else "-", "-"],
-            ["日阅读人数合计", fmt_int(current_30["reads"] if is_extended else batch.total_reads), fmt_int(previous.total_reads) if previous else "-", "-"],
+            ["统计天数", 30 if normalize_period else batch.days, 30 if normalize_period and previous else (previous.days if previous else "-"), "-"],
+            ["发表篇数", int(current_30["posts"]) if normalize_period else batch.published, int(previous_30["posts"]) if normalize_period and previous else (previous.published if previous else "-"), "-"],
+            ["日阅读人数合计", fmt_int(current_30["reads"] if normalize_period else batch.total_reads), fmt_int(previous_30["reads"] if normalize_period and previous else (previous.total_reads if previous else 0)) if previous else "-", "-"],
             [
                 "日均阅读",
-                fmt_float(current_30["avg_reads"] if is_extended else batch.avg_reads),
-                fmt_float(previous_30["avg_reads"] if is_extended else previous.avg_reads) if previous else "-",
-                fmt_delta(current_30["avg_reads"] if is_extended else batch.avg_reads, previous_30["avg_reads"] if is_extended else previous.avg_reads) if previous else "-",
+                fmt_float(current_30["avg_reads"] if normalize_period else batch.avg_reads),
+                fmt_float(previous_30["avg_reads"] if normalize_period else previous.avg_reads) if previous else "-",
+                fmt_delta(current_30["avg_reads"] if normalize_period else batch.avg_reads, previous_30["avg_reads"] if normalize_period else previous.avg_reads) if previous else "-",
             ],
             [
                 "日均分享",
-                fmt_float(current_30["avg_shares"] if is_extended else batch.avg_shares),
-                fmt_float(previous_30["avg_shares"] if is_extended else previous.avg_shares) if previous else "-",
-                fmt_delta(current_30["avg_shares"] if is_extended else batch.avg_shares, previous_30["avg_shares"] if is_extended else previous.avg_shares) if previous else "-",
+                fmt_float(current_30["avg_shares"] if normalize_period else batch.avg_shares),
+                fmt_float(previous_30["avg_shares"] if normalize_period else previous.avg_shares) if previous else "-",
+                fmt_delta(current_30["avg_shares"] if normalize_period else batch.avg_shares, previous_30["avg_shares"] if normalize_period else previous.avg_shares) if previous else "-",
             ],
             [
                 "日均收藏",
-                fmt_float(current_30["avg_favorites"] if is_extended else batch.avg_favorites),
-                fmt_float(previous_30["avg_favorites"] if is_extended else previous.avg_favorites) if previous else "-",
-                fmt_delta(current_30["avg_favorites"] if is_extended else batch.avg_favorites, previous_30["avg_favorites"] if is_extended else previous.avg_favorites) if previous else "-",
+                fmt_float(current_30["avg_favorites"] if normalize_period else batch.avg_favorites),
+                fmt_float(previous_30["avg_favorites"] if normalize_period else previous.avg_favorites) if previous else "-",
+                fmt_delta(current_30["avg_favorites"] if normalize_period else batch.avg_favorites, previous_30["avg_favorites"] if normalize_period else previous.avg_favorites) if previous else "-",
             ],
         ]
         if is_extended:
@@ -686,7 +821,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             )
         )
 
-        lines.extend(["", "## 四、相邻等长区间比较" if is_extended else "## 四、滚动窗口替换拆解", ""])
+        lines.extend(["", "## 四、相邻等长区间比较" if use_adjacent else "## 四、滚动窗口替换拆解", ""])
         if previous and new_daily and removed_daily:
             new_reads = sum(row["read_users"] or 0 for row in new_daily)
             new_shares = sum(row["share_users"] or 0 for row in new_daily)
@@ -706,7 +841,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 markdown_table(
                     ["窗口区间", "日期", "天数", "发文", "阅读", "日均阅读", "分享", "收藏"],
                     [
-                        ["上期对照" if is_extended else "移出本批", f"{removed_dates[0]} 至 {removed_dates[-1]}", len(removed_dates), removed_posts, fmt_int(removed_reads), fmt_float(removed_avg), fmt_int(removed_shares), fmt_int(removed_favorites)],
+                        ["上期对照" if use_adjacent else "移出本批", f"{removed_dates[0]} 至 {removed_dates[-1]}", len(removed_dates), removed_posts, fmt_int(removed_reads), fmt_float(removed_avg), fmt_int(removed_shares), fmt_int(removed_favorites)],
                         ["新加入本批", f"{new_dates[0]} 至 {new_dates[-1]}", len(new_dates), new_posts, fmt_int(new_reads), fmt_float(new_avg), fmt_int(new_shares), fmt_int(new_favorites)],
                     ],
                     ["---", "---", "---:", "---:", "---:", "---:", "---:", "---:"],
@@ -715,7 +850,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             lines.extend(
                 [
                     "",
-                    f"新增区间比{'上期对照' if is_extended else '移出区间'}{contribution} {fmt_int(abs(replacement_delta))} 阅读；新增区间日均阅读变化 {fmt_delta(new_avg, removed_avg)}。因此，近期表现{cycle_direction}，新增日期阅读强度{strength}{'上期对照区间' if is_extended else '被移出日期'}。",
+                    f"新增区间比{'上期对照' if use_adjacent else '移出区间'}{contribution} {fmt_int(abs(replacement_delta))} 阅读；新增区间日均阅读变化 {fmt_delta(new_avg, removed_avg)}。因此，近期表现{cycle_direction}，新增日期阅读强度{strength}{'上期对照区间' if use_adjacent else '被移出日期'}。",
                 ]
             )
         elif previous:
@@ -784,10 +919,10 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 key=lambda channel: new_channel_totals.get(channel, 0),
                 reverse=True,
             )
-            lines.extend(["", "### 新增区间与上期对照渠道变化" if is_extended else "### 新增区间与移出区间渠道变化", ""])
+            lines.extend(["", "### 新增区间与上期对照渠道变化" if use_adjacent else "### 新增区间与移出区间渠道变化", ""])
             lines.extend(
                 markdown_table(
-                    ["渠道", "上期对照" if is_extended else "移出区间", "新增区间", "变化"],
+                    ["渠道", "上期对照" if use_adjacent else "移出区间", "新增区间", "变化"],
                     [
                         [
                             channel,
@@ -803,7 +938,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
             lines.extend(
                 [
                     "",
-                    "该表比较相邻等长日期，用于识别本周变化由哪些阅读来源推动。" if is_extended else "该表比较等长的新增与移出日期区间，用于识别本次滚动窗口变化由哪些阅读来源推动。",
+                    "该表比较相邻等长日期，用于识别本周变化由哪些阅读来源推动。" if use_adjacent else "该表比较等长的新增与移出日期区间，用于识别本次滚动窗口变化由哪些阅读来源推动。",
                 ]
             )
         lines.extend(["", "## 八、文章阅读排名", ""])
@@ -908,7 +1043,7 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 )
             )
             judgment_items.append(
-                f"**发文效率**：新增区间在{post_comparison}的情况下，阅读较{'上期对照' if is_extended else '移出区间'}变化 {read_change:+.1f}%，"
+                f"**发文效率**：新增区间在{post_comparison}的情况下，阅读较{'上期对照' if use_adjacent else '移出区间'}变化 {read_change:+.1f}%，"
                 f"分享变化 {share_change:+.1f}%，收藏变化 {favorite_change:+.1f}%。"
             )
 
@@ -924,15 +1059,16 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                     )
                     for channel in set(new_channel_totals) | set(removed_channel_totals)
                 ),
+                key=lambda row: abs(row[0]),
                 reverse=True,
             )
-            positive_changes = [row for row in channel_changes if row[0] > 0]
-            if positive_changes:
-                delta, channel, old_value, new_value = positive_changes[0]
+            if channel_changes:
+                delta, channel, old_value, new_value = channel_changes[0]
                 rate = 100 * delta / old_value if old_value else 0
+                direction = "增加" if delta > 0 else "减少"
                 judgment_items.append(
-                    f"**最大渠道驱动**：{channel}阅读由 {fmt_int(old_value)} 增至 {fmt_int(new_value)}，"
-                    f"增加 {fmt_int(delta)}（{rate:+.1f}%），是新增区间最明显的渠道变化。"
+                    f"**最大渠道驱动**：{channel}阅读由 {fmt_int(old_value)} 变为 {fmt_int(new_value)}，"
+                    f"{direction} {fmt_int(abs(delta))}（{rate:+.1f}%），是新增区间最明显的渠道变化。"
                 )
 
         no_post_days = [
@@ -988,10 +1124,109 @@ def generate_batch_reports(db_path: Path, report_dir: Path) -> list[Path]:
                 "- 本报告依据公众号后台导出的滚动周期数据，不把重叠日期重复累计为本周新增。",
                 "- 来源概况未必覆盖期间全部发文，未出现的文章不能直接判定为零阅读。",
                 "- 推荐约比用于观察推荐渠道强弱；不同渠道可能存在读者交叉。",
-                *( ["- 本批为长周期导出，周度结论只使用上次截止日后的新增日期，并与紧邻等长区间比较；全周期合计不与30天批次直接环比。"] if is_extended else [] ),
+                *( ["- 本批或上一批为长周期导出，周度结论只使用上次截止日后的新增日期，并与紧邻等长区间比较；长周期合计不与30天批次直接环比。"] if use_adjacent else [] ),
                 "",
             ]
         )
+
+        if supplemental:
+            follower_total = sum(row["converted_followers"] or 0 for row in supplemental["daily"])
+            read_total = sum(row["read_users"] or 0 for row in supplemental["daily"])
+            lines.extend(
+                [
+                    "## 十四、搜索与关注转化",
+                    "",
+                    f"- 补充数据范围：{supplemental['info']['start_date']} 至 {supplemental['info']['end_date']}。",
+                    f"- 搜索转化粉丝合计 {fmt_int(follower_total)}；搜索日数据阅读合计 {fmt_int(read_total)}。",
+                    "",
+                ]
+            )
+            lines.extend(
+                markdown_table(
+                    ["搜索版块", "展示", "点击", "曝光点击率", "转化粉丝", "点击转粉率"],
+                    [
+                        [
+                            row["search_section"],
+                            fmt_int(row["impressions"]),
+                            fmt_int(row["clicks"]),
+                            f"{(row['click_rate'] or 0):.2%}",
+                            fmt_int(row["converted_followers"]),
+                            f"{(row['converted_followers'] or 0) / row['clicks']:.2%}" if row["clicks"] else "-",
+                        ]
+                        for row in supplemental["follower_sources"]
+                    ],
+                    ["---", "---:", "---:", "---:", "---:", "---:"],
+                )
+            )
+            peak_followers = sorted(
+                supplemental["daily"],
+                key=lambda row: row["converted_followers"] or 0,
+                reverse=True,
+            )[:5]
+            lines.extend(["", "### 搜索转粉高峰日期", ""])
+            lines.extend(
+                markdown_table(
+                    ["日期", "转化粉丝", "搜索阅读"],
+                    [
+                        [row["date"], fmt_int(row["converted_followers"]), fmt_int(row["read_users"])]
+                        for row in peak_followers
+                    ],
+                    ["---", "---:", "---:"],
+                )
+            )
+
+            article_keywords = [
+                row for row in supplemental["keywords"] if row["search_section"] == "文章"
+            ]
+            lines.extend(["", "## 十五、搜索需求与热门文章", "", "### 热门文章搜索词", ""])
+            lines.extend(
+                markdown_table(
+                    ["搜索词", "展示", "点击", "曝光点击率", "关联词"],
+                    [
+                        [
+                            row["keyword"],
+                            fmt_int(row["impressions"]),
+                            fmt_int(row["clicks"]),
+                            f"{(row['click_rate'] or 0):.2%}",
+                            row["related_terms"] or "-",
+                        ]
+                        for row in article_keywords[:10]
+                    ],
+                    ["---", "---:", "---:", "---:", "---"],
+                )
+            )
+            lines.extend(["", "### 搜索点击热门文章", ""])
+            lines.extend(
+                markdown_table(
+                    ["文章", "展示", "点击", "曝光点击率", "平均位置"],
+                    [
+                        [
+                            row["title"],
+                            fmt_int(row["impressions"]),
+                            fmt_int(row["clicks"]),
+                            f"{(row['click_rate'] or 0):.2%}",
+                            fmt_float(row["rank_position"]),
+                        ]
+                        for row in supplemental["articles"][:10]
+                    ],
+                    ["---", "---:", "---:", "---:", "---:"],
+                )
+            )
+            lines.extend(
+                [
+                    "",
+                    "## 十六、补充数据限制",
+                    "",
+                    "- “当日阅读数”与粉丝来源表的点击数属于后台不同导出口径，不直接相加或互相替代。",
+                    "- 菜单数据样本很小，仅作观察，不据此调整栏目结构。",
+                    *(
+                        [f"- 搜索日数据缺少 {', '.join(supplemental['missing_dates'])}，不能按零值解释。"]
+                        if supplemental["missing_dates"]
+                        else []
+                    ),
+                    "",
+                ]
+            )
 
         output_path = report_dir / f"{batch.batch_id}.md"
         deep_analysis_marker = "<!-- CODEX_DEEP_ANALYSIS -->"

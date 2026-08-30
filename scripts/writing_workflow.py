@@ -259,6 +259,11 @@ def main() -> int:
         "--wechat-html",
         help="gzh-design 红白色系生成并通过校验的公众号正文 HTML",
     )
+    dual_parser.add_argument(
+        "--no-figures",
+        action="store_true",
+        help="无图文章模式：正文确无图片时豁免配图门槛（如热点系列）",
+    )
     saved_parser = subparsers.add_parser(
         "mark-toutiao-saved",
         help="浏览器保存成功后登记今日头条草稿",
@@ -395,6 +400,8 @@ def main() -> int:
             arguments.append("--force-wechat")
         if args.wechat_html:
             arguments.extend(["--wechat-html", args.wechat_html])
+        if args.no_figures:
+            arguments.append("--no-figures")
         return run_script("sync_dual_drafts.py", arguments)
     if args.command == "mark-toutiao-saved":
         arguments = ["mark-toutiao-saved", args.article]
