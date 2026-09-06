@@ -30,6 +30,16 @@ from modules.utils import Config
 
 CONFIG_PATH = PROJECT_ROOT / "config.json"
 REPORT_PREFIX = "peopleapp_opinion_notion_sync"
+FIXED_SOURCE_OPTIONS = {
+    "人民日报客户端",
+    "人民日报",
+    "人民日报海外版",
+    "人民号",
+    "光明网",
+    "上观新闻",
+    "其他",
+}
+FIXED_SECTION_OPTIONS = {"APP-锐评", "评论", "其他"}
 
 
 def rich_text(value: object, limit: int = 2000) -> Dict:
@@ -70,23 +80,44 @@ def keyword_property(keywords: Iterable[str]) -> Dict:
     return {"multi_select": options}
 
 
-def article_properties(article: Dict, status: str = "已同步", title_name: str = "标题") -> Dict:
-    return {
+def article_properties(
+    article: Dict,
+    status: str = "已同步",
+    title_name: str = "标题",
+    include_keywords: bool = True,
+    safe_selects: bool = False,
+) -> Dict:
+    source_name = option_name(article.get("source_name"), fallback="其他")
+    section_name = option_name(article.get("section_name") or article.get("plate"), fallback="APP-锐评")
+    if safe_selects:
+        source_name = source_name if source_name in FIXED_SOURCE_OPTIONS else "其他"
+        section_name = section_name if section_name in FIXED_SECTION_OPTIONS else "其他"
+    properties = {
         title_name: title_property(article.get("title")),
         "Article ID": rich_text(article.get("article_id")),
         "Content ID": rich_text(article.get("content_id")),
         "Rel ID": rich_text(article.get("rel_id")),
         "发布日期": date_property(article.get("date")),
         "作者": rich_text(article.get("author")),
-        "来源": select_property(article.get("source_name"), fallback="其他"),
-        "栏目": select_property(article.get("section_name") or article.get("plate"), fallback="APP-锐评"),
+        "来源": select_property(source_name, fallback="其他"),
+        "栏目": select_property(section_name, fallback="APP-锐评"),
         "URL": {"url": article.get("source_url") or article.get("url") or None},
         "摘要": rich_text(article.get("summary")),
-        "关键词": keyword_property(article.get("keywords") or []),
         "正文字数": {"number": int(article.get("word_count") or len(article.get("content") or ""))},
         "同步时间": {"date": {"start": datetime.now(TIMEZONE).isoformat(timespec="seconds")}},
         "采集状态": select_property(status, fallback="已同步"),
     }
+    if include_keywords:
+        properties["关键词"] = keyword_property(article.get("keywords") or [])
+    return properties
+
+
+def is_keyword_schema_limit_error(exc: Exception) -> bool:
+    text = str(exc)
+    return (
+        "database schema has exceeded the maximum size" in text.lower()
+        and ("关键词" in text or "pHYX" in text)
+    )
 
 
 def plain_rich_text(properties: Dict, name: str) -> str:
@@ -190,6 +221,16 @@ def paragraph_block(text: str) -> Dict:
 
 def build_page_blocks(article: Dict) -> List[Dict]:
     blocks: List[Dict] = []
+    metadata = []
+    if article.get("source_name"):
+        metadata.append(f"来源：{article['source_name']}")
+    if article.get("date"):
+        metadata.append(f"发布日期：{article['date']}")
+    if article.get("section_name") or article.get("plate"):
+        metadata.append(f"栏目：{article.get('section_name') or article.get('plate')}")
+    if metadata:
+        blocks.append(paragraph_block("｜".join(metadata)))
+
     summary = str(article.get("summary") or "").strip()
     if summary:
         blocks.append(paragraph_block(f"摘要：{summary}"))
@@ -213,10 +254,22 @@ def append_blocks(notion: Client, page_id: str, blocks: List[Dict]) -> None:
         notion.blocks.children.append(block_id=page_id, children=blocks[start : start + 100])
 
 
-def create_page(notion: Client, database_id: str, article: Dict, title_name: str) -> str:
+def create_page(
+    notion: Client,
+    database_id: str,
+    article: Dict,
+    title_name: str,
+    include_keywords: bool = True,
+    safe_selects: bool = False,
+) -> str:
     page = notion.pages.create(
         parent={"database_id": database_id},
-        properties=article_properties(article, title_name=title_name),
+        properties=article_properties(
+            article,
+            title_name=title_name,
+            include_keywords=include_keywords,
+            safe_selects=safe_selects,
+        ),
     )
     blocks = build_page_blocks(article)
     if blocks:
@@ -224,8 +277,23 @@ def create_page(notion: Client, database_id: str, article: Dict, title_name: str
     return page["id"]
 
 
-def update_page(notion: Client, page_id: str, article: Dict, title_name: str) -> None:
-    notion.pages.update(page_id=page_id, properties=article_properties(article, title_name=title_name))
+def update_page(
+    notion: Client,
+    page_id: str,
+    article: Dict,
+    title_name: str,
+    include_keywords: bool = True,
+    safe_selects: bool = False,
+) -> None:
+    notion.pages.update(
+        page_id=page_id,
+        properties=article_properties(
+            article,
+            title_name=title_name,
+            include_keywords=include_keywords,
+            safe_selects=safe_selects,
+        ),
+    )
 
 
 def default_range(days: int) -> tuple[str, str]:
@@ -284,6 +352,7 @@ def sync_peopleapp_opinion_to_notion(args) -> Dict:
         "skipped": 0,
         "failed": 0,
         "failures": [],
+        "keyword_fallback": False,
         "dry_run": args.dry_run,
     }
 
@@ -301,6 +370,8 @@ def sync_peopleapp_opinion_to_notion(args) -> Dict:
     title_name = find_title_property_name(notion, database_id, data_source_id)
     existing_index = build_existing_index(notion, database_id, data_source_id) if not args.dry_run else {}
     print(f"Notion 已有 APP 评论文章：{len(existing_index)}")
+    include_keywords = True
+    safe_selects = False
 
     for index, article in enumerate(articles, 1):
         title = article.get("title", "无标题")
@@ -322,11 +393,25 @@ def sync_peopleapp_opinion_to_notion(args) -> Dict:
                 continue
 
             if existing:
-                update_page(notion, existing["id"], article, title_name)
+                update_page(
+                    notion,
+                    existing["id"],
+                    article,
+                    title_name,
+                    include_keywords=include_keywords,
+                    safe_selects=safe_selects,
+                )
                 report["updated"] += 1
                 print(f"[{index}/{len(articles)}] 更新成功：{title[:40]}")
             else:
-                page_id = create_page(notion, database_id, article, title_name)
+                page_id = create_page(
+                    notion,
+                    database_id,
+                    article,
+                    title_name,
+                    include_keywords=include_keywords,
+                    safe_selects=safe_selects,
+                )
                 existing_index[article_id] = {"id": page_id, "article_id": article_id, "title": title}
                 report["created"] += 1
                 print(f"[{index}/{len(articles)}] 上传成功：{title[:40]}")
@@ -334,6 +419,47 @@ def sync_peopleapp_opinion_to_notion(args) -> Dict:
             if args.delay:
                 time.sleep(args.delay)
         except APIResponseError as exc:
+            if is_keyword_schema_limit_error(exc) and (include_keywords or not safe_selects):
+                include_keywords = False
+                safe_selects = True
+                report["keyword_fallback"] = True
+                print(
+                    "Notion 下拉选项已达到容量上限，本轮及后续文章将停止追加关键词，"
+                    "未知媒体来源统一归入“其他”，精确来源保留在正文开头。"
+                )
+                try:
+                    if existing:
+                        update_page(
+                            notion,
+                            existing["id"],
+                            article,
+                            title_name,
+                            include_keywords=False,
+                            safe_selects=True,
+                        )
+                        report["updated"] += 1
+                        print(f"[{index}/{len(articles)}] 更新成功（未写关键词）：{title[:40]}")
+                    else:
+                        page_id = create_page(
+                            notion,
+                            database_id,
+                            article,
+                            title_name,
+                            include_keywords=False,
+                            safe_selects=True,
+                        )
+                        existing_index[article_id] = {
+                            "id": page_id,
+                            "article_id": article_id,
+                            "title": title,
+                        }
+                        report["created"] += 1
+                        print(f"[{index}/{len(articles)}] 上传成功（未写关键词）：{title[:40]}")
+                    if args.delay:
+                        time.sleep(args.delay)
+                    continue
+                except Exception as retry_exc:
+                    exc = retry_exc
             report["failed"] += 1
             report["failures"].append(
                 {"article_id": article_id, "title": title, "error": str(exc), "url": article.get("source_url", "")}

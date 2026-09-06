@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>平台算法治理 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#2563eb;--accent-soft:rgba(37,99,235,.15);--warn:#f59e0b;--danger:#ef4444;--success:#16a34a;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:96px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第88期</span></div>
+    <h1 class="hero">配送<br>不能只由倒计时决定</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">安全、效率和权益，都要算进算法</p>
+  </div>
+  <div class="key-sentence">红灯前停下，是守法，不是怠工。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 两个倒计时 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">冲</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>现实冲突 · 两个倒计时</p>
+    <h2 class="h2">骑手停在红灯前<br>眼前有两个倒计时</h2>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:26px;">🚦 路口倒计时</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">交通信号灯在走，遵守规则就要等，等就可能超时</p>
+      </div>
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);font-size:26px;">📱 手机倒计时</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">配送时限在减少，超时可能扣分、扣钱、影响派单</p>
+      </div>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">⚠</div><div class="data-label">守法可能超时</div><div class="data-desc">遵守交通规则等红灯，配送时间继续减少，可能被扣分扣钱</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">⚠</div><div class="data-label">抢时间有风险</div><div class="data-desc">抢红灯、超速、逆行，把风险留给骑手自己和路人，可能出事故</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">算法如果不计算守法等待<span class="arrow">→</span>就会把风险当成效率</p>
+    </div>
+  </div>
+  <div class="key-sentence">算法如果不计算守法等待，就会把风险当成效率。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 红灯停表 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">停</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>北京试点 · 红灯停表</p>
+    <h2 class="h2">"红灯停表"<br>改了什么？</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:24px;text-align:center;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">2026年8月 · 北京三家外卖平台试点</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:6px;">骑手计时"红灯停表"——等红灯多久，就自动补时多久</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item"><div class="f-num">🚦</div><div class="f-title">红灯自动补时</div><div class="f-desc">等红灯多久，配送时间自动延长多久，守法等待不再扣时间</div></div>
+      <div class="five-item"><div class="f-num">🌧</div><div class="f-title">恶劣天气延长</div><div class="f-desc">暴雨、大雪、高温等恶劣天气，适度延长配送时间，不拿安全换速度</div></div>
+      <div class="five-item"><div class="f-num">🛣</div><div class="f-title">复杂路况补时</div><div class="f-desc">修路、拥堵、电梯等待等复杂路况，系统识别后自动补时</div></div>
+      <div class="five-item"><div class="f-num">🍱</div><div class="f-title">出餐慢不扣分</div><div class="f-desc">商家出餐慢，不再影响骑手服务分，责任从骑手转移到商家</div></div>
+      <div class="five-item"><div class="f-num">🔄</div><div class="f-title">转单适度延长</div><div class="f-desc">转单、改地址等异常情况，适度延长时间，区分责任归属</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">核心改变：</strong>停下的不只是计时器，还包括把全部责任推给骑手的旧逻辑。红灯停表把不可控时间从骑手责任中剥离，让考核更接近真实服务过程。</p>
+    </div>
+  </div>
+  <div class="key-sentence">停下的不只是计时器，还包括把全部责任推给骑手的旧逻辑。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 算法是劳动规则 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">算</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>概念升级 · 算法已经是劳动规则</p>
+    <h2 class="h2">能派单、计价、考核的算法<br>就是劳动规则</h2>
+    <p class="body">算法不再只是后台工具。派单、计价、抽成、路线、时限和奖惩共同决定骑手怎样工作、能赚多少、承受多大风险。</p>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">📋</div><div class="data-label">派单</div><div class="data-desc">谁接到什么单、接多少单，由算法决定，直接影响收入和工作强度</div></div>
+      <div class="data-card"><div class="data-num">💰</div><div class="data-label">计价抽成</div><div class="data-desc">每单多少钱、平台抽多少，由算法计算，决定骑手实际收入</div></div>
+      <div class="data-card"><div class="data-num">🗺</div><div class="data-label">路线时限</div><div class="data-desc">走哪条路、多长时间送达，由算法规划，决定安全风险和工作节奏</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">⚖</div><div class="data-label">奖惩考核</div><div class="data-desc">超时扣多少钱、差评影响什么，由算法执行，决定骑手的职业稳定性</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:14px 0;">
+      <p class="formula-text" style="font-size:26px;">算法 = 派单 <span class="arrow">+</span> 计价 <span class="arrow">+</span> 抽成 <span class="arrow">+</span> 路线 <span class="arrow">+</span> 时限 <span class="arrow">+</span> 奖惩</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">这些要素共同决定骑手怎样工作、能赚多少、承受多大风险</p>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">概念升级：</strong>算法已经不是中立的技术工具，而是事实上的劳动规则。既然是规则，就要符合劳动法的基本要求：透明、可协商、有安全底线、有纠错渠道。</p>
+    </div>
+  </div>
+  <div class="key-sentence">能派单、计价、考核和奖惩的算法，就是劳动规则。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 规则可解释 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">明</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第一步 · 规则可解释</p>
+    <h2 class="h2">算法可以复杂<br>劳动规则不能含糊</h2>
+    <div class="data-card" style="border-color:var(--warn);background:rgba(245,158,11,.1);margin:10px 0;padding:20px;">
+      <p style="font-size:24px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">⚠ 常见误解：</strong>透明 = 公开源代码？<br><span style="color:var(--text-secondary);font-size:22px;">错。透明不等于公开源代码，而是说明规则的基本逻辑和影响。</span></p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">基本逻辑</div><div class="f-desc">说明派单和计价的基本逻辑——按什么规则派单、按什么标准计价</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">触发条件</div><div class="f-desc">说明规则触发条件——什么情况会扣分、什么情况会补时、什么情况会限流</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">调整影响</div><div class="f-desc">说明调整影响——规则变化后对收入、派单、考核有什么影响</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">记录查看</div><div class="f-desc">提供个人记录查看方式——骑手可以查看自己的派单记录、收入明细、扣分记录</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">申诉渠道</div><div class="f-desc">明确申诉渠道——对扣罚有异议时，知道去哪里申诉、怎么申诉、多久有结果</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">黑箱算法 → 可解释规则：说清逻辑、条件、影响、记录、申诉</p>
+    </div>
+  </div>
+  <div class="key-sentence">算法可以复杂，劳动规则不能含糊。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 劳动者可协商 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">协</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第二步 · 劳动者可协商</p>
+    <h2 class="h2">透明让人知道规则<br>协商让人有机会改变规则</h2>
+    <p class="body">订单怎么分、收入和抽成怎么算、时间和路线是否合理，都可以进入协商。劳动者代表与平台相关部门共同参与，结果写进制度和算法运行。</p>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">劳动者代表</div><div class="step-desc">受规则影响的骑手有代表参与协商，不是平台单方面决定规则</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">平台相关部门</div><div class="step-desc">平台算法、运营、法务等相关部门参与，说明规则设计逻辑和约束条件</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">协商议题</div><div class="step-desc">订单分配、收入计算、抽成比例、配送时限、路线规划、奖惩标准都可以协商</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">书面协议</div><div class="step-desc">协商结果形成书面协议，不是口头承诺，有约束力、可追溯</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">算法执行</div><div class="step-desc">协议结果落实到算法运行中，不是协商归协商、算法归算法，两张皮</div></div></div>
+    </div>
+    <div class="compare-grid" style="margin:10px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 只有透明</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);margin-top:6px;">知道规则是什么，但无法改变不合理的规则——知情权不等于参与权</p>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 透明+协商</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);margin-top:6px;">不仅知道规则，还有机会参与制定和修改规则——从被动接受到主动参与</p>
+      </div>
+    </div>
+  </div>
+  <div class="key-sentence">透明让人知道规则，协商让人有机会改变规则。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 安全成硬约束 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">安</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第三步 · 安全成硬约束</p>
+    <h2 class="h2">安全不是效率之外的选项<br>而是效率成立的前提</h2>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">✅</div><div class="data-label">合法时速测算</div><div class="data-desc">配送时间按合法时速测算，不按超速、闯红灯的"极限速度"计算时限</div></div>
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">✅</div><div class="data-label">合规路线规划</div><div class="data-desc">路线不能推荐逆行、禁行、闯红灯等违法通行方式，必须规划合规路线</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">❌</div><div class="data-label">禁止违法捷径</div><div class="data-desc">算法不得允许"超速配送"，不能把违法路线当成"最优路线"推荐给骑手</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">🔍</div><div class="data-label">持续审核验证</div><div class="data-desc">算法上线后还要持续审核、评估和验证，发现安全隐患及时修正，不是上线就不管</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:14px 0;border-color:var(--success);background:rgba(22,163,74,.1);">
+      <p class="formula-text" style="font-size:26px;color:var(--success);">安全 = 效率的前提</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">没有安全的效率，是用骑手的生命和路人的安全换速度，不可持续、不可接受</p>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">政策依据：</strong>《平台算法不得允许"超速配送"》（人民日报2026年7月31日第11版）明确要求平台算法必须守住安全底线，不得为了效率而牺牲骑手和路人的安全。</p>
+    </div>
+  </div>
+  <div class="key-sentence">安全不是效率之外的选项，而是效率成立的前提。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 异常能补时 -->
+<section class="poster photo-page" id="xhs-08">
+  <img class="bg-img" src="assets/route.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第四步 · 异常能补时</p>
+    <h2 class="h2">现实世界<br>不是一条没有红灯的直线</h2>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🚦</div><div class="f-title">红灯等待</div><div class="f-desc">等红灯的时间应该自动补时，守法等待不应该扣骑手的配送时间</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🌧</div><div class="f-title">恶劣天气</div><div class="f-desc">暴雨、大雪、高温、大风等恶劣天气，路况变差，应该适度延长配送时间</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🛣</div><div class="f-title">复杂路况</div><div class="f-desc">修路、拥堵、交通事故、电梯等待等复杂情况，系统识别后自动补时</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🍱</div><div class="f-title">商家出餐慢</div><div class="f-desc">商家出餐慢不是骑手的责任，应该从骑手责任中剥离，不影响服务分</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🔄</div><div class="f-title">转单改地址</div><div class="f-desc">转单、改地址、联系不上用户等异常情况，应该区分责任并同步纠正扣分</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;background:rgba(37,99,235,.2);">
+      <p class="formula-text" style="font-size:24px;">系统识别异常 <span class="arrow">→</span> 自动补时 <span class="arrow">→</span> 区分责任 <span class="arrow">→</span> 同步纠正扣分</p>
+    </div>
+  </div>
+  <div class="key-sentence">现实世界不是一条没有红灯的直线。异常能补时，考核才公平。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 补时不是放弃效率 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">效</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>辨析 · 补时不是放弃效率</p>
+    <h2 class="h2">补时不是放弃效率<br>而是让效率更真实</h2>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:26px;">❌ 极限倒计时</h3>
+        <ul>
+          <li>按"最快速度"计算时限</li>
+          <li>不计算红灯、天气、路况</li>
+          <li>骑手被迫超速、抢灯、逆行</li>
+          <li>曲线陡峭但风险极高</li>
+          <li>事故率高，不可持续</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:26px;">✅ 守法配送</h3>
+        <ul>
+          <li>按合法时速计算时限</li>
+          <li>自动识别异常并补时</li>
+          <li>骑手遵守交通规则</li>
+          <li>曲线平稳但安全可靠</li>
+          <li>事故率低，可持续</li>
+        </ul>
+      </div>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card"><div class="data-num">📊</div><div class="data-label">考核更真实</div><div class="data-desc">把不可控时间从骑手责任中剥离，考核更接近真实服务过程，不是比谁更敢冒险</div></div>
+      <div class="data-card"><div class="data-num">🛡</div><div class="data-label">减少冒险冲动</div><div class="data-desc">减少以超速、抢灯、逆行换时间的冲动，保护骑手和路人的安全</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">真实的效率 <span class="arrow">&gt;</span> 虚假的分钟竞速</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">补时不是取消时效要求，而是让时效要求建立在安全和守法的基础上</p>
+    </div>
+  </div>
+  <div class="key-sentence">真实的效率，比虚假的分钟竞速更可持续。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 结果可申诉 -->
+<section class="poster photo-page" id="xhs-10">
+  <img class="bg-img" src="assets/algorithm.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第五步 · 结果可申诉</p>
+    <h2 class="h2">系统做出判断之后<br>还要有人对判断负责</h2>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item" style="background:rgba(0,0,0,.3);"><div class="step-num">1</div><div class="step-content"><div class="step-title">查看扣罚原因</div><div class="step-desc">劳动者应能查看扣罚原因——为什么扣分、扣了多少、依据什么规则</div></div></div>
+      <div class="step-item" style="background:rgba(0,0,0,.3);"><div class="step-num">2</div><div class="step-content"><div class="step-title">上传证据</div><div class="step-desc">可以上传证据——照片、视频、聊天记录、定位信息等，证明自己没有违规</div></div></div>
+      <div class="step-item" style="background:rgba(0,0,0,.3);"><div class="step-num">3</div><div class="step-content"><div class="step-title">申请人工复核</div><div class="step-desc">可以申请人工复核——不是算法说了算，有人工审核环节，避免算法误判</div></div></div>
+      <div class="step-item" style="background:rgba(0,0,0,.3);"><div class="step-num">4</div><div class="step-content"><div class="step-title">限时反馈</div><div class="step-desc">获得限时反馈——申诉后多久有结果，必须有明确时限，不能石沉大海</div></div></div>
+      <div class="step-item" style="background:rgba(0,0,0,.3);"><div class="step-num">5</div><div class="step-content"><div class="step-title">外部救济</div><div class="step-desc">复杂争议可转入协商、调解、仲裁和法律服务——平台内部解决不了，有外部渠道</div></div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;background:rgba(37,99,235,.2);">
+      <p class="formula-text" style="font-size:24px;">算法判断 <span class="arrow">→</span> 人工复核 <span class="arrow">→</span> 限时反馈 <span class="arrow">→</span> 外部救济</p>
+    </div>
+  </div>
+  <div class="key-sentence">系统做出判断之后，还要有人对判断负责。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 五环总公式 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">环</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总框架 · 五环总公式</p>
+    <h2 class="h2">效率要计算<br>公平要设计，错误要能改</h2>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);background:var(--accent-soft);"><div class="f-num">1</div><div class="f-title">规则可解释</div><div class="f-desc">说清派单、计价、抽成、考核和申诉的基本逻辑——算法可以复杂，规则不能含糊</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">劳动者可协商</div><div class="f-desc">受规则影响的人有代表、有议题、有书面结果——透明让人知道，协商让人改变</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">安全成硬约束</div><div class="f-desc">按合法时速和合法路线测算效率——安全不是效率之外的选项，而是效率成立的前提</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">异常能补时</div><div class="f-desc">红灯、天气、出餐和复杂路况动态纠偏——现实世界不是一条没有红灯的直线</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">结果可申诉</div><div class="f-desc">证据能提交、人工能复核、错误能撤销——系统做出判断之后，还要有人负责</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:14px 0;">
+      <p class="formula-text" style="font-size:26px;">规则可解释 <span class="arrow">→</span> 劳动者可协商 <span class="arrow">→</span> 安全成硬约束 <span class="arrow">→</span> 异常能补时 <span class="arrow">→</span> 结果可申诉</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:10px;">中央：安全 · 效率 · 权益——三者平衡，缺一不可</p>
+    </div>
+  </div>
+  <div class="key-sentence">效率要计算，公平要设计，错误要能改。五环缺一不可。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 申论面试迁移 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>考场迁移 · 申论面试怎么用</p>
+    <h2 class="h2">遇到平台治理题<br>用五环框架答题</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:22px;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">📝 申论总论点公式</p>
+      <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">平台算法治理要守住安全底线、保障劳动者权益、提升配送效率，实现安全、效率、权益三者平衡。以规则透明为基础，以协商参与为保障，以安全约束为前提，以异常补时为纠偏，以申诉纠错为兜底。</p>
+    </div>
+    <div class="data-grid" style="margin:12px 0;">
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">申论三问</div><div class="data-desc">①算法算什么？②谁来定规则？③出错怎么办？先诊断问题，再匹配政策</div></div>
+      <div class="data-card"><div class="data-num">🎤</div><div class="data-label">面试情境</div><div class="data-desc">骑手投诉算法不合理超时扣钱怎么办？用五环：查规则→看协商→守安全→补异常→给申诉</div></div>
+      <div class="data-card"><div class="data-num">📊</div><div class="data-label">数据论据</div><div class="data-desc">北京三家平台试点红灯停表、2026年8月实施、恶劣天气和复杂路况自动补时</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">⚠</div><div class="data-label">常见误区</div><div class="data-desc">只写"加强监管"，忽视规则透明、协商参与、安全约束、异常补时、申诉纠错五个具体环节</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">面试五步：查规则 <span class="arrow">→</span> 看协商 <span class="arrow">→</span> 守安全 <span class="arrow">→</span> 补异常 <span class="arrow">→</span> 给申诉</p>
+    </div>
+  </div>
+  <div class="key-sentence">别再只写"加强监管"，用五环框架答出深度和可操作性。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 认知升级+尾卡 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">升</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>认知升级 · 尾卡</p>
+    <h2 class="h2">算法擅长找更快的路线<br>却不会天然知道什么是公平</h2>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">❌</div><div class="data-label">算法的局限</div><div class="data-desc">算法只会优化"更快"，不会天然考虑"更公平""更安全""更有尊严"——效率目标单一，需要人为设定公平目标</div></div>
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">✅</div><div class="data-label">公平的来源</div><div class="data-desc">公平来自规则目标、参与程序、安全边界和纠错责任——不是算法自动产生的，而是制度设计出来的</div></div>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item"><div class="f-num">🎯</div><div class="f-title">规则目标</div><div class="f-desc">算法的目标函数不能只有"最快"，还要加入安全、公平、权益等约束条件</div></div>
+      <div class="five-item"><div class="f-num">🗣</div><div class="f-title">参与程序</div><div class="f-desc">受算法影响的劳动者要有参与权，不是平台单方面决定所有人的工作规则</div></div>
+      <div class="five-item"><div class="f-num">🛡</div><div class="f-title">安全边界</div><div class="f-desc">安全是不可突破的硬约束，不能为了效率牺牲骑手和路人的生命安全</div></div>
+      <div class="five-item"><div class="f-num">🔧</div><div class="f-title">纠错责任</div><div class="f-desc">算法出错要有纠错渠道，有人对判断负责，不能让算法成为"无法问责的黑箱"</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:14px 0;background:var(--accent-soft);">
+      <p class="formula-text" style="font-size:26px;">配送可以由算法调度<br>但不能只由倒计时决定</p>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;text-align:center;">
+      <p style="font-size:24px;font-weight:700;line-height:1.6;color:var(--accent);">收藏五环框架<br>规则可解释 → 劳动者可协商 → 安全成硬约束 → 异常能补时 → 结果可申诉</p>
+    </div>
+  </div>
+  <div class="key-sentence">算法并不是问题本身。真正的问题是：它算什么、谁来定、出了错怎么办。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:10px;">本卡片内容基于以下6篇人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">魏哲哲：《依法维护新就业形态劳动者权益》</div><div class="ref-meta">人民日报，2025年1月16日，第05版；新就业形态劳动者权益保障的法律框架和政策方向</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">谢增毅：《有效加强新就业形态劳动者权益保障》</div><div class="ref-meta">人民日报，2025年5月7日，第09版；新就业形态劳动者权益保障的制度设计和实施路径</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">王沛：《为新就业形态劳动者撑腰打气》</div><div class="ref-meta">人民日报，2026年5月30日，第04版；新就业形态劳动者权益保障的政策支持和实践进展</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">易舒冉：《如何更好保障新就业形态劳动者权益》</div><div class="ref-meta">人民日报，2026年6月12日，第01版；新就业形态劳动者权益保障的综合分析和政策建议</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">王洲：《平台算法不得允许"超速配送"》</div><div class="ref-meta">人民日报，2026年7月31日，第11版；平台算法安全底线要求，不得允许超速配送，安全成硬约束的政策依据</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">潘俊强、林丽鹂：《北京三家外卖平台试点骑手计时"红灯停表"》</div><div class="ref-meta">人民日报，2026年8月14日，第11版；北京三家外卖平台试点红灯停表的具体做法和效果，异常能补时的实践案例</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:14px 20px;">
+      <p style="font-size:20px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>北京三家外卖平台试点红灯停表为2026年8月地方试点，不直接写成全国统一制度；平台算法不得允许"超速配送"为政策要求，具体实施细则以各地监管部门规定为准；新就业形态劳动者权益保障涉及劳动法、社会保险、职业伤害保障等多个领域，引用时必须保留法律和政策限定；红灯停表、恶劣天气补时、商家出餐慢不扣分等为北京试点具体做法，其他城市和平台可能有不同实施方式。不构成个体劳动者维权的法律建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第88期</span></div>
+    <h1 class="hero">配送<br>不能只由倒计时决定</h1>
+    <p class="body">安全、效率和权益都要算进算法。五环框架：规则可解释→劳动者可协商→安全成硬约束→异常能补时→结果可申诉。</p>
+    <div class="key-sentence">红灯前停下，是守法，不是怠工。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

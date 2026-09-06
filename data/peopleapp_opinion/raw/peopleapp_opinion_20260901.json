@@ -1,0 +1,514 @@
+[
+  {
+    "list_item": {
+      "activityExt": null,
+      "appStyle": "26",
+      "askInfo": null,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/edba82bc3fdc49889cb6ea5a118fac59.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 224,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/5b5cddd0680d42179026da6c2ecd8a87.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 212,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/7ae00f6327354375acf31fd27a9f6de4.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 239,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/3a9b917df3004af68d13aead2e2c9446.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 233,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "董泽扬"
+        }
+      ],
+      "channelId": 2003,
+      "commentInfo": null,
+      "contentMajorTopicRel": [],
+      "corner": "",
+      "coverSize": "900*600",
+      "coverType": 1,
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1788254216000",
+      "fullColumnImgUrls": [
+        {
+          "height": 600,
+          "landscape": 1,
+          "size": 145898,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 900
+        }
+      ],
+      "isAssessOriginal": 1,
+      "keyArticle": 0,
+      "linkUrl": "",
+      "liveInfo": null,
+      "menuShow": 1,
+      "moreObjectInfo": null,
+      "newTags": "",
+      "newsSummary": "大美山海不是免费影棚，生态环境更不是用完即弃的道具。",
+      "newsTitle": "“拍完就走”，这绝非“与自然相处之道”",
+      "objectId": "30053065926",
+      "objectType": "8",
+      "openAudio": 1,
+      "positionType": 1,
+      "publishTime": "1788270755000",
+      "readFlag": 1,
+      "relAskInfos": [],
+      "relId": 500007678731,
+      "relObjectId": "2003",
+      "relType": 1,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "shareInfo": null,
+      "shortDrama": null,
+      "slideShows": [],
+      "source": "人民日报客户端",
+      "sourceId": "41",
+      "tagIds": [],
+      "topicWatchCover": null,
+      "userInfo": null,
+      "videoInfo": null,
+      "visitorComment": 1,
+      "voiceInfo": {
+        "defaultMultiple": "1.0",
+        "openMultipleAdjustment": 1,
+        "type": 3,
+        "voiceDuration": 224,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/edba82bc3fdc49889cb6ea5a118fac59.mp3"
+      }
+    },
+    "detail": {
+      "activityInfos": [],
+      "appstyle": 26,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/edba82bc3fdc49889cb6ea5a118fac59.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 224,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/5b5cddd0680d42179026da6c2ecd8a87.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 212,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/7ae00f6327354375acf31fd27a9f6de4.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 239,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/3a9b917df3004af68d13aead2e2c9446.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 233,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "董泽扬"
+        }
+      ],
+      "bestNoticer": 1,
+      "commentDisplay": 1,
+      "contentMajorTopicRel": [],
+      "currentNum": null,
+      "editorName": "张小鹏",
+      "firstFrameImageUri": "",
+      "firstPublishTime": "2026-09-01 21:00:03",
+      "fullColumnImgUrls": [
+        {
+          "format": null,
+          "height": 600,
+          "landscape": 1,
+          "size": 145898,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg",
+          "weight": 900
+        }
+      ],
+      "hasPopUp": null,
+      "isAssessOriginal": 1,
+      "isNewspaper": false,
+      "itemId": "",
+      "itemTypeCode": "",
+      "keyArticle": 0,
+      "leaderArticle": 0,
+      "likesStyle": 1,
+      "liveInfo": null,
+      "menuShow": 1,
+      "newIntroduction": "",
+      "newLinkObject": null,
+      "newsBodyTitle": "",
+      "newsContent": "<p style=\"text-indent: 2em;\">近日，一位自媒体博主在海南万宁市神州半岛第四湾海滩开展公益净滩时，挖出两年前一视频平台制作综艺节目《这是我的岛》遗留的大量拍摄道具。现场铁架锈蚀、泡沫散落，与节目“找到与自然的相处之道”的定位形成鲜明反差。事件曝光后，万宁市迅速介入，组织力量完成全域清理，节目组也赶赴现场排查处理。</p><p><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260901/image/content/07653421df164562a6020b9b0b185252.png\" alt=\"\" class=\"332794571\"></p><p style=\"text-indent: 2em;\"><span style=\"text-indent: 2em;\">垃圾清走了，争议却未平息。节目组的回应耐人寻味：拍摄结束后做过清运，由于有村民索要剩余道具，经协商后，将余下少量道具交由村民，明确后续管理、处置责任“由接收方承担”。言下之意，我交出去了，之后的事与我无关了。</span></p><p style=\"text-indent: 2em;\">这套逻辑，看似有理，实则站不住脚。<strong>垃圾在拍摄过程中产生，节目组自然是第一责任人。既然以自然为话题拍摄节目，对生态环境更应有审慎敬畏的态度、善始善终的担当</strong>。既然付费委托第三方清理，理应跟踪落实，实地验收。所谓“移交”，不过是将商业拍摄的收尾成本转嫁给缺乏处置能力的村民。从节目杀青后的行动到如今的回应，<strong>言行之中，似无“与海共处”的情，倒有甩锅敷衍的意。</strong></p><p style=\"text-indent: 2em;\">把自然环境当“一次性背景板”、将动植物视为“话题道具”，这样的做法并非孤例。此前，有电影在云南香格里拉碧沽天池拍摄，为修建沙石道路、栈道等，剧组毁坏并占用高山草甸及灌木林地；某档综艺节目中，出现嘉宾采摘珍稀植物“水母雪兔子”的争议，事后节目组就此发布致歉声明……镜头里精心编排“亲近自然”的叙事，镜头外却以“拍完就走”的姿态留下生态创伤。</p><p style=\"text-indent: 2em;\">更深层的问题在于，户外影视综艺拍摄长期处于“流量至上、生态让位”的惯性之中。在生态脆弱的海<span style=\"text-align: justify; text-indent: 36px;\">滨</span>、山林、草原野蛮拍摄，废旧金属渗入土里，泡沫塑料碎入水中，其危害远非“捡一捡”就能消弭。商业创作攫取了自然场景的审美红利，却不愿承担场地保护和修复的对等义务。明星在镜头前做出破坏环境的举动，更容易引发模仿，贻害无穷。</p><p style=\"text-indent: 2em;\"><strong>个案的“灭火”不能替代制度的“防火”，综艺节目“杀青”也别忘了“护绿”</strong>。拍摄主体是第一责任人，对拍摄产生的垃圾和生态破坏的后果负有直接责任。拍摄前科学做好环境影响评估，拍摄中严格落实环保措施，拍摄后认真做到场清料净，这应当成为行业通行的“标准动作”。这也离不开制度的约束，明晰权责、建立闭环，将生态复原作为拍摄许可的刚性前置条件与硬性退场标准，并引入保证金、黑名单等约束手段，让“拍完就走”付出应有代价。</p><p style=\"text-indent: 2em;\"><strong>大美山海不是免费影棚，生态环境更不是用完即弃的道具。</strong>真正的“人与自然和谐共生”，不在节目的剧本里，不在宣发的口号中，而在拍摄全周期爱护环境、保护生态的担当之中。“像保护眼睛一样保护生态环境”，这样的节目才能打动观众，也才能收获真正的认可与尊重。</p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">策划：岳小乔、雒健晴</span></p><p style=\"text-indent: 2em;\"><span style=\"color: rgb(127, 127, 127);\">海报：王宇峰、刘珂君</span></p>",
+      "newsContentBak": "{}",
+      "newsDownTitle": "",
+      "newsId": 30053065926,
+      "newsLinkUrl": "",
+      "newsShortTitle": "",
+      "newsSource": "41",
+      "newsSourceName": "人民日报客户端",
+      "newsSummary": "大美山海不是免费影棚，生态环境更不是用完即弃的道具。",
+      "newsTags": "",
+      "newsTitle": "“拍完就走”，这绝非“与自然相处之道”",
+      "newsType": 8,
+      "oldNewsId": "",
+      "openAudio": 1,
+      "openComment": 1,
+      "openLikes": 1,
+      "openView": 1,
+      "paperCategorys": [],
+      "pcFirstFrameImageUri": "",
+      "photoList": [
+        {
+          "height": 1920,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260901/image/content/07653421df164562a6020b9b0b185252.png",
+          "size": 0,
+          "width": 1080
+        }
+      ],
+      "popUps": [],
+      "preCommentFlag": 0,
+      "publishTime": "2026-09-01 21:52:35",
+      "reLInfo": {
+        "channelId": 2003,
+        "relId": "500007678731",
+        "relObjectId": 2003,
+        "relType": "1"
+      },
+      "readFlag": 1,
+      "recallFrom": null,
+      "recommendShow": 1,
+      "refreshCnt": null,
+      "relAskInfos": [],
+      "respPosition": null,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "sceneId": "",
+      "serials": null,
+      "shareInfo": {
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrbxbshare.png?x-oss-process=image/resize,w_120",
+        "shareOpen": 1,
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/image/column/rmrpxb.jpg?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterOpen": 1,
+        "sharePosterStyle": 1,
+        "shareSummary": "大美山海不是免费影棚，生态环境更不是用完即弃的道具。",
+        "shareTitle": "“拍完就走”，这绝非“与自然相处之道”",
+        "shareUrl": "https://www.peopleapp.com/column/30053065926-500007678731"
+      },
+      "shortDrama": null,
+      "specialColumnId": null,
+      "specialColumnName": "",
+      "subSceneId": "",
+      "timeline": null,
+      "topicInfo": null,
+      "traceId": "",
+      "traceInfo": "",
+      "traineeName": "",
+      "userInfo": null,
+      "videoInfo": [],
+      "viewCount": 1878310,
+      "visitorComment": 1,
+      "voteInfo": null
+    }
+  },
+  {
+    "list_item": {
+      "activityExt": null,
+      "appStyle": "26",
+      "askInfo": null,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/4f5e84bc0ebb46eebad3254ca0a4dada.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 188,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/733a2d7b306340778dd81a52f73eefe8.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 178,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/b7897b3c0dae4f06b99396320b3702ca.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 197,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/0228c14847a14eb5ae20c2bdf4eac4ac.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 198,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "罗珊珊"
+        },
+        {
+          "authorName": "孙嘉翊"
+        }
+      ],
+      "channelId": 2003,
+      "commentInfo": null,
+      "contentMajorTopicRel": [],
+      "corner": "",
+      "coverSize": "1560*1040",
+      "coverType": 1,
+      "coverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260712/image/zhuanlan/1a4a17fe3c474bf68b2884a177444bb6.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+      "createTime": "1788259085000",
+      "fullColumnImgUrls": [
+        {
+          "height": 1040,
+          "landscape": 1,
+          "size": 726434,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260712/image/zhuanlan/1a4a17fe3c474bf68b2884a177444bb6.png?x-oss-process=image/resize,w_750/quality,q_90/format,jpg",
+          "weight": 1560
+        }
+      ],
+      "isAssessOriginal": 1,
+      "keyArticle": 0,
+      "linkUrl": "",
+      "liveInfo": null,
+      "menuShow": 1,
+      "moreObjectInfo": null,
+      "newTags": "",
+      "newsSummary": "汽车出海，比拼的是体系能力。",
+      "newsTitle": "汽车“出海”，有了《指引》",
+      "objectId": "30053066645",
+      "objectType": "8",
+      "openAudio": 1,
+      "positionType": 1,
+      "publishTime": "1788270749000",
+      "readFlag": 0,
+      "relAskInfos": [],
+      "relId": 500007678730,
+      "relObjectId": "2003",
+      "relType": 1,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "shareInfo": null,
+      "shortDrama": null,
+      "slideShows": [],
+      "source": "人民日报客户端",
+      "sourceId": "41",
+      "tagIds": [],
+      "topicWatchCover": null,
+      "userInfo": null,
+      "videoInfo": null,
+      "visitorComment": 1,
+      "voiceInfo": {
+        "defaultMultiple": "1.0",
+        "openMultipleAdjustment": 1,
+        "type": 3,
+        "voiceDuration": 188,
+        "voiceUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/4f5e84bc0ebb46eebad3254ca0a4dada.mp3"
+      }
+    },
+    "detail": {
+      "activityInfos": [],
+      "appstyle": 26,
+      "audioList": [
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/4f5e84bc0ebb46eebad3254ca0a4dada.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 188,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "stanley"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/733a2d7b306340778dd81a52f73eefe8.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 178,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhistella"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/b7897b3c0dae4f06b99396320b3702ca.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 197,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhiyuan"
+        },
+        {
+          "audioUrl": "https://cdnjdout.aikan.pdnews.cn/zhbj-20260901/voice/0228c14847a14eb5ae20c2bdf4eac4ac.mp3",
+          "defaultMultiple": "1.0",
+          "duration": 198,
+          "openMultipleAdjustment": 1,
+          "sourceType": 2,
+          "type": 3,
+          "voicer": "zhida"
+        }
+      ],
+      "authorList": [
+        {
+          "authorName": "罗珊珊"
+        },
+        {
+          "authorName": "孙嘉翊"
+        }
+      ],
+      "bestNoticer": 1,
+      "commentDisplay": 1,
+      "contentMajorTopicRel": [],
+      "currentNum": null,
+      "editorName": "吴约",
+      "firstFrameImageUri": "",
+      "firstPublishTime": "2026-09-01 21:27:47",
+      "fullColumnImgUrls": [
+        {
+          "format": null,
+          "height": 1040,
+          "landscape": 1,
+          "size": 726434,
+          "url": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260712/image/zhuanlan/1a4a17fe3c474bf68b2884a177444bb6.png",
+          "weight": 1560
+        }
+      ],
+      "hasPopUp": null,
+      "isAssessOriginal": 1,
+      "isNewspaper": false,
+      "itemId": "",
+      "itemTypeCode": "",
+      "keyArticle": 0,
+      "leaderArticle": 0,
+      "likesStyle": 1,
+      "liveInfo": null,
+      "menuShow": 1,
+      "newIntroduction": "",
+      "newLinkObject": null,
+      "newsBodyTitle": "",
+      "newsContent": "<p style=\"justify-content: center;\"><img src=\"https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260901/image/content/4ace40bb04a54746940dc57f10cb22ad.png\" class=\"332798780\" style=\"max-width:100%\"></p><p style=\"text-indent: 2em;\">近日，商务部、工业和信息化部、市场监管总局发布《汽车行业境外竞争行为与合规建设指引》（以下简称《汽车指引》），<strong>为中国汽车“出海”实现经营稳、品牌响、走得远提供了明确的指南。</strong><br></p><p style=\"text-indent: 2em;\">2025年，我国汽车出口832.5万辆，销往200多个国家和地区。今年前7月，我国汽车整车出口614万辆，同比大幅增长66.8%。<strong>我国汽车制造业企业已在80多个国家和地区投资产业</strong>，为越来越多全球消费者提供了优质优价、安全可靠、绿色低碳的出行工具。</p><p style=\"text-indent: 2em;\">随着汽车出海规模不断扩大，国际竞争力持续提升，也对企业的海外经营能力提出更高要求。一段时间以来，在一些海外市场，出现了个别企业集中涌入同一价格区间、频繁降价、渠道窜货、压缩售后服务投入等现象。为此，《指引》强调，“汽车行业企业境外生产经营应当遵循依法合规、公平竞争、互利共赢的基本原则”，<strong>目的在于引导企业有效遏制海外市场低价内卷等恶性竞争行为，推动汽车企业提升跨国经营专业化、规范化水平。</strong></p><p style=\"text-indent: 2em;\">对汽车企业而言，走向海外，面对的是不同的法律制度、市场环境和商业文化。《指引》将境外市场竞争行为作为重要内容，从生产销售、品牌宣传等方面提出注意事项，同时围绕安全生产、质量管理、售后服务、数据安全、知识产权保护、反垄断合规以及劳工环保等方面，对企业海外合规建设提出建议。</p><p style=\"text-indent: 2em;\">汽车出海，比拼的是体系能力。当前，中国汽车企业与跨国车企相比，在国际化经营能力、合规建设、售后服务体系等方面仍有提升空间。为此《指引》提出，“企业应根据我国对外投资合作政策导向和东道国（地区）实际情况，因地制宜开展生产经营活动”“提高境外安全生产管理水平”。<strong>此举在于引导汽车产业链跨境有序布局，推动行业形成互利共赢的国际化发展生态，助力我国从汽车出口大国稳步迈向汽车产业强国，为汽车出口行稳致远提供坚实支撑。</strong></p><p style=\"text-indent: 2em;\">越是在全球竞争加剧背景下，越要珍惜来之不易的品牌口碑。随着中国汽车从“产品出海”迈向“产业生态出海”，《指引》提出，走向全球的中国汽车企业“应建立完善汽车相关产品境外市场质量管理体系和售后服务体系，做好市场研究和适应性开发，提升服务水平”。<strong>只有这样，才能让出海产品经得起市场检验，让中国汽车品牌在海外市场走得更远。</strong></p>",
+      "newsContentBak": "{}",
+      "newsDownTitle": "",
+      "newsId": 30053066645,
+      "newsLinkUrl": "",
+      "newsShortTitle": "",
+      "newsSource": "41",
+      "newsSourceName": "人民日报客户端",
+      "newsSummary": "汽车出海，比拼的是体系能力。",
+      "newsTags": "",
+      "newsTitle": "汽车“出海”，有了《指引》",
+      "newsType": 8,
+      "oldNewsId": "",
+      "openAudio": 1,
+      "openComment": 1,
+      "openLikes": 1,
+      "openView": 1,
+      "paperCategorys": [],
+      "pcFirstFrameImageUri": "",
+      "photoList": [
+        {
+          "height": 317,
+          "picDesc": "",
+          "picPath": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260901/image/content/4ace40bb04a54746940dc57f10cb22ad.png",
+          "size": 0,
+          "width": 1080
+        }
+      ],
+      "popUps": [],
+      "preCommentFlag": 0,
+      "publishTime": "2026-09-01 21:52:29",
+      "reLInfo": {
+        "channelId": 2003,
+        "relId": "500007678730",
+        "relObjectId": 2003,
+        "relType": "1"
+      },
+      "readFlag": 1,
+      "recallFrom": null,
+      "recommendShow": 1,
+      "refreshCnt": null,
+      "relAskInfos": [],
+      "respPosition": null,
+      "rmhInfo": null,
+      "rmhPlatform": 0,
+      "sceneId": "",
+      "serials": null,
+      "shareInfo": {
+        "shareCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260712/image/zhuanlan/8fcaad9fb3244554a0c19fcaeb766e81.png?x-oss-process=image/resize,w_120",
+        "shareOpen": 1,
+        "sharePosterCoverUrl": "https://cdnjdphoto.aikan.pdnews.cn/zhbj-20260712/image/zhuanlan/1a4a17fe3c474bf68b2884a177444bb6.png?x-oss-process=image/resize,m_fill,h_500,w_750,limit_0/quality,q_90",
+        "sharePosterOpen": 1,
+        "sharePosterStyle": 1,
+        "shareSummary": "汽车出海，比拼的是体系能力。",
+        "shareTitle": "汽车“出海”，有了《指引》",
+        "shareUrl": "https://www.peopleapp.com/column/30053066645-500007678730"
+      },
+      "shortDrama": null,
+      "specialColumnId": null,
+      "specialColumnName": "",
+      "subSceneId": "",
+      "timeline": null,
+      "topicInfo": null,
+      "traceId": "",
+      "traceInfo": "",
+      "traineeName": "",
+      "userInfo": null,
+      "videoInfo": [],
+      "viewCount": 370074,
+      "visitorComment": 1,
+      "voteInfo": null
+    }
+  }
+]

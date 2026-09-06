@@ -55,6 +55,8 @@
 - 选题可以是一篇独立核心主题，也可以设计成连续系列。设计系列时，要参考人民日报原有栏目、连续报道、标题括注和同主题文章群；系列中的每一篇都必须有独立读者问题、独立分析框架，并分别满足至少 3 篇人民日报文章支撑，不能把同一篇文章只换标题拆成多篇。
 - 排查重复时除查看 `content_ideas` 的状态外，还要同步核对 `data/articles/文章索引.md` 和成品稿目录，避免因选题状态未及时回写而重复安排已经成稿或发表的文章。
 - 本地 HTML 选题工作台由 `scripts/serve_idea_magazine.py` 启动，读取 `content_ideas`，并把精筛、备注等人工操作写入 `content_idea_notes`。
+- 妙搭“人民日报选题工作台”是选题库的只读网页副本，本地 `data/core/material_assets.sqlite` 仍是唯一事实源。每次日报、周报、月报或政经参考选题梳理完成并刷新 `data/articles/选题库.md`、`data/exports/content_ideas.csv` 后，必须继续运行 `python3 scripts/sync_idea_magazine_to_miaoda.py` 覆盖发布同一个妙搭地址；同步失败要明确说明，不能把只刷新本地文件当作完成。常用的 `scripts/refine_content_ideas.py` 和 `scripts/export_content_ideas.py` 在已有妙搭配置时会自动执行这一步。
+- 妙搭“APP 评论热点选题工作台”是 `data/peopleapp_opinion/core/hotspot_topics.sqlite` 的只读网页副本。每次 APP 评论热点梳理完成后，必须继续运行 `python3 scripts/sync_hotspot_magazine_to_miaoda.py` 覆盖更新同一个网页地址；`scripts/update_peopleapp_opinion_topic_library.py` 在已有妙搭配置时会自动同步，因此每日 APP 评论采集流程也会自动刷新该网页。同步失败要明确说明，不能把只刷新本地热点总库当作完成。
 - 自媒体运营数据统一放在 `data/data_analysis/`。其中原始后台表进 `raw/`，CSV 等拆分结果进 `exports/`，分析结果进 `reports/`，长期数据链更新 `overview.md`。
 - 每次用户提供新的自媒体后台数据后，必须生成一份对应批次的详细运营数据分析报告，并与上一批比较；不能只生成导入说明或只做当期孤立分析。
 - 每次自媒体数据导入后必须同步更新长期运营总览，连续观察新增日期、新文章、同篇文章长尾、渠道变化和滚动周期趋势。
@@ -90,6 +92,18 @@ python3 scripts/export_content_ideas.py
 
 ```bash
 python3 idea_magazine.py
+```
+
+同步选题网页到妙搭：
+
+```bash
+python3 scripts/sync_idea_magazine_to_miaoda.py
+```
+
+同步 APP 评论热点网页到妙搭：
+
+```bash
+python3 scripts/sync_hotspot_magazine_to_miaoda.py
 ```
 
 重建本地核心库：

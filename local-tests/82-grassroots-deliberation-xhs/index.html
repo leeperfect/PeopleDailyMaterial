@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>基层群众议事 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#dc2626;--accent-soft:rgba(220,38,38,.15);--warn:#f59e0b;--danger:#ef4444;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:96px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3.photo-page .content{justify-content:center}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第82期</span></div>
+    <h1 class="hero">群众议事<br>从听意见到见结果</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">五个动作把意见转成治理结果</p>
+  </div>
+  <div class="key-sentence">会开完了，事情办成了吗？</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>纠偏 · 常见低分表达</p>
+    <h2 class="h2">很多答案<br>只写到了"开会"</h2>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">1</div><div class="data-label">广泛征求群众意见</div><div class="data-desc">只说"听意见"，不说意见去了哪里</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">召开居民议事会</div><div class="data-desc">只说"开会"，不说谁能议、议什么、怎样议</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">凝聚各方共识</div><div class="data-desc">只说"共识"，不说共识怎样变成行动</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">?</div><div class="data-label">后面全空白</div><div class="data-desc">责任、资金、时限、反馈——答案里全没有</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>意见去了哪里、由谁办理、结果怎样评价——这才是群众议事的关键。</p>
+    </div>
+  </div>
+  <div class="key-sentence">意见去了哪里、由谁办理、结果怎样评价，答案里全没有。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总框架 · 把意见转成结果要过5关</p>
+    <h2 class="h2">群众议事<br>是一条转化链</h2>
+    <div class="formula-box">
+      <p class="formula-text">民情定议题<span class="arrow">→</span>规则保参与<span class="arrow">→</span>调研找方案<span class="arrow">→</span><br>协同办结果<span class="arrow">→</span>公开再评价</p>
+    </div>
+    <div class="five-grid">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">民情定议题</div><div class="f-desc">从热线、走访、网格中找到真问题，不是谁声音大先议谁</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">规则保参与</div><div class="f-desc">明确谁能议、议什么、怎样议，规则防止少数人垄断表达</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">调研找方案</div><div class="f-desc">查成因、核政策、算成本、评风险，生活经验和专业判断同桌</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">协同办结果</div><div class="f-desc">形成主责、协同、资源、时限、风险五张清单，共识变行动</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">公开再评价</div><div class="f-desc">议题、方案、进度、资金、结果全公开，允许复议纠错</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">群众议事是一条转化链，不是一场活动。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 议题 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">议</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第一关 · 民情定议题</p>
+    <h2 class="h2">不是谁声音大<br>就先议谁</h2>
+    <p class="body">投诉、建议和日常观察先形成问题清单，再判断公共性、紧迫性、权限和可协商性。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">⚖</div><div class="data-label">公共性判断</div><div class="data-desc">是否涉及多数人利益，还是个别诉求</div></div>
+      <div class="data-card"><div class="data-num">⏰</div><div class="data-label">紧迫性判断</div><div class="data-desc">是否需要立即处理，还是可以纳入计划</div></div>
+      <div class="data-card"><div class="data-num">📋</div><div class="data-label">权限判断</div><div class="data-desc">是否属于基层自治范围，还是需转交部门</div></div>
+      <div class="data-card"><div class="data-num">🤝</div><div class="data-label">可协商性</div><div class="data-desc">是否存在多方利益，需要协商而非裁决</div></div>
+    </div>
+    <p class="h3" style="color:var(--accent);margin:8px 0;">别漏掉"沉默需求"：</p>
+    <div class="compare-grid" style="margin:10px 0;">
+      <div class="compare-col"><h3 style="font-size:24px;">到会者</h3><p style="font-size:21px;color:var(--text-secondary);">声音大、表达能力强，但不能自动代表全部群众</p></div>
+      <div class="compare-col"><h3 style="font-size:24px;">未到会者</h3><p style="font-size:21px;color:var(--text-secondary);">独居老人、残疾人、外来租户、轮班人员——靠入户、网格、热线补充发现</p></div>
+    </div>
+  </div>
+  <div class="key-sentence">议题要从真实民情中来，也要经过公共判断。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 数据选题 -->
+<section class="poster photo-page" id="xhs-05">
+  <img class="bg-img" src="assets/funnel.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>地方案例 · 数据帮助选题</p>
+    <h2 class="h2">一通投诉是个案<br>反复投诉可能是共性问题</h2>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">📞</div><div class="data-label">12345热线大数据</div><div class="data-desc">北京"每月一题"从热线数据中筛选高频共性问题</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">💧</div><div class="data-label">农村供水保障议题</div><div class="data-desc">从反复投诉中识别农村供水问题，再到典型区域调研</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🔍</div><div class="data-label">数据+现场</div><div class="data-desc">数据帮助看见共性，现场决定问题是否真实</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">⚠</div><div class="data-label">边界提醒</div><div class="data-desc">这是北京地方实践，不代表全国统一做法</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:16px 0;background:rgba(220,38,38,.2);">
+      <p class="formula-text" style="font-size:25px;">数据聚合共性 <span class="arrow">→</span> 现场验证真实 <span class="arrow">→</span> 形成公共议题</p>
+    </div>
+  </div>
+  <div class="key-sentence">数据帮助看见共性，现场决定问题是否真实。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 规则 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">规</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第二关 · 规则保参与</p>
+    <h2 class="h2">议事不是<br>"想说什么就说什么"</h2>
+    <p class="body">要明确谁能议、议什么、怎样议，依法区分协商、表决和部门职责。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">👤</div><div class="data-label">谁能议</div><div class="data-desc">利益相关者、居民代表、不便发声群体都要进入</div></div>
+      <div class="data-card"><div class="data-num">📋</div><div class="data-label">议什么</div><div class="data-desc">自治事项可协商，法定决策走程序，部门职责不越权</div></div>
+      <div class="data-card"><div class="data-num">📝</div><div class="data-label">怎样议</div><div class="data-desc">中立主持、一事一议、有序发言、不打断不攻击</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">✓</div><div class="data-label">规则的价值</div><div class="data-desc">不是限制表达，而是防止少数人垄断表达</div></div>
+    </div>
+    <p class="h3" style="color:var(--accent);margin:8px 0;">混乱议事会怎样纠偏（融安地方案例）：</p>
+    <div class="compare-grid" style="margin:10px 0;">
+      <div class="compare-col"><h3 style="font-size:24px;">议事六条</h3><ul><li>有序发言、不打断</li><li>不攻击、不揣测动机</li><li>事实不足就补材料</li></ul></div>
+      <div class="compare-col"><h3 style="font-size:24px;">延期复议</h3><ul><li>不能形成方案就延期</li><li>充分协商≠当天必须统一</li><li>允许下次再议</li></ul></div>
+    </div>
+  </div>
+  <div class="key-sentence">规则不是限制表达，而是防止少数人垄断表达。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 方案 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">案</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第三关 · 调研找方案</p>
+    <h2 class="h2">大家都赞成<br>为什么仍可能办不了？</h2>
+    <p class="body">还要查成因、核政策、算成本、评风险，并形成可比较的备选方案。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">🔬</div><div class="data-label">查成因</div><div class="data-desc">专业检测查清污染原因，不靠感受判断</div></div>
+      <div class="data-card"><div class="data-num">📜</div><div class="data-label">核政策</div><div class="data-desc">核对政策依据和法定程序，不越权决策</div></div>
+      <div class="data-card"><div class="data-num">💰</div><div class="data-label">算成本</div><div class="data-desc">资金核算、筹资方式、维护费用都要算清</div></div>
+      <div class="data-card"><div class="data-num">⚠</div><div class="data-label">评风险</div><div class="data-desc">施工风险、环境影响、后续维护都要评估</div></div>
+    </div>
+    <p class="h3" style="color:var(--accent);margin:8px 0;">供水案例的三次转换：</p>
+    <div class="formula-box" style="padding:20px;margin:10px 0;">
+      <p class="formula-text" style="font-size:25px;">感受（水发臭）<span class="arrow">→</span> 事实（检测查清污染）<span class="arrow">→</span> 方案（市政水接入）</p>
+    </div>
+    <p class="body" style="font-size:23px;">把分歧拆成事实、成本和责任，问题才有机会解决。（地方案例，不外推价格和时限）</p>
+  </div>
+  <div class="key-sentence">协商要把生活经验和专业判断放在同一张桌上。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 执行 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">办</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第四关 · 协同办结果</p>
+    <h2 class="h2">谁负责？钱从哪来？<br>多久办完？</h2>
+    <p class="body">形成主责、协同、资源、时限和风险五张清单，超出基层权限的及时转交有权部门。</p>
+    <div class="five-grid">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">主责清单</div><div class="f-desc">明确谁牵头负责，避免"大家都管=没人管"</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">协同清单</div><div class="f-desc">跨部门事项明确配合单位和衔接机制</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">资源清单</div><div class="f-desc">资金、场地、人员、设备落实到具体来源</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">时限清单</div><div class="f-desc">每个节点有明确完成时间，防止无限拖延</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">风险清单</div><div class="f-desc">预判施工、资金、舆情风险，制定应急预案</div></div>
+    </div>
+    <div class="compare-col" style="margin-top:14px;padding:18px 22px;border-color:var(--warn);">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">共治不是责任转嫁：</strong>群众参与≠群众兜底。筹资投劳必须自愿公开；专业工程由专业主体负责；政府法定职责不能用"共同商量"推给居民。</p>
+    </div>
+  </div>
+  <div class="key-sentence">形成共识不是终点，是责任办理的起点。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 公开 -->
+<section class="poster photo-page" id="xhs-09">
+  <img class="bg-img" src="assets/dashboard.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第五关 · 公开再评价</p>
+    <h2 class="h2">公开不只晒结果<br>全过程都要看得见</h2>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">1</div><div class="data-label">议题公开</div><div class="data-desc">是否受理、为什么选这个议题，及时告知</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">2</div><div class="data-label">方案公开</div><div class="data-desc">备选方案、论证过程、选择理由全部公开</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">3</div><div class="data-label">进度公开</div><div class="data-desc">办理主体、当前进度、预计完成时间可查</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">4</div><div class="data-label">资金公开</div><div class="data-desc">采购施工、资金使用、决算审计透明</div></div>
+    </div>
+    <div class="data-grid" style="margin:12px 0;">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">5</div><div class="data-label">结果公开</div><div class="data-desc">项目完成后评价公平、效果和维护</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">!</div><div class="data-label">群众最怕</div><div class="data-desc">不是暂时没办完，而是不知道办到哪一步</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">群众最怕的不是暂时没办完，而是不知道办到哪一步。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 复议 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">复</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>纠错机制 · 允许复议才是真闭环</p>
+    <h2 class="h2">方案错了怎么办？</h2>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">承认失误</div><div class="step-desc">不回避问题，公开说明哪里出了错、为什么出错</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">重新调查</div><div class="step-desc">回到现场，重新核实事实、成本和责任</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">再次协商</div><div class="step-desc">把新情况带回议事会，重新形成方案</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">调整方案</div><div class="step-desc">根据新共识调整执行方案，公开变更理由</div></div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:16px 0;">
+      <p class="formula-text" style="font-size:25px;">办理结果 <span class="arrow">→</span> 群众评价 <span class="arrow">→</span> 新问题 <span class="arrow">→</span> 下一轮议事</p>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">桂花村案例：</strong>53年坚持"议事"，调查后再决定、复议纠错和财务公开——常态议事让错误能纠正、规则能改进。</p>
+    </div>
+  </div>
+  <div class="key-sentence">闭环不是销号，而是错误能纠正、规则能改进。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 申论迁移 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">申</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>考场迁移 · 申论怎么写</p>
+    <h2 class="h2">遇到"群众参与"<br>先写这五步</h2>
+    <div class="compare-col accent-col" style="padding:22px;margin-bottom:18px;">
+      <p style="font-size:26px;line-height:1.8;font-weight:700;"><strong style="color:var(--accent);">申论公式：</strong>民情有入口 <span style="color:var(--accent);">+</span> 参与有规则 <span style="color:var(--accent);">+</span> 方案有论证 <span style="color:var(--accent);">+</span> 办理有清单 <span style="color:var(--accent);">+</span> 结果有监督</p>
+    </div>
+    <p class="h3" style="color:var(--accent);margin-bottom:10px;">适用母题：</p>
+    <div class="data-grid" style="margin:10px 0;">
+      <div class="data-card"><div class="data-label">全过程人民民主</div><div class="data-desc">基层群众自治、民主协商、民主决策</div></div>
+      <div class="data-card"><div class="data-label">社区/乡村治理</div><div class="data-desc">物业协商、村庄项目、矛盾纠纷化解</div></div>
+      <div class="data-card"><div class="data-label">群众诉求办理</div><div class="data-desc">12345热线、听证议事、政务公开</div></div>
+      <div class="data-card"><div class="data-label">基层减负协同</div><div class="data-desc">部门协同、权责清晰、群众监督</div></div>
+    </div>
+    <div class="compare-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong>写作提醒：</strong>不要只写"广泛征求意见、召开议事会、凝聚各方共识"——要写意见怎样变成议题、方案、清单和结果。</p>
+    </div>
+  </div>
+  <div class="key-sentence">不要只会"耐心沟通"，要把沟通变成可执行步骤。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 面试处置 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">面</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>面试迁移 · 现场处置题</p>
+    <h2 class="h2">停车场改造引发争议<br>怎么办？</h2>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">核实需求</div><div class="step-desc">先了解争议焦点：是车位数量、收费标准、施工影响还是产权问题</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">规范议事</div><div class="step-desc">组织利益相关者议事，明确规则，中立主持，保障各方表达</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">比较方案</div><div class="step-desc">提供2-3个备选方案，附成本、工期、影响评估，供群众比较选择</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">明确责任</div><div class="step-desc">形成主责、协同、资金、时限清单，超出权限的及时转交部门</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">公开评价</div><div class="step-desc">全过程公开进度和资金，完成后接受群众评价，允许复议纠错</div></div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">核实需求 <span class="arrow">→</span> 规范议事 <span class="arrow">→</span> 比较方案 <span class="arrow">→</span> 明确责任 <span class="arrow">→</span> 公开评价</p>
+    </div>
+  </div>
+  <div class="key-sentence">不要只会"耐心沟通"，要把沟通变成可执行步骤。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">结</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>认知升级 · 群众议事最后要见到什么</p>
+    <h2 class="h2">从"听意见"<br>到"见结果"</h2>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">📥</div><div class="data-label">意见有去向</div><div class="data-desc">每条意见都有受理、有分类、有回应</div></div>
+      <div class="data-card"><div class="data-num">📋</div><div class="data-label">方案有依据</div><div class="data-desc">经过事实调查、专业论证和成本测算</div></div>
+      <div class="data-card"><div class="data-num">👤</div><div class="data-label">事项有人办</div><div class="data-desc">主责、协同、资源、时限清单明确</div></div>
+      <div class="data-card"><div class="data-num">👁</div><div class="data-label">过程能监督</div><div class="data-desc">议题、方案、进度、资金、结果全公开</div></div>
+    </div>
+    <div class="data-card" style="margin:12px 0;border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">✓</div><div class="data-label">结果可评价</div><div class="data-desc">项目完成后评价公平、效果和维护，允许复议纠错，闭环成为下一轮治理起点</div></div>
+    <div class="formula-box" style="padding:22px;margin:16px 0;">
+      <p class="formula-text" style="font-size:26px;">从"听意见"到"见结果"，中间隔着的正是基层治理能力。</p>
+    </div>
+  </div>
+  <div class="key-sentence">群众议事不是一场活动，而是一套把意见转化为治理结果的机制。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:12px;">本卡片内容基于以下7篇人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">修改后的村民委员会组织法、城市居民委员会组织法本月起施行</div><div class="ref-meta">彭波，人民日报，2026年1月，法治底座；支撑党的领导、民主协商、民主决策、民主管理和民主监督的制度框架；法律制度不能简化为"所有事项均由议事会决定"，仍需区分自治事项、法定决策程序和部门职责</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">"基层治理像绣花，针脚跟着民情走"</div><div class="ref-meta">何昭宇，人民日报，2026年1月，民情发现与常态议事；主动发现、沉默需求、居民出题和数字巡检；"窗帘约定"不能脱离居民同意和社区关系机械复制</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">53年坚持"议事"，桂花村越来越好</div><div class="ref-meta">朱磊，人民日报，2026年1月，常态议事、调查后再决定、复议纠错和财务公开；桂花村产业成效不能单独归因于议事制度</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">汇聚各方声音 协商化解民忧</div><div class="ref-meta">姜洁、施芳，人民日报，2026年1月，专业论证与跨部门协同；热线选题、专业检测、现场调研、成本核算、多方协商和资金落地的完整案例（北京供水）；供水价格、筹资方式和完成时限均为当地具体条件下的结果</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">一场议事会，如何让"金点子"变成"金果子"</div><div class="ref-meta">祝佳祺，人民日报，2026年1月，规则、执行与监督；四项基本流程、"七议三不议"、"议事六条"、理事会监事会分工和一事一公开（融安案例）；融安阶段数据标明2024年以来；村民自筹和投工投劳必须自愿、公开、量力而行</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">让群众议事议得好、有成效</div><div class="ref-meta">胡帆，人民日报，2026年1月，从议到办再到管；强调议事不能停在会场，要落到办理和监督</div></div></div>
+      <div class="ref-item"><div class="ref-num">7</div><div class="ref-content"><div class="ref-title">议事亭里的"治理三要"</div><div class="ref-meta">宋传超，人民日报，2026年1月，开门纳言、务实办理和常态共建；提炼群众议事的三个关键动作</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:12px;padding:14px 20px;">
+      <p style="font-size:20px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>北京供水、融安议事、桂花村等做法均为地方案例；供水价格、筹资方式、完成时限、融安阶段数据均有明确地区和时间范围，不外推为全国普遍情况。不构成个体法律或政策建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第82期</span></div>
+    <h1 class="hero">群众议事<br>从听意见到见结果</h1>
+    <p class="body">五个动作把意见转成治理结果——民情定议题、规则保参与、调研找方案、协同办结果、公开再评价。</p>
+    <div class="key-sentence">群众议事不是一场活动，而是一套把意见转化为治理结果的机制。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

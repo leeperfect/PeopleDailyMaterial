@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>提振消费 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#dc2626;--accent-soft:rgba(220,38,38,.15);--warn:#f59e0b;--danger:#ef4444;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:96px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第85期</span></div>
+    <h1 class="hero">提振消费<br>不能只靠发券</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">让群众能消费、敢消费、愿消费，要补哪四块？</p>
+  </div>
+  <div class="key-sentence">一次优惠能促成下单，四块基础才能支撑持续消费。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>纠偏 · 常见低分写法</p>
+    <h2 class="h2">购物节、夜经济、网红街<br>还缺什么？</h2>
+    <p class="body">这些措施主要回答"怎样聚集一次客流"，却没有解释四个根本问题：</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">有没有稳定收入？</div><div class="data-desc">群众消费能力从哪里来？</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">担心未来支出？</div><div class="data-desc">养老医疗育幼住房是否可控？</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">有值得买的供给？</div><div class="data-desc">产品服务是否匹配真实需求？</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">买错能解决？</div><div class="data-desc">退换维权是否顺畅可信？</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>写了很多促销动作，不等于解释了消费为什么发生。消费券改变一笔交易的价格，四块基础改变一个家庭持续消费的能力和意愿。</p>
+    </div>
+  </div>
+  <div class="key-sentence">写了很多促销动作，不等于解释了消费为什么发生。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总框架 · 提振消费要补四块基础</p>
+    <h2 class="h2">一笔消费<br>依次经过四道门</h2>
+    <div class="formula-box">
+      <p class="formula-text">就业增收<span class="arrow">→</span>社会保障<span class="arrow">→</span>优质供给<span class="arrow">→</span>权益保护</p>
+    </div>
+    <div class="five-grid">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">能消费</div><div class="f-desc">就业增收托住消费能力——产业创造岗位，稳定就业带来持续收入</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">敢消费</div><div class="f-desc">社会保障稳定未来预期——养老医疗育幼托住民生，减少预防性储蓄</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">愿消费</div><div class="f-desc">优质供给承接真实需求——从"有没有"走向品质、体验和个性</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">放心消费</div><div class="f-desc">权益保护降低交易风险——价格质量售后本身就是消费成本</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:14px 0;">
+      <p class="formula-text" style="font-size:24px;">四块不是并列口号，而是一笔消费依次经过的四道门</p>
+    </div>
+  </div>
+  <div class="key-sentence">四块不是并列口号，而是一笔消费依次经过的四道门。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 能消费 -->
+<section class="poster photo-page" id="xhs-04">
+  <img class="bg-img" src="assets/wallet.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第一块 · 能消费</p>
+    <h2 class="h2">优惠能省几十元<br>稳定就业决定长期购买力</h2>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">产业创造岗位</div><div class="step-desc">实体经济和县域产业提供就业机会</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">技能培训提高匹配</div><div class="step-desc">让劳动者能力与岗位需求对接</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">稳定就业带来收入</div><div class="step-desc">持续工资性收入形成消费能力</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">收入增长形成消费</div><div class="step-desc">家庭预算改善后自然增加消费</div></div></div>
+    </div>
+    <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--accent);margin:10px 0;"><div class="data-num" style="color:var(--accent);">625<span style="font-size:28px;">亿</span></div><div class="data-label">2026年第一批超长期特别国债</div><div class="data-desc">支持消费品以旧换新资金计划已下达——短期政策有明确资金承接，但不推断全年效果</div></div>
+  </div>
+  <div class="key-sentence">消费券改变一笔交易的价格，就业改变一个家庭持续消费的能力。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 四川案例 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">川</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>地方案例 · 四川安岳</p>
+    <h2 class="h2">岗位离家近<br>收入才更稳</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">108<span style="font-size:28px;">家</span></div><div class="data-label">鞋服"卫星工厂"</div><div class="data-desc">四川安岳县建设108家鞋服卫星工厂，分散在县域各乡镇</div></div>
+      <div class="data-card"><div class="data-num">1.5<span style="font-size:28px;">万+</span></div><div class="data-label">吸纳就业</div><div class="data-desc">超过1.5万人在家门口获得工资性收入</div></div>
+      <div class="data-card"><div class="data-num">🏭</div><div class="data-label">产业下沉</div><div class="data-desc">让群众在生活半径内获得稳定就业，不必外出务工</div></div>
+      <div class="data-card"><div class="data-num">💰</div><div class="data-label">收入传导</div><div class="data-desc">工资性收入稳定后，县域消费能力自然提升</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>产业、就业和消费，不是三项分开的工作。产业下沉创造岗位，岗位稳定带来收入，收入增长支撑消费——这是一条完整的传导链。</p>
+    </div>
+    <p class="body" style="font-size:22px;margin-top:10px;">（地方案例，108家工厂和1.5万就业为安岳县数据，不外推为全国普遍情况）</p>
+  </div>
+  <div class="key-sentence">产业、就业和消费，不是三项分开的工作。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 敢消费 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">敢</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第二块 · 敢消费</p>
+    <h2 class="h2">家庭算的不是本月余额<br>而是未来账单</h2>
+    <p class="body">养老、医疗、育幼、教育和住房支出越不确定，家庭越需要增加预防性储蓄。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">👴</div><div class="data-label">养老</div><div class="data-desc">养老金是否足额？养老服务是否可及？</div></div>
+      <div class="data-card"><div class="data-num">🏥</div><div class="data-label">医疗</div><div class="data-desc">医保报销比例？大病保障是否到位？</div></div>
+      <div class="data-card"><div class="data-num">👶</div><div class="data-label">育幼</div><div class="data-desc">托位是否充足？价格是否可负担？</div></div>
+      <div class="data-card"><div class="data-num">🏠</div><div class="data-label">住房教育</div><div class="data-desc">住房支出压力？教育成本是否可控？</div></div>
+    </div>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">没有保障时</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);">家庭不得不为风险多留钱，预防性储蓄增加，当期消费被压缩</p>
+      </div>
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);font-size:25px;">保障托住后</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);">未来预期更稳定，家庭减少焦虑性储蓄，消费意愿自然提升</p>
+      </div>
+    </div>
+  </div>
+  <div class="key-sentence">敢消费，不是劝群众少存钱，而是减少不得不为风险多留钱的焦虑。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 长沙托育案例 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">托</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>地方案例 · 长沙</p>
+    <h2 class="h2">托位建在家门口<br>还要价格和质量都可靠</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">📍</div><div class="data-label">距离</div><div class="data-desc">社区托育进入"15分钟生活圈"，接送方便</div></div>
+      <div class="data-card"><div class="data-num">💰</div><div class="data-label">价格</div><div class="data-desc">收费可负担，不是高收入家庭专属</div></div>
+      <div class="data-card"><div class="data-num">👩‍⚕</div><div class="data-label">专业</div><div class="data-desc">配置专业人员、健康检查和医育结合</div></div>
+      <div class="data-card"><div class="data-num">🤝</div><div class="data-label">信任</div><div class="data-desc">服务记录公开透明，家长可查可监督</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:16px 0;">
+      <p class="formula-text" style="font-size:25px;">距离 <span class="arrow">+</span> 价格 <span class="arrow">+</span> 专业 <span class="arrow">+</span> 信任 <span class="arrow">=</span> 家庭真正用得上</p>
+    </div>
+    <div class="compare-col" style="margin-top:12px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong>公共服务与服务消费衔接：</strong>有点位只是起点，可负担、可信赖才是有效供给。社会保障托住民生底线，也让家庭敢把钱花在当前消费上。</p>
+    </div>
+  </div>
+  <div class="key-sentence">有点位只是起点，可负担、可信赖才是有效供给。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 愿消费 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">愿</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第三块 · 愿消费</p>
+    <h2 class="h2">有钱有保障<br>也要有值得买的东西</h2>
+    <p class="body">消费正从商品为主走向商品与服务并重，从"有没有"走向品质、体验和个性。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">📈</div><div class="data-label">品质升级</div><div class="data-desc">从满足基本需求到追求品质，消费者愿意为好产品付费</div></div>
+      <div class="data-card"><div class="data-num">🎭</div><div class="data-label">体验消费</div><div class="data-desc">体育演艺、文化旅游、露营休闲等体验型消费增长</div></div>
+      <div class="data-card"><div class="data-num">🎨</div><div class="data-label">个性需求</div><div class="data-desc">绿色健康、数字消费、国潮文创等个性化需求崛起</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">⚡</div><div class="data-label">供给适配</div><div class="data-desc">供给要更专业、更便捷、更适配，好供给碰到真实需求</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>愿消费不是靠气氛动员，而是好供给碰到了真实需求。消费升级不是喊口号，而是让市场提供品质、体验和个性都匹配的产品和服务。</p>
+    </div>
+  </div>
+  <div class="key-sentence">愿消费不是靠气氛动员，而是好供给碰到了真实需求。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 三类供给 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">供</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>供给升级 · 三类供给分别怎么写</p>
+    <h2 class="h2">基础型、改善型、新型<br>分别怎么补？</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">1</div><div class="data-label">基础型</div><div class="data-desc">家政托育进入生活圈——解决"有没有"的问题，让基本服务可及可负担</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">改善型</div><div class="data-desc">体育演艺盘活空间、连接业态——解决"好不好"的问题，提升体验品质</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">新型</div><div class="data-desc">绿色健康数字消费进入日常——解决"新不新"的问题，培育新消费场景</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">!</div><div class="data-label">福州案例</div><div class="data-desc">盘活闲置地块建设可移动体育馆，日均接待约200人次——改善型消费盘活存量空间</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:14px 0;">
+      <p class="formula-text" style="font-size:24px;">新场景的价值，不在名字多新，而在服务是否更近、更方便、更完整</p>
+    </div>
+    <p class="body" style="font-size:22px;">武汉用票根连接演出、旅游和交通——说明改善型消费要连接业态，不是单点发力。</p>
+  </div>
+  <div class="key-sentence">新场景的价值，不在名字多新，而在服务是否更近、更方便、更完整。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 县域消费提醒 -->
+<section class="poster photo-page" id="xhs-10">
+  <img class="bg-img" src="assets/logistics.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>县域消费 · 不是把城市商品搬下去</p>
+    <h2 class="h2">不是把城市商品<br>搬下去就够了</h2>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">💰</div><div class="data-label">补收入</div><div class="data-desc">县域群众要有稳定收入来源，不是只靠外出务工汇款</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🏪</div><div class="data-label">补网点</div><div class="data-desc">线下销售和服务网点要覆盖乡镇，不是只有县城有</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🚚</div><div class="data-label">补物流</div><div class="data-desc">城乡物流要顺畅抵达，商品不能"最后一公里"卡住</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🔧</div><div class="data-label">补维修售后</div><div class="data-desc">卖得到还要修得到、退得了，售后不能只在城市有</div></div>
+    </div>
+    <div class="data-card" style="background:rgba(0,0,0,.5);margin:10px 0;border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">🎯</div><div class="data-label">本地适配供给</div><div class="data-desc">商品和服务要适配县乡消费习惯和需求，不是把城市商品原样搬下去</div></div>
+  </div>
+  <div class="key-sentence">渠道下沉不等于供给适配，卖得到还要修得到、退得了。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 放心消费 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">信</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第四块 · 放心消费</p>
+    <h2 class="h2">价格、质量和售后<br>本身就是消费成本</h2>
+    <p class="body">虚假优惠、预付风险、退换困难和投诉空转，都会让消费者在下单前提高风险估值。</p>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num">⚠</div><div class="data-label">虚假优惠</div><div class="data-desc">先涨后降、虚假折扣，让消费者怀疑价格真实性</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num">⚠</div><div class="data-label">预付风险</div><div class="data-desc">预付卡跑路、服务缩水，让消费者不敢大额预付</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num">⚠</div><div class="data-label">退换困难</div><div class="data-desc">退货门槛高、换货推诿，让消费者担心买错</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num">⚠</div><div class="data-label">投诉空转</div><div class="data-desc">投诉无门、处理拖延，让消费者觉得维权成本太高</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>权益保护不是交易结束后的补救，而是下单之前的信心来源。规则完善后，隐性风险成本下降，消费者才敢尝试、愿复购。</p>
+    </div>
+  </div>
+  <div class="key-sentence">权益保护不是交易结束后的补救，而是下单之前的信心来源。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 川渝退货+长期机制 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">环</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>信任机制 · 川渝跨区域退货</p>
+    <h2 class="h2">异地能退货<br>靠的不只是一句承诺</h2>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">规则公开</div><div class="step-desc">经营者公开退货范围、时限、条件和程序，消费者事先知情</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">数据可查</div><div class="step-desc">门店查询购买记录，异地门店协同办理，不需要消费者反复举证</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">责任可追</div><div class="step-desc">监管部门提供工作指引，企业责任明确，不是互相推诿</div></div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">数据识需 <span class="arrow">→</span> 生产响应 <span class="arrow">→</span> 物流抵达 <span class="arrow">→</span> 信用维权 <span class="arrow">→</span> 需求再反馈</p>
+    </div>
+    <div class="compare-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.5;color:var(--text);"><strong>长期机制：</strong>供需适配不是猜中一次爆款，而是让需求被持续看见、供给能够及时调整。公共服务从家庭端稳定预期，有效投资从供给端补齐能力。</p>
+    </div>
+  </div>
+  <div class="key-sentence">规则公开、数据可查、责任可追，才有可预期的售后。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 申论四问+总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>考场迁移 · 认知升级</p>
+    <h2 class="h2">遇到消费题<br>先问这四句</h2>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">就业收入稳不稳？</div><div class="data-desc">群众是没有消费能力，还是收入预期不稳？</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">未来支出怕不怕？</div><div class="data-desc">是担心未来大额支出，还是公共服务不足？</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">产品服务配不配？</div><div class="data-desc">是没有需求，还是本地供给质量、距离和场景不匹配？</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">交易维权顺不顺？</div><div class="data-desc">是价格偏高，还是质量、售后和维权风险压低信心？</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:12px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.7;"><strong style="color:var(--accent);">认知升级：</strong>消费的底气，来自更好的生活。让劳动有稳定回报，让家庭面对未来更安心，让市场提供值得买的产品服务，让每一笔交易都有可信规则。提振消费不是催促群众花钱，而是把选择消费的条件准备好。</p>
+    </div>
+  </div>
+  <div class="key-sentence">先诊断卡点，再匹配政策，别一上来就发券办节。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:10px;">本卡片内容基于以下9篇人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">坚持内需主导，建设强大国内市场</div><div class="ref-meta">人民日报，2026年1月，政策总纲；说明消费、投资、就业、收入和公共服务是一个循环；2026年第一批625亿元超长期特别国债支持消费品以旧换新</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">统筹促消费和扩投资，建设强大国内市场</div><div class="ref-meta">人民日报，2026年1月，政策总纲；消费是最终需求，投资既形成当期需求也决定未来供给，投资还可带动就业和工资增长</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">如何推动能消费敢消费愿消费</div><div class="ref-meta">人民日报，2026年1月，能力与预期层；提供就业增收、社会保障、带薪休假和地方供给实践；四川以就业友好型产业、技能提升和县域岗位扩大收入来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">基础型服务消费：家政托育进入生活圈</div><div class="ref-meta">人民日报，2026年1月，供给案例层；长沙案例将托育嵌入"15分钟生活圈"，以专业人员、医育结合和信息记录增强可及性与信任</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">改善型消费：体育演艺盘活空间、连接业态</div><div class="ref-meta">人民日报，2026年1月，供给案例层；福州盘活闲置地块建设可移动体育馆，日均接待约200人次；武汉用票根连接演出、旅游和交通</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">新型消费：绿色健康数字消费进入日常</div><div class="ref-meta">人民日报，2026年1月，供给案例层；绿色积分、中医养生市集和数字商圈说明新供给要进入日常生活，不能停在概念展示</div></div></div>
+      <div class="ref-item"><div class="ref-num">7</div><div class="ref-content"><div class="ref-title">让消费者舒心购无忧购</div><div class="ref-meta">人民日报，2026年1月，信任机制层；川渝跨区域无理由退货依靠规则公示、购买记录查询和跨地协同；黄山以安全、质量、价格、维权、服务评价放心消费主体</div></div></div>
+      <div class="ref-item"><div class="ref-num">8</div><div class="ref-content"><div class="ref-title">提振消费，如何增强供需适配性</div><div class="ref-meta">人民日报，2026年1月，长期机制层；数据互通、城乡物流、质量信用、公共服务和供需动态调整框架；流通与生产数据互通、农村物流补短板</div></div></div>
+      <div class="ref-item"><div class="ref-num">9</div><div class="ref-content"><div class="ref-title">出政策办活动优场景，促消费今年继续加力</div><div class="ref-meta">人民日报，2026年1月，阶段性政策层；用于区分短期工具与长期机制，说明消费券、购物节等短期措施的定位和边界</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:14px 20px;">
+      <p style="font-size:20px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>625亿元超长期特别国债、108家鞋服卫星工厂、1.5万就业、福州体育馆日均200人次等数据对应不同政策、年份和地方统计口径，引用时必须保留限定；北京、山西、四川、长沙、福州、武汉、川渝等地做法是地方实践，不直接写成全国统一制度；跨区域无理由退货存在商品范围、时限和不影响二次销售等条件。不构成个体消费或投资建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第85期</span></div>
+    <h1 class="hero">提振消费<br>不能只靠发券</h1>
+    <p class="body">让群众能消费、敢消费、愿消费——就业增收、社会保障、优质供给、权益保护四块基础一起补。</p>
+    <div class="key-sentence">提振消费不是催促群众花钱，而是把选择消费的条件准备好。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

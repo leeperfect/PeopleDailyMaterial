@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>完整社区 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#b45309;--accent-soft:rgba(180,83,9,.15);--warn:#f59e0b;--danger:#ef4444;--success:#16a34a;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:96px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第92期</span></div>
+    <h1 class="hero">完整社区<br>不是把设施配齐</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">而是让居民从"提需求"走到"共运营"</p>
+  </div>
+  <div class="key-sentence">完整社区不是设施竞赛。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 路灯案例 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">光</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>案例 · 路灯没安成，居民还叫好</p>
+    <h2 class="h2">路灯没装<br>为什么居民还叫好？</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:22px;text-align:center;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">📍 一处老旧小区 · 原准备安装路灯</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">居民担心灯杆紧贴窗户、夜间扰民 → 社区把议事会开到楼下 → 最后通过调亮附近广场灯"借光" → 项目没落地，问题却解决了</p>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">原方案：安装路灯</div><div class="step-desc">社区原计划在小区安装路灯，解决照明问题。方案已经形成，准备实施。</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">居民提出担忧</div><div class="step-desc">居民担心灯杆紧贴窗户、夜间灯光扰民，影响休息。居民不是反对照明，而是反对影响生活的照明方式。</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">议事会开到楼下</div><div class="step-desc">社区没有硬装，而是把议事会开到楼下，让居民充分表达意见，共同讨论解决方案。不是政府单方面决定，而是居民参与决策。</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">调亮广场灯"借光"</div><div class="step-desc">最后通过调亮附近广场灯"借光"的方式解决照明问题，不需要安装新路灯，不影响居民休息。</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">项目没落地，问题解决了</div><div class="step-desc">路灯项目没有落地，但居民真正要解决的照明问题解决了，而且没有扰民。居民反而叫好，因为方案尊重了居民的真实需求。</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">关键洞察：</strong>方案可以改变，居民真正要解决的问题不能丢。完整社区不是把设施配齐，而是准确识别居民的真实需求，找到最合适的解决方案。居民参与不是给既定方案签字，而是真正影响决策。</p>
+    </div>
+  </div>
+  <div class="key-sentence">方案可以改变，居民真正要解决的问题不能丢。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 完整到底完整在哪里 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">整</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>核心判断 · 完整在哪里</p>
+    <h2 class="h2">"完整"<br>到底完整在哪里？</h2>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:26px;">❌ 设施清单误区</h3>
+        <ul>
+          <li>养老点、托育点、停车位越多越完整？</li>
+          <li>把设施配齐 = 完整社区？</li>
+          <li>只看硬件数量，不看使用效果</li>
+          <li>只看建设完成，不看持续运营</li>
+          <li>设施可能闲置、服务可能缺失</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:26px;">✅ 真正的完整</h3>
+        <ul>
+          <li>不同人群的生活需求能否在合理半径内被连续接住？</li>
+          <li>需求被识别 + 服务被提供 + 运营可持续 = 完整社区</li>
+          <li>看硬件数量，更看使用效果和居民满意</li>
+          <li>看建设完成，更看持续运营和动态调整</li>
+          <li>设施被使用、服务有温度、运营可持续</li>
+        </ul>
+      </div>
+    </div>
+    <div class="data-card" style="border:2px solid var(--accent);background:var(--accent-soft);margin:14px 0;padding:22px;text-align:center;">
+      <p style="font-size:28px;font-weight:900;line-height:1.5;color:var(--text);">设施 ≠ 完整</p>
+      <p style="font-size:24px;font-weight:700;color:var(--accent);margin-top:8px;">设施 = 外壳</p>
+      <p style="font-size:24px;font-weight:700;color:var(--success);margin-top:4px;">需求 + 服务 + 运营 = 内里</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:10px;">设施是外壳，需求、服务和运营才是内里。完整社区不是设施竞赛，而是生活需求被连续接住。</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">👴</div><div class="f-title">老年人需求</div><div class="f-desc">养老、助餐、助医、助洁、精神慰藉，在合理半径内被连续接住，不是只有一个养老点牌子</div></div>
+      <div class="five-item"><div class="f-num">👶</div><div class="f-title">儿童需求</div><div class="f-desc">托育、早教、游乐、安全防护，家长上班时间有托管，放学后有去处，不是只有一个托育点牌子</div></div>
+      <div class="five-item"><div class="f-num">🚗</div><div class="f-title">出行需求</div><div class="f-desc">停车、充电、无障碍通道、公交接驳，出行便利不是停车位越多越好，而是出行需求被满足</div></div>
+      <div class="five-item"><div class="f-num">💬</div><div class="f-title">参与需求</div><div class="f-desc">议事、监督、互助、共建，居民有渠道表达意见、参与决策、监督执行，不是只有一个议事会牌子</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">不同人群的生活需求<br>能否在合理半径内被连续接住？</p>
+    </div>
+  </div>
+  <div class="key-sentence">设施是外壳，需求、服务和运营才是内里。完整社区不是设施竞赛。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 第一步：居民出题 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">题</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第一步 · 居民出题</p>
+    <h2 class="h2">居民参与<br>要进入设计，而不是停在表态</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:20px;">
+      <p style="font-size:25px;line-height:1.6;color:var(--text);"><strong style="color:var(--accent);">核心逻辑：</strong>走访、热线、议事会不是为了给既定方案签字，而是要在项目形成前找到晾晒、做饭、充电、照护等真实问题。居民参与要进入设计，而不是停在表态。</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">🚪</div><div class="f-title">入户走访</div><div class="f-desc">工作人员入户走访，了解居民的真实生活需求和困难，不是只在办公室里猜需求。走访要覆盖不同人群，特别是老年人、残疾人、低收入家庭等特殊群体。</div></div>
+      <div class="five-item"><div class="f-num">📞</div><div class="f-title">热线收集</div><div class="f-desc">开通社区热线，方便居民随时反映问题和需求。热线要有专人接听、记录、反馈，不是摆设。居民反映的问题要进入项目设计，不是记录了就完事。</div></div>
+      <div class="five-item"><div class="f-num">💬</div><div class="f-title">议事会</div><div class="f-desc">组织居民议事会，让居民充分表达意见、参与讨论。议事会要在项目形成前召开，不是方案定好了再让居民签字。居民意见要真正影响方案，不是走形式。</div></div>
+      <div class="five-item"><div class="f-num">👕</div><div class="f-title">晾晒需求</div><div class="f-desc">老旧小区居民有晾晒衣物的需求，这是真实的生活细节。设计时要考虑晾晒空间，不是只看绿化率和停车位。生活细节进入图纸，才是真正的以人为本。</div></div>
+      <div class="five-item"><div class="f-num">🍳</div><div class="f-title">做饭需求</div><div class="f-desc">老年人、双职工家庭有做饭和就餐需求，社区食堂、助餐点要考虑。不是只看商业配套，而是看居民真正的吃饭问题能否解决。</div></div>
+      <div class="five-item"><div class="f-num">🔌</div><div class="f-title">充电需求</div><div class="f-desc">电动车、汽车充电需求，要规划充电设施和安全管理。不是只看停车位数量，而是看充电需求能否被安全、便利地满足。</div></div>
+      <div class="five-item"><div class="f-num">👵</div><div class="f-title">照护需求</div><div class="f-desc">老年人、残疾人、病患的照护需求，要考虑养老服务、康复服务、无障碍设施。不是只看养老点牌子，而是看照护需求能否被连续接住。</div></div>
+    </div>
+    <div class="compare-grid" style="margin:12px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 表态式参与</h3>
+        <ul>
+          <li>方案定好了再征求意见</li>
+          <li>居民意见不影响方案</li>
+          <li>议事会只是走形式、签字</li>
+          <li>参与停在表态，不进入设计</li>
+          <li>居民觉得"说了也白说"</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 设计式参与</h3>
+        <ul>
+          <li>项目形成前就收集需求</li>
+          <li>居民意见真正影响方案</li>
+          <li>议事会充分讨论、共同决策</li>
+          <li>参与进入设计，生活细节进入图纸</li>
+          <li>居民觉得"说了有用、能改变"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">居民参与要进入设计<br>而不是停在表态</p>
+    </div>
+  </div>
+  <div class="key-sentence">居民参与要进入设计，而不是停在表态。生活细节进入图纸，才是真正的以人为本。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 第二步：三张清单对接 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">单</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第二步 · 三张清单对接</p>
+    <h2 class="h2">把模糊诉求<br>翻译成可执行的责任链</h2>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">📋</div><div class="data-label">需求清单</div><div class="data-desc">群众缺什么。通过走访、热线、议事会收集居民的真实需求，形成需求清单。需求要具体、可操作，不是模糊的"改善生活"。</div></div>
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">💰</div><div class="data-label">资源清单</div><div class="data-desc">谁有政策、资金和能力。梳理政府部门、社会组织、企业、商户等各方资源，形成资源清单。资源要明确、可对接，不是笼统的"社会力量"。</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">🎯</div><div class="data-label">项目清单</div><div class="data-desc">谁负责、何时办、做到什么标准。将需求清单和资源清单对接，形成具体项目，明确责任主体、时间节点和质量标准。项目要可执行、可监督、可评价。</div></div>
+      <div class="data-card" style="border:2px solid var(--accent);background:var(--accent-soft);"><div class="data-num">🔗</div><div class="data-label">三张清单对接</div><div class="data-desc">需求清单 → 资源清单 → 项目清单，形成完整的责任链。把模糊诉求翻译成可执行的项目，把"群众需要"变成"有人负责、有时间节点、有质量标准"。</div></div>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">收集需求，形成需求清单</div><div class="step-desc">通过入户走访、热线电话、居民议事会等渠道，收集居民的真实需求。需求要具体到"什么人、什么问题、什么程度"，不是模糊的"改善环境"。</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">梳理资源，形成资源清单</div><div class="step-desc">梳理政府部门的政策和资金、社会组织的专业服务、企业的赞助和资源、商户的便利服务、居民的志愿力量，形成可对接的资源清单。</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">对接需求和资源，形成项目清单</div><div class="step-desc">将需求清单和资源清单对接，形成具体项目。每个项目明确：谁负责、何时完成、做到什么标准、如何验收。把模糊诉求变成可执行的责任链。</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">公开项目，接受监督</div><div class="step-desc">项目清单向居民公开，接受居民监督。居民可以查询项目进展、提出意见、评价效果。项目不是做完就完事，而是要持续接受居民评价和调整。</div></div></div>
+    </div>
+    <div class="data-card" style="border-color:var(--warn);background:rgba(245,158,11,.1);margin:14px 0;padding:18px;">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">⚠ 常见问题：</strong>很多社区有需求清单，但没有资源清单和项目清单，需求停留在"群众需要什么"，没有变成"谁来做、何时做、做到什么标准"。结果是需求年年提、问题年年在。三张清单对接的关键，是把需求翻译成可执行的责任链。</p>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">需求清单 <span class="arrow">→</span> 资源清单 <span class="arrow">→</span> 项目清单</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">把模糊诉求翻译成可执行的责任链</p>
+    </div>
+  </div>
+  <div class="key-sentence">把模糊诉求翻译成可执行的责任链。需求清单、资源清单、项目清单，三张清单对接。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 第三步：多元主体共同供给 -->
+<section class="poster photo-page" id="xhs-06">
+  <img class="bg-img" src="assets/network.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第三步 · 多元主体共同供给</p>
+    <h2 class="h2">多元共治<br>不是平均分任务</h2>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="background:rgba(0,0,0,.5);border-color:var(--accent);"><div class="f-num" style="color:var(--accent);">🏛</div><div class="f-title">公共部门托底</div><div class="f-desc">政府部门负责基本公共服务托底，制定规则、提供资金、保障底线。养老、托育、医疗等基本服务要有公共投入保障，不能完全市场化。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🏢</div><div class="f-title">物业和专业机构定标准</div><div class="f-desc">物业公司负责日常维护和管理，专业机构提供专业服务（养老、托育、康复等）。物业和专业机构要制定服务标准、保证服务质量，不是只收费不服务。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🏪</div><div class="f-title">商户补便利</div><div class="f-desc">社区商户提供便利服务（便利店、餐饮、维修、理发等），补充社区生活服务。商户要服从社区管理、保证服务质量，不能只追求利润忽视居民需求。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);border-color:var(--success);"><div class="f-num" style="color:var(--success);">🤝</div><div class="f-title">社会组织做专业服务</div><div class="f-desc">社会组织提供专业服务（社工服务、志愿服务、文化活动、矛盾调解等），补充政府和市场不足的领域。社会组织要有专业能力、接受监督，不是挂名不做事。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);border-color:var(--warn);"><div class="f-num" style="color:var(--warn);">👥</div><div class="f-title">居民参与议事监督互助</div><div class="f-desc">居民参与议事决策、监督执行、互助服务。居民不是被动接受服务，而是社区治理的参与者和共建者。居民参与要有渠道、有效果、有反馈。</div></div>
+    </div>
+    <div class="data-card" style="background:rgba(0,0,0,.5);border:2px solid var(--accent);margin:12px 0;padding:20px;text-align:center;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">多元共治 = 各守边界 + 彼此补位</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">不是平均分任务，而是每个主体发挥各自优势，在各自边界内做好本职，在边界处彼此补位。公共部门托底、专业机构定标准、商户补便利、社会组织做专业服务、居民参与议事监督互助。</p>
+    </div>
+    <div class="compare-grid" style="margin:12px 0;">
+      <div class="compare-col" style="background:rgba(0,0,0,.5);border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 平均分任务</h3>
+        <ul>
+          <li>每个主体都管一点，每个都管不好</li>
+          <li>责任不清，互相推诿</li>
+          <li>公共部门做不专业的事</li>
+          <li>专业机构做不擅长的事</li>
+          <li>居民参与没有渠道和效果</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="background:rgba(0,0,0,.5);border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 各守边界、彼此补位</h3>
+        <ul>
+          <li>每个主体发挥优势，做好本职</li>
+          <li>责任清晰，有人负责</li>
+          <li>公共部门托底、定规则</li>
+          <li>专业机构做专业服务</li>
+          <li>居民参与有渠道、有效果、有反馈</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="key-sentence">多元共治不是平均分任务，而是各守边界、彼此补位。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 居民也可以成为服务供给者 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">供</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>居民角色 · 从被服务到供给者</p>
+    <h2 class="h2">居民不仅被服务<br>也参与创造社区服务</h2>
+    <div class="data-card" style="border-color:var(--success);background:rgba(22,163,74,.1);margin:10px 0;padding:20px;">
+      <p style="font-size:25px;line-height:1.6;color:var(--text);"><strong style="color:var(--success);">角色转变：</strong>居民不仅是被服务的对象，也可以成为服务的供给者。志愿团队可以调解邻里矛盾、发现沉默需求、开展助餐互助；楼栋管家可以连接专业物业与居民日常。居民从"被服务的人"变成"创造服务的人"。</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num" style="color:var(--success);">🤝</div><div class="f-title">志愿团队调解矛盾</div><div class="f-desc">居民志愿团队可以调解邻里矛盾（噪音、停车、晾晒、宠物等），比社区工作人员更了解情况、更有说服力。邻里矛盾由居民自己调解，效果更好、成本更低。</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num" style="color:var(--success);">👁</div><div class="f-title">发现沉默需求</div><div class="f-desc">居民志愿团队可以发现沉默需求（独居老人、残疾人、困难家庭等），这些需求可能不会主动反映，但居民志愿者更了解邻居情况，可以及时发现和报告。</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num" style="color:var(--success);">🍱</div><div class="f-title">助餐互助</div><div class="f-desc">居民志愿团队可以开展助餐互助（老年人互助做饭、送餐、陪餐等），补充社区食堂的不足。居民之间的互助更有温度、更可持续，不是完全依赖政府和市场。</div></div>
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">🔑</div><div class="f-title">楼栋管家</div><div class="f-desc">楼栋管家（居民志愿者）可以连接专业物业与居民日常，收集本楼栋居民的问题和需求，反馈给物业和社区，跟踪问题解决。楼栋管家是社区治理的"神经末梢"。</div></div>
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">📚</div><div class="f-title">文化活动组织</div><div class="f-desc">居民志愿团队可以组织文化活动（读书会、兴趣班、节日活动、儿童托管等），丰富社区文化生活。居民自己组织的活动更符合居民需求、更有参与感。</div></div>
+      <div class="five-item" style="border-color:var(--warn);"><div class="f-num" style="color:var(--warn);">📞</div><div class="f-title">特殊群体关爱</div><div class="f-desc">居民志愿团队可以关爱特殊群体（独居老人定期探访、残疾人帮扶、困难家庭慰问等），补充政府和社会组织的不足。邻里之间的关爱更及时、更温暖。</div></div>
+    </div>
+    <div class="compare-grid" style="margin:12px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 居民只是被服务者</h3>
+        <ul>
+          <li>居民被动接受政府和市场服务</li>
+          <li>服务供给完全依赖外部力量</li>
+          <li>居民需求反映不及时、不充分</li>
+          <li>社区服务缺乏温度和可持续性</li>
+          <li>居民对社区没有归属感和责任感</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 居民也是服务供给者</h3>
+        <ul>
+          <li>居民主动参与服务供给和社区治理</li>
+          <li>服务供给多元：政府+市场+社会组织+居民</li>
+          <li>居民需求反映及时、充分</li>
+          <li>社区服务有温度、可持续</li>
+          <li>居民对社区有归属感和责任感</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">居民不仅被服务<br>也参与创造社区服务</p>
+    </div>
+  </div>
+  <div class="key-sentence">居民不仅被服务，也参与创造社区服务。从"被服务的人"变成"创造服务的人"。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 第四步：账目公开 -->
+<section class="poster photo-page" id="xhs-08">
+  <img class="bg-img" src="assets/checklist.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第四步 · 账目公开</p>
+    <h2 class="h2">钱花得明白<br>居民才愿意一起把社区管下去</h2>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="background:rgba(0,0,0,.5);border-color:var(--accent);"><div class="f-num" style="color:var(--accent);">🏠</div><div class="f-title">物业费公开</div><div class="f-desc">物业费的收取标准、使用方向、收支明细要公开透明。居民要知道物业费花在了哪里、用在了什么地方、效果如何。不是只收费不公开。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">💰</div><div class="f-title">公共收益公开</div><div class="f-desc">公共收益（广告、停车、场地租赁等）的收入和使用要公开透明。公共收益属于全体业主，不是物业或居委会的"小金库"。居民要知道公共收益有多少、用在了哪里。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🔧</div><div class="f-title">维修支出公开</div><div class="f-desc">维修资金的使用（大修、更新、改造等）要公开透明。维修资金属于全体业主，使用要经过业主同意、公开招标、验收评价。不是物业说了算，花完了不告诉业主。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);border-color:var(--success);"><div class="f-num" style="color:var(--success);">📋</div><div class="f-title">服务清单公开</div><div class="f-desc">社区服务清单（提供什么服务、谁提供、什么标准、什么时间）要公开透明。居民要知道社区有哪些服务、如何获取、效果如何。不是服务藏在深闺人未识。</div></div>
+    </div>
+    <div class="data-card" style="background:rgba(0,0,0,.5);border:2px solid var(--accent);margin:12px 0;padding:20px;text-align:center;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">透明先重建信任</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">协商再形成合理分担</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">账目公开 → 居民信任 → 愿意参与 → 合理分担 → 运营长久</p>
+    </div>
+    <div class="compare-grid" style="margin:12px 0;">
+      <div class="compare-col" style="background:rgba(0,0,0,.5);border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 账目不透明</h3>
+        <ul>
+          <li>物业费、公共收益、维修支出不公开</li>
+          <li>居民不知道钱花在了哪里</li>
+          <li>居民不信任物业和居委会</li>
+          <li>居民不愿意缴费和参与</li>
+          <li>社区运营难以持续</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="background:rgba(0,0,0,.5);border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 账目公开透明</h3>
+        <ul>
+          <li>物业费、公共收益、维修支出全部公开</li>
+          <li>居民清楚知道钱花在了哪里</li>
+          <li>居民信任物业和居委会</li>
+          <li>居民愿意缴费、参与、分担</li>
+          <li>社区运营可持续、有活力</li>
+        </ul>
+      </div>
+    </div>
+    <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--warn);margin:12px 0;padding:16px;">
+      <p style="font-size:22px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">⚠ 重要原则：</strong>居民分担费用要有服务清单、协商规则和公开账目。不能乱收费、高收费，分担比例要合理、透明、可监督。居民分担不是政府和物业推卸责任，而是共同建设美好家园。</p>
+    </div>
+  </div>
+  <div class="key-sentence">钱花得明白，居民才愿意一起把社区管下去。透明先重建信任，协商再形成合理分担。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 第五步：从开过会到见结果 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">果</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第五步 · 从开过会到见结果</p>
+    <h2 class="h2">参与的终点不是发言<br>而是结果可见、过程可追溯</h2>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item" style="border-color:var(--accent);"><div class="step-num" style="color:var(--accent);">1</div><div class="step-content"><div class="step-title">提议</div><div class="step-desc">居民提出意见和建议，形成议题。提议要有记录、有编号、有反馈，不是说了就忘。居民要知道自己的提议被记录了、被重视了。</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">表决</div><div class="step-desc">对重要事项进行表决，形成决策。表决要公开、公正、透明，不是少数人说了算。表决结果要公开，居民要知道决策是怎么形成的。</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">执行</div><div class="step-desc">按照决策执行项目，明确责任主体和时间节点。执行过程要公开，居民可以查询进展。不是决策完了就没人管、没人做。</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">公开</div><div class="step-desc">项目执行情况、资金使用情况、完成效果要公开。公开要及时、全面、易懂，不是藏在文件里、挂在角落里。居民要能方便地查询和了解。</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">评价</div><div class="step-desc">居民对项目效果进行评价，提出改进意见。评价要真实、有效，不是走形式。评价结果要影响后续决策和调整，不是评完就完事。</div></div></div>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">🗣</div><div class="data-label">意见怎样形成</div><div class="data-desc">居民意见是怎么收集、整理、形成议题的，要能查询、能追溯。不是意见收集了就石沉大海，居民要知道自己的意见去了哪里、有没有被采纳。</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">👤</div><div class="data-label">谁负责办理</div><div class="data-desc">每个项目和事项要明确责任主体，谁负责、谁配合、谁监督，要清晰明确。不是人人都管、人人都不管，出了问题找不到人。</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">💰</div><div class="data-label">资金怎样使用</div><div class="data-desc">项目资金的来源、使用、结余要公开透明，能查询、能审计。不是资金使用不透明，居民不知道钱花在了哪里、有没有浪费。</div></div>
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">📊</div><div class="data-label">项目做到哪一步</div><div class="data-desc">项目进展要实时公开，居民可以查询做到哪一步、什么时候完成、效果如何。不是项目开始了就没消息，居民不知道进展、不知道结果。</div></div>
+    </div>
+    <div class="compare-grid" style="margin:12px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 开过会就完事</h3>
+        <ul>
+          <li>议事会开了，但没有后续</li>
+          <li>居民发言了，但没有反馈</li>
+          <li>决策形成了，但没有执行</li>
+          <li>项目开始了，但没有公开</li>
+          <li>居民觉得"说了也白说"</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 结果可见、过程可追溯</h3>
+        <ul>
+          <li>议事会开了，有后续执行</li>
+          <li>居民发言了，有反馈和采纳</li>
+          <li>决策形成了，有责任主体和时间节点</li>
+          <li>项目开始了，有公开和评价</li>
+          <li>居民觉得"说了有用、能看到结果"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">提议 <span class="arrow">→</span> 表决 <span class="arrow">→</span> 执行 <span class="arrow">→</span> 公开 <span class="arrow">→</span> 评价</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">参与的终点不是发言，而是结果可见、过程可追溯</p>
+    </div>
+  </div>
+  <div class="key-sentence">参与的终点不是发言，而是结果可见、过程可追溯。提议→表决→执行→公开→评价，五步闭环。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 完整社区不是设施竞赛 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">赛</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>认知升级 · 不是设施竞赛</p>
+    <h2 class="h2">完整社区<br>不是替居民安排好一切</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:22px;text-align:center;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">完整社区 = 让居民的需要进入决策</p>
+      <p style="font-size:24px;font-weight:700;color:var(--success);margin-top:8px;">+ 让各方资源共同解决问题</p>
+      <p style="font-size:24px;font-weight:700;color:var(--warn);margin-top:4px;">+ 让服务在时间里持续</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:10px;">不是替居民安排好一切，而是让居民从被服务的人，变成出题者、参与者、监督者和共建者。</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">📝</div><div class="f-title">出题者</div><div class="f-desc">居民是社区需求的出题者，提出真实的生活需求和问题。不是政府或专家替居民出题，而是居民自己说出需要什么、想要什么、困扰什么。</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num" style="color:var(--success);">🤝</div><div class="f-title">参与者</div><div class="f-desc">居民是社区治理的参与者，参与议事、决策、执行、监督。不是被动接受安排，而是主动参与社区建设，影响决策过程和结果。</div></div>
+      <div class="five-item" style="border-color:var(--warn);"><div class="f-num" style="color:var(--warn);">👁</div><div class="f-title">监督者</div><div class="f-desc">居民是社区运营的监督者，监督资金使用、服务质量、项目进展。不是监督缺位，而是有渠道、有效果、有反馈，确保社区运营公开透明。</div></div>
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">🏗</div><div class="f-title">共建者</div><div class="f-desc">居民是社区服务的共建者，参与志愿服务、互助服务、文化活动。不是只接受服务，而是也创造服务，共同建设美好家园。</div></div>
+    </div>
+    <div class="compare-grid" style="margin:12px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 替居民安排好一切</h3>
+        <ul>
+          <li>政府和专家替居民决定需要什么</li>
+          <li>居民被动接受安排，没有参与权</li>
+          <li>设施建好了，但居民不使用、不满意</li>
+          <li>服务不可持续，运营难以为继</li>
+          <li>居民对社区没有归属感和责任感</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 让居民成为主体</h3>
+        <ul>
+          <li>居民自己说出需要什么、想要什么</li>
+          <li>居民主动参与决策、执行、监督</li>
+          <li>设施建好了，居民使用、满意、受益</li>
+          <li>服务可持续，运营有活力</li>
+          <li>居民对社区有归属感、责任感、自豪感</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:12px 0;">
+      <p class="formula-text" style="font-size:26px;">当居民成为出题者、参与者、监督者和共建者<br>社区才真正完整</p>
+    </div>
+  </div>
+  <div class="key-sentence">当居民成为出题者、参与者、监督者和共建者，社区才真正完整。完整社区不是替居民安排好一切。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 国考省考申论面试怎么用 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>考场迁移 · 申论面试怎么用</p>
+    <h2 class="h2">不要只写完善设施<br>要写清谁来用、谁来管、如何持续</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:22px;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">📝 申论总论点公式</p>
+      <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">完整社区建设要以居民需求为导向，通过需求精准识别、资源清单对接、多元协同供给、专业服务嵌入、公开评价长效运营，实现从"设施配齐"到"居民共建"的转变。不是把设施配齐，而是让居民从"提需求"走到"共运营"。</p>
+    </div>
+    <div class="data-card" style="border:2px solid var(--accent);margin:12px 0;padding:20px;text-align:center;">
+      <p style="font-size:25px;font-weight:700;line-height:1.5;color:var(--text);">可迁移公式</p>
+      <p style="font-size:23px;font-weight:700;color:var(--accent);margin-top:8px;">需求精准识别 + 资源清单对接 + 多元协同供给 + 专业服务嵌入 + 公开评价长效运营</p>
+    </div>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">1</div><div class="f-title">先问需</div><div class="f-desc">通过入户走访、热线、议事会收集居民真实需求，不是政府和专家替居民决定需要什么。需求要具体、可操作。</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">再分类</div><div class="f-desc">对需求进行分类（老年人、儿童、出行、参与等），匹配不同的服务供给方式。不是一刀切，而是精准匹配。</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">对资源</div><div class="f-desc">梳理政府、社会组织、企业、商户、居民等各方资源，形成资源清单，与需求清单对接。不是只靠政府，而是多元协同。</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">定责任</div><div class="f-desc">形成项目清单，明确谁负责、何时办、做到什么标准。把模糊诉求翻译成可执行的责任链，不是需求年年提、问题年年在。</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">做反馈</div><div class="f-desc">建立公开评价和反馈机制，居民可以查询进展、评价效果、提出改进。不是做完就完事，而是持续接受评价和调整。</div></div>
+    </div>
+    <div class="data-grid" style="margin:12px 0;">
+      <div class="data-card"><div class="data-num">📊</div><div class="data-label">数据论据</div><div class="data-desc">路灯没安成居民还叫好（借光解决问题）；首批完整社区建设可复制经验做法清单发布；"老奶奶帮帮团"架起社区"幸福桥"；"消失的竹竿"照见共建力量。</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">⚠</div><div class="data-label">常见误区</div><div class="data-desc">只写"完善养老、托育、停车等设施"，忽视谁来用、谁来管、钱从哪里来、意见怎样进入设计、服务不好怎样调整；把完整社区等同于设施竞赛，忽视居民参与和持续运营。</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">答题动作：先问需 <span class="arrow">→</span> 再分类 <span class="arrow">→</span> 对资源 <span class="arrow">→</span> 定责任 <span class="arrow">→</span> 做反馈</p>
+    </div>
+  </div>
+  <div class="key-sentence">不要只写完善设施，要写清谁来用、谁来管、如何持续。用五动作框架答出深度和可操作性。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 六步公式总结 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">式</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总结 · 完整社区六步公式</p>
+    <h2 class="h2">完整社区六步公式</h2>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="border-color:var(--accent);background:var(--accent-soft);"><div class="f-num">1</div><div class="f-title">居民出题</div><div class="f-desc">参与要前置，在项目形成前找到晾晒、做饭、充电、照护等真实问题。居民参与进入设计，不是停在表态。</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">清单对接</div><div class="f-desc">需求清单（群众缺什么）+ 资源清单（谁有政策资金能力）+ 项目清单（谁负责何时办什么标准）。把模糊诉求翻译成可执行的责任链。</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">多元共建</div><div class="f-desc">公共部门托底、物业和专业机构定标准、商户补便利、社会组织做专业服务、居民参与议事监督互助。各守边界、彼此补位。</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">服务嵌入</div><div class="f-desc">空间后面接服务，有房间不等于有服务。养老、托育、文化、食堂、便民服务，都需要人员、设备、开放时间、内容安排和质量标准。</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">账目公开</div><div class="f-desc">物业费、公共收益、维修支出、服务清单都要看得见。透明先重建信任，协商再形成合理分担。钱花得明白，居民才愿意一起管。</div></div>
+      <div class="five-item"><div class="f-num">6</div><div class="f-title">共管共评</div><div class="f-desc">从"开过会"到"见结果"。提议→表决→执行→公开→评价，五步闭环。参与的终点不是发言，而是结果可见、过程可追溯。</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:14px 0;">
+      <p class="formula-text" style="font-size:26px;">居民出题 <span class="arrow">→</span> 清单对接 <span class="arrow">→</span> 多元共建 <span class="arrow">→</span> 服务嵌入 <span class="arrow">→</span> 账目公开 <span class="arrow">→</span> 共管共评</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:10px;">六步闭环，从"提需求"走到"共运营"</p>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;text-align:center;">
+      <p style="font-size:24px;font-weight:700;line-height:1.6;color:var(--accent);">收藏六步公式<br>居民出题 → 清单对接 → 多元共建 → 服务嵌入 → 账目公开 → 共管共评</p>
+    </div>
+  </div>
+  <div class="key-sentence">居民出题→清单对接→多元共建→服务嵌入→账目公开→共管共评。六步闭环，从"提需求"走到"共运营"。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 收束页+金句 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">整</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>收束 · 认知升级</p>
+    <h2 class="h2">把生活需要接成服务闭环<br>把社区成员连成行动共同体</h2>
+    <div class="data-card" style="border:2px solid var(--accent);background:var(--accent-soft);margin:14px 0;padding:24px;text-align:center;">
+      <p style="font-size:28px;font-weight:900;line-height:1.5;color:var(--text);">这才是完整社区的真正含义</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">🔗</div><div class="f-title">服务闭环</div><div class="f-desc">把生活需要接成服务闭环，不是零散的设施和服务，而是从需求识别到服务供给到评价反馈的完整闭环。居民的每个需求都能被识别、被响应、被评价。</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num" style="color:var(--success);">🤝</div><div class="f-title">行动共同体</div><div class="f-desc">把社区成员连成行动共同体，不是政府单方面管理、居民被动接受，而是政府、市场、社会组织、居民共同参与、共同建设、共同治理。每个成员都是社区建设的主体。</div></div>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">❌</div><div class="data-label">不完整的社区</div><div class="data-desc">设施配齐了但没人用，服务有了但不可持续，居民有意见但没渠道，钱花了但不透明，项目做了但没评价。社区是"硬件完整、软件缺失"，不是真正的完整。</div></div>
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">✅</div><div class="data-label">真正完整的社区</div><div class="data-desc">设施被使用、服务有温度、运营可持续、居民有参与、账目有公开、效果有评价。社区是"硬件+软件"双完整，居民从被服务的人变成共建者。</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:14px 0;">
+      <p class="formula-text" style="font-size:26px;">完整社区不是替居民安排好一切<br>而是让居民的需要进入决策<br>让各方资源共同解决问题<br>让服务在时间里持续</p>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;text-align:center;">
+      <p style="font-size:24px;font-weight:700;line-height:1.6;color:var(--accent);">金句集合</p>
+      <p style="font-size:21px;line-height:1.7;color:var(--text);margin-top:8px;">①完整社区不是设施竞赛。②方案可以改变，居民真正要解决的问题不能丢。③设施是外壳，需求、服务和运营才是内里。④居民参与要进入设计，而不是停在表态。⑤把模糊诉求翻译成可执行的责任链。⑥多元共治不是平均分任务，而是各守边界、彼此补位。⑦居民不仅被服务，也参与创造社区服务。⑧钱花得明白，居民才愿意一起把社区管下去。⑨参与的终点不是发言，而是结果可见、过程可追溯。⑩当居民成为出题者、参与者、监督者和共建者，社区才真正完整。</p>
+    </div>
+  </div>
+  <div class="key-sentence">把生活需要接成服务闭环，把社区成员连成行动共同体，这才是完整社区的真正含义。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:8px;">本卡片内容基于以下8篇人民日报报道整理，所有观点和案例均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">徐晓敬：《路灯没安成，为啥还叫好》</div><div class="ref-meta">人民日报，2026年7月27日，第05版；路灯案例来源，居民参与影响决策、方案可以改变的实践来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">杜宇慧：《"消失的竹竿"照见共建力量》</div><div class="ref-meta">人民日报，2026年7月28日，第05版；居民共建共治实践，晾晒需求进入设计的案例来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">王崟欣：《让居民深度参与、多得实惠》</div><div class="ref-meta">人民日报，2026年7月29日，第15版；居民深度参与社区治理的实践，居民出题、参与、监督的理论来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">王优玲：《首批完整社区建设可复制经验做法清单发布》</div><div class="ref-meta">人民日报，2026年7月29日，第07版；首批完整社区建设可复制经验做法清单，完整社区建设标准和经验的政策来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">曾亦辰、申智林、王者：《用心用情做好事办实事解难事》</div><div class="ref-meta">人民日报，2026年7月30日，第17版；社区为民办实事实践，服务嵌入和居民需求识别的实践来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">刘燕杰、田婷：《"老奶奶帮帮团"架起社区"幸福桥"》</div><div class="ref-meta">人民日报，2026年7月30日，第10版；居民志愿团队参与社区服务和矛盾调解，居民成为服务供给者的案例来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">7</div><div class="ref-content"><div class="ref-title">朱佩娴：《以信息化赋能"四议两公开"》</div><div class="ref-meta">人民日报，2026年8月4日，第19版；信息化赋能社区议事公开，账目公开和共管共评的技术来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">8</div><div class="ref-content"><div class="ref-title">尚嵘峥：《新疆出台导则助力建设互嵌式完整居住社区》</div><div class="ref-meta">人民日报，2026年8月6日，第07版；互嵌式完整居住社区建设导则，完整社区建设标准和多元共治的地方实践来源</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:8px;padding:12px 20px;">
+      <p style="font-size:19px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>路灯没安成居民还叫好、"老奶奶帮帮团"、"消失的竹竿"等均为具体案例，不直接写成全国统一做法；首批完整社区建设可复制经验做法清单为政策文件，具体实施以各地规定为准；居民参与、多元共治、账目公开等为治理框架，不同社区可能有不同实施方式；引用时必须保留地方案例和政策限定。不构成个体办事的法律建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第92期</span></div>
+    <h1 class="hero">完整社区<br>不是把设施配齐</h1>
+    <p class="body">而是让居民从"提需求"走到"共运营"。六步公式：居民出题→清单对接→多元共建→服务嵌入→账目公开→共管共评。</p>
+    <div class="key-sentence">完整社区不是设施竞赛。当居民成为出题者、参与者、监督者和共建者，社区才真正完整。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

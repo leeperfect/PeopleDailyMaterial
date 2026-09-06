@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>县域青年发展 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#ea580c;--accent-soft:rgba(234,88,12,.15);--warn:#f59e0b;--danger:#ef4444;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:104px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3.photo-page .content{justify-content:center}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第81期</span></div>
+    <h1 class="hero">县域青年发展<br>岗位住房只是起点</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">关键是让青年有成长空间</p>
+  </div>
+  <div class="key-sentence">县域青年工作不能只回答"引来多少人"。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>纠偏 · 常见低分答案</p>
+    <h2 class="h2">写县域吸引青年<br>你是不是只会这3句？</h2>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">1</div><div class="data-label">增加就业岗位</div><div class="data-desc">只回答"有没有班上"，不回答专业能否用上</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">建设人才公寓</div><div class="data-desc">只解决"住得下"，不回答生活得好不好</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">发放创业补贴</div><div class="data-desc">只给第一笔钱，不接场地、客户和专业服务</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">?</div><div class="data-label">1年后呢？</div><div class="data-desc">这些能解决落脚，却没有回答青年下一步往哪里走</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>把青年政策写成三项福利，是考场和政策表达中最常见的浅层框架。</p>
+    </div>
+  </div>
+  <div class="key-sentence">这些能解决落脚，却没有回答青年下一步往哪里走。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总框架 · 县域青年发展5步链条</p>
+    <h2 class="h2">从"把人引来"<br>走向"让人成长"</h2>
+    <div class="formula-box">
+      <p class="formula-text">产业给入口<span class="arrow">→</span>服务稳预期<span class="arrow">→</span>平台降门槛<span class="arrow">→</span><br>机制促成长<span class="arrow">→</span>参与建认同</p>
+    </div>
+    <div class="five-grid">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">产业给入口</div><div class="f-desc">主导产业和真实岗位提供职业支点，没有产业青年缺少进入支点</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">服务稳预期</div><div class="f-desc">公共服务稳定长期生活选择，没有服务岗位难转化为长期生活</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">平台降门槛</div><div class="f-desc">资源平台帮助创业越过起步阶段，没有平台创意难以起步</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">机制促成长</div><div class="f-desc">公平机制和高质量任务打开成长通道，没有机制青年很快碰到上限</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">参与建认同</div><div class="f-desc">公共参与形成深层认同，没有参与青年与县域难以形成共同未来</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">从"把人引来"，走向"让人成长"。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 岗位 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">岗</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第一环节 · 产业给入口</p>
+    <h2 class="h2">青年需要的<br>不是"任意一个岗位"</h2>
+    <p class="body">真正有效的岗位要同时回答三个问题：</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">专业能不能用上？</div><div class="data-desc">专业匹配是职业入口的第一关，学非所用会快速消耗热情</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">工作有没有真实任务？</div><div class="data-desc">真实研发和核心业务让工作不只是"有份班上"，而是有成长</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">能力能不能持续积累？</div><div class="data-desc">岗位要提供技能提升路径，重复性事务无法形成职业竞争力</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">✓</div><div class="data-label">有效岗位</div><div class="data-desc">专业匹配 + 真实任务 + 能力积累，三者同时满足</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">对比：</strong>左侧大量散乱职位标签 ≠ 右侧专业—岗位—项目的精准连线。岗位数量不等于岗位质量。</p>
+    </div>
+  </div>
+  <div class="key-sentence">岗位是入口，专业匹配和任务质量才决定成长。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 案例+匹配 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">配</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>地方案例 · 产业接住专业 + 动态匹配</p>
+    <h2 class="h2">为什么医药专业青年<br>愿意留在梅河口？</h2>
+    <div class="compare-grid">
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);">梅河口 · 产业留人</h3>
+        <ul>
+          <li>当地医药产业提供对应岗位</li>
+          <li>专项招聘、校企合作连接青年</li>
+          <li>企业真实研发和核心业务</li>
+          <li>工作不只是"有份班上"</li>
+        </ul>
+        <p style="font-size:20px;color:var(--warn);margin-top:8px;">⚠ 地方案例，不代表全国普遍情况</p>
+      </div>
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);">陕西镇坪 · 动态匹配</h3>
+        <ul>
+          <li>一人一档记录专业、项目和服务需求</li>
+          <li>产业需求同步更新，不建静态名单</li>
+          <li>线上匹配后还有线下对接和跟踪反馈</li>
+          <li>招聘是一次接触，匹配是持续服务</li>
+        </ul>
+        <p style="font-size:20px;color:var(--warn);margin-top:8px;">⚠ 镇坪县人才数据中心地方数据</p>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:16px 0;">
+      <p class="formula-text" style="font-size:25px;">专业有用武之地 <span class="arrow">→</span> 青年才看得到职业下一步</p>
+    </div>
+    <p class="body" style="font-size:24px;">人才工作别只建名单——一人一档 + 需求同步 + 线下对接 + 跟踪反馈，才是完整闭环。</p>
+  </div>
+  <div class="key-sentence">专业有用武之地，青年才看得到职业下一步。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 住房+服务 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">服</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第二环节 · 服务稳预期</p>
+    <h2 class="h2">住得下<br>不等于生活得好</h2>
+    <p class="body">青年还会计算通勤、医疗、教育、文化生活和家庭照护。公共服务稳定，才敢把未来放在县域。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">🚌</div><div class="data-label">通勤交通</div><div class="data-desc">上下班是否便利，影响生活质量和时间成本</div></div>
+      <div class="data-card"><div class="data-num">🏥</div><div class="data-label">医疗教育</div><div class="data-desc">看病、子女教育是长期生活的核心考量</div></div>
+      <div class="data-card"><div class="data-num">🎭</div><div class="data-label">文化生活</div><div class="data-desc">青年夜校、共享办公、文化馆满足精神需求</div></div>
+      <div class="data-card"><div class="data-num">👨‍👩‍👧</div><div class="data-label">家庭照护</div><div class="data-desc">老人、孩子的照护资源决定家庭能否安顿</div></div>
+    </div>
+    <p class="h3" style="color:var(--accent);margin:8px 0;">服务要看不同青年：</p>
+    <div class="compare-grid" style="margin:10px 0;">
+      <div class="compare-col"><h3 style="font-size:24px;">产业青年</h3><p style="font-size:21px;color:var(--text-secondary);">需要技能培训和通勤便利</p></div>
+      <div class="compare-col"><h3 style="font-size:24px;">创业青年</h3><p style="font-size:21px;color:var(--text-secondary);">需要空间、市场和行业信息</p></div>
+      <div class="compare-col"><h3 style="font-size:24px;">返乡青年</h3><p style="font-size:21px;color:var(--text-secondary);">可能面对家庭照护和重新适应</p></div>
+      <div class="compare-col"><h3 style="font-size:24px;">外来青年</h3><p style="font-size:21px;color:var(--text-secondary);">更在意公平服务和社群融入</p></div>
+    </div>
+  </div>
+  <div class="key-sentence">公共服务是在降低长期选择的不确定性。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 创业 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">创</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第三环节 · 平台降门槛</p>
+    <h2 class="h2">有钱起步<br>为什么项目仍可能走不远？</h2>
+    <p class="body">创业还缺场地、设备、客户、行业信息和专业服务。资金只解决一段，平台要接起整条路。</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">🏢</div><div class="data-label">场地设备</div><div class="data-desc">共享办公、实验设备、中试空间，降低固定成本</div></div>
+      <div class="data-card"><div class="data-num">👥</div><div class="data-label">客户市场</div><div class="data-desc">首用首试、采购对接、渠道合作，接受市场检验</div></div>
+      <div class="data-card"><div class="data-num">📊</div><div class="data-label">行业信息</div><div class="data-desc">产业趋势、技术动态、政策解读，减少信息差</div></div>
+      <div class="data-card"><div class="data-num">⚖</div><div class="data-label">专业服务</div><div class="data-desc">财税、法务、品牌、检测，补齐创业团队短板</div></div>
+    </div>
+    <div class="compare-col" style="margin-top:16px;padding:20px 24px;border-color:var(--danger);">
+      <p style="font-size:24px;line-height:1.6;color:var(--text);"><strong style="color:var(--danger);">断点：</strong>创业流水线在"客户、检测、法务、渠道"处断开，资金用完项目就停。</p>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:12px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">解法：</strong>平台桥梁接通四端，创业扶持从"只有启动"变成"全程接续"。</p>
+    </div>
+  </div>
+  <div class="key-sentence">创业最怕的不是没有第一笔钱，而是资源在中途断开。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 平台 -->
+<section class="poster photo-page" id="xhs-08">
+  <img class="bg-img" src="assets/platform.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>平台建设 · 有效平台要接四端</p>
+    <h2 class="h2">需求、资源<br>专业、市场</h2>
+    <p class="body">平台不是一栋楼，而是一套减少资源断点的服务。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">1</div><div class="data-label">接真实需求</div><div class="data-desc">产业命题、企业需求、社会问题，让创业对准真实痛点</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">2</div><div class="data-label">开放设备数据</div><div class="data-desc">实验设备、中试线、产业数据向青年开放，降低硬件门槛</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">3</div><div class="data-label">提供专业支持</div><div class="data-desc">财税、法务、品牌、检测等专业服务，补齐团队短板</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">4</div><div class="data-label">接受市场检验</div><div class="data-desc">首用首试、采购对接、渠道合作，让产品经过真实市场</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">创新突围看县域：</strong>产业命题、产教融合、概念验证、中试加速、创新中心、人才飞地和跨域协作，说明县域青年成长依靠真实产业任务与可获得资源。</p>
+    </div>
+  </div>
+  <div class="key-sentence">平台不是一栋楼，而是一套减少资源断点的服务。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 成长上限 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">长</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第四环节 · 机制促成长</p>
+    <h2 class="h2">低成本能吸引<br>成长空间才能留住</h2>
+    <p class="body">青年还需要高质量项目、重要岗位、公平竞争和外部资源链接。没有下一步，首年补贴很快失去作用。</p>
+    <div class="compare-grid">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);">只有低成本 ✗</h3>
+        <ul>
+          <li>低房租、低消费吸引青年进入</li>
+          <li>但项目质量低、岗位不重要</li>
+          <li>竞争不透明、外部资源少</li>
+          <li>首年补贴用完后看不到下一步</li>
+          <li>青年很快碰到成长天花板</li>
+        </ul>
+      </div>
+      <div class="compare-col accent-col">
+        <h3 style="color:var(--accent);">有成长空间 ✓</h3>
+        <ul>
+          <li>高质量项目历练真实能力</li>
+          <li>重要岗位赋予责任和话语权</li>
+          <li>公平竞争让努力有回报</li>
+          <li>人才飞地和校企合作链接外部</li>
+          <li>青年努力后看得见职业下一步</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:16px 0;">
+      <p class="formula-text" style="font-size:25px;">县域留人的竞争力 <span class="arrow">=</span> 青年努力以后看得见下一步</p>
+    </div>
+  </div>
+  <div class="key-sentence">县域留人的竞争力，是青年努力以后看得见下一步。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 资源组织 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">组</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>机制解法 · 县域资源少怎样给成长空间</p>
+    <h2 class="h2">不必复制大城市<br>要会组织有限资源</h2>
+    <p class="body">县域资源总量有限，更要让项目、人才和平台精准相遇。</p>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">用真实项目历练人</div><div class="step-desc">产业命题、企业需求、社会问题转化为青年可参与的真实任务</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">用公开规则选用人</div><div class="step-desc">项目申报、岗位竞聘、资源分配全程公开，让能力说话而非关系</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">用人才飞地和校企合作连接人</div><div class="step-desc">在大城市设研发飞地，与高校共建实验室，链接外部资源和导师</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">用持续评价发展人</div><div class="step-desc">建立成长档案和反馈机制，定期评估能力提升和职业发展</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">三把钥匙：</strong>科技与产业创新、制度与机制创新、理念与模式创新——县域资源少不等于机会少，关键是如何组织资源。</p>
+    </div>
+  </div>
+  <div class="key-sentence">资源总量有限，更要让项目、人才和平台精准相遇。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 公平 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">公</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>隐性环境 · 公平为什么重要</p>
+    <h2 class="h2">青年怕的<br>不只是机会少</h2>
+    <p class="body">关系壁垒、论资排辈、项目不公开，会让外来青年和返乡青年失去长期预期。公平不是附加福利，是成长通道的底座。</p>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">✗</div><div class="data-label">关系壁垒</div><div class="data-desc">好项目、好岗位靠关系分配，外来青年看不到机会</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">✗</div><div class="data-label">论资排辈</div><div class="data-desc">年轻人永远排在后面，能力和努力不被认可</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">✗</div><div class="data-label">项目不公开</div><div class="data-desc">资源分配暗箱操作，青年不知道如何争取</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">✓</div><div class="data-label">公平开放</div><div class="data-desc">机会公开、规则透明、竞争公平，让能力说话</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:16px 0;">
+      <p class="formula-text" style="font-size:25px;">机会是否公平 <span class="arrow">→</span> 决定青年愿不愿长期投入</p>
+    </div>
+    <p class="body" style="font-size:24px;font-weight:700;color:var(--text);">公平不是附加福利，是成长通道的底座。没有公平，再多补贴也留不住人。</p>
+  </div>
+  <div class="key-sentence">机会是否公平，决定青年愿不愿长期投入。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 参与 -->
+<section class="poster photo-page" id="xhs-12">
+  <img class="bg-img" src="assets/growth.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第五环节 · 参与建认同</p>
+    <h2 class="h2">归属感<br>从哪里来？</h2>
+    <p class="body">专业被需要，建议有回应，参与能见到结果。让青年进入产业规划、社区治理、公共文化和乡村建设，认同才会形成。</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🏭</div><div class="data-label">产业规划</div><div class="data-desc">青年参与产业方向讨论，用数字内容和新消费改造传统产业</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🏘</div><div class="data-label">社区治理</div><div class="data-desc">青年参与社区事务，用新视角解决基层问题</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🎨</div><div class="data-label">公共文化</div><div class="data-desc">青年策划文化活动，用包装设计和创意激活地方文化</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🌾</div><div class="data-label">乡村建设</div><div class="data-desc">青年参与乡村振兴，用新技术和新理念建设家乡</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">递进：</strong>从"被服务对象" → "参与建设者" → "共同创造者"。青年参与县域改变，也会在改变中确认自己的价值。</p>
+    </div>
+  </div>
+  <div class="key-sentence">青年参与县域改变，也会在改变中确认自己的价值。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 考场+总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>考场迁移 + 认知升级</p>
+    <h2 class="h2">遇到"人才留不住"<br>先查这5层</h2>
+    <div class="compare-col accent-col" style="padding:22px;margin-bottom:18px;">
+      <p style="font-size:26px;line-height:1.8;font-weight:700;"><strong style="color:var(--accent);">申论公式：</strong>有岗位可进入 <span style="color:var(--accent);">+</span> 有服务可安顿 <span style="color:var(--accent);">+</span> 有平台可起步 <span style="color:var(--accent);">+</span> 有机制可成长 <span style="color:var(--accent);">+</span> 有参与可认同</p>
+    </div>
+    <div class="step-chain" style="margin-top:4px;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">岗位与专业是否匹配？</div><div class="step-desc">不匹配 → 先查产业结构和招聘方式，别急着加补贴</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">公共服务能否支撑长期生活？</div><div class="step-desc">服务不足 → 先补通勤、医疗、教育、文化，别只建公寓</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">创业平台是否连接真实市场？</div><div class="step-desc">平台空转 → 先接需求、资源、专业、市场四端，别只发钱</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">竞争和晋升是否公平开放？</div><div class="step-desc">公平缺失 → 先公开规则和项目，破除关系壁垒和论资排辈</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">青年是否有参与地方建设的机会？</div><div class="step-desc">参与不足 → 先让青年进入产业、社区、文化、乡村建设</div></div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:14px 0;">
+      <p class="formula-text" style="font-size:24px;">县域能够成就青年 <span class="arrow">↔</span> 青年才会重新塑造县域</p>
+    </div>
+  </div>
+  <div class="key-sentence">别急着继续加补贴，先找到青年在哪一层被卡住。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:12px;">本卡片内容基于以下5篇人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">青年发展看县域</div><div class="ref-meta">人民日报，2026年1月，梅河口、蒙自、中宁三地案例；主导产业和青年专业匹配，人才公寓、共享办公、青年夜校与公共服务，创业贷款、阶段免租和资源对接；人口、返乡创业主体、房租等数据均有明确地区和时间范围，不外推为全国普遍情况</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">县域更友好 青年更有为</div><div class="ref-meta">人民日报，2026年1月，总论和认知升级；支撑"横向服务+纵向成长"双重逻辑，特别是公平竞争、重要岗位、成长舞台和青年友好环境；该文为观点提炼，具体案例须回到同版调查</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">陕西镇坪数字赋能县域人才管理</div><div class="ref-meta">人民日报，2026年1月，动态匹配机制；一人一档、需求画像、供需匹配、动态更新和服务办理，说明人才工作不能停在静态名单和一次招聘；入库率、匹配成功率增幅和满意率为镇坪县人才数据中心成立一年后的地方数据，未作为全国成效使用</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">创新突围看县域</div><div class="ref-meta">人民日报，2026年1月，成长平台和资源组织；产业命题、产教融合、概念验证、中试加速、创新中心、人才飞地和跨域协作；说明县域青年成长依靠真实产业任务与可获得资源；不同地区案例不能拼接成同一地已经全部具备的服务体系</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">县域创新的"三把钥匙"</div><div class="ref-meta">人民日报，2026年1月，创新环境概括；科技与产业创新、制度与机制创新、理念与模式创新；转译为青年成长空间，说明县域资源少不等于机会少，关键是如何组织资源</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:12px;padding:14px 20px;">
+      <p style="font-size:20px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>梅河口、蒙自、中宁、陕西镇坪等地做法均为地方案例；人口、返乡创业主体、房租、匹配成功率等数据均有明确地区和时间范围，不外推为全国普遍情况。不构成个体就业或创业建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第81期</span></div>
+    <h1 class="hero">县域青年发展<br>岗位住房只是起点</h1>
+    <p class="body">关键是让青年有成长空间——产业给入口、服务稳预期、平台降门槛、机制促成长、参与建认同。</p>
+    <div class="key-sentence">县域能够成就青年，青年才会重新塑造县域。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

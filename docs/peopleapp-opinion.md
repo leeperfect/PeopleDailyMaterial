@@ -148,6 +148,14 @@ data/peopleapp_opinion/exports/hotspots/
 python3 scripts/update_peopleapp_opinion_topic_library.py --all
 ```
 
+该命令在已有妙搭配置时会同时更新“APP 评论热点选题工作台”网页。也可以单独覆盖同步：
+
+```bash
+python3 scripts/sync_hotspot_magazine_to_miaoda.py
+```
+
+妙搭页面是只读展示副本，本地 SQLite 热点库仍是唯一事实源。
+
 机器统计库：
 
 ```text
@@ -176,3 +184,4 @@ data/peopleapp_opinion/exports/hotspot_topic_library.csv
 - 自动任务日志要能看到采集数量、跳过重复数量、同步数量和失败清单。
 - 热点报告中，`已达热点标准` 的话题至少包含 3 个不同来源媒体；重复稿和残缺正文不参与支撑数量。
 - 热点选题总库每天自动更新，保留历史文章参与累计统计。
+- 热点总库更新成功后，妙搭热点网页同步更新；同步失败必须在任务结果中明确显示。

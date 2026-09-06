@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSET_DB = ROOT / "data" / "core" / "material_assets.sqlite"
 ARTICLE_DB = ROOT / "data" / "core" / "articles.sqlite"
 REPORT_PATH = ROOT / "data" / "articles" / "选题库-精筛说明.md"
+MIAODA_CONFIG_PATH = ROOT / "data" / "exports" / "idea_magazine_miaoda.json"
 MIN_SUPPORT_COUNT = 3
 
 
@@ -2729,10 +2730,21 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="按至少3篇支撑文章和去重规则精筛公众号选题库")
     parser.add_argument("--db-path", default=str(ASSET_DB), help="素材资产库路径")
     parser.add_argument("--no-refresh", action="store_true", help="不刷新 Markdown/CSV 总表")
+    parser.add_argument("--no-miaoda-sync", action="store_true", help="完成精筛后不同步妙搭网页")
     parser.add_argument("--report-path", default=str(REPORT_PATH), help="精筛说明输出路径")
     args = parser.parse_args()
     result = refine_content_ideas(Path(args.db_path), refresh=not args.no_refresh, report_path=Path(args.report_path))
     print(json.dumps(result, ensure_ascii=False, indent=2))
+    if (
+        not args.no_refresh
+        and not args.no_miaoda_sync
+        and Path(args.db_path).resolve() == ASSET_DB.resolve()
+        and MIAODA_CONFIG_PATH.exists()
+    ):
+        import sync_idea_magazine_to_miaoda
+
+        sync_result = sync_idea_magazine_to_miaoda.sync()
+        print(f"妙搭网页已同步: {sync_result['url']}")
 
 
 if __name__ == "__main__":

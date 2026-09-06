@@ -1,5 +1,5 @@
 schema_version: 2
-type: notebooklm_figure_manifest
+type: inline_markdown_figure_manifest
 date: '2026-08-29'
 registered_at: '2026-08-30T07:27:18'
 article: data/articles/人民日报系列/86-《人民日报》深度分析【企业信用修复】：不良记录不是“一删了之”，而是纠错、履责、退出惩戒.md
@@ -23,40 +23,79 @@ source:
 plans:
   shared:
     items:
+    - id: fig-86-01
+      before_heading: '## 一、先辨性质：不是所有失信都能修，也不是所有失信都该“一罪永罚”'
+      inline_marker: '![第86篇配图01](media/images/2026-08-29-article-86/fig-86-01.png)'
+      anchor_before: 86｜《人民日报》深度分析【企业信用修复】：不良记录不是“一删了之”，而是纠错、履责、退出惩戒
+      anchor_after: 一家上市公司负债近160亿元，涉及400多宗官司，离退市破产仅一步之遥。它的身后，是1600多名职工、3800多家供货商和4万多名农民工。
+      context_after: 2025年4月，有关部门印发了《关于健全社会信用体系的意见》，其中一句话特别值得注意：设定失信惩戒措施、确定严重失信主体名单的领域，必须以法律法规或政策性文件为
     - id: fig-86-02
       before_heading: '## 一、先辨性质：不是所有失信都能修，也不是所有失信都该“一罪永罚”'
+      inline_marker: '![活下来只是前半段：债务清偿完毕，不良记录仍锁住贷款、投标与签约](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-02.png)'
+      anchor_before: 恰恰是这个“删”字错了。如果信用修复只是删除记录，那它保护的就不是诚信，而是公关能力。
+      anchor_after: 《人民日报》这组关于企业信用修复的报道，讲的是另一件事：信用修复修的不是记录，是状态；不是把昨天抹掉，而是让企业能回到明天。
       context_after: 2025年4月，有关部门印发了《关于健全社会信用体系的意见》，其中一句话特别值得注意：设定失信惩戒措施、确定严重失信主体名单的领域，必须以法律法规或政策性文件为
     - id: fig-86-04
       before_heading: '## 一、先辨性质：不是所有失信都能修，也不是所有失信都该“一罪永罚”'
+      inline_marker: '![信用修复六环闭环：先辨性质、主动纠错、统一办理、协同互认、依法退出、关口前移](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-04.png)'
+      anchor_before: 六环相扣，环环有门道。我们一环一环拆解。
+      anchor_after: 一、先辨性质：不是所有失信都能修，也不是所有失信都该“一罪永罚”
       context_after: 2025年4月，有关部门印发了《关于健全社会信用体系的意见》，其中一句话特别值得注意：设定失信惩戒措施、确定严重失信主体名单的领域，必须以法律法规或政策性文件为
     - id: fig-86-05
       before_heading: '## 二、主动纠错：修复的钥匙在企业自己手里'
+      inline_marker: '![三类失信分类处置：恶意失信一惩到底、暂时困难拉一把、轻微过失给出路](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-05.png)'
+      anchor_before: 不分类的修复，要么是放水，要么是做样子。这是考官一眼就能看出的差别。
+      anchor_after: 二、主动纠错：修复的钥匙在企业自己手里
       context_after: 第二个常见误区，是把信用修复写成“政府帮企业把信用洗回来”。这弄错了主体。《关于健全社会信用体系的意见》在完善信用修复制度那条里明确指出：“鼓励失信主体**主动
     - id: fig-86-06
       before_heading: '## 三、统一办理：从“多头跑”到“一件事”'
+      inline_marker: '![信用修复的责任分工：企业主动纠错承担主体责任，政府降低制度成本](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-06.png)'
+      anchor_before: 申论里写对策，不要写“政府帮助企业修复信用”，要写“引导企业主动纠正失信行为，同步降低纠错的制度性交易成本”。这一句话的差别，就是执行层和理解层的差别。
+      anchor_after: 三、统一办理：从“多头跑”到“一件事”
       context_after: 纠错完成后，接下来是程序问题：去哪修、怎么修、多久能修完。这个问题在过去是真痛点。企业可能在一个地方被处罚，在另一个地方投标受限，修复标准各地不一、材料重复交、
     - id: fig-86-07
       before_heading: '## 四、协同修复与依法退出：退出的是状态，留下的是事实'
+      inline_marker: '![从“多头跑”到“一件事”：标准统一、渠道整合、跨省通办](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-07.png)'
+      anchor_before: 这正是全国统一大市场在信用领域的投影：规则统一了，修复才能跟着企业走，而不是跟着地域走。
+      anchor_after: 四、协同修复与依法退出：退出的是状态，留下的是事实
       context_after: 比“多头跑”更难的，是破产企业的信用修复。企业都要退市了，还修复信用做什么？这恰恰最考验治理功力。广西的答案是“四个一”全链条解决方案：一套联动机制、一笔兜底资
     - id: fig-86-09
       before_heading: '## 五、关口前移：最好的修复，是让小过失不留痕'
+      inline_marker: '![破产企业的信用修复：府院联动助力1078户平稳退市，核查从35天压至5天](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-09.png)'
+      anchor_before: 1078户这个数字背后，是一个容易被忽略的判断：退出也要退得干净。 一家破产企业如果注销无门、信息核查拖沓、信用记录悬而未决，占用的是市场资源，消耗的是接盘方和债权人的耐心。让破产企业平稳退市，本身就是信用体系的一部分。
+      anchor_after: 那么，信用修复完成后会发生什么？《关于健全社会信用体系的意见》给出了三个具体动作：
       context_after: 沿着这个链条思考，还有一个更高层次的问题：能否让企业从一开始就不需要修复？广西在2026年1月出台的《广西市场监管领域信用豁免管理制度（试行）》回答了这个问题。
     - id: fig-86-08
       before_heading: '## 五、关口前移：最好的修复，是让小过失不留痕'
+      inline_marker: '![信用修复完成后：停止公示、移出名单、解除惩戒，退出的是状态、留下的是事实](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-08.png)'
+      anchor_before: 这个区分，正是申论考试中拉开分差的关键。删除是让事实“蒸发”的幻觉，退出则是让状态“归位”的程序。前者会破坏信用体系的严肃性，后者则维护了体系的完整性。
+      anchor_after: 五、关口前移：最好的修复，是让小过失不留痕
       context_after: 沿着这个链条思考，还有一个更高层次的问题：能否让企业从一开始就不需要修复？广西在2026年1月出台的《广西市场监管领域信用豁免管理制度（试行）》回答了这个问题。
     - id: fig-86-10
       before_heading: '## 六、国考省考申论面试怎么用'
+      inline_marker: '![关口前移：信用豁免在事前事中不留痕，信用修复在事后错了再修](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-10.png)'
+      anchor_before: 惩戒的目的是让人守信，而不是让企业永世不得翻身；最好的信用治理，是让轻微过失不必付出终身代价。
+      anchor_after: 六、国考省考申论面试怎么用
       context_after: 首先，建立一个总公式：>**信用修复=辨性质+纠错误+统标准+通渠道+退惩戒+前关口。**在申论中遇到营商环境、诚信社会建设、社会信用体系、民营经济等主题时，可
     - id: fig-86-11
       before_heading: '## 七、结尾：别把机制写成操作'
+      inline_marker: '![企业求助五步诊断法：核实性质、一次告知、协助办理、跟进退出、前移提醒](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-11.png)'
+      anchor_before: 完成这五步，解决的不仅是一家企业的问题，更是堵上了一个服务流程的缺口。
+      anchor_after: 七、结尾：别把机制写成操作
       context_after: 回到开头那个“删”字。现在你能看出它错在哪里了：它把一个治理机制，简化成了一次数据操作。而人民日报这组报道真正想说的是，惩戒与修复是一个完整循环的两面。只惩戒不
     - id: fig-86-12
       before_heading: '## 金句集合'
+      inline_marker: '![下次再看到“信用修复”，先问一句：它指的是“删除”，还是“退出”？](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-12.png)'
+      anchor_before: 这一问，就区分了看热闹与看门道。
+      anchor_after: 金句集合
       context_after: 1.信用修复修的不是记录，而是状态；不是抹掉昨天，而是让企业能走向明天。2.如果信用修复只是删除，那它保护的不是诚信，而是公关能力。3.恶意失信要惩戒到底，轻微
     - id: fig-86-infographic
       before_heading: '## 参考文章'
+      inline_marker: '![全文总览：企业信用修复是“重塑状态”，不是“抹除过去”](media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-infographic.png)'
+      anchor_before: 只惩戒不修复，信用体系就成了“一罪永罚”；只修复不惩戒，信用体系就成了空转。
+      anchor_after: 参考文章
       context_after: 1.程远州：《助力困境企业“重获新生”》，2025年1月27日，第14版（法治）。2.王昊男：《构建区域协同信用修复机制》，2025年3月13日，第12版（经济
-    updated_at: '2026-08-30T07:46:06'
+    updated_at: '2026-09-06T05:39:36'
   wechat:
     inherit: shared
     items: null
@@ -66,308 +105,204 @@ plans:
     items: null
     updated_at: null
 confirmation:
-  status: editing
-  confirmed_at: null
-  body_hash: null
-  plan_fingerprint: null
+  status: confirmed
+  confirmed_at: '2026-09-06T05:39:39'
+  body_hash: d573a28f276c7406c913e496cfb13ee2e7785c215262ef13f62c10631241d45a
+  plan_fingerprint: 6c07da588673147472955c78e94a490a731ae03c22a8f43e3bb14b62a06e80e4
 figures:
 - id: fig-86-01
-  kind: ppt_slide
-  source_slide: 1
-  source_member: ppt/media/image1.png
-  file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-01.png
-  width_px: 1376
-  height_px: 768
-  sha256: 07f2c8ec402c7edade5e1987a877c5f113717f5b2b6f8320231f647dd3e9a6bd
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: NotebookLM幻灯片第01页
-  caption: NotebookLM幻灯片第01页
-  wechat_status: candidate
-  used_in_wechat: false
-  article_position: null
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: null
+  kind: inline_markdown
+  file: media/images/2026-08-29-article-86/fig-86-01.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 3dd1e33367789b0dd4fa99defdde7da74d09b73098c802ea0932bc95c1bbf55b
+  title: 第86篇配图01
+  caption: 第86篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先辨性质：不是所有失信都能修，也不是所有失信都该“一罪永罚”附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-02
-  kind: ppt_slide
-  source_slide: 2
-  source_member: ppt/media/image2.png
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-02.png
   width_px: 1376
   height_px: 768
   sha256: e4eede5181a5264cf2ddb823820944a52865b1f4a0048a5ee9e32b40a108c271
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 活下来只是前半段
+  title: 活下来只是前半段：债务清偿完毕，不良记录仍锁住贷款、投标与签约
   caption: 活下来只是前半段：债务清偿完毕，不良记录仍锁住贷款、投标与签约
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 一、先辨性质：不是所有失信都能修，也不是所有失信都该“一罪永罚”之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 1
-- id: fig-86-03
-  kind: ppt_slide
-  source_slide: 3
-  source_member: ppt/media/image3.png
-  file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-03.png
-  width_px: 1376
-  height_px: 768
-  sha256: 05a0ef8fcd9adcfee821d3350535ad0db3b1efd546e567d8fe96b61e5c047fb8
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: NotebookLM幻灯片第03页
-  caption: NotebookLM幻灯片第03页
-  wechat_status: candidate
-  used_in_wechat: false
-  article_position: null
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: null
+  article_position: '## 一、先辨性质：不是所有失信都能修，也不是所有失信都该“一罪永罚”附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-04
-  kind: ppt_slide
-  source_slide: 4
-  source_member: ppt/media/image4.png
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-04.png
   width_px: 1376
   height_px: 768
   sha256: bb722753aec0c84cde8511fe9ea05f3378e254eb4da9b9e0bfc4d4e8c5c05ccc
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 信用修复六环闭环
+  title: 信用修复六环闭环：先辨性质、主动纠错、统一办理、协同互认、依法退出、关口前移
   caption: 信用修复六环闭环：先辨性质、主动纠错、统一办理、协同互认、依法退出、关口前移
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 一、先辨性质：不是所有失信都能修，也不是所有失信都该“一罪永罚”之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 2
+  article_position: '## 一、先辨性质：不是所有失信都能修，也不是所有失信都该“一罪永罚”附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-05
-  kind: ppt_slide
-  source_slide: 5
-  source_member: ppt/media/image5.png
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-05.png
   width_px: 1376
   height_px: 768
   sha256: 29759686f0a4b544343ca6f23cb6327b95893fdc18728c7d75ae1877cf34258d
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 三类失信分类处置
+  title: 三类失信分类处置：恶意失信一惩到底、暂时困难拉一把、轻微过失给出路
   caption: 三类失信分类处置：恶意失信一惩到底、暂时困难拉一把、轻微过失给出路
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 二、主动纠错：修复的钥匙在企业自己手里之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 3
+  article_position: '## 二、主动纠错：修复的钥匙在企业自己手里附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-06
-  kind: ppt_slide
-  source_slide: 6
-  source_member: ppt/media/image6.png
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-06.png
   width_px: 1376
   height_px: 768
   sha256: 76eb900e5b6d27b6639464694796e6a88a7703c29991bdc9abf89b3e9bea5e24
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 信用修复的责任分工
+  title: 信用修复的责任分工：企业主动纠错承担主体责任，政府降低制度成本
   caption: 信用修复的责任分工：企业主动纠错承担主体责任，政府降低制度成本
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 三、统一办理：从“多头跑”到“一件事”之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 4
+  article_position: '## 三、统一办理：从“多头跑”到“一件事”附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-07
-  kind: ppt_slide
-  source_slide: 7
-  source_member: ppt/media/image7.png
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-07.png
   width_px: 1376
   height_px: 768
   sha256: 0fed1508e528f8e1c47a441df31bfc576bdf6767f7249c19634aafd58b4775ff
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 从多头跑到一件事
+  title: 从“多头跑”到“一件事”：标准统一、渠道整合、跨省通办
   caption: 从“多头跑”到“一件事”：标准统一、渠道整合、跨省通办
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 四、协同修复与依法退出：退出的是状态，留下的是事实之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 5
-- id: fig-86-08
-  kind: ppt_slide
-  source_slide: 8
-  source_member: ppt/media/image8.png
-  file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-08.png
-  width_px: 1376
-  height_px: 768
-  sha256: cfce4910b07519a14b54ed5450de2366caa7a785decf3994f51d92e3394c4239
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 退出状态留下事实
-  caption: 信用修复完成后：停止公示、移出名单、解除惩戒，退出的是状态、留下的是事实
-  wechat_status: selected
-  used_in_wechat: true
-  article_position: '## 五、关口前移：最好的修复，是让小过失不留痕之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 7
+  article_position: '## 四、协同修复与依法退出：退出的是状态，留下的是事实附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-09
-  kind: ppt_slide
-  source_slide: 9
-  source_member: ppt/media/image9.png
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-09.png
   width_px: 1376
   height_px: 768
   sha256: bdd2ca78f06051bd5f735643f8e9468ec5a06f067becc62f11d6208c0c4536f4
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 破产企业的信用修复
+  title: 破产企业的信用修复：府院联动助力1078户平稳退市，核查从35天压至5天
   caption: 破产企业的信用修复：府院联动助力1078户平稳退市，核查从35天压至5天
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 五、关口前移：最好的修复，是让小过失不留痕之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 6
+  article_position: '## 五、关口前移：最好的修复，是让小过失不留痕附近（按正文内链接精确定位）'
+  article_order: 7
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
+- id: fig-86-08
+  kind: inline_markdown
+  file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-08.png
+  width_px: 1376
+  height_px: 768
+  sha256: cfce4910b07519a14b54ed5450de2366caa7a785decf3994f51d92e3394c4239
+  title: 信用修复完成后：停止公示、移出名单、解除惩戒，退出的是状态、留下的是事实
+  caption: 信用修复完成后：停止公示、移出名单、解除惩戒，退出的是状态、留下的是事实
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、关口前移：最好的修复，是让小过失不留痕附近（按正文内链接精确定位）'
+  article_order: 8
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-10
-  kind: ppt_slide
-  source_slide: 10
-  source_member: ppt/media/image10.png
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-10.png
   width_px: 1376
   height_px: 768
   sha256: 6a6d167b9339e9b83bc8632ea3bb1ae66353b6ad2473b71a5695f67c721ed78c
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 关口前移
+  title: 关口前移：信用豁免在事前事中不留痕，信用修复在事后错了再修
   caption: 关口前移：信用豁免在事前事中不留痕，信用修复在事后错了再修
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 六、国考省考申论面试怎么用之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 8
+  article_position: '## 六、国考省考申论面试怎么用附近（按正文内链接精确定位）'
+  article_order: 9
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-11
-  kind: ppt_slide
-  source_slide: 11
-  source_member: ppt/media/image11.png
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-11.png
   width_px: 1376
   height_px: 768
   sha256: b6a6b88fb5616e7bdebece9873965b3f677b75cc0c8f655a5303e92225a33ad3
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 企业求助五步诊断法
+  title: 企业求助五步诊断法：核实性质、一次告知、协助办理、跟进退出、前移提醒
   caption: 企业求助五步诊断法：核实性质、一次告知、协助办理、跟进退出、前移提醒
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 七、结尾：别把机制写成操作之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 9
+  article_position: '## 七、结尾：别把机制写成操作附近（按正文内链接精确定位）'
+  article_order: 10
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-12
-  kind: ppt_slide
-  source_slide: 12
-  source_member: ppt/media/image12.png
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-12.png
   width_px: 1376
   height_px: 768
   sha256: 32a407fe467e9dc0463f1a8dc7908f8c125c2aa91096123779825bd5c8c63e0e
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 删除还是退出
+  title: 下次再看到“信用修复”，先问一句：它指的是“删除”，还是“退出”？
   caption: 下次再看到“信用修复”，先问一句：它指的是“删除”，还是“退出”？
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 金句集合之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 116.5
-  print_height_mm_at_300dpi: 65.0
-  publication_status: needs_redraw
-  print_assessment: 公众号可用；纸书半页可评估，整页建议重绘
-  article_order: 10
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 11
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
 - id: fig-86-infographic
-  kind: infographic
-  source_slide: null
-  source_member: null
+  kind: inline_markdown
   file: media/images/2026-08-29-credit-repair-notebooklm/wechat/fig-86-infographic.png
   width_px: 2752
   height_px: 1536
   sha256: 9fa8c74ffc12d320683017803f30f9e35328070d49c068aab26d34a3d6d434e7
-  native_text_nodes: 0
-  picture_nodes: 1
-  editable: false
-  title: 全文总览信息图
+  title: 全文总览：企业信用修复是“重塑状态”，不是“抹除过去”
   caption: 全文总览：企业信用修复是“重塑状态”，不是“抹除过去”
   wechat_status: selected
   used_in_wechat: true
-  article_position: '## 参考文章之前'
-  source_tool: NotebookLM
-  watermark_present: true
-  print_width_mm_at_300dpi: 233.0
-  print_height_mm_at_300dpi: 130.0
-  publication_status: review_required
-  print_assessment: 清晰度足够；信息密度较高，纸书建议拆图或横向跨页
-  article_order: 11
-updated_at: '2026-08-30T07:46:06'
+  article_position: '## 参考文章附近（按正文内链接精确定位）'
+  article_order: 12
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:36'
+updated_at: '2026-09-06T05:39:39'
+placement_mode: inline_markdown
+inline_markdown_count: 12
+inline_imported_at: '2026-09-06T05:39:36'

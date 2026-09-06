@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>基层减负 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#15803d;--accent-soft:rgba(21,128,61,.15);--warn:#f59e0b;--danger:#ef4444;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:96px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第83期</span></div>
+    <h1 class="hero">基层减负<br>不是简单少干活</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">权责、资源和能力要一起配上</p>
+  </div>
+  <div class="key-sentence">任务少了不等于负担真减了。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">减</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>纠偏 · 常见低分写法</p>
+    <h2 class="h2">很多答案只做了<br>一道"数量减法题"</h2>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">✓</div><div class="data-label">精文减会</div><div class="data-desc">减少文件和会议数量</div></div>
+      <div class="data-card"><div class="data-num">✓</div><div class="data-label">减少报表</div><div class="data-desc">压缩各类统计报表</div></div>
+      <div class="data-card"><div class="data-num">✓</div><div class="data-label">压缩检查</div><div class="data-desc">减少督查检查考核</div></div>
+      <div class="data-card"><div class="data-num">✓</div><div class="data-label">整治政务APP</div><div class="data-desc">清理冗余应用和打卡</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:16px;padding:22px;">
+      <p style="font-size:25px;line-height:1.7;"><strong style="color:var(--accent);">这些措施都对，但还没回答：</strong><br>任务为什么会压向基层？基层靠什么把事办成？表格少了，责任错位可能还在。</p>
+    </div>
+  </div>
+  <div class="key-sentence">表格少了，责任错位可能还在。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总框架 · 基层减负的五步链条</p>
+    <h2 class="h2">减负是履职条件的<br>重新配置</h2>
+    <div class="formula-box">
+      <p class="formula-text">清单定责<span class="arrow">→</span>准入控量<span class="arrow">→</span>资源随事<span class="arrow">→</span><br>场景练兵<span class="arrow">→</span>群众验效</p>
+    </div>
+    <div class="five-grid">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">清单定责</div><div class="f-desc">谁该干？分清基本履职、配合履职、上级收回</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">准入控量</div><div class="f-desc">能不能派？清单外任务过必要性、合法性、可承接性三关</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">资源随事</div><div class="f-desc">凭什么干？权限、经费、人员、专业、数据、协同六项随事下沉</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">场景练兵</div><div class="f-desc">会不会干？现实问题→跟班学习→导师帮带→项目实践→复盘提升</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">群众验效</div><div class="f-desc">干得值不值？时间账、责任账、效能账、群众账四本账验收</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">减负是履职条件的重新配置，不是简单少干活。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 清单定责 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">责</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第一步 · 清单定责</p>
+    <h2 class="h2">先分清<br>"自己办、配合办、上级办"</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">1</div><div class="data-label">基本履职</div><div class="data-desc">基层依法独立办好，是基层的主责主业</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">配合履职</div><div class="data-desc">部门主责，基层完成明确协助动作，不是无限兜底</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">上级收回</div><div class="data-desc">专业性强、基层接不住的，由有权部门承接</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">!</div><div class="data-label">2025年数据</div><div class="data-desc">全国3.8万个乡镇（街道）完成履职事项清单编制</div></div>
+    </div>
+    <div class="compare-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong>清单的作用：</strong>不是少担责的借口，而是责任协作说明书。让每个事项都有明确的主责单位和协助边界。</p>
+    </div>
+  </div>
+  <div class="key-sentence">清单不是少担责的借口，而是责任协作说明书。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 边界案例 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">界</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>边界案例 · 银川</p>
+    <h2 class="h2">证明不能乱开<br>困难不能不管</h2>
+    <div class="compare-grid">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:26px;">不能做的</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);">居民需要法律援助，社区对照清单<strong style="color:var(--text);">不能开困难证明</strong>——拒绝越权背书，不做"万能章"</p>
+      </div>
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);font-size:26px;">必须做的</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);">主动<strong style="color:var(--text);">联系法律顾问</strong>，帮助对接合法援助渠道——拒绝越权背书，仍要帮助群众找到解决路径</p>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:16px 0;">
+      <p class="formula-text" style="font-size:26px;">一拒一帮：拒绝越权背书 <span class="arrow">+</span> 链接合法服务</p>
+    </div>
+    <div class="compare-col" style="margin-top:12px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.5;color:var(--text);"><strong>双边界提醒：</strong>既不能以无权为由不管风险，也不能让基层为专业结果越权背书。减负不等于不管事，赋能也不等于上级包办。</p>
+    </div>
+  </div>
+  <div class="key-sentence">拒绝越权背书，仍要帮助群众找到解决路径。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 准入控量 -->
+<section class="poster photo-page" id="xhs-06">
+  <img class="bg-img" src="assets/gate.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第二步 · 准入控量</p>
+    <h2 class="h2">给清单外任务<br>装一道"闸门"</h2>
+    <p class="body" style="color:var(--text);">新增任务进入基层前要过三关：</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">1</div><div class="data-label">必要性审查</div><div class="data-desc">是否确有必要让基层参与？还是部门自己就能办？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">2</div><div class="data-label">合法性审查</div><div class="data-desc">是否符合法定职责和权限？有没有法律依据？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">3</div><div class="data-label">可承接性审查</div><div class="data-desc">基层是否有人、有时间、有工具承接？条件不足就不能派</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">!</div><div class="data-label">叠加效应</div><div class="data-desc">每个部门多派一项小任务，叠加到基层就是小马拉大车</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">每个部门多派一项小任务，叠加到基层就是小马拉大车。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 宜宾案例 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">宜</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>地方案例 · 宜宾</p>
+    <h2 class="h2">全科网格<br>不能变成"全靠网格"</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">📋</div><div class="data-label">事项清单</div><div class="data-desc">江安明确网格基础事项，10项网格工作为地方实践</div></div>
+      <div class="data-card"><div class="data-num">🚫</div><div class="data-label">负面清单</div><div class="data-desc">翠屏区禁止把网格作为行政执法等事项责任主体</div></div>
+      <div class="data-card"><div class="data-num">💰</div><div class="data-label">资源清单</div><div class="data-desc">部门确需协助，先申请再审定，通过后同步赋权、给资金、作指导、办培训</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">⚠</div><div class="data-label">边界提醒</div><div class="data-desc">10项网格工作、95项收回事项均为地方实践，不写成全国统一标准</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:16px 0;">
+      <p class="formula-text" style="font-size:25px;">准入管入口 <span class="arrow">+</span> 负面清单守红线 <span class="arrow">+</span> 资源清单补条件</p>
+    </div>
+    <p class="body" style="font-size:23px;">三张清单成套出现，才能防止"全科网格"变成"全靠网格"。</p>
+  </div>
+  <div class="key-sentence">准入管入口，负面清单守红线，资源清单补条件。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 资源随事 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">配</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第三步 · 资源随事</p>
+    <h2 class="h2">放权<br>不等于赋能</h2>
+    <p class="body">任务下沉前要核验六项条件，缺一不可：</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">⚖</div><div class="data-label">权限</div><div class="data-desc">法定权限随事下放，不能有责无权</div></div>
+      <div class="data-card"><div class="data-num">💰</div><div class="data-label">经费</div><div class="data-desc">专项预算和资金保障同步配置</div></div>
+      <div class="data-card"><div class="data-num">👥</div><div class="data-label">人员</div><div class="data-desc">编制调剂和人员补充跟上任务量</div></div>
+      <div class="data-card"><div class="data-num">🔬</div><div class="data-label">专业</div><div class="data-desc">专业资质和技术力量不能缺位</div></div>
+      <div class="data-card"><div class="data-num">📊</div><div class="data-label">数据</div><div class="data-desc">数据共享和信息系统打通壁垒</div></div>
+      <div class="data-card"><div class="data-num">🤝</div><div class="data-label">协同</div><div class="data-desc">跨部门联合下沉和协作机制建立</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:12px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>缺少履职条件，责任下沉就会变成风险下沉。</p>
+    </div>
+  </div>
+  <div class="key-sentence">缺少履职条件，责任下沉就会变成风险下沉。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 沾益案例 -->
+<section class="poster photo-page" id="xhs-09">
+  <img class="bg-img" src="assets/balance.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>地方案例 · 沾益</p>
+    <h2 class="h2">能接的带条件下放<br>接不住的及时收回</h2>
+    <div class="compare-grid">
+      <div class="compare-col" style="background:rgba(0,0,0,.5);border-color:var(--warn);">
+        <h3 style="color:var(--warn);font-size:25px;">专业事项上收</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);">乡镇获得林草执法权，却没有测绘评估人员和专项预算，仍无法规范处罚→<strong style="color:var(--text);">收回区级</strong></p>
+      </div>
+      <div class="compare-col" style="background:rgba(0,0,0,.5);border-color:var(--accent);">
+        <h3 style="color:var(--accent);font-size:25px;">便民事项下放</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);">建房审批等便民事项，在<strong style="color:var(--text);">配套人员、培训和窗口</strong>后下放，让群众少跑腿</p>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:16px 0;background:rgba(21,128,61,.2);">
+      <p class="formula-text" style="font-size:25px;">事项怎么收放，要看基层能不能<strong>依法、专业、持续</strong>地办</p>
+    </div>
+    <p class="body" style="font-size:22px;color:var(--text);">不是所有权力都要下放，也不是所有事项都要上收——关键看承接能力。</p>
+  </div>
+  <div class="key-sentence">事项怎么收放，要看基层能不能依法、专业、持续地办。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 场景练兵 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">练</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第四步 · 场景练兵</p>
+    <h2 class="h2">能力不是在<br>签到表里长出来的</h2>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">现实问题</div><div class="step-desc">从基层真实难题出发，确定培训内容，不是泛泛授课</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">找到短板</div><div class="step-desc">对照任务要求，识别能力缺口和知识盲区</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">跟班学习</div><div class="step-desc">扬州把村干部送到先进地区和企业跟班，不是坐在教室里</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">导师帮带</div><div class="step-desc">国企结对、导师带徒，把经验传下去</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">项目实践</div><div class="step-desc">学习成果回到产业项目中接受检验，在干中学</div></div></div>
+      <div class="step-item"><div class="step-num">6</div><div class="step-content"><div class="step-title">复盘提升</div><div class="step-desc">项目结束后复盘总结，把经验固化为能力</div></div></div>
+    </div>
+  </div>
+  <div class="key-sentence">培训内容要由真实任务倒推，学习效果要由实际问题验收。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 群众验效 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">验</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第五步 · 群众验效</p>
+    <h2 class="h2">减负不能变成<br>群众多跑腿</h2>
+    <p class="body">评价基层减负，要看四本账：</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">⏰</div><div class="data-label">时间账</div><div class="data-desc">少填表，多走访——基层干部时间从台账转向群众</div></div>
+      <div class="data-card"><div class="data-num">📋</div><div class="data-label">责任账</div><div class="data-desc">部门主动承接，不再无限兜底——责任按清单归位</div></div>
+      <div class="data-card"><div class="data-num">⚡</div><div class="data-label">效能账</div><div class="data-desc">数据共享，协同提速——一表通减少重复填报</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">👤</div><div class="data-label">群众账</div><div class="data-desc">少跑腿、有人接、办得成——群众体验是最终检验标准</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>基层少做了什么，只是过程；群众多获得了什么，才是结果。</p>
+    </div>
+    <p class="body" style="font-size:22px;margin-top:10px;">《基层减负不应增加群众负担》提醒：事项退出若无替代流程，会把基层负担转成群众跑腿。</p>
+  </div>
+  <div class="key-sentence">基层少做了什么，只是过程；群众多获得了什么，才是结果。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 申论公式 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">申</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>考场迁移 · 申论怎么写</p>
+    <h2 class="h2">申论写基层减负<br>用这五个动作</h2>
+    <div class="compare-col accent-col" style="padding:22px;margin-bottom:16px;">
+      <p style="font-size:26px;line-height:1.8;font-weight:700;"><strong style="color:var(--accent);">申论公式：</strong>建清单 <span style="color:var(--accent);">+</span> 设准入 <span style="color:var(--accent);">+</span> 配条件 <span style="color:var(--accent);">+</span> 强能力 <span style="color:var(--accent);">+</span> 看结果</p>
+    </div>
+    <div class="step-chain" style="margin:10px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">建清单</div><div class="step-desc">分清基本履职、配合履职和上级收回事项</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">设准入</div><div class="step-desc">阻断随意派单和层层加码，清单外任务过三关</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">配条件</div><div class="step-desc">让权、钱、人、数、专业随事下沉</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">强能力</div><div class="step-desc">用跟班、导师、现场指导解决真问题</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">看结果</div><div class="step-desc">以群众体验和实际成效验收，不是只看报表减少</div></div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:12px 0;">
+      <p class="formula-text" style="font-size:24px;">减负与赋能并重，纠治与立制并举</p>
+    </div>
+  </div>
+  <div class="key-sentence">不要只写"少开会少填表"，要写任务怎样准入、条件怎样配置、结果怎样验收。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 面试五问+总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">结</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>面试迁移 · 认知升级</p>
+    <h2 class="h2">遇到上级摊派任务<br>先问这五句</h2>
+    <div class="data-grid" style="margin:16px 0;">
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">依法由谁主责？</div><div class="data-desc">先判断这件事的法定责任主体</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">是否经过准入？</div><div class="data-desc">清单外事项是否过了三关审查</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">条件是否匹配？</div><div class="data-desc">权限、人员和经费是否同步到位</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">需要谁联合？</div><div class="data-desc">哪些专业部门需要联合下沉</div></div>
+    </div>
+    <div class="data-card" style="margin:10px 0;border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">?</div><div class="data-label">群众问题谁反馈？</div><div class="data-desc">最后结果由谁向群众反馈，不能石沉大海</div></div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">认知升级：</strong>减的是无效消耗，增的是治理能力。不该基层扛的担子移回有权有能的部门；该基层扛的担子配上合适的肩膀、工具和帮手。基层轻装上阵，不是为了少担当，而是为了更有条件担当。</p>
+    </div>
+  </div>
+  <div class="key-sentence">基层轻装上阵，不是为了少担当，而是为了更有条件担当。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:10px;">本卡片内容基于以下人民日报报道和政策文件整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">中央层面整治形式主义为基层减负专项工作机制会议在京召开</div><div class="ref-meta">人民日报，2026年，政策总纲；提供"六个纠治"、履职清单、一表通和一致性评估的制度范围</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">减负增效添干劲 实干担当谱新篇</div><div class="ref-meta">人民日报，2026年，减负赋能、纠治立制并举的总体判断；2025年全国3.8万个乡镇（街道）完成履职事项清单编制、编制调剂和报表精简数据</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">深化"六个纠治" 强化实干导向</div><div class="ref-meta">人民日报，2026年，减负必须从决策、发文、考核、数据、督查等源头治理</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">宜宾网格事项准入实践</div><div class="ref-meta">人民日报，2026年，江安明确网格基础事项；部门确需协助先申请再审定，通过后同步赋权、给资金、作指导、办培训；翠屏区负面清单禁止把网格作为行政执法责任主体；10项网格工作、95项收回事项均为地方实践</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">沾益事项收放实践</div><div class="ref-meta">人民日报，2026年，乡镇获得林草执法权却无测绘评估人员和专项预算，专业执法事项收回区级；建房审批等便民事项在配套人员、培训和窗口后下放；解释"能接才放、接不住就收"</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">扬州干部培养实践</div><div class="ref-meta">人民日报，2026年，跟班学习、导师带徒、国企结对和项目实践相连；说明能力要在真实场景中形成，不是在签到表里长出来</div></div></div>
+      <div class="ref-item"><div class="ref-num">7</div><div class="ref-content"><div class="ref-title">减下负担不是放下责任</div><div class="ref-meta">人民日报，2026年，提供"一拒一帮"：证明不能乱开，群众困难仍要通过法律顾问、吹哨报到和资源链接解决；银川社区法律援助案例</div></div></div>
+      <div class="ref-item"><div class="ref-num">8</div><div class="ref-content"><div class="ref-title">基层减负不应增加群众负担</div><div class="ref-meta">人民日报，2026年，提醒事项退出若无替代流程，会把基层负担转成群众跑腿；评价减负要看群众是否少跑腿、问题是否解决</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:14px 20px;">
+      <p style="font-size:20px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>宜宾10项网格工作、95项收回事项、沾益林草执法、扬州跟班学习等均为地方实践，不写成全国统一标准；2025年全国3.8万个乡镇（街道）完成履职清单编制等数据保留年份和全国口径。不构成个体政策或法律建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第83期</span></div>
+    <h1 class="hero">基层减负<br>不是简单少干活</h1>
+    <p class="body">权责、资源和能力要一起配上——清单定责、准入控量、资源随事、场景练兵、群众验效。</p>
+    <div class="key-sentence">减的是无效消耗，增的是治理能力。基层轻装上阵，不是为了少担当，而是为了更有条件担当。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

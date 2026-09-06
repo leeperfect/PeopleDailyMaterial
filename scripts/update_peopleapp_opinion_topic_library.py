@@ -32,6 +32,7 @@ from modules.peopleapp_opinion import CORE_DIR, DATA_ROOT, EXPORT_DIR, TIMEZONE,
 TOPIC_DB_PATH = CORE_DIR / "hotspot_topics.sqlite"
 TOPIC_MD_PATH = DATA_ROOT / "hotspot_topic_library.md"
 TOPIC_CSV_PATH = EXPORT_DIR / "hotspot_topic_library.csv"
+MIAODA_CONFIG_PATH = DATA_ROOT / "miaoda_deployment.json"
 
 
 def connect(path: Path) -> sqlite3.Connection:
@@ -443,6 +444,7 @@ def main() -> int:
     parser.add_argument("--end", help="结束日期 YYYY-MM-DD")
     parser.add_argument("--limit", type=int, help="限制参与分析的文章数量")
     parser.add_argument("--min-media", type=int, default=3, help="热点至少需要几个不同媒体，默认 3")
+    parser.add_argument("--no-miaoda-sync", action="store_true", help="只刷新本地热点库，不同步妙搭网页")
     parser.add_argument(
         "--min-similarity",
         type=float,
@@ -464,6 +466,11 @@ def main() -> int:
     print(f"SQLite 总库：{TOPIC_DB_PATH.relative_to(PROJECT_ROOT)}")
     print(f"Markdown 选题库：{TOPIC_MD_PATH.relative_to(PROJECT_ROOT)}")
     print(f"CSV 导出：{TOPIC_CSV_PATH.relative_to(PROJECT_ROOT)}")
+    if not args.no_miaoda_sync and MIAODA_CONFIG_PATH.exists():
+        import sync_hotspot_magazine_to_miaoda
+
+        sync_result = sync_hotspot_magazine_to_miaoda.sync()
+        print(f"妙搭热点网页已同步：{sync_result['url']}")
     return 0
 
 

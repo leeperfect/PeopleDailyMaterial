@@ -57,6 +57,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `export_content_ideas.py` | 刷新选题库，生成 `选题库.md` + `content_ideas.csv` |
 | `idea_magazine.py` | 根目录启动入口，打开本地 HTML 选题工作台（`http://127.0.0.1:8765`） |
 | `scripts/serve_idea_magazine.py` | 选题工作台原始脚本，支持筛选、精筛、备注 |
+| `scripts/build_idea_magazine_site.py` | 把本地选题库生成成可托管的只读网页快照 |
+| `scripts/sync_idea_magazine_to_miaoda.py` | 覆盖发布妙搭“人民日报选题工作台”，保持访问地址不变 |
+| `hotspot_magazine.py` | 根目录启动入口，打开本地 APP 评论热点选题工作台（`http://127.0.0.1:8766`） |
+| `scripts/build_hotspot_magazine_site.py` | 把 APP 评论热点库生成成可托管的只读网页快照 |
+| `scripts/sync_hotspot_magazine_to_miaoda.py` | 覆盖发布妙搭“APP 评论热点选题工作台”，保持访问地址不变 |
 | `sync_to_notion.py` | 同步指定日期文章到 Notion |
 | `notion_maintenance.py` | Notion 重复页归档和缺失文章补齐（`--dry-run` 预览） |
 | `import_material_assets.py` | 导入教研素材数据 |
@@ -94,6 +99,9 @@ python3 scripts/notion_maintenance.py --archive-duplicates --create-missing --de
 # 选题库
 python3 scripts/export_content_ideas.py
 python3 idea_magazine.py
+python3 scripts/sync_idea_magazine_to_miaoda.py
+python3 hotspot_magazine.py
+python3 scripts/sync_hotspot_magazine_to_miaoda.py
 ```
 
 ## Git Commit 规范

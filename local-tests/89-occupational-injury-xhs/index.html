@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>职业伤害保障 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#1d4ed8;--accent-soft:rgba(29,78,216,.15);--warn:#f59e0b;--danger:#ef4444;--success:#16a34a;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:96px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/order.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第89期</span></div>
+    <h1 class="hero">职业伤害保障<br>不能只等事故后赔钱</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">预防、认定、理赔、康复要接成一条链</p>
+  </div>
+  <div class="key-sentence">工作可以按单发生，责任不能等事故发生后才出现。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 当天到账案例 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">快</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>案例 · 北京小伤快赔</p>
+    <h2 class="h2">一键报案后<br>当天收到医疗报销</h2>
+    <div class="data-card" style="border-color:var(--success);background:rgba(22,163,74,.1);margin:10px 0;padding:24px;text-align:center;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">北京骑手送餐途中受伤 · 平台一键报案</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:6px;">在线提交5项材料 · 符合"小伤快赔"条件 · 当日到账</p>
+      <p style="font-size:48px;font-weight:900;color:var(--success);margin-top:10px;">302元</p>
+      <p style="font-size:22px;color:var(--text-secondary);">医疗报销费用 · 当天到账</p>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">送餐途中受伤</div><div class="step-desc">骑手在配送过程中发生意外，需要医疗救治</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">平台一键报案</div><div class="step-desc">通过平台APP一键报案，不需要跑多个部门、填多张表</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">在线提交5项材料</div><div class="step-desc">订单记录、轨迹信息、身份信息、医疗凭证、事故说明，在线提交</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">符合小伤快赔条件</div><div class="step-desc">门急诊、无需住院、事实清楚、材料齐全、责任明确、没有争议</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">当日收到302元报销</div><div class="step-desc">医疗费用当天到账，不需要漫长等待和反复催办</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">关键洞察：</strong>最值得关注的不只是"快"，而是背后的流程重构——报案一次提交、后台多协同、分类理赔、小伤快赔。快赔的前提是案件分得准、流程接得通。</p>
+    </div>
+  </div>
+  <div class="key-sentence">最值得关注的不只是"快"，而是背后的流程重构。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 纠正误区 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>误区纠正 · 不是一张报销单</p>
+    <h2 class="h2">职业伤害保障<br>不是一张报销单</h2>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:26px;">❌ 常见误解</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">职业伤害保障 = 出了事故赔钱？<br><br>只关注到账金额和到账速度，忽视预防、认定、康复等全链条环节</p>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:26px;">✅ 完整理解</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">职业伤害保障 = 从事故前预防到康复后回归的全链条<br><br>到账只是一个节点，不是保障的全部</p>
+      </div>
+    </div>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:14px 0;padding:22px;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">📋 完整保障要回答六个问题</p>
+    </div>
+    <div class="five-grid" style="margin:10px 0;">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">谁缴费</div><div class="f-desc">平台出资、按单缴费，个人无需缴费，不区分全职兼职</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">怎样预防</div><div class="f-desc">安全培训、合理时限、设备检查、恶劣天气调整、事故数据复盘</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">如何报案</div><div class="f-desc">统一一键报案入口，订单、轨迹和身份信息依法共享，一次提交</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">谁来确认</div><div class="f-desc">职业伤害确认、劳动能力鉴定、待遇发放整合办理，后台多协同</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">怎样理赔</div><div class="f-desc">小伤快赔、复杂案件精办，分类处置，兼顾效率与公平</div></div>
+      <div class="five-item"><div class="f-num">6</div><div class="f-title">治疗后怎么办</div><div class="f-desc">康复指导、劳动能力评估、岗位调整、技能培训、调解仲裁、法律援助</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">到账只是一个节点，不是保障的全部。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 完整治理链 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总框架 · 六个动作缺一不可</p>
+    <h2 class="h2">六个动作<br>缺一不可</h2>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item" style="border-color:var(--accent);"><div class="step-num" style="color:var(--accent);">1</div><div class="step-content"><div class="step-title">订单触发保障</div><div class="step-desc">平台出资、按单缴费，劳动者在哪个平台接单，相应订单就产生保障责任。兼职、跨平台也不能漏保</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">风险前置预防</div><div class="step-desc">安全培训、合理时限、设备检查、恶劣天气调整、事故数据复盘，都应进入平台日常管理。赔得再快，也不如少出事故</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">一键报案</div><div class="step-desc">统一一键报案入口，订单、轨迹和身份信息依法共享，劳动者不再反复提交平台已经掌握的材料。群众报一次，后台多协同</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">协同认定</div><div class="step-desc">职业伤害确认、劳动能力鉴定和待遇发放整合办理。重点不是少几个名称，而是少重复、少等待、能追踪</div></div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-content"><div class="step-title">分类理赔</div><div class="step-desc">小伤快赔（门急诊、无需住院、事实清楚）和复杂案件精办（住院、伤残、责任不清）并行。简单案件不能被拖慢，复杂案件也不能被草率快结</div></div></div>
+      <div class="step-item"><div class="step-num">6</div><div class="step-content"><div class="step-title">康复救济接续</div><div class="step-desc">诊疗之后，衔接康复指导、劳动能力评估、岗位调整、技能培训，以及调解仲裁和法律援助。医疗费用到账只是节点，恢复生活和工作才是结果</div></div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">订单触发 <span class="arrow">→</span> 风险预防 <span class="arrow">→</span> 一键报案 <span class="arrow">→</span> 协同认定 <span class="arrow">→</span> 分类理赔 <span class="arrow">→</span> 康复接续</p>
+    </div>
+  </div>
+  <div class="key-sentence">保障要从事故前一直延伸到重新生活和工作。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 保障跟着订单走 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">单</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>动作一 · 订单触发保障</p>
+    <h2 class="h2">兼职、跨平台<br>也不能漏保</h2>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">🏢</div><div class="data-label">平台出资</div><div class="data-desc">由平台出资购买职业伤害保障，不需要劳动者个人缴费，减轻劳动者负担</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">📋</div><div class="data-label">按单缴费</div><div class="data-desc">每接一单就产生一单的保障责任，保障跟着订单走，不跟着劳动关系走</div></div>
+      <div class="data-card"><div class="data-num">👤</div><div class="data-label">个人无需缴费</div><div class="data-desc">劳动者不需要自己掏钱买保险，平台承担保障成本，体现平台责任</div></div>
+      <div class="data-card"><div class="data-num">🔄</div><div class="data-label">不区分全职兼职</div><div class="data-desc">不管是全职骑手还是兼职骑手，不管在一个平台还是跨多个平台，都有保障</div></div>
+    </div>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 传统工伤保险</h3>
+        <ul>
+          <li>以劳动关系为前提</li>
+          <li>兼职、跨平台可能漏保</li>
+          <li>需要用人单位统一缴费</li>
+          <li>灵活就业人员覆盖难</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 职业伤害保障</h3>
+        <ul>
+          <li>以订单为触发单位</li>
+          <li>兼职、跨平台不漏保</li>
+          <li>平台按单出资，个人不缴费</li>
+          <li>灵活就业人员全覆盖</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">按单缴费 = 让责任跟得上流动的劳动</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">劳动者在哪个平台接单，相应订单就应产生保障责任。保障跟着订单走，不跟着劳动关系走</p>
+    </div>
+  </div>
+  <div class="key-sentence">按单缴费，让责任跟得上流动的劳动。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 风险提前防 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">防</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>动作二 · 风险前置预防</p>
+    <h2 class="h2">赔得再快<br>也不如少出事故</h2>
+    <div class="data-card" style="border-color:var(--warn);background:rgba(245,158,11,.1);margin:10px 0;padding:20px;">
+      <p style="font-size:24px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">⚠ 关键原则：</strong>赔付速度不能成为容忍高风险规则的理由。不能因为"赔得快"就忽视事故预防，不能用快速赔付掩盖高风险算法和管理漏洞。</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--warn);"><div class="f-num">🎓</div><div class="f-title">安全培训</div><div class="f-desc">入职安全培训、定期安全提醒、事故案例教育，让骑手知道什么是危险、怎么避险</div></div>
+      <div class="five-item"><div class="f-num">⏱</div><div class="f-title">合理时限</div><div class="f-desc">按合法时速和真实路况计算配送时限，不按"极限速度"压时间，不鼓励超速抢灯</div></div>
+      <div class="five-item"><div class="f-num">🔧</div><div class="f-title">设备检查</div><div class="f-desc">电动车刹车、轮胎、电池定期检查，不合格设备不上路，减少因设备故障导致的事故</div></div>
+      <div class="five-item"><div class="f-num">🌧</div><div class="f-title">恶劣天气调整</div><div class="f-desc">暴雨、大雪、高温、大风等恶劣天气，自动延长配送时间、降低派单密度，不拿安全换速度</div></div>
+      <div class="five-item"><div class="f-num">📊</div><div class="f-title">事故数据复盘</div><div class="f-desc">定期分析事故数据，识别高风险路段、高风险时段、高风险算法规则，持续改进管理</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;border-color:var(--warn);background:rgba(245,158,11,.1);">
+      <p class="formula-text" style="font-size:25px;color:var(--warn);">预防 > 赔付</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">把治理从赔付前移到预防，用安全培训、合理时限、设备检查、天气调整、数据复盘减少事故发生</p>
+    </div>
+  </div>
+  <div class="key-sentence">赔付速度不能成为容忍高风险规则的理由。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 平台算法算安全 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">算</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>连接 · 平台算法也要算安全</p>
+    <h2 class="h2">能算效率<br>也要能识别风险</h2>
+    <p class="body">平台掌握订单密度、路线、天气和异常停留等数据，就有条件把安全约束写进派单和计时规则。</p>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:26px;">❌ 只算效率</h3>
+        <ul>
+          <li>只优化"最快送达"</li>
+          <li>不计算红灯、天气、路况</li>
+          <li>派单密度过高</li>
+          <li>时限按极限速度计算</li>
+          <li>算法催快，不避险</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:26px;">✅ 效率+安全</h3>
+        <ul>
+          <li>优化"安全送达"</li>
+          <li>计算红灯、天气、路况</li>
+          <li>合理控制派单密度</li>
+          <li>时限按合法时速计算</li>
+          <li>算法既能催快，也能避险</li>
+        </ul>
+      </div>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card"><div class="data-num">📊</div><div class="data-label">订单密度</div><div class="data-desc">识别订单密度过高的区域和时段，自动降低派单密度，避免骑手为了赶单而冒险</div></div>
+      <div class="data-card"><div class="data-num">🗺</div><div class="data-label">路线风险</div><div class="data-desc">识别高风险路段（事故多发、施工、拥堵），规划更安全的路线，不推荐违法捷径</div></div>
+      <div class="data-card"><div class="data-num">🌧</div><div class="data-label">天气预警</div><div class="data-desc">接入天气数据，恶劣天气自动延长时限、降低派单密度，不拿安全换速度</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">⚠</div><div class="data-label">异常停留</div><div class="data-desc">识别异常停留（可能发生事故），主动联系骑手确认安全，必要时启动救援和报案流程</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">平台既能用算法催快<br>也应当用算法避险</p>
+    </div>
+  </div>
+  <div class="key-sentence">平台既能用算法催快，也应当用算法避险。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 报案一次提交 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">报</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>动作三 · 一键报案</p>
+    <h2 class="h2">群众报一次<br>后台多协同</h2>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">📱</div><div class="data-label">统一一键报案入口</div><div class="data-desc">通过平台APP一键报案，不需要跑多个部门、填多张表、打多个电话</div></div>
+      <div class="data-card"><div class="data-num">🔗</div><div class="data-label">信息依法共享</div><div class="data-desc">订单记录、轨迹信息、身份信息依法共享，劳动者不再反复提交平台已经掌握的材料</div></div>
+    </div>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 传统报案</h3>
+        <ul>
+          <li>跑多个部门</li>
+          <li>填多张表格</li>
+          <li>反复提交相同材料</li>
+          <li>受伤的人还要跑腿</li>
+          <li>流程复杂、等待漫长</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 一键报案</h3>
+        <ul>
+          <li>平台APP一键提交</li>
+          <li>一次提交、后台共享</li>
+          <li>不需要反复提交材料</li>
+          <li>受伤的人不用跑腿</li>
+          <li>流程简化、快速响应</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">前台</div><div class="step-content"><div class="step-title">只有一个提交按钮</div><div class="step-desc">劳动者只需要在平台APP点击"一键报案"，提交一次材料，不需要面对多个部门和多个入口</div></div></div>
+      <div class="step-item"><div class="step-num">后台</div><div class="step-content"><div class="step-title">分流至四个节点</div><div class="step-desc">报案信息后台自动分流至平台（订单核实）、经办（受理登记）、保险（理赔审核）、鉴定（能力评估），多部门协同办理</div></div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">流程再复杂<br>也不该把复杂留给受伤的人</p>
+    </div>
+  </div>
+  <div class="key-sentence">流程再复杂，也不该把复杂留给受伤的人。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 认定变成一件事 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">认</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>动作四 · 协同认定 · 黑龙江试点</p>
+    <h2 class="h2">确认、鉴定、发放<br>接起来</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:22px;text-align:center;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">📍 黑龙江试点 · 2026年7月启动</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:6px;">新就业形态人员职业伤害保障试点，把三个环节整合办理</p>
+    </div>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 分散办理</h3>
+        <ul>
+          <li>职业伤害确认：一个部门</li>
+          <li>劳动能力鉴定：另一个部门</li>
+          <li>待遇发放：第三个部门</li>
+          <li>三个环节、三次申请</li>
+          <li>重复提交材料、反复等待</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 整合办理</h3>
+        <ul>
+          <li>三个环节整合为"一件事"</li>
+          <li>一次申请、后台协同</li>
+          <li>材料一次提交、内部流转</li>
+          <li>进度可追踪、结果可查询</li>
+          <li>少重复、少等待、能追踪</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">职业伤害确认</div><div class="step-desc">确认事故是否属于职业伤害范围，核实事故时间、地点、原因和责任</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">劳动能力鉴定</div><div class="step-desc">评估受伤程度和劳动能力影响，确定伤残等级和待遇标准</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">待遇发放</div><div class="step-desc">根据确认结果和鉴定等级，发放医疗费用报销、伤残补助、康复费用等待遇</div></div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">"一件事" = 后台多协同 + 前台少跑腿</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">重点不是少几个名称，而是少重复、少等待、能追踪</p>
+    </div>
+  </div>
+  <div class="key-sentence">"一件事"是后台多协同、前台少跑腿。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 小伤快赔 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">赔</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>动作五 · 分类理赔 · 小伤快赔</p>
+    <h2 class="h2">快，不等于不审核</h2>
+    <div class="data-card" style="border-color:var(--success);background:rgba(22,163,74,.1);margin:10px 0;padding:22px;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--success);">✅ 小伤快赔六项条件（全部满足才能进入快车道）</p>
+    </div>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num">1</div><div class="f-title">仅门急诊</div><div class="f-desc">只需要门诊或急诊治疗，不需要住院，伤情较轻</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num">2</div><div class="f-title">无需住院</div><div class="f-desc">不需要住院治疗，医疗费用相对较低，处理流程相对简单</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num">3</div><div class="f-title">事实清楚</div><div class="f-desc">事故发生时间、地点、原因清楚，没有争议和疑点</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num">4</div><div class="f-title">材料齐全</div><div class="f-desc">订单记录、轨迹信息、医疗凭证、身份信息等材料完整，不需要补充</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num">5</div><div class="f-title">责任明确</div><div class="f-desc">责任归属明确，平台、劳动者、第三方之间没有责任争议</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num">6</div><div class="f-title">没有争议</div><div class="f-desc">劳动者、平台、保险机构对事故认定和理赔金额没有异议</div></div>
+    </div>
+    <div class="compare-grid" style="margin:12px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 误解：快赔 = 免审核</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">快赔不是不审核，而是对符合条件的简单案件简化流程、快速办理。不符合条件的案件不能进入快车道。</p>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 正确：快赔 = 分类处置</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">简单案件快速办理，复杂案件精细办理。快赔的前提是案件分得准——六项条件全部满足才能进入快车道。</p>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;border-color:var(--success);background:rgba(22,163,74,.1);">
+      <p class="formula-text" style="font-size:24px;color:var(--success);">快赔的前提，是案件分得准。</p>
+    </div>
+  </div>
+  <div class="key-sentence">快赔的前提，是案件分得准。六项条件全部满足才能进入快车道。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 复杂案件精办 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">精</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>动作五 · 分类理赔 · 复杂案件精办</p>
+    <h2 class="h2">不是所有事故<br>都能一键结清</h2>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">✅</div><div class="data-label">小伤快赔通道</div><div class="data-desc">门急诊、无需住院、事实清楚、材料齐全、责任明确、没有争议——六项条件全部满足，快速办理、当日到账</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">🔍</div><div class="data-label">复杂案件精办通道</div><div class="data-desc">住院、伤残、责任不清、多方侵权、劳动关系争议——需要专业调查、能力鉴定和责任分流，不能草率快结</div></div>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">🏥</div><div class="f-title">住院治疗</div><div class="f-desc">需要住院治疗的案件，医疗费用较高、治疗周期较长，需要详细审核和持续跟踪</div></div>
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">♿</div><div class="f-title">伤残鉴定</div><div class="f-desc">可能造成伤残的案件，需要劳动能力鉴定，确定伤残等级和长期待遇标准</div></div>
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">❓</div><div class="f-title">责任不清</div><div class="f-desc">事故原因、责任归属不明确的案件，需要专业调查，不能简单认定和快速赔付</div></div>
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">⚖</div><div class="f-title">多方侵权</div><div class="f-desc">涉及第三方侵权的案件，需要区分职业伤害待遇和第三人侵权责任，不能重复赔付或遗漏责任</div></div>
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">📋</div><div class="f-title">劳动关系争议</div><div class="f-desc">涉及劳动关系认定争议的案件，需要先解决劳动关系问题，再进行职业伤害认定和理赔</div></div>
+    </div>
+    <div class="data-card" style="border-color:var(--warn);background:rgba(245,158,11,.1);margin:14px 0;padding:20px;">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">⚠ 重要原则：</strong>获得职业伤害待遇，也不当然免除第三人责任。如果事故是由第三方侵权造成的（如交通事故），劳动者在获得职业伤害待遇的同时，仍然可以向第三方主张侵权赔偿。</p>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">简单案件不能被拖慢<br>复杂案件也不能被草率快结</p>
+    </div>
+  </div>
+  <div class="key-sentence">简单案件不能被拖慢，复杂案件也不能被草率快结。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 到账之后 -->
+<section class="poster photo-page" id="xhs-12">
+  <img class="bg-img" src="assets/recovery.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>动作六 · 康复救济接续</p>
+    <h2 class="h2">从治伤<br>走向恢复能力</h2>
+    <div class="data-card" style="border-color:var(--success);background:rgba(22,163,74,.15);margin:10px 0;padding:20px;">
+      <p style="font-size:24px;line-height:1.6;color:var(--text);"><strong style="color:var(--success);">关键认知：</strong>医疗费用到账只是节点，恢复生活和工作才是结果。保障不能止于赔钱，还要接住到账之后的生活。</p>
+    </div>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🏥</div><div class="f-title">康复指导</div><div class="f-desc">诊疗之后衔接康复指导，帮助劳动者科学恢复身体功能，减少后遗症和长期影响</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">📊</div><div class="f-title">劳动能力评估</div><div class="f-desc">评估受伤后的劳动能力变化，确定是否需要调整岗位、转换职业或提供辅助器具</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">💼</div><div class="f-title">岗位调整</div><div class="f-desc">对于不能继续原岗位的劳动者，协调平台进行岗位调整，安排适合身体条件的工作</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🎓</div><div class="f-title">技能培训</div><div class="f-desc">对于需要转换职业的劳动者，提供职业技能培训，帮助其掌握新技能、重新就业</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">⚖</div><div class="f-title">调解仲裁</div><div class="f-desc">对于待遇争议、责任纠纷，提供调解和仲裁渠道，帮助劳动者依法维护权益</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">📞</div><div class="f-title">法律援助</div><div class="f-desc">对于经济困难的劳动者，提供法律援助，帮助其通过法律途径解决争议和维护权益</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;background:rgba(22,163,74,.2);border-color:var(--success);">
+      <p class="formula-text" style="font-size:24px;color:var(--success);">诊疗 → 康复 → 评估 → 岗位 → 培训 → 维权</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">从治伤走向恢复能力，从赔钱走向重新生活和工作</p>
+    </div>
+  </div>
+  <div class="key-sentence">医疗费用到账只是节点，恢复生活和工作才是结果。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 六动作公式+申论迁移 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">式</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总结 · 六动作公式 + 考场迁移</p>
+    <h2 class="h2">这类题<br>记住六个动作</h2>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="border-color:var(--accent);background:var(--accent-soft);"><div class="f-num">1</div><div class="f-title">责任随单落实</div><div class="f-desc">平台出资、按单缴费，兼职跨平台不漏保——让责任跟得上流动的劳动</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">风险前端预防</div><div class="f-desc">安全培训、合理时限、设备检查、天气调整、数据复盘——赔得再快不如少出事故</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">报案一次提交</div><div class="f-desc">统一一键报案、信息依法共享、后台多协同——群众报一次，后台多协同</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">认定协同办理</div><div class="f-desc">确认、鉴定、发放整合为"一件事"——后台多协同、前台少跑腿</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">理赔分类处置</div><div class="f-desc">小伤快赔、复杂案件精办——简单案件不拖慢，复杂案件不草率</div></div>
+      <div class="five-item"><div class="f-num">6</div><div class="f-title">康复救济接续</div><div class="f-desc">康复、评估、岗位、培训、维权——从治伤走向恢复能力，从赔钱走向重新生活</div></div>
+    </div>
+    <div class="data-grid" style="margin:12px 0;">
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">⚠</div><div class="data-label">申论注意事项</div><div class="data-desc">职业伤害保障不能直接等同于传统工伤保险全部制度；个案到账金额不是普遍待遇标准；快赔不等于免审核；引用时必须保留法律和政策限定</div></div>
+      <div class="data-card"><div class="data-num">🎤</div><div class="data-label">面试答题框架</div><div class="data-desc">遇到新就业形态劳动者权益题：先讲按单缴费解决覆盖问题，再讲预防前移减少事故，然后讲报案认定理赔的流程优化，最后讲康复接续的全链条保障</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:12px 0;">
+      <p class="formula-text" style="font-size:26px;">岗位可以灵活，保障不能失联。</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">工作可以按单发生，责任不能等事故发生后才出现</p>
+    </div>
+  </div>
+  <div class="key-sentence">岗位可以灵活，保障不能失联。六个动作，缺一不可。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:8px;">本卡片内容基于以下9篇人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">魏哲哲：《依法维护新就业形态劳动者权益》</div><div class="ref-meta">人民日报，2025年1月16日，第05版；新就业形态劳动者权益保障的法律框架</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">谢增毅：《有效加强新就业形态劳动者权益保障》</div><div class="ref-meta">人民日报，2025年5月7日，第09版；新就业形态劳动者权益保障的制度设计</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">魏哲哲：《强化新就业形态劳动者权益保障》</div><div class="ref-meta">人民日报，2025年5月7日，第11版；新就业形态劳动者权益保障的政策强化</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">潘俊强：《北京推行新业态劳动者职业伤害"小伤快赔"》</div><div class="ref-meta">人民日报，2026年1月6日，第13版；北京小伤快赔试点的具体做法和案例，302元当日到账案例来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">王沛：《为新就业形态劳动者撑腰打气》</div><div class="ref-meta">人民日报，2026年5月30日，第04版；新就业形态劳动者权益保障的政策支持</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">易舒冉：《如何更好保障新就业形态劳动者权益》</div><div class="ref-meta">人民日报，2026年6月12日，第01版；新就业形态劳动者权益保障的综合分析</div></div></div>
+      <div class="ref-item"><div class="ref-num">7</div><div class="ref-content"><div class="ref-title">郭晓龙：《黑龙江启动新就业形态人员职业伤害保障试点》</div><div class="ref-meta">人民日报，2026年7月23日，第14版；黑龙江职业伤害保障试点，确认、鉴定、发放整合办理的实践来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">8</div><div class="ref-content"><div class="ref-title">邱超奕等：《推动高质量充分就业取得新进展》</div><div class="ref-meta">人民日报，2026年8月10日，第01版；高质量充分就业与新就业形态劳动者权益保障的关系</div></div></div>
+      <div class="ref-item"><div class="ref-num">9</div><div class="ref-content"><div class="ref-title">陆凡冰：《多措并举加强民生保障》</div><div class="ref-meta">人民日报，2026年8月30日，第02版；民生保障与职业伤害保障的政策背景</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:8px;padding:12px 20px;">
+      <p style="font-size:19px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>北京"小伤快赔"和黑龙江职业伤害保障试点为地方试点，不直接写成全国统一制度；302元为个案到账金额，不是普遍待遇标准；职业伤害保障不能直接等同于传统工伤保险全部制度；快赔不等于免审核，六项条件全部满足才能进入快车道；获得职业伤害待遇不当然免除第三人责任。不构成个体劳动者维权的法律建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第89期</span></div>
+    <h1 class="hero">职业伤害保障<br>不能只等事故后赔钱</h1>
+    <p class="body">预防、认定、理赔、康复要接成一条链。六个动作：责任随单落实→风险前端预防→报案一次提交→认定协同办理→理赔分类处置→康复救济接续。</p>
+    <div class="key-sentence">工作可以按单发生，责任不能等事故发生后才出现。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

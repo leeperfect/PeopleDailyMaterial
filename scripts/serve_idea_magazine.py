@@ -619,6 +619,18 @@ HTML = r"""<!doctype html>
       cursor: pointer;
     }
     .action:hover, .status-button:hover { border-color: var(--ink); }
+    body.read-only .write-only { display: none !important; }
+    .readonly-note {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+    .readonly-note p {
+      margin: 0;
+      color: #4d453b;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
     /* batch mode */
     .batch-bar {
       position: sticky;
@@ -992,11 +1004,11 @@ HTML = r"""<!doctype html>
       <select class="field" id="monthFilter"><option value="">全部月份</option></select>
       <select class="field" id="quarterFilter"><option value="">全部季度</option></select>
       <select class="field" id="platformFilter"><option value="">全部平台</option></select>
-      <button class="batch-toggle" id="batchToggle">批量操作</button>
-      <button class="action" id="exportButton">刷新总表</button>
+      <button class="batch-toggle write-only" id="batchToggle">批量操作</button>
+      <button class="action write-only" id="exportButton">刷新总表</button>
     </section>
 
-    <div class="batch-bar" id="batchBar">
+    <div class="batch-bar write-only" id="batchBar">
       <span>已选 <span class="batch-count" id="batchCount">0</span> 项</span>
       <button id="batchSelectAll">全选当前</button>
       <select id="batchStatus"><option value="">设置状态…</option></select>
@@ -1013,6 +1025,10 @@ HTML = r"""<!doctype html>
   </main>
 
   <script>
+    const EMBEDDED_PAYLOAD = window.__IDEA_MAGAZINE_PAYLOAD__ || null;
+    const READ_ONLY = Boolean(EMBEDDED_PAYLOAD);
+    document.body.classList.toggle("read-only", READ_ONLY);
+
     const state = {
       ideas: [],
       filters: { statuses: [], priorities: [], months: [], quarters: [], platforms: [] },
@@ -1029,7 +1045,13 @@ HTML = r"""<!doctype html>
 
     const $ = (id) => document.getElementById(id);
     const today = new Date();
-    $("issueDate").textContent = `${today.getFullYear()}.${String(today.getMonth()+1).padStart(2, "0")}.${String(today.getDate()).padStart(2, "0")}`;
+    const generatedAt = EMBEDDED_PAYLOAD && EMBEDDED_PAYLOAD.meta && EMBEDDED_PAYLOAD.meta.generated_at;
+    $("issueDate").textContent = generatedAt
+      ? `更新于 ${generatedAt}`
+      : `${today.getFullYear()}.${String(today.getMonth()+1).padStart(2, "0")}.${String(today.getDate()).padStart(2, "0")}`;
+    if (READ_ONLY) {
+      document.querySelector(".deck").textContent = "随时查看已精筛的公众号选题；网页为只读快照，数据由本地素材库同步更新。";
+    }
 
     function tagClass(status) {
       if (status === "已完成") return "done";
@@ -1064,8 +1086,11 @@ HTML = r"""<!doctype html>
     }
 
     async function load() {
-      const response = await fetch("/api/ideas");
-      const payload = await response.json();
+      let payload = EMBEDDED_PAYLOAD;
+      if (!payload) {
+        const response = await fetch("/api/ideas");
+        payload = await response.json();
+      }
       state.ideas = payload.ideas || [];
       state.filters = payload.filters || state.filters;
       state.activeId = state.activeId || (state.ideas[0] && state.ideas[0].idea_id);
@@ -1232,14 +1257,21 @@ HTML = r"""<!doctype html>
                   ${escapeHtml(article.title)}
                   <small>${escapeHtml(article.date || article.article_id)} ${escapeHtml(article.section_name || "")}</small>
                 </a>
-                <button class="mini-action remove-reference" data-article-id="${escapeHtml(article.article_id)}">移除</button>
+                ${READ_ONLY ? "" : `<button class="mini-action remove-reference" data-article-id="${escapeHtml(article.article_id)}">移除</button>`}
               </div>
             `).join("") || '<div class="article">暂无支撑文章</div>'}
           </div>
           <div class="copy-row">
             <button class="action" id="copyButton">复制选题和参考资料</button>
+            <span class="toast" id="copyToast"></span>
           </div>
-          <div class="ops">
+          ${READ_ONLY && idea.user_note ? `
+            <div class="readonly-note">
+              <div class="section-title">教研备注</div>
+              <p>${escapeHtml(idea.user_note)}</p>
+            </div>
+          ` : ""}
+          <div class="ops write-only">
             <div class="section-title">优先级</div>
             <div class="status-grid">
               ${state.filters.priorities.map((priority) => `
@@ -1259,7 +1291,7 @@ HTML = r"""<!doctype html>
               <span class="toast" id="toast"></span>
             </div>
           </div>
-          <div class="article-search">
+          <div class="article-search write-only">
             <div class="section-title">文章库搜索</div>
             <input class="field" id="articleSearch" placeholder="搜索原文标题、版面、摘要">
             <div class="article-results" id="articleResults"></div>
@@ -1370,7 +1402,8 @@ HTML = r"""<!doctype html>
         currentNote || "暂无"
       ].join("\n");
       await copyText(text);
-      $("toast").textContent = "已复制";
+      if ($("toast")) $("toast").textContent = "已复制";
+      if ($("copyToast")) $("copyToast").textContent = "已复制";
     }
 
     async function searchArticles() {

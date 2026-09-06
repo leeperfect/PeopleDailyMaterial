@@ -82,6 +82,10 @@
 
 | 2026-08-20 | 健康优先不是卫生部门"单打独斗" | 小红书图 | `media/images/2026-08-20-health-priority-xhs/` | 待上传 | `data/xiaohongshu/78-xiaohongshu-health-priority-prevention-daily-life-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+翡翠绿#059669，3张AI生成配图，末页7篇人民日报参考文献） |
 | 2026-08-22 | 带薪休假不是"放几天假"，而是让职工敢休、单位能排、消费接得住 | 小红书图 / 视频封面 | `media/images/2026-08-22-paid-leave-xhs/` | 待上传 | `data/xiaohongshu/80-xiaohongshu-paid-leave-rights-time-consumption-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+砖红#dc2626，3张AI生成配图，人民日报标识突出，末页6篇人民日报参考文献） |
+| 2026-09-04 | 县域青年发展：岗位、住房只是起点，关键是让青年有成长空间 | 小红书图 / 视频封面 | `media/images/2026-09-04-81-county-youth-xhs/` | 待上传 | `data/xiaohongshu/81-xiaohongshu-county-youth-development-growth-ecosystem-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+产业橙#ea580c，3张AI生成配图，《人民日报》深度分析统一标识，末页5篇人民日报参考文献） |
+| 2026-09-05 | 基层群众议事：从听意见到见结果的五个动作 | 小红书图 / 视频封面 | `media/images/2026-09-05-82-grassroots-deliberation-xhs/` | 待上传 | `data/xiaohongshu/82-xiaohongshu-grassroots-deliberation-results-closed-loop-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+制度红#dc2626，3张AI生成配图，《人民日报》深度分析统一标识，末页7篇人民日报参考文献） |
+| 2026-09-05 | 基层减负：权责、资源和能力一起配上 | 小红书图 / 视频封面 | `media/images/2026-09-05-83-grassroots-burden-xhs/` | 待上传 | `data/xiaohongshu/83-xiaohongshu-grassroots-burden-reduction-responsibility-resources-capability-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+深绿#15803d，3张AI生成配图，《人民日报》深度分析统一标识，末页8篇人民日报参考文献） |
+| 2026-09-05 | "十五五"开局如何落地：内需、创新、民生和风险要接成一条链 | 小红书图 / 视频封面 | `media/images/2026-09-05-84-fifteen-five-xhs/` | 待上传 | `data/xiaohongshu/84-xiaohongshu-fifteen-five-opening-implementation-chain-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+墨绿#14532d，3张AI生成配图，《人民日报》深度分析统一标识，末页9篇人民日报参考文献） |
 
 | 2026-08-22 | 带薪休假：让职工敢休、单位能排、消费接得住 | 双平台手动配图 | `media/images/2026-08-22-article-80/` | 待上传 | `data/articles/人民日报系列/80-人民日报讲带薪休假：不是“放几天假”，而是让职工敢休、单位能排、消费接得住.md`；由本地双平台配图工作台登记 |
 
@@ -96,6 +100,34 @@
 | 2026-08-24 | 基层减负：权责、资源和能力一起配上 | 双平台手动配图 | `media/images/2026-08-24-article-83/` | 待上传 | `data/articles/人民日报系列/83-人民日报讲基层减负：不是简单少干活，而要把权责、资源和能力一起配上.md`；由本地双平台配图工作台登记 |
 
 | 2026-08-29 | 企业信用修复 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-08-29-credit-repair-notebooklm/` | 待上传 | `data/articles/人民日报系列/86-《人民日报》深度分析【企业信用修复】：不良记录不是“一删了之”，而是纠错、履责、退出惩戒.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
+
+| 2026-08-24 | 《人民日报》讲提振消费：让群众能消费、敢消费、愿消费，要补哪四块 | 双平台手动配图 | `media/images/2026-08-24-article-85/` | 待上传 | `data/articles/人民日报系列/85-人民日报讲提振消费：让群众能消费、敢消费、愿消费，要补哪四块.md`；由本地双平台配图工作台登记 |
+
+| 2026-08-24 | “十五五”开局如何落地：内需、创新、民生和风险要接成一条链 | 双平台手动配图 | `media/images/2026-08-24-article-84/` | 待上传 | `data/articles/人民日报系列/84-人民日报讲“十五五”开局：内需、创新、民生和风险要接成一条链.md`；由本地双平台配图工作台登记 |
+
+| 2026-09-05 | 提振消费：能消费、敢消费、愿消费要补哪四块 | 小红书图 / 视频封面 | `media/images/2026-09-05-85-consumption-boost-xhs/` | 待上传 | `data/xiaohongshu/85-xiaohongshu-consumption-ability-expectation-supply-trust-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，朱红#dc2626，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第85期」，末页参考文献9篇 |
+
+| 2026-09-05 | 企业信用修复：不良记录不是"一删了之" | 小红书图 / 视频封面 | `media/images/2026-09-05-86-credit-repair-xhs/` | 待上传 | `data/xiaohongshu/86-xiaohongshu-credit-repair-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，深蓝#1d4ed8，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第86期」，末页参考文献8篇 |
+
+| 2026-09-05 | 县域消费：供给、物流和服务跟着需求下沉 | 小红书图 / 视频封面 | `media/images/2026-09-05-87-county-consumption-xhs/` | 待上传 | `data/xiaohongshu/87-xiaohongshu-county-consumption-demand-supply-logistics-service-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，湖蓝#0891b2，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第87期」，末页参考文献9篇 |
+
+| 2026-08-30 | 平台算法治理 | 双平台手动配图 | `media/images/2026-08-30-article-88/` | 待上传 | `data/articles/人民日报系列/88-《人民日报》深度分析【平台算法治理】：配送不能只由倒计时决定，安全、效率和权益都要算进去.md`；由本地双平台配图工作台登记 |
+
+| 2026-08-30 | 职业伤害保障 | 双平台手动配图 | `media/images/2026-08-30-article-89/` | 待上传 | `data/articles/人民日报系列/89-《人民日报》深度分析【职业伤害保障】：不能等出了事故再赔钱，预防、认定、理赔、康复要接起来.md`；由本地双平台配图工作台登记 |
+
+| 2026-09-06 | 平台算法治理：配送不能只由倒计时决定 | 小红书图 / 视频封面 | `media/images/2026-09-06-88-algorithm-governance-xhs/` | 待上传 | `data/xiaohongshu/88-xiaohongshu-platform-algorithm-governance-delivery-safety-rights-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，科技蓝#2563eb，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第88期」，末页参考文献6篇 |
+
+| 2026-09-06 | 职业伤害保障：预防、认定、理赔、康复要接起来 | 小红书图 / 视频封面 | `media/images/2026-09-06-89-occupational-injury-xhs/` | 待上传 | `data/xiaohongshu/89-xiaohongshu-occupational-injury-protection-prevention-claim-rehabilitation-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，安全蓝#1d4ed8，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第89期」，末页参考文献9篇 |
+
+| 2026-09-06 | 民生服务快办：风险分级、流程再造、主动触达 | 小红书图 / 视频封面 | `media/images/2026-09-06-90-public-service-fast-track-xhs/` | 待上传 | `data/xiaohongshu/90-xiaohongshu-public-service-fast-track-risk-classification-process-redesign-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，服务蓝#0ea5e9，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第90期」，末页参考文献6篇 |
+
+| 2026-09-06 | 城市更新后半程：服务、运营和居民参与 | 小红书图 / 视频封面 | `media/images/2026-09-06-91-urban-renewal-xhs/` | 待上传 | `data/xiaohongshu/91-xiaohongshu-urban-renewal-second-half-services-operations-resident-participation-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，城市砖红#b91c1c，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第91期」，末页参考文献7篇 |
+
+| 2026-09-06 | 完整社区：从"提需求"到"共运营" | 小红书图 / 视频封面 | `media/images/2026-09-06-92-complete-community-xhs/` | 待上传 | `data/xiaohongshu/92-xiaohongshu-complete-community-resident-participation-long-term-operation-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，暖砖红#b45309，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第92期」，末页参考文献8篇 |
+
+| 2026-09-06 | 生态产品价值实现：好生态变资产、变产业、变收入 | 小红书图 / 视频封面 | `media/images/2026-09-06-93-ecological-product-value-xhs/` | 待上传 | `data/xiaohongshu/93-xiaohongshu-ecological-product-value-assets-industry-income-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，森林绿#15803d，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第93期」，末页参考文献13篇 |
+
+| 2026-08-30 | 县域消费 | 双平台手动配图 | `media/images/2026-08-30-article-87/` | 待上传 | `data/articles/人民日报系列/87-《人民日报》深度分析【县域消费】：不是把商场搬到县城，而是让供给、物流和服务跟着需求下沉.md`；由本地双平台配图工作台登记 |
 
 ## 类型写法
 

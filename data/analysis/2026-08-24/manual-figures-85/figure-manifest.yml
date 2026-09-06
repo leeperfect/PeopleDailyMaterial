@@ -1,0 +1,251 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-08-24'
+registered_at: '2026-09-04T20:07:07'
+article: data/articles/人民日报系列/85-人民日报讲提振消费：让群众能消费、敢消费、愿消费，要补哪四块.md
+topic: 《人民日报》讲提振消费：让群众能消费、敢消费、愿消费，要补哪四块
+article_number: '85'
+asset_root: media/images/2026-08-24-article-85
+manifest_path: data/analysis/2026-08-24/manual-figures-85/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-85-01
+      before_heading: '## 一、先解决“能不能”：消费能力来自稳定收入，而非临时优惠'
+      inline_marker: '![第85篇配图01](media/images/2026-08-24-article-85/fig-85-01.png)'
+      anchor_before: 85｜《人民日报》谈提振消费：让群众能消费、敢消费、愿消费，要补哪四块短板？
+      anchor_after: 在申论中写“提振消费”，很多答案会迅速进入活动策划模式：
+      context_after: 消费券能让一件商品便宜几十元，但稳定就业才决定了一个家庭在未来几个月、甚至几年里是否拥有持续的购买能力。《如何推动能消费敢消费愿消费》一文清晰地指出了“能消费”
+    - id: fig-85-02
+      before_heading: '## 一、先解决“能不能”：消费能力来自稳定收入，而非临时优惠'
+      inline_marker: '![第85篇配图02](media/images/2026-08-24-article-85/fig-85-02.png)'
+      anchor_before: 他们会先判断收入是否稳定，再考虑未来的养老、医疗、育幼、住房等支出；在有能力且有预期之后，还会看市场上有没有合适的产品和服务；准备下单时，又会评估质量、价格、退换货和维权风险。
+      anchor_after: 通读《人民日报》1月份的这组消费报道，可以将提振消费的基础概括为四块：
+      context_after: 消费券能让一件商品便宜几十元，但稳定就业才决定了一个家庭在未来几个月、甚至几年里是否拥有持续的购买能力。《如何推动能消费敢消费愿消费》一文清晰地指出了“能消费”
+    - id: fig-85-04
+      before_heading: '## 一、先解决“能不能”：消费能力来自稳定收入，而非临时优惠'
+      inline_marker: '![第85篇配图04](media/images/2026-08-24-article-85/fig-85-04.png)'
+      anchor_before: 这四块不是四项并列的活动，而是一项消费决策依次经过的四道门槛。任何一处卡住，潜在需求都可能停留在购物车里。
+      anchor_after: 一、先解决“能不能”：消费能力来自稳定收入，而非临时优惠
+      context_after: 消费券能让一件商品便宜几十元，但稳定就业才决定了一个家庭在未来几个月、甚至几年里是否拥有持续的购买能力。《如何推动能消费敢消费愿消费》一文清晰地指出了“能消费”
+    - id: fig-85-05
+      before_heading: '## 二、再解决“敢不敢”：社会保障稳住的，是家庭对未来的预期'
+      inline_marker: '![第85篇配图05](media/images/2026-08-24-article-85/fig-85-05.png)'
+      anchor_before: 有了收入，消费就一定会增加吗？还不够。家庭考虑的是长期的收支平衡，而非某个月的钱包余额。
+      anchor_after: 二、再解决“敢不敢”：社会保障稳住的，是家庭对未来的预期
+      context_after: 一个家庭即使当前收入尚可，但只要担心老人患病无人照护、孩子托育费用过高，或者住房、教育支出存在较大不确定性，就会为未来预留更多资金。表面看是“消费意愿不强”，实
+    - id: fig-85-06
+      before_heading: '## 三、接住“愿不愿”：有了需求，还要有适配的供给'
+      inline_marker: '![第85篇配图06](media/images/2026-08-24-article-85/fig-85-06.png)'
+      anchor_before: 在“能消费”和“敢消费”之后，需求还需要市场来承接。否则，即使群众有购买能力，也可能找不到距离合适、质量可靠、体验良好的产品和服务。
+      anchor_after: 三、接住“愿不愿”：有了需求，还要有适配的供给
+      context_after: 我国的消费结构正在发生变化。以2025年为例，服务性消费支出占居民人均消费支出的比重为46.1%，服务零售额同比增长5.5%。这些数字虽然对应特定年份，却清晰地
+    - id: fig-85-07
+      before_heading: '## 四、守住“放不放心”：价格、质量和售后，本身就是消费成本'
+      inline_marker: '![第85篇配图07](media/images/2026-08-24-article-85/fig-85-07.png)'
+      anchor_before: 不过，供给适配只能让人产生购买意愿。要让一次尝试变成持续消费，还需解决最后一块拼图：交易是否值得信任。
+      anchor_after: 四、守住“放不放心”：价格、质量和售后，本身就是消费成本
+      context_after: 消费者购买一件商品或预订一项服务，所支付的远不止标价。如果担心商家宣传夸大其词、小字免责，担心预付后商家关门跑路，担心退货必须回到原店，担心投诉被反复转办，那么
+    - id: fig-85-08
+      before_heading: '## 五、从一次刺激到长期循环：让数据、物流和公共服务一起运转'
+      inline_marker: '![第85篇配图08](media/images/2026-08-24-article-85/fig-85-08.png)'
+      anchor_before: 即便补齐了上述四块短板，工作也远未结束。居民的需求会变化，产品和服务也会迭代，提振消费还需要一套能够持续调整的连接机制。
+      anchor_after: 五、从一次刺激到长期循环：让数据、物流和公共服务一起运转
+      context_after: 《提振消费，如何增强供需适配性》提出了一个重要概念：供需适配。它远不止于企业做一次市场调查，或由政府列一份热销产品目录。供需适配需要一条能够持续运转的反馈链条。
+    - id: fig-85-09
+      before_heading: '## 七、结尾：消费的底气，来自更好的生活'
+      inline_marker: '![第85篇配图09](media/images/2026-08-24-article-85/fig-85-09.png)'
+      anchor_before: 信任问：信息、质量、退换、预付和维权风险是否压低了消费信心？
+      anchor_after: 申论可用表达
+      context_after: 消费不是一道要求群众“多花钱”的动员题。对个人和家庭而言，它是收入、保障、需求与信任共同作用后的生活选择；对经济运行而言，它又会把需求信号传回生产、投资和就业环
+    - id: fig-85-10
+      before_heading: '## 金句集合'
+      inline_marker: '![第85篇配图10](media/images/2026-08-24-article-85/fig-85-10.png)'
+      anchor_before: 只有把这四块基础接牢，消费增长才不会只是一时热闹，而会成为生活改善与经济循环相互促进的良性结果。
+      anchor_after: 金句集合
+      context_after: '```text1.提振消费不能只研究怎样促成一次交易，还要回答居民为什么愿意持续消费。2.就业增收托住消费能力，社会保障稳定未来预期，优质供给承接真实需求，权益'
+    - id: fig-85-11
+      before_heading: '## 参考文章'
+      inline_marker: '![第85篇配图11](media/images/2026-08-24-article-85/fig-85-11.png)'
+      anchor_before: 消费的底气，最终来自稳定的收入、可靠的保障、优质的供给和可信的规则。
+      anchor_after: 参考文章
+      context_after: 1.王珂、齐志明、韩鑫：《坚持内需主导，建设强大国内市场（稳中求进、提质增效实现“十五五”良好开局）》，2026年1月5日，第05版。2.钟才平：《统筹促消费和
+    updated_at: '2026-09-04T20:07:07'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-09-04T20:07:13'
+  body_hash: a603664e9a2bd41c44ce925acaf7fcc001c2aa409149a86add52612a33910497
+  plan_fingerprint: 758458cb6b1739d0cd95e951f390bd344c92ab0954bf8b563b3cf392e4aeeca2
+figures:
+- id: fig-85-01
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-01.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 623eee00963389410c7b2e843f674610bc700224c31a48f2847e7b3ef9ee6e2a
+  title: 第85篇配图01
+  caption: 第85篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先解决“能不能”：消费能力来自稳定收入，而非临时优惠附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+- id: fig-85-02
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-02.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 7a322eb95c1e2cf6bd7f88e08c155db98f2e52dc5198321bcd43e14d2440c39a
+  title: 第85篇配图02
+  caption: 第85篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先解决“能不能”：消费能力来自稳定收入，而非临时优惠附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+- id: fig-85-04
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-04.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 6a38f42583ff0a96cee5867bf3ac9d5f7a97422a1adc153113857cc24162c5aa
+  title: 第85篇配图04
+  caption: 第85篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先解决“能不能”：消费能力来自稳定收入，而非临时优惠附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+- id: fig-85-05
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-05.png
+  width_px: 2560
+  height_px: 1428
+  sha256: a8f9b4130ff971746ef9b49e88ad5a908f27c474658cf7ed7a72806d96d46b57
+  title: 第85篇配图05
+  caption: 第85篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、再解决“敢不敢”：社会保障稳住的，是家庭对未来的预期附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+- id: fig-85-06
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-06.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 5214b289a5d3508f0c56abec5c6ff2167a265b317c35112feb17de0ce8b04932
+  title: 第85篇配图06
+  caption: 第85篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、接住“愿不愿”：有了需求，还要有适配的供给附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+- id: fig-85-07
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-07.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 790ea5ac36f638ab907e8284f7f35d9a46eb784a3f87e3601bdb9ee66369403e
+  title: 第85篇配图07
+  caption: 第85篇配图07
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、守住“放不放心”：价格、质量和售后，本身就是消费成本附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+- id: fig-85-08
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-08.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 194036751823e3e5151bace36e35203105065ebbbca4be33a03e0061e26499af
+  title: 第85篇配图08
+  caption: 第85篇配图08
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、从一次刺激到长期循环：让数据、物流和公共服务一起运转附近（按正文内链接精确定位）'
+  article_order: 7
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+- id: fig-85-09
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-09.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 0e19ab2107df7abaa38beca113348be0c58e57fcfc96f97c219ff633bd61e9b9
+  title: 第85篇配图09
+  caption: 第85篇配图09
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 七、结尾：消费的底气，来自更好的生活附近（按正文内链接精确定位）'
+  article_order: 8
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+- id: fig-85-10
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-10.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 3e2c96d50768cf985137e1680a3e536b106f6726285adcb02c371edbdf0879db
+  title: 第85篇配图10
+  caption: 第85篇配图10
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 9
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+- id: fig-85-11
+  kind: inline_markdown
+  file: media/images/2026-08-24-article-85/fig-85-11.png
+  width_px: 2752
+  height_px: 1536
+  sha256: 6459ec9112397924b044b1c9f52f60ffbd0fe59b562c15902a8066938610a2b7
+  title: 第85篇配图11
+  caption: 第85篇配图11
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 参考文章附近（按正文内链接精确定位）'
+  article_order: 10
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-04T20:07:07'
+updated_at: '2026-09-04T20:07:13'
+placement_mode: inline_markdown
+inline_markdown_count: 10
+inline_imported_at: '2026-09-04T20:07:07'

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>十五五开局 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#14532d;--accent-soft:rgba(20,83,45,.2);--warn:#f59e0b;--danger:#dc2626;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:96px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第84期</span></div>
+    <h1 class="hero">"十五五"开局<br>不能平均用力</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">内需、创新、民生和风险要接成一条链</p>
+  </div>
+  <div class="key-sentence">开局不是把所有任务一次铺开，而是找到能打开局面的第一步。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 误区 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">全</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>纠偏 · 常见低分写法</p>
+    <h2 class="h2">每句话都对<br>为什么答案仍不具体？</h2>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-label">扩大内需</div><div class="data-desc">只写名词，不写载体和责任</div></div>
+      <div class="data-card"><div class="data-label">创新驱动</div><div class="data-desc">只写方向，不写平台和企业</div></div>
+      <div class="data-card"><div class="data-label">深化改革</div><div class="data-desc">只写口号，不写堵点和流程</div></div>
+      <div class="data-card"><div class="data-label">绿色转型</div><div class="data-desc">只写目标，不写标准和准入</div></div>
+      <div class="data-card"><div class="data-label">保障民生</div><div class="data-desc">只写承诺，不写投入和验收</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-label" style="color:var(--danger);">防范风险</div><div class="data-desc">只写底线，不写评估和止损</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:22px;">
+      <p style="font-size:25px;line-height:1.7;"><strong style="color:var(--accent);">核心判断：</strong>这些都重要，但如果没有主次、载体和责任，就只是一份任务大全。如果每件事都是重点，就等于没有年度重点。</p>
+    </div>
+  </div>
+  <div class="key-sentence">如果每件事都是重点，就等于没有年度重点。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 总公式 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">链</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总框架 · 把规划语言翻译成执行语言</p>
+    <h2 class="h2">一条执行链<br>五个环节</h2>
+    <div class="formula-box">
+      <p class="formula-text">战略定向<span class="arrow">→</span>矛盾筛选<span class="arrow">→</span>项目承接<span class="arrow">→</span><br>责任配资<span class="arrow">→</span>民生与风险双校验</p>
+    </div>
+    <div class="five-grid">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">战略定向</div><div class="f-desc">往哪走？在国家需要、地方所长和市场需求之间找交集</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">矛盾筛选</div><div class="f-desc">先解决什么？用紧迫性、牵引性、可行性三道筛子选年度重点</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">项目承接</div><div class="f-desc">靠什么落地？项目补设施、改革破堵点、服务惠民生</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">责任配资</div><div class="f-desc">谁来干、凭什么干？八要素同步配齐，责任到人+资源到位</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">双校验</div><div class="f-desc">结果能不能经得住检验？民生校验防离人太远，风险校验防跑得太急</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">这不是五个并列分论点，而是一件事走向落实的五个环节。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 战略定向 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">向</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第一步 · 战略定向</p>
+    <h2 class="h2">方向不能错<br>路径不能抄</h2>
+    <p class="body">国家规划给出共同方向，地方年度计划还要回答四个问题：</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">1</div><div class="data-label">发展阶段</div><div class="data-desc">本地处于什么发展阶段？是工业化初期还是转型升级期？</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">功能定位</div><div class="data-desc">承担什么功能？是生态屏障、粮食主产区还是创新高地？</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">产业基础</div><div class="data-desc">最有基础的产业是什么？有哪些龙头企业和产业链？</div></div>
+      <div class="data-card"><div class="data-num">4</div><div class="data-label">突出短板</div><div class="data-desc">最突出的短板在哪里？是基础设施、公共服务还是营商环境？</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:16px 0;">
+      <p class="formula-text" style="font-size:26px;">国家需要 <span class="arrow">∩</span> 地方所长 <span class="arrow">∩</span> 市场需求 <span class="arrow">=</span> 正确承接</p>
+    </div>
+    <p class="body" style="font-size:23px;">在三者之间找到交集，才是正确承接——不能把中央部署原封不动复制成地方任务。</p>
+  </div>
+  <div class="key-sentence">在国家需要、地方所长和市场需求之间找到交集，才是正确承接。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 矛盾筛选 -->
+<section class="poster photo-page" id="xhs-05">
+  <img class="bg-img" src="assets/funnel.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第二步 · 矛盾筛选</p>
+    <h2 class="h2">年度重点<br>要过三道筛子</h2>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">1</div><div class="data-label">紧迫性</div><div class="data-desc">不解决会不会制约全局？是不是群众急难愁盼？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">2</div><div class="data-label">牵引性</div><div class="data-desc">打通后能否带动多个环节？是不是牵一发而动全身？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">3</div><div class="data-label">可行性</div><div class="data-desc">资源、条件和市场是否成熟？能不能在年度内见效？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">✓</div><div class="data-label">筛选结果</div><div class="data-desc">三道筛子过后，只留下少量高优先级任务，避免平均用力</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;background:rgba(20,83,45,.25);">
+      <p class="formula-text" style="font-size:25px;">开局的"开"，是用牵引性任务把局面打开</p>
+    </div>
+  </div>
+  <div class="key-sentence">开局的"开"，是用牵引性任务把局面打开。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 内需链条 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">需</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>案例 · 以旧换新为什么要接成链</p>
+    <h2 class="h2">一项政策<br>为什么要接成链？</h2>
+    <p class="body">以旧换新看似是消费政策，向前连接生产升级，向后连接回收循环，中间还需要标准、物流、金融和售后服务。</p>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">🛒</div><div class="data-label">消费需求</div><div class="data-desc">中心：群众换新意愿和补贴政策</div></div>
+      <div class="data-card"><div class="data-num">🏭</div><div class="data-label">生产升级</div><div class="data-desc">向前：倒逼企业技术升级和产品迭代</div></div>
+      <div class="data-card"><div class="data-num">♻</div><div class="data-label">回收循环</div><div class="data-desc">向后：旧品回收、拆解和资源再利用</div></div>
+      <div class="data-card"><div class="data-num">🔧</div><div class="data-label">服务配套</div><div class="data-desc">中间：标准、物流、金融、售后服务缺一不可</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:20px 24px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>真正有牵引力的任务，会让需求、供给和服务一起动起来——不是单点发力，而是链条共振。</p>
+    </div>
+  </div>
+  <div class="key-sentence">真正有牵引力的任务，会让需求、供给和服务一起动起来。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 项目承接 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">承</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第三步 · 项目政策承接</p>
+    <h2 class="h2">项目、改革、服务<br>不能互相替代</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">🏗</div><div class="data-label">项目</div><div class="data-desc">解决"缺什么"：补设施、平台和能力。适用于硬件短板、基础设施不足。</div></div>
+      <div class="data-card"><div class="data-num">⚖</div><div class="data-label">改革</div><div class="data-desc">解决"卡在哪"：破规则、流程和机制堵点。适用于制度障碍、审批繁琐。</div></div>
+      <div class="data-card"><div class="data-num">🏥</div><div class="data-label">服务</div><div class="data-desc">回答"为了谁"：让群众和企业真正受益。适用于民生需求、营商环境。</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">!</div><div class="data-label">常见误区</div><div class="data-desc">不是所有问题都要新建项目，也不是出台一个文件就算落实。要对症下药。</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:16px 0;">
+      <p class="formula-text" style="font-size:25px;">缺设施 → 建项目 <span class="arrow">|</span> 卡规则 → 推改革 <span class="arrow">|</span> 惠民生 → 补服务</p>
+    </div>
+    <p class="body" style="font-size:23px;">三类载体各有分工，共同托起年度任务，不能用一种方式解决所有问题。</p>
+  </div>
+  <div class="key-sentence">不是所有问题都要新建一个项目，也不是出台一个文件就算落实。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 创新链条 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">创</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>案例 · 创新不能止于实验室</p>
+    <h2 class="h2">科技成果要有<br>平台、有企业、有场景</h2>
+    <div class="step-chain">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">基础研究</div><div class="step-desc">源头：高校和科研院所的原始创新，不能只列研发项目</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">中试验证</div><div class="step-desc">平台：概念验证和中试加速，把实验室成果变成可量产技术</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">企业应用</div><div class="step-desc">主体：企业承接技术转化，金融支持和人才培养同步跟上</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">市场场景</div><div class="step-desc">出口：让技术进入真实产业链，在应用场景中迭代优化</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:12px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>从创新源头到产业应用，中间缺的往往不是口号，而是接力机制。每一站都要有明确的承接主体和转化条件。</p>
+    </div>
+  </div>
+  <div class="key-sentence">从创新源头到产业应用，中间缺的往往不是口号，而是接力机制。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 责任配资 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">配</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第四步 · 责任配资</p>
+    <h2 class="h2">明确"谁来干"<br>还要回答"凭什么干"</h2>
+    <p class="body">一项年度任务至少要配齐八个要素：</p>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">1</div><div class="data-label">牵头部门</div><div class="data-desc">谁主责推进，不能多头负责</div></div>
+      <div class="data-card"><div class="data-num">2</div><div class="data-label">配合部门</div><div class="data-desc">谁协同配合，明确协助动作</div></div>
+      <div class="data-card"><div class="data-num">3</div><div class="data-label">时间节点</div><div class="data-desc">分阶段目标和完成时限</div></div>
+      <div class="data-card"><div class="data-num">4</div><div class="data-label">资金来源</div><div class="data-desc">专项预算和融资渠道落实</div></div>
+      <div class="data-card"><div class="data-num">5</div><div class="data-label">土地能源</div><div class="data-desc">用地指标和能源保障到位</div></div>
+      <div class="data-card"><div class="data-num">6</div><div class="data-label">人才技术</div><div class="data-desc">专业人员和技术力量配齐</div></div>
+      <div class="data-card"><div class="data-num">7</div><div class="data-label">数据权限</div><div class="data-desc">数据共享和信息系统打通</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">8</div><div class="data-label">市场主体</div><div class="data-desc">企业和社会力量参与机制</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:12px 0;">
+      <p class="formula-text" style="font-size:24px;">责任到人只解决谁来推，资源到位才能解决怎么推成</p>
+    </div>
+  </div>
+  <div class="key-sentence">责任到人只解决谁来推，资源到位才能解决怎么推成。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 协同机制 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">协</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>协同 · 不只是开联席会</p>
+    <h2 class="h2">任务跨部门<br>信息和资源也要跨部门</h2>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">📋</div><div class="data-label">统一清单</div><div class="data-desc">围绕同一目标，统一问题清单、项目台账和时间节点，避免各自为政</div></div>
+      <div class="data-card"><div class="data-num">📊</div><div class="data-label">数据共享</div><div class="data-desc">数据一次采集、共同使用，避免重复填报和信息孤岛</div></div>
+      <div class="data-card"><div class="data-num">🔧</div><div class="data-label">堵点解决</div><div class="data-desc">遇到堵点，由有权限、有资源的部门解决，不能推给基层</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">✓</div><div class="data-label">协同标准</div><div class="data-desc">不是一起开过会，而是问题有没有被共同解决</div></div>
+    </div>
+    <div class="compare-grid" style="margin:16px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">错误做法</h3>
+        <ul><li>开个联席会就算协同</li><li>各自形成孤立台账</li><li>数据不共享，重复填报</li><li>堵点推给基层自己解决</li></ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);font-size:25px;">正确做法</h3>
+        <ul><li>统一目标和清单</li><li>共用项目看板和台账</li><li>数据一次采集共同使用</li><li>有权部门主动解决堵点</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="key-sentence">部门协同的标准，不是一起开过会，而是问题有没有被共同解决。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 民生校验 -->
+<section class="poster photo-page" id="xhs-11">
+  <img class="bg-img" src="assets/dashboard.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第五步 · 民生校验</p>
+    <h2 class="h2">发展项目最后<br>要回到人的生活</h2>
+    <p class="body" style="color:var(--text);">评价开局成效，不能只看投资额、开工率和产值，还要看：</p>
+    <div class="data-grid">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">💼</div><div class="data-label">就业</div><div class="data-desc">就业是否增加？岗位质量是否提升？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">💰</div><div class="data-label">收入</div><div class="data-desc">居民收入是否改善？消费能力是否增强？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">🏥</div><div class="data-label">公共服务</div><div class="data-desc">教育、医疗、养老是否更便利？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">📉</div><div class="data-label">企业成本</div><div class="data-desc">企业制度性交易成本是否下降？</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;background:rgba(20,83,45,.25);">
+      <p class="formula-text" style="font-size:25px;">民生不是发展之后再补的一章，而是检验发展方向的一把尺子</p>
+    </div>
+  </div>
+  <div class="key-sentence">民生不是发展之后再补的一章，而是检验发展方向的一把尺子。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 风险校验 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">险</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第五步 · 风险校验</p>
+    <h2 class="h2">风险不能留到<br>项目建成后再补课</h2>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">💳</div><div class="data-label">债务风险</div><div class="data-desc">融资可持续性和债务约束，不能盲目举债上项目</div></div>
+      <div class="data-card"><div class="data-num">🌿</div><div class="data-label">生态风险</div><div class="data-desc">生态准入和环境影响评估，绿色转型前置为质量标尺</div></div>
+      <div class="data-card"><div class="data-num">🛡</div><div class="data-label">安全风险</div><div class="data-desc">生产安全和公共安全底线，"三保"底线不能突破</div></div>
+      <div class="data-card"><div class="data-num">🔐</div><div class="data-label">数据风险</div><div class="data-desc">数据安全和隐私保护，信息系统不能有漏洞</div></div>
+    </div>
+    <div class="data-card" style="margin:12px 0;border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">⚙</div><div class="data-label">运营风险</div><div class="data-desc">后续运营主体和维护成本，不能建成后没人管、没钱修</div></div>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col"><h3 style="font-size:24px;">立项时</h3><p style="font-size:22px;color:var(--text-secondary);">同步评估五类风险，不是先上马再补评估</p></div>
+      <div class="compare-col"><h3 style="font-size:24px;">推进中</h3><p style="font-size:22px;color:var(--text-secondary);">设置监测节点，条件变化时能分期、调整、止损或退出</p></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">民生校验防止发展离人太远，风险校验防止开局跑得太急</p>
+    </div>
+  </div>
+  <div class="key-sentence">民生校验防止发展离人太远，风险校验防止开局跑得太急。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 申论五问+总结 -->
+<section class="poster" id="xhs-13">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>考场迁移 · 认知升级</p>
+    <h2 class="h2">遇到"规划落地"<br>先问这五句</h2>
+    <div class="data-grid" style="margin:16px 0;">
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">定位问</div><div class="data-desc">与国家战略和地方阶段是什么关系？</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">矛盾问</div><div class="data-desc">今年最该优先解决什么？</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">承接问</div><div class="data-desc">需要建项目、改政策还是补服务？</div></div>
+      <div class="data-card"><div class="data-num">?</div><div class="data-label">条件问</div><div class="data-desc">责任、资金、要素和人才是否匹配？</div></div>
+    </div>
+    <div class="data-card" style="margin:8px 0;border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">?</div><div class="data-label">结果问</div><div class="data-desc">群众是否受益，风险是否可控？</div></div>
+    <div class="compare-col accent-col" style="margin-top:14px;padding:18px 22px;">
+      <p style="font-size:23px;line-height:1.7;"><strong style="color:var(--accent);">认知升级：</strong>好的开局，不是盘子铺得最大，而是第一步找得准、资源配得齐、结果站得稳。先找准最能打开局面的问题，再把政策、项目、责任和资源接牢，让群众看见变化，也不给未来留下难以承受的风险。</p>
+    </div>
+  </div>
+  <div class="key-sentence">先把决策链想清楚，答案自然就不会变成政策名词堆砌。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:10px;">本卡片内容基于以下9篇人民日报报道整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">为共赴"十五五"新征程凝聚奋进力量</div><div class="ref-meta">人民日报，2026年1月，价值与方法总纲；提供发展信心、民生温度和开放合作的价值背景</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">沉下心来抓落实、办实事</div><div class="ref-meta">人民日报，2026年1月，执行方法总纲；提供"大局定位、问题突破、长短结合、同题共答"的执行方法</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">内需：把增收、社保、消费供给、有效投资和民间活力接成供需循环</div><div class="ref-meta">人民日报，2026年1月，发展动力层；以旧换新等政策说明牵引性任务如何让需求、供给和服务一起动起来</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">创新：把基础研究、科创平台、企业主体、成果转化和应用场景连成创新链</div><div class="ref-meta">人民日报，2026年1月，发展动力层；说明科技成果要有平台、有企业、有场景，从创新源头到产业应用需要接力机制</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">改革：打通市场、准入、要素与企业发展堵点</div><div class="ref-meta">人民日报，2026年1月，发展动力层；说明改革是解决"卡在哪"的工具，与项目、服务不能互相替代</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">协调：地区差异化定位，硬联通、软联通、县域承接和公共服务共享</div><div class="ref-meta">人民日报，2026年1月，空间与质量层；强调地方功能定位和发展阶段，不能把中央部署原封不动复制</div></div></div>
+      <div class="ref-item"><div class="ref-num">7</div><div class="ref-content"><div class="ref-title">绿色：碳排放双控、生态准入和绿色转型前置为项目与产业的质量标尺</div><div class="ref-meta">人民日报，2026年1月，空间与质量层；说明生态风险应前置到项目立项和推进全过程</div></div></div>
+      <div class="ref-item"><div class="ref-num">8</div><div class="ref-content"><div class="ref-title">民生：就业、保障和公共服务既是投入项，也是检验发展成效的结果项</div><div class="ref-meta">人民日报，2026年1月，结果与底线层；评价开局成效不能只看投资额和开工率，还要看就业、收入、服务和企业成本</div></div></div>
+      <div class="ref-item"><div class="ref-num">9</div><div class="ref-content"><div class="ref-title">风险：融资可持续、债务约束、项目绩效和"三保"底线前置到执行过程</div><div class="ref-meta">人民日报，2026年1月，结果与底线层；债务、生态、安全、数据和运营风险应在立项时同步评估，推进中设置监测节点</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:14px 20px;">
+      <p style="font-size:20px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>625亿元、1210万人、3.7万架、60%以上等数据对应不同政策、年份和统计口径，引用时必须保留限定；各地案例用于说明方法，不写成全国统一标准；开局不等于追求短期速度，一时难以解决的问题应分阶段、持续推进。不构成个体投资或政策建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第84期</span></div>
+    <h1 class="hero">"十五五"开局<br>不能平均用力</h1>
+    <p class="body">内需、创新、民生和风险要接成一条链——战略定向、矛盾筛选、项目承接、责任配资、民生与风险双校验。</p>
+    <div class="key-sentence">好的开局，不是盘子铺得最大，而是第一步找得准、资源配得齐、结果站得稳。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

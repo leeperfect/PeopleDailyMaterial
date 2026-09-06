@@ -115,6 +115,16 @@ data/exports/content_ideas.csv
 python3 idea_magazine.py
 ```
 
+如果只需要随时查看而不在网页端改状态或备注，可直接打开妙搭“人民日报选题工作台”。它是本地选题库的只读网页副本，支持搜索、筛选、查看参考文章和复制教研材料，不占用本地浏览器端口。
+
+每次完成选题梳理和精筛后，覆盖同步同一个妙搭地址：
+
+```bash
+python3 scripts/sync_idea_magazine_to_miaoda.py
+```
+
+`scripts/refine_content_ideas.py` 和 `scripts/export_content_ideas.py` 在检测到已有妙搭配置时会自动同步；只有明确需要离线处理时才使用 `--no-miaoda-sync`。
+
 默认地址：
 
 ```text
@@ -131,6 +141,14 @@ python3 hotspot_magazine.py
 
 默认地址是 `http://127.0.0.1:8766`。页面读取
 `data/peopleapp_opinion/core/hotspot_topics.sqlite`，可按热点状态、优先级、媒体来源和人工精筛状态挑选话题。选题带有教研分类和核心角度；统计会排除同源同标题重复稿以及正文不足 200 字的残缺稿。精筛结果和个人备注直接保存在热点总库中，每日更新热点时会保留。
+
+不占用本地端口的只读版已发布到妙搭。每次刷新 APP 评论热点总库后，可用固定同步入口覆盖更新同一个网页地址：
+
+```bash
+python3 scripts/sync_hotspot_magazine_to_miaoda.py
+```
+
+`scripts/update_peopleapp_opinion_topic_library.py` 在检测到已有妙搭配置时会自动同步；只有明确需要离线处理时才使用 `--no-miaoda-sync`。
 
 ## 抓取新文章
 

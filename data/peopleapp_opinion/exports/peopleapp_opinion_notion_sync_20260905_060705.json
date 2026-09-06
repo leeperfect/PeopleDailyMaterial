@@ -1,0 +1,27 @@
+{
+  "source": "peopleapp_opinion",
+  "database_id": "e091a3f1-0ee4-49da-adce-f92a25293d6a",
+  "db_path": "data/peopleapp_opinion/core/articles.sqlite",
+  "generated_at": "2026-09-05T06:05:04+08:00",
+  "candidate_count": 57,
+  "created": 35,
+  "updated": 0,
+  "skipped": 20,
+  "failed": 2,
+  "failures": [
+    {
+      "article_id": "peopleapp_opinion_20260903_30053080559_500007681699",
+      "title": "家长群自报干部身份，教育公平岂容权力“打招呼”",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487369 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053080559-500007681699"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053085537_500007682516",
+      "title": "“阴阳菜单”宰客，砸了城市口碑",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487369 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053085537-500007682516"
+    }
+  ],
+  "keyword_fallback": true,
+  "dry_run": false
+}

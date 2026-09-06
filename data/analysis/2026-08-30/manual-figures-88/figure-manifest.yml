@@ -1,0 +1,295 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-08-30'
+registered_at: '2026-09-06T05:39:50'
+article: data/articles/人民日报系列/88-《人民日报》深度分析【平台算法治理】：配送不能只由倒计时决定，安全、效率和权益都要算进去.md
+topic: 平台算法治理
+article_number: '88'
+asset_root: media/images/2026-08-30-article-88
+manifest_path: data/analysis/2026-08-30/manual-figures-88/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-88-01
+      before_heading: '## 一、规则要透明：算法一旦决定劳动过程，就不再只是技术工具'
+      inline_marker: '![第88篇配图01](media/images/2026-08-30-article-88/fig-88-01.png)'
+      anchor_before: 88｜《人民日报》深度分析【平台算法治理】：外卖平台试点骑手计时“红灯停表”
+      anchor_after: 骑手停在红灯前，眼前有两个倒计时。
+      context_after: 消费者看到的是“预计30分钟送达”，骑手面对的却是一整套后台规则：订单派给谁、路线怎样规划、配送时间多长、收入和抽成怎么算、什么情况扣分、什么情况影响后续接单。
+    - id: fig-88-02
+      before_heading: '## 一、规则要透明：算法一旦决定劳动过程，就不再只是技术工具'
+      inline_marker: '![第88篇配图02](media/images/2026-08-30-article-88/fig-88-02.png)'
+      anchor_before: 遵守交通规则，手机里的时间会继续减少；抢回几十秒，却可能把风险留给自己，也留给路上的行人和车辆。
+      anchor_after: 2026年8月，北京三家外卖平台试点骑手计时“红灯停表”：等红灯多久，配送考核时间就顺延多久。恶劣天气、复杂路况、转单等情况也会适当补时；如果超时源于商家出餐慢，不再影响骑手服务分。
+      context_after: 消费者看到的是“预计30分钟送达”，骑手面对的却是一整套后台规则：订单派给谁、路线怎样规划、配送时间多长、收入和抽成怎么算、什么情况扣分、什么情况影响后续接单。
+    - id: fig-88-03
+      before_heading: '## 一、规则要透明：算法一旦决定劳动过程，就不再只是技术工具'
+      inline_marker: '![第88篇配图03](media/images/2026-08-30-article-88/fig-88-03.png)'
+      anchor_before: 这看起来只是计时器停了一会儿，背后改的却是一套责任逻辑：系统终于开始区分哪些时间由骑手控制，哪些时间属于守法等待和客观异常。
+      anchor_after: 平台算法带来了即时配送的高效率，也创造了大量灵活就业机会。问题不在于要不要算法，而在于算法算什么、谁来定、出了错怎么办。
+      context_after: 消费者看到的是“预计30分钟送达”，骑手面对的却是一整套后台规则：订单派给谁、路线怎样规划、配送时间多长、收入和抽成怎么算、什么情况扣分、什么情况影响后续接单。
+    - id: fig-88-04
+      before_heading: '## 一、规则要透明：算法一旦决定劳动过程，就不再只是技术工具'
+      inline_marker: '![第88篇配图04](media/images/2026-08-30-article-88/fig-88-04.png)'
+      anchor_before: 平台算法治理的完整链条是：规则可解释 -> 劳动者可协商 -> 安全成硬约束 -> 异常能补时 -> 结果可申诉。
+      anchor_after: 一、规则要透明：算法一旦决定劳动过程，就不再只是技术工具
+      context_after: 消费者看到的是“预计30分钟送达”，骑手面对的却是一整套后台规则：订单派给谁、路线怎样规划、配送时间多长、收入和抽成怎么算、什么情况扣分、什么情况影响后续接单。
+    - id: fig-88-05
+      before_heading: '## 二、劳动者能协商：被规则管理的人，也要有机会参与规则形成'
+      inline_marker: '![第88篇配图05](media/images/2026-08-30-article-88/fig-88-05.png)'
+      anchor_before: 算法可以复杂，劳动规则不能含糊；技术可以藏在后台，权利义务不能藏起来。
+      anchor_after: 二、劳动者能协商：被规则管理的人，也要有机会参与规则形成
+      context_after: 把规则讲清楚，只解决了“知不知道”的问题，还没有解决“能不能改变”的问题。平台掌握订单、流量和技术，单个骑手很难与一套系统讨价还价。即使每个人都觉得某项派单或考
+    - id: fig-88-06
+      before_heading: '## 三、安全进模型：效率必须在合法时速和合法路线内产生'
+      inline_marker: '![第88篇配图06](media/images/2026-08-30-article-88/fig-88-06.png)'
+      anchor_before: 透明让人知道规则，协商让人有机会改变规则。两者缺一，参与就容易流于形式。
+      anchor_after: 三、安全进模型：效率必须在合法时速和合法路线内产生
+      context_after: 规则可以协商，但有些底线不能拿来交换。2026年7月，北京相关管理办法明确，平台在设定配送时间和路线时，应充分考虑交通安全，按不超过法律规定最高时速的平均时速来
+    - id: fig-88-07
+      before_heading: '## 四、异常能补时：现实世界不是一条没有红灯的直线'
+      inline_marker: '![第88篇配图07](media/images/2026-08-30-article-88/fig-88-07.png)'
+      anchor_before: 不能把风险藏进平均送达时长，更不能让骑手用安全为算法误差买单。
+      anchor_after: 四、异常能补时：现实世界不是一条没有红灯的直线
+      context_after: 即使按照合法时速和路线建模，现实配送仍然充满变数。红灯要等，暴雨会减速，商家可能出餐慢，小区可能难进，电梯可能排队，订单转给新骑手后路线也会改变。过去，系统如果
+    - id: fig-88-08
+      before_heading: '## 五、结果可申诉：系统做出判断之后，还要有人对判断负责'
+      inline_marker: '![第88篇配图08](media/images/2026-08-30-article-88/fig-88-08.png)'
+      anchor_before: 好的算法不只会催人快一点，也应知道什么时候必须慢下来、什么时候不该罚。
+      anchor_after: 五、结果可申诉：系统做出判断之后，还要有人对判断负责
+      context_after: 再精细的模型也可能出现误判。定位可能漂移，天气数据可能滞后，商家出餐时间可能未被准确记录，复杂小区的上楼时间也未必能被系统完整识别。如果平台只提供一个自动回复的
+    - id: fig-88-09
+      before_heading: '## 六、国考省考申论面试怎么用'
+      inline_marker: '![第88篇配图09](media/images/2026-08-30-article-88/fig-88-09.png)'
+      anchor_before: 真正的纠错，不仅是改回一次扣分，更要让同一种错误少发生一次。
+      anchor_after: 六、国考省考申论面试怎么用
+      context_after: 遇到平台经济、科技向善、新就业形态、劳动权益、安全治理等题目，可以使用这个总公式：**平台算法治理=透明说明+代表协商+安全建模+动态补时+申诉纠错。**申论写
+    - id: fig-88-10
+      before_heading: '## 结尾'
+      inline_marker: '![第88篇配图10](media/images/2026-08-30-article-88/fig-88-10.png)'
+      anchor_before: 畅救济：提供证据上传、人工复核、限时反馈和调解仲裁通道，以申诉数据反向优化规则。
+      anchor_after: 面试中可能出现这样的题目：
+      context_after: 让我们再回到路口的两个倒计时。红灯前停下是守法，不是怠工；暴雨中慢一点是安全需要，不是效率不足；商家晚出餐，也不该自动变成骑手的过错。算法擅长在海量订单中寻找更
+    - id: fig-88-11
+      before_heading: '## 金句集合'
+      inline_marker: '![第88篇配图11](media/images/2026-08-30-article-88/fig-88-11.png)'
+      anchor_before: 配送可以由算法调度，但不能只由倒计时决定。
+      anchor_after: 金句集合
+      context_after: '```text1.系统终于开始区分哪些时间由骑手控制，哪些时间属于守法等待和客观异常。2.当算法能够派单、计价、考核和奖惩时，它实际上已经成为劳动规则。3.算法'
+    - id: fig-88-12
+      before_heading: '## 参考文章'
+      inline_marker: '![第88篇配图12](media/images/2026-08-30-article-88/fig-88-12.png)'
+      anchor_before: 配送可以由算法调度，但不能只由倒计时决定。
+      anchor_after: 参考文章
+      context_after: 1.魏哲哲：《依法维护新就业形态劳动者权益》，《人民日报》2025年1月16日，第05版。2.谢增毅：《有效加强新就业形态劳动者权益保障》，《人民日报》2025
+    updated_at: '2026-09-06T05:39:50'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-09-06T05:39:53'
+  body_hash: 47152c6ac93194a273ed51d7cc34383cc1f09d6360bcc7eca27407e9c6b8c6c8
+  plan_fingerprint: 1bea44c2b80598d06b2da3ca27e7d7fc97e360f15938475b555ff1520408be02
+figures:
+- id: fig-88-01
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-01.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 29bb601887e317f059e873c21a236735f448c4a66ed2bb947221bd67dcd89175
+  title: 第88篇配图01
+  caption: 第88篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、规则要透明：算法一旦决定劳动过程，就不再只是技术工具附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-02
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-02.png
+  width_px: 2560
+  height_px: 1428
+  sha256: b0c5d6a97ed5872bf5afcdb0a4cc5fe6f304b15b43e9d29a035d27fda42c43e5
+  title: 第88篇配图02
+  caption: 第88篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、规则要透明：算法一旦决定劳动过程，就不再只是技术工具附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-03
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-03.png
+  width_px: 2560
+  height_px: 1428
+  sha256: fd4f6f24eba40c4a2d0d53f8c07d1005832075365b4003da59c5553960770fae
+  title: 第88篇配图03
+  caption: 第88篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、规则要透明：算法一旦决定劳动过程，就不再只是技术工具附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-04
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-04.png
+  width_px: 2560
+  height_px: 1428
+  sha256: a1cbe8e00711bfb905c8cb556264834ac1e23366d8d461228cfd8e273eee954f
+  title: 第88篇配图04
+  caption: 第88篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、规则要透明：算法一旦决定劳动过程，就不再只是技术工具附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-05
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-05.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 1d374e2df8dff64a7ae12f57f25c0ff878f0d330cab446e20d79d90ccd755bb7
+  title: 第88篇配图05
+  caption: 第88篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、劳动者能协商：被规则管理的人，也要有机会参与规则形成附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-06
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-06.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 247e2b7a09cfcc2418a5538a87319183e84bf39ab7812b892b09cde68cb8765e
+  title: 第88篇配图06
+  caption: 第88篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、安全进模型：效率必须在合法时速和合法路线内产生附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-07
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-07.png
+  width_px: 2560
+  height_px: 1428
+  sha256: acead74fc4aa048d96d843fd47591de5ab5fa1ad1f8fb0216a1faf6f75fb6e14
+  title: 第88篇配图07
+  caption: 第88篇配图07
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、异常能补时：现实世界不是一条没有红灯的直线附近（按正文内链接精确定位）'
+  article_order: 7
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-08
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-08.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 20c25818f637999a54509bc2a7f6fde0af2a0d8f226ea77114e0d7f4d47ffc5d
+  title: 第88篇配图08
+  caption: 第88篇配图08
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、结果可申诉：系统做出判断之后，还要有人对判断负责附近（按正文内链接精确定位）'
+  article_order: 8
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-09
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-09.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 7998aa2f7660a7d3538fc9b14a7a1163710aa4efe30d669ad8da2206bbf05770
+  title: 第88篇配图09
+  caption: 第88篇配图09
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试怎么用附近（按正文内链接精确定位）'
+  article_order: 9
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-10
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-10.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 0f2d01bf88ac3dca3c217df99789df664c2c433ef2a983619ae55dd3ba610fac
+  title: 第88篇配图10
+  caption: 第88篇配图10
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 结尾附近（按正文内链接精确定位）'
+  article_order: 10
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-11
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-11.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 3297e30fb2e287151b5e190277c42a429cc6669ad670bd70ac271a9aa8ea345b
+  title: 第88篇配图11
+  caption: 第88篇配图11
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 11
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+- id: fig-88-12
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-88/fig-88-12.png
+  width_px: 2752
+  height_px: 1536
+  sha256: c557806352452af4a9521bb4481f7d25015a8dcb11a1e6c2c8a965b4b374e72e
+  title: 第88篇配图12
+  caption: 第88篇配图12
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 参考文章附近（按正文内链接精确定位）'
+  article_order: 12
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-06T05:39:50'
+updated_at: '2026-09-06T05:39:53'
+placement_mode: inline_markdown
+inline_markdown_count: 12
+inline_imported_at: '2026-09-06T05:39:50'

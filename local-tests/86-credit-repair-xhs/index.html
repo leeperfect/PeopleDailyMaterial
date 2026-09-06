@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>企业信用修复 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#1d4ed8;--accent-soft:rgba(29,78,216,.15);--warn:#f59e0b;--danger:#ef4444;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:96px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第86期</span></div>
+    <h1 class="hero">信用修复<br>≠删除记录</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">申论加分点：纠错 · 履责 · 退出惩戒</p>
+  </div>
+  <div class="key-sentence">不是把昨天抹掉，而是让企业能回到明天。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 低分写法预警 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">误</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>纠偏 · 低分写法预警</p>
+    <h2 class="h2">申论写"及时删除<br>企业不良记录"？</h2>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:26px;">❌ 败在"删除"两个字</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">把治理机制写成了数据操作。"删除"意味着事实消失，这在法律和治理逻辑上都是错误的。</p>
+      </div>
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);font-size:26px;">✅ 正确：修复"状态"</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">信用修复修的不是记录，是状态。停止公示、移出名单、解除惩戒——事实还在，但企业可以重新参与市场。</p>
+      </div>
+    </div>
+    <div class="data-grid">
+      <div class="data-card"><div class="data-num">📝</div><div class="data-label">"删除"的问题</div><div class="data-desc">暗示事实可以被抹除，违背信用体系"记录留痕"的基本原则</div></div>
+      <div class="data-card"><div class="data-num">🔄</div><div class="data-label">"退出"的正确</div><div class="data-desc">退出的是惩戒状态，不是事实记录；企业纠错后可以重新获得市场信任</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:12px;padding:18px 22px;">
+      <p style="font-size:24px;line-height:1.6;"><strong style="color:var(--accent);">核心判断：</strong>下次写"信用修复"，先问自己：写的是"删除"，还是"退出"？这一个字的差别，决定了答案是治理思维还是数据操作思维。</p>
+    </div>
+  </div>
+  <div class="key-sentence">不是把昨天抹掉，而是让企业能回到明天。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 六环链条 -->
+<section class="poster photo-page" id="xhs-03">
+  <img class="bg-img" src="assets/chain.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总框架 · 六环链条</p>
+    <h2 class="h2">六环接成一条线<br>才是完整答案</h2>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">1</div><div class="f-title">先辨性质</div><div class="f-desc">谁能修——恶意失信惩戒到底，轻微过失给出路，暂时困难拉一把</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">2</div><div class="f-title">主动纠错</div><div class="f-desc">凭什么修——钥匙在企业自己手里，政府降低制度成本</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">3</div><div class="f-title">统一办理</div><div class="f-desc">去哪修——京津冀同标办理，受理条件、材料、标准、时限四统一</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">4</div><div class="f-title">协同互认</div><div class="f-desc">异地怎么修——跨省修复协同互认，南京企业1个工作日办结</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">5</div><div class="f-title">依法退出</div><div class="f-desc">修成什么样——停止公示、移出名单、解除惩戒，三步一环不能少</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">6</div><div class="f-title">关口前移</div><div class="f-desc">怎么不用修——信用豁免，让小过失不留痕，从事后修复向事前预防延伸</div></div>
+    </div>
+  </div>
+  <div class="key-sentence">六环接成一条线，才是完整答案。缺一环，修复就不完整。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 先辨性质 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">辨</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第一环 · 先辨性质</p>
+    <h2 class="h2">谁能修？<br>三类性质三种处理</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">🔴</div><div class="data-label">恶意失信</div><div class="data-desc">惩戒到底——故意违法、屡教不改的，不能给修复出路，必须保持惩戒威慑</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">🟡</div><div class="data-label">轻微过失</div><div class="data-desc">给出路——非主观故意、危害轻微的，允许纠错后修复信用，鼓励改正</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">🔵</div><div class="data-label">暂时困难</div><div class="data-desc">拉一把——经营困难导致的失信，通过重整、和解等方式帮助企业恢复</div></div>
+      <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);"><div class="data-num" style="color:var(--accent);">⚖</div><div class="data-label">分类原则</div><div class="data-desc">不分类的修复，要么是放水（恶意也修），要么是做样子（轻微也不放）</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">分类是修复的前提 <span class="arrow">→</span> 先判断性质 <span class="arrow">→</span> 再决定是否修复、怎么修复</p>
+    </div>
+    <p class="body" style="font-size:22px;">政策依据：《关于健全社会信用体系的意见》（2025年4月1日，人民日报第01版要闻）明确要求分类施策、宽严相济。</p>
+  </div>
+  <div class="key-sentence">不分类的修复，要么是放水，要么是做样子。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 深圳广田案例 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">案</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>地方案例 · 深圳广田集团</p>
+    <h2 class="h2">重整成功之后<br>才谈信用修复</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">160<span style="font-size:28px;">亿</span></div><div class="data-label">负债规模</div><div class="data-desc">深圳广田集团负债近160亿元，陷入严重经营困难</div></div>
+      <div class="data-card"><div class="data-num">5<span style="font-size:28px;">个月</span></div><div class="data-label">预重整周期</div><div class="data-label" style="font-size:21px;color:var(--text-secondary);">通过预重整程序，5个月内完成债务重组</div></div>
+      <div class="data-card"><div class="data-num">100<span style="font-size:28px;">%</span></div><div class="data-label">债务清偿</div><div class="data-desc">实现债务100%清偿，债权人利益得到充分保障</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">🔄</div><div class="data-label">修复前提</div><div class="data-desc">重整成功、债务清偿后，才具备信用修复的基础条件</div></div>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">陷入困境</div><div class="step-desc">负债近160亿元，经营困难，被列入失信名单</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">预重整</div><div class="step-desc">5个月预重整，与债权人达成和解方案</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">100%清偿</div><div class="step-desc">债务全部清偿，企业恢复正常经营能力</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">信用修复</div><div class="step-desc">纠错履责完成后，依法申请信用修复，退出惩戒状态</div></div></div>
+    </div>
+    <p class="body" style="font-size:22px;">（来源：程远州《助力困境企业"重获新生"》，2025年1月27日，人民日报第14版法治）</p>
+  </div>
+  <div class="key-sentence">信用修复不是无条件的"洗白"，而是纠错履责后的"重新出发"。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 主动纠错 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">主</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第二环 · 主动纠错</p>
+    <h2 class="h2">钥匙在企业手里<br>政府降低制度成本</h2>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);font-size:26px;">企业：主体责任</h3>
+        <ul>
+          <li>政策原话："鼓励失信主体主动纠正失信行为"</li>
+          <li>"主动"是关键词——纠错动作必须企业完成</li>
+          <li>补缴税款、履行合同、整改问题，都是企业的事</li>
+          <li>不主动纠错，就不具备修复条件</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--warn);">
+        <h3 style="color:var(--warn);font-size:26px;">政府：服务保障</h3>
+        <ul>
+          <li>提醒服务——主动告知企业失信状态和修复途径</li>
+          <li>降低制度成本——简化申请材料、缩短办理时限</li>
+          <li>统一标准——受理条件、审查标准、办理时限四统一</li>
+          <li>不代替企业纠错，只降低纠错的门槛和成本</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">政府降低纠错的制度成本 <span class="arrow">+</span> 企业承担纠错的主体责任 <span class="arrow">=</span> 信用修复的完整逻辑</p>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">申论提醒：</strong>写信用修复不能只写"政府要帮助企业修复信用"，必须同时写企业的主体责任和政府的服务保障，两者缺一不可。只写政府帮忙，就是把企业责任推给政府；只写企业自己修，就是忽视制度成本的障碍。</p>
+    </div>
+  </div>
+  <div class="key-sentence">政府降低纠错的制度成本，企业承担纠错的主体责任。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 统一办理 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">统</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第三环 · 统一办理</p>
+    <h2 class="h2">统一的是标准<br>打通的是渠道</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">4</div><div class="data-label">京津冀四统一</div><div class="data-desc">规范受理条件、申请材料、审查标准、办理时限，同标办理</div></div>
+      <div class="data-card"><div class="data-num">4792.24<span style="font-size:24px;">万户</span></div><div class="data-label">累计修复主体</div><div class="data-desc">截至2026年3月底，累计4792.24万户经营主体完成信用修复</div></div>
+      <div class="data-card"><div class="data-num">📋</div><div class="data-label">一次告知</div><div class="data-desc">企业申请时一次性告知所需材料和办理流程，避免反复跑</div></div>
+      <div class="data-card"><div class="data-num">⏱</div><div class="data-label">限时办结</div><div class="data-desc">明确办理时限，符合条件的在规定时间内完成修复</div></div>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">受理条件统一</div><div class="step-desc">什么情况可以申请修复，三地标准一致</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">申请材料统一</div><div class="step-desc">需要提交什么材料，清单一致，不额外要求</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">审查标准统一</div><div class="step-desc">怎么判断是否符合修复条件，尺度一致</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">办理时限统一</div><div class="step-desc">多长时间内办结，时限一致，不拖延</div></div></div>
+    </div>
+    <p class="body" style="font-size:22px;">（来源：王昊男《构建区域协同信用修复机制》，2025年3月13日，人民日报第12版经济；4792.24万户数据截至2026年3月底）</p>
+  </div>
+  <div class="key-sentence">统一的是标准，打通的是渠道。标准不统一，企业就无所适从。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 协同互认 -->
+<section class="poster" id="xhs-08">
+  <div class="watermark">协</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第四环 · 协同互认</p>
+    <h2 class="h2">异地怎么修？<br>跨省修复1个工作日</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">1<span style="font-size:28px;">天</span></div><div class="data-label">南京跨省修复</div><div class="data-desc">南京企业跨省信用修复，1个工作日办结——异地不再是障碍</div></div>
+      <div class="data-card"><div class="data-num">🔗</div><div class="data-label">数据互通</div><div class="step-desc" style="font-size:21px;color:var(--text-secondary);">各地信用信息系统互联互通，修复结果实时共享</div></div>
+      <div class="data-card"><div class="data-num">🤝</div><div class="data-label">结果互认</div><div class="data-desc">一地修复，多地认可——不需要企业在每个地方重复申请</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">⚠</div><div class="data-label">过去的问题</div><div class="data-desc">异地失信记录修复难，企业需要跑多个地方，成本高、周期长</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:14px 0;">
+      <p class="formula-text" style="font-size:25px;">数据互通 <span class="arrow">→</span> 结果互认 <span class="arrow">→</span> 跨省通办 <span class="arrow">→</span> 企业不再为异地修复奔波</p>
+    </div>
+    <div class="compare-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;color:var(--text);"><strong>南京溧水区案例：</strong>完善为企服务体系，构筑良好营商环境，将信用修复纳入"一站式"企业服务，企业不需要多头跑、反复问。（来源：《南京市溧水区 完善为企服务体系 构筑良好营商环境》，2026年6月26日，人民日报第06版要闻）</p>
+    </div>
+  </div>
+  <div class="key-sentence">协同互认让信用修复不再受地域限制，一地修复、全国通行。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 三步退出 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">退</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第五环 · 依法退出</p>
+    <h2 class="h2">退出的是"惩戒状态"<br>不是"事实记录"</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">1</div><div class="data-label">停止公示</div><div class="data-desc">停止公示失信信息——不再在信用网站上公开显示，但记录本身不删除</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">2</div><div class="data-label">移出名单</div><div class="data-desc">移出相关失信名单——不再被标记为失信企业，恢复正常市场主体身份</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">3</div><div class="data-label">解除惩戒</div><div class="data-desc">依法解除失信惩戒措施——可以重新参与投标、贷款、评优等</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">!</div><div class="data-label">注意边界</div><div class="data-desc">停止公示≠事实消失。记录仍在档案中，再次失信将从重处理</div></div>
+    </div>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 错误理解</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);margin-top:6px;">"修复=删除记录"——以为失信事实可以被抹除，企业可以当作没发生过</p>
+      </div>
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);font-size:25px;">✅ 正确理解</h3>
+        <p style="font-size:22px;line-height:1.6;color:var(--text-secondary);margin-top:6px;">"修复=退出惩戒"——事实记录保留，但企业纠错后可以重新参与市场活动</p>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">三步一环不能少：停止公示 → 移出名单 → 解除惩戒</p>
+    </div>
+  </div>
+  <div class="key-sentence">退出的是"惩戒状态"，不是"事实记录"。这是信用修复最核心的边界。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 关口前移 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">防</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第六环 · 关口前移</p>
+    <h2 class="h2">最好的修复<br>是让小过失不留痕</h2>
+    <div class="data-grid">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">📋</div><div class="data-label">检查结果豁免</div><div class="data-desc">对轻微失信行为，检查结果"发现问题"豁免——不记入失信记录</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">⚖</div><div class="data-label">处罚公示豁免</div><div class="data-desc">行政处罚公示豁免——轻微违法不公示，不给企业留下信用污点</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">📁</div><div class="data-label">异常名录豁免</div><div class="data-desc">列入异常名录豁免——轻微问题不列入经营异常名录，不影响企业经营</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">🔄</div><div class="data-label">理念转变</div><div class="data-desc">从"事后修复"向"事前预防、事中包容"延伸——预防优于修复</div></div>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">事前预防</div><div class="step-desc">信用提醒、合规指导，帮助企业避免失信行为发生</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">事中包容</div><div class="step-desc">轻微失信实行豁免制度，给企业改正机会，不轻易记入失信</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">事后修复</div><div class="step-desc">已经失信的，通过六环链条依法修复，帮助企业重新出发</div></div></div>
+    </div>
+    <p class="body" style="font-size:22px;">（来源：张云河、宁佐添《广西推行市场监管信用豁免制度》，2026年1月23日，人民日报第10版政治；庞革平《广西多举措帮助经营主体修复年报和信用》，2025年5月29日，人民日报第11版经济）</p>
+  </div>
+  <div class="key-sentence">最好的修复，是让小过失不留痕。关口前移，预防优于事后补救。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 申论金句 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">金</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>考场迁移 · 三句申论金句</p>
+    <h2 class="h2">三句金句<br>直接抄进作文</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:24px;">
+      <p style="font-size:28px;font-weight:700;line-height:1.5;color:var(--text);">① 惩戒的威慑在于必然，修复的意义在于出路。</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:8px;">用于论述惩戒与修复的辩证关系——惩戒不是目的，修复才是出路</p>
+    </div>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:24px;">
+      <p style="font-size:28px;font-weight:700;line-height:1.5;color:var(--text);">② 让失信者付出代价、让纠错者重获信任，才是完整的社会信用体系。</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:8px;">用于论述社会信用体系的完整性——只有惩戒没有修复，体系不完整</p>
+    </div>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:24px;">
+      <p style="font-size:28px;font-weight:700;line-height:1.5;color:var(--text);">③ 统一的是标准，打通的是渠道，退出的是状态，留下的是事实。</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:8px;">用于概括信用修复的四个核心动作——标准统一、渠道打通、状态退出、事实留痕</p>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">申论总论点：分类施策、宽严相济，惩戒与修复并重，构建完整社会信用体系</p>
+    </div>
+  </div>
+  <div class="key-sentence">金句不是装饰，是论证的骨架。用对位置，比堆砌更有力量。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 面试五步法 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">面</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>面试迁移 · 五步法</p>
+    <h2 class="h2">企业年报逾期被列异常<br>投标受限，怎么办？</h2>
+    <p class="body" style="margin-bottom:10px;">情境：企业负责人来求助，年报逾期被列入经营异常名录，投标受限。</p>
+    <div class="five-grid" style="margin:10px 0;">
+      <div class="five-item"><div class="f-num">1</div><div class="f-title">核性质</div><div class="f-desc">先判断是恶意还是过失——年报逾期通常是轻微过失，符合修复条件</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">一次告知</div><div class="f-desc">一次性告知补报年报、申请移出异常名录所需材料和流程</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">协助办理</div><div class="f-desc">指导企业补报年报，协助提交信用修复申请，跟踪办理进度</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">跟进退出</div><div class="f-desc">确认移出异常名录、解除惩戒措施，确保企业可以正常参与投标</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">前移提醒</div><div class="f-desc">建立年报提醒机制，提前通知企业按时报送，避免再次逾期</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">面试高分点：</strong>不解决一家企业的问题，是修复一条服务的缺口。回答不能只说"帮企业修复信用"，必须体现分类判断、主动服务、跟踪闭环和长效机制四个层次。</p>
+    </div>
+  </div>
+  <div class="key-sentence">不解决一家企业的问题，是修复一条服务的缺口。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 认知升级+尾卡 -->
+<section class="poster photo-page" id="xhs-13">
+  <img class="bg-img" src="assets/shield.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>认知升级 · 尾卡</p>
+    <h2 class="h2">人民日报不是背诵本<br>是训练治理思维的样本</h2>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">?</div><div class="data-label">划了什么边界？</div><div class="data-desc">信用修复的边界在哪里？什么能修、什么不能修？退出的是什么、留下的是什么？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">?</div><div class="data-label">定了什么标准？</div><div class="data-desc">修复的标准是什么？受理条件、审查标准、办理时限如何统一？分类依据是什么？</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);"><div class="data-num">?</div><div class="data-label">守了什么底线？</div><div class="data-desc">信用修复的底线是什么？事实记录不能删除、恶意失信不能放水、惩戒威慑不能丧失</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--accent);"><div class="data-num" style="color:var(--accent);">⚖</div><div class="data-label">治理思维</div><div class="data-desc">从"删除记录"到"退出状态"，从"事后修复"到"关口前移"，从"政府包办"到"企业主体+政府服务"</div></div>
+    </div>
+    <div class="formula-box" style="padding:20px;margin:10px 0;background:rgba(29,78,216,.2);">
+      <p class="formula-text" style="font-size:26px;">信用修复 = 纠错 + 履责 + 退出惩戒<br><span style="font-size:22px;font-weight:400;color:var(--text-secondary);">不是抹除过去，而是重塑状态，让企业能回到明天</span></p>
+    </div>
+  </div>
+  <div class="key-sentence">下次写"信用修复"，先问自己：写的是"删除"，还是"退出"？</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:10px;">本卡片内容基于以下8篇人民日报报道和政策文件整理，所有观点和数据均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">程远州：《助力困境企业"重获新生"》</div><div class="ref-meta">2025年1月27日，人民日报第14版（法治）；深圳广田集团预重整5个月实现债务100%清偿案例</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">王昊男：《构建区域协同信用修复机制》</div><div class="ref-meta">2025年3月13日，人民日报第12版（经济）；京津冀规范受理条件、申请材料、审查标准、办理时限，同标办理</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">《关于健全社会信用体系的意见》</div><div class="ref-meta">2025年4月1日，人民日报第01版（要闻）；政策总纲，明确分类施策、宽严相济、惩戒与修复并重</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">庞革平：《广西多举措帮助经营主体修复年报和信用》</div><div class="ref-meta">2025年5月29日，人民日报第11版（经济）；广西帮助经营主体修复年报和信用的具体做法</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">张云河、宁佐添：《广西推行市场监管信用豁免制度》</div><div class="ref-meta">2026年1月23日，人民日报第10版（政治）；广西对轻微失信行为实行检查结果、处罚公示、异常名录三项豁免</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">李心萍、林丽鹂、葛孟超：《法治护航 民企扬帆》</div><div class="ref-meta">2026年5月22日，人民日报第06版（要闻）；法治护航民营企业发展，信用修复是营商环境的重要组成部分</div></div></div>
+      <div class="ref-item"><div class="ref-num">7</div><div class="ref-content"><div class="ref-title">《南京市溧水区 完善为企服务体系 构筑良好营商环境》</div><div class="ref-meta">2026年6月26日，人民日报第06版（要闻）；南京企业跨省信用修复1个工作日办结，完善为企服务体系</div></div></div>
+      <div class="ref-item"><div class="ref-num">8</div><div class="ref-content"><div class="ref-title">庞革平：《广西创新机制助力破产企业平稳退市》</div><div class="ref-meta">2026年8月7日，人民日报第10版（政治）；广西创新机制助力破产企业平稳退市，与信用修复形成衔接</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:14px 20px;">
+      <p style="font-size:20px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>4792.24万户经营主体完成信用修复数据截至2026年3月底；深圳广田集团负债近160亿元、预重整5个月、100%清偿为具体企业案例，不外推为普遍结果；京津冀四统一、广西信用豁免、南京跨省修复为地方实践，不直接写成全国统一制度；信用修复存在分类条件、申请材料、审查标准和办理时限等要求，不是所有失信都可以修复。不构成个体企业信用修复的法律建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第86期</span></div>
+    <h1 class="hero">信用修复<br>≠删除记录</h1>
+    <p class="body">不良记录不是"一删了之"，而是纠错、履责、退出惩戒。六环链条：先辨性质→主动纠错→统一办理→协同互认→依法退出→关口前移。</p>
+    <div class="key-sentence">不是把昨天抹掉，而是让企业能回到明天。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

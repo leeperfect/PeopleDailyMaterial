@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>生态产品价值实现 - 小红书卡片</title>
+<style>
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-55-Regular/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-65-Medium/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-75-SemiBold/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Alibaba PuHuiTi';src:url('https://puhuiti.oss-cn-hangzhou.aliyuncs.com/AlibabaPuHuiTi-3/AlibabaPuHuiTi-3-95-ExtraBold/AlibabaPuHuiTi-3-95-ExtraBold.woff2') format('woff2');font-weight:900;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--text:#ffffff;--text-secondary:#9ca3af;--accent:#15803d;--accent-soft:rgba(21,128,61,.15);--warn:#f59e0b;--danger:#ef4444;--success:#16a34a;--gold:#d4a017;--line:rgba(255,255,255,.12)}
+body{font-family:'Alibaba PuHuiTi','PingFang SC','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background:var(--bg);padding:72px 80px;display:flex;flex-direction:column}
+.cover-4x3{width:1440px;height:1080px;position:relative;overflow:hidden;background:var(--bg);padding:64px 80px;display:flex;flex-direction:column;justify-content:center}
+.cover-4x3 .rm-cover-badge{margin-bottom:28px}
+.cover-4x3 .rm-cover-badge .rm-text{font-size:40px;letter-spacing:2px}
+.cover-4x3 .hero{font-size:96px;line-height:1.12;letter-spacing:-2px;margin-bottom:20px}
+.cover-4x3 .body{font-size:30px;line-height:1.5;max-width:900px}
+.cover-4x3 .foot{margin-top:auto;font-size:24px}
+.cover-4x3 .key-sentence{margin-top:28px;font-size:30px;max-width:1000px}
+.rm-cover-badge{display:inline-flex;align-items:center;background:rgba(0,0,0,.55);border-left:6px solid var(--accent);padding:14px 24px;margin-bottom:24px;backdrop-filter:blur(4px)}
+.rm-cover-badge .rm-text{font-size:34px;font-weight:700;color:var(--text);letter-spacing:1.5px;line-height:1}
+.kicker{font-size:24px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:20px}
+.kicker .rm-highlight{font-size:24px;font-weight:700;color:var(--text);letter-spacing:1px}
+.kicker .rm-sep{color:var(--accent);margin:0 6px;font-weight:700}
+.hero{font-size:84px;font-weight:900;line-height:1.15;letter-spacing:-1px}
+.h2{font-size:54px;font-weight:900;line-height:1.2;margin-bottom:28px}
+.h3{font-size:34px;font-weight:700;margin-bottom:12px}
+.body{font-size:27px;line-height:1.65;color:var(--text-secondary);font-weight:400}
+.body strong{color:var(--text);font-weight:700}
+.watermark{position:absolute;right:-20px;top:120px;font-size:280px;font-weight:900;color:rgba(255,255,255,.03);letter-spacing:-10px;pointer-events:none;z-index:0}
+.content{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.key-sentence{margin-top:auto;background:var(--accent-soft);border-left:6px solid var(--accent);padding:24px 32px;font-size:27px;font-weight:700;line-height:1.5;color:var(--text)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:32px;font-size:22px;color:var(--text-secondary);font-weight:500;position:relative;z-index:1}
+.data-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.data-card{border:1px solid var(--line);padding:26px 22px;background:rgba(255,255,255,.02)}
+.data-num{font-size:58px;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px}
+.data-num span{font-size:30px;font-weight:700}
+.data-label{font-size:25px;font-weight:700;margin-bottom:6px}
+.data-desc{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.compare-col{border:1px solid var(--line);padding:22px;background:rgba(255,255,255,.02)}
+.compare-col.accent-col{border-color:var(--accent);background:var(--accent-soft)}
+.compare-col h3{font-size:27px;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{font-size:23px;line-height:1.6;color:var(--text-secondary);padding:3px 0}
+.compare-col li::before{content:"· ";color:var(--accent);font-weight:900}
+.step-chain{margin:20px 0}
+.step-item{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-size:34px;font-weight:900;color:var(--accent);min-width:44px;line-height:1}
+.step-content{flex:1}
+.step-title{font-size:27px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:23px;color:var(--text-secondary);line-height:1.5}
+.formula-box{background:var(--accent-soft);border:1px solid var(--accent);padding:28px;margin:20px 0;text-align:center}
+.formula-text{font-size:27px;font-weight:700;line-height:1.8;color:var(--text)}
+.formula-text .arrow{color:var(--accent);margin:0 6px}
+.five-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0}
+.five-item{display:flex;align-items:center;gap:16px;padding:14px 20px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.five-item .f-num{font-size:32px;font-weight:900;color:var(--accent);min-width:36px}
+.five-item .f-title{font-size:26px;font-weight:700;min-width:110px}
+.five-item .f-desc{font-size:22px;color:var(--text-secondary);flex:1}
+.ref-list{margin:16px 0}
+.ref-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.ref-num{font-size:30px;font-weight:900;color:var(--accent);min-width:38px}
+.ref-content{flex:1}
+.ref-title{font-size:25px;font-weight:700;margin-bottom:5px}
+.ref-meta{font-size:21px;color:var(--text-secondary);line-height:1.5}
+.bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.overlay-bottom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.5) 40%,transparent 65%);z-index:1}
+.overlay-full{position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:1}
+.photo-page .content{justify-content:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 01 封面 -->
+<section class="poster photo-page" id="xhs-01">
+  <img class="bg-img" src="assets/cover.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-bottom"></div>
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第93期</span></div>
+    <h1 class="hero">好生态怎样<br>变资产、变产业</h1>
+    <p class="body" style="font-size:28px;color:var(--text);font-weight:500;margin-top:14px;">变群众收入 · 生态产品价值实现</p>
+  </div>
+  <div class="key-sentence">山水有价值，不等于山水能直接变现。</div>
+  <div class="foot"><span>01 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 02 汉丰湖碳票案例 -->
+<section class="poster" id="xhs-02">
+  <div class="watermark">碳</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>案例 · 汉丰湖碳票</p>
+    <h2 class="h2">一张碳票<br>为什么等了近20年？</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:22px;text-align:center;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">📍 重庆开州汉丰湖</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">先经历长期生态修复 → 再开展监测、核算、评估和交易 → 8784吨碳汇以70.3万元成交 → 收益继续用于维护和监测</p>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--gold);"><div class="data-num" style="color:var(--gold);">8784<span>吨</span></div><div class="data-label">碳汇量</div><div class="data-desc">汉丰湖湿地生态修复后形成的碳汇量，经过监测、核算、评估确认。不是估算值，而是经过专业核算的真实生态增量。</div></div>
+      <div class="data-card" style="border-color:var(--gold);"><div class="data-num" style="color:var(--gold);">70.3<span>万元</span></div><div class="data-label">成交价</div><div class="data-desc">8784吨碳汇以70.3万元成交，收益继续用于维护和监测。不是一次性变现，而是反哺生态保护，形成良性循环。</div></div>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">长期生态修复</div><div class="step-desc">汉丰湖先经历长期生态修复，从荒滩变成湿地。生态修复不是一朝一夕的事，需要持续投入和耐心等待。这是价值的起点，不是交易的起点。</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">监测、核算、评估</div><div class="step-desc">生态修复形成真实增量后，再开展监测、核算和评估。通过遥感、采样和持续监测，确认生态功能是否改善；用统一方法核算数量和价值。不是拍脑袋估值，而是科学核算。</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">进入交易</div><div class="step-desc">经过监测、核算、评估后，才能进入交易环节。8784吨碳汇以70.3万元成交。交易是结果，不是起点。没有前面的保护和核算，就没有后面的交易。</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">收益反哺保护</div><div class="step-desc">交易收益继续用于维护和监测，不是一次性分光。收益回到保护，形成"保护→价值→收益→再保护"的良性循环。这才是生态产品价值实现的真正含义。</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">关键洞察：</strong>交易是结果，保护才是价值的起点。生态价值不是直接"算出来、卖出去"的，先要长期修复形成真实增量，再经过调查、确权、监测、核算和评估，才能进入补偿、交易或产业经营。收益还要回到保护和群众。</p>
+    </div>
+  </div>
+  <div class="key-sentence">交易是结果，保护才是价值的起点。</div>
+  <div class="foot"><span>02 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 03 第一步：保护定边界 -->
+<section class="poster" id="xhs-03">
+  <div class="watermark">界</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第一步 · 保护定边界</p>
+    <h2 class="h2">先划清生态底线<br>再谈价值实现</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:20px;">
+      <p style="font-size:25px;line-height:1.6;color:var(--text);"><strong style="color:var(--accent);">核心逻辑：</strong>先划清生态底线、承载边界和利用方式。能不能开发、开发到什么程度，必须服从生态系统稳定。价值实现不是把保护让位给开发，而是让保护得到持续回报。</p>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">🔴</div><div class="data-label">保护区</div><div class="data-desc">严格保护，禁止开发。生态红线、自然保护区、重要生态功能区，必须严格保护，不能因为要"实现价值"就破坏生态。保护是价值实现的前提，不是障碍。</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">🟡</div><div class="data-label">修复区</div><div class="data-desc">限制利用，优先修复。生态退化区、生态脆弱区，要优先修复，限制利用方式。不是不能利用，而是利用方式必须服从生态修复目标，不能破坏修复成果。</div></div>
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">🟢</div><div class="data-label">适度利用区</div><div class="data-desc">合理利用，持续发展。生态承载力较强的区域，可以适度发展生态产业（生态旅游、林下经济、生态农业等），但利用方式和强度必须服从生态系统稳定，不能过度开发。</div></div>
+      <div class="data-card" style="border:2px solid var(--accent);background:var(--accent-soft);"><div class="data-num">📐</div><div class="data-label">三层地图</div><div class="data-desc">保护区、修复区、适度利用区三层地图，明确每个区域的生态底线、承载边界和利用方式。不是一刀切，而是分类管理、精准施策。能不能开发、开发到什么程度，必须服从生态系统稳定。</div></div>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">1</div><div class="f-title">划生态底线</div><div class="f-desc">明确哪些区域必须严格保护，哪些区域可以适度利用。生态底线是不可逾越的红线，不能因为要"实现价值"就突破底线。</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">定承载边界</div><div class="f-desc">明确每个区域的生态承载力，开发强度不能超过承载边界。不是想开发多少就开发多少，而是必须服从生态系统的承载能力。</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">明利用方式</div><div class="f-desc">明确每个区域可以采用什么利用方式，不能采用什么利用方式。利用方式必须与生态功能相匹配，不能破坏生态系统的稳定和功能。</div></div>
+    </div>
+    <div class="compare-grid" style="margin:12px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 先开发后保护</h3>
+        <ul>
+          <li>为了"实现价值"先开发再说</li>
+          <li>生态底线被突破，生态被破坏</li>
+          <li>开发强度超过承载边界</li>
+          <li>利用方式不考虑生态功能</li>
+          <li>价值实现变成生态破坏</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 先保护后开发</h3>
+        <ul>
+          <li>先划清生态底线、承载边界和利用方式</li>
+          <li>生态底线不可逾越，保护是前提</li>
+          <li>开发强度服从承载边界</li>
+          <li>利用方式与生态功能匹配</li>
+          <li>价值实现让保护得到持续回报</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">价值实现不是把保护让位给开发<br>而是让保护得到持续回报</p>
+    </div>
+  </div>
+  <div class="key-sentence">价值实现不是把保护让位给开发，而是让保护得到持续回报。先划清生态底线，再谈价值实现。</div>
+  <div class="foot"><span>03 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 04 第二步：清查确权 -->
+<section class="poster" id="xhs-04">
+  <div class="watermark">权</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第二步 · 清查确权</p>
+    <h2 class="h2">资产化先清权利和责任<br>不是先贴价格</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:20px;">
+      <p style="font-size:25px;line-height:1.6;color:var(--text);"><strong style="color:var(--accent);">核心逻辑：</strong>先回答有什么、在哪里、归谁管、哪些权利可以依法配置。资源分散、权属不清，后续交易和经营就容易起争议。资产化先清权利和责任，不是先贴价格。</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">📦</div><div class="f-title">有什么</div><div class="f-desc">先清查有哪些生态资源（森林、湿地、河流、草原、农田等），每种资源的数量、质量、分布。不是笼统说"我们这里生态好"，而是要具体到有什么、有多少、在哪里。</div></div>
+      <div class="five-item"><div class="f-num">📍</div><div class="f-title">在哪里</div><div class="f-desc">明确每种生态资源的地理位置、边界范围、面积大小。不是模糊说"在山里"，而是要精确到边界坐标、面积数据。资源地图要清晰、准确、可查询。</div></div>
+      <div class="five-item"><div class="f-num">👤</div><div class="f-title">归谁管</div><div class="f-desc">明确每种生态资源的所有权、使用权、管理权归谁。是国家所有、集体所有，还是个人承包？谁负责管理、谁负责保护？权属不清，后续交易和经营就容易起争议。</div></div>
+      <div class="five-item"><div class="f-num">⚖</div><div class="f-title">哪些权利可以依法配置</div><div class="f-desc">明确哪些权利可以依法转让、抵押、入股、交易。不是所有权利都可以自由配置，必须依法依规。权利配置要合法、合规、可追溯，不能违法交易、不能暗箱操作。</div></div>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">❌</div><div class="data-label">先贴价格</div><div class="data-desc">还没清查有什么、在哪里、归谁管，就先给生态资源"贴价格"，说"我们的生态值多少钱"。结果是价格没有依据、权属不清、交易起争议，价值实现变成空中楼阁。</div></div>
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">✅</div><div class="data-label">先清权利和责任</div><div class="data-desc">先回答有什么、在哪里、归谁管、哪些权利可以依法配置，把权利和责任理清楚，再谈价值实现。资产化的基础是权利清晰、责任明确，不是先贴价格。</div></div>
+    </div>
+    <div class="data-card" style="border-color:var(--warn);background:rgba(245,158,11,.1);margin:14px 0;padding:18px;">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">⚠ 常见问题：</strong>很多地方生态资源丰富，但资源分散、权属不清，有的是国家所有、有的是集体所有、有的是个人承包，边界不清、责任不明。结果是想交易不知道交易什么、想经营不知道经营谁的资源、出了问题不知道谁负责。清查确权是价值实现的基础工作，不能跳过。</p>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">有什么 <span class="arrow">→</span> 在哪里 <span class="arrow">→</span> 归谁管 <span class="arrow">→</span> 哪些权利可以依法配置</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">资产化先清权利和责任，不是先贴价格</p>
+    </div>
+  </div>
+  <div class="key-sentence">资产化先清权利和责任，不是先贴价格。有什么、在哪里、归谁管、哪些权利可以依法配置，四个问题必须先回答。</div>
+  <div class="foot"><span>04 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 05 第三步：监测核算 -->
+<section class="poster" id="xhs-05">
+  <div class="watermark">算</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第三步 · 监测核算</p>
+    <h2 class="h2">用数据识别真实生态增量<br>不是拍脑袋估值</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:20px;">
+      <p style="font-size:25px;line-height:1.6;color:var(--text);"><strong style="color:var(--accent);">核心逻辑：</strong>通过遥感、采样和持续监测，确认生态功能是否改善；用统一方法核算数量和价值。数据能降低信息差，不能代替法定确权和专业评估。</p>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">🛰</div><div class="data-label">遥感监测</div><div class="data-desc">通过卫星遥感技术，大范围、持续监测生态资源的变化（森林覆盖、湿地面积、河流流量等）。遥感数据客观、全面、可追溯，是监测生态变化的重要手段。</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">🔬</div><div class="data-label">实地采样</div><div class="data-desc">通过实地采样，获取生态资源的具体数据（土壤质量、水质、生物多样性、碳储量等）。实地采样数据精确、具体，是核算生态价值的基础数据。</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">📡</div><div class="data-label">持续监测</div><div class="data-desc">通过传感器、监测站等设备，持续监测生态功能的变化（空气质量、水质、噪音、生物活动等）。持续监测数据实时、动态，是确认生态功能是否改善的关键。</div></div>
+      <div class="data-card" style="border:2px solid var(--accent);background:var(--accent-soft);"><div class="data-num">📊</div><div class="data-label">统一核算</div><div class="data-desc">用统一方法核算生态资源的数量和价值（碳汇量、水量、生物多样性价值等）。核算方法要统一、标准、可复现，不是各算各的、各说各话。核算结果要经过专业评估确认。</div></div>
+    </div>
+    <div class="step-chain" style="margin:14px 0;">
+      <div class="step-item"><div class="step-num">1</div><div class="step-content"><div class="step-title">监测生态变化</div><div class="step-desc">通过遥感、采样和持续监测，获取生态资源的变化数据。不是凭感觉说"生态变好了"，而是用数据说话。监测数据要客观、全面、可追溯。</div></div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-content"><div class="step-title">确认生态功能是否改善</div><div class="step-desc">根据监测数据，确认生态功能是否真的改善了（森林覆盖率提高了吗？水质变好了吗？生物多样性增加了吗？）。不是只看资源数量，更要看生态功能。</div></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-content"><div class="step-title">核算数量和价值</div><div class="step-desc">用统一方法核算生态资源的数量（多少吨碳汇、多少立方米水）和价值（值多少钱）。核算方法要统一、标准、可复现，核算结果要经过专业评估确认。</div></div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-content"><div class="step-title">专业评估确认</div><div class="step-desc">核算结果要经过专业评估机构确认，不是自己算自己认。专业评估要独立、客观、公正，评估结果要可追溯、可复核。数据能降低信息差，但不能代替法定确权和专业评估。</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">重要原则：</strong>数据能降低信息差，不能代替法定确权和专业评估。监测核算是价值实现的技术基础，但不是全部。有了数据，还要有法定确权（权利清晰）和专业评估（价值确认），才能进入交易和经营。不能用数据代替法律和专业。</p>
+    </div>
+  </div>
+  <div class="key-sentence">用数据识别真实生态增量，不是拍脑袋估值。数据能降低信息差，不能代替法定确权和专业评估。</div>
+  <div class="foot"><span>05 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 06 核算值不等于成交价 -->
+<section class="poster" id="xhs-06">
+  <div class="watermark">价</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>关键边界 · 核算值≠成交价</p>
+    <h2 class="h2">"值多少"与"卖多少"<br>是两个问题</h2>
+    <div class="compare-grid" style="margin:14px 0;">
+      <div class="compare-col" style="border-color:var(--accent);">
+        <h3 style="color:var(--accent);font-size:27px;">📊 核算值</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-bottom:10px;">回答：生态贡献有多大？</p>
+        <ul>
+          <li>通过监测和核算，确认生态资源的数量和价值</li>
+          <li>核算方法统一、标准、可复现</li>
+          <li>核算结果经过专业评估确认</li>
+          <li>核算是技术问题，回答"值多少"</li>
+          <li>核算值是价值实现的基础，但不是成交价</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--gold);">
+        <h3 style="color:var(--gold);font-size:27px;">💰 成交价</h3>
+        <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-bottom:10px;">回答：能卖多少钱？</p>
+        <ul>
+          <li>取决于合法标的、市场需求和交易规则</li>
+          <li>有买家愿意买、有卖家愿意卖，才能成交</li>
+          <li>价格由市场供需决定，不是核算出来的</li>
+          <li>交易是市场问题，回答"卖多少"</li>
+          <li>成交价可能高于或低于核算值</li>
+        </ul>
+      </div>
+    </div>
+    <div class="data-card" style="border:2px solid var(--danger);background:rgba(239,68,68,.1);margin:14px 0;padding:22px;text-align:center;">
+      <p style="font-size:28px;font-weight:900;line-height:1.5;color:var(--danger);">⚠ 不能直接等同</p>
+      <p style="font-size:23px;color:var(--text-secondary);margin-top:8px;">核算值 ≠ 成交价。左边是生态核算表，右边是交易撮合页，中间用断开的箭头提醒：不能直接等同。</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--gold);"><div class="f-num" style="color:var(--gold);">📋</div><div class="f-title">合法标的</div><div class="f-desc">交易的标的必须合法，不是所有生态资源都可以交易。碳汇、水权、排污权等有明确的法律依据和交易规则，才能成为合法标的。不合法的标的不能交易。</div></div>
+      <div class="five-item" style="border-color:var(--gold);"><div class="f-num" style="color:var(--gold);">📈</div><div class="f-title">市场需求</div><div class="f-desc">有买家愿意买，才能成交。市场需求取决于买家的需求（企业碳中和、政府生态补偿、个人环保消费等）和支付意愿。没有市场需求，核算值再高也卖不出去。</div></div>
+      <div class="five-item" style="border-color:var(--gold);"><div class="f-num" style="color:var(--gold);">⚖</div><div class="f-title">交易规则</div><div class="f-desc">交易必须遵守交易规则（交易平台、交易流程、价格形成机制、信息披露等）。交易规则要公开、透明、公平，保护买卖双方的合法权益。不遵守规则的交易不受法律保护。</div></div>
+    </div>
+    <div class="data-card" style="border-color:var(--warn);background:rgba(245,158,11,.1);margin:14px 0;padding:18px;">
+      <p style="font-size:23px;line-height:1.6;color:var(--text);"><strong style="color:var(--warn);">⚠ 常见误区：</strong>很多地方核算出生态价值后，就以为可以直接变现，说"我们的生态值XX亿元"。但核算值只是技术评估，成交价取决于市场。没有合法标的、没有市场需求、没有交易规则，核算值再高也卖不出去。"值多少"与"卖多少"是两个问题，不能混淆。</p>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">核算值（技术问题）<span class="arrow">≠</span>成交价（市场问题）</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">合法标的 + 市场需求 + 交易规则 = 成交价</p>
+    </div>
+  </div>
+  <div class="key-sentence">"值多少"与"卖多少"是两个问题。核算值不等于成交价，合法标的、市场需求和交易规则共同决定成交价。</div>
+  <div class="foot"><span>06 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 07 第四步：分类选择价值通道 -->
+<section class="poster" id="xhs-07">
+  <div class="watermark">道</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第四步 · 分类选择价值通道</p>
+    <h2 class="h2">不同生态贡献<br>匹配不同回报方式</h2>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">🤝</div><div class="data-label">生态补偿</div><div class="data-desc">让保护者不吃亏。政府或受益地区向保护地区提供补偿（资金、技术、项目等），弥补保护地区因保护生态而损失的发展机会。生态补偿是政府主导的价值实现方式，适用于公共生态产品。</div></div>
+      <div class="data-card" style="border-color:var(--gold);"><div class="data-num" style="color:var(--gold);">📈</div><div class="data-label">权益交易</div><div class="data-desc">为可计量增量形成价格。碳汇、水权、排污权等可计量的生态权益，通过交易平台进行交易，由市场形成价格。权益交易是市场主导的价值实现方式，适用于可计量、可交易的生态产品。</div></div>
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">🏭</div><div class="data-label">产业经营</div><div class="data-desc">把生态优势做成产品和服务。生态旅游、林下经济、生态农业、康养研学等，把生态资源转化为产品和服务，通过市场经营获得收益。产业经营是市场主导的价值实现方式，适用于可经营的生态资源。</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">🏦</div><div class="data-label">绿色融资</div><div class="data-desc">为长期项目提供资金支持。绿色信贷、绿色债券、生态基金等，为生态保护和生态产业项目提供长期资金支持。绿色融资是金融主导的价值实现方式，适用于需要长期投入的生态项目。</div></div>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">1</div><div class="f-title">识别生态贡献类型</div><div class="f-desc">先识别本地的生态贡献是什么类型（公共生态产品？可计量权益？可经营资源？需要长期投入的项目？）。不同类型的生态贡献，适合不同的价值实现方式。</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">匹配价值通道</div><div class="f-desc">根据生态贡献类型，匹配合适的价值通道（生态补偿、权益交易、产业经营、绿色融资）。不是所有生态贡献都适合同一种方式，要分类选择、精准匹配。</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">组合使用</div><div class="f-desc">多种价值通道可以组合使用。比如一个地区既有生态补偿（政府补偿），又有碳汇交易（市场交易），还有生态旅游（产业经营），还有绿色信贷（金融支持）。组合使用可以最大化价值实现。</div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;">
+      <p style="font-size:22px;line-height:1.6;"><strong style="color:var(--accent);">关键原则：</strong>不同生态贡献，要匹配不同回报方式。不是所有生态产品都能交易，也不是所有生态资源都能经营。公共生态产品适合生态补偿，可计量权益适合权益交易，可经营资源适合产业经营，长期项目适合绿色融资。分类选择、精准匹配，才能真正实现生态产品价值。</p>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">生态补偿 <span class="arrow">+</span> 权益交易 <span class="arrow">+</span> 产业经营 <span class="arrow">+</span> 绿色融资</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">四类价值通道，分类选择、精准匹配、组合使用</p>
+    </div>
+  </div>
+  <div class="key-sentence">不同生态贡献，要匹配不同回报方式。生态补偿、权益交易、产业经营、绿色融资，四类价值通道分类选择。</div>
+  <div class="foot"><span>07 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 08 第五步：把产业链做长 -->
+<section class="poster photo-page" id="xhs-08">
+  <img class="bg-img" src="assets/industry.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第五步 · 把产业链做长</p>
+    <h2 class="h2">从好山水到好产业<br>中间隔着什么？</h2>
+    <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--accent);margin:10px 0;padding:20px;text-align:center;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">标准 <span style="color:var(--accent);">→</span> 技术 <span style="color:var(--accent);">→</span> 加工 <span style="color:var(--accent);">→</span> 品牌 <span style="color:var(--accent);">→</span> 场景 <span style="color:var(--accent);">→</span> 人才</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">六个环节，缺一不可</p>
+    </div>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="background:rgba(0,0,0,.5);border-color:var(--accent);"><div class="f-num" style="color:var(--accent);">📐</div><div class="f-title">标准</div><div class="f-desc">林业标准地降低进入成本。制定统一的生产标准、质量标准、安全标准，让生态产品有标准可循、有质量可保。标准是产业链的基础，没有标准就没有规模。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🔬</div><div class="f-title">技术</div><div class="f-desc">种养形成原料。运用先进的种植、养殖技术，提高产量和质量，形成稳定的原料供应。技术是产业链的支撑，没有技术就没有优质原料。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🏭</div><div class="f-title">加工</div><div class="f-desc">加工提升附加值。对原料进行深加工，提高产品附加值，从卖原料变成卖产品。加工是产业链的关键环节，没有加工就没有高附加值。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🏷</div><div class="f-title">品牌</div><div class="f-desc">品牌和溯源建立信任。打造区域品牌、产品品牌，建立溯源体系，让消费者信任产品、愿意为品牌付费。品牌是产业链的溢价来源，没有品牌就没有高价格。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);"><div class="f-num">🎯</div><div class="f-title">场景</div><div class="f-desc">康养、研学和赛事连接消费场景。把生态资源与消费场景连接起来，发展康养、研学、赛事、旅游等新业态，拓展消费渠道。场景是产业链的延伸，没有场景就没有新增长点。</div></div>
+      <div class="five-item" style="background:rgba(0,0,0,.5);border-color:var(--gold);"><div class="f-num" style="color:var(--gold);">👥</div><div class="f-title">人才</div><div class="f-desc">人才是产业链的核心。需要懂技术、懂经营、懂市场、懂管理的人才，特别是本土人才和返乡人才。人才是产业链的根本，没有人才就没有可持续发展。</div></div>
+    </div>
+    <div class="data-card" style="background:rgba(0,0,0,.5);border:2px solid var(--accent);margin:12px 0;padding:18px;text-align:center;">
+      <p style="font-size:24px;font-weight:700;line-height:1.5;color:var(--text);">从好山水到好产业<br>中间隔着标准、技术、加工、品牌、场景和人才</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">六个环节缺一不可，少一个环节，产业链就做不长、做不强</p>
+    </div>
+  </div>
+  <div class="key-sentence">从好山水到好产业，中间隔着标准、技术、加工、品牌、场景和人才。六个环节缺一不可。</div>
+  <div class="foot"><span>08 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 09 不要复制同一种网红项目 -->
+<section class="poster" id="xhs-09">
+  <div class="watermark">异</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>风险提醒 · 不要复制网红项目</p>
+    <h2 class="h2">找准本地燃点<br>比铺开一堆项目更重要</h2>
+    <div class="data-card" style="border-color:var(--danger);background:rgba(239,68,68,.1);margin:10px 0;padding:20px;">
+      <p style="font-size:25px;line-height:1.6;color:var(--text);"><strong style="color:var(--danger);">⚠ 风险提醒：</strong>生态产业要看本地独特性、目标市场、生态承载、运营人才和居民参与。不是哪里都适合民宿、赛事和景区。同质化竞争、盲目复制网红项目，结果是项目烂尾、资源浪费、生态破坏。</p>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">🌟</div><div class="f-title">本地独特性</div><div class="f-desc">生态产业要基于本地独特性，不是复制别人的项目。本地有什么独特的生态资源、文化资源、产业基础？要发挥本地优势，做别人做不了的事。不是别人做民宿我也做民宿，别人做景区我也做景区。</div></div>
+      <div class="five-item"><div class="f-num">🎯</div><div class="f-title">目标市场</div><div class="f-desc">生态产业要有明确的目标市场，谁是消费者？他们需要什么？愿意付多少钱？不是想当然说"市场很大"，而是要做市场调研、明确目标客户。没有目标市场的项目，就是盲目投资。</div></div>
+      <div class="five-item"><div class="f-num">🌿</div><div class="f-title">生态承载</div><div class="f-desc">生态产业要考虑生态承载力，开发强度不能超过生态承载边界。不是项目越多越好、游客越多越好，而是要在生态承载范围内发展。超过生态承载，就会破坏生态，得不偿失。</div></div>
+      <div class="five-item"><div class="f-num">👥</div><div class="f-title">运营人才</div><div class="f-desc">生态产业要有运营人才，谁来经营？谁来管理？谁来营销？不是建好了项目就完事，而是要有专业人才运营。没有运营人才的项目，就是"建得起、管不好、活不长"。</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num" style="color:var(--success);">🤝</div><div class="f-title">居民参与</div><div class="f-desc">生态产业要有居民参与，居民是受益者还是旁观者？居民能不能就业、能不能增收、能不能参与经营？不是企业赚钱、居民旁观，而是要让居民真正受益。没有居民参与的项目，就没有可持续性。</div></div>
+    </div>
+    <div class="compare-grid" style="margin:12px 0;">
+      <div class="compare-col" style="border-color:var(--danger);">
+        <h3 style="color:var(--danger);font-size:25px;">❌ 复制网红项目</h3>
+        <ul>
+          <li>别人做民宿我也做民宿</li>
+          <li>别人做景区我也做景区</li>
+          <li>不考虑本地独特性和目标市场</li>
+          <li>不考虑生态承载和运营人才</li>
+          <li>项目烂尾、资源浪费、生态破坏</li>
+        </ul>
+      </div>
+      <div class="compare-col" style="border-color:var(--success);">
+        <h3 style="color:var(--success);font-size:25px;">✅ 找准本地燃点</h3>
+        <ul>
+          <li>发挥本地独特性，做别人做不了的事</li>
+          <li>明确目标市场，做市场调研</li>
+          <li>在生态承载范围内发展</li>
+          <li>培养和引进运营人才</li>
+          <li>让居民真正受益、参与经营</li>
+        </ul>
+      </div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">本地独特性 + 目标市场 + 生态承载 + 运营人才 + 居民参与</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">五个维度评估，找准本地燃点，比铺开一堆项目更重要</p>
+    </div>
+  </div>
+  <div class="key-sentence">找准本地燃点，比铺开一堆项目更重要。本地独特性、目标市场、生态承载、运营人才、居民参与，五个维度评估。</div>
+  <div class="foot"><span>09 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 10 第六步：群众怎样真正受益 -->
+<section class="poster" id="xhs-10">
+  <div class="watermark">益</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>第六步 · 群众真正受益</p>
+    <h2 class="h2">项目有收入<br>不等于群众有增收</h2>
+    <div class="data-card" style="border-color:var(--danger);background:rgba(239,68,68,.1);margin:10px 0;padding:20px;text-align:center;">
+      <p style="font-size:26px;font-weight:900;line-height:1.5;color:var(--danger);">⚠ 项目有收入 ≠ 群众有增收</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:8px;">很多生态项目企业赚钱、政府有税收，但群众没有真正受益。群众不能只看一次性分红，还要获得长期能力。</p>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">🤝</div><div class="data-label">补偿</div><div class="data-desc">生态补偿资金直接发放给保护地区和保护者，让保护者不吃亏。补偿要及时、足额、透明，不能被截留、挪用。补偿是群众受益的基础方式。</div></div>
+      <div class="data-card" style="border-color:var(--accent);"><div class="data-num">🏠</div><div class="data-label">租金</div><div class="data-desc">土地、林地、房屋等资源流转租金，让群众从资源出租中获得稳定收入。租金要合理、按时支付，不能压价、拖欠。租金是群众受益的稳定方式。</div></div>
+      <div class="data-card" style="border-color:var(--success);"><div class="data-num" style="color:var(--success);">💼</div><div class="data-label">就业</div><div class="data-desc">生态产业创造就业岗位，让群众在家门口就业，获得工资收入。就业要优先本地群众，特别是低收入群体。就业是群众受益的主要方式。</div></div>
+      <div class="data-card" style="border-color:var(--gold);"><div class="data-num" style="color:var(--gold);">📦</div><div class="data-label">保底收购</div><div class="data-desc">企业与农户签订保底收购协议，保证农产品的最低收购价，让群众不愁卖、不亏本。保底收购要兑现、不能压级压价。保底收购是群众受益的保障方式。</div></div>
+      <div class="data-card" style="border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">📈</div><div class="data-label">入股分红</div><div class="data-desc">群众以土地、资金、劳动力等入股，参与企业分红，获得长期收益。分红要公开、透明、按时，不能只分一次就完事。入股分红是群众受益的长期方式。</div></div>
+      <div class="data-card" style="border:2px solid var(--accent);background:var(--accent-soft);"><div class="data-num">🏥</div><div class="data-label">公共服务</div><div class="data-desc">生态产业收益用于改善公共服务（教育、医疗、养老、文化等），让群众共享发展成果。公共服务要普惠、均等、可持续。公共服务是群众受益的共享方式。</div></div>
+    </div>
+    <div class="five-grid" style="margin:14px 0;">
+      <div class="five-item" style="border-color:var(--danger);"><div class="f-num" style="color:var(--danger);">❌</div><div class="f-title">一次性分红</div><div class="f-desc">群众只获得一次性分红，分完就完事，没有长期收益。一次性分红不能持续改善群众生活，不能提高群众能力。项目结束后，群众又回到原点。</div></div>
+      <div class="five-item" style="border-color:var(--success);"><div class="f-num" style="color:var(--success);">✅</div><div class="f-title">长期能力</div><div class="f-desc">群众不仅获得收入，还获得长期能力（就业技能、经营能力、管理能力等）。长期能力让群众能够持续增收、自我发展。授人以鱼不如授人以渔。</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">补偿 + 租金 + 就业 + 保底收购 + 入股分红 + 公共服务</p>
+      <p style="font-size:21px;color:var(--text-secondary);margin-top:6px;">六种收益方式，群众不能只看一次性分红，还要获得长期能力</p>
+    </div>
+  </div>
+  <div class="key-sentence">项目有收入不等于群众有增收。补偿、租金、就业、保底收购、入股分红、公共服务，六种收益方式，群众还要获得长期能力。</div>
+  <div class="foot"><span>10 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 11 国考省考申论面试怎么用 -->
+<section class="poster" id="xhs-11">
+  <div class="watermark">考</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>考场迁移 · 申论面试怎么用</p>
+    <h2 class="h2">不要只写生态旅游和品牌宣传<br>要把制度链、产业链和利益链接起来</h2>
+    <div class="data-card" style="border-color:var(--accent);background:var(--accent-soft);margin:10px 0;padding:22px;">
+      <p style="font-size:26px;font-weight:700;line-height:1.5;color:var(--text);">📝 申论总论点公式</p>
+      <p style="font-size:23px;line-height:1.6;color:var(--text-secondary);margin-top:8px;">生态产品价值实现要以保护为前提，通过保护定边界、确权清底数、核算识价值、市场建通道、产业做增值、联结促增收、监管保长久，实现从"绿水青山"到"金山银山"的转化。不是把青山变成商品，而是让保护有回报、产业有边界、群众有收益、生态有未来。</p>
+    </div>
+    <div class="data-card" style="border:2px solid var(--accent);margin:12px 0;padding:20px;text-align:center;">
+      <p style="font-size:25px;font-weight:700;line-height:1.5;color:var(--text);">可迁移公式（七步闭环）</p>
+      <p style="font-size:22px;font-weight:700;color:var(--accent);margin-top:8px;">保护定边界 + 确权清底数 + 核算识价值 + 市场建通道 + 产业做增值 + 联结促增收 + 监管保长久</p>
+    </div>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="border-color:var(--accent);"><div class="f-num">1</div><div class="f-title">保护定边界</div><div class="f-desc">先划清生态底线、承载边界和利用方式。能不能开发、开发到什么程度，必须服从生态系统稳定。保护是价值实现的前提，不是障碍。</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">确权清底数</div><div class="f-desc">先回答有什么、在哪里、归谁管、哪些权利可以依法配置。资源分散、权属不清，后续交易和经营就容易起争议。资产化先清权利和责任，不是先贴价格。</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">核算识价值</div><div class="f-desc">通过遥感、采样和持续监测，确认生态功能是否改善；用统一方法核算数量和价值。数据能降低信息差，不能代替法定确权和专业评估。</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">市场建通道</div><div class="f-desc">分类选择价值通道：生态补偿、权益交易、产业经营、绿色融资。不同生态贡献，要匹配不同回报方式。核算值不等于成交价，合法标的、市场需求和交易规则共同决定成交价。</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">产业做增值</div><div class="f-desc">把产业链做长：标准、技术、加工、品牌、场景、人才，六个环节缺一不可。从好山水到好产业，中间隔着这六个环节。找准本地燃点，比铺开一堆项目更重要。</div></div>
+      <div class="five-item"><div class="f-num">6</div><div class="f-title">联结促增收</div><div class="f-desc">群众怎样真正受益：补偿、租金、就业、保底收购、入股分红、公共服务，六种收益方式。项目有收入不等于群众有增收，群众不能只看一次性分红，还要获得长期能力。</div></div>
+      <div class="five-item"><div class="f-num">7</div><div class="f-title">监管保长久</div><div class="f-desc">建立监测、评估、监管机制，确保生态产品价值实现不破坏生态、不损害群众利益。监管要全程、动态、可追溯，不能一卖了之、一建了之。最后一箭返回保护，形成闭环。</div></div>
+    </div>
+    <div class="data-grid" style="margin:12px 0;">
+      <div class="data-card"><div class="data-num">📊</div><div class="data-label">数据论据</div><div class="data-desc">汉丰湖8784吨碳汇70.3万元成交；广西首批水土保持生态产品价值交易成功签约；护好公益林碳汇助增收；林地生金绿富共生；推动林下经济长效发展。</div></div>
+      <div class="data-card" style="border-color:var(--danger);"><div class="data-num" style="color:var(--danger);">⚠</div><div class="data-label">常见误区</div><div class="data-desc">只写生态旅游和品牌宣传，忽视制度链（保护、确权、核算、交易）、产业链（标准、技术、加工、品牌、场景、人才）和利益链（补偿、租金、就业、分红、公共服务）；把价值实现写成开发景区、出售资源；把核算值直接当成成交价；只看项目收入，不看群众增收和生态质量。</div></div>
+    </div>
+    <div class="formula-box" style="padding:18px;margin:10px 0;">
+      <p class="formula-text" style="font-size:24px;">七步闭环：保护 <span class="arrow">→</span> 确权 <span class="arrow">→</span> 核算 <span class="arrow">→</span> 市场 <span class="arrow">→</span> 产业 <span class="arrow">→</span> 联结 <span class="arrow">→</span> 监管 <span class="arrow">→</span> 保护</p>
+    </div>
+  </div>
+  <div class="key-sentence">不要只写生态旅游和品牌宣传，要把制度链、产业链和利益链接起来。七步闭环公式答出深度和系统性。</div>
+  <div class="foot"><span>11 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 12 七步闭环公式总结 -->
+<section class="poster" id="xhs-12">
+  <div class="watermark">环</div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>总结 · 七步闭环公式</p>
+    <h2 class="h2">生态产品价值实现<br>七步闭环公式</h2>
+    <div class="five-grid" style="margin:12px 0;">
+      <div class="five-item" style="border-color:var(--accent);background:var(--accent-soft);"><div class="f-num">1</div><div class="f-title">保护定边界</div><div class="f-desc">先划清生态底线、承载边界和利用方式。能不能开发、开发到什么程度，必须服从生态系统稳定。价值实现不是把保护让位给开发，而是让保护得到持续回报。</div></div>
+      <div class="five-item"><div class="f-num">2</div><div class="f-title">确权清底数</div><div class="f-desc">先回答有什么、在哪里、归谁管、哪些权利可以依法配置。资源分散、权属不清，后续交易和经营就容易起争议。资产化先清权利和责任，不是先贴价格。</div></div>
+      <div class="five-item"><div class="f-num">3</div><div class="f-title">核算识价值</div><div class="f-desc">通过遥感、采样和持续监测，确认生态功能是否改善；用统一方法核算数量和价值。数据能降低信息差，不能代替法定确权和专业评估。</div></div>
+      <div class="five-item"><div class="f-num">4</div><div class="f-title">市场建通道</div><div class="f-desc">分类选择价值通道：生态补偿、权益交易、产业经营、绿色融资。不同生态贡献，要匹配不同回报方式。核算值不等于成交价。</div></div>
+      <div class="five-item"><div class="f-num">5</div><div class="f-title">产业做增值</div><div class="f-desc">把产业链做长：标准、技术、加工、品牌、场景、人才，六个环节缺一不可。找准本地燃点，比铺开一堆项目更重要。</div></div>
+      <div class="five-item"><div class="f-num">6</div><div class="f-title">联结促增收</div><div class="f-desc">群众怎样真正受益：补偿、租金、就业、保底收购、入股分红、公共服务，六种收益方式。项目有收入不等于群众有增收，群众还要获得长期能力。</div></div>
+      <div class="five-item"><div class="f-num">7</div><div class="f-title">监管保长久</div><div class="f-desc">建立监测、评估、监管机制，确保生态产品价值实现不破坏生态、不损害群众利益。最后一箭返回保护，形成"保护→价值→收益→再保护"的闭环。</div></div>
+    </div>
+    <div class="formula-box" style="padding:22px;margin:14px 0;">
+      <p class="formula-text" style="font-size:26px;">保护定边界 <span class="arrow">→</span> 确权清底数 <span class="arrow">→</span> 核算识价值 <span class="arrow">→</span> 市场建通道 <span class="arrow">→</span> 产业做增值 <span class="arrow">→</span> 联结促增收 <span class="arrow">→</span> 监管保长久 <span class="arrow">→</span> 保护</p>
+      <p style="font-size:22px;color:var(--text-secondary);margin-top:10px;">七步闭环，最后一箭返回保护，形成良性循环</p>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:10px;padding:16px 20px;text-align:center;">
+      <p style="font-size:24px;font-weight:700;line-height:1.6;color:var(--accent);">收藏七步闭环公式<br>保护→确权→核算→市场→产业→联结→监管→保护</p>
+    </div>
+  </div>
+  <div class="key-sentence">保护定边界→确权清底数→核算识价值→市场建通道→产业做增值→联结促增收→监管保长久→保护。七步闭环，最后一箭返回保护。</div>
+  <div class="foot"><span>12 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 13 收束页+金句 -->
+<section class="poster photo-page" id="xhs-13">
+  <img class="bg-img" src="assets/cycle.jpg" alt="" style="object-position:center 50%">
+  <div class="overlay-full"></div>
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>收束 · 认知升级</p>
+    <h2 class="h2">好生态从一时优势<br>变成长久能力</h2>
+    <div class="data-card" style="background:rgba(0,0,0,.5);border:2px solid var(--accent);margin:14px 0;padding:24px;text-align:center;">
+      <p style="font-size:28px;font-weight:900;line-height:1.5;color:var(--text);">这才是真正实现价值</p>
+    </div>
+    <div class="data-grid" style="margin:14px 0;">
+      <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--accent);"><div class="data-num">🛡</div><div class="data-label">保护有回报</div><div class="data-desc">保护生态不是只投入不产出，而是让保护者得到持续回报。生态补偿、碳汇交易、产业收益，让保护有回报、保护者不吃亏。</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--warn);"><div class="data-num" style="color:var(--warn);">📐</div><div class="data-label">产业有边界</div><div class="data-desc">生态产业不是无限制开发，而是有生态边界、承载边界。开发强度不能超过生态承载，利用方式必须服从生态系统稳定。产业有边界，生态才有未来。</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);border-color:var(--success);"><div class="data-num" style="color:var(--success);">👥</div><div class="data-label">群众有收益</div><div class="data-desc">生态产品价值实现不是企业赚钱、群众旁观，而是让群众真正受益。补偿、租金、就业、分红、公共服务，群众有收益、有能力、有获得感。</div></div>
+      <div class="data-card" style="background:rgba(0,0,0,.5);border:2px solid var(--accent);"><div class="data-num">🌱</div><div class="data-label">生态有未来</div><div class="data-desc">生态产品价值实现不是把青山变成商品，而是让生态可持续、可发展。收益反哺保护，形成"保护→价值→收益→再保护"的良性循环。生态有未来，发展才有未来。</div></div>
+    </div>
+    <div class="formula-box" style="background:rgba(0,0,0,.5);padding:22px;margin:14px 0;">
+      <p class="formula-text" style="font-size:26px;">真正成熟的生态产品价值实现<br>不是把青山变成商品<br>而是让保护有回报、产业有边界、群众有收益、生态有未来</p>
+    </div>
+    <div class="compare-col accent-col" style="background:rgba(0,0,0,.5);margin-top:10px;padding:16px 20px;text-align:center;">
+      <p style="font-size:24px;font-weight:700;line-height:1.6;color:var(--accent);">金句集合</p>
+      <p style="font-size:21px;line-height:1.7;color:var(--text);margin-top:8px;">①山水有价值，不等于山水能直接变现。②交易是结果，保护才是价值的起点。③价值实现不是把保护让位给开发，而是让保护得到持续回报。④资产化先清权利和责任，不是先贴价格。⑤数据能降低信息差，不能代替法定确权和专业评估。⑥"值多少"与"卖多少"是两个问题。⑦不同生态贡献，要匹配不同回报方式。⑧从好山水到好产业，中间隔着标准、技术、加工、品牌、场景和人才。⑨找准本地燃点，比铺开一堆项目更重要。⑩项目有收入不等于群众有增收。⑪好生态从一时优势变成长久能力，才算真正实现价值。</p>
+    </div>
+  </div>
+  <div class="key-sentence">好生态从一时优势变成长久能力，才算真正实现价值。保护有回报、产业有边界、群众有收益、生态有未来。</div>
+  <div class="foot"><span>13 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 14 参考文献 -->
+<section class="poster" id="xhs-14">
+  <div class="content">
+    <p class="kicker"><span class="rm-highlight">《人民日报》深度分析</span><span class="rm-sep">|</span>参考文献 · 资料来源</p>
+    <h2 class="h2">参考文章</h2>
+    <p class="body" style="margin-bottom:8px;">本卡片内容基于以下13篇人民日报报道整理，所有观点和案例均可溯源。</p>
+    <div class="ref-list">
+      <div class="ref-item"><div class="ref-num">1</div><div class="ref-content"><div class="ref-title">常钦：《让更多绿水青山成为金山银山》</div><div class="ref-meta">人民日报，2025年1月19日，第02版；生态产品价值实现的总体论述，绿水青山转化金山银山的路径来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">2</div><div class="ref-content"><div class="ref-title">尹双红、郑颖：《"生态流量"如何变成"经济增量"》</div><div class="ref-meta">人民日报，2025年3月13日，第05版；生态流量转化为经济增量的实践，生态产品价值实现的机制来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">3</div><div class="ref-content"><div class="ref-title">张云河：《广西首批水土保持生态产品价值交易成功签约》</div><div class="ref-meta">人民日报，2025年3月21日，第06版；广西水土保持生态产品价值交易案例，权益交易的实践来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">4</div><div class="ref-content"><div class="ref-title">吕晓勋：《生态富是一种高境界的富》</div><div class="ref-meta">人民日报，2025年5月9日，第09版；生态富的理念论述，生态产品价值实现的价值来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">5</div><div class="ref-content"><div class="ref-title">文漪：《加快小流域生态产品价值实现》</div><div class="ref-meta">人民日报，2025年11月13日，第17版；小流域生态产品价值实现的实践，监测核算和价值通道的来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">6</div><div class="ref-content"><div class="ref-title">崔莉：《用数据要素激活生态价值》</div><div class="ref-meta">人民日报，2025年12月17日，第06版；数据要素激活生态价值的论述，监测核算和数据应用的来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">7</div><div class="ref-content"><div class="ref-title">刘新吾：《一张"碳票"换来生态红利》</div><div class="ref-meta">人民日报，2026年1月26日，第13版；碳票案例来源，汉丰湖碳票交易的具体数据和实践来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">8</div><div class="ref-content"><div class="ref-title">陈健、周谷平：《拓宽绿水青山转化金山银山的路径》</div><div class="ref-meta">人民日报，2026年4月29日，第09版；绿水青山转化金山银山的路径论述，四类价值通道的理论来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">9</div><div class="ref-content"><div class="ref-title">顾仲阳、王伟：《护好公益林 碳汇助增收》</div><div class="ref-meta">人民日报，2026年6月16日，第11版；公益林碳汇助增收案例，群众受益和碳汇交易的实践来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">10</div><div class="ref-content"><div class="ref-title">董丝雨：《林地生金 绿富共生》</div><div class="ref-meta">人民日报，2026年6月20日，第05版；林地生金绿富共生案例，产业经营和群众增收的实践来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">11</div><div class="ref-content"><div class="ref-title">钱志权：《推动林下经济长效发展》</div><div class="ref-meta">人民日报，2026年6月20日，第05版；林下经济长效发展的论述，产业链和运营人才的来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">12</div><div class="ref-content"><div class="ref-title">吴勇、李祉瑶：《从一片绿到满目新》</div><div class="ref-meta">人民日报，2026年8月17日，第10版；从一片绿到满目新的实践，生态修复和产业发展的案例来源</div></div></div>
+      <div class="ref-item"><div class="ref-num">13</div><div class="ref-content"><div class="ref-title">聂慧松：《找准生态产业发展的燃点》</div><div class="ref-meta">人民日报，2026年8月19日，第05版；找准生态产业发展燃点的论述，本地独特性和避免同质化的理论来源</div></div></div>
+    </div>
+    <div class="compare-col accent-col" style="margin-top:8px;padding:12px 20px;">
+      <p style="font-size:19px;line-height:1.5;"><strong style="color:var(--accent);">资料使用说明：</strong>汉丰湖8784吨碳汇70.3万元成交、广西水土保持生态产品价值交易等均为具体案例，不直接写成全国统一做法；生态补偿、碳汇交易、水权交易等具体政策以各地规定为准；核算值与成交价的区分是理论框架，不同地区可能有不同实施方式；引用时必须保留地方案例和政策限定。不构成个体投资或经营的法律建议。</p>
+    </div>
+  </div>
+  <div class="foot"><span>14 / 14</span><span>LeePerfect</span></div>
+</section>
+
+<!-- 4:3 视频封面 -->
+<section class="poster cover-4x3" id="cover-4x3">
+  <div class="content">
+    <div class="rm-cover-badge"><span class="rm-text">《人民日报》深度分析 · 第93期</span></div>
+    <h1 class="hero">好生态怎样<br>变资产、变产业</h1>
+    <p class="body">变群众收入 · 生态产品价值实现。七步闭环：保护→确权→核算→市场→产业→联结→监管→保护。</p>
+    <div class="key-sentence">山水有价值，不等于山水能直接变现。好生态从一时优势变成长久能力，才算真正实现价值。</div>
+  </div>
+  <div class="foot"><span>视频封面 · 4:3</span><span>LeePerfect</span></div>
+</section>
+
+</body>
+</html>

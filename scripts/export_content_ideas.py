@@ -18,6 +18,7 @@ DEFAULT_ASSET_DB = ROOT / "data" / "core" / "material_assets.sqlite"
 DEFAULT_ARTICLE_DB = ROOT / "data" / "core" / "articles.sqlite"
 DEFAULT_MD_PATH = ROOT / "data" / "articles" / "选题库.md"
 DEFAULT_CSV_PATH = ROOT / "data" / "exports" / "content_ideas.csv"
+MIAODA_CONFIG_PATH = ROOT / "data" / "exports" / "idea_magazine_miaoda.json"
 NOTE_TABLE = "content_idea_notes"
 
 
@@ -329,6 +330,7 @@ def main() -> None:
     parser.add_argument("--csv-path", default=str(DEFAULT_CSV_PATH), help="CSV 选题库输出路径")
     parser.add_argument("--start", help="开始日期，例如 2026-05-01")
     parser.add_argument("--end", help="结束日期，例如 2026-05-31")
+    parser.add_argument("--no-miaoda-sync", action="store_true", help="只刷新本地总表，不同步妙搭网页")
     args = parser.parse_args()
 
     db_path = Path(args.db_path)
@@ -347,6 +349,11 @@ def main() -> None:
     print(f"已导出 {len(records)} 个选题")
     print(f"Markdown: {args.md_path}")
     print(f"CSV: {args.csv_path}")
+    if not args.no_miaoda_sync and MIAODA_CONFIG_PATH.exists():
+        import sync_idea_magazine_to_miaoda
+
+        result = sync_idea_magazine_to_miaoda.sync()
+        print(f"妙搭网页已同步: {result['url']}")
 
 
 if __name__ == "__main__":

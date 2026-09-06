@@ -1,0 +1,236 @@
+{
+  "source": "peopleapp_opinion",
+  "database_id": "e091a3f1-0ee4-49da-adce-f92a25293d6a",
+  "db_path": "data/peopleapp_opinion/core/articles.sqlite",
+  "generated_at": "2026-09-05T06:02:28+08:00",
+  "candidate_count": 57,
+  "created": 10,
+  "updated": 0,
+  "skipped": 10,
+  "failed": 37,
+  "failures": [
+    {
+      "article_id": "peopleapp_opinion_20260903_30053079995_500007681577",
+      "title": "大学怎么才能越读越“大”",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487687 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053079995-500007681577"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053075745_500007681185",
+      "title": "好故事如何从笔端走向银幕？来自长影节的声音引人深思",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487444 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053075745-500007681185"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053080559_500007681699",
+      "title": "家长群自报干部身份，教育公平岂容权力“打招呼”",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487612 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053080559-500007681699"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053078759_500007681962",
+      "title": "尺素金声丨哈佛学者：所谓中国“以邻为壑”论调站不住脚",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487616 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053078759-500007681962"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053081420_500007681926",
+      "title": "房地产金融制度的系统性重塑",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487527 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053081420-500007681926"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053081587_500007681845",
+      "title": "政务热线岂能成粉丝斗场？",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487448 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053081587-500007681845"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053081765_500007681961",
+      "title": "新生家长“免费床铺”何以上热搜？大学的温度不只在课堂",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487449 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053081765-500007681961"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053081601_500007681846",
+      "title": "看人下菜碟？“阴阳菜单”砸的是文旅招牌",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487931 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053081601-500007681846"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053080693_500007681712",
+      "title": "网络舆论场岂能被“小作文”牵着走",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487450 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053080693-500007681712"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053080130_500007681596",
+      "title": "背着高考排名的包袱，如何轻装上大学？",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487682 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053080130-500007681596"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053078892_500007681925",
+      "title": "自动驾驶“入法”，厘清权责边界，筑牢制度底座",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487447 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053078892-500007681925"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053079540_500007681501",
+      "title": "镜头里捡垃圾，镜头外扔垃圾，伪公益该叫停",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487455 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053079540-500007681501"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260903_30053077427_500007681175",
+      "title": "零时差 | 从一碗饺子到一部中国电影：不断解锁中埃友谊的打开方式",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487613 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053077427-500007681175"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053088609_500007683465",
+      "title": "AI数秒生成文本的时代，文学凭什么值得被“慢慢”等待？",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487607 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053088609-500007683465"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053087886_500007683248",
+      "title": "‍‍房间和宣传货不对板？不能让“AI房骗”忽悠消费者",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487610 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053087886-500007683248"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053082870_500007682248",
+      "title": "‍多到群众爱去的地方看看",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487692 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053082870-500007682248"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053087934_500007683253",
+      "title": "“教育公平是最大的公平”，需彻查“求关照”",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487931 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053087934-500007683253"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053084257_500007682337",
+      "title": "“葫芦娃爷爷”的葫芦里装了什么",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487770 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053084257-500007682337"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053085537_500007682516",
+      "title": "“阴阳菜单”宰客，砸了城市口碑",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487936 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053085537-500007682516"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053082894_500007682343",
+      "title": "一方天台的治理温度",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487605 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053082894-500007682343"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053082866_500007682227",
+      "title": "人民日报评论员观察：“渐”的耐心与“进”的节奏",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487699 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053082866-500007682227"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053082867_500007682275",
+      "title": "人民时评：“到中国出差”的新变化",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487692 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053082867-500007682275"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053083080_500007682348",
+      "title": "人民论坛：一则“史料”里的政绩观启示",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487526 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053083080-500007682348"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053082868_500007682205",
+      "title": "从殷玉珍家宴到龙餐馆烩饭，交流最终抵达的是人心",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487526 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053082868-500007682205"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053085701_500007682584",
+      "title": "免费仅限早晨，公共体育场不该“宁愿闲着也要关着”",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487609 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053085701-500007682584"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053080003_500007681579",
+      "title": "别让“饭圈”拉锯挤占民生通道",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487526 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053080003-500007681579"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053082840_500007682219",
+      "title": "和音：共同书写中埃友好历史新篇",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487455 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053082840-500007682219"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053081651_500007682633",
+      "title": "善待每个劳动者，是城市治理“必答题”",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487615 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053081651-500007682633"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053087066_500007683121",
+      "title": "大学生活费，多少才算够",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487687 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053087066-500007683121"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053088366_500007683417",
+      "title": "好好看比赛，到底有多难？整治体育“饭圈”步入“深水区”",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487532 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053088366-500007683417"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053086930_500007683102",
+      "title": "如何上好中小学AI素养这门课",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487449 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053086930-500007683102"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053089021_500007683478",
+      "title": "小学新生起名褪去“网红风”，肯定个性也要更理性",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487848 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053089021-500007683478"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053082950_500007682396",
+      "title": "情绪的本质是什么？从进化的角度理解情绪",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487602 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053082950-500007682396"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053087286_500007683174",
+      "title": "政务宣传容不得“文学加工”",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487767 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053087286-500007683174"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053088280_500007683397",
+      "title": "流量狂欢之后，“团播”出路在哪？",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487612 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053088280-500007683397"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053082951_500007682441",
+      "title": "用生命影响生命，追忆贺娇龙",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487611 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053082951-500007682441"
+    },
+    {
+      "article_id": "peopleapp_opinion_20260904_30053087012_500007683111",
+      "title": "走进大学校门，走出分数围城",
+      "error": "Your database schema has exceeded the maximum size. The largest property is '关键词' (ID: pHYX at 487531 bytes). Consider removing unused select options or properties to reduce schema size.",
+      "url": "https://www.peopleapp.com/column/30053087012-500007683111"
+    }
+  ],
+  "dry_run": false
+}
