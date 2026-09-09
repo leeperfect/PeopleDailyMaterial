@@ -1,0 +1,33 @@
+{
+  "current": {
+    "title": "公众号运营分析（修正版 v2）",
+    "platform": "miaoda",
+    "app_id": "app_17dp88t5g4a",
+    "url": "https://xw3elgcbph.feishuapp.com/app/app_17dp88t5g4a",
+    "dev_url": "https://miaoda.feishu.cn/app/app_17dp88t5g4a",
+    "published_at": "2026-09-08",
+    "data_end_date": "2026-09-06",
+    "status": "succeeded",
+    "access": "owner-only",
+    "source_dir": "data/data_analysis/wechat-operations-analysis/",
+    "note": "修正版：三篇高阅读文章“零收入”误判作废；阅读×收入相关 0.48→0.81；文章级归属 55.4%→61.8%。"
+  },
+  "history": [
+    {
+      "title": "公众号运营分析（初版）",
+      "platform": "codex-chatgpt-site",
+      "project_id": "appgprj_6a9e4d5996f881918366d795f6c1f788",
+      "version_id": "appgprj_6a9e4d5996f881918366d795f6c1f788~appgver_5f38d3eefc7c8191972529ce0ff608bc",
+      "deployment_id": "appgdep_6a9e4e6a11ec8191a29298aabe9fb823",
+      "source_commit": "e1e83343c583c67419ad39c5f0ec2277e9e774d2",
+      "source_repository": "https://git.chatgpt-team.site/8f1d3b35-1794-4a23-9d7a-f54b24c95fc1/appgprj_6a9e4d5996f881918366d795f6c1f788.git",
+      "artifact_path": "data/data_analysis/exports/2026-08-08_to_2026-09-06_tendency/artifact.json",
+      "published_at": "2026-09-07",
+      "data_end_date": "2026-09-06",
+      "status": "superseded",
+      "url": "https://wechat-operations-analysis.perfectsora.chatgpt.site",
+      "access": "owner-only",
+      "note": "初版由 Codex 发布，收入口径有误（三篇高阅读文章误判零收入），2026-09-08 起由妙搭修正版替代。"
+    }
+  ]
+}

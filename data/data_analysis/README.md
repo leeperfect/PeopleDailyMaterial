@@ -28,3 +28,24 @@
 4. 生成本批详细运营分析报告。
 5. 更新长期运营数据总览。
 6. 根据新文章、长尾文章、推荐渠道、分享和收藏表现提出选题建议。
+
+## 变现与增长数据（文章收入 / 广告位 / 全部文章 / 用户增长）
+
+这类数据按日期全局入库，与批次解耦，同一日期重复导入只覆盖不累加。
+
+半自动采集（推荐）：打开后台后按终端清单逐页点"导出"，文件自动归档入库。
+
+```bash
+python3 scripts/collect_wechat_mp_stats.py
+```
+
+手工导入已有导出文件（可一次传多份，类型自动识别）：
+
+```bash
+python3 scripts/import_wechat_monetization_stats.py 文件1.csv 文件2.csv
+```
+
+入库位置：`data/core/wechat_official_account.sqlite`（ad_income_daily、ad_slot_daily、
+article_income、article_content_stats、user_growth_daily 五张表）；
+全量明细同步导出到 `exports/monetization/`，原始表归档到 `raw/monetization/`。
+采集器登录态保存在 `.collector_profile/`（已加入 .gitignore，不进 GitHub）。

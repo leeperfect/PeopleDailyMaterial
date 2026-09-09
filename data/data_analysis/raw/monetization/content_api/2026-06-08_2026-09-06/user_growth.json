@@ -1,0 +1,907 @@
+{
+ "base_resp": {
+  "ret": 0,
+  "err_msg": "ok",
+  "svr_time": 1788773138,
+  "token": "1619374629",
+  "cgi_id": 2215,
+  "media_ticket": "1461f285e138733622155804288461c9097961d3",
+  "master_ticket": "1461f285e138733622155804288461c9097961d3",
+  "master_ticket_id": "gh_7cca1ea5ab9d",
+  "sp_login": 0,
+  "func_ban_info": {
+   "func_ban_list": []
+  },
+  "red_dot": {
+   "new_comment_num": 3,
+   "new_danmu_num": 0,
+   "new_fans_msg_num": 0,
+   "new_mention_num": 0,
+   "new_underline_num": 0
+  },
+  "fault_announcement": {},
+  "plugin_tree_json": "{\"tree\":{\"nodes\":[{\"data\":{\"id\":10063,\"new_seq\":0,\"history_seq\":0,\"logo_key\":\"home\",\"name\":\"首页\",\"nav_url\":\"/cgi-bin/home?t=home/index\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10131,\"new_seq\":0,\"history_seq\":0,\"logo_key\":\"notification\",\"name\":\"通知中心\",\"nav_url\":\"/cgi-bin/frame?t=notification/index_frame&nav=10131\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10113,\"new_seq\":0,\"history_seq\":0,\"logo_key\":\"create\",\"name\":\"内容管理\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10114,\"new_seq\":0,\"history_seq\":0,\"name\":\"创作\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10125,\"new_seq\":0,\"history_seq\":0,\"name\":\"草稿箱\",\"nav_url\":\"/cgi-bin/appmsg?begin=0&count=10&type=77&action=list_card\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10087,\"new_seq\":0,\"history_seq\":0,\"name\":\"素材库\",\"nav_url\":\"/cgi-bin/filepage?type=2&begin=0&count=12\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10126,\"new_seq\":0,\"history_seq\":0,\"name\":\"发表记录\",\"nav_url\":\"/cgi-bin/appmsgpublish?sub=list&begin=0&count=10\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10042,\"new_seq\":0,\"history_seq\":1,\"name\":\"原创\",\"nav_url\":\"/cgi-bin/appmsgcopyright?action=orignal&type=1\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10039,\"new_seq\":0,\"history_seq\":1,\"name\":\"合集\",\"nav_url\":\"/cgi-bin/appmsgalbummgr?action=list\",\"nav_new_flag\":0,\"selected_flag\":0}}]}]},{\"data\":{\"id\":10140,\"new_seq\":0,\"history_seq\":0,\"logo_key\":\"interaction\",\"name\":\"互动管理\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10115,\"new_seq\":0,\"history_seq\":0,\"name\":\"互动\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10033,\"new_seq\":0,\"history_seq\":1,\"name\":\"留言\",\"nav_url\":\"/misc/appmsgcomment?action=list_latest_comment&begin=0&count=10&sendtype=MASSSEND&scene=1\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10144,\"new_seq\":0,\"history_seq\":0,\"name\":\"划线\",\"nav_url\":\"/cgi-bin/mpunderline?action=underline&sort_type=1\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10012,\"new_seq\":0,\"history_seq\":0,\"name\":\"私信\",\"nav_url\":\"/cgi-bin/message?t=message/list&count=20&day=7\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10132,\"new_seq\":0,\"history_seq\":0,\"name\":\"提到\",\"nav_url\":\"/cgi-bin/atfunc?action=get_at_notify_list\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10038,\"new_seq\":0,\"history_seq\":1,\"name\":\"投票\",\"nav_url\":\"/cgi-bin/newoperatevote?action=list\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10104,\"new_seq\":0,\"history_seq\":0,\"name\":\"视频弹幕\",\"nav_url\":\"/cgi-bin/video?action=list_video\",\"nav_new_flag\":0,\"selected_flag\":0}}]},{\"data\":{\"id\":10116,\"new_seq\":0,\"history_seq\":0,\"name\":\"内容工具\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10006,\"new_seq\":1,\"history_seq\":0,\"name\":\"自动回复\",\"nav_url\":\"/advanced/autoreply?t=ivr/reply&action=beadded\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10007,\"new_seq\":0,\"history_seq\":0,\"name\":\"自定义菜单\",\"nav_url\":\"/advanced/selfmenu?action=index&t=advanced/menu-setting\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10013,\"new_seq\":0,\"history_seq\":0,\"name\":\"用户管理\",\"nav_url\":\"/cgi-bin/contactmanage?t=user/index&pageidx=0&type=0\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10112,\"new_seq\":0,\"history_seq\":0,\"name\":\"号内搜索\",\"nav_url\":\"/cgi-bin/searchplugin?action=profilewordsinfo\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10101,\"new_seq\":1,\"history_seq\":0,\"name\":\"微信红包封面\",\"nav_url\":\"https://mp.weixin.qq.com/cgi-bin/redpacketcover?action=intro\",\"nav_new_flag\":0,\"selected_flag\":0}}]}]},{\"data\":{\"id\":10117,\"new_seq\":0,\"history_seq\":0,\"logo_key\":\"statistics\",\"name\":\"数据分析\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10016,\"new_seq\":0,\"history_seq\":0,\"name\":\"内容分析\",\"nav_url\":\"/misc/appmsganalysis?action=report&type=daily_v2\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10015,\"new_seq\":0,\"history_seq\":0,\"name\":\"用户分析\",\"nav_url\":\"/misc/useranalysis?\",\"nav_new_flag\":0,\"selected_flag\":1}},{\"data\":{\"id\":10047,\"new_seq\":0,\"history_seq\":0,\"name\":\"菜单分析\",\"nav_url\":\"/misc/menuanalysis?\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10017,\"new_seq\":0,\"history_seq\":0,\"name\":\"消息分析\",\"nav_url\":\"/misc/messageanalysis?type=daily&t=statistics/msg\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10018,\"new_seq\":0,\"history_seq\":0,\"name\":\"接口分析\",\"nav_url\":\"/misc/interfaceanalysis?type=daily\",\"nav_new_flag\":0,\"selected_flag\":0}}]},{\"data\":{\"id\":10142,\"new_seq\":0,\"history_seq\":0,\"logo_key\":\"income\",\"name\":\"收入变现\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10143,\"new_seq\":0,\"history_seq\":0,\"name\":\"变现工具\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10040,\"new_seq\":0,\"history_seq\":2,\"name\":\"赞赏\",\"nav_url\":\"/merchant/reward?action=getlatestreward\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10102,\"new_seq\":0,\"history_seq\":0,\"name\":\"付费\",\"nav_url\":\"/merchant/mppaysubscribe?action=getlatestpay\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10138,\"new_seq\":1,\"history_seq\":0,\"name\":\"带货\",\"nav_url\":\"/cgi-bin/productpage\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10027,\"new_seq\":2,\"history_seq\":0,\"name\":\"广告收入\",\"nav_url\":\"/promotion/publisher/publisher_index?\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10137,\"new_seq\":0,\"history_seq\":1,\"name\":\"微信小店\",\"nav_url\":\"/cgi-bin/weshop?action=weshop_page\",\"nav_new_flag\":0,\"selected_flag\":0}}]}]},{\"data\":{\"id\":10134,\"new_seq\":1,\"history_seq\":0,\"logo_key\":\"promoting\",\"name\":\"账号成长\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10136,\"new_seq\":0,\"history_seq\":0,\"name\":\"我的足迹\",\"nav_url\":\"/cgi-bin/mpgrowthfootprint?action=getlist\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10146,\"new_seq\":1,\"history_seq\":0,\"name\":\"账号检测\",\"nav_url\":\"/cgi-bin/mpaccountdetection?action=index\",\"nav_new_flag\":0,\"selected_flag\":0}}]},{\"data\":{\"id\":10118,\"new_seq\":0,\"history_seq\":0,\"logo_key\":\"business\",\"name\":\"营销与服务\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10120,\"new_seq\":0,\"history_seq\":0,\"name\":\"服务\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10026,\"new_seq\":0,\"history_seq\":0,\"name\":\"营销推广\",\"nav_url\":\"/promotion/advertiser_index?\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10060,\"new_seq\":0,\"history_seq\":0,\"name\":\"小程序管理\",\"nav_url\":\"/cgi-bin/wxopen?action=list\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10145,\"new_seq\":1,\"history_seq\":0,\"name\":\"加热工具\",\"nav_url\":\"/cgi-bin/mppromotionorder?action=dashboard\",\"nav_new_flag\":0,\"selected_flag\":0}}]},{\"data\":{\"id\":10121,\"new_seq\":0,\"history_seq\":0,\"name\":\"更多能力\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10071,\"new_seq\":1,\"history_seq\":0,\"name\":\"微信搜一搜\",\"nav_url\":\"/misc/pluginloginpage?pluginuin=10071\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10129,\"new_seq\":1,\"history_seq\":0,\"name\":\"服务市场\",\"nav_url\":\"/cgi-bin/frame?t=3rd_market/common_frame&nav=10129\",\"nav_new_flag\":0,\"selected_flag\":0}}]}]},{\"data\":{\"id\":10122,\"new_seq\":0,\"history_seq\":0,\"logo_key\":\"setup\",\"name\":\"设置与开发\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10123,\"new_seq\":0,\"history_seq\":0,\"name\":\"基本设置\",\"nav_new_flag\":0,\"selected_flag\":0},\"nodes\":[{\"data\":{\"id\":10019,\"new_seq\":0,\"history_seq\":0,\"name\":\"账号设置\",\"nav_url\":\"/cgi-bin/settingpage?t=setting/index&action=index\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10070,\"new_seq\":0,\"history_seq\":1,\"name\":\"人员设置\",\"nav_url\":\"/cgi-bin/safecenterstatus?action=admins&t=setting/safe-admins\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10022,\"new_seq\":0,\"history_seq\":0,\"name\":\"安全中心\",\"nav_url\":\"/cgi-bin/safecenterstatus?action=view&t=setting/safe-index\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10045,\"new_seq\":0,\"history_seq\":0,\"name\":\"违规记录\",\"nav_url\":\"/cgi-bin/illegalrecord?count=10\",\"nav_new_flag\":0,\"selected_flag\":0}},{\"data\":{\"id\":10141,\"new_seq\":0,\"history_seq\":0,\"name\":\"开发接口管理\",\"nav_url\":\"/cgi-bin/frame?t=pages/developsetting/page/developsetting_frame&nav=10141\",\"nav_new_flag\":0,\"selected_flag\":0}}]}]}]}}",
+  "plugin_center_new_flag": 0,
+  "front_end_data": {},
+  "hide_nav": 0
+ },
+ "user_info": {
+  "nick_name": "学习理想国",
+  "fake_id": 3232081271,
+  "user_role": 25,
+  "mass_send_left": 0,
+  "alias": "PerfectAcademy",
+  "sys_notify_cnt": 1,
+  "service_type": 1,
+  "notify_msg": "",
+  "user_name": "PerfectAcademy",
+  "is_wx_verify": 0,
+  "realname_status": 1,
+  "realname_type": 0,
+  "is_vip": 0,
+  "is_dev_user": 1,
+  "have_package": 0,
+  "wb_info": {
+   "src": "",
+   "verify_flag": 0,
+   "verify_info": "",
+   "nick_name": "",
+   "head_img_url": "",
+   "verify_code": "b31e29b6e751ffe64af4",
+   "manual_review": 1,
+   "can_sync": 0,
+   "verify_status": 0
+  },
+  "is_verify_on": 0,
+  "fake_id_base64": "MzIzMjA4MTI3MQ==",
+  "is_qverify": 0,
+  "account_version": 2,
+  "bank_verify_status": 0,
+  "bank_deadline": 0,
+  "remit_code_prefix": "",
+  "open_app_type": 16,
+  "register_type": 0,
+  "show_verify_warning": 0,
+  "verify_deadline": 0,
+  "nickname_invade": 0,
+  "force_remit_verify": 0,
+  "registered_country": 1017,
+  "is_overseas": 0,
+  "nickname_check_status": 2,
+  "disable_head_box": 0,
+  "is_remit_reg": 0,
+  "remit_reg_deadline": 0,
+  "head_img": "https://wx.qlogo.cn/mmopen/PiajxSqBRaEK0K69cGHJM2Jicic83fFJiacZYxxxayNDSdHKcD9HwkRFO7IEvB7DYu28q5YFMxZUSM4XBU0z2XxIQ2A2NRKMC74UBublO9eO0wOfHFxkxFt4ibNtgdlqmJfae/64",
+  "is_upload_log": 0,
+  "has_new_notify": 1,
+  "is_person_verify": 1,
+  "real_name_verify_time": 1571644090,
+  "customer_type": 0,
+  "bind_finder_status": {
+   "bind_status": 3,
+   "finder_nickname": "学习理想国",
+   "wx_nickname": "李鹏飞 LeePerfect",
+   "ban_publish": 0,
+   "finder_username": "v2_060000231003b20faec8cae0891bc6ddcf00e932b0779db1a66322d1812747754cf64c8ebbec@finder",
+   "acct_ban": 0,
+   "acct_secret": 0,
+   "finder_user_status": 0,
+   "finder_head_img_url": "https://wx.qlogo.cn/finderhead/ver_1/GjAniaIfYuPJAQa1kQ7IvmRgHFkqzPyJb9nxPBmHRMJosEAMY08FpgOyqicUZIZDrqUDRVFI1rkMRCicT7RPEDBUYACVUGf3XkQoCy2JUNWaBATyJYxsJHenSjgKmdkZUPv/132",
+   "shop_type": 1
+  },
+  "video_masssend_leftover_quota": 1,
+  "has_video_masssend_findervideo_priv": 0,
+  "is_can_masssend_finderlive": 1,
+  "is_unrealname": 0,
+  "show_switchacct": 1,
+  "real_nick_name": "学习理想国",
+  "verify_status": 1,
+  "claim_source_list": "{\"list\":[{\"claim_source_type\":1,\"claim_source\":\"内容由AI生成\"},{\"claim_source_type\":2,\"claim_source\":\"素材来源官方媒体\\/网络新闻\"},{\"claim_source_type\":3,\"claim_source\":\"内容剧情演绎，仅供娱乐\"},{\"claim_source_type\":4,\"claim_source\":\"个人观点，仅供参考\"},{\"claim_source_type\":5,\"claim_source\":\"健康医疗分享，仅供参考\"},{\"claim_source_type\":6,\"claim_source\":\"投资观点，仅供参考\"}]}",
+  "appid": "wxe785b3eedc746a28",
+  "is_one_msg_before_reply": 0,
+  "create_time": 1571643440,
+  "has_nickname": 1,
+  "has_headimg": 1
+ },
+ "user_acl": {
+  "base_acl": {
+   "can_mass_send": 1,
+   "can_public_channel": 1,
+   "can_verify_apply": 1,
+   "can_use_advanced_func": 1,
+   "can_use_biz_menu": 1,
+   "can_use_biz_ivr": 1,
+   "can_dev_apply": 0,
+   "can_use_merchant": 0,
+   "can_use_customer": 0,
+   "can_use_dev_reply": 1,
+   "can_access_merchant": 0,
+   "can_access_tmplmsg": 0,
+   "can_use_device_func": 0,
+   "can_use_selfmenu": 1,
+   "can_modify_info": 1,
+   "can_modify_ivr": 1,
+   "can_modify_biz_menu": 1,
+   "can_use_shortvideo": 0,
+   "can_use_comment": 1,
+   "can_use_reward": 1,
+   "can_use_reprintapply_list": 0,
+   "can_use_img_copyright": 0,
+   "can_use_ori_video": 1,
+   "can_see_product": 0,
+   "can_use_qa": 0,
+   "ban_mp_video_custom_cover": 0,
+   "can_upload_2m_more_gif": 1,
+   "can_use_related_video": 1,
+   "is_ori_video_ban": 0,
+   "can_use_video_dot": 1,
+   "can_use_pay_subscribe": 1,
+   "can_use_album": 1,
+   "can_use_copyright": 1,
+   "can_use_mediaapi": 0,
+   "close_related_video": 0,
+   "can_use_public_tag": 0,
+   "can_use_danmu": 1,
+   "can_use_album_send": 1,
+   "can_use_release_video": 0,
+   "can_c2c_reply": 2,
+   "can_use_new_draft": 1,
+   "is_mp_finder_gray_user": 0,
+   "mp_finder_had_send": 0,
+   "is_send_findervideo_gray_user": 1,
+   "is_sync_to_finder_gray_user": 0,
+   "has_main_admin": 1,
+   "can_use_novel_album": 1,
+   "is_import_to_finder_gray_user": 1,
+   "can_use_replay": 0,
+   "can_use_new_publish": 1,
+   "frontend_exp": {
+    "list": [
+     {
+      "key": "auto_layout_position",
+      "value": "1"
+     },
+     {
+      "key": "multiple_posts_ban",
+      "value": "7,8,10"
+     },
+     {
+      "key": "pictext_name_version",
+      "value": "1"
+     }
+    ],
+    "succ": true
+   },
+   "can_use_aff_products": 1,
+   "can_use_product_activity": 0,
+   "can_use_pic_comment": 1,
+   "open_aff": 1,
+   "can_use_ecs_mall_activity": 0,
+   "can_use_rumor_refutation": 0,
+   "can_use_advert_seller": 1,
+   "can_use_wxa_novel_album": 1,
+   "has_wxa_novel_album": 0,
+   "is_ai_reply_open": 0,
+   "is_keyword_ivr_close": 0,
+   "can_use_new_draft_ui": 1
+  },
+  "msg_acl": {
+   "can_text_msg": 1,
+   "can_image_msg": 1,
+   "can_voice_msg": 1,
+   "can_video_msg": 1,
+   "can_app_msg": 1,
+   "can_app_msg_activity": 500,
+   "can_app_msg_comm": 1,
+   "can_app_msg_single": 1,
+   "can_app_msg_multi": 1,
+   "can_share_card": 0,
+   "can_commodity_app_msg": 0,
+   "can_use_auto_save": 0
+  },
+  "ivr_acl": {
+   "can_text_msg": 1,
+   "can_image_msg": 1,
+   "can_voice_msg": 1,
+   "can_video_msg": 1,
+   "can_app_msg": 1,
+   "can_app_msg_activity": 1,
+   "can_app_msg_comm": 1,
+   "can_app_msg_single": 1,
+   "can_app_msg_multi": 1,
+   "can_commodity_app_msg": 0,
+   "can_use_video_snap_msg": 1
+  },
+  "merchant_acl": {
+   "can_use_merchant": 0,
+   "can_use_card": 0,
+   "can_use_shop": 0,
+   "wxa_mall_status": 0
+  },
+  "region_acl": {
+   "can_use_js_trust_domain": 1,
+   "can_use_js_api_domain": 1,
+   "can_use_appmsg_source_url": 1,
+   "can_use_menu_outer_url": 1,
+   "can_use_appmsg_outer_url": 1,
+   "can_use_menu_url": 1,
+   "can_use_friend_ivr": 1,
+   "can_use_auto_ivr": 1,
+   "can_use_keyword_ivr": 1
+  },
+  "single_msg_acl": {
+   "can_text_msg": 1,
+   "can_image_msg": 1,
+   "can_voice_msg": 1,
+   "can_video_msg": 1,
+   "can_app_msg": 1,
+   "can_app_msg_activity": 1,
+   "can_app_msg_comm": 1,
+   "can_app_msg_single": 1,
+   "can_app_msg_multi": 1,
+   "can_share_card": 1,
+   "can_commodity_app_msg": 0
+  },
+  "material_acl": {
+   "can_text_msg": 1,
+   "can_image_msg": 1,
+   "can_voice_msg": 1,
+   "can_video_msg": 1,
+   "can_app_msg": 1,
+   "can_app_msg_activity": 1,
+   "can_app_msg_comm": 1,
+   "can_app_msg_single": 1,
+   "can_app_msg_multi": 1,
+   "can_share_card": 0,
+   "can_commodity_app_msg": 0
+  },
+  "env_acl": {
+   "hostrole": 0
+  }
+ },
+ "category_list": [
+  {
+   "user_source": 99999999,
+   "list": [
+    {
+     "date": "2026-06-08",
+     "new_user": 1106,
+     "cancel_user": 7,
+     "netgain_user": 1099,
+     "cumulate_user": 9174
+    },
+    {
+     "date": "2026-06-09",
+     "new_user": 1384,
+     "cancel_user": 14,
+     "netgain_user": 1370,
+     "cumulate_user": 10544
+    },
+    {
+     "date": "2026-06-10",
+     "new_user": 1240,
+     "cancel_user": 9,
+     "netgain_user": 1231,
+     "cumulate_user": 11775
+    },
+    {
+     "date": "2026-06-11",
+     "new_user": 912,
+     "cancel_user": 8,
+     "netgain_user": 904,
+     "cumulate_user": 12679
+    },
+    {
+     "date": "2026-06-12",
+     "new_user": 644,
+     "cancel_user": 7,
+     "netgain_user": 637,
+     "cumulate_user": 13316
+    },
+    {
+     "date": "2026-06-13",
+     "new_user": 444,
+     "cancel_user": 6,
+     "netgain_user": 438,
+     "cumulate_user": 13754
+    },
+    {
+     "date": "2026-06-14",
+     "new_user": 269,
+     "cancel_user": 3,
+     "netgain_user": 266,
+     "cumulate_user": 14020
+    },
+    {
+     "date": "2026-06-15",
+     "new_user": 477,
+     "cancel_user": 4,
+     "netgain_user": 473,
+     "cumulate_user": 14493
+    },
+    {
+     "date": "2026-06-16",
+     "new_user": 584,
+     "cancel_user": 8,
+     "netgain_user": 576,
+     "cumulate_user": 15069
+    },
+    {
+     "date": "2026-06-17",
+     "new_user": 554,
+     "cancel_user": 3,
+     "netgain_user": 551,
+     "cumulate_user": 15620
+    },
+    {
+     "date": "2026-06-18",
+     "new_user": 452,
+     "cancel_user": 5,
+     "netgain_user": 447,
+     "cumulate_user": 16067
+    },
+    {
+     "date": "2026-06-19",
+     "new_user": 226,
+     "cancel_user": 4,
+     "netgain_user": 222,
+     "cumulate_user": 16289
+    },
+    {
+     "date": "2026-06-20",
+     "new_user": 242,
+     "cancel_user": 1,
+     "netgain_user": 241,
+     "cumulate_user": 16530
+    },
+    {
+     "date": "2026-06-21",
+     "new_user": 230,
+     "cancel_user": 2,
+     "netgain_user": 228,
+     "cumulate_user": 16758
+    },
+    {
+     "date": "2026-06-22",
+     "new_user": 350,
+     "cancel_user": 4,
+     "netgain_user": 346,
+     "cumulate_user": 17104
+    },
+    {
+     "date": "2026-06-23",
+     "new_user": 426,
+     "cancel_user": 11,
+     "netgain_user": 415,
+     "cumulate_user": 17519
+    },
+    {
+     "date": "2026-06-24",
+     "new_user": 523,
+     "cancel_user": 4,
+     "netgain_user": 519,
+     "cumulate_user": 18038
+    },
+    {
+     "date": "2026-06-25",
+     "new_user": 558,
+     "cancel_user": 6,
+     "netgain_user": 552,
+     "cumulate_user": 18590
+    },
+    {
+     "date": "2026-06-26",
+     "new_user": 415,
+     "cancel_user": 8,
+     "netgain_user": 407,
+     "cumulate_user": 18997
+    },
+    {
+     "date": "2026-06-27",
+     "new_user": 287,
+     "cancel_user": 2,
+     "netgain_user": 285,
+     "cumulate_user": 19282
+    },
+    {
+     "date": "2026-06-28",
+     "new_user": 418,
+     "cancel_user": 6,
+     "netgain_user": 412,
+     "cumulate_user": 19694
+    },
+    {
+     "date": "2026-06-29",
+     "new_user": 775,
+     "cancel_user": 7,
+     "netgain_user": 768,
+     "cumulate_user": 20462
+    },
+    {
+     "date": "2026-06-30",
+     "new_user": 660,
+     "cancel_user": 8,
+     "netgain_user": 652,
+     "cumulate_user": 21114
+    },
+    {
+     "date": "2026-07-01",
+     "new_user": 677,
+     "cancel_user": 6,
+     "netgain_user": 671,
+     "cumulate_user": 21785
+    },
+    {
+     "date": "2026-07-02",
+     "new_user": 604,
+     "cancel_user": 1,
+     "netgain_user": 603,
+     "cumulate_user": 22388
+    },
+    {
+     "date": "2026-07-03",
+     "new_user": 515,
+     "cancel_user": 1,
+     "netgain_user": 514,
+     "cumulate_user": 22902
+    },
+    {
+     "date": "2026-07-04",
+     "new_user": 362,
+     "cancel_user": 3,
+     "netgain_user": 359,
+     "cumulate_user": 23261
+    },
+    {
+     "date": "2026-07-05",
+     "new_user": 269,
+     "cancel_user": 8,
+     "netgain_user": 261,
+     "cumulate_user": 23522
+    },
+    {
+     "date": "2026-07-06",
+     "new_user": 424,
+     "cancel_user": 2,
+     "netgain_user": 422,
+     "cumulate_user": 23944
+    },
+    {
+     "date": "2026-07-07",
+     "new_user": 369,
+     "cancel_user": 7,
+     "netgain_user": 362,
+     "cumulate_user": 24306
+    },
+    {
+     "date": "2026-07-08",
+     "new_user": 452,
+     "cancel_user": 5,
+     "netgain_user": 447,
+     "cumulate_user": 24753
+    },
+    {
+     "date": "2026-07-09",
+     "new_user": 380,
+     "cancel_user": 5,
+     "netgain_user": 375,
+     "cumulate_user": 25128
+    },
+    {
+     "date": "2026-07-10",
+     "new_user": 358,
+     "cancel_user": 6,
+     "netgain_user": 352,
+     "cumulate_user": 25480
+    },
+    {
+     "date": "2026-07-11",
+     "new_user": 224,
+     "cancel_user": 4,
+     "netgain_user": 220,
+     "cumulate_user": 25700
+    },
+    {
+     "date": "2026-07-12",
+     "new_user": 268,
+     "cancel_user": 1,
+     "netgain_user": 267,
+     "cumulate_user": 25967
+    },
+    {
+     "date": "2026-07-13",
+     "new_user": 404,
+     "cancel_user": 4,
+     "netgain_user": 400,
+     "cumulate_user": 26367
+    },
+    {
+     "date": "2026-07-14",
+     "new_user": 337,
+     "cancel_user": 5,
+     "netgain_user": 332,
+     "cumulate_user": 26699
+    },
+    {
+     "date": "2026-07-15",
+     "new_user": 328,
+     "cancel_user": 6,
+     "netgain_user": 322,
+     "cumulate_user": 27021
+    },
+    {
+     "date": "2026-07-16",
+     "new_user": 414,
+     "cancel_user": 10,
+     "netgain_user": 404,
+     "cumulate_user": 27425
+    },
+    {
+     "date": "2026-07-17",
+     "new_user": 352,
+     "cancel_user": 2,
+     "netgain_user": 350,
+     "cumulate_user": 27775
+    },
+    {
+     "date": "2026-07-18",
+     "new_user": 365,
+     "cancel_user": 8,
+     "netgain_user": 357,
+     "cumulate_user": 28132
+    },
+    {
+     "date": "2026-07-19",
+     "new_user": 513,
+     "cancel_user": 6,
+     "netgain_user": 507,
+     "cumulate_user": 28639
+    },
+    {
+     "date": "2026-07-20",
+     "new_user": 761,
+     "cancel_user": 7,
+     "netgain_user": 754,
+     "cumulate_user": 29393
+    },
+    {
+     "date": "2026-07-21",
+     "new_user": 822,
+     "cancel_user": 3,
+     "netgain_user": 819,
+     "cumulate_user": 30212
+    },
+    {
+     "date": "2026-07-22",
+     "new_user": 696,
+     "cancel_user": 14,
+     "netgain_user": 682,
+     "cumulate_user": 30894
+    },
+    {
+     "date": "2026-07-23",
+     "new_user": 591,
+     "cancel_user": 11,
+     "netgain_user": 580,
+     "cumulate_user": 31474
+    },
+    {
+     "date": "2026-07-24",
+     "new_user": 492,
+     "cancel_user": 5,
+     "netgain_user": 487,
+     "cumulate_user": 31961
+    },
+    {
+     "date": "2026-07-25",
+     "new_user": 292,
+     "cancel_user": 2,
+     "netgain_user": 290,
+     "cumulate_user": 32251
+    },
+    {
+     "date": "2026-07-26",
+     "new_user": 208,
+     "cancel_user": 4,
+     "netgain_user": 204,
+     "cumulate_user": 32455
+    },
+    {
+     "date": "2026-07-27",
+     "new_user": 479,
+     "cancel_user": 4,
+     "netgain_user": 475,
+     "cumulate_user": 32930
+    },
+    {
+     "date": "2026-07-28",
+     "new_user": 434,
+     "cancel_user": 12,
+     "netgain_user": 422,
+     "cumulate_user": 33352
+    },
+    {
+     "date": "2026-07-29",
+     "new_user": 388,
+     "cancel_user": 7,
+     "netgain_user": 381,
+     "cumulate_user": 33733
+    },
+    {
+     "date": "2026-07-30",
+     "new_user": 406,
+     "cancel_user": 5,
+     "netgain_user": 401,
+     "cumulate_user": 34134
+    },
+    {
+     "date": "2026-07-31",
+     "new_user": 327,
+     "cancel_user": 3,
+     "netgain_user": 324,
+     "cumulate_user": 34458
+    },
+    {
+     "date": "2026-08-01",
+     "new_user": 218,
+     "cancel_user": 4,
+     "netgain_user": 214,
+     "cumulate_user": 34672
+    },
+    {
+     "date": "2026-08-02",
+     "new_user": 220,
+     "cancel_user": 5,
+     "netgain_user": 215,
+     "cumulate_user": 34887
+    },
+    {
+     "date": "2026-08-03",
+     "new_user": 194,
+     "cancel_user": 3,
+     "netgain_user": 191,
+     "cumulate_user": 35078
+    },
+    {
+     "date": "2026-08-04",
+     "new_user": 247,
+     "cancel_user": 9,
+     "netgain_user": 238,
+     "cumulate_user": 35316
+    },
+    {
+     "date": "2026-08-05",
+     "new_user": 401,
+     "cancel_user": 6,
+     "netgain_user": 395,
+     "cumulate_user": 35711
+    },
+    {
+     "date": "2026-08-06",
+     "new_user": 320,
+     "cancel_user": 11,
+     "netgain_user": 309,
+     "cumulate_user": 36020
+    },
+    {
+     "date": "2026-08-07",
+     "new_user": 286,
+     "cancel_user": 7,
+     "netgain_user": 279,
+     "cumulate_user": 36299
+    },
+    {
+     "date": "2026-08-08",
+     "new_user": 203,
+     "cancel_user": 3,
+     "netgain_user": 200,
+     "cumulate_user": 36499
+    },
+    {
+     "date": "2026-08-09",
+     "new_user": 182,
+     "cancel_user": 5,
+     "netgain_user": 177,
+     "cumulate_user": 36676
+    },
+    {
+     "date": "2026-08-10",
+     "new_user": 236,
+     "cancel_user": 6,
+     "netgain_user": 230,
+     "cumulate_user": 36906
+    },
+    {
+     "date": "2026-08-11",
+     "new_user": 197,
+     "cancel_user": 9,
+     "netgain_user": 188,
+     "cumulate_user": 37094
+    },
+    {
+     "date": "2026-08-12",
+     "new_user": 241,
+     "cancel_user": 7,
+     "netgain_user": 234,
+     "cumulate_user": 37328
+    },
+    {
+     "date": "2026-08-13",
+     "new_user": 282,
+     "cancel_user": 6,
+     "netgain_user": 276,
+     "cumulate_user": 37604
+    },
+    {
+     "date": "2026-08-14",
+     "new_user": 289,
+     "cancel_user": 6,
+     "netgain_user": 283,
+     "cumulate_user": 37887
+    },
+    {
+     "date": "2026-08-15",
+     "new_user": 174,
+     "cancel_user": 7,
+     "netgain_user": 167,
+     "cumulate_user": 38054
+    },
+    {
+     "date": "2026-08-16",
+     "new_user": 237,
+     "cancel_user": 4,
+     "netgain_user": 233,
+     "cumulate_user": 38287
+    },
+    {
+     "date": "2026-08-17",
+     "new_user": 282,
+     "cancel_user": 7,
+     "netgain_user": 275,
+     "cumulate_user": 38562
+    },
+    {
+     "date": "2026-08-18",
+     "new_user": 280,
+     "cancel_user": 2,
+     "netgain_user": 278,
+     "cumulate_user": 38840
+    },
+    {
+     "date": "2026-08-19",
+     "new_user": 224,
+     "cancel_user": 11,
+     "netgain_user": 213,
+     "cumulate_user": 39053
+    },
+    {
+     "date": "2026-08-20",
+     "new_user": 250,
+     "cancel_user": 8,
+     "netgain_user": 242,
+     "cumulate_user": 39295
+    },
+    {
+     "date": "2026-08-21",
+     "new_user": 197,
+     "cancel_user": 4,
+     "netgain_user": 193,
+     "cumulate_user": 39488
+    },
+    {
+     "date": "2026-08-22",
+     "new_user": 132,
+     "cancel_user": 5,
+     "netgain_user": 127,
+     "cumulate_user": 39615
+    },
+    {
+     "date": "2026-08-23",
+     "new_user": 176,
+     "cancel_user": 4,
+     "netgain_user": 172,
+     "cumulate_user": 39787
+    },
+    {
+     "date": "2026-08-24",
+     "new_user": 221,
+     "cancel_user": 11,
+     "netgain_user": 210,
+     "cumulate_user": 39997
+    },
+    {
+     "date": "2026-08-25",
+     "new_user": 178,
+     "cancel_user": 10,
+     "netgain_user": 168,
+     "cumulate_user": 40165
+    },
+    {
+     "date": "2026-08-26",
+     "new_user": 123,
+     "cancel_user": 10,
+     "netgain_user": 113,
+     "cumulate_user": 40278
+    },
+    {
+     "date": "2026-08-27",
+     "new_user": 115,
+     "cancel_user": 6,
+     "netgain_user": 109,
+     "cumulate_user": 40387
+    },
+    {
+     "date": "2026-08-28",
+     "new_user": 76,
+     "cancel_user": 4,
+     "netgain_user": 72,
+     "cumulate_user": 40459
+    },
+    {
+     "date": "2026-08-29",
+     "new_user": 49,
+     "cancel_user": 2,
+     "netgain_user": 47,
+     "cumulate_user": 40506
+    },
+    {
+     "date": "2026-08-30",
+     "new_user": 48,
+     "cancel_user": 1,
+     "netgain_user": 47,
+     "cumulate_user": 40553
+    },
+    {
+     "date": "2026-08-31",
+     "new_user": 53,
+     "cancel_user": 10,
+     "netgain_user": 43,
+     "cumulate_user": 40596
+    },
+    {
+     "date": "2026-09-01",
+     "new_user": 56,
+     "cancel_user": 5,
+     "netgain_user": 51,
+     "cumulate_user": 40647
+    },
+    {
+     "date": "2026-09-02",
+     "new_user": 71,
+     "cancel_user": 4,
+     "netgain_user": 67,
+     "cumulate_user": 40714
+    },
+    {
+     "date": "2026-09-03",
+     "new_user": 60,
+     "cancel_user": 4,
+     "netgain_user": 56,
+     "cumulate_user": 40770
+    },
+    {
+     "date": "2026-09-04",
+     "new_user": 83,
+     "cancel_user": 5,
+     "netgain_user": 78,
+     "cumulate_user": 40848
+    },
+    {
+     "date": "2026-09-05",
+     "new_user": 51,
+     "cancel_user": 3,
+     "netgain_user": 48,
+     "cumulate_user": 40896
+    },
+    {
+     "date": "2026-09-06",
+     "new_user": 75,
+     "cancel_user": 5,
+     "netgain_user": 70,
+     "cumulate_user": 40966
+    }
+   ]
+  }
+ ],
+ "load_done": 1
+}

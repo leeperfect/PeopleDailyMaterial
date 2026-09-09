@@ -1,0 +1,4696 @@
+{
+ "base_resp": {
+  "ret": 0,
+  "err_msg": ""
+ },
+ "all_article_stat_tendency": {
+  "list": [
+   {
+    "date": 1780848000,
+    "scene": 0,
+    "read_uv": 734,
+    "share_uv": 0
+   },
+   {
+    "date": 1780848000,
+    "scene": 1,
+    "read_uv": 1324,
+    "share_uv": 0
+   },
+   {
+    "date": 1780848000,
+    "scene": 2,
+    "read_uv": 841,
+    "share_uv": 0
+   },
+   {
+    "date": 1780848000,
+    "scene": 4,
+    "read_uv": 1057,
+    "share_uv": 0
+   },
+   {
+    "date": 1780848000,
+    "scene": 5,
+    "read_uv": 374,
+    "share_uv": 0
+   },
+   {
+    "date": 1780848000,
+    "scene": 6,
+    "read_uv": 9693,
+    "share_uv": 0
+   },
+   {
+    "date": 1780848000,
+    "scene": 7,
+    "read_uv": 225,
+    "share_uv": 0
+   },
+   {
+    "date": 1780848000,
+    "scene": 9999,
+    "read_uv": 13704,
+    "share_uv": 2152,
+    "source_uv": 0,
+    "collection_uv": 738,
+    "mass_pv": 1
+   },
+   {
+    "date": 1780934400,
+    "scene": 0,
+    "read_uv": 849,
+    "share_uv": 0
+   },
+   {
+    "date": 1780934400,
+    "scene": 1,
+    "read_uv": 1631,
+    "share_uv": 0
+   },
+   {
+    "date": 1780934400,
+    "scene": 2,
+    "read_uv": 795,
+    "share_uv": 0
+   },
+   {
+    "date": 1780934400,
+    "scene": 4,
+    "read_uv": 1258,
+    "share_uv": 0
+   },
+   {
+    "date": 1780934400,
+    "scene": 5,
+    "read_uv": 381,
+    "share_uv": 0
+   },
+   {
+    "date": 1780934400,
+    "scene": 6,
+    "read_uv": 12561,
+    "share_uv": 0
+   },
+   {
+    "date": 1780934400,
+    "scene": 7,
+    "read_uv": 273,
+    "share_uv": 0
+   },
+   {
+    "date": 1780934400,
+    "scene": 9999,
+    "read_uv": 17119,
+    "share_uv": 2764,
+    "source_uv": 0,
+    "collection_uv": 1092,
+    "mass_pv": 2
+   },
+   {
+    "date": 1781020800,
+    "scene": 0,
+    "read_uv": 1058,
+    "share_uv": 0
+   },
+   {
+    "date": 1781020800,
+    "scene": 1,
+    "read_uv": 1580,
+    "share_uv": 0
+   },
+   {
+    "date": 1781020800,
+    "scene": 2,
+    "read_uv": 1146,
+    "share_uv": 0
+   },
+   {
+    "date": 1781020800,
+    "scene": 4,
+    "read_uv": 1276,
+    "share_uv": 0
+   },
+   {
+    "date": 1781020800,
+    "scene": 5,
+    "read_uv": 417,
+    "share_uv": 0
+   },
+   {
+    "date": 1781020800,
+    "scene": 6,
+    "read_uv": 12299,
+    "share_uv": 0
+   },
+   {
+    "date": 1781020800,
+    "scene": 7,
+    "read_uv": 284,
+    "share_uv": 0
+   },
+   {
+    "date": 1781020800,
+    "scene": 9999,
+    "read_uv": 17483,
+    "share_uv": 2709,
+    "source_uv": 0,
+    "collection_uv": 909,
+    "mass_pv": 2
+   },
+   {
+    "date": 1781107200,
+    "scene": 0,
+    "read_uv": 895,
+    "share_uv": 0
+   },
+   {
+    "date": 1781107200,
+    "scene": 1,
+    "read_uv": 1234,
+    "share_uv": 0
+   },
+   {
+    "date": 1781107200,
+    "scene": 2,
+    "read_uv": 898,
+    "share_uv": 0
+   },
+   {
+    "date": 1781107200,
+    "scene": 4,
+    "read_uv": 914,
+    "share_uv": 0
+   },
+   {
+    "date": 1781107200,
+    "scene": 5,
+    "read_uv": 358,
+    "share_uv": 0
+   },
+   {
+    "date": 1781107200,
+    "scene": 6,
+    "read_uv": 10078,
+    "share_uv": 0
+   },
+   {
+    "date": 1781107200,
+    "scene": 7,
+    "read_uv": 270,
+    "share_uv": 0
+   },
+   {
+    "date": 1781107200,
+    "scene": 9999,
+    "read_uv": 14224,
+    "share_uv": 2076,
+    "source_uv": 0,
+    "collection_uv": 759,
+    "mass_pv": 1
+   },
+   {
+    "date": 1781193600,
+    "scene": 0,
+    "read_uv": 1187,
+    "share_uv": 0
+   },
+   {
+    "date": 1781193600,
+    "scene": 1,
+    "read_uv": 952,
+    "share_uv": 0
+   },
+   {
+    "date": 1781193600,
+    "scene": 2,
+    "read_uv": 580,
+    "share_uv": 0
+   },
+   {
+    "date": 1781193600,
+    "scene": 4,
+    "read_uv": 919,
+    "share_uv": 0
+   },
+   {
+    "date": 1781193600,
+    "scene": 5,
+    "read_uv": 300,
+    "share_uv": 0
+   },
+   {
+    "date": 1781193600,
+    "scene": 6,
+    "read_uv": 6933,
+    "share_uv": 0
+   },
+   {
+    "date": 1781193600,
+    "scene": 7,
+    "read_uv": 203,
+    "share_uv": 0
+   },
+   {
+    "date": 1781193600,
+    "scene": 9999,
+    "read_uv": 10779,
+    "share_uv": 1486,
+    "source_uv": 0,
+    "collection_uv": 560,
+    "mass_pv": 1
+   },
+   {
+    "date": 1781280000,
+    "scene": 0,
+    "read_uv": 746,
+    "share_uv": 0
+   },
+   {
+    "date": 1781280000,
+    "scene": 1,
+    "read_uv": 669,
+    "share_uv": 0
+   },
+   {
+    "date": 1781280000,
+    "scene": 2,
+    "read_uv": 418,
+    "share_uv": 0
+   },
+   {
+    "date": 1781280000,
+    "scene": 4,
+    "read_uv": 576,
+    "share_uv": 0
+   },
+   {
+    "date": 1781280000,
+    "scene": 5,
+    "read_uv": 182,
+    "share_uv": 0
+   },
+   {
+    "date": 1781280000,
+    "scene": 6,
+    "read_uv": 4537,
+    "share_uv": 0
+   },
+   {
+    "date": 1781280000,
+    "scene": 7,
+    "read_uv": 132,
+    "share_uv": 0
+   },
+   {
+    "date": 1781280000,
+    "scene": 9999,
+    "read_uv": 7077,
+    "share_uv": 1071,
+    "source_uv": 0,
+    "collection_uv": 432,
+    "mass_pv": 1
+   },
+   {
+    "date": 1781366400,
+    "scene": 0,
+    "read_uv": 329,
+    "share_uv": 0
+   },
+   {
+    "date": 1781366400,
+    "scene": 1,
+    "read_uv": 498,
+    "share_uv": 0
+   },
+   {
+    "date": 1781366400,
+    "scene": 2,
+    "read_uv": 361,
+    "share_uv": 0
+   },
+   {
+    "date": 1781366400,
+    "scene": 4,
+    "read_uv": 361,
+    "share_uv": 0
+   },
+   {
+    "date": 1781366400,
+    "scene": 5,
+    "read_uv": 151,
+    "share_uv": 0
+   },
+   {
+    "date": 1781366400,
+    "scene": 6,
+    "read_uv": 2938,
+    "share_uv": 0
+   },
+   {
+    "date": 1781366400,
+    "scene": 7,
+    "read_uv": 127,
+    "share_uv": 0
+   },
+   {
+    "date": 1781366400,
+    "scene": 9999,
+    "read_uv": 4663,
+    "share_uv": 652,
+    "source_uv": 0,
+    "collection_uv": 252,
+    "mass_pv": 1
+   },
+   {
+    "date": 1781452800,
+    "scene": 0,
+    "read_uv": 1085,
+    "share_uv": 0
+   },
+   {
+    "date": 1781452800,
+    "scene": 1,
+    "read_uv": 671,
+    "share_uv": 0
+   },
+   {
+    "date": 1781452800,
+    "scene": 2,
+    "read_uv": 570,
+    "share_uv": 0
+   },
+   {
+    "date": 1781452800,
+    "scene": 4,
+    "read_uv": 802,
+    "share_uv": 0
+   },
+   {
+    "date": 1781452800,
+    "scene": 5,
+    "read_uv": 306,
+    "share_uv": 0
+   },
+   {
+    "date": 1781452800,
+    "scene": 6,
+    "read_uv": 5033,
+    "share_uv": 0
+   },
+   {
+    "date": 1781452800,
+    "scene": 7,
+    "read_uv": 226,
+    "share_uv": 0
+   },
+   {
+    "date": 1781452800,
+    "scene": 9999,
+    "read_uv": 8419,
+    "share_uv": 1189,
+    "source_uv": 0,
+    "collection_uv": 358,
+    "mass_pv": 1
+   },
+   {
+    "date": 1781539200,
+    "scene": 0,
+    "read_uv": 896,
+    "share_uv": 0
+   },
+   {
+    "date": 1781539200,
+    "scene": 1,
+    "read_uv": 714,
+    "share_uv": 0
+   },
+   {
+    "date": 1781539200,
+    "scene": 2,
+    "read_uv": 513,
+    "share_uv": 0
+   },
+   {
+    "date": 1781539200,
+    "scene": 4,
+    "read_uv": 853,
+    "share_uv": 0
+   },
+   {
+    "date": 1781539200,
+    "scene": 5,
+    "read_uv": 239,
+    "share_uv": 0
+   },
+   {
+    "date": 1781539200,
+    "scene": 6,
+    "read_uv": 5507,
+    "share_uv": 0
+   },
+   {
+    "date": 1781539200,
+    "scene": 7,
+    "read_uv": 258,
+    "share_uv": 0
+   },
+   {
+    "date": 1781539200,
+    "scene": 9999,
+    "read_uv": 8667,
+    "share_uv": 1129,
+    "source_uv": 0,
+    "collection_uv": 348,
+    "mass_pv": 1
+   },
+   {
+    "date": 1781625600,
+    "scene": 0,
+    "read_uv": 207,
+    "share_uv": 0
+   },
+   {
+    "date": 1781625600,
+    "scene": 1,
+    "read_uv": 459,
+    "share_uv": 0
+   },
+   {
+    "date": 1781625600,
+    "scene": 2,
+    "read_uv": 185,
+    "share_uv": 0
+   },
+   {
+    "date": 1781625600,
+    "scene": 4,
+    "read_uv": 710,
+    "share_uv": 0
+   },
+   {
+    "date": 1781625600,
+    "scene": 5,
+    "read_uv": 264,
+    "share_uv": 0
+   },
+   {
+    "date": 1781625600,
+    "scene": 6,
+    "read_uv": 4565,
+    "share_uv": 0
+   },
+   {
+    "date": 1781625600,
+    "scene": 7,
+    "read_uv": 208,
+    "share_uv": 0
+   },
+   {
+    "date": 1781625600,
+    "scene": 9999,
+    "read_uv": 6370,
+    "share_uv": 854,
+    "source_uv": 0,
+    "collection_uv": 280,
+    "mass_pv": 0
+   },
+   {
+    "date": 1781712000,
+    "scene": 0,
+    "read_uv": 162,
+    "share_uv": 0
+   },
+   {
+    "date": 1781712000,
+    "scene": 1,
+    "read_uv": 409,
+    "share_uv": 0
+   },
+   {
+    "date": 1781712000,
+    "scene": 2,
+    "read_uv": 191,
+    "share_uv": 0
+   },
+   {
+    "date": 1781712000,
+    "scene": 4,
+    "read_uv": 573,
+    "share_uv": 0
+   },
+   {
+    "date": 1781712000,
+    "scene": 5,
+    "read_uv": 201,
+    "share_uv": 0
+   },
+   {
+    "date": 1781712000,
+    "scene": 6,
+    "read_uv": 3608,
+    "share_uv": 0
+   },
+   {
+    "date": 1781712000,
+    "scene": 7,
+    "read_uv": 164,
+    "share_uv": 0
+   },
+   {
+    "date": 1781712000,
+    "scene": 9999,
+    "read_uv": 5159,
+    "share_uv": 666,
+    "source_uv": 0,
+    "collection_uv": 221,
+    "mass_pv": 0
+   },
+   {
+    "date": 1781798400,
+    "scene": 0,
+    "read_uv": 419,
+    "share_uv": 0
+   },
+   {
+    "date": 1781798400,
+    "scene": 1,
+    "read_uv": 223,
+    "share_uv": 0
+   },
+   {
+    "date": 1781798400,
+    "scene": 2,
+    "read_uv": 124,
+    "share_uv": 0
+   },
+   {
+    "date": 1781798400,
+    "scene": 4,
+    "read_uv": 408,
+    "share_uv": 0
+   },
+   {
+    "date": 1781798400,
+    "scene": 5,
+    "read_uv": 134,
+    "share_uv": 0
+   },
+   {
+    "date": 1781798400,
+    "scene": 6,
+    "read_uv": 1831,
+    "share_uv": 0
+   },
+   {
+    "date": 1781798400,
+    "scene": 7,
+    "read_uv": 94,
+    "share_uv": 0
+   },
+   {
+    "date": 1781798400,
+    "scene": 9999,
+    "read_uv": 3144,
+    "share_uv": 421,
+    "source_uv": 0,
+    "collection_uv": 156,
+    "mass_pv": 2
+   },
+   {
+    "date": 1781884800,
+    "scene": 0,
+    "read_uv": 655,
+    "share_uv": 0
+   },
+   {
+    "date": 1781884800,
+    "scene": 1,
+    "read_uv": 223,
+    "share_uv": 0
+   },
+   {
+    "date": 1781884800,
+    "scene": 2,
+    "read_uv": 151,
+    "share_uv": 0
+   },
+   {
+    "date": 1781884800,
+    "scene": 4,
+    "read_uv": 439,
+    "share_uv": 0
+   },
+   {
+    "date": 1781884800,
+    "scene": 5,
+    "read_uv": 133,
+    "share_uv": 0
+   },
+   {
+    "date": 1781884800,
+    "scene": 6,
+    "read_uv": 1645,
+    "share_uv": 0
+   },
+   {
+    "date": 1781884800,
+    "scene": 7,
+    "read_uv": 131,
+    "share_uv": 0
+   },
+   {
+    "date": 1781884800,
+    "scene": 9999,
+    "read_uv": 3280,
+    "share_uv": 475,
+    "source_uv": 0,
+    "collection_uv": 133,
+    "mass_pv": 1
+   },
+   {
+    "date": 1781971200,
+    "scene": 0,
+    "read_uv": 514,
+    "share_uv": 0
+   },
+   {
+    "date": 1781971200,
+    "scene": 1,
+    "read_uv": 233,
+    "share_uv": 0
+   },
+   {
+    "date": 1781971200,
+    "scene": 2,
+    "read_uv": 197,
+    "share_uv": 0
+   },
+   {
+    "date": 1781971200,
+    "scene": 4,
+    "read_uv": 464,
+    "share_uv": 0
+   },
+   {
+    "date": 1781971200,
+    "scene": 5,
+    "read_uv": 122,
+    "share_uv": 0
+   },
+   {
+    "date": 1781971200,
+    "scene": 6,
+    "read_uv": 1640,
+    "share_uv": 0
+   },
+   {
+    "date": 1781971200,
+    "scene": 7,
+    "read_uv": 123,
+    "share_uv": 0
+   },
+   {
+    "date": 1781971200,
+    "scene": 9999,
+    "read_uv": 3189,
+    "share_uv": 438,
+    "source_uv": 0,
+    "collection_uv": 122,
+    "mass_pv": 1
+   },
+   {
+    "date": 1782057600,
+    "scene": 0,
+    "read_uv": 710,
+    "share_uv": 0
+   },
+   {
+    "date": 1782057600,
+    "scene": 1,
+    "read_uv": 367,
+    "share_uv": 0
+   },
+   {
+    "date": 1782057600,
+    "scene": 2,
+    "read_uv": 74,
+    "share_uv": 0
+   },
+   {
+    "date": 1782057600,
+    "scene": 4,
+    "read_uv": 748,
+    "share_uv": 0
+   },
+   {
+    "date": 1782057600,
+    "scene": 5,
+    "read_uv": 234,
+    "share_uv": 0
+   },
+   {
+    "date": 1782057600,
+    "scene": 6,
+    "read_uv": 2545,
+    "share_uv": 0
+   },
+   {
+    "date": 1782057600,
+    "scene": 7,
+    "read_uv": 223,
+    "share_uv": 0
+   },
+   {
+    "date": 1782057600,
+    "scene": 9999,
+    "read_uv": 4720,
+    "share_uv": 552,
+    "source_uv": 0,
+    "collection_uv": 148,
+    "mass_pv": 1
+   },
+   {
+    "date": 1782144000,
+    "scene": 0,
+    "read_uv": 896,
+    "share_uv": 0
+   },
+   {
+    "date": 1782144000,
+    "scene": 1,
+    "read_uv": 399,
+    "share_uv": 0
+   },
+   {
+    "date": 1782144000,
+    "scene": 2,
+    "read_uv": 141,
+    "share_uv": 0
+   },
+   {
+    "date": 1782144000,
+    "scene": 4,
+    "read_uv": 789,
+    "share_uv": 0
+   },
+   {
+    "date": 1782144000,
+    "scene": 5,
+    "read_uv": 272,
+    "share_uv": 0
+   },
+   {
+    "date": 1782144000,
+    "scene": 6,
+    "read_uv": 3170,
+    "share_uv": 0
+   },
+   {
+    "date": 1782144000,
+    "scene": 7,
+    "read_uv": 207,
+    "share_uv": 0
+   },
+   {
+    "date": 1782144000,
+    "scene": 9999,
+    "read_uv": 5629,
+    "share_uv": 717,
+    "source_uv": 0,
+    "collection_uv": 188,
+    "mass_pv": 3
+   },
+   {
+    "date": 1782230400,
+    "scene": 0,
+    "read_uv": 911,
+    "share_uv": 0
+   },
+   {
+    "date": 1782230400,
+    "scene": 1,
+    "read_uv": 626,
+    "share_uv": 0
+   },
+   {
+    "date": 1782230400,
+    "scene": 2,
+    "read_uv": 480,
+    "share_uv": 0
+   },
+   {
+    "date": 1782230400,
+    "scene": 4,
+    "read_uv": 833,
+    "share_uv": 0
+   },
+   {
+    "date": 1782230400,
+    "scene": 5,
+    "read_uv": 300,
+    "share_uv": 0
+   },
+   {
+    "date": 1782230400,
+    "scene": 6,
+    "read_uv": 3980,
+    "share_uv": 0
+   },
+   {
+    "date": 1782230400,
+    "scene": 7,
+    "read_uv": 197,
+    "share_uv": 0
+   },
+   {
+    "date": 1782230400,
+    "scene": 9999,
+    "read_uv": 7037,
+    "share_uv": 857,
+    "source_uv": 0,
+    "collection_uv": 271,
+    "mass_pv": 1
+   },
+   {
+    "date": 1782316800,
+    "scene": 0,
+    "read_uv": 1185,
+    "share_uv": 0
+   },
+   {
+    "date": 1782316800,
+    "scene": 1,
+    "read_uv": 665,
+    "share_uv": 0
+   },
+   {
+    "date": 1782316800,
+    "scene": 2,
+    "read_uv": 386,
+    "share_uv": 0
+   },
+   {
+    "date": 1782316800,
+    "scene": 4,
+    "read_uv": 962,
+    "share_uv": 0
+   },
+   {
+    "date": 1782316800,
+    "scene": 5,
+    "read_uv": 280,
+    "share_uv": 0
+   },
+   {
+    "date": 1782316800,
+    "scene": 6,
+    "read_uv": 4606,
+    "share_uv": 0
+   },
+   {
+    "date": 1782316800,
+    "scene": 7,
+    "read_uv": 286,
+    "share_uv": 0
+   },
+   {
+    "date": 1782316800,
+    "scene": 9999,
+    "read_uv": 8042,
+    "share_uv": 1022,
+    "source_uv": 0,
+    "collection_uv": 325,
+    "mass_pv": 1
+   },
+   {
+    "date": 1782403200,
+    "scene": 0,
+    "read_uv": 744,
+    "share_uv": 0
+   },
+   {
+    "date": 1782403200,
+    "scene": 1,
+    "read_uv": 606,
+    "share_uv": 0
+   },
+   {
+    "date": 1782403200,
+    "scene": 2,
+    "read_uv": 317,
+    "share_uv": 0
+   },
+   {
+    "date": 1782403200,
+    "scene": 4,
+    "read_uv": 678,
+    "share_uv": 0
+   },
+   {
+    "date": 1782403200,
+    "scene": 5,
+    "read_uv": 252,
+    "share_uv": 0
+   },
+   {
+    "date": 1782403200,
+    "scene": 6,
+    "read_uv": 3869,
+    "share_uv": 0
+   },
+   {
+    "date": 1782403200,
+    "scene": 7,
+    "read_uv": 189,
+    "share_uv": 0
+   },
+   {
+    "date": 1782403200,
+    "scene": 9999,
+    "read_uv": 6423,
+    "share_uv": 800,
+    "source_uv": 0,
+    "collection_uv": 258,
+    "mass_pv": 1
+   },
+   {
+    "date": 1782489600,
+    "scene": 0,
+    "read_uv": 610,
+    "share_uv": 0
+   },
+   {
+    "date": 1782489600,
+    "scene": 1,
+    "read_uv": 339,
+    "share_uv": 0
+   },
+   {
+    "date": 1782489600,
+    "scene": 2,
+    "read_uv": 324,
+    "share_uv": 0
+   },
+   {
+    "date": 1782489600,
+    "scene": 4,
+    "read_uv": 453,
+    "share_uv": 0
+   },
+   {
+    "date": 1782489600,
+    "scene": 5,
+    "read_uv": 141,
+    "share_uv": 0
+   },
+   {
+    "date": 1782489600,
+    "scene": 6,
+    "read_uv": 2707,
+    "share_uv": 0
+   },
+   {
+    "date": 1782489600,
+    "scene": 7,
+    "read_uv": 105,
+    "share_uv": 0
+   },
+   {
+    "date": 1782489600,
+    "scene": 9999,
+    "read_uv": 4556,
+    "share_uv": 592,
+    "source_uv": 0,
+    "collection_uv": 228,
+    "mass_pv": 1
+   },
+   {
+    "date": 1782576000,
+    "scene": 0,
+    "read_uv": 655,
+    "share_uv": 0
+   },
+   {
+    "date": 1782576000,
+    "scene": 1,
+    "read_uv": 498,
+    "share_uv": 0
+   },
+   {
+    "date": 1782576000,
+    "scene": 2,
+    "read_uv": 572,
+    "share_uv": 0
+   },
+   {
+    "date": 1782576000,
+    "scene": 4,
+    "read_uv": 532,
+    "share_uv": 0
+   },
+   {
+    "date": 1782576000,
+    "scene": 5,
+    "read_uv": 123,
+    "share_uv": 0
+   },
+   {
+    "date": 1782576000,
+    "scene": 6,
+    "read_uv": 4055,
+    "share_uv": 0
+   },
+   {
+    "date": 1782576000,
+    "scene": 7,
+    "read_uv": 105,
+    "share_uv": 0
+   },
+   {
+    "date": 1782576000,
+    "scene": 9999,
+    "read_uv": 6355,
+    "share_uv": 1063,
+    "source_uv": 0,
+    "collection_uv": 480,
+    "mass_pv": 1
+   },
+   {
+    "date": 1782662400,
+    "scene": 0,
+    "read_uv": 749,
+    "share_uv": 0
+   },
+   {
+    "date": 1782662400,
+    "scene": 1,
+    "read_uv": 1418,
+    "share_uv": 0
+   },
+   {
+    "date": 1782662400,
+    "scene": 2,
+    "read_uv": 1872,
+    "share_uv": 0
+   },
+   {
+    "date": 1782662400,
+    "scene": 4,
+    "read_uv": 798,
+    "share_uv": 0
+   },
+   {
+    "date": 1782662400,
+    "scene": 5,
+    "read_uv": 271,
+    "share_uv": 0
+   },
+   {
+    "date": 1782662400,
+    "scene": 6,
+    "read_uv": 9019,
+    "share_uv": 0
+   },
+   {
+    "date": 1782662400,
+    "scene": 7,
+    "read_uv": 233,
+    "share_uv": 0
+   },
+   {
+    "date": 1782662400,
+    "scene": 9999,
+    "read_uv": 13910,
+    "share_uv": 2149,
+    "source_uv": 0,
+    "collection_uv": 884,
+    "mass_pv": 2
+   },
+   {
+    "date": 1782748800,
+    "scene": 0,
+    "read_uv": 759,
+    "share_uv": 0
+   },
+   {
+    "date": 1782748800,
+    "scene": 1,
+    "read_uv": 1189,
+    "share_uv": 0
+   },
+   {
+    "date": 1782748800,
+    "scene": 2,
+    "read_uv": 1593,
+    "share_uv": 0
+   },
+   {
+    "date": 1782748800,
+    "scene": 4,
+    "read_uv": 759,
+    "share_uv": 0
+   },
+   {
+    "date": 1782748800,
+    "scene": 5,
+    "read_uv": 264,
+    "share_uv": 0
+   },
+   {
+    "date": 1782748800,
+    "scene": 6,
+    "read_uv": 7075,
+    "share_uv": 0
+   },
+   {
+    "date": 1782748800,
+    "scene": 7,
+    "read_uv": 207,
+    "share_uv": 0
+   },
+   {
+    "date": 1782748800,
+    "scene": 9999,
+    "read_uv": 11477,
+    "share_uv": 1785,
+    "source_uv": 0,
+    "collection_uv": 709,
+    "mass_pv": 1
+   },
+   {
+    "date": 1782835200,
+    "scene": 0,
+    "read_uv": 889,
+    "share_uv": 0
+   },
+   {
+    "date": 1782835200,
+    "scene": 1,
+    "read_uv": 870,
+    "share_uv": 0
+   },
+   {
+    "date": 1782835200,
+    "scene": 2,
+    "read_uv": 990,
+    "share_uv": 0
+   },
+   {
+    "date": 1782835200,
+    "scene": 4,
+    "read_uv": 753,
+    "share_uv": 0
+   },
+   {
+    "date": 1782835200,
+    "scene": 5,
+    "read_uv": 244,
+    "share_uv": 0
+   },
+   {
+    "date": 1782835200,
+    "scene": 6,
+    "read_uv": 6499,
+    "share_uv": 0
+   },
+   {
+    "date": 1782835200,
+    "scene": 7,
+    "read_uv": 192,
+    "share_uv": 0
+   },
+   {
+    "date": 1782835200,
+    "scene": 9999,
+    "read_uv": 10131,
+    "share_uv": 1599,
+    "source_uv": 0,
+    "collection_uv": 613,
+    "mass_pv": 1
+   },
+   {
+    "date": 1782921600,
+    "scene": 0,
+    "read_uv": 853,
+    "share_uv": 0
+   },
+   {
+    "date": 1782921600,
+    "scene": 1,
+    "read_uv": 863,
+    "share_uv": 0
+   },
+   {
+    "date": 1782921600,
+    "scene": 2,
+    "read_uv": 498,
+    "share_uv": 0
+   },
+   {
+    "date": 1782921600,
+    "scene": 4,
+    "read_uv": 669,
+    "share_uv": 0
+   },
+   {
+    "date": 1782921600,
+    "scene": 5,
+    "read_uv": 231,
+    "share_uv": 0
+   },
+   {
+    "date": 1782921600,
+    "scene": 6,
+    "read_uv": 5563,
+    "share_uv": 0
+   },
+   {
+    "date": 1782921600,
+    "scene": 7,
+    "read_uv": 199,
+    "share_uv": 0
+   },
+   {
+    "date": 1782921600,
+    "scene": 9999,
+    "read_uv": 8600,
+    "share_uv": 1321,
+    "source_uv": 0,
+    "collection_uv": 447,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783008000,
+    "scene": 0,
+    "read_uv": 571,
+    "share_uv": 0
+   },
+   {
+    "date": 1783008000,
+    "scene": 1,
+    "read_uv": 1109,
+    "share_uv": 0
+   },
+   {
+    "date": 1783008000,
+    "scene": 2,
+    "read_uv": 790,
+    "share_uv": 0
+   },
+   {
+    "date": 1783008000,
+    "scene": 4,
+    "read_uv": 719,
+    "share_uv": 0
+   },
+   {
+    "date": 1783008000,
+    "scene": 5,
+    "read_uv": 241,
+    "share_uv": 0
+   },
+   {
+    "date": 1783008000,
+    "scene": 6,
+    "read_uv": 5282,
+    "share_uv": 0
+   },
+   {
+    "date": 1783008000,
+    "scene": 7,
+    "read_uv": 193,
+    "share_uv": 0
+   },
+   {
+    "date": 1783008000,
+    "scene": 9999,
+    "read_uv": 8632,
+    "share_uv": 1214,
+    "source_uv": 0,
+    "collection_uv": 393,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783094400,
+    "scene": 0,
+    "read_uv": 356,
+    "share_uv": 0
+   },
+   {
+    "date": 1783094400,
+    "scene": 1,
+    "read_uv": 455,
+    "share_uv": 0
+   },
+   {
+    "date": 1783094400,
+    "scene": 2,
+    "read_uv": 503,
+    "share_uv": 0
+   },
+   {
+    "date": 1783094400,
+    "scene": 4,
+    "read_uv": 424,
+    "share_uv": 0
+   },
+   {
+    "date": 1783094400,
+    "scene": 5,
+    "read_uv": 143,
+    "share_uv": 0
+   },
+   {
+    "date": 1783094400,
+    "scene": 6,
+    "read_uv": 3782,
+    "share_uv": 0
+   },
+   {
+    "date": 1783094400,
+    "scene": 7,
+    "read_uv": 111,
+    "share_uv": 0
+   },
+   {
+    "date": 1783094400,
+    "scene": 9999,
+    "read_uv": 5631,
+    "share_uv": 880,
+    "source_uv": 0,
+    "collection_uv": 316,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783180800,
+    "scene": 0,
+    "read_uv": 777,
+    "share_uv": 0
+   },
+   {
+    "date": 1783180800,
+    "scene": 1,
+    "read_uv": 516,
+    "share_uv": 0
+   },
+   {
+    "date": 1783180800,
+    "scene": 2,
+    "read_uv": 419,
+    "share_uv": 0
+   },
+   {
+    "date": 1783180800,
+    "scene": 4,
+    "read_uv": 371,
+    "share_uv": 0
+   },
+   {
+    "date": 1783180800,
+    "scene": 5,
+    "read_uv": 115,
+    "share_uv": 0
+   },
+   {
+    "date": 1783180800,
+    "scene": 6,
+    "read_uv": 2703,
+    "share_uv": 0
+   },
+   {
+    "date": 1783180800,
+    "scene": 7,
+    "read_uv": 130,
+    "share_uv": 0
+   },
+   {
+    "date": 1783180800,
+    "scene": 9999,
+    "read_uv": 4890,
+    "share_uv": 746,
+    "source_uv": 0,
+    "collection_uv": 251,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783267200,
+    "scene": 0,
+    "read_uv": 692,
+    "share_uv": 0
+   },
+   {
+    "date": 1783267200,
+    "scene": 1,
+    "read_uv": 615,
+    "share_uv": 0
+   },
+   {
+    "date": 1783267200,
+    "scene": 2,
+    "read_uv": 493,
+    "share_uv": 0
+   },
+   {
+    "date": 1783267200,
+    "scene": 4,
+    "read_uv": 596,
+    "share_uv": 0
+   },
+   {
+    "date": 1783267200,
+    "scene": 5,
+    "read_uv": 212,
+    "share_uv": 0
+   },
+   {
+    "date": 1783267200,
+    "scene": 6,
+    "read_uv": 3944,
+    "share_uv": 0
+   },
+   {
+    "date": 1783267200,
+    "scene": 7,
+    "read_uv": 266,
+    "share_uv": 0
+   },
+   {
+    "date": 1783267200,
+    "scene": 9999,
+    "read_uv": 6616,
+    "share_uv": 826,
+    "source_uv": 0,
+    "collection_uv": 270,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783353600,
+    "scene": 0,
+    "read_uv": 1048,
+    "share_uv": 0
+   },
+   {
+    "date": 1783353600,
+    "scene": 1,
+    "read_uv": 610,
+    "share_uv": 0
+   },
+   {
+    "date": 1783353600,
+    "scene": 2,
+    "read_uv": 521,
+    "share_uv": 0
+   },
+   {
+    "date": 1783353600,
+    "scene": 4,
+    "read_uv": 595,
+    "share_uv": 0
+   },
+   {
+    "date": 1783353600,
+    "scene": 5,
+    "read_uv": 199,
+    "share_uv": 0
+   },
+   {
+    "date": 1783353600,
+    "scene": 6,
+    "read_uv": 3004,
+    "share_uv": 0
+   },
+   {
+    "date": 1783353600,
+    "scene": 7,
+    "read_uv": 247,
+    "share_uv": 0
+   },
+   {
+    "date": 1783353600,
+    "scene": 9999,
+    "read_uv": 6011,
+    "share_uv": 819,
+    "source_uv": 0,
+    "collection_uv": 228,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783440000,
+    "scene": 0,
+    "read_uv": 547,
+    "share_uv": 0
+   },
+   {
+    "date": 1783440000,
+    "scene": 1,
+    "read_uv": 580,
+    "share_uv": 0
+   },
+   {
+    "date": 1783440000,
+    "scene": 2,
+    "read_uv": 323,
+    "share_uv": 0
+   },
+   {
+    "date": 1783440000,
+    "scene": 4,
+    "read_uv": 495,
+    "share_uv": 0
+   },
+   {
+    "date": 1783440000,
+    "scene": 5,
+    "read_uv": 225,
+    "share_uv": 0
+   },
+   {
+    "date": 1783440000,
+    "scene": 6,
+    "read_uv": 3863,
+    "share_uv": 0
+   },
+   {
+    "date": 1783440000,
+    "scene": 7,
+    "read_uv": 256,
+    "share_uv": 0
+   },
+   {
+    "date": 1783440000,
+    "scene": 9999,
+    "read_uv": 6085,
+    "share_uv": 809,
+    "source_uv": 0,
+    "collection_uv": 275,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783526400,
+    "scene": 0,
+    "read_uv": 892,
+    "share_uv": 0
+   },
+   {
+    "date": 1783526400,
+    "scene": 1,
+    "read_uv": 493,
+    "share_uv": 0
+   },
+   {
+    "date": 1783526400,
+    "scene": 2,
+    "read_uv": 367,
+    "share_uv": 0
+   },
+   {
+    "date": 1783526400,
+    "scene": 4,
+    "read_uv": 521,
+    "share_uv": 0
+   },
+   {
+    "date": 1783526400,
+    "scene": 5,
+    "read_uv": 190,
+    "share_uv": 0
+   },
+   {
+    "date": 1783526400,
+    "scene": 6,
+    "read_uv": 4045,
+    "share_uv": 0
+   },
+   {
+    "date": 1783526400,
+    "scene": 7,
+    "read_uv": 225,
+    "share_uv": 0
+   },
+   {
+    "date": 1783526400,
+    "scene": 9999,
+    "read_uv": 6543,
+    "share_uv": 820,
+    "source_uv": 0,
+    "collection_uv": 285,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783612800,
+    "scene": 0,
+    "read_uv": 779,
+    "share_uv": 0
+   },
+   {
+    "date": 1783612800,
+    "scene": 1,
+    "read_uv": 497,
+    "share_uv": 0
+   },
+   {
+    "date": 1783612800,
+    "scene": 2,
+    "read_uv": 276,
+    "share_uv": 0
+   },
+   {
+    "date": 1783612800,
+    "scene": 4,
+    "read_uv": 556,
+    "share_uv": 0
+   },
+   {
+    "date": 1783612800,
+    "scene": 5,
+    "read_uv": 200,
+    "share_uv": 0
+   },
+   {
+    "date": 1783612800,
+    "scene": 6,
+    "read_uv": 3726,
+    "share_uv": 0
+   },
+   {
+    "date": 1783612800,
+    "scene": 7,
+    "read_uv": 215,
+    "share_uv": 0
+   },
+   {
+    "date": 1783612800,
+    "scene": 9999,
+    "read_uv": 6064,
+    "share_uv": 811,
+    "source_uv": 0,
+    "collection_uv": 289,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783699200,
+    "scene": 0,
+    "read_uv": 340,
+    "share_uv": 0
+   },
+   {
+    "date": 1783699200,
+    "scene": 1,
+    "read_uv": 289,
+    "share_uv": 0
+   },
+   {
+    "date": 1783699200,
+    "scene": 2,
+    "read_uv": 236,
+    "share_uv": 0
+   },
+   {
+    "date": 1783699200,
+    "scene": 4,
+    "read_uv": 366,
+    "share_uv": 0
+   },
+   {
+    "date": 1783699200,
+    "scene": 5,
+    "read_uv": 106,
+    "share_uv": 0
+   },
+   {
+    "date": 1783699200,
+    "scene": 6,
+    "read_uv": 2205,
+    "share_uv": 0
+   },
+   {
+    "date": 1783699200,
+    "scene": 7,
+    "read_uv": 96,
+    "share_uv": 0
+   },
+   {
+    "date": 1783699200,
+    "scene": 9999,
+    "read_uv": 3561,
+    "share_uv": 554,
+    "source_uv": 0,
+    "collection_uv": 182,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783785600,
+    "scene": 0,
+    "read_uv": 594,
+    "share_uv": 0
+   },
+   {
+    "date": 1783785600,
+    "scene": 1,
+    "read_uv": 368,
+    "share_uv": 0
+   },
+   {
+    "date": 1783785600,
+    "scene": 2,
+    "read_uv": 259,
+    "share_uv": 0
+   },
+   {
+    "date": 1783785600,
+    "scene": 4,
+    "read_uv": 405,
+    "share_uv": 0
+   },
+   {
+    "date": 1783785600,
+    "scene": 5,
+    "read_uv": 128,
+    "share_uv": 0
+   },
+   {
+    "date": 1783785600,
+    "scene": 6,
+    "read_uv": 2635,
+    "share_uv": 0
+   },
+   {
+    "date": 1783785600,
+    "scene": 7,
+    "read_uv": 122,
+    "share_uv": 0
+   },
+   {
+    "date": 1783785600,
+    "scene": 9999,
+    "read_uv": 4370,
+    "share_uv": 728,
+    "source_uv": 0,
+    "collection_uv": 235,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783872000,
+    "scene": 0,
+    "read_uv": 937,
+    "share_uv": 0
+   },
+   {
+    "date": 1783872000,
+    "scene": 1,
+    "read_uv": 654,
+    "share_uv": 0
+   },
+   {
+    "date": 1783872000,
+    "scene": 2,
+    "read_uv": 645,
+    "share_uv": 0
+   },
+   {
+    "date": 1783872000,
+    "scene": 4,
+    "read_uv": 654,
+    "share_uv": 0
+   },
+   {
+    "date": 1783872000,
+    "scene": 5,
+    "read_uv": 180,
+    "share_uv": 0
+   },
+   {
+    "date": 1783872000,
+    "scene": 6,
+    "read_uv": 4376,
+    "share_uv": 0
+   },
+   {
+    "date": 1783872000,
+    "scene": 7,
+    "read_uv": 241,
+    "share_uv": 0
+   },
+   {
+    "date": 1783872000,
+    "scene": 9999,
+    "read_uv": 7418,
+    "share_uv": 1070,
+    "source_uv": 0,
+    "collection_uv": 382,
+    "mass_pv": 1
+   },
+   {
+    "date": 1783958400,
+    "scene": 0,
+    "read_uv": 729,
+    "share_uv": 0
+   },
+   {
+    "date": 1783958400,
+    "scene": 1,
+    "read_uv": 664,
+    "share_uv": 0
+   },
+   {
+    "date": 1783958400,
+    "scene": 2,
+    "read_uv": 400,
+    "share_uv": 0
+   },
+   {
+    "date": 1783958400,
+    "scene": 4,
+    "read_uv": 601,
+    "share_uv": 0
+   },
+   {
+    "date": 1783958400,
+    "scene": 5,
+    "read_uv": 260,
+    "share_uv": 0
+   },
+   {
+    "date": 1783958400,
+    "scene": 6,
+    "read_uv": 3207,
+    "share_uv": 0
+   },
+   {
+    "date": 1783958400,
+    "scene": 7,
+    "read_uv": 256,
+    "share_uv": 0
+   },
+   {
+    "date": 1783958400,
+    "scene": 9999,
+    "read_uv": 5921,
+    "share_uv": 802,
+    "source_uv": 0,
+    "collection_uv": 303,
+    "mass_pv": 1
+   },
+   {
+    "date": 1784044800,
+    "scene": 0,
+    "read_uv": 590,
+    "share_uv": 0
+   },
+   {
+    "date": 1784044800,
+    "scene": 1,
+    "read_uv": 627,
+    "share_uv": 0
+   },
+   {
+    "date": 1784044800,
+    "scene": 2,
+    "read_uv": 578,
+    "share_uv": 0
+   },
+   {
+    "date": 1784044800,
+    "scene": 4,
+    "read_uv": 643,
+    "share_uv": 0
+   },
+   {
+    "date": 1784044800,
+    "scene": 5,
+    "read_uv": 207,
+    "share_uv": 0
+   },
+   {
+    "date": 1784044800,
+    "scene": 6,
+    "read_uv": 2805,
+    "share_uv": 0
+   },
+   {
+    "date": 1784044800,
+    "scene": 7,
+    "read_uv": 267,
+    "share_uv": 0
+   },
+   {
+    "date": 1784044800,
+    "scene": 9999,
+    "read_uv": 5518,
+    "share_uv": 877,
+    "source_uv": 0,
+    "collection_uv": 248,
+    "mass_pv": 1
+   },
+   {
+    "date": 1784131200,
+    "scene": 0,
+    "read_uv": 450,
+    "share_uv": 0
+   },
+   {
+    "date": 1784131200,
+    "scene": 1,
+    "read_uv": 481,
+    "share_uv": 0
+   },
+   {
+    "date": 1784131200,
+    "scene": 2,
+    "read_uv": 528,
+    "share_uv": 0
+   },
+   {
+    "date": 1784131200,
+    "scene": 4,
+    "read_uv": 563,
+    "share_uv": 0
+   },
+   {
+    "date": 1784131200,
+    "scene": 5,
+    "read_uv": 165,
+    "share_uv": 0
+   },
+   {
+    "date": 1784131200,
+    "scene": 6,
+    "read_uv": 3076,
+    "share_uv": 0
+   },
+   {
+    "date": 1784131200,
+    "scene": 7,
+    "read_uv": 225,
+    "share_uv": 0
+   },
+   {
+    "date": 1784131200,
+    "scene": 9999,
+    "read_uv": 5320,
+    "share_uv": 789,
+    "source_uv": 0,
+    "collection_uv": 248,
+    "mass_pv": 1
+   },
+   {
+    "date": 1784217600,
+    "scene": 0,
+    "read_uv": 542,
+    "share_uv": 0
+   },
+   {
+    "date": 1784217600,
+    "scene": 1,
+    "read_uv": 415,
+    "share_uv": 0
+   },
+   {
+    "date": 1784217600,
+    "scene": 2,
+    "read_uv": 247,
+    "share_uv": 0
+   },
+   {
+    "date": 1784217600,
+    "scene": 4,
+    "read_uv": 552,
+    "share_uv": 0
+   },
+   {
+    "date": 1784217600,
+    "scene": 5,
+    "read_uv": 163,
+    "share_uv": 0
+   },
+   {
+    "date": 1784217600,
+    "scene": 6,
+    "read_uv": 2832,
+    "share_uv": 0
+   },
+   {
+    "date": 1784217600,
+    "scene": 7,
+    "read_uv": 194,
+    "share_uv": 0
+   },
+   {
+    "date": 1784217600,
+    "scene": 9999,
+    "read_uv": 4775,
+    "share_uv": 696,
+    "source_uv": 0,
+    "collection_uv": 196,
+    "mass_pv": 0
+   },
+   {
+    "date": 1784304000,
+    "scene": 0,
+    "read_uv": 896,
+    "share_uv": 0
+   },
+   {
+    "date": 1784304000,
+    "scene": 1,
+    "read_uv": 357,
+    "share_uv": 0
+   },
+   {
+    "date": 1784304000,
+    "scene": 2,
+    "read_uv": 301,
+    "share_uv": 0
+   },
+   {
+    "date": 1784304000,
+    "scene": 4,
+    "read_uv": 443,
+    "share_uv": 0
+   },
+   {
+    "date": 1784304000,
+    "scene": 5,
+    "read_uv": 132,
+    "share_uv": 0
+   },
+   {
+    "date": 1784304000,
+    "scene": 6,
+    "read_uv": 3177,
+    "share_uv": 0
+   },
+   {
+    "date": 1784304000,
+    "scene": 7,
+    "read_uv": 109,
+    "share_uv": 0
+   },
+   {
+    "date": 1784304000,
+    "scene": 9999,
+    "read_uv": 5257,
+    "share_uv": 844,
+    "source_uv": 0,
+    "collection_uv": 310,
+    "mass_pv": 1
+   },
+   {
+    "date": 1784390400,
+    "scene": 0,
+    "read_uv": 298,
+    "share_uv": 0
+   },
+   {
+    "date": 1784390400,
+    "scene": 1,
+    "read_uv": 502,
+    "share_uv": 0
+   },
+   {
+    "date": 1784390400,
+    "scene": 2,
+    "read_uv": 642,
+    "share_uv": 0
+   },
+   {
+    "date": 1784390400,
+    "scene": 4,
+    "read_uv": 514,
+    "share_uv": 0
+   },
+   {
+    "date": 1784390400,
+    "scene": 5,
+    "read_uv": 143,
+    "share_uv": 0
+   },
+   {
+    "date": 1784390400,
+    "scene": 6,
+    "read_uv": 4850,
+    "share_uv": 0
+   },
+   {
+    "date": 1784390400,
+    "scene": 7,
+    "read_uv": 164,
+    "share_uv": 0
+   },
+   {
+    "date": 1784390400,
+    "scene": 9999,
+    "read_uv": 6926,
+    "share_uv": 1107,
+    "source_uv": 0,
+    "collection_uv": 375,
+    "mass_pv": 0
+   },
+   {
+    "date": 1784476800,
+    "scene": 0,
+    "read_uv": 981,
+    "share_uv": 0
+   },
+   {
+    "date": 1784476800,
+    "scene": 1,
+    "read_uv": 952,
+    "share_uv": 0
+   },
+   {
+    "date": 1784476800,
+    "scene": 2,
+    "read_uv": 665,
+    "share_uv": 0
+   },
+   {
+    "date": 1784476800,
+    "scene": 4,
+    "read_uv": 827,
+    "share_uv": 0
+   },
+   {
+    "date": 1784476800,
+    "scene": 5,
+    "read_uv": 299,
+    "share_uv": 0
+   },
+   {
+    "date": 1784476800,
+    "scene": 6,
+    "read_uv": 6606,
+    "share_uv": 0
+   },
+   {
+    "date": 1784476800,
+    "scene": 7,
+    "read_uv": 341,
+    "share_uv": 0
+   },
+   {
+    "date": 1784476800,
+    "scene": 9999,
+    "read_uv": 10257,
+    "share_uv": 1462,
+    "source_uv": 0,
+    "collection_uv": 522,
+    "mass_pv": 1
+   },
+   {
+    "date": 1784563200,
+    "scene": 0,
+    "read_uv": 281,
+    "share_uv": 0
+   },
+   {
+    "date": 1784563200,
+    "scene": 1,
+    "read_uv": 940,
+    "share_uv": 0
+   },
+   {
+    "date": 1784563200,
+    "scene": 2,
+    "read_uv": 653,
+    "share_uv": 0
+   },
+   {
+    "date": 1784563200,
+    "scene": 4,
+    "read_uv": 801,
+    "share_uv": 0
+   },
+   {
+    "date": 1784563200,
+    "scene": 5,
+    "read_uv": 241,
+    "share_uv": 0
+   },
+   {
+    "date": 1784563200,
+    "scene": 6,
+    "read_uv": 6557,
+    "share_uv": 0
+   },
+   {
+    "date": 1784563200,
+    "scene": 7,
+    "read_uv": 295,
+    "share_uv": 0
+   },
+   {
+    "date": 1784563200,
+    "scene": 9999,
+    "read_uv": 9442,
+    "share_uv": 1409,
+    "source_uv": 0,
+    "collection_uv": 446,
+    "mass_pv": 0
+   },
+   {
+    "date": 1784649600,
+    "scene": 0,
+    "read_uv": 1087,
+    "share_uv": 0
+   },
+   {
+    "date": 1784649600,
+    "scene": 1,
+    "read_uv": 755,
+    "share_uv": 0
+   },
+   {
+    "date": 1784649600,
+    "scene": 2,
+    "read_uv": 432,
+    "share_uv": 0
+   },
+   {
+    "date": 1784649600,
+    "scene": 4,
+    "read_uv": 851,
+    "share_uv": 0
+   },
+   {
+    "date": 1784649600,
+    "scene": 5,
+    "read_uv": 285,
+    "share_uv": 0
+   },
+   {
+    "date": 1784649600,
+    "scene": 6,
+    "read_uv": 5801,
+    "share_uv": 0
+   },
+   {
+    "date": 1784649600,
+    "scene": 7,
+    "read_uv": 335,
+    "share_uv": 0
+   },
+   {
+    "date": 1784649600,
+    "scene": 9999,
+    "read_uv": 9224,
+    "share_uv": 1248,
+    "source_uv": 0,
+    "collection_uv": 402,
+    "mass_pv": 1
+   },
+   {
+    "date": 1784736000,
+    "scene": 0,
+    "read_uv": 790,
+    "share_uv": 0
+   },
+   {
+    "date": 1784736000,
+    "scene": 1,
+    "read_uv": 1053,
+    "share_uv": 0
+   },
+   {
+    "date": 1784736000,
+    "scene": 2,
+    "read_uv": 785,
+    "share_uv": 0
+   },
+   {
+    "date": 1784736000,
+    "scene": 4,
+    "read_uv": 780,
+    "share_uv": 0
+   },
+   {
+    "date": 1784736000,
+    "scene": 5,
+    "read_uv": 309,
+    "share_uv": 0
+   },
+   {
+    "date": 1784736000,
+    "scene": 6,
+    "read_uv": 7003,
+    "share_uv": 0
+   },
+   {
+    "date": 1784736000,
+    "scene": 7,
+    "read_uv": 304,
+    "share_uv": 0
+   },
+   {
+    "date": 1784736000,
+    "scene": 9999,
+    "read_uv": 10647,
+    "share_uv": 1471,
+    "source_uv": 0,
+    "collection_uv": 483,
+    "mass_pv": 1
+   },
+   {
+    "date": 1784822400,
+    "scene": 0,
+    "read_uv": 779,
+    "share_uv": 0
+   },
+   {
+    "date": 1784822400,
+    "scene": 1,
+    "read_uv": 640,
+    "share_uv": 0
+   },
+   {
+    "date": 1784822400,
+    "scene": 2,
+    "read_uv": 379,
+    "share_uv": 0
+   },
+   {
+    "date": 1784822400,
+    "scene": 4,
+    "read_uv": 700,
+    "share_uv": 0
+   },
+   {
+    "date": 1784822400,
+    "scene": 5,
+    "read_uv": 249,
+    "share_uv": 0
+   },
+   {
+    "date": 1784822400,
+    "scene": 6,
+    "read_uv": 4791,
+    "share_uv": 0
+   },
+   {
+    "date": 1784822400,
+    "scene": 7,
+    "read_uv": 322,
+    "share_uv": 0
+   },
+   {
+    "date": 1784822400,
+    "scene": 9999,
+    "read_uv": 7611,
+    "share_uv": 1027,
+    "source_uv": 0,
+    "collection_uv": 327,
+    "mass_pv": 1
+   },
+   {
+    "date": 1784908800,
+    "scene": 0,
+    "read_uv": 672,
+    "share_uv": 0
+   },
+   {
+    "date": 1784908800,
+    "scene": 1,
+    "read_uv": 365,
+    "share_uv": 0
+   },
+   {
+    "date": 1784908800,
+    "scene": 2,
+    "read_uv": 641,
+    "share_uv": 0
+   },
+   {
+    "date": 1784908800,
+    "scene": 4,
+    "read_uv": 453,
+    "share_uv": 0
+   },
+   {
+    "date": 1784908800,
+    "scene": 5,
+    "read_uv": 137,
+    "share_uv": 0
+   },
+   {
+    "date": 1784908800,
+    "scene": 6,
+    "read_uv": 2190,
+    "share_uv": 0
+   },
+   {
+    "date": 1784908800,
+    "scene": 7,
+    "read_uv": 169,
+    "share_uv": 0
+   },
+   {
+    "date": 1784908800,
+    "scene": 9999,
+    "read_uv": 4485,
+    "share_uv": 637,
+    "source_uv": 0,
+    "collection_uv": 213,
+    "mass_pv": 1
+   },
+   {
+    "date": 1784995200,
+    "scene": 0,
+    "read_uv": 678,
+    "share_uv": 0
+   },
+   {
+    "date": 1784995200,
+    "scene": 1,
+    "read_uv": 295,
+    "share_uv": 0
+   },
+   {
+    "date": 1784995200,
+    "scene": 2,
+    "read_uv": 320,
+    "share_uv": 0
+   },
+   {
+    "date": 1784995200,
+    "scene": 4,
+    "read_uv": 292,
+    "share_uv": 0
+   },
+   {
+    "date": 1784995200,
+    "scene": 5,
+    "read_uv": 104,
+    "share_uv": 0
+   },
+   {
+    "date": 1784995200,
+    "scene": 6,
+    "read_uv": 1941,
+    "share_uv": 0
+   },
+   {
+    "date": 1784995200,
+    "scene": 7,
+    "read_uv": 167,
+    "share_uv": 0
+   },
+   {
+    "date": 1784995200,
+    "scene": 9999,
+    "read_uv": 3686,
+    "share_uv": 578,
+    "source_uv": 0,
+    "collection_uv": 199,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785081600,
+    "scene": 0,
+    "read_uv": 1215,
+    "share_uv": 0
+   },
+   {
+    "date": 1785081600,
+    "scene": 1,
+    "read_uv": 742,
+    "share_uv": 0
+   },
+   {
+    "date": 1785081600,
+    "scene": 2,
+    "read_uv": 469,
+    "share_uv": 0
+   },
+   {
+    "date": 1785081600,
+    "scene": 4,
+    "read_uv": 748,
+    "share_uv": 0
+   },
+   {
+    "date": 1785081600,
+    "scene": 5,
+    "read_uv": 249,
+    "share_uv": 0
+   },
+   {
+    "date": 1785081600,
+    "scene": 6,
+    "read_uv": 4563,
+    "share_uv": 0
+   },
+   {
+    "date": 1785081600,
+    "scene": 7,
+    "read_uv": 297,
+    "share_uv": 0
+   },
+   {
+    "date": 1785081600,
+    "scene": 9999,
+    "read_uv": 8023,
+    "share_uv": 1119,
+    "source_uv": 0,
+    "collection_uv": 342,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785168000,
+    "scene": 0,
+    "read_uv": 863,
+    "share_uv": 0
+   },
+   {
+    "date": 1785168000,
+    "scene": 1,
+    "read_uv": 794,
+    "share_uv": 0
+   },
+   {
+    "date": 1785168000,
+    "scene": 2,
+    "read_uv": 578,
+    "share_uv": 0
+   },
+   {
+    "date": 1785168000,
+    "scene": 4,
+    "read_uv": 621,
+    "share_uv": 0
+   },
+   {
+    "date": 1785168000,
+    "scene": 5,
+    "read_uv": 235,
+    "share_uv": 0
+   },
+   {
+    "date": 1785168000,
+    "scene": 6,
+    "read_uv": 4137,
+    "share_uv": 0
+   },
+   {
+    "date": 1785168000,
+    "scene": 7,
+    "read_uv": 229,
+    "share_uv": 0
+   },
+   {
+    "date": 1785168000,
+    "scene": 9999,
+    "read_uv": 7210,
+    "share_uv": 955,
+    "source_uv": 0,
+    "collection_uv": 303,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785254400,
+    "scene": 0,
+    "read_uv": 804,
+    "share_uv": 0
+   },
+   {
+    "date": 1785254400,
+    "scene": 1,
+    "read_uv": 602,
+    "share_uv": 0
+   },
+   {
+    "date": 1785254400,
+    "scene": 2,
+    "read_uv": 344,
+    "share_uv": 0
+   },
+   {
+    "date": 1785254400,
+    "scene": 4,
+    "read_uv": 597,
+    "share_uv": 0
+   },
+   {
+    "date": 1785254400,
+    "scene": 5,
+    "read_uv": 244,
+    "share_uv": 0
+   },
+   {
+    "date": 1785254400,
+    "scene": 6,
+    "read_uv": 3637,
+    "share_uv": 0
+   },
+   {
+    "date": 1785254400,
+    "scene": 7,
+    "read_uv": 243,
+    "share_uv": 0
+   },
+   {
+    "date": 1785254400,
+    "scene": 9999,
+    "read_uv": 6239,
+    "share_uv": 927,
+    "source_uv": 0,
+    "collection_uv": 275,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785340800,
+    "scene": 0,
+    "read_uv": 733,
+    "share_uv": 0
+   },
+   {
+    "date": 1785340800,
+    "scene": 1,
+    "read_uv": 749,
+    "share_uv": 0
+   },
+   {
+    "date": 1785340800,
+    "scene": 2,
+    "read_uv": 424,
+    "share_uv": 0
+   },
+   {
+    "date": 1785340800,
+    "scene": 4,
+    "read_uv": 581,
+    "share_uv": 0
+   },
+   {
+    "date": 1785340800,
+    "scene": 5,
+    "read_uv": 216,
+    "share_uv": 0
+   },
+   {
+    "date": 1785340800,
+    "scene": 6,
+    "read_uv": 4082,
+    "share_uv": 0
+   },
+   {
+    "date": 1785340800,
+    "scene": 7,
+    "read_uv": 256,
+    "share_uv": 0
+   },
+   {
+    "date": 1785340800,
+    "scene": 9999,
+    "read_uv": 6803,
+    "share_uv": 962,
+    "source_uv": 0,
+    "collection_uv": 331,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785427200,
+    "scene": 0,
+    "read_uv": 809,
+    "share_uv": 0
+   },
+   {
+    "date": 1785427200,
+    "scene": 1,
+    "read_uv": 727,
+    "share_uv": 0
+   },
+   {
+    "date": 1785427200,
+    "scene": 2,
+    "read_uv": 329,
+    "share_uv": 0
+   },
+   {
+    "date": 1785427200,
+    "scene": 4,
+    "read_uv": 459,
+    "share_uv": 0
+   },
+   {
+    "date": 1785427200,
+    "scene": 5,
+    "read_uv": 177,
+    "share_uv": 0
+   },
+   {
+    "date": 1785427200,
+    "scene": 6,
+    "read_uv": 3264,
+    "share_uv": 0
+   },
+   {
+    "date": 1785427200,
+    "scene": 7,
+    "read_uv": 239,
+    "share_uv": 0
+   },
+   {
+    "date": 1785427200,
+    "scene": 9999,
+    "read_uv": 5826,
+    "share_uv": 758,
+    "source_uv": 0,
+    "collection_uv": 250,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785513600,
+    "scene": 0,
+    "read_uv": 553,
+    "share_uv": 0
+   },
+   {
+    "date": 1785513600,
+    "scene": 1,
+    "read_uv": 652,
+    "share_uv": 0
+   },
+   {
+    "date": 1785513600,
+    "scene": 2,
+    "read_uv": 480,
+    "share_uv": 0
+   },
+   {
+    "date": 1785513600,
+    "scene": 4,
+    "read_uv": 299,
+    "share_uv": 0
+   },
+   {
+    "date": 1785513600,
+    "scene": 5,
+    "read_uv": 118,
+    "share_uv": 0
+   },
+   {
+    "date": 1785513600,
+    "scene": 6,
+    "read_uv": 4457,
+    "share_uv": 0
+   },
+   {
+    "date": 1785513600,
+    "scene": 7,
+    "read_uv": 126,
+    "share_uv": 0
+   },
+   {
+    "date": 1785513600,
+    "scene": 9999,
+    "read_uv": 6582,
+    "share_uv": 875,
+    "source_uv": 0,
+    "collection_uv": 273,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785600000,
+    "scene": 0,
+    "read_uv": 402,
+    "share_uv": 0
+   },
+   {
+    "date": 1785600000,
+    "scene": 1,
+    "read_uv": 691,
+    "share_uv": 0
+   },
+   {
+    "date": 1785600000,
+    "scene": 2,
+    "read_uv": 425,
+    "share_uv": 0
+   },
+   {
+    "date": 1785600000,
+    "scene": 4,
+    "read_uv": 303,
+    "share_uv": 0
+   },
+   {
+    "date": 1785600000,
+    "scene": 5,
+    "read_uv": 107,
+    "share_uv": 0
+   },
+   {
+    "date": 1785600000,
+    "scene": 6,
+    "read_uv": 4182,
+    "share_uv": 0
+   },
+   {
+    "date": 1785600000,
+    "scene": 7,
+    "read_uv": 119,
+    "share_uv": 0
+   },
+   {
+    "date": 1785600000,
+    "scene": 9999,
+    "read_uv": 6112,
+    "share_uv": 794,
+    "source_uv": 0,
+    "collection_uv": 297,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785686400,
+    "scene": 0,
+    "read_uv": 768,
+    "share_uv": 0
+   },
+   {
+    "date": 1785686400,
+    "scene": 1,
+    "read_uv": 763,
+    "share_uv": 0
+   },
+   {
+    "date": 1785686400,
+    "scene": 2,
+    "read_uv": 508,
+    "share_uv": 0
+   },
+   {
+    "date": 1785686400,
+    "scene": 4,
+    "read_uv": 481,
+    "share_uv": 0
+   },
+   {
+    "date": 1785686400,
+    "scene": 5,
+    "read_uv": 188,
+    "share_uv": 0
+   },
+   {
+    "date": 1785686400,
+    "scene": 6,
+    "read_uv": 3883,
+    "share_uv": 0
+   },
+   {
+    "date": 1785686400,
+    "scene": 7,
+    "read_uv": 259,
+    "share_uv": 0
+   },
+   {
+    "date": 1785686400,
+    "scene": 9999,
+    "read_uv": 6647,
+    "share_uv": 878,
+    "source_uv": 0,
+    "collection_uv": 251,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785772800,
+    "scene": 0,
+    "read_uv": 614,
+    "share_uv": 0
+   },
+   {
+    "date": 1785772800,
+    "scene": 1,
+    "read_uv": 816,
+    "share_uv": 0
+   },
+   {
+    "date": 1785772800,
+    "scene": 2,
+    "read_uv": 710,
+    "share_uv": 0
+   },
+   {
+    "date": 1785772800,
+    "scene": 4,
+    "read_uv": 489,
+    "share_uv": 0
+   },
+   {
+    "date": 1785772800,
+    "scene": 5,
+    "read_uv": 184,
+    "share_uv": 0
+   },
+   {
+    "date": 1785772800,
+    "scene": 6,
+    "read_uv": 4564,
+    "share_uv": 0
+   },
+   {
+    "date": 1785772800,
+    "scene": 7,
+    "read_uv": 274,
+    "share_uv": 0
+   },
+   {
+    "date": 1785772800,
+    "scene": 9999,
+    "read_uv": 7442,
+    "share_uv": 928,
+    "source_uv": 0,
+    "collection_uv": 287,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785859200,
+    "scene": 0,
+    "read_uv": 825,
+    "share_uv": 0
+   },
+   {
+    "date": 1785859200,
+    "scene": 1,
+    "read_uv": 1364,
+    "share_uv": 0
+   },
+   {
+    "date": 1785859200,
+    "scene": 2,
+    "read_uv": 1324,
+    "share_uv": 0
+   },
+   {
+    "date": 1785859200,
+    "scene": 4,
+    "read_uv": 471,
+    "share_uv": 0
+   },
+   {
+    "date": 1785859200,
+    "scene": 5,
+    "read_uv": 240,
+    "share_uv": 0
+   },
+   {
+    "date": 1785859200,
+    "scene": 6,
+    "read_uv": 8035,
+    "share_uv": 0
+   },
+   {
+    "date": 1785859200,
+    "scene": 7,
+    "read_uv": 265,
+    "share_uv": 0
+   },
+   {
+    "date": 1785859200,
+    "scene": 9999,
+    "read_uv": 12166,
+    "share_uv": 1596,
+    "source_uv": 0,
+    "collection_uv": 498,
+    "mass_pv": 1
+   },
+   {
+    "date": 1785945600,
+    "scene": 0,
+    "read_uv": 265,
+    "share_uv": 0
+   },
+   {
+    "date": 1785945600,
+    "scene": 1,
+    "read_uv": 1292,
+    "share_uv": 0
+   },
+   {
+    "date": 1785945600,
+    "scene": 2,
+    "read_uv": 1212,
+    "share_uv": 0
+   },
+   {
+    "date": 1785945600,
+    "scene": 4,
+    "read_uv": 382,
+    "share_uv": 0
+   },
+   {
+    "date": 1785945600,
+    "scene": 5,
+    "read_uv": 200,
+    "share_uv": 0
+   },
+   {
+    "date": 1785945600,
+    "scene": 6,
+    "read_uv": 6179,
+    "share_uv": 0
+   },
+   {
+    "date": 1785945600,
+    "scene": 7,
+    "read_uv": 274,
+    "share_uv": 0
+   },
+   {
+    "date": 1785945600,
+    "scene": 9999,
+    "read_uv": 9566,
+    "share_uv": 1181,
+    "source_uv": 0,
+    "collection_uv": 352,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786032000,
+    "scene": 0,
+    "read_uv": 861,
+    "share_uv": 0
+   },
+   {
+    "date": 1786032000,
+    "scene": 1,
+    "read_uv": 939,
+    "share_uv": 0
+   },
+   {
+    "date": 1786032000,
+    "scene": 2,
+    "read_uv": 833,
+    "share_uv": 0
+   },
+   {
+    "date": 1786032000,
+    "scene": 4,
+    "read_uv": 458,
+    "share_uv": 0
+   },
+   {
+    "date": 1786032000,
+    "scene": 5,
+    "read_uv": 185,
+    "share_uv": 0
+   },
+   {
+    "date": 1786032000,
+    "scene": 6,
+    "read_uv": 4595,
+    "share_uv": 0
+   },
+   {
+    "date": 1786032000,
+    "scene": 7,
+    "read_uv": 234,
+    "share_uv": 0
+   },
+   {
+    "date": 1786032000,
+    "scene": 9999,
+    "read_uv": 7889,
+    "share_uv": 1017,
+    "source_uv": 0,
+    "collection_uv": 375,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786118400,
+    "scene": 0,
+    "read_uv": 556,
+    "share_uv": 0
+   },
+   {
+    "date": 1786118400,
+    "scene": 1,
+    "read_uv": 528,
+    "share_uv": 0
+   },
+   {
+    "date": 1786118400,
+    "scene": 2,
+    "read_uv": 701,
+    "share_uv": 0
+   },
+   {
+    "date": 1786118400,
+    "scene": 4,
+    "read_uv": 239,
+    "share_uv": 0
+   },
+   {
+    "date": 1786118400,
+    "scene": 5,
+    "read_uv": 111,
+    "share_uv": 0
+   },
+   {
+    "date": 1786118400,
+    "scene": 6,
+    "read_uv": 3131,
+    "share_uv": 0
+   },
+   {
+    "date": 1786118400,
+    "scene": 7,
+    "read_uv": 144,
+    "share_uv": 0
+   },
+   {
+    "date": 1786118400,
+    "scene": 9999,
+    "read_uv": 5295,
+    "share_uv": 692,
+    "source_uv": 0,
+    "collection_uv": 278,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786204800,
+    "scene": 0,
+    "read_uv": 362,
+    "share_uv": 0
+   },
+   {
+    "date": 1786204800,
+    "scene": 1,
+    "read_uv": 356,
+    "share_uv": 0
+   },
+   {
+    "date": 1786204800,
+    "scene": 2,
+    "read_uv": 752,
+    "share_uv": 0
+   },
+   {
+    "date": 1786204800,
+    "scene": 4,
+    "read_uv": 225,
+    "share_uv": 0
+   },
+   {
+    "date": 1786204800,
+    "scene": 5,
+    "read_uv": 104,
+    "share_uv": 0
+   },
+   {
+    "date": 1786204800,
+    "scene": 6,
+    "read_uv": 2504,
+    "share_uv": 0
+   },
+   {
+    "date": 1786204800,
+    "scene": 7,
+    "read_uv": 156,
+    "share_uv": 0
+   },
+   {
+    "date": 1786204800,
+    "scene": 9999,
+    "read_uv": 4382,
+    "share_uv": 665,
+    "source_uv": 0,
+    "collection_uv": 224,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786291200,
+    "scene": 0,
+    "read_uv": 637,
+    "share_uv": 0
+   },
+   {
+    "date": 1786291200,
+    "scene": 1,
+    "read_uv": 854,
+    "share_uv": 0
+   },
+   {
+    "date": 1786291200,
+    "scene": 2,
+    "read_uv": 873,
+    "share_uv": 0
+   },
+   {
+    "date": 1786291200,
+    "scene": 4,
+    "read_uv": 454,
+    "share_uv": 0
+   },
+   {
+    "date": 1786291200,
+    "scene": 5,
+    "read_uv": 161,
+    "share_uv": 0
+   },
+   {
+    "date": 1786291200,
+    "scene": 6,
+    "read_uv": 3602,
+    "share_uv": 0
+   },
+   {
+    "date": 1786291200,
+    "scene": 7,
+    "read_uv": 280,
+    "share_uv": 0
+   },
+   {
+    "date": 1786291200,
+    "scene": 9999,
+    "read_uv": 6672,
+    "share_uv": 862,
+    "source_uv": 0,
+    "collection_uv": 316,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786377600,
+    "scene": 0,
+    "read_uv": 324,
+    "share_uv": 0
+   },
+   {
+    "date": 1786377600,
+    "scene": 1,
+    "read_uv": 970,
+    "share_uv": 0
+   },
+   {
+    "date": 1786377600,
+    "scene": 2,
+    "read_uv": 933,
+    "share_uv": 0
+   },
+   {
+    "date": 1786377600,
+    "scene": 4,
+    "read_uv": 309,
+    "share_uv": 0
+   },
+   {
+    "date": 1786377600,
+    "scene": 5,
+    "read_uv": 164,
+    "share_uv": 0
+   },
+   {
+    "date": 1786377600,
+    "scene": 6,
+    "read_uv": 2767,
+    "share_uv": 0
+   },
+   {
+    "date": 1786377600,
+    "scene": 7,
+    "read_uv": 212,
+    "share_uv": 0
+   },
+   {
+    "date": 1786377600,
+    "scene": 9999,
+    "read_uv": 5552,
+    "share_uv": 672,
+    "source_uv": 0,
+    "collection_uv": 212,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786464000,
+    "scene": 0,
+    "read_uv": 794,
+    "share_uv": 0
+   },
+   {
+    "date": 1786464000,
+    "scene": 1,
+    "read_uv": 727,
+    "share_uv": 0
+   },
+   {
+    "date": 1786464000,
+    "scene": 2,
+    "read_uv": 843,
+    "share_uv": 0
+   },
+   {
+    "date": 1786464000,
+    "scene": 4,
+    "read_uv": 348,
+    "share_uv": 0
+   },
+   {
+    "date": 1786464000,
+    "scene": 5,
+    "read_uv": 164,
+    "share_uv": 0
+   },
+   {
+    "date": 1786464000,
+    "scene": 6,
+    "read_uv": 3041,
+    "share_uv": 0
+   },
+   {
+    "date": 1786464000,
+    "scene": 7,
+    "read_uv": 237,
+    "share_uv": 0
+   },
+   {
+    "date": 1786464000,
+    "scene": 9999,
+    "read_uv": 5966,
+    "share_uv": 793,
+    "source_uv": 0,
+    "collection_uv": 241,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786550400,
+    "scene": 0,
+    "read_uv": 697,
+    "share_uv": 0
+   },
+   {
+    "date": 1786550400,
+    "scene": 1,
+    "read_uv": 807,
+    "share_uv": 0
+   },
+   {
+    "date": 1786550400,
+    "scene": 2,
+    "read_uv": 968,
+    "share_uv": 0
+   },
+   {
+    "date": 1786550400,
+    "scene": 4,
+    "read_uv": 451,
+    "share_uv": 0
+   },
+   {
+    "date": 1786550400,
+    "scene": 5,
+    "read_uv": 173,
+    "share_uv": 0
+   },
+   {
+    "date": 1786550400,
+    "scene": 6,
+    "read_uv": 3577,
+    "share_uv": 0
+   },
+   {
+    "date": 1786550400,
+    "scene": 7,
+    "read_uv": 258,
+    "share_uv": 0
+   },
+   {
+    "date": 1786550400,
+    "scene": 9999,
+    "read_uv": 6773,
+    "share_uv": 960,
+    "source_uv": 0,
+    "collection_uv": 309,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786636800,
+    "scene": 0,
+    "read_uv": 484,
+    "share_uv": 0
+   },
+   {
+    "date": 1786636800,
+    "scene": 1,
+    "read_uv": 1084,
+    "share_uv": 0
+   },
+   {
+    "date": 1786636800,
+    "scene": 2,
+    "read_uv": 1087,
+    "share_uv": 0
+   },
+   {
+    "date": 1786636800,
+    "scene": 4,
+    "read_uv": 381,
+    "share_uv": 0
+   },
+   {
+    "date": 1786636800,
+    "scene": 5,
+    "read_uv": 177,
+    "share_uv": 0
+   },
+   {
+    "date": 1786636800,
+    "scene": 6,
+    "read_uv": 4392,
+    "share_uv": 0
+   },
+   {
+    "date": 1786636800,
+    "scene": 7,
+    "read_uv": 270,
+    "share_uv": 0
+   },
+   {
+    "date": 1786636800,
+    "scene": 9999,
+    "read_uv": 7674,
+    "share_uv": 1058,
+    "source_uv": 0,
+    "collection_uv": 409,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786723200,
+    "scene": 0,
+    "read_uv": 506,
+    "share_uv": 0
+   },
+   {
+    "date": 1786723200,
+    "scene": 1,
+    "read_uv": 481,
+    "share_uv": 0
+   },
+   {
+    "date": 1786723200,
+    "scene": 2,
+    "read_uv": 500,
+    "share_uv": 0
+   },
+   {
+    "date": 1786723200,
+    "scene": 4,
+    "read_uv": 220,
+    "share_uv": 0
+   },
+   {
+    "date": 1786723200,
+    "scene": 5,
+    "read_uv": 108,
+    "share_uv": 0
+   },
+   {
+    "date": 1786723200,
+    "scene": 6,
+    "read_uv": 2532,
+    "share_uv": 0
+   },
+   {
+    "date": 1786723200,
+    "scene": 7,
+    "read_uv": 137,
+    "share_uv": 0
+   },
+   {
+    "date": 1786723200,
+    "scene": 9999,
+    "read_uv": 4378,
+    "share_uv": 738,
+    "source_uv": 0,
+    "collection_uv": 316,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786809600,
+    "scene": 0,
+    "read_uv": 434,
+    "share_uv": 0
+   },
+   {
+    "date": 1786809600,
+    "scene": 1,
+    "read_uv": 591,
+    "share_uv": 0
+   },
+   {
+    "date": 1786809600,
+    "scene": 2,
+    "read_uv": 912,
+    "share_uv": 0
+   },
+   {
+    "date": 1786809600,
+    "scene": 4,
+    "read_uv": 226,
+    "share_uv": 0
+   },
+   {
+    "date": 1786809600,
+    "scene": 5,
+    "read_uv": 96,
+    "share_uv": 0
+   },
+   {
+    "date": 1786809600,
+    "scene": 6,
+    "read_uv": 5513,
+    "share_uv": 0
+   },
+   {
+    "date": 1786809600,
+    "scene": 7,
+    "read_uv": 131,
+    "share_uv": 0
+   },
+   {
+    "date": 1786809600,
+    "scene": 9999,
+    "read_uv": 7785,
+    "share_uv": 973,
+    "source_uv": 0,
+    "collection_uv": 395,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786896000,
+    "scene": 0,
+    "read_uv": 673,
+    "share_uv": 0
+   },
+   {
+    "date": 1786896000,
+    "scene": 1,
+    "read_uv": 1258,
+    "share_uv": 0
+   },
+   {
+    "date": 1786896000,
+    "scene": 2,
+    "read_uv": 1599,
+    "share_uv": 0
+   },
+   {
+    "date": 1786896000,
+    "scene": 4,
+    "read_uv": 300,
+    "share_uv": 0
+   },
+   {
+    "date": 1786896000,
+    "scene": 5,
+    "read_uv": 187,
+    "share_uv": 0
+   },
+   {
+    "date": 1786896000,
+    "scene": 6,
+    "read_uv": 6802,
+    "share_uv": 0
+   },
+   {
+    "date": 1786896000,
+    "scene": 7,
+    "read_uv": 286,
+    "share_uv": 0
+   },
+   {
+    "date": 1786896000,
+    "scene": 9999,
+    "read_uv": 10882,
+    "share_uv": 1226,
+    "source_uv": 0,
+    "collection_uv": 414,
+    "mass_pv": 1
+   },
+   {
+    "date": 1786982400,
+    "scene": 0,
+    "read_uv": 725,
+    "share_uv": 0
+   },
+   {
+    "date": 1786982400,
+    "scene": 1,
+    "read_uv": 1123,
+    "share_uv": 0
+   },
+   {
+    "date": 1786982400,
+    "scene": 2,
+    "read_uv": 822,
+    "share_uv": 0
+   },
+   {
+    "date": 1786982400,
+    "scene": 4,
+    "read_uv": 406,
+    "share_uv": 0
+   },
+   {
+    "date": 1786982400,
+    "scene": 5,
+    "read_uv": 211,
+    "share_uv": 0
+   },
+   {
+    "date": 1786982400,
+    "scene": 6,
+    "read_uv": 5304,
+    "share_uv": 0
+   },
+   {
+    "date": 1786982400,
+    "scene": 7,
+    "read_uv": 248,
+    "share_uv": 0
+   },
+   {
+    "date": 1786982400,
+    "scene": 9999,
+    "read_uv": 8645,
+    "share_uv": 1025,
+    "source_uv": 0,
+    "collection_uv": 331,
+    "mass_pv": 3
+   },
+   {
+    "date": 1787068800,
+    "scene": 0,
+    "read_uv": 938,
+    "share_uv": 0
+   },
+   {
+    "date": 1787068800,
+    "scene": 1,
+    "read_uv": 901,
+    "share_uv": 0
+   },
+   {
+    "date": 1787068800,
+    "scene": 2,
+    "read_uv": 750,
+    "share_uv": 0
+   },
+   {
+    "date": 1787068800,
+    "scene": 4,
+    "read_uv": 293,
+    "share_uv": 0
+   },
+   {
+    "date": 1787068800,
+    "scene": 5,
+    "read_uv": 186,
+    "share_uv": 0
+   },
+   {
+    "date": 1787068800,
+    "scene": 6,
+    "read_uv": 4556,
+    "share_uv": 0
+   },
+   {
+    "date": 1787068800,
+    "scene": 7,
+    "read_uv": 270,
+    "share_uv": 0
+   },
+   {
+    "date": 1787068800,
+    "scene": 9999,
+    "read_uv": 7705,
+    "share_uv": 976,
+    "source_uv": 0,
+    "collection_uv": 363,
+    "mass_pv": 2
+   },
+   {
+    "date": 1787155200,
+    "scene": 0,
+    "read_uv": 1003,
+    "share_uv": 0
+   },
+   {
+    "date": 1787155200,
+    "scene": 1,
+    "read_uv": 926,
+    "share_uv": 0
+   },
+   {
+    "date": 1787155200,
+    "scene": 2,
+    "read_uv": 895,
+    "share_uv": 0
+   },
+   {
+    "date": 1787155200,
+    "scene": 4,
+    "read_uv": 416,
+    "share_uv": 0
+   },
+   {
+    "date": 1787155200,
+    "scene": 5,
+    "read_uv": 232,
+    "share_uv": 0
+   },
+   {
+    "date": 1787155200,
+    "scene": 6,
+    "read_uv": 4036,
+    "share_uv": 0
+   },
+   {
+    "date": 1787155200,
+    "scene": 7,
+    "read_uv": 266,
+    "share_uv": 0
+   },
+   {
+    "date": 1787155200,
+    "scene": 9999,
+    "read_uv": 7547,
+    "share_uv": 1024,
+    "source_uv": 0,
+    "collection_uv": 353,
+    "mass_pv": 1
+   },
+   {
+    "date": 1787241600,
+    "scene": 0,
+    "read_uv": 816,
+    "share_uv": 0
+   },
+   {
+    "date": 1787241600,
+    "scene": 1,
+    "read_uv": 776,
+    "share_uv": 0
+   },
+   {
+    "date": 1787241600,
+    "scene": 2,
+    "read_uv": 566,
+    "share_uv": 0
+   },
+   {
+    "date": 1787241600,
+    "scene": 4,
+    "read_uv": 328,
+    "share_uv": 0
+   },
+   {
+    "date": 1787241600,
+    "scene": 5,
+    "read_uv": 180,
+    "share_uv": 0
+   },
+   {
+    "date": 1787241600,
+    "scene": 6,
+    "read_uv": 3947,
+    "share_uv": 0
+   },
+   {
+    "date": 1787241600,
+    "scene": 7,
+    "read_uv": 251,
+    "share_uv": 0
+   },
+   {
+    "date": 1787241600,
+    "scene": 9999,
+    "read_uv": 6659,
+    "share_uv": 918,
+    "source_uv": 0,
+    "collection_uv": 303,
+    "mass_pv": 2
+   },
+   {
+    "date": 1787328000,
+    "scene": 0,
+    "read_uv": 329,
+    "share_uv": 0
+   },
+   {
+    "date": 1787328000,
+    "scene": 1,
+    "read_uv": 556,
+    "share_uv": 0
+   },
+   {
+    "date": 1787328000,
+    "scene": 2,
+    "read_uv": 669,
+    "share_uv": 0
+   },
+   {
+    "date": 1787328000,
+    "scene": 4,
+    "read_uv": 174,
+    "share_uv": 0
+   },
+   {
+    "date": 1787328000,
+    "scene": 5,
+    "read_uv": 99,
+    "share_uv": 0
+   },
+   {
+    "date": 1787328000,
+    "scene": 6,
+    "read_uv": 1945,
+    "share_uv": 0
+   },
+   {
+    "date": 1787328000,
+    "scene": 7,
+    "read_uv": 148,
+    "share_uv": 0
+   },
+   {
+    "date": 1787328000,
+    "scene": 9999,
+    "read_uv": 3830,
+    "share_uv": 558,
+    "source_uv": 0,
+    "collection_uv": 215,
+    "mass_pv": 1
+   },
+   {
+    "date": 1787414400,
+    "scene": 0,
+    "read_uv": 399,
+    "share_uv": 0
+   },
+   {
+    "date": 1787414400,
+    "scene": 1,
+    "read_uv": 1031,
+    "share_uv": 0
+   },
+   {
+    "date": 1787414400,
+    "scene": 2,
+    "read_uv": 1225,
+    "share_uv": 0
+   },
+   {
+    "date": 1787414400,
+    "scene": 4,
+    "read_uv": 177,
+    "share_uv": 0
+   },
+   {
+    "date": 1787414400,
+    "scene": 5,
+    "read_uv": 99,
+    "share_uv": 0
+   },
+   {
+    "date": 1787414400,
+    "scene": 6,
+    "read_uv": 2914,
+    "share_uv": 0
+   },
+   {
+    "date": 1787414400,
+    "scene": 7,
+    "read_uv": 159,
+    "share_uv": 0
+   },
+   {
+    "date": 1787414400,
+    "scene": 9999,
+    "read_uv": 5875,
+    "share_uv": 853,
+    "source_uv": 0,
+    "collection_uv": 297,
+    "mass_pv": 1
+   },
+   {
+    "date": 1787500800,
+    "scene": 0,
+    "read_uv": 548,
+    "share_uv": 0
+   },
+   {
+    "date": 1787500800,
+    "scene": 1,
+    "read_uv": 1049,
+    "share_uv": 0
+   },
+   {
+    "date": 1787500800,
+    "scene": 2,
+    "read_uv": 1037,
+    "share_uv": 0
+   },
+   {
+    "date": 1787500800,
+    "scene": 4,
+    "read_uv": 287,
+    "share_uv": 0
+   },
+   {
+    "date": 1787500800,
+    "scene": 5,
+    "read_uv": 179,
+    "share_uv": 0
+   },
+   {
+    "date": 1787500800,
+    "scene": 6,
+    "read_uv": 4044,
+    "share_uv": 0
+   },
+   {
+    "date": 1787500800,
+    "scene": 7,
+    "read_uv": 299,
+    "share_uv": 0
+   },
+   {
+    "date": 1787500800,
+    "scene": 9999,
+    "read_uv": 7245,
+    "share_uv": 923,
+    "source_uv": 0,
+    "collection_uv": 291,
+    "mass_pv": 1
+   },
+   {
+    "date": 1787587200,
+    "scene": 0,
+    "read_uv": 410,
+    "share_uv": 0
+   },
+   {
+    "date": 1787587200,
+    "scene": 1,
+    "read_uv": 979,
+    "share_uv": 0
+   },
+   {
+    "date": 1787587200,
+    "scene": 2,
+    "read_uv": 865,
+    "share_uv": 0
+   },
+   {
+    "date": 1787587200,
+    "scene": 4,
+    "read_uv": 297,
+    "share_uv": 0
+   },
+   {
+    "date": 1787587200,
+    "scene": 5,
+    "read_uv": 182,
+    "share_uv": 0
+   },
+   {
+    "date": 1787587200,
+    "scene": 6,
+    "read_uv": 2626,
+    "share_uv": 0
+   },
+   {
+    "date": 1787587200,
+    "scene": 7,
+    "read_uv": 286,
+    "share_uv": 0
+   },
+   {
+    "date": 1787587200,
+    "scene": 9999,
+    "read_uv": 5498,
+    "share_uv": 716,
+    "source_uv": 0,
+    "collection_uv": 201,
+    "mass_pv": 1
+   },
+   {
+    "date": 1787673600,
+    "scene": 0,
+    "read_uv": 982,
+    "share_uv": 0
+   },
+   {
+    "date": 1787673600,
+    "scene": 1,
+    "read_uv": 674,
+    "share_uv": 0
+   },
+   {
+    "date": 1787673600,
+    "scene": 2,
+    "read_uv": 505,
+    "share_uv": 0
+   },
+   {
+    "date": 1787673600,
+    "scene": 4,
+    "read_uv": 318,
+    "share_uv": 0
+   },
+   {
+    "date": 1787673600,
+    "scene": 5,
+    "read_uv": 186,
+    "share_uv": 0
+   },
+   {
+    "date": 1787673600,
+    "scene": 6,
+    "read_uv": 1909,
+    "share_uv": 0
+   },
+   {
+    "date": 1787673600,
+    "scene": 7,
+    "read_uv": 291,
+    "share_uv": 0
+   },
+   {
+    "date": 1787673600,
+    "scene": 9999,
+    "read_uv": 4768,
+    "share_uv": 518,
+    "source_uv": 0,
+    "collection_uv": 135,
+    "mass_pv": 2
+   },
+   {
+    "date": 1787760000,
+    "scene": 0,
+    "read_uv": 1099,
+    "share_uv": 0
+   },
+   {
+    "date": 1787760000,
+    "scene": 1,
+    "read_uv": 510,
+    "share_uv": 0
+   },
+   {
+    "date": 1787760000,
+    "scene": 2,
+    "read_uv": 391,
+    "share_uv": 0
+   },
+   {
+    "date": 1787760000,
+    "scene": 4,
+    "read_uv": 404,
+    "share_uv": 0
+   },
+   {
+    "date": 1787760000,
+    "scene": 5,
+    "read_uv": 177,
+    "share_uv": 0
+   },
+   {
+    "date": 1787760000,
+    "scene": 6,
+    "read_uv": 1443,
+    "share_uv": 0
+   },
+   {
+    "date": 1787760000,
+    "scene": 7,
+    "read_uv": 259,
+    "share_uv": 0
+   },
+   {
+    "date": 1787760000,
+    "scene": 9999,
+    "read_uv": 4143,
+    "share_uv": 592,
+    "source_uv": 0,
+    "collection_uv": 157,
+    "mass_pv": 2
+   },
+   {
+    "date": 1787846400,
+    "scene": 0,
+    "read_uv": 723,
+    "share_uv": 0
+   },
+   {
+    "date": 1787846400,
+    "scene": 1,
+    "read_uv": 319,
+    "share_uv": 0
+   },
+   {
+    "date": 1787846400,
+    "scene": 2,
+    "read_uv": 222,
+    "share_uv": 0
+   },
+   {
+    "date": 1787846400,
+    "scene": 4,
+    "read_uv": 182,
+    "share_uv": 0
+   },
+   {
+    "date": 1787846400,
+    "scene": 5,
+    "read_uv": 131,
+    "share_uv": 0
+   },
+   {
+    "date": 1787846400,
+    "scene": 6,
+    "read_uv": 1298,
+    "share_uv": 0
+   },
+   {
+    "date": 1787846400,
+    "scene": 7,
+    "read_uv": 197,
+    "share_uv": 0
+   },
+   {
+    "date": 1787846400,
+    "scene": 9999,
+    "read_uv": 2976,
+    "share_uv": 372,
+    "source_uv": 0,
+    "collection_uv": 113,
+    "mass_pv": 2
+   },
+   {
+    "date": 1787932800,
+    "scene": 0,
+    "read_uv": 537,
+    "share_uv": 0
+   },
+   {
+    "date": 1787932800,
+    "scene": 1,
+    "read_uv": 211,
+    "share_uv": 0
+   },
+   {
+    "date": 1787932800,
+    "scene": 2,
+    "read_uv": 120,
+    "share_uv": 0
+   },
+   {
+    "date": 1787932800,
+    "scene": 4,
+    "read_uv": 197,
+    "share_uv": 0
+   },
+   {
+    "date": 1787932800,
+    "scene": 5,
+    "read_uv": 106,
+    "share_uv": 0
+   },
+   {
+    "date": 1787932800,
+    "scene": 6,
+    "read_uv": 740,
+    "share_uv": 0
+   },
+   {
+    "date": 1787932800,
+    "scene": 7,
+    "read_uv": 122,
+    "share_uv": 0
+   },
+   {
+    "date": 1787932800,
+    "scene": 9999,
+    "read_uv": 1969,
+    "share_uv": 301,
+    "source_uv": 0,
+    "collection_uv": 74,
+    "mass_pv": 2
+   },
+   {
+    "date": 1788019200,
+    "scene": 0,
+    "read_uv": 384,
+    "share_uv": 0
+   },
+   {
+    "date": 1788019200,
+    "scene": 1,
+    "read_uv": 171,
+    "share_uv": 0
+   },
+   {
+    "date": 1788019200,
+    "scene": 2,
+    "read_uv": 119,
+    "share_uv": 0
+   },
+   {
+    "date": 1788019200,
+    "scene": 4,
+    "read_uv": 108,
+    "share_uv": 0
+   },
+   {
+    "date": 1788019200,
+    "scene": 5,
+    "read_uv": 81,
+    "share_uv": 0
+   },
+   {
+    "date": 1788019200,
+    "scene": 6,
+    "read_uv": 745,
+    "share_uv": 0
+   },
+   {
+    "date": 1788019200,
+    "scene": 7,
+    "read_uv": 114,
+    "share_uv": 0
+   },
+   {
+    "date": 1788019200,
+    "scene": 9999,
+    "read_uv": 1683,
+    "share_uv": 223,
+    "source_uv": 0,
+    "collection_uv": 71,
+    "mass_pv": 1
+   },
+   {
+    "date": 1788105600,
+    "scene": 0,
+    "read_uv": 1002,
+    "share_uv": 0
+   },
+   {
+    "date": 1788105600,
+    "scene": 1,
+    "read_uv": 460,
+    "share_uv": 0
+   },
+   {
+    "date": 1788105600,
+    "scene": 2,
+    "read_uv": 177,
+    "share_uv": 0
+   },
+   {
+    "date": 1788105600,
+    "scene": 4,
+    "read_uv": 399,
+    "share_uv": 0
+   },
+   {
+    "date": 1788105600,
+    "scene": 5,
+    "read_uv": 192,
+    "share_uv": 0
+   },
+   {
+    "date": 1788105600,
+    "scene": 6,
+    "read_uv": 1008,
+    "share_uv": 0
+   },
+   {
+    "date": 1788105600,
+    "scene": 7,
+    "read_uv": 273,
+    "share_uv": 0
+   },
+   {
+    "date": 1788105600,
+    "scene": 9999,
+    "read_uv": 3375,
+    "share_uv": 402,
+    "source_uv": 0,
+    "collection_uv": 176,
+    "mass_pv": 1
+   },
+   {
+    "date": 1788192000,
+    "scene": 0,
+    "read_uv": 236,
+    "share_uv": 0
+   },
+   {
+    "date": 1788192000,
+    "scene": 1,
+    "read_uv": 332,
+    "share_uv": 0
+   },
+   {
+    "date": 1788192000,
+    "scene": 2,
+    "read_uv": 99,
+    "share_uv": 0
+   },
+   {
+    "date": 1788192000,
+    "scene": 4,
+    "read_uv": 200,
+    "share_uv": 0
+   },
+   {
+    "date": 1788192000,
+    "scene": 5,
+    "read_uv": 114,
+    "share_uv": 0
+   },
+   {
+    "date": 1788192000,
+    "scene": 6,
+    "read_uv": 847,
+    "share_uv": 0
+   },
+   {
+    "date": 1788192000,
+    "scene": 7,
+    "read_uv": 229,
+    "share_uv": 0
+   },
+   {
+    "date": 1788192000,
+    "scene": 9999,
+    "read_uv": 1997,
+    "share_uv": 252,
+    "source_uv": 0,
+    "collection_uv": 91,
+    "mass_pv": 0
+   },
+   {
+    "date": 1788278400,
+    "scene": 0,
+    "read_uv": 153,
+    "share_uv": 0
+   },
+   {
+    "date": 1788278400,
+    "scene": 1,
+    "read_uv": 273,
+    "share_uv": 0
+   },
+   {
+    "date": 1788278400,
+    "scene": 2,
+    "read_uv": 167,
+    "share_uv": 0
+   },
+   {
+    "date": 1788278400,
+    "scene": 4,
+    "read_uv": 145,
+    "share_uv": 0
+   },
+   {
+    "date": 1788278400,
+    "scene": 5,
+    "read_uv": 123,
+    "share_uv": 0
+   },
+   {
+    "date": 1788278400,
+    "scene": 6,
+    "read_uv": 874,
+    "share_uv": 0
+   },
+   {
+    "date": 1788278400,
+    "scene": 7,
+    "read_uv": 274,
+    "share_uv": 0
+   },
+   {
+    "date": 1788278400,
+    "scene": 9999,
+    "read_uv": 1959,
+    "share_uv": 214,
+    "source_uv": 0,
+    "collection_uv": 66,
+    "mass_pv": 0
+   },
+   {
+    "date": 1788364800,
+    "scene": 0,
+    "read_uv": 125,
+    "share_uv": 0
+   },
+   {
+    "date": 1788364800,
+    "scene": 1,
+    "read_uv": 244,
+    "share_uv": 0
+   },
+   {
+    "date": 1788364800,
+    "scene": 2,
+    "read_uv": 113,
+    "share_uv": 0
+   },
+   {
+    "date": 1788364800,
+    "scene": 4,
+    "read_uv": 164,
+    "share_uv": 0
+   },
+   {
+    "date": 1788364800,
+    "scene": 5,
+    "read_uv": 130,
+    "share_uv": 0
+   },
+   {
+    "date": 1788364800,
+    "scene": 6,
+    "read_uv": 670,
+    "share_uv": 0
+   },
+   {
+    "date": 1788364800,
+    "scene": 7,
+    "read_uv": 241,
+    "share_uv": 0
+   },
+   {
+    "date": 1788364800,
+    "scene": 9999,
+    "read_uv": 1639,
+    "share_uv": 182,
+    "source_uv": 0,
+    "collection_uv": 58,
+    "mass_pv": 0
+   },
+   {
+    "date": 1788451200,
+    "scene": 0,
+    "read_uv": 332,
+    "share_uv": 0
+   },
+   {
+    "date": 1788451200,
+    "scene": 1,
+    "read_uv": 237,
+    "share_uv": 0
+   },
+   {
+    "date": 1788451200,
+    "scene": 2,
+    "read_uv": 88,
+    "share_uv": 0
+   },
+   {
+    "date": 1788451200,
+    "scene": 4,
+    "read_uv": 215,
+    "share_uv": 0
+   },
+   {
+    "date": 1788451200,
+    "scene": 5,
+    "read_uv": 97,
+    "share_uv": 0
+   },
+   {
+    "date": 1788451200,
+    "scene": 6,
+    "read_uv": 1035,
+    "share_uv": 0
+   },
+   {
+    "date": 1788451200,
+    "scene": 7,
+    "read_uv": 241,
+    "share_uv": 0
+   },
+   {
+    "date": 1788451200,
+    "scene": 9999,
+    "read_uv": 2182,
+    "share_uv": 287,
+    "source_uv": 0,
+    "collection_uv": 72,
+    "mass_pv": 1
+   },
+   {
+    "date": 1788537600,
+    "scene": 0,
+    "read_uv": 728,
+    "share_uv": 0
+   },
+   {
+    "date": 1788537600,
+    "scene": 1,
+    "read_uv": 213,
+    "share_uv": 0
+   },
+   {
+    "date": 1788537600,
+    "scene": 2,
+    "read_uv": 310,
+    "share_uv": 0
+   },
+   {
+    "date": 1788537600,
+    "scene": 4,
+    "read_uv": 185,
+    "share_uv": 0
+   },
+   {
+    "date": 1788537600,
+    "scene": 5,
+    "read_uv": 88,
+    "share_uv": 0
+   },
+   {
+    "date": 1788537600,
+    "scene": 6,
+    "read_uv": 1730,
+    "share_uv": 0
+   },
+   {
+    "date": 1788537600,
+    "scene": 7,
+    "read_uv": 122,
+    "share_uv": 0
+   },
+   {
+    "date": 1788537600,
+    "scene": 9999,
+    "read_uv": 3298,
+    "share_uv": 333,
+    "source_uv": 0,
+    "collection_uv": 93,
+    "mass_pv": 1
+   },
+   {
+    "date": 1788624000,
+    "scene": 0,
+    "read_uv": 362,
+    "share_uv": 0
+   },
+   {
+    "date": 1788624000,
+    "scene": 1,
+    "read_uv": 263,
+    "share_uv": 0
+   },
+   {
+    "date": 1788624000,
+    "scene": 2,
+    "read_uv": 313,
+    "share_uv": 0
+   },
+   {
+    "date": 1788624000,
+    "scene": 4,
+    "read_uv": 135,
+    "share_uv": 0
+   },
+   {
+    "date": 1788624000,
+    "scene": 5,
+    "read_uv": 90,
+    "share_uv": 0
+   },
+   {
+    "date": 1788624000,
+    "scene": 6,
+    "read_uv": 6926,
+    "share_uv": 0
+   },
+   {
+    "date": 1788624000,
+    "scene": 7,
+    "read_uv": 146,
+    "share_uv": 0
+   },
+   {
+    "date": 1788624000,
+    "scene": 9999,
+    "read_uv": 8157,
+    "share_uv": 375,
+    "source_uv": 0,
+    "collection_uv": 109,
+    "mass_pv": 2
+   }
+  ],
+  "scene_info": []
+ },
+ "all_article_stat_source": {
+  "list": [
+   {
+    "scene": 0,
+    "read_uv": 61013,
+    "share_uv": 0
+   },
+   {
+    "scene": 1,
+    "read_uv": 61927,
+    "share_uv": 0
+   },
+   {
+    "scene": 2,
+    "read_uv": 51877,
+    "share_uv": 0
+   },
+   {
+    "scene": 4,
+    "read_uv": 46378,
+    "share_uv": 0
+   },
+   {
+    "scene": 5,
+    "read_uv": 17478,
+    "share_uv": 0
+   },
+   {
+    "scene": 6,
+    "read_uv": 372393,
+    "share_uv": 0
+   },
+   {
+    "scene": 7,
+    "read_uv": 19473,
+    "share_uv": 0
+   }
+  ],
+  "scene_info": []
+ },
+ "jump_list": [],
+ "user_source_list": [],
+ "article_list": [],
+ "one_article_jump_stat": []
+}

@@ -31,10 +31,45 @@ data/data_analysis/
 | `daily_trends` | 每日阅读总量、分享、收藏、发文数量等趋势 |
 | `channel_daily_reads` | 每日不同渠道的阅读人数，如公众号消息、朋友圈、推荐、搜一搜 |
 | `source_overview` | 单篇文章在不同传播渠道下的阅读表现 |
+| `ad_income_daily` | 流量主账号级每日收入：拉取、曝光、点击、eCPM、收入 |
+| `ad_slot_daily` | 流量主分广告位每日收入（文章中部/底部、留言区、贴图推荐流） |
+| `article_income` | 窗口内发表文章的归属收入（流量主“文章收入”页抓取，仅窗口内发表，留作交叉校验） |
+| `article_income_daily` | 文章级收入主口径：API 逐日全历史（494 篇、2023 年起），含 slot_id/slot_name，按收入发生日归属，不受发表窗口限制 |
+| `article_detail_30d` | 高阅读文章发表后 30 天明细：阅读、完读、涨粉、分享、渠道占比、每日趋势 |
+| `user_growth_daily` | 每日新增关注、取消关注、净增、累计关注 |
+| `monetization_imports` | 变现数据每次导入的文件、类型和行数记录 |
+| `article_content_stats` | 预留：手工导出“全部文章内容分析”Excel 时使用；接口明细优先入 `article_detail_30d` |
 
 分析单篇文章阅读量时，优先看 `source_overview.channel = '全部'` 的记录，避免把推荐、朋友圈、会话等渠道重复相加。
 
 分析渠道贡献时，优先看 `channel_daily_reads`；其中 `全部` 是当日总阅读，不和其他渠道相加。
+
+分析收入时三条口径互不换算：`ad_income_daily`（账号级，等于各广告位之和）、`ad_slot_daily`（广告位结构）、`article_income_daily`（文章归属，窗口口径约为账号级的 62%，其余后台未按文章归属）。
+
+文章级收入一律用 `article_income_daily`（API 逐日）；`article_income`（页面抓取）只列出统计窗口内发表的文章，会漏掉窗口前发表文章的长尾收入，2026-09-07 曾因此把 3 篇高阅读文章误判为零收入，仅保留作交叉校验。
+
+## 二之一、变现与用户增长数据的采集方式
+
+变现与用户增长数据不从“数据趋势概况” Excel 进入，而是 2026-09-07 起经浏览器直接操作公众号后台补采，原始文件固定在：
+
+```text
+data/data_analysis/raw/monetization/
+  ad_slot_daily/       分广告位每日收入 CSV（文件名带广告位后缀）
+  article_income/      文章收入抓取结果
+  content_api/         内容分析接口原始 JSON（文章清单、详情、渠道趋势、用户增长）
+```
+
+常用脚本：
+
+| 脚本 | 用途 |
+|---|---|
+| `scripts/browser_driver.py` | 远程驾驶本机 Chrome（调试端口 9222），逐步操作后台、接管“导出”下载并自动入库 |
+| `scripts/collect_wechat_mp_stats.py` | 半自动采集辅助：下载文件识别、归档、`inbox` 监听 |
+| `scripts/import_wechat_monetization_stats.py` | 变现类 CSV 入库（账号级/广告位/文章收入/内容分析），重复导入覆盖不重复 |
+| `scripts/collect_wechat_content_api.py` | 经后台内容分析接口拉取文章清单、单篇 30 天详情、渠道趋势 |
+| `scripts/import_wechat_api_stats.py` | 接口 JSON 入库：写入 `article_detail_30d`、`user_growth_daily` 等 |
+
+注意：流量主按广告位导出的 CSV 文件名完全相同且不含广告位列，入库时必须显式指定 `--kind ad_slot_daily --slot-name <广告位名>`，否则不同广告位数据会互相覆盖。2026-09-07 曾因此把“文章底部广告”文件误作账号级汇总入库，已更正并在批次报告第十七节留痕。
 
 ## 三、导入方式
 

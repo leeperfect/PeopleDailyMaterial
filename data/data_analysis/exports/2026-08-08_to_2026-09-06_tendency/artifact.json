@@ -1,0 +1,866 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "公众号运营综合报告 · 2026年9月6日",
+    "generatedAt": "2026-09-07T13:40:00+08:00",
+    "sources": [
+      {
+        "id": "daily",
+        "label": "后台每日趋势",
+        "query": {
+          "engine": "SQLite",
+          "sql": "SELECT date,published_count,read_users,share_users,wechat_favorites FROM daily_trends WHERE batch_id='2026-08-08_to_2026-09-06_tendency' ORDER BY date",
+          "description": "按已归档批次读取后台数据，保留原指标口径"
+        }
+      },
+      {
+        "id": "channels",
+        "label": "后台渠道阅读",
+        "query": {
+          "engine": "SQLite",
+          "sql": "SELECT channel,CASE WHEN date<'2026-08-30' THEN '前8天' ELSE '新增8天' END period,SUM(read_users) reads FROM channel_daily_reads WHERE batch_id='2026-08-08_to_2026-09-06_tendency' AND date>='2026-08-22' AND channel<>'全部' GROUP BY channel,period",
+          "description": "按已归档批次读取后台数据，保留原指标口径"
+        }
+      },
+      {
+        "id": "followers",
+        "label": "搜索关注来源",
+        "query": {
+          "engine": "SQLite",
+          "sql": "SELECT search_section,CASE WHEN batch_id='2026-08-08_to_2026-09-06_tendency' THEN '本期30天' ELSE '上期30天' END period,impressions,clicks,converted_followers,1.0*converted_followers/clicks conversion FROM search_follower_sources WHERE batch_id IN ('2026-08-08_to_2026-09-06_tendency','2026-07-31_to_2026-08-29_tendency') ORDER BY search_section,period",
+          "description": "按已归档批次读取后台数据，保留原指标口径"
+        }
+      },
+      {
+        "id": "keywords",
+        "label": "热门搜索词",
+        "query": {
+          "engine": "SQLite",
+          "sql": "SELECT keyword,impressions,clicks,click_rate FROM search_keywords WHERE batch_id='2026-08-08_to_2026-09-06_tendency' AND search_section='文章' ORDER BY clicks DESC",
+          "description": "按已归档批次读取后台数据，保留原指标口径"
+        }
+      },
+      {
+        "id": "articles",
+        "label": "热门搜索文章",
+        "query": {
+          "engine": "SQLite",
+          "sql": "SELECT title,impressions,clicks,click_rate,rank_position FROM search_articles WHERE batch_id='2026-08-08_to_2026-09-06_tendency' ORDER BY clicks DESC",
+          "description": "按已归档批次读取后台数据，保留原指标口径"
+        }
+      },
+      {
+        "id": "menus",
+        "label": "热门服务菜单",
+        "query": {
+          "engine": "SQLite",
+          "sql": "SELECT name,impressions,clicks,impression_users,click_users,click_rate FROM search_service_menus WHERE batch_id='2026-08-08_to_2026-09-06_tendency'",
+          "description": "按已归档批次读取后台数据，保留原指标口径"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# 公众号运营综合报告 · 2026年9月6日"
+      },
+      {
+        "id": "summary_text",
+        "type": "markdown",
+        "body": "## Executive Summary\n\n**阅读仍承压，期末出现回升。** 本期30天日阅读合计15.65万，较上期下降19.5%；新增8天2.43万，较紧邻前8天下降33.1%。9月6日回升至8,157，尚不能据单日判定趋势反转。\n\n**转发回落与停更需要一起复盘。** 新增8天发文6篇，前8天12篇，9月1日至3日无发文。聊天与朋友圈阅读分别减少58.8%、72.5%，推荐减少18.2%。这些是同期变化，不能证明停更或标题导致下降。\n\n**搜索关注略增，入口差异扩大。** 搜索转化关注212，上期207；公众号搜索贡献187，文章搜索25。优先测试文章读者的关注承接，并跟进消费类新文的持续表现。",
+        "layout": "full"
+      },
+      {
+        "id": "trend_text",
+        "type": "markdown",
+        "body": "## 新增8天下降33.1%，9月6日反弹仍待验证\n\n新增区间为8月30日至9月6日；运营环比使用紧邻的8月22日至29日，各8天。日阅读人数求和允许同一读者跨天重复，不是周期独立人数。30天窗口另与7月31日至8月29日比较，二者重叠22天，不能把两批相加。\n\n新增8天发文从12篇降至6篇，阅读36,304降至24,290。日阅读包含旧文，除以发文量仅是运营比值，不能当作新文章篇均阅读。移出窗口7月31日至8月7日的62,230阅读用于解释30天变化，不能称为上周基线。",
+        "layout": "full"
+      },
+      {
+        "id": "trend_chart",
+        "type": "chart",
+        "chartId": "trend",
+        "layout": "full"
+      },
+      {
+        "id": "channels_text",
+        "type": "markdown",
+        "body": "## 聊天与朋友圈回落比推荐更明显\n\n推荐16,919降至13,835，减少3,084；聊天5,329降至2,193，朋友圈5,034降至1,386。两类社交渠道合计减少6,784。不同渠道可能重复计算读者，这些降幅不能相加当作独立人数损失或精确归因比例。\n\n下一期优先观察文章是否提供值得转给同事、学员的具体判断、案例或工具。标题、发布时间、发文频率和推荐机制均可能影响表现，现有汇总数据不能识别各自因果作用。",
+        "layout": "full"
+      },
+      {
+        "id": "channels_chart",
+        "type": "chart",
+        "chartId": "channels",
+        "layout": "full"
+      },
+      {
+        "id": "followers_text",
+        "type": "markdown",
+        "body": "## 搜索转粉增加来自公众号入口\n\n本期30天搜索转化关注212，较207增加2.4%。公众号搜索转粉172升至187，点击940降至888，点击转粉比率18.30%升至21.06%；文章搜索转粉35降至25，比率0.54%降至0.42%。\n\n这表明两个搜索版块的转化效率不同，不能证明文章读者随后到主页关注，也不能将50.6倍的比率差视为改主页的因果收益。公众号搜索可能包含原本就想关注的读者。建议测试清楚的账号价值表达、系列入口和一个具体的关注理由。",
+        "layout": "full"
+      },
+      {
+        "id": "followers_table",
+        "type": "table",
+        "tableId": "followers",
+        "layout": "full"
+      },
+      {
+        "id": "keywords_text",
+        "type": "markdown",
+        "body": "## 县域经济和新就业群体继续承接明确需求\n\n县域经济搜索词点击182升至190、点击率23.21%升至24.05%；新就业群体95升至106、13.73%升至14.91%。常态化帮扶仍有92次点击。“传承”曝光1,165，点击32、点击率2.75%，低于上一期3.38%。\n\n这些是账号获得的热门搜索词，不能代表全平台需求。生态和城市更新未进本期前十也不代表需求归零。优先采用明确政策词加具体读者问题，宽泛文化主题先缩小对象和问题。",
+        "layout": "full"
+      },
+      {
+        "id": "keywords_chart",
+        "type": "chart",
+        "chartId": "keywords",
+        "layout": "full"
+      },
+      {
+        "id": "articles_text",
+        "type": "markdown",
+        "body": "## 消费新文值得跟进，旧文仍提供搜索入口\n\n9月5日发布的提振消费文章截至9月6日在来源概况已有8,677阅读、推荐7,592；它与期末回升同期出现，但无法将9月6日全部阅读归给这一篇。其观察时间只有约两天，不能与整月旧文直接排优劣。\n\n下表是搜索文章榜，不是全部文章榜。常态化帮扶455次、县域经济422次搜索点击仍居前；基层减负新进入榜单，95次点击。不同窗口的差额包含旧日期移出，不能称为一周新增点击。",
+        "layout": "full"
+      },
+      {
+        "id": "articles_table",
+        "type": "table",
+        "tableId": "articles",
+        "layout": "full"
+      },
+      {
+        "id": "menus_text",
+        "type": "markdown",
+        "body": "## 菜单样本不足以指导栏目调整\n\n申论、热点菜单分别只有9次和8次曝光，均记录100%点击率。17次总曝光样本太小，无法据此判断稳定栏目偏好。保留现有入口，继续累计。",
+        "layout": "full"
+      },
+      {
+        "id": "menus_table",
+        "type": "table",
+        "tableId": "menus",
+        "layout": "full"
+      },
+      {
+        "id": "actions_text",
+        "type": "markdown",
+        "body": "## 下一阶段把选题安排作为可检验的尝试\n\n1. **消费主题先跟踪，再展开。** 提振消费已成稿并发布，下一阶段检索服务消费、消费权益和供需适配等不同问题。新题需要全库回溯、至少3篇真实来源及成稿查重，本报告只给方向，不将未核验方向登记为新选题。\n2. **县域经济、新就业群体维持优先观察。** 搜索证据连续两期较强；续写时检索公共服务承载、权益保障等独立问题，避免复述旧文。\n3. **基层治理保留，强化可转发价值。** 基层责任边界、基层减负、群众议事均已有稿；下一篇必须提供独立机制和可执行步骤。\n4. **修正上期安排。** 上期把常态化帮扶、社会工作列作在制优先题，成稿索引和后台已证明它们发表。以后以选题库、成稿索引和后台共同查重，不沿用滞后的状态。\n5. **稳定更新并记录实验。** 尽量提前备稿，减少连续断更；不要把多发或少发预设为增长原因。每次只测试一个主要变量，用发布后24小时、7天同龄数据比较阅读、分享、收藏及关注。",
+        "layout": "full"
+      },
+      {
+        "id": "questions_text",
+        "type": "markdown",
+        "body": "## 下一批需要验证什么\n\n优先补完整单篇内容分析、全账号新增与取消关注、广告收益及曝光数据。现有数据只能评估搜索归因关注，不能计算整体净增粉或广告收入。\n\n重点验证：消费新文能否保持7天增长；社交转发是否回升；文章搜索点击转粉能否改善。收益评估应同时记录广告千次曝光收益，阅读增长不保证广告收益同比增长。",
+        "layout": "full"
+      },
+      {
+        "id": "limits_text",
+        "type": "markdown",
+        "body": "## 缺失日期和口径限制\n\n搜索日表只有27行，缺8月20日、9月4日、9月6日，缺失不能填零。已导出关注合计212恰好与来源表212相等，只能说明两表总量一致，不能据此认定日表完整。日表阅读8,501与来源点击6,897口径不同。\n\n原始表、标准化明细和12批历史数据已保留。本报告是截至2026年9月6日的数据快照，生成于9月7日；网页不会自动连接微信后台。",
+        "layout": "full"
+      }
+    ],
+    "charts": [
+      {
+        "id": "trend",
+        "dataset": "daily",
+        "sourceId": "daily",
+        "title": "30天每日阅读人数",
+        "type": "line",
+        "encodings": {
+          "x": {
+            "field": "date",
+            "type": "temporal"
+          },
+          "y": {
+            "field": "read_users",
+            "type": "quantitative",
+            "format": "compact"
+          }
+        },
+        "layout": "full"
+      },
+      {
+        "id": "channels",
+        "dataset": "channels",
+        "sourceId": "channels",
+        "title": "相邻8天渠道阅读",
+        "type": "bar",
+        "encodings": {
+          "x": {
+            "field": "channel",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "reads",
+            "type": "quantitative",
+            "format": "compact"
+          },
+          "color": {
+            "field": "period",
+            "type": "nominal"
+          }
+        },
+        "legend": {
+          "position": "bottom"
+        },
+        "settings": {
+          "groupMode": "grouped"
+        },
+        "layout": "full"
+      },
+      {
+        "id": "keywords",
+        "dataset": "keywords",
+        "sourceId": "keywords",
+        "title": "本期文章搜索词点击次数",
+        "type": "bar",
+        "encodings": {
+          "x": {
+            "field": "keyword",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "clicks",
+            "type": "quantitative",
+            "format": "compact"
+          }
+        },
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "followers",
+        "dataset": "followers",
+        "sourceId": "followers",
+        "title": "搜索来源与上期比较",
+        "columns": [
+          {
+            "field": "period",
+            "label": "周期"
+          },
+          {
+            "field": "search_section",
+            "label": "搜索版块"
+          },
+          {
+            "field": "impressions",
+            "label": "曝光"
+          },
+          {
+            "field": "clicks",
+            "label": "点击"
+          },
+          {
+            "field": "converted_followers",
+            "label": "转化关注"
+          },
+          {
+            "field": "conversion",
+            "label": "点击转粉比率",
+            "format": "percent"
+          }
+        ],
+        "defaultSort": {
+          "field": "converted_followers",
+          "direction": "desc"
+        }
+      },
+      {
+        "id": "articles",
+        "dataset": "articles",
+        "sourceId": "articles",
+        "title": "热门搜索文章明细",
+        "columns": [
+          {
+            "field": "title",
+            "label": "文章"
+          },
+          {
+            "field": "impressions",
+            "label": "曝光"
+          },
+          {
+            "field": "clicks",
+            "label": "点击"
+          },
+          {
+            "field": "click_rate",
+            "label": "点击率",
+            "format": "percent"
+          },
+          {
+            "field": "rank_position",
+            "label": "平均位置"
+          }
+        ],
+        "defaultSort": {
+          "field": "clicks",
+          "direction": "desc"
+        }
+      },
+      {
+        "id": "menus",
+        "dataset": "menus",
+        "sourceId": "menus",
+        "title": "服务菜单明细",
+        "columns": [
+          {
+            "field": "name",
+            "label": "菜单"
+          },
+          {
+            "field": "impressions",
+            "label": "曝光"
+          },
+          {
+            "field": "clicks",
+            "label": "点击"
+          }
+        ],
+        "defaultSort": {
+          "field": "clicks",
+          "direction": "desc"
+        }
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "status": "ready",
+    "generatedAt": "2026-09-07T13:40:00+08:00",
+    "datasets": {
+      "daily": [
+        {
+          "date": "2026-08-08",
+          "published_count": 1,
+          "read_users": 5295,
+          "share_users": 692,
+          "wechat_favorites": 278
+        },
+        {
+          "date": "2026-08-09",
+          "published_count": 1,
+          "read_users": 4382,
+          "share_users": 665,
+          "wechat_favorites": 224
+        },
+        {
+          "date": "2026-08-10",
+          "published_count": 1,
+          "read_users": 6672,
+          "share_users": 862,
+          "wechat_favorites": 316
+        },
+        {
+          "date": "2026-08-11",
+          "published_count": 1,
+          "read_users": 5552,
+          "share_users": 672,
+          "wechat_favorites": 212
+        },
+        {
+          "date": "2026-08-12",
+          "published_count": 1,
+          "read_users": 5966,
+          "share_users": 793,
+          "wechat_favorites": 241
+        },
+        {
+          "date": "2026-08-13",
+          "published_count": 1,
+          "read_users": 6773,
+          "share_users": 960,
+          "wechat_favorites": 309
+        },
+        {
+          "date": "2026-08-14",
+          "published_count": 1,
+          "read_users": 7674,
+          "share_users": 1058,
+          "wechat_favorites": 409
+        },
+        {
+          "date": "2026-08-15",
+          "published_count": 1,
+          "read_users": 4378,
+          "share_users": 738,
+          "wechat_favorites": 316
+        },
+        {
+          "date": "2026-08-16",
+          "published_count": 1,
+          "read_users": 7785,
+          "share_users": 973,
+          "wechat_favorites": 395
+        },
+        {
+          "date": "2026-08-17",
+          "published_count": 1,
+          "read_users": 10882,
+          "share_users": 1226,
+          "wechat_favorites": 414
+        },
+        {
+          "date": "2026-08-18",
+          "published_count": 3,
+          "read_users": 8645,
+          "share_users": 1025,
+          "wechat_favorites": 331
+        },
+        {
+          "date": "2026-08-19",
+          "published_count": 2,
+          "read_users": 7705,
+          "share_users": 976,
+          "wechat_favorites": 363
+        },
+        {
+          "date": "2026-08-20",
+          "published_count": 1,
+          "read_users": 7547,
+          "share_users": 1024,
+          "wechat_favorites": 353
+        },
+        {
+          "date": "2026-08-21",
+          "published_count": 2,
+          "read_users": 6659,
+          "share_users": 918,
+          "wechat_favorites": 303
+        },
+        {
+          "date": "2026-08-22",
+          "published_count": 1,
+          "read_users": 3830,
+          "share_users": 558,
+          "wechat_favorites": 215
+        },
+        {
+          "date": "2026-08-23",
+          "published_count": 1,
+          "read_users": 5875,
+          "share_users": 853,
+          "wechat_favorites": 297
+        },
+        {
+          "date": "2026-08-24",
+          "published_count": 1,
+          "read_users": 7245,
+          "share_users": 923,
+          "wechat_favorites": 291
+        },
+        {
+          "date": "2026-08-25",
+          "published_count": 1,
+          "read_users": 5498,
+          "share_users": 716,
+          "wechat_favorites": 201
+        },
+        {
+          "date": "2026-08-26",
+          "published_count": 2,
+          "read_users": 4768,
+          "share_users": 518,
+          "wechat_favorites": 135
+        },
+        {
+          "date": "2026-08-27",
+          "published_count": 2,
+          "read_users": 4143,
+          "share_users": 592,
+          "wechat_favorites": 157
+        },
+        {
+          "date": "2026-08-28",
+          "published_count": 2,
+          "read_users": 2976,
+          "share_users": 372,
+          "wechat_favorites": 113
+        },
+        {
+          "date": "2026-08-29",
+          "published_count": 2,
+          "read_users": 1969,
+          "share_users": 301,
+          "wechat_favorites": 74
+        },
+        {
+          "date": "2026-08-30",
+          "published_count": 1,
+          "read_users": 1683,
+          "share_users": 223,
+          "wechat_favorites": 71
+        },
+        {
+          "date": "2026-08-31",
+          "published_count": 1,
+          "read_users": 3375,
+          "share_users": 402,
+          "wechat_favorites": 176
+        },
+        {
+          "date": "2026-09-01",
+          "published_count": 0,
+          "read_users": 1997,
+          "share_users": 252,
+          "wechat_favorites": 91
+        },
+        {
+          "date": "2026-09-02",
+          "published_count": 0,
+          "read_users": 1959,
+          "share_users": 214,
+          "wechat_favorites": 66
+        },
+        {
+          "date": "2026-09-03",
+          "published_count": 0,
+          "read_users": 1639,
+          "share_users": 182,
+          "wechat_favorites": 58
+        },
+        {
+          "date": "2026-09-04",
+          "published_count": 1,
+          "read_users": 2182,
+          "share_users": 287,
+          "wechat_favorites": 72
+        },
+        {
+          "date": "2026-09-05",
+          "published_count": 1,
+          "read_users": 3298,
+          "share_users": 333,
+          "wechat_favorites": 93
+        },
+        {
+          "date": "2026-09-06",
+          "published_count": 2,
+          "read_users": 8157,
+          "share_users": 375,
+          "wechat_favorites": 109
+        }
+      ],
+      "channels": [
+        {
+          "channel": "公众号主页",
+          "period": "前8天",
+          "reads": 2036
+        },
+        {
+          "channel": "公众号主页",
+          "period": "新增8天",
+          "reads": 1551
+        },
+        {
+          "channel": "公众号消息",
+          "period": "前8天",
+          "reads": 5027
+        },
+        {
+          "channel": "公众号消息",
+          "period": "新增8天",
+          "reads": 3322
+        },
+        {
+          "channel": "其他",
+          "period": "前8天",
+          "reads": 1159
+        },
+        {
+          "channel": "其他",
+          "period": "新增8天",
+          "reads": 915
+        },
+        {
+          "channel": "推荐",
+          "period": "前8天",
+          "reads": 16919
+        },
+        {
+          "channel": "推荐",
+          "period": "新增8天",
+          "reads": 13835
+        },
+        {
+          "channel": "搜一搜",
+          "period": "前8天",
+          "reads": 1761
+        },
+        {
+          "channel": "搜一搜",
+          "period": "新增8天",
+          "reads": 1640
+        },
+        {
+          "channel": "朋友圈",
+          "period": "前8天",
+          "reads": 5034
+        },
+        {
+          "channel": "朋友圈",
+          "period": "新增8天",
+          "reads": 1386
+        },
+        {
+          "channel": "聊天会话",
+          "period": "前8天",
+          "reads": 5329
+        },
+        {
+          "channel": "聊天会话",
+          "period": "新增8天",
+          "reads": 2193
+        }
+      ],
+      "followers": [
+        {
+          "search_section": "公众号",
+          "period": "上期30天",
+          "impressions": 2497,
+          "clicks": 940,
+          "converted_followers": 172,
+          "conversion": 0.1829787234042553
+        },
+        {
+          "search_section": "公众号",
+          "period": "本期30天",
+          "impressions": 2359,
+          "clicks": 888,
+          "converted_followers": 187,
+          "conversion": 0.21058558558558557
+        },
+        {
+          "search_section": "文章",
+          "period": "上期30天",
+          "impressions": 54931,
+          "clicks": 6424,
+          "converted_followers": 35,
+          "conversion": 0.005448318804483188
+        },
+        {
+          "search_section": "文章",
+          "period": "本期30天",
+          "impressions": 53078,
+          "clicks": 6009,
+          "converted_followers": 25,
+          "conversion": 0.0041604260276252285
+        }
+      ],
+      "keywords": [
+        {
+          "keyword": "县域经济",
+          "impressions": 790,
+          "clicks": 190,
+          "click_rate": 0.24050000000000002
+        },
+        {
+          "keyword": "新就业群体",
+          "impressions": 711,
+          "clicks": 106,
+          "click_rate": 0.1491
+        },
+        {
+          "keyword": "常态化帮扶",
+          "impressions": 549,
+          "clicks": 92,
+          "click_rate": 0.16760000000000003
+        },
+        {
+          "keyword": "六张网",
+          "impressions": 384,
+          "clicks": 58,
+          "click_rate": 0.151
+        },
+        {
+          "keyword": "文化",
+          "impressions": 448,
+          "clicks": 50,
+          "click_rate": 0.1116
+        },
+        {
+          "keyword": "社会工作",
+          "impressions": 582,
+          "clicks": 49,
+          "click_rate": 0.0842
+        },
+        {
+          "keyword": "传承",
+          "impressions": 1165,
+          "clicks": 32,
+          "click_rate": 0.0275
+        },
+        {
+          "keyword": "科普",
+          "impressions": 411,
+          "clicks": 24,
+          "click_rate": 0.0584
+        },
+        {
+          "keyword": "未成年人",
+          "impressions": 383,
+          "clicks": 19,
+          "click_rate": 0.0496
+        },
+        {
+          "keyword": "人民日报",
+          "impressions": 471,
+          "clicks": 8,
+          "click_rate": 0.017
+        }
+      ],
+      "articles": [
+        {
+          "title": "《人民日报》讲透“常态化帮扶”：不是简单“输血”",
+          "impressions": 3755,
+          "clicks": 455,
+          "click_rate": 0.12119999999999999,
+          "rank_position": 11.36
+        },
+        {
+          "title": "《人民日报》再谈【县域经济】：不求“小而全”",
+          "impressions": 2362,
+          "clicks": 422,
+          "click_rate": 0.1787,
+          "rank_position": 9.12
+        },
+        {
+          "title": "《人民日报》谈新时代【社会工作】：不是社区“兜底包办”",
+          "impressions": 1792,
+          "clicks": 204,
+          "click_rate": 0.11380000000000001,
+          "rank_position": 12.73
+        },
+        {
+          "title": "《人民日报》讲【六张网】：不是大基建清单",
+          "impressions": 1312,
+          "clicks": 196,
+          "click_rate": 0.1494,
+          "rank_position": 17.52
+        },
+        {
+          "title": "《人民日报》这样写“新就业群体”：从服务对象到城市伙伴",
+          "impressions": 988,
+          "clicks": 163,
+          "click_rate": 0.165,
+          "rank_position": 11.09
+        },
+        {
+          "title": "《人民日报》谈【基层责任边界】：属地不是无限责任",
+          "impressions": 1559,
+          "clicks": 159,
+          "click_rate": 0.102,
+          "rank_position": 9.12
+        },
+        {
+          "title": "《人民日报》谈【未成年人保护】：不能等孩子“出事”后再管",
+          "impressions": 1721,
+          "clicks": 150,
+          "click_rate": 0.0872,
+          "rank_position": 8.09
+        },
+        {
+          "title": "《人民日报》写透文化传承：不是摆出来，而是连起来",
+          "impressions": 2604,
+          "clicks": 137,
+          "click_rate": 0.0526,
+          "rank_position": 7.69
+        },
+        {
+          "title": "《人民日报》讲【文化传承】：既要守住根脉，也要走进生活、走向世界",
+          "impressions": 1933,
+          "clicks": 128,
+          "click_rate": 0.0662,
+          "rank_position": 8.11
+        },
+        {
+          "title": "《人民日报》谈【基层减负】：不是简单少干活",
+          "impressions": 992,
+          "clicks": 95,
+          "click_rate": 0.0958,
+          "rank_position": 10.81
+        }
+      ],
+      "menus": [
+        {
+          "name": "申论",
+          "impressions": 9,
+          "clicks": 9,
+          "impression_users": 9,
+          "click_users": 9,
+          "click_rate": 1
+        },
+        {
+          "name": "热点",
+          "impressions": 8,
+          "clicks": 8,
+          "impression_users": 8,
+          "click_users": 8,
+          "click_rate": 1
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "daily",
+      "label": "后台每日趋势",
+      "query": {
+        "engine": "SQLite",
+        "sql": "SELECT date,published_count,read_users,share_users,wechat_favorites FROM daily_trends WHERE batch_id='2026-08-08_to_2026-09-06_tendency' ORDER BY date",
+        "description": "按已归档批次读取后台数据，保留原指标口径"
+      }
+    },
+    {
+      "id": "channels",
+      "label": "后台渠道阅读",
+      "query": {
+        "engine": "SQLite",
+        "sql": "SELECT channel,CASE WHEN date<'2026-08-30' THEN '前8天' ELSE '新增8天' END period,SUM(read_users) reads FROM channel_daily_reads WHERE batch_id='2026-08-08_to_2026-09-06_tendency' AND date>='2026-08-22' AND channel<>'全部' GROUP BY channel,period",
+        "description": "按已归档批次读取后台数据，保留原指标口径"
+      }
+    },
+    {
+      "id": "followers",
+      "label": "搜索关注来源",
+      "query": {
+        "engine": "SQLite",
+        "sql": "SELECT search_section,CASE WHEN batch_id='2026-08-08_to_2026-09-06_tendency' THEN '本期30天' ELSE '上期30天' END period,impressions,clicks,converted_followers,1.0*converted_followers/clicks conversion FROM search_follower_sources WHERE batch_id IN ('2026-08-08_to_2026-09-06_tendency','2026-07-31_to_2026-08-29_tendency') ORDER BY search_section,period",
+        "description": "按已归档批次读取后台数据，保留原指标口径"
+      }
+    },
+    {
+      "id": "keywords",
+      "label": "热门搜索词",
+      "query": {
+        "engine": "SQLite",
+        "sql": "SELECT keyword,impressions,clicks,click_rate FROM search_keywords WHERE batch_id='2026-08-08_to_2026-09-06_tendency' AND search_section='文章' ORDER BY clicks DESC",
+        "description": "按已归档批次读取后台数据，保留原指标口径"
+      }
+    },
+    {
+      "id": "articles",
+      "label": "热门搜索文章",
+      "query": {
+        "engine": "SQLite",
+        "sql": "SELECT title,impressions,clicks,click_rate,rank_position FROM search_articles WHERE batch_id='2026-08-08_to_2026-09-06_tendency' ORDER BY clicks DESC",
+        "description": "按已归档批次读取后台数据，保留原指标口径"
+      }
+    },
+    {
+      "id": "menus",
+      "label": "热门服务菜单",
+      "query": {
+        "engine": "SQLite",
+        "sql": "SELECT name,impressions,clicks,impression_users,click_users,click_rate FROM search_service_menus WHERE batch_id='2026-08-08_to_2026-09-06_tendency'",
+        "description": "按已归档批次读取后台数据，保留原指标口径"
+      }
+    }
+  ]
+}

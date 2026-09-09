@@ -73,6 +73,10 @@ media/packages/**
 .DS_Store
 Thumbs.db
 
+# 公众号采集器：Chrome 登录态（敏感）与下载暂存区
+data/data_analysis/.collector_profile/
+data/data_analysis/raw/inbox/
+
 # 写作工作流：微信 access_token 缓存（临时凭证，敏感，不入库）
 data/exports/wechat_token_cache.json
 data/exports/getnote_article_map.json
