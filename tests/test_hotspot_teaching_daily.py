@@ -49,6 +49,28 @@ def topic_fixture():
 
 
 class HotspotTeachingDailyTest(unittest.TestCase):
+    def test_latest_sources_include_new_articles_without_marking_them_reviewed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            app_path, paper_path = Path(directory) / 'app.sqlite', Path(directory) / 'paper.sqlite'
+            with sqlite3.connect(app_path) as conn:
+                conn.executescript('CREATE TABLE articles(article_id TEXT, date TEXT, title TEXT, source_url TEXT, source TEXT, summary TEXT, content TEXT); CREATE TABLE peopleapp_opinion_meta(article_id TEXT, source_name TEXT);')
+                conn.executemany('INSERT INTO articles VALUES (?,?,?,?,?,?,?)', [
+                    ('old', '2026-09-06', '已归档日期', 'https://example.com/old', '原媒体', '', '旧资料'),
+                    ('new', '2026-09-12', '尚未归并的新资料', 'https://example.com/new', '原媒体', '摘要', '新资料正文'),
+                ])
+                conn.execute("INSERT INTO peopleapp_opinion_meta VALUES ('new','评论来源媒体')")
+            with sqlite3.connect(paper_path) as conn:
+                conn.executescript("CREATE TABLE articles(date TEXT); INSERT INTO articles VALUES ('2026-09-06');")
+            latest = builder.load_latest_sources('2026-09-06', app_path, paper_path)
+            self.assertEqual([row['article_id'] for row in latest['articles']], ['new'])
+            self.assertEqual(latest['articles'][0]['material_status'], 'source_only')
+            self.assertEqual(latest['articles'][0]['source_name'], '评论来源媒体')
+            self.assertEqual(latest['coverage']['app_until'], '2026-09-12')
+            self.assertEqual(latest['coverage']['curated_until'], '2026-09-06')
+            self.assertEqual(latest['coverage']['fresh_count'], 1)
+            with sqlite3.connect(app_path) as conn:
+                self.assertEqual(conn.execute('SELECT COUNT(*) FROM articles').fetchone()[0], 2)
+
     def test_paper_support_requires_real_keyword_overlap(self):
         topic = topic_fixture()
         paper_articles = [
@@ -146,7 +168,12 @@ class HotspotTeachingDailyTest(unittest.TestCase):
                     "end_date": "2026-07-27",
                 },
             ]
-            builder.build_editions(conn, topics, "2026-08-11T12:00:00")
+            class FixedDate(builder.date):
+                @classmethod
+                def today(cls):
+                    return cls(2026, 8, 11)
+            with patch.object(builder, "date", FixedDate):
+                builder.build_editions(conn, topics, "2026-08-11T12:00:00")
             row = conn.execute(
                 "SELECT topic_ids_json FROM daily_editions WHERE edition_date='2026-07-27'"
             ).fetchone()
@@ -211,7 +238,8 @@ class HotspotTeachingDailyTest(unittest.TestCase):
                  patch.object(builder, "OUTPUT_DB", output_db), \
                  patch.object(builder, "EXPORT_ROOT", export_root), \
                  patch.object(builder, "SITE_ROOT", site_root), \
-                 patch.object(builder, "WEB_ROOT", web_root):
+                 patch.object(builder, "WEB_ROOT", web_root), \
+                 patch('hotspot_lesson_packages.load_lessons', return_value={}):
                 conn = builder.connect_output(output_db)
                 now = "2026-08-11T12:00:00"
                 conn.execute(

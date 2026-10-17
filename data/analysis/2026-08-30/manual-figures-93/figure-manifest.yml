@@ -1,0 +1,163 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-08-30'
+registered_at: '2026-09-21T11:56:46'
+article: data/articles/人民日报系列/93-《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入.md
+topic: 生态产品价值实现
+article_number: '93'
+asset_root: media/images/2026-08-30-article-93
+manifest_path: data/analysis/2026-08-30/manual-figures-93/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-93-02
+      before_heading: '## 一、先把生态护好：价值实现的起点不是开发，而是增值'
+      inline_marker: '![第93篇配图02](media/images/2026-08-30-article-93/fig-93-02.png)'
+      anchor_before: 生态产品价值实现的完整逻辑是：保护增值 -> 清查确权 -> 核算定量 -> 市场配置 -> 产业增值 -> 利益共享 -> 监测反哺。
+      anchor_after: 一、先把生态护好：价值实现的起点不是开发，而是增值
+      context_after: 谈到价值实现，人们最容易把注意力放在后半段：怎么交易、怎么融资、怎么做产业。但如果生态系统质量下降，水源涵养、固碳、保土、生物多样性等功能不断减弱，后面的核算和
+    - id: fig-93-01
+      before_heading: '## 二、再把家底算清：从资源到资产，先要回答“有什么、归谁管、值多少”'
+      inline_marker: '![第93篇配图01](media/images/2026-08-30-article-93/fig-93-01.png)'
+      anchor_before: 价值实现并非保护之后才做的事，而是要让保护者获得合理回报，从而使保护行为本身能够持续下去。
+      anchor_after: 二、再把家底算清：从资源到资产，先要回答“有什么、归谁管、值多少”
+      context_after: 一片森林、一条小流域或一处湿地，虽然看得见，却不一定能直接进入经营和交易环节。生态资源往往分布零散，所有权、使用权、经营权边界复杂，其生态功能也难以用普通商品的
+    - id: fig-93-03
+      before_heading: '## 三、让价值有通道：补偿、交易、经营和融资不能混为一谈'
+      inline_marker: '![第93篇配图03](media/images/2026-08-30-article-93/fig-93-03.png)'
+      anchor_before: 资产化的核心，不是给山水简单地贴上价格标签，而是让权利归属、利用边界、资源数量和各方责任变得清晰可循。
+      anchor_after: 三、让价值有通道：补偿、交易、经营和融资不能混为一谈
+      context_after: 生态产品种类繁多，其价值实现的方式也各不相同。有些生态功能具有显著的公共属性，例如水源涵养、防风固沙、生物多样性保护等，难以完全依赖市场购买，需要公共补偿来支持
+    - id: fig-93-04
+      before_heading: '## 四、把产业链做长：不能只卖门票，更不能复制同一种“网红项目”'
+      inline_marker: '![第93篇配图04](media/images/2026-08-30-article-93/fig-93-04.png)'
+      anchor_before: 好的价值通道，不是把所有生态资源都推向市场，而是为不同类型的生态贡献找到匹配的回报方式。
+      anchor_after: 四、把产业链做长：不能只卖门票，更不能复制同一种“网红项目”
+      context_after: 生态资源进入产业，并不等于围起来收门票、开几家民宿那么简单。真正有韧性的生态产业，需要将资源优势转化为稳定的品质、加工能力、品牌信誉和服务场景。浙江发展林下经济
+    - id: fig-93-05
+      before_heading: '## 五、最终看群众收益：既要分得到，也要保得住、能持续'
+      inline_marker: '![第93篇配图05](media/images/2026-08-30-article-93/fig-93-05.png)'
+      anchor_before: 从好山水到好产业，中间隔着标准、技术、加工、品牌、场景和人才，缺一项都可能只剩短期热闹。
+      anchor_after: 五、最终看群众收益：既要分得到，也要保得住、能持续
+      context_after: 生态项目建起来、交易完成、游客来了，并不代表价值已经真正实现。还要继续追问：收益到了谁手里？保护者有没有得到补偿？普通农户能否参与？村集体有没有稳定收入？生态质
+    - id: fig-93-06
+      before_heading: '## 六、国考省考申论面试怎么用'
+      inline_marker: '![第93篇配图06](media/images/2026-08-30-article-93/fig-93-06.png)'
+      anchor_before: 生态产品价值实现的终点，不是山水卖出了多少钱，而是好生态能否持续、产业能否长久、群众能否稳定受益。
+      anchor_after: 六、国考省考申论面试怎么用
+      context_after: 遇到生态产品价值实现、绿色发展、乡村振兴、共同富裕、生态补偿等题目，可以使用这套公式：>**保护定边界+确权清底数+核算识价值+市场建通道+产业做增值+联结促增
+    updated_at: '2026-09-21T11:56:46'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-09-21T11:56:49'
+  body_hash: 27b6b7ed5b630b86d3c4fbcdc01e8cee76f9c98566e108c248486e64eb660d89
+  plan_fingerprint: 643f9edfee02b346d38fe78b0d1806d49f35e5dd46652febf38d60b81f1ee935
+figures:
+- id: fig-93-02
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-93/fig-93-02.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 28ba5ec332afcf0e543e4063f9db626885466d3925619b7ec875fc04cc05a3f0
+  title: 第93篇配图02
+  caption: 第93篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先把生态护好：价值实现的起点不是开发，而是增值附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:46'
+- id: fig-93-01
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-93/fig-93-01.png
+  width_px: 1448
+  height_px: 1086
+  sha256: f55b0fc898e1226da7aff5bfa5b0690b96ff599822def7eb933d4fc2ecc90511
+  title: 第93篇配图01
+  caption: 第93篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、再把家底算清：从资源到资产，先要回答“有什么、归谁管、值多少”附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:46'
+- id: fig-93-03
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-93/fig-93-03.png
+  width_px: 1448
+  height_px: 1086
+  sha256: ed23f3b2b224e05410c00156bb1de84af58ed05f3553057efd639c8df771b36a
+  title: 第93篇配图03
+  caption: 第93篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、让价值有通道：补偿、交易、经营和融资不能混为一谈附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:46'
+- id: fig-93-04
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-93/fig-93-04.png
+  width_px: 1448
+  height_px: 1086
+  sha256: d60d29470da19f72d745d46fd6335e13f7bd2adc3d8a23aa5a4b4d51df1cc582
+  title: 第93篇配图04
+  caption: 第93篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、把产业链做长：不能只卖门票，更不能复制同一种“网红项目”附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:46'
+- id: fig-93-05
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-93/fig-93-05.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 573878bff0ee088052b70750c4758da94982e7f56e63fdd786ac9ab6e74de542
+  title: 第93篇配图05
+  caption: 第93篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、最终看群众收益：既要分得到，也要保得住、能持续附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:46'
+- id: fig-93-06
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-93/fig-93-06.png
+  width_px: 1448
+  height_px: 1086
+  sha256: abb750cf1f57257ffabe7e73798b49bb3696bc2a8638e4a4589adebf8e0c9e37
+  title: 第93篇配图06
+  caption: 第93篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试怎么用附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:46'
+updated_at: '2026-09-21T11:56:49'
+placement_mode: inline_markdown
+inline_markdown_count: 6
+inline_imported_at: '2026-09-21T11:56:46'

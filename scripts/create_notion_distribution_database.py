@@ -165,6 +165,10 @@ def load_articles() -> List[Dict]:
     for path in sorted(ARTICLES_ROOT.rglob("*.md")):
         if path.name in SKIP_FILENAMES:
             continue
+        # 【R】润色稿是同一篇文章的一润中间产物，不作为独立内容进分发台账；
+        # 在文件名层过滤最稳，因为润色稿的标题和 H1 都带【R】标记，但文件名标记是命名规范保证的稳定锚点。
+        if "【R】" in path.stem:
+            continue
         relative_parts = path.relative_to(ARTICLES_ROOT).parts
         if path.name == "README.md":
             continue

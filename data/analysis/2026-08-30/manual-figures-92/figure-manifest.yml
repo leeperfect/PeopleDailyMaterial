@@ -1,0 +1,163 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-08-30'
+registered_at: '2026-09-21T11:56:44'
+article: data/articles/人民日报系列/92-《人民日报》深度分析【完整社区】：不是把设施配齐，而是让居民从“提需求”走到“共运营”.md
+topic: 完整社区
+article_number: '92'
+asset_root: media/images/2026-08-30-article-92
+manifest_path: data/analysis/2026-08-30/manual-figures-92/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-92-01
+      before_heading: '## 一、完整的不是设施目录，而是居民的一日生活'
+      inline_marker: '![第92篇配图01](media/images/2026-08-30-article-92/fig-92-01.png)'
+      anchor_before: 完整社区的完整逻辑是：居民出题 -> 清单对接 -> 多元共建 -> 服务嵌入 -> 共管共评。
+      anchor_after: 一、完整的不是设施目录，而是居民的一日生活
+      context_after: 一提到完整社区，很多人会想到养老点、托育点、停车位、充电桩、健身场地和便民商店。这些设施当然重要，但把它们逐项配齐，不代表社区就自然“完整”。老年人能否方便地吃
+    - id: fig-92-02
+      before_heading: '## 二、居民先出题：参与不能等到方案画完以后'
+      inline_marker: '![第92篇配图02](media/images/2026-08-30-article-92/fig-92-02.png)'
+      anchor_before: 完整社区，不是把所有功能塞进一平方公里，而是让居民的日常需求，在合理的半径内被连续、顺畅地承接住。
+      anchor_after: 二、居民先出题：参与不能等到方案画完以后
+      context_after: 社区建设中，常见一种“倒序”现象：项目、预算和图纸都已确定，最后才请居民来提意见。这时，所谓的参与往往只剩下同意或不同意，真正能调整的空间已经很小。上海老弄堂曾
+    - id: fig-92-03
+      before_heading: '## 三、清单来对接：意见要变成责任、资金和项目'
+      inline_marker: '![第92篇配图03](media/images/2026-08-30-article-92/fig-92-03.png)'
+      anchor_before: 问需的目的，不是让居民代替专业人员画图，而是让专业方案能从真实的生活出发。
+      anchor_after: 三、清单来对接：意见要变成责任、资金和项目
+      context_after: 听到需求只是第一步。居民反映“这里缺路灯”“那里停车难”“老人吃饭不方便”，如果这些意见没有明确的责任主体、资金来源和办理时限，最终可能只是停留在记录本上。在首
+    - id: fig-92-04
+      before_heading: '## 四、多元来供给：居民不只是服务对象，也是社区合伙人'
+      inline_marker: '![第92篇配图04](media/images/2026-08-30-article-92/fig-92-04.png)'
+      anchor_before: 清单的价值，不在于多做台账，而在于将模糊的诉求转化为可执行的责任链。
+      anchor_after: 四、多元来供给：居民不只是服务对象，也是社区合伙人
+      context_after: 完整社区涉及的事务繁杂：养老托育需要专业人员，物业维修需要稳定队伍，邻里调解需要信任关系，文化活动又需要居民愿意参与。仅靠社区工作人员包办一切，既不现实，也容易
+    - id: fig-92-05
+      before_heading: '## 五、运营要长久：钱要公开，过程要可查，效果要能改'
+      inline_marker: '![第92篇配图05](media/images/2026-08-30-article-92/fig-92-05.png)'
+      anchor_before: 多元共治并非简单地将任务平均分配，而是让专业的人守住专业边界，让熟悉社区的人延伸服务触角。
+      anchor_after: 五、运营要长久：钱要公开，过程要可查，效果要能改
+      context_after: 设施建成之后，完整社区才真正进入一场耐力赛。谁来开门、谁来保洁、设备坏了谁维修、服务项目由谁更新、费用如何分担、居民意见怎样处理……这些问题若不解决，再好的设施
+    - id: fig-92-06
+      before_heading: '## 六、国考省考申论面试应用指南'
+      inline_marker: '![第92篇配图06](media/images/2026-08-30-article-92/fig-92-06.png)'
+      anchor_before: 社区真正的完整，不在于建成时设施齐全，而在于运行多年后，依然有人使用、有人管理、有人愿意共同改进。
+      anchor_after: 六、国考省考申论面试应用指南
+      context_after: 当遇到完整社区、基层治理、公共服务、老旧小区改造、便民生活圈等主题的题目时，可以直接运用以下公式：>**居民需求精准识别+部门资源清单对接+多元主体协同供给+专
+    updated_at: '2026-09-21T11:56:44'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-09-21T11:56:46'
+  body_hash: ecaa67c3b79e9ac85237d5b72c01d225e197d58d7a46933e5f0bd65c6c8bdec1
+  plan_fingerprint: b76cf01124c9748593daf069f4de18098a2698cee85fab1a8a25e81931e43622
+figures:
+- id: fig-92-01
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-92/fig-92-01.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 40f63622641fdfdfeb4f7c772dbd84e4f03bf7c59b479c56ee291aa61f859560
+  title: 第92篇配图01
+  caption: 第92篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、完整的不是设施目录，而是居民的一日生活附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:44'
+- id: fig-92-02
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-92/fig-92-02.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 69dde033224cacfbbaf7f565f34d90b888ee57963c509ceb576fe5a50510e5bc
+  title: 第92篇配图02
+  caption: 第92篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、居民先出题：参与不能等到方案画完以后附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:44'
+- id: fig-92-03
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-92/fig-92-03.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 3bfe659520f7aa64fe7dc49dbb0472edb78f0fadc12c743688b6be7a0cc730ca
+  title: 第92篇配图03
+  caption: 第92篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、清单来对接：意见要变成责任、资金和项目附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:44'
+- id: fig-92-04
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-92/fig-92-04.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 4916bdfe3efc8e7ce9753cbb45ac31d31bd23459124ad5e0c34c23b29a311a6a
+  title: 第92篇配图04
+  caption: 第92篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、多元来供给：居民不只是服务对象，也是社区合伙人附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:44'
+- id: fig-92-05
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-92/fig-92-05.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 8d7f1a56b89af64bb43b2c8d95895c5248cfe0125921620bf6057963a7cfd35f
+  title: 第92篇配图05
+  caption: 第92篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、运营要长久：钱要公开，过程要可查，效果要能改附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:44'
+- id: fig-92-06
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-92/fig-92-06.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 2e7d8646cb7a01416fc23ebd4c17cc2f1b8c5d3d2fa9727f107d71dbd0970744
+  title: 第92篇配图06
+  caption: 第92篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试应用指南附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:44'
+updated_at: '2026-09-21T11:56:46'
+placement_mode: inline_markdown
+inline_markdown_count: 6
+inline_imported_at: '2026-09-21T11:56:44'

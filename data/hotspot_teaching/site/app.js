@@ -1,435 +1,131 @@
-const state = {
-  data: null,
-  view: "today",
-  archive: "daily",
-  selectedDaily: null,
-  selectedWeekly: null,
-  selectedTopic: null,
-  search: "",
-};
-
-const main = document.querySelector("#mainContent");
-const archiveList = document.querySelector("#archiveList");
-const searchInput = document.querySelector("#searchInput");
-const toast = document.querySelector("#toast");
-const archiveSidebar = document.querySelector(".archive-sidebar");
-
-function escapeHtml(value = "") {
-  return String(value).replace(/[&<>'"]/g, char => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
-  })[char]);
+'use strict';
+const M=window.LessonModel,E=window.LessonExport,V=window.LessonVisuals;
+const $=s=>document.querySelector(s),esc=M.escape;
+const STORAGE='hotspot-teaching-workspace-v2';
+const emptyPersonal=()=>({schema:2,pack:[],title:'我的课堂备课',notes:{},drafts:{},recent:[]});
+let personal=emptyPersonal(),storageProblem=false;
+try{const raw=localStorage.getItem(STORAGE);if(raw)personal=validatePersonal(JSON.parse(raw));}catch(_){storageProblem=true;}
+const state={data:null,filter:'',course:'',category:'',ready:false,tab:'quick',duration:'3',exportTopics:[],blocks:[],drag:null,freshFilter:'',homeCategory:''};
+const labels={home:'授课精选',fresh:'最新资料',catalog:'全部热点',pack:'本次备课',recent:'最近取用',daily:'热点日报',weekly:'每周精选',themes:'主题档案',ranking:'热点排行',guide:'取用与来源说明',lesson:'案例讲授'};
+function validatePersonal(data){
+ if(!data||data.schema!==2||!Array.isArray(data.pack)||data.pack.length>300)throw Error('备课文件格式不正确');
+ const result=emptyPersonal();result.pack=[...new Set(data.pack.filter(x=>typeof x==='string'&&/^peopleapp_hotspot_[\w]+$/.test(x)))];result.title=String(data.title||result.title).slice(0,120);
+ for(const kind of ['notes','drafts'])for(const [id,value]of Object.entries(data[kind]||{})){
+  if(!/^peopleapp_hotspot_[\w]+$/.test(id)||!value||typeof value.text!=='string'||value.text.length>50000)continue;
+  result[kind][id]={text:value.text,baseVersion:String(value.baseVersion||''),updatedAt:String(value.updatedAt||'')};
+ }
+ result.recent=Array.isArray(data.recent)?data.recent.filter(x=>typeof x==='string').slice(0,30):[];return result;
 }
-
-function formatDate(value) {
-  if (!value) return "";
-  const date = new Date(`${value}T00:00:00`);
-  return new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "long", day: "numeric", weekday: "long" }).format(date);
+function save(){try{localStorage.setItem(STORAGE,JSON.stringify(personal));storageProblem=false;return true;}catch(_){storageProblem=true;toast('本机保存未成功，请导出备课备份');return false;}}
+function toast(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').classList.remove('show'),3500);}
+function topic(id){return state.data.topics.find(t=>t.topic_id===id);}
+function route(){const [view='home',id='']=location.hash.slice(1).split('/');return {view:view||'home',id:decodeURIComponent(id)};}
+function go(view,id=''){location.hash=view+(id?'/'+encodeURIComponent(id):'');}
+function updateCounts(){for(const id of ['packCount','topPackCount'])$('#'+id).textContent=personal.pack.length;$('#freshCount').textContent=state.data?.fresh_articles?.length||0;$('#lessonCount').textContent=state.data?.topics.filter(t=>t.lesson).length||0;}
+function add(id){if(!personal.pack.includes(id)){personal.pack.push(id);save();updateCounts();toast('已加入本次备课');}else toast('已在本次备课中');document.querySelectorAll(`[data-add="${id}"]`).forEach(b=>{b.textContent='已加入';b.setAttribute('aria-pressed','true');});}
+function remember(ids){personal.recent=[...ids,...personal.recent.filter(id=>!ids.includes(id))].slice(0,30);save();}
+function version(t){return t.lesson?.version||t.card?.updated_at||t.updated_at;}
+function settings(){return {drafts:personal.drafts,notesById:personal.notes,useDraft:true};}
+function addButton(t){return `<button class="button" data-add="${t.topic_id}" aria-label="加入备课：${esc(M.lessonTitle(t))}" aria-pressed="${personal.pack.includes(t.topic_id)}">${personal.pack.includes(t.topic_id)?'已加入':'＋ 备课'}</button>`;}
+function sourceDate(){return state.data.source_coverage?.curated_until||'';}
+function pageIntro(eyebrow,title,text,action=''){return `<div class="page-intro"><div><span class="eyebrow">${eyebrow}</span><h1>${esc(title)}</h1><p>${esc(text)}</p></div>${action}</div>`;}
+function cards(topics){return `<div class="lesson-grid pin-grid">${topics.map((t,i)=>{const l=t.lesson;return `<article class="lesson-card pin-card"><div class="pin-image"><a class="pin-open" href="#lesson/${t.topic_id}" aria-label="打开讲稿：${esc(M.lessonTitle(t))}">${V.cover(t,i)}</a>${addButton(t)}<span class="cover-format">${l?'讲稿 · 练习 · 提纲':'原版资料'}</span></div><div class="pin-info"><div class="pin-meta"><span>${esc(V.family(t).label)}</span><span>${l?'3 / 10 / 20 分钟':'来源资料'}</span></div><h3><a href="#lesson/${t.topic_id}">${esc(M.lessonTitle(t))}</a></h3><p>${esc(l?.focus||t.angle)}</p><div class="pin-foot"><span>${l?.sources.length||t.sources?.length||0} 篇来源 · ${esc(l?.basis_until||t.end_date)}</span><a href="#lesson/${t.topic_id}" aria-label="取用资料：${esc(M.lessonTitle(t))}">取用 ↗</a></div>${l&&l.source_check!=='matched'?'<span class="badge red">来源待复核</span>':''}</div></article>`;}).join('')}</div>`;}
+function homeSelection(){const lessons=state.data.topics.filter(t=>t.lesson),preferred=['N06','N01','N18','N29','N14','N03'];if(state.homeCategory)return lessons.filter(t=>V.family(t).id===state.homeCategory);const featured=preferred.map(key=>lessons.find(t=>t.lesson.editorial_key===key)).filter(Boolean);return [...featured,...lessons.filter(t=>!featured.includes(t))].slice(0,12);}
+function homePins(){const selection=homeSelection();return `<div class="section-heading"><h2>${state.homeCategory?V.families.find(f=>f.id===state.homeCategory).label+' · 课堂案例':'为这节课，找一点灵感'}</h2><small>${selection.length} 个案例 · 教研稿待试讲确认</small></div>${cards(selection)}<div class="browse-more"><a class="button" href="#catalog">继续浏览全部 ${state.data.topics.filter(t=>t.lesson).length} 套资料 <span aria-hidden="true">↗</span></a></div>`;}
+function home(){
+ const lessons=state.data.topics.filter(t=>t.lesson),c=state.data.source_coverage||{};
+ return `<div class="page home-page"><section class="discovery-intro"><span class="eyebrow"><span class="live-dot"></span> 老师的备课灵感库</span><h1>今天这节课，<em>讲什么？</em></h1><p>从一个好案例开始，让思考在课堂发生。</p><div class="hero-meta"><span><b>${lessons.length}</b> 套授课资料</span><span>讲稿 · 练习 · 课件提纲</span><span>材料至 ${esc(c.teaching_until||'')}</span></div></section><div class="discovery-chips" role="group" aria-label="按课堂主题浏览"><button class="chip ${!state.homeCategory?'active':''}" data-home-category="" aria-pressed="${!state.homeCategory}">为你精选</button>${V.families.map(f=>`<button class="chip ${state.homeCategory===f.id?'active':''}" data-home-category="${f.id}" aria-pressed="${state.homeCategory===f.id}">${f.label}</button>`).join('')}</div><div id="homePins">${homePins()}</div>${freshNotice()}<div class="split-help"><section class="panel"><span class="eyebrow">按课堂需要取用</span><h2>备课不用从空白页开始</h2><ul class="simple-list"><li><strong>临时补充案例</strong>　复制3分钟口语稿</li><li><strong>展开一道综合分析题</strong>　看10分钟讲解与追问</li><li><strong>安排随堂训练</strong>　学生版默认不带答案</li><li><strong>补进已有课件</strong>　按页复制课件提纲</li></ul></section><section class="panel export-collection"><span class="eyebrow">多个案例，一次带走</span><h2>你的下一堂好课<br>从这里出发。</h2><p>${lessons.length} 套完整资料，可全库取用，也可以自行组合成一堂课。</p><div class="actions"><button class="button primary" data-all-export="teacher">导出全部教师稿</button><button class="button" data-all-export="student">导出全部学生练习</button><a class="button link" href="#pack">整理本次备课 ↗</a></div></section></div>${storageProblem?'<div class="notice">浏览器存储暂不可用，请用“导出备课备份”保存个人内容。</div>':''}</div>`;
 }
-
-function shortDate(value) {
-  if (!value) return "";
-  const [, month, day] = value.split("-");
-  return `${Number(month)}月${Number(day)}日`;
+function freshNotice(){const c=state.data.source_coverage||{};return c.fresh_count?`<div class="notice subtle"><strong>${c.fresh_with_lessons} / ${c.fresh_count} 篇新资料已关联课程</strong> · 归并为 ${c.supplemental_lessons} 个新增主题。其中 ${c.image_references} 篇为图片延伸阅读，${c.corrected_sources} 篇旧闻附纠正说明。<a class="button small" href="#fresh">从最新资料找讲稿 →</a></div>`:'';}
+function freshRows(){const query=state.freshFilter.trim().toLowerCase();const rows=(state.data.fresh_articles||[]).filter(a=>[a.title,a.source_name,a.date,a.summary,a.source_review?.note,...(a.lesson_ids||[]).map(id=>topic(id)?.lesson?.title)].join(' ').toLowerCase().includes(query));return `<p class="source-status">${rows.length}篇资料 · 原文日期由新到旧</p>`+(rows.length?'<div class="fresh-grid">'+rows.map(a=>{const r=a.source_review;return `<article class="reading-panel fresh-source"><div class="block-head"><div><span class="eyebrow">${esc(a.date)} · ${esc(a.source_name||'来源未注明')}</span><h2>${esc(a.title)}</h2></div></div><span class="badge">${r?.status==='superseded'?'旧闻已纠正 · 仅供对照':r?.status==='image_reference'?'图片延伸阅读':a.lesson_ids?.length?'已配授课资料':'来源资料 · 待整理'}</span>${r?`<div class="notice">${esc(r.note)}${r.correction_url?` <a href="${esc(M.safeURL(r.correction_url))}" target="_blank" rel="noopener noreferrer">查看纠正依据 ↗</a>`:''}</div>`:''}${r?'':`<details><summary>查看${a.summary?'原库摘要':'正文节选'}</summary><p class="body-copy">${esc(a.summary||a.content_excerpt||'原库未提供摘要，请查看来源原文。')}</p></details>`}<div class="actions">${(a.lesson_ids||[]).map(id=>`<a class="button primary" href="#lesson/${id}">打开讲稿：${esc(topic(id)?.lesson?.title||'对应课程')}</a>`).join('')}<a class="button" href="${esc(M.safeURL(a.source_url))}" target="_blank" rel="noopener noreferrer">${r?.status==='superseded'?'查看旧文留存':'查看原文'}</a><button class="button" data-copy-source="${esc(a.article_id)}">${r?'复制说明与出处':'复制资料摘要与出处'}</button></div></article>`;}).join('')+'</div>':'<div class="empty">没有匹配资料，可换一个关键词。</div>');}
+function fresh(){const c=state.data.source_coverage||{};return `<div class="page">${pageIntro('最新来源资料','新材料，也有对应的讲法','每篇资料可直接进入相关讲稿；同题报道合并成课，保留来源与使用边界。')}${freshNotice()}<p class="source-status">APP原文截至 ${esc(c.app_until||'未记录')}；原热点归档截至 ${esc(c.curated_until||'未记录')}；正式版原文库截至 ${esc(c.paper_until||'未记录')}。</p><div class="filters"><input id="freshSearch" aria-label="搜索最新资料" placeholder="搜索标题、课程、媒体或日期…" value="${esc(state.freshFilter)}"></div><div id="freshResults">${freshRows()}</div></div>`;}
+function filterBar(){return `<div class="filters"><input id="topicSearch" aria-label="搜索热点或课堂用途" placeholder="搜索热点、课堂用途或来源…" value="${esc(state.filter)}"><select id="courseFilter" aria-label="按课程筛选"><option value="">全部课程</option>${['面试综合分析','申论对策展开','申论案例运用'].map(c=>`<option ${state.course===c?'selected':''}>${c}</option>`).join('')}</select><select id="categoryFilter" aria-label="按主题筛选"><option value="">全部主题</option>${state.data.categories.map(c=>`<option ${state.category===c.name?'selected':''}>${esc(c.name)}</option>`).join('')}</select><label><input id="readyFilter" type="checkbox" ${state.ready?'checked':''}>仅已配授课资料</label></div>`;}
+function filtered(topics){const q=state.filter.toLowerCase();return topics.filter(t=>(!state.category||t.category===state.category)&&(!state.course||t.lesson?.courses.includes(state.course))&&(!state.ready||t.lesson)&&(!q||JSON.stringify([t.topic,t.angle,t.category,t.lesson?.title,t.lesson?.subtitle,t.lesson?.focus,t.lesson?.misconception,t.lesson?.courses,...(t.sources||[]).map(s=>[s.article?.title,s.article?.source_name])]).toLowerCase().includes(q)));}
+function topicRows(topics){if(!topics.length)return `<div class="empty"><h2>没有找到匹配案例</h2><p>换一个关键词，或清空课程和主题筛选。</p><button class="button" data-clear-filters>清空筛选</button></div>`;return `<p class="source-status">${topics.length} 个案例</p><div class="topic-list">${topics.map(t=>`<article class="topic-row"><div><h3><a href="#lesson/${t.topic_id}">${esc(M.lessonTitle(t))}</a></h3><p>${esc(t.lesson?.focus||t.angle)}</p><div class="meta">${esc(t.category)} · 资料至 ${t.lesson?.basis_until||t.end_date} · ${t.lesson?'有讲稿与练习':'原版资料'}${t.lesson?'':` · ${t.app_article_count}篇APP评论 / ${t.paper_support_count}篇正式版`}</div></div><div class="actions"><a class="button ${t.lesson?'primary':''}" href="#lesson/${t.topic_id}">${t.lesson?'打开讲稿':'查看资料'}</a>${addButton(t)}</div></article>`).join('')}</div>`;}
+function catalogRows(topics){return topics.length?`<p class="source-status" role="status">找到 ${topics.length} 个案例 · 教研稿待试讲确认</p>${cards(topics)}`:topicRows(topics);}
+function catalog(){return `<div class="page">${pageIntro('热点授课资料库','每个热点，都有一种讲法','找到这节课需要的案例，带走完整讲稿、练习与课件提纲。',`<button class="button" data-all-export="teacher">导出全部教师稿 ↗</button>`)}${filterBar()}<div class="actions catalog-actions"><button class="button" data-add-filtered>将筛选结果加入备课</button><button class="button primary" data-filtered-export="teacher">导出筛选结果</button><button class="button link" data-clear-filters>清空筛选</button></div><div id="catalogResults">${catalogRows(filtered(state.data.topics))}</div></div>`;}
+function copyBlockButton(t,key){return `<button class="button small" data-copy-block="${key}" data-id="${t.topic_id}">复制这一块</button>`;}
+function block(t,key,title,content,extra=''){return `<section class="reading-panel ${extra}"><div class="block-head"><h2>${title}</h2>${copyBlockButton(t,key)}</div>${content}</section>`;}
+function factsView(t){const l=t.lesson;return block(t,'facts','可引用的事件事实',`<ol>${l.facts.map(f=>`<li>${esc(f.text)} <span class="source-ref">[${f.source_ids.map(id=>l.source_ids.indexOf(id)+1).join(', ')}]</span></li>`).join('')}</ol><small>编号对应“来源”页；观点与推演另列。</small>`);}
+function quickView(t){const l=t.lesson,draft=personal.drafts[t.topic_id];const text=draft?.text||l.quick_script.join('\n\n');return block(t,'quick','课堂口语稿',`<p class="source-status">建议约3分钟，实际语速请试讲校准。${draft?.text?'当前展示你的个人改稿。':'从情境切入，讲到机制，再留下一条迁移方法。'}</p>${draft&&draft.baseVersion!==l.version?'<div class="notice">原教研稿已有新版本；你的改稿已保留，请对照后再使用。</div>':''}<div class="body-copy">${text.split(/\n+/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('')}</div><details><summary>按我的讲课习惯改一改</summary><p class="source-status">只保存在当前浏览器，不覆盖原稿。可随备课备份带走。</p><textarea class="notes-text script-editor" id="scriptEditor" data-id="${t.topic_id}" aria-label="我的课堂口语稿">${esc(text)}</textarea><div class="actions"><button class="button small" data-save-script="${t.topic_id}">保存我的改稿</button><button class="button small" data-reset-script="${t.topic_id}">恢复教研原稿</button><span id="scriptSaveState" class="save-state"></span></div></details>`)+factsView(t)+block(t,'chain','这一课的分析路径',`<ol class="chain">${l.chain.map(s=>`<li>${esc(s)}</li>`).join('')}</ol><p><strong>${esc(l.takeaway)}</strong></p>`);}
+function explainView(t){const l=t.lesson;return `<div class="notice subtle">10分钟包含讲解与现场互动；20分钟可在讲解后加入准备2分钟、作答2分钟、互评3分钟、教师反馈3分钟。</div>`+l.segments.map(s=>`<section class="reading-panel"><div class="block-head"><h2>${esc(s.title)}</h2><span class="time-label">${s.minutes}分钟</span></div><p class="body-copy">${esc(s.script)}</p><div class="board">板书　${esc(s.board)}</div></section>`).join('')+block(t,'interactions','学生怎么答，老师怎么追问',l.interactions.map(q=>`<article class="qa"><h3>${esc(q.question)}</h3><p><span class="muted">学生可能回答：</span>${esc(q.likely_answer)}</p><p><strong>教师追问：</strong>${esc(q.follow_up)}</p><details><summary>展开参考要点与观察标准</summary><p>${esc(q.answer)}</p><p class="muted">观察：${esc(q.check)}</p></details></article>`).join(''));}
+function exerciseView(t){return `<div class="notice subtle">以下为教研模拟练习。学生版默认不带答案，导出时可选择将答案附在单独页面。</div>${factsView(t)}${t.lesson.exercises.map(e=>`<section class="reading-panel student-sheet"><div class="block-head"><h2>${esc(e.kind)}</h2><span class="badge">模拟练习</span></div><p class="body-copy">${esc(e.prompt)}</p><p class="source-status">${esc(e.requirement)}</p><div class="answer-lines" aria-label="学生作答留白"></div><details class="qa"><summary>教师参考答案与观察要点</summary><p>${esc(e.answer)}</p><ul>${e.points.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></details></section>`).join('')}`;}
+function slidesView(t){return `<div class="notice subtle">每页只放关键要点，讲解备注留给教师。可以逐页复制到已有课件，也可导出整份提纲。</div>${t.lesson.slides.map((s,i)=>`<section class="reading-panel"><div class="block-head"><h3>第 ${i+1} 页</h3><button class="button small" data-copy-slide="${i}" data-id="${t.topic_id}">复制这一页</button></div><div class="slide-card"><span class="slide-no">TEACHING / ${String(i+1).padStart(2,'0')}</span><h3>${esc(s.title)}</h3><ul>${s.bullets.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></div><p class="source-status">讲解备注：${esc(s.notes)}</p></section>`).join('')}`;}
+function sourcesView(t){const l=t.lesson;const sources=l?.sources||(t.sources||[]).map(s=>s.article);return `${l?block(t,'viewpoints','媒体观点与教学提炼分开读',l.viewpoints.map(v=>`<p>${esc(v.text)} <span class="source-ref">[${l.source_ids.indexOf(v.source_id)+1}]</span></p>`).join('')):''}<section class="reading-panel"><h2>所用来源</h2><p class="source-status">${l?`本课使用${l.sources.length}篇来源，材料截至${l.basis_until}。仅核对本地留存原文，不代表此后没有新进展。`:'原教学卡关联资料，取用前复核主题与时效。'}</p>${sources.filter(Boolean).map((s,i)=>`<article class="source-item"><small>[${i+1}] ${esc(s.date)} · ${esc(s.source_name||s.source||'来源文章')}</small><h3>${esc(s.title)}</h3>${s.source_review?`<p class="notice">${esc(s.source_review.note)}</p>`:''}${M.safeURL(s.source_url)?`<a target="_blank" rel="noopener noreferrer" href="${esc(M.safeURL(s.source_url))}">打开原文 ↗</a>`:'<p>未提供在线原文链接</p>'}</article>`).join('')}</section>`;}
+function notesView(t){const note=personal.notes[t.topic_id];return `<section class="reading-panel"><h2>我的备课备注</h2><p class="source-status">记录本班学生的难点、自己的例子和授课提醒。备注只保存在当前浏览器，原资料更新不会覆盖它。</p>${note&&note.baseVersion!==version(t)?'<div class="notice">教研稿已有更新，你的旧版备注仍保留。</div>':''}<textarea id="notesEditor" data-id="${t.topic_id}" class="notes-text" aria-label="我的备课备注" placeholder="例如：先让学生讨论一分钟，再展示计时规则…">${esc(note?.text||'')}</textarea><p id="noteSaveState" class="save-state">${note?'已保存个人备注':'输入后自动保存'}</p><div class="backup-actions"><button class="button" data-backup>导出备课备份</button><button class="button" data-import>导入备份</button></div></section>`;}
+function lesson(id){const t=topic(id);if(!t)return `<div class="page empty"><h2>没有找到这个案例</h2><a class="button" href="#catalog">返回全部热点</a></div>`;const l=t.lesson;
+ if(!l)return `<div class="page"><div class="breadcrumb"><a href="#catalog">全部热点</a> / 原版资料</div>${pageIntro('原版教学资料',t.topic,'原稿和来源继续保留，尚未完成新的授课加工。',addButton(t))}<div class="notice">旧版分析可能含通用模板，请结合原文重新核对。原审核状态：${esc(t.card?.review_status||'未标记')}。</div><div class="actions"><button class="button primary" data-open-export="legacy" data-id="${id}">完整复制与导出</button></div><section class="reading-panel" style="margin-top:20px">${M.html(M.build([t],'legacy'))}</section>${notesView(t)}</div>`;
+ const tabs={quick:'3分钟口语稿',explain:'10分钟讲解',exercise:'随堂练习',slides:'课件提纲',sources:'来源',notes:'我的备注'};
+ const content=({quick:quickView,explain:explainView,exercise:exerciseView,slides:slidesView,sources:sourcesView,notes:notesView}[state.tab]||quickView)(t);
+ return `<div class="page"><div class="breadcrumb"><a href="#home">授课精选</a> / ${esc(l.title)}</div><div class="detail-header"><div><span class="eyebrow">课堂案例 / ${l.courses.map(esc).join(' · ')}</span><h1>${esc(l.title)}</h1><p>${esc(l.subtitle)}</p><span class="badge red">${l.source_check==='matched'?'新教研稿 · 待试讲确认':'来源变化 · 待核验'}</span> <small>材料截至 ${l.basis_until}</small></div><div class="detail-actions"><button class="button primary" data-copy-quick="${id}">复制讲稿</button><button class="button" data-open-export="teacher" data-id="${id}">导出材料</button>${addButton(t)}</div></div>${M.cautions(t).length?`<div class="notice">${M.html(M.cautions(t))}</div>`:''}<div class="teaching-brief"><div><small>这一课教什么</small>${esc(l.focus)}</div><div><small>学生容易答偏</small>${esc(l.misconception)}</div><div><small>讲完记住什么</small>${esc(l.takeaway)}</div></div><div class="detail-layout"><div class="detail-main"><div class="tabbar" role="tablist" aria-label="教学材料">${Object.entries(tabs).map(([key,label])=>`<button role="tab" aria-selected="${state.tab===key}" aria-controls="lessonPanel" id="tab-${key}" class="${state.tab===key?'active':''}" data-tab="${key}">${label}</button>`).join('')}</div><div id="lessonPanel" role="tabpanel" aria-labelledby="tab-${state.tab}">${content}</div></div><aside class="lesson-side"><section class="panel"><h3>这节课留几分钟？</h3>${[['3','3分钟 · 案例导入'],['10','10分钟 · 讲解追问'],['20','20分钟 · 讲练结合']].map(([v,s])=>`<button class="button ${state.duration===v?'active':''}" data-duration="${v}">${s}</button>`).join('')}<p>${state.duration==='3'?'使用口语稿，收束在一条分析路径。':state.duration==='20'?'讲解10分钟，准备2分钟、作答2分钟、互评3分钟、反馈3分钟。':'按分段讲解组织，穿插学生回答与教师追问。'}</p></section><section class="panel"><h3>带进课堂</h3><button class="button" data-open-export="student" data-id="${id}">取学生练习单</button><button class="button" data-open-export="slides" data-id="${id}">取课件提纲</button><p>Word 可继续编辑；打印可保存为 PDF。导出前可预览。</p></section><p class="source-status">版本 ${l.version}<br>${l.sources.length}篇来源 · 分析与模拟题为教研整理</p></aside></div></div>`;
 }
-
-function topicById(id) {
-  return state.data.topics.find(topic => topic.topic_id === id);
-}
-
-function currentDaily() {
-  const editions = state.data.daily_editions;
-  return editions.find(item => item.edition_date === state.selectedDaily) || editions[0];
-}
-
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add("show");
-  clearTimeout(showToast.timer);
-  showToast.timer = setTimeout(() => toast.classList.remove("show"), 1800);
-}
-
-async function copyText(text, message = "已复制") {
-  try {
-    await navigator.clipboard.writeText(text);
-    showToast(message);
-  } catch {
-    const area = document.createElement("textarea");
-    area.value = text;
-    document.body.append(area);
-    area.select();
-    document.execCommand("copy");
-    area.remove();
-    showToast(message);
-  }
-}
-
-function quickText(topic) {
-  const card = topic.card;
-  return [
-    `【${topic.topic}｜3分钟速讲】`,
-    card.quick_intro,
-    "",
-    "一、关键事实",
-    ...(card.key_facts || []).map((item, index) => `${index + 1}. ${item}`),
-    "",
-    "二、核心判断",
-    ...(card.core_judgments || []).map((item, index) => `${index + 1}. ${item}`),
-    "",
-    `课堂切入：${card.classroom_entry}`,
-  ].join("\n");
-}
-
-function fullCardText(topic) {
-  const card = topic.card;
-  const framework = card.analysis_framework || {};
-  return [
-    "【热点概览】",
-    card.news_overview,
-    "",
-    "【深度教学分析】",
-    ...Object.entries(framework).flatMap(([key, value]) => [
-      `${key}：`,
-      ...(Array.isArray(value) ? value : [value]).map((item, index) => `${index + 1}. ${item}`),
-    ]),
-    "",
-    quickText(topic),
-    "",
-    "【为什么值得讲】",
-    card.worth_teaching,
-    "",
-    "【规范表达】",
-    ...(card.standard_expressions || []).map((item, index) => `${index + 1}. ${item}`),
-    "",
-    "【课堂问题】",
-    ...(card.classroom_questions || []).map((item, index) => `${index + 1}. ${item}`),
-  ].join("\n");
-}
-
-function analysisItems(value) {
-  return (Array.isArray(value) ? value : [value]).filter(Boolean);
-}
-
-function analysisGridHtml(framework) {
-  return Object.entries(framework || {}).map(([key, value]) => `
-    <div class="framework-item">
-      <strong>${escapeHtml(key)}</strong>
-      <ol class="framework-list">${analysisItems(value).map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
-    </div>`).join("");
-}
-
-function setView(view) {
-  state.view = view;
-  document.querySelectorAll(".nav-item").forEach(button => button.classList.toggle("active", button.dataset.view === view));
-  if (view === "daily" || view === "today") setArchive("daily", false);
-  if (view === "weekly") setArchive("weekly", false);
-  if (view === "themes") setArchive("themes", false);
-  render();
-}
-
-function setArchive(kind, rerender = true) {
-  state.archive = kind;
-  document.querySelectorAll(".archive-tab").forEach(button => button.classList.toggle("active", button.dataset.archive === kind));
-  renderArchive();
-  if (rerender) {
-    state.view = kind === "themes" ? "themes" : kind;
-    render();
-  }
-}
-
-function groupByMonth(editions, key) {
-  return editions.reduce((groups, edition) => {
-    const month = (edition[key] || "").slice(0, 7);
-    (groups[month] ||= []).push(edition);
-    return groups;
-  }, {});
-}
-
-function dailyArchiveHeadline(edition) {
-  const topic = topicById((edition.topic_ids || [])[0]);
-  if (!topic) return edition.title;
-  const sameDayArticles = (topic.sources || [])
-    .filter(item => item.source_kind === "peopleapp_opinion" && item.article?.date === edition.edition_date)
-    .map(item => item.article)
-    .filter(article => article?.title)
-    .sort((a, b) => a.title.length - b.title.length || a.title.localeCompare(b.title, "zh-CN"));
-  return sameDayArticles[0]?.title || topic.topic;
-}
-
-function renderArchive() {
-  if (!state.data) return;
-  const query = state.search.trim().toLowerCase();
-  if (state.archive === "themes") {
-    const categories = state.data.categories.filter(item => !query || item.name.toLowerCase().includes(query));
-    archiveList.innerHTML = categories.length ? `
-      <div class="archive-group">
-        <div class="archive-month"><span>教学主题</span><small>${categories.length}</small></div>
-        ${categories.map(item => `
-          <button class="archive-link" data-category="${escapeHtml(item.name)}">
-            <strong>${String(item.count).padStart(2, "0")}</strong><span>${escapeHtml(item.name)}</span>
-          </button>`).join("")}
-      </div>` : `<div class="archive-empty">没有匹配主题</div>`;
-    return;
-  }
-
-  const isDaily = state.archive === "daily";
-  const key = isDaily ? "edition_date" : "week_start";
-  const editions = (isDaily ? state.data.daily_editions : state.data.weekly_editions).filter(edition => {
-    if (!query) return true;
-    const topics = (edition.topic_ids || []).map(topicById).filter(Boolean);
-    return [edition.title, edition.teaching_judgment, ...topics.map(item => `${item.topic} ${item.category}`)]
-      .join(" ").toLowerCase().includes(query);
-  });
-  const groups = groupByMonth(editions, key);
-  archiveList.innerHTML = Object.keys(groups).length ? Object.entries(groups).map(([month, items]) => `
-    <div class="archive-group">
-      <div class="archive-month"><span>${month.replace("-", " 年 ")} 月</span><small>${items.length}</small></div>
-      ${items.map(edition => {
-        const topic = topicById((edition.topic_ids || [])[0]);
-        const active = isDaily ? edition.edition_date === state.selectedDaily : edition.week_start === state.selectedWeekly;
-        return `<button class="archive-link ${active ? "active" : ""}" data-${isDaily ? "daily" : "weekly"}="${edition[key]}">
-          <strong>${isDaily ? `${Number(edition.edition_date.slice(-2))} 日` : shortDate(edition.week_start)}</strong>
-          <span>${escapeHtml(isDaily ? dailyArchiveHeadline(edition) : (topic?.topic || edition.title))}</span>
-        </button>`;
-      }).join("")}
-    </div>`).join("") : `<div class="archive-empty">没有匹配内容</div>`;
-}
-
-function statsHtml(edition, topics) {
-  return `<div class="edition-stats">
-    <div class="stat"><strong>${topics.length}</strong><span>今日热点</span></div>
-    <div class="stat"><strong>${edition.app_article_count ?? topics.reduce((sum, item) => sum + item.app_article_count, 0)}</strong><span>APP评论支撑</span></div>
-    <div class="stat"><strong>${edition.paper_article_count ?? topics.reduce((sum, item) => sum + item.paper_support_count, 0)}</strong><span>人民日报支撑</span></div>
-    <div class="stat"><strong>${edition.reading_minutes ?? Math.max(5, topics.length * 3)}</strong><span>分钟速读</span></div>
-  </div>`;
-}
-
-function editionHeader(edition, topics, type = "日报") {
-  const dateLabel = type === "周报" ? `${shortDate(edition.week_start)}—${shortDate(edition.week_end)}` : formatDate(edition.edition_date);
-  const issue = edition.issue_no ? `VOL.${String(edition.issue_no).padStart(3, "0")}` : "WEEKLY EDITION";
-  return `
-    <div class="edition-kicker"><span>${issue}</span><span>·</span><span>${topics.length} TOPICS</span><span>·</span><span>TEACHING ${type === "周报" ? "WEEKLY" : "DAILY"}</span></div>
-    <h1 class="edition-title">热点<em>教学</em>${type}</h1>
-    <p class="edition-date">${escapeHtml(dateLabel)}</p>
-    <div class="double-rule"></div>
-    <div class="teaching-judgment"><strong>今日教学判断</strong><p>${escapeHtml(edition.teaching_judgment)}</p></div>
-    ${statsHtml(edition, topics)}
-    ${edition.status !== "published" ? `<div class="review-banner">教研预览：来源已经过规则复核，教学卡仍需人工确认后再作为正式发布内容。</div>` : ""}`;
-}
-
-function headlineHtml(topics) {
-  return `<section>
-    <div class="section-title"><h2>今日看点</h2><small>${topics.length} 个热点 · 点击进入教学卡</small></div>
-    <div class="headline-list">
-      ${topics.map((topic, index) => `<button class="headline-item" data-topic="${topic.topic_id}">
-        <span class="headline-no">${String(index + 1).padStart(2, "0")}</span>
-        <span class="headline-category">${escapeHtml(topic.category)}</span>
-        <span class="headline-copy"><strong>${escapeHtml(topic.topic)}</strong><small>${escapeHtml(topic.card?.classroom_entry || topic.angle)}</small></span>
-        <span class="headline-arrow">›</span>
-      </button>`).join("")}
-    </div>
-  </section>`;
-}
-
-function topicSummariesHtml(topics) {
-  const groups = topics.reduce((result, topic) => {
-    (result[topic.category] ||= []).push(topic);
-    return result;
-  }, {});
-  return Object.entries(groups).map(([category, items], groupIndex) => `<section class="topic-section">
-    <div class="topic-section-head"><span class="number">${String(groupIndex + 1).padStart(2, "0")}</span><h2>${escapeHtml(category)}</h2><small>${items.length} TOPICS</small></div>
-    ${items.map(topic => `<article class="topic-card">
-      <div class="topic-meta"><span class="pill priority">${topic.priority}级</span><span class="pill">${topic.status}</span><span class="pill">${topic.media_count}家媒体</span><span class="pill">${topic.paper_support_count}篇人民日报支撑</span></div>
-      <h3>${escapeHtml(topic.topic)}</h3>
-      <p>${escapeHtml(topic.card?.quick_intro || topic.angle)}</p>
-      <div class="topic-actions"><button class="button primary" data-topic="${topic.topic_id}">打开教学卡</button><button class="button" data-copy-quick="${topic.topic_id}">复制3分钟速讲</button></div>
-    </article>`).join("")}
-  </section>`).join("");
-}
-
-function renderDaily() {
-  const edition = currentDaily();
-  if (!edition) return renderEmpty("还没有生成日报");
-  const topics = (edition.topic_ids || []).map(topicById).filter(Boolean);
-  main.innerHTML = `<div class="content-wrap">${editionHeader(edition, topics)}${headlineHtml(topics)}${topicSummariesHtml(topics)}</div>`;
-}
-
-function renderWeekly() {
-  const edition = state.data.weekly_editions.find(item => item.week_start === state.selectedWeekly) || state.data.weekly_editions[0];
-  if (!edition) return renderEmpty("还没有生成周报");
-  const topics = (edition.topic_ids || []).map(topicById).filter(Boolean);
-  main.innerHTML = `<div class="content-wrap">${editionHeader(edition, topics, "周报")}${headlineHtml(topics)}${topicSummariesHtml(topics)}</div>`;
-}
-
-function sourceCards(items, kind) {
-  const sources = items.filter(item => item.source_kind === kind);
-  if (!sources.length) return kind === "people_daily_newspaper"
-    ? `<div class="empty-support">暂未发现可靠的《人民日报》正式版支撑文章。系统不会为了凑齐来源强行关联。</div>`
-    : `<div class="empty-support">暂无APP评论来源。</div>`;
-  return sources.map(item => {
-    const article = item.article || {};
-    const confidence = kind === "people_daily_newspaper" ? ` · 匹配度 ${Math.round((item.confidence || 0) * 100)}%` : "";
-    return `<article class="source-card">
-      <span class="source-role">${escapeHtml(item.relation_role)}${confidence}</span>
-      <h3>${escapeHtml(article.title)}</h3>
-      <p>${escapeHtml(article.summary || item.match_reason)}</p>
-      <small>${escapeHtml(article.date)} · ${escapeHtml(article.source_name)}${article.section_name ? ` · ${escapeHtml(article.section_name)}` : ""}</small>
-      ${article.source_url ? `<p><a href="${escapeHtml(article.source_url)}" target="_blank" rel="noreferrer">打开原文 ↗</a></p>` : ""}
-    </article>`;
-  }).join("");
-}
-
-function renderTopic(id) {
-  const topic = topicById(id);
-  if (!topic?.card) return renderEmpty("没有找到这张教学卡");
-  state.selectedTopic = id;
-  const card = topic.card;
-  const navItems = [
-    ["overview", "新闻概况"], ["framework", "深度教学分析"], ["quick", "3分钟速讲"],
-    ["worth", "为什么值得讲"], ["questions", "课堂问题"], ["background", "背景与时间线"],
-    ["views", "媒体观点比较"], ["paper", "人民日报支撑"], ["sources", "全部来源"],
-  ];
-  main.innerHTML = `<div class="content-wrap">
-    <button class="button detail-back" data-back>← 返回日报</button>
-    <header class="detail-header">
-      <div class="topic-meta"><span class="pill priority">${topic.priority}级</span><span class="pill">${escapeHtml(topic.category)}</span><span class="pill">${topic.status}</span><span class="pill">${topic.start_date}—${topic.end_date}</span></div>
-      <h1>${escapeHtml(topic.topic)}</h1>
-      <p class="detail-lead">${escapeHtml(card.quick_intro)}</p>
-      <div class="topic-actions"><button class="button primary" data-copy-full="${topic.topic_id}">复制完整教学卡</button><button class="button" data-copy-quick="${topic.topic_id}">复制3分钟速讲</button><button class="button" onclick="window.print()">打印讲义</button></div>
-      ${card.review_status !== "published" ? `<div class="review-banner">当前状态：教学卡初稿。APP热点归并已经复核；人民日报关联与教学表达仍需人工确认。</div>` : ""}
-    </header>
-    <div class="detail-layout">
-      <article>
-        <section id="overview" class="detail-section"><h2>新闻概况</h2><p class="overview-copy">${escapeHtml(card.news_overview || card.quick_intro)}</p></section>
-        <section id="framework" class="detail-section analysis-section">
-          <div class="section-title"><h2>深度教学分析</h2><small>从新闻现象走向治理逻辑</small></div>
-          <h3>问题—原因—影响—对策</h3>
-          <div class="framework-grid">${analysisGridHtml(card.analysis_framework)}</div>
-          <h3>建议讲授顺序</h3>
-          <div class="teaching-path">
-            <div><strong>01 现象导入</strong><p>${escapeHtml(card.classroom_entry)}</p></div>
-            <div><strong>02 矛盾提炼</strong><p>${escapeHtml(card.controversy)}</p></div>
-            <div><strong>03 机制分析</strong><p>结合问题、原因和影响，说明个案背后的责任边界、制度短板与公共价值。</p></div>
-            <div><strong>04 表达迁移</strong><p>使用下方规范表达形成申论分论点、面试分析段或课堂总结。</p></div>
-          </div>
-          <h3>可直接使用的规范表达</h3><ol class="numbered-list">${(card.standard_expressions || []).map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
-          <h3>常见误区</h3><ol class="numbered-list">${(card.common_mistakes || []).map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
-        </section>
-        <section id="quick" class="detail-section"><h2>3分钟速讲</h2><div class="quick-card"><p>${escapeHtml(card.quick_intro)}</p><h3>三个关键事实</h3><ol class="numbered-list">${(card.key_facts || []).map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol><h3>三个核心判断</h3><ol class="numbered-list">${(card.core_judgments || []).map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol></div></section>
-        <section id="worth" class="detail-section"><h2>为什么值得讲</h2><p>${escapeHtml(card.worth_teaching)}</p><p><strong>课堂切入：</strong>${escapeHtml(card.classroom_entry)}</p></section>
-        <section id="questions" class="detail-section"><h2>课堂互动问题</h2><ol class="numbered-list">${(card.classroom_questions || []).map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol></section>
-        <section id="background" class="detail-section"><h2>背景与时间线</h2><ul class="timeline">${(card.background || []).map(item => `<li><time>${escapeHtml(item.date)}</time><div><strong>${escapeHtml(item.source)}</strong> · ${escapeHtml(item.title)}</div></li>`).join("")}</ul><p>${escapeHtml(card.controversy)}</p></section>
-        <section id="views" class="detail-section"><h2>APP评论观点比较</h2>${(card.media_viewpoints || []).map(item => `<article class="source-card"><span class="source-role">媒体观点</span><h3>${escapeHtml(item.source)}｜${escapeHtml(item.title)}</h3><p>${escapeHtml(item.viewpoint)}</p>${item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">查看来源 ↗</a>` : ""}</article>`).join("")}</section>
-        <section id="paper" class="detail-section"><h2>《人民日报》正式版支撑</h2>${sourceCards(topic.sources || [], "people_daily_newspaper")}</section>
-        <section id="sources" class="detail-section"><h2>全部来源</h2><h3>人民日报APP评论</h3>${sourceCards(topic.sources || [], "peopleapp_opinion")}<h3>《人民日报》正式版</h3>${sourceCards(topic.sources || [], "people_daily_newspaper")}</section>
-      </article>
-      <aside class="detail-nav"><strong>本课目录</strong>${navItems.map(([anchor, label]) => `<a href="#${anchor}">${label}</a>`).join("")}<div class="topic-meta">${(card.tags || []).map(tag => `<span class="pill">${escapeHtml(tag)}</span>`).join("")}</div></aside>
-    </div>
-  </div>`;
-  main.focus();
-}
-
-function renderThemes() {
-  const topicsByCategory = state.data.topics.reduce((result, topic) => {
-    (result[topic.category] ||= []).push(topic);
-    return result;
-  }, {});
-  main.innerHTML = `<div class="content-wrap simple-page"><p class="edition-kicker">THEME ARCHIVE · 长期母题</p><h1>主题档案</h1><p>把每天的新闻变化沉淀成可持续复用的教学母题。点击主题后，可查看该主题下的全部热点卡。</p><div class="theme-grid">${Object.entries(topicsByCategory).map(([category, topics]) => `<article class="theme-card" data-category="${escapeHtml(category)}"><small>${topics.length} 个热点</small><h2>${escapeHtml(category)}</h2><p>${escapeHtml(topics.slice(0, 4).map(item => item.topic).join("；"))}</p></article>`).join("")}</div></div>`;
-}
-
-function renderCategory(category) {
-  const topics = state.data.topics.filter(topic => topic.category === category);
-  main.innerHTML = `<div class="content-wrap simple-page"><button class="button detail-back" data-view-button="themes">← 返回主题档案</button><p class="edition-kicker">TEACHING THEME</p><h1>${escapeHtml(category)}</h1><p>共 ${topics.length} 个经过热点归并的教学主题。</p>${topicSummariesHtml(topics)}</div>`;
-}
-
-function renderRanking() {
-  const ranked = [...state.data.topics].sort((a, b) => (b.media_count * 2 + b.app_article_count + b.paper_support_count) - (a.media_count * 2 + a.app_article_count + a.paper_support_count));
-  main.innerHTML = `<div class="content-wrap simple-page"><p class="edition-kicker">HOTSPOT RANKING · 多源关注</p><h1>热点排行</h1><p>排行用于帮助教师快速确定优先级，综合参考媒体数量、APP评论文章和人民日报支撑数量，不代表价值判断。</p><div class="ranking-list">${ranked.map((topic, index) => `<button class="ranking-row" data-topic="${topic.topic_id}"><strong>${String(index + 1).padStart(2, "0")}</strong><span><h3>${escapeHtml(topic.topic)}</h3><small>${escapeHtml(topic.category)} · ${topic.media_count}家媒体 · ${topic.app_article_count}篇APP评论</small></span><span class="pill priority">${topic.priority}级</span></button>`).join("")}</div></div>`;
-}
-
-function renderInfo(kind) {
-  const sourcePage = kind === "sources";
-  main.innerHTML = `<div class="content-wrap simple-page"><p class="edition-kicker">${sourcePage ? "SOURCE NOTES" : "USER GUIDE"}</p><h1>${sourcePage ? "来源说明" : "使用指南"}</h1>${sourcePage ? `
-    <p>本工具使用两条彼此独立的事实链。页面不会把来源文章简单混在一起，也不会为了凑齐材料强行建立关系。</p>
-    <div class="theme-grid"><article class="theme-card"><small>热点信号 · 媒体观点 · 争议观察</small><h2>人民日报APP评论库</h2><p>用于识别多家媒体共同关注的现实话题，并保留媒体差异。</p></article><article class="theme-card"><small>政策依据 · 治理案例 · 规范表达</small><h2>《人民日报》正式版文章库</h2><p>用于补充权威政策语境、案例和可用于课堂的规范表达。</p></article></div>
-    <p class="review-banner">自动匹配的人民日报文章会显示匹配理由与可信度；未完成人工确认前，统一标记为教研预览。</p>` : `
-    <div class="theme-grid"><article class="theme-card"><small>第一步</small><h2>先看“今日看点”</h2><p>30秒判断当天最值得补充的热点，以及适合进入哪类课程。</p></article><article class="theme-card"><small>第二步</small><h2>复制3分钟速讲</h2><p>适合课堂临时补充，也可作为课程开场或案例导入。</p></article><article class="theme-card"><small>第三步</small><h2>展开教学卡</h2><p>继续查看媒体观点、人民日报支撑、分析框架、误区和课堂问题。</p></article><article class="theme-card"><small>第四步</small><h2>核对原始来源</h2><p>点击原文链接确认事实和语境，再用于正式课程或讲义。</p></article></div>`}</div>`;
-}
-
-function renderEmpty(message) {
-  main.innerHTML = `<div class="content-wrap simple-page"><h1>${escapeHtml(message)}</h1><p>请先运行数据生成流程，或选择其他日期。</p></div>`;
-}
-
-function render() {
-  if (!state.data) return;
-  state.selectedTopic = null;
-  if (state.view === "today" || state.view === "daily") renderDaily();
-  else if (state.view === "weekly") renderWeekly();
-  else if (state.view === "themes") renderThemes();
-  else if (state.view === "ranking") renderRanking();
-  else if (state.view === "sources" || state.view === "guide") renderInfo(state.view);
-}
-
-document.addEventListener("click", event => {
-  const nav = event.target.closest("[data-view]");
-  if (nav) setView(nav.dataset.view);
-  const archiveTab = event.target.closest("[data-archive]");
-  if (archiveTab) setArchive(archiveTab.dataset.archive);
-  const daily = event.target.closest("[data-daily]");
-  if (daily) {
-    state.selectedDaily = daily.dataset.daily;
-    state.view = "daily";
-    renderArchive(); render(); archiveSidebar.classList.remove("open");
-  }
-  const weekly = event.target.closest("[data-weekly]");
-  if (weekly) {
-    state.selectedWeekly = weekly.dataset.weekly;
-    state.view = "weekly";
-    renderArchive(); render(); archiveSidebar.classList.remove("open");
-  }
-  const topic = event.target.closest("[data-topic]");
-  if (topic) renderTopic(topic.dataset.topic);
-  const category = event.target.closest("[data-category]");
-  if (category) renderCategory(category.dataset.category);
-  const back = event.target.closest("[data-back]");
-  if (back) render();
-  const viewButton = event.target.closest("[data-view-button]");
-  if (viewButton) setView(viewButton.dataset.viewButton);
-  const copyQuick = event.target.closest("[data-copy-quick]");
-  if (copyQuick) copyText(quickText(topicById(copyQuick.dataset.copyQuick)), "3分钟速讲已复制");
-  const copyFull = event.target.closest("[data-copy-full]");
-  if (copyFull) copyText(fullCardText(topicById(copyFull.dataset.copyFull)), "完整教学卡已复制");
+function pack(){const selected=personal.pack.map(topic).filter(Boolean),missing=personal.pack.filter(id=>!topic(id));return `<div class="page">${pageIntro('我的课堂材料','本次备课','调整案例顺序，把讲稿与练习一次带走。')}<div class="pack-layout"><div><label for="packTitle" class="muted">本次课程名称</label><input type="text" class="pack-title" id="packTitle" value="${esc(personal.title)}" maxlength="120">${selected.length?selected.map((t,i)=>`<article class="pack-card" draggable="true" data-drag-id="${t.topic_id}"><span class="pack-order">${String(i+1).padStart(2,'0')}</span><div><h3><a href="#lesson/${t.topic_id}">${esc(M.lessonTitle(t))}</a></h3><p>${esc(t.lesson?.focus||'原版资料，将按原卡内容导出。')}</p><div class="tags"><span class="tag">${t.lesson?'教师稿 / 学生版 / 提纲':'原教学卡'}</span>${personal.drafts[t.topic_id]?.text?'<span class="tag">含个人改稿</span>':''}</div></div><div class="pack-move"><button data-move="up" data-id="${t.topic_id}" aria-label="上移${esc(M.lessonTitle(t))}" ${i===0?'disabled':''}>↑</button><button data-move="down" data-id="${t.topic_id}" aria-label="下移${esc(M.lessonTitle(t))}" ${i===selected.length-1?'disabled':''}>↓</button><button data-remove="${t.topic_id}" aria-label="移除${esc(M.lessonTitle(t))}">移除</button></div></article>`).join(''):`<div class="panel empty"><h2>先选一个案例</h2><p>在案例上点“＋ 备课”，就会出现在这里。</p><a class="button primary" href="#home">去选授课案例</a></div>`}${missing.length?`<div class="notice">${missing.length}条备课记录在当前资料中未找到，已保留编号与备注；导出时会跳过。</div>`:''}<div class="backup-actions"><a class="button" href="#catalog">＋ 添加更多案例</a><button class="button" data-backup>导出备课备份</button><button class="button" data-import>导入备份</button></div><p class="source-status">支持拖动排序，也可使用上移、下移按钮。个人改稿、备注和顺序保存在当前浏览器；换设备或换网址前可导出备份。</p></div><aside class="panel pack-sidebar"><span class="eyebrow">合并取用</span><h2>${selected.length}个案例</h2><p>先预览，再决定是否附参考答案、来源和自己的备注。</p><button class="button primary" data-pack-export="teacher" ${!selected.length?'disabled':''}>导出教师讲稿</button><button class="button" data-pack-export="student" ${!selected.length?'disabled':''}>导出学生练习单</button><button class="button" data-pack-export="slides" ${!selected.length?'disabled':''}>导出课件提纲</button><p style="margin-top:18px">学生版与课件提纲只纳入已完成新授课加工的案例。旧卡仍可作为教师参考资料导出。</p></aside></div></div>`;}
+function recent(){return `<div class="page">${pageIntro('取用记录','最近用过的案例','复制或导出后自动记录，便于接着备课。')}${personal.recent.length?topicRows(personal.recent.map(topic).filter(Boolean)):'<div class="empty">还没有取用记录。试着复制一份讲稿。</div>'}</div>`;}
+function themes(){return `<div class="page">${pageIntro('长期教学母题','按主题找案例','把不同事件放在一起，比较规则、责任与执行。')}<div class="theme-grid">${state.data.categories.map(c=>`<a class="theme-tile" href="#catalog" data-category="${esc(c.name)}"><span class="eyebrow">${c.count} 个热点</span><h3>${esc(c.name)}</h3><small>${state.data.topics.filter(t=>t.category===c.name).slice(0,2).map(t=>esc(M.lessonTitle(t))).join('、')}</small></a>`).join('')}</div></div>`;}
+function ranking(){const topics=[...state.data.topics].sort((a,b)=>b.media_count-a.media_count||b.app_article_count-a.app_article_count);return `<div class="page">${pageIntro('热点观察','热点排行','按来源媒体数量排序，热度不等于授课成熟度。')}${topicRows(topics)}</div>`;}
+function editions(kind,id){const weekly=kind==='weekly',rows=state.data[weekly?'weekly_editions':'daily_editions'],key=weekly?'week_start':'edition_date';const current=rows.find(e=>e[key]===id)||rows[0];if(!current)return '<div class="page empty">暂无归档</div>';return `<div class="page">${pageIntro('资料归档',weekly?'每周精选':'热点日报','按原资料期次回看；授课资料单独更新，历史案例不冒充当天新事件。')}<div class="archive-layout"><aside class="panel edition-list">${rows.map(r=>`<a href="#${kind}/${r[key]}" class="${r[key]===current[key]?'active':''}">${r[key]}${weekly?' — '+r.week_end:''}<small>${r.topic_ids.length}个热点 · ${r.status==='published'?'原期次已标记发布':'教研预览'}</small></a>`).join('')}</aside><section><span class="eyebrow">${current[key]}</span><h2>${esc(current.title)}</h2><p class="muted">${esc(current.teaching_judgment)}</p>${topicRows(current.topic_ids.map(topic).filter(Boolean))}</section></div></div>`;}
+function guide(){return `<div class="page help-copy">${pageIntro('取用指南','把材料带进你的课堂','资料、教研稿与个人备课分别保存。')}<section class="panel"><h2>先看适不适合，再取材料</h2><p>授课资料先说明适用课程、教学重点和常见误区。3分钟口语稿适合临时导入，10分钟讲解带有分段安排与追问，20分钟方案增加随堂练习。</p><h2>复制与导出</h2><p>“复制这一块”只取当前内容并附出处。“导出材料”可以预览教师稿、学生练习单或课件提纲。保留格式复制会尽量保留标题、列表和加粗；浏览器不支持时会明确提示改为纯文本。Word为可编辑文档。打印窗口可保存PDF；内置浏览器未弹出窗口时，可用Chrome打开本页，或下载Word后另存PDF。</p><h2>学生版不提前泄露答案</h2><p>学生练习单默认只有材料、模拟题、作答要求与留白。勾选参考答案后，答案放在单独页面，发给学生前可移除。课件提纲默认不含讲解备注。</p><h2>事实与教学判断</h2><p>事实卡逐条标注来源。媒体观点明确归属，分析、课堂情境与模拟题由教研整理。材料日期表示依据的历史资料时间，新版本日期不表示事件是当天发生的。</p><h2>审核与版本</h2><p>新授课资料是独立教研稿，仍需教师试讲确认。原教学卡与审核记录保留在资料库，不能把旧稿的发布标记自动沿用到新讲稿。若所用本地原文发生变化，系统标记来源待核验。每次导出保留材料日期与教研版本。</p><h2>个人改稿与备份</h2><p>你可以改写口语稿、写备注、组合备课。它们只保存在当前浏览器，不回写原始资料，也不上传妙搭。导出备课备份可带到其他设备；导入时优先保留本机已有改稿和备注，并补入备份中独有的内容。</p><div class="backup-actions"><button class="button" data-backup>导出备课备份</button><button class="button" data-import>导入备份</button></div><h2>资料来源</h2><p>人民日报APP评论用于热点观察与媒体观点；《人民日报》正式版用于补充事实与论证。没有合适的正式版支撑时会明确显示。资料库与固定迁移包保存在个人本地项目，网页是可重新发布的副本。</p></section></div>`;}
+function render(){if(!state.data)return;const {view,id}=route();document.querySelectorAll('[data-nav]').forEach(a=>{a.classList.toggle('active',a.dataset.nav===view);if(a.dataset.nav===view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});$('#mainContent').dataset.view=view;$('#globalSearch').value=state.filter;$('#pageLabel').textContent=labels[view]||'授课精选';const functions={home,fresh,catalog,pack,recent,themes,ranking,guide};$('#mainContent').innerHTML=view==='lesson'?lesson(id):['daily','weekly'].includes(view)?editions(view,id):(functions[view]||home)();updateCounts();}
+function exportOptions(){return {...settings(),answers:$('#exportAnswers').checked,sources:$('#exportSources').checked,notes:$('#exportNotes').checked,useDraft:$('#exportDrafts').checked,packTitle:state.exportTitle||personal.title};}
+function updatePreview(){const mode=$('#exportMode').value;const all=state.exportTopics;const selected=['student','slides'].includes(mode)?all.filter(t=>t.lesson):all;state.blocks=M.build(selected,mode,exportOptions());$('#exportPreview').innerHTML=`<div class="export-paper">${selected.length?M.html(state.blocks):'<p>选中的旧版资料还没有对应的练习或课件，请选择教师详稿。</p>'}</div>`;const omitted=all.length-selected.length;$('#exportHint').textContent=`${selected.length}个案例 · ${M.modes[mode]}${mode==='student'?' · '+($('#exportAnswers').checked?'答案在另页，发放前请确认':'不含参考答案'):''}${omitted?` · ${omitted}个旧版案例未纳入此类型`:''}。所有材料保留日期与版本。`;$('#exportFeedback').textContent='';document.querySelectorAll('[data-export]').forEach(b=>b.disabled=!selected.length);$('#exportNotes').disabled=mode==='student';$('#exportDrafts').disabled=!['quick','teacher'].includes(mode);$('#exportAnswers').disabled=!['teacher','student'].includes(mode);}
+function openExport(ids,mode,packTitle=''){state.exportTitle=packTitle;state.exportTopics=ids.map(topic).filter(Boolean);if(!state.exportTopics.length){toast('请先添加一个案例');return;}
+ $('#exportMode').value=mode;$('#exportAnswers').checked=['teacher','legacy'].includes(mode);$('#exportNotes').checked=false;$('#exportSources').checked=true;$('#exportDrafts').checked=true;
+ const legacyOnly=state.exportTopics.every(t=>!t.lesson);for(const o of $('#exportMode').options)o.disabled=legacyOnly&&o.value!=='legacy'&&o.value!=='teacher';if(legacyOnly)$('#exportMode').value='legacy';
+ updatePreview();$('#exportDialog').showModal();}
+function backup(){const name='hotspot-teaching-backup-'+new Date().toISOString().slice(0,10)+'.json';E.download(new Blob([JSON.stringify(personal,null,2)],{type:'application/json'}),name);toast('已导出备课备份');}
+function saveScript(id){const text=$('#scriptEditor')?.value.trim();if(!text){toast('讲稿不能为空');return;}personal.drafts[id]={text,baseVersion:version(topic(id)),updatedAt:new Date().toISOString()};if(save()){$('#scriptSaveState').textContent='已保存';toast('已保存个人改稿，原稿保留');}}
+function syncNotes(){const e=$('#notesEditor');if(e){personal.notes[e.dataset.id]={text:e.value,baseVersion:version(topic(e.dataset.id)),updatedAt:new Date().toISOString()};$('#noteSaveState').textContent=save()?'已保存到当前浏览器':'保存未成功，请导出备份';}}
+document.addEventListener('click',async event=>{
+ const el=event.target.closest('button,a');if(!el)return;
+ try{
+  if(el.hasAttribute('data-home-category')){state.homeCategory=el.dataset.homeCategory;document.querySelectorAll('[data-home-category]').forEach(b=>{b.classList.toggle('active',b.dataset.homeCategory===state.homeCategory);b.setAttribute('aria-pressed',String(b.dataset.homeCategory===state.homeCategory));});$('#homePins').innerHTML=homePins();return;}
+  if(el.dataset.allExport){openExport(state.data.topics.filter(t=>t.lesson).map(t=>t.topic_id),el.dataset.allExport,'热点授课资料全集');return;}
+  if(el.dataset.filteredExport){openExport(filtered(state.data.topics).map(t=>t.topic_id),el.dataset.filteredExport);return;}
+  if(el.hasAttribute('data-add-filtered')){const ids=filtered(state.data.topics).map(t=>t.topic_id),before=personal.pack.length;personal.pack=[...new Set([...personal.pack,...ids])];save();render();toast(`已加入 ${personal.pack.length-before} 个案例`);return;}
+  if(el.dataset.add){add(el.dataset.add);return;}
+  if(el.dataset.copySource){const a=state.data.fresh_articles.find(a=>a.article_id===el.dataset.copySource);if(!a)return;const result=await E.copy(M.sourceSummary(a));toast(result==='rich'?'已复制资料说明与出处':'已复制纯文本说明与出处');return;}
+  if(el.dataset.category){state.category=el.dataset.category;state.course='';state.filter='';state.ready=false;if(route().view==='catalog')render();return;}
+  if(el.hasAttribute('data-clear-filters')){state.filter='';state.course='';state.category='';state.ready=false;render();return;}
+  if(el.dataset.tab){state.tab=el.dataset.tab;state.duration=({quick:'3',explain:'10',exercise:'20'})[state.tab]||state.duration;render();$('#tab-'+state.tab)?.focus({preventScroll:true});return;}
+  if(el.dataset.duration){state.duration=el.dataset.duration;state.tab=state.duration==='3'?'quick':state.duration==='20'?'exercise':'explain';render();return;}
+  if(el.dataset.openExport){openExport([el.dataset.id],el.dataset.openExport);return;}
+  if(el.dataset.packExport){openExport(personal.pack,el.dataset.packExport);return;}
+  if(el.hasAttribute('data-close-dialog')){$('#exportDialog').close();return;}
+  if(el.dataset.copyQuick){const t=topic(el.dataset.copyQuick),result=await E.copy(M.build([t],'quick',settings()));remember([t.topic_id]);toast(result==='rich'?'已复制讲稿，含日期与来源':'已复制纯文本讲稿，含日期与来源');return;}
+  if(el.dataset.copyBlock){const t=topic(el.dataset.id);const blocks=[{type:'title',text:M.lessonTitle(t)},{type:'meta',text:M.metadata(t,el.dataset.copyBlock==='quick'&&!!personal.drafts[t.topic_id]?.text)},...M.cautions(t),...M.section(t,el.dataset.copyBlock,settings()),...M.sourceBlocks(t)];const result=await E.copy(blocks);remember([t.topic_id]);toast(result==='rich'?'已保留格式复制，附来源':'已复制纯文本，附来源');return;}
+  if(el.hasAttribute('data-copy-slide')){const t=topic(el.dataset.id),s=t.lesson.slides[Number(el.dataset.copySlide)];const blocks=[{type:'title',text:s.title},{type:'meta',text:M.metadata(t)},...M.cautions(t),...s.bullets.map(text=>({type:'li',text})),...M.sourceBlocks(t)];const result=await E.copy(blocks);remember([t.topic_id]);toast(result==='rich'?'已复制本页提纲':'已复制纯文本提纲');return;}
+  if(el.dataset.export){const action=el.dataset.export,feedback=$('#exportFeedback');feedback.textContent='正在准备…';el.disabled=true;
+   try{if(action==='word'){const blob=await E.word(state.blocks);const title=state.exportTopics.length===1?M.lessonTitle(state.exportTopics[0]):(state.exportTitle||personal.title);E.download(blob,(title+'-'+M.modes[$('#exportMode').value]).replace(/[\\/:*?"<>|]/g,'-')+'.docx');feedback.textContent='Word已生成，下载已发起';}
+    else if(action==='print'){E.print(state.blocks);feedback.textContent='已请求打印；若未出现窗口，请用 Chrome 打开本页，或下载 Word 后保存 PDF';}
+    else{const result=await E.copy(state.blocks,action==='rich');feedback.textContent=result==='rich'?'已保留格式复制':'已复制纯文本';}
+    remember(state.exportTopics.map(t=>t.topic_id));
+   }finally{el.disabled=false;}return;}
+  if(el.dataset.saveScript){saveScript(el.dataset.saveScript);return;}
+  if(el.dataset.resetScript){const id=el.dataset.resetScript;if(personal.drafts[id]?.text){E.download(new Blob([personal.drafts[id].text],{type:'text/plain;charset=utf-8'}),'personal-script-backup.txt');delete personal.drafts[id];save();toast('已恢复原稿，个人改稿已下载留存');}render();return;}
+  if(el.dataset.remove){personal.pack=personal.pack.filter(id=>id!==el.dataset.remove);save();render();return;}
+  if(el.dataset.move){const i=personal.pack.indexOf(el.dataset.id),j=i+(el.dataset.move==='up'?-1:1);if(i>=0&&j>=0&&j<personal.pack.length){[personal.pack[i],personal.pack[j]]=[personal.pack[j],personal.pack[i]];save();render();}return;}
+  if(el.hasAttribute('data-backup')){backup();return;}
+  if(el.hasAttribute('data-import')){$('#importWorkspace').click();return;}
+ }catch(error){if($('#exportDialog').open)$('#exportFeedback').textContent=error.message;else toast(error.message||'操作未完成，请重试');}
 });
-
-searchInput.addEventListener("input", event => {
-  state.search = event.target.value;
-  renderArchive();
-});
-
-document.querySelector("#mobileArchiveToggle").addEventListener("click", () => archiveSidebar.classList.toggle("open"));
-
-document.querySelector("#themeToggle").addEventListener("click", () => {
-  const current = document.documentElement.dataset.theme || "light";
-  const next = current === "dark" ? "light" : "dark";
-  document.documentElement.dataset.theme = next;
-  localStorage.setItem("hotspot-teaching-theme", next);
-  document.querySelector("[data-theme-icon]").textContent = next === "dark" ? "☾" : "☀";
-  document.querySelector("[data-theme-label]").textContent = next === "dark" ? "深色阅读" : "浅色阅读";
-});
-
-async function init() {
-  const savedTheme = localStorage.getItem("hotspot-teaching-theme");
-  if (savedTheme) document.documentElement.dataset.theme = savedTheme;
-  try {
-    const response = await fetch("./data.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`数据读取失败：${response.status}`);
-    state.data = await response.json();
-    state.selectedDaily = state.data.daily_editions[0]?.edition_date || null;
-    state.selectedWeekly = state.data.weekly_editions[0]?.week_start || null;
-    renderArchive();
-    render();
-  } catch (error) {
-    main.innerHTML = `<div class="content-wrap simple-page"><h1>暂时无法读取教学日报</h1><p>${escapeHtml(error.message)}</p><p>如果是直接双击打开，请通过本地工作台入口启动。</p></div>`;
-  }
-}
-
+document.addEventListener('input',event=>{const el=event.target;if(el.id==='freshSearch'){state.freshFilter=el.value;$('#freshResults').innerHTML=freshRows();}if(el.id==='topicSearch'){state.filter=el.value;$('#globalSearch').value=el.value;$('#catalogResults').innerHTML=catalogRows(filtered(state.data.topics));}if(el.id==='notesEditor')syncNotes();if(el.id==='scriptEditor'){personal.drafts[el.dataset.id]={text:el.value,baseVersion:version(topic(el.dataset.id)),updatedAt:new Date().toISOString()};$('#scriptSaveState').textContent=save()?'已自动保存个人改稿':'保存未成功，请导出备份';}if(el.id==='packTitle'){personal.title=el.value;save();}});
+document.addEventListener('change',event=>{const el=event.target;if(['courseFilter','categoryFilter','readyFilter'].includes(el.id)){if(el.id==='courseFilter')state.course=el.value;if(el.id==='categoryFilter')state.category=el.value;if(el.id==='readyFilter')state.ready=el.checked;$('#catalogResults').innerHTML=catalogRows(filtered(state.data.topics));}
+ if(el.closest('.export-controls')){if(el.id==='exportMode'){$('#exportAnswers').checked=['teacher','legacy'].includes(el.value);$('#exportNotes').checked=false;}updatePreview();}});
+$('#importWorkspace').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{if(file.size>2000000)throw Error('备份超过2MB，未导入');const imported=validatePersonal(JSON.parse(await file.text()));personal.pack=[...new Set([...personal.pack,...imported.pack])];personal.notes={...imported.notes,...personal.notes};personal.drafts={...imported.drafts,...personal.drafts};personal.recent=[...new Set([...personal.recent,...imported.recent])].slice(0,30);if(personal.title==='我的课堂备课')personal.title=imported.title;save();render();toast('已合并备份，本机已有改稿和备注保留');}catch(error){toast(error.message||'备份格式无法识别');}event.target.value='';});
+document.addEventListener('dragstart',event=>{const el=event.target.closest('[data-drag-id]');if(el){state.drag=el.dataset.dragId;event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',state.drag);}});
+document.addEventListener('dragover',event=>{const el=event.target.closest('[data-drag-id]');if(el&&state.drag){event.preventDefault();el.classList.add('drag-over');}});
+document.addEventListener('dragleave',event=>event.target.closest('[data-drag-id]')?.classList.remove('drag-over'));
+document.addEventListener('drop',event=>{const el=event.target.closest('[data-drag-id]');if(!el||!state.drag)return;event.preventDefault();const target=el.dataset.dragId,id=state.drag;if(id!==target&&personal.pack.includes(id)&&personal.pack.includes(target)){personal.pack=personal.pack.filter(x=>x!==id);personal.pack.splice(personal.pack.indexOf(target),0,id);save();}state.drag=null;render();});
+document.addEventListener('dragend',()=>{state.drag=null;document.querySelectorAll('.drag-over').forEach(e=>e.classList.remove('drag-over'));});
+document.addEventListener('keydown',event=>{if(event.target.matches('[role=tab]')&&['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();const tabs=[...document.querySelectorAll('[role=tab]')],i=tabs.indexOf(event.target),next=tabs[(i+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length];state.tab=next.dataset.tab;render();$('#tab-'+state.tab).focus();}});
+$('#themeToggle').addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;$('#themeToggle').textContent=next==='dark'?'切换浅色阅读':'切换深色阅读';try{localStorage.setItem('hotspot-teaching-theme',next);}catch(_){}});
+window.addEventListener('hashchange',()=>{document.body.classList.remove('nav-open');$('#mobileMenu').setAttribute('aria-expanded','false');$('#mobileMenu').setAttribute('aria-label','展开全部导航');state.tab='quick';state.duration='3';render();window.scrollTo({top:0,behavior:'instant'});$('#mainContent').focus({preventScroll:true});});
+window.addEventListener('beforeunload',event=>{const edit=$('#scriptEditor');if(edit){const t=topic(edit.dataset.id),saved=personal.drafts[t.topic_id]?.text||t.lesson.quick_script.join('\n\n');if(edit.value.trim()!==saved.trim()){event.preventDefault();event.returnValue='';}}});
+async function init(){try{const theme=localStorage.getItem('hotspot-teaching-theme');if(theme==='dark'){document.documentElement.dataset.theme=theme;$('#themeToggle').textContent='切换浅色阅读';}}catch(_){}
+ try{const response=await fetch('./data.json',{cache:'no-store'});if(!response.ok)throw Error('教学资料读取失败');state.data=await response.json();render();}
+ catch(error){$('#mainContent').innerHTML=`<div class="page empty"><h2>暂时无法读取教学资料</h2><p>${esc(error.message)}</p><p>请使用本地工作台入口，或刷新已发布的网页。</p><button class="button" onclick="location.reload()">重新读取</button></div>`;}}
+V.decorateNav();
+$('#globalSearchForm').addEventListener('submit',event=>{event.preventDefault();state.filter=$('#globalSearch').value.trim();state.category='';state.course='';state.ready=false;if(route().view==='catalog'){render();$('#topicSearch').focus();}else go('catalog');});
+$('#mobileMenu').addEventListener('click',()=>{const open=document.body.classList.toggle('nav-open');$('#mobileMenu').setAttribute('aria-expanded',String(open));$('#mobileMenu').setAttribute('aria-label',open?'收起全部导航':'展开全部导航');});
+document.addEventListener('keydown',event=>{if(event.key==='/'&&!event.metaKey&&!event.ctrlKey&&!event.altKey&&!event.target.closest('input,textarea,select,[contenteditable]')&&!$('#exportDialog').open){event.preventDefault();$('#globalSearch').focus();}if(event.key==='Escape'&&document.body.classList.contains('nav-open')){$('#mobileMenu').click();$('#mobileMenu').focus();}});
 init();

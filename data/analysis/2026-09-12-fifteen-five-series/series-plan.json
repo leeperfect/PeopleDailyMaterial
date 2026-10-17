@@ -1,0 +1,2083 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-09-12",
+  "series_name": "从人民日报读懂“十五五”",
+  "scope": "经济社会发展与基层履职主线；非62章逐章全覆盖",
+  "source_period": "2026年1—6月为主体，2025年材料用于溯源，2026年7月至9月6日补充专项解读和实践",
+  "operation_data_cutoff": "2026-09-06",
+  "shared_outline": {
+    "article_id": "people_daily_20260314_30145231",
+    "date": "2026-03-14",
+    "title": "中华人民共和国国民经济和社会发展第十五个五年规划纲要",
+    "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/14/content_30145231.html",
+    "markdown_path": "data/vault/2026/03/2026-03-14/06-要闻/中华人民共和国国民经济和社会发展第十五个五年规划纲要.md",
+    "raw_path": "",
+    "word_count": 60079,
+    "time_layer": "上半年主体",
+    "use": ""
+  },
+  "stats": {
+    "library_count": 14655,
+    "library_date_range": [
+      "2025-01-01",
+      "2026-09-06"
+    ],
+    "literal_title_fifteen_count": 331,
+    "literal_raw_content_fifteen_count": 2366,
+    "expanded_title_records": 334,
+    "reading_groups": 326,
+    "duplicate_pairs": 8,
+    "h1_records": 190,
+    "h1_reading_groups": 185,
+    "all_text_keyword_candidates": 2399,
+    "new_ideas": 6,
+    "reused_ideas": 18,
+    "existing_manuscript_entries": 15,
+    "unwritten_existing_entries": 3,
+    "dedicated_source_bindings": 72,
+    "dedicated_unique_sources": 72,
+    "months": [
+      {
+        "month": "2025-05",
+        "records": 3,
+        "reading_groups": 3
+      },
+      {
+        "month": "2025-11",
+        "records": 40,
+        "reading_groups": 40
+      },
+      {
+        "month": "2025-12",
+        "records": 34,
+        "reading_groups": 34
+      },
+      {
+        "month": "2026-01",
+        "records": 44,
+        "reading_groups": 44
+      },
+      {
+        "month": "2026-02",
+        "records": 6,
+        "reading_groups": 6
+      },
+      {
+        "month": "2026-03",
+        "records": 32,
+        "reading_groups": 32
+      },
+      {
+        "month": "2026-04",
+        "records": 44,
+        "reading_groups": 43
+      },
+      {
+        "month": "2026-05",
+        "records": 41,
+        "reading_groups": 39
+      },
+      {
+        "month": "2026-06",
+        "records": 23,
+        "reading_groups": 21
+      },
+      {
+        "month": "2026-07",
+        "records": 27,
+        "reading_groups": 25
+      },
+      {
+        "month": "2026-08",
+        "records": 36,
+        "reading_groups": 36
+      },
+      {
+        "month": "2026-09",
+        "records": 4,
+        "reading_groups": 3
+      }
+    ]
+  },
+  "lectures": [
+    {
+      "number": 1,
+      "unit": "一、读懂规划",
+      "theme": "规划的读法",
+      "reader_question": "同一张规划表里的数字，为什么不能用同一种办法落实？",
+      "outline_chapters": [
+        1,
+        2,
+        3
+      ],
+      "idea_id": "idea_20260912_fifteen_reading_indicators",
+      "manuscript_numbers": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20251210_30119437",
+          "date": "2025-12-10",
+          "title": "从五年规划看“中国之治”",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202512/10/content_30119437.html",
+          "markdown_path": "data/vault/2025/12/2025-12-10/01-要闻/从五年规划看“中国之治”.md",
+          "raw_path": "data/raw/articles_20251210.json",
+          "word_count": 7909,
+          "time_layer": "此前溯源",
+          "use": "解释五年规划的连续性及计划与规划的变化"
+        },
+        {
+          "article_id": "people_daily_20260109_30130836",
+          "date": "2026-01-09",
+          "title": "深刻理解我国五年规划的作用机制和重要优势（深入学习贯彻习近平新时代中国特色社会主义思想）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/09/content_30130836.html",
+          "markdown_path": "data/vault/2026/01/2026-01-09/09-理论/深刻理解我国五年规划的作用机制和重要优势（深入学习贯彻习近平新时代中国特色社会主义思想）.md",
+          "raw_path": "",
+          "word_count": 8900,
+          "time_layer": "上半年主体",
+          "use": "区分共识、资源配置、预期性与约束性指标的作用"
+        },
+        {
+          "article_id": "people_daily_20260317_30145608",
+          "date": "2026-03-17",
+          "title": "在法治轨道上更好发挥国家发展规划的战略导向作用（深入学习贯彻习近平新时代中国特色社会主义思想）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/17/content_30145608.html",
+          "markdown_path": "data/vault/2026/03/2026-03-17/09-理论/在法治轨道上更好发挥国家发展规划的战略导向作用（深入学习贯彻习近平新时代中国特色社会主义思想）.md",
+          "raw_path": "",
+          "word_count": 5331,
+          "time_layer": "上半年主体",
+          "use": "解释年度计划与规划指标的衔接"
+        }
+      ],
+      "boundary": "只解决怎么读规划、辨指标与责任；第24讲解决怎么把目标组织成实际工作。",
+      "extensions": "第84篇可作导读后的总览链接；正式纲要与3月6日草案摘要分开。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》深度分析【“十五五”规划指标】：数字背后，哪些是方向、哪些是责任",
+      "framework": [
+        "认清文本：规划建议、纲要草案、正式纲要和专项规划各处在什么位置",
+        "分清指标：发展愿景、预期性指标和约束性指标分别怎样理解",
+        "看清主体：政府承担什么，怎样引导市场和社会参与",
+        "读出联系：目标、重大任务、工程和年度安排怎样对应",
+        "用于分析：以就业或绿色发展为例制作一张规划阅读表"
+      ],
+      "production_state": "本次新增选题，未写稿",
+      "action": "新增",
+      "manuscripts": []
+    },
+    {
+      "number": 2,
+      "unit": "二、发展动能",
+      "theme": "现代化产业体系",
+      "reader_question": "发展新产业时，传统产业怎样一起升级？",
+      "outline_chapters": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "idea_id": "idea_refined_20260527_new_productivity",
+      "manuscript_numbers": [
+        3
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260410_30150364",
+          "date": "2026-04-10",
+          "title": "一家农机老店三次转型（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/10/content_30150364.html",
+          "markdown_path": "data/vault/2026/04/2026-04-10/02-要闻/一家农机老店三次转型（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1433,
+          "time_layer": "上半年主体",
+          "use": "农机老店转型展示传统产业升级"
+        },
+        {
+          "article_id": "people_daily_20260430_30154147",
+          "date": "2026-04-30",
+          "title": "大模型助力种小麦，出苗率提升近三成（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/30/content_30154147.html",
+          "markdown_path": "data/vault/2026/04/2026-04-30/02-要闻/大模型助力种小麦，出苗率提升近三成（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1246,
+          "time_layer": "上半年主体",
+          "use": "农业场景展示新技术改造传统生产"
+        },
+        {
+          "article_id": "people_daily_20260315_30145337",
+          "date": "2026-03-15",
+          "title": "山西着力构建具有比较优势的现代化产业体系（“十五五”开好局起好步）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/15/content_30145337.html",
+          "markdown_path": "data/vault/2026/03/2026-03-15/01-要闻/山西着力构建具有比较优势的现代化产业体系（“十五五”开好局起好步）.md",
+          "raw_path": "",
+          "word_count": 1415,
+          "time_layer": "上半年主体",
+          "use": "山西报道连接比较优势与产业体系"
+        }
+      ],
+      "boundary": "首讲承接第03篇的新质生产力视角，未来产业、服务业和基础设施分别进入延伸阅读。",
+      "extensions": "第37篇未来产业、第33篇服务业、第27篇六张网。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "新质生产力别写空：从词元、农机到田间大模型",
+      "framework": [
+        "技术不是抽象名词：词元、算力、数据交易、机器人都有场景",
+        "产业不是追风口：传统产业和农业也能形成新质生产力",
+        "考场表达：技术、要素、场景、制度共同发力"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/03-人民日报讲新质生产力：别写空，从词元、农机到田间大模型.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 3,
+      "unit": "二、发展动能",
+      "theme": "科技创新与成果转化",
+      "reader_question": "实验室里的成果怎样走到生产线？",
+      "outline_chapters": [
+        8,
+        9,
+        10
+      ],
+      "idea_id": "idea_refined_20260612_tech_transfer_chain",
+      "manuscript_numbers": [
+        23
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260612_30162631",
+          "date": "2026-06-12",
+          "title": "江苏探索科技成果高效转化应用新途径",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/12/content_30162631.html",
+          "markdown_path": "data/vault/2026/06/2026-06-12/01-要闻/江苏探索科技成果高效转化应用新途径.md",
+          "raw_path": "",
+          "word_count": 1528,
+          "time_layer": "上半年主体",
+          "use": "地方科技成果转化机制"
+        },
+        {
+          "article_id": "people_daily_20260613_30162793",
+          "date": "2026-06-13",
+          "title": "科研成果从实验室加速迈向生产线（“十五五”开好局起好步）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/13/content_30162793.html",
+          "markdown_path": "data/vault/2026/06/2026-06-13/01-要闻/科研成果从实验室加速迈向生产线（“十五五”开好局起好步）.md",
+          "raw_path": "",
+          "word_count": 1636,
+          "time_layer": "上半年主体",
+          "use": "开局栏目中的成果转化全链"
+        },
+        {
+          "article_id": "people_daily_20260703_30166448",
+          "date": "2026-07-03",
+          "title": "“书架”到“货架”  场景促转化（人民眼·科技成果转化）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/03/content_30166448.html",
+          "markdown_path": "data/vault/2026/07/2026-07-03/13-记者调查/“书架”到“货架” 场景促转化（人民眼·科技成果转化）.md",
+          "raw_path": "",
+          "word_count": 5302,
+          "time_layer": "下半年补充",
+          "use": "场景促转化的具体调查"
+        }
+      ],
+      "boundary": "围绕成果跨越验证与应用环节；不重复第04讲的人才培养评价。",
+      "extensions": "既有中试平台、第96篇技术经理人，以及已有概念验证、专利交易选题。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "科技成果转化别只写“产学研”：关键是打通最后一公里",
+      "framework": [
+        "从实验室到生产线：成果要有场景、有企业、有需求",
+        "从政策到服务链：平台、金融、保险、技术经理人协同发力",
+        "从创新到就业：微专业、创业服务和AI应用把成果转成产业机会"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 4,
+      "unit": "二、发展动能",
+      "theme": "教育科技人才一体发展",
+      "reader_question": "学校培养、科研攻关和产业用人怎样接起来？",
+      "outline_chapters": [
+        11
+      ],
+      "idea_id": "idea_20260615_21_edu_tech_talent_chain",
+      "manuscript_numbers": [
+        41
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260616_30163258",
+          "date": "2026-06-16",
+          "title": "一体推进教育科技人才发展",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/16/content_30163258.html",
+          "markdown_path": "data/vault/2026/06/2026-06-16/01-要闻/一体推进教育科技人才发展.md",
+          "raw_path": "",
+          "word_count": 1074,
+          "time_layer": "上半年主体",
+          "use": "一体推进的总框架"
+        },
+        {
+          "article_id": "people_daily_20260615_30163002",
+          "date": "2026-06-15",
+          "title": "以加强基础研究打牢科技强国建设根基（深入学习贯彻习近平新时代中国特色社会主义思想）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/15/content_30163002.html",
+          "markdown_path": "data/vault/2026/06/2026-06-15/09-理论/以加强基础研究打牢科技强国建设根基（深入学习贯彻习近平新时代中国特色社会主义思想）.md",
+          "raw_path": "",
+          "word_count": 4030,
+          "time_layer": "上半年主体",
+          "use": "基础研究作为创新根基"
+        },
+        {
+          "article_id": "people_daily_20260616_30163263",
+          "date": "2026-06-16",
+          "title": "北京加强基础研究蹚新路（活力中国调研行）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/16/content_30163263.html",
+          "markdown_path": "data/vault/2026/06/2026-06-16/01-要闻/北京加强基础研究蹚新路（活力中国调研行）.md",
+          "raw_path": "",
+          "word_count": 2318,
+          "time_layer": "上半年主体",
+          "use": "基础研究的地方组织实践"
+        }
+      ],
+      "boundary": "重在创新体系内的组织协同；第14讲重在普通家庭面对的教育公平和成长。",
+      "extensions": "第98篇人才评价、既有基础研究选题。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "教育科技人才一体怎么写：不是三个词并列，而是一条创新链",
+      "framework": [
+        "总纲：教育科技人才是现代化基础性、战略性支撑",
+        "源头：基础研究和原始创新决定创新后劲",
+        "土壤：科普和创新文化扩大高素质创新大军",
+        "转化：赋权改革、科技金融、融资租赁把成果接到产业",
+        "表达公式：基础研究 -> 人才培养 -> 制度供给 -> 金融支撑 -> 场景落地"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/41-人民日报讲教育科技人才一体发展：不是三个词并列，而是一条创新链.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 5,
+      "unit": "二、发展动能",
+      "theme": "数字中国与人工智能应用",
+      "reader_question": "技术能用以后，怎样用得起、用得好、用得稳？",
+      "outline_chapters": [
+        12,
+        13,
+        14
+      ],
+      "idea_id": "idea_20260615_21_ai_real_scenes_rules",
+      "manuscript_numbers": [
+        46
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260615_30162995",
+          "date": "2026-06-15",
+          "title": "物理人工智能，加速走进现实世界（瞰前沿）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/15/content_30162995.html",
+          "markdown_path": "data/vault/2026/06/2026-06-15/08-科技·新知/物理人工智能，加速走进现实世界（瞰前沿）.md",
+          "raw_path": "",
+          "word_count": 3157,
+          "time_layer": "上半年主体",
+          "use": "物理人工智能进入现实场景"
+        },
+        {
+          "article_id": "people_daily_20260620_30163930",
+          "date": "2026-06-20",
+          "title": "人机协同，学车更方便（新场景新动能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/20/content_30163930.html",
+          "markdown_path": "data/vault/2026/06/2026-06-20/02-要闻/人机协同，学车更方便（新场景新动能）.md",
+          "raw_path": "",
+          "word_count": 1617,
+          "time_layer": "上半年主体",
+          "use": "学车场景观察人机协同"
+        },
+        {
+          "article_id": "people_daily_20260621_30164025",
+          "date": "2026-06-21",
+          "title": "大模型收费，合理吗？（读者点题·共同关注）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/21/content_30164025.html",
+          "markdown_path": "data/vault/2026/06/2026-06-21/01-要闻/大模型收费，合理吗？（读者点题·共同关注）.md",
+          "raw_path": "",
+          "word_count": 1322,
+          "time_layer": "上半年主体",
+          "use": "大模型定价的读者问题"
+        }
+      ],
+      "boundary": "首讲从应用的价值、成本和边界切入，算力数据底座、治理规则列为延伸。",
+      "extensions": "既有AI治理、数字治理、平台算法治理稿。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "AI应用别只写“赋能”：真实场景、合理定价和安全规则要一起跟上",
+      "framework": [
+        "应用端：物理AI、人机协同学车、AI旅游、钢铁定制化生产",
+        "定价端：大模型收费要看成本、价值和用户权益",
+        "风险端：智能眼镜偷拍、AI诈骗说明技术越近身越要治理",
+        "方法端：因地制宜做场景建设，规则与应用同步生长"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/46-人民日报讲AI应用落地：场景要真、定价要公、安全要守.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 6,
+      "unit": "三、增长机制",
+      "theme": "强大国内市场",
+      "reader_question": "收入、保障、供给和信任怎样共同影响消费？",
+      "outline_chapters": [
+        15,
+        17
+      ],
+      "idea_id": "idea_202601_revisit_consumption_confidence_supply",
+      "manuscript_numbers": [
+        85
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260105_30129319",
+          "date": "2026-01-05",
+          "title": "坚持内需主导，建设强大国内市场（稳中求进、提质增效 实现“十五五”良好开局）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/05/content_30129319.html",
+          "markdown_path": "data/vault/2026/01/2026-01-05/05-特别报道/坚持内需主导，建设强大国内市场（稳中求进、提质增效 实现“十五五”良好开局）.md",
+          "raw_path": "",
+          "word_count": 3029,
+          "time_layer": "上半年主体",
+          "use": "内需主导的开局部署"
+        },
+        {
+          "article_id": "people_daily_20260128_30136197",
+          "date": "2026-01-28",
+          "title": "如何推动能消费敢消费愿消费（经济新方位·对话·奋进2026）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/28/content_30136197.html",
+          "markdown_path": "data/vault/2026/01/2026-01-28/04-要闻/如何推动能消费敢消费愿消费（经济新方位·对话·奋进2026）.md",
+          "raw_path": "",
+          "word_count": 4242,
+          "time_layer": "上半年主体",
+          "use": "能力、预期与意愿的解释"
+        },
+        {
+          "article_id": "people_daily_20260130_30136904",
+          "date": "2026-01-30",
+          "title": "提振消费，如何增强供需适配性（高质量发展故事汇·第15期）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/30/content_30136904.html",
+          "markdown_path": "data/vault/2026/01/2026-01-30/10-经济/提振消费，如何增强供需适配性（高质量发展故事汇·第15期）.md",
+          "raw_path": "",
+          "word_count": 4727,
+          "time_layer": "上半年主体",
+          "use": "供需适配的案例与方法"
+        }
+      ],
+      "boundary": "首讲以家庭消费为结果变量；第17讲解释收入形成与分配，第07讲解释投资选择。",
+      "extensions": "第08篇全国统一大市场、第21篇服务消费、第87篇县域消费。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》讲提振消费：让群众能消费、敢消费、愿消费，要补哪四块",
+      "framework": [
+        "能消费：以稳定就业、居民增收和收入分配增强购买能力",
+        "敢消费：以养老、医疗、育幼、住房等保障减轻后顾之忧",
+        "愿消费：以优质商品服务、县域供给和融合场景满足新需求",
+        "放心消费：以信用监管、便捷退换和消费维权增强信任",
+        "长期机制：供需数据互通、物流补短板和公共服务共同发力"
+      ],
+      "database_status": "备选",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/人民日报系列/85-人民日报讲提振消费：让群众能消费、敢消费、愿消费，要补哪四块.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 7,
+      "unit": "三、增长机制",
+      "theme": "有效投资与投资于人",
+      "reader_question": "楼建好了，服务为什么未必跟得上？",
+      "outline_chapters": [
+        16
+      ],
+      "idea_id": "idea_20260912_fifteen_investment_people",
+      "manuscript_numbers": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260322_30146416",
+          "date": "2026-03-22",
+          "title": "如何理解“投资于物和投资于人紧密结合”（读者点题·共同关注）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/22/content_30146416.html",
+          "markdown_path": "data/vault/2026/03/2026-03-22/01-要闻/如何理解“投资于物和投资于人紧密结合”（读者点题·共同关注）.md",
+          "raw_path": "",
+          "word_count": 1374,
+          "time_layer": "上半年主体",
+          "use": "物的投入与人的能力相互促进"
+        },
+        {
+          "article_id": "people_daily_20260424_30152868",
+          "date": "2026-04-24",
+          "title": "投资于物和投资于人不能割裂（有的放矢）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/24/content_30152868.html",
+          "markdown_path": "data/vault/2026/04/2026-04-24/09-理论/投资于物和投资于人不能割裂（有的放矢）.md",
+          "raw_path": "",
+          "word_count": 1713,
+          "time_layer": "上半年主体",
+          "use": "避免把两类投资割裂的理论解释"
+        },
+        {
+          "article_id": "people_daily_20260529_30159775",
+          "date": "2026-05-29",
+          "title": "以投资于人推动人的全面发展（高质量发展故事汇·第19期）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/29/../../../content/202605/29/content_30159775.html",
+          "markdown_path": "",
+          "raw_path": "data/raw/articles_20260529.json",
+          "word_count": 8693,
+          "time_layer": "上半年主体",
+          "use": "投资于人与全生命周期发展的论述和故事"
+        }
+      ],
+      "boundary": "研究项目和预算怎样同时安排设施、人员、能力与持续服务；不同于第91篇城市空间运营，也不同于技能培训的到岗流程。",
+      "extensions": "连接养老、教育、医疗和就业，使用同一张项目效益分析表。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》深度分析【有效投资】：楼建好了，怎样让人员、能力和服务一起跟上",
+      "framework": [
+        "从需求起步：先识别服务对象、人口变化和实际缺口",
+        "让物和人匹配：设施设备、岗位人员、技能培养同时安排",
+        "算完整账：建设投入、运行经费、服务覆盖和长期效益一起看",
+        "接上发展：服务改善怎样影响能力、就业和消费预期",
+        "用于分析：设计项目立项到服务效果的检查表"
+      ],
+      "production_state": "本次新增选题，未写稿",
+      "action": "新增",
+      "manuscripts": []
+    },
+    {
+      "number": 8,
+      "unit": "三、增长机制",
+      "theme": "改革与资源配置",
+      "reader_question": "闲置的房屋和设施，怎样重新变成有用的服务？",
+      "outline_chapters": [
+        18,
+        19,
+        20
+      ],
+      "idea_id": "idea_20260912_fifteen_idle_assets_services",
+      "manuscript_numbers": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260121_30134381",
+          "date": "2026-01-21",
+          "title": "盘活存量，关键在巧拨“炭火”（评论员观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/21/content_30134381.html",
+          "markdown_path": "data/vault/2026/01/2026-01-21/05-评论/盘活存量，关键在巧拨“炭火”（评论员观察）.md",
+          "raw_path": "",
+          "word_count": 1231,
+          "time_layer": "上半年主体",
+          "use": "盘活存量的需求、平台、参与机制"
+        },
+        {
+          "article_id": "people_daily_20260203_30137829",
+          "date": "2026-02-03",
+          "title": "盘活存量  提升效率",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/03/content_30137829.html",
+          "markdown_path": "data/vault/2026/02/2026-02-03/19-党建/盘活存量 提升效率.md",
+          "raw_path": "",
+          "word_count": 961,
+          "time_layer": "上半年主体",
+          "use": "办公用房整合并转为公共服务的实例"
+        },
+        {
+          "article_id": "people_daily_20260720_30169717",
+          "date": "2026-07-20",
+          "title": "完工闲置8年  盘活遭遇梗阻（来信调查）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/20/content_30169717.html",
+          "markdown_path": "data/vault/2026/07/2026-07-20/07-读者来信/完工闲置8年 盘活遭遇梗阻（来信调查）.md",
+          "raw_path": "",
+          "word_count": 4342,
+          "time_layer": "下半年补充",
+          "use": "闲置住房调查揭示用途、配套和管理衔接问题"
+        }
+      ],
+      "boundary": "首讲聚焦存量资源的清查、权属用途、需求匹配和运营责任；第91篇从已完成城市更新后的运营出发，本讲从尚未盘活的资源出发。",
+      "extensions": "要素市场改革、各类经营主体、宏观政策协同通过纲要章节继续阅读；已有营商环境、信用修复、数据治理稿作延伸。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》深度分析【盘活存量】：闲置的房屋和设施，怎样重新变成有用的服务",
+      "framework": [
+        "查清闲置：分别识别低效使用、功能错配、手续缺失和需求变化",
+        "厘清用途权属：谁有权调整、需要哪些程序、成本由谁承担",
+        "匹配真实需求：腾退、调剂、改造或退出分别适合什么情形",
+        "建立使用责任：明确运营、维护、资金与服务评价",
+        "用于分析：用一项闲置设施推演盘活方案和风险边界"
+      ],
+      "production_state": "本次新增选题，未写稿",
+      "action": "新增",
+      "manuscripts": []
+    },
+    {
+      "number": 9,
+      "unit": "三、增长机制",
+      "theme": "高水平对外开放",
+      "reader_question": "货物过了关，规则、标准和服务还要打通什么？",
+      "outline_chapters": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "idea_id": "idea_20260912_fifteen_institutional_opening",
+      "manuscript_numbers": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20251114_30114827",
+          "date": "2025-11-14",
+          "title": "扩大外贸领域制度型开放（专家点评）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202511/14/content_30114827.html",
+          "markdown_path": "data/vault/2025/11/2025-11-14/02-要闻/扩大外贸领域制度型开放（专家点评）.md",
+          "raw_path": "",
+          "word_count": 550,
+          "time_layer": "此前溯源",
+          "use": "外贸制度型开放的规则与新业态"
+        },
+        {
+          "article_id": "people_daily_20251220_30125933",
+          "date": "2025-12-20",
+          "title": "为什么要积极扩大自主开放（读者点题·共同关注）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202512/20/content_30125933.html",
+          "markdown_path": "data/vault/2025/12/2025-12-20/01-要闻/为什么要积极扩大自主开放（读者点题·共同关注）.md",
+          "raw_path": "",
+          "word_count": 1208,
+          "time_layer": "此前溯源",
+          "use": "解释自主开放的逻辑"
+        },
+        {
+          "article_id": "people_daily_20260624_30164610",
+          "date": "2026-06-24",
+          "title": "23个自贸试验区雁阵齐飞",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/24/content_30164610.html",
+          "markdown_path": "data/vault/2026/06/2026-06-24/10-特别报道/23个自贸试验区雁阵齐飞.md",
+          "raw_path": "",
+          "word_count": 578,
+          "time_layer": "上半年主体",
+          "use": "自贸试验区差异探索与制度创新"
+        }
+      ],
+      "boundary": "聚焦规则衔接与制度试验；第35篇品牌出海聚焦企业能力和价值链，不以它替代制度分析。",
+      "extensions": "8月20日数据跨境报道作后续案例；战略外交另列拓展阅读。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》深度分析【制度型开放】：货物过了关，规则、标准和服务还要打通什么",
+      "framework": [
+        "识别堵点：关税、准入、标准认证、数据和服务不是同一类问题",
+        "把握开放方向：自主开放与制度型开放的关系",
+        "观察试验机制：自贸试验区怎样对接需求、试验规则",
+        "兼顾便利与监管：制度透明、分类管理和风险责任相互配合",
+        "用于分析：用企业跨境业务串起需求、制度、服务与评估"
+      ],
+      "production_state": "本次新增选题，未写稿",
+      "action": "新增",
+      "manuscripts": []
+    },
+    {
+      "number": 10,
+      "unit": "四、城乡空间",
+      "theme": "农业农村与农民增收",
+      "reader_question": "产业做大以后，农民怎样分享到增值收益？",
+      "outline_chapters": [
+        25,
+        26,
+        27
+      ],
+      "idea_id": "idea_20260912_h1_farmer_value_distribution",
+      "manuscript_numbers": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260620_30163953",
+          "date": "2026-06-20",
+          "title": "林地生金  绿富共生（深度观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/20/content_30163953.html",
+          "markdown_path": "data/vault/2026/06/2026-06-20/05-绿色/林地生金 绿富共生（深度观察）.md",
+          "raw_path": "",
+          "word_count": 4830,
+          "time_layer": "上半年主体",
+          "use": "林地资源与收益机制"
+        },
+        {
+          "article_id": "people_daily_20260429_30153825",
+          "date": "2026-04-29",
+          "title": "“洋特产”如何变“土特产”（现场评论）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/29/content_30153825.html",
+          "markdown_path": "data/vault/2026/04/2026-04-29/05-评论/“洋特产”如何变“土特产”（现场评论）.md",
+          "raw_path": "",
+          "word_count": 1171,
+          "time_layer": "上半年主体",
+          "use": "特色产业与本地化发展"
+        },
+        {
+          "article_id": "people_daily_20260320_30146212",
+          "date": "2026-03-20",
+          "title": "连点成片，片区化推进乡村振兴（人民眼·乡村全面振兴）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/20/content_30146212.html",
+          "markdown_path": "data/vault/2026/03/2026-03-20/13-记者调查/连点成片，片区化推进乡村振兴（人民眼·乡村全面振兴）.md",
+          "raw_path": "",
+          "word_count": 5645,
+          "time_layer": "上半年主体",
+          "use": "片区协作与乡村产业联动"
+        }
+      ],
+      "boundary": "沿用本次上半年梳理已入库的联农带农选题；不再次新增同题。",
+      "extensions": "既有农业社会化服务、片区化乡村振兴、常态化帮扶；粮食安全另作延伸。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》深度分析【联农带农】：产业做大以后，农民怎样分到增值收益",
+      "framework": [
+        "画清收益去向：原料、加工、销售和服务各环节谁获益",
+        "增加参与入口：订单生产、就近务工、合作经营等分类选择",
+        "把分配写进约定：收购、租金、分红及结算方式可核验",
+        "给经营留余地：区分收入与利润，保留再投入并讲清风险",
+        "用农户获得感验收：到账收入、稳定就业和公共服务改善分别看"
+      ],
+      "database_status": "备选",
+      "action": "复用",
+      "manuscripts": [],
+      "production_state": "既有选题，未发现同题成稿"
+    },
+    {
+      "number": 11,
+      "unit": "四、城乡空间",
+      "theme": "区域协调与县域分工",
+      "reader_question": "一个县怎样找准自己的位置，又融入更大的市场？",
+      "outline_chapters": [
+        28,
+        29,
+        30,
+        32
+      ],
+      "idea_id": "idea_20260629_0705_county_specialized_integrated",
+      "manuscript_numbers": [
+        44
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260629_30165412",
+          "date": "2026-06-29",
+          "title": "走出符合自身实际的县域经济高质量发展之路（调查与思考）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/29/content_30165412.html",
+          "markdown_path": "data/vault/2026/06/2026-06-29/09-理论/走出符合自身实际的县域经济高质量发展之路（调查与思考）.md",
+          "raw_path": "",
+          "word_count": 9842,
+          "time_layer": "上半年主体",
+          "use": "县域比较优势与发展路径"
+        },
+        {
+          "article_id": "people_daily_20260116_30133100",
+          "date": "2026-01-16",
+          "title": "创新突围看县域（人民眼·县域经济）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/16/content_30133100.html",
+          "markdown_path": "data/vault/2026/01/2026-01-16/13-记者调查/创新突围看县域（人民眼·县域经济）.md",
+          "raw_path": "",
+          "word_count": 6195,
+          "time_layer": "上半年主体",
+          "use": "县域创新的具体调查"
+        },
+        {
+          "article_id": "people_daily_20260210_30139783",
+          "date": "2026-02-10",
+          "title": "东中西部三位县长谈发展县域经济（经济新方位·对话·奋进二〇二六）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/10/content_30139783.html",
+          "markdown_path": "data/vault/2026/02/2026-02-10/02-要闻/东中西部三位县长谈发展县域经济（经济新方位·对话·奋进二〇二六）.md",
+          "raw_path": "",
+          "word_count": 3429,
+          "time_layer": "上半年主体",
+          "use": "东中西县域差异与分工"
+        }
+      ],
+      "boundary": "以县域在区域网络中的位置为主；第10讲重在农民收益，第12讲重在人口迁移和公共服务。",
+      "extensions": "第20篇向西发展、第12篇海洋经济、第30篇区域共同富裕。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”",
+      "framework": [
+        "不求小而全：立足资源禀赋做出不可替代的特色",
+        "不止卖原料：用科技、加工、标准和品牌延长价值链",
+        "不做封闭循环：主动融入全国大市场和区域产业分工",
+        "不割裂城乡：基础设施和公共服务先行，促进要素双向流动",
+        "不追短期风口：一张蓝图绘到底，尊重基层和群众首创"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/44-人民日报再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 12,
+      "unit": "四、城乡空间",
+      "theme": "以人为本的新型城镇化",
+      "reader_question": "人已经进了城，公共服务怎样跟上？",
+      "outline_chapters": [
+        31
+      ],
+      "idea_id": "idea_refined_20260612_services_follow_people",
+      "manuscript_numbers": [
+        22
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260608_30161752",
+          "date": "2026-06-08",
+          "title": "服务随人走，发展添活力（评论员观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/08/content_30161752.html",
+          "markdown_path": "data/vault/2026/06/2026-06-08/05-评论/服务随人走，发展添活力（评论员观察）.md",
+          "raw_path": "",
+          "word_count": 1266,
+          "time_layer": "上半年主体",
+          "use": "服务随人走的逻辑"
+        },
+        {
+          "article_id": "people_daily_20260612_30162695",
+          "date": "2026-06-12",
+          "title": "从流入到融入  变他乡为吾乡（人民眼·以人为本的新型城镇化）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/12/content_30162695.html",
+          "markdown_path": "data/vault/2026/06/2026-06-12/13-记者调查/从流入到融入 变他乡为吾乡（人民眼·以人为本的新型城镇化）.md",
+          "raw_path": "",
+          "word_count": 5459,
+          "time_layer": "上半年主体",
+          "use": "从流入到融入的生活案例"
+        },
+        {
+          "article_id": "people_daily_20260612_30162696",
+          "date": "2026-06-12",
+          "title": "稳步推进基本公共服务均等化（有所思）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/12/content_30162696.html",
+          "markdown_path": "data/vault/2026/06/2026-06-12/13-记者调查/稳步推进基本公共服务均等化（有所思）.md",
+          "raw_path": "",
+          "word_count": 768,
+          "time_layer": "上半年主体",
+          "use": "均等化的制度视角"
+        }
+      ],
+      "boundary": "只解决流动与融入带来的服务承接；第19讲比较一般公共服务的可及性和底线保障。",
+      "extensions": "第87篇县域消费、第91篇城市更新后半程。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "新型城镇化怎么写：不是进城落脚，而是服务跟着人走",
+      "framework": [
+        "对象跟着人走：从户籍人口转向常住人口和新职业人群",
+        "资源跟着需求走：教育、养老、就业、住房进入生活半径",
+        "治理跟着风险走：权益保障和数智服务把新市民真正接住"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 13,
+      "unit": "五、美好生活",
+      "theme": "人口变化与养老照护",
+      "reader_question": "老人失能以后，家庭怎样接上持续照护？",
+      "outline_chapters": [
+        37,
+        40
+      ],
+      "idea_id": "idea_20260720_0726_elderly_care_system",
+      "manuscript_numbers": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260211_30140134",
+          "date": "2026-02-11",
+          "title": "精准聚力托举失能照护（人民时评）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/11/content_30140134.html",
+          "markdown_path": "data/vault/2026/02/2026-02-11/05-评论/精准聚力托举失能照护（人民时评）.md",
+          "raw_path": "",
+          "word_count": 1138,
+          "time_layer": "上半年主体",
+          "use": "失能照护的现实缺口"
+        },
+        {
+          "article_id": "people_daily_20260403_30149129",
+          "date": "2026-04-03",
+          "title": "长护险落地，服务供给如何跟上（健康焦点）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/03/content_30149129.html",
+          "markdown_path": "data/vault/2026/04/2026-04-03/19-健康/长护险落地，服务供给如何跟上（健康焦点）.md",
+          "raw_path": "",
+          "word_count": 3808,
+          "time_layer": "上半年主体",
+          "use": "保障支付与服务供给的衔接"
+        },
+        {
+          "article_id": "people_daily_20260614_30162849",
+          "date": "2026-06-14",
+          "title": "健全养老服务体系  绘就银龄幸福画卷（“十五五”开好局起好步）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/14/content_30162849.html",
+          "markdown_path": "data/vault/2026/06/2026-06-14/01-要闻/健全养老服务体系 绘就银龄幸福画卷（“十五五”开好局起好步）.md",
+          "raw_path": "",
+          "word_count": 1693,
+          "time_layer": "上半年主体",
+          "use": "养老服务体系的开局报道"
+        }
+      ],
+      "boundary": "首讲延用已有养老照护选题；人口专题再链接托育，避免一篇同时展开所有年龄段。",
+      "extensions": "第63篇普惠托育，以及互助养老、养老护理人才选题。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》深度分析【养老照护】：老人失能之后，家庭怎样接上持续照护",
+      "framework": [
+        "先分清需求：区分一般生活帮助、康复护理和失能照护",
+        "评估后配服务：一户一策改造，不能用买设备替代照护人员",
+        "专业服务到家：社区联络、机构支撑、人员培训接住家庭需求",
+        "不同阶段能接续：治疗、康复与稳定期生活照料相互衔接",
+        "支付保障可持续：分清长护险、消费补贴与家庭支出，核实当地适用条件",
+        "质量有人负责：服务记录、质量监管和异常响应不能缺位"
+      ],
+      "database_status": "备选",
+      "action": "复用",
+      "manuscripts": [],
+      "production_state": "既有选题，未发现同题成稿"
+    },
+    {
+      "number": 14,
+      "unit": "五、美好生活",
+      "theme": "教育公平与质量",
+      "reader_question": "人口和技术在变，教育怎样更公平、更适配？",
+      "outline_chapters": [
+        38
+      ],
+      "idea_id": "idea_20260629_0705_education_fifteen_five",
+      "manuscript_numbers": [
+        36
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260630_30165669",
+          "date": "2026-06-30",
+          "title": "国务院印发《教育发展“十五五”规划》",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/30/content_30165669.html",
+          "markdown_path": "data/vault/2026/06/2026-06-30/02-要闻/国务院印发《教育发展“十五五”规划》.md",
+          "raw_path": "",
+          "word_count": 867,
+          "time_layer": "上半年主体",
+          "use": "教育专项规划的发布消息"
+        },
+        {
+          "article_id": "people_daily_20260630_30165708",
+          "date": "2026-06-30",
+          "title": "明确未来五年教育强国建设行动路线",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/30/content_30165708.html",
+          "markdown_path": "data/vault/2026/06/2026-06-30/08-政治/明确未来五年教育强国建设行动路线.md",
+          "raw_path": "",
+          "word_count": 1208,
+          "time_layer": "上半年主体",
+          "use": "未来五年行动路线解读"
+        },
+        {
+          "article_id": "people_daily_20260630_30165703",
+          "date": "2026-06-30",
+          "title": "让幼儿教育回归本真（纵横）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/30/content_30165703.html",
+          "markdown_path": "data/vault/2026/06/2026-06-30/07-评论/让幼儿教育回归本真（纵横）.md",
+          "raw_path": "",
+          "word_count": 1000,
+          "time_layer": "上半年主体",
+          "use": "幼儿教育尊重成长规律"
+        }
+      ],
+      "boundary": "第36篇已在往期目录；复用为阅读入口，更新专项解读前须核对原文。",
+      "extensions": "第04讲教科人才是创新体系，本讲是学习者的成长与教育服务。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》讲教育“十五五”：不是让孩子学得更多，而是让教育更公平、更适配、更有质量",
+      "framework": [
+        "看公平：教育资源跟着学龄人口和真实需求走",
+        "看结构：各类教育办出特色，人才培养对接产业和国家战略",
+        "看质量：从知识灌输转向学思用合一和科学素养",
+        "守规律：幼儿教育回归游戏、陪伴和真实体验",
+        "建生态：学校、家庭、社区和终身学习共同育人"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/36-人民日报讲教育“十五五”：不是让孩子学得更多，而是让教育更公平、更适配、更有质量.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 15,
+      "unit": "五、美好生活",
+      "theme": "健康中国",
+      "reader_question": "优质医疗怎样走到群众身边？",
+      "outline_chapters": [
+        39
+      ],
+      "idea_id": "idea_20260615_21_health_nearby_service",
+      "manuscript_numbers": [
+        26
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260617_30163386",
+          "date": "2026-06-17",
+          "title": "适应新形势完善少年儿童健康服务（专题深思）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/17/content_30163386.html",
+          "markdown_path": "data/vault/2026/06/2026-06-17/09-理论/适应新形势完善少年儿童健康服务（专题深思）.md",
+          "raw_path": "",
+          "word_count": 1665,
+          "time_layer": "上半年主体",
+          "use": "少年儿童健康服务适配"
+        },
+        {
+          "article_id": "people_daily_20260621_30164023",
+          "date": "2026-06-21",
+          "title": "深化医改，让群众就近享受优质医疗服务（总书记的关切·落地的回响）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/21/content_30164023.html",
+          "markdown_path": "data/vault/2026/06/2026-06-21/01-要闻/深化医改，让群众就近享受优质医疗服务（总书记的关切·落地的回响）.md",
+          "raw_path": "",
+          "word_count": 1640,
+          "time_layer": "上半年主体",
+          "use": "优质医疗服务下沉"
+        },
+        {
+          "article_id": "people_daily_20260714_30168525",
+          "date": "2026-07-14",
+          "title": "以基层医疗卫生服务提质助力健康中国建设（专题深思）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/14/content_30168525.html",
+          "markdown_path": "data/vault/2026/07/2026-07-14/09-理论/以基层医疗卫生服务提质助力健康中国建设（专题深思）.md",
+          "raw_path": "",
+          "word_count": 1578,
+          "time_layer": "下半年补充",
+          "use": "基层医疗提质的解释"
+        }
+      ],
+      "boundary": "复用就近享受服务的入口；全生命周期预防通过健康优先旧稿补充，不写成个人诊疗建议。",
+      "extensions": "第78篇健康优先、第94篇陪诊。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "健康中国怎么写：不是医院越大越好，而是优质服务离群众更近",
+      "framework": [
+        "破误区：健康不是医疗资源简单堆大堆强",
+        "总纲：人民健康是现代化的重要指标",
+        "机制：三医联动、医共体和优质医疗资源下沉",
+        "延伸：儿童健康、适儿化空间和预防关口前移",
+        "考场迁移：健康中国=公平可及+基层能力+全周期守护"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/26-人民日报讲健康中国：不是医院越大越好，而是优质服务离群众更近.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 16,
+      "unit": "五、美好生活",
+      "theme": "高质量充分就业",
+      "reader_question": "产业变化以后，岗位、技能和就业服务怎样一起调整？",
+      "outline_chapters": [
+        41
+      ],
+      "idea_id": "idea_20260615_21_employment_priority_people",
+      "manuscript_numbers": [
+        55
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260618_30163726",
+          "date": "2026-06-18",
+          "title": "国务院印发《实施就业优先战略“十五五”规划》",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/18/content_30163726.html",
+          "markdown_path": "data/vault/2026/06/2026-06-18/01-要闻/国务院印发《实施就业优先战略“十五五”规划》.md",
+          "raw_path": "",
+          "word_count": 910,
+          "time_layer": "上半年主体",
+          "use": "就业专项规划发布"
+        },
+        {
+          "article_id": "people_daily_20260621_30164031",
+          "date": "2026-06-21",
+          "title": "让钢铁实现个性化、定制化生产（产业里的年轻人）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/21/content_30164031.html",
+          "markdown_path": "data/vault/2026/06/2026-06-21/02-要闻/让钢铁实现个性化、定制化生产（产业里的年轻人）.md",
+          "raw_path": "",
+          "word_count": 1151,
+          "time_layer": "上半年主体",
+          "use": "生产变革中的劳动者"
+        },
+        {
+          "article_id": "people_daily_20260124_30135370",
+          "date": "2026-01-24",
+          "title": "抓好就业这个民生头等大事（权威访谈·开局“十五五”）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/24/content_30135370.html",
+          "markdown_path": "data/vault/2026/01/2026-01-24/02-要闻/抓好就业这个民生头等大事（权威访谈·开局“十五五”）.md",
+          "raw_path": "",
+          "word_count": 3353,
+          "time_layer": "上半年主体",
+          "use": "就业优先的权威访谈"
+        }
+      ],
+      "boundary": "复用第55篇，能力培训、岗位匹配、产业带岗组成链条；权益细分沿用现有稿件。",
+      "extensions": "第88篇算法治理、第89篇职业伤害保障、已入库技能培训和劳动纠纷选题。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "就业优先战略升级：不是只保岗位，而是投资于人、匹配到岗、产业带岗",
+      "framework": [
+        "政策底座：就业优先战略“十五五”规划明确目标任务",
+        "投资于人：教育、技能、人才需求匹配度提升",
+        "产业带岗：服务业、物流、钢铁智能化和高端装备创造岗位",
+        "权益兜底：新就业形态健康发展和劳动者权益保障"
+      ],
+      "database_status": "进行中",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/55-人民日报讲就业优先战略升级：不是只保岗位，而是投资于人、匹配到岗、产业带岗.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 17,
+      "unit": "五、美好生活",
+      "theme": "居民增收与收入分配",
+      "reader_question": "发展成果怎样更稳定地进入普通家庭的收入？",
+      "outline_chapters": [
+        42
+      ],
+      "idea_id": "idea_20260912_fifteen_household_income",
+      "manuscript_numbers": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20251114_30114876",
+          "date": "2025-11-14",
+          "title": "持续扩大中等收入群体规模  扎实推进共同富裕（深入学习贯彻习近平新时代中国特色社会主义思想）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202511/14/content_30114876.html",
+          "markdown_path": "data/vault/2025/11/2025-11-14/09-理论/持续扩大中等收入群体规模 扎实推进共同富裕（深入学习贯彻习近平新时代中国特色社会主义思想）.md",
+          "raw_path": "",
+          "word_count": 4757,
+          "time_layer": "此前溯源",
+          "use": "扩中提低与分配结构"
+        },
+        {
+          "article_id": "people_daily_20260421_30152252",
+          "date": "2026-04-21",
+          "title": "统筹促就业、增收入、稳预期（人民要论）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/21/content_30152252.html",
+          "markdown_path": "data/vault/2026/04/2026-04-21/09-理论/统筹促就业、增收入、稳预期（人民要论）.md",
+          "raw_path": "",
+          "word_count": 4908,
+          "time_layer": "上半年主体",
+          "use": "就业收入预期的相互作用"
+        },
+        {
+          "article_id": "people_daily_20260811_30174298",
+          "date": "2026-08-11",
+          "title": "“在推进共同富裕中先行示范”",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/11/content_30174298.html",
+          "markdown_path": "data/vault/2026/08/2026-08-11/01-要闻/“在推进共同富裕中先行示范”.md",
+          "raw_path": "",
+          "word_count": 6217,
+          "time_layer": "下半年补充",
+          "use": "工资成长、资源收益与区域实践"
+        }
+      ],
+      "boundary": "聚焦收入从哪里来、怎样分、如何保持可持续；不复述第85篇的促消费供给，也不重复联农带农这一农业切口。",
+      "extensions": "用劳动性收入、经营性收入、财产性收入、转移性收入拆家庭案例；这些是收入来源口径，不能直接等同初次、再、第三次分配。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》深度分析【居民增收】：发展成果怎样更稳定地进入普通家庭的收入",
+      "framework": [
+        "先看收入来源：劳动、经营、财产和转移性收入分别从哪里来",
+        "让能力对应回报：岗位升级、技能成长与工资机制相衔接",
+        "拓展经营与财产收益：分析机会和制度条件，保留风险边界",
+        "理解分配调节：初次分配、再分配和第三次分配各发挥什么作用",
+        "用于分析：把扩中提低落到对象、渠道、机制与持续性"
+      ],
+      "production_state": "本次新增选题，未写稿",
+      "action": "新增",
+      "manuscripts": []
+    },
+    {
+      "number": 18,
+      "unit": "五、美好生活",
+      "theme": "住房保障与居住品质",
+      "reader_question": "从有地方住到住得安心，住房供给要改变什么？",
+      "outline_chapters": [
+        44
+      ],
+      "idea_id": "idea_20260912_fifteen_housing_quality",
+      "manuscript_numbers": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260122_30134729",
+          "date": "2026-01-22",
+          "title": "实现住房城乡建设高质量发展良好开局（权威访谈·开局“十五五”）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/22/content_30134729.html",
+          "markdown_path": "data/vault/2026/01/2026-01-22/02-要闻/实现住房城乡建设高质量发展良好开局（权威访谈·开局“十五五”）.md",
+          "raw_path": "",
+          "word_count": 3093,
+          "time_layer": "上半年主体",
+          "use": "住房领域开局任务与保障"
+        },
+        {
+          "article_id": "people_daily_20260204_30138258",
+          "date": "2026-02-04",
+          "title": "建设安全舒适绿色智慧的“好房子”",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/04/content_30138258.html",
+          "markdown_path": "data/vault/2026/02/2026-02-04/09-理论/建设安全舒适绿色智慧的“好房子”.md",
+          "raw_path": "",
+          "word_count": 2123,
+          "time_layer": "上半年主体",
+          "use": "安全舒适绿色智慧的品质要求"
+        },
+        {
+          "article_id": "people_daily_20260313_30145125",
+          "date": "2026-03-13",
+          "title": "老房子这样变成“好房子”（人民眼·城市更新）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/13/content_30145125.html",
+          "markdown_path": "data/vault/2026/03/2026-03-13/13-记者调查/老房子这样变成“好房子”（人民眼·城市更新）.md",
+          "raw_path": "",
+          "word_count": 6181,
+          "time_layer": "上半年主体",
+          "use": "老旧住房更新中的共识、资金和审批"
+        }
+      ],
+      "boundary": "住房供给、品质标准与全生命周期责任是主线；与第91篇社区空间运营区分，住房市场报道不转成房价预测。",
+      "extensions": "8月住房公积金报道列为后续补充，正式引用待遇与实施日期时另核现行政策。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》深度分析【住房品质】：从有地方住到住得安心，住房供给要改变什么",
+      "framework": [
+        "识别住房需求：困难家庭、新市民与改善性需求分别需要什么",
+        "建立品质尺度：安全、舒适、绿色、智慧如何成为实际体验",
+        "推进存量更新：居民共识、资金、审批和建设主体如何衔接",
+        "落实长期责任：建设质量、维护管理、体检与风险治理相衔接",
+        "用于分析：住房保障和品质提升怎样分类施策"
+      ],
+      "production_state": "本次新增选题，未写稿",
+      "action": "新增",
+      "manuscripts": []
+    },
+    {
+      "number": 19,
+      "unit": "五、美好生活",
+      "theme": "公共服务与社会保障",
+      "reader_question": "服务有了，怎样让真正需要的人用得到？",
+      "outline_chapters": [
+        43,
+        45,
+        46
+      ],
+      "idea_id": "idea_20260518_24_public_service",
+      "manuscript_numbers": [
+        1
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260518_30157413",
+          "date": "2026-05-18",
+          "title": "保障流动儿童均等化享有基本公共服务",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/18/content_30157413.html",
+          "markdown_path": "data/vault/2026/05/2026-05-18/11-政治/保障流动儿童均等化享有基本公共服务.md",
+          "raw_path": "",
+          "word_count": 232,
+          "time_layer": "上半年主体",
+          "use": "流动儿童的服务权益"
+        },
+        {
+          "article_id": "people_daily_20260523_30158589",
+          "date": "2026-05-23",
+          "title": "国务院印发《关于推行常住地提供基本公共服务的实施意见》",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/23/content_30158589.html",
+          "markdown_path": "data/vault/2026/05/2026-05-23/01-要闻/国务院印发《关于推行常住地提供基本公共服务的实施意见》.md",
+          "raw_path": "data/raw/articles_20260523.json",
+          "word_count": 978,
+          "time_layer": "上半年主体",
+          "use": "常住地提供服务的政策发布"
+        },
+        {
+          "article_id": "people_daily_20260524_30158705",
+          "date": "2026-05-24",
+          "title": "因地制宜推行常住地提供基本公共服务（政策解读）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/24/content_30158705.html",
+          "markdown_path": "data/vault/2026/05/2026-05-24/02-要闻/因地制宜推行常住地提供基本公共服务（政策解读）.md",
+          "raw_path": "data/raw/articles_20260524.json",
+          "word_count": 2378,
+          "time_layer": "上半年主体",
+          "use": "因地制宜推行的解读"
+        }
+      ],
+      "boundary": "首讲复用公共服务均等化，社会保障和困难群体权益用既有社会救助、无障碍等稿件补齐；不把服务可及直接等同现金待遇。",
+      "extensions": "第89篇职业伤害保障、既有社会救助法、无障碍环境稿。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "公共服务均等化：从“有没有”到“够得到”",
+      "framework": [
+        "服务跟着人走：常住地提供基本公共服务",
+        "资源跟着需求走：医疗、养老、教育、就业进入生活半径",
+        "流程跟着问题走：办不成事、互联网医院、基层服务形成闭环"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/01-人民日报讲公共服务均等化：从“有没有”到“够得到”.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 20,
+      "unit": "五、美好生活",
+      "theme": "文化创新与公共文化",
+      "reader_question": "新技术、新业态怎样带来更好的文化生活？",
+      "outline_chapters": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "idea_id": "idea_20260622_28_culture_tech_core",
+      "manuscript_numbers": [
+        40
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260626_30165074",
+          "date": "2026-06-26",
+          "title": "答好文化与科技的“融合题”",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/26/content_30165074.html",
+          "markdown_path": "data/vault/2026/06/2026-06-26/10-特别报道/答好文化与科技的“融合题”.md",
+          "raw_path": "",
+          "word_count": 382,
+          "time_layer": "上半年主体",
+          "use": "文化科技融合的主论点"
+        },
+        {
+          "article_id": "people_daily_20260624_30164616",
+          "date": "2026-06-24",
+          "title": "数字浪潮里，动画电影如何守住匠心（文化市场新观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/24/content_30164616.html",
+          "markdown_path": "data/vault/2026/06/2026-06-24/12-文化/数字浪潮里，动画电影如何守住匠心（文化市场新观察）.md",
+          "raw_path": "",
+          "word_count": 1682,
+          "time_layer": "上半年主体",
+          "use": "动画电影的技术与匠心"
+        },
+        {
+          "article_id": "people_daily_20260626_30165078",
+          "date": "2026-06-26",
+          "title": "激发文化创新创造活力",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/26/content_30165078.html",
+          "markdown_path": "data/vault/2026/06/2026-06-26/11-特别报道/激发文化创新创造活力.md",
+          "raw_path": "",
+          "word_count": 583,
+          "time_layer": "上半年主体",
+          "use": "创新创造活力与文化供给"
+        }
+      ],
+      "boundary": "首讲复用文化科技融合，以内容价值作为检验标准；公共文化、非遗、传播各接已有专题。",
+      "extensions": "第42篇乡村文化、既有公共文化服务、非遗传承人与研学质量选题。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》讲文化与科技融合：不是给传统文化套一层特效",
+      "framework": [
+        "先立内核：文化基因和真实生活决定作品能否打动人",
+        "再用技术：数字建模、虚拟拍摄和AI是工具，不替代创作",
+        "连接青年：让年轻人从传统文化旁观者变成共创者",
+        "守住原创：治理AI洗稿和抄袭，维护健康内容生态",
+        "形成表达：文化为内核、科技为载体、生活为土壤、青年为主体"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/40-人民日报讲文化与科技融合：不是给传统文化套一层特效.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 21,
+      "unit": "六、治理保障",
+      "theme": "全面绿色转型",
+      "reader_question": "减碳、治污、生态保护和发展怎样协同？",
+      "outline_chapters": [
+        47,
+        48,
+        49,
+        50
+      ],
+      "idea_id": "idea_20260629_0705_beautiful_china_system",
+      "manuscript_numbers": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260112_30131245",
+          "date": "2026-01-12",
+          "title": "坚持“双碳”引领，推动全面绿色转型（稳中求进、提质增效 实现“十五五”良好开局）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/12/content_30131245.html",
+          "markdown_path": "data/vault/2026/01/2026-01-12/05-特别报道/坚持“双碳”引领，推动全面绿色转型（稳中求进、提质增效 实现“十五五”良好开局）.md",
+          "raw_path": "",
+          "word_count": 3005,
+          "time_layer": "上半年主体",
+          "use": "双碳引领的开局部署"
+        },
+        {
+          "article_id": "people_daily_20260521_30158083",
+          "date": "2026-05-21",
+          "title": "青海推进青藏高原生态保护和高质量发展（开局起步“十五五”·专题新闻发布）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/21/content_30158083.html",
+          "markdown_path": "data/vault/2026/05/2026-05-21/06-要闻/青海推进青藏高原生态保护和高质量发展（开局起步“十五五”·专题新闻发布）.md",
+          "raw_path": "",
+          "word_count": 1827,
+          "time_layer": "上半年主体",
+          "use": "青海生态保护与高质量发展的新闻发布"
+        },
+        {
+          "article_id": "people_daily_20260704_30166584",
+          "date": "2026-07-04",
+          "title": "国务院印发《美丽中国建设“十五五”规划》",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/04/content_30166584.html",
+          "markdown_path": "data/vault/2026/07/2026-07-04/02-要闻/国务院印发《美丽中国建设“十五五”规划》.md",
+          "raw_path": "",
+          "word_count": 885,
+          "time_layer": "下半年补充",
+          "use": "美丽中国专项规划发布"
+        }
+      ],
+      "boundary": "延用已有美丽中国选题，不将碳达峰、能源体系、循环经济旧稿再次同题立项。",
+      "extensions": "既有新型能源体系、碳达峰、生态产品价值实现、横向生态补偿与产品碳足迹。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》讲美丽中国：不能只做末端治理，要把降碳减污扩绿增长一起谋划",
+      "framework": [
+        "源头转型：调整产业、能源和交通结构",
+        "过程协同：降碳、减污、扩绿、增长一体推进",
+        "循环利用：贯通生产、消费、回收和再利用全链条",
+        "生态修复：提升生态系统多样性、稳定性和持续性",
+        "制度保障：精准科学依法治污，完善评价和责任机制"
+      ],
+      "database_status": "备选",
+      "action": "复用",
+      "manuscripts": [],
+      "production_state": "既有选题，未发现同题成稿"
+    },
+    {
+      "number": 22,
+      "unit": "六、治理保障",
+      "theme": "发展和安全",
+      "reader_question": "风险还没有变成事故，公共治理怎样提前行动？",
+      "outline_chapters": [
+        51,
+        52,
+        53
+      ],
+      "idea_id": "idea_20260622_28_safety_investment",
+      "manuscript_numbers": [
+        34
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260623_30164422",
+          "date": "2026-06-23",
+          "title": "充分发挥安全投资对防范化解风险的基础性作用（专题深思）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/23/content_30164422.html",
+          "markdown_path": "data/vault/2026/06/2026-06-23/09-理论/充分发挥安全投资对防范化解风险的基础性作用（专题深思）.md",
+          "raw_path": "",
+          "word_count": 1772,
+          "time_layer": "上半年主体",
+          "use": "安全投资与风险防范"
+        },
+        {
+          "article_id": "people_daily_20260624_30164658",
+          "date": "2026-06-24",
+          "title": "安全生产不容“迷之自信”（评论员观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/24/content_30164658.html",
+          "markdown_path": "data/vault/2026/06/2026-06-24/05-评论/安全生产不容“迷之自信”（评论员观察）.md",
+          "raw_path": "",
+          "word_count": 1285,
+          "time_layer": "上半年主体",
+          "use": "安全生产中的侥幸心理"
+        },
+        {
+          "article_id": "people_daily_20260625_30164784",
+          "date": "2026-06-25",
+          "title": "涉企检查当“减量不降效”（纵横）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/25/content_30164784.html",
+          "markdown_path": "data/vault/2026/06/2026-06-25/05-评论/涉企检查当“减量不降效”（纵横）.md",
+          "raw_path": "",
+          "word_count": 874,
+          "time_layer": "上半年主体",
+          "use": "风险治理与检查效能"
+        }
+      ],
+      "boundary": "首讲复用前置安全投资；粮食、能源、产业链及金融风险不能压缩成同一套事故应急方法，分别列延伸。",
+      "extensions": "第17篇韧性治理、第53篇预警到行动；8月11日粮食专项解码。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "《人民日报》讲安全治理：安全不是成本，而是一项前置投资",
+      "framework": [
+        "转观念：安全不是附加成本，而是发展底座",
+        "投设施：更新设备、补齐工程设防和监测预警短板",
+        "投能力：培训识险、避险和应急处置能力",
+        "强监管：精准检查、指导整改，防止检查扰企和监管缺位",
+        "建闭环：从被动处置事故转向主动塑造安全"
+      ],
+      "database_status": "备选",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/34-人民日报讲安全治理：安全不是成本，而是一项前置投资.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 23,
+      "unit": "六、治理保障",
+      "theme": "社会治理与法治",
+      "reader_question": "群众提的建议，怎样成为可执行、可监督的共同事务？",
+      "outline_chapters": [
+        54,
+        57,
+        58
+      ],
+      "idea_id": "idea_202601_revisit_deliberation_to_results",
+      "manuscript_numbers": [
+        82
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260111_30131064",
+          "date": "2026-01-11",
+          "title": "53年坚持“议事”，桂花村越来越好",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/11/content_30131064.html",
+          "markdown_path": "data/vault/2026/01/2026-01-11/04-要闻/53年坚持“议事”，桂花村越来越好.md",
+          "raw_path": "",
+          "word_count": 1711,
+          "time_layer": "上半年主体",
+          "use": "长期议事的基层实践"
+        },
+        {
+          "article_id": "people_daily_20260119_30133508",
+          "date": "2026-01-19",
+          "title": "汇聚各方声音  协商化解民忧（在现场·全过程人民民主）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/19/content_30133508.html",
+          "markdown_path": "data/vault/2026/01/2026-01-19/04-要闻/汇聚各方声音 协商化解民忧（在现场·全过程人民民主）.md",
+          "raw_path": "",
+          "word_count": 1627,
+          "time_layer": "上半年主体",
+          "use": "协商化解民忧"
+        },
+        {
+          "article_id": "people_daily_20260126_30135660",
+          "date": "2026-01-26",
+          "title": "一场议事会，如何让“金点子”变成“金果子”（基层治理新实践）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/26/content_30135660.html",
+          "markdown_path": "data/vault/2026/01/2026-01-26/10-政治/一场议事会，如何让“金点子”变成“金果子”（基层治理新实践）.md",
+          "raw_path": "",
+          "word_count": 2035,
+          "time_layer": "上半年主体",
+          "use": "从建议到成果的具体程序"
+        }
+      ],
+      "boundary": "首讲复用群众议事；涉企执法、基层责任边界与司法服务依照各自规则进入延伸，不把协商替代法定程序。",
+      "extensions": "既有营商环境、基层减负、基层责任边界、12345热线稿或选题。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "基层治理怎么写群众议事：从“听意见”到“见结果”的五个动作",
+      "framework": [
+        "民情定议题：从热线、走访和日常生活中找真问题",
+        "规则保参与：明确谁能议、议什么、怎样公开",
+        "调研找方案：兼顾利益诉求、专业判断和成本约束",
+        "协同办结果：把议定事项落到责任、资金、时限和部门",
+        "公开再评价：反馈进度、接受监督、复盘规则"
+      ],
+      "database_status": "已完成",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/人民日报系列/82-人民日报讲基层群众议事：从“听意见”到“见结果”的五个动作.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    },
+    {
+      "number": 24,
+      "unit": "六、治理保障",
+      "theme": "从规划到落实",
+      "reader_question": "国家目标怎样落到地方项目、责任、资源和群众感受？",
+      "outline_chapters": [
+        61,
+        62
+      ],
+      "idea_id": "idea_202601_revisit_fifteen_five_implementation",
+      "manuscript_numbers": [
+        84
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260104_30129034",
+          "date": "2026-01-04",
+          "title": "沉下心来抓落实、办实事（“十五五”开好局起好步）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/04/content_30129034.html",
+          "markdown_path": "data/vault/2026/01/2026-01-04/01-要闻/沉下心来抓落实、办实事（“十五五”开好局起好步）.md",
+          "raw_path": "",
+          "word_count": 3073,
+          "time_layer": "上半年主体",
+          "use": "开局抓落实的实践"
+        },
+        {
+          "article_id": "people_daily_20260331_30148330",
+          "date": "2026-03-31",
+          "title": "做好地方规划和专项规划与国家整体规划衔接工作（专题深思）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/31/content_30148330.html",
+          "markdown_path": "data/vault/2026/03/2026-03-31/09-理论/做好地方规划和专项规划与国家整体规划衔接工作（专题深思）.md",
+          "raw_path": "",
+          "word_count": 2458,
+          "time_layer": "上半年主体",
+          "use": "地方专项规划与整体规划的衔接"
+        },
+        {
+          "article_id": "people_daily_20260624_30164687",
+          "date": "2026-06-24",
+          "title": "从各地“十五五”规划感悟因地制宜（有感而发）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/24/content_30164687.html",
+          "markdown_path": "data/vault/2026/06/2026-06-24/18-产经/从各地“十五五”规划感悟因地制宜（有感而发）.md",
+          "raw_path": "",
+          "word_count": 1563,
+          "time_layer": "上半年主体",
+          "use": "各地差异化落实的方法"
+        }
+      ],
+      "boundary": "第84篇已覆盖这条执行链，直接作为收束入口；本次只补充来源与目录关系，不新增一个相似的落实题。",
+      "extensions": "在旧稿之外附一张内部工作表：目标—措施—项目—责任—资源—进度—评估。",
+      "shared_outline_article_id": "people_daily_20260314_30145231",
+      "title": "“十五五”开局如何落地：内需、创新、民生和风险要接成一条链",
+      "framework": [
+        "规划定方向：把握内需主导、高质量发展和民生为大的主线",
+        "年度抓重点：围绕主要矛盾选择牵引性任务，避免平均用力",
+        "项目政策承接：把部署拆成项目、改革和公共服务安排",
+        "责任资源匹配：明确部门、时限、资金和要素保障",
+        "民生风险校验：既看发展成效，也看群众感受和底线风险"
+      ],
+      "database_status": "进行中",
+      "action": "复用",
+      "manuscripts": [
+        "data/articles/人民日报系列/84-人民日报讲“十五五”开局：内需、创新、民生和风险要接成一条链.md"
+      ],
+      "production_state": "已有成稿，按链接复用"
+    }
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260912_fifteen_reading_indicators",
+      "date": "2026-09-12",
+      "title": "《人民日报》深度分析【“十五五”规划指标】：数字背后，哪些是方向、哪些是责任",
+      "angle": "“十五五”系统系列第01讲。从同一张规划指标表上不同类型的目标切入，帮助读者区分发展方向、政府责任和市场引导，再理解规划建议、正式纲要、专项规划、年度计划之间的关系。",
+      "platform": "公众号",
+      "support_article_ids": [
+        "people_daily_20251210_30119437",
+        "people_daily_20260109_30130836",
+        "people_daily_20260317_30145608"
+      ],
+      "outline": [
+        "认清文本：规划建议、纲要草案、正式纲要和专项规划各处在什么位置",
+        "分清指标：发展愿景、预期性指标和约束性指标分别怎样理解",
+        "看清主体：政府承担什么，怎样引导市场和社会参与",
+        "读出联系：目标、重大任务、工程和年度安排怎样对应",
+        "用于分析：以就业或绿色发展为例制作一张规划阅读表"
+      ],
+      "status": "备选",
+      "priority": "A",
+      "reader_question": "同一张规划表里的数字，为什么不能用同一种办法落实？",
+      "series_name": "从人民日报读懂“十五五”",
+      "series_position": 1,
+      "difference_from_existing": "只解决怎么读规划、辨指标与责任；第24讲解决怎么把目标组织成实际工作。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20251210_30119437",
+          "date": "2025-12-10",
+          "title": "从五年规划看“中国之治”",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202512/10/content_30119437.html",
+          "markdown_path": "data/vault/2025/12/2025-12-10/01-要闻/从五年规划看“中国之治”.md",
+          "raw_path": "data/raw/articles_20251210.json",
+          "word_count": 7909,
+          "time_layer": "此前溯源",
+          "use": "解释五年规划的连续性及计划与规划的变化"
+        },
+        {
+          "article_id": "people_daily_20260109_30130836",
+          "date": "2026-01-09",
+          "title": "深刻理解我国五年规划的作用机制和重要优势（深入学习贯彻习近平新时代中国特色社会主义思想）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/09/content_30130836.html",
+          "markdown_path": "data/vault/2026/01/2026-01-09/09-理论/深刻理解我国五年规划的作用机制和重要优势（深入学习贯彻习近平新时代中国特色社会主义思想）.md",
+          "raw_path": "",
+          "word_count": 8900,
+          "time_layer": "上半年主体",
+          "use": "区分共识、资源配置、预期性与约束性指标的作用"
+        },
+        {
+          "article_id": "people_daily_20260317_30145608",
+          "date": "2026-03-17",
+          "title": "在法治轨道上更好发挥国家发展规划的战略导向作用（深入学习贯彻习近平新时代中国特色社会主义思想）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/17/content_30145608.html",
+          "markdown_path": "data/vault/2026/03/2026-03-17/09-理论/在法治轨道上更好发挥国家发展规划的战略导向作用（深入学习贯彻习近平新时代中国特色社会主义思想）.md",
+          "raw_path": "",
+          "word_count": 5331,
+          "time_layer": "上半年主体",
+          "use": "解释年度计划与规划指标的衔接"
+        }
+      ]
+    },
+    {
+      "idea_id": "idea_20260912_fifteen_investment_people",
+      "date": "2026-09-12",
+      "title": "《人民日报》深度分析【有效投资】：楼建好了，怎样让人员、能力和服务一起跟上",
+      "angle": "“十五五”系统系列第07讲。从设施建成却缺人员和服务的读者问题切入，把物质设施、人力能力、经常性服务和项目效益放在一起评估，解释投资于物与投资于人的结合。",
+      "platform": "公众号",
+      "support_article_ids": [
+        "people_daily_20260322_30146416",
+        "people_daily_20260424_30152868",
+        "people_daily_20260529_30159775"
+      ],
+      "outline": [
+        "从需求起步：先识别服务对象、人口变化和实际缺口",
+        "让物和人匹配：设施设备、岗位人员、技能培养同时安排",
+        "算完整账：建设投入、运行经费、服务覆盖和长期效益一起看",
+        "接上发展：服务改善怎样影响能力、就业和消费预期",
+        "用于分析：设计项目立项到服务效果的检查表"
+      ],
+      "status": "备选",
+      "priority": "A",
+      "reader_question": "楼建好了，服务为什么未必跟得上？",
+      "series_name": "从人民日报读懂“十五五”",
+      "series_position": 7,
+      "difference_from_existing": "研究项目和预算怎样同时安排设施、人员、能力与持续服务；不同于第91篇城市空间运营，也不同于技能培训的到岗流程。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260322_30146416",
+          "date": "2026-03-22",
+          "title": "如何理解“投资于物和投资于人紧密结合”（读者点题·共同关注）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/22/content_30146416.html",
+          "markdown_path": "data/vault/2026/03/2026-03-22/01-要闻/如何理解“投资于物和投资于人紧密结合”（读者点题·共同关注）.md",
+          "raw_path": "",
+          "word_count": 1374,
+          "time_layer": "上半年主体",
+          "use": "物的投入与人的能力相互促进"
+        },
+        {
+          "article_id": "people_daily_20260424_30152868",
+          "date": "2026-04-24",
+          "title": "投资于物和投资于人不能割裂（有的放矢）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/24/content_30152868.html",
+          "markdown_path": "data/vault/2026/04/2026-04-24/09-理论/投资于物和投资于人不能割裂（有的放矢）.md",
+          "raw_path": "",
+          "word_count": 1713,
+          "time_layer": "上半年主体",
+          "use": "避免把两类投资割裂的理论解释"
+        },
+        {
+          "article_id": "people_daily_20260529_30159775",
+          "date": "2026-05-29",
+          "title": "以投资于人推动人的全面发展（高质量发展故事汇·第19期）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/29/../../../content/202605/29/content_30159775.html",
+          "markdown_path": "",
+          "raw_path": "data/raw/articles_20260529.json",
+          "word_count": 8693,
+          "time_layer": "上半年主体",
+          "use": "投资于人与全生命周期发展的论述和故事"
+        }
+      ]
+    },
+    {
+      "idea_id": "idea_20260912_fifteen_idle_assets_services",
+      "date": "2026-09-12",
+      "title": "《人民日报》深度分析【盘活存量】：闲置的房屋和设施，怎样重新变成有用的服务",
+      "angle": "“十五五”系统系列第08讲。以办公用房整合和闲置住房调查对照，追问已有资源为何不能使用，从资源清查、用途权属、需求匹配到责任和运营，说明资源重新配置的条件。",
+      "platform": "公众号",
+      "support_article_ids": [
+        "people_daily_20260121_30134381",
+        "people_daily_20260203_30137829",
+        "people_daily_20260720_30169717"
+      ],
+      "outline": [
+        "查清闲置：分别识别低效使用、功能错配、手续缺失和需求变化",
+        "厘清用途权属：谁有权调整、需要哪些程序、成本由谁承担",
+        "匹配真实需求：腾退、调剂、改造或退出分别适合什么情形",
+        "建立使用责任：明确运营、维护、资金与服务评价",
+        "用于分析：用一项闲置设施推演盘活方案和风险边界"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "reader_question": "闲置的房屋和设施，怎样重新变成有用的服务？",
+      "series_name": "从人民日报读懂“十五五”",
+      "series_position": 8,
+      "difference_from_existing": "首讲聚焦存量资源的清查、权属用途、需求匹配和运营责任；第91篇从已完成城市更新后的运营出发，本讲从尚未盘活的资源出发。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260121_30134381",
+          "date": "2026-01-21",
+          "title": "盘活存量，关键在巧拨“炭火”（评论员观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/21/content_30134381.html",
+          "markdown_path": "data/vault/2026/01/2026-01-21/05-评论/盘活存量，关键在巧拨“炭火”（评论员观察）.md",
+          "raw_path": "",
+          "word_count": 1231,
+          "time_layer": "上半年主体",
+          "use": "盘活存量的需求、平台、参与机制"
+        },
+        {
+          "article_id": "people_daily_20260203_30137829",
+          "date": "2026-02-03",
+          "title": "盘活存量  提升效率",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/03/content_30137829.html",
+          "markdown_path": "data/vault/2026/02/2026-02-03/19-党建/盘活存量 提升效率.md",
+          "raw_path": "",
+          "word_count": 961,
+          "time_layer": "上半年主体",
+          "use": "办公用房整合并转为公共服务的实例"
+        },
+        {
+          "article_id": "people_daily_20260720_30169717",
+          "date": "2026-07-20",
+          "title": "完工闲置8年  盘活遭遇梗阻（来信调查）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/20/content_30169717.html",
+          "markdown_path": "data/vault/2026/07/2026-07-20/07-读者来信/完工闲置8年 盘活遭遇梗阻（来信调查）.md",
+          "raw_path": "",
+          "word_count": 4342,
+          "time_layer": "下半年补充",
+          "use": "闲置住房调查揭示用途、配套和管理衔接问题"
+        }
+      ]
+    },
+    {
+      "idea_id": "idea_20260912_fifteen_institutional_opening",
+      "date": "2026-09-12",
+      "title": "《人民日报》深度分析【制度型开放】：货物过了关，规则、标准和服务还要打通什么",
+      "angle": "“十五五”系统系列第09讲。从通关后仍面对认证、数据和服务规则的场景切入，借助自贸试验区案例理解开放从货物流动延伸到规则衔接、制度试验与监管协同。",
+      "platform": "公众号",
+      "support_article_ids": [
+        "people_daily_20251114_30114827",
+        "people_daily_20251220_30125933",
+        "people_daily_20260624_30164610"
+      ],
+      "outline": [
+        "识别堵点：关税、准入、标准认证、数据和服务不是同一类问题",
+        "把握开放方向：自主开放与制度型开放的关系",
+        "观察试验机制：自贸试验区怎样对接需求、试验规则",
+        "兼顾便利与监管：制度透明、分类管理和风险责任相互配合",
+        "用于分析：用企业跨境业务串起需求、制度、服务与评估"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "reader_question": "货物过了关，规则、标准和服务还要打通什么？",
+      "series_name": "从人民日报读懂“十五五”",
+      "series_position": 9,
+      "difference_from_existing": "聚焦规则衔接与制度试验；第35篇品牌出海聚焦企业能力和价值链，不以它替代制度分析。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20251114_30114827",
+          "date": "2025-11-14",
+          "title": "扩大外贸领域制度型开放（专家点评）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202511/14/content_30114827.html",
+          "markdown_path": "data/vault/2025/11/2025-11-14/02-要闻/扩大外贸领域制度型开放（专家点评）.md",
+          "raw_path": "",
+          "word_count": 550,
+          "time_layer": "此前溯源",
+          "use": "外贸制度型开放的规则与新业态"
+        },
+        {
+          "article_id": "people_daily_20251220_30125933",
+          "date": "2025-12-20",
+          "title": "为什么要积极扩大自主开放（读者点题·共同关注）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202512/20/content_30125933.html",
+          "markdown_path": "data/vault/2025/12/2025-12-20/01-要闻/为什么要积极扩大自主开放（读者点题·共同关注）.md",
+          "raw_path": "",
+          "word_count": 1208,
+          "time_layer": "此前溯源",
+          "use": "解释自主开放的逻辑"
+        },
+        {
+          "article_id": "people_daily_20260624_30164610",
+          "date": "2026-06-24",
+          "title": "23个自贸试验区雁阵齐飞",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/24/content_30164610.html",
+          "markdown_path": "data/vault/2026/06/2026-06-24/10-特别报道/23个自贸试验区雁阵齐飞.md",
+          "raw_path": "",
+          "word_count": 578,
+          "time_layer": "上半年主体",
+          "use": "自贸试验区差异探索与制度创新"
+        }
+      ]
+    },
+    {
+      "idea_id": "idea_20260912_fifteen_household_income",
+      "date": "2026-09-12",
+      "title": "《人民日报》深度分析【居民增收】：发展成果怎样更稳定地进入普通家庭的收入",
+      "angle": "“十五五”系统系列第17讲。从产业升级后劳动者收入如何变化切入，区分收入来源与分配机制，分析技能回报、经营机会、财产收益、保障调节怎样共同影响扩中提低。",
+      "platform": "公众号",
+      "support_article_ids": [
+        "people_daily_20251114_30114876",
+        "people_daily_20260421_30152252",
+        "people_daily_20260811_30174298"
+      ],
+      "outline": [
+        "先看收入来源：劳动、经营、财产和转移性收入分别从哪里来",
+        "让能力对应回报：岗位升级、技能成长与工资机制相衔接",
+        "拓展经营与财产收益：分析机会和制度条件，保留风险边界",
+        "理解分配调节：初次分配、再分配和第三次分配各发挥什么作用",
+        "用于分析：把扩中提低落到对象、渠道、机制与持续性"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "reader_question": "发展成果怎样更稳定地进入普通家庭的收入？",
+      "series_name": "从人民日报读懂“十五五”",
+      "series_position": 17,
+      "difference_from_existing": "聚焦收入从哪里来、怎样分、如何保持可持续；不复述第85篇的促消费供给，也不重复联农带农这一农业切口。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20251114_30114876",
+          "date": "2025-11-14",
+          "title": "持续扩大中等收入群体规模  扎实推进共同富裕（深入学习贯彻习近平新时代中国特色社会主义思想）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202511/14/content_30114876.html",
+          "markdown_path": "data/vault/2025/11/2025-11-14/09-理论/持续扩大中等收入群体规模 扎实推进共同富裕（深入学习贯彻习近平新时代中国特色社会主义思想）.md",
+          "raw_path": "",
+          "word_count": 4757,
+          "time_layer": "此前溯源",
+          "use": "扩中提低与分配结构"
+        },
+        {
+          "article_id": "people_daily_20260421_30152252",
+          "date": "2026-04-21",
+          "title": "统筹促就业、增收入、稳预期（人民要论）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/21/content_30152252.html",
+          "markdown_path": "data/vault/2026/04/2026-04-21/09-理论/统筹促就业、增收入、稳预期（人民要论）.md",
+          "raw_path": "",
+          "word_count": 4908,
+          "time_layer": "上半年主体",
+          "use": "就业收入预期的相互作用"
+        },
+        {
+          "article_id": "people_daily_20260811_30174298",
+          "date": "2026-08-11",
+          "title": "“在推进共同富裕中先行示范”",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/11/content_30174298.html",
+          "markdown_path": "data/vault/2026/08/2026-08-11/01-要闻/“在推进共同富裕中先行示范”.md",
+          "raw_path": "",
+          "word_count": 6217,
+          "time_layer": "下半年补充",
+          "use": "工资成长、资源收益与区域实践"
+        }
+      ]
+    },
+    {
+      "idea_id": "idea_20260912_fifteen_housing_quality",
+      "date": "2026-09-12",
+      "title": "《人民日报》深度分析【住房品质】：从有地方住到住得安心，住房供给要改变什么",
+      "angle": "“十五五”系统系列第18讲。以老旧住房更新和好房子建设为材料，围绕需求分层、品质标准、更新协商、资金与长期安全责任，解释住房从数量供给到宜居品质的转变。",
+      "platform": "公众号",
+      "support_article_ids": [
+        "people_daily_20260122_30134729",
+        "people_daily_20260204_30138258",
+        "people_daily_20260313_30145125"
+      ],
+      "outline": [
+        "识别住房需求：困难家庭、新市民与改善性需求分别需要什么",
+        "建立品质尺度：安全、舒适、绿色、智慧如何成为实际体验",
+        "推进存量更新：居民共识、资金、审批和建设主体如何衔接",
+        "落实长期责任：建设质量、维护管理、体检与风险治理相衔接",
+        "用于分析：住房保障和品质提升怎样分类施策"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "reader_question": "从有地方住到住得安心，住房供给要改变什么？",
+      "series_name": "从人民日报读懂“十五五”",
+      "series_position": 18,
+      "difference_from_existing": "住房供给、品质标准与全生命周期责任是主线；与第91篇社区空间运营区分，住房市场报道不转成房价预测。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260122_30134729",
+          "date": "2026-01-22",
+          "title": "实现住房城乡建设高质量发展良好开局（权威访谈·开局“十五五”）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/22/content_30134729.html",
+          "markdown_path": "data/vault/2026/01/2026-01-22/02-要闻/实现住房城乡建设高质量发展良好开局（权威访谈·开局“十五五”）.md",
+          "raw_path": "",
+          "word_count": 3093,
+          "time_layer": "上半年主体",
+          "use": "住房领域开局任务与保障"
+        },
+        {
+          "article_id": "people_daily_20260204_30138258",
+          "date": "2026-02-04",
+          "title": "建设安全舒适绿色智慧的“好房子”",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/04/content_30138258.html",
+          "markdown_path": "data/vault/2026/02/2026-02-04/09-理论/建设安全舒适绿色智慧的“好房子”.md",
+          "raw_path": "",
+          "word_count": 2123,
+          "time_layer": "上半年主体",
+          "use": "安全舒适绿色智慧的品质要求"
+        },
+        {
+          "article_id": "people_daily_20260313_30145125",
+          "date": "2026-03-13",
+          "title": "老房子这样变成“好房子”（人民眼·城市更新）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/13/content_30145125.html",
+          "markdown_path": "data/vault/2026/03/2026-03-13/13-记者调查/老房子这样变成“好房子”（人民眼·城市更新）.md",
+          "raw_path": "",
+          "word_count": 6181,
+          "time_layer": "上半年主体",
+          "use": "老旧住房更新中的共识、资金和审批"
+        }
+      ]
+    }
+  ],
+  "support_updates": {
+    "idea_refined_20260527_new_productivity": [
+      "people_daily_20260315_30145337"
+    ],
+    "idea_20260720_0726_elderly_care_system": [
+      "people_daily_20260614_30162849"
+    ],
+    "idea_20260615_21_employment_priority_people": [
+      "people_daily_20260124_30135370"
+    ],
+    "idea_20260629_0705_beautiful_china_system": [
+      "people_daily_20260112_30131245",
+      "people_daily_20260521_30158083"
+    ],
+    "idea_202601_revisit_fifteen_five_implementation": [
+      "people_daily_20260331_30148330",
+      "people_daily_20260624_30164687"
+    ]
+  },
+  "support_removals": {
+    "idea_20260629_0705_beautiful_china_system": [
+      "people_daily_20260629_30165396"
+    ]
+  },
+  "duplicate_review": [
+    {
+      "primary": "people_daily_20260429_30153796",
+      "related": "people_daily_20260429_30153821",
+      "similarity": 1.0,
+      "rule": "同日同题，移除排版与头部阅读标记后正文相似度至少99.9%；只合并阅读组，不删源记录"
+    },
+    {
+      "primary": "people_daily_20260525_30158957",
+      "related": "people_daily_20260525_30158967",
+      "similarity": 1.0,
+      "rule": "同日同题，移除排版与头部阅读标记后正文相似度至少99.9%；只合并阅读组，不删源记录"
+    },
+    {
+      "primary": "people_daily_20260529_30159825",
+      "related": "people_daily_20260529_30159870",
+      "similarity": 0.9994386752736458,
+      "rule": "同日同题，移除排版与头部阅读标记后正文相似度至少99.9%；只合并阅读组，不删源记录"
+    },
+    {
+      "primary": "people_daily_20260601_30160069",
+      "related": "people_daily_20260601_30160108",
+      "similarity": 1.0,
+      "rule": "同日同题，移除排版与头部阅读标记后正文相似度至少99.9%；只合并阅读组，不删源记录"
+    },
+    {
+      "primary": "people_daily_20260620_30163924",
+      "related": "people_daily_20260620_30163936",
+      "similarity": 1.0,
+      "rule": "同日同题，移除排版与头部阅读标记后正文相似度至少99.9%；只合并阅读组，不删源记录"
+    },
+    {
+      "primary": "people_daily_20260713_30168296",
+      "related": "people_daily_20260713_30168329",
+      "similarity": 1.0,
+      "rule": "同日同题，移除排版与头部阅读标记后正文相似度至少99.9%；只合并阅读组，不删源记录"
+    },
+    {
+      "primary": "people_daily_20260714_30168602",
+      "related": "people_daily_20260714_30168627",
+      "similarity": 1.0,
+      "rule": "同日同题，移除排版与头部阅读标记后正文相似度至少99.9%；只合并阅读组，不删源记录"
+    },
+    {
+      "primary": "people_daily_20260904_30179035",
+      "related": "people_daily_20260904_30179084",
+      "similarity": 1.0,
+      "rule": "同日同题，移除排版与头部阅读标记后正文相似度至少99.9%；只合并阅读组，不删源记录"
+    }
+  ]
+}

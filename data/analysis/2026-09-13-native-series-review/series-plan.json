@@ -1,0 +1,4273 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-09-13",
+  "source_scope": "库内2026年1月1日至9月6日全部7956条文章；不是2026自然年全年完结资料",
+  "operations_cutoff": "2026-09-06",
+  "stats": {
+    "library_year_records": 7956,
+    "date_start": "2026-01-01",
+    "date_end": "2026-09-06",
+    "bracketed_articles": 4876,
+    "raw_bracket_names": 721,
+    "normalized_bracket_groups": 714,
+    "duplicate_reading_records": 102,
+    "classification_counts": {
+      "通用栏目": 186,
+      "已另作十五五专题": 18,
+      "内部理论与履职参考": 42,
+      "延展储备": 69,
+      "优先系列": 20,
+      "专题备查": 51,
+      "非专题括注": 8,
+      "少量线索": 320
+    },
+    "recommended_series": 12,
+    "reserve_series": 29,
+    "episode_positions": 25,
+    "new_ideas": 12,
+    "existing_episode_positions": 13,
+    "existing_ideas_unique": 12,
+    "evidence_bindings": 75,
+    "evidence_articles_unique": 75,
+    "native_evidence_bindings": 69
+  },
+  "series": [
+    {
+      "code": "S01",
+      "name": "小城产业怎样进入全球市场",
+      "native_brackets": [
+        "财经深一度·宝藏小城的出口生意经"
+      ],
+      "priority": "A",
+      "logic": "集群协作降低单个企业门槛，再看创新、品牌与全球价值。",
+      "article_ids": [
+        "people_daily_20260126_30135706",
+        "people_daily_20260302_30142944",
+        "people_daily_20260317_30145547",
+        "people_daily_20260420_30152121",
+        "people_daily_20260513_30156493",
+        "people_daily_20260713_30168348",
+        "people_daily_20260727_30171050"
+      ],
+      "record_count": 7,
+      "reading_group_count": 7,
+      "date_start": "2026-01-26",
+      "date_end": "2026-07-27",
+      "episodes": [
+        "idea_20260913_native_county_export_cluster",
+        "idea_20260622_28_china_brand_global_value"
+      ]
+    },
+    {
+      "code": "S02",
+      "name": "制造业背后的生产性服务",
+      "native_brackets": [
+        "产经视野·推动生产性服务业高质量发展",
+        "经济新方位·服务业扩能提质",
+        "民生一线·关注生产性服务业"
+      ],
+      "priority": "A",
+      "logic": "产品设计、物流协同、技术转化分别解决企业生产前、流通中和创新落地的问题。",
+      "article_ids": [
+        "people_daily_20260520_30157885",
+        "people_daily_20260527_30159421",
+        "people_daily_20260611_30162384",
+        "people_daily_20260701_30165917",
+        "people_daily_20260427_30153345",
+        "people_daily_20260510_30155809",
+        "people_daily_20260511_30156006",
+        "people_daily_20260618_30163743",
+        "people_daily_20260710_30167861",
+        "people_daily_20260424_30152869",
+        "people_daily_20260428_30153620",
+        "people_daily_20260514_30156888"
+      ],
+      "record_count": 12,
+      "reading_group_count": 12,
+      "date_start": "2026-04-24",
+      "date_end": "2026-07-10",
+      "episodes": [
+        "idea_20260913_native_industrial_design",
+        "idea_20260913_native_logistics_coordination",
+        "idea_refined_20260612_tech_transfer_chain"
+      ]
+    },
+    {
+      "code": "S03",
+      "name": "怎样成为懂产业的干部",
+      "native_brackets": [
+        "前沿观察·锻造推动产业发展的行家里手"
+      ],
+      "priority": "A",
+      "logic": "先看干部怎样获得专业判断，再用这种判断辨认适合本地的产业赛道。",
+      "article_ids": [
+        "people_daily_20260317_30145558",
+        "people_daily_20260324_30146956",
+        "people_daily_20260331_30148376",
+        "people_daily_20260407_30149529",
+        "people_daily_20260421_30152372",
+        "people_daily_20260428_30153707",
+        "people_daily_20260519_30157772",
+        "people_daily_20260526_30159139",
+        "people_daily_20260602_30160443",
+        "people_daily_20260609_30161910"
+      ],
+      "record_count": 10,
+      "reading_group_count": 10,
+      "date_start": "2026-03-17",
+      "date_end": "2026-06-09",
+      "episodes": [
+        "idea_20260913_native_cadre_industry_literacy",
+        "idea_20260622_28_future_industry_positioning"
+      ]
+    },
+    {
+      "code": "S04",
+      "name": "让干部愿担当、敢担当、善担当",
+      "native_brackets": [
+        "干部状态新观察·让愿担当、敢担当、善担当蔚然成风",
+        "人民眼·全面增强干部队伍现代化建设能力"
+      ],
+      "priority": "B",
+      "logic": "容错与纠错划定探索边界，分类考核把担当转成持续激励。",
+      "article_ids": [
+        "people_daily_20260408_30149721",
+        "people_daily_20260409_30150046",
+        "people_daily_20260410_30150307",
+        "people_daily_20260413_30150725",
+        "people_daily_20260414_30150969",
+        "people_daily_20260708_30167450",
+        "people_daily_20260710_30167912",
+        "people_daily_20260717_30169228",
+        "people_daily_20260720_30169738",
+        "people_daily_20260723_30170523",
+        "people_daily_20260728_30171320",
+        "people_daily_20260729_30171745",
+        "people_daily_20260403_30149104",
+        "people_daily_20260410_30150333",
+        "people_daily_20260417_30151644",
+        "people_daily_20260424_30152947"
+      ],
+      "record_count": 16,
+      "reading_group_count": 16,
+      "date_start": "2026-04-03",
+      "date_end": "2026-07-29",
+      "episodes": [
+        "idea_20260913_native_fault_tolerance_correction",
+        "idea_20260629_0705_performance_assessment_value"
+      ]
+    },
+    {
+      "code": "S05",
+      "name": "基层减负的具体边界",
+      "native_brackets": [
+        "干部状态新观察·为基层减负赋能"
+      ],
+      "priority": "A",
+      "logic": "先把报表和数据工作做实，再把属地、牵头、放权的责任边界说清。",
+      "article_ids": [
+        "people_daily_20260513_30156565",
+        "people_daily_20260514_30156871",
+        "people_daily_20260518_30157411",
+        "people_daily_20260707_30167267",
+        "people_daily_20260714_30168550",
+        "people_daily_20260715_30168855",
+        "people_daily_20260805_30173183",
+        "people_daily_20260806_30173432",
+        "people_daily_20260807_30173601",
+        "people_daily_20260810_30174003",
+        "people_daily_20260811_30174255",
+        "people_daily_20260812_30174426"
+      ],
+      "record_count": 12,
+      "reading_group_count": 12,
+      "date_start": "2026-05-13",
+      "date_end": "2026-08-12",
+      "episodes": [
+        "idea_20260913_native_reporting_data_burden",
+        "idea_20260803_0809_grassroots_responsibility_boundary"
+      ]
+    },
+    {
+      "code": "S06",
+      "name": "一项农业新技术怎样真正下田",
+      "native_brackets": [
+        "春耕里的新质生产力"
+      ],
+      "priority": "A",
+      "logic": "先解决农户愿不愿采用，再解决小农户怎样持续获得专业服务。",
+      "article_ids": [
+        "people_daily_20260304_30143324",
+        "people_daily_20260321_30146364",
+        "people_daily_20260323_30146631",
+        "people_daily_20260328_30147859",
+        "people_daily_20260401_30148493",
+        "people_daily_20260410_30150364",
+        "people_daily_20260412_30150528",
+        "people_daily_20260414_30150919",
+        "people_daily_20260417_30151559",
+        "people_daily_20260422_30152537",
+        "people_daily_20260425_30153014",
+        "people_daily_20260426_30153124",
+        "people_daily_20260428_30153650",
+        "people_daily_20260429_30153803",
+        "people_daily_20260430_30154147",
+        "people_daily_20260503_30154680",
+        "people_daily_20260504_30154786",
+        "people_daily_20260505_30154855",
+        "people_daily_20260507_30155308",
+        "people_daily_20260508_30155586"
+      ],
+      "record_count": 20,
+      "reading_group_count": 20,
+      "date_start": "2026-03-04",
+      "date_end": "2026-05-08",
+      "episodes": [
+        "idea_20260913_native_agri_technology_adoption",
+        "idea_20260706_0712_agricultural_socialized_service"
+      ]
+    },
+    {
+      "code": "S07",
+      "name": "从培训到岗位的就业服务",
+      "native_brackets": [
+        "稳就业在行动",
+        "稳就业·我的求职故事",
+        "稳就业·暖心故事"
+      ],
+      "priority": "A",
+      "logic": "把培训到岗和日常就业服务分开，形成能力、匹配、服务的连续阅读。",
+      "article_ids": [
+        "people_daily_20260416_30151486",
+        "people_daily_20260416_30151487",
+        "people_daily_20260429_30153870",
+        "people_daily_20260515_30156948",
+        "people_daily_20260521_30158129",
+        "people_daily_20260525_30158862",
+        "people_daily_20260608_30161711",
+        "people_daily_20260624_30164624",
+        "people_daily_20260709_30167691",
+        "people_daily_20260721_30169966",
+        "people_daily_20260517_30157307",
+        "people_daily_20260524_30158699",
+        "people_daily_20260529_30159877",
+        "people_daily_20260531_30159994",
+        "people_daily_20260601_30160088",
+        "people_daily_20260610_30162263",
+        "people_daily_20260720_30169695",
+        "people_daily_20260730_30171977",
+        "people_daily_20260812_30174387",
+        "people_daily_20260415_30151295",
+        "people_daily_20260527_30159279",
+        "people_daily_20260813_30174693",
+        "people_daily_20260828_30177675"
+      ],
+      "record_count": 23,
+      "reading_group_count": 23,
+      "date_start": "2026-04-15",
+      "date_end": "2026-08-28",
+      "episodes": [
+        "idea_20260912_h1_training_to_jobs",
+        "idea_refined_20260612_employment_chain"
+      ]
+    },
+    {
+      "code": "S08",
+      "name": "文艺怎样扎根乡村",
+      "native_brackets": [
+        "文艺赋美乡村"
+      ],
+      "priority": "B",
+      "logic": "先看村民怎样成为创作主体，再看公共文化如何形成日常参与。",
+      "article_ids": [
+        "people_daily_20260204_30138173",
+        "people_daily_20260318_30145856",
+        "people_daily_20260401_30148555",
+        "people_daily_20260402_30148866",
+        "people_daily_20260415_30151283",
+        "people_daily_20260526_30159110",
+        "people_daily_20260527_30159271",
+        "people_daily_20260708_30167460",
+        "people_daily_20260722_30170153"
+      ],
+      "record_count": 9,
+      "reading_group_count": 9,
+      "date_start": "2026-02-04",
+      "date_end": "2026-07-22",
+      "episodes": [
+        "idea_20260913_native_art_village_cocreation",
+        "idea_20260629_0705_rural_public_culture"
+      ]
+    },
+    {
+      "code": "S09",
+      "name": "身边文物：保护、理解与转译",
+      "native_brackets": [
+        "我家门口有文物",
+        "文物里的潮生活"
+      ],
+      "priority": "B",
+      "logic": "用身边守护讲保护底线，再用文创案例讲文化信息怎样进入日常用品。",
+      "article_ids": [
+        "people_daily_20260131_30137239",
+        "people_daily_20260131_30137240",
+        "people_daily_20260131_30137241",
+        "people_daily_20260228_30142692",
+        "people_daily_20260228_30142693",
+        "people_daily_20260328_30147890",
+        "people_daily_20260411_30150454",
+        "people_daily_20260530_30159983",
+        "people_daily_20260606_30161422",
+        "people_daily_20260613_30162789",
+        "people_daily_20260613_30162790",
+        "people_daily_20260711_30168039",
+        "people_daily_20260801_30172535",
+        "people_daily_20260829_30177901",
+        "people_daily_20260905_30179272",
+        "people_daily_20260114_30132156",
+        "people_daily_20260318_30145885",
+        "people_daily_20260408_30149766",
+        "people_daily_20260415_30151323",
+        "people_daily_20260429_30153860",
+        "people_daily_20260506_30154997",
+        "people_daily_20260521_30158159",
+        "people_daily_20260603_30160661",
+        "people_daily_20260625_30164715",
+        "people_daily_20260708_30167375",
+        "people_daily_20260722_30170191",
+        "people_daily_20260902_30178557"
+      ],
+      "record_count": 27,
+      "reading_group_count": 27,
+      "date_start": "2026-01-14",
+      "date_end": "2026-09-05",
+      "episodes": [
+        "idea_refined_20260613_cultural_heritage_life",
+        "idea_20260913_native_heritage_design_translation"
+      ]
+    },
+    {
+      "code": "S10",
+      "name": "看得见变化的生态保护",
+      "native_brackets": [
+        "美丽中国",
+        "美丽中国行",
+        "美丽中国·身边的绿色故事"
+      ],
+      "priority": "B",
+      "logic": "先辨保护是否有效，再分析生态改善怎样进入产业和居民生活。",
+      "article_ids": [
+        "people_daily_20260119_30133567",
+        "people_daily_20260202_30137391",
+        "people_daily_20260204_30138184",
+        "people_daily_20260323_30146572",
+        "people_daily_20260327_30147603",
+        "people_daily_20260330_30148063",
+        "people_daily_20260408_30149743",
+        "people_daily_20260410_30150325",
+        "people_daily_20260413_30150749",
+        "people_daily_20260427_30153313",
+        "people_daily_20260428_30153630",
+        "people_daily_20260515_30156957",
+        "people_daily_20260525_30158867",
+        "people_daily_20260527_30159285",
+        "people_daily_20260605_30161172",
+        "people_daily_20260608_30161715",
+        "people_daily_20260610_30162230",
+        "people_daily_20260622_30164265",
+        "people_daily_20260625_30164751",
+        "people_daily_20260831_30178058",
+        "people_daily_20260605_30161082",
+        "people_daily_20260608_30161747",
+        "people_daily_20260609_30162037",
+        "people_daily_20260610_30162260",
+        "people_daily_20260613_30162797",
+        "people_daily_20260707_30167220",
+        "people_daily_20260710_30167887",
+        "people_daily_20260713_30168324",
+        "people_daily_20260714_30168639",
+        "people_daily_20260331_30148344",
+        "people_daily_20260401_30148571",
+        "people_daily_20260407_30149504",
+        "people_daily_20260603_30160637",
+        "people_daily_20260623_30164445",
+        "people_daily_20260819_30175835",
+        "people_daily_20260904_30178999"
+      ],
+      "record_count": 36,
+      "reading_group_count": 36,
+      "date_start": "2026-01-19",
+      "date_end": "2026-09-04",
+      "episodes": [
+        "idea_20260913_native_habitat_restoration_evidence",
+        "idea_20260615_21_ecology_asset_income"
+      ]
+    },
+    {
+      "code": "S11",
+      "name": "高效办成一件事的前后半程",
+      "native_brackets": [
+        "高效办成一件事"
+      ],
+      "priority": "A",
+      "logic": "前半程改流程、补服务，后半程用群众反馈发现制度堵点。",
+      "article_ids": [
+        "people_daily_20260508_30155511",
+        "people_daily_20260608_30161696",
+        "people_daily_20260609_30161985",
+        "people_daily_20260610_30162206",
+        "people_daily_20260623_30164437",
+        "people_daily_20260706_30166951"
+      ],
+      "record_count": 6,
+      "reading_group_count": 6,
+      "date_start": "2026-05-08",
+      "date_end": "2026-07-06",
+      "episodes": [
+        "idea_202601_revisit_public_service_fast_track",
+        "idea_20260913_native_service_feedback_redesign"
+      ]
+    },
+    {
+      "code": "S12",
+      "name": "创新怎样经得起实际使用",
+      "native_brackets": [
+        "创新故事"
+      ],
+      "priority": "B",
+      "logic": "工程可靠性解决能否稳定运行，成果转化解决如何进入产业应用。",
+      "article_ids": [
+        "people_daily_20260109_30130815",
+        "people_daily_20260112_30131252",
+        "people_daily_20260129_30136570",
+        "people_daily_20260325_30147133",
+        "people_daily_20260326_30147462",
+        "people_daily_20260330_30148033",
+        "people_daily_20260407_30149461",
+        "people_daily_20260414_30150943",
+        "people_daily_20260428_30153680",
+        "people_daily_20260507_30155336",
+        "people_daily_20260508_30155617",
+        "people_daily_20260512_30156288",
+        "people_daily_20260513_30156538",
+        "people_daily_20260610_30162274",
+        "people_daily_20260623_30164497",
+        "people_daily_20260716_30169104",
+        "people_daily_20260722_30170123",
+        "people_daily_20260819_30175795"
+      ],
+      "record_count": 18,
+      "reading_group_count": 18,
+      "date_start": "2026-01-09",
+      "date_end": "2026-08-19",
+      "episodes": [
+        "idea_20260913_native_engineering_reliability",
+        "idea_refined_20260612_tech_transfer_chain"
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "series_code": "S01",
+      "position": 1,
+      "idea_id": "idea_20260913_native_county_export_cluster",
+      "theme": "县域产业集群出海",
+      "reader_question": "小企业怎样借助本地产业网络接住海外订单？",
+      "source_ids": [
+        "people_daily_20260317_30145547",
+        "people_daily_20260420_30152121",
+        "people_daily_20260513_30156493"
+      ],
+      "source_uses": [
+        "衣架产业配套与集群协作",
+        "纽扣市场、产业聚集与渠道演化",
+        "牙刷产业的集群突围与技术升级"
+      ],
+      "boundary": "与第35篇品牌出海的全球价值链视角、第44篇县域定位区分，本题聚焦中小企业共同使用的本地配套、服务和市场网络。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "A",
+      "framework": [
+        "从一张订单看门槛：配套、交付、质量与市场信息",
+        "用产业分工降低成本：专业化企业怎样互补",
+        "把公共服务做到缺口上：设计、检测、物流与渠道按来源分别展开",
+        "留下共同成长的条件：避免同质压价，维护质量与协作规则"
+      ],
+      "title": "《人民日报》深度分析【县域产业集群出海】：小企业怎样借助本地产业网络接住海外订单",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260317_30145547",
+          "date": "2026-03-17",
+          "title": "小衣架“挂”出大产业（财经深一度·宝藏小城的出口生意经）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/17/content_30145547.html",
+          "markdown_path": "data/vault/2026/03/2026-03-17/15-财经/小衣架“挂”出大产业（财经深一度·宝藏小城的出口生意经）.md",
+          "raw_path": "",
+          "word_count": 3058,
+          "use": "衣架产业配套与集群协作",
+          "native_brackets": [
+            "财经深一度·宝藏小城的出口生意经"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260420_30152121",
+          "date": "2026-04-20",
+          "title": "一粒小纽扣，如何联动大市场（财经深一度·宝藏小城的出口生意经）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/20/content_30152121.html",
+          "markdown_path": "data/vault/2026/04/2026-04-20/18-财经/一粒小纽扣，如何联动大市场（财经深一度·宝藏小城的出口生意经）.md",
+          "raw_path": "",
+          "word_count": 3029,
+          "use": "纽扣市场、产业聚集与渠道演化",
+          "native_brackets": [
+            "财经深一度·宝藏小城的出口生意经"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260513_30156493",
+          "date": "2026-05-13",
+          "title": "杭集牙刷，何以“刷”遍全球？（财经深一度·宝藏小城的出口生意经）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/13/content_30156493.html",
+          "markdown_path": "data/vault/2026/05/2026-05-13/18-财经/杭集牙刷，何以“刷”遍全球？（财经深一度·宝藏小城的出口生意经）.md",
+          "raw_path": "",
+          "word_count": 3419,
+          "use": "牙刷产业的集群突围与技术升级",
+          "native_brackets": [
+            "财经深一度·宝藏小城的出口生意经"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S01",
+      "position": 2,
+      "idea_id": "idea_20260622_28_china_brand_global_value",
+      "theme": "产品创新与品牌",
+      "reader_question": "同样的小产品，怎样增加技术和品牌价值？",
+      "source_ids": [
+        "people_daily_20260302_30142944",
+        "people_daily_20260713_30168348",
+        "people_daily_20260727_30171050"
+      ],
+      "source_uses": [
+        "手杖创新与海外需求",
+        "刺绣机技术升级",
+        "毛织产业更新"
+      ],
+      "boundary": "衔接第35篇，先讲产品和品牌能力；与前篇的集群公共条件形成内外两层。",
+      "action": "复用",
+      "manuscript_number": 35,
+      "priority": "B",
+      "framework": [
+        "破误区：出口规模大不等于品牌竞争力强",
+        "技术底座：原创研发和高端装备提升产品不可替代性",
+        "质量信任：标准、品控和知识产权托住品牌",
+        "全链协同：研发、制造、物流和服务共同响应市场",
+        "价值跃迁：从卖产品走向品牌、服务和规则影响力"
+      ],
+      "title": "《人民日报》讲中国品牌出海：不是卖得更多，而是进入全球价值链中高端",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/35-人民日报讲中国品牌出海：不是卖得更多，而是进入全球价值链中高端.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260302_30142944",
+          "date": "2026-03-02",
+          "title": "用创新“杖”量世界（财经深一度·宝藏小城的出口生意经）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/02/content_30142944.html",
+          "markdown_path": "data/vault/2026/03/2026-03-02/18-财经/用创新“杖”量世界（财经深一度·宝藏小城的出口生意经）.md",
+          "raw_path": "",
+          "word_count": 3078,
+          "use": "手杖创新与海外需求",
+          "native_brackets": [
+            "财经深一度·宝藏小城的出口生意经"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260713_30168348",
+          "date": "2026-07-13",
+          "title": "诸暨刺绣机，绣出万千精致（财经深一度·宝藏小城的出口生意经）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/13/content_30168348.html",
+          "markdown_path": "data/vault/2026/07/2026-07-13/18-财经/诸暨刺绣机，绣出万千精致（财经深一度·宝藏小城的出口生意经）.md",
+          "raw_path": "",
+          "word_count": 3505,
+          "use": "刺绣机技术升级",
+          "native_brackets": [
+            "财经深一度·宝藏小城的出口生意经"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260727_30171050",
+          "date": "2026-07-27",
+          "title": "大朗毛织焕新记（财经深一度·宝藏小城的出口生意经）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/27/content_30171050.html",
+          "markdown_path": "data/vault/2026/07/2026-07-27/18-财经/大朗毛织焕新记（财经深一度·宝藏小城的出口生意经）.md",
+          "raw_path": "",
+          "word_count": 3554,
+          "use": "毛织产业更新",
+          "native_brackets": [
+            "财经深一度·宝藏小城的出口生意经"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S02",
+      "position": 1,
+      "idea_id": "idea_20260913_native_industrial_design",
+      "theme": "工业设计",
+      "reader_question": "一件产品怎样从造得出来走向真正好用？",
+      "source_ids": [
+        "people_daily_20260701_30165917",
+        "people_daily_20260827_30177487",
+        "people_daily_20260521_30158158"
+      ],
+      "source_uses": [
+        "设计参与用户需求和产品开发",
+        "工业设计嵌入研发生产营销",
+        "雨伞在设计、品质与服务上的升级；组外补证"
+      ],
+      "boundary": "与已有制造业柔性生产、文化科技融合区分，专门讨论需求研究、产品功能和设计服务怎样进入制造过程。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "A",
+      "framework": [
+        "先识别使用问题：用户不便怎样进入研发任务",
+        "从造型走向功能：材料、结构、工艺和体验协同",
+        "让设计可验证：原型、用户反馈与制造条件相互修正",
+        "把服务接入企业：专业设计资源怎样服务不同规模企业"
+      ],
+      "title": "《人民日报》深度分析【工业设计】：一件产品怎样从造得出来走向真正好用",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260701_30165917",
+          "date": "2026-07-01",
+          "title": "用好工业设计“钥匙”，开启制造业新蓝海（产经视野·推动生产性服务业高质量发展）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/01/content_30165917.html",
+          "markdown_path": "data/vault/2026/07/2026-07-01/18-产经/用好工业设计“钥匙”，开启制造业新蓝海（产经视野·推动生产性服务业高质量发展）.md",
+          "raw_path": "",
+          "word_count": 3221,
+          "use": "设计参与用户需求和产品开发",
+          "native_brackets": [
+            "产经视野·推动生产性服务业高质量发展"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260827_30177487",
+          "date": "2026-08-27",
+          "title": "工业设计，为制造业打开新空间（大数据观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/27/content_30177487.html",
+          "markdown_path": "data/vault/2026/08/2026-08-27/07-要闻/工业设计，为制造业打开新空间（大数据观察）.md",
+          "raw_path": "",
+          "word_count": 2745,
+          "use": "工业设计嵌入研发生产营销",
+          "native_brackets": [
+            "大数据观察"
+          ],
+          "in_native_family": false
+        },
+        {
+          "article_id": "people_daily_20260521_30158158",
+          "date": "2026-05-21",
+          "title": "中国雨伞的全球进阶路（看中国好物七十二变）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/21/content_30158158.html",
+          "markdown_path": "data/vault/2026/05/2026-05-21/18-消费/中国雨伞的全球进阶路（看中国好物七十二变）.md",
+          "raw_path": "",
+          "word_count": 3533,
+          "use": "雨伞在设计、品质与服务上的升级；组外补证",
+          "native_brackets": [
+            "看中国好物七十二变"
+          ],
+          "in_native_family": false
+        }
+      ]
+    },
+    {
+      "series_code": "S02",
+      "position": 2,
+      "idea_id": "idea_20260913_native_logistics_coordination",
+      "theme": "物流降本增效",
+      "reader_question": "货运得更快以后，怎样让企业整条供应链少等待？",
+      "source_ids": [
+        "people_daily_20260428_30153620",
+        "people_daily_20260520_30157885",
+        "people_daily_20260623_30164474"
+      ],
+      "source_uses": [
+        "现代物流服务产业",
+        "港航协同从单点效率到全程效率",
+        "物流网的设施与协同机制；组外补证"
+      ],
+      "boundary": "第27篇六张网讲基础设施体系，本题聚焦物流组织、标准、信息和服务的协同；不同于第87篇县域消费的末端供给。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "B",
+      "framework": [
+        "识别等待发生在哪里：运输、换装、仓储、口岸各算一笔账",
+        "从企业单点提速走向多方协同",
+        "用标准和信息减少衔接成本",
+        "以全程时效、综合成本和稳定性检验服务"
+      ],
+      "title": "《人民日报》深度分析【物流降本增效】：货运得更快以后，怎样让企业整条供应链少等待",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260428_30153620",
+          "date": "2026-04-28",
+          "title": "物流动脉更畅  服务产业更强（民生一线·关注生产性服务业）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/28/content_30153620.html",
+          "markdown_path": "data/vault/2026/04/2026-04-28/13-社会/物流动脉更畅 服务产业更强（民生一线·关注生产性服务业）.md",
+          "raw_path": "",
+          "word_count": 2598,
+          "use": "现代物流服务产业",
+          "native_brackets": [
+            "民生一线·关注生产性服务业"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260520_30157885",
+          "date": "2026-05-20",
+          "title": "“出海口”搬到“家门口”（产经视野·推动生产性服务业高质量发展）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/20/content_30157885.html",
+          "markdown_path": "data/vault/2026/05/2026-05-20/18-产经/“出海口”搬到“家门口”（产经视野·推动生产性服务业高质量发展）.md",
+          "raw_path": "",
+          "word_count": 3317,
+          "use": "港航协同从单点效率到全程效率",
+          "native_brackets": [
+            "产经视野·推动生产性服务业高质量发展"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260623_30164474",
+          "date": "2026-06-23",
+          "title": "现代物流网怎么建（经济新方位·精准发力建好“六张网”）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/23/content_30164474.html",
+          "markdown_path": "data/vault/2026/06/2026-06-23/03-要闻/现代物流网怎么建（经济新方位·精准发力建好“六张网”）.md",
+          "raw_path": "",
+          "word_count": 2570,
+          "use": "物流网的设施与协同机制；组外补证",
+          "native_brackets": [
+            "经济新方位·精准发力建好“六张网”"
+          ],
+          "in_native_family": false
+        }
+      ]
+    },
+    {
+      "series_code": "S02",
+      "position": 3,
+      "idea_id": "idea_refined_20260612_tech_transfer_chain",
+      "theme": "科技成果转化服务",
+      "reader_question": "企业需要的技术，怎样从研究成果变成可用产品？",
+      "source_ids": [
+        "people_daily_20260427_30153345",
+        "people_daily_20260514_30156888",
+        "people_daily_20260527_30159421"
+      ],
+      "source_uses": [
+        "科技企业专业服务",
+        "研究对接生产需求",
+        "成果从样品走向产品"
+      ],
+      "boundary": "接入第23篇，与工业设计、物流分开解释技术转化服务。",
+      "action": "复用",
+      "manuscript_number": 23,
+      "priority": "B",
+      "framework": [
+        "从实验室到生产线：成果要有场景、有企业、有需求",
+        "从政策到服务链：平台、金融、保险、技术经理人协同发力",
+        "从创新到就业：微专业、创业服务和AI应用把成果转成产业机会"
+      ],
+      "title": "科技成果转化别只写“产学研”：关键是打通最后一公里",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260427_30153345",
+          "date": "2026-04-27",
+          "title": "科创企业有了专属“服务员”（经济新方位·服务业扩能提质）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/27/content_30153345.html",
+          "markdown_path": "data/vault/2026/04/2026-04-27/02-要闻/科创企业有了专属“服务员”（经济新方位·服务业扩能提质）.md",
+          "raw_path": "",
+          "word_count": 1473,
+          "use": "科技企业专业服务",
+          "native_brackets": [
+            "经济新方位·服务业扩能提质"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260514_30156888",
+          "date": "2026-05-14",
+          "title": "研究成果能落地  企业生产更高效（民生一线·关注生产性服务业）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/14/content_30156888.html",
+          "markdown_path": "data/vault/2026/05/2026-05-14/14-社会/研究成果能落地 企业生产更高效（民生一线·关注生产性服务业）.md",
+          "raw_path": "",
+          "word_count": 2781,
+          "use": "研究对接生产需求",
+          "native_brackets": [
+            "民生一线·关注生产性服务业"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260527_30159421",
+          "date": "2026-05-27",
+          "title": "“书架”到“货架”  “样品”变“产品”（产经视野·推动生产性服务业高质量发展）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/27/content_30159421.html",
+          "markdown_path": "data/vault/2026/05/2026-05-27/18-产经/“书架”到“货架” “样品”变“产品”（产经视野·推动生产性服务业高质量发展）.md",
+          "raw_path": "data/raw/articles_20260527.json",
+          "word_count": 3472,
+          "use": "成果从样品走向产品",
+          "native_brackets": [
+            "产经视野·推动生产性服务业高质量发展"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S03",
+      "position": 1,
+      "idea_id": "idea_20260913_native_cadre_industry_literacy",
+      "theme": "干部产业能力",
+      "reader_question": "面对一个新产业，怎样学懂门道并解决企业的真问题？",
+      "source_ids": [
+        "people_daily_20260324_30146956",
+        "people_daily_20260421_30152372",
+        "people_daily_20260609_30161910"
+      ],
+      "source_uses": [
+        "产业一线锤炼专业本领",
+        "数字经济演进中的学习与服务",
+        "多地产业实践中的求真务实"
+      ],
+      "boundary": "已有因地制宜、未来产业稿侧重产业选择，本题侧重干部的知识获取、现场学习、专业交流和服务能力形成。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "A",
+      "framework": [
+        "建立产业知识图：技术、市场、配套和约束一起看",
+        "进入真实现场：向企业、科研人员和实践学习",
+        "把知识变成判断：识别瓶颈，避免照搬产业标签",
+        "把判断变成服务：跨部门解题并持续回访效果"
+      ],
+      "title": "《人民日报》深度分析【干部产业能力】：面对一个新产业，怎样学懂门道并解决企业的真问题",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260324_30146956",
+          "date": "2026-03-24",
+          "title": "历练实干本领  涵养创新生态（前沿观察·锻造推动产业发展的行家里手）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/24/content_30146956.html",
+          "markdown_path": "data/vault/2026/03/2026-03-24/19-党建/历练实干本领 涵养创新生态（前沿观察·锻造推动产业发展的行家里手）.md",
+          "raw_path": "",
+          "word_count": 3470,
+          "use": "产业一线锤炼专业本领",
+          "native_brackets": [
+            "前沿观察·锻造推动产业发展的行家里手"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260421_30152372",
+          "date": "2026-04-21",
+          "title": "贵阳贵安数字经济何以“三级跳”（前沿观察·锻造推动产业发展的行家里手）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/21/content_30152372.html",
+          "markdown_path": "data/vault/2026/04/2026-04-21/19-党建/贵阳贵安数字经济何以“三级跳”（前沿观察·锻造推动产业发展的行家里手）.md",
+          "raw_path": "",
+          "word_count": 3433,
+          "use": "数字经济演进中的学习与服务",
+          "native_brackets": [
+            "前沿观察·锻造推动产业发展的行家里手"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260609_30161910",
+          "date": "2026-06-09",
+          "title": "因地制宜谋  求真务实干（前沿观察·锻造推动产业发展的行家里手）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/09/content_30161910.html",
+          "markdown_path": "data/vault/2026/06/2026-06-09/19-党建/因地制宜谋 求真务实干（前沿观察·锻造推动产业发展的行家里手）.md",
+          "raw_path": "",
+          "word_count": 4646,
+          "use": "多地产业实践中的求真务实",
+          "native_brackets": [
+            "前沿观察·锻造推动产业发展的行家里手"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S03",
+      "position": 2,
+      "idea_id": "idea_20260622_28_future_industry_positioning",
+      "theme": "因地制宜选择产业",
+      "reader_question": "新赛道很多，怎样判断哪些适合本地？",
+      "source_ids": [
+        "people_daily_20260317_30145558",
+        "people_daily_20260331_30148376",
+        "people_daily_20260519_30157772"
+      ],
+      "source_uses": [
+        "无锡商业航天的产业基础",
+        "廊坊算力定位与区域分工",
+        "合肥量子产业培育"
+      ],
+      "boundary": "复用第37篇，对照不同地方的禀赋和分工；不再另立同义的县域定位题。",
+      "action": "复用",
+      "manuscript_number": 37,
+      "priority": "B",
+      "framework": [
+        "破误区：未来产业不是看见风口就一拥而上",
+        "定坐标：先在全国发展大局中明确地方功能",
+        "找优势：资源禀赋、科创基础、产业配套和开放通道共同决定赛道",
+        "做协同：研发、制造、应用跨区域配置，形成全国一盘棋",
+        "留耐心：前瞻布局但不盲动，以长期投入培厚产业土壤"
+      ],
+      "title": "《人民日报》讲因地制宜发展未来产业：不是各地追同一个风口",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/37-人民日报讲因地制宜发展未来产业：不是各地追同一个风口.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260317_30145558",
+          "date": "2026-03-17",
+          "title": "商业航天，无锡是如何“无中生有”的（前沿观察·锻造推动产业发展的行家里手）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/17/content_30145558.html",
+          "markdown_path": "data/vault/2026/03/2026-03-17/19-党建/商业航天，无锡是如何“无中生有”的（前沿观察·锻造推动产业发展的行家里手）.md",
+          "raw_path": "",
+          "word_count": 3641,
+          "use": "无锡商业航天的产业基础",
+          "native_brackets": [
+            "前沿观察·锻造推动产业发展的行家里手"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260331_30148376",
+          "date": "2026-03-31",
+          "title": "算力迸发，廊坊凭什么（前沿观察·锻造推动产业发展的行家里手）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/31/content_30148376.html",
+          "markdown_path": "data/vault/2026/03/2026-03-31/19-党建/算力迸发，廊坊凭什么（前沿观察·锻造推动产业发展的行家里手）.md",
+          "raw_path": "",
+          "word_count": 3567,
+          "use": "廊坊算力定位与区域分工",
+          "native_brackets": [
+            "前沿观察·锻造推动产业发展的行家里手"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260519_30157772",
+          "date": "2026-05-19",
+          "title": "合肥“量子大道”何以越走越宽（前沿观察·锻造推动产业发展的行家里手）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/19/content_30157772.html",
+          "markdown_path": "data/vault/2026/05/2026-05-19/19-党建/合肥“量子大道”何以越走越宽（前沿观察·锻造推动产业发展的行家里手）.md",
+          "raw_path": "",
+          "word_count": 3600,
+          "use": "合肥量子产业培育",
+          "native_brackets": [
+            "前沿观察·锻造推动产业发展的行家里手"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S04",
+      "position": 1,
+      "idea_id": "idea_20260913_native_fault_tolerance_correction",
+      "theme": "容错纠错",
+      "reader_question": "干部敢于探索，怎样同时守住责任和程序？",
+      "source_ids": [
+        "people_daily_20260413_30150725",
+        "people_daily_20260417_30151644",
+        "people_daily_20260417_30151645"
+      ],
+      "source_uses": [
+        "地方报备容错的情境",
+        "容错减责的具体调查",
+        "边界、程序与纠错要求"
+      ],
+      "boundary": "与第45篇考核、第50篇抓落实区分，聚焦探索失误怎样辨认、处理和改正；地方做法不写成全国统一制度，报备不等于自动免责。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "B",
+      "framework": [
+        "先辨问题性质：探索失误、失职和违纪违法不能混同",
+        "还原事实过程：动机、条件、程序、影响及补救一并核验",
+        "按权限和程序作出处理：保护担当也明确责任",
+        "让纠错接上容错：整改、复盘、能力提升与制度完善"
+      ],
+      "title": "《人民日报》深度分析【容错纠错】：干部敢于探索，怎样同时守住责任和程序",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260413_30150725",
+          "date": "2026-04-13",
+          "title": "放下“洗碗越多，摔碗越多”的干事顾虑（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/13/content_30150725.html",
+          "markdown_path": "data/vault/2026/04/2026-04-13/10-政治/放下“洗碗越多，摔碗越多”的干事顾虑（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）.md",
+          "raw_path": "",
+          "word_count": 1936,
+          "use": "地方报备容错的情境",
+          "native_brackets": [
+            "干部状态新观察·让愿担当、敢担当、善担当蔚然成风"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260417_30151644",
+          "date": "2026-04-17",
+          "title": "为担当者担当  向“不敢为”说不（人民眼·全面增强干部队伍现代化建设能力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/17/content_30151644.html",
+          "markdown_path": "data/vault/2026/04/2026-04-17/13-记者调查/为担当者担当 向“不敢为”说不（人民眼·全面增强干部队伍现代化建设能力）.md",
+          "raw_path": "",
+          "word_count": 5237,
+          "use": "容错减责的具体调查",
+          "native_brackets": [
+            "人民眼·全面增强干部队伍现代化建设能力"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260417_30151645",
+          "date": "2026-04-17",
+          "title": "科学容错纠错  激励担当作为（有所思）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/17/content_30151645.html",
+          "markdown_path": "data/vault/2026/04/2026-04-17/13-记者调查/科学容错纠错 激励担当作为（有所思）.md",
+          "raw_path": "",
+          "word_count": 550,
+          "use": "边界、程序与纠错要求",
+          "native_brackets": [
+            "有所思"
+          ],
+          "in_native_family": false
+        }
+      ]
+    },
+    {
+      "series_code": "S04",
+      "position": 2,
+      "idea_id": "idea_20260629_0705_performance_assessment_value",
+      "theme": "分类考核",
+      "reader_question": "怎样让不同岗位的实干得到合适的评价？",
+      "source_ids": [
+        "people_daily_20260414_30150969",
+        "people_daily_20260710_30167912",
+        "people_daily_20260717_30169228"
+      ],
+      "source_uses": [
+        "纠正干好干坏一个样",
+        "差异化考核",
+        "以实绩评价干部"
+      ],
+      "boundary": "第45篇已有完整框架，补入原生连载中的案例，作为容错之后的激励篇。",
+      "action": "复用",
+      "manuscript_number": 45,
+      "priority": "B",
+      "framework": [
+        "分类考：不同地区、岗位和发展阶段不能一把尺子",
+        "精准考：定量与定性、考人与考事相结合",
+        "长效考：既看显绩，也识别生态、民生等潜绩",
+        "群众评：把获得感和实际问题解决情况纳入评价",
+        "资金问效：花钱必问效，无效必问责"
+      ],
+      "title": "《人民日报》讲政绩考核：不是考得多，而是分类考、精准考、看长效",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/45-人民日报讲政绩考核：不是考得多，而是分类考、精准考、看长效.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260414_30150969",
+          "date": "2026-04-14",
+          "title": "校正“干好干坏一个样”的考核偏差（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/14/content_30150969.html",
+          "markdown_path": "data/vault/2026/04/2026-04-14/10-政治/校正“干好干坏一个样”的考核偏差（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）.md",
+          "raw_path": "",
+          "word_count": 1604,
+          "use": "纠正干好干坏一个样",
+          "native_brackets": [
+            "干部状态新观察·让愿担当、敢担当、善担当蔚然成风"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260710_30167912",
+          "date": "2026-07-10",
+          "title": "差异化考核激发基层干事活力（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/10/content_30167912.html",
+          "markdown_path": "data/vault/2026/07/2026-07-10/10-政治/差异化考核激发基层干事活力（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）.md",
+          "raw_path": "",
+          "word_count": 1945,
+          "use": "差异化考核",
+          "native_brackets": [
+            "干部状态新观察·让愿担当、敢担当、善担当蔚然成风"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260717_30169228",
+          "date": "2026-07-17",
+          "title": "干部干得好不好，凭实绩说话（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/17/content_30169228.html",
+          "markdown_path": "data/vault/2026/07/2026-07-17/11-政治/干部干得好不好，凭实绩说话（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）.md",
+          "raw_path": "",
+          "word_count": 2214,
+          "use": "以实绩评价干部",
+          "native_brackets": [
+            "干部状态新观察·让愿担当、敢担当、善担当蔚然成风"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S05",
+      "position": 1,
+      "idea_id": "idea_20260913_native_reporting_data_burden",
+      "theme": "基层报表减负",
+      "reader_question": "表格少了，怎样让基层数据更准、更有用？",
+      "source_ids": [
+        "people_daily_20260715_30168855",
+        "people_daily_20260806_30173432",
+        "people_daily_20260810_30174003"
+      ],
+      "source_uses": [
+        "数据与业务流程的关系",
+        "减少临时报数并走进现场",
+        "一表通减少重复填报"
+      ],
+      "boundary": "第83篇讲减负与赋能的总体关系，第07篇讲数字治理；本题只讨论数据采集的必要性、频次、共享、核验和使用。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "A",
+      "framework": [
+        "先问用途：每张表服务什么决策，能否复用已有数据",
+        "统筹采集：减少多头布置和不合理时限",
+        "共享与核验并行：系统取数不能代替现场了解",
+        "用使用效果验减负：基层少重复、业务部门能判断"
+      ],
+      "title": "《人民日报》深度分析【基层报表减负】：表格少了，怎样让基层数据更准、更有用",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260715_30168855",
+          "date": "2026-07-15",
+          "title": "数据赋能不是数据万能（干部状态新观察·为基层减负赋能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/15/content_30168855.html",
+          "markdown_path": "data/vault/2026/07/2026-07-15/07-政治/数据赋能不是数据万能（干部状态新观察·为基层减负赋能）.md",
+          "raw_path": "",
+          "word_count": 2043,
+          "use": "数据与业务流程的关系",
+          "native_brackets": [
+            "干部状态新观察·为基层减负赋能"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260806_30173432",
+          "date": "2026-08-06",
+          "title": "摸清底数不能动辄报数（干部状态新观察·为基层减负赋能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/06/content_30173432.html",
+          "markdown_path": "data/vault/2026/08/2026-08-06/12-政治/摸清底数不能动辄报数（干部状态新观察·为基层减负赋能）.md",
+          "raw_path": "",
+          "word_count": 2304,
+          "use": "减少临时报数并走进现场",
+          "native_brackets": [
+            "干部状态新观察·为基层减负赋能"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260810_30174003",
+          "date": "2026-08-10",
+          "title": "规范填报不是事事填表（干部状态新观察·为基层减负赋能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/10/content_30174003.html",
+          "markdown_path": "data/vault/2026/08/2026-08-10/11-政治/规范填报不是事事填表（干部状态新观察·为基层减负赋能）.md",
+          "raw_path": "",
+          "word_count": 1888,
+          "use": "一表通减少重复填报",
+          "native_brackets": [
+            "干部状态新观察·为基层减负赋能"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S05",
+      "position": 2,
+      "idea_id": "idea_20260803_0809_grassroots_responsibility_boundary",
+      "theme": "基层责任边界",
+      "reader_question": "属地、牵头、放权各意味着什么责任？",
+      "source_ids": [
+        "people_daily_20260805_30173183",
+        "people_daily_20260807_30173601",
+        "people_daily_20260812_30174426"
+      ],
+      "source_uses": [
+        "属地责任边界",
+        "牵头与包办的区别",
+        "放权后的指导与支持"
+      ],
+      "boundary": "复用第70篇；与前篇的数据负担区分，本篇围绕权责和资源。",
+      "action": "复用",
+      "manuscript_number": 70,
+      "priority": "B",
+      "framework": [
+        "清单明责：区分基本履职、配合履职和上级收回事项",
+        "属地归位：谁有执法权、专业能力和资源，谁承担主责",
+        "牵头赋权：牵头部门负责统筹，但配合部门必须履责",
+        "数据减负：从反复向基层要数转向系统共享和一次采集",
+        "考核协同：用双向评价、过程督办和资源配置保障落实"
+      ],
+      "title": "《人民日报》讲基层责任边界：属地不是无限责任，牵头也不是全包全责",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/人民日报系列/70-人民日报讲基层责任边界：属地不是无限责任，牵头也不是全包全责.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260805_30173183",
+          "date": "2026-08-05",
+          "title": "属地责任不是无限责任（干部状态新观察·为基层减负赋能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/05/content_30173183.html",
+          "markdown_path": "data/vault/2026/08/2026-08-05/10-政治/属地责任不是无限责任（干部状态新观察·为基层减负赋能）.md",
+          "raw_path": "",
+          "word_count": 2336,
+          "use": "属地责任边界",
+          "native_brackets": [
+            "干部状态新观察·为基层减负赋能"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260807_30173601",
+          "date": "2026-08-07",
+          "title": "牵头负责不是全包全责（干部状态新观察·为基层减负赋能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/07/content_30173601.html",
+          "markdown_path": "data/vault/2026/08/2026-08-07/10-政治/牵头负责不是全包全责（干部状态新观察·为基层减负赋能）.md",
+          "raw_path": "",
+          "word_count": 2293,
+          "use": "牵头与包办的区别",
+          "native_brackets": [
+            "干部状态新观察·为基层减负赋能"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260812_30174426",
+          "date": "2026-08-12",
+          "title": "放权赋能不可甩手推诿（干部状态新观察·为基层减负赋能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/12/content_30174426.html",
+          "markdown_path": "data/vault/2026/08/2026-08-12/07-政治/放权赋能不可甩手推诿（干部状态新观察·为基层减负赋能）.md",
+          "raw_path": "",
+          "word_count": 1784,
+          "use": "放权后的指导与支持",
+          "native_brackets": [
+            "干部状态新观察·为基层减负赋能"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S06",
+      "position": 1,
+      "idea_id": "idea_20260913_native_agri_technology_adoption",
+      "theme": "农业技术推广",
+      "reader_question": "好技术到了田边，怎样让农户愿意用、用得好？",
+      "source_ids": [
+        "people_daily_20260429_30153803",
+        "people_daily_20260304_30143324",
+        "people_daily_20260412_30150528"
+      ],
+      "source_uses": [
+        "五笔账说明农户采用的收益比较",
+        "农资店与技术服务网络",
+        "新农机在真实田间的适用条件"
+      ],
+      "boundary": "已有新质生产力稿介绍技术作用，农业社会化服务稿讲服务组织；本题聚焦农户采用一项新技术时的成本收益、试用条件与后续支持。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "A",
+      "framework": [
+        "从农户的一笔账出发：投入、劳动、收益与风险",
+        "用真实田块验证适用性，明确适合谁和什么条件",
+        "降低采用门槛：示范、培训与可获得的服务",
+        "把效果反馈给推广者：让技术随土地和需求调整"
+      ],
+      "title": "《人民日报》深度分析【农业技术推广】：好技术到了田边，怎样让农户愿意用、用得好",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260429_30153803",
+          "date": "2026-04-29",
+          "title": "细算5笔账，农户主动用上膜下滴灌（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/29/content_30153803.html",
+          "markdown_path": "data/vault/2026/04/2026-04-29/02-要闻/细算5笔账，农户主动用上膜下滴灌（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1124,
+          "use": "五笔账说明农户采用的收益比较",
+          "native_brackets": [
+            "春耕里的新质生产力"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260304_30143324",
+          "date": "2026-03-04",
+          "title": "老杨农资店满满科技感（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/04/content_30143324.html",
+          "markdown_path": "data/vault/2026/03/2026-03-04/02-要闻/老杨农资店满满科技感（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1341,
+          "use": "农资店与技术服务网络",
+          "native_brackets": [
+            "春耕里的新质生产力"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260412_30150528",
+          "date": "2026-04-12",
+          "title": "田间来了“大力士”，能扛秧苗几百斤（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/12/content_30150528.html",
+          "markdown_path": "data/vault/2026/04/2026-04-12/03-要闻/田间来了“大力士”，能扛秧苗几百斤（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1598,
+          "use": "新农机在真实田间的适用条件",
+          "native_brackets": [
+            "春耕里的新质生产力"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S06",
+      "position": 2,
+      "idea_id": "idea_20260706_0712_agricultural_socialized_service",
+      "theme": "农业社会化服务",
+      "reader_question": "小农户怎样接上专业农机与田间服务？",
+      "source_ids": [
+        "people_daily_20260410_30150364",
+        "people_daily_20260417_30151559",
+        "people_daily_20260504_30154786"
+      ],
+      "source_uses": [
+        "农机店服务升级",
+        "梯田科技代种",
+        "线上农机调度"
+      ],
+      "boundary": "复用第48篇，从单项技术采用进入服务组织和持续供给。",
+      "action": "复用",
+      "manuscript_number": 48,
+      "priority": "B",
+      "framework": [
+        "先识别难题：小农户缺技术、缺装备、缺市场和规模效益",
+        "守住边界：服务托管不等于土地流转，农民仍是经营主体",
+        "技术搭桥：让科研成果经过示范、培训和在地适配长进田里",
+        "服务成链：从耕种管收到加工销售提供专业化服务",
+        "利益落地：用节本增效和风险约束保护农民收益"
+      ],
+      "title": "《人民日报》讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/48-人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260410_30150364",
+          "date": "2026-04-10",
+          "title": "一家农机老店三次转型（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/10/content_30150364.html",
+          "markdown_path": "data/vault/2026/04/2026-04-10/02-要闻/一家农机老店三次转型（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1433,
+          "use": "农机店服务升级",
+          "native_brackets": [
+            "春耕里的新质生产力"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260417_30151559",
+          "date": "2026-04-17",
+          "title": "八十多亩梯田，科技“代种”八小时插好秧（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/17/content_30151559.html",
+          "markdown_path": "data/vault/2026/04/2026-04-17/04-要闻/八十多亩梯田，科技“代种”八小时插好秧（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1116,
+          "use": "梯田科技代种",
+          "native_brackets": [
+            "春耕里的新质生产力"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260504_30154786",
+          "date": "2026-05-04",
+          "title": "一键下单  农机到田（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/04/content_30154786.html",
+          "markdown_path": "data/vault/2026/05/2026-05-04/02-要闻/一键下单 农机到田（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1373,
+          "use": "线上农机调度",
+          "native_brackets": [
+            "春耕里的新质生产力"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S07",
+      "position": 1,
+      "idea_id": "idea_20260912_h1_training_to_jobs",
+      "theme": "技能培训到岗",
+      "reader_question": "结业后，怎样真正接上一个合适岗位？",
+      "source_ids": [
+        "people_daily_20260610_30162263",
+        "people_daily_20260813_30174693",
+        "people_daily_20260828_30177675"
+      ],
+      "source_uses": [
+        "培训支持求职",
+        "学校对口岗位支持",
+        "校企训练内容匹配"
+      ],
+      "boundary": "沿用9月12日已入库的技能培训选题，不重复新增；加入原生稳就业栏目的后续案例。",
+      "action": "复用",
+      "manuscript_number": null,
+      "priority": "B",
+      "framework": [
+        "先查卡点：技能、资格、时间成本还是信息不匹配",
+        "从岗位反推课程：企业任务和技术迭代进入教学",
+        "降低参与门槛：场地、学制、支持方式适配不同群体",
+        "把实训接入生产：真实项目和评价要求衔接",
+        "结业后继续跟踪：入职、稳岗与后续技能更新检验成效"
+      ],
+      "title": "《人民日报》深度分析【技能培训】：结业以后，怎样真正接上一个岗位",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260610_30162263",
+          "date": "2026-06-10",
+          "title": "技能培训照亮求职之路（稳就业·我的求职故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/10/content_30162263.html",
+          "markdown_path": "data/vault/2026/06/2026-06-10/04-要闻/技能培训照亮求职之路（稳就业·我的求职故事）.md",
+          "raw_path": "",
+          "word_count": 2083,
+          "use": "培训支持求职",
+          "native_brackets": [
+            "稳就业·我的求职故事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260813_30174693",
+          "date": "2026-08-13",
+          "title": "“找到对口岗位，离不开学校托举”（稳就业·暖心故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/13/content_30174693.html",
+          "markdown_path": "data/vault/2026/08/2026-08-13/13-社会/“找到对口岗位，离不开学校托举”（稳就业·暖心故事）.md",
+          "raw_path": "",
+          "word_count": 933,
+          "use": "学校对口岗位支持",
+          "native_brackets": [
+            "稳就业·暖心故事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260828_30177675",
+          "date": "2026-08-28",
+          "title": "“学校练的和企业要的是同一套东西”(稳就业·暖心故事)",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/28/content_30177675.html",
+          "markdown_path": "data/vault/2026/08/2026-08-28/10-社会/“学校练的和企业要的是同一套东西”(稳就业·暖心故事).md",
+          "raw_path": "",
+          "word_count": 1478,
+          "use": "校企训练内容匹配",
+          "native_brackets": [
+            "稳就业·暖心故事"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S07",
+      "position": 2,
+      "idea_id": "idea_refined_20260612_employment_chain",
+      "theme": "就业服务链",
+      "reader_question": "人想工作，岗位和服务怎样来到身边？",
+      "source_ids": [
+        "people_daily_20260709_30167691",
+        "people_daily_20260517_30157307",
+        "people_daily_20260812_30174387"
+      ],
+      "source_uses": [
+        "就业服务圈",
+        "零工市场供需对接",
+        "社区微就业"
+      ],
+      "boundary": "复用第16篇，与培训到岗区分，侧重服务网络、岗位对接与就业支持。",
+      "action": "复用",
+      "manuscript_number": 16,
+      "priority": "B",
+      "framework": [
+        "产业端造岗：新质生产力、生产性服务业、数字经济创造新岗位",
+        "教育端练岗：职业教育、技能培训、微专业精准对接岗位需求",
+        "服务端送岗：国聘行动、岗位归集、AI匹配提高就业服务效率",
+        "创业端带岗：陪跑服务、资金支持、订单对接让创业带动就业"
+      ],
+      "title": "破解就业难，不能只写“多给岗位”：产业、技能、服务和创业一起成链",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260709_30167691",
+          "date": "2026-07-09",
+          "title": "织密城乡“15分钟就业服务圈”（稳就业在行动）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/09/content_30167691.html",
+          "markdown_path": "data/vault/2026/07/2026-07-09/11-社会/织密城乡“15分钟就业服务圈”（稳就业在行动）.md",
+          "raw_path": "",
+          "word_count": 571,
+          "use": "就业服务圈",
+          "native_brackets": [
+            "稳就业在行动"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260517_30157307",
+          "date": "2026-05-17",
+          "title": "“零工市场让我们好找活、有保障”（稳就业·我的求职故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/17/content_30157307.html",
+          "markdown_path": "data/vault/2026/05/2026-05-17/04-要闻/“零工市场让我们好找活、有保障”（稳就业·我的求职故事）.md",
+          "raw_path": "",
+          "word_count": 2452,
+          "use": "零工市场供需对接",
+          "native_brackets": [
+            "稳就业·我的求职故事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260812_30174387",
+          "date": "2026-08-12",
+          "title": "社区微就业  服务在身边（稳就业·我的求职故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/12/content_30174387.html",
+          "markdown_path": "data/vault/2026/08/2026-08-12/04-要闻/社区微就业 服务在身边（稳就业·我的求职故事）.md",
+          "raw_path": "",
+          "word_count": 972,
+          "use": "社区微就业",
+          "native_brackets": [
+            "稳就业·我的求职故事"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S08",
+      "position": 1,
+      "idea_id": "idea_20260913_native_art_village_cocreation",
+      "theme": "艺术乡建",
+      "reader_question": "艺术来到村里，怎样让村民成为持续参与的创作者？",
+      "source_ids": [
+        "people_daily_20260204_30138173",
+        "people_daily_20260401_30148555",
+        "people_daily_20260722_30170153"
+      ],
+      "source_uses": [
+        "文艺扎根乡村生活",
+        "农民画与乡村发展",
+        "村民创作与代际参与"
+      ],
+      "boundary": "与第42篇公共文化设施和服务、第95篇旅居条件区分，聚焦村民创作主体、技能与组织支持；不把艺术进入村庄等同普遍增收。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "B",
+      "framework": [
+        "从村民已有生活和表达出发，找到本地创作资源",
+        "让外来资源帮助共创：培训、指导和公共空间",
+        "建立持续参与的组织条件和展示交流渠道",
+        "审视乡村受益：文化表达、参与机会与经营收益分别评价"
+      ],
+      "title": "《人民日报》深度分析【艺术乡建】：艺术来到村里，怎样让村民成为持续参与的创作者",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260204_30138173",
+          "date": "2026-02-04",
+          "title": "文艺扎进泥土  在乡村诗意栖居（文艺赋美乡村）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/04/content_30138173.html",
+          "markdown_path": "data/vault/2026/02/2026-02-04/12-文化/文艺扎进泥土 在乡村诗意栖居（文艺赋美乡村）.md",
+          "raw_path": "",
+          "word_count": 2629,
+          "use": "文艺扎根乡村生活",
+          "native_brackets": [
+            "文艺赋美乡村"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260401_30148555",
+          "date": "2026-04-01",
+          "title": "绘出农村的美  农民的勤  农耕的火热（文艺赋美乡村）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/01/content_30148555.html",
+          "markdown_path": "data/vault/2026/04/2026-04-01/11-文化/绘出农村的美 农民的勤 农耕的火热（文艺赋美乡村）.md",
+          "raw_path": "",
+          "word_count": 1223,
+          "use": "农民画与乡村发展",
+          "native_brackets": [
+            "文艺赋美乡村"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260722_30170153",
+          "date": "2026-07-22",
+          "title": "“谁说握锄头的手不能握画笔？”（文艺赋美乡村）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/22/content_30170153.html",
+          "markdown_path": "data/vault/2026/07/2026-07-22/11-文化/“谁说握锄头的手不能握画笔？”（文艺赋美乡村）.md",
+          "raw_path": "",
+          "word_count": 1450,
+          "use": "村民创作与代际参与",
+          "native_brackets": [
+            "文艺赋美乡村"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S08",
+      "position": 2,
+      "idea_id": "idea_20260629_0705_rural_public_culture",
+      "theme": "乡村公共文化",
+      "reader_question": "文化活动怎样从偶尔热闹变成日常生活？",
+      "source_ids": [
+        "people_daily_20260318_30145856",
+        "people_daily_20260415_30151283",
+        "people_daily_20260526_30159110"
+      ],
+      "source_uses": [
+        "乡村越剧与日常空间",
+        "歌仔戏传承参与",
+        "清溪村的文学日常"
+      ],
+      "boundary": "复用第42篇的有人来、有用处框架，增加戏曲和文学案例；前篇重创作主体，本篇重常态服务。",
+      "action": "复用",
+      "manuscript_number": 42,
+      "priority": "B",
+      "framework": [
+        "从有到优：分类管理、差异投入，盘活现有文化设施",
+        "从配到选：依据人口结构和群众需求优化内容",
+        "从静到动：阅读、村舞、非遗和节庆活动带动参与",
+        "从输血到共创：让村民成为文化生产和传播主体",
+        "从文化到振兴：在守住底线的前提下连接教育、旅游和产业"
+      ],
+      "title": "《人民日报》讲乡村文化振兴：农家书屋不能只“有书”，关键要“有人来、有用处”",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/42-人民日报讲乡村文化振兴：农家书屋不能只“有书”，关键要“有人来、有用处”.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260318_30145856",
+          "date": "2026-03-18",
+          "title": "在乡间，唱越剧看山水（文艺赋美乡村）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/18/content_30145856.html",
+          "markdown_path": "data/vault/2026/03/2026-03-18/13-文化/在乡间，唱越剧看山水（文艺赋美乡村）.md",
+          "raw_path": "",
+          "word_count": 1217,
+          "use": "乡村越剧与日常空间",
+          "native_brackets": [
+            "文艺赋美乡村"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260415_30151283",
+          "date": "2026-04-15",
+          "title": "歌仔戏，“长势”正好（文艺赋美乡村）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/15/content_30151283.html",
+          "markdown_path": "data/vault/2026/04/2026-04-15/12-文化/歌仔戏，“长势”正好（文艺赋美乡村）.md",
+          "raw_path": "",
+          "word_count": 1160,
+          "use": "歌仔戏传承参与",
+          "native_brackets": [
+            "文艺赋美乡村"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260526_30159110",
+          "date": "2026-05-26",
+          "title": "在清溪村，文学就是日常生活（文艺赋美乡村）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/26/content_30159110.html",
+          "markdown_path": "data/vault/2026/05/2026-05-26/13-文化/在清溪村，文学就是日常生活（文艺赋美乡村）.md",
+          "raw_path": "data/raw/articles_20260526.json",
+          "word_count": 2306,
+          "use": "清溪村的文学日常",
+          "native_brackets": [
+            "文艺赋美乡村"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S09",
+      "position": 1,
+      "idea_id": "idea_refined_20260613_cultural_heritage_life",
+      "theme": "身边文物保护",
+      "reader_question": "普通人怎样参与身边文物的发现与守护？",
+      "source_ids": [
+        "people_daily_20260411_30150454",
+        "people_daily_20260606_30161422",
+        "people_daily_20260829_30177901"
+      ],
+      "source_uses": [
+        "普查发现与社会记忆",
+        "巡护、报告与专业协同",
+        "天文台建筑与历史认识"
+      ],
+      "boundary": "复用既有文化遗产保护稿；本组为补充叙事案例，不能据散文替代保护程序依据。",
+      "action": "复用",
+      "manuscript_number": 4,
+      "priority": "B",
+      "framework": [
+        "保护第一：整体性、系统性保护守住文化根脉",
+        "表达更新：用不同视角打开文化遗产，让公众看得懂、愿意亲近",
+        "回到日常：文旅融合、门口文物和生活美学让文化成为共同记忆"
+      ],
+      "title": "文化遗产保护高分写法：先保护好，再让它回到日常",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/04-人民日报讲文化传承：不是摆出来，而是连起来.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260411_30150454",
+          "date": "2026-04-11",
+          "title": "接力的守护（我家门口有文物）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/11/content_30150454.html",
+          "markdown_path": "data/vault/2026/04/2026-04-11/07-文化遗产/接力的守护（我家门口有文物）.md",
+          "raw_path": "",
+          "word_count": 1393,
+          "use": "普查发现与社会记忆",
+          "native_brackets": [
+            "我家门口有文物"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260606_30161422",
+          "date": "2026-06-06",
+          "title": "守护古城的残垣（我家门口有文物）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/06/content_30161422.html",
+          "markdown_path": "data/vault/2026/06/2026-06-06/07-文化遗产/守护古城的残垣（我家门口有文物）.md",
+          "raw_path": "",
+          "word_count": 1009,
+          "use": "巡护、报告与专业协同",
+          "native_brackets": [
+            "我家门口有文物"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260829_30177901",
+          "date": "2026-08-29",
+          "title": "凤凰山上的天文台（我家门口有文物）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/29/content_30177901.html",
+          "markdown_path": "data/vault/2026/08/2026-08-29/07-文化遗产/凤凰山上的天文台（我家门口有文物）.md",
+          "raw_path": "",
+          "word_count": 949,
+          "use": "天文台建筑与历史认识",
+          "native_brackets": [
+            "我家门口有文物"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S09",
+      "position": 2,
+      "idea_id": "idea_20260913_native_heritage_design_translation",
+      "theme": "文创转译",
+      "reader_question": "文物变成日用品，怎样保留文化信息并满足真实需求？",
+      "source_ids": [
+        "people_daily_20260902_30178557",
+        "people_daily_20260722_30170191",
+        "people_daily_20260408_30149766"
+      ],
+      "source_uses": [
+        "国博文创的使用场景和设计",
+        "文物特征与时尚转译",
+        "古蜀文物进入日常产品"
+      ],
+      "boundary": "第40篇侧重文化科技融合，本题研究文化元素提取、信息准确、功能设计与使用场景；不以销量代替文化传播效果。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "B",
+      "framework": [
+        "先识别文物承载的信息和可用元素",
+        "从复制外形到设计真实的使用场景",
+        "保持文化解释和创意表达之间的准确关系",
+        "分别评价实用性、审美、文化理解和市场反馈"
+      ],
+      "title": "《人民日报》深度分析【文创转译】：文物变成日用品，怎样保留文化信息并满足真实需求",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260902_30178557",
+          "date": "2026-09-02",
+          "title": "国博文创让文物“潮”出圈（文物里的潮生活）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202609/02/content_30178557.html",
+          "markdown_path": "data/vault/2026/09/2026-09-02/19-消费/国博文创让文物“潮”出圈（文物里的潮生活）.md",
+          "raw_path": "",
+          "word_count": 1293,
+          "use": "国博文创的使用场景和设计",
+          "native_brackets": [
+            "文物里的潮生活"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260722_30170191",
+          "date": "2026-07-22",
+          "title": "“香薰鸭”变“岁岁鸭”的潮流转译（文物里的潮生活）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/22/content_30170191.html",
+          "markdown_path": "data/vault/2026/07/2026-07-22/19-消费/“香薰鸭”变“岁岁鸭”的潮流转译（文物里的潮生活）.md",
+          "raw_path": "",
+          "word_count": 1389,
+          "use": "文物特征与时尚转译",
+          "native_brackets": [
+            "文物里的潮生活"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260408_30149766",
+          "date": "2026-04-08",
+          "title": "古蜀文物化作“潮品”融入日常（文物里的潮生活）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/08/content_30149766.html",
+          "markdown_path": "data/vault/2026/04/2026-04-08/19-消费/古蜀文物化作“潮品”融入日常（文物里的潮生活）.md",
+          "raw_path": "",
+          "word_count": 1216,
+          "use": "古蜀文物进入日常产品",
+          "native_brackets": [
+            "文物里的潮生活"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S10",
+      "position": 1,
+      "idea_id": "idea_20260913_native_habitat_restoration_evidence",
+      "theme": "生境保护",
+      "reader_question": "鸟回来了，怎样判断生态保护真正有效？",
+      "source_ids": [
+        "people_daily_20260202_30137391",
+        "people_daily_20260427_30153313",
+        "people_daily_20260608_30161747"
+      ],
+      "source_uses": [
+        "湿地保护与生态功能",
+        "园区转型修复后的鸟类活动",
+        "保护地本底调查与监测证据"
+      ],
+      "boundary": "与美丽中国总论、生态价值和补偿选题区分，聚焦栖息环境、干扰控制与监测评价；发现更多物种不直接等于新增了更多物种，也不能凭一张照片证明因果。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "B",
+      "framework": [
+        "从一个物种回到它需要的栖息环境",
+        "识别破坏来源并恢复水土植被等关键条件",
+        "建立本底和持续监测，分清发现变化与种群变化",
+        "以长期维护和人类活动管理巩固保护效果"
+      ],
+      "title": "《人民日报》深度分析【生境保护】：鸟回来了，怎样判断生态保护真正有效",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260202_30137391",
+          "date": "2026-02-02",
+          "title": "珍爱湿地  人与自然和谐共生（美丽中国）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/02/content_30137391.html",
+          "markdown_path": "data/vault/2026/02/2026-02-02/13-生态/珍爱湿地 人与自然和谐共生（美丽中国）.md",
+          "raw_path": "",
+          "word_count": 3319,
+          "use": "湿地保护与生态功能",
+          "native_brackets": [
+            "美丽中国"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260427_30153313",
+          "date": "2026-04-27",
+          "title": "珍稀鸟类为啥成化工园区“常客”？（美丽中国）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/27/content_30153313.html",
+          "markdown_path": "data/vault/2026/04/2026-04-27/12-生态/珍稀鸟类为啥成化工园区“常客”？（美丽中国）.md",
+          "raw_path": "",
+          "word_count": 2372,
+          "use": "园区转型修复后的鸟类活动",
+          "native_brackets": [
+            "美丽中国"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260608_30161747",
+          "date": "2026-06-08",
+          "title": "黄龙自然保护地  生态家底更殷实（美丽中国行）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/08/content_30161747.html",
+          "markdown_path": "data/vault/2026/06/2026-06-08/04-要闻/黄龙自然保护地 生态家底更殷实（美丽中国行）.md",
+          "raw_path": "",
+          "word_count": 1096,
+          "use": "保护地本底调查与监测证据",
+          "native_brackets": [
+            "美丽中国行"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S10",
+      "position": 2,
+      "idea_id": "idea_20260615_21_ecology_asset_income",
+      "theme": "生态价值与群众受益",
+      "reader_question": "保护好生态，怎样让当地产业与居民得到持续收益？",
+      "source_ids": [
+        "people_daily_20260609_30162037",
+        "people_daily_20260613_30162797",
+        "people_daily_20260713_30168324"
+      ],
+      "source_uses": [
+        "朱鹮保护与绿色产业",
+        "生态保护与富民实践",
+        "高原生态农牧业"
+      ],
+      "boundary": "复用第93篇；保护效果和收益机制分别证明，不把保护地物种数直接换算经济收益。",
+      "action": "复用",
+      "manuscript_number": 93,
+      "priority": "B",
+      "framework": [
+        "保护定边界：生态承载力和系统保护决定什么能开发、怎样开发",
+        "核算明价值：通过资源确权、生态核算和数据监测识别生态资产",
+        "市场建通道：用碳票、生态补偿、权益交易等机制形成合理回报",
+        "产业做增值：发展林下经济、生态农业和绿色服务，延长价值链",
+        "群众得收益：完善经营主体与群众的利益联结，防止只见项目不见增收",
+        "监管保长久：跟踪生态质量、资产运营和收益分配，避免透支资源"
+      ],
+      "title": "《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入",
+      "database_status": "备选",
+      "manuscripts": [
+        "data/articles/人民日报系列/93-《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260609_30162037",
+          "date": "2026-06-09",
+          "title": "“东方宝石”见证绿富同兴（美丽中国行）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/09/content_30162037.html",
+          "markdown_path": "data/vault/2026/06/2026-06-09/04-要闻/“东方宝石”见证绿富同兴（美丽中国行）.md",
+          "raw_path": "",
+          "word_count": 1845,
+          "use": "朱鹮保护与绿色产业",
+          "native_brackets": [
+            "美丽中国行"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260613_30162797",
+          "date": "2026-06-13",
+          "title": "守护绿水青山，共绘生态富民新图景（美丽中国行）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/13/content_30162797.html",
+          "markdown_path": "data/vault/2026/06/2026-06-13/01-要闻/守护绿水青山，共绘生态富民新图景（美丽中国行）.md",
+          "raw_path": "",
+          "word_count": 3438,
+          "use": "生态保护与富民实践",
+          "native_brackets": [
+            "美丽中国行"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260713_30168324",
+          "date": "2026-07-13",
+          "title": "青海发展高原特色生态农牧业（美丽中国行）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/13/content_30168324.html",
+          "markdown_path": "data/vault/2026/07/2026-07-13/06-要闻/青海发展高原特色生态农牧业（美丽中国行）.md",
+          "raw_path": "",
+          "word_count": 2321,
+          "use": "高原生态农牧业",
+          "native_brackets": [
+            "美丽中国行"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S11",
+      "position": 1,
+      "idea_id": "idea_202601_revisit_public_service_fast_track",
+      "theme": "办事流程再造",
+      "reader_question": "服务怎样从能办走向方便办、及时办？",
+      "source_ids": [
+        "people_daily_20260508_30155511",
+        "people_daily_20260609_30161985",
+        "people_daily_20260610_30162206"
+      ],
+      "source_uses": [
+        "个人办事便利度",
+        "业务流程优化",
+        "补齐服务盲区与专业快办"
+      ],
+      "boundary": "第90篇已有风险分类与流程再造框架，本轮补栏目中的案例。",
+      "action": "复用",
+      "manuscript_number": 90,
+      "priority": "B",
+      "framework": [
+        "事项分类：区分事实清楚的简单事项与需要专业判断的复杂事项",
+        "风险分级：急难事项先响应，低争议事项走简易程序",
+        "材料共享：一次申报、数据复用，减少群众反复证明",
+        "流程并联：把能够合并的审核、确认和拨付同步办理",
+        "主动触达：用监测预警和上门服务发现未主动申请的人",
+        "守住边界：快办不能牺牲安全、资金规范和事后监督"
+      ],
+      "title": "《人民日报》深度分析【民生服务快办】：不是催窗口再快一点，而是按风险和紧急程度重做流程",
+      "database_status": "备选",
+      "manuscripts": [
+        "data/articles/人民日报系列/90-《人民日报》深度分析【民生服务快办】：不是催窗口再快一点，而是按风险和紧急程度重做流程.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260508_30155511",
+          "date": "2026-05-08",
+          "title": "个人办事，不只“能办”还要“好办、易办”（高效办成一件事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/08/content_30155511.html",
+          "markdown_path": "data/vault/2026/05/2026-05-08/10-政治/个人办事，不只“能办”还要“好办、易办”（高效办成一件事）.md",
+          "raw_path": "",
+          "word_count": 2871,
+          "use": "个人办事便利度",
+          "native_brackets": [
+            "高效办成一件事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260609_30161985",
+          "date": "2026-06-09",
+          "title": "完善业务流程  提高办事效率（高效办成一件事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/09/content_30161985.html",
+          "markdown_path": "data/vault/2026/06/2026-06-09/11-政治/完善业务流程 提高办事效率（高效办成一件事）.md",
+          "raw_path": "",
+          "word_count": 2779,
+          "use": "业务流程优化",
+          "native_brackets": [
+            "高效办成一件事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260610_30162206",
+          "date": "2026-06-10",
+          "title": "整合办事窗口  填补服务盲区（高效办成一件事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/10/content_30162206.html",
+          "markdown_path": "data/vault/2026/06/2026-06-10/10-政治/整合办事窗口 填补服务盲区（高效办成一件事）.md",
+          "raw_path": "",
+          "word_count": 1985,
+          "use": "补齐服务盲区与专业快办",
+          "native_brackets": [
+            "高效办成一件事"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S11",
+      "position": 2,
+      "idea_id": "idea_20260913_native_service_feedback_redesign",
+      "theme": "政务服务评价",
+      "reader_question": "办完以后，怎样让群众反馈改变下一次办事？",
+      "source_ids": [
+        "people_daily_20260706_30166951",
+        "people_daily_20260508_30155515",
+        "people_daily_20260402_30148918"
+      ],
+      "source_uses": [
+        "从群众感受找到改革方向",
+        "惠企服务好差评；组外补证",
+        "从办不成个案反查制度堵点；组外补证"
+      ],
+      "boundary": "第90篇重办理流程，第45篇重干部考核；本题侧重如何采集反馈、诊断共性问题、推动规则改进并回访验证。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "B",
+      "framework": [
+        "让反馈进得来：便利表达，识别未办成和不愿评价的需求",
+        "从一次差评追到业务原因和制度原因",
+        "把共性问题转成服务规则和流程调整",
+        "用再办体验和回访结果检验改进"
+      ],
+      "title": "《人民日报》深度分析【政务服务评价】：办完以后，怎样让群众反馈改变下一次办事",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260706_30166951",
+          "date": "2026-07-06",
+          "title": "从企业群众评价中找到发力方向（高效办成一件事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/06/content_30166951.html",
+          "markdown_path": "data/vault/2026/07/2026-07-06/11-政治/从企业群众评价中找到发力方向（高效办成一件事）.md",
+          "raw_path": "",
+          "word_count": 2738,
+          "use": "从群众感受找到改革方向",
+          "native_brackets": [
+            "高效办成一件事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260508_30155515",
+          "date": "2026-05-08",
+          "title": "上海惠企政策服务引入“好差评”机制",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/08/content_30155515.html",
+          "markdown_path": "data/vault/2026/05/2026-05-08/10-政治/上海惠企政策服务引入“好差评”机制.md",
+          "raw_path": "",
+          "word_count": 529,
+          "use": "惠企服务好差评；组外补证",
+          "native_brackets": [],
+          "in_native_family": false
+        },
+        {
+          "article_id": "people_daily_20260402_30148918",
+          "date": "2026-04-02",
+          "title": "“办不成事”窗口最终是为办得成（金台锐评）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/02/content_30148918.html",
+          "markdown_path": "data/vault/2026/04/2026-04-02/19-法治/“办不成事”窗口最终是为办得成（金台锐评）.md",
+          "raw_path": "",
+          "word_count": 787,
+          "use": "从办不成个案反查制度堵点；组外补证",
+          "native_brackets": [
+            "金台锐评"
+          ],
+          "in_native_family": false
+        }
+      ]
+    },
+    {
+      "series_code": "S12",
+      "position": 1,
+      "idea_id": "idea_20260913_native_engineering_reliability",
+      "theme": "工程可靠性",
+      "reader_question": "技术怎样经得起复杂环境和实际运行的考验？",
+      "source_ids": [
+        "people_daily_20260623_30164497",
+        "people_daily_20260716_30169104",
+        "people_daily_20260819_30175795"
+      ],
+      "source_uses": [
+        "打桩船的受力与精准控制",
+        "复杂地层分段攻坚",
+        "高铁制动的材料与系统协同"
+      ],
+      "boundary": "第68篇中试关注量产和市场检验；本题聚焦大型工程和装备在复杂工况中的设计约束、系统协同与验证，不写成具体施工指导。",
+      "action": "新增",
+      "manuscript_number": null,
+      "priority": "B",
+      "framework": [
+        "从真实工况倒推性能和安全约束",
+        "分解难题：材料、结构、控制和环境分别验证",
+        "系统集成后检验协同，避免单项指标替代整体表现",
+        "在实际运行中反馈改进，交代验证范围与限制"
+      ],
+      "title": "《人民日报》深度分析【工程可靠性】：技术怎样经得起复杂环境和实际运行的考验",
+      "database_status": "备选",
+      "manuscripts": [],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260623_30164497",
+          "date": "2026-06-23",
+          "title": "建造海面上的“超级打桩机”（创新故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/23/content_30164497.html",
+          "markdown_path": "data/vault/2026/06/2026-06-23/06-要闻/建造海面上的“超级打桩机”（创新故事）.md",
+          "raw_path": "",
+          "word_count": 1872,
+          "use": "打桩船的受力与精准控制",
+          "native_brackets": [
+            "创新故事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260716_30169104",
+          "date": "2026-07-16",
+          "title": "分段攻坚，穿透岩层“迷雾”（创新故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/16/content_30169104.html",
+          "markdown_path": "data/vault/2026/07/2026-07-16/06-要闻/分段攻坚，穿透岩层“迷雾”（创新故事）.md",
+          "raw_path": "",
+          "word_count": 2069,
+          "use": "复杂地层分段攻坚",
+          "native_brackets": [
+            "创新故事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260819_30175795",
+          "date": "2026-08-19",
+          "title": "让最快高铁列车跑得快、停得住（创新故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/19/content_30175795.html",
+          "markdown_path": "data/vault/2026/08/2026-08-19/06-要闻/让最快高铁列车跑得快、停得住（创新故事）.md",
+          "raw_path": "",
+          "word_count": 1679,
+          "use": "高铁制动的材料与系统协同",
+          "native_brackets": [
+            "创新故事"
+          ],
+          "in_native_family": true
+        }
+      ]
+    },
+    {
+      "series_code": "S12",
+      "position": 2,
+      "idea_id": "idea_refined_20260612_tech_transfer_chain",
+      "theme": "创新成果的应用",
+      "reader_question": "技术突破怎样进入产业链和实际需求？",
+      "source_ids": [
+        "people_daily_20260326_30147462",
+        "people_daily_20260508_30155617",
+        "people_daily_20260112_30131252"
+      ],
+      "source_uses": [
+        "鞋底核心技术与市场",
+        "碳纤维成果与应用协作",
+        "算力服务的网络协同与使用"
+      ],
+      "boundary": "与S02共享第23篇入口，只安排一次稿件，不重复立项；这里提供创新故事的案例串读。",
+      "action": "复用",
+      "manuscript_number": 23,
+      "priority": "B",
+      "framework": [
+        "从实验室到生产线：成果要有场景、有企业、有需求",
+        "从政策到服务链：平台、金融、保险、技术经理人协同发力",
+        "从创新到就业：微专业、创业服务和AI应用把成果转成产业机会"
+      ],
+      "title": "科技成果转化别只写“产学研”：关键是打通最后一公里",
+      "database_status": "已完成",
+      "manuscripts": [
+        "data/articles/往期文章/人民日报系列/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260326_30147462",
+          "date": "2026-03-26",
+          "title": "靠技术在市场上站稳脚跟（创新故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/26/content_30147462.html",
+          "markdown_path": "data/vault/2026/03/2026-03-26/06-要闻/靠技术在市场上站稳脚跟（创新故事）.md",
+          "raw_path": "",
+          "word_count": 1192,
+          "use": "鞋底核心技术与市场",
+          "native_brackets": [
+            "创新故事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260508_30155617",
+          "date": "2026-05-08",
+          "title": "这个青年团队，把“一根丝”打造成“一条链”（创新故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/08/content_30155617.html",
+          "markdown_path": "data/vault/2026/05/2026-05-08/07-要闻/这个青年团队，把“一根丝”打造成“一条链”（创新故事）.md",
+          "raw_path": "",
+          "word_count": 2755,
+          "use": "碳纤维成果与应用协作",
+          "native_brackets": [
+            "创新故事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260112_30131252",
+          "date": "2026-01-12",
+          "title": "让算力像水和电一样方便取用（创新故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/12/content_30131252.html",
+          "markdown_path": "data/vault/2026/01/2026-01-12/06-要闻/让算力像水和电一样方便取用（创新故事）.md",
+          "raw_path": "",
+          "word_count": 1502,
+          "use": "算力服务的网络协同与使用",
+          "native_brackets": [
+            "创新故事"
+          ],
+          "in_native_family": true
+        }
+      ]
+    }
+  ],
+  "reserve_series": [
+    {
+      "name": "小物件里的制造升级",
+      "native_brackets": [
+        "看中国好物七十二变"
+      ],
+      "article_ids": [
+        "people_daily_20260114_30132155",
+        "people_daily_20260128_30136156",
+        "people_daily_20260325_30147082",
+        "people_daily_20260415_30151322",
+        "people_daily_20260521_30158158",
+        "people_daily_20260625_30164714",
+        "people_daily_20260715_30168796",
+        "people_daily_20260826_30177166"
+      ],
+      "record_count": 8,
+      "reading_group_count": 8,
+      "opportunity": "可按材料、功能、品牌组织比较阅读",
+      "limitation": "原栏目8篇跨产品；正式拆分时每题仍须3篇分别支撑",
+      "existing_connection": "已有制造业新模式、品牌出海稿；本轮工业设计吸收雨伞案例"
+    },
+    {
+      "name": "向海发展的产业链",
+      "native_brackets": [
+        "海洋经济高质量发展一线见闻"
+      ],
+      "article_ids": [
+        "people_daily_20260511_30156007",
+        "people_daily_20260517_30157297",
+        "people_daily_20260518_30157359",
+        "people_daily_20260601_30160075",
+        "people_daily_20260605_30161067",
+        "people_daily_20260610_30162254"
+      ],
+      "record_count": 6,
+      "reading_group_count": 6,
+      "opportunity": "海洋农业、临港枢纽、海洋资源利用分向整理",
+      "limitation": "6篇不等于可直接生成6篇原创分析",
+      "existing_connection": "已有第12篇海洋经济，先形成专题串读"
+    },
+    {
+      "name": "六张网建设",
+      "native_brackets": [
+        "经济新方位·精准发力建好“六张网”",
+        "大数据观察·“六张网”里的新动能",
+        "经济聚焦·“六张网”这样建"
+      ],
+      "article_ids": [
+        "people_daily_20260528_30159576",
+        "people_daily_20260529_30159837",
+        "people_daily_20260601_30160073",
+        "people_daily_20260608_30161733",
+        "people_daily_20260615_30163061",
+        "people_daily_20260623_30164474",
+        "people_daily_20260728_30171409",
+        "people_daily_20260730_30172001",
+        "people_daily_20260731_30172275",
+        "people_daily_20260818_30175599",
+        "people_daily_20260903_30178754",
+        "people_daily_20260904_30179105"
+      ],
+      "record_count": 12,
+      "reading_group_count": 12,
+      "opportunity": "可按网络功能与跨网协同展开",
+      "limitation": "各张网至少3篇来源后再逐网开稿，不能一网只有一篇材料",
+      "existing_connection": "第27篇及早期六张网稿已存在；本轮物流题是独立深化"
+    },
+    {
+      "name": "体验消费与新场景",
+      "native_brackets": [
+        "新视窗·聚焦体验经济",
+        "新场景新动能",
+        "经济新方位·新场景新动能"
+      ],
+      "article_ids": [
+        "people_daily_20260401_30148592",
+        "people_daily_20260506_30154996",
+        "people_daily_20260513_30156497",
+        "people_daily_20260527_30159425",
+        "people_daily_20260603_30160660",
+        "people_daily_20260420_30152034",
+        "people_daily_20260511_30156008",
+        "people_daily_20260603_30160569",
+        "people_daily_20260620_30163930",
+        "people_daily_20260713_30168302",
+        "people_daily_20260815_30175033",
+        "people_daily_20260111_30131047",
+        "people_daily_20260203_30137848",
+        "people_daily_20260209_30139413",
+        "people_daily_20260402_30148787",
+        "people_daily_20260404_30149188"
+      ],
+      "record_count": 16,
+      "reading_group_count": 16,
+      "opportunity": "体验设计、服务承接、复游复购分别观察",
+      "limitation": "该方向与已有服务消费、票根、旅居重合较多",
+      "existing_connection": "优先串读第21篇、第95篇及票根经济稿"
+    },
+    {
+      "name": "跟着历史理解经济",
+      "native_brackets": [
+        "跟着历史学经济"
+      ],
+      "article_ids": [
+        "people_daily_20260126_30135707",
+        "people_daily_20260302_30142945",
+        "people_daily_20260330_30148089",
+        "people_daily_20260420_30152122",
+        "people_daily_20260601_30160127",
+        "people_daily_20260615_30163037",
+        "people_daily_20260720_30169772",
+        "people_daily_20260817_30175253"
+      ],
+      "record_count": 8,
+      "reading_group_count": 8,
+      "opportunity": "适合做经济概念的历史比较阅读",
+      "limitation": "历史制度不直接推导当代政策；每篇历史材料配当代来源后再成题",
+      "existing_connection": "可衔接普惠金融、要素配置、风险管理"
+    },
+    {
+      "name": "工匠技能与实践知识",
+      "native_brackets": [
+        "工匠绝活",
+        "工匠绝活·全国文物大工匠"
+      ],
+      "article_ids": [
+        "people_daily_20260119_30133522",
+        "people_daily_20260408_30149800",
+        "people_daily_20260409_30150013",
+        "people_daily_20260416_30151376",
+        "people_daily_20260507_30155338",
+        "people_daily_20260706_30166892",
+        "people_daily_20260722_30170127",
+        "people_daily_20260821_30176336",
+        "people_daily_20260827_30177484",
+        "people_daily_20260831_30178127",
+        "people_daily_20260415_30151250",
+        "people_daily_20260417_30151570",
+        "people_daily_20260421_30152233",
+        "people_daily_20260422_30152566",
+        "people_daily_20260512_30156289",
+        "people_daily_20260522_30158440",
+        "people_daily_20260715_30168850",
+        "people_daily_20260814_30174915"
+      ],
+      "record_count": 18,
+      "reading_group_count": 18,
+      "opportunity": "技术难题、经验传承、技能评价可以形成教学专题",
+      "limitation": "人物成就报道不能独自证明培训制度的普遍效果",
+      "existing_connection": "既有人才评价、非遗传承人、技能培训可承接"
+    },
+    {
+      "name": "科学家怎样做研究",
+      "native_brackets": [
+        "弘扬科学家精神"
+      ],
+      "article_ids": [
+        "people_daily_20260123_30135140",
+        "people_daily_20260127_30135841",
+        "people_daily_20260130_30136884",
+        "people_daily_20260203_30137878",
+        "people_daily_20260330_30148032",
+        "people_daily_20260402_30148819",
+        "people_daily_20260407_30149460",
+        "people_daily_20260409_30150011",
+        "people_daily_20260413_30150701",
+        "people_daily_20260415_30151249",
+        "people_daily_20260422_30152565",
+        "people_daily_20260522_30158437",
+        "people_daily_20260611_30162446",
+        "people_daily_20260622_30164225",
+        "people_daily_20260707_30167239",
+        "people_daily_20260709_30167656",
+        "people_daily_20260720_30169713",
+        "people_daily_20260728_30171407",
+        "people_daily_20260731_30172381",
+        "people_daily_20260814_30174912",
+        "people_daily_20260821_30176335",
+        "people_daily_20260825_30176954"
+      ],
+      "record_count": 22,
+      "reading_group_count": 22,
+      "opportunity": "问题选择、长期积累、交叉协作的科学精神案例",
+      "limitation": "与创新故事相关但原栏目独立，本轮保留原名",
+      "existing_connection": "已有基础研究、人才评价、教科人才选题"
+    },
+    {
+      "name": "年中经济复盘",
+      "native_brackets": [
+        "年中经济观察"
+      ],
+      "article_ids": [
+        "people_daily_20260717_30169295",
+        "people_daily_20260717_30169329",
+        "people_daily_20260718_30169418",
+        "people_daily_20260719_30169554",
+        "people_daily_20260719_30169584",
+        "people_daily_20260720_30169678",
+        "people_daily_20260720_30169697",
+        "people_daily_20260721_30169894",
+        "people_daily_20260721_30169938",
+        "people_daily_20260722_30170103",
+        "people_daily_20260723_30170435",
+        "people_daily_20260724_30170709",
+        "people_daily_20260725_30170880"
+      ],
+      "record_count": 13,
+      "reading_group_count": 9,
+      "opportunity": "适合一次阶段性回顾，比较产业、需求、民生",
+      "limitation": "数据时点集中，不能当全年结论或无限续写",
+      "existing_connection": "可作为十五五之外的经济运行专题资料"
+    },
+    {
+      "name": "高质量发展故事汇",
+      "native_brackets": [
+        "高质量发展故事汇"
+      ],
+      "article_ids": [
+        "people_daily_20260130_30136904",
+        "people_daily_20260227_30142450",
+        "people_daily_20260330_30148044",
+        "people_daily_20260430_30154246",
+        "people_daily_20260529_30159775",
+        "people_daily_20260629_30165422",
+        "people_daily_20260731_30172282",
+        "people_daily_20260828_30177668"
+      ],
+      "record_count": 8,
+      "reading_group_count": 8,
+      "opportunity": "适合教研方法系列：从一个故事提取一条政策分析链",
+      "limitation": "原括注第15—22期共8期，归并期次而不删除原题；跨主题，不能直接当单一政策专题",
+      "existing_connection": "与现有消费、投资于人、县域等稿件衔接"
+    },
+    {
+      "name": "建议提案如何落地",
+      "native_brackets": [
+        "落地有声·高质量办理代表建议",
+        "落地有声·高质量办理政协提案"
+      ],
+      "article_ids": [
+        "people_daily_20260209_30139415",
+        "people_daily_20260213_30140635",
+        "people_daily_20260225_30141933",
+        "people_daily_20260227_30142515",
+        "people_daily_20260210_30139799",
+        "people_daily_20260224_30141615",
+        "people_daily_20260226_30142246",
+        "people_daily_20260228_30142730"
+      ],
+      "record_count": 8,
+      "reading_group_count": 8,
+      "opportunity": "问题提出、办理协同、反馈监督可形成短系列",
+      "limitation": "8篇分别属于两类履职制度，应明确主体和程序，不混同",
+      "existing_connection": "已有群众议事与抓落实稿；新立题前再核程序来源"
+    },
+    {
+      "name": "新大众文艺",
+      "native_brackets": [
+        "坚持“两创”·关注新大众文艺"
+      ],
+      "article_ids": [
+        "people_daily_20260324_30146962",
+        "people_daily_20260331_30148381",
+        "people_daily_20260428_30153712",
+        "people_daily_20260623_30164531",
+        "people_daily_20260707_30167187",
+        "people_daily_20260714_30168588",
+        "people_daily_20260721_30170002",
+        "people_daily_20260804_30173046",
+        "people_daily_20260811_30174291",
+        "people_daily_20260825_30176916"
+      ],
+      "record_count": 10,
+      "reading_group_count": 10,
+      "opportunity": "创作主体、平台传播、原创生态可拆不同问题",
+      "limitation": "先辨评论、作品评论与产业事实，不用热度代替质量",
+      "existing_connection": "已有文化科技融合与公共文化服务稿"
+    },
+    {
+      "name": "老字号怎样焕新",
+      "native_brackets": [
+        "老字号焕新记"
+      ],
+      "article_ids": [
+        "people_daily_20260703_30166400",
+        "people_daily_20260729_30171764",
+        "people_daily_20260805_30173219",
+        "people_daily_20260819_30175854"
+      ],
+      "record_count": 4,
+      "reading_group_count": 4,
+      "opportunity": "适合先做一篇跨案例整合，再补经营与传承切口",
+      "limitation": "目前原栏4条，尚不足以仅靠本组承诺多篇深度稿",
+      "existing_connection": "可衔接品牌、消费与文化传承，避免重写总论"
+    },
+    {
+      "name": "政绩观与考核方法",
+      "native_brackets": [
+        "树立和践行正确政绩观",
+        "金台潮声·政绩观系列谈",
+        "前沿观察·用好考核指挥棒"
+      ],
+      "article_ids": [
+        "people_daily_20260228_30142706",
+        "people_daily_20260304_30143318",
+        "people_daily_20260310_30144447",
+        "people_daily_20260315_30145336",
+        "people_daily_20260318_30145794",
+        "people_daily_20260319_30146088",
+        "people_daily_20260319_30146109",
+        "people_daily_20260321_30146355",
+        "people_daily_20260329_30147950",
+        "people_daily_20260329_30147961",
+        "people_daily_20260330_30148003",
+        "people_daily_20260402_30148781",
+        "people_daily_20260402_30148806",
+        "people_daily_20260403_30148972",
+        "people_daily_20260410_30150359",
+        "people_daily_20260417_30151534",
+        "people_daily_20260420_30152024",
+        "people_daily_20260424_30152802",
+        "people_daily_20260426_30153119",
+        "people_daily_20260429_30153794",
+        "people_daily_20260429_30153820",
+        "people_daily_20260506_30155009",
+        "people_daily_20260509_30155670",
+        "people_daily_20260514_30156795",
+        "people_daily_20260514_30156822",
+        "people_daily_20260522_30158427",
+        "people_daily_20260524_30158697",
+        "people_daily_20260601_30160068",
+        "people_daily_20260612_30162628",
+        "people_daily_20260615_30163053",
+        "people_daily_20260615_30163079",
+        "people_daily_20260622_30164187",
+        "people_daily_20260628_30165325",
+        "people_daily_20260629_30165373",
+        "people_daily_20260706_30166861",
+        "people_daily_20260706_30166878",
+        "people_daily_20260713_30168294",
+        "people_daily_20260720_30169676",
+        "people_daily_20260725_30170879",
+        "people_daily_20260728_30171366",
+        "people_daily_20260728_30171381",
+        "people_daily_20260807_30173552",
+        "people_daily_20260811_30174299",
+        "people_daily_20260811_30174308",
+        "people_daily_20260813_30174612",
+        "people_daily_20260813_30174629",
+        "people_daily_20260303_30143125",
+        "people_daily_20260317_30145559",
+        "people_daily_20260324_30146957",
+        "people_daily_20260331_30148377",
+        "people_daily_20260407_30149530",
+        "people_daily_20260414_30151027",
+        "people_daily_20260421_30152375",
+        "people_daily_20260428_30153708",
+        "people_daily_20260519_30157773",
+        "people_daily_20260526_30159140",
+        "people_daily_20260602_30160444",
+        "people_daily_20260616_30163226",
+        "people_daily_20260623_30164528",
+        "people_daily_20260630_30165740",
+        "people_daily_20260616_30163225",
+        "people_daily_20260623_30164525",
+        "people_daily_20260630_30165739",
+        "people_daily_20260707_30167182"
+      ],
+      "record_count": 64,
+      "reading_group_count": 54,
+      "opportunity": "可按目标、决策、考核和长期效果组织旧稿",
+      "limitation": "既有稿群已经较完整，本轮不换名重复立题",
+      "existing_connection": "第29、45、50、83篇等优先串读；干部担当系列补容错切口"
+    },
+    {
+      "name": "小城产业的多种发展路径",
+      "native_brackets": [
+        "高质量发展在一线·小城宝藏",
+        "县域看发展",
+        "“镇”在创新",
+        "大国小村",
+        "人民眼·县域经济",
+        "神州看点·小物件里探发展"
+      ],
+      "article_ids": [
+        "people_daily_20260210_30139830",
+        "people_daily_20260402_30148850",
+        "people_daily_20260408_30149820",
+        "people_daily_20260413_30150716",
+        "people_daily_20260514_30156864",
+        "people_daily_20260603_30160607",
+        "people_daily_20260609_30161978",
+        "people_daily_20260610_30162283",
+        "people_daily_20260611_30162477",
+        "people_daily_20260703_30166422",
+        "people_daily_20260707_30167259",
+        "people_daily_20260714_30168548",
+        "people_daily_20260728_30171294",
+        "people_daily_20260805_30173177",
+        "people_daily_20260813_30174658",
+        "people_daily_20260814_30174951",
+        "people_daily_20260817_30175310",
+        "people_daily_20260903_30178759",
+        "people_daily_20260515_30157008",
+        "people_daily_20260522_30158444",
+        "people_daily_20260728_30171411",
+        "people_daily_20260806_30173401",
+        "people_daily_20260812_30174399",
+        "people_daily_20260818_30175605",
+        "people_daily_20260820_30176108",
+        "people_daily_20260826_30177094",
+        "people_daily_20260904_30179089",
+        "people_daily_20260202_30137412",
+        "people_daily_20260209_30139514",
+        "people_daily_20260331_30148388",
+        "people_daily_20260525_30158891",
+        "people_daily_20260615_30163040",
+        "people_daily_20260706_30166848",
+        "people_daily_20260318_30145838",
+        "people_daily_20260326_30147468",
+        "people_daily_20260407_30149467",
+        "people_daily_20260414_30150952",
+        "people_daily_20260511_30156039",
+        "people_daily_20260520_30157830",
+        "people_daily_20260602_30160382",
+        "people_daily_20260716_30169108",
+        "people_daily_20260721_30169936",
+        "people_daily_20260731_30172277",
+        "people_daily_20260804_30172985",
+        "people_daily_20260805_30173165",
+        "people_daily_20260807_30173591",
+        "people_daily_20260116_30133100",
+        "people_daily_20260123_30135184",
+        "people_daily_20260130_30136917",
+        "people_daily_20260709_30167673",
+        "people_daily_20260723_30170504",
+        "people_daily_20260827_30177507"
+      ],
+      "record_count": 52,
+      "reading_group_count": 52,
+      "opportunity": "可按资源识别、产业分工、公共服务串联对照案例",
+      "limitation": "范围比出口产业更宽；要先选具体产业问题，避免再写县域总论",
+      "existing_connection": "与第44篇县域定位、S01小城出口系列互相衔接"
+    },
+    {
+      "name": "村庄治理与共同参与",
+      "native_brackets": [
+        "基层治理新实践",
+        "美丽乡村我的家",
+        "我的家乡我建设",
+        "乡见"
+      ],
+      "article_ids": [
+        "people_daily_20260126_30135660",
+        "people_daily_20260209_30139451",
+        "people_daily_20260519_30157731",
+        "people_daily_20260528_30159501",
+        "people_daily_20260604_30161002",
+        "people_daily_20260630_30165706",
+        "people_daily_20260730_30171928",
+        "people_daily_20260130_30136941",
+        "people_daily_20260227_30142461",
+        "people_daily_20260327_30147635",
+        "people_daily_20260403_30149126",
+        "people_daily_20260424_30152973",
+        "people_daily_20260529_30159809",
+        "people_daily_20260605_30161126",
+        "people_daily_20260612_30162615",
+        "people_daily_20260626_30165154",
+        "people_daily_20260702_30166034",
+        "people_daily_20260731_30172235",
+        "people_daily_20260814_30174970",
+        "people_daily_20260821_30176278",
+        "people_daily_20260828_30177703",
+        "people_daily_20260122_30134809",
+        "people_daily_20260407_30149497",
+        "people_daily_20260417_30151587",
+        "people_daily_20260506_30154965",
+        "people_daily_20260508_30155498",
+        "people_daily_20260813_30174692",
+        "people_daily_20260831_30178048",
+        "people_daily_20260106_30129790",
+        "people_daily_20260118_30133406",
+        "people_daily_20260314_30145241",
+        "people_daily_20260426_30153151",
+        "people_daily_20260607_30161530",
+        "people_daily_20260719_30169597",
+        "people_daily_20260820_30176045",
+        "people_daily_20260823_30176518",
+        "people_daily_20260830_30178032",
+        "people_daily_20260906_30179340"
+      ],
+      "record_count": 38,
+      "reading_group_count": 38,
+      "opportunity": "议事、公共空间、村民参与和长效维护可形成专题",
+      "limitation": "报道类型不同，景物描写不能独立证明治理成效",
+      "existing_connection": "已有基层治理、群众议事和乡村公共文化选题，先选一个组织难题深化"
+    },
+    {
+      "name": "城市更新与人民城市",
+      "native_brackets": [
+        "探访·城市更新",
+        "新时代画卷·建设现代化人民城市"
+      ],
+      "article_ids": [
+        "people_daily_20260121_30134394",
+        "people_daily_20260324_30147013",
+        "people_daily_20260331_30148320",
+        "people_daily_20260513_30156547",
+        "people_daily_20260721_30169935",
+        "people_daily_20260811_30174245",
+        "people_daily_20260814_30174926",
+        "people_daily_20260815_30175075"
+      ],
+      "record_count": 8,
+      "reading_group_count": 8,
+      "opportunity": "从改造需求到建后服务、运营和居民参与",
+      "limitation": "不能凭城市更新总标签重复立项",
+      "existing_connection": "已有第91篇城市更新后半程、第92篇完整社区"
+    },
+    {
+      "name": "产业变化中的职业与就业",
+      "native_brackets": [
+        "新质生产力创造就业新空间",
+        "产业里的年轻人",
+        "大力促进就业创业",
+        "服务窗·迈向社会第一步"
+      ],
+      "article_ids": [
+        "people_daily_20260714_30168605",
+        "people_daily_20260720_30169683",
+        "people_daily_20260812_30174371",
+        "people_daily_20260821_30176301",
+        "people_daily_20260824_30176630",
+        "people_daily_20260504_30154784",
+        "people_daily_20260505_30154856",
+        "people_daily_20260506_30155019",
+        "people_daily_20260608_30161734",
+        "people_daily_20260611_30162427",
+        "people_daily_20260621_30164031",
+        "people_daily_20260721_30169910",
+        "people_daily_20260520_30157800",
+        "people_daily_20260531_30159995",
+        "people_daily_20260607_30161512",
+        "people_daily_20260621_30164030",
+        "people_daily_20260722_30170111",
+        "people_daily_20260610_30162223",
+        "people_daily_20260611_30162484",
+        "people_daily_20260625_30164794"
+      ],
+      "record_count": 20,
+      "reading_group_count": 20,
+      "opportunity": "新岗位从哪里来、能力如何形成、初次就业如何衔接",
+      "limitation": "新职业机会不能只用人物成功故事推断普遍薪资和就业前景",
+      "existing_connection": "第64篇新职业及技能培训到岗选题可承接，S07讲就业服务网络"
+    },
+    {
+      "name": "法治化营商环境",
+      "native_brackets": [
+        "法治头条·优化法治化营商环境"
+      ],
+      "article_ids": [
+        "people_daily_20260514_30156784",
+        "people_daily_20260521_30158161",
+        "people_daily_20260528_30159554",
+        "people_daily_20260604_30161044",
+        "people_daily_20260618_30163706",
+        "people_daily_20260709_30167615"
+      ],
+      "record_count": 6,
+      "reading_group_count": 6,
+      "opportunity": "可按执法规范、权益保护、解纷与企业经营预期展开",
+      "limitation": "每个法治问题仍需核准适用条文和时间，报道案例不代替法律规则",
+      "existing_connection": "第32篇营商环境全生命周期及既有规范涉企执法稿优先串读"
+    },
+    {
+      "name": "防灾减灾与韧性治理",
+      "native_brackets": [
+        "扎实做好防灾救灾各项工作",
+        "服务窗·关注汛期安全",
+        "防汛救灾一线故事"
+      ],
+      "article_ids": [
+        "people_daily_20260708_30167432",
+        "people_daily_20260711_30168080",
+        "people_daily_20260713_30168311",
+        "people_daily_20260714_30168621",
+        "people_daily_20260715_30168836",
+        "people_daily_20260715_30168838",
+        "people_daily_20260716_30169088",
+        "people_daily_20260726_30170997",
+        "people_daily_20260714_30168526",
+        "people_daily_20260716_30169028",
+        "people_daily_20260811_30174263",
+        "people_daily_20260817_30175220",
+        "people_daily_20260716_30169089",
+        "people_daily_20260717_30169324",
+        "people_daily_20260721_30169928",
+        "people_daily_20260722_30170124"
+      ],
+      "record_count": 16,
+      "reading_group_count": 16,
+      "opportunity": "预警、转移、资源调度、恢复重建可形成连续课题",
+      "limitation": "安全提示、现场报道和治理机制应分清；不据报道自行编应急操作",
+      "existing_connection": "第17篇韧性治理已有总框架，宜从预警如何转成行动补充材料"
+    },
+    {
+      "name": "制造业升级与智能经济",
+      "native_brackets": [
+        "大数据观察·智能经济新形态",
+        "经济新方位·制造业新趋势",
+        "向新向优的中国产业",
+        "产经视野·做强做优做大实体经济",
+        "强国建设故事汇·百业千企焕新记"
+      ],
+      "article_ids": [
+        "people_daily_20260331_30148317",
+        "people_daily_20260402_30148827",
+        "people_daily_20260403_30149016",
+        "people_daily_20260410_30150287",
+        "people_daily_20260805_30173134",
+        "people_daily_20260807_30173556",
+        "people_daily_20260808_30173733",
+        "people_daily_20260131_30137194",
+        "people_daily_20260201_30137258",
+        "people_daily_20260203_30137854",
+        "people_daily_20260219_30141265",
+        "people_daily_20260320_30146241",
+        "people_daily_20260322_30146417",
+        "people_daily_20260715_30168792",
+        "people_daily_20260729_30171760",
+        "people_daily_20260819_30175850",
+        "people_daily_20260902_30178552",
+        "people_daily_20260121_30134453",
+        "people_daily_20260318_30145880",
+        "people_daily_20260325_30147078",
+        "people_daily_20260401_30148588",
+        "people_daily_20260708_30167370"
+      ],
+      "record_count": 22,
+      "reading_group_count": 22,
+      "opportunity": "生产流程、企业组织、应用场景与价值创造可以分题",
+      "limitation": "不同产业的技术路径不能拼成一套万能方案",
+      "existing_connection": "既有制造业新模式、新质生产力和人工智能题需先查重"
+    },
+    {
+      "name": "前沿技术怎样进入真实应用",
+      "native_brackets": [
+        "我身边的最强大脑",
+        "院士讲科普·未来产业",
+        "深度观察·未来产业里的向“新”力"
+      ],
+      "article_ids": [
+        "people_daily_20260119_30133599",
+        "people_daily_20260331_30148389",
+        "people_daily_20260414_30151023",
+        "people_daily_20260427_30153394",
+        "people_daily_20260601_30160131",
+        "people_daily_20260615_30163041",
+        "people_daily_20260622_30164175",
+        "people_daily_20260706_30166849",
+        "people_daily_20260720_30169776",
+        "people_daily_20260727_30171055",
+        "people_daily_20260810_30173993",
+        "people_daily_20260817_30175257",
+        "people_daily_20260824_30176715",
+        "people_daily_20260831_30178083",
+        "people_daily_20260711_30168019",
+        "people_daily_20260801_30172525",
+        "people_daily_20260808_30173757",
+        "people_daily_20260815_30175056",
+        "people_daily_20260905_30179262",
+        "people_daily_20260803_30172794",
+        "people_daily_20260810_30173992",
+        "people_daily_20260831_30178082"
+      ],
+      "record_count": 22,
+      "reading_group_count": 22,
+      "opportunity": "从技术原理到应用条件，再到现实约束",
+      "limitation": "先辨实验、试点与规模应用；科普解释不能自动推出产业成熟",
+      "existing_connection": "衔接基础研究、未来产业、第37篇和S12创新故事"
+    },
+    {
+      "name": "阅读与公共文化服务",
+      "native_brackets": [
+        "解码·提升公共文化服务水平",
+        "全民阅读特别报道"
+      ],
+      "article_ids": [
+        "people_daily_20260202_30137375",
+        "people_daily_20260416_30151477",
+        "people_daily_20260714_30168560",
+        "people_daily_20260716_30169040",
+        "people_daily_20260420_30152073",
+        "people_daily_20260421_30152239",
+        "people_daily_20260422_30152577",
+        "people_daily_20260423_30152751"
+      ],
+      "record_count": 8,
+      "reading_group_count": 8,
+      "opportunity": "服务可及、空间使用、内容供给和持续参与",
+      "limitation": "目前更适合一篇整合加案例包，独立多篇还需逐题补源",
+      "existing_connection": "第42篇乡村公共文化与已有公共文化服务题可承接"
+    },
+    {
+      "name": "农业生产与和美乡村",
+      "native_brackets": [
+        "三夏进行时",
+        "经济聚焦·农田里的新鲜事",
+        "新春走基层·建设宜居宜业和美乡村"
+      ],
+      "article_ids": [
+        "people_daily_20260614_30162853",
+        "people_daily_20260720_30169686",
+        "people_daily_20260802_30172609",
+        "people_daily_20260317_30145611",
+        "people_daily_20260413_30150715",
+        "people_daily_20260527_30159255",
+        "people_daily_20260612_30162661",
+        "people_daily_20260216_30141117",
+        "people_daily_20260216_30141118",
+        "people_daily_20260217_30141254",
+        "people_daily_20260218_30141232",
+        "people_daily_20260224_30141627",
+        "people_daily_20260224_30141628",
+        "people_daily_20260224_30141629",
+        "people_daily_20260224_30141630",
+        "people_daily_20260224_30141631",
+        "people_daily_20260224_30141632",
+        "people_daily_20260224_30141633",
+        "people_daily_20260224_30141634",
+        "people_daily_20260224_30141635",
+        "people_daily_20260224_30141636"
+      ],
+      "record_count": 21,
+      "reading_group_count": 21,
+      "opportunity": "田间生产、农机组织、乡村公共条件可分别观察",
+      "limitation": "生产季报道与乡村建设并非同一官方连载，应保留子栏目",
+      "existing_connection": "与S06农业技术推广、第48篇社会化服务及粮食安全选题接续"
+    },
+    {
+      "name": "制度开放与投资服务",
+      "native_brackets": [
+        "深入实施自由贸易试验区提升战略",
+        "大数据观察·投资中国"
+      ],
+      "article_ids": [
+        "people_daily_20260820_30176065",
+        "people_daily_20260823_30176531",
+        "people_daily_20260831_30178097",
+        "people_daily_20260127_30135849",
+        "people_daily_20260605_30161106",
+        "people_daily_20260714_30168646"
+      ],
+      "record_count": 6,
+      "reading_group_count": 6,
+      "opportunity": "规则衔接、投资服务、企业办事体验可组成比较阅读",
+      "limitation": "本组是独立开放栏目；不重复此前十五五系列已立的制度型开放题",
+      "existing_connection": "沿用已有制度型开放选题，积累案例后再决定是否拆分"
+    },
+    {
+      "name": "考古发现与专业知识传承",
+      "native_brackets": [
+        "感知文化里的中国·关注冷门绝学",
+        "考古中国",
+        "赓续历史文脉",
+        "赓续历史文脉·考古故事"
+      ],
+      "article_ids": [
+        "people_daily_20260324_30146926",
+        "people_daily_20260428_30153610",
+        "people_daily_20260713_30168342",
+        "people_daily_20260827_30177529",
+        "people_daily_20260228_30142688",
+        "people_daily_20260328_30147889",
+        "people_daily_20260530_30159980",
+        "people_daily_20260530_30159981",
+        "people_daily_20260711_30168036",
+        "people_daily_20260711_30168038",
+        "people_daily_20260718_30169455",
+        "people_daily_20260822_30176453",
+        "people_daily_20260829_30177899",
+        "people_daily_20260905_30179270",
+        "people_daily_20260122_30134755",
+        "people_daily_20260331_30148310",
+        "people_daily_20260401_30148522",
+        "people_daily_20260429_30153830",
+        "people_daily_20260706_30166891",
+        "people_daily_20260729_30171807",
+        "people_daily_20260826_30177128",
+        "people_daily_20260129_30136568",
+        "people_daily_20260527_30159329",
+        "people_daily_20260710_30167888",
+        "people_daily_20260724_30170708"
+      ],
+      "record_count": 25,
+      "reading_group_count": 25,
+      "opportunity": "从发现到解释、保存，再到专业知识延续",
+      "limitation": "考古结论须区分已证实与推测，不能用单一发现改写通史",
+      "existing_connection": "与S09文物保护、文创转译形成上下游阅读，不重写文化传承总论"
+    },
+    {
+      "name": "节约怎样落实到具体流程",
+      "native_brackets": [
+        "厉行节约反对浪费"
+      ],
+      "article_ids": [
+        "people_daily_20260119_30133511",
+        "people_daily_20260125_30135528",
+        "people_daily_20260127_30135830",
+        "people_daily_20260209_30139432",
+        "people_daily_20260328_30147869",
+        "people_daily_20260405_30149308",
+        "people_daily_20260418_30151771",
+        "people_daily_20260507_30155326",
+        "people_daily_20260509_30155701",
+        "people_daily_20260514_30156823"
+      ],
+      "record_count": 10,
+      "reading_group_count": 10,
+      "opportunity": "资源消耗、规则设计、日常行为与公共管理可以分题",
+      "limitation": "需要按餐饮、办公等具体对象重组，不能一套倡议套所有场景",
+      "existing_connection": "可衔接绿色消费与基层治理，从一个可观察的浪费环节切入"
+    },
+    {
+      "name": "区域协作与老区产业",
+      "native_brackets": [
+        "神州看点·关注东西部协作",
+        "老区新事",
+        "经济聚焦·老区新产业"
+      ],
+      "article_ids": [
+        "people_daily_20260409_30150035",
+        "people_daily_20260702_30165992",
+        "people_daily_20260903_30178867",
+        "people_daily_20260511_30156001",
+        "people_daily_20260514_30156797",
+        "people_daily_20260525_30158958",
+        "people_daily_20260621_30164024",
+        "people_daily_20260622_30164189",
+        "people_daily_20260817_30175271",
+        "people_daily_20260806_30173424",
+        "people_daily_20260811_30174312",
+        "people_daily_20260814_30174949"
+      ],
+      "record_count": 12,
+      "reading_group_count": 12,
+      "opportunity": "协作资源如何转成产业能力、就业和公共服务",
+      "limitation": "外部投入与本地持续经营能力要分别分析",
+      "existing_connection": "第20篇大国向西、第30篇共同富裕已有框架，可做案例专题"
+    },
+    {
+      "name": "民营经济与企业成长",
+      "native_brackets": [
+        "感言·发展壮大民营经济",
+        "中国品牌日",
+        "中国品牌圈粉海外"
+      ],
+      "article_ids": [
+        "people_daily_20260527_30159256",
+        "people_daily_20260528_30159617",
+        "people_daily_20260603_30160602",
+        "people_daily_20260604_30160999",
+        "people_daily_20260605_30161145",
+        "people_daily_20260510_30155788",
+        "people_daily_20260511_30155976",
+        "people_daily_20260511_30155978",
+        "people_daily_20260512_30156231",
+        "people_daily_20260512_30156233",
+        "people_daily_20260331_30148325",
+        "people_daily_20260528_30159615",
+        "people_daily_20260604_30160998",
+        "people_daily_20260624_30164670"
+      ],
+      "record_count": 14,
+      "reading_group_count": 14,
+      "opportunity": "经营环境、创新能力、品牌成长可形成串读",
+      "limitation": "本组跨评论与报道，不能直接归为同一个原生系列",
+      "existing_connection": "已有营商环境、民营经济与品牌出海题，S01覆盖部分出口案例"
+    },
+    {
+      "name": "基层卫生服务与健康科普",
+      "native_brackets": [
+        "健康焦点",
+        "无影灯"
+      ],
+      "article_ids": [
+        "people_daily_20260403_30149129",
+        "people_daily_20260417_30151669",
+        "people_daily_20260515_30156917",
+        "people_daily_20260529_30159812",
+        "people_daily_20260713_30168283",
+        "people_daily_20260724_30170770",
+        "people_daily_20260807_30173641",
+        "people_daily_20260904_30179023",
+        "people_daily_20260213_30140696",
+        "people_daily_20260403_30149128",
+        "people_daily_20260417_30151668",
+        "people_daily_20260515_30156916",
+        "people_daily_20260529_30159811",
+        "people_daily_20260713_30168282",
+        "people_daily_20260724_30170769",
+        "people_daily_20260807_30173640",
+        "people_daily_20260904_30179022"
+      ],
+      "record_count": 17,
+      "reading_group_count": 17,
+      "opportunity": "优先观察医疗服务供给与就医体验，健康科普另分资料",
+      "limitation": "不能把科普专栏整组当作医疗制度专题；医学建议需另核权威依据",
+      "existing_connection": "先建服务案例资料包，本轮不新增医疗建议稿"
+    }
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260913_native_county_export_cluster",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【县域产业集群出海】：小企业怎样借助本地产业网络接住海外订单",
+      "angle": "【原生栏目系列·小城产业怎样进入全球市场·第1篇】小企业怎样借助本地产业网络接住海外订单？ 分析主线：从一张订单看门槛：配套、交付、质量与市场信息；用产业分工降低成本：专业化企业怎样互补；把公共服务做到缺口上：设计、检测、物流与渠道按来源分别展开；留下共同成长的条件：避免同质压价，维护质量与协作规则。 与旧稿区别：与第35篇品牌出海的全球价值链视角、第44篇县域定位区分，本题聚焦中小企业共同使用的本地配套、服务和市场网络。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "从一张订单看门槛：配套、交付、质量与市场信息",
+        "用产业分工降低成本：专业化企业怎样互补",
+        "把公共服务做到缺口上：设计、检测、物流与渠道按来源分别展开",
+        "留下共同成长的条件：避免同质压价，维护质量与协作规则"
+      ],
+      "support_article_ids": [
+        "people_daily_20260317_30145547",
+        "people_daily_20260420_30152121",
+        "people_daily_20260513_30156493"
+      ],
+      "status": "备选",
+      "priority": "A",
+      "series_code": "S01",
+      "series_name": "小城产业怎样进入全球市场",
+      "native_brackets": [
+        "财经深一度·宝藏小城的出口生意经"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260317_30145547",
+          "date": "2026-03-17",
+          "title": "小衣架“挂”出大产业（财经深一度·宝藏小城的出口生意经）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/17/content_30145547.html",
+          "markdown_path": "data/vault/2026/03/2026-03-17/15-财经/小衣架“挂”出大产业（财经深一度·宝藏小城的出口生意经）.md",
+          "raw_path": "",
+          "word_count": 3058,
+          "use": "衣架产业配套与集群协作",
+          "native_brackets": [
+            "财经深一度·宝藏小城的出口生意经"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260420_30152121",
+          "date": "2026-04-20",
+          "title": "一粒小纽扣，如何联动大市场（财经深一度·宝藏小城的出口生意经）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/20/content_30152121.html",
+          "markdown_path": "data/vault/2026/04/2026-04-20/18-财经/一粒小纽扣，如何联动大市场（财经深一度·宝藏小城的出口生意经）.md",
+          "raw_path": "",
+          "word_count": 3029,
+          "use": "纽扣市场、产业聚集与渠道演化",
+          "native_brackets": [
+            "财经深一度·宝藏小城的出口生意经"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260513_30156493",
+          "date": "2026-05-13",
+          "title": "杭集牙刷，何以“刷”遍全球？（财经深一度·宝藏小城的出口生意经）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/13/content_30156493.html",
+          "markdown_path": "data/vault/2026/05/2026-05-13/18-财经/杭集牙刷，何以“刷”遍全球？（财经深一度·宝藏小城的出口生意经）.md",
+          "raw_path": "",
+          "word_count": 3419,
+          "use": "牙刷产业的集群突围与技术升级",
+          "native_brackets": [
+            "财经深一度·宝藏小城的出口生意经"
+          ],
+          "in_native_family": true
+        }
+      ],
+      "difference_from_existing": "与第35篇品牌出海的全球价值链视角、第44篇县域定位区分，本题聚焦中小企业共同使用的本地配套、服务和市场网络。"
+    },
+    {
+      "idea_id": "idea_20260913_native_industrial_design",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【工业设计】：一件产品怎样从造得出来走向真正好用",
+      "angle": "【原生栏目系列·制造业背后的生产性服务·第1篇】一件产品怎样从造得出来走向真正好用？ 分析主线：先识别使用问题：用户不便怎样进入研发任务；从造型走向功能：材料、结构、工艺和体验协同；让设计可验证：原型、用户反馈与制造条件相互修正；把服务接入企业：专业设计资源怎样服务不同规模企业。 与旧稿区别：与已有制造业柔性生产、文化科技融合区分，专门讨论需求研究、产品功能和设计服务怎样进入制造过程。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "先识别使用问题：用户不便怎样进入研发任务",
+        "从造型走向功能：材料、结构、工艺和体验协同",
+        "让设计可验证：原型、用户反馈与制造条件相互修正",
+        "把服务接入企业：专业设计资源怎样服务不同规模企业"
+      ],
+      "support_article_ids": [
+        "people_daily_20260701_30165917",
+        "people_daily_20260827_30177487",
+        "people_daily_20260521_30158158"
+      ],
+      "status": "备选",
+      "priority": "A",
+      "series_code": "S02",
+      "series_name": "制造业背后的生产性服务",
+      "native_brackets": [
+        "产经视野·推动生产性服务业高质量发展",
+        "经济新方位·服务业扩能提质",
+        "民生一线·关注生产性服务业"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260701_30165917",
+          "date": "2026-07-01",
+          "title": "用好工业设计“钥匙”，开启制造业新蓝海（产经视野·推动生产性服务业高质量发展）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/01/content_30165917.html",
+          "markdown_path": "data/vault/2026/07/2026-07-01/18-产经/用好工业设计“钥匙”，开启制造业新蓝海（产经视野·推动生产性服务业高质量发展）.md",
+          "raw_path": "",
+          "word_count": 3221,
+          "use": "设计参与用户需求和产品开发",
+          "native_brackets": [
+            "产经视野·推动生产性服务业高质量发展"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260827_30177487",
+          "date": "2026-08-27",
+          "title": "工业设计，为制造业打开新空间（大数据观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/27/content_30177487.html",
+          "markdown_path": "data/vault/2026/08/2026-08-27/07-要闻/工业设计，为制造业打开新空间（大数据观察）.md",
+          "raw_path": "",
+          "word_count": 2745,
+          "use": "工业设计嵌入研发生产营销",
+          "native_brackets": [
+            "大数据观察"
+          ],
+          "in_native_family": false
+        },
+        {
+          "article_id": "people_daily_20260521_30158158",
+          "date": "2026-05-21",
+          "title": "中国雨伞的全球进阶路（看中国好物七十二变）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/21/content_30158158.html",
+          "markdown_path": "data/vault/2026/05/2026-05-21/18-消费/中国雨伞的全球进阶路（看中国好物七十二变）.md",
+          "raw_path": "",
+          "word_count": 3533,
+          "use": "雨伞在设计、品质与服务上的升级；组外补证",
+          "native_brackets": [
+            "看中国好物七十二变"
+          ],
+          "in_native_family": false
+        }
+      ],
+      "difference_from_existing": "与已有制造业柔性生产、文化科技融合区分，专门讨论需求研究、产品功能和设计服务怎样进入制造过程。"
+    },
+    {
+      "idea_id": "idea_20260913_native_logistics_coordination",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【物流降本增效】：货运得更快以后，怎样让企业整条供应链少等待",
+      "angle": "【原生栏目系列·制造业背后的生产性服务·第2篇】货运得更快以后，怎样让企业整条供应链少等待？ 分析主线：识别等待发生在哪里：运输、换装、仓储、口岸各算一笔账；从企业单点提速走向多方协同；用标准和信息减少衔接成本；以全程时效、综合成本和稳定性检验服务。 与旧稿区别：第27篇六张网讲基础设施体系，本题聚焦物流组织、标准、信息和服务的协同；不同于第87篇县域消费的末端供给。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "识别等待发生在哪里：运输、换装、仓储、口岸各算一笔账",
+        "从企业单点提速走向多方协同",
+        "用标准和信息减少衔接成本",
+        "以全程时效、综合成本和稳定性检验服务"
+      ],
+      "support_article_ids": [
+        "people_daily_20260428_30153620",
+        "people_daily_20260520_30157885",
+        "people_daily_20260623_30164474"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "series_code": "S02",
+      "series_name": "制造业背后的生产性服务",
+      "native_brackets": [
+        "产经视野·推动生产性服务业高质量发展",
+        "经济新方位·服务业扩能提质",
+        "民生一线·关注生产性服务业"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260428_30153620",
+          "date": "2026-04-28",
+          "title": "物流动脉更畅  服务产业更强（民生一线·关注生产性服务业）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/28/content_30153620.html",
+          "markdown_path": "data/vault/2026/04/2026-04-28/13-社会/物流动脉更畅 服务产业更强（民生一线·关注生产性服务业）.md",
+          "raw_path": "",
+          "word_count": 2598,
+          "use": "现代物流服务产业",
+          "native_brackets": [
+            "民生一线·关注生产性服务业"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260520_30157885",
+          "date": "2026-05-20",
+          "title": "“出海口”搬到“家门口”（产经视野·推动生产性服务业高质量发展）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/20/content_30157885.html",
+          "markdown_path": "data/vault/2026/05/2026-05-20/18-产经/“出海口”搬到“家门口”（产经视野·推动生产性服务业高质量发展）.md",
+          "raw_path": "",
+          "word_count": 3317,
+          "use": "港航协同从单点效率到全程效率",
+          "native_brackets": [
+            "产经视野·推动生产性服务业高质量发展"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260623_30164474",
+          "date": "2026-06-23",
+          "title": "现代物流网怎么建（经济新方位·精准发力建好“六张网”）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/23/content_30164474.html",
+          "markdown_path": "data/vault/2026/06/2026-06-23/03-要闻/现代物流网怎么建（经济新方位·精准发力建好“六张网”）.md",
+          "raw_path": "",
+          "word_count": 2570,
+          "use": "物流网的设施与协同机制；组外补证",
+          "native_brackets": [
+            "经济新方位·精准发力建好“六张网”"
+          ],
+          "in_native_family": false
+        }
+      ],
+      "difference_from_existing": "第27篇六张网讲基础设施体系，本题聚焦物流组织、标准、信息和服务的协同；不同于第87篇县域消费的末端供给。"
+    },
+    {
+      "idea_id": "idea_20260913_native_cadre_industry_literacy",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【干部产业能力】：面对一个新产业，怎样学懂门道并解决企业的真问题",
+      "angle": "【原生栏目系列·怎样成为懂产业的干部·第1篇】面对一个新产业，怎样学懂门道并解决企业的真问题？ 分析主线：建立产业知识图：技术、市场、配套和约束一起看；进入真实现场：向企业、科研人员和实践学习；把知识变成判断：识别瓶颈，避免照搬产业标签；把判断变成服务：跨部门解题并持续回访效果。 与旧稿区别：已有因地制宜、未来产业稿侧重产业选择，本题侧重干部的知识获取、现场学习、专业交流和服务能力形成。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "建立产业知识图：技术、市场、配套和约束一起看",
+        "进入真实现场：向企业、科研人员和实践学习",
+        "把知识变成判断：识别瓶颈，避免照搬产业标签",
+        "把判断变成服务：跨部门解题并持续回访效果"
+      ],
+      "support_article_ids": [
+        "people_daily_20260324_30146956",
+        "people_daily_20260421_30152372",
+        "people_daily_20260609_30161910"
+      ],
+      "status": "备选",
+      "priority": "A",
+      "series_code": "S03",
+      "series_name": "怎样成为懂产业的干部",
+      "native_brackets": [
+        "前沿观察·锻造推动产业发展的行家里手"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260324_30146956",
+          "date": "2026-03-24",
+          "title": "历练实干本领  涵养创新生态（前沿观察·锻造推动产业发展的行家里手）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/24/content_30146956.html",
+          "markdown_path": "data/vault/2026/03/2026-03-24/19-党建/历练实干本领 涵养创新生态（前沿观察·锻造推动产业发展的行家里手）.md",
+          "raw_path": "",
+          "word_count": 3470,
+          "use": "产业一线锤炼专业本领",
+          "native_brackets": [
+            "前沿观察·锻造推动产业发展的行家里手"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260421_30152372",
+          "date": "2026-04-21",
+          "title": "贵阳贵安数字经济何以“三级跳”（前沿观察·锻造推动产业发展的行家里手）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/21/content_30152372.html",
+          "markdown_path": "data/vault/2026/04/2026-04-21/19-党建/贵阳贵安数字经济何以“三级跳”（前沿观察·锻造推动产业发展的行家里手）.md",
+          "raw_path": "",
+          "word_count": 3433,
+          "use": "数字经济演进中的学习与服务",
+          "native_brackets": [
+            "前沿观察·锻造推动产业发展的行家里手"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260609_30161910",
+          "date": "2026-06-09",
+          "title": "因地制宜谋  求真务实干（前沿观察·锻造推动产业发展的行家里手）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/09/content_30161910.html",
+          "markdown_path": "data/vault/2026/06/2026-06-09/19-党建/因地制宜谋 求真务实干（前沿观察·锻造推动产业发展的行家里手）.md",
+          "raw_path": "",
+          "word_count": 4646,
+          "use": "多地产业实践中的求真务实",
+          "native_brackets": [
+            "前沿观察·锻造推动产业发展的行家里手"
+          ],
+          "in_native_family": true
+        }
+      ],
+      "difference_from_existing": "已有因地制宜、未来产业稿侧重产业选择，本题侧重干部的知识获取、现场学习、专业交流和服务能力形成。"
+    },
+    {
+      "idea_id": "idea_20260913_native_fault_tolerance_correction",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【容错纠错】：干部敢于探索，怎样同时守住责任和程序",
+      "angle": "【原生栏目系列·让干部愿担当、敢担当、善担当·第1篇】干部敢于探索，怎样同时守住责任和程序？ 分析主线：先辨问题性质：探索失误、失职和违纪违法不能混同；还原事实过程：动机、条件、程序、影响及补救一并核验；按权限和程序作出处理：保护担当也明确责任；让纠错接上容错：整改、复盘、能力提升与制度完善。 与旧稿区别：与第45篇考核、第50篇抓落实区分，聚焦探索失误怎样辨认、处理和改正；地方做法不写成全国统一制度，报备不等于自动免责。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "先辨问题性质：探索失误、失职和违纪违法不能混同",
+        "还原事实过程：动机、条件、程序、影响及补救一并核验",
+        "按权限和程序作出处理：保护担当也明确责任",
+        "让纠错接上容错：整改、复盘、能力提升与制度完善"
+      ],
+      "support_article_ids": [
+        "people_daily_20260413_30150725",
+        "people_daily_20260417_30151644",
+        "people_daily_20260417_30151645"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "series_code": "S04",
+      "series_name": "让干部愿担当、敢担当、善担当",
+      "native_brackets": [
+        "干部状态新观察·让愿担当、敢担当、善担当蔚然成风",
+        "人民眼·全面增强干部队伍现代化建设能力"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260413_30150725",
+          "date": "2026-04-13",
+          "title": "放下“洗碗越多，摔碗越多”的干事顾虑（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/13/content_30150725.html",
+          "markdown_path": "data/vault/2026/04/2026-04-13/10-政治/放下“洗碗越多，摔碗越多”的干事顾虑（干部状态新观察·让愿担当、敢担当、善担当蔚然成风）.md",
+          "raw_path": "",
+          "word_count": 1936,
+          "use": "地方报备容错的情境",
+          "native_brackets": [
+            "干部状态新观察·让愿担当、敢担当、善担当蔚然成风"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260417_30151644",
+          "date": "2026-04-17",
+          "title": "为担当者担当  向“不敢为”说不（人民眼·全面增强干部队伍现代化建设能力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/17/content_30151644.html",
+          "markdown_path": "data/vault/2026/04/2026-04-17/13-记者调查/为担当者担当 向“不敢为”说不（人民眼·全面增强干部队伍现代化建设能力）.md",
+          "raw_path": "",
+          "word_count": 5237,
+          "use": "容错减责的具体调查",
+          "native_brackets": [
+            "人民眼·全面增强干部队伍现代化建设能力"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260417_30151645",
+          "date": "2026-04-17",
+          "title": "科学容错纠错  激励担当作为（有所思）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/17/content_30151645.html",
+          "markdown_path": "data/vault/2026/04/2026-04-17/13-记者调查/科学容错纠错 激励担当作为（有所思）.md",
+          "raw_path": "",
+          "word_count": 550,
+          "use": "边界、程序与纠错要求",
+          "native_brackets": [
+            "有所思"
+          ],
+          "in_native_family": false
+        }
+      ],
+      "difference_from_existing": "与第45篇考核、第50篇抓落实区分，聚焦探索失误怎样辨认、处理和改正；地方做法不写成全国统一制度，报备不等于自动免责。"
+    },
+    {
+      "idea_id": "idea_20260913_native_reporting_data_burden",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【基层报表减负】：表格少了，怎样让基层数据更准、更有用",
+      "angle": "【原生栏目系列·基层减负的具体边界·第1篇】表格少了，怎样让基层数据更准、更有用？ 分析主线：先问用途：每张表服务什么决策，能否复用已有数据；统筹采集：减少多头布置和不合理时限；共享与核验并行：系统取数不能代替现场了解；用使用效果验减负：基层少重复、业务部门能判断。 与旧稿区别：第83篇讲减负与赋能的总体关系，第07篇讲数字治理；本题只讨论数据采集的必要性、频次、共享、核验和使用。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "先问用途：每张表服务什么决策，能否复用已有数据",
+        "统筹采集：减少多头布置和不合理时限",
+        "共享与核验并行：系统取数不能代替现场了解",
+        "用使用效果验减负：基层少重复、业务部门能判断"
+      ],
+      "support_article_ids": [
+        "people_daily_20260715_30168855",
+        "people_daily_20260806_30173432",
+        "people_daily_20260810_30174003"
+      ],
+      "status": "备选",
+      "priority": "A",
+      "series_code": "S05",
+      "series_name": "基层减负的具体边界",
+      "native_brackets": [
+        "干部状态新观察·为基层减负赋能"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260715_30168855",
+          "date": "2026-07-15",
+          "title": "数据赋能不是数据万能（干部状态新观察·为基层减负赋能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/15/content_30168855.html",
+          "markdown_path": "data/vault/2026/07/2026-07-15/07-政治/数据赋能不是数据万能（干部状态新观察·为基层减负赋能）.md",
+          "raw_path": "",
+          "word_count": 2043,
+          "use": "数据与业务流程的关系",
+          "native_brackets": [
+            "干部状态新观察·为基层减负赋能"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260806_30173432",
+          "date": "2026-08-06",
+          "title": "摸清底数不能动辄报数（干部状态新观察·为基层减负赋能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/06/content_30173432.html",
+          "markdown_path": "data/vault/2026/08/2026-08-06/12-政治/摸清底数不能动辄报数（干部状态新观察·为基层减负赋能）.md",
+          "raw_path": "",
+          "word_count": 2304,
+          "use": "减少临时报数并走进现场",
+          "native_brackets": [
+            "干部状态新观察·为基层减负赋能"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260810_30174003",
+          "date": "2026-08-10",
+          "title": "规范填报不是事事填表（干部状态新观察·为基层减负赋能）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/10/content_30174003.html",
+          "markdown_path": "data/vault/2026/08/2026-08-10/11-政治/规范填报不是事事填表（干部状态新观察·为基层减负赋能）.md",
+          "raw_path": "",
+          "word_count": 1888,
+          "use": "一表通减少重复填报",
+          "native_brackets": [
+            "干部状态新观察·为基层减负赋能"
+          ],
+          "in_native_family": true
+        }
+      ],
+      "difference_from_existing": "第83篇讲减负与赋能的总体关系，第07篇讲数字治理；本题只讨论数据采集的必要性、频次、共享、核验和使用。"
+    },
+    {
+      "idea_id": "idea_20260913_native_agri_technology_adoption",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【农业技术推广】：好技术到了田边，怎样让农户愿意用、用得好",
+      "angle": "【原生栏目系列·一项农业新技术怎样真正下田·第1篇】好技术到了田边，怎样让农户愿意用、用得好？ 分析主线：从农户的一笔账出发：投入、劳动、收益与风险；用真实田块验证适用性，明确适合谁和什么条件；降低采用门槛：示范、培训与可获得的服务；把效果反馈给推广者：让技术随土地和需求调整。 与旧稿区别：已有新质生产力稿介绍技术作用，农业社会化服务稿讲服务组织；本题聚焦农户采用一项新技术时的成本收益、试用条件与后续支持。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "从农户的一笔账出发：投入、劳动、收益与风险",
+        "用真实田块验证适用性，明确适合谁和什么条件",
+        "降低采用门槛：示范、培训与可获得的服务",
+        "把效果反馈给推广者：让技术随土地和需求调整"
+      ],
+      "support_article_ids": [
+        "people_daily_20260429_30153803",
+        "people_daily_20260304_30143324",
+        "people_daily_20260412_30150528"
+      ],
+      "status": "备选",
+      "priority": "A",
+      "series_code": "S06",
+      "series_name": "一项农业新技术怎样真正下田",
+      "native_brackets": [
+        "春耕里的新质生产力"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260429_30153803",
+          "date": "2026-04-29",
+          "title": "细算5笔账，农户主动用上膜下滴灌（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/29/content_30153803.html",
+          "markdown_path": "data/vault/2026/04/2026-04-29/02-要闻/细算5笔账，农户主动用上膜下滴灌（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1124,
+          "use": "五笔账说明农户采用的收益比较",
+          "native_brackets": [
+            "春耕里的新质生产力"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260304_30143324",
+          "date": "2026-03-04",
+          "title": "老杨农资店满满科技感（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/04/content_30143324.html",
+          "markdown_path": "data/vault/2026/03/2026-03-04/02-要闻/老杨农资店满满科技感（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1341,
+          "use": "农资店与技术服务网络",
+          "native_brackets": [
+            "春耕里的新质生产力"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260412_30150528",
+          "date": "2026-04-12",
+          "title": "田间来了“大力士”，能扛秧苗几百斤（春耕里的新质生产力）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/12/content_30150528.html",
+          "markdown_path": "data/vault/2026/04/2026-04-12/03-要闻/田间来了“大力士”，能扛秧苗几百斤（春耕里的新质生产力）.md",
+          "raw_path": "",
+          "word_count": 1598,
+          "use": "新农机在真实田间的适用条件",
+          "native_brackets": [
+            "春耕里的新质生产力"
+          ],
+          "in_native_family": true
+        }
+      ],
+      "difference_from_existing": "已有新质生产力稿介绍技术作用，农业社会化服务稿讲服务组织；本题聚焦农户采用一项新技术时的成本收益、试用条件与后续支持。"
+    },
+    {
+      "idea_id": "idea_20260913_native_art_village_cocreation",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【艺术乡建】：艺术来到村里，怎样让村民成为持续参与的创作者",
+      "angle": "【原生栏目系列·文艺怎样扎根乡村·第1篇】艺术来到村里，怎样让村民成为持续参与的创作者？ 分析主线：从村民已有生活和表达出发，找到本地创作资源；让外来资源帮助共创：培训、指导和公共空间；建立持续参与的组织条件和展示交流渠道；审视乡村受益：文化表达、参与机会与经营收益分别评价。 与旧稿区别：与第42篇公共文化设施和服务、第95篇旅居条件区分，聚焦村民创作主体、技能与组织支持；不把艺术进入村庄等同普遍增收。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "从村民已有生活和表达出发，找到本地创作资源",
+        "让外来资源帮助共创：培训、指导和公共空间",
+        "建立持续参与的组织条件和展示交流渠道",
+        "审视乡村受益：文化表达、参与机会与经营收益分别评价"
+      ],
+      "support_article_ids": [
+        "people_daily_20260204_30138173",
+        "people_daily_20260401_30148555",
+        "people_daily_20260722_30170153"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "series_code": "S08",
+      "series_name": "文艺怎样扎根乡村",
+      "native_brackets": [
+        "文艺赋美乡村"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260204_30138173",
+          "date": "2026-02-04",
+          "title": "文艺扎进泥土  在乡村诗意栖居（文艺赋美乡村）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/04/content_30138173.html",
+          "markdown_path": "data/vault/2026/02/2026-02-04/12-文化/文艺扎进泥土 在乡村诗意栖居（文艺赋美乡村）.md",
+          "raw_path": "",
+          "word_count": 2629,
+          "use": "文艺扎根乡村生活",
+          "native_brackets": [
+            "文艺赋美乡村"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260401_30148555",
+          "date": "2026-04-01",
+          "title": "绘出农村的美  农民的勤  农耕的火热（文艺赋美乡村）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/01/content_30148555.html",
+          "markdown_path": "data/vault/2026/04/2026-04-01/11-文化/绘出农村的美 农民的勤 农耕的火热（文艺赋美乡村）.md",
+          "raw_path": "",
+          "word_count": 1223,
+          "use": "农民画与乡村发展",
+          "native_brackets": [
+            "文艺赋美乡村"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260722_30170153",
+          "date": "2026-07-22",
+          "title": "“谁说握锄头的手不能握画笔？”（文艺赋美乡村）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/22/content_30170153.html",
+          "markdown_path": "data/vault/2026/07/2026-07-22/11-文化/“谁说握锄头的手不能握画笔？”（文艺赋美乡村）.md",
+          "raw_path": "",
+          "word_count": 1450,
+          "use": "村民创作与代际参与",
+          "native_brackets": [
+            "文艺赋美乡村"
+          ],
+          "in_native_family": true
+        }
+      ],
+      "difference_from_existing": "与第42篇公共文化设施和服务、第95篇旅居条件区分，聚焦村民创作主体、技能与组织支持；不把艺术进入村庄等同普遍增收。"
+    },
+    {
+      "idea_id": "idea_20260913_native_heritage_design_translation",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【文创转译】：文物变成日用品，怎样保留文化信息并满足真实需求",
+      "angle": "【原生栏目系列·身边文物：保护、理解与转译·第2篇】文物变成日用品，怎样保留文化信息并满足真实需求？ 分析主线：先识别文物承载的信息和可用元素；从复制外形到设计真实的使用场景；保持文化解释和创意表达之间的准确关系；分别评价实用性、审美、文化理解和市场反馈。 与旧稿区别：第40篇侧重文化科技融合，本题研究文化元素提取、信息准确、功能设计与使用场景；不以销量代替文化传播效果。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "先识别文物承载的信息和可用元素",
+        "从复制外形到设计真实的使用场景",
+        "保持文化解释和创意表达之间的准确关系",
+        "分别评价实用性、审美、文化理解和市场反馈"
+      ],
+      "support_article_ids": [
+        "people_daily_20260902_30178557",
+        "people_daily_20260722_30170191",
+        "people_daily_20260408_30149766"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "series_code": "S09",
+      "series_name": "身边文物：保护、理解与转译",
+      "native_brackets": [
+        "我家门口有文物",
+        "文物里的潮生活"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260902_30178557",
+          "date": "2026-09-02",
+          "title": "国博文创让文物“潮”出圈（文物里的潮生活）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202609/02/content_30178557.html",
+          "markdown_path": "data/vault/2026/09/2026-09-02/19-消费/国博文创让文物“潮”出圈（文物里的潮生活）.md",
+          "raw_path": "",
+          "word_count": 1293,
+          "use": "国博文创的使用场景和设计",
+          "native_brackets": [
+            "文物里的潮生活"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260722_30170191",
+          "date": "2026-07-22",
+          "title": "“香薰鸭”变“岁岁鸭”的潮流转译（文物里的潮生活）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/22/content_30170191.html",
+          "markdown_path": "data/vault/2026/07/2026-07-22/19-消费/“香薰鸭”变“岁岁鸭”的潮流转译（文物里的潮生活）.md",
+          "raw_path": "",
+          "word_count": 1389,
+          "use": "文物特征与时尚转译",
+          "native_brackets": [
+            "文物里的潮生活"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260408_30149766",
+          "date": "2026-04-08",
+          "title": "古蜀文物化作“潮品”融入日常（文物里的潮生活）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/08/content_30149766.html",
+          "markdown_path": "data/vault/2026/04/2026-04-08/19-消费/古蜀文物化作“潮品”融入日常（文物里的潮生活）.md",
+          "raw_path": "",
+          "word_count": 1216,
+          "use": "古蜀文物进入日常产品",
+          "native_brackets": [
+            "文物里的潮生活"
+          ],
+          "in_native_family": true
+        }
+      ],
+      "difference_from_existing": "第40篇侧重文化科技融合，本题研究文化元素提取、信息准确、功能设计与使用场景；不以销量代替文化传播效果。"
+    },
+    {
+      "idea_id": "idea_20260913_native_habitat_restoration_evidence",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【生境保护】：鸟回来了，怎样判断生态保护真正有效",
+      "angle": "【原生栏目系列·看得见变化的生态保护·第1篇】鸟回来了，怎样判断生态保护真正有效？ 分析主线：从一个物种回到它需要的栖息环境；识别破坏来源并恢复水土植被等关键条件；建立本底和持续监测，分清发现变化与种群变化；以长期维护和人类活动管理巩固保护效果。 与旧稿区别：与美丽中国总论、生态价值和补偿选题区分，聚焦栖息环境、干扰控制与监测评价；发现更多物种不直接等于新增了更多物种，也不能凭一张照片证明因果。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "从一个物种回到它需要的栖息环境",
+        "识别破坏来源并恢复水土植被等关键条件",
+        "建立本底和持续监测，分清发现变化与种群变化",
+        "以长期维护和人类活动管理巩固保护效果"
+      ],
+      "support_article_ids": [
+        "people_daily_20260202_30137391",
+        "people_daily_20260427_30153313",
+        "people_daily_20260608_30161747"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "series_code": "S10",
+      "series_name": "看得见变化的生态保护",
+      "native_brackets": [
+        "美丽中国",
+        "美丽中国行",
+        "美丽中国·身边的绿色故事"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260202_30137391",
+          "date": "2026-02-02",
+          "title": "珍爱湿地  人与自然和谐共生（美丽中国）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/02/content_30137391.html",
+          "markdown_path": "data/vault/2026/02/2026-02-02/13-生态/珍爱湿地 人与自然和谐共生（美丽中国）.md",
+          "raw_path": "",
+          "word_count": 3319,
+          "use": "湿地保护与生态功能",
+          "native_brackets": [
+            "美丽中国"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260427_30153313",
+          "date": "2026-04-27",
+          "title": "珍稀鸟类为啥成化工园区“常客”？（美丽中国）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/27/content_30153313.html",
+          "markdown_path": "data/vault/2026/04/2026-04-27/12-生态/珍稀鸟类为啥成化工园区“常客”？（美丽中国）.md",
+          "raw_path": "",
+          "word_count": 2372,
+          "use": "园区转型修复后的鸟类活动",
+          "native_brackets": [
+            "美丽中国"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260608_30161747",
+          "date": "2026-06-08",
+          "title": "黄龙自然保护地  生态家底更殷实（美丽中国行）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/08/content_30161747.html",
+          "markdown_path": "data/vault/2026/06/2026-06-08/04-要闻/黄龙自然保护地 生态家底更殷实（美丽中国行）.md",
+          "raw_path": "",
+          "word_count": 1096,
+          "use": "保护地本底调查与监测证据",
+          "native_brackets": [
+            "美丽中国行"
+          ],
+          "in_native_family": true
+        }
+      ],
+      "difference_from_existing": "与美丽中国总论、生态价值和补偿选题区分，聚焦栖息环境、干扰控制与监测评价；发现更多物种不直接等于新增了更多物种，也不能凭一张照片证明因果。"
+    },
+    {
+      "idea_id": "idea_20260913_native_service_feedback_redesign",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【政务服务评价】：办完以后，怎样让群众反馈改变下一次办事",
+      "angle": "【原生栏目系列·高效办成一件事的前后半程·第2篇】办完以后，怎样让群众反馈改变下一次办事？ 分析主线：让反馈进得来：便利表达，识别未办成和不愿评价的需求；从一次差评追到业务原因和制度原因；把共性问题转成服务规则和流程调整；用再办体验和回访结果检验改进。 与旧稿区别：第90篇重办理流程，第45篇重干部考核；本题侧重如何采集反馈、诊断共性问题、推动规则改进并回访验证。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "让反馈进得来：便利表达，识别未办成和不愿评价的需求",
+        "从一次差评追到业务原因和制度原因",
+        "把共性问题转成服务规则和流程调整",
+        "用再办体验和回访结果检验改进"
+      ],
+      "support_article_ids": [
+        "people_daily_20260706_30166951",
+        "people_daily_20260508_30155515",
+        "people_daily_20260402_30148918"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "series_code": "S11",
+      "series_name": "高效办成一件事的前后半程",
+      "native_brackets": [
+        "高效办成一件事"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260706_30166951",
+          "date": "2026-07-06",
+          "title": "从企业群众评价中找到发力方向（高效办成一件事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/06/content_30166951.html",
+          "markdown_path": "data/vault/2026/07/2026-07-06/11-政治/从企业群众评价中找到发力方向（高效办成一件事）.md",
+          "raw_path": "",
+          "word_count": 2738,
+          "use": "从群众感受找到改革方向",
+          "native_brackets": [
+            "高效办成一件事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260508_30155515",
+          "date": "2026-05-08",
+          "title": "上海惠企政策服务引入“好差评”机制",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/08/content_30155515.html",
+          "markdown_path": "data/vault/2026/05/2026-05-08/10-政治/上海惠企政策服务引入“好差评”机制.md",
+          "raw_path": "",
+          "word_count": 529,
+          "use": "惠企服务好差评；组外补证",
+          "native_brackets": [],
+          "in_native_family": false
+        },
+        {
+          "article_id": "people_daily_20260402_30148918",
+          "date": "2026-04-02",
+          "title": "“办不成事”窗口最终是为办得成（金台锐评）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/02/content_30148918.html",
+          "markdown_path": "data/vault/2026/04/2026-04-02/19-法治/“办不成事”窗口最终是为办得成（金台锐评）.md",
+          "raw_path": "",
+          "word_count": 787,
+          "use": "从办不成个案反查制度堵点；组外补证",
+          "native_brackets": [
+            "金台锐评"
+          ],
+          "in_native_family": false
+        }
+      ],
+      "difference_from_existing": "第90篇重办理流程，第45篇重干部考核；本题侧重如何采集反馈、诊断共性问题、推动规则改进并回访验证。"
+    },
+    {
+      "idea_id": "idea_20260913_native_engineering_reliability",
+      "date": "2026-09-13",
+      "title": "《人民日报》深度分析【工程可靠性】：技术怎样经得起复杂环境和实际运行的考验",
+      "angle": "【原生栏目系列·创新怎样经得起实际使用·第1篇】技术怎样经得起复杂环境和实际运行的考验？ 分析主线：从真实工况倒推性能和安全约束；分解难题：材料、结构、控制和环境分别验证；系统集成后检验协同，避免单项指标替代整体表现；在实际运行中反馈改进，交代验证范围与限制。 与旧稿区别：第68篇中试关注量产和市场检验；本题聚焦大型工程和装备在复杂工况中的设计约束、系统协同与验证，不写成具体施工指导。",
+      "platform": "公众号 + 课堂讲解",
+      "outline": [
+        "从真实工况倒推性能和安全约束",
+        "分解难题：材料、结构、控制和环境分别验证",
+        "系统集成后检验协同，避免单项指标替代整体表现",
+        "在实际运行中反馈改进，交代验证范围与限制"
+      ],
+      "support_article_ids": [
+        "people_daily_20260623_30164497",
+        "people_daily_20260716_30169104",
+        "people_daily_20260819_30175795"
+      ],
+      "status": "备选",
+      "priority": "B",
+      "series_code": "S12",
+      "series_name": "创新怎样经得起实际使用",
+      "native_brackets": [
+        "创新故事"
+      ],
+      "evidence": [
+        {
+          "article_id": "people_daily_20260623_30164497",
+          "date": "2026-06-23",
+          "title": "建造海面上的“超级打桩机”（创新故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/23/content_30164497.html",
+          "markdown_path": "data/vault/2026/06/2026-06-23/06-要闻/建造海面上的“超级打桩机”（创新故事）.md",
+          "raw_path": "",
+          "word_count": 1872,
+          "use": "打桩船的受力与精准控制",
+          "native_brackets": [
+            "创新故事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260716_30169104",
+          "date": "2026-07-16",
+          "title": "分段攻坚，穿透岩层“迷雾”（创新故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202607/16/content_30169104.html",
+          "markdown_path": "data/vault/2026/07/2026-07-16/06-要闻/分段攻坚，穿透岩层“迷雾”（创新故事）.md",
+          "raw_path": "",
+          "word_count": 2069,
+          "use": "复杂地层分段攻坚",
+          "native_brackets": [
+            "创新故事"
+          ],
+          "in_native_family": true
+        },
+        {
+          "article_id": "people_daily_20260819_30175795",
+          "date": "2026-08-19",
+          "title": "让最快高铁列车跑得快、停得住（创新故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202608/19/content_30175795.html",
+          "markdown_path": "data/vault/2026/08/2026-08-19/06-要闻/让最快高铁列车跑得快、停得住（创新故事）.md",
+          "raw_path": "",
+          "word_count": 1679,
+          "use": "高铁制动的材料与系统协同",
+          "native_brackets": [
+            "创新故事"
+          ],
+          "in_native_family": true
+        }
+      ],
+      "difference_from_existing": "第68篇中试关注量产和市场检验；本题聚焦大型工程和装备在复杂工况中的设计约束、系统协同与验证，不写成具体施工指导。"
+    }
+  ],
+  "support_updates": {
+    "idea_20260622_28_china_brand_global_value": [
+      "people_daily_20260302_30142944",
+      "people_daily_20260713_30168348",
+      "people_daily_20260727_30171050"
+    ],
+    "idea_refined_20260612_tech_transfer_chain": [
+      "people_daily_20260427_30153345",
+      "people_daily_20260514_30156888",
+      "people_daily_20260527_30159421",
+      "people_daily_20260326_30147462",
+      "people_daily_20260508_30155617",
+      "people_daily_20260112_30131252"
+    ],
+    "idea_20260622_28_future_industry_positioning": [
+      "people_daily_20260317_30145558",
+      "people_daily_20260331_30148376",
+      "people_daily_20260519_30157772"
+    ],
+    "idea_20260629_0705_performance_assessment_value": [
+      "people_daily_20260414_30150969"
+    ],
+    "idea_20260706_0712_agricultural_socialized_service": [
+      "people_daily_20260410_30150364",
+      "people_daily_20260417_30151559",
+      "people_daily_20260504_30154786"
+    ],
+    "idea_20260912_h1_training_to_jobs": [
+      "people_daily_20260813_30174693",
+      "people_daily_20260828_30177675"
+    ],
+    "idea_refined_20260612_employment_chain": [
+      "people_daily_20260709_30167691",
+      "people_daily_20260517_30157307"
+    ],
+    "idea_20260629_0705_rural_public_culture": [
+      "people_daily_20260318_30145856",
+      "people_daily_20260415_30151283",
+      "people_daily_20260526_30159110"
+    ],
+    "idea_refined_20260613_cultural_heritage_life": [
+      "people_daily_20260411_30150454",
+      "people_daily_20260606_30161422",
+      "people_daily_20260829_30177901"
+    ],
+    "idea_20260615_21_ecology_asset_income": [
+      "people_daily_20260609_30162037",
+      "people_daily_20260613_30162797",
+      "people_daily_20260713_30168324"
+    ],
+    "idea_202601_revisit_public_service_fast_track": [
+      "people_daily_20260508_30155511",
+      "people_daily_20260609_30161985",
+      "people_daily_20260610_30162206"
+    ]
+  },
+  "support_removals": {},
+  "reading_duplicates": {
+    "people_daily_20260105_30129318": "people_daily_20260105_30129299",
+    "people_daily_20260111_30131069": "people_daily_20260111_30131042",
+    "people_daily_20260118_30133390": "people_daily_20260118_30133368",
+    "people_daily_20260119_30133523": "people_daily_20260119_30133490",
+    "people_daily_20260128_30136214": "people_daily_20260128_30136169",
+    "people_daily_20260303_30143155": "people_daily_20260303_30143136",
+    "people_daily_20260305_30143544": "people_daily_20260305_30143534",
+    "people_daily_20260315_30145362": "people_daily_20260315_30145339",
+    "people_daily_20260318_30145830": "people_daily_20260318_30145798",
+    "people_daily_20260319_30146108": "people_daily_20260319_30146087",
+    "people_daily_20260319_30146109": "people_daily_20260319_30146088",
+    "people_daily_20260329_30147961": "people_daily_20260329_30147950",
+    "people_daily_20260402_30148806": "people_daily_20260402_30148781",
+    "people_daily_20260402_30148824": "people_daily_20260402_30148777",
+    "people_daily_20260407_30149451": "people_daily_20260407_30149431",
+    "people_daily_20260413_30150691": "people_daily_20260413_30150664",
+    "people_daily_20260420_30152049": "people_daily_20260420_30152023",
+    "people_daily_20260423_30152679": "people_daily_20260423_30152642",
+    "people_daily_20260429_30153820": "people_daily_20260429_30153794",
+    "people_daily_20260429_30153821": "people_daily_20260429_30153796",
+    "people_daily_20260504_30154800": "people_daily_20260504_30154780",
+    "people_daily_20260514_30156822": "people_daily_20260514_30156795",
+    "people_daily_20260518_30157360": "people_daily_20260518_30157355",
+    "people_daily_20260520_30157831": "people_daily_20260520_30157787",
+    "people_daily_20260525_30158967": "people_daily_20260525_30158957",
+    "people_daily_20260601_30160108": "people_daily_20260601_30160069",
+    "people_daily_20260615_30163079": "people_daily_20260615_30163053",
+    "people_daily_20260616_30163291": "people_daily_20260616_30163259",
+    "people_daily_20260616_30163313": "people_daily_20260616_30163290",
+    "people_daily_20260617_30163481": "people_daily_20260617_30163453",
+    "people_daily_20260617_30163482": "people_daily_20260617_30163454",
+    "people_daily_20260618_30163747": "people_daily_20260618_30163723",
+    "people_daily_20260618_30163752": "people_daily_20260618_30163722",
+    "people_daily_20260618_30163754": "people_daily_20260618_30163721",
+    "people_daily_20260620_30163936": "people_daily_20260620_30163924",
+    "people_daily_20260622_30164239": "people_daily_20260622_30164236",
+    "people_daily_20260625_30164799": "people_daily_20260625_30164764",
+    "people_daily_20260627_30165314": "people_daily_20260627_30165281",
+    "people_daily_20260629_30165391": "people_daily_20260629_30165371",
+    "people_daily_20260630_30165697": "people_daily_20260630_30165666",
+    "people_daily_20260701_30165926": "people_daily_20260701_30165923",
+    "people_daily_20260703_30166346": "people_daily_20260703_30166336",
+    "people_daily_20260704_30166583": "people_daily_20260704_30166574",
+    "people_daily_20260706_30166878": "people_daily_20260706_30166861",
+    "people_daily_20260708_30167448": "people_daily_20260708_30167408",
+    "people_daily_20260710_30167901": "people_daily_20260710_30167856",
+    "people_daily_20260713_30168329": "people_daily_20260713_30168296",
+    "people_daily_20260714_30168627": "people_daily_20260714_30168602",
+    "people_daily_20260714_30168650": "people_daily_20260714_30168603",
+    "people_daily_20260715_30168832": "people_daily_20260715_30168809",
+    "people_daily_20260715_30168852": "people_daily_20260715_30168815",
+    "people_daily_20260717_30169329": "people_daily_20260717_30169295",
+    "people_daily_20260719_30169584": "people_daily_20260719_30169554",
+    "people_daily_20260720_30169697": "people_daily_20260720_30169678",
+    "people_daily_20260720_30169699": "people_daily_20260720_30169679",
+    "people_daily_20260721_30169938": "people_daily_20260721_30169894",
+    "people_daily_20260722_30170120": "people_daily_20260722_30170102",
+    "people_daily_20260722_30170128": "people_daily_20260722_30170107",
+    "people_daily_20260723_30170457": "people_daily_20260723_30170436",
+    "people_daily_20260727_30171088": "people_daily_20260727_30171064",
+    "people_daily_20260728_30171381": "people_daily_20260728_30171366",
+    "people_daily_20260728_30171394": "people_daily_20260728_30171364",
+    "people_daily_20260731_30172383": "people_daily_20260731_30172355",
+    "people_daily_20260804_30172980": "people_daily_20260804_30172948",
+    "people_daily_20260806_30173386": "people_daily_20260806_30173362",
+    "people_daily_20260806_30173398": "people_daily_20260806_30173363",
+    "people_daily_20260808_30173749": "people_daily_20260808_30173729",
+    "people_daily_20260809_30173800": "people_daily_20260809_30173779",
+    "people_daily_20260811_30174308": "people_daily_20260811_30174299",
+    "people_daily_20260813_30174629": "people_daily_20260813_30174612",
+    "people_daily_20260814_30174903": "people_daily_20260814_30174882",
+    "people_daily_20260815_30175036": "people_daily_20260815_30175027",
+    "people_daily_20260816_30175098": "people_daily_20260816_30175092",
+    "people_daily_20260816_30175128": "people_daily_20260816_30175093",
+    "people_daily_20260820_30176109": "people_daily_20260820_30176063",
+    "people_daily_20260821_30176348": "people_daily_20260821_30176297",
+    "people_daily_20260822_30176503": "people_daily_20260822_30176466",
+    "people_daily_20260823_30176539": "people_daily_20260823_30176530",
+    "people_daily_20260826_30177125": "people_daily_20260826_30177110",
+    "people_daily_20260826_30177131": "people_daily_20260826_30177111",
+    "people_daily_20260827_30177483": "people_daily_20260827_30177459",
+    "people_daily_20260828_30177635": "people_daily_20260828_30177627",
+    "people_daily_20260828_30177660": "people_daily_20260828_30177629",
+    "people_daily_20260828_30177664": "people_daily_20260828_30177630",
+    "people_daily_20260828_30177665": "people_daily_20260828_30177644",
+    "people_daily_20260828_30177666": "people_daily_20260828_30177646",
+    "people_daily_20260829_30177895": "people_daily_20260829_30177883",
+    "people_daily_20260829_30177928": "people_daily_20260829_30177914",
+    "people_daily_20260829_30177933": "people_daily_20260829_30177918",
+    "people_daily_20260829_30177934": "people_daily_20260829_30177919",
+    "people_daily_20260829_30177939": "people_daily_20260829_30177920",
+    "people_daily_20260829_30177941": "people_daily_20260829_30177926",
+    "people_daily_20260830_30178002": "people_daily_20260830_30177989",
+    "people_daily_20260830_30178003": "people_daily_20260830_30177990",
+    "people_daily_20260830_30178008": "people_daily_20260830_30177991",
+    "people_daily_20260830_30178019": "people_daily_20260830_30177994",
+    "people_daily_20260830_30178020": "people_daily_20260830_30177995",
+    "people_daily_20260904_30179042": "people_daily_20260904_30179034",
+    "people_daily_20260904_30179083": "people_daily_20260904_30179036",
+    "people_daily_20260904_30179084": "people_daily_20260904_30179035",
+    "people_daily_20260904_30179090": "people_daily_20260904_30179037",
+    "people_daily_20260905_30179241": "people_daily_20260905_30179222"
+  }
+}

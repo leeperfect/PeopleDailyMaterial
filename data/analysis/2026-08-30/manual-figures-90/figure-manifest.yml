@@ -1,0 +1,251 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-08-30'
+registered_at: '2026-09-21T11:56:37'
+article: data/articles/人民日报系列/90-《人民日报》深度分析【民生服务快办】：不是催窗口再快一点，而是按风险和紧急程度重做流程.md
+topic: 民生服务快办
+article_number: '90'
+asset_root: media/images/2026-08-30-article-90
+manifest_path: data/analysis/2026-08-30/manual-figures-90/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-90-01
+      before_heading: '## 一、先分类再提速：用两把尺子决定走哪条路'
+      inline_marker: '![第90篇配图01](media/images/2026-08-30-article-90/fig-90-01.png)'
+      anchor_before: 90｜《人民日报》深度分析【民生服务快办】：不是催窗口再快一点，而是按风险和紧急程度重做流程
+      anchor_after: 一位居民因大病住院，出院时还在为自付的医疗费用发愁。他没有先去窗口排队，系统已经根据其医疗支出变化发出了预警。工作人员主动联系、上门核实并协助申请，审核审批只用了2天。出院不到一周，16296元临时救助金就已到账。
+      context_after: 同样是群众急需办理的事，其难度和风险可能完全不同。一笔事实清楚、金额较小的急难救助，与一起责任存在争议的职业伤害案件，不能走同一套程序；一次标准化的失业登记，与
+    - id: fig-90-02
+      before_heading: '## 一、先分类再提速：用两把尺子决定走哪条路'
+      inline_marker: '![第90篇配图02](media/images/2026-08-30-article-90/fig-90-02.png)'
+      anchor_before: 从困难出现到系统发现，从工作人员上门到材料提交，再从审核审批到资金到账，时间被压缩在整个流程之中。窗口人员并没有被要求把每个动作做得更急，变化发生在窗口之前，也发生在部门之间。
+      anchor_after: 答案并不在窗口的计时器上。民生服务的速度，来自分类、共享和流程重排。
+      context_after: 同样是群众急需办理的事，其难度和风险可能完全不同。一笔事实清楚、金额较小的急难救助，与一起责任存在争议的职业伤害案件，不能走同一套程序；一次标准化的失业登记，与
+    - id: fig-90-03
+      before_heading: '## 一、先分类再提速：用两把尺子决定走哪条路'
+      inline_marker: '![第90篇配图03](media/images/2026-08-30-article-90/fig-90-03.png)'
+      anchor_before: 民生服务快办的完整逻辑是：事项与风险分流 -> 材料一次采集 -> 流程并联重排 -> 服务主动触达 -> 事后监督闭环。
+      anchor_after: 一、先分类再提速：用两把尺子决定走哪条路
+      context_after: 同样是群众急需办理的事，其难度和风险可能完全不同。一笔事实清楚、金额较小的急难救助，与一起责任存在争议的职业伤害案件，不能走同一套程序；一次标准化的失业登记，与
+    - id: fig-90-04
+      before_heading: '## 二、材料少交一次：群众不必反复证明系统已经知道的事实'
+      inline_marker: '![第90篇配图04](media/images/2026-08-30-article-90/fig-90-04.png)'
+      anchor_before: 分类不是给群众设置新的挡板，而是让不同的事进入最合适的程序。
+      anchor_after: 二、材料少交一次：群众不必反复证明系统已经知道的事实
+      context_after: 许多等待时间都耗在了同一份信息的反复收集上。群众填写一次身份信息，换一个窗口又得填一次；提交过收入、参保或就医材料，进入下一环节还要重新证明。看起来每个部门都按
+    - id: fig-90-05
+      before_heading: '## 三、流程不必串着等：能前置的前置，能并行的并行'
+      inline_marker: '![第90篇配图05](media/images/2026-08-30-article-90/fig-90-05.png)'
+      anchor_before: 当然，共享也有边界。哪些信息可以调取、用于什么事项、谁有权查看、过程如何留痕，都必须明确。便捷不能以过度采集和随意使用个人信息为代价。
+      anchor_after: 三、流程不必串着等：能前置的前置，能并行的并行
+      context_after: 材料减少之后，还要追问：各个环节为什么必须排成一条长队？有些等待是客观需要，有些则只是沿用了旧的顺序。“预住院”服务将诊断明确、病情稳定的择期手术患者所需的检查
+    - id: fig-90-06
+      before_heading: '## 四、服务不能只等申请：还要缩短“需求被看见”的时间'
+      inline_marker: '![第90篇配图06](media/images/2026-08-30-article-90/fig-90-06.png)'
+      anchor_before: 快办要减少不必要的等待，但不必将每个环节都压缩到极限。
+      anchor_after: 四、服务不能只等申请：还要缩短“需求被看见”的时间
+      context_after: 对于熟悉政策、会用手机、能够到窗口的人来说，办得快很重要。但还有一些人，甚至没有走到申请这一步。他们可能不知道自己符合条件，也可能因为疾病、行动不便或家庭压力而
+    - id: fig-90-07
+      before_heading: '## 五、快而不乱：流程越简，边界和监督越要清楚'
+      inline_marker: '![第90篇配图07](media/images/2026-08-30-article-90/fig-90-07.png)'
+      anchor_before: 民生服务既要接住主动申请，也要看见没有主动开口的人。
+      anchor_after: 五、快而不乱：流程越简，边界和监督越要清楚
+      context_after: 快办需要警惕两个极端：一是所有事项都套用复杂程序，让急难群众等不起；二是将简化理解为不审核，导致安全、资金和公平失去约束。六篇材料反复体现了同一原则：快办必须有
+    - id: fig-90-08
+      before_heading: '## 六、国考省考申论面试怎么用'
+      inline_marker: '![第90篇配图08](media/images/2026-08-30-article-90/fig-90-08.png)'
+      anchor_before: 评价效率不能只看报表上的平均天数。急事是否有人接、简事是否少等待、难事是否有人管，以及办理结果能否经得起检查，都要纳入考量。
+      anchor_after: 六、国考省考申论面试怎么用
+      context_after: 遇到政务服务、社会救助、医疗服务、“一件事”改革等题目时，不要只写“简化流程、提高效率”。可以使用这套公式：>**复杂度定程序+紧急度定顺序+数据共享减材料+流
+    - id: fig-90-09
+      before_heading: '## 金句集合'
+      inline_marker: '![第90篇配图09](media/images/2026-08-30-article-90/fig-90-09.png)'
+      anchor_before: 该快的快起来，该审的审到位，该主动上门的及时到达，这才是快办真正的含义。
+      anchor_after: 金句集合
+      context_after: 1.服务快办的关键，不是让窗口再快一点，而是让不同事项走上合适的路。2.速度不是靠催出来的，而是靠分类、共享和重排流程做出来的。3.事实复杂度决定走什么程序，事
+    - id: fig-90-10
+      before_heading: '## 参考文章'
+      inline_marker: '![第90篇配图10](media/images/2026-08-30-article-90/fig-90-10.png)'
+      anchor_before: 真正的效率，是该快的快起来、该审的审到位、该主动上门的及时到达。
+      anchor_after: 参考文章
+      context_after: 1.邱越：《“预住院”服务的改革深意》，《人民日报》2026年1月6日第07版。2.潘俊强：《北京推行新业态劳动者职业伤害“小伤快赔”》，《人民日报》2026年
+    updated_at: '2026-09-21T11:56:37'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-09-21T11:56:41'
+  body_hash: b89e3ae0986529193f0496d27fd82e73833991d40a1fc18630a991af783ed4ab
+  plan_fingerprint: dfd1f336c6163ac3719951703e2bb53144949c9817ee8a11ff729ca5b3a6b824
+figures:
+- id: fig-90-01
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-01.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 63a36e8f1442e1d847bc7b5c1719aa766866e0a9f0fa0df3eecf247490c74df7
+  title: 第90篇配图01
+  caption: 第90篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先分类再提速：用两把尺子决定走哪条路附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+- id: fig-90-02
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-02.png
+  width_px: 2560
+  height_px: 1428
+  sha256: d3485a262f2e983d0ba79315797fbe06e6a5242810a5804c015adaac9dfe56c9
+  title: 第90篇配图02
+  caption: 第90篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先分类再提速：用两把尺子决定走哪条路附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+- id: fig-90-03
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-03.png
+  width_px: 2560
+  height_px: 1428
+  sha256: e0a9eacd34edebee8760ecbc4d099b9ab2cac961dd5456239124a35626664269
+  title: 第90篇配图03
+  caption: 第90篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先分类再提速：用两把尺子决定走哪条路附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+- id: fig-90-04
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-04.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 19a78ccaa20d83b06a440c114f491f657808c66c4315dc05c0258b7b21e06e53
+  title: 第90篇配图04
+  caption: 第90篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、材料少交一次：群众不必反复证明系统已经知道的事实附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+- id: fig-90-05
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-05.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 67e364e8aa0240ce440d3b7e1e4ab10add26055154504593c24c01e9f3b2d879
+  title: 第90篇配图05
+  caption: 第90篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、流程不必串着等：能前置的前置，能并行的并行附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+- id: fig-90-06
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-06.png
+  width_px: 2560
+  height_px: 1428
+  sha256: d5e9adc247f615de9600d705dd1135c2e26d6690fa9905c9731be499672c4269
+  title: 第90篇配图06
+  caption: 第90篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、服务不能只等申请：还要缩短“需求被看见”的时间附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+- id: fig-90-07
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-07.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 21b67ccc11f2c66598bba77869128227c504b3d63a081257361c164acdf4342e
+  title: 第90篇配图07
+  caption: 第90篇配图07
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、快而不乱：流程越简，边界和监督越要清楚附近（按正文内链接精确定位）'
+  article_order: 7
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+- id: fig-90-08
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-08.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 961006b34e024d7b77993002028f9571cb5a79f88d0b6adfd0de9089826effb1
+  title: 第90篇配图08
+  caption: 第90篇配图08
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试怎么用附近（按正文内链接精确定位）'
+  article_order: 8
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+- id: fig-90-09
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-09.png
+  width_px: 2560
+  height_px: 1428
+  sha256: 66c7ccdab6d9fe7a2dfbdad564ecb927374bbfc6836003664f4d98e35bcfc0f5
+  title: 第90篇配图09
+  caption: 第90篇配图09
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 金句集合附近（按正文内链接精确定位）'
+  article_order: 9
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+- id: fig-90-10
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-90/fig-90-10.png
+  width_px: 2752
+  height_px: 1536
+  sha256: 1644fc818e3750edb3bbfa403f51242c7599df6a443ee24cd46a0598ba2614c6
+  title: 第90篇配图10
+  caption: 第90篇配图10
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 参考文章附近（按正文内链接精确定位）'
+  article_order: 10
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:37'
+updated_at: '2026-09-21T11:56:41'
+placement_mode: inline_markdown
+inline_markdown_count: 10
+inline_imported_at: '2026-09-21T11:56:37'

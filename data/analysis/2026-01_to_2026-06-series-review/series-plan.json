@@ -1,0 +1,1308 @@
+{
+  "schema_version": 1,
+  "created_on": "2026-09-12",
+  "source_period": {
+    "start": "2026-01-01",
+    "end": "2026-06-30"
+  },
+  "operation_data_cutoff": "2026-09-06",
+  "full_library_count": 14655,
+  "series": [
+    {
+      "code": "A",
+      "name": "县域发展：从选产业到共同增收",
+      "priority": "先做",
+      "logic": "县域分工定位 → 跨村资源组织 → 农户收益分配",
+      "native": "人民眼·县域经济、人民眼·乡村全面振兴、县域看发展",
+      "metric": "同龄新增关注、每千读者新增关注、县域相关搜索点击",
+      "reason": "县域两篇成熟样本每千读者新增关注84.0、89.5人；县域经济搜索790次展示、190次点击。",
+      "anchor": "idea_20260629_0705_county_specialized_integrated",
+      "anchor_no": "44",
+      "anchor_keys": [
+        "30133100",
+        "30139783",
+        "30165412"
+      ],
+      "anchor_record": {
+        "idea_id": "idea_20260629_0705_county_specialized_integrated",
+        "title": "《人民日报》再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”",
+        "database_status": "已完成",
+        "action": "复用既有选题，不重复建题",
+        "evidence": [
+          {
+            "article_id": "people_daily_20260116_30133100",
+            "date": "2026-01-16",
+            "title": "创新突围看县域（人民眼·县域经济）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/16/content_30133100.html",
+            "markdown_path": "data/vault/2026/01/2026-01-16/13-记者调查/创新突围看县域（人民眼·县域经济）.md",
+            "raw_path": "",
+            "use": "县域创新要依托既有产业并连接人才、平台及区域协作。"
+          },
+          {
+            "article_id": "people_daily_20260210_30139783",
+            "date": "2026-02-10",
+            "title": "东中西部三位县长谈发展县域经济（经济新方位·对话·奋进二〇二六）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/10/content_30139783.html",
+            "markdown_path": "data/vault/2026/02/2026-02-10/02-要闻/东中西部三位县长谈发展县域经济（经济新方位·对话·奋进二〇二六）.md",
+            "raw_path": "",
+            "use": "东中西部不同产业基础的对照，支持因地制宜而非统一模板。"
+          },
+          {
+            "article_id": "people_daily_20260629_30165412",
+            "date": "2026-06-29",
+            "title": "走出符合自身实际的县域经济高质量发展之路（调查与思考）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/29/content_30165412.html",
+            "markdown_path": "data/vault/2026/06/2026-06-29/09-理论/走出符合自身实际的县域经济高质量发展之路（调查与思考）.md",
+            "raw_path": "",
+            "use": "对县域特色产业、融合发展和实际条件的系统分析。"
+          }
+        ],
+        "manuscripts": [
+          "data/articles/往期文章/人民日报系列/44-人民日报再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”.md"
+        ],
+        "production_state": "已有成稿，实际发布以后台核验为准"
+      },
+      "new_idea_ids": [
+        "idea_20260912_h1_rural_cluster_coordination",
+        "idea_20260912_h1_farmer_value_distribution"
+      ]
+    },
+    {
+      "code": "B",
+      "name": "养老服务：把持续照护接到家门口",
+      "priority": "先做",
+      "logic": "家庭怎样接上照护 → 邻里互助怎样持续 → 专业人员怎样培养留住",
+      "native": "民生一线、健康焦点、人民时评的养老服务文章群",
+      "metric": "同龄收藏、分享、新增关注，随后看30天转粉",
+      "reason": "银发经济成熟样本每千读者新增关注87.0人；最新复盘明确建议继续验证养老服务。",
+      "anchor": "idea_20260720_0726_elderly_care_system",
+      "anchor_no": null,
+      "anchor_keys": [
+        "30131899",
+        "30140134",
+        "30149129"
+      ],
+      "anchor_record": {
+        "idea_id": "idea_20260720_0726_elderly_care_system",
+        "title": "《人民日报》深度分析【养老照护】：老人失能之后，家庭怎样接上持续照护",
+        "database_status": "备选",
+        "action": "复用既有选题，不重复建题",
+        "evidence": [
+          {
+            "article_id": "people_daily_20260113_30131899",
+            "date": "2026-01-13",
+            "title": "照护接力，绘就养老“同心圆”（编辑手记）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/13/content_30131899.html",
+            "markdown_path": "data/vault/2026/01/2026-01-13/04-要闻/照护接力，绘就养老“同心圆”（编辑手记）.md",
+            "raw_path": "",
+            "use": "医师、志愿者与家庭的照护分工。"
+          },
+          {
+            "article_id": "people_daily_20260211_30140134",
+            "date": "2026-02-11",
+            "title": "精准聚力托举失能照护（人民时评）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/11/content_30140134.html",
+            "markdown_path": "data/vault/2026/02/2026-02-11/05-评论/精准聚力托举失能照护（人民时评）.md",
+            "raw_path": "",
+            "use": "失能照护需求、制度支持与家庭负担的连接。"
+          },
+          {
+            "article_id": "people_daily_20260403_30149129",
+            "date": "2026-04-03",
+            "title": "长护险落地，服务供给如何跟上（健康焦点）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/03/content_30149129.html",
+            "markdown_path": "data/vault/2026/04/2026-04-03/19-健康/长护险落地，服务供给如何跟上（健康焦点）.md",
+            "raw_path": "",
+            "use": "长护险服务布点、专业人员及质量监管。"
+          }
+        ],
+        "manuscripts": [],
+        "production_state": "已有选题，未检索到对应成稿；不重复建题"
+      },
+      "new_idea_ids": [
+        "idea_20260912_h1_mutual_eldercare_support",
+        "idea_20260912_h1_eldercare_workforce"
+      ]
+    },
+    {
+      "code": "C",
+      "name": "劳动者的一条保障链",
+      "priority": "先做",
+      "logic": "把技能接到岗位 → 把劳动报酬兑现 → 把职业风险托住",
+      "native": "关心困难群众生产生活、稳就业·我的求职故事、加强劳动者权益保障",
+      "metric": "同龄关注、收藏及新就业群体搜索点击",
+      "reason": "新就业群体成熟样本每千读者新增关注56.9人，搜索711次展示、106次点击；一般劳动者题不能直接继承骑手题效果。",
+      "anchor": "idea_20260830_occupational_injury_protection_chain",
+      "anchor_no": "89",
+      "anchor_keys": [
+        "30129768",
+        "30159963",
+        "30162633"
+      ],
+      "anchor_record": {
+        "idea_id": "idea_20260830_occupational_injury_protection_chain",
+        "title": "《人民日报》深度分析【职业伤害保障】：不能等出了事故再赔钱，预防、认定、理赔、康复要接起来",
+        "database_status": "备选",
+        "action": "复用既有选题，不重复建题",
+        "evidence": [
+          {
+            "article_id": "people_daily_20260106_30129768",
+            "date": "2026-01-06",
+            "title": "北京推行新业态劳动者职业伤害“小伤快赔”",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/06/content_30129768.html",
+            "markdown_path": "data/vault/2026/01/2026-01-06/13-社会/北京推行新业态劳动者职业伤害“小伤快赔”.md",
+            "raw_path": "",
+            "use": "北京新业态职业伤害小伤快赔实践。"
+          },
+          {
+            "article_id": "people_daily_20260530_30159963",
+            "date": "2026-05-30",
+            "title": "为新就业形态劳动者撑腰打气（奋进“十五五” 一线见闻·加强劳动者权益保障）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/30/content_30159963.html",
+            "markdown_path": "data/vault/2026/05/2026-05-30/04-要闻/为新就业形态劳动者撑腰打气（奋进“十五五” 一线见闻·加强劳动者权益保障）.md",
+            "raw_path": "",
+            "use": "新就业形态劳动者权益服务与保障实践。"
+          },
+          {
+            "article_id": "people_daily_20260612_30162633",
+            "date": "2026-06-12",
+            "title": "如何更好保障新就业形态劳动者权益（政策问答·回应关切）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/12/content_30162633.html",
+            "markdown_path": "data/vault/2026/06/2026-06-12/01-要闻/如何更好保障新就业形态劳动者权益（政策问答·回应关切）.md",
+            "raw_path": "",
+            "use": "职业伤害保障及平台劳动权益的政策问答。"
+          }
+        ],
+        "manuscripts": [
+          "data/articles/人民日报系列/89-《人民日报》深度分析【职业伤害保障】：不能等出了事故再赔钱，预防、认定、理赔、康复要接起来.md"
+        ],
+        "production_state": "已有成稿，实际发布以后台核验为准"
+      },
+      "new_idea_ids": [
+        "idea_20260912_h1_training_to_jobs",
+        "idea_20260912_h1_labor_dispute_delivery"
+      ]
+    },
+    {
+      "code": "D",
+      "name": "科技成果落地：拆开转化的几道关",
+      "priority": "先做",
+      "logic": "验证值不值得继续 → 明确技术怎样交易 → 找到持续撮合的人",
+      "native": "深聚焦、活力中国调研行、产经视野·推动生产性服务业高质量发展",
+      "metric": "首7天阅读、已观测首7天收入、同龄新增关注分别观察",
+      "reason": "科技成果转化成熟样本30天阅读41,415、关注1,743；已观测首7天收入101.37元。不能把这两个窗口相除。",
+      "anchor": "idea_20260911_technology_manager_partner",
+      "anchor_no": "96",
+      "anchor_keys": [
+        "30138652",
+        "30159421",
+        "30162631"
+      ],
+      "anchor_record": {
+        "idea_id": "idea_20260911_technology_manager_partner",
+        "title": "《人民日报》深度分析【技术经理人】：好技术为什么还需要一个懂市场的合伙人",
+        "database_status": "已完成",
+        "action": "复用既有选题，不重复建题",
+        "evidence": [
+          {
+            "article_id": "people_daily_20260205_30138652",
+            "date": "2026-02-05",
+            "title": "科技红娘  上门转化服务",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/05/content_30138652.html",
+            "markdown_path": "data/vault/2026/02/2026-02-05/08-各地传真/科技红娘 上门转化服务.md",
+            "raw_path": "",
+            "use": "上门开展转化服务的技术经理人案例。"
+          },
+          {
+            "article_id": "people_daily_20260527_30159421",
+            "date": "2026-05-27",
+            "title": "“书架”到“货架”  “样品”变“产品”（产经视野·推动生产性服务业高质量发展）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/27/content_30159421.html",
+            "markdown_path": "data/vault/2026/05/2026-05-27/18-产经/“书架”到“货架” “样品”变“产品”（产经视野·推动生产性服务业高质量发展）.md",
+            "raw_path": "data/raw/articles_20260527.json",
+            "use": "生产性服务平台、资金及专业撮合服务协同。"
+          },
+          {
+            "article_id": "people_daily_20260612_30162631",
+            "date": "2026-06-12",
+            "title": "江苏探索科技成果高效转化应用新途径",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/12/content_30162631.html",
+            "markdown_path": "data/vault/2026/06/2026-06-12/01-要闻/江苏探索科技成果高效转化应用新途径.md",
+            "raw_path": "",
+            "use": "江苏转化平台及技术经理人网络服务企业需求。"
+          }
+        ],
+        "manuscripts": [
+          "data/articles/人民日报系列/96-《人民日报》深度分析【技术经理人】：好技术为什么还需要一个懂市场的合伙人.md"
+        ],
+        "production_state": "已有成稿，实际发布以后台核验为准"
+      },
+      "new_idea_ids": [
+        "idea_20260912_h1_proof_of_concept",
+        "idea_20260912_h1_patent_transaction"
+      ]
+    },
+    {
+      "code": "E",
+      "name": "基层治理：让问题有人接、规则有人守",
+      "priority": "稳步做",
+      "logic": "把群众意见变方案 → 把热线诉求变实办 → 把监管资源用到风险处",
+      "native": "基层治理新实践、百姓关注、法治头条·优化法治化营商环境",
+      "metric": "首7天阅读、分享收藏和关注并看；收入单列",
+      "reason": "基层责任边界本批阅读17,083、推荐约比78.5%；治理有阅读优势，但成熟治理稿转粉表现不同。",
+      "anchor": "idea_202601_revisit_deliberation_to_results",
+      "anchor_no": "82",
+      "anchor_keys": [
+        "30131064",
+        "30135660",
+        "30135826"
+      ],
+      "anchor_record": {
+        "idea_id": "idea_202601_revisit_deliberation_to_results",
+        "title": "基层治理怎么写群众议事：从“听意见”到“见结果”的五个动作",
+        "database_status": "已完成",
+        "action": "复用既有选题，不重复建题",
+        "evidence": [
+          {
+            "article_id": "people_daily_20260111_30131064",
+            "date": "2026-01-11",
+            "title": "53年坚持“议事”，桂花村越来越好",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/11/content_30131064.html",
+            "markdown_path": "data/vault/2026/01/2026-01-11/04-要闻/53年坚持“议事”，桂花村越来越好.md",
+            "raw_path": "",
+            "use": "村级议事长期实践及调研后再决策。"
+          },
+          {
+            "article_id": "people_daily_20260126_30135660",
+            "date": "2026-01-26",
+            "title": "一场议事会，如何让“金点子”变成“金果子”（基层治理新实践）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/26/content_30135660.html",
+            "markdown_path": "data/vault/2026/01/2026-01-26/10-政治/一场议事会，如何让“金点子”变成“金果子”（基层治理新实践）.md",
+            "raw_path": "",
+            "use": "群众意见转为议题、方案与落实的具体过程。"
+          },
+          {
+            "article_id": "people_daily_20260127_30135826",
+            "date": "2026-01-27",
+            "title": "议事亭里的“治理三要”（人民论坛）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/27/content_30135826.html",
+            "markdown_path": "data/vault/2026/01/2026-01-27/04-要闻/议事亭里的“治理三要”（人民论坛）.md",
+            "raw_path": "",
+            "use": "议事中的参与、回应和落实原则。"
+          }
+        ],
+        "manuscripts": [
+          "data/articles/人民日报系列/82-人民日报讲基层群众议事：从“听意见”到“见结果”的五个动作.md"
+        ],
+        "production_state": "已有成稿，实际发布以后台核验为准"
+      },
+      "new_idea_ids": [
+        "idea_20260912_h1_hotline_resolution",
+        "idea_20260912_h1_risk_based_inspection"
+      ]
+    },
+    {
+      "code": "F",
+      "name": "绿色发展：把生态账算清楚",
+      "priority": "小批试验",
+      "logic": "识别生态价值 → 分担跨界保护成本 → 核清产品全链条排放",
+      "native": "美丽中国·拓展生态产品价值实现渠道、美丽中国·关注生态协同治理、美丽中国·从绿色产品看节能降碳",
+      "metric": "同龄收藏、搜索点击、新增关注；不预设收入优势",
+      "reason": "上批周报提示生态搜索承接不足；本批没有直接证明生态子题高转粉，保留实验份额。",
+      "anchor": "idea_20260615_21_ecology_asset_income",
+      "anchor_no": "93",
+      "anchor_keys": [
+        "30135678",
+        "30163319",
+        "30163954"
+      ],
+      "anchor_record": {
+        "idea_id": "idea_20260615_21_ecology_asset_income",
+        "title": "《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入",
+        "database_status": "备选",
+        "action": "复用既有选题，不重复建题",
+        "evidence": [
+          {
+            "article_id": "people_daily_20260126_30135678",
+            "date": "2026-01-26",
+            "title": "一张“碳票”换来生态红利（美丽中国·拓展生态产品价值实现渠道）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/26/content_30135678.html",
+            "markdown_path": "data/vault/2026/01/2026-01-26/13-生态/一张“碳票”换来生态红利（美丽中国·拓展生态产品价值实现渠道）.md",
+            "raw_path": "",
+            "use": "水生态碳汇核算与交易的地方探索。"
+          },
+          {
+            "article_id": "people_daily_20260616_30163319",
+            "date": "2026-06-16",
+            "title": "护好公益林  碳汇助增收",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/16/content_30163319.html",
+            "markdown_path": "data/vault/2026/06/2026-06-16/11-生态/护好公益林 碳汇助增收.md",
+            "raw_path": "",
+            "use": "公益林保护形成收益并计划反哺管护和民生。"
+          },
+          {
+            "article_id": "people_daily_20260620_30163954",
+            "date": "2026-06-20",
+            "title": "推动林下经济长效发展（专家观点）",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/20/content_30163954.html",
+            "markdown_path": "data/vault/2026/06/2026-06-20/05-绿色/推动林下经济长效发展（专家观点）.md",
+            "raw_path": "",
+            "use": "林下经济需要技术、产业及长期服务支撑。"
+          }
+        ],
+        "manuscripts": [
+          "data/articles/人民日报系列/93-《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入.md"
+        ],
+        "production_state": "已有成稿，实际发布以后台核验为准"
+      },
+      "new_idea_ids": [
+        "idea_20260912_h1_ecological_compensation",
+        "idea_20260912_h1_product_carbon_footprint"
+      ]
+    },
+    {
+      "code": "G",
+      "name": "文化传承：从看见到学会",
+      "priority": "小批试验",
+      "logic": "保护与日常连接 → 培养能接班的人 → 把文化体验做成有效学习",
+      "native": "非遗里的青春派、传承、经济新方位·聚焦假期消费、教育时评",
+      "metric": "同龄收藏、分享、文化相关搜索点击及新增关注",
+      "reason": "传承搜索1,165次展示仅32次点击，点击率2.75%；需要用具体问题承接，不能只扩大文化概念题供给。",
+      "anchor": "idea_20260615_21_culture_life_world",
+      "anchor_no": "28",
+      "anchor_keys": [
+        "30162786",
+        "30162787",
+        "30162788"
+      ],
+      "anchor_record": {
+        "idea_id": "idea_20260615_21_culture_life_world",
+        "title": "文化传承新写法：既要守住根脉，也要走进生活、走向世界",
+        "database_status": "已完成",
+        "action": "复用既有选题，不重复建题",
+        "evidence": [
+          {
+            "article_id": "people_daily_20260613_30162786",
+            "date": "2026-06-13",
+            "title": "用不同视角“打开”云冈石窟",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/13/content_30162786.html",
+            "markdown_path": "data/vault/2026/06/2026-06-13/08-文化遗产/用不同视角“打开”云冈石窟.md",
+            "raw_path": "",
+            "use": "从历史与艺术视角理解遗产，扩展参观的知识价值。"
+          },
+          {
+            "article_id": "people_daily_20260613_30162787",
+            "date": "2026-06-13",
+            "title": "把敬畏传下去",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/13/content_30162787.html",
+            "markdown_path": "data/vault/2026/06/2026-06-13/08-文化遗产/把敬畏传下去.md",
+            "raw_path": "",
+            "use": "长期文物保护研究和团队传承的经验。"
+          },
+          {
+            "article_id": "people_daily_20260613_30162788",
+            "date": "2026-06-13",
+            "title": "让美回到日常",
+            "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/13/content_30162788.html",
+            "markdown_path": "data/vault/2026/06/2026-06-13/08-文化遗产/让美回到日常.md",
+            "raw_path": "",
+            "use": "以传统服饰审美与手工复原连接当代日常。"
+          }
+        ],
+        "manuscripts": [
+          "data/articles/往期文章/人民日报系列/28-人民日报讲文化传承：既要守住根脉，也要走进生活、走向世界.md"
+        ],
+        "production_state": "已有成稿，实际发布以后台核验为准"
+      },
+      "new_idea_ids": [
+        "idea_20260912_h1_heritage_apprenticeship",
+        "idea_20260912_h1_study_tour_learning"
+      ]
+    }
+  ],
+  "content_ideas": [
+    {
+      "idea_id": "idea_20260912_h1_rural_cluster_coordination",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "S",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【片区化乡村振兴】：几个村怎样协作，才能把分散资源用起来",
+      "angle": "【半年回溯·县域发展：从选产业到共同增收·新增1】片区化的核心是跨村配置空间、产业和公共服务，并形成可执行的协调机制。 读者问题：相邻村庄都发展产业，为什么仍然各有短板、彼此争客？ 与旧稿区别：旧44讲县域产业分工，旧81讲青年生态；本题只讲村庄之间怎样组织协作。收益分配留给下一篇，不重讲县域总论。",
+      "outline": [
+        "从单村瓶颈出发：产业有资源，却缺空间、配套或客流承接",
+        "按关联划片：地理、产业、交通、文化和民意共同判断",
+        "让村庄差异分工：共享设施，避免每村复制同一业态",
+        "建立跨界协调：规划、责任、资金与项目调度相互配合",
+        "持续运营与动态调整：群众反馈、专业队伍和资源承受力共同检验"
+      ],
+      "support_article_ids": [
+        "people_daily_20260320_30146212",
+        "people_daily_20260509_30155669",
+        "people_daily_20260512_30156243"
+      ],
+      "series_code": "A",
+      "theme": "片区化乡村振兴",
+      "reader_question": "相邻村庄都发展产业，为什么仍然各有短板、彼此争客？",
+      "opening_scene": "青岛黄泥巷有樱桃却缺加工用地，单村经营受季节限制；片区统筹后才接起加工和游览线路。",
+      "core_argument": "片区化的核心是跨村配置空间、产业和公共服务，并形成可执行的协调机制。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260320_30146212",
+          "date": "2026-03-20",
+          "title": "连点成片，片区化推进乡村振兴（人民眼·乡村全面振兴）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/20/content_30146212.html",
+          "markdown_path": "data/vault/2026/03/2026-03-20/13-记者调查/连点成片，片区化推进乡村振兴（人民眼·乡村全面振兴）.md",
+          "raw_path": "",
+          "use": "提供青岛、杭州、苏州的跨村空间调配与协调案例；不同片区规模差异明显。"
+        },
+        {
+          "article_id": "people_daily_20260509_30155669",
+          "date": "2026-05-09",
+          "title": "河南片区化推进乡村振兴（“十五五”开好局起好步）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/09/content_30155669.html",
+          "markdown_path": "data/vault/2026/05/2026-05-09/01-要闻/河南片区化推进乡村振兴（“十五五”开好局起好步）.md",
+          "raw_path": "",
+          "use": "提供河南片区规划、主导产业链及基础设施公共服务协同的省域实践。"
+        },
+        {
+          "article_id": "people_daily_20260512_30156243",
+          "date": "2026-05-12",
+          "title": "木兰溪畔奏响共富曲（前沿观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/12/content_30156243.html",
+          "markdown_path": "data/vault/2026/05/2026-05-12/19-党建/木兰溪畔奏响共富曲（前沿观察）.md",
+          "raw_path": "",
+          "use": "提供莆田跨乡镇联建、专业服务队及项目清单协调的操作经验。"
+        }
+      ],
+      "difference_from_existing": "旧44讲县域产业分工，旧81讲青年生态；本题只讲村庄之间怎样组织协作。收益分配留给下一篇，不重讲县域总论。",
+      "reuse_boundary": "不能将片区化写成行政撤并；不能将某地村庄数量、分股比例写成全国标准。",
+      "teaching_use": "申论：功能关联—要素统筹—差异分工—协同责任—动态评估；面试：面对跨村项目先查真实关联和群众意愿。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_farmer_value_distribution",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "S",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【联农带农】：产业做大以后，农民怎样分到增值收益",
+      "angle": "【半年回溯·县域发展：从选产业到共同增收·新增2】判断富民产业，要沿着农户参与方式、合同安排和实际到账收益追踪，而不能用企业产值代替农民收入。 读者问题：同样种出好产品，为什么农民可能只拿原料钱，享受不到后续增值？ 与旧稿区别：旧74讲土特产标准品牌产业链，旧47讲常态化帮扶；本题专讲增加的收益如何回到农户，与片区篇的组织协作分开。",
+      "outline": [
+        "画清收益去向：原料、加工、销售和服务各环节谁获益",
+        "增加参与入口：订单生产、就近务工、合作经营等分类选择",
+        "把分配写进约定：收购、租金、分红及结算方式可核验",
+        "给经营留余地：区分收入与利润，保留再投入并讲清风险",
+        "用农户获得感验收：到账收入、稳定就业和公共服务改善分别看"
+      ],
+      "support_article_ids": [
+        "people_daily_20260620_30163953",
+        "people_daily_20260429_30153825",
+        "people_daily_20260320_30146212"
+      ],
+      "series_code": "A",
+      "theme": "联农带农",
+      "reader_question": "同样种出好产品，为什么农民可能只拿原料钱，享受不到后续增值？",
+      "opening_scene": "浙江林地经营把农户的租金、股金、薪金组合起来，和单纯出售初级产品形成对照。",
+      "core_argument": "判断富民产业，要沿着农户参与方式、合同安排和实际到账收益追踪，而不能用企业产值代替农民收入。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260620_30163953",
+          "date": "2026-06-20",
+          "title": "林地生金  绿富共生（深度观察）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/20/content_30163953.html",
+          "markdown_path": "data/vault/2026/06/2026-06-20/05-绿色/林地生金 绿富共生（深度观察）.md",
+          "raw_path": "",
+          "use": "提供林地经营权入股、保底收购及租金股金薪金等多元收益安排；用于分析具体分配接口。"
+        },
+        {
+          "article_id": "people_daily_20260429_30153825",
+          "date": "2026-04-29",
+          "title": "“洋特产”如何变“土特产”（现场评论）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/29/content_30153825.html",
+          "markdown_path": "data/vault/2026/04/2026-04-29/05-评论/“洋特产”如何变“土特产”（现场评论）.md",
+          "raw_path": "",
+          "use": "咖啡从原料销售向精品、加工及体验延伸，说明产业增值空间，但本篇不证明每个农户收入变化。"
+        },
+        {
+          "article_id": "people_daily_20260320_30146212",
+          "date": "2026-03-20",
+          "title": "连点成片，片区化推进乡村振兴（人民眼·乡村全面振兴）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202603/20/content_30146212.html",
+          "markdown_path": "data/vault/2026/03/2026-03-20/13-记者调查/连点成片，片区化推进乡村振兴（人民眼·乡村全面振兴）.md",
+          "raw_path": "",
+          "use": "强村公司提取发展金后再按股权分配，农户收购款与分红各有来源，便于拆开现金流。"
+        }
+      ],
+      "difference_from_existing": "旧74讲土特产标准品牌产业链，旧47讲常态化帮扶；本题专讲增加的收益如何回到农户，与片区篇的组织协作分开。",
+      "reuse_boundary": "地方合同的保底价和分红比例不是通用收益承诺；不把经营权流转写成土地所有权转移。",
+      "teaching_use": "申论：产业增值—主体参与—契约分配—风险约束—收益核验；面试：项目评估同时问产值和农户到账。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_mutual_eldercare_support",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "S",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【互助养老】：邻里愿意帮忙，怎样把照料长期接下去",
+      "angle": "【半年回溯·养老服务：把持续照护接到家门口·新增1】互助养老需要自愿参与、稳定组织、可持续资源及专业转介共同支撑，邻里善意不能独自承担全部照护。 读者问题：靠热心邻居照顾老人，怎样避免热情耗尽或遇到专业问题无人接手？ 与旧稿区别：旧14与39是银发经济及养老事业产业总论；既有养老照护题讲家庭接入服务，本题只讲互助的可持续组织。",
+      "outline": [
+        "识别适合互助的需求：陪伴、探访、日常生活支持",
+        "自愿结对与任务分工：不把互助变成强制义务",
+        "让资源有出处：场地、集体支持、社会力量和合理分担",
+        "积分与反馈可兑现：记录贡献，也安排人员更替",
+        "接入专业服务：高风险需求及时交由专业机构，并保留监督和退出"
+      ],
+      "support_article_ids": [
+        "people_daily_20260506_30154966",
+        "people_daily_20260519_30157745",
+        "people_daily_20260528_30159599"
+      ],
+      "series_code": "B",
+      "theme": "互助养老",
+      "reader_question": "靠热心邻居照顾老人，怎样避免热情耗尽或遇到专业问题无人接手？",
+      "opening_scene": "重庆长虹村老人出菜、出工办互助食堂，志愿积分背后还需要资金来源和专业支持。",
+      "core_argument": "互助养老需要自愿参与、稳定组织、可持续资源及专业转介共同支撑，邻里善意不能独自承担全部照护。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260506_30154966",
+          "date": "2026-05-06",
+          "title": "推进互助性养老服务发展",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/06/content_30154966.html",
+          "markdown_path": "data/vault/2026/05/2026-05-06/13-社会/推进互助性养老服务发展.md",
+          "raw_path": "",
+          "use": "界定互助服务的自愿、非营利属性，介绍阵地及要素保障安排。"
+        },
+        {
+          "article_id": "people_daily_20260519_30157745",
+          "date": "2026-05-19",
+          "title": "守望邻里  老有所依（民生一线）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/19/content_30157745.html",
+          "markdown_path": "data/vault/2026/05/2026-05-19/14-社会/守望邻里 老有所依（民生一线）.md",
+          "raw_path": "",
+          "use": "重庆集中互助与邻里小院、积分及多方筹资、专业进村的案例链。"
+        },
+        {
+          "article_id": "people_daily_20260528_30159599",
+          "date": "2026-05-28",
+          "title": "以制度托举有温度的互助养老（人民时评）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/28/content_30159599.html",
+          "markdown_path": "data/vault/2026/05/2026-05-28/05-评论/以制度托举有温度的互助养老（人民时评）.md",
+          "raw_path": "",
+          "use": "辨明低龄老人能力边界，提出公共资源托底与专业力量支持。"
+        }
+      ],
+      "difference_from_existing": "旧14与39是银发经济及养老事业产业总论；既有养老照护题讲家庭接入服务，本题只讲互助的可持续组织。",
+      "reuse_boundary": "不把志愿者写成医护替代者；积分兑现与地方支持不能写成全国统一待遇。",
+      "teaching_use": "申论：自愿参与—组织链接—资源保障—专业托底—长效评价；面试：先划服务能力边界。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_eldercare_workforce",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "A",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【养老护理人才】：年轻人愿意来，怎样让专业照护留得住",
+      "angle": "【半年回溯·养老服务：把持续照护接到家门口·新增2】把养老需求转成稳定服务，关键在真实场景培养、岗位能力匹配和持续职业支持。 读者问题：养老机构有床位、有设备，为什么家庭仍担心找不到可靠照护？ 与旧稿区别：旧新职业题讲标准培训评价总链条，养老照护题讲家庭服务接入；本题限定养老专业队伍与服务质量。",
+      "outline": [
+        "把岗位说明白：生活照料、长期照护、医护及管理各有要求",
+        "培养进入真实场景：院校课程与机构需求共同设计",
+        "让实操和资格相互验证：证书与服务质量不能割裂",
+        "为青年提供成长路径：轮岗、带教、继续学习及合理职业回报",
+        "用服务结果检验队伍：需求匹配、投诉反馈、稳定性持续观察"
+      ],
+      "support_article_ids": [
+        "people_daily_20260416_30151397",
+        "people_daily_20260421_30152340",
+        "people_daily_20260403_30149129"
+      ],
+      "series_code": "B",
+      "theme": "养老护理人才",
+      "reader_question": "养老机构有床位、有设备，为什么家庭仍担心找不到可靠照护？",
+      "opening_scene": "上海养老招聘会上的年轻求职者既有养老服务专业，也有信息管理背景；岗位能力正在细分。",
+      "core_argument": "把养老需求转成稳定服务，关键在真实场景培养、岗位能力匹配和持续职业支持。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260416_30151397",
+          "date": "2026-04-16",
+          "title": "“养老院里的00后员工越来越多了”",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/16/content_30151397.html",
+          "markdown_path": "data/vault/2026/04/2026-04-16/10-各地传真/“养老院里的00后员工越来越多了”.md",
+          "raw_path": "",
+          "use": "上海招聘与轮岗安排，说明养老岗位多元化及年轻人入行路径。"
+        },
+        {
+          "article_id": "people_daily_20260421_30152340",
+          "date": "2026-04-21",
+          "title": "青春力量守护“夕阳红”",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/21/content_30152340.html",
+          "markdown_path": "data/vault/2026/04/2026-04-21/13-社会/青春力量守护“夕阳红”.md",
+          "raw_path": "",
+          "use": "承德院校与京津机构订单培养、校岗直通，提供产教融合机制。"
+        },
+        {
+          "article_id": "people_daily_20260403_30149129",
+          "date": "2026-04-03",
+          "title": "长护险落地，服务供给如何跟上（健康焦点）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/03/content_30149129.html",
+          "markdown_path": "data/vault/2026/04/2026-04-03/19-健康/长护险落地，服务供给如何跟上（健康焦点）.md",
+          "raw_path": "",
+          "use": "青岛、南通长护服务的人才培训、实操认定、派单及质量监管，补足服务结果视角。"
+        }
+      ],
+      "difference_from_existing": "旧新职业题讲标准培训评价总链条，养老照护题讲家庭服务接入；本题限定养老专业队伍与服务质量。",
+      "reuse_boundary": "长护险服务人员、养老护理员、医生护士的职责不能混同；稳定收入和留任是待核查变量，不能说报道已证明普遍留得住。",
+      "teaching_use": "申论：需求定岗—校企育人—实操评价—职业支持—质量回访；面试：不只统计培训人数。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_training_to_jobs",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "S",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【技能培训】：结业以后，怎样真正接上一个岗位",
+      "angle": "【半年回溯·劳动者的一条保障链·新增1】有效培训从劳动者的实际障碍和企业岗位需求倒推，课程、实训、评价、就业跟踪应连续安排。 读者问题：为什么拿了培训证书还可能找不到工作，怎样让培训围着岗位转？ 与旧稿区别：旧16讲就业链、旧55讲就业优先、旧98讲人才评价；本题只拆培训到岗位的交付环节。",
+      "outline": [
+        "先查卡点：技能、资格、时间成本还是信息不匹配",
+        "从岗位反推课程：企业任务和技术迭代进入教学",
+        "降低参与门槛：场地、学制、支持方式适配不同群体",
+        "把实训接入生产：真实项目和评价要求衔接",
+        "结业后继续跟踪：入职、稳岗与后续技能更新检验成效"
+      ],
+      "support_article_ids": [
+        "people_daily_20260114_30132133",
+        "people_daily_20260421_30152341",
+        "people_daily_20260610_30162263"
+      ],
+      "series_code": "C",
+      "theme": "技能培训",
+      "reader_question": "为什么拿了培训证书还可能找不到工作，怎样让培训围着岗位转？",
+      "opening_scene": "贵州老黎有焊接经验却缺合规上岗条件，家门口的双证培训补上了费用、技能和资格三道坎。",
+      "core_argument": "有效培训从劳动者的实际障碍和企业岗位需求倒推，课程、实训、评价、就业跟踪应连续安排。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260114_30132133",
+          "date": "2026-01-14",
+          "title": "一次技能培训，让脱贫户老黎增收有底（关心困难群众生产生活）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/14/content_30132133.html",
+          "markdown_path": "data/vault/2026/01/2026-01-14/13-社会/一次技能培训，让脱贫户老黎增收有底（关心困难群众生产生活）.md",
+          "raw_path": "",
+          "use": "铜仁双证培训解决有经验缺资质和参训成本的问题，提供完整人物场景。"
+        },
+        {
+          "article_id": "people_daily_20260421_30152341",
+          "date": "2026-04-21",
+          "title": "推动高校毕业生带着“技能证书”就业",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/21/content_30152341.html",
+          "markdown_path": "data/vault/2026/04/2026-04-21/13-社会/推动高校毕业生带着“技能证书”就业.md",
+          "raw_path": "",
+          "use": "北京大学生技师班与短训分类安排，明确学制、企业实习和推荐就业，不能写成就业保证。"
+        },
+        {
+          "article_id": "people_daily_20260610_30162263",
+          "date": "2026-06-10",
+          "title": "技能培训照亮求职之路（稳就业·我的求职故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/10/content_30162263.html",
+          "markdown_path": "data/vault/2026/06/2026-06-10/04-要闻/技能培训照亮求职之路（稳就业·我的求职故事）.md",
+          "raw_path": "",
+          "use": "广东青年技师工作站、微课程、项目制培养把岗位标准转成教学内容。"
+        }
+      ],
+      "difference_from_existing": "旧16讲就业链、旧55讲就业优先、旧98讲人才评价；本题只拆培训到岗位的交付环节。",
+      "reuse_boundary": "个案收入不代表培训普遍效果；特种作业资格与技能等级不可混同，不承诺结业必就业。",
+      "teaching_use": "申论：摸需求—定课程—做实训—严评价—跟稳岗；面试：设计培训时先找用工方与目标人群。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_labor_dispute_delivery",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "A",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【劳动纠纷化解】：进了一个门，怎样真正拿到应得的工资",
+      "angle": "【半年回溯·劳动者的一条保障链·新增2】一站式服务的价值在证据、责任、程序和结果衔接，同时要从工资支付源头减少纠纷。 读者问题：维权窗口集中以后，怎样避免劳动者仍在部门之间反复跑？ 与旧稿区别：旧89讲职业伤害保障，旧13讲企业账款，旧90讲快办流程；本题聚焦劳动报酬和劳动争议的程序衔接。",
+      "outline": [
+        "先明确争议与证据：欠薪、劳动关系等问题分类处理",
+        "统一受理后有人负责：按职责流转，避免只转不办",
+        "调解与法定程序衔接：不以调解代替当事人依法救济",
+        "结果落到履行：付款、约定义务与后续反馈分开核验",
+        "用个案反查源头：用工登记、支付责任与监督机制补漏洞"
+      ],
+      "support_article_ids": [
+        "people_daily_20260202_30137489",
+        "people_daily_20260203_30137902",
+        "people_daily_20260525_30158968"
+      ],
+      "series_code": "C",
+      "theme": "劳动纠纷化解",
+      "reader_question": "维权窗口集中以后，怎样避免劳动者仍在部门之间反复跑？",
+      "opening_scene": "太康把仲裁服务接进综治中心，调解不成继续转仲裁；成都把网络留言直接转给相关部门。",
+      "core_argument": "一站式服务的价值在证据、责任、程序和结果衔接，同时要从工资支付源头减少纠纷。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260202_30137489",
+          "date": "2026-02-02",
+          "title": "解决农民工欠薪  如何对症下药（金台视线）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/02/content_30137489.html",
+          "markdown_path": "data/vault/2026/02/2026-02-02/07-读者来信/解决农民工欠薪 如何对症下药（金台视线）.md",
+          "raw_path": "",
+          "use": "建筑领域欠薪调查揭示垫资、转包、证据及工资支付制度落实的堵点。"
+        },
+        {
+          "article_id": "people_daily_20260203_30137902",
+          "date": "2026-02-03",
+          "title": "四川成都多部门协同解决欠薪难题",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/03/content_30137902.html",
+          "markdown_path": "data/vault/2026/02/2026-02-03/10-政治/四川成都多部门协同解决欠薪难题.md",
+          "raw_path": "",
+          "use": "成都网络留言转办和部门协同，提供便捷受理与即时响应的地方案例。"
+        },
+        {
+          "article_id": "people_daily_20260525_30158968",
+          "date": "2026-05-25",
+          "title": "多部门联动，高效化解劳动纠纷（奋进“十五五” 一线见闻·加强劳动者权益保障）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/25/content_30158968.html",
+          "markdown_path": "data/vault/2026/05/2026-05-25/04-要闻/多部门联动，高效化解劳动纠纷（奋进“十五五” 一线见闻·加强劳动者权益保障）.md",
+          "raw_path": "data/raw/articles_20260525.json",
+          "use": "太康统一受理、分类流转、多部门联动及调解仲裁衔接，说明集中办公后的程序融合。"
+        }
+      ],
+      "difference_from_existing": "旧89讲职业伤害保障，旧13讲企业账款，旧90讲快办流程；本题聚焦劳动报酬和劳动争议的程序衔接。",
+      "reuse_boundary": "不把某地一天办结推广成法定时限；施工款和工资的法律责任应区分，具体制度在写稿时复核原文。",
+      "teaching_use": "申论：受理—举证—分类—衔接—履行—预防；面试：现场接诉要说明路径和跟进人。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_proof_of_concept",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "S",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【概念验证】：好技术进入生产线前，先验证什么",
+      "angle": "【半年回溯·科技成果落地：拆开转化的几道关·新增1】概念验证用较早、较小规模的验证降低技术与市场的不确定性，为继续研发、转向或退出提供依据。 读者问题：科研上能做出来，为什么还不能直接投入产业化？ 与旧稿区别：旧67讲中试量产验证，旧96讲技术经理人，旧23讲总链条；本题只讲更早阶段的关键假设与继续投入判断。",
+      "outline": [
+        "先列待证假设：用户需求、技术路线和应用条件",
+        "把想法做成可验证样本：选定场景和测试指标",
+        "技术可行与市场接受分开验证：不以能演示代替有人用",
+        "把服务和资源接上：平台、资金、知识产权与企业共同参与",
+        "决定下一步：补证、调整、停止或进入中试，不把验证当成果保证"
+      ],
+      "support_article_ids": [
+        "people_daily_20260407_30149471",
+        "people_daily_20260111_30131072",
+        "people_daily_20260620_30163929"
+      ],
+      "series_code": "D",
+      "theme": "概念验证",
+      "reader_question": "科研上能做出来，为什么还不能直接投入产业化？",
+      "opening_scene": "广西概念验证中心把创意初审、技术评估与Demo验证连起来，北京案例同时追问市场接受度。",
+      "core_argument": "概念验证用较早、较小规模的验证降低技术与市场的不确定性，为继续研发、转向或退出提供依据。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260407_30149471",
+          "date": "2026-04-07",
+          "title": "广西—东盟人工智能概念验证中心成立",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/07/content_30149471.html",
+          "markdown_path": "data/vault/2026/04/2026-04-07/07-要闻/广西—东盟人工智能概念验证中心成立.md",
+          "raw_path": "",
+          "use": "广西平台列出创意初审、技术评估、Demo验证和商业落地服务环节。"
+        },
+        {
+          "article_id": "people_daily_20260111_30131072",
+          "date": "2026-01-11",
+          "title": "三个视角，看教育科技人才一体发展（深聚焦）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/11/content_30131072.html",
+          "markdown_path": "data/vault/2026/01/2026-01-11/05-教育/三个视角，看教育科技人才一体发展（深聚焦）.md",
+          "raw_path": "",
+          "use": "江苏高校成果由区域平台提供资金、评估和实验数据完善，体现早期验证支持。"
+        },
+        {
+          "article_id": "people_daily_20260620_30163929",
+          "date": "2026-06-20",
+          "title": "让科技的种子落地生花（活力中国调研行）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/20/content_30163929.html",
+          "markdown_path": "data/vault/2026/06/2026-06-20/02-要闻/让科技的种子落地生花（活力中国调研行）.md",
+          "raw_path": "",
+          "use": "北京概念验证平台明确同时验证技术可行性与市场接受度。"
+        }
+      ],
+      "difference_from_existing": "旧67讲中试量产验证，旧96讲技术经理人，旧23讲总链条；本题只讲更早阶段的关键假设与继续投入判断。",
+      "reuse_boundary": "概念验证与中试可能迭代交叉，不画成所有行业统一线性流程；不承诺降低风险就能成功。",
+      "teaching_use": "申论：需求提出—假设验证—资源支持—阶段决策—衔接产业；面试：先小范围验证再决定扩大投入。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_patent_transaction",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "A",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【专利转化交易】：好专利怎样变成企业用得起的技术",
+      "angle": "【半年回溯·科技成果落地：拆开转化的几道关·新增2】专利转化交易要同时解决成果能否成套使用、价值如何协商、付款风险如何分担和收益如何安排。 读者问题：高校有专利、企业有需求，为什么还可能卡在交易这一步？ 与旧稿区别：旧38讲知识产权保护，旧96讲撮合人才，旧49讲科技金融；本题只讲技术交易的组合、定价和风险分担。",
+      "outline": [
+        "先识别可用技术：从专利数量转向应用价值与组合",
+        "让企业需求进入筛选：明确使用场景和配套条件",
+        "选择适当交易方式：许可、买断、作价入股及先用后付各有条件",
+        "把权利义务讲清：费用、期限、成果归属、风险和后续支持",
+        "回到使用效果：技术应用产生反馈，支撑再研发与合理分配"
+      ],
+      "support_article_ids": [
+        "people_daily_20260107_30130221",
+        "people_daily_20260202_30137423",
+        "people_daily_20260416_30151391",
+        "people_daily_20260620_30163929"
+      ],
+      "series_code": "D",
+      "theme": "专利转化交易",
+      "reader_question": "高校有专利、企业有需求，为什么还可能卡在交易这一步？",
+      "opening_scene": "中南大学把存量专利组合成适合应用的技术包；其他案例探索先使用后买断、作价入股等方式。",
+      "core_argument": "专利转化交易要同时解决成果能否成套使用、价值如何协商、付款风险如何分担和收益如何安排。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260107_30130221",
+          "date": "2026-01-07",
+          "title": "盘活存量专利  加快成果转化",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202601/07/content_30130221.html",
+          "markdown_path": "data/vault/2026/01/2026-01-07/05-特别报道/盘活存量专利 加快成果转化.md",
+          "raw_path": "",
+          "use": "中南大学盘点专利、按场景组合并协商作价入股及收益安排，提供交易前端。"
+        },
+        {
+          "article_id": "people_daily_20260202_30137423",
+          "date": "2026-02-02",
+          "title": "高价值专利助力培育新质生产力（新春走基层）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/02/content_30137423.html",
+          "markdown_path": "data/vault/2026/02/2026-02-02/01-要闻/高价值专利助力培育新质生产力（新春走基层）.md",
+          "raw_path": "",
+          "use": "农机、脑机接口等案例展示许可、先使用后买断、作价入股的不同转化方式。"
+        },
+        {
+          "article_id": "people_daily_20260416_30151391",
+          "date": "2026-04-16",
+          "title": "加快推进科技创新与产业创新深度融合（专题深思）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/16/content_30151391.html",
+          "markdown_path": "data/vault/2026/04/2026-04-16/09-理论/加快推进科技创新与产业创新深度融合（专题深思）.md",
+          "raw_path": "",
+          "use": "理论文章提出先使用后付费及完善成果利益分配；用于机制建议，不能当成所有单位现行条款。"
+        },
+        {
+          "article_id": "people_daily_20260620_30163929",
+          "date": "2026-06-20",
+          "title": "让科技的种子落地生花（活力中国调研行）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/20/content_30163929.html",
+          "markdown_path": "data/vault/2026/06/2026-06-20/02-要闻/让科技的种子落地生花（活力中国调研行）.md",
+          "raw_path": "",
+          "use": "北京已有先使用后付费试点，为机制提供实践对应。"
+        }
+      ],
+      "difference_from_existing": "旧38讲知识产权保护，旧96讲撮合人才，旧49讲科技金融；本题只讲技术交易的组合、定价和风险分担。",
+      "reuse_boundary": "先用后付不等于免费使用或产权转让；不提供具体合同及投资建议，写稿时核验适用制度。",
+      "teaching_use": "申论：识别价值—对接需求—选择模式—明晰权责—效果反馈；面试：避免只以成交额评价转化。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_hotline_resolution",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "A",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【12345热线】：电话接通以后，怎样把群众的事办完",
+      "angle": "【半年回溯·基层治理：让问题有人接、规则有人守·新增1】热线是一条受理、识别、派单、办理、回访和治理共性问题的服务链，不能只追求接听速度。 读者问题：接通率提高了，为什么群众仍可能觉得问题没有解决？ 与旧稿区别：旧82讲协商形成方案，旧90讲风险分类快办，旧83讲基层减负；本题只讲热线工单的责任和质效。",
+      "outline": [
+        "入口可达：电话信息准确，人工接入与替代渠道便捷",
+        "答复有能力：专业座席和及时更新的知识库作支撑",
+        "工单到责任人：按权限直达承办单位，复杂事项部门协同",
+        "办理有核验：结果审核、群众回访和不合格重办",
+        "共性诉求变治理清单：从反复处理一件事走向减少一类问题"
+      ],
+      "support_article_ids": [
+        "people_daily_20260511_30156050",
+        "people_daily_20260525_30158847",
+        "people_daily_20260525_30158848",
+        "people_daily_20260603_30160619"
+      ],
+      "series_code": "E",
+      "theme": "12345热线",
+      "reader_question": "接通率提高了，为什么群众仍可能觉得问题没有解决？",
+      "opening_scene": "淮北取消语音导航后，话务量随之增加，需要座席、知识库、直派工单和督办一起跟上。",
+      "core_argument": "热线是一条受理、识别、派单、办理、回访和治理共性问题的服务链，不能只追求接听速度。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260511_30156050",
+          "date": "2026-05-11",
+          "title": "热线电话“打通难”，难在哪（百姓关注）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/11/../../../content/202605/11/content_30156050.html",
+          "markdown_path": "",
+          "raw_path": "data/raw/articles_20260511.json",
+          "use": "调查的是部分部门公开电话不畅，不可误写成全国12345普遍打不通；用于入口问题对照。"
+        },
+        {
+          "article_id": "people_daily_20260525_30158847",
+          "date": "2026-05-25",
+          "title": "热线接入提速  政务服务升温",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/25/content_30158847.html",
+          "markdown_path": "data/vault/2026/05/2026-05-25/10-政治/热线接入提速 政务服务升温.md",
+          "raw_path": "data/raw/articles_20260525.json",
+          "use": "淮北取消语音导航、补座席、知识库、直派与督办回访构成办理链。"
+        },
+        {
+          "article_id": "people_daily_20260525_30158848",
+          "date": "2026-05-25",
+          "title": "安徽出台十项措施提升12345热线服务质效（延伸阅读）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/25/content_30158848.html",
+          "markdown_path": "data/vault/2026/05/2026-05-25/10-政治/安徽出台十项措施提升12345热线服务质效（延伸阅读）.md",
+          "raw_path": "data/raw/articles_20260525.json",
+          "use": "安徽高频诉求和一类事治理事项清单，补足从个案到共性的环节。"
+        },
+        {
+          "article_id": "people_daily_20260603_30160619",
+          "date": "2026-06-03",
+          "title": "《江苏省12345热线条例》本月起施行",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/03/content_30160619.html",
+          "markdown_path": "data/vault/2026/06/2026-06-03/10-政治/《江苏省12345热线条例》本月起施行.md",
+          "raw_path": "",
+          "use": "江苏热线条例报道明确各方责任，并介绍特殊情形部门进驻协同。"
+        }
+      ],
+      "difference_from_existing": "旧82讲协商形成方案，旧90讲风险分类快办，旧83讲基层减负；本题只讲热线工单的责任和质效。",
+      "reuse_boundary": "地方时限不是全国标准；紧急报警与普通政务诉求应区分，不能把不属职责的事无限派给基层。",
+      "teaching_use": "申论：可达—能答—准派—实办—回访—类案治理；面试：接到多部门诉求要确定牵头与协作。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_risk_based_inspection",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "A",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【涉企检查】：检查次数少了，怎样让风险发现得更准",
+      "angle": "【半年回溯·基层治理：让问题有人接、规则有人守·新增2】检查减量依赖事项透明、部门协同和风险分类，评价重点应包括问题发现、纠正及重复发生情况。 读者问题：企业想少迎检，群众又需要安全保障，这两种要求怎样同时实现？ 与旧稿区别：既有营商环境稿是规范执法总论，旧86讲信用修复；本题限定检查资源如何配置及效果如何评价。",
+      "outline": [
+        "减去无依据与重复检查：公开主体、事项、计划和依据",
+        "综合查一次：合并可合并环节，保留专业判断",
+        "按风险分配检查力量：动态分类，非现场方式辅助",
+        "该严的领域守底线：不能把少检查变成免责承诺",
+        "检查以后促改进：合规指导、整改回访与执法监督相连"
+      ],
+      "support_article_ids": [
+        "people_daily_20260514_30156784",
+        "people_daily_20260625_30164784",
+        "people_daily_20260604_30161045"
+      ],
+      "series_code": "E",
+      "theme": "涉企检查",
+      "reader_question": "企业想少迎检，群众又需要安全保障，这两种要求怎样同时实现？",
+      "opening_scene": "厦门企业迎来扫码入企与清单管理：减少一般现场检查，安全生产等检查仍需按规定开展。",
+      "core_argument": "检查减量依赖事项透明、部门协同和风险分类，评价重点应包括问题发现、纠正及重复发生情况。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260514_30156784",
+          "date": "2026-05-14",
+          "title": "把法治资源转化为发展优势（法治头条·优化法治化营商环境）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/14/content_30156784.html",
+          "markdown_path": "data/vault/2026/05/2026-05-14/19-法治/把法治资源转化为发展优势（法治头条·优化法治化营商环境）.md",
+          "raw_path": "",
+          "use": "厦门扫码入企、白名单及清单公开，并把监管资源转向风险环节。"
+        },
+        {
+          "article_id": "people_daily_20260625_30164784",
+          "date": "2026-06-25",
+          "title": "涉企检查当“减量不降效”（纵横）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/25/content_30164784.html",
+          "markdown_path": "data/vault/2026/06/2026-06-25/05-评论/涉企检查当“减量不降效”（纵横）.md",
+          "raw_path": "",
+          "use": "检查数量和问题发现变化的地方观察，提出风险分类、非现场监管和回访指导。"
+        },
+        {
+          "article_id": "people_daily_20260604_30161045",
+          "date": "2026-06-04",
+          "title": "涉企执法，该严则严、当宽则宽（金台锐评）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/04/content_30161045.html",
+          "markdown_path": "data/vault/2026/06/2026-06-04/19-法治/涉企执法，该严则严、当宽则宽（金台锐评）.md",
+          "raw_path": "",
+          "use": "说明规范乱执法与依法严格监管可以并行，提供边界论证。"
+        }
+      ],
+      "difference_from_existing": "既有营商环境稿是规范执法总论，旧86讲信用修复；本题限定检查资源如何配置及效果如何评价。",
+      "reuse_boundary": "白名单不是永久免检；不能把评论主张当法定免罚条件。写作前复核地方与全国规定的适用范围。",
+      "teaching_use": "申论：清单定边界—综合减重复—风险定频次—整改看实效；面试：兼顾企业负担与公共安全。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_ecological_compensation",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "B",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【横向生态补偿】：上游保护环境，下游怎样共同承担成本",
+      "angle": "【半年回溯·绿色发展：把生态账算清楚·新增1】横向生态补偿把保护责任、监测标准、补偿安排与协同治理写进约定，使跨界受益和成本形成连接。 读者问题：河流跨越行政边界，保护成本与受益不在一处，怎样建立合作？ 与旧稿区别：旧93讲生态产品价值实现总论，旧76讲法典体系；本题聚焦跨行政边界的成本分担和协议治理。",
+      "outline": [
+        "先认清谁保护谁受益：流域整体看问题",
+        "指标可核验：水质类别与具体污染物改善分别计量",
+        "协商责任与补偿：根据水系特点确定单向或双向安排",
+        "资金连接治理：巡河、信息共享、污染防治与联合处置",
+        "效果持续评估：保护质量与协议执行同时复核"
+      ],
+      "support_article_ids": [
+        "people_daily_20260211_30140181",
+        "people_daily_20260529_30159782",
+        "people_daily_20260429_30153876"
+      ],
+      "series_code": "F",
+      "theme": "横向生态补偿",
+      "reader_question": "河流跨越行政边界，保护成本与受益不在一处，怎样建立合作？",
+      "opening_scene": "嘉陵江陕甘段互为上下游，设置双向断面补偿；长三角村庄之间也探索监测与补偿协议。",
+      "core_argument": "横向生态补偿把保护责任、监测标准、补偿安排与协同治理写进约定，使跨界受益和成本形成连接。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260211_30140181",
+          "date": "2026-02-11",
+          "title": "交界“好邻居”  环保“好搭档”（美丽中国·关注生态协同治理）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202602/11/content_30140181.html",
+          "markdown_path": "data/vault/2026/02/2026-02-11/14-生态/交界“好邻居” 环保“好搭档”（美丽中国·关注生态协同治理）.md",
+          "raw_path": "",
+          "use": "长三角跨界巡河与村际补偿协议，展示监测、考核和专款用途。"
+        },
+        {
+          "article_id": "people_daily_20260529_30159782",
+          "date": "2026-05-29",
+          "title": "陕甘推进渭河和嘉陵江流域横向生态补偿",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/29/../../../content/202605/29/content_30159782.html",
+          "markdown_path": "",
+          "raw_path": "data/raw/articles_20260529.json",
+          "use": "陕甘嘉陵江双向断面补偿，显示机制必须服从互为上下游的水系现实。"
+        },
+        {
+          "article_id": "people_daily_20260429_30153876",
+          "date": "2026-04-29",
+          "title": "拓宽绿水青山转化金山银山的路径（治理之道）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202604/29/content_30153876.html",
+          "markdown_path": "data/vault/2026/04/2026-04-29/09-理论/拓宽绿水青山转化金山银山的路径（治理之道）.md",
+          "raw_path": "",
+          "use": "讨论产权核算、市场交易与生态补偿的不同路径，提供保护者受益的机制视角。"
+        }
+      ],
+      "difference_from_existing": "旧93讲生态产品价值实现总论，旧76讲法典体系；本题聚焦跨行政边界的成本分担和协议治理。",
+      "reuse_boundary": "补偿不是购买排污权；水质达标与污染物改善指标不能混写，地方支付办法不外推。",
+      "teaching_use": "申论：外部受益—协商机制—监测计量—责任分担—共保联治；面试：跨域协作先统一证据与接口。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_product_carbon_footprint",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "B",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【产品碳足迹】：一张绿色标签，怎样倒逼整条生产链改变",
+      "angle": "【半年回溯·绿色发展：把生态账算清楚·新增2】碳足迹的价值在明确核算边界、取得可追溯数据、识别排放重点并持续改进，而非单纯获得标签。 读者问题：产品贴了碳标签，究竟只是宣传，还是能够找到真正该减排的环节？ 与旧稿区别：旧18讲资源循环、既有碳达峰及能源稿讲系统转型，旧93讲生态价值；本题只讲产品核算如何带动供应链改进。",
+      "outline": [
+        "先定边界和单位：说明算的是哪种产品、哪些环节",
+        "把数据追到供应链：原料、生产、运输等信息有依据",
+        "找排放集中处：用核算结果确定改造优先序",
+        "推动实际改变：能源、工艺、管理与供应商协同",
+        "认证之后继续核查：比较时保持同口径，防止只贴标不改进"
+      ],
+      "support_article_ids": [
+        "people_daily_20260603_30160637",
+        "people_daily_20260512_30156321",
+        "people_daily_20260513_30156581"
+      ],
+      "series_code": "F",
+      "theme": "产品碳足迹",
+      "reader_question": "产品贴了碳标签，究竟只是宣传，还是能够找到真正该减排的环节？",
+      "opening_scene": "张掖马铃薯核算后发现种植阶段影响最大，企业据此调整肥料、灌溉等生产方式。",
+      "core_argument": "碳足迹的价值在明确核算边界、取得可追溯数据、识别排放重点并持续改进，而非单纯获得标签。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260603_30160637",
+          "date": "2026-06-03",
+          "title": "一颗马铃薯的碳足迹（美丽中国·身边的绿色故事）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/03/content_30160637.html",
+          "markdown_path": "data/vault/2026/06/2026-06-03/14-生态/一颗马铃薯的碳足迹（美丽中国·身边的绿色故事）.md",
+          "raw_path": "",
+          "use": "马铃薯碳标签核算与种植环节调整；区分报道中的具体核算边界与一般生命周期概念。"
+        },
+        {
+          "article_id": "people_daily_20260512_30156321",
+          "date": "2026-05-12",
+          "title": "一张超薄铝箔怎样诞生（美丽中国·从绿色产品看节能降碳）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/12/content_30156321.html",
+          "markdown_path": "data/vault/2026/05/2026-05-12/12-生态/一张超薄铝箔怎样诞生（美丽中国·从绿色产品看节能降碳）.md",
+          "raw_path": "",
+          "use": "绿色铝加工通过工序控制、铝水直供及清洁能源减少能耗，展示工业链条对应。"
+        },
+        {
+          "article_id": "people_daily_20260513_30156581",
+          "date": "2026-05-13",
+          "title": "光伏片连成绿色生产线（美丽中国·从绿色产品看节能降碳）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/13/content_30156581.html",
+          "markdown_path": "data/vault/2026/05/2026-05-13/14-生态/光伏片连成绿色生产线（美丽中国·从绿色产品看节能降碳）.md",
+          "raw_path": "",
+          "use": "光伏企业能碳管理与原料、运输数据共同纳入，体现绿色产品也要管理生产排放。"
+        }
+      ],
+      "difference_from_existing": "旧18讲资源循环、既有碳达峰及能源稿讲系统转型，旧93讲生态价值；本题只讲产品核算如何带动供应链改进。",
+      "reuse_boundary": "绿电不等于全生命周期零排放；不同产品、边界、年份的碳数值不可直接排名，不承诺认证必然溢价。",
+      "teaching_use": "申论：可计量—可追溯—找重点—全链改—再核验；面试：先核数据和口径再宣传成效。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_heritage_apprenticeship",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "B",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【非遗传承人】：流量带来了观众，怎样留下真正学手艺的人",
+      "angle": "【半年回溯·文化传承：从看见到学会·新增1】非遗的长期延续需要把关注转成学习入口、持续训练、展示反馈和合理生计支持。 读者问题：越来越多人点赞非遗，为什么接班人仍需花力气培养？ 与旧稿区别：旧28与40讲文化转译及科技融合，旧72讲公共文化参与；本题专讲青年传承人的培养链。",
+      "outline": [
+        "从看热闹到愿意学：把文化含义讲明，降低接触门槛",
+        "保留扎实训练：师承、材料、工艺和基本功不能省略",
+        "让年轻人有表达：在理解传统的基础上进行当代创作",
+        "教学和行业相连：校园、工坊、工作室形成成长路径",
+        "用接班质量检验传播：学习持续性、技能成长和作品反馈"
+      ],
+      "support_article_ids": [
+        "people_daily_20260609_30161959",
+        "people_daily_20260608_30161763",
+        "people_daily_20260604_30160968"
+      ],
+      "series_code": "G",
+      "theme": "非遗传承人",
+      "reader_question": "越来越多人点赞非遗，为什么接班人仍需花力气培养？",
+      "opening_scene": "畲歌青年传承人从直播走进校园教学，陶瓷匠人用具体材料和创作指导带年轻同行参加比赛。",
+      "core_argument": "非遗的长期延续需要把关注转成学习入口、持续训练、展示反馈和合理生计支持。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260609_30161959",
+          "date": "2026-06-09",
+          "title": "“学的人多了，非遗才能真正传下去”（非遗里的青春派）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/09/content_30161959.html",
+          "markdown_path": "data/vault/2026/06/2026-06-09/06-要闻/“学的人多了，非遗才能真正传下去”（非遗里的青春派）.md",
+          "raw_path": "",
+          "use": "畲歌传承人将直播关注连接校园授课、公益教学和创业支持。"
+        },
+        {
+          "article_id": "people_daily_20260608_30161763",
+          "date": "2026-06-08",
+          "title": "用自己的方式，画出心中山水（非遗里的青春派）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/08/content_30161763.html",
+          "markdown_path": "data/vault/2026/06/2026-06-08/06-要闻/用自己的方式，画出心中山水（非遗里的青春派）.md",
+          "raw_path": "",
+          "use": "陶瓷创作者经过长期材料试验形成表达，并对年轻同行进行细致指导。"
+        },
+        {
+          "article_id": "people_daily_20260604_30160968",
+          "date": "2026-06-04",
+          "title": "挖掘民族服饰的时尚潜力（非遗里的青春派）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/04/content_30160968.html",
+          "markdown_path": "data/vault/2026/06/2026-06-04/06-要闻/挖掘民族服饰的时尚潜力（非遗里的青春派）.md",
+          "raw_path": "",
+          "use": "彝绣创新产品、绣坊与培训指导角色，补充手艺传承和生计支持的联系。"
+        }
+      ],
+      "difference_from_existing": "旧28与40讲文化转译及科技融合，旧72讲公共文化参与；本题专讲青年传承人的培养链。",
+      "reuse_boundary": "非遗门类不同，不能用单一商业销量评价；不把热度直接当传承人数或技能质量。",
+      "teaching_use": "申论：活态传承—系统培养—当代表达—生计支撑；面试：活动之外设计长期学习与实践。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    },
+    {
+      "idea_id": "idea_20260912_h1_study_tour_learning",
+      "date": "2026-09-12",
+      "status": "备选",
+      "priority": "B",
+      "platform": "公众号系列 + 申论面试教学",
+      "title": "《人民日报》深度分析【研学质量】：走了一趟、拍了照片，孩子究竟学到了什么",
+      "angle": "【半年回溯·文化传承：从看见到学会·新增2】研学应以学习目标、实践任务和成果反馈为核心，课程质量、收费透明及安全责任共同托底。 读者问题：怎样区分真正的行走课堂与换了教育标签的旅游？ 与旧稿区别：旧59讲旅游承载力，旧36讲教育体系；备选算法价值泛题虽涉及研学，本题已限定课程交付与消费责任，并有完整独立来源。",
+      "outline": [
+        "先问学习目标：年龄、兴趣与课程要求相匹配",
+        "把景点变任务：观察、提问、查证和表达替代被动打卡",
+        "把收获留下：作品、讲解和反思能够呈现学习过程",
+        "把钱与责任说清：费用项目、资质、师资和安全安排可核查",
+        "让监督覆盖营销与履约：家校理性选择，部门和平台按职责协作"
+      ],
+      "support_article_ids": [
+        "people_daily_20260502_30154649",
+        "people_daily_20260531_30160052",
+        "people_daily_20260626_30165127"
+      ],
+      "series_code": "G",
+      "theme": "研学质量",
+      "reader_question": "怎样区分真正的行走课堂与换了教育标签的旅游？",
+      "opening_scene": "奉节研学用诗句、岩层和现场观察互相验证，让孩子主动查资料再讲出来，可与重出片轻课程的问题对照。",
+      "core_argument": "研学应以学习目标、实践任务和成果反馈为核心，课程质量、收费透明及安全责任共同托底。",
+      "evidence": [
+        {
+          "article_id": "people_daily_20260502_30154649",
+          "date": "2026-05-02",
+          "title": "游山水，更懂山水（经济新方位·聚焦假期消费）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/02/content_30154649.html",
+          "markdown_path": "data/vault/2026/05/2026-05-02/02-要闻/游山水，更懂山水（经济新方位·聚焦假期消费）.md",
+          "raw_path": "",
+          "use": "奉节诗景配对与学生主动查证表达，提供课程设计正例。"
+        },
+        {
+          "article_id": "people_daily_20260531_30160052",
+          "date": "2026-05-31",
+          "title": "行走的研学别走偏了（教育时评）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202605/31/content_30160052.html",
+          "markdown_path": "data/vault/2026/05/2026-05-31/05-教育/行走的研学别走偏了（教育时评）.md",
+          "raw_path": "",
+          "use": "列举研学定价、资质、安全、责任与成果评价问题，区分事实描述与作者建议。"
+        },
+        {
+          "article_id": "people_daily_20260626_30165127",
+          "date": "2026-06-26",
+          "title": "谨防研学被流量带偏方向（纵横）",
+          "source_url": "https://paper.people.com.cn/rmrb/pc/content/202606/26/content_30165127.html",
+          "markdown_path": "data/vault/2026/06/2026-06-26/05-评论/谨防研学被流量带偏方向（纵横）.md",
+          "raw_path": "",
+          "use": "分析投放营销挤压教学、导师变拍照导游的机制，提出多方治理建议。"
+        }
+      ],
+      "difference_from_existing": "旧59讲旅游承载力，旧36讲教育体系；备选算法价值泛题虽涉及研学，本题已限定课程交付与消费责任，并有完整独立来源。",
+      "reuse_boundary": "评论建议不等于全国统一行业准入规范；不将研学等同于成绩提升或升学收益。",
+      "teaching_use": "申论：目标—任务—实践—评价—保障；面试：以学习产出和安全底线设计活动。",
+      "source_period": "2026-01-01_to_2026-06-30"
+    }
+  ],
+  "support_updates": {
+    "idea_20260629_0705_county_specialized_integrated": [
+      "people_daily_20260116_30133100",
+      "people_daily_20260210_30139783",
+      "people_daily_20260629_30165412"
+    ],
+    "idea_20260720_0726_elderly_care_system": [
+      "people_daily_20260113_30131899",
+      "people_daily_20260211_30140134",
+      "people_daily_20260403_30149129"
+    ],
+    "idea_20260830_occupational_injury_protection_chain": [
+      "people_daily_20260106_30129768",
+      "people_daily_20260530_30159963",
+      "people_daily_20260612_30162633"
+    ],
+    "idea_20260911_technology_manager_partner": [
+      "people_daily_20260205_30138652",
+      "people_daily_20260527_30159421",
+      "people_daily_20260612_30162631"
+    ],
+    "idea_202601_revisit_deliberation_to_results": [
+      "people_daily_20260111_30131064",
+      "people_daily_20260126_30135660",
+      "people_daily_20260127_30135826"
+    ],
+    "idea_20260615_21_ecology_asset_income": [
+      "people_daily_20260126_30135678",
+      "people_daily_20260616_30163319",
+      "people_daily_20260620_30163954"
+    ],
+    "idea_20260615_21_culture_life_world": [
+      "people_daily_20260613_30162786",
+      "people_daily_20260613_30162787",
+      "people_daily_20260613_30162788"
+    ]
+  }
+}

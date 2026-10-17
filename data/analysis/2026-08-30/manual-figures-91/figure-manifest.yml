@@ -1,0 +1,163 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-08-30'
+registered_at: '2026-09-21T11:56:41'
+article: data/articles/人民日报系列/91-《人民日报》深度分析【城市更新后半程】：空间建好了，服务、运营和居民参与还要接上.md
+topic: 城市更新后半程
+article_number: '91'
+asset_root: media/images/2026-08-30-article-91
+manifest_path: data/analysis/2026-08-30/manual-figures-91/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-91-02
+      before_heading: '## 一、建设前先问需求：别等空间建好再寻找用途'
+      inline_marker: '![第91篇配图02](media/images/2026-08-30-article-91/fig-91-02.png)'
+      anchor_before: 城市更新后半程的完整逻辑是：体检问需 -> 服务嵌入 -> 业态适配 -> 多方运营 -> 资金平衡 -> 动态评估。
+      anchor_after: 一、建设前先问需求：别等空间建好再寻找用途
+      context_after: 城市更新最怕一种顺序：先定项目、先画效果图，建好之后再问居民“这里适合做什么”。需求如果进入得太晚，空间和服务就容易错位。老年人多的社区可能缺的是食堂、助浴和健
+    - id: fig-91-04
+      before_heading: '## 二、空间建成后接服务：有房间不等于有服务'
+      inline_marker: '![第91篇配图04](media/images/2026-08-30-article-91/fig-91-04.png)'
+      anchor_before: 先明确谁来用、为什么用，再决定建什么，这样可以避免走很多弯路。
+      anchor_after: 二、空间建成后接服务：有房间不等于有服务
+      context_after: 一间活动室挂上牌子，不会自动变成养老服务中心；一个展厅装好灯光，也不会自己产生展览。空间只是一个容器，真正的服务需要人员、内容、时间表和标准来支撑。上海的门卫美
+    - id: fig-91-03
+      before_heading: '## 三、业态要适宜：人气不是靠塞满商铺制造的'
+      inline_marker: '![第91篇配图03](media/images/2026-08-30-article-91/fig-91-03.png)'
+      anchor_before: 空间被使用，才有公共价值；服务能持续，更新才真正融入生活。
+      anchor_after: 三、业态要适宜：人气不是靠塞满商铺制造的
+      context_after: 城市更新需要活力，也需要一定的经营收入。但在引入业态时，不能哪里有空位就开店，更不能让每条老街都复制同一套“咖啡、文创加网红打卡”的模式。成都地铁在利用闲置和碎
+    - id: fig-91-05
+      before_heading: '## 四、多方共运营：有人牵头，也要有人长期履责'
+      inline_marker: '![第91篇配图05](media/images/2026-08-30-article-91/fig-91-05.png)'
+      anchor_before: 好的业态不是看上去最热闹，而是与这块空间、这群人和这座城市相互适配。
+      anchor_after: 四、多方共运营：有人牵头，也要有人长期履责
+      context_after: 建设阶段通常有项目单位、施工单位和明确的验收标准。但项目一旦结束，责任链就可能变得模糊：产权人只管房屋，物业只管保洁，运营方只管活动，而居民有意见却不知道该找谁
+    - id: fig-91-06
+      before_heading: '## 五、把长期账算清：既要有钱维护，也要用效果校准'
+      inline_marker: '![第91篇配图06](media/images/2026-08-30-article-91/fig-91-06.png)'
+      anchor_before: 共同运营的关键，在于每个主体都清楚自己该做什么，出了问题知道由谁来负责。
+      anchor_after: 五、把长期账算清：既要有钱维护，也要用效果校准
+      context_after: 项目建设有预算，长期运营同样有成本。人员工资、水电能耗、设备维修、内容更新、安全保障，这些费用并不会因为项目竣工而消失。例如，上海市民新村的改造资金，由财政资金
+    - id: fig-91-07
+      before_heading: '## 六、国考省考申论面试怎么用'
+      inline_marker: '![第91篇配图07](media/images/2026-08-30-article-91/fig-91-07.png)'
+      anchor_before: 后评估为下一轮调整提供依据，让更新能够持续适应生活变化。
+      anchor_after: 六、国考省考申论面试怎么用
+      context_after: 遇到城市更新、老旧小区改造、完整社区建设、历史街区保护等题目时，不能只写“完善基础设施、优化城市环境”。可以直接使用这套公式：>**需求决定功能+服务填充空间+
+    updated_at: '2026-09-21T11:56:41'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-09-21T11:56:43'
+  body_hash: 4f0cef10f60bc32b830ba6108ad3356c35ed9b241bfc8284da90dd9f11683e9c
+  plan_fingerprint: eddff9b9f238dc9d1161c4363a49891bbf2059c0a0b93c252b656ebe15a2d919
+figures:
+- id: fig-91-02
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-91/fig-91-02.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 89886a9d6fb5be885ec302ab7eeb709e1d99686c6c284538fb9a49c0d8f4f0ce
+  title: 第91篇配图02
+  caption: 第91篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、建设前先问需求：别等空间建好再寻找用途附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:41'
+- id: fig-91-04
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-91/fig-91-04.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 3ba23d4322f781d19cac6d5ba60de3976f7ff71581300c2993892929b5ff0206
+  title: 第91篇配图04
+  caption: 第91篇配图04
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、空间建成后接服务：有房间不等于有服务附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:41'
+- id: fig-91-03
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-91/fig-91-03.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 2a0e147085af93ba333f6ed8e5b34519d5d251174b23af4cd06a0c90e1214d17
+  title: 第91篇配图03
+  caption: 第91篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、业态要适宜：人气不是靠塞满商铺制造的附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:41'
+- id: fig-91-05
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-91/fig-91-05.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 1896be229400236124f48eef6bf182cdce6287267ca02ac9524a09776a5545f5
+  title: 第91篇配图05
+  caption: 第91篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、多方共运营：有人牵头，也要有人长期履责附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:41'
+- id: fig-91-06
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-91/fig-91-06.png
+  width_px: 1448
+  height_px: 1086
+  sha256: d84ff936a3bc5071393e23f1e983c5404d9acb355bda24d727558dd6c64c6c91
+  title: 第91篇配图06
+  caption: 第91篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、把长期账算清：既要有钱维护，也要用效果校准附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:41'
+- id: fig-91-07
+  kind: inline_markdown
+  file: media/images/2026-08-30-article-91/fig-91-07.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 2012e044f41cd9a475f4f1ae629d13703dd5db62fdcd73dfeb4b0e26adc9c1fe
+  title: 第91篇配图07
+  caption: 第91篇配图07
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试怎么用附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-09-21T11:56:41'
+updated_at: '2026-09-21T11:56:43'
+placement_mode: inline_markdown
+inline_markdown_count: 6
+inline_imported_at: '2026-09-21T11:56:41'

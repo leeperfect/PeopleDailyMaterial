@@ -1,0 +1,187 @@
+{
+  "created_on": "2026-09-12",
+  "scope": "2026-01-01_to_2026-06-30",
+  "library_articles": 14655,
+  "h1_articles": 5154,
+  "monthly": [
+    {
+      "month": "2026-01",
+      "articles": 776,
+      "days": 31,
+      "short_content": 3
+    },
+    {
+      "month": "2026-02",
+      "articles": 515,
+      "days": 28,
+      "short_content": 0
+    },
+    {
+      "month": "2026-03",
+      "articles": 817,
+      "days": 31,
+      "short_content": 6
+    },
+    {
+      "month": "2026-04",
+      "articles": 1059,
+      "days": 30,
+      "short_content": 1
+    },
+    {
+      "month": "2026-05",
+      "articles": 952,
+      "days": 31,
+      "short_content": 24
+    },
+    {
+      "month": "2026-06",
+      "articles": 1035,
+      "days": 30,
+      "short_content": 7
+    }
+  ],
+  "title_theme_counts": {
+    "县域与乡村": {
+      "monthly": [
+        26,
+        16,
+        17,
+        21,
+        18,
+        29
+      ],
+      "total": 127
+    },
+    "养老与照护": {
+      "monthly": [
+        7,
+        4,
+        6,
+        12,
+        2,
+        5
+      ],
+      "total": 36
+    },
+    "就业与技能": {
+      "monthly": [
+        14,
+        7,
+        10,
+        22,
+        16,
+        15
+      ],
+      "total": 84
+    },
+    "科技与产业": {
+      "monthly": [
+        56,
+        41,
+        66,
+        88,
+        69,
+        71
+      ],
+      "total": 391
+    },
+    "基层与公共服务": {
+      "monthly": [
+        38,
+        23,
+        29,
+        42,
+        43,
+        43
+      ],
+      "total": 218
+    },
+    "消费与市场": {
+      "monthly": [
+        26,
+        14,
+        23,
+        31,
+        21,
+        42
+      ],
+      "total": 157
+    },
+    "文化与教育": {
+      "monthly": [
+        35,
+        21,
+        38,
+        66,
+        50,
+        72
+      ],
+      "total": 282
+    },
+    "生态与安全": {
+      "monthly": [
+        25,
+        18,
+        38,
+        69,
+        44,
+        47
+      ],
+      "total": 241
+    }
+  },
+  "series_count": 7,
+  "new_ideas": 14,
+  "existing_ideas_reused": 7,
+  "source_bindings": 65,
+  "unique_sources": 62,
+  "source_count_per_new_idea": {
+    "idea_20260912_h1_rural_cluster_coordination": 3,
+    "idea_20260912_h1_farmer_value_distribution": 3,
+    "idea_20260912_h1_mutual_eldercare_support": 3,
+    "idea_20260912_h1_eldercare_workforce": 3,
+    "idea_20260912_h1_training_to_jobs": 3,
+    "idea_20260912_h1_labor_dispute_delivery": 3,
+    "idea_20260912_h1_proof_of_concept": 3,
+    "idea_20260912_h1_patent_transaction": 4,
+    "idea_20260912_h1_hotline_resolution": 4,
+    "idea_20260912_h1_risk_based_inspection": 3,
+    "idea_20260912_h1_ecological_compensation": 3,
+    "idea_20260912_h1_product_carbon_footprint": 3,
+    "idea_20260912_h1_heritage_apprenticeship": 3,
+    "idea_20260912_h1_study_tour_learning": 3
+  },
+  "all_source_ids_found": true,
+  "all_sources_in_h1": true,
+  "all_have_local_source": true,
+  "raw_only_sources": [
+    "people_daily_20260511_30156050",
+    "people_daily_20260529_30159782"
+  ],
+  "priority_counts": {
+    "S": 5,
+    "A": 5,
+    "B": 4
+  },
+  "online_check": "5篇官网正文；另2篇官网PDF/目录补核；其余本地来源审查",
+  "database_write": "passed",
+  "miaoda_sync": {
+    "status": "published",
+    "published_at": "2026-09-12T22:12:33+08:00",
+    "idea_count": 124,
+    "url": "https://xw3elgcbph.feishuapp.com/app/app_17dckjymr5w",
+    "app_id": "app_17dckjymr5w",
+    "html_bytes": 759975,
+    "initial_sandbox_keychain_failure": "已在获准访问系统钥匙串的环境中重试成功；没有变更鉴权配置"
+  },
+  "new_rows_added": 14,
+  "existing_support_updated": 4,
+  "total_ideas_after": 124,
+  "old_status_priority_notes_unchanged": true,
+  "future_refinement_aligned": true,
+  "public_wording_required": 0,
+  "public_wording_review": 0,
+  "local_link_check": "review.md与series-cards.md的本地资料链接均存在；2个无vault记录链接到raw",
+  "source_fact_layers": "仅修改material_assets.sqlite的选题与来源绑定；未写入articles.sqlite、raw、vault或Notion"
+}

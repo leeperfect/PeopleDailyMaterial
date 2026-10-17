@@ -2416,6 +2416,153 @@ REFINED_IDEAS.extend(
 )
 
 
+# 2026-09-11: latest available newspaper batch ends on September 6.
+for _idea in REFINED_IDEAS:
+    if _idea["idea_id"] == "idea_20260720_0726_elderly_care_system":
+        _idea.update({
+            "priority": "S",
+            "title": "《人民日报》深度分析【养老照护】：老人失能之后，家庭怎样接上持续照护",
+            "angle": "从居家生活需要协助的老人及其家庭出发，讲清需求评估、适老化改造、专业上门服务、医养接续和支付保障如何衔接。区别于银发经济产业总论和公益市场关系，聚焦照护能否持续交付；不把长护险规划目标写成全国已可领取的待遇。",
+            "outline": [
+                "先分清需求：区分一般生活帮助、康复护理和失能照护",
+                "评估后配服务：一户一策改造，不能用买设备替代照护人员",
+                "专业服务到家：社区联络、机构支撑、人员培训接住家庭需求",
+                "不同阶段能接续：治疗、康复与稳定期生活照料相互衔接",
+                "支付保障可持续：分清长护险、消费补贴与家庭支出，核实当地适用条件",
+                "质量有人负责：服务记录、质量监管和异常响应不能缺位",
+            ],
+            "support_article_ids": list(dict.fromkeys(_idea["support_article_ids"] + [
+                "people_daily_20260904_30179049", "people_daily_20260905_30179238",
+            ])),
+        })
+
+REFINED_IDEAS.extend([
+    {
+        "idea_id": "idea_20260911_accompanied_medical_service",
+        "date": "2026-09-11", "priority": "S", "status": "备选",
+        "platform": "公众号系列 + 小红书",
+        "title": "《人民日报》深度分析【陪诊服务】：花钱请来的“临时家人”，怎样才能让人放心",
+        "angle": "从老人子女无法陪同、异地患者不熟流程的现实处境切入，解释陪诊如何从跑腿生意走向可信服务。承接银发和就业读者，但不再讲新职业总论；集中回答服务边界、培训、合同收费、隐私与纠纷责任。地方能力证书不能写成全国执业资格，专家建议不能写成强制规定。",
+        "outline": [
+            "需求为何出现：就医流程与家庭陪伴时间之间存在缺口",
+            "服务值在哪里：行程安排、资料整理、准确转述与情绪支持",
+            "专业边界在哪里：陪同服务不能代替医生诊疗和患者医疗决策",
+            "信任怎样建立：培训实训、合同收费、信息保护与服务留痕",
+            "纠纷由谁接住：平台管理、投诉处理、医院协同与行业监管",
+        ],
+        "support_article_ids": ["people_daily_20260709_30167680", "people_daily_20260828_30177676", "people_daily_20260904_30178989", "people_daily_20260904_30178990"],
+    },
+    {
+        "idea_id": "idea_20260911_technology_manager_partner",
+        "date": "2026-09-11", "priority": "S", "status": "备选",
+        "platform": "公众号系列 + 申论题卡",
+        "title": "《人民日报》深度分析【技术经理人】：好技术为什么还需要一个懂市场的合伙人",
+        "angle": "承接科技成果转化的历史读者，参考人民日报“从‘0’到‘1’，把‘1’拉长”系列，专讲谁来组织转化、如何承担全过程服务及获得长效激励。以陕西技术经理人和光谷需求说明书为主例，不重复既有成果转化全链条、中试设备和耐心资本总论。",
+        "outline": [
+            "技术好不等于产品有人买：科研语言与企业需求之间存在距离",
+            "先把需求说清：深入企业和使用现场，形成可验证的问题说明",
+            "再把合作做实：评估技术、匹配团队、谈判合同与协调资源",
+            "从撮合走向陪伴：产品迭代、商业模式与企业成长需要持续服务",
+            "激励与能力一起建设：项目实训、职业通道和合理收益分配",
+        ],
+        "support_article_ids": ["people_daily_20260205_30138652", "people_daily_20260817_30175276", "people_daily_20260817_30175277", "people_daily_20260819_30175799", "people_daily_20260902_30178545"],
+    },
+    {
+        "idea_id": "idea_20260911_residential_tourism_services",
+        "date": "2026-09-11", "priority": "S", "status": "备选",
+        "platform": "公众号系列 + 小红书",
+        "title": "《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来",
+        "angle": "从游客要长住而非短暂打卡的需求变化，分析生活服务、季节性供给和本地居民利益的平衡。承接县域及银发主题但不能把两类历史高阅读简单相加；区别于既有旅游承载力和县域消费，主攻从游客到临时居民的服务转换，不把旅居包装成旅游地产。",
+        "outline": [
+            "需求变了：看风景之外，还有医疗、交通、社交与日常生活",
+            "供给按人配置：康养、青年旅创等客群不能套同一种产品",
+            "旺淡季弹性安排：盘活存量、共享设施，避免一热就扩建",
+            "融入而非隔离：公共文化与创业服务帮助旅居者形成连接",
+            "本地人也要受益：关注物价、交通和经营机会，共生才可持续",
+        ],
+        "support_article_ids": ["people_daily_20260730_30171994", "people_daily_20260805_30173182", "people_daily_20260904_30179003"],
+    },
+    {
+        "idea_id": "idea_20260911_dignified_precise_assistance",
+        "date": "2026-09-11", "priority": "A", "status": "备选",
+        "platform": "公众号 + 申论题卡",
+        "title": "《人民日报》深度分析【精准资助】：不公开谁在受助，怎样把钱发准、把账说清",
+        "angle": "从暖心饭卡不申请、不公示的具体做法切入，回答保护受助者尊严与接受资金监督能否兼得。不同于已写的政策找人和快办，重点是身份保密、人工复核、财务透明三者的制度分工；高校慈善实践不能推成所有法定救助免公示的通则。",
+        "outline": [
+            "善意也需要分寸：帮助不能以展览困境和强迫感谢为代价",
+            "数据只做初筛：低消费不必然等于贫困，辅导员复核并动态增补",
+            "身份保护与监督分开：受助信息保密，项目规则和收支接受监督",
+            "机制随现实迭代：支付方式和物价变化都要进入识别与补助调整",
+            "从一顿饭到成长支持：守住边界，再连接学业与就业服务",
+        ],
+        "support_article_ids": ["people_daily_20260105_30129339", "people_daily_20260903_30178771", "people_daily_20260903_30178772"],
+    },
+    {
+        "idea_id": "idea_20260911_talent_evaluation_real_contribution",
+        "date": "2026-09-11", "priority": "A", "status": "备选",
+        "platform": "公众号系列 + 申论题卡",
+        "title": "《人民日报》深度分析【人才评价】：不只凭论文，怎样认定一个人真有本事",
+        "angle": "以实践成果申请学位为引子，贯通专业学位与职称分类评价，回答破唯论文之后用什么标准确认真实贡献。与教育科技人才一体总论、岗位技能培训区分，核心是分类标尺、成果核验和质量责任；不鼓吹取消论文，不用短期市场收益评价所有基础研究。",
+        "outline": [
+            "先分培养目标：学术探索、工程应用等不能共用一把尺子",
+            "再定义有效成果：创新性、独立贡献和实际应用价值分别核验",
+            "证据必须过硬：检测、用户报告、同行及行业评审相互印证",
+            "换标准不是降标准：开题、评阅、答辩及质量监督仍要严格",
+            "评价反向改培养：真实项目和协同育人进入学习全过程",
+        ],
+        "support_article_ids": ["people_daily_20260717_30169310", "people_daily_20260804_30173004", "people_daily_20260904_30179087", "people_daily_20260904_30179088"],
+    },
+])
+
+
+# 半年回溯选题以资料包保存，纳入同一精筛清单，避免工作台刷新时丢失。
+H1_SERIES_PLAN_PATH = ROOT / "data" / "analysis" / "2026-01_to_2026-06-series-review" / "series-plan.json"
+H1_SERIES_PLAN = json.loads(H1_SERIES_PLAN_PATH.read_text(encoding="utf-8"))
+REFINED_IDEAS.extend(H1_SERIES_PLAN["content_ideas"])
+for _idea in REFINED_IDEAS:
+    _support_additions = H1_SERIES_PLAN["support_updates"].get(_idea["idea_id"], [])
+    _idea["support_article_ids"] = list(dict.fromkeys(_idea["support_article_ids"] + _support_additions))
+
+# “十五五”系统系列沿用既有选题，只补充独立的新切口及已核验的来源。
+FIFTEEN_SERIES_PLAN_PATH = ROOT / "data" / "analysis" / "2026-09-12-fifteen-five-series" / "series-plan.json"
+FIFTEEN_SERIES_PLAN = json.loads(FIFTEEN_SERIES_PLAN_PATH.read_text(encoding="utf-8"))
+REFINED_IDEAS.extend(FIFTEEN_SERIES_PLAN["content_ideas"])
+for _idea in REFINED_IDEAS:
+    _support_additions = FIFTEEN_SERIES_PLAN["support_updates"].get(_idea["idea_id"], [])
+    _support_removals = FIFTEEN_SERIES_PLAN["support_removals"].get(_idea["idea_id"], [])
+    _idea["support_article_ids"] = [
+        _article_id for _article_id in dict.fromkeys(_idea["support_article_ids"] + _support_additions)
+        if _article_id not in _support_removals
+    ]
+
+
+# 标题括注原生系列保留独立选题与来源增量，后续精筛刷新时一并承接。
+NATIVE_SERIES_PLAN_PATH = ROOT / "data" / "analysis" / "2026-09-13-native-series-review" / "series-plan.json"
+NATIVE_SERIES_PLAN = json.loads(NATIVE_SERIES_PLAN_PATH.read_text(encoding="utf-8"))
+REFINED_IDEAS.extend(NATIVE_SERIES_PLAN["content_ideas"])
+for _idea in REFINED_IDEAS:
+    _support_additions = NATIVE_SERIES_PLAN["support_updates"].get(_idea["idea_id"], [])
+    _idea["support_article_ids"] = list(dict.fromkeys(_idea["support_article_ids"] + _support_additions))
+
+
+WEEKLY_SELECTION_20260921 = {
+    "idea_20260911_technology_manager_partner": "9月21日周一主推；已有第96篇，核对发布状态后使用。承接成果转化历史读者，讲谁来组织合作。",
+    "idea_20260912_h1_training_to_jobs": "9月22日周二；待写。聚焦课程、实训与实际岗位衔接，不把拿证等同于就业。",
+    "idea_20260911_accompanied_medical_service": "9月23日周三主推；已有第94篇，核对发布状态后使用。用具体就医困境承接银发与生活服务需求。",
+    "idea_20260912_h1_farmer_value_distribution": "9月24日周四；待写。承接土特产和县域产业阅读，重点讲收益分配而非重复产业链。",
+    "idea_20260911_residential_tourism_services": "9月25日周五主推；已有第95篇，核对发布状态后使用。聚焦长住服务，与宽泛提振消费区分。",
+    "idea_20260911_dignified_precise_assistance": "9月26日周六；已有第97篇，核对发布状态后使用。兼顾受助尊严与资金监督，保留公共价值题。",
+    "idea_20260912_h1_proof_of_concept": "9月27日周日；待写。回答继续投资前先验证什么，与技术经理人及中试平台区分。",
+}
+for _idea in REFINED_IDEAS:
+    if _idea["idea_id"] in WEEKLY_SELECTION_20260921:
+        _idea["angle"] = (
+            "【2026年9月21—27日排期】"
+            + WEEKLY_SELECTION_20260921[_idea["idea_id"]]
+            + " 原选题切口：" + _idea["angle"]
+        )
+
+
 def connect(path: Path) -> sqlite3.Connection:
     conn = sqlite3.connect(str(path))
     conn.row_factory = sqlite3.Row

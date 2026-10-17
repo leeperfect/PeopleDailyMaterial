@@ -21,6 +21,7 @@ import json
 import re
 import shutil
 import sqlite3
+import sys
 from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -1088,6 +1089,10 @@ def refresh_database(topics: list[dict[str, Any]], paper_articles: list[dict[str
         row["topic_id"]: dict(row)
         for row in conn.execute("SELECT * FROM teaching_cards")
     }
+    existing_links = {
+        (row['topic_id'], row['article_id']): dict(row)
+        for row in conn.execute('SELECT l.*, s.content_hash FROM topic_article_links l JOIN source_articles s USING(article_id)')
+    }
 
     active_topic_ids: list[str] = []
     conn.execute("DELETE FROM topic_article_links")
@@ -1144,6 +1149,8 @@ def refresh_database(topics: list[dict[str, Any]], paper_articles: list[dict[str
                 ),
             )
         for article in supports:
+            prior = existing_links.get((topic['topic_id'], article['article_id']), {})
+            unchanged = bool(article.get('content_hash')) and prior.get('content_hash') == article.get('content_hash') and prior.get('relation_role') == article.get('relation_role', '延伸母题')
             upsert_source(conn, article, SOURCE_KIND_PAPER)
             conn.execute(
                 """
@@ -1155,7 +1162,7 @@ def refresh_database(topics: list[dict[str, Any]], paper_articles: list[dict[str
                 (
                     topic["topic_id"], article.get("article_id", ""), SOURCE_KIND_PAPER,
                     article.get("relation_role", "延伸母题"), article.get("confidence", 0),
-                    article.get("match_reason", ""), 0, now,
+                    article.get("match_reason", ""), int(prior.get('reviewed', 0)) if unchanged else 0, now,
                 ),
             )
 
@@ -1247,6 +1254,8 @@ def build_editions(conn: sqlite3.Connection, topics: list[dict[str, Any]], now: 
     # 每次刷新只重建尚未发布的预览期；已发布历史期继续保留。
     conn.execute("DELETE FROM daily_editions WHERE status='preview'")
     conn.execute("DELETE FROM weekly_editions WHERE status='preview'")
+    published_days = {row[0] for row in conn.execute("SELECT edition_date FROM daily_editions WHERE status='published'")}
+    published_weeks = {row[0] for row in conn.execute("SELECT week_start FROM weekly_editions WHERE status='published'")}
     valid_dates = [
         date.fromisoformat(value)
         for topic in topics
@@ -1270,6 +1279,8 @@ def build_editions(conn: sqlite3.Connection, topics: list[dict[str, Any]], now: 
     )
     for issue_no, current in enumerate(issue_dates, start=1):
         current_text = current.isoformat()
+        if current_text in published_days:
+            continue
         active = [
             topic for topic in topics
             if (topic.get("start_date") or current_text) <= current_text <= (topic.get("end_date") or current_text)
@@ -1343,6 +1354,8 @@ def build_editions(conn: sqlite3.Connection, topics: list[dict[str, Any]], now: 
         monday = topic_date - timedelta(days=topic_date.weekday())
         week_groups[monday].append(topic)
     for monday, week_topics in week_groups.items():
+        if monday.isoformat() in published_weeks:
+            continue
         selected = sorted(week_topics, key=topic_sort_key)[:10]
         sunday = monday + timedelta(days=6)
         topic_ids = [topic["topic_id"] for topic in selected]
@@ -1392,7 +1405,37 @@ def write_jsonl(path: Path, rows: Iterable[dict[str, Any]]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def load_latest_sources(curated_until: str, app_db: Path | None = None, paper_db: Path | None = None) -> dict[str, Any]:
+    """Expose newer source articles without silently treating them as reviewed topics."""
+    app = connect_ro(app_db or APP_DB)
+    paper = connect_ro(paper_db or PAPER_DB)
+    try:
+        app_count, app_until = app.execute("SELECT COUNT(*), MAX(date) FROM articles").fetchone()
+        paper_count, paper_until = paper.execute("SELECT COUNT(*), MAX(date) FROM articles").fetchone()
+        rows = app.execute(
+            """SELECT a.article_id, a.date, a.title, a.source_url,
+                      COALESCE(m.source_name, a.source) AS source_name,
+                      a.summary, substr(a.content, 1, 600) AS content_excerpt
+               FROM articles a LEFT JOIN peopleapp_opinion_meta m USING(article_id)
+               WHERE a.date > ? ORDER BY a.date DESC, a.title, a.article_id""",
+            (curated_until,),
+        ).fetchall()
+        return {
+            "coverage": {"app_until": app_until or "", "app_count": app_count,
+                         "paper_until": paper_until or "", "paper_count": paper_count,
+                         "curated_until": curated_until, "fresh_count": len(rows)},
+            "articles": [{**dict(row), "material_status": "source_only"} for row in rows],
+        }
+    finally:
+        app.close()
+        paper.close()
+
+
 def build_site_payload(conn: sqlite3.Connection) -> dict[str, Any]:
+    if str(ROOT / "scripts") not in sys.path:
+        sys.path.insert(0, str(ROOT / "scripts"))
+    from hotspot_lesson_packages import load_lessons
+    lessons = load_lessons()
     topics = table_rows(conn, "hotspot_topics", "end_date DESC, priority, topic")
     cards = {row["topic_id"]: row for row in table_rows(conn, "teaching_cards", "updated_at DESC")}
     links = table_rows(conn, "topic_article_links", "topic_id, source_kind, confidence DESC")
@@ -1410,9 +1453,51 @@ def build_site_payload(conn: sqlite3.Connection) -> dict[str, Any]:
                 **topic,
                 "card": cards.get(topic["topic_id"]),
                 "sources": links_by_topic.get(topic["topic_id"], []),
+                "lesson": lessons.get(topic["topic_id"]),
             }
         )
-    category_counts = Counter(topic["category"] for topic in topics)
+    latest = load_latest_sources(max((topic["end_date"] for topic in topics), default=""))
+    by_source = defaultdict(list)
+    source_reviews = {}
+    for tid, lesson in lessons.items():
+        for source in lesson['sources']:
+            by_source[source['article_id']].append(tid)
+            if source.get('source_review'):
+                source_reviews[source['article_id']] = source['source_review']
+    original_ids = {t['topic_id'] for t in topics}
+    fresh_by_id = {a['article_id']:a for a in latest['articles']}
+    for tid, lesson in lessons.items():
+        if tid in original_ids:
+            continue
+        if not lesson.get('is_supplement'):
+            raise ValueError(f'授课稿对应的原热点缺失：{tid}')
+        records = [{**s, 'source_name':fresh_by_id.get(s['article_id'],{}).get('source_name',s['source'])}
+                   for s in lesson['sources']]
+        topic_payload.append({
+            'topic_id':tid, 'topic':lesson['title'], 'angle':lesson['focus'],
+            'category':lesson['topic_category'], 'status':'教研预览', 'priority':'B',
+            'start_date':min(s['date'] for s in records), 'end_date':lesson['basis_until'],
+            'media_count':len({s['source_name'] for s in records}),
+            'app_article_count':len(records), 'paper_support_count':0,
+            'is_supplement':True, 'updated_at':lesson['version'], 'card':None, 'lesson':lesson,
+            'sources':[{'article_id':s['article_id'], 'source_kind':SOURCE_KIND_APP,
+                        'relation_role':'授课依据', 'article':s} for s in records],
+        })
+    for article in latest['articles']:
+        article['lesson_ids'] = by_source.get(article['article_id'], [])
+        article['source_review'] = source_reviews.get(article['article_id'])
+        article['material_status'] = (article['source_review']['status'] if article['source_review']
+                                      else 'lesson_ready' if article['lesson_ids'] else 'source_only')
+    latest['coverage'].update({
+        'original_topics':len(topics), 'original_lessons':sum(t['topic_id'] in lessons for t in topics),
+        'supplemental_lessons':len(topic_payload)-len(topics), 'lesson_count':len(lessons),
+        'teaching_until':max((l['basis_until'] for l in lessons.values()),default=''),
+        'fresh_with_lessons':sum(bool(a['lesson_ids']) for a in latest['articles']),
+        'image_references':sum(a['material_status']=='image_reference' for a in latest['articles']),
+        'corrected_sources':sum(a['material_status']=='superseded' for a in latest['articles']),
+    })
+    topic_payload.sort(key=lambda t:(t.get('lesson',{}).get('basis_until',t['end_date']) if t.get('lesson') else t['end_date'],t['topic_id']),reverse=True)
+    category_counts = Counter(topic['category'] for topic in topic_payload)
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "product": {
@@ -1421,13 +1506,17 @@ def build_site_payload(conn: sqlite3.Connection) -> dict[str, Any]:
             "source_note": "人民日报APP评论发现热点，《人民日报》正式版补充政策、案例与规范表达。",
         },
         "stats": {
-            "topics": len(topics),
+            "topics": len(topic_payload),
+            "original_topics": len(topics),
+            "lesson_packages": len(lessons),
             "app_articles": sum(1 for source in sources.values() if source["source_kind"] == SOURCE_KIND_APP),
             "paper_articles": sum(1 for source in sources.values() if source["source_kind"] == SOURCE_KIND_PAPER),
             "daily_editions": len(daily),
             "weekly_editions": len(weekly),
         },
         "categories": [{"name": key, "count": value} for key, value in sorted(category_counts.items())],
+        "source_coverage": latest["coverage"],
+        "fresh_articles": latest["articles"],
         "daily_editions": daily,
         "weekly_editions": weekly,
         "topics": topic_payload,
@@ -1460,10 +1549,22 @@ def export_bundle(counts: dict[str, int]) -> dict[str, Any]:
         writer.writerows({key: row.get(key, "") for key in fieldnames} for row in link_rows)
 
     payload = build_site_payload(conn)
+    lesson_rows = [topic['lesson'] for topic in payload['topics'] if topic.get('lesson')]
+    write_jsonl(EXPORT_ROOT / 'lesson_packages.jsonl', lesson_rows)
+    write_jsonl(EXPORT_ROOT / 'supplemental_topics.jsonl',
+                [{k:v for k,v in topic.items() if k != 'lesson'} for topic in payload['topics'] if topic.get('is_supplement')])
+    write_jsonl(EXPORT_ROOT / 'fresh_articles.jsonl', payload['fresh_articles'])
+    (EXPORT_ROOT / 'source_coverage.json').write_text(
+        json.dumps(payload['source_coverage'], ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     payload_path = SITE_ROOT / "data.json"
     payload_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
     for asset in ("index.html", "styles.css", "app.js"):
         shutil.copy2(WEB_ROOT / asset, SITE_ROOT / asset)
+    for asset in ("lesson-model.js", "lesson-export.js", "lesson-visuals.js", "pinboard.css"):
+        if (WEB_ROOT / asset).exists():
+            shutil.copy2(WEB_ROOT / asset, SITE_ROOT / asset)
+    if (WEB_ROOT / "vendor").exists():
+        shutil.copytree(WEB_ROOT / "vendor", SITE_ROOT / "vendor", dirs_exist_ok=True)
 
     backup_path = EXPORT_ROOT / "hotspot_teaching.sqlite"
     backup_conn = sqlite3.connect(backup_path)
@@ -1472,8 +1573,9 @@ def export_bundle(counts: dict[str, int]) -> dict[str, Any]:
     conn.close()
 
     checksum = hashlib.sha256()
-    for path in sorted(EXPORT_ROOT.glob("*")):
-        if path.name == "manifest.json" or not path.is_file():
+    bundle_files = [*exports, "lesson_packages.jsonl", "supplemental_topics.jsonl", "fresh_articles.jsonl", "source_coverage.json", "topic_article_links.csv", "hotspot_teaching.sqlite"]
+    for path in sorted(EXPORT_ROOT / name for name in bundle_files):
+        if not path.is_file():
             continue
         checksum.update(path.name.encode("utf-8"))
         with path.open("rb") as handle:
@@ -1487,9 +1589,10 @@ def export_bundle(counts: dict[str, int]) -> dict[str, Any]:
             "peopleapp_articles": str(APP_DB.relative_to(ROOT)),
             "people_daily_articles": str(PAPER_DB.relative_to(ROOT)),
         },
-        "counts": counts,
+        "counts": {**counts, 'lesson_packages': len(lesson_rows), 'fresh_articles': len(payload['fresh_articles']),
+                   'supplemental_topics':payload['source_coverage']['supplemental_lessons'], 'site_topics':len(payload['topics'])},
         "sha256": checksum.hexdigest(),
-        "files": sorted(path.name for path in EXPORT_ROOT.glob("*") if path.is_file()),
+        "files": sorted([*bundle_files, "manifest.json"]),
     }
     (EXPORT_ROOT / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
