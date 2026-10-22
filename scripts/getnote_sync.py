@@ -59,6 +59,19 @@ def run_getnote(arguments: list[str], timeout: int = 90) -> str:
         raise RuntimeError("Get笔记请求超时，请稍后重试") from error
     if result.returncode != 0:
         message = (result.stderr or result.stdout).strip()
+        network_message = message.lower()
+        if any(marker in network_message for marker in (
+            "no such host", "could not resolve host", "name resolution",
+            "nodename nor servname", "network is unreachable",
+            "operation not permitted",
+        )):
+            raise RuntimeError(
+                "Get笔记网络连接失败，请求未完成。若在 Codex 受限环境中运行，"
+                "应先通过工具的联网权限审批，在允许联网的环境中只读验证精确 note_id，"
+                "成功后重试原命令；不能仅凭此报错认定电脑 DNS 故障、登录失效或 CLI 版本问题。"
+                "若获准联网后仍失败，再排查本机网络与 DNS。\n"
+                f"原始错误：{message}"
+            )
         if "会员" in message or "OpenAPI" in message:
             raise RuntimeError("得到大脑 OpenAPI 仅对会员开放")
         if "auth" in message.lower() or "login" in message.lower():

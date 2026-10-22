@@ -1,0 +1,119 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-10-17'
+registered_at: '2026-10-21T05:53:02'
+article: data/articles/人民日报系列/100-《人民日报》深度分析【联农带农】：产业做大以后，农民怎样分到增值收益.md
+topic: 联农带农
+article_number: '100'
+asset_root: media/images/article-inbox
+manifest_path: data/analysis/2026-10-17/manual-figures-100/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: 农户自选参与入口-1
+      before_heading: '## 三、把收益写进具体约定，农户才知道凭什么领钱'
+      inline_marker: '![](../../../media/images/article-inbox/农户自选参与入口-1.png)'
+      anchor_before: 多元收益模式并不意味着每户都能同时拿到租金、分红和工资。同一项资源通过什么方式参与、对应哪笔收入，要按实际约定核对，不能重复计算。
+      anchor_after: 三、把收益写进具体约定，农户才知道凭什么领钱
+      context_after: 选好参与方式后，双方还得把具体条件谈清楚。杨玉梓的经历中，最能建立信任的细节，是收购车开进地头后，钱款当天到账。公司按约定收购，农户看到了兑现，才愿意扩大参与。
+    - id: 杨家山里利润分层分配图-6
+      before_heading: '## 五、把验收落到农户，现金、就业和服务分别看'
+      inline_marker: '![](../../../media/images/article-inbox/杨家山里利润分层分配图-6.png)'
+      anchor_before: 20%仅是该案例的约定，并非可照搬的统一比例。借鉴时应关注留存的目的、确定方式、说明与监督机制，以及剩余收益的分配安排。
+      anchor_after: 留存需有明确用途和依据。在强调“为了长远发展”后，还得说清资金具体投向何处、经营账目如何；判断可分配金额，也不能仅看企业销售规模。
+      context_after: 约定是否兑现，需回到农户处核实。企业销售额增长，反映的是经营规模的变化；村集体收入增加，体现的是集体可用资源的增多。但这两者都不能直接等同于某一户农民的实际收入
+    - id: 保底收购风险与结算-13
+      before_heading: '## 五、把验收落到农户，现金、就业和服务分别看'
+      inline_marker: '![](../../../media/images/article-inbox/保底收购风险与结算-13.png)'
+      anchor_before: 报道中的保底收购是特定协议安排，不代表整个经营过程无风险。能否按约兑现，仍取决于实际经营、履约能力及具体条件。不同项目的风险由谁承担，不能靠一句“共同受益”含糊带过。
+      anchor_after: 五、把验收落到农户，现金、就业和服务分别看
+      context_after: 约定是否兑现，需回到农户处核实。企业销售额增长，反映的是经营规模的变化；村集体收入增加，体现的是集体可用资源的增多。但这两者都不能直接等同于某一户农民的实际收入
+    - id: 受益核验三方面-7
+      before_heading: '## 六、国考省考申论面试怎么用'
+      inline_marker: '![](../../../media/images/article-inbox/受益核验三方面-7.png)'
+      anchor_before: 除了统计“带动了多少户”，还应抽取不同参与方式的家庭进行回访：种植户是否按约收到货款，务工者是否领到工资，资源参与户是否清楚结算依据。若有农户未受益，需查明原因是参与门槛、执行问题，还是项目缺乏持续经营能力。
+      anchor_after: 六、国考省考申论面试怎么用
+      context_after: 这组材料适用于乡村振兴、产业富民、集体经济和利益联结等主题。写作时，与其只泛泛而谈“延长产业链，带动农民增收”，不如具体说明农户如何参与、收益如何兑现。>**申
+    updated_at: '2026-10-21T05:53:14'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-10-21T05:53:16'
+  body_hash: 107873584fb70f420e901908be7a4a03489c7b46e612c85fb4ee8aa063eda1f7
+  plan_fingerprint: 4c0467158e7891f35e9917bdb00051d4d273778968a2bf7506c7752edc0a023d
+figures:
+- id: 农户自选参与入口-1
+  kind: inline_markdown
+  file: media/images/article-inbox/农户自选参与入口-1.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 017503ecf3d21b0e3b2d044ad016b0282cf509d32a0b8bcb8bddcabb1739db97
+  title: 农户自选参与入口-1
+  caption: 农户自选参与入口-1
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、把收益写进具体约定，农户才知道凭什么领钱附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-21T05:53:14'
+- id: 杨家山里利润分层分配图-6
+  kind: inline_markdown
+  file: media/images/article-inbox/杨家山里利润分层分配图-6.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 53ca4520767ecec14983a647294c1d5ba3a183922cd84800050b069eb6d380fc
+  title: 杨家山里利润分层分配图-6
+  caption: 杨家山里利润分层分配图-6
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、把验收落到农户，现金、就业和服务分别看附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-21T05:53:14'
+- id: 保底收购风险与结算-13
+  kind: inline_markdown
+  file: media/images/article-inbox/保底收购风险与结算-13.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 2e14717fa21d938ac783df2ee6b2753ed9b1346eb7a29e5b602c9a5e6da5ea4b
+  title: 保底收购风险与结算-13
+  caption: 保底收购风险与结算-13
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、把验收落到农户，现金、就业和服务分别看附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-21T05:53:14'
+- id: 受益核验三方面-7
+  kind: inline_markdown
+  file: media/images/article-inbox/受益核验三方面-7.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 7c0518e06eba7e146c5c2be1d530a7c722e93f94ad5687531eb1e656392ecce5
+  title: 受益核验三方面-7
+  caption: 受益核验三方面-7
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试怎么用附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-21T05:53:14'
+updated_at: '2026-10-21T05:53:16'
+placement_mode: inline_markdown
+inline_markdown_count: 4
+inline_imported_at: '2026-10-21T05:53:14'

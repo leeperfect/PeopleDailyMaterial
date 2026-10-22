@@ -1,0 +1,50 @@
+{
+  "run_time": "2026-10-22T09:39:04+08:00",
+  "automation_id": "app-2",
+  "last_successful_crawl_date": "2026-10-17",
+  "start_date": "2026-10-18",
+  "end_date": "2026-10-22",
+  "status": "success",
+  "crawl": {
+    "list_items": 120,
+    "selected": 95,
+    "downloaded": 95,
+    "skipped": 0,
+    "failed": 0,
+    "unique_article_ids": 95,
+    "raw_records_verified": true,
+    "daily_counts": {
+      "2026-10-18": 24,
+      "2026-10-19": 21,
+      "2026-10-20": 23,
+      "2026-10-21": 24,
+      "2026-10-22": 3
+    },
+    "range_check": "列表120条，小于默认10页×20条上限；脚本按越过起始日期或空页停止，无失败",
+    "report": "data/peopleapp_opinion/exports/peopleapp_opinion_crawl_daily_20261022_093341.json"
+  },
+  "notion": {
+    "created": 95,
+    "updated": 0,
+    "skipped": 0,
+    "failed": 0,
+    "keyword_fallback": true,
+    "report": "data/peopleapp_opinion/exports/peopleapp_opinion_notion_sync_20261022_093814.json"
+  },
+  "topics": {
+    "total": 49,
+    "hotspots": 43,
+    "candidates": 5,
+    "special_topics": 1,
+    "sqlite_markdown_csv": "updated"
+  },
+  "miaoda": {
+    "status": "published",
+    "url": "https://xw3elgcbph.feishu.link/app/app_17dcrzez2dd",
+    "published_at": "2026-10-22T09:38:33+08:00"
+  },
+  "notes": [
+    "首次受限环境DNS解析失败，获准联网后采集成功；非来源接口限制。",
+    "未改写原始资料，未提交Git。"
+  ]
+}

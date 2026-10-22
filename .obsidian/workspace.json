@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data/articles/人民日报系列/93-《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入.md",
+                "file": "data/articles/人民日报系列/99-《人民日报》深度分析【片区化乡村振兴】：几个村怎样协作，才能把分散资源用起来.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "93-《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入"
+              "title": "99-《人民日报》深度分析【片区化乡村振兴】：几个村怎样协作，才能把分散资源用起来"
             }
           }
         ]
@@ -55,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "小马拉大车",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -76,12 +76,12 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 473.30859375
+    "width": 473.30859375,
+    "collapsed": true
   },
   "right": {
     "id": "1ad80539526a48b6",
@@ -187,35 +187,36 @@
       "bases:新建数据库": false
     }
   },
-  "active": "a90f6a71be84645d",
+  "active": "e920f5faf10598ee",
   "lastOpenFiles": [
-    "data/exports/93-生态产品价值实现-toutiao-import.docx",
-    "data/exports/92-完整社区-toutiao-import.docx",
-    "data/exports/91-城市更新后半程-toutiao-import.docx",
-    "data/exports/90-民生服务快办-toutiao-import.docx",
-    "modules/__pycache__/wechat_api.cpython-313.pyc",
-    "scripts/__pycache__/publish_wechat_draft.cpython-313.pyc",
-    "scripts/__pycache__/build_toutiao_import_docx.cpython-313.pyc",
-    "modules/__pycache__/platform_workflow.cpython-313.pyc",
-    "media/images/2026-08-30-article-93-manual",
-    "data/analysis/2026-08-30/manual-figures-93/figure-manifest.yml",
-    "data/analysis/2026-08-30/manual-figures-93",
+    "data/articles/人民日报系列/100-《人民日报》深度分析【联农带农】：产业做大以后，农民怎样分到增值收益.md",
+    "data/exports/100-wechat-red-white-preview.html",
+    "data/exports/99-wechat-red-white-preview.html",
+    "data/exports/100-wechat-red-white.html",
+    "data/exports/99-wechat-red-white.html",
+    "media/images/2026-10-17-article-100-manual",
+    "data/analysis/2026-10-17/manual-figures-100/figure-manifest.yml",
+    "data/analysis/2026-10-17/manual-figures-100",
+    "media/images/2026-10-17-article-99-manual",
+    "data/analysis/2026-10-17/manual-figures-99/figure-manifest.yml",
+    "data/analysis/2026-10-17/manual-figures-99",
+    "media/images/article-inbox/杨家山里利润分层分配图-6.png",
+    "media/images/article-inbox/受益核验三方面-7.png",
+    "media/images/article-inbox/保底收购风险与结算-13.png",
+    "media/images/article-inbox/农户自选参与入口-1.png",
+    "data/articles/人民日报系列/99-《人民日报》深度分析【片区化乡村振兴】：几个村怎样协作，才能把分散资源用起来.md",
+    "media/images/article-inbox/建成后的持续检验-6.png",
+    "media/images/article-inbox/跨界事项的协调衔接-5.png",
+    "media/images/article-inbox/共享设施配置核实图-4.png",
+    "media/images/article-inbox/不同互补，相似协作-3 1.png",
+    "media/images/article-inbox/不同互补，相似协作-3.png",
+    "media/images/article-inbox/跨村协作：缺口与条件匹配-2.png",
+    "data/articles/人民日报系列/93-《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入.md",
     "data/articles/人民日报系列/90-《人民日报》深度分析【民生服务快办】：不是催窗口再快一点，而是按风险和紧急程度重做流程.md",
     "data/articles/人民日报系列/89-《人民日报》深度分析【职业伤害保障】：不能等出了事故再赔钱，预防、认定、理赔、康复要接起来.md",
-    "data/articles/人民日报系列/93-《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入.md",
     "data/analysis/2026-09-21-weekly-topic-plan.md",
     "data/data_analysis/reports/2026-08-22_to_2026-09-20_tendency.md",
-    "media/images/2026-08-30-article-93/fig-93-06.png",
-    "media/images/2026-08-30-article-93/fig-93-05.png",
-    "media/images/2026-08-30-article-93/fig-93-04.png",
-    "media/images/2026-08-30-article-93/fig-93-03.png",
-    "media/images/2026-08-30-article-93/fig-93-02.png",
-    "media/images/2026-08-30-article-93/fig-93-01.png",
     "data/articles/人民日报系列/92-《人民日报》深度分析【完整社区】：不是把设施配齐，而是让居民从“提需求”走到“共运营”.md",
-    "media/images/2026-08-30-article-92/fig-92-06.png",
-    "media/images/2026-08-30-article-92/fig-92-05.png",
-    "media/images/2026-08-30-article-92/fig-92-04.png",
-    "media/images/2026-08-30-article-92/fig-92-03.png",
     "data/articles/人民日报系列/91-《人民日报》深度分析【城市更新后半程】：空间建好了，服务、运营和居民参与还要接上.md",
     "data/articles/人民日报系列/54-【R】人民日报讲人工智能全球治理：不能让AI成为“富国和富人的游戏”.md",
     "data/vault/2026/09/2026-09-06/07-人文/四季“全民星”点亮乡村大舞台（乡见）.md",
@@ -234,7 +235,6 @@
     "data/vault/2026/09/2026-09-05/08-文化遗产/开封城里觅包公（我家门口有文物）.md",
     "data/vault/2026/09/2026-09-05/08-文化遗产/廓清“秦人尚武”之说（博古知今）.md",
     "data/vault/2026/09/2026-09-05/08-文化遗产/从孔龙村遗址看西北彩陶南传之路（考古中国）.md",
-    "data/vault/2026/09/2026-09-05/06-科技·新知/广西大明山发现植物新种上林凤仙花.md",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "未命名.canvas"
