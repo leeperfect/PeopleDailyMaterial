@@ -11,12 +11,23 @@ const {pathToFileURL} = require('node:url');
   const data = JSON.parse(fs.readFileSync(path.join(root, 'data/hotspot_teaching/site/data.json'), 'utf8'));
   const topics = data.topics;
   const lessons = topics.filter(t => t.lesson);
-  assert.equal(lessons.length,85);
+  const editorial = path.join(root,'data/hotspot_teaching/editorial');
+  const authored = ['lesson-pilots.json','lesson-library.json'].flatMap(name=>JSON.parse(fs.readFileSync(path.join(editorial,name),'utf8')).lessons);
+  assert.deepEqual(new Set(lessons.map(t=>t.topic_id)),new Set(authored.map(l=>l.topic_id)));
+  assert.equal(lessons.length,authored.length);
+  assert.equal(lessons.length,data.source_coverage.lesson_count);
   assert.equal(data.source_coverage.original_lessons,49);
-  assert.equal(data.source_coverage.supplemental_lessons,36);
-  assert.equal(data.fresh_articles.length,72);
-  for(const a of data.fresh_articles) assert(a.lesson_ids.length && a.lesson_ids.every(id=>lessons.some(t=>t.topic_id===id)));
-  assert.equal(new Set(lessons.map(t=>t.lesson.quick_script.join(''))).size,85);
+  assert.equal(data.source_coverage.supplemental_lessons,lessons.filter(t=>t.is_supplement).length);
+  assert.equal(data.fresh_articles.length,data.source_coverage.fresh_count);
+  assert.equal(new Set(data.fresh_articles.map(a=>a.article_id)).size,data.fresh_articles.length);
+  for(const a of data.fresh_articles){
+    assert(Array.isArray(a.lesson_ids) && a.lesson_ids.every(id=>lessons.some(t=>t.topic_id===id)));
+    if(!a.lesson_ids.length) assert.equal(a.material_status,'source_only');
+  }
+  assert.equal(data.fresh_articles.filter(a=>a.lesson_ids.length).length,data.source_coverage.fresh_with_lessons);
+  const originalFeed=JSON.parse(fs.readFileSync(path.join(editorial,'full-coverage/inventory.json'),'utf8')).fresh_articles;
+  for(const a of originalFeed) assert(data.fresh_articles.some(row=>row.article_id===a.article_id && row.lesson_ids.length));
+  assert.equal(new Set(lessons.map(t=>t.lesson.quick_script.join(''))).size,lessons.length);
   const teacher=M.plain(M.build(lessons,'teacher'));
   for(const t of lessons){
     assert.equal(t.lesson.source_check,'matched');

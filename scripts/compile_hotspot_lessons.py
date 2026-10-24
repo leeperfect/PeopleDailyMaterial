@@ -37,7 +37,7 @@ def compile_lesson(spec: dict, register: dict, inventory: dict) -> dict:
              spec['boundary'] + spec['transfer']]
     return {
         'topic_id':topic_id, 'title':spec['title'], 'subtitle':spec['subtitle'],
-        'version':'2026-09-13.2', 'review_status':'editorial_preview',
+        'version':spec.get('version', '2026-09-13.2'), 'review_status':'editorial_preview',
         'courses':['面试综合分析','申论对策展开','申论案例运用'],
         'focus':spec['focus'] if 'focus' in spec else spec['transfer'],
         'misconception':spec['discussion'][0][1], 'takeaway':spec['transfer'],
@@ -87,6 +87,18 @@ def main() -> None:
     if len(keys) != len(set(keys)):
         raise ValueError('授课编号重复')
     lessons = [compile_lesson(s, register, inventory) for s in specs]
+    # Preserve independently authored lessons when older spec batches are recompiled.
+    library_path = EDITORIAL/'lesson-library.json'
+    existing = json.loads(library_path.read_text())['lessons'] if library_path.exists() else []
+    existing_by_id = {l['topic_id']:l for l in existing}
+    for index, lesson in enumerate(lessons):
+        previous = existing_by_id.get(lesson['topic_id'])
+        if previous and previous['version'] > lesson['version']:
+            raise ValueError(f"拒绝授课版本倒退：{lesson['topic_id']}")
+        if previous == lesson:
+            lessons[index] = previous
+    compiled_ids = {l['topic_id'] for l in lessons}
+    lessons += [l for l in existing if l['topic_id'] not in compiled_ids]
     pilots = json.loads((EDITORIAL/'lesson-pilots.json').read_text())['lessons']
     if {l['topic_id'] for l in lessons} & {l['topic_id'] for l in pilots}:
         raise ValueError('新资料不得覆盖保留的三张原授课样板')
@@ -110,7 +122,9 @@ def main() -> None:
         pins[aid] = expected
     (EDITORIAL/'lesson-library.json').write_text(json.dumps({'schema_version':1,'lessons':lessons},ensure_ascii=False,indent=2)+'\n')
     (EDITORIAL/'source-snapshot.json').write_text(json.dumps(pins,ensure_ascii=False,indent=2)+'\n')
-    reviews = {
+    review_path = EDITORIAL/'source-review.json'
+    reviews = json.loads(review_path.read_text()) if review_path.exists() else {}
+    reviews.update({
         register['F01']['article_id']: {
             'status':'image_reference',
             'note':'图片延伸阅读：本地没有图内可核对文字，未引用校长发言；对应课程依据另一篇可读正文编写。',
@@ -122,7 +136,7 @@ def main() -> None:
             'correction_title':register['F03']['title'],
             'correction_url':register['F03']['source_url'],
         },
-    }
+    })
     (EDITORIAL/'source-review.json').write_text(json.dumps(reviews,ensure_ascii=False,indent=2)+'\n')
     covered = {l['topic_id'] for l in lessons+pilots}
     remaining = [t['title'] for t in inventory.values() if t['topic_id'] not in covered]

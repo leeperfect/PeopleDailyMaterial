@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 同心协力，奔赴充满光荣和梦想的远征 </title>
+		<meta name="author" content='第002版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.424656,31.32648875,290.41096,31.32648875,290.41096,378.00630525,3.424656,378.00630525" shape="polygon" href="content_30187432.html"><Area coords="300.684932,31.32648875,396.575344,31.32648875,396.575344,253.39649125,300.684932,253.39649125" shape="polygon" href="content_30187433.html"><Area coords="300.684932,263.83865225,396.575344,263.83865225,396.575344,568.74981325,300.684932,568.74981325" shape="polygon" href="content_30187434.html"><Area coords="102.739728,401.6752027499999,102.739728,387.05617849999993,3.424656,387.05617849999993,3.424656,401.6752027499999,3.424656,467.11276150000003,102.739728,467.11276150000003" shape="polygon" href="content_30187435.html"><Area coords="113.01370000000001,387.05617849999993,290.41096,387.05617849999993,290.41096,571.53438875,113.01370000000001,571.53438875" shape="polygon" href="content_30187436.html"><Area coords="102.739728,491.47780574999996,102.739728,477.55492250000003,102.739728,477.55492250000003,3.424656,477.55492250000003,3.424656,477.55492250000003,3.424656,491.47780574999996,3.424656,524.196588,102.739728,524.196588" shape="polygon" href="content_30187437.html"><Area coords="102.739728,544.384769,102.739728,529.765739,102.739728,529.765739,3.424656,529.765739,3.424656,529.765739,3.424656,544.384769,3.424656,571.53438875,102.739728,571.53438875" shape="polygon" href="content_30187438.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/24/79ad2cca-a0c3-44d4-bc3e-a322c61c5d1c.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第02版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30187432.html"> 同心协力，奔赴充满光荣和梦想的远征 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187433.html"> 适应人工智能技术发展助力构建就业友好型发展方式 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187434.html"> 医保钱包2.0版怎么用（信息服务台） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187435.html"> 前三季度财政运行总体平稳 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187436.html"> 第140届广交会第二期开幕 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187437.html"> 李乐成当选中共安徽省委书记 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187438.html"> 周祖翼当选中共河南省委书记 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月24日
+							Sat</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/24/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/24/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/24/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/24/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/24/node_05.html">05版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/24/node_06.html">06版：文化遗产</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/24/node_07.html">07版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/24/node_08.html">08版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/24/node_02.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30187433.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　“长征的历史从未远去，长征的路在不断延伸。”“新征程是充满光荣和梦想的远征，是党和人民的新长征。”</p>
+  <p>　　习近平总书记10月22日在纪念中国工农红军长征胜利90周年大会上发表重要讲话，在广大干部群众中持续引发强烈共鸣。大家表示，要更加紧密地团结在以习近平同志为核心的党中央周围，坚持以习近平新时代中国特色社会主义思想为指导，深刻领悟“两个确立”的决定性意义，增强“四个意识”、坚定“四个自信”、做到“两个维护”，大力弘扬伟大长征精神，接续奋斗、砥砺前行，同心协力走好新的长征路。</p>
+  <p><strong>　　铸牢对党忠诚</strong></p>
+  <p><strong>　　坚守理想信念</strong></p>
+  <p>　　习近平总书记指出，理想信念宗旨是共产党人的“魂”，始终指引我们前进的方向。</p>
+  <p>　　理想信念之火一经点燃，就永远不会熄灭。位于广西全州县的红军长征湘江战役纪念园依山而建，上万块黑色山石静卧于山陵之间，这些石头取自当年红军抢渡湘江经过的湘桂古道。</p>
+  <p>　　“是什么让红军将士勇往直前、舍生忘死？是什么让我们党团结带领人民在一次又一次伟大长征中夺取一个又一个伟大胜利？习近平总书记的重要讲话蕴藏着深刻答案。”全州红军长征湘江战役文化保护传承中心主任周运良表示，“革命理想高于天，我们要把理想信念化作走好新的长征路的前行力量。”</p>
+  <p>　　甘南迭部，腊子口战役纪念碑巍然矗立——这片区域是护林员陈卫锋和同事负责的辖区。</p>
+  <p>　　“‘红军长征创造了非凡的人间奇迹’，总书记这句话让我深有感触，腊子口战役的时候红军攀爬的山崖至今都没什么人敢走。”陈卫锋说，40年前刚工作时这里交通不便、物资得人背马驮，如今游人如织，人们来到纪念碑前缅怀先烈。“为祖国守护绿水青山，为子孙后代保护家园，这就是我们的长征。”</p>
+  <p>　　家住吉林长春的沈邢台是老红军之女。已八旬高龄的她步履不停，进学校、进社区、进机关、进企业，讲述长征故事，弘扬红色文化。</p>
+  <p>　　从电视上学习了习近平总书记的重要讲话，她饱含感情地说：“我们今天的幸福生活是革命前辈用鲜血和生命换来的。走在新的长征路上，绝不能忘了来时的路，一定要把伟大长征精神传承下去。”</p>
+  <p>　　从革命战争年代冒着生命危险开展地下工作，到新中国成立后脚穿草鞋走遍巴山村寨，再到离休后带领群众开辟致富路，“七一勋章”获得者、四川省原达县地委副书记周永开，用一生践行着对党的忠诚。</p>
+  <p>　　“具有崇高理想和坚定信念的队伍是不可战胜的。”学习习近平总书记重要讲话，周永开久久不能平静，“走好新的长征路，要把对党的忠诚放在心里、落实到行动上，一辈子为党和人民做事。”</p>
+  <p>　　在大会现场，中共中央党史和文献研究院第七研究部主任刘荣刚聆听了习近平总书记的重要讲话，他边听边记，更加明确了工作方向。</p>
+  <p>　　“习近平总书记指出，红军长征的伟大胜利之路，是依靠党的正确领导走出来的。新征程上，必须坚持党的领导、加强党的建设。”刘荣刚说，“作为党史和文献工作者，我们要不断用党的创新理论武装头脑，牢记初心使命，从伟大长征精神中汲取奋进的智慧和力量，传承红色基因，赓续红色血脉，为以中国式现代化全面推进强国建设、民族复兴伟业贡献力量。”</p>
+  <p>　　习近平总书记强调，党的领导和党的建设是事业发展的根本保证。</p>
+  <p>　　学习习近平总书记重要讲话，山东德州西于架村党支部书记黄云州脑海中浮现出今年6月总书记来到这里考察的情景。</p>
+  <p>　　“离开村子时，总书记勉励大家‘要齐心协力走好新的长征路，开创更加光明的未来’。”黄云州说，“新时代乡村振兴就是我们农村基层干部要走好的新长征路。村庄发展既离不开党组织引领带动，也离不开群众衷心支持。基层党组织处处为老百姓着想，把根深扎进土地里，才会有取之不尽、用之不竭的智慧和力量。”</p>
+  <p>　　“习近平总书记的重要讲话发人深思，伟大长征精神是我们基层治理的宝贵指引。”江苏连云港海州区海连社区党委书记李肖娜说，把基层党组织建强、把群众紧紧团结在党组织周围，新长征路就有了最坚实的根基。今天的社区治理，要把支部建在小区里，立足居民急难愁盼，凝聚多方力量，共建和美家园。</p>
+  <p><strong>　　站稳人民立场</strong></p>
+  <p><strong>　　凝聚奋斗力量</strong></p>
+  <p>　　“十送红军”的不舍、于都夜渡的守护、“半条被子”的温暖、“彝海结盟”的誓言……习近平总书记深刻指出：“红军长征的伟大胜利之路，是依靠广大人民群众支持走出来的。”</p>
+  <p>　　位于上海的中共一大代表宿舍旧址，“红军不怕远征难——纪念红军长征胜利90周年专题展”正在展出。中共一大纪念馆馆长陈殷华感慨道：“伟大长征精神跨越时空、历久弥新，不断提醒着我们党的根基在人民、力量在人民。新的长征路上，纪念馆将持续深入讲好建党故事和长征故事，让更多人感悟长征中蕴含的人民伟力。”</p>
+  <p>　　祖国西南，群山环抱着云南省武定县木高古村。长征途中，中央红军途经武定，在木高古村写下标语，至今清晰可见。</p>
+  <p>　　“以实际行动赢得群众、赢得民心”，习近平总书记的重要讲话，令60岁的村民李作勇深感认同：“红军在村里留下的不光是标语，更宝贵的是同人民心心相印的优良传统。现在我们家门口已经建起高原绿色蔬菜基地，只要听党话、感党恩、跟党走，同心协力一起干，日子一定会越来越有奔头。”</p>
+  <p>　　“生在井冈山，长在南泥湾，转战数万里，屯垦在天山。”新疆生产建设兵团第一师医院前身为八路军三五九旅休养连，有着悠久的红色血脉传承。</p>
+  <p>　　“习近平总书记强调，弘扬伟大长征精神、走好新的长征路，必须坚定不移推动高质量发展、不断满足人民日益增长的美好生活需要。”医院神经外科主任医师王志强说，“现在，我们的使命是要更好满足人民群众卫生健康需求。我要和团队一起提高本领，开展好下乡义诊、基层巡诊、健康科普等，把优质诊疗服务送到各族群众家门口。”</p>
+  <p>　　安徽金寨干部学院红色文化和大别山精神研究室副主任周宇对习近平总书记讲的“人民群众永远是党和人民军队的力量源泉和坚强后盾”深有感悟：“红军打胜仗，人民是靠山。革命年代，金寨几乎家家有红军、户户有英烈。我们在这片红色土地上研究红色历史，就要真正走到田间地头、走到老百姓中间去，讲清楚我们党如何赢得人民群众真心拥护和支持，讲清楚永远走在时代前列的制胜密码。”</p>
+  <p>　　不久前，中央红军长征出发地江西瑞金与落脚点陕西延安之间开通高铁。</p>
+  <p>　　习近平总书记的重要讲话，令中国铁路西安局集团有限公司西安客运段列车长魏海涵觉得肩上的责任更重了：“总书记强调‘坚持全心全意为人民服务的根本宗旨，紧紧依靠人民创造新的历史伟业’。飞驰在延安和瑞金之间，我由衷地感受到山河巨变、使命光荣。我们要让铁路更好赋能革命老区发展，让高铁车厢成为旅客感悟伟大长征精神的流动课堂，书写崭新的长征篇章。”</p>
+  <p>　　在福建，宁化县全面推进长征国家文化公园建设，长征精神教育基地、长征历史步道等项目相继完成。</p>
+  <p>　　“习近平总书记向当年支援红军长征的各族人民特别是各革命根据地人民致以崇高敬意，令我们感受到，走好今天的长征路，必须把人民放在心中最高位置。”福建省三明市宁化县长征出发地遗址保护中心主任邱明华表示，将和同事们一起守好红色家底、传承红色基因，引导广大干部群众充分感悟初心使命，凝聚起奋进新征程的磅礴力量。</p>
+  <p>　　近年来，重庆师范大学持续打造“新时代长征路上的青春”系列主题艺术思政课。作为思政课团队成员，地理与旅游学院2026级硕士研究生李晓雨走村入户寻访红色足迹，讲述红色故事。</p>
+  <p>　　“习近平总书记强调‘不断增强全党全军全国各族人民的志气、骨气、底气’，激励着青年一代发愤图强、奋发有为。我要不断从伟大长征精神中汲取奋进力量，深入基层、深入人民，走好我们这代人的长征路。”李晓雨说。</p>
+  <p><strong>　　敢于攻坚克难</strong></p>
+  <p><strong>　　推进复兴伟业</strong></p>
+  <p>　　“奔向理想的道路从来都不平坦，伟大胜利都是依靠顽强斗争取得的。”习近平总书记的重要讲话道出新长征路的艰巨与荣光。</p>
+  <p>　　在北京科技大学雄安校区建设现场，项目指挥部造价管理部副部长张鹏飞和同事们第一时间学习了重要讲话。</p>
+  <p>　　“长征路上没有退路，攻坚期更不能松劲。”展望未来，张鹏飞坚定信心：“作为雄安一线建设者，我们要把‘严’字落在每一道工序背后，把伟大长征精神落到本职工作上，为承接北京非首都功能疏解、服务京津冀协同发展筑牢坚实根基。”</p>
+  <p>　　累计行程2500多公里，走遍全县乡镇、边境点位与项目现场……山东省烟台市第十一批援藏工作组领队、西藏聂拉木县委常务副书记张鹏已在边境一线奋战一年多。学习习近平总书记重要讲话，他深有感触：“援藏就是我们的长征。我将带领团队保持扎根高原的战略定力，坚定初心、迎难而上，踏踏实实办好民生实事。”</p>
+  <p>　　习近平总书记指出，弘扬伟大长征精神、走好新的长征路，必须勇于进行具有许多新的历史特点的伟大斗争。</p>
+  <p>　　在国网天津滨海公司，时代楷模、全国劳动模范张黎明与配电抢修班的工友们围坐在一起，结合一线创新实践交流学习总书记重要讲话的体会。他表示，新时代电力人的长征就是扎根一线、攻坚克难，把技术短板补扎实，让创新成果真正服务生产一线，用心守护万家灯火。</p>
+  <p>　　东风汽车集团有限公司副总工程师杨彦鼎对习近平总书记重要讲话中“以历史主动精神克难关、战风险、迎挑战”印象深刻：“老一辈东风人住芦席棚、点马灯开山建厂，自力更生。今天我们将以久久为功的韧劲打好核心技术攻坚战，把发展民族汽车工业的主动权牢牢攥在自己手里。”</p>
+  <p>　　人民军队永远是捍卫党和国家事业的钢铁长城。</p>
+  <p>　　学习了习近平总书记重要讲话，军事科学院军队政治工作研究院解放军党史军史研究中心副主任李振林表示：“我们既要从长征史中把党对军队绝对领导的根本原则和独特制胜机理研究深、阐释透，把红色血脉融入当代强军实践；也要以习近平强军思想为统领，在理论创新、史料考证和现实服务中持续发力，让长征精神不断转化为建设世界一流军队的坚实力量。”</p>
+  <p>　　退伍不褪色、退役不褪志。在焦裕禄精神发源地河南兰考，退役军人服务保障网络不断向基层延伸。</p>
+  <p>　　“强国必须强军，军强才能国安。”兰考县退役军人事务局局长张振方说，做退役军人工作，就是要把党和国家对老兵的关心送到他们心坎上，“把服务保障做实、把尊崇致敬落实，就是我们弘扬伟大长征精神的实际行动，也是我们在强国强军新征程上应有的担当”。</p>
+  <p>　　前不久，习近平总书记来到内蒙古乌兰察布察哈尔高新技术开发区考察。快手乌兰察布数据中心00后项目经理张羽对习近平总书记勉励“我们现在进行新的长征，你们是高水平科技自立自强的一个方面军”记忆犹新。</p>
+  <p>　　这次学习了习近平总书记在大会上的重要讲话，张羽有了更加深切的体会：“我们要始终保持学习能力，在日新月异的发展中保持竞争力。我将不断钻研创新，为数字经济高质量发展贡献青春力量，和千千万万新时代奋斗者一同走好强国建设、民族复兴新的长征路。”</p>
+  <p>　　（新华社北京10月23日电）</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-24 00:00:00:0</date><author>新华社记者</author><subtitle><p> ——习近平总书记在纪念中国工农红军长征胜利90周年大会上的重要讲话鼓舞广大干部群众接续奋斗开创未来 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30187432</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/24/content_30187432.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/24/content_30187432.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 同心协力，奔赴充满光荣和梦想的远征 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 同心协力，奔赴充满光荣和梦想的远征 </p></h1>
+						<h2><p> ——习近平总书记在纪念中国工农红军长征胜利90周年大会上的重要讲话鼓舞广大干部群众接续奋斗开创未来 </p></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							新华社记者
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月24日</span>&nbsp;第&nbsp;02&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　“长征的历史从未远去，长征的路在不断延伸。”“新征程是充满光荣和梦想的远征，是党和人民的新长征。”</p><p>　　习近平总书记10月22日在纪念中国工农红军长征胜利90周年大会上发表重要讲话，在广大干部群众中持续引发强烈共鸣。大家表示，要更加紧密地团结在以习近平同志为核心的党中央周围，坚持以习近平新时代中国特色社会主义思想为指导，深刻领悟“两个确立”的决定性意义，增强“四个意识”、坚定“四个自信”、做到“两个维护”，大力弘扬伟大长征精神，接续奋斗、砥砺前行，同心协力走好新的长征路。</p><p><strong>　　铸牢对党忠诚</strong></p><p><strong>　　坚守理想信念</strong></p><p>　　习近平总书记指出，理想信念宗旨是共产党人的“魂”，始终指引我们前进的方向。</p><p>　　理想信念之火一经点燃，就永远不会熄灭。位于广西全州县的红军长征湘江战役纪念园依山而建，上万块黑色山石静卧于山陵之间，这些石头取自当年红军抢渡湘江经过的湘桂古道。</p><p>　　“是什么让红军将士勇往直前、舍生忘死？是什么让我们党团结带领人民在一次又一次伟大长征中夺取一个又一个伟大胜利？习近平总书记的重要讲话蕴藏着深刻答案。”全州红军长征湘江战役文化保护传承中心主任周运良表示，“革命理想高于天，我们要把理想信念化作走好新的长征路的前行力量。”</p><p>　　甘南迭部，腊子口战役纪念碑巍然矗立——这片区域是护林员陈卫锋和同事负责的辖区。</p><p>　　“‘红军长征创造了非凡的人间奇迹’，总书记这句话让我深有感触，腊子口战役的时候红军攀爬的山崖至今都没什么人敢走。”陈卫锋说，40年前刚工作时这里交通不便、物资得人背马驮，如今游人如织，人们来到纪念碑前缅怀先烈。“为祖国守护绿水青山，为子孙后代保护家园，这就是我们的长征。”</p><p>　　家住吉林长春的沈邢台是老红军之女。已八旬高龄的她步履不停，进学校、进社区、进机关、进企业，讲述长征故事，弘扬红色文化。</p><p>　　从电视上学习了习近平总书记的重要讲话，她饱含感情地说：“我们今天的幸福生活是革命前辈用鲜血和生命换来的。走在新的长征路上，绝不能忘了来时的路，一定要把伟大长征精神传承下去。”</p><p>　　从革命战争年代冒着生命危险开展地下工作，到新中国成立后脚穿草鞋走遍巴山村寨，再到离休后带领群众开辟致富路，“七一勋章”获得者、四川省原达县地委副书记周永开，用一生践行着对党的忠诚。</p><p>　　“具有崇高理想和坚定信念的队伍是不可战胜的。”学习习近平总书记重要讲话，周永开久久不能平静，“走好新的长征路，要把对党的忠诚放在心里、落实到行动上，一辈子为党和人民做事。”</p><p>　　在大会现场，中共中央党史和文献研究院第七研究部主任刘荣刚聆听了习近平总书记的重要讲话，他边听边记，更加明确了工作方向。</p><p>　　“习近平总书记指出，红军长征的伟大胜利之路，是依靠党的正确领导走出来的。新征程上，必须坚持党的领导、加强党的建设。”刘荣刚说，“作为党史和文献工作者，我们要不断用党的创新理论武装头脑，牢记初心使命，从伟大长征精神中汲取奋进的智慧和力量，传承红色基因，赓续红色血脉，为以中国式现代化全面推进强国建设、民族复兴伟业贡献力量。”</p><p>　　习近平总书记强调，党的领导和党的建设是事业发展的根本保证。</p><p>　　学习习近平总书记重要讲话，山东德州西于架村党支部书记黄云州脑海中浮现出今年6月总书记来到这里考察的情景。</p><p>　　“离开村子时，总书记勉励大家‘要齐心协力走好新的长征路，开创更加光明的未来’。”黄云州说，“新时代乡村振兴就是我们农村基层干部要走好的新长征路。村庄发展既离不开党组织引领带动，也离不开群众衷心支持。基层党组织处处为老百姓着想，把根深扎进土地里，才会有取之不尽、用之不竭的智慧和力量。”</p><p>　　“习近平总书记的重要讲话发人深思，伟大长征精神是我们基层治理的宝贵指引。”江苏连云港海州区海连社区党委书记李肖娜说，把基层党组织建强、把群众紧紧团结在党组织周围，新长征路就有了最坚实的根基。今天的社区治理，要把支部建在小区里，立足居民急难愁盼，凝聚多方力量，共建和美家园。</p><p><strong>　　站稳人民立场</strong></p><p><strong>　　凝聚奋斗力量</strong></p><p>　　“十送红军”的不舍、于都夜渡的守护、“半条被子”的温暖、“彝海结盟”的誓言……习近平总书记深刻指出：“红军长征的伟大胜利之路，是依靠广大人民群众支持走出来的。”</p><p>　　位于上海的中共一大代表宿舍旧址，“红军不怕远征难——纪念红军长征胜利90周年专题展”正在展出。中共一大纪念馆馆长陈殷华感慨道：“伟大长征精神跨越时空、历久弥新，不断提醒着我们党的根基在人民、力量在人民。新的长征路上，纪念馆将持续深入讲好建党故事和长征故事，让更多人感悟长征中蕴含的人民伟力。”</p><p>　　祖国西南，群山环抱着云南省武定县木高古村。长征途中，中央红军途经武定，在木高古村写下标语，至今清晰可见。</p><p>　　“以实际行动赢得群众、赢得民心”，习近平总书记的重要讲话，令60岁的村民李作勇深感认同：“红军在村里留下的不光是标语，更宝贵的是同人民心心相印的优良传统。现在我们家门口已经建起高原绿色蔬菜基地，只要听党话、感党恩、跟党走，同心协力一起干，日子一定会越来越有奔头。”</p><p>　　“生在井冈山，长在南泥湾，转战数万里，屯垦在天山。”新疆生产建设兵团第一师医院前身为八路军三五九旅休养连，有着悠久的红色血脉传承。</p><p>　　“习近平总书记强调，弘扬伟大长征精神、走好新的长征路，必须坚定不移推动高质量发展、不断满足人民日益增长的美好生活需要。”医院神经外科主任医师王志强说，“现在，我们的使命是要更好满足人民群众卫生健康需求。我要和团队一起提高本领，开展好下乡义诊、基层巡诊、健康科普等，把优质诊疗服务送到各族群众家门口。”</p><p>　　安徽金寨干部学院红色文化和大别山精神研究室副主任周宇对习近平总书记讲的“人民群众永远是党和人民军队的力量源泉和坚强后盾”深有感悟：“红军打胜仗，人民是靠山。革命年代，金寨几乎家家有红军、户户有英烈。我们在这片红色土地上研究红色历史，就要真正走到田间地头、走到老百姓中间去，讲清楚我们党如何赢得人民群众真心拥护和支持，讲清楚永远走在时代前列的制胜密码。”</p><p>　　不久前，中央红军长征出发地江西瑞金与落脚点陕西延安之间开通高铁。</p><p>　　习近平总书记的重要讲话，令中国铁路西安局集团有限公司西安客运段列车长魏海涵觉得肩上的责任更重了：“总书记强调‘坚持全心全意为人民服务的根本宗旨，紧紧依靠人民创造新的历史伟业’。飞驰在延安和瑞金之间，我由衷地感受到山河巨变、使命光荣。我们要让铁路更好赋能革命老区发展，让高铁车厢成为旅客感悟伟大长征精神的流动课堂，书写崭新的长征篇章。”</p><p>　　在福建，宁化县全面推进长征国家文化公园建设，长征精神教育基地、长征历史步道等项目相继完成。</p><p>　　“习近平总书记向当年支援红军长征的各族人民特别是各革命根据地人民致以崇高敬意，令我们感受到，走好今天的长征路，必须把人民放在心中最高位置。”福建省三明市宁化县长征出发地遗址保护中心主任邱明华表示，将和同事们一起守好红色家底、传承红色基因，引导广大干部群众充分感悟初心使命，凝聚起奋进新征程的磅礴力量。</p><p>　　近年来，重庆师范大学持续打造“新时代长征路上的青春”系列主题艺术思政课。作为思政课团队成员，地理与旅游学院2026级硕士研究生李晓雨走村入户寻访红色足迹，讲述红色故事。</p><p>　　“习近平总书记强调‘不断增强全党全军全国各族人民的志气、骨气、底气’，激励着青年一代发愤图强、奋发有为。我要不断从伟大长征精神中汲取奋进力量，深入基层、深入人民，走好我们这代人的长征路。”李晓雨说。</p><p><strong>　　敢于攻坚克难</strong></p><p><strong>　　推进复兴伟业</strong></p><p>　　“奔向理想的道路从来都不平坦，伟大胜利都是依靠顽强斗争取得的。”习近平总书记的重要讲话道出新长征路的艰巨与荣光。</p><p>　　在北京科技大学雄安校区建设现场，项目指挥部造价管理部副部长张鹏飞和同事们第一时间学习了重要讲话。</p><p>　　“长征路上没有退路，攻坚期更不能松劲。”展望未来，张鹏飞坚定信心：“作为雄安一线建设者，我们要把‘严’字落在每一道工序背后，把伟大长征精神落到本职工作上，为承接北京非首都功能疏解、服务京津冀协同发展筑牢坚实根基。”</p><p>　　累计行程2500多公里，走遍全县乡镇、边境点位与项目现场……山东省烟台市第十一批援藏工作组领队、西藏聂拉木县委常务副书记张鹏已在边境一线奋战一年多。学习习近平总书记重要讲话，他深有感触：“援藏就是我们的长征。我将带领团队保持扎根高原的战略定力，坚定初心、迎难而上，踏踏实实办好民生实事。”</p><p>　　习近平总书记指出，弘扬伟大长征精神、走好新的长征路，必须勇于进行具有许多新的历史特点的伟大斗争。</p><p>　　在国网天津滨海公司，时代楷模、全国劳动模范张黎明与配电抢修班的工友们围坐在一起，结合一线创新实践交流学习总书记重要讲话的体会。他表示，新时代电力人的长征就是扎根一线、攻坚克难，把技术短板补扎实，让创新成果真正服务生产一线，用心守护万家灯火。</p><p>　　东风汽车集团有限公司副总工程师杨彦鼎对习近平总书记重要讲话中“以历史主动精神克难关、战风险、迎挑战”印象深刻：“老一辈东风人住芦席棚、点马灯开山建厂，自力更生。今天我们将以久久为功的韧劲打好核心技术攻坚战，把发展民族汽车工业的主动权牢牢攥在自己手里。”</p><p>　　人民军队永远是捍卫党和国家事业的钢铁长城。</p><p>　　学习了习近平总书记重要讲话，军事科学院军队政治工作研究院解放军党史军史研究中心副主任李振林表示：“我们既要从长征史中把党对军队绝对领导的根本原则和独特制胜机理研究深、阐释透，把红色血脉融入当代强军实践；也要以习近平强军思想为统领，在理论创新、史料考证和现实服务中持续发力，让长征精神不断转化为建设世界一流军队的坚实力量。”</p><p>　　退伍不褪色、退役不褪志。在焦裕禄精神发源地河南兰考，退役军人服务保障网络不断向基层延伸。</p><p>　　“强国必须强军，军强才能国安。”兰考县退役军人事务局局长张振方说，做退役军人工作，就是要把党和国家对老兵的关心送到他们心坎上，“把服务保障做实、把尊崇致敬落实，就是我们弘扬伟大长征精神的实际行动，也是我们在强国强军新征程上应有的担当”。</p><p>　　前不久，习近平总书记来到内蒙古乌兰察布察哈尔高新技术开发区考察。快手乌兰察布数据中心00后项目经理张羽对习近平总书记勉励“我们现在进行新的长征，你们是高水平科技自立自强的一个方面军”记忆犹新。</p><p>　　这次学习了习近平总书记在大会上的重要讲话，张羽有了更加深切的体会：“我们要始终保持学习能力，在日新月异的发展中保持竞争力。我将不断钻研创新，为数字经济高质量发展贡献青春力量，和千千万万新时代奋斗者一同走好强国建设、民族复兴新的长征路。”</p><p>　　（新华社北京10月23日电）</p><!--/enpcontent--><!--enpproperty <date>2026-10-24 00:00:00:0</date><author>新华社记者</author><subtitle><p> ——习近平总书记在纪念中国工农红军长征胜利90周年大会上的重要讲话鼓舞广大干部群众接续奋斗开创未来 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30187432</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/24/content_30187432.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/24/content_30187432.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 同心协力，奔赴充满光荣和梦想的远征 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

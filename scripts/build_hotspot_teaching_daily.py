@@ -1412,7 +1412,9 @@ def load_latest_sources(curated_until: str, app_db: Path | None = None, paper_db
     try:
         app_count, app_until = app.execute("SELECT COUNT(*), MAX(date) FROM articles").fetchone()
         paper_count, paper_until = paper.execute("SELECT COUNT(*), MAX(date) FROM articles").fetchone()
-        rows = app.execute(
+        paper_state_path = (paper_db or PAPER_DB).parent / 'people_daily_collection_state.json'
+        paper_state = json.loads(paper_state_path.read_text(encoding='utf-8')) if paper_state_path.exists() else {}
+        app_rows = app.execute(
             """SELECT a.article_id, a.date, a.title, a.source_url,
                       COALESCE(m.source_name, a.source) AS source_name,
                       a.summary, substr(a.content, 1, 600) AS content_excerpt
@@ -1420,11 +1422,23 @@ def load_latest_sources(curated_until: str, app_db: Path | None = None, paper_db
                WHERE a.date > ? ORDER BY a.date DESC, a.title, a.article_id""",
             (curated_until,),
         ).fetchall()
+        paper_rows = paper.execute(
+            """SELECT article_id,date,title,source_url,summary,
+                      substr(content,1,600) AS content_excerpt
+               FROM articles WHERE date > ? ORDER BY date DESC,title,article_id""",
+            (curated_until,),
+        ).fetchall()
+        rows = [{**dict(row),'source_kind':SOURCE_KIND_APP} for row in app_rows]
+        rows += [{**dict(row),'source_name':'《人民日报》正式版','source_kind':SOURCE_KIND_PAPER} for row in paper_rows]
+        rows.sort(key=lambda row:(row['date'],row['article_id']),reverse=True)
         return {
             "coverage": {"app_until": app_until or "", "app_count": app_count,
                          "paper_until": paper_until or "", "paper_count": paper_count,
-                         "curated_until": curated_until, "fresh_count": len(rows)},
-            "articles": [{**dict(row), "material_status": "source_only"} for row in rows],
+                         "curated_until": curated_until, "fresh_count": len(rows),
+                         "paper_latest_complete_issue":paper_state.get('latest_complete_issue',''),
+                         "paper_known_missing_dates":paper_state.get('known_missing_dates',[]),
+                         "fresh_app_count":len(app_rows),"fresh_paper_count":len(paper_rows)},
+            "articles": [{**row, "material_status": "source_only"} for row in rows],
         }
     finally:
         app.close()
@@ -1456,7 +1470,17 @@ def build_site_payload(conn: sqlite3.Connection) -> dict[str, Any]:
                 "lesson": lessons.get(topic["topic_id"]),
             }
         )
-    latest = load_latest_sources(max((topic["end_date"] for topic in topics), default=""))
+    curated_until = max((topic["end_date"] for topic in topics), default="")
+    # Keep previously exposed source IDs visible when the curated archive advances.
+    previous_payload = SITE_ROOT / 'data.json'
+    previous_cutoff = ''
+    if previous_payload.exists():
+        previous_cutoff = json.loads(previous_payload.read_text(encoding='utf-8')).get('source_coverage', {}).get('source_feed_since', '')
+        if not previous_cutoff:
+            previous_cutoff = json.loads(previous_payload.read_text(encoding='utf-8')).get('source_coverage', {}).get('curated_until', '')
+    feed_since = min(curated_until, previous_cutoff) if previous_cutoff else curated_until
+    latest = load_latest_sources(feed_since)
+    latest['coverage'].update({'curated_until':curated_until, 'source_feed_since':feed_since})
     by_source = defaultdict(list)
     source_reviews = {}
     for tid, lesson in lessons.items():

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 重温历史  汲取奋进的智慧和力量 </title>
+		<meta name="author" content='第008版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="10.580368,39.21892149999999,389.606532,39.21892149999999,389.606532,538.3113314999999,10.580368,538.3113314999999" shape="polygon" href="content_30187358.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/23/e502facb-256b-4496-a650-e5c9d8452932.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第08版：特别报道
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30187358.html"> 重温历史  汲取奋进的智慧和力量 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月23日
+							Fri</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_05.html">05版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_06.html">06版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_07.html">07版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_08.html">08版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_09.html">09版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_10.html">10版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_11.html">11版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_12.html">12版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_13.html">13版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_14.html">14版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_15.html">15版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_18.html">18版：新农村</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_19.html">19版：科技</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/23/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/23/node_08.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　党的领导 党的建设</p>
+  <p>　　确保党始终成为坚强领导核心</p>
+  <p>　　欧阳淞</p>
+  <p>　　习近平总书记在纪念中国工农红军长征胜利90周年大会上指出：“党的领导和党的建设是事业发展的根本保证。”回望90年前那次彪炳史册的伟大远征，眺望新时代强国建设、民族复兴的壮阔前程，一条颠扑不破的历史结论昭示我们：弘扬伟大长征精神、走好新的长征路，必须坚持党的领导、加强党的建设。</p>
+  <p>　　长征的胜利，归根结底是党的领导的胜利、党的建设的胜利。习近平总书记深刻指出：“红军长征的伟大胜利之路，是依靠党的正确领导走出来的。”理想信念的伟大远征，靠的是党的政治引领；检验真理的伟大远征，靠的是党的自我纠错；唤醒民众的伟大远征，靠的是党的群众路线；开创新局的伟大远征，靠的是党的方向引领和团结统一。</p>
+  <p>　　从长征胜利后的“新局面”到实现中华民族伟大复兴中国梦的“新征程”，历史前行的每一步，都离不开党的坚强领导。今天，我们行进在全面建设社会主义现代化国家、实现第二个百年奋斗目标的新的长征路上，同样需要坚持党的领导、加强党的建设。</p>
+  <p>　　全面推进强国建设、民族复兴伟业，需要党的领导领航定向。越是目标宏伟，越是任务艰巨，越需要党总揽全局、协调各方，越需要维护党中央权威和集中统一领导，把党的领导落实到党和国家事业各领域各方面各环节；越是要把全党全军全国各族人民凝聚成“一块坚硬的钢铁”，越需要党的领导来凝心铸魂，越需要用共同的理想信念把全党全军全国各族人民凝聚起来；越是应对可以预料和难以预料的风险挑战，越是形势复杂多变，越需要党的领导来“砥柱中流”，越需要坚持好、运用好、发展好党的领导这一最大优势。</p>
+  <p>　　党能不能真正实施坚强有力领导，取决于党自身强不强。100多年来，党的建设从革命战争年代“伟大的工程”发展到新时代“新的伟大工程”，党不断推进马克思主义中国化时代化，锻造出始终走在时代前列的中国共产党，这不仅让党自身更加坚强有力，也持续为党领导人民进行伟大斗争、推进伟大事业和实现伟大梦想提供了十分重要的保证。</p>
+  <p>　　新的长征路上，要深入贯彻习近平党建思想，落实新时代党的建设总要求，坚持党的全面领导和党中央集中统一领导。坚持党的领导，最根本的是坚持党中央集中统一领导这一最高政治原则。要深刻领悟“两个确立”的决定性意义，坚决做到“两个维护”，这是加强党的领导最根本的政治要求。要持之以恒推进全面从严治党，不断实现党的自我净化、自我完善、自我革新、自我提高，持续增强党的政治领导力、思想引领力、群众组织力、社会号召力，确保党始终成为中国特色社会主义事业的坚强领导核心，把党的政治优势、组织优势不断转化为推进中国式现代化的强大动力和持久效能。</p>
+  <p>　　（作者为原中央党史研究室主任）&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　伟大长征精神</p>
+  <p>　　弘扬伟大长征精神</p>
+  <p>　　辛向阳</p>
+  <p>　　习近平总书记在纪念中国工农红军长征胜利90周年大会上的重要讲话中，深刻阐明了伟大长征精神的重要内涵，指出：“伟大长征精神充分彰显了忠诚的力量、真理的力量、正义的力量、团结的力量”“永远是激励我们战胜困难、勇往直前的宝贵财富和强大动力”。</p>
+  <p>　　弘扬伟大长征精神，必须坚守党的理想信念宗旨。理想信念宗旨是共产党人的“魂”，始终指引我们前进的方向。伟大长征精神中把全国人民和中华民族的根本利益看得高于一切，坚定革命的理想和信念，坚信正义事业必然胜利的精神，支撑红军将士身处绝境向死而生、历经磨难不改初心，以真理的力量和坚定的革命意志创造了非凡的人间奇迹。奋力走好新的长征路，要全面贯彻习近平新时代中国特色社会主义思想，坚定对马克思主义的信仰、对社会主义和共产主义的信念，坚定中国特色社会主义“四个自信”，牢记初心使命，坚持党的根本宗旨，紧紧依靠人民接续奋斗、砥砺前行。</p>
+  <p>　　弘扬伟大长征精神，必须发扬斗争精神、增强斗争本领。奔向理想的道路从来都不平坦，伟大胜利都是依靠顽强斗争取得的。伟大长征精神中为了救国救民，不怕任何艰难险阻，不惜付出一切牺牲的精神，激励红军将士以正义的力量在枪林弹雨中向死而生，在生存极限中绝境求生，在千锤百炼中浴火重生。新的长征路上，面对复杂严峻的风险挑战，必须练就过硬斗争本领，敢于、善于进行具有许多新的历史特点的伟大斗争。</p>
+  <p>　　弘扬伟大长征精神，必须把国家发展进步的主动权牢牢掌握在自己手中。伟大长征精神中坚持独立自主、实事求是，一切从实际出发的精神，引领我们党在血的教训中深刻认识中国革命的规律，逐步摆脱教条主义束缚，牢牢掌握历史主动。大力弘扬伟大长征精神，同心协力走好新的长征路，必须以历史主动精神直面风险挑战，立足时代发展大势主动识变应变求变，牢牢掌握国家发展进步的主动权。</p>
+  <p>　　弘扬伟大长征精神，必须坚持党的领导、加强党的建设。伟大长征精神中顾全大局、严守纪律、紧密团结的精神，使全党上下以忠诚的力量凝聚成“一块坚硬的钢铁”。走好新的长征路，要深入贯彻习近平党建思想，落实新时代党的建设总要求，坚持党的全面领导和党中央集中统一领导，以全面从严治党永远在路上的坚韧和执着，把党建设得更加坚强有力。</p>
+  <p>　　弘扬伟大长征精神，必须保持党同人民群众的血肉联系。伟大长征精神中紧紧依靠人民群众，同人民群众生死相依、患难与共、艰苦奋斗的精神，支撑红军将士以团结的力量一路跋山涉水，以为民初心走出一条植根群众的胜利之路。新征程是党和人民的新长征，我们要牢牢站稳人民立场，始终坚持以人民为中心的发展思想，与人民站在一起、想在一起、干在一起，共同创造新的历史伟业。</p>
+  <p>　　（作者为中国社会科学院马克思主义研究院研究员）&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　独立自主 实事求是</p>
+  <p>　　坚持独立自主、实事求是走好新的长征路</p>
+  <p>　　颜晓峰</p>
+  <p>　　长征的伟大胜利，使中国革命化危为机、开创新局。习近平总书记指出：“红军长征的伟大胜利之路，是依靠独立自主、实事求是走出来的。”长征的伟大胜利是必然的，其中蕴含着党和人民军队铿锵前进的一个制胜之道：依靠独立自主、实事求是艰辛探索革命道路。</p>
+  <p>　　习近平总书记指出：“马克思主义基本原理只有同中国具体实际紧密结合，才能解决中国的问题，才能展现出强大生命力。”由于“左”倾教条主义在党内的错误领导，中央革命根据地第五次反“围剿”失败，其他革命根据地也遭受挫折。在生死存亡的危急关头，党领导红军第一、第二、第四方面军和第二十五军被迫进行战略转移，踏上漫漫长征之路，开启了震撼世界、彪炳史册的伟大征途。长征的过程，也是我们党艰辛探索革命道路的过程。我们党在长征中开始独立自主、实事求是地解决路往哪里走、仗要怎么打等重大问题。为什么讲长征中“毛主席用兵真如神”？神就神在不是照搬外国军事理论削足适履，而是反对战争问题上的机械论，坚持从中国革命实际出发，主动认识和把握中国革命规律，由此创造了四渡赤水这样的“得意之笔”。</p>
+  <p>　　长征用血与火的实践经验雄辩地证明，不了解中国革命复杂性和中国革命战争特殊性，只知道拄着“洋拐杖”、从“书本”中找现成答案，只会给革命事业带来损失；只有依靠独立自主、实事求是，才能将国家发展进步的命运牢牢掌握在自己手中。依靠独立自主、实事求是走自己的路，我们党在长征中创造了非凡的人间奇迹。继承和弘扬独立自主、实事求是优良传统，新时代中国共产党人在新的长征路上立足国情、从实际出发谋全局、应变局、开新局，如期实现全面建成小康社会的第一个百年奋斗目标，推动党和国家事业取得历史性成就、发生历史性变革，让中国化时代化的马克思主义展现出强大生命力。</p>
+  <p>　　独立自主、实事求是走自己的路，是长征留给我们的宝贵启示。接续走好新的长征路，必须坚持独立自主、实事求是，始终把国家和民族发展放在自己力量的基点上，不迷信本本、不盲从经验、不照搬模式，从实际出发、按规律办事，找准破解发展难题的路径，把长征中用血与火验证的经验智慧转化为扎根当代中国大地、回应时代课题的理论自觉和实践自觉，在新的长征路上奋力创造新的辉煌！</p>
+  <p>　　（作者为天津大学马克思主义学院院长）&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　人民立场</p>
+  <p>　　不断满足人民日益增长的美好生活需要</p>
+  <p>　　刘光明</p>
+  <p>　　在纪念中国工农红军长征胜利90周年大会上，习近平总书记指出“红军长征的伟大胜利之路，是依靠广大人民群众支持走出来的”，并强调“弘扬伟大长征精神、走好新的长征路，必须坚定不移推动高质量发展、不断满足人民日益增长的美好生活需要”。回望峥嵘岁月，一个结论掷地有声：“我们党为人民而生、因人民而兴，一切工作都是为了人民的幸福。”长征中，党和红军依靠人民绝境重生、铸就奇迹；新时代新征程，党团结带领人民勇毅前行、开创未来。</p>
+  <p>　　人民是历史的创造者，是决定党和国家前途命运的根本力量。二万五千里长征是人类历史上的伟大奇迹，是党、红军与人民风雨同舟、生死与共的生动写照。正是因为始终与人民血肉相连、紧紧依靠人民，党和红军才能突破层层封锁、跨越千山万水，在物资极端匮乏、强敌围追堵截的绝境中凝聚起无往不胜的磅礴力量。</p>
+  <p>　　党的一切奋斗、一切牺牲、一切创造，都是为了让人民过上好日子，这是我们党初心使命的生动诠释，也是新的长征路的价值坐标。习近平总书记强调：“我们党立志于中华民族千秋伟业，首先要完成好新时代新征程党的使命任务。”以中国式现代化全面推进强国建设、民族复兴伟业，是新时代新征程党和国家的中心任务，是新时代最大的政治。习近平总书记还强调：“民心是最大的政治”。正是人民，使这两个“最大的政治”意蕴相通、本质归一。党的使命任务与为民初心高度统一。民族复兴的宏伟事业，归根结底是造福人民的事业；新时代所有攻坚奋斗、所有发展突破，最终目标都是回应人民期盼、增进人民福祉。90年岁月，变的是征途，不变的是初心。</p>
+  <p>　　中国共产党根基在人民、血脉在人民、力量在人民。在中国式现代化事业中推动高质量发展，必须紧紧依靠人民。高质量发展，是体现新发展理念的发展，是能够很好满足人民日益增长的美好生活需要的发展。没有高质量发展，民生改善就缺少物质支撑；没有人民参与，高质量发展就失去主体力量；没有成果共享，发展就会偏离根本方向。坚持发展为了人民，要把人民需要作为出发点；坚持发展依靠人民，要激发亿万群众的创造伟力；坚持发展成果由人民共享，要在办好民生实事上持续用力，促进全体人民共同富裕。长征胜利之路靠人民支持走出来，民族复兴伟业靠人民齐心干出来。</p>
+  <p>　　新征程上，我们要在高质量发展中让人民的奋斗更有激情，让人民的笑容更加灿烂，让人民的获得感、幸福感、安全感更加充实、更有保障、更可持续。</p>
+  <p>　　（作者为国防大学习近平新时代中国特色社会主义思想研究中心研究员）</p>
+  <p>　　</p>
+  <p>　　伟大斗争</p>
+  <p>　　勇于进行具有许多新的历史特点的伟大斗争</p>
+  <p>　　齐&nbsp;&nbsp;彪</p>
+  <p>　　习近平总书记在纪念中国工农红军长征胜利90周年大会上的重要讲话中指出：“弘扬伟大长征精神、走好新的长征路，必须勇于进行具有许多新的历史特点的伟大斗争。”这一重要要求是历史对现实的重要启示。长征是用意志和勇气谱写的人类史诗。红军长征的伟大胜利之路，是依靠坚定的革命意志走出来的。伟大长征精神“不怕任何艰难险阻，不惜付出一切牺牲”的内涵告诉我们：奔向理想的道路从来都不平坦，伟大胜利都是依靠顽强斗争取得的。</p>
+  <p>　　长征胜利90年来，我们党团结带领人民在革命、建设、改革各个历史时期进行了一次又一次伟大斗争，进行了一次又一次伟大长征，夺取了一个又一个伟大胜利。党和人民取得的一切成就，不是天上掉下来的，不是别人恩赐的，而是通过不断斗争取得的。在新的长征路上，党团结带领人民正同心协力以中国式现代化全面推进强国建设、民族复兴伟业。虽然没有了红军当年面对的军事围堵、生死绝境，但推进中国式现代化，与长征一样是具有开创性、艰巨性、复杂性的事业。只有把握新的伟大斗争的历史特点，敢于斗争、善于斗争，不断增强全党全军全国各族人民的志气、骨气、底气，更好统筹发展和安全，随时准备经受风高浪急甚至惊涛骇浪的重大考验，以历史主动精神克难关、战风险、迎挑战，才能确保中华复兴号巨轮劈波斩浪、行稳致远。</p>
+  <p>　　党依靠斗争创造辉煌历史，更要依靠斗争开辟光明未来。如何敢于斗争、善于斗争？一是把握斗争的方向。共产党人的斗争是有方向、有立场、有原则的，大方向就是坚持中国共产党领导和我国社会主义制度不动摇。二是增强斗争的底气。底气来自哪里？来自我国越来越厚实的“家底”，更来自坚定的理想信念、执着的真理追求和对党的初心使命的始终坚守。三是坚定斗争意志。历史经验告诉我们，一个政党、一个国家、一支队伍，如果失去了斗争意志，是非常可怕的，离危亡也就不远了。在长期和平环境下，更要永葆斗争精神、斗争意志。四是注重斗争策略。抓主要矛盾、抓矛盾的主要方面，坚持有理有利有节，合理选择斗争方式、把握斗争火候，在原则问题上寸步不让，在策略问题上灵活机动。要根据形势需要，把握时、度、效，及时调整斗争策略。五是增强斗争本领。要有见微知著的能力，对潜在的风险有科学预判，知道风险在哪里，表现形式是什么，发展趋势会怎样，该斗争的就要斗争；要主动投身到各种斗争中去，面对外部打压遏制，面对经济社会发展中的深层次矛盾和问题，要敢于迎难而上，扎实储备谋略举措，及时果断消除风险隐患，努力把不利因素转化为克敌制胜的有利条件。</p>
+  <p>　　踏平坎坷成大道，斗罢艰险又出发。我们要勇于进行具有许多新的历史特点的伟大斗争，战胜一切风险挑战，走好新的长征路，夺取新的伟大胜利！</p>
+  <p>　　（作者为中共中央党史和文献研究院教授）&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　世界一流军队</p>
+  <p>　　加快把人民军队建成世界一流军队</p>
+  <p>　　傅婉娟</p>
+  <p>　　习近平总书记指出：“弘扬伟大长征精神、走好新的长征路，必须加快把人民军队建成世界一流军队。”90年前，党领导红军胜利完成充满苦难与辉煌的伟大长征。明年，中国人民解放军将迎来建军100周年。从于都河畔的星夜集结出发，到建军百年的历史节点，当年在绝境中求生存的人民军队，如今正以崭新面貌向着世界一流军队阔步前行。</p>
+  <p>　　何为世界一流军队？回望长征这一惊天动地的革命壮举，便能找到最质朴也最深刻的答案。面对千重封锁、万般险阻，缺衣少粮、装备落后的红军不仅胜利实现战略转移，更在绝境中发展壮大。长征用血与火的生死考验淬炼的建军治军真理告诉我们：一支军队的强大，并不单纯取决于装备好坏、人员多少等，根本在于由谁领导、为谁而战。长征是人民军队的淬火熔炉。生死存亡关头，党的正确领导和毛泽东同志核心地位的确立，使党和红军获得新的生命。四渡赤水、巧渡金沙江、强渡大渡河……每一场转危为机的军事奇迹，都是在党的正确路线指引下创造的。长征途中“半条被子”的温暖、“彝海结盟”的誓言，生动诠释了军民的鱼水深情，也是人民军队性质宗旨本色的鲜活写照。始终同人民血脉相连、休戚与共，为人民扛枪、为人民打仗，革命军队就拥有了一往无前、战无不胜的力量。</p>
+  <p>　　时空跨越九十载，伟大长征精神始终熔铸于人民军队的血脉，并在新时代强军兴军火热实践中焕发出新的生机活力。“人民军队永远是捍卫党和国家事业的钢铁长城。”如期实现建军一百年奋斗目标，高质量推进国防和军队现代化，加快建成世界一流军队，是人民军队传承红色基因、坚定理想信念、从胜利走向胜利的历史要求，也是应对风险挑战、谋取战略主动、赢得发展优势，以强军支撑强国的迫切需要。新时代新征程，我们要全面贯彻习近平强军思想，始终坚持党对人民军队的绝对领导，以政治建军固根本、以改革强军塑体系、以科技强军赋新能、以人才强军夯支撑、以依法治军严纲纪，推动人民军队赓续红色血脉、永葆纯洁本色，加快军事理论、军队组织形态、军事人员、武器装备和军事治理现代化，以过硬打赢能力守护国家安全和人民安宁，护航中国式现代化行稳致远。</p>
+  <p>　　震撼世界、彪炳史册的伟大长征，不仅书写了以人类意志征服极端条件的英雄史诗，更向世界展现了人民军队不畏强权、追求真理和光明的精神特质。于伟大长征中浴火重生的人民军队，在加快走向世界一流的进程中，成为保卫红色江山、守护万家灯火的坚强柱石，也成为维护世界和平与发展、推动构建人类命运共同体的重要力量，必将谱写无愧于革命前辈、无愧于百年基业、无愧于新时代的强军兴军新篇章。</p>
+  <p>　　（作者为国防科技大学军政基础教育学院教授）</p>
+  <p><br></p>
+  <p>　　版式设计：汪哲平</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-23 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30187358</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/23/content_30187358.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/23/content_30187358.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 重温历史  汲取奋进的智慧和力量 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 重温历史  汲取奋进的智慧和力量 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月23日</span>&nbsp;第&nbsp;08&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p style="text-align:center;" class="not-indent"><img src="../../../pic/202610/23/ceda25b6-1dc5-4edf-8aba-a07600fe847d.jpg" style="max-width:100%;"></p><p>　　党的领导 党的建设</p><p>　　确保党始终成为坚强领导核心</p><p>　　欧阳淞</p><p>　　习近平总书记在纪念中国工农红军长征胜利90周年大会上指出：“党的领导和党的建设是事业发展的根本保证。”回望90年前那次彪炳史册的伟大远征，眺望新时代强国建设、民族复兴的壮阔前程，一条颠扑不破的历史结论昭示我们：弘扬伟大长征精神、走好新的长征路，必须坚持党的领导、加强党的建设。</p><p>　　长征的胜利，归根结底是党的领导的胜利、党的建设的胜利。习近平总书记深刻指出：“红军长征的伟大胜利之路，是依靠党的正确领导走出来的。”理想信念的伟大远征，靠的是党的政治引领；检验真理的伟大远征，靠的是党的自我纠错；唤醒民众的伟大远征，靠的是党的群众路线；开创新局的伟大远征，靠的是党的方向引领和团结统一。</p><p>　　从长征胜利后的“新局面”到实现中华民族伟大复兴中国梦的“新征程”，历史前行的每一步，都离不开党的坚强领导。今天，我们行进在全面建设社会主义现代化国家、实现第二个百年奋斗目标的新的长征路上，同样需要坚持党的领导、加强党的建设。</p><p>　　全面推进强国建设、民族复兴伟业，需要党的领导领航定向。越是目标宏伟，越是任务艰巨，越需要党总揽全局、协调各方，越需要维护党中央权威和集中统一领导，把党的领导落实到党和国家事业各领域各方面各环节；越是要把全党全军全国各族人民凝聚成“一块坚硬的钢铁”，越需要党的领导来凝心铸魂，越需要用共同的理想信念把全党全军全国各族人民凝聚起来；越是应对可以预料和难以预料的风险挑战，越是形势复杂多变，越需要党的领导来“砥柱中流”，越需要坚持好、运用好、发展好党的领导这一最大优势。</p><p>　　党能不能真正实施坚强有力领导，取决于党自身强不强。100多年来，党的建设从革命战争年代“伟大的工程”发展到新时代“新的伟大工程”，党不断推进马克思主义中国化时代化，锻造出始终走在时代前列的中国共产党，这不仅让党自身更加坚强有力，也持续为党领导人民进行伟大斗争、推进伟大事业和实现伟大梦想提供了十分重要的保证。</p><p>　　新的长征路上，要深入贯彻习近平党建思想，落实新时代党的建设总要求，坚持党的全面领导和党中央集中统一领导。坚持党的领导，最根本的是坚持党中央集中统一领导这一最高政治原则。要深刻领悟“两个确立”的决定性意义，坚决做到“两个维护”，这是加强党的领导最根本的政治要求。要持之以恒推进全面从严治党，不断实现党的自我净化、自我完善、自我革新、自我提高，持续增强党的政治领导力、思想引领力、群众组织力、社会号召力，确保党始终成为中国特色社会主义事业的坚强领导核心，把党的政治优势、组织优势不断转化为推进中国式现代化的强大动力和持久效能。</p><p>　　（作者为原中央党史研究室主任）&nbsp;&nbsp;</p><p>　　</p><p>　　伟大长征精神</p><p>　　弘扬伟大长征精神</p><p>　　辛向阳</p><p>　　习近平总书记在纪念中国工农红军长征胜利90周年大会上的重要讲话中，深刻阐明了伟大长征精神的重要内涵，指出：“伟大长征精神充分彰显了忠诚的力量、真理的力量、正义的力量、团结的力量”“永远是激励我们战胜困难、勇往直前的宝贵财富和强大动力”。</p><p>　　弘扬伟大长征精神，必须坚守党的理想信念宗旨。理想信念宗旨是共产党人的“魂”，始终指引我们前进的方向。伟大长征精神中把全国人民和中华民族的根本利益看得高于一切，坚定革命的理想和信念，坚信正义事业必然胜利的精神，支撑红军将士身处绝境向死而生、历经磨难不改初心，以真理的力量和坚定的革命意志创造了非凡的人间奇迹。奋力走好新的长征路，要全面贯彻习近平新时代中国特色社会主义思想，坚定对马克思主义的信仰、对社会主义和共产主义的信念，坚定中国特色社会主义“四个自信”，牢记初心使命，坚持党的根本宗旨，紧紧依靠人民接续奋斗、砥砺前行。</p><p>　　弘扬伟大长征精神，必须发扬斗争精神、增强斗争本领。奔向理想的道路从来都不平坦，伟大胜利都是依靠顽强斗争取得的。伟大长征精神中为了救国救民，不怕任何艰难险阻，不惜付出一切牺牲的精神，激励红军将士以正义的力量在枪林弹雨中向死而生，在生存极限中绝境求生，在千锤百炼中浴火重生。新的长征路上，面对复杂严峻的风险挑战，必须练就过硬斗争本领，敢于、善于进行具有许多新的历史特点的伟大斗争。</p><p>　　弘扬伟大长征精神，必须把国家发展进步的主动权牢牢掌握在自己手中。伟大长征精神中坚持独立自主、实事求是，一切从实际出发的精神，引领我们党在血的教训中深刻认识中国革命的规律，逐步摆脱教条主义束缚，牢牢掌握历史主动。大力弘扬伟大长征精神，同心协力走好新的长征路，必须以历史主动精神直面风险挑战，立足时代发展大势主动识变应变求变，牢牢掌握国家发展进步的主动权。</p><p>　　弘扬伟大长征精神，必须坚持党的领导、加强党的建设。伟大长征精神中顾全大局、严守纪律、紧密团结的精神，使全党上下以忠诚的力量凝聚成“一块坚硬的钢铁”。走好新的长征路，要深入贯彻习近平党建思想，落实新时代党的建设总要求，坚持党的全面领导和党中央集中统一领导，以全面从严治党永远在路上的坚韧和执着，把党建设得更加坚强有力。</p><p>　　弘扬伟大长征精神，必须保持党同人民群众的血肉联系。伟大长征精神中紧紧依靠人民群众，同人民群众生死相依、患难与共、艰苦奋斗的精神，支撑红军将士以团结的力量一路跋山涉水，以为民初心走出一条植根群众的胜利之路。新征程是党和人民的新长征，我们要牢牢站稳人民立场，始终坚持以人民为中心的发展思想，与人民站在一起、想在一起、干在一起，共同创造新的历史伟业。</p><p>　　（作者为中国社会科学院马克思主义研究院研究员）&nbsp;&nbsp;</p><p>　　</p><p>　　独立自主 实事求是</p><p>　　坚持独立自主、实事求是走好新的长征路</p><p>　　颜晓峰</p><p>　　长征的伟大胜利，使中国革命化危为机、开创新局。习近平总书记指出：“红军长征的伟大胜利之路，是依靠独立自主、实事求是走出来的。”长征的伟大胜利是必然的，其中蕴含着党和人民军队铿锵前进的一个制胜之道：依靠独立自主、实事求是艰辛探索革命道路。</p><p>　　习近平总书记指出：“马克思主义基本原理只有同中国具体实际紧密结合，才能解决中国的问题，才能展现出强大生命力。”由于“左”倾教条主义在党内的错误领导，中央革命根据地第五次反“围剿”失败，其他革命根据地也遭受挫折。在生死存亡的危急关头，党领导红军第一、第二、第四方面军和第二十五军被迫进行战略转移，踏上漫漫长征之路，开启了震撼世界、彪炳史册的伟大征途。长征的过程，也是我们党艰辛探索革命道路的过程。我们党在长征中开始独立自主、实事求是地解决路往哪里走、仗要怎么打等重大问题。为什么讲长征中“毛主席用兵真如神”？神就神在不是照搬外国军事理论削足适履，而是反对战争问题上的机械论，坚持从中国革命实际出发，主动认识和把握中国革命规律，由此创造了四渡赤水这样的“得意之笔”。</p><p>　　长征用血与火的实践经验雄辩地证明，不了解中国革命复杂性和中国革命战争特殊性，只知道拄着“洋拐杖”、从“书本”中找现成答案，只会给革命事业带来损失；只有依靠独立自主、实事求是，才能将国家发展进步的命运牢牢掌握在自己手中。依靠独立自主、实事求是走自己的路，我们党在长征中创造了非凡的人间奇迹。继承和弘扬独立自主、实事求是优良传统，新时代中国共产党人在新的长征路上立足国情、从实际出发谋全局、应变局、开新局，如期实现全面建成小康社会的第一个百年奋斗目标，推动党和国家事业取得历史性成就、发生历史性变革，让中国化时代化的马克思主义展现出强大生命力。</p><p>　　独立自主、实事求是走自己的路，是长征留给我们的宝贵启示。接续走好新的长征路，必须坚持独立自主、实事求是，始终把国家和民族发展放在自己力量的基点上，不迷信本本、不盲从经验、不照搬模式，从实际出发、按规律办事，找准破解发展难题的路径，把长征中用血与火验证的经验智慧转化为扎根当代中国大地、回应时代课题的理论自觉和实践自觉，在新的长征路上奋力创造新的辉煌！</p><p>　　（作者为天津大学马克思主义学院院长）&nbsp;&nbsp;</p><p>　　</p><p>　　人民立场</p><p>　　不断满足人民日益增长的美好生活需要</p><p>　　刘光明</p><p>　　在纪念中国工农红军长征胜利90周年大会上，习近平总书记指出“红军长征的伟大胜利之路，是依靠广大人民群众支持走出来的”，并强调“弘扬伟大长征精神、走好新的长征路，必须坚定不移推动高质量发展、不断满足人民日益增长的美好生活需要”。回望峥嵘岁月，一个结论掷地有声：“我们党为人民而生、因人民而兴，一切工作都是为了人民的幸福。”长征中，党和红军依靠人民绝境重生、铸就奇迹；新时代新征程，党团结带领人民勇毅前行、开创未来。</p><p>　　人民是历史的创造者，是决定党和国家前途命运的根本力量。二万五千里长征是人类历史上的伟大奇迹，是党、红军与人民风雨同舟、生死与共的生动写照。正是因为始终与人民血肉相连、紧紧依靠人民，党和红军才能突破层层封锁、跨越千山万水，在物资极端匮乏、强敌围追堵截的绝境中凝聚起无往不胜的磅礴力量。</p><p>　　党的一切奋斗、一切牺牲、一切创造，都是为了让人民过上好日子，这是我们党初心使命的生动诠释，也是新的长征路的价值坐标。习近平总书记强调：“我们党立志于中华民族千秋伟业，首先要完成好新时代新征程党的使命任务。”以中国式现代化全面推进强国建设、民族复兴伟业，是新时代新征程党和国家的中心任务，是新时代最大的政治。习近平总书记还强调：“民心是最大的政治”。正是人民，使这两个“最大的政治”意蕴相通、本质归一。党的使命任务与为民初心高度统一。民族复兴的宏伟事业，归根结底是造福人民的事业；新时代所有攻坚奋斗、所有发展突破，最终目标都是回应人民期盼、增进人民福祉。90年岁月，变的是征途，不变的是初心。</p><p>　　中国共产党根基在人民、血脉在人民、力量在人民。在中国式现代化事业中推动高质量发展，必须紧紧依靠人民。高质量发展，是体现新发展理念的发展，是能够很好满足人民日益增长的美好生活需要的发展。没有高质量发展，民生改善就缺少物质支撑；没有人民参与，高质量发展就失去主体力量；没有成果共享，发展就会偏离根本方向。坚持发展为了人民，要把人民需要作为出发点；坚持发展依靠人民，要激发亿万群众的创造伟力；坚持发展成果由人民共享，要在办好民生实事上持续用力，促进全体人民共同富裕。长征胜利之路靠人民支持走出来，民族复兴伟业靠人民齐心干出来。</p><p>　　新征程上，我们要在高质量发展中让人民的奋斗更有激情，让人民的笑容更加灿烂，让人民的获得感、幸福感、安全感更加充实、更有保障、更可持续。</p><p>　　（作者为国防大学习近平新时代中国特色社会主义思想研究中心研究员）</p><p>　　</p><p>　　伟大斗争</p><p>　　勇于进行具有许多新的历史特点的伟大斗争</p><p>　　齐&nbsp;&nbsp;彪</p><p>　　习近平总书记在纪念中国工农红军长征胜利90周年大会上的重要讲话中指出：“弘扬伟大长征精神、走好新的长征路，必须勇于进行具有许多新的历史特点的伟大斗争。”这一重要要求是历史对现实的重要启示。长征是用意志和勇气谱写的人类史诗。红军长征的伟大胜利之路，是依靠坚定的革命意志走出来的。伟大长征精神“不怕任何艰难险阻，不惜付出一切牺牲”的内涵告诉我们：奔向理想的道路从来都不平坦，伟大胜利都是依靠顽强斗争取得的。</p><p>　　长征胜利90年来，我们党团结带领人民在革命、建设、改革各个历史时期进行了一次又一次伟大斗争，进行了一次又一次伟大长征，夺取了一个又一个伟大胜利。党和人民取得的一切成就，不是天上掉下来的，不是别人恩赐的，而是通过不断斗争取得的。在新的长征路上，党团结带领人民正同心协力以中国式现代化全面推进强国建设、民族复兴伟业。虽然没有了红军当年面对的军事围堵、生死绝境，但推进中国式现代化，与长征一样是具有开创性、艰巨性、复杂性的事业。只有把握新的伟大斗争的历史特点，敢于斗争、善于斗争，不断增强全党全军全国各族人民的志气、骨气、底气，更好统筹发展和安全，随时准备经受风高浪急甚至惊涛骇浪的重大考验，以历史主动精神克难关、战风险、迎挑战，才能确保中华复兴号巨轮劈波斩浪、行稳致远。</p><p>　　党依靠斗争创造辉煌历史，更要依靠斗争开辟光明未来。如何敢于斗争、善于斗争？一是把握斗争的方向。共产党人的斗争是有方向、有立场、有原则的，大方向就是坚持中国共产党领导和我国社会主义制度不动摇。二是增强斗争的底气。底气来自哪里？来自我国越来越厚实的“家底”，更来自坚定的理想信念、执着的真理追求和对党的初心使命的始终坚守。三是坚定斗争意志。历史经验告诉我们，一个政党、一个国家、一支队伍，如果失去了斗争意志，是非常可怕的，离危亡也就不远了。在长期和平环境下，更要永葆斗争精神、斗争意志。四是注重斗争策略。抓主要矛盾、抓矛盾的主要方面，坚持有理有利有节，合理选择斗争方式、把握斗争火候，在原则问题上寸步不让，在策略问题上灵活机动。要根据形势需要，把握时、度、效，及时调整斗争策略。五是增强斗争本领。要有见微知著的能力，对潜在的风险有科学预判，知道风险在哪里，表现形式是什么，发展趋势会怎样，该斗争的就要斗争；要主动投身到各种斗争中去，面对外部打压遏制，面对经济社会发展中的深层次矛盾和问题，要敢于迎难而上，扎实储备谋略举措，及时果断消除风险隐患，努力把不利因素转化为克敌制胜的有利条件。</p><p>　　踏平坎坷成大道，斗罢艰险又出发。我们要勇于进行具有许多新的历史特点的伟大斗争，战胜一切风险挑战，走好新的长征路，夺取新的伟大胜利！</p><p>　　（作者为中共中央党史和文献研究院教授）&nbsp;&nbsp;</p><p>　　</p><p>　　世界一流军队</p><p>　　加快把人民军队建成世界一流军队</p><p>　　傅婉娟</p><p>　　习近平总书记指出：“弘扬伟大长征精神、走好新的长征路，必须加快把人民军队建成世界一流军队。”90年前，党领导红军胜利完成充满苦难与辉煌的伟大长征。明年，中国人民解放军将迎来建军100周年。从于都河畔的星夜集结出发，到建军百年的历史节点，当年在绝境中求生存的人民军队，如今正以崭新面貌向着世界一流军队阔步前行。</p><p>　　何为世界一流军队？回望长征这一惊天动地的革命壮举，便能找到最质朴也最深刻的答案。面对千重封锁、万般险阻，缺衣少粮、装备落后的红军不仅胜利实现战略转移，更在绝境中发展壮大。长征用血与火的生死考验淬炼的建军治军真理告诉我们：一支军队的强大，并不单纯取决于装备好坏、人员多少等，根本在于由谁领导、为谁而战。长征是人民军队的淬火熔炉。生死存亡关头，党的正确领导和毛泽东同志核心地位的确立，使党和红军获得新的生命。四渡赤水、巧渡金沙江、强渡大渡河……每一场转危为机的军事奇迹，都是在党的正确路线指引下创造的。长征途中“半条被子”的温暖、“彝海结盟”的誓言，生动诠释了军民的鱼水深情，也是人民军队性质宗旨本色的鲜活写照。始终同人民血脉相连、休戚与共，为人民扛枪、为人民打仗，革命军队就拥有了一往无前、战无不胜的力量。</p><p>　　时空跨越九十载，伟大长征精神始终熔铸于人民军队的血脉，并在新时代强军兴军火热实践中焕发出新的生机活力。“人民军队永远是捍卫党和国家事业的钢铁长城。”如期实现建军一百年奋斗目标，高质量推进国防和军队现代化，加快建成世界一流军队，是人民军队传承红色基因、坚定理想信念、从胜利走向胜利的历史要求，也是应对风险挑战、谋取战略主动、赢得发展优势，以强军支撑强国的迫切需要。新时代新征程，我们要全面贯彻习近平强军思想，始终坚持党对人民军队的绝对领导，以政治建军固根本、以改革强军塑体系、以科技强军赋新能、以人才强军夯支撑、以依法治军严纲纪，推动人民军队赓续红色血脉、永葆纯洁本色，加快军事理论、军队组织形态、军事人员、武器装备和军事治理现代化，以过硬打赢能力守护国家安全和人民安宁，护航中国式现代化行稳致远。</p><p>　　震撼世界、彪炳史册的伟大长征，不仅书写了以人类意志征服极端条件的英雄史诗，更向世界展现了人民军队不畏强权、追求真理和光明的精神特质。于伟大长征中浴火重生的人民军队，在加快走向世界一流的进程中，成为保卫红色江山、守护万家灯火的坚强柱石，也成为维护世界和平与发展、推动构建人类命运共同体的重要力量，必将谱写无愧于革命前辈、无愧于百年基业、无愧于新时代的强军兴军新篇章。</p><p>　　（作者为国防科技大学军政基础教育学院教授）</p><p><br></p><p>　　版式设计：汪哲平</p><!--/enpcontent--><!--enpproperty <date>2026-10-23 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30187358</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/23/content_30187358.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/23/content_30187358.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 重温历史  汲取奋进的智慧和力量 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

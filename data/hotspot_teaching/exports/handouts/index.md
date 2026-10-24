@@ -1,6 +1,6 @@
 # 热点授课资料目录
 
-共 85 套；原有 49 个热点、新增 36 个主题。资料截至 2026-09-12。
+共 93 套；原有 49 个热点、新增 44 个主题。资料截至 2026-10-24。
 
 每套包含教师详稿、学生练习单和课件提纲。学生版不含答案；教师稿含参考答案与课堂追问。均为教研稿，授课前请结合班型试讲。
 
@@ -16,6 +16,7 @@
 
 | 课程 | 教师稿 | 学生练习 | 课件提纲 |
 | --- | --- | --- | --- |
+| 前沿科技与动态标准 | [打开](peopleapp_hotspot_lesson_75ce5dcb4c-teacher.md) | [打开](peopleapp_hotspot_lesson_75ce5dcb4c-student.md) | [打开](peopleapp_hotspot_lesson_75ce5dcb4c-slides.md) |
 | 制造出海与需求适配 | [打开](peopleapp_hotspot_1edada9e7f-teacher.md) | [打开](peopleapp_hotspot_1edada9e7f-student.md) | [打开](peopleapp_hotspot_1edada9e7f-slides.md) |
 | 农业现代化与全链条增值 | [打开](peopleapp_hotspot_5b43a3a1d8-teacher.md) | [打开](peopleapp_hotspot_5b43a3a1d8-student.md) | [打开](peopleapp_hotspot_5b43a3a1d8-slides.md) |
 | 企业有序退出与营商环境 | [打开](peopleapp_hotspot_19cd199ec4-teacher.md) | [打开](peopleapp_hotspot_19cd199ec4-student.md) | [打开](peopleapp_hotspot_19cd199ec4-slides.md) |
@@ -69,6 +70,7 @@
 
 | 课程 | 教师稿 | 学生练习 | 课件提纲 |
 | --- | --- | --- | --- |
+| 热线考核与真实问题解决 | [打开](peopleapp_hotspot_lesson_1640c9bae5-teacher.md) | [打开](peopleapp_hotspot_lesson_1640c9bae5-student.md) | [打开](peopleapp_hotspot_lesson_1640c9bae5-slides.md) |
 | 债务治理与真实履职 | [打开](peopleapp_hotspot_lesson_aa62f2f7b0-teacher.md) | [打开](peopleapp_hotspot_lesson_aa62f2f7b0-student.md) | [打开](peopleapp_hotspot_lesson_aa62f2f7b0-slides.md) |
 | 履职清单与群众办事路径 | [打开](peopleapp_hotspot_lesson_4ba988c08a-teacher.md) | [打开](peopleapp_hotspot_lesson_4ba988c08a-student.md) | [打开](peopleapp_hotspot_lesson_4ba988c08a-slides.md) |
 | 反复调解与真正解决纠纷 | [打开](peopleapp_hotspot_lesson_09af134a6f-teacher.md) | [打开](peopleapp_hotspot_lesson_09af134a6f-student.md) | [打开](peopleapp_hotspot_lesson_09af134a6f-slides.md) |
@@ -78,6 +80,8 @@
 
 | 课程 | 教师稿 | 学生练习 | 课件提纲 |
 | --- | --- | --- | --- |
+| 新能源“孤儿车”售后保障 | [打开](peopleapp_hotspot_lesson_64a22ebbd1-teacher.md) | [打开](peopleapp_hotspot_lesson_64a22ebbd1-student.md) | [打开](peopleapp_hotspot_lesson_64a22ebbd1-slides.md) |
+| 溯源旅游与老年消费保护 | [打开](peopleapp_hotspot_lesson_e9ec46078f-teacher.md) | [打开](peopleapp_hotspot_lesson_e9ec46078f-student.md) | [打开](peopleapp_hotspot_lesson_e9ec46078f-slides.md) |
 | 机票退改签与前置告知 | [打开](peopleapp_hotspot_5063f9c1f1-teacher.md) | [打开](peopleapp_hotspot_5063f9c1f1-student.md) | [打开](peopleapp_hotspot_5063f9c1f1-slides.md) |
 | 出格营销与品牌治理 | [打开](peopleapp_hotspot_7cca892224-teacher.md) | [打开](peopleapp_hotspot_7cca892224-student.md) | [打开](peopleapp_hotspot_7cca892224-slides.md) |
 | 低价旅游与转包利益链 | [打开](peopleapp_hotspot_e70fa03a14-teacher.md) | [打开](peopleapp_hotspot_e70fa03a14-student.md) | [打开](peopleapp_hotspot_e70fa03a14-slides.md) |
@@ -86,6 +90,7 @@
 
 | 课程 | 教师稿 | 学生练习 | 课件提纲 |
 | --- | --- | --- | --- |
+| 校园菜单与有边界的参与 | [打开](peopleapp_hotspot_lesson_fa8edb9fca-teacher.md) | [打开](peopleapp_hotspot_lesson_fa8edb9fca-student.md) | [打开](peopleapp_hotspot_lesson_fa8edb9fca-slides.md) |
 | 高校考核与教师专业自主 | [打开](peopleapp_hotspot_lesson_546dcbd26a-teacher.md) | [打开](peopleapp_hotspot_lesson_546dcbd26a-student.md) | [打开](peopleapp_hotspot_lesson_546dcbd26a-slides.md) |
 | 儿童零食营销与安全底线 | [打开](peopleapp_hotspot_lesson_46fe1aaa41-teacher.md) | [打开](peopleapp_hotspot_lesson_46fe1aaa41-student.md) | [打开](peopleapp_hotspot_lesson_46fe1aaa41-slides.md) |
 | AI时代的作业与真实学习 | [打开](peopleapp_hotspot_lesson_2826351d7d-teacher.md) | [打开](peopleapp_hotspot_lesson_2826351d7d-student.md) | [打开](peopleapp_hotspot_lesson_2826351d7d-slides.md) |
@@ -122,6 +127,7 @@
 
 | 课程 | 教师稿 | 学生练习 | 课件提纲 |
 | --- | --- | --- | --- |
+| AI标识与内容真实性 | [打开](peopleapp_hotspot_lesson_786f67adeb-teacher.md) | [打开](peopleapp_hotspot_lesson_786f67adeb-student.md) | [打开](peopleapp_hotspot_lesson_786f67adeb-slides.md) |
 | 热点反转与信息核验责任 | [打开](peopleapp_hotspot_lesson_575b3f5638-teacher.md) | [打开](peopleapp_hotspot_lesson_575b3f5638-student.md) | [打开](peopleapp_hotspot_lesson_575b3f5638-slides.md) |
 | 机构账号出租与公共信用 | [打开](peopleapp_hotspot_lesson_bd90af486c-teacher.md) | [打开](peopleapp_hotspot_lesson_bd90af486c-student.md) | [打开](peopleapp_hotspot_lesson_bd90af486c-slides.md) |
 
@@ -157,6 +163,7 @@
 
 | 课程 | 教师稿 | 学生练习 | 课件提纲 |
 | --- | --- | --- | --- |
+| 流域保护与跨区域协同 | [打开](peopleapp_hotspot_lesson_1dcfd68ebf-teacher.md) | [打开](peopleapp_hotspot_lesson_1dcfd68ebf-student.md) | [打开](peopleapp_hotspot_lesson_1dcfd68ebf-slides.md) |
 | 外卖绿色包装与成本分担 | [打开](peopleapp_hotspot_lesson_2ef607da16-teacher.md) | [打开](peopleapp_hotspot_lesson_2ef607da16-student.md) | [打开](peopleapp_hotspot_lesson_2ef607da16-slides.md) |
 | 噪声治理与真实生活体验 | [打开](peopleapp_hotspot_lesson_6f002a728e-teacher.md) | [打开](peopleapp_hotspot_lesson_6f002a728e-student.md) | [打开](peopleapp_hotspot_lesson_6f002a728e-slides.md) |
 | 跨境灾害与预警协同 | [打开](peopleapp_hotspot_lesson_361dc91d88-teacher.md) | [打开](peopleapp_hotspot_lesson_361dc91d88-student.md) | [打开](peopleapp_hotspot_lesson_361dc91d88-slides.md) |
@@ -171,6 +178,12 @@
 | 快递利润与发展质量 | [打开](peopleapp_hotspot_lesson_37fd7e6c80-teacher.md) | [打开](peopleapp_hotspot_lesson_37fd7e6c80-student.md) | [打开](peopleapp_hotspot_lesson_37fd7e6c80-slides.md) |
 | 车企账期与产业链韧性 | [打开](peopleapp_hotspot_lesson_2a5e467575-teacher.md) | [打开](peopleapp_hotspot_lesson_2a5e467575-student.md) | [打开](peopleapp_hotspot_lesson_2a5e467575-slides.md) |
 | 资本市场改革与制度协同 | [打开](peopleapp_hotspot_lesson_5a5680cd81-teacher.md) | [打开](peopleapp_hotspot_lesson_5a5680cd81-student.md) | [打开](peopleapp_hotspot_lesson_5a5680cd81-slides.md) |
+
+## 经济运行与数据解读
+
+| 课程 | 教师稿 | 学生练习 | 课件提纲 |
+| --- | --- | --- | --- |
+| 居民用电负增长如何读数 | [打开](peopleapp_hotspot_lesson_30ce850d98-teacher.md) | [打开](peopleapp_hotspot_lesson_30ce850d98-student.md) | [打开](peopleapp_hotspot_lesson_30ce850d98-slides.md) |
 
 ## 网络生态与社会信任
 

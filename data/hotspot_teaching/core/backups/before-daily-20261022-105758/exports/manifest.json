@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-09-13T16:04:20",
+  "schema_version": 1,
+  "source_databases": {
+    "hotspot_topics": "data/peopleapp_opinion/core/hotspot_topics.sqlite",
+    "peopleapp_articles": "data/peopleapp_opinion/core/articles.sqlite",
+    "people_daily_articles": "data/core/articles.sqlite"
+  },
+  "counts": {
+    "topics": 49,
+    "sources": 357,
+    "links": 361,
+    "cards": 49,
+    "daily_editions": 42,
+    "weekly_editions": 11,
+    "lesson_packages": 85,
+    "fresh_articles": 72,
+    "supplemental_topics": 36,
+    "site_topics": 85
+  },
+  "sha256": "f939ea06ac8849f2152278ad8c3412576cbaa40eafdddc1c87811cfcd9133ca7",
+  "files": [
+    "daily_editions.jsonl",
+    "fresh_articles.jsonl",
+    "hotspot_teaching.sqlite",
+    "hotspot_topics.jsonl",
+    "lesson_packages.jsonl",
+    "manifest.json",
+    "source_articles.jsonl",
+    "source_coverage.json",
+    "supplemental_topics.jsonl",
+    "teaching_cards.jsonl",
+    "topic_article_links.csv",
+    "weekly_editions.jsonl"
+  ]
+}

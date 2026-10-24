@@ -1,0 +1,185 @@
+schema_version: 2
+type: inline_markdown_figure_manifest
+date: '2026-10-17'
+registered_at: '2026-10-23T04:46:07'
+article: data/articles/人民日报系列/101-《人民日报》深度分析【概念验证】：好技术进入生产线前，先验证什么.md
+topic: 概念验证
+article_number: '101'
+asset_root: media/images/2026-10-17-article-101
+manifest_path: data/analysis/2026-10-17/manual-figures-101/figure-manifest.yml
+plans:
+  shared:
+    items:
+    - id: fig-101-01
+      before_heading: '## 一、先列待证假设，把“技术好”转化为具体问题'
+      inline_marker: '![第101篇配图01](media/images/2026-10-17-article-101/fig-101-01.png)'
+      anchor_before: 列出假设 → 制作可验样本 → 分别验证技术与市场 → 接入专业资源 → 依据证据决定下一步。
+      anchor_after: 一、先列待证假设，把“技术好”转化为具体问题
+      context_after: 一项技术拥有论文、专利和演示，并不意味着应用所需的条件已经齐备。在锅炉巡检无人机的任务中，通信、定位和供电相互牵连。如果只关注单一指标，就可能漏掉决定方案能否落
+    - id: fig-101-03
+      before_heading: '## 二、把想法做成可验样本，先说清怎样才算有证据'
+      inline_marker: '![第101篇配图03](media/images/2026-10-17-article-101/fig-101-03.png)'
+      anchor_before: 应用还依赖哪些条件？数据、材料、设备、使用环境或人员配合能否获得？
+      anchor_after: 比如，“这项识别技术适合某类巡检任务”，如果证据不足，这就是一条待证假设。我们需要继续明确：识别什么、在什么条件下识别、结果交给谁使用。
+      context_after: 接下来，要为待证问题安排合适的测试。4月7日，《人民日报》报道广西—东盟人工智能概念验证中心成立，介绍了创意初审、技术评估、Demo验证等服务。Demo是用于展
+    - id: fig-101-08
+      before_heading: '## 三、技术可行性与市场接受度，需分开判断'
+      inline_marker: '![第101篇配图08](media/images/2026-10-17-article-101/fig-101-08.png)'
+      anchor_before: 较早、较小范围的验证，旨在适当阶段获取证据，但这并不意味着所有项目都能快速、低成本地完成。具体规模与周期，应由待证问题和技术特点决定。
+      anchor_after: 三、技术可行性与市场接受度，需分开判断
+      context_after: 技术测试有了结果后，还要核对目标用户的反应。6月20日《让科技的种子落地生花》报道指出，北京的概念验证平台既关注技术可行性，也关注市场接受度。这两方面需要分别寻
+    - id: fig-101-02
+      before_heading: '## 四、让平台、企业和专业服务共同补上验证条件'
+      inline_marker: '![第101篇配图02](media/images/2026-10-17-article-101/fig-101-02.png)'
+      anchor_before: 这些反馈需结合行业和阶段进行判断，不能直接拼凑成统一的通过标准。技术与市场验证往往需要反复迭代：测试暴露限制，场景随之调整；用户提出新要求，技术也得再次修改。
+      anchor_after: 四、让平台、企业和专业服务共同补上验证条件
+      context_after: 前述步骤都需要资源支撑。设备借不到、合适的数据拿不来、企业场景的使用条件没谈拢，都可能导致验证停留在计划阶段。研发人员需要借助专业服务，将这些条件落实到位。广西
+    - id: fig-101-05
+      before_heading: '## 五、用结果决定下一步，避免验证止步于报告'
+      inline_marker: '![第101篇配图05](media/images/2026-10-17-article-101/fig-101-05.png)'
+      anchor_before: 这里不展开具体的授权或合同判断，主要提醒的是：验证不仅需要具备可使用的资源条件，还需要有人负责将这些条件协调到位。
+      anchor_after: 五、用结果决定下一步，避免验证止步于报告
+      context_after: 一轮验证结束后，必须明确下一步的行动方案。如果关键假设得到支持，可继续推进；如果某些问题仍缺证据，需补充测试；如果目标场景不合适，可调整方向；若关键条件难以满足
+    - id: fig-101-07
+      before_heading: '## 六、国考省考申论面试怎么用'
+      inline_marker: '![第101篇配图07](media/images/2026-10-17-article-101/fig-101-07.png)'
+      anchor_before: 进入后续阶段。 在当前目标和条件下已有足够依据，带着剩余问题接入中试等后续工作。
+      anchor_after: 以上是依据案例归纳的判断方法，并非统一的考核程序。结论具有阶段性，若出现新条件，可重新评估。
+      context_after: 这组材料适用于科技成果转化、产学研协同和创新服务等主题。在撰写“支持成果落地”相关内容时，可将支持动作前移至关键问题的验证阶段。>**申论公式：列明待证假设→设
+    - id: fig-101-06
+      before_heading: '## 六、国考省考申论面试怎么用'
+      inline_marker: '![第101篇配图06](media/images/2026-10-17-article-101/fig-101-06.png)'
+      anchor_before: 本文讨论的是具有应用转化目标的早期成果。不能将短期订单要求套用于所有基础研究，也不能因一次未达预期就否定科研工作的价值。
+      anchor_after: 六、国考省考申论面试怎么用
+      context_after: 这组材料适用于科技成果转化、产学研协同和创新服务等主题。在撰写“支持成果落地”相关内容时，可将支持动作前移至关键问题的验证阶段。>**申论公式：列明待证假设→设
+    updated_at: '2026-10-23T04:46:56'
+  wechat:
+    inherit: shared
+    items: null
+    updated_at: null
+  toutiao:
+    inherit: shared
+    items: null
+    updated_at: null
+confirmation:
+  status: confirmed
+  confirmed_at: '2026-10-23T04:46:58'
+  body_hash: ced52b2d83973483fcc2fcb2e42f1aa5ea48ef4bed15ce75711776c2ad0d804d
+  plan_fingerprint: ad1a8e6f071e0e60f06dd6796f57a7dab071b83c08f4ea3c05d92ad28b0b28ac
+figures:
+- id: fig-101-01
+  kind: inline_markdown
+  file: media/images/2026-10-17-article-101/fig-101-01.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 57c26a4ae5a6d9354a837f0129f389e7ca9c8260b46d7af96bde9e0d4384ff69
+  title: 第101篇配图01
+  caption: 第101篇配图01
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 一、先列待证假设，把“技术好”转化为具体问题附近（按正文内链接精确定位）'
+  article_order: 1
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-23T04:46:56'
+- id: fig-101-03
+  kind: inline_markdown
+  file: media/images/2026-10-17-article-101/fig-101-03.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 4b512a2aff5779af1d7bc959e9eeeafcc328911d87c1489dcca7c02291c68c99
+  title: 第101篇配图03
+  caption: 第101篇配图03
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 二、把想法做成可验样本，先说清怎样才算有证据附近（按正文内链接精确定位）'
+  article_order: 2
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-23T04:46:56'
+- id: fig-101-08
+  kind: inline_markdown
+  file: media/images/2026-10-17-article-101/fig-101-08.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 11a0dcc2212f4022abb98854ae85a7734c3990c274f381e8ae20998fe6d21e69
+  title: 第101篇配图08
+  caption: 第101篇配图08
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 三、技术可行性与市场接受度，需分开判断附近（按正文内链接精确定位）'
+  article_order: 3
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-23T04:46:56'
+- id: fig-101-02
+  kind: inline_markdown
+  file: media/images/2026-10-17-article-101/fig-101-02.png
+  width_px: 1448
+  height_px: 1086
+  sha256: f7f9680070dcb075f8af5e953fb7e712fae2a748b0f25950c1379105836dd494
+  title: 第101篇配图02
+  caption: 第101篇配图02
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 四、让平台、企业和专业服务共同补上验证条件附近（按正文内链接精确定位）'
+  article_order: 4
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-23T04:46:56'
+- id: fig-101-05
+  kind: inline_markdown
+  file: media/images/2026-10-17-article-101/fig-101-05.png
+  width_px: 1448
+  height_px: 1086
+  sha256: 02abb8fa1506dfa68cf0d23591fe8ed8a6396889fafd861f7039ba6bd41913cc
+  title: 第101篇配图05
+  caption: 第101篇配图05
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 五、用结果决定下一步，避免验证止步于报告附近（按正文内链接精确定位）'
+  article_order: 5
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-23T04:46:56'
+- id: fig-101-07
+  kind: inline_markdown
+  file: media/images/2026-10-17-article-101/fig-101-07.png
+  width_px: 1448
+  height_px: 1086
+  sha256: de4d22c07c10f35bb4b59516f13842bf8ef23fcc7db7a6ce8ee0dea6d385dd90
+  title: 第101篇配图07
+  caption: 第101篇配图07
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试怎么用附近（按正文内链接精确定位）'
+  article_order: 6
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-23T04:46:56'
+- id: fig-101-06
+  kind: inline_markdown
+  file: media/images/2026-10-17-article-101/fig-101-06.png
+  width_px: 1448
+  height_px: 1086
+  sha256: d0f6e170c4c4503fb19f6bb059a3685a91d16a9abfff0bcb7749e86a76f447d2
+  title: 第101篇配图06
+  caption: 第101篇配图06
+  wechat_status: selected
+  used_in_wechat: true
+  article_position: '## 六、国考省考申论面试怎么用附近（按正文内链接精确定位）'
+  article_order: 7
+  source_tool: obsidian_article_image_paste
+  publication_status: manual_review_confirmed
+  quality_status: ok
+  registered_at: '2026-10-23T04:46:56'
+updated_at: '2026-10-23T04:46:58'
+placement_mode: inline_markdown
+inline_markdown_count: 7
+inline_imported_at: '2026-10-23T04:46:56'

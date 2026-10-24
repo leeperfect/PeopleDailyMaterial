@@ -60,14 +60,23 @@ class HotspotTeachingDailyTest(unittest.TestCase):
                 ])
                 conn.execute("INSERT INTO peopleapp_opinion_meta VALUES ('new','评论来源媒体')")
             with sqlite3.connect(paper_path) as conn:
-                conn.executescript("CREATE TABLE articles(date TEXT); INSERT INTO articles VALUES ('2026-09-06');")
+                conn.execute('CREATE TABLE articles(article_id TEXT,date TEXT,title TEXT,source_url TEXT,summary TEXT,content TEXT)')
+                conn.executemany('INSERT INTO articles VALUES (?,?,?,?,?,?)',[
+                    ('paper-old','2026-09-06','旧正式版','https://example.com/po','','旧正文'),
+                    ('paper-new','2026-10-23','新正式版','https://example.com/pn','正式版摘要','正式版完整正文'),
+                ])
             latest = builder.load_latest_sources('2026-09-06', app_path, paper_path)
-            self.assertEqual([row['article_id'] for row in latest['articles']], ['new'])
+            self.assertEqual([row['article_id'] for row in latest['articles']], ['paper-new','new'])
             self.assertEqual(latest['articles'][0]['material_status'], 'source_only')
-            self.assertEqual(latest['articles'][0]['source_name'], '评论来源媒体')
+            self.assertEqual(latest['articles'][1]['source_name'], '评论来源媒体')
+            self.assertEqual(latest['articles'][0]['source_kind'], builder.SOURCE_KIND_PAPER)
+            self.assertEqual(latest['articles'][0]['content_excerpt'], '正式版完整正文')
+            self.assertEqual(latest['coverage']['paper_until'], '2026-10-23')
             self.assertEqual(latest['coverage']['app_until'], '2026-09-12')
             self.assertEqual(latest['coverage']['curated_until'], '2026-09-06')
-            self.assertEqual(latest['coverage']['fresh_count'], 1)
+            self.assertEqual(latest['coverage']['fresh_count'], 2)
+            self.assertEqual(latest['coverage']['fresh_app_count'], 1)
+            self.assertEqual(latest['coverage']['fresh_paper_count'], 1)
             with sqlite3.connect(app_path) as conn:
                 self.assertEqual(conn.execute('SELECT COUNT(*) FROM articles').fetchone()[0], 2)
 

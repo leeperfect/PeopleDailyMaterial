@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="为申论与面试老师准备可直接讲授的热点案例、讲稿和练习。">
+  <title>热点教学日报 · 教师备课台</title>
+  <link rel="stylesheet" href="./styles.css?v=20260913-2">
+  <link rel="stylesheet" href="./pinboard.css?v=20260913-5">
+</head>
+<body>
+<a class="skip-link" href="#mainContent">跳到教学内容</a>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#home"><span class="brand-mark">热</span><span>热点教学日报<small>把好案例带进课堂</small></span></a>
+    <nav id="mainNavigation" aria-label="主导航">
+      <p class="nav-label">开始备课</p>
+      <a href="#home" data-nav="home">授课精选 <span id="lessonCount">0</span></a>
+      <a href="#fresh" data-nav="fresh">最新资料 <span id="freshCount">0</span></a>
+      <a href="#catalog" data-nav="catalog">全部热点</a>
+      <a href="#pack" data-nav="pack">本次备课 <span id="packCount">0</span></a>
+      <a href="#recent" data-nav="recent">最近取用</a>
+      <p class="nav-label">资料归档</p>
+      <a href="#daily" data-nav="daily">热点日报</a>
+      <a href="#weekly" data-nav="weekly">每周精选</a>
+      <a href="#themes" data-nav="themes">主题档案</a>
+      <a href="#ranking" data-nav="ranking">热点排行</a>
+      <p class="nav-label">帮助</p>
+      <a href="#guide" data-nav="guide">取用与来源说明</a>
+    </nav>
+    <div class="sidebar-footer"><button id="themeToggle" class="theme-switch">切换深色阅读</button><p>华图教育培训学院</p><small>讲稿 · 练习 · 课件提纲</small></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <span id="pageLabel">授课精选</span>
+      <form id="globalSearchForm" class="global-search" role="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="globalSearch" type="search" aria-label="搜索全部授课资料" placeholder="找一个话题，开启这节课" autocomplete="off"><button type="submit" aria-label="搜索"><span>搜索</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></form>
+      <a href="#pack" class="button pack-shortcut">本次备课 <b id="topPackCount">0</b></a>
+      <button id="mobileMenu" class="icon-button mobile-menu" aria-label="展开全部导航" aria-expanded="false" aria-controls="mainNavigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </header>
+    <main id="mainContent" tabindex="-1"><div class="empty">正在读取教学资料…</div></main>
+  </div>
+</div>
+<dialog id="exportDialog" aria-labelledby="exportTitle">
+  <div class="dialog-head"><div><span class="eyebrow">材料取用</span><h2 id="exportTitle">预览并导出</h2></div><button class="icon-button" data-close-dialog aria-label="关闭导出预览">×</button></div>
+  <div class="export-controls">
+    <label>材料类型<select id="exportMode"><option value="quick">3分钟讲稿</option><option value="teacher">教师详稿</option><option value="student">学生练习单</option><option value="slides">课件提纲</option><option value="legacy">原教学卡</option></select></label>
+    <label class="check"><input type="checkbox" id="exportAnswers">附参考答案</label>
+    <label class="check"><input type="checkbox" id="exportSources" checked>附来源</label>
+    <label class="check"><input type="checkbox" id="exportNotes">附讲解与个人备注</label>
+    <label class="check"><input type="checkbox" id="exportDrafts" checked>采用我的口语改稿</label>
+  </div>
+  <p id="exportHint" class="export-hint"></p><div id="exportPreview" class="export-preview"></div>
+  <div class="dialog-footer"><span id="exportFeedback" role="status"></span><button class="button" data-export="plain">复制纯文本</button><button class="button" data-export="rich">保留格式复制</button><button class="button" data-export="print">打印 / PDF</button><button class="button primary" data-export="word">下载 Word</button></div>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<input type="file" id="importWorkspace" accept="application/json,.json" hidden>
+<script src="./lesson-model.js?v=20260913-2"></script>
+<script src="./lesson-export.js?v=20260913-2"></script>
+<script src="./lesson-visuals.js?v=20260913-3"></script>
+<script src="./app.js?v=20260913-3"></script>
+</body>
+</html>
