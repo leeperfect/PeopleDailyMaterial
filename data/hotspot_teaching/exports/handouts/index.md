@@ -1,6 +1,6 @@
 # 热点授课资料目录
 
-共 93 套；原有 49 个热点、新增 44 个主题。资料截至 2026-10-24。
+共 99 套；原有 49 个热点、新增 50 个主题。资料截至 2026-10-27。
 
 每套包含教师详稿、学生练习单和课件提纲。学生版不含答案；教师稿含参考答案与课堂追问。均为教研稿，授课前请结合班型试讲。
 
@@ -66,6 +66,12 @@
 | 停车收费与精细化治理 | [打开](peopleapp_hotspot_c53f6034d6-teacher.md) | [打开](peopleapp_hotspot_c53f6034d6-student.md) | [打开](peopleapp_hotspot_c53f6034d6-slides.md) |
 | 服务驿站与有效覆盖 | [打开](peopleapp_hotspot_e76c769a01-teacher.md) | [打开](peopleapp_hotspot_e76c769a01-student.md) | [打开](peopleapp_hotspot_e76c769a01-slides.md) |
 
+## 基层治理与公共服务
+
+| 课程 | 教师稿 | 学生练习 | 课件提纲 |
+| --- | --- | --- | --- |
+| 热线考核怎样避免数字好看问题未解 | [打开](peopleapp_hotspot_lesson_0c9b6b6968-teacher.md) | [打开](peopleapp_hotspot_lesson_0c9b6b6968-student.md) | [打开](peopleapp_hotspot_lesson_0c9b6b6968-slides.md) |
+
 ## 基层治理与履职能力
 
 | 课程 | 教师稿 | 学生练习 | 课件提纲 |
@@ -76,15 +82,28 @@
 | 反复调解与真正解决纠纷 | [打开](peopleapp_hotspot_lesson_09af134a6f-teacher.md) | [打开](peopleapp_hotspot_lesson_09af134a6f-student.md) | [打开](peopleapp_hotspot_lesson_09af134a6f-slides.md) |
 | 机场短途优待与规则套利 | [打开](peopleapp_hotspot_lesson_5be07aa7a1-teacher.md) | [打开](peopleapp_hotspot_lesson_5be07aa7a1-student.md) | [打开](peopleapp_hotspot_lesson_5be07aa7a1-slides.md) |
 
+## 就业与民生服务
+
+| 课程 | 教师稿 | 学生练习 | 课件提纲 |
+| --- | --- | --- | --- |
+| 养老服务怎样留住青年人才 | [打开](peopleapp_hotspot_lesson_1efac834d9-teacher.md) | [打开](peopleapp_hotspot_lesson_1efac834d9-student.md) | [打开](peopleapp_hotspot_lesson_1efac834d9-slides.md) |
+
 ## 市场监管与消费权益
 
 | 课程 | 教师稿 | 学生练习 | 课件提纲 |
 | --- | --- | --- | --- |
+| 净水器会销中的老年消费保护 | [打开](peopleapp_hotspot_lesson_cdafc9a25c-teacher.md) | [打开](peopleapp_hotspot_lesson_cdafc9a25c-student.md) | [打开](peopleapp_hotspot_lesson_cdafc9a25c-slides.md) |
 | 新能源“孤儿车”售后保障 | [打开](peopleapp_hotspot_lesson_64a22ebbd1-teacher.md) | [打开](peopleapp_hotspot_lesson_64a22ebbd1-student.md) | [打开](peopleapp_hotspot_lesson_64a22ebbd1-slides.md) |
 | 溯源旅游与老年消费保护 | [打开](peopleapp_hotspot_lesson_e9ec46078f-teacher.md) | [打开](peopleapp_hotspot_lesson_e9ec46078f-student.md) | [打开](peopleapp_hotspot_lesson_e9ec46078f-slides.md) |
 | 机票退改签与前置告知 | [打开](peopleapp_hotspot_5063f9c1f1-teacher.md) | [打开](peopleapp_hotspot_5063f9c1f1-student.md) | [打开](peopleapp_hotspot_5063f9c1f1-slides.md) |
 | 出格营销与品牌治理 | [打开](peopleapp_hotspot_7cca892224-teacher.md) | [打开](peopleapp_hotspot_7cca892224-student.md) | [打开](peopleapp_hotspot_7cca892224-slides.md) |
 | 低价旅游与转包利益链 | [打开](peopleapp_hotspot_e70fa03a14-teacher.md) | [打开](peopleapp_hotspot_e70fa03a14-student.md) | [打开](peopleapp_hotspot_e70fa03a14-slides.md) |
+
+## 应急管理与基层治理
+
+| 课程 | 教师稿 | 学生练习 | 课件提纲 |
+| --- | --- | --- | --- |
+| 灾后安置中的细小需求如何接单 | [打开](peopleapp_hotspot_lesson_e5965640d6-teacher.md) | [打开](peopleapp_hotspot_lesson_e5965640d6-student.md) | [打开](peopleapp_hotspot_lesson_e5965640d6-slides.md) |
 
 ## 教育与青年成长
 
@@ -108,6 +127,12 @@
 | 功利童书与儿童内容保护 | [打开](peopleapp_hotspot_169b52fa11-teacher.md) | [打开](peopleapp_hotspot_169b52fa11-student.md) | [打开](peopleapp_hotspot_169b52fa11-slides.md) |
 | 志愿咨询与学生自主选择 | [打开](peopleapp_hotspot_e349cd9e2b-teacher.md) | [打开](peopleapp_hotspot_e349cd9e2b-student.md) | [打开](peopleapp_hotspot_e349cd9e2b-slides.md) |
 | 教师减负与职责边界 | [打开](peopleapp_hotspot_6c61f4349b-teacher.md) | [打开](peopleapp_hotspot_6c61f4349b-student.md) | [打开](peopleapp_hotspot_6c61f4349b-slides.md) |
+
+## 数字平台与市场秩序
+
+| 课程 | 教师稿 | 学生练习 | 课件提纲 |
+| --- | --- | --- | --- |
+| 技术黄牛怎样挤占公共排队号源 | [打开](peopleapp_hotspot_lesson_5d6717bee1-teacher.md) | [打开](peopleapp_hotspot_lesson_5d6717bee1-student.md) | [打开](peopleapp_hotspot_lesson_5d6717bee1-slides.md) |
 
 ## 数字治理与消费权益
 
@@ -193,3 +218,9 @@
 | 舆情敲诈与正常监督 | [打开](peopleapp_hotspot_6edb0a96b1-teacher.md) | [打开](peopleapp_hotspot_6edb0a96b1-student.md) | [打开](peopleapp_hotspot_6edb0a96b1-slides.md) |
 | 卖惨摆拍与真实困难识别 | [打开](peopleapp_hotspot_5595f2aa34-teacher.md) | [打开](peopleapp_hotspot_5595f2aa34-student.md) | [打开](peopleapp_hotspot_5595f2aa34-slides.md) |
 | 伪科普与专业概念误用 | [打开](peopleapp_hotspot_39f081377e-teacher.md) | [打开](peopleapp_hotspot_39f081377e-student.md) | [打开](peopleapp_hotspot_39f081377e-slides.md) |
+
+## 营商环境与市场秩序
+
+| 课程 | 教师稿 | 学生练习 | 课件提纲 |
+| --- | --- | --- | --- |
+| 企业账款怎样真正按约兑现 | [打开](peopleapp_hotspot_lesson_6cde4416cf-teacher.md) | [打开](peopleapp_hotspot_lesson_6cde4416cf-student.md) | [打开](peopleapp_hotspot_lesson_6cde4416cf-slides.md) |

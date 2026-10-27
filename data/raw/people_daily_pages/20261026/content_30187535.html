@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 汇智聚力，共谋改革完善全球治理之道 </title>
+		<meta name="author" content='第003版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="293.760836,78.43784299999999,293.760836,30.99559925,3.734248,30.99559925,3.734248,78.43784299999999,3.734248,262.51374875,293.760836,262.51374875" shape="polygon" href="content_30187535.html"><Area coords="396.452652,45.544554,396.452652,30.99559925,304.341204,30.99559925,304.341204,45.544554,304.341204,362.45874799999996,396.452652,362.45874799999996" shape="polygon" href="content_30187536.html"><Area coords="3.734248,273.26732400000003,88.37719999999999,273.26732400000003,88.37719999999999,571.2046205,3.734248,571.2046205" shape="polygon" href="content_30187537.html"><Area coords="98.957568,273.26732400000003,293.760836,273.26732400000003,293.760836,424.4499465,98.957568,424.4499465" shape="polygon" href="content_30187538.html"><Area coords="396.452652,387.12871475,396.452652,373.21232325000005,304.341204,373.21232325000005,304.341204,387.12871475,304.341204,452.91529275,396.452652,452.91529275" shape="polygon" href="content_30187539.html"><Area coords="293.760836,472.52475350000003,293.760836,434.57095849999996,98.957568,434.57095849999996,98.957568,472.52475350000003,98.957568,571.2046205,293.760836,571.2046205" shape="polygon" href="content_30187540.html"><Area coords="396.452652,472.52475350000003,396.452652,458.608362,304.341204,458.608362,304.341204,472.52475350000003,304.341204,575.0,396.452652,575.0" shape="polygon" href="content_30187541.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/26/243edd5c-738d-401e-9352-da9fef8dcfb0.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第03版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30187535.html"> 汇智聚力，共谋改革完善全球治理之道 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187536.html"> 中国发展机遇持续与世界共享（和音） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187537.html"> 深化创新合作  续写中瑞友好（大使随笔） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187538.html"> 图片报道 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187539.html"> 中朝举行中国人民志愿军烈士陵园修缮工程竣工仪式 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187540.html"> 为加强全球经济金融治理贡献智慧 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187541.html"> 中国驻欧盟使团介绍中国绿色发展及中欧绿色合作 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月26日
+							Mon</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_07.html">07版：读者来信</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_10.html">10版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_11.html">11版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_13.html">13版：专题</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_14.html">14版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_15.html">15版：人文</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_17.html">17版：国际副刊</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_18.html">18版：科技</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_19.html">19版：新农村</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/26/node_03.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30187536.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　金秋时节，一座承载千年大计的现代化新城喜迎八方宾朋。</p>
+  <p>　　10月23日至25日，主题为“重建信心与合作：百年变局与改革完善全球治理”的2026全球治理论坛（雄安）在河北雄安新区举行。论坛由中国人民外交学会主办，来自90多个国家和联合国等国际和地区组织的政界、战略界、学界、工商界、媒体及青年领袖代表近400人齐聚一堂，激荡思想，凝聚共识，共商改革完善全球治理大计，推动构建更加公正合理的全球治理体系。</p>
+  <p>　　<strong>“助力构建和平、公正和可持续的未来”</strong></p>
+  <p>　　“践行多边主义”“倡导合作共赢”“坚持平等互利”“因应时代变革”“促进文明交流”……论坛聚焦全球治理领域国际社会关切议题，以开幕式、5个板块分论坛22场研讨会、多场配套活动等为载体，推动对话交流。</p>
+  <p>　　“全球性挑战非一国之力所能解决，需要各方开展对话、加强合作。”尼泊尔前总统班达里表示，全球治理倡议强调奉行主权平等、遵守国际法治、践行多边主义、倡导以人为本、注重行动导向，为改革完善全球治理体系、加强国际合作指明了方向。</p>
+  <p>　　“改革完善全球治理，不是对现有的国际秩序推倒重来，也不是在现行国际体系之外另起炉灶。”吉尔吉斯斯坦前总理奥托尔巴耶夫说，全球南方国家支持全球治理倡议，“我们需要不断增长的世界而不是霸权的世界，需要合作而不是干涉，需要进步而不是霸权。”</p>
+  <p>　　“全球治理倡议高度重视提升全球南方的代表性和发言权，这将助力落实联合国可持续发展目标。”联合国政策事务副秘书长莱德表示，此次论坛旨在让多边主义更有效，放大全球南方声音，“助力构建和平、公正和可持续的未来”。</p>
+  <p>　　发布《关于加强外空治理的中国立场》，推动外空治理规则跟上探索；发布《〈人工智能能力建设普惠计划〉进展报告》，推动人工智能国际合作走深走实；发布《论坛愿景文件》，推动扩大改革完善全球治理的国际共识和民意基础……论坛发布多项成果，展现中国推动构建更加公正合理的全球治理体系、更好造福全人类的担当。</p>
+  <p>　　“人工智能既需要新的规则，也需要新的技术，但绝不能凌驾于法律之上。”在世界经济论坛创始人施瓦布看来，论坛将人工智能纳入讨论，各方要抓住机遇，推动务实合作，加强对智能时代相关技术的治理。</p>
+  <p>　　“论坛上的一次次思想碰撞令我深受启发，也让我对推动构建人类命运共同体有了更深刻理解。”塞尔维亚国际政治经济研究所中国研究中心主任卡塔琳娜·扎基奇表示，从雄安出发，更多务实的对话与合作终将载入史册。</p>
+  <p>　　<strong>“超越单边主义局限，谋求人类共同福祉”</strong></p>
+  <p>　　与会嘉宾普遍认为，一年多来，全球治理倡议的时代价值更加凸显，完善全球治理的中国贡献更加突出，对中国发挥更大作用的国际期待更加热切。</p>
+  <p>　　今年是新中国恢复联合国合法席位55周年。巴基斯坦前常驻联合国代表穆尼尔·阿克拉姆表示，中国始终积极维护联合国宪章宗旨和原则，支持联合国维和行动、支持全球南方发展进步。</p>
+  <p>　　“提升全球南方代表性要落实到国际机构改革之中。”坦桑尼亚革命党前副总书记约翰·蒙盖拉说，中国支持非洲在国际机构改革中的合理诉求，为推动全球治理体系朝着更加公正合理的方向发展凝聚力量，“对非洲国家而言，更加公正合理的全球治理体系是获得可负担融资、增强自主发展能力的重要条件。”</p>
+  <p>　　国际调解院成立一年来，得到国际社会广泛支持和积极响应，创始成员国增加至48个，已成功调解国际商事争议案件……阿根廷拉普拉塔国立大学中国研究中心主任司芙兰表示，中国发起成立国际调解院，顺应了国际社会缓和矛盾、减少冲突的现实需求，“对于完善国际争端解决机制、实现和平与发展目标、推动构建人类命运共同体具有重要意义”。</p>
+  <p>　　今年7月，世界人工智能合作组织应运而生。“人工智能安全连接”协会共同创始人、共同首席执行官尼古拉斯·米埃勒认为，世界人工智能合作组织可以助力其他国家提升人工智能技术使用和治理水平，并汇聚各国科学界力量，携手应对单个国家难以管控的风险。他表示：“智能化浪潮风起云涌，风险超越国界，应对之道在于全球协同。中国积极推动人工智能全球治理，并在其中发挥重要作用。”</p>
+  <p>　　“中国的发展实践、对外交往之道以及推动完善全球治理的务实行动，都令人印象深刻。”匈牙利约翰·冯·诺伊曼大学欧亚中心主任霍尔瓦特·列文特说，中国提出全球治理倡议等，始终强调和平、对话、发展，坚持为人类共同美好愿景而努力，并以自身发展成就给全球发展带来信心。</p>
+  <p>　　马耳他常驻世界贸易组织代表、前外长特里戈纳认为，全球治理关乎各个国家，更关乎各国人民的福祉，“各方深入探讨全球治理的内涵，有助于各方携手超越单边主义局限，谋求人类共同福祉”。</p>
+  <p>　　<strong>“为世界提供了‘未来之城’建设样本”</strong></p>
+  <p>　　雄安新区这座承载千年大计的城市，是中国推进城市治理现代化的生动实践。论坛期间，各国与会人士走进这座“未来之城”，沉浸式感受这里的蓬勃生机与发展活力。</p>
+  <p>　　雄安新区智慧城市科创中心今年8月揭牌启用，以“地上一座城、地下一座城、云上一座城”的“三座城”建设理念为主线，集中展示雄安新区在数字基础设施、智能应用、产业创新、生态治理等方面的数字化建设成果。“神奇、美丽、智慧！”塞内加尔达喀尔大学教授易卜拉希玛·尼昂称赞。</p>
+  <p>　　“能够建成如此理念超前、规模宏大的新城市，可以想见中国是以怎样的决心推动发展转型。”东盟基金会项目部负责人伊兰·阿斯科拉尼表示，以此次论坛为契机，各国人士可以实地感受雄安发展，从中获得启发和鼓舞，汲取本国发展所需的理念和经验。</p>
+  <p>　　巴基斯坦“读懂中国”论坛理事长扎法尔第一次到访雄安新区，容东片区地下综合管廊给他留下了深刻印象。“地下综合管廊十分‘智慧’，机器人在其中巡检，设施数据出现异常，系统就会立刻自动响应和提示。”扎法尔了解到，管线等城市“大动脉”藏于地下管廊中，不仅让市容市貌更美观，也让城市更安全，“这为世界提供了‘未来之城’建设样本”。</p>
+  <p>　　绿色，是这座“未来之城”的鲜明底色。2017年雄安新区设立后，白洋淀迎来有史以来最大规模生态治理，“千年秀林”工程同时推进，城市建设和产业导入也在绿色规划下有序展开。土耳其亚太研究中心创始主任塞尔丘克·乔拉克奥卢认为，雄安新区的建设告诉人们：发展可以在尊重环境的基础上实现双赢。这一经验对广大全球南方国家意义重大。</p>
+  <p>　　清洁低碳绿色能源网络、绿色建筑、绿色交通……雄安新区科技发展与生态保护相融合，令牙买加麦可大学学院教育学院院长费荣感触深刻。他说：“雄安在城市治理现代化上的探索价值不止于技术发展、基础设施建设层面，可持续发展理念在这里得到了很好的体现。”</p>
+  <p>　　（本报记者王海林参与采写）</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-26 00:00:00:0</date><author>本报记者  陈尚文  曲  颂  邵玉姿  宋亦然</author><subtitle><p> ——2026全球治理论坛（雄安）综述 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30187535</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/26/content_30187535.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/26/content_30187535.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 汇智聚力，共谋改革完善全球治理之道 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 汇智聚力，共谋改革完善全球治理之道 </p></h1>
+						<h2><p> ——2026全球治理论坛（雄安）综述 </p></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  陈尚文  曲  颂  邵玉姿  宋亦然
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月26日</span>&nbsp;第&nbsp;03&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　金秋时节，一座承载千年大计的现代化新城喜迎八方宾朋。</p><p>　　10月23日至25日，主题为“重建信心与合作：百年变局与改革完善全球治理”的2026全球治理论坛（雄安）在河北雄安新区举行。论坛由中国人民外交学会主办，来自90多个国家和联合国等国际和地区组织的政界、战略界、学界、工商界、媒体及青年领袖代表近400人齐聚一堂，激荡思想，凝聚共识，共商改革完善全球治理大计，推动构建更加公正合理的全球治理体系。</p><p>　　<strong>“助力构建和平、公正和可持续的未来”</strong></p><p>　　“践行多边主义”“倡导合作共赢”“坚持平等互利”“因应时代变革”“促进文明交流”……论坛聚焦全球治理领域国际社会关切议题，以开幕式、5个板块分论坛22场研讨会、多场配套活动等为载体，推动对话交流。</p><p>　　“全球性挑战非一国之力所能解决，需要各方开展对话、加强合作。”尼泊尔前总统班达里表示，全球治理倡议强调奉行主权平等、遵守国际法治、践行多边主义、倡导以人为本、注重行动导向，为改革完善全球治理体系、加强国际合作指明了方向。</p><p>　　“改革完善全球治理，不是对现有的国际秩序推倒重来，也不是在现行国际体系之外另起炉灶。”吉尔吉斯斯坦前总理奥托尔巴耶夫说，全球南方国家支持全球治理倡议，“我们需要不断增长的世界而不是霸权的世界，需要合作而不是干涉，需要进步而不是霸权。”</p><p>　　“全球治理倡议高度重视提升全球南方的代表性和发言权，这将助力落实联合国可持续发展目标。”联合国政策事务副秘书长莱德表示，此次论坛旨在让多边主义更有效，放大全球南方声音，“助力构建和平、公正和可持续的未来”。</p><p>　　发布《关于加强外空治理的中国立场》，推动外空治理规则跟上探索；发布《〈人工智能能力建设普惠计划〉进展报告》，推动人工智能国际合作走深走实；发布《论坛愿景文件》，推动扩大改革完善全球治理的国际共识和民意基础……论坛发布多项成果，展现中国推动构建更加公正合理的全球治理体系、更好造福全人类的担当。</p><p>　　“人工智能既需要新的规则，也需要新的技术，但绝不能凌驾于法律之上。”在世界经济论坛创始人施瓦布看来，论坛将人工智能纳入讨论，各方要抓住机遇，推动务实合作，加强对智能时代相关技术的治理。</p><p>　　“论坛上的一次次思想碰撞令我深受启发，也让我对推动构建人类命运共同体有了更深刻理解。”塞尔维亚国际政治经济研究所中国研究中心主任卡塔琳娜·扎基奇表示，从雄安出发，更多务实的对话与合作终将载入史册。</p><p>　　<strong>“超越单边主义局限，谋求人类共同福祉”</strong></p><p>　　与会嘉宾普遍认为，一年多来，全球治理倡议的时代价值更加凸显，完善全球治理的中国贡献更加突出，对中国发挥更大作用的国际期待更加热切。</p><p>　　今年是新中国恢复联合国合法席位55周年。巴基斯坦前常驻联合国代表穆尼尔·阿克拉姆表示，中国始终积极维护联合国宪章宗旨和原则，支持联合国维和行动、支持全球南方发展进步。</p><p>　　“提升全球南方代表性要落实到国际机构改革之中。”坦桑尼亚革命党前副总书记约翰·蒙盖拉说，中国支持非洲在国际机构改革中的合理诉求，为推动全球治理体系朝着更加公正合理的方向发展凝聚力量，“对非洲国家而言，更加公正合理的全球治理体系是获得可负担融资、增强自主发展能力的重要条件。”</p><p>　　国际调解院成立一年来，得到国际社会广泛支持和积极响应，创始成员国增加至48个，已成功调解国际商事争议案件……阿根廷拉普拉塔国立大学中国研究中心主任司芙兰表示，中国发起成立国际调解院，顺应了国际社会缓和矛盾、减少冲突的现实需求，“对于完善国际争端解决机制、实现和平与发展目标、推动构建人类命运共同体具有重要意义”。</p><p>　　今年7月，世界人工智能合作组织应运而生。“人工智能安全连接”协会共同创始人、共同首席执行官尼古拉斯·米埃勒认为，世界人工智能合作组织可以助力其他国家提升人工智能技术使用和治理水平，并汇聚各国科学界力量，携手应对单个国家难以管控的风险。他表示：“智能化浪潮风起云涌，风险超越国界，应对之道在于全球协同。中国积极推动人工智能全球治理，并在其中发挥重要作用。”</p><p>　　“中国的发展实践、对外交往之道以及推动完善全球治理的务实行动，都令人印象深刻。”匈牙利约翰·冯·诺伊曼大学欧亚中心主任霍尔瓦特·列文特说，中国提出全球治理倡议等，始终强调和平、对话、发展，坚持为人类共同美好愿景而努力，并以自身发展成就给全球发展带来信心。</p><p>　　马耳他常驻世界贸易组织代表、前外长特里戈纳认为，全球治理关乎各个国家，更关乎各国人民的福祉，“各方深入探讨全球治理的内涵，有助于各方携手超越单边主义局限，谋求人类共同福祉”。</p><p>　　<strong>“为世界提供了‘未来之城’建设样本”</strong></p><p>　　雄安新区这座承载千年大计的城市，是中国推进城市治理现代化的生动实践。论坛期间，各国与会人士走进这座“未来之城”，沉浸式感受这里的蓬勃生机与发展活力。</p><p>　　雄安新区智慧城市科创中心今年8月揭牌启用，以“地上一座城、地下一座城、云上一座城”的“三座城”建设理念为主线，集中展示雄安新区在数字基础设施、智能应用、产业创新、生态治理等方面的数字化建设成果。“神奇、美丽、智慧！”塞内加尔达喀尔大学教授易卜拉希玛·尼昂称赞。</p><p>　　“能够建成如此理念超前、规模宏大的新城市，可以想见中国是以怎样的决心推动发展转型。”东盟基金会项目部负责人伊兰·阿斯科拉尼表示，以此次论坛为契机，各国人士可以实地感受雄安发展，从中获得启发和鼓舞，汲取本国发展所需的理念和经验。</p><p>　　巴基斯坦“读懂中国”论坛理事长扎法尔第一次到访雄安新区，容东片区地下综合管廊给他留下了深刻印象。“地下综合管廊十分‘智慧’，机器人在其中巡检，设施数据出现异常，系统就会立刻自动响应和提示。”扎法尔了解到，管线等城市“大动脉”藏于地下管廊中，不仅让市容市貌更美观，也让城市更安全，“这为世界提供了‘未来之城’建设样本”。</p><p>　　绿色，是这座“未来之城”的鲜明底色。2017年雄安新区设立后，白洋淀迎来有史以来最大规模生态治理，“千年秀林”工程同时推进，城市建设和产业导入也在绿色规划下有序展开。土耳其亚太研究中心创始主任塞尔丘克·乔拉克奥卢认为，雄安新区的建设告诉人们：发展可以在尊重环境的基础上实现双赢。这一经验对广大全球南方国家意义重大。</p><p>　　清洁低碳绿色能源网络、绿色建筑、绿色交通……雄安新区科技发展与生态保护相融合，令牙买加麦可大学学院教育学院院长费荣感触深刻。他说：“雄安在城市治理现代化上的探索价值不止于技术发展、基础设施建设层面，可持续发展理念在这里得到了很好的体现。”</p><p>　　（本报记者王海林参与采写）</p><!--/enpcontent--><!--enpproperty <date>2026-10-26 00:00:00:0</date><author>本报记者  陈尚文  曲  颂  邵玉姿  宋亦然</author><subtitle><p> ——2026全球治理论坛（雄安）综述 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30187535</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/26/content_30187535.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/26/content_30187535.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 汇智聚力，共谋改革完善全球治理之道 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

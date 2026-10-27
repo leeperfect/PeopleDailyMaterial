@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 从“种土豆”到“种Token”（深度观察） </title>
+		<meta name="author" content='第018版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.791468,26.3325045,396.208532,26.3325045,396.208532,140.6541195,3.791468,140.6541195" shape="polygon" href="content_30187602.html"><Area coords="3.791468,154.1415035,396.208532,154.1415035,396.208532,570.96581725,3.791468,570.96581725" shape="polygon" href="content_30187603.html"><Area coords="314.691944,563.2587415,375.355452,563.2587415,375.355452,570.96581725,314.691944,570.96581725" shape="polygon" href="content_30187604.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/26/a95b5d1f-3b9d-4b68-9525-f2a5ef382ba3.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第18版：科技
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30187602.html"> 从乌兰察布发展绿色算力，感悟因地制宜方法论（创新谈） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187603.html"> 从“种土豆”到“种Token”（深度观察） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187604.html"> 本版责编：刘诗瑶 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月26日
+							Mon</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_07.html">07版：读者来信</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_10.html">10版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_11.html">11版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_13.html">13版：专题</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_14.html">14版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_15.html">15版：人文</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_17.html">17版：国际副刊</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_18.html">18版：科技</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_19.html">19版：新农村</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/26/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/26/node_18.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30187602.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30187604.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　习近平总书记在内蒙古乌兰察布考察时强调，希望大家认真落实高效、绿色、安全的要求，注重“算电协同”、“算水协同”，搞好算力中心项目建设和运营，积极推动绿色算力产业发展，为推进数字中国建设、促进新质生产力发展多作贡献。</p>
+  <p>　　内蒙古乌兰察布的实践表明，发展新质生产力，要将贯彻落实党中央战略部署同发挥自身条件优势结合，精准对接、找准定位。本版聚焦内蒙古乌兰察布绿色算力产业，看一片草原如何长出算力森林，看一度绿电如何变成一次智能运算，看“东数西算”的蓝图如何在北疆大地转化为高质量发展的美好实景。</p>
+  <p>　　——编&nbsp;&nbsp;者</p>
+  <p>　　</p>
+  <p>　　深秋，内蒙古乌兰察布察哈尔高新技术开发区，塔吊林立、机械轰鸣，施工现场一片火热。看着眼前这些景象，高延东总会想起，6年前决定返乡从事算力行业时，身边几乎没人看好。</p>
+  <p>　　高延东的家乡乌兰察布，地处内蒙古中部，气候冷凉、昼夜温差大，盛产马铃薯，被称为“中国薯都”。在亲友眼里，大数据、算力、运维这些词，很难与这座“种土豆”的草原小城扯上关系，更难想象竟然有人能在家门口吃上“算力”这碗饭。</p>
+  <p>　　看似冒险的选择，高延东有自己的考量。大学专业是电力系统自动化，毕业后进入河北一家风电场工作，专业对口、收入稳定，但工作内容比较单调、成长路径相对狭窄，他渐渐萌生了转换赛道的想法。平日里，高延东经常留意行业动向，大数据、云计算等前沿技术引起了他的关注。</p>
+  <p>　　2020年，得知察哈尔高新技术开发区一家算力企业招聘运维工程师，高延东仔细了解后发现：岗位所需的供配电等知识，正是自己的专业所长；家乡冷凉的气候，也恰恰成了发展算力产业的优势。深思熟虑后，高延东提交了报名表，顺利通过面试，开始从事运维工作。</p>
+  <p>　　6年过去，身边的变化不断印证着高延东的判断。察哈尔高新技术开发区里，曾经空旷的土地上，一座座数据机房拔地而起，吸引着来自天南海北的务工人员；乘着产业发展的东风，高延东也在不断积累经验、钻研技术，工作内容从基础运维转向数据中心交付前的测试验证，不仅收入可观，还带起了团队。“从‘种土豆’到‘种Token（词元）’，我是家乡变化的亲历者，也是受益者。”高延东感慨道。</p>
+  <p>　　高延东的经历，是当地产业转型升级的一个缩影。作为乌兰察布算力产业的主要承载区，截至目前，察哈尔高新技术开发区累计签约数据中心项目65个，累计完成投资450亿元，建成机柜58万架……从单个项目落地到众多企业集聚，算力产业正在这片沃土加速成形起势。近日，记者来到察哈尔高新技术开发区，实地探寻这里的发展密码。</p>
+  <p>　　蓄势——</p>
+  <p>　　抢抓发展先机&nbsp;&nbsp;提升服务水平</p>
+  <p>　　6年，是高延东眼中察哈尔高新技术开发区算力产业的成长时间；实际上，从布局大数据产业到发力智能算力，当地已持续耕耘10余年。</p>
+  <p>　　2013年，华为团队来到察哈尔高新技术开发区，商谈建设云计算数据中心。彼时，当地在这一领域几乎是空白：既没有配套基础设施和专业运维人才，当地干部对大数据、云计算等前沿技术也知之甚少。“一开始还有人担心，建设数据中心只是个噱头，带不来实实在在的发展。”察哈尔高新技术开发区管委会副主任刘俊平回忆，但接触下来，大家发现，大数据存储、计算的需求不断增长，市场前景很广阔。“产业基础薄弱，可以一点点补，但不能因为没干过，就错过来之不易的发展机遇。”刘俊平说。</p>
+  <p>　　机遇来了，就要想办法抓住。为了推动项目高效落地，当地政府与企业组建联合工作组，干部们跟着技术团队跑前跑后，先弄懂企业需求，再想办法针对性提供支持——用电怎样保障、网络怎么铺设、审批如何加速，大家边学边干，硬是把一个陌生的高科技产业，拆解成一项项可以着手推进的具体工作。2016年，华为云计算数据中心正式投运，总投资16亿元，承载近2万台服务器，乌兰察布由此成为全国最早布局大数据产业的地级市之一。</p>
+  <p>　　项目推进的过程，也让当地干部重新认识了自己的家底。首先是“冷”：乌兰察布年均气温4.3摄氏度，拥有每年近10个月的自然冷源，同等技术条件下能使数据中心能耗降低20%至30%；其次是“风”：仅春季便有长达60天大风日，叠加年平均5500—6200兆焦/平方米的太阳总辐射量，能够更好满足智算中心大规模绿电需求。“过去说起天冷、风大，总觉得对产业发展不利，现在换个角度看，这些条件反而成为发展算力的优势。”刘俊平说。</p>
+  <p>　　然而，华为云计算数据中心投运后，算力产业并没有立刻驶入快车道。此后几年里，察哈尔高新技术开发区的新项目寥寥无几。刘俊平说，面对漫长的沉寂期，他们没有着急，一边继续完善变电站、光缆等配套设施，一边组织外出，了解行业动向、学习先进经验，一点点夯实产业发展的底子。“回过头看，那些看似缓慢的积淀，恰恰是在为后来的快速发展蓄力。”刘俊平说。</p>
+  <p>　　多年耕耘，也让乌兰察布的另一重优势开始凸显——“快”。2017年开始，乌兰察布用两年时间，建成两条直通北京的144芯点对点专用双路由大容量光缆，将端对端时延压缩至4.2毫秒。“相当于人眨一下眼的时间，数据已在北京和乌兰察布之间往返几十次。”刘俊平说，传输速度快了，意味着空间距离对业务的影响就小了。企业把服务器放在乌兰察布，既能享受本地的低电价等优势，又能及时响应远程需求。跨省份协同，变成了实实在在的产业现实。</p>
+  <p>　　2022年，国家“东数西算”工程正式启动，内蒙古成为八大国家算力枢纽节点之一。冷清的察哈尔高新技术开发区，终于迎来产业发展的春风，越来越多的头部企业在这里落子布局。如今，漫步察哈尔高新技术开发区，工程车辆往来穿梭，街道两侧错落分布着已经投运或正在建设的数据中心，处处涌动着澎湃活力。“目前光在建算力项目就有22个，建设工人将近3万人。”刘俊平说。</p>
+  <p>　　有了“硬基础”，也要做好“软服务”。“基本上只要是动工的项目，客户已经谈好了，交付日期都是定死的，备案、施工、测试，哪一步耽搁都可能影响最终交付。”中金数据乌兰察布零碳算力基地运维负责人李春晓说，项目施工前，相关部门主动问需，提供周到服务，他们仅用了35天就完成施工，第一时间就给客户交付。</p>
+  <p>　　针对项目建设过程中的难点堵点，乌兰察布定期组织政企恳谈会，企业提诉求，相关部门现场督办，逐一明确解决方案，并将办理成效纳入监督检查，做到件件有回应、事事有交代。“得益于提前布局，我们抢占了发展先机；但发展先机能不能变成持久优势，拼的是服务。”察哈尔高新技术开发区经济发展和投资促进局副局长乌日鲁格说。</p>
+  <p>　　攀登——</p>
+  <p>　　新技术加快应用&nbsp;&nbsp;效益账越算越细</p>
+  <p>　　对企业而言，数据中心在哪落地、如何运营，关键看“电”——</p>
+  <p>　　电价要低。数据中心堪称“电老虎”，用电成本占运营总成本的60%以上，1度电便宜1毛钱，利润就可能多出上千万元。</p>
+  <p>　　来源要绿。相关政策规定，到2025年底，国家枢纽节点新建数据中心绿电占比超过80%。</p>
+  <p>　　供应要稳。遭遇故障停电，大模型训练发生一次中断，损失可能超百万元。</p>
+  <p>　　如何算好用电账？在察哈尔高新技术开发区，中金数据给出的解法是“源网荷储一体化”——</p>
+  <p>　　山野之间，风机迎风而立，光伏板连绵铺展。源源不断的绿电，经由16公里长的专用线路，直达中金数据乌兰察布零碳算力基地，与公共电网协同配合，支撑数据机房24小时不间断运转。这便是全国首批数据中心绿电直连源网荷储一体化项目，风光总装机30万千瓦，配套储能4.5万千瓦，年自发自用绿电约8.48亿度。</p>
+  <p>　　“绿电直达机房，省掉了公共电网的输配电损耗，用电成本明显降低。”李春晓介绍，配套储能就像大号充电宝，风大光足时存起来，“风光”不足时放出来，根本不用担心断电。自去年7月运营以来，电力供应平稳，有力支撑数据机房正常运转。</p>
+  <p>　　用电这笔账，企业在算，政府同样在算。“算电协同”被正式写入今年的《政府工作报告》，列为新基建工程之一。察哈尔高新技术开发区先行先试，以“增量配电网+绿电直供”为核心模式，将整个大数据产业园作为一个统一的配电网单元，统一开发建设风电光伏项目，统一给智算中心供电。刘俊平表示，“增量配电网+绿电直供”模式应用后，到户电价0.32至0.38元/度，绿电直连占比超80%，可以实现100%绿电溯源，在全国具有领先优势。</p>
+  <p>　　服务器昼夜运行，除了用电，散热是必须考虑的关键问题。</p>
+  <p>　　散热这件事，乌兰察布有“天赋”，因为它够“冷”。通过技术创新，企业进一步将“天赋”转化为“效益”。李春晓介绍，当温度较低时，主要利用外界冷空气制冷；当温度较高时，主要采用压缩机制冷；通过智能调度系统的科学测算，两种方式可以按照合适比例协同运行，在保证稳定的同时最大程度降低能耗。</p>
+  <p>　　实际效果如何？李春晓算了笔账，衡量数据中心能源使用效率，有一个关键指标——PUE（电能使用效率）。PUE越接近1，说明用于散热等环节的额外能源消耗越少。“我们的PUE可以做到1.2以下。”李春晓对比道，在其他许多地区，数据中心PUE可能达到1.3左右。以每年10亿度用电量为例，PUE降低0.1，相当于全年可节省近1亿度用电量，即使按照0.35元一度的低电价算，也能省出3500万元的成本投入。</p>
+  <p>　　用水账也要算。近日，一种质疑声在网络传播：乌兰察布人均水资源不足全国平均水平的1/4，大批智算中心投入运营，会不会“跟羊抢水喝”？</p>
+  <p>　　世纪互联乌兰察布基地技术负责人李毅介绍，实际上，数据中心冷却用水并不要求饮用水水质，再生水、中水、海水，经适度处理后都能用。“我们制冷用的全是中水，不影响本地天然水源和地下水源，也不涉及饮用、灌溉、畜牧用水。”</p>
+  <p>　　政府也在开源节流。乌兰察布市水利局副局长王英泉介绍，根据《内蒙古自治区地下水保护和管理条例》，算力中心项目生产用水严禁取用地下水作为冷却用水。从储量看，全市中水产生量每年约7200万吨，剩余可调配中水约3000万吨，引调海河流域地表水工程等多个后备水源也在推进中。此外，通过推广无水氟泵空调、风冷螺杆机组等节水技术，也推动算力产业向节水高效的方向发展。</p>
+  <p>　　用电、用水、散热，效益账越算越细的过程，也在推动算力产业向新向优攀登。</p>
+  <p>　　受益——</p>
+  <p>　　人才回流“种Token”&nbsp;&nbsp;小城升腾烟火气</p>
+  <p>　　产业发展，最终还是要落在“人”上。</p>
+  <p>　　6年来，高延东明显感受到，来察哈尔高新技术开发区工作的年轻人越来越多。虽然工作内容不同，但大家有个统一的身份——“种Token的人”。所谓“种Token的人”，指的是算力产业相关从业者，包括数据中心运维、测试、数据标注等不同工种。</p>
+  <p>　　今年26岁的赵伟希，在外工作两年后，也想回家“种Token”。这段时间，他的内心既紧张又期待。紧张，是因为正在焦虑各个企业的面试结果；期待，则是希望能在算力赛道闯出一番天地。</p>
+  <p>　　赵伟希的职业跨度，比高延东更大。2024年从内蒙古机电职业技术学院毕业后，他干起了导游。旅游旺季，每天接团、带团，常常忙得脚不沾地。和游客接触的过程中，赵伟希了解到许多新职业。去年春天，他接待了一个算力企业的旅游团，对算力产业发展有了初步认识。进一步了解后，他发现家乡乌兰察布的察哈尔高新技术开发区已经成为算力高地，许多数据中心在招聘运维人员。回家“种Token”的念头，那时在他的心里悄悄萌发。</p>
+  <p>　　2022年，聚焦算力产业，乌兰察布职业学院联合相关企业成立润创产业学院，覆盖电力自动化、消防安全等专业领域，面向在校学生和社会人员开设为期40天的“运维工匠班”。2026年7月，经朋友推荐，赵伟希联系到润创产业学院培训经理安文军。</p>
+  <p>　　说明报名意愿后，安文军没有立刻表态，而是推荐了几本业务书籍，让赵伟希了解清楚再做决定。赵伟希的大学专业是云计算技术与应用，对书中内容并不算陌生，读完之后，数据中心的工作在他的脑海中浮现轮廓。利用旅游淡季的闲暇时间，他还考下了消防证和高压电工证，心里渐渐有了底，最终决定报名。报名前，学院对他进行了一次基础评估，通过之后，正式进入“运维工匠班”学习。</p>
+  <p>　　数据中心运维要确保机房内各类设备运行安全，电气、暖通、弱电、消防，都得熟练掌握。40天的课程，一半理论、一半实操，从早到晚排得满满当当。虽说事先看过书，但真学起来还是格外吃力，尤其是电气课，赵伟希经常听得一头雾水。晚上复习、早上预习，他用笨功夫把知识点一个一个啃下来。一个月后，赵伟希对各类专业名词、技术操作已经熟稔于心。培训结束，他就接到不少面试邀约。</p>
+  <p>　　赵伟希的故事并非个例。安文军告诉记者，培训班开办至今，已累计培育上千名学员，就业率超99%。一开始，学员大多来自乌兰察布及周边城市；如今，生源范围已扩大至宁夏、甘肃、黑龙江等多个省份，其中不乏知名院校的毕业生。往往培训还没结束，企业就上门来要人，“订单式”培养成为常态。</p>
+  <p>　　算力产业的受益者，不只有“种Token的人”。距离察哈尔高新技术开发区不远的八苏木村，罗东梅夫妻俩经营着一家饭馆，过去因为缺少客源，店里格外冷清。现在一到饭点，从开发区下班的人流便涌向村里，小店常常坐得满满当当。因为忙不过来，夫妻俩还雇了一名村民帮忙。“现在每天能挣2000多元，是以前的好几倍！”罗东梅眉开眼笑。如今，夫妻俩搬进更大的店面，还做起旅馆生意，日子过得有滋有味。</p>
+  <p>　　傍晚时分，原本冷寂的小城变得格外喧闹。算力产业的发展，不只体现在持续增长的纸面数据上，也藏在街头巷尾升腾的烟火气里……</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-26 00:00:00:0</date><author>本报记者  冯春梅  赵景锋</author><subtitle></subtitle><introtitle><p> 内蒙古乌兰察布察哈尔高新技术开发区锚定算力产业实现产业升级 </p></introtitle><keyword></keyword><paperarticleid>30187603</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/26/content_30187603.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/26/content_30187603.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 从“种土豆”到“种Token”（深度观察） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 内蒙古乌兰察布察哈尔高新技术开发区锚定算力产业实现产业升级 </p></h3>
+						<h1><p> 从“种土豆”到“种Token”（深度观察） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  冯春梅  赵景锋
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月26日</span>&nbsp;第&nbsp;18&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202610/26/d5ce7fd3-6b5b-4a97-bc10-1a51e7430fee.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　中弘紫晶乌兰察布智算中心的数字化平台。</p><p>　　郭小燕摄</p>"></p><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202610/26/db385d27-9d38-4c15-996a-4a63a26dc3f7.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　中金数据乌兰察布零碳算力基地远景。</p><p>　　中金数据供图</p>"></p><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202610/26/65e3ce4a-d4cf-44ef-8715-28d78e19ec7f.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　数据来源：内蒙古乌兰察布察哈尔高新技术开发区</p>"></p><p>　　习近平总书记在内蒙古乌兰察布考察时强调，希望大家认真落实高效、绿色、安全的要求，注重“算电协同”、“算水协同”，搞好算力中心项目建设和运营，积极推动绿色算力产业发展，为推进数字中国建设、促进新质生产力发展多作贡献。</p><p>　　内蒙古乌兰察布的实践表明，发展新质生产力，要将贯彻落实党中央战略部署同发挥自身条件优势结合，精准对接、找准定位。本版聚焦内蒙古乌兰察布绿色算力产业，看一片草原如何长出算力森林，看一度绿电如何变成一次智能运算，看“东数西算”的蓝图如何在北疆大地转化为高质量发展的美好实景。</p><p>　　——编&nbsp;&nbsp;者</p><p>　　</p><p>　　深秋，内蒙古乌兰察布察哈尔高新技术开发区，塔吊林立、机械轰鸣，施工现场一片火热。看着眼前这些景象，高延东总会想起，6年前决定返乡从事算力行业时，身边几乎没人看好。</p><p>　　高延东的家乡乌兰察布，地处内蒙古中部，气候冷凉、昼夜温差大，盛产马铃薯，被称为“中国薯都”。在亲友眼里，大数据、算力、运维这些词，很难与这座“种土豆”的草原小城扯上关系，更难想象竟然有人能在家门口吃上“算力”这碗饭。</p><p>　　看似冒险的选择，高延东有自己的考量。大学专业是电力系统自动化，毕业后进入河北一家风电场工作，专业对口、收入稳定，但工作内容比较单调、成长路径相对狭窄，他渐渐萌生了转换赛道的想法。平日里，高延东经常留意行业动向，大数据、云计算等前沿技术引起了他的关注。</p><p>　　2020年，得知察哈尔高新技术开发区一家算力企业招聘运维工程师，高延东仔细了解后发现：岗位所需的供配电等知识，正是自己的专业所长；家乡冷凉的气候，也恰恰成了发展算力产业的优势。深思熟虑后，高延东提交了报名表，顺利通过面试，开始从事运维工作。</p><p>　　6年过去，身边的变化不断印证着高延东的判断。察哈尔高新技术开发区里，曾经空旷的土地上，一座座数据机房拔地而起，吸引着来自天南海北的务工人员；乘着产业发展的东风，高延东也在不断积累经验、钻研技术，工作内容从基础运维转向数据中心交付前的测试验证，不仅收入可观，还带起了团队。“从‘种土豆’到‘种Token（词元）’，我是家乡变化的亲历者，也是受益者。”高延东感慨道。</p><p>　　高延东的经历，是当地产业转型升级的一个缩影。作为乌兰察布算力产业的主要承载区，截至目前，察哈尔高新技术开发区累计签约数据中心项目65个，累计完成投资450亿元，建成机柜58万架……从单个项目落地到众多企业集聚，算力产业正在这片沃土加速成形起势。近日，记者来到察哈尔高新技术开发区，实地探寻这里的发展密码。</p><p>　　蓄势——</p><p>　　抢抓发展先机&nbsp;&nbsp;提升服务水平</p><p>　　6年，是高延东眼中察哈尔高新技术开发区算力产业的成长时间；实际上，从布局大数据产业到发力智能算力，当地已持续耕耘10余年。</p><p>　　2013年，华为团队来到察哈尔高新技术开发区，商谈建设云计算数据中心。彼时，当地在这一领域几乎是空白：既没有配套基础设施和专业运维人才，当地干部对大数据、云计算等前沿技术也知之甚少。“一开始还有人担心，建设数据中心只是个噱头，带不来实实在在的发展。”察哈尔高新技术开发区管委会副主任刘俊平回忆，但接触下来，大家发现，大数据存储、计算的需求不断增长，市场前景很广阔。“产业基础薄弱，可以一点点补，但不能因为没干过，就错过来之不易的发展机遇。”刘俊平说。</p><p>　　机遇来了，就要想办法抓住。为了推动项目高效落地，当地政府与企业组建联合工作组，干部们跟着技术团队跑前跑后，先弄懂企业需求，再想办法针对性提供支持——用电怎样保障、网络怎么铺设、审批如何加速，大家边学边干，硬是把一个陌生的高科技产业，拆解成一项项可以着手推进的具体工作。2016年，华为云计算数据中心正式投运，总投资16亿元，承载近2万台服务器，乌兰察布由此成为全国最早布局大数据产业的地级市之一。</p><p>　　项目推进的过程，也让当地干部重新认识了自己的家底。首先是“冷”：乌兰察布年均气温4.3摄氏度，拥有每年近10个月的自然冷源，同等技术条件下能使数据中心能耗降低20%至30%；其次是“风”：仅春季便有长达60天大风日，叠加年平均5500—6200兆焦/平方米的太阳总辐射量，能够更好满足智算中心大规模绿电需求。“过去说起天冷、风大，总觉得对产业发展不利，现在换个角度看，这些条件反而成为发展算力的优势。”刘俊平说。</p><p>　　然而，华为云计算数据中心投运后，算力产业并没有立刻驶入快车道。此后几年里，察哈尔高新技术开发区的新项目寥寥无几。刘俊平说，面对漫长的沉寂期，他们没有着急，一边继续完善变电站、光缆等配套设施，一边组织外出，了解行业动向、学习先进经验，一点点夯实产业发展的底子。“回过头看，那些看似缓慢的积淀，恰恰是在为后来的快速发展蓄力。”刘俊平说。</p><p>　　多年耕耘，也让乌兰察布的另一重优势开始凸显——“快”。2017年开始，乌兰察布用两年时间，建成两条直通北京的144芯点对点专用双路由大容量光缆，将端对端时延压缩至4.2毫秒。“相当于人眨一下眼的时间，数据已在北京和乌兰察布之间往返几十次。”刘俊平说，传输速度快了，意味着空间距离对业务的影响就小了。企业把服务器放在乌兰察布，既能享受本地的低电价等优势，又能及时响应远程需求。跨省份协同，变成了实实在在的产业现实。</p><p>　　2022年，国家“东数西算”工程正式启动，内蒙古成为八大国家算力枢纽节点之一。冷清的察哈尔高新技术开发区，终于迎来产业发展的春风，越来越多的头部企业在这里落子布局。如今，漫步察哈尔高新技术开发区，工程车辆往来穿梭，街道两侧错落分布着已经投运或正在建设的数据中心，处处涌动着澎湃活力。“目前光在建算力项目就有22个，建设工人将近3万人。”刘俊平说。</p><p>　　有了“硬基础”，也要做好“软服务”。“基本上只要是动工的项目，客户已经谈好了，交付日期都是定死的，备案、施工、测试，哪一步耽搁都可能影响最终交付。”中金数据乌兰察布零碳算力基地运维负责人李春晓说，项目施工前，相关部门主动问需，提供周到服务，他们仅用了35天就完成施工，第一时间就给客户交付。</p><p>　　针对项目建设过程中的难点堵点，乌兰察布定期组织政企恳谈会，企业提诉求，相关部门现场督办，逐一明确解决方案，并将办理成效纳入监督检查，做到件件有回应、事事有交代。“得益于提前布局，我们抢占了发展先机；但发展先机能不能变成持久优势，拼的是服务。”察哈尔高新技术开发区经济发展和投资促进局副局长乌日鲁格说。</p><p>　　攀登——</p><p>　　新技术加快应用&nbsp;&nbsp;效益账越算越细</p><p>　　对企业而言，数据中心在哪落地、如何运营，关键看“电”——</p><p>　　电价要低。数据中心堪称“电老虎”，用电成本占运营总成本的60%以上，1度电便宜1毛钱，利润就可能多出上千万元。</p><p>　　来源要绿。相关政策规定，到2025年底，国家枢纽节点新建数据中心绿电占比超过80%。</p><p>　　供应要稳。遭遇故障停电，大模型训练发生一次中断，损失可能超百万元。</p><p>　　如何算好用电账？在察哈尔高新技术开发区，中金数据给出的解法是“源网荷储一体化”——</p><p>　　山野之间，风机迎风而立，光伏板连绵铺展。源源不断的绿电，经由16公里长的专用线路，直达中金数据乌兰察布零碳算力基地，与公共电网协同配合，支撑数据机房24小时不间断运转。这便是全国首批数据中心绿电直连源网荷储一体化项目，风光总装机30万千瓦，配套储能4.5万千瓦，年自发自用绿电约8.48亿度。</p><p>　　“绿电直达机房，省掉了公共电网的输配电损耗，用电成本明显降低。”李春晓介绍，配套储能就像大号充电宝，风大光足时存起来，“风光”不足时放出来，根本不用担心断电。自去年7月运营以来，电力供应平稳，有力支撑数据机房正常运转。</p><p>　　用电这笔账，企业在算，政府同样在算。“算电协同”被正式写入今年的《政府工作报告》，列为新基建工程之一。察哈尔高新技术开发区先行先试，以“增量配电网+绿电直供”为核心模式，将整个大数据产业园作为一个统一的配电网单元，统一开发建设风电光伏项目，统一给智算中心供电。刘俊平表示，“增量配电网+绿电直供”模式应用后，到户电价0.32至0.38元/度，绿电直连占比超80%，可以实现100%绿电溯源，在全国具有领先优势。</p><p>　　服务器昼夜运行，除了用电，散热是必须考虑的关键问题。</p><p>　　散热这件事，乌兰察布有“天赋”，因为它够“冷”。通过技术创新，企业进一步将“天赋”转化为“效益”。李春晓介绍，当温度较低时，主要利用外界冷空气制冷；当温度较高时，主要采用压缩机制冷；通过智能调度系统的科学测算，两种方式可以按照合适比例协同运行，在保证稳定的同时最大程度降低能耗。</p><p>　　实际效果如何？李春晓算了笔账，衡量数据中心能源使用效率，有一个关键指标——PUE（电能使用效率）。PUE越接近1，说明用于散热等环节的额外能源消耗越少。“我们的PUE可以做到1.2以下。”李春晓对比道，在其他许多地区，数据中心PUE可能达到1.3左右。以每年10亿度用电量为例，PUE降低0.1，相当于全年可节省近1亿度用电量，即使按照0.35元一度的低电价算，也能省出3500万元的成本投入。</p><p>　　用水账也要算。近日，一种质疑声在网络传播：乌兰察布人均水资源不足全国平均水平的1/4，大批智算中心投入运营，会不会“跟羊抢水喝”？</p><p>　　世纪互联乌兰察布基地技术负责人李毅介绍，实际上，数据中心冷却用水并不要求饮用水水质，再生水、中水、海水，经适度处理后都能用。“我们制冷用的全是中水，不影响本地天然水源和地下水源，也不涉及饮用、灌溉、畜牧用水。”</p><p>　　政府也在开源节流。乌兰察布市水利局副局长王英泉介绍，根据《内蒙古自治区地下水保护和管理条例》，算力中心项目生产用水严禁取用地下水作为冷却用水。从储量看，全市中水产生量每年约7200万吨，剩余可调配中水约3000万吨，引调海河流域地表水工程等多个后备水源也在推进中。此外，通过推广无水氟泵空调、风冷螺杆机组等节水技术，也推动算力产业向节水高效的方向发展。</p><p>　　用电、用水、散热，效益账越算越细的过程，也在推动算力产业向新向优攀登。</p><p>　　受益——</p><p>　　人才回流“种Token”&nbsp;&nbsp;小城升腾烟火气</p><p>　　产业发展，最终还是要落在“人”上。</p><p>　　6年来，高延东明显感受到，来察哈尔高新技术开发区工作的年轻人越来越多。虽然工作内容不同，但大家有个统一的身份——“种Token的人”。所谓“种Token的人”，指的是算力产业相关从业者，包括数据中心运维、测试、数据标注等不同工种。</p><p>　　今年26岁的赵伟希，在外工作两年后，也想回家“种Token”。这段时间，他的内心既紧张又期待。紧张，是因为正在焦虑各个企业的面试结果；期待，则是希望能在算力赛道闯出一番天地。</p><p>　　赵伟希的职业跨度，比高延东更大。2024年从内蒙古机电职业技术学院毕业后，他干起了导游。旅游旺季，每天接团、带团，常常忙得脚不沾地。和游客接触的过程中，赵伟希了解到许多新职业。去年春天，他接待了一个算力企业的旅游团，对算力产业发展有了初步认识。进一步了解后，他发现家乡乌兰察布的察哈尔高新技术开发区已经成为算力高地，许多数据中心在招聘运维人员。回家“种Token”的念头，那时在他的心里悄悄萌发。</p><p>　　2022年，聚焦算力产业，乌兰察布职业学院联合相关企业成立润创产业学院，覆盖电力自动化、消防安全等专业领域，面向在校学生和社会人员开设为期40天的“运维工匠班”。2026年7月，经朋友推荐，赵伟希联系到润创产业学院培训经理安文军。</p><p>　　说明报名意愿后，安文军没有立刻表态，而是推荐了几本业务书籍，让赵伟希了解清楚再做决定。赵伟希的大学专业是云计算技术与应用，对书中内容并不算陌生，读完之后，数据中心的工作在他的脑海中浮现轮廓。利用旅游淡季的闲暇时间，他还考下了消防证和高压电工证，心里渐渐有了底，最终决定报名。报名前，学院对他进行了一次基础评估，通过之后，正式进入“运维工匠班”学习。</p><p>　　数据中心运维要确保机房内各类设备运行安全，电气、暖通、弱电、消防，都得熟练掌握。40天的课程，一半理论、一半实操，从早到晚排得满满当当。虽说事先看过书，但真学起来还是格外吃力，尤其是电气课，赵伟希经常听得一头雾水。晚上复习、早上预习，他用笨功夫把知识点一个一个啃下来。一个月后，赵伟希对各类专业名词、技术操作已经熟稔于心。培训结束，他就接到不少面试邀约。</p><p>　　赵伟希的故事并非个例。安文军告诉记者，培训班开办至今，已累计培育上千名学员，就业率超99%。一开始，学员大多来自乌兰察布及周边城市；如今，生源范围已扩大至宁夏、甘肃、黑龙江等多个省份，其中不乏知名院校的毕业生。往往培训还没结束，企业就上门来要人，“订单式”培养成为常态。</p><p>　　算力产业的受益者，不只有“种Token的人”。距离察哈尔高新技术开发区不远的八苏木村，罗东梅夫妻俩经营着一家饭馆，过去因为缺少客源，店里格外冷清。现在一到饭点，从开发区下班的人流便涌向村里，小店常常坐得满满当当。因为忙不过来，夫妻俩还雇了一名村民帮忙。“现在每天能挣2000多元，是以前的好几倍！”罗东梅眉开眼笑。如今，夫妻俩搬进更大的店面，还做起旅馆生意，日子过得有滋有味。</p><p>　　傍晚时分，原本冷寂的小城变得格外喧闹。算力产业的发展，不只体现在持续增长的纸面数据上，也藏在街头巷尾升腾的烟火气里……</p><!--/enpcontent--><!--enpproperty <date>2026-10-26 00:00:00:0</date><author>本报记者  冯春梅  赵景锋</author><subtitle></subtitle><introtitle><p> 内蒙古乌兰察布察哈尔高新技术开发区锚定算力产业实现产业升级 </p></introtitle><keyword></keyword><paperarticleid>30187603</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/26/content_30187603.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/26/content_30187603.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 从“种土豆”到“种Token”（深度观察） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

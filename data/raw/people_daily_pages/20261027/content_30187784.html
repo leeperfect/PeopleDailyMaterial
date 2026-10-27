@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 思想如炬，照亮新的赶考路 </title>
+		<meta name="author" content='第004版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="6.84612,34.79097875,92.111448,34.79097875,92.111448,315.01650425,6.84612,315.01650425" shape="polygon" href="content_30187779.html"><Area coords="176.75439999999998,183.4433425,308.075452,177.75027325,308.075452,36.05610525,102.069444,36.05610525,102.069444,177.75027325,102.069444,183.4433425,102.069444,259.3509325,176.75439999999998,259.3509325" shape="polygon" href="content_30187780.html"><Area coords="308.075452,201.78767675,308.075452,182.81077924999997,308.075452,182.81077924999997,184.222896,182.81077924999997,184.222896,182.81077924999997,184.222896,201.78767675,184.222896,258.085806,308.075452,258.085806" shape="polygon" href="content_30187781.html"><Area coords="102.691816,268.83938125000003,308.075452,268.83938125000003,308.075452,316.28163075,102.691816,316.28163075" shape="polygon" href="content_30187782.html"><Area coords="396.452652,244.80197775,396.452652,173.3223305,396.452652,30.99559925,318.65582,30.99559925,318.65582,173.3223305,318.65582,244.80197775,318.65582,376.3751395,396.452652,376.3751395" shape="polygon" href="content_30187783.html"><Area coords="3.734248,325.7700795,308.075452,325.7700795,308.075452,571.2046205,3.734248,571.2046205" shape="polygon" href="content_30187784.html"><Area coords="318.65582,387.12871475,396.452652,387.12871475,396.452652,538.3113314999999,318.65582,538.3113314999999" shape="polygon" href="content_30187785.html"><Area coords="313.676824,544.00440075,396.452652,544.00440075,396.452652,571.2046205,313.676824,571.2046205" shape="polygon" href="content_30187786.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/27/9991f205-3089-48c5-a385-bab428a5f5f1.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第04版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30187779.html"> 稳稳护好每一名伤员（在现场） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187780.html"> 图片报道 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187781.html"> 西藏巴青县累计转移安置受灾群众12964人 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187782.html"> 迅速响应，功夫在平时（记者手记） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187783.html"> 推行“三问三请” 办好民生实事 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187784.html"> 思想如炬，照亮新的赶考路 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187785.html"> 邵奇惠同志逝世 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30187786.html"> 一版责编：杨  旭  栾心怡  赵川博  二版责编：林  琳  祁嘉润  郭雪岩  三版责编：吴  刚  周  輖  谢佳宁  四版责编：袁振喜  刘静文  张雪妍 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月27日
+							Tue</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_10.html">10版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_11.html">11版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_13.html">13版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_14.html">14版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_15.html">15版：体育</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_18.html">18版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_19.html">19版：党建</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/27/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/27/node_04.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30187783.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30187785.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　治国必先治党，党兴才能国强。</p>
+  <p>　　10月26日至29日，党的二十届五中全会在京召开，研究持之以恒推进全面从严治党若干重大问题，充分体现了百年大党永葆生机活力的清醒坚定，彰显了走好新的赶考之路的历史主动。</p>
+  <p>　　读懂今天的中国，必须读懂中国共产党。中国共产党为什么能，中国特色社会主义为什么好，归根到底是马克思主义行，是中国化时代化的马克思主义行。</p>
+  <p>　　思想如炬，照亮新的赶考路。习近平党建思想书写马克思主义建党学说中国化时代化新篇章，是加强新时代党的建设的根本遵循。新征程上，坚持以习近平党建思想为指引，我们党必将始终步履坚定、朝气蓬勃，把中国式现代化宏伟事业不断推向前进。</p>
+  <p>　　<strong>鲜明的中国气派</strong></p>
+  <p><strong>　　坚持用马克思主义之“矢”去射新时代中国之“的”</strong></p>
+  <p>　　任何科学理论，必须本土化才能真正发挥作用。</p>
+  <p>　　习近平总书记强调：“坚持用马克思主义之‘矢’去射新时代中国之‘的’”。习近平党建思想的一个鲜明特质就在于牢牢把握“两个结合”。</p>
+  <p>　　——同中国具体实际相结合，让党的领导的显著优势充分彰显。</p>
+  <p>　　中国最大的国情就是中国共产党的领导。什么是中国特色？这就是中国特色。习近平党建思想鲜明提出“十四个坚持”，其中包括“坚持党的领导是中国特色社会主义最本质的特征”“坚持党中央集中统一领导”。</p>
+  <p>　　这是被百年奋斗反复验证的硬道理。新时代以来，党和国家面临的形势之复杂、斗争之严峻、改革发展稳定任务之艰巨世所罕见、史所罕见。以习近平同志为核心的党中央就坚持和加强党的全面领导作出一系列重要部署，党总揽全局、协调各方的领导核心作用充分发挥。</p>
+  <p>　　编制实施五年规划，是一个观察视角。</p>
+  <p>　　2025年春节刚过，“十五五”规划建议起草工作正式启动，2月11日，习近平总书记主持召开文件起草组第一次全体会议，从12个方面明确要抓住一批具有重大牵引、驱动、支撑作用的战略任务，提出44个需要回答的重大问题。</p>
+  <p>　　紧接着，习近平总书记率先垂范，赴多地考察调研，主持召开部分省区市“十五五”时期经济社会发展座谈会……集思广益、集中智慧。</p>
+  <p>　　2025年10月，北京人民大会堂，党的二十届四中全会。</p>
+  <p>　　“通过！”</p>
+  <p>　　“十五五”规划建议全文约两万字，有对国内外形势的科学研判，有目标任务的系统谋划。贯穿始终的，是习近平总书记掌舵定向，引领全党全国各族人民“一步一步坚定走”。“现代化是多少代中国人苦苦追寻的目标。它曾看起来如此遥远，如今离我们越来越近。”一位文件起草组成员感慨。</p>
+  <p>　　稳经济、促发展，战贫困、建小康，控疫情、抗大灾，应变局、化危机……新时代以来，党带领人民团结奋斗，战胜一个又一个困难，取得一个又一个胜利。“两个确立”是党在新时代取得的重大政治成果。</p>
+  <p>　　习近平总书记深刻指出：“坚持党的领导是方向性问题，必须旗帜鲜明、立场坚定，决不能羞羞答答、语焉不详，决不能遮遮掩掩、搞自我麻痹。”这是马克思主义建党学说植根中国大地、经过实践检验得出的科学结论。</p>
+  <p>　　——同中华优秀传统文化相结合，让千年治世智慧融入新时代管党治党实践。</p>
+  <p>　　“如果没有中华五千年文明，哪里有什么中国特色？如果不是中国特色，哪有我们今天这么成功的中国特色社会主义道路？”中华优秀传统文化是我们党的创新理论的“根”。</p>
+  <p>　　翻阅《习近平党建文选》第一卷、第二卷，大量征引古代经典著作中的名句、典故。《着力培养选拔党和人民需要的好干部》一文阐释春秋时期宋国大夫正考父在家庙鼎上铸下的铭训；《严明党的组织纪律，增强组织纪律性》一文引用宋代朱熹的一副对联“地位清高，日月每从肩上过；门庭开豁，江山常在掌中看”；《坚持共产党人价值观》一文讲述东汉时期杨震“四知拒金”的故事……</p>
+  <p>　　“读书正业、孝慈仁爱、非义不取、为政清廉”是三苏好家风。2022年6月，习近平总书记来到四川省眉山市三苏祠，强调“涵养新时代共产党人的良好家风”。</p>
+  <p>　　作为一体推进不敢腐不能腐不想腐的基础性工程，新时代廉洁文化建设持续走深走实，廉洁主题公园、廉政教育基地、清廉村居等串珠成链，清风正气在全社会更加充盈。</p>
+  <p>　　鉴于往事、资于治道，新时代中国共产党人在“结合”中不断激活文明底蕴，中华优秀传统文化得以创造性转化、创新性发展，“坚持一体推进不敢腐不能腐不想腐”成为习近平党建思想“十四个坚持”的一个重要方面。一以贯之、一抓到底，“八项规定”成为党的建设的“金色名片”。本质上，这就是中华民族的文化主体性。有了文化主体性，中国共产党就有了引领时代的强大文化力量。</p>
+  <p>　　“问渠那得清如许？为有源头活水来。”正是坚持“两个结合”，习近平党建思想呈现鲜明的中国特色、中国风格、中国气派。</p>
+  <p>　　<strong>深邃的时代应答</strong></p>
+  <p><strong>　　“更好运用马克思主义观察时代、解读时代、引领时代”</strong></p>
+  <p>　　一切划时代的理论，都是满足时代需要的产物。</p>
+  <p>　　习近平总书记强调：“要立足时代特点，推进马克思主义时代化，更好运用马克思主义观察时代、解读时代、引领时代”。</p>
+  <p>　　问题是时代的声音，也是理论创新的起点。作为马克思主义建党学说中国化时代化的最新成果，习近平党建思想深刻回答“建设什么样的长期执政的马克思主义政党、怎样建设长期执政的马克思主义政党”这一重大时代课题。</p>
+  <p>　　——回答时代之问，要有审时度势的战略布局。</p>
+  <p>　　战略问题是一个政党、一个国家的根本性问题。随着中国特色社会主义进入新时代，“形势的发展、事业的开拓、人民的期待，都要求我们以改革创新精神全面推进党的建设新的伟大工程，全面提高党的建设科学化水平。”</p>
+  <p>　　“坚持全面从严治党”是新时代党的建设的战略方针。</p>
+  <p>　　在“从严治党”前冠以“全面”二字，就是管全党治全党，不留死角、不留盲区；就是更加突出运用治理的理念、系统的观念、辩证的思维管党治党建设党；就是锚定“国之大者”，将其纳入“四个全面”战略布局，更好发挥政治引领和政治保障作用……这是实践的发展、认识的深化。</p>
+  <p>　　——回答时代之问，要有开拓创新的实践展开。</p>
+  <p>　　我们党作为世界第一大执政党，大就要有大的样子，大也有大的难处。习近平总书记以“六个如何始终”作出深刻分析。时代化的马克思主义，正是在解决这些难题的火热实践中锻造出来的。</p>
+  <p>　　以“坚持以党的政治建设为统领”为例。党的十九大明确提出以党的政治建设为统领，强调把党的政治建设摆在首位，这凝结着新时代全面从严治党的实践探索。</p>
+  <p>　　“秦岭违建是一个大教训。”2020年4月，习近平总书记在陕西秦岭牛背梁国家级自然保护区考察时，这样告诫党员干部。</p>
+  <p>　　“大教训”是什么？</p>
+  <p>　　曾经，秦岭北麓不断出现违建别墅，严重破坏生态环境。习近平总书记多次作出重要指示批示，问题却迟迟没有得到彻底整改。</p>
+  <p>　　2018年7月，习近平总书记第六次作出重要批示，强调“首先从政治纪律查起”。这一查，抓住了要害。随后，大量违建别墅被依法拆除，多名领导干部被严肃查处。</p>
+  <p>　　秦岭违建，表面看是自然生态问题，根子上是政治生态问题。这深刻警示广大党员干部，全面从严治党首先要从政治上看，不从政治上认识问题、解决问题，就会陷入头痛医头、脚痛医脚的被动局面，就无法从根本上解决问题。</p>
+  <p>　　如今，我们党坚持以党的政治建设为统领，把政治标准和政治要求贯穿党的各项建设之中，全党上下旗帜鲜明讲政治的氛围愈发浓厚。</p>
+  <p>　　再看“坚持用严明的纪律管全党治全党”。党的十九大将纪律建设纳入党的建设总体布局，将其定义为全面从严治党的治本之策。</p>
+  <p>　　习近平总书记讲过“苹果的故事”：辽沈战役期间，锦州乡间的苹果熟了。行军路过的解放军战士虽然饥渴难耐，却严守纪律，一个都没有摘，“因为这是人民的苹果”。加强纪律性，革命无不胜。“不吃苹果”让党的军队赢得“仁义之师”的赞誉。</p>
+  <p>　　在辽西大地，“苹果的故事”流传至今。走进辽宁省锦州市政务服务大厅，有个锁着30多个审批公章的铁柜。启用公章，需职能部门、市数据局同时开锁，缺一不可。为啥这么做？当地干部说得形象：“这就好比‘不吃苹果’，规范权力是为了更好地为群众服务。”</p>
+  <p>　　从“不吃苹果”到“锁住公章”，马克思主义政党严明纪律的品格不仅没有变，而且被赋予新的内涵。形势越复杂、任务越艰巨，越是要拧紧纪律螺丝。“这样的苹果，我们现在也不能吃。”这句警言，正镌刻在新时代中国共产党人的心头。</p>
+  <p>　　凡益之道、与时偕行，守正创新是我们党在新时代治国理政的重要思想方法。《习近平党建文选》第一卷《关于坚持和发展中国特色社会主义的几个问题》一文写道：“解放思想、实事求是、与时俱进，是马克思主义活的灵魂，是我们适应新形势、认识新事物、完成新任务的根本思想武器。”</p>
+  <p>　　新时代新征程，思想伟力在火热实践中不断迸发——</p>
+  <p>　　“坚持不忘初心、牢记使命”。数百万第一书记和驻村工作队把初心刻在田垄上，以实干兑现“全面建成小康社会，一个都不能少”的庄严承诺。</p>
+  <p>　　“坚持用党的创新理论凝心铸魂”。在各级党校（行政学院）课堂上深学细悟，在改革发展一线践行运用，广大党员干部自觉做党的创新理论的坚定信仰者、忠实实践者。</p>
+  <p>　　“坚持锤炼坚强党性”。在严肃党内政治生活中淬炼，在重大斗争和急难险重任务中砥砺，在服务群众最前沿检验，党员干部自觉追求活到老、学到老、修养到老。</p>
+  <p>　　“坚持建设堪当民族复兴重任的高素质干部队伍”。坚持党管干部原则，落实新时代好干部标准，让想干事者有舞台、能干事者有平台、干成事者有激励。</p>
+  <p>　　“坚持推进作风建设常态化长效化”。各地各部门锲而不舍贯彻落实中央八项规定精神，同志关系更加清爽，政商关系亲清有度，干群关系更加密切。</p>
+  <p>　　这些生动实践都是理论创新的鲜活注脚，都是对时代之问深邃而又响亮的作答。</p>
+  <p>　　<strong>常新的理论体系</strong></p>
+  <p><strong>　　“推进理论的体系化、学理化，是理论创新的内在要求和重要途径”</strong></p>
+  <p>　　科学理论的成熟，在于其系统性、完整性、逻辑性。</p>
+  <p>　　习近平总书记指出：“推进理论的体系化、学理化，是理论创新的内在要求和重要途径。马克思主义之所以影响深远，在于其以深刻的学理揭示人类社会发展的真理性、以完备的体系论证其理论的科学性。”</p>
+  <p>　　提出新时代党的建设总要求、提出健全全面从严治党体系……品读《习近平党建文选》第一卷、第二卷，深切感悟新时代中国共产党人对管党治党规律、理论体系构建的不懈探索。《习近平党建文选》第一卷中，《探索新形势下从严治党的特点和规律》一文写道：“要注重把继承传统和改革创新结合起来，把总结自身经验和借鉴世界其他政党经验结合起来，增强从严治党的系统性、预见性、创造性、实效性”。</p>
+  <p>　　——宏观看，习近平党建思想构成一个系统完整、逻辑严密的理论体系。</p>
+  <p>　　“十四个坚持”深刻把握管党治党、兴党强党和强国复兴的内在联系，统筹党的领导和党的建设，全面深刻阐明了新时代党的建设的最高原则、战略方针、价值追求、工作布局、方法路径，坚持认识论和方法论、两点论和重点论的有机统一。</p>
+  <p>　　——具体看，每个“坚持”都是一篇大文章。</p>
+  <p>　　“坚持健全上下贯通、执行有力的组织体系”，强调党的各级组织都健全、都过硬，这样党的领导才能“如身使臂、如臂使指”。</p>
+  <p>　　新时代，从“五级书记”抓扶贫打赢脱贫攻坚战，到解决群众操心事、烦心事、揪心事，各地基层党组织和广大党员干部始终坚持以人民为中心的发展思想，发挥战斗堡垒作用和先锋模范作用，既时时放心不下，又坚持久久为功。</p>
+  <p>　　“共产党就是为老百姓服务的。我们党始终有这颗初心，坚持往前走。”今年7月，习近平总书记来到上海市黄浦区半淞园路街道市民新村居民区，调研一件民生实事——城市更新中的老旧小区改造。</p>
+  <p>　　旧房改造、城市更新是举世公认的治理难题。上海推进旧房改造几十年，一棒接着一棒，久久为功、攻坚克难。如今，这场民生攻坚战总体完成，历史性解决了“拎马桶”问题。</p>
+  <p>　　习近平总书记走进社区，走进居民家中，细看旧居新貌。居民说，现在有了自家的厨房、卫生间，生活方便多了。总书记听了很高兴。</p>
+  <p>　　调研中，习近平总书记也在思考基层治理的创新：“要进一步加强党建引领，积极探索社区党组织领导下的居委会、业委会、物业服务企业协调运行新模式，建设完整社区和便民生活圈，用心用情为居民做好事、办实事、解难事。”</p>
+  <p>　　基层是党的执政之基、力量之源。新时代以来，各地各部门深入贯彻落实新时代党的组织路线，树立大抓基层的鲜明导向。推进党支部标准化规范化建设，整顿软弱涣散村（社区）党组织……一个支部一个支部提升，一个阵地一个阵地巩固，把党的政治优势、组织优势、密切联系群众优势转化为基层治理优势。</p>
+  <p>　　“坚持落实管党治党政治责任”，关键在于健全主体明确、要求清晰的责任体系，“不明确责任，不落实责任，不追究责任，从严治党是做不到的”。</p>
+  <p>　　县委书记是“芝麻官”千钧担。2015年1月，习近平总书记专程来到中央党校县委书记研修班，谈怎样做焦裕禄式的县委书记。</p>
+  <p>　　谈到“心中有责”时，习近平总书记提及山西右玉县治沙的故事，强调“对定下来的工作部署，要一抓到底、善始善终，坚决防止走过场、一阵风”。</p>
+  <p>　　管党治党必须牵住责任制这个“牛鼻子”。党委（党组）全面从严治党主体责任，各级纪委的监督责任，党委（党组）书记第一责任人责任，领导班子成员的管党治党责任，党员、干部的具体责任……各负其责、同心协力，把管党治党各项工作任务抓实、抓细、抓到位。</p>
+  <p>　　还有“坚持制度治党、依规治党”。新时代以来，我们党先后编制三个中央党内法规制定工作五年规划，形成比较完善的党内法规体系，为党的建设提供根本性、全局性、稳定性、长期性保障。</p>
+  <p>　　…………</p>
+  <p>　　“时代在不断前进、事业在不断发展，理论创新和实践创新一刻也不能停止。”</p>
+  <p>　　习近平党建思想是一个贯通历史、现实和未来的开放思想体系。党的二十届五中全会研究持之以恒推进全面从严治党若干重大问题。新的赶考路上，习近平党建思想必将在动态中保持理论鲜活性，在发展中彰显科学预见性，必将不断开创新时代管党治党、兴党强党新局面，指引百年大党永葆活力、复兴伟业一往无前。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-27 00:00:00:0</date><author>本报记者  张  洋</author><subtitle><p> ——习近平党建思想书写马克思主义建党学说中国化时代化新篇章 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30187784</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/27/content_30187784.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/27/content_30187784.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 思想如炬，照亮新的赶考路 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 思想如炬，照亮新的赶考路 </p></h1>
+						<h2><p> ——习近平党建思想书写马克思主义建党学说中国化时代化新篇章 </p></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  张  洋
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月27日</span>&nbsp;第&nbsp;04&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　治国必先治党，党兴才能国强。</p><p>　　10月26日至29日，党的二十届五中全会在京召开，研究持之以恒推进全面从严治党若干重大问题，充分体现了百年大党永葆生机活力的清醒坚定，彰显了走好新的赶考之路的历史主动。</p><p>　　读懂今天的中国，必须读懂中国共产党。中国共产党为什么能，中国特色社会主义为什么好，归根到底是马克思主义行，是中国化时代化的马克思主义行。</p><p>　　思想如炬，照亮新的赶考路。习近平党建思想书写马克思主义建党学说中国化时代化新篇章，是加强新时代党的建设的根本遵循。新征程上，坚持以习近平党建思想为指引，我们党必将始终步履坚定、朝气蓬勃，把中国式现代化宏伟事业不断推向前进。</p><p>　　<strong>鲜明的中国气派</strong></p><p><strong>　　坚持用马克思主义之“矢”去射新时代中国之“的”</strong></p><p>　　任何科学理论，必须本土化才能真正发挥作用。</p><p>　　习近平总书记强调：“坚持用马克思主义之‘矢’去射新时代中国之‘的’”。习近平党建思想的一个鲜明特质就在于牢牢把握“两个结合”。</p><p>　　——同中国具体实际相结合，让党的领导的显著优势充分彰显。</p><p>　　中国最大的国情就是中国共产党的领导。什么是中国特色？这就是中国特色。习近平党建思想鲜明提出“十四个坚持”，其中包括“坚持党的领导是中国特色社会主义最本质的特征”“坚持党中央集中统一领导”。</p><p>　　这是被百年奋斗反复验证的硬道理。新时代以来，党和国家面临的形势之复杂、斗争之严峻、改革发展稳定任务之艰巨世所罕见、史所罕见。以习近平同志为核心的党中央就坚持和加强党的全面领导作出一系列重要部署，党总揽全局、协调各方的领导核心作用充分发挥。</p><p>　　编制实施五年规划，是一个观察视角。</p><p>　　2025年春节刚过，“十五五”规划建议起草工作正式启动，2月11日，习近平总书记主持召开文件起草组第一次全体会议，从12个方面明确要抓住一批具有重大牵引、驱动、支撑作用的战略任务，提出44个需要回答的重大问题。</p><p>　　紧接着，习近平总书记率先垂范，赴多地考察调研，主持召开部分省区市“十五五”时期经济社会发展座谈会……集思广益、集中智慧。</p><p>　　2025年10月，北京人民大会堂，党的二十届四中全会。</p><p>　　“通过！”</p><p>　　“十五五”规划建议全文约两万字，有对国内外形势的科学研判，有目标任务的系统谋划。贯穿始终的，是习近平总书记掌舵定向，引领全党全国各族人民“一步一步坚定走”。“现代化是多少代中国人苦苦追寻的目标。它曾看起来如此遥远，如今离我们越来越近。”一位文件起草组成员感慨。</p><p>　　稳经济、促发展，战贫困、建小康，控疫情、抗大灾，应变局、化危机……新时代以来，党带领人民团结奋斗，战胜一个又一个困难，取得一个又一个胜利。“两个确立”是党在新时代取得的重大政治成果。</p><p>　　习近平总书记深刻指出：“坚持党的领导是方向性问题，必须旗帜鲜明、立场坚定，决不能羞羞答答、语焉不详，决不能遮遮掩掩、搞自我麻痹。”这是马克思主义建党学说植根中国大地、经过实践检验得出的科学结论。</p><p>　　——同中华优秀传统文化相结合，让千年治世智慧融入新时代管党治党实践。</p><p>　　“如果没有中华五千年文明，哪里有什么中国特色？如果不是中国特色，哪有我们今天这么成功的中国特色社会主义道路？”中华优秀传统文化是我们党的创新理论的“根”。</p><p>　　翻阅《习近平党建文选》第一卷、第二卷，大量征引古代经典著作中的名句、典故。《着力培养选拔党和人民需要的好干部》一文阐释春秋时期宋国大夫正考父在家庙鼎上铸下的铭训；《严明党的组织纪律，增强组织纪律性》一文引用宋代朱熹的一副对联“地位清高，日月每从肩上过；门庭开豁，江山常在掌中看”；《坚持共产党人价值观》一文讲述东汉时期杨震“四知拒金”的故事……</p><p>　　“读书正业、孝慈仁爱、非义不取、为政清廉”是三苏好家风。2022年6月，习近平总书记来到四川省眉山市三苏祠，强调“涵养新时代共产党人的良好家风”。</p><p>　　作为一体推进不敢腐不能腐不想腐的基础性工程，新时代廉洁文化建设持续走深走实，廉洁主题公园、廉政教育基地、清廉村居等串珠成链，清风正气在全社会更加充盈。</p><p>　　鉴于往事、资于治道，新时代中国共产党人在“结合”中不断激活文明底蕴，中华优秀传统文化得以创造性转化、创新性发展，“坚持一体推进不敢腐不能腐不想腐”成为习近平党建思想“十四个坚持”的一个重要方面。一以贯之、一抓到底，“八项规定”成为党的建设的“金色名片”。本质上，这就是中华民族的文化主体性。有了文化主体性，中国共产党就有了引领时代的强大文化力量。</p><p>　　“问渠那得清如许？为有源头活水来。”正是坚持“两个结合”，习近平党建思想呈现鲜明的中国特色、中国风格、中国气派。</p><p>　　<strong>深邃的时代应答</strong></p><p><strong>　　“更好运用马克思主义观察时代、解读时代、引领时代”</strong></p><p>　　一切划时代的理论，都是满足时代需要的产物。</p><p>　　习近平总书记强调：“要立足时代特点，推进马克思主义时代化，更好运用马克思主义观察时代、解读时代、引领时代”。</p><p>　　问题是时代的声音，也是理论创新的起点。作为马克思主义建党学说中国化时代化的最新成果，习近平党建思想深刻回答“建设什么样的长期执政的马克思主义政党、怎样建设长期执政的马克思主义政党”这一重大时代课题。</p><p>　　——回答时代之问，要有审时度势的战略布局。</p><p>　　战略问题是一个政党、一个国家的根本性问题。随着中国特色社会主义进入新时代，“形势的发展、事业的开拓、人民的期待，都要求我们以改革创新精神全面推进党的建设新的伟大工程，全面提高党的建设科学化水平。”</p><p>　　“坚持全面从严治党”是新时代党的建设的战略方针。</p><p>　　在“从严治党”前冠以“全面”二字，就是管全党治全党，不留死角、不留盲区；就是更加突出运用治理的理念、系统的观念、辩证的思维管党治党建设党；就是锚定“国之大者”，将其纳入“四个全面”战略布局，更好发挥政治引领和政治保障作用……这是实践的发展、认识的深化。</p><p>　　——回答时代之问，要有开拓创新的实践展开。</p><p>　　我们党作为世界第一大执政党，大就要有大的样子，大也有大的难处。习近平总书记以“六个如何始终”作出深刻分析。时代化的马克思主义，正是在解决这些难题的火热实践中锻造出来的。</p><p>　　以“坚持以党的政治建设为统领”为例。党的十九大明确提出以党的政治建设为统领，强调把党的政治建设摆在首位，这凝结着新时代全面从严治党的实践探索。</p><p>　　“秦岭违建是一个大教训。”2020年4月，习近平总书记在陕西秦岭牛背梁国家级自然保护区考察时，这样告诫党员干部。</p><p>　　“大教训”是什么？</p><p>　　曾经，秦岭北麓不断出现违建别墅，严重破坏生态环境。习近平总书记多次作出重要指示批示，问题却迟迟没有得到彻底整改。</p><p>　　2018年7月，习近平总书记第六次作出重要批示，强调“首先从政治纪律查起”。这一查，抓住了要害。随后，大量违建别墅被依法拆除，多名领导干部被严肃查处。</p><p>　　秦岭违建，表面看是自然生态问题，根子上是政治生态问题。这深刻警示广大党员干部，全面从严治党首先要从政治上看，不从政治上认识问题、解决问题，就会陷入头痛医头、脚痛医脚的被动局面，就无法从根本上解决问题。</p><p>　　如今，我们党坚持以党的政治建设为统领，把政治标准和政治要求贯穿党的各项建设之中，全党上下旗帜鲜明讲政治的氛围愈发浓厚。</p><p>　　再看“坚持用严明的纪律管全党治全党”。党的十九大将纪律建设纳入党的建设总体布局，将其定义为全面从严治党的治本之策。</p><p>　　习近平总书记讲过“苹果的故事”：辽沈战役期间，锦州乡间的苹果熟了。行军路过的解放军战士虽然饥渴难耐，却严守纪律，一个都没有摘，“因为这是人民的苹果”。加强纪律性，革命无不胜。“不吃苹果”让党的军队赢得“仁义之师”的赞誉。</p><p>　　在辽西大地，“苹果的故事”流传至今。走进辽宁省锦州市政务服务大厅，有个锁着30多个审批公章的铁柜。启用公章，需职能部门、市数据局同时开锁，缺一不可。为啥这么做？当地干部说得形象：“这就好比‘不吃苹果’，规范权力是为了更好地为群众服务。”</p><p>　　从“不吃苹果”到“锁住公章”，马克思主义政党严明纪律的品格不仅没有变，而且被赋予新的内涵。形势越复杂、任务越艰巨，越是要拧紧纪律螺丝。“这样的苹果，我们现在也不能吃。”这句警言，正镌刻在新时代中国共产党人的心头。</p><p>　　凡益之道、与时偕行，守正创新是我们党在新时代治国理政的重要思想方法。《习近平党建文选》第一卷《关于坚持和发展中国特色社会主义的几个问题》一文写道：“解放思想、实事求是、与时俱进，是马克思主义活的灵魂，是我们适应新形势、认识新事物、完成新任务的根本思想武器。”</p><p>　　新时代新征程，思想伟力在火热实践中不断迸发——</p><p>　　“坚持不忘初心、牢记使命”。数百万第一书记和驻村工作队把初心刻在田垄上，以实干兑现“全面建成小康社会，一个都不能少”的庄严承诺。</p><p>　　“坚持用党的创新理论凝心铸魂”。在各级党校（行政学院）课堂上深学细悟，在改革发展一线践行运用，广大党员干部自觉做党的创新理论的坚定信仰者、忠实实践者。</p><p>　　“坚持锤炼坚强党性”。在严肃党内政治生活中淬炼，在重大斗争和急难险重任务中砥砺，在服务群众最前沿检验，党员干部自觉追求活到老、学到老、修养到老。</p><p>　　“坚持建设堪当民族复兴重任的高素质干部队伍”。坚持党管干部原则，落实新时代好干部标准，让想干事者有舞台、能干事者有平台、干成事者有激励。</p><p>　　“坚持推进作风建设常态化长效化”。各地各部门锲而不舍贯彻落实中央八项规定精神，同志关系更加清爽，政商关系亲清有度，干群关系更加密切。</p><p>　　这些生动实践都是理论创新的鲜活注脚，都是对时代之问深邃而又响亮的作答。</p><p>　　<strong>常新的理论体系</strong></p><p><strong>　　“推进理论的体系化、学理化，是理论创新的内在要求和重要途径”</strong></p><p>　　科学理论的成熟，在于其系统性、完整性、逻辑性。</p><p>　　习近平总书记指出：“推进理论的体系化、学理化，是理论创新的内在要求和重要途径。马克思主义之所以影响深远，在于其以深刻的学理揭示人类社会发展的真理性、以完备的体系论证其理论的科学性。”</p><p>　　提出新时代党的建设总要求、提出健全全面从严治党体系……品读《习近平党建文选》第一卷、第二卷，深切感悟新时代中国共产党人对管党治党规律、理论体系构建的不懈探索。《习近平党建文选》第一卷中，《探索新形势下从严治党的特点和规律》一文写道：“要注重把继承传统和改革创新结合起来，把总结自身经验和借鉴世界其他政党经验结合起来，增强从严治党的系统性、预见性、创造性、实效性”。</p><p>　　——宏观看，习近平党建思想构成一个系统完整、逻辑严密的理论体系。</p><p>　　“十四个坚持”深刻把握管党治党、兴党强党和强国复兴的内在联系，统筹党的领导和党的建设，全面深刻阐明了新时代党的建设的最高原则、战略方针、价值追求、工作布局、方法路径，坚持认识论和方法论、两点论和重点论的有机统一。</p><p>　　——具体看，每个“坚持”都是一篇大文章。</p><p>　　“坚持健全上下贯通、执行有力的组织体系”，强调党的各级组织都健全、都过硬，这样党的领导才能“如身使臂、如臂使指”。</p><p>　　新时代，从“五级书记”抓扶贫打赢脱贫攻坚战，到解决群众操心事、烦心事、揪心事，各地基层党组织和广大党员干部始终坚持以人民为中心的发展思想，发挥战斗堡垒作用和先锋模范作用，既时时放心不下，又坚持久久为功。</p><p>　　“共产党就是为老百姓服务的。我们党始终有这颗初心，坚持往前走。”今年7月，习近平总书记来到上海市黄浦区半淞园路街道市民新村居民区，调研一件民生实事——城市更新中的老旧小区改造。</p><p>　　旧房改造、城市更新是举世公认的治理难题。上海推进旧房改造几十年，一棒接着一棒，久久为功、攻坚克难。如今，这场民生攻坚战总体完成，历史性解决了“拎马桶”问题。</p><p>　　习近平总书记走进社区，走进居民家中，细看旧居新貌。居民说，现在有了自家的厨房、卫生间，生活方便多了。总书记听了很高兴。</p><p>　　调研中，习近平总书记也在思考基层治理的创新：“要进一步加强党建引领，积极探索社区党组织领导下的居委会、业委会、物业服务企业协调运行新模式，建设完整社区和便民生活圈，用心用情为居民做好事、办实事、解难事。”</p><p>　　基层是党的执政之基、力量之源。新时代以来，各地各部门深入贯彻落实新时代党的组织路线，树立大抓基层的鲜明导向。推进党支部标准化规范化建设，整顿软弱涣散村（社区）党组织……一个支部一个支部提升，一个阵地一个阵地巩固，把党的政治优势、组织优势、密切联系群众优势转化为基层治理优势。</p><p>　　“坚持落实管党治党政治责任”，关键在于健全主体明确、要求清晰的责任体系，“不明确责任，不落实责任，不追究责任，从严治党是做不到的”。</p><p>　　县委书记是“芝麻官”千钧担。2015年1月，习近平总书记专程来到中央党校县委书记研修班，谈怎样做焦裕禄式的县委书记。</p><p>　　谈到“心中有责”时，习近平总书记提及山西右玉县治沙的故事，强调“对定下来的工作部署，要一抓到底、善始善终，坚决防止走过场、一阵风”。</p><p>　　管党治党必须牵住责任制这个“牛鼻子”。党委（党组）全面从严治党主体责任，各级纪委的监督责任，党委（党组）书记第一责任人责任，领导班子成员的管党治党责任，党员、干部的具体责任……各负其责、同心协力，把管党治党各项工作任务抓实、抓细、抓到位。</p><p>　　还有“坚持制度治党、依规治党”。新时代以来，我们党先后编制三个中央党内法规制定工作五年规划，形成比较完善的党内法规体系，为党的建设提供根本性、全局性、稳定性、长期性保障。</p><p>　　…………</p><p>　　“时代在不断前进、事业在不断发展，理论创新和实践创新一刻也不能停止。”</p><p>　　习近平党建思想是一个贯通历史、现实和未来的开放思想体系。党的二十届五中全会研究持之以恒推进全面从严治党若干重大问题。新的赶考路上，习近平党建思想必将在动态中保持理论鲜活性，在发展中彰显科学预见性，必将不断开创新时代管党治党、兴党强党新局面，指引百年大党永葆活力、复兴伟业一往无前。</p><!--/enpcontent--><!--enpproperty <date>2026-10-27 00:00:00:0</date><author>本报记者  张  洋</author><subtitle><p> ——习近平党建思想书写马克思主义建党学说中国化时代化新篇章 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30187784</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/27/content_30187784.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/27/content_30187784.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 思想如炬，照亮新的赶考路 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>
