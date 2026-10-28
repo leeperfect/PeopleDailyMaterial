@@ -84,3 +84,5 @@ data/exports/wechat_html/
 data/exports/idea_magazine_site/
 data/peopleapp_opinion/site/
 .local/
+# 本地日报采集前的核心库快照不进入 Git
+/data/core/backups/

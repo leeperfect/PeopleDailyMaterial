@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 让居民“都愿意进来坐一坐”（大国小家） </title>
+		<meta name="author" content='第018版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.803488,30.926012749999998,396.196512,30.926012749999998,396.196512,124.9926375,3.803488,124.9926375" shape="polygon" href="content_30188122.html"><Area coords="396.196512,135.30130649999998,6.97306,135.30130649999998,6.97306,143.03280825000002,6.97306,447.78290025,396.196512,447.78290025" shape="polygon" href="content_30188123.html"><Area coords="3.803488,458.7358625,396.196512,458.7358625,396.196512,572.1312445,3.803488,572.1312445" shape="polygon" href="content_30188124.html"><Area coords="332.171156,441.33997924999994,396.196512,441.33997924999994,396.196512,449.07148100000006,332.171156,449.07148100000006" shape="polygon" href="content_30188125.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/28/417a3657-1f10-4eaf-a60e-c4d3800eba23.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第18版：民生
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30188122.html"> 停车收费要算清“分钟账”（多棱镜） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188123.html"> 让居民“都愿意进来坐一坐”（大国小家） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188124.html"> 把马养好，带乡亲们一起增收（枝叶关情） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188125.html"> 本版责编：陆凡冰 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月28日
+							Wed</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_10.html">10版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_11.html">11版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_12.html">12版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_13.html">13版：生态</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_14.html">14版：专题</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_15.html">15版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_18.html">18版：民生</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_19.html">19版：财经</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/28/node_18.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30188122.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30188124.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p> 　　清晨7点，上海市黄浦区半淞园路街道保屯路211弄17号，市民新村居民区党群服务站开门了。</p>
+  <p>　　脆生生的蔬菜一筐筐卸下车，摆进党群服务站的“家门口生鲜直供点”，番茄、土豆、胡萝卜……晨光下样样水灵。“菜好，就在家门口，价格还实惠。”小孙子今天点名要吃豆芽，居民龚伟兴一抓一大把。“你看，这豆芽干干爽爽的。”</p>
+  <p>　　党群服务站把“菜篮子”送到居民身边，站里的饮水机是老人们最习惯的普通款。“我们希望无论什么时候，老百姓都愿意进来坐一坐，党群服务站就是要服务好‘最后100米’。”半淞园路街道相关负责同志笑着说。</p>
+  <p>　　从清晨到夜晚，记者跟随采访这家党群服务站的一天，发现党群服务的温度就充盈在居民的日常生活中。</p>
+  <p>　　“大家住得好了，服务更要好”</p>
+  <p>　　上午9点，买菜高峰期刚过，市民新村业委会第三次会议在党群服务站内召开。</p>
+  <p>　　“小区主通道是消防通道，严禁停放车辆”“梯度收费，业主要比租户便宜些”“要参考周边小区的标准”……</p>
+  <p>　　刚刚选举产生的业委会，正在讨论“三规”修订。从《业主大会议事规则》到《管理规约》《专项维修资金管理规约》，业主大会召开在即，准备工作得做到前头。</p>
+  <p>　　新的市民新村业委会，服务新的市民新村居民区。</p>
+  <p>　　市民新村始建于1957年，是当年首批“小梁薄板”结构房屋的工人新村。老旧楼房没有独立厨卫。“一层楼10户人家，共用一个卫生间，大家都在拎马桶。天花板漏水，滴在床中央。”过去的窘迫，退休居民朱国莉历历在目。</p>
+  <p>　　2023年，市民新村启动改造，对4幢不成套房屋全部拆除重建。改造项目“一户一方案”，并采取“抽户+原拆原建”的改造方式，为回搬居民配备独立厨卫和电梯。到2026年3月底，新房正式迎来交房，居民分批回搬。</p>
+  <p>　　从“错峰做饭”“撑伞炒菜”到独立厨卫、电梯直达，朱国莉和300多户老邻居的居住条件发生天翻地覆的变化。</p>
+  <p>　　2026年7月15日，习近平总书记在上海实地考察黄浦区半淞园路街道市民新村居民区，走进朱国莉家，仔细察看居住情况。总书记说，“一枝一叶总关情”，老百姓的生活是家事，更是国事。共产党就是为老百姓服务的，只有人民群众安居乐业、生活舒心，党和政府才放心。希望你们把退休生活安排好，把家庭建设搞得更好。</p>
+  <p>　　朱国莉说，自己深深记着总书记考察时的一幕幕。她在家里小阳台上支起小桌子，摆上早上刚买回家的芋艿和咖啡，喝着咖啡，推窗见绿。</p>
+  <p>　　新房清清爽爽，老邻居还是老邻居。居民区里，全新的多层小楼、郁郁葱葱的绿化、公共座椅等便民设施一应俱全。党群服务站里社群服务区、读书角、儿童游乐区……麻雀虽小五脏俱全，功能紧贴着日常生活需求打造，成为居民的共享客厅。老伙伴相约到党群服务站，大家坐在一起闲聊，都感慨真是赶上了好时候。</p>
+  <p>　　“真是一个天上一个地下。”居民戈惠君拉着记者参观她的新居，门口贴着“乔迁之喜”。她和耄耋之年的老伴刚结伴去党群服务站买菜，老两口手挽着手回家。“现在便当啊，坐着电梯上下楼，党群服务站就在家门口，下雨天也不怕。”</p>
+  <p>　　打赢了“螺蛳壳里做道场”的城市更新硬仗，党群服务站托住的是居民对“住好”的期盼。会议现场，业委会主任李小虎自感责任很重，成员都是新当选的，居委会派出90后社工陈玮萍担任业委会“小秘书”。她细心提醒，“停车规则要便于理解、容易执行”“需要增加约定时间，多长时间不缴停车费，车位就要收回重新流通。”</p>
+  <p>　　陈玮萍说，现在居民对小区归属感都很强，“大家住得好了，服务更要好。”</p>
+  <p>　　“能不能把服务再往前延伸一步？开展一些居民喜闻乐见的活动”</p>
+  <p>　　中午时分，党群服务站短暂安静下来。</p>
+  <p>　　趁着空当，便民菜摊工作人员整理起瓜果蔬菜。宁夏青、太湖菜、矮脚菜……新鲜小菜都卖得好，冬瓜只剩一小块了，再抱一个出来。秋月梨还剩4只……今年7月1日便民蔬果摊开张，小小几个摊位，能提供二十几种时令蔬果。每日更新，价格亲民，从早上7点开到晚上7点。买块姜，带两个百合，都是居民餐桌上用得着、买得起、拎得回的家常生鲜。</p>
+  <p>　　市民新村居民区党总支书记、居委会主任张蔚坦言，开设生鲜直供点，最初是为了解决老旧小区老年人买菜难的痛点，运行几天后，大家发现，许多老人买完菜、量好血压并不急着走，而是在党群服务站里坐着聊聊天、歇歇脚。“我们就想，能不能把服务再往前延伸一步？开展一些居民喜闻乐见的活动。”张蔚说。</p>
+  <p>　　下午两点越剧队排练，1点不到，队长卢佩卿就到了。《城隍庙》《送凤冠》《我家有个小九妹》……十来个戏迷，能完整排出一整台越剧专场。“我们原来在公园、地下室排练，现在每周固定时间来党群服务站，条件好多了。”卢佩卿和队员们正忙着准备近期的演出，“街坊们都在问我们要票。”</p>
+  <p>　　合唱队规模更大。“洪湖水呀浪呀么浪打浪啊……”上午业委会的会议桌，下午给了合唱队。阿姨们漂漂亮亮围坐一堂，举着歌谱高歌。“大家注意啊，声音不能断，要连着唱下去。”老师指导得激情澎湃，队员们唱得全情投入。</p>
+  <p>　　百姓生活，热热闹闹，也有七嘴八舌。有居民在留言墙上写下，“带娃看书很好”“买菜真的很方便”“服务好，有冰激凌就更好了”，也有居民提意见，“菜摊噪声影响读书角的阅读，有了甜蜜的烦恼。”街道相关负责人笑着说，“已经通过错时引导、图书外借等方式协调，兼顾多元需求。”</p>
+  <p>　　党群服务站墙上贴着一张“活动表”，排满了居民议事会、越剧队表演、电影观摩、半日医馆等社群活动的时间。便民服务同样不少，理发、免费磨刀、手机免费贴膜、宽带故障咨询……张蔚介绍，党群服务站兼顾外部资源对接与内部挖潜，活动大多匹配社区老年群体占比高的实际需求，而暑期就重点面向青少年推出专项活动。</p>
+  <p>　　这边厢，居民们坐在板凳上攀谈，手里拿着号码牌，自发排着队，等着俞纪伟给居民免费按摩。小俞身有残疾，自学了盲人按摩。“他手法特别好，我的肩颈按了几次后舒服多了。”居民们热情推介。小俞喜欢这份“被需要”的感觉，“感谢居委会给我搭了这个平台。我们残疾人受到社会照顾，也要用实际行动来回馈社会。”</p>
+  <p>　　废旧纸箱、塑料瓶别乱扔，党群服务站里还会开展置换活动，平日里积攒的废旧纸箱、塑料瓶、闲置物品，不用再随手丢弃、白白浪费，统一投放至社区回收箱中，实打实兑换抽纸、垃圾袋、食用盐、洗衣液等居家必备品，暖心又便民。</p>
+  <p>　　“任何时候来，这里都是热热闹闹的”</p>
+  <p>　　傍晚，律师沈珮正在党群服务站轮值，有居民前来咨询租房合同纠纷，沈珮当场帮忙打电话与租客沟通。“很多小纠纷，其实只是缺一个桥梁。大家相信法律的权威，我们也是尽量把矛盾化解在基层。”沈珮说。</p>
+  <p>　　党群服务站配备“3+X”一站式社区服务体系，提供物业服务、居委会基础服务、“一网通办”远程服务，以及X类轮值特色服务，每周固定轮值驻点服务，覆盖城管、法律顾问、家庭医生、养老顾问等非高频刚需。</p>
+  <p>　　“物业管理处在党群服务站有一个日间接待窗口，也有日间报修与应急抢修的热线电话，24小时服务，居民群众有问题能够保证随叫随到。”南房集团党委书记、董事长暴智浩介绍。</p>
+  <p>　　在寸土寸金的上海市中心，市民新村居民区一度连马桶都无处安放，为何还能在黄金位置开设党群服务站？</p>
+  <p>　　张蔚透露，这里曾是小区门口的市场监管所。配合城市更新，街道向上级部门申请将其调整为社区共享空间，把最好的资源留给居民。站点开放时间从早7点至晚9点，所有服务和设施均以贴合居民实际需求为核心标准，支持临时休憩、纳凉。“任何时候来，这里都是热热闹闹的。”</p>
+  <p>　　市民新村居民区是2023年《上海市旧住房成套改造和拆除重建实施管理办法（试行）》实施后，上海市中心首个大体量旧住房拆除改造项目。项目推进过程中，居民知晓率、选票送达率、投票参与率、自主签约率均达100%。</p>
+  <p>　　旧住房成套改造尽量让居民留在原生社区，熟悉的地段、邻里、生活圈子这些看不见的资产，一并留住，让在这里住了几十年的人，还能守着熟悉的街巷，社区的人情味还在。</p>
+  <p>　　这也让做好安居乐业“后半篇文章”的作用，更加凸显。</p>
+  <p>　　“基层是联系服务群众的家园，把更多资源、服务、管理放到基层，是提升治理效能、更好为群众办实事解难题的关键所在，也是群众可感可触可及的关键所在。”黄浦区委书记徐惠丽说。</p>
+  <p>　　暮色降临，晚风微拂。菜摊临近收摊，有居民跑来切了片冬瓜，“这冬瓜质量好啊，烧出来糯糯的。”朱国莉提了一篮子菜，“孙女要吃牛肋条，买了土豆、卷心菜、西红柿，罗宋汤也能烧了。”街坊们闲聊着，欢笑声、唠嗑声，在保屯路四散开来。</p>
+  <p>　　党群服务站，成为居民身边明亮温暖的灯光。 </p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>本报记者  曹玲娟</author><subtitle><p> ——上海市民新村居民区党群服务站的一天 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188123</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188123.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188123.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 让居民“都愿意进来坐一坐”（大国小家） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 让居民“都愿意进来坐一坐”（大国小家） </p></h1>
+						<h2><p> ——上海市民新村居民区党群服务站的一天 </p></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  曹玲娟
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月28日</span>&nbsp;第&nbsp;18&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202610/28/710ce4fa-ffc7-4ad2-a923-5250f2f4a10e.jpg" style="max-width: 100%;" _src="../../../pic/202610/28/710ce4fa-ffc7-4ad2-a923-5250f2f4a10e.jpg" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　居民在市民新村居民区党群服务站买菜。</p>"></p><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202610/28/f5e5c1a1-81c0-4682-a35d-3282541f692b.jpg" style="max-width: 100%;" _src="../../../pic/202610/28/f5e5c1a1-81c0-4682-a35d-3282541f692b.jpg" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　合唱队在市民新村居民区党群服务站排练。</p>"></p><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202610/28/85233b73-4c66-447c-b7f8-4f50e58bdfa3.jpg" style="max-width: 100%;" _src="../../../pic/202610/28/85233b73-4c66-447c-b7f8-4f50e58bdfa3.jpg" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　律师沈珮（左）正在提供法律咨询服务。</p><p>　　以上图片均为人民网记者王初摄</p>"></p><p> 　　清晨7点，上海市黄浦区半淞园路街道保屯路211弄17号，市民新村居民区党群服务站开门了。</p><p>　　脆生生的蔬菜一筐筐卸下车，摆进党群服务站的“家门口生鲜直供点”，番茄、土豆、胡萝卜……晨光下样样水灵。“菜好，就在家门口，价格还实惠。”小孙子今天点名要吃豆芽，居民龚伟兴一抓一大把。“你看，这豆芽干干爽爽的。”</p><p>　　党群服务站把“菜篮子”送到居民身边，站里的饮水机是老人们最习惯的普通款。“我们希望无论什么时候，老百姓都愿意进来坐一坐，党群服务站就是要服务好‘最后100米’。”半淞园路街道相关负责同志笑着说。</p><p>　　从清晨到夜晚，记者跟随采访这家党群服务站的一天，发现党群服务的温度就充盈在居民的日常生活中。</p><p>　　“大家住得好了，服务更要好”</p><p>　　上午9点，买菜高峰期刚过，市民新村业委会第三次会议在党群服务站内召开。</p><p>　　“小区主通道是消防通道，严禁停放车辆”“梯度收费，业主要比租户便宜些”“要参考周边小区的标准”……</p><p>　　刚刚选举产生的业委会，正在讨论“三规”修订。从《业主大会议事规则》到《管理规约》《专项维修资金管理规约》，业主大会召开在即，准备工作得做到前头。</p><p>　　新的市民新村业委会，服务新的市民新村居民区。</p><p>　　市民新村始建于1957年，是当年首批“小梁薄板”结构房屋的工人新村。老旧楼房没有独立厨卫。“一层楼10户人家，共用一个卫生间，大家都在拎马桶。天花板漏水，滴在床中央。”过去的窘迫，退休居民朱国莉历历在目。</p><p>　　2023年，市民新村启动改造，对4幢不成套房屋全部拆除重建。改造项目“一户一方案”，并采取“抽户+原拆原建”的改造方式，为回搬居民配备独立厨卫和电梯。到2026年3月底，新房正式迎来交房，居民分批回搬。</p><p>　　从“错峰做饭”“撑伞炒菜”到独立厨卫、电梯直达，朱国莉和300多户老邻居的居住条件发生天翻地覆的变化。</p><p>　　2026年7月15日，习近平总书记在上海实地考察黄浦区半淞园路街道市民新村居民区，走进朱国莉家，仔细察看居住情况。总书记说，“一枝一叶总关情”，老百姓的生活是家事，更是国事。共产党就是为老百姓服务的，只有人民群众安居乐业、生活舒心，党和政府才放心。希望你们把退休生活安排好，把家庭建设搞得更好。</p><p>　　朱国莉说，自己深深记着总书记考察时的一幕幕。她在家里小阳台上支起小桌子，摆上早上刚买回家的芋艿和咖啡，喝着咖啡，推窗见绿。</p><p>　　新房清清爽爽，老邻居还是老邻居。居民区里，全新的多层小楼、郁郁葱葱的绿化、公共座椅等便民设施一应俱全。党群服务站里社群服务区、读书角、儿童游乐区……麻雀虽小五脏俱全，功能紧贴着日常生活需求打造，成为居民的共享客厅。老伙伴相约到党群服务站，大家坐在一起闲聊，都感慨真是赶上了好时候。</p><p>　　“真是一个天上一个地下。”居民戈惠君拉着记者参观她的新居，门口贴着“乔迁之喜”。她和耄耋之年的老伴刚结伴去党群服务站买菜，老两口手挽着手回家。“现在便当啊，坐着电梯上下楼，党群服务站就在家门口，下雨天也不怕。”</p><p>　　打赢了“螺蛳壳里做道场”的城市更新硬仗，党群服务站托住的是居民对“住好”的期盼。会议现场，业委会主任李小虎自感责任很重，成员都是新当选的，居委会派出90后社工陈玮萍担任业委会“小秘书”。她细心提醒，“停车规则要便于理解、容易执行”“需要增加约定时间，多长时间不缴停车费，车位就要收回重新流通。”</p><p>　　陈玮萍说，现在居民对小区归属感都很强，“大家住得好了，服务更要好。”</p><p>　　“能不能把服务再往前延伸一步？开展一些居民喜闻乐见的活动”</p><p>　　中午时分，党群服务站短暂安静下来。</p><p>　　趁着空当，便民菜摊工作人员整理起瓜果蔬菜。宁夏青、太湖菜、矮脚菜……新鲜小菜都卖得好，冬瓜只剩一小块了，再抱一个出来。秋月梨还剩4只……今年7月1日便民蔬果摊开张，小小几个摊位，能提供二十几种时令蔬果。每日更新，价格亲民，从早上7点开到晚上7点。买块姜，带两个百合，都是居民餐桌上用得着、买得起、拎得回的家常生鲜。</p><p>　　市民新村居民区党总支书记、居委会主任张蔚坦言，开设生鲜直供点，最初是为了解决老旧小区老年人买菜难的痛点，运行几天后，大家发现，许多老人买完菜、量好血压并不急着走，而是在党群服务站里坐着聊聊天、歇歇脚。“我们就想，能不能把服务再往前延伸一步？开展一些居民喜闻乐见的活动。”张蔚说。</p><p>　　下午两点越剧队排练，1点不到，队长卢佩卿就到了。《城隍庙》《送凤冠》《我家有个小九妹》……十来个戏迷，能完整排出一整台越剧专场。“我们原来在公园、地下室排练，现在每周固定时间来党群服务站，条件好多了。”卢佩卿和队员们正忙着准备近期的演出，“街坊们都在问我们要票。”</p><p>　　合唱队规模更大。“洪湖水呀浪呀么浪打浪啊……”上午业委会的会议桌，下午给了合唱队。阿姨们漂漂亮亮围坐一堂，举着歌谱高歌。“大家注意啊，声音不能断，要连着唱下去。”老师指导得激情澎湃，队员们唱得全情投入。</p><p>　　百姓生活，热热闹闹，也有七嘴八舌。有居民在留言墙上写下，“带娃看书很好”“买菜真的很方便”“服务好，有冰激凌就更好了”，也有居民提意见，“菜摊噪声影响读书角的阅读，有了甜蜜的烦恼。”街道相关负责人笑着说，“已经通过错时引导、图书外借等方式协调，兼顾多元需求。”</p><p>　　党群服务站墙上贴着一张“活动表”，排满了居民议事会、越剧队表演、电影观摩、半日医馆等社群活动的时间。便民服务同样不少，理发、免费磨刀、手机免费贴膜、宽带故障咨询……张蔚介绍，党群服务站兼顾外部资源对接与内部挖潜，活动大多匹配社区老年群体占比高的实际需求，而暑期就重点面向青少年推出专项活动。</p><p>　　这边厢，居民们坐在板凳上攀谈，手里拿着号码牌，自发排着队，等着俞纪伟给居民免费按摩。小俞身有残疾，自学了盲人按摩。“他手法特别好，我的肩颈按了几次后舒服多了。”居民们热情推介。小俞喜欢这份“被需要”的感觉，“感谢居委会给我搭了这个平台。我们残疾人受到社会照顾，也要用实际行动来回馈社会。”</p><p>　　废旧纸箱、塑料瓶别乱扔，党群服务站里还会开展置换活动，平日里积攒的废旧纸箱、塑料瓶、闲置物品，不用再随手丢弃、白白浪费，统一投放至社区回收箱中，实打实兑换抽纸、垃圾袋、食用盐、洗衣液等居家必备品，暖心又便民。</p><p>　　“任何时候来，这里都是热热闹闹的”</p><p>　　傍晚，律师沈珮正在党群服务站轮值，有居民前来咨询租房合同纠纷，沈珮当场帮忙打电话与租客沟通。“很多小纠纷，其实只是缺一个桥梁。大家相信法律的权威，我们也是尽量把矛盾化解在基层。”沈珮说。</p><p>　　党群服务站配备“3+X”一站式社区服务体系，提供物业服务、居委会基础服务、“一网通办”远程服务，以及X类轮值特色服务，每周固定轮值驻点服务，覆盖城管、法律顾问、家庭医生、养老顾问等非高频刚需。</p><p>　　“物业管理处在党群服务站有一个日间接待窗口，也有日间报修与应急抢修的热线电话，24小时服务，居民群众有问题能够保证随叫随到。”南房集团党委书记、董事长暴智浩介绍。</p><p>　　在寸土寸金的上海市中心，市民新村居民区一度连马桶都无处安放，为何还能在黄金位置开设党群服务站？</p><p>　　张蔚透露，这里曾是小区门口的市场监管所。配合城市更新，街道向上级部门申请将其调整为社区共享空间，把最好的资源留给居民。站点开放时间从早7点至晚9点，所有服务和设施均以贴合居民实际需求为核心标准，支持临时休憩、纳凉。“任何时候来，这里都是热热闹闹的。”</p><p>　　市民新村居民区是2023年《上海市旧住房成套改造和拆除重建实施管理办法（试行）》实施后，上海市中心首个大体量旧住房拆除改造项目。项目推进过程中，居民知晓率、选票送达率、投票参与率、自主签约率均达100%。</p><p>　　旧住房成套改造尽量让居民留在原生社区，熟悉的地段、邻里、生活圈子这些看不见的资产，一并留住，让在这里住了几十年的人，还能守着熟悉的街巷，社区的人情味还在。</p><p>　　这也让做好安居乐业“后半篇文章”的作用，更加凸显。</p><p>　　“基层是联系服务群众的家园，把更多资源、服务、管理放到基层，是提升治理效能、更好为群众办实事解难题的关键所在，也是群众可感可触可及的关键所在。”黄浦区委书记徐惠丽说。</p><p>　　暮色降临，晚风微拂。菜摊临近收摊，有居民跑来切了片冬瓜，“这冬瓜质量好啊，烧出来糯糯的。”朱国莉提了一篮子菜，“孙女要吃牛肋条，买了土豆、卷心菜、西红柿，罗宋汤也能烧了。”街坊们闲聊着，欢笑声、唠嗑声，在保屯路四散开来。</p><p>　　党群服务站，成为居民身边明亮温暖的灯光。 </p><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>本报记者  曹玲娟</author><subtitle><p> ——上海市民新村居民区党群服务站的一天 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188123</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188123.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188123.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 让居民“都愿意进来坐一坐”（大国小家） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

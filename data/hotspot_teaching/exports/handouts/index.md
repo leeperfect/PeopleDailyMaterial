@@ -1,6 +1,6 @@
 # 热点授课资料目录
 
-共 99 套；原有 49 个热点、新增 50 个主题。资料截至 2026-10-27。
+共 101 套；原有 49 个热点、新增 52 个主题。资料截至 2026-10-28。
 
 每套包含教师详稿、学生练习单和课件提纲。学生版不含答案；教师稿含参考答案与课堂追问。均为教研稿，授课前请结合班型试讲。
 
@@ -65,6 +65,12 @@
 | 政务热线边界与公共信任 | [打开](peopleapp_hotspot_5be75ac333-teacher.md) | [打开](peopleapp_hotspot_5be75ac333-student.md) | [打开](peopleapp_hotspot_5be75ac333-slides.md) |
 | 停车收费与精细化治理 | [打开](peopleapp_hotspot_c53f6034d6-teacher.md) | [打开](peopleapp_hotspot_c53f6034d6-student.md) | [打开](peopleapp_hotspot_c53f6034d6-slides.md) |
 | 服务驿站与有效覆盖 | [打开](peopleapp_hotspot_e76c769a01-teacher.md) | [打开](peopleapp_hotspot_e76c769a01-student.md) | [打开](peopleapp_hotspot_e76c769a01-slides.md) |
+
+## 城市治理与消费公平
+
+| 课程 | 教师稿 | 学生练习 | 课件提纲 |
+| --- | --- | --- | --- |
+| 停车收费怎样算清每一分钟 | [打开](peopleapp_hotspot_lesson_12cd0ce199-teacher.md) | [打开](peopleapp_hotspot_lesson_12cd0ce199-student.md) | [打开](peopleapp_hotspot_lesson_12cd0ce199-slides.md) |
 
 ## 基层治理与公共服务
 
@@ -209,6 +215,12 @@
 | 课程 | 教师稿 | 学生练习 | 课件提纲 |
 | --- | --- | --- | --- |
 | 居民用电负增长如何读数 | [打开](peopleapp_hotspot_lesson_30ce850d98-teacher.md) | [打开](peopleapp_hotspot_lesson_30ce850d98-student.md) | [打开](peopleapp_hotspot_lesson_30ce850d98-slides.md) |
+
+## 绿色发展与交通治理
+
+| 课程 | 教师稿 | 学生练习 | 课件提纲 |
+| --- | --- | --- | --- |
+| 绿色交通不能只换新能源车 | [打开](peopleapp_hotspot_lesson_7a0818ed5b-teacher.md) | [打开](peopleapp_hotspot_lesson_7a0818ed5b-student.md) | [打开](peopleapp_hotspot_lesson_7a0818ed5b-slides.md) |
 
 ## 网络生态与社会信任
 

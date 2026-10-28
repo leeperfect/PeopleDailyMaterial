@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> “我将无我，不负人民”的时代答卷 </title>
+		<meta name="author" content='第001版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.771628,97.4147405,194.867432,97.4147405,194.867432,394.0869105,3.771628,394.0869105" shape="polygon" href="content_30188024.html"><Area coords="396.64952,31.6281625,396.64952,3.7953795,205.553712,3.7953795,205.553712,31.6281625,205.553712,58.828382250000004,396.64952,58.828382250000004" shape="polygon" href="content_30188025.html"><Area coords="396.64952,97.4147405,396.64952,69.5819575,205.553712,69.5819575,205.553712,97.4147405,205.553712,124.61496025000001,396.64952,124.61496025000001" shape="polygon" href="content_30188026.html"><Area coords="205.553712,135.3685355,396.64952,135.3685355,396.64952,313.75137775,205.553712,313.75137775" shape="polygon" href="content_30188027.html"><Area coords="290.415336,402.94279600000004,290.415336,397.24972675000004,290.415336,323.2398265,205.553712,323.2398265,205.553712,397.24972675000004,155.893948,402.94279600000004,155.893948,535.14851525,290.415336,535.14851525" shape="polygon" href="content_30188028.html"><Area coords="301.101616,325.7700795,396.64952,325.7700795,396.64952,571.2046205,301.101616,571.2046205" shape="polygon" href="content_30188029.html"><Area coords="145.207668,403.57535925,3.771628,403.57535925,3.771628,438.366338,3.771628,445.32453375,3.771628,571.2046205,145.207668,571.2046205" shape="polygon" href="content_30188030.html"><Area coords="159.665576,543.3718375,293.55836,543.3718375,293.55836,568.04180425,159.665576,568.04180425" shape="polygon" href="content_30188031.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/28/ab911d2e-3305-45bb-b4f8-b933deb361c2.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第01版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30188024.html"> “我将无我，不负人民”的时代答卷 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188025.html"> 习近平致电祝贺卢拉当选连任巴西总统 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188026.html"> 习近平向日本前首相福田康夫遗属致唁电 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188027.html"> 全面从严治党就在身边 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188028.html"> 我国风光累计装机容量超20亿千瓦 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188029.html"> 因地制宜推进乡村全面振兴（活力中国调研行） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188030.html"> 小家电产业焕新升级（先进制造业发展一线见闻）</a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188031.html"> 导读 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月28日
+							Wed</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_10.html">10版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_11.html">11版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_12.html">12版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_13.html">13版：生态</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_14.html">14版：专题</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_15.html">15版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_18.html">18版：民生</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_19.html">19版：财经</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/28/node_01.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30188025.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　“我将无我，不负人民”。在新时代治国理政的答卷中，意义深远，永载史册。</p>
+  <p>　　“我将无我，不负人民”，是中国共产党人赤子之心的真情流露，是初心使命的真切表达，深刻昭示习近平党建思想蕴含的深厚为民情怀，充分体现新时代我们党坚持党要管党、全面从严治党，赢得强党强国的历史主动。</p>
+  <p>　　从国家博物馆《复兴之路》展览，到中共一大会址和南湖红船，再到延安革命纪念地，一次次宣示清晰指向“承前启后、继往开来，把我们的党建设好”。</p>
+  <p>　　新时代启航的历史时刻，习近平总书记的三句重要论述切中关键——</p>
+  <p>　　党的十八届一中全会，“人民群众始终是我们党的坚实执政基础”；</p>
+  <p>　　十八届中央政治局常委同中外记者见面，“我们的责任，就是同全党同志一道，坚持党要管党、从严治党，切实解决自身存在的突出问题”；</p>
+  <p>　　十八届中央政治局第一次集体学习，“党坚强有力，党同人民保持血肉联系，国家就繁荣稳定，人民就幸福安康。”</p>
+  <p>　　“新征程是充满光荣和梦想的远征，是党和人民的新长征。”</p>
+  <p>　　纪念中国工农红军长征胜利90周年大会上，习近平总书记抚今追昔，就弘扬伟大长征精神、走好新的长征路提出“五个必须”的明确要求，强调“必须坚持党的领导、加强党的建设”。</p>
+  <p>　　“我们的目标很宏伟，也很朴素，归根到底就是让老百姓过上更好的日子。”</p>
+  <p>　　“我将无我，不负人民”，从中能读懂大党大国领袖不忘初心、牢记使命的情怀担当，持之以恒推进全面从严治党的战略远见。</p>
+  <p>　　<strong>“我将无我、不负人民，这就是我终生的信念”</strong></p>
+  <p>　　习近平总书记今年以来的考察足迹，镜头记录了两组温情画面——</p>
+  <p>　　春节前夕，在北京新街口街道父母食堂，察看菜品、价格和就餐环境；春季学期，在北京四中雄安校区食堂，叮嘱学校一定要确保学生饮食的安全和营养。</p>
+  <p>　　“加强食品安全监管，守护好‘舌尖上的安全’。”10月，习近平总书记在全国卫生与健康大会上强调。</p>
+  <p>　　“一老一小”两桌餐，盛的是寻常饭菜，装的是幸福生活。</p>
+  <p>　　夏播时节，走进山东德州一户村民家，了解党的“三农”政策是不是全部落实到位；顶着酷暑，深入上海居民家中察看居住情况，“共产党就是为老百姓服务的”。</p>
+  <p>　　一城一乡两家人，两次推门入户，牵挂的是万家冷暖。</p>
+  <p>　　“以党的初心为本心、以党的使命为生命”。10月16日，《求是》杂志发表习近平总书记重要文章《以更高标准、更实举措推进全面从严治党》。</p>
+  <p>　　“民之所忧，我必念之；民之所盼，我必行之。”一言一行，映照中国共产党始终坚守的初心使命：从石库门到天安门，从兴业路到复兴路，我们党所付出的一切努力、进行的一切斗争、作出的一切牺牲，都是为了人民幸福和民族复兴。</p>
+  <p>　　拉长岁月的镜头，更见这句重要论断的深邃意蕴。两篇文字，铺展着在思索中萌芽、于实践中生长的为民情怀。</p>
+  <p>　　一篇文章，延安插队的习近平同志反复捧读，这就是《为人民服务》，其中写道：“我们这个队伍完全是为着解放人民的，是彻底地为人民的利益工作的。”</p>
+  <p>　　一则短文，主政浙江的习近平同志写下《一切为民者，则民向往之》：“党员干部与人民群众的关系就是公仆与主人的关系。离开了人民，我们将一无所有、一事无成”。</p>
+  <p>　　“一个人也好，一个政党也好，最难得的就是历经沧桑而初心不改、饱经风霜而本色依旧。”</p>
+  <p>　　从农村生产大队党支部书记，到主政一方的地方领导，再到新时代中国领航人，一路走来，人民立场一以贯之：“人民对美好生活的向往，就是我们的奋斗目标。”</p>
+  <p>　　“我将无我，不负人民”，心中装着全体人民的责任担当。</p>
+  <p>　　“苦瘠甲天下”的甘肃定西、零下30多摄氏度的内蒙古阿尔山林区、海拔2500多米的四川彝寨……习近平总书记去得最多的地方就是基层，进村入户、访贫问苦，“各族群众、家家户户都是我的牵挂。”</p>
+  <p>　　“这个季节夜里睡觉凉不凉”“一年吃高血压的药要多少钱”“孩子在哪里上学”……面对面交流，心贴心叮嘱。</p>
+  <p>　　有尽精微的关怀备至，亦可见致广大的长远谋划。“十五五”规划开展编制工作时，习近平总书记亲自担任规划建议文件起草组组长。如今，翻开沉甸甸的规划纲要，“加大保障和改善民生力度&nbsp;&nbsp;扎实推进全体人民共同富裕”单独成篇。25项民生工程，覆盖教育、医疗、社会关爱服务等方方面面。</p>
+  <p>　　“党的最大政治优势是密切联系群众，党执政后的最大危险是脱离群众，要始终把人民放在心中最高位置，站稳人民立场，厚植为民情怀”，字字显党性、见本色。</p>
+  <p>　　脱贫攻坚，50多次调研扶贫工作，走遍14个集中连片特困地区；谋划改革，主持召开中央深改组、深改委会议数十次，全面深化改革启动后出台的改革举措数以千计……一串串连点成线，勾勒出“人民的勤务员”始终如一的价值追求。</p>
+  <p>　　“我将无我，不负人民”，以身许党许国的精神境界。</p>
+  <p>　　对于马克思主义者来说，什么是幸福？</p>
+  <p>　　马克思在《青年在选择职业时的考虑》中这样定义：“历史承认那些为共同目标劳动因而自己变得高尚的人是伟大人物，经验赞美那些为大多数人带来幸福的人是最幸福的人。”</p>
+  <p>　　跨越时空，价值坚守一脉相承，新时代中国共产党人初心如磐。在习近平总书记眼中，“世界上最大的幸福莫过于为人民幸福而奋斗。”</p>
+  <p>　　犹记建党百年时的言之谆谆：在中央党校（国家行政学院），勉励年轻干部“不断追求‘我将无我，不负人民’的精神境界”；在人民大会堂，礼赞“七一勋章”获得者“诠释了共产党人‘我将无我、不负人民’的崇高情怀”，激励广大党员、干部牢记党的初心使命……</p>
+  <p>　　为中国人民谋幸福、为中华民族谋复兴，“忘记这个初心和使命，党就会改变性质、改变颜色，就会失去人民、失去未来。”</p>
+  <p>　　“既有办大事、建伟业的巨大优势，也面临治党治国的特殊难题。”二十届中央纪委二次全会，习近平总书记从党和国家事业发展全局角度，用“六个如何始终”作出深刻阐释，首要就是“如何始终不忘初心、牢记使命”。</p>
+  <p>　　中国共产党根基在人民、血脉在人民、力量在人民。</p>
+  <p>　　“我将无我、不负人民，这就是我终生的信念”“我要用毕生精力和全部生命来回报党和人民的信任”。从承诺到践诺，这是一名共产党员的深情告白，是人民领袖引领全党始终与人民风雨同舟的知行合一。</p>
+  <p>　　<strong>我将无我，不负人民，“坚决同一切损害党的先进性和纯洁性的因素作斗争”</strong></p>
+  <p>　　“为人民出政绩、以实干出政绩”。树立和践行正确政绩观学习教育今年在全党深入开展。</p>
+  <p>　　同向发力，“持之以恒推进全面从严治党”贯穿于新时代全面从严治党的实践，也体现在今年治国理政的重要节点：</p>
+  <p>　　在二十届中央纪委五次全会上强调，更加坚决有力地贯彻落实党中央重大决策部署，更加科学有效地把权力关进制度笼子，更加清醒坚定地推进反腐败斗争；</p>
+  <p>　　全国两会期间指出，管党治党越有效，经济社会发展的保障就越有力；</p>
+  <p>　　在庆祝中国共产党成立105周年大会上强调，坚定信心、接续奋斗，必须持之以恒推进全面从严治党；</p>
+  <p>　　9月21日，中央政治局会议研究持之以恒推进全面从严治党重大问题；</p>
+  <p>　　地方考察期间，始终关注加强党的领导和党的建设……</p>
+  <p>　　“十五五”开局之年，习近平总书记多次强调持之以恒推进全面从严治党。</p>
+  <p>　　从党和人民的关系中去考量。</p>
+  <p>　　“我将无我、不负人民，始终代表最广大人民根本利益”，才能检视自身、常思己过，“坚决同一切损害党的先进性和纯洁性的因素作斗争”。</p>
+  <p>　　“民心是最大的政治”。一个没有自己特殊利益的党，才敢于刀刃向内，才经得起人民的监督。</p>
+  <p>　　1988年，习近平同志赴任福建宁德，调研中不少群众反映干部违纪违法占地建私房，百姓称之为“马路边的腐败”。他严肃发问：“老百姓意见大不大？”“是不是当前影响积极性最大的问题？”“将近三百万人该得罪，还是这两三千人该得罪？”一场清房行动就此展开。</p>
+  <p>　　党的十八大以来，这份非凡的使命担当持续彰显。</p>
+  <p>　　“如果管党不力、治党不严，人民群众反映强烈的党内突出问题得不到解决，那我们党迟早会失去执政资格，不可避免被历史淘汰”“不是没有掂量过。但我们认准了党的宗旨使命，认准了人民的期待”……</p>
+  <p>　　参加党的二十大广西代表团讨论，习近平总书记感叹：“党中央以‘十年磨一剑’的定力推进全面从严治党，以‘得罪千百人，不负十四亿’的使命担当推进史无前例的反腐败斗争。”</p>
+  <p>　　这是一场输不起也决不能输的重大斗争，一组数字见证决心：</p>
+  <p>　　10月27日，中央纪委国家监委公布今年9月全国查处违反中央八项规定精神问题汇总情况。这是连续第157个月公布月报数据；</p>
+  <p>　　同日，通报今年1至9月全国纪检监察机关监督检查审查调查情况。立案80万件，其中立案省部级及以上干部73人、厅局级干部4203人、县处级干部3.4万人、乡科级干部11.4万人；立案现任或原任村党支部书记、村委会主任7.9万人。</p>
+  <p>　　“以全面从严治党的实际成效取信于民”。今年全国两会，习近平总书记参加江苏代表团审议时指出。</p>
+  <p>　　大党立信，成于扎实成效，始于民心期盼。</p>
+  <p>　　“您是腐败分子的克星，全国人民的福星！”2014年12月，江苏镇江丹徒区世业镇，一位老党员紧紧握住总书记的手。正是在这次江苏调研，总书记首次提出“全面从严治党”。</p>
+  <p>　　持之以恒推进全面从严治党，靠规矩，也靠教育。</p>
+  <p>　　2016年10月，党的十八届六中全会审议通过《关于新形势下党内政治生活的若干准则》《中国共产党党内监督条例》。习近平总书记就文件起草向全会作说明时讲得清楚：</p>
+  <p>　　“在开展党的群众路线教育实践活动和‘三严三实’专题教育中，不少同志建议结合新的形势，制定一个加强和规范党内政治生活的文件。”</p>
+  <p>　　学习贯彻习近平新时代中国特色社会主义思想主题教育、党纪学习教育、深入贯彻中央八项规定精神学习教育……新时代以来历次党内学习教育，集中用力又抓常抓长，我们党通过一次次思想洗礼，以清醒的历史自觉继续答好“窑洞之问”。</p>
+  <p>　　淬火成钢的革命性锻造，赢得了什么？</p>
+  <p>　　我将无我，不负人民，“才能让人民信赖我们、支持我们，真心实意帮助我们改正缺点，坚定跟着党一起奋斗”。</p>
+  <p>　　习近平总书记深刻指出：“党通过前所未有的反腐倡廉斗争，赢得了保持同人民群众的血肉联系、人民衷心拥护的历史主动，赢得了全党高度团结统一、走在时代前列、带领人民实现中华民族伟大复兴的历史主动。”</p>
+  <p>　　党的十八届六中全会，明确习近平总书记为党中央的核心、全党的核心；党的十九届六中全会《决议》，鲜明提出“两个确立”。</p>
+  <p>　　这是历史的选择，也是时代的选择、人民的选择，充分反映了全党共同意志和全国人民共同心声，从根本上确保了中华民族伟大复兴历史大势不可逆转、不可阻挡。</p>
+  <p>　　今天，我们党更大了，党的队伍更大了，党的事业更大了，我们肩负的责任也更大了，人民对党的要求也更大了。“十五五”时期发展任务艰巨、形势严峻复杂，对全面从严治党提出了新的更高要求。</p>
+  <p>　　“‘虽千万人，吾往矣’！”</p>
+  <p>　　从解决人民群众反映最强烈、对党的执政基础威胁最大的突出问题靶向施策、综合施策，管党治党的每一步都彰显着“我将无我、不负人民”的坚定决心。</p>
+  <p>　　<strong>作为中国领导人，“我的态度是‘我将无我，不负人民’”</strong></p>
+  <p>　　“愿学习中国治国理政经验，特别是习近平主席‘我将无我、不负人民’的情怀”。8月，中亚之行，吉尔吉斯斯坦总统扎帕罗夫在同习近平主席会谈时由衷感佩。</p>
+  <p>　　这一幕，让人们回想起2019年的亚平宁半岛。</p>
+  <p>　　在意大利众议院，面对外方领导人提问当选中国国家主席的心情，习近平主席目光沉静而充满力量：“我将无我，不负人民。我愿意做到一个‘无我’的状态，为中国的发展奉献自己。”</p>
+  <p>　　赤子之心，人民至上。这些年，习近平主席在外事场合常用深沉的语言讲述同一个主题——</p>
+  <p>　　“作为国家领导人，人民把我放在这样的工作岗位上，我就要始终把人民放在心中最高的位置，牢记责任重于泰山，时刻把人民群众的安危冷暖放在心上”；</p>
+  <p>　　“作为中国领导人，我能够为14亿中国人民服务，同他们一起创造美好生活，是一个重大的挑战，也是一个重大的责任。我的态度是‘我将无我，不负人民’”……</p>
+  <p>　　为什么多次提及人民、感念人民？</p>
+  <p>　　因为，这是自诞生之日起就把“人民”二字鲜明写在旗帜上的政党，这是从黄土地一路走来、始终一心为民的大党大国领袖。</p>
+  <p>　　“深深植根人民，始终拥有坚实根基”，在庆祝中国共产党成立105周年大会上，习近平总书记将其凝练为党的六大优秀特质之一。</p>
+  <p>　　“历史和人民选择了中国共产党，中国共产党也没有辜负历史和人民的选择。”牢记和践行初心使命，是贯穿我们党百余年奋斗史的一条主线。</p>
+  <p>　　截至今年9月底，全国基本养老保险、失业保险、工伤保险基金累计结余11.2万亿元；预计到年底，95%以上社区卫生服务中心和乡镇卫生院能够提供儿科诊疗服务；全年粮食生产有望再获丰收，中国人的饭碗端得更牢、更好；“六张网”织密铺展，推动东西优势互补、共享基建红利……一项项发展成果不断增强人民获得感、幸福感、安全感。</p>
+  <p>　　时代车轮滚滚向前，思想昭示历久弥新。</p>
+  <p>　　建党105周年、红军长征胜利90周年、“十五五”开局之年——站在历史交汇处，望向新时代的历史性成就、历史性变革，习近平总书记的这番话意蕴深远：</p>
+  <p>　　“我们党已经发展成为具有重大全球影响力的世界第一大执政党，得到人民衷心拥护和支持，是中国特色社会主义事业的坚强领导核心，完全无愧为伟大光荣正确的党。”</p>
+  <p>　　历史给出答案，也启示未来。</p>
+  <p>　　2021年7月，中国共产党与世界政党领导人峰会举行，主题是“为人民谋幸福：政党的责任”。</p>
+  <p>　　“中国共产党将坚持以人民为中心的发展思想，在宏阔的时空维度中思考民族复兴和人类进步的深刻命题，同各国政党一起努力，创造更加美好的未来。”</p>
+  <p>　　以人民为中心的发展思想，在中国与世界的频密互动中释放出强大感召力、影响力。</p>
+  <p>　　习近平主席在二十国集团领导人第十九次峰会上，分享中国脱贫攻坚实践，娓娓讲述“弱鸟”先飞、高飞带来的信心和可能；在联合国发展峰会上，阐明“发展的最终目的是为了人民”……一次次讲述让中国智慧深入人心。</p>
+  <p>　　从共建“一带一路”到四大全球倡议，从照亮万家灯火的清洁能源到急人所急的减贫惠民合作计划……一项项合作让中国方案惠及全球。</p>
+  <p>　　“我将无我，不负人民”的中国声音，在世界聚光灯下发出，也在国际社会收获共鸣，“向东看”“去中国”成为时代潮流。</p>
+  <p>　　今年，北京人民大会堂，习近平主席同外国政要会谈会见的现场，提供了读懂中国的视角：</p>
+  <p>　　来华进行国事访问的美国总统特朗普表示：“习近平主席是伟大的领导人，中国是伟大的国家，我十分尊重习近平主席和中国人民。”</p>
+  <p>　　博茨瓦纳总统博科回顾访华行程从福建开始，“那是您曾经工作过的地方，您在那里取得了了不起的成就”。</p>
+  <p>　　多哥部长会议主席福雷的访华首站在陕西，“我在那边还看见了您本人的一张照片，和当地的人民在一起”……</p>
+  <p>　　近年来，一些外国政要在访华期间参访城市、乡村，实地感受中国式现代化的万千气象。越来越多外国政党领导人的行程中有着共同一站：中国共产党历史展览馆。</p>
+  <p>　　穿行于这部立体的壮丽史诗中，感悟百年大党治国理政经验。行至“我将无我&nbsp;&nbsp;不负人民”展区，习近平总书记与各族人民在一起的照片墙引人驻足凝望：</p>
+  <p>　　湖南湘西十八洞村，和村民在一起；河北唐山社区文化活动室，和居民在一起；北京市少年宫，和孩子们在一起……</p>
+  <p>　　一个个瞬间定格山高水远的跋涉，组成一幅人民领袖同人民群众心手相连的画卷。展区前方，八个大字熠熠生辉——</p>
+  <p>　　“我将无我&nbsp;&nbsp;不负人民”。</p>
+  <p>　　（本报记者程龙、杨翘楚、王嵘参与采写）</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>本报记者  黄  超  陈世涵  邝西曦</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188024</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188024.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188024.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> “我将无我，不负人民”的时代答卷 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> “我将无我，不负人民”的时代答卷 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  黄  超  陈世涵  邝西曦
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月28日</span>&nbsp;第&nbsp;01&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　“我将无我，不负人民”。在新时代治国理政的答卷中，意义深远，永载史册。</p><p>　　“我将无我，不负人民”，是中国共产党人赤子之心的真情流露，是初心使命的真切表达，深刻昭示习近平党建思想蕴含的深厚为民情怀，充分体现新时代我们党坚持党要管党、全面从严治党，赢得强党强国的历史主动。</p><p>　　从国家博物馆《复兴之路》展览，到中共一大会址和南湖红船，再到延安革命纪念地，一次次宣示清晰指向“承前启后、继往开来，把我们的党建设好”。</p><p>　　新时代启航的历史时刻，习近平总书记的三句重要论述切中关键——</p><p>　　党的十八届一中全会，“人民群众始终是我们党的坚实执政基础”；</p><p>　　十八届中央政治局常委同中外记者见面，“我们的责任，就是同全党同志一道，坚持党要管党、从严治党，切实解决自身存在的突出问题”；</p><p>　　十八届中央政治局第一次集体学习，“党坚强有力，党同人民保持血肉联系，国家就繁荣稳定，人民就幸福安康。”</p><p>　　“新征程是充满光荣和梦想的远征，是党和人民的新长征。”</p><p>　　纪念中国工农红军长征胜利90周年大会上，习近平总书记抚今追昔，就弘扬伟大长征精神、走好新的长征路提出“五个必须”的明确要求，强调“必须坚持党的领导、加强党的建设”。</p><p>　　“我们的目标很宏伟，也很朴素，归根到底就是让老百姓过上更好的日子。”</p><p>　　“我将无我，不负人民”，从中能读懂大党大国领袖不忘初心、牢记使命的情怀担当，持之以恒推进全面从严治党的战略远见。</p><p>　　<strong>“我将无我、不负人民，这就是我终生的信念”</strong></p><p>　　习近平总书记今年以来的考察足迹，镜头记录了两组温情画面——</p><p>　　春节前夕，在北京新街口街道父母食堂，察看菜品、价格和就餐环境；春季学期，在北京四中雄安校区食堂，叮嘱学校一定要确保学生饮食的安全和营养。</p><p>　　“加强食品安全监管，守护好‘舌尖上的安全’。”10月，习近平总书记在全国卫生与健康大会上强调。</p><p>　　“一老一小”两桌餐，盛的是寻常饭菜，装的是幸福生活。</p><p>　　夏播时节，走进山东德州一户村民家，了解党的“三农”政策是不是全部落实到位；顶着酷暑，深入上海居民家中察看居住情况，“共产党就是为老百姓服务的”。</p><p>　　一城一乡两家人，两次推门入户，牵挂的是万家冷暖。</p><p>　　“以党的初心为本心、以党的使命为生命”。10月16日，《求是》杂志发表习近平总书记重要文章《以更高标准、更实举措推进全面从严治党》。</p><p>　　“民之所忧，我必念之；民之所盼，我必行之。”一言一行，映照中国共产党始终坚守的初心使命：从石库门到天安门，从兴业路到复兴路，我们党所付出的一切努力、进行的一切斗争、作出的一切牺牲，都是为了人民幸福和民族复兴。</p><p>　　拉长岁月的镜头，更见这句重要论断的深邃意蕴。两篇文字，铺展着在思索中萌芽、于实践中生长的为民情怀。</p><p>　　一篇文章，延安插队的习近平同志反复捧读，这就是《为人民服务》，其中写道：“我们这个队伍完全是为着解放人民的，是彻底地为人民的利益工作的。”</p><p>　　一则短文，主政浙江的习近平同志写下《一切为民者，则民向往之》：“党员干部与人民群众的关系就是公仆与主人的关系。离开了人民，我们将一无所有、一事无成”。</p><p>　　“一个人也好，一个政党也好，最难得的就是历经沧桑而初心不改、饱经风霜而本色依旧。”</p><p>　　从农村生产大队党支部书记，到主政一方的地方领导，再到新时代中国领航人，一路走来，人民立场一以贯之：“人民对美好生活的向往，就是我们的奋斗目标。”</p><p>　　“我将无我，不负人民”，心中装着全体人民的责任担当。</p><p>　　“苦瘠甲天下”的甘肃定西、零下30多摄氏度的内蒙古阿尔山林区、海拔2500多米的四川彝寨……习近平总书记去得最多的地方就是基层，进村入户、访贫问苦，“各族群众、家家户户都是我的牵挂。”</p><p>　　“这个季节夜里睡觉凉不凉”“一年吃高血压的药要多少钱”“孩子在哪里上学”……面对面交流，心贴心叮嘱。</p><p>　　有尽精微的关怀备至，亦可见致广大的长远谋划。“十五五”规划开展编制工作时，习近平总书记亲自担任规划建议文件起草组组长。如今，翻开沉甸甸的规划纲要，“加大保障和改善民生力度&nbsp;&nbsp;扎实推进全体人民共同富裕”单独成篇。25项民生工程，覆盖教育、医疗、社会关爱服务等方方面面。</p><p>　　“党的最大政治优势是密切联系群众，党执政后的最大危险是脱离群众，要始终把人民放在心中最高位置，站稳人民立场，厚植为民情怀”，字字显党性、见本色。</p><p>　　脱贫攻坚，50多次调研扶贫工作，走遍14个集中连片特困地区；谋划改革，主持召开中央深改组、深改委会议数十次，全面深化改革启动后出台的改革举措数以千计……一串串连点成线，勾勒出“人民的勤务员”始终如一的价值追求。</p><p>　　“我将无我，不负人民”，以身许党许国的精神境界。</p><p>　　对于马克思主义者来说，什么是幸福？</p><p>　　马克思在《青年在选择职业时的考虑》中这样定义：“历史承认那些为共同目标劳动因而自己变得高尚的人是伟大人物，经验赞美那些为大多数人带来幸福的人是最幸福的人。”</p><p>　　跨越时空，价值坚守一脉相承，新时代中国共产党人初心如磐。在习近平总书记眼中，“世界上最大的幸福莫过于为人民幸福而奋斗。”</p><p>　　犹记建党百年时的言之谆谆：在中央党校（国家行政学院），勉励年轻干部“不断追求‘我将无我，不负人民’的精神境界”；在人民大会堂，礼赞“七一勋章”获得者“诠释了共产党人‘我将无我、不负人民’的崇高情怀”，激励广大党员、干部牢记党的初心使命……</p><p>　　为中国人民谋幸福、为中华民族谋复兴，“忘记这个初心和使命，党就会改变性质、改变颜色，就会失去人民、失去未来。”</p><p>　　“既有办大事、建伟业的巨大优势，也面临治党治国的特殊难题。”二十届中央纪委二次全会，习近平总书记从党和国家事业发展全局角度，用“六个如何始终”作出深刻阐释，首要就是“如何始终不忘初心、牢记使命”。</p><p>　　中国共产党根基在人民、血脉在人民、力量在人民。</p><p>　　“我将无我、不负人民，这就是我终生的信念”“我要用毕生精力和全部生命来回报党和人民的信任”。从承诺到践诺，这是一名共产党员的深情告白，是人民领袖引领全党始终与人民风雨同舟的知行合一。</p><p>　　<strong>我将无我，不负人民，“坚决同一切损害党的先进性和纯洁性的因素作斗争”</strong></p><p>　　“为人民出政绩、以实干出政绩”。树立和践行正确政绩观学习教育今年在全党深入开展。</p><p>　　同向发力，“持之以恒推进全面从严治党”贯穿于新时代全面从严治党的实践，也体现在今年治国理政的重要节点：</p><p>　　在二十届中央纪委五次全会上强调，更加坚决有力地贯彻落实党中央重大决策部署，更加科学有效地把权力关进制度笼子，更加清醒坚定地推进反腐败斗争；</p><p>　　全国两会期间指出，管党治党越有效，经济社会发展的保障就越有力；</p><p>　　在庆祝中国共产党成立105周年大会上强调，坚定信心、接续奋斗，必须持之以恒推进全面从严治党；</p><p>　　9月21日，中央政治局会议研究持之以恒推进全面从严治党重大问题；</p><p>　　地方考察期间，始终关注加强党的领导和党的建设……</p><p>　　“十五五”开局之年，习近平总书记多次强调持之以恒推进全面从严治党。</p><p>　　从党和人民的关系中去考量。</p><p>　　“我将无我、不负人民，始终代表最广大人民根本利益”，才能检视自身、常思己过，“坚决同一切损害党的先进性和纯洁性的因素作斗争”。</p><p>　　“民心是最大的政治”。一个没有自己特殊利益的党，才敢于刀刃向内，才经得起人民的监督。</p><p>　　1988年，习近平同志赴任福建宁德，调研中不少群众反映干部违纪违法占地建私房，百姓称之为“马路边的腐败”。他严肃发问：“老百姓意见大不大？”“是不是当前影响积极性最大的问题？”“将近三百万人该得罪，还是这两三千人该得罪？”一场清房行动就此展开。</p><p>　　党的十八大以来，这份非凡的使命担当持续彰显。</p><p>　　“如果管党不力、治党不严，人民群众反映强烈的党内突出问题得不到解决，那我们党迟早会失去执政资格，不可避免被历史淘汰”“不是没有掂量过。但我们认准了党的宗旨使命，认准了人民的期待”……</p><p>　　参加党的二十大广西代表团讨论，习近平总书记感叹：“党中央以‘十年磨一剑’的定力推进全面从严治党，以‘得罪千百人，不负十四亿’的使命担当推进史无前例的反腐败斗争。”</p><p>　　这是一场输不起也决不能输的重大斗争，一组数字见证决心：</p><p>　　10月27日，中央纪委国家监委公布今年9月全国查处违反中央八项规定精神问题汇总情况。这是连续第157个月公布月报数据；</p><p>　　同日，通报今年1至9月全国纪检监察机关监督检查审查调查情况。立案80万件，其中立案省部级及以上干部73人、厅局级干部4203人、县处级干部3.4万人、乡科级干部11.4万人；立案现任或原任村党支部书记、村委会主任7.9万人。</p><p>　　“以全面从严治党的实际成效取信于民”。今年全国两会，习近平总书记参加江苏代表团审议时指出。</p><p>　　大党立信，成于扎实成效，始于民心期盼。</p><p>　　“您是腐败分子的克星，全国人民的福星！”2014年12月，江苏镇江丹徒区世业镇，一位老党员紧紧握住总书记的手。正是在这次江苏调研，总书记首次提出“全面从严治党”。</p><p>　　持之以恒推进全面从严治党，靠规矩，也靠教育。</p><p>　　2016年10月，党的十八届六中全会审议通过《关于新形势下党内政治生活的若干准则》《中国共产党党内监督条例》。习近平总书记就文件起草向全会作说明时讲得清楚：</p><p>　　“在开展党的群众路线教育实践活动和‘三严三实’专题教育中，不少同志建议结合新的形势，制定一个加强和规范党内政治生活的文件。”</p><p>　　学习贯彻习近平新时代中国特色社会主义思想主题教育、党纪学习教育、深入贯彻中央八项规定精神学习教育……新时代以来历次党内学习教育，集中用力又抓常抓长，我们党通过一次次思想洗礼，以清醒的历史自觉继续答好“窑洞之问”。</p><p>　　淬火成钢的革命性锻造，赢得了什么？</p><p>　　我将无我，不负人民，“才能让人民信赖我们、支持我们，真心实意帮助我们改正缺点，坚定跟着党一起奋斗”。</p><p>　　习近平总书记深刻指出：“党通过前所未有的反腐倡廉斗争，赢得了保持同人民群众的血肉联系、人民衷心拥护的历史主动，赢得了全党高度团结统一、走在时代前列、带领人民实现中华民族伟大复兴的历史主动。”</p><p>　　党的十八届六中全会，明确习近平总书记为党中央的核心、全党的核心；党的十九届六中全会《决议》，鲜明提出“两个确立”。</p><p>　　这是历史的选择，也是时代的选择、人民的选择，充分反映了全党共同意志和全国人民共同心声，从根本上确保了中华民族伟大复兴历史大势不可逆转、不可阻挡。</p><p>　　今天，我们党更大了，党的队伍更大了，党的事业更大了，我们肩负的责任也更大了，人民对党的要求也更大了。“十五五”时期发展任务艰巨、形势严峻复杂，对全面从严治党提出了新的更高要求。</p><p>　　“‘虽千万人，吾往矣’！”</p><p>　　从解决人民群众反映最强烈、对党的执政基础威胁最大的突出问题靶向施策、综合施策，管党治党的每一步都彰显着“我将无我、不负人民”的坚定决心。</p><p>　　<strong>作为中国领导人，“我的态度是‘我将无我，不负人民’”</strong></p><p>　　“愿学习中国治国理政经验，特别是习近平主席‘我将无我、不负人民’的情怀”。8月，中亚之行，吉尔吉斯斯坦总统扎帕罗夫在同习近平主席会谈时由衷感佩。</p><p>　　这一幕，让人们回想起2019年的亚平宁半岛。</p><p>　　在意大利众议院，面对外方领导人提问当选中国国家主席的心情，习近平主席目光沉静而充满力量：“我将无我，不负人民。我愿意做到一个‘无我’的状态，为中国的发展奉献自己。”</p><p>　　赤子之心，人民至上。这些年，习近平主席在外事场合常用深沉的语言讲述同一个主题——</p><p>　　“作为国家领导人，人民把我放在这样的工作岗位上，我就要始终把人民放在心中最高的位置，牢记责任重于泰山，时刻把人民群众的安危冷暖放在心上”；</p><p>　　“作为中国领导人，我能够为14亿中国人民服务，同他们一起创造美好生活，是一个重大的挑战，也是一个重大的责任。我的态度是‘我将无我，不负人民’”……</p><p>　　为什么多次提及人民、感念人民？</p><p>　　因为，这是自诞生之日起就把“人民”二字鲜明写在旗帜上的政党，这是从黄土地一路走来、始终一心为民的大党大国领袖。</p><p>　　“深深植根人民，始终拥有坚实根基”，在庆祝中国共产党成立105周年大会上，习近平总书记将其凝练为党的六大优秀特质之一。</p><p>　　“历史和人民选择了中国共产党，中国共产党也没有辜负历史和人民的选择。”牢记和践行初心使命，是贯穿我们党百余年奋斗史的一条主线。</p><p>　　截至今年9月底，全国基本养老保险、失业保险、工伤保险基金累计结余11.2万亿元；预计到年底，95%以上社区卫生服务中心和乡镇卫生院能够提供儿科诊疗服务；全年粮食生产有望再获丰收，中国人的饭碗端得更牢、更好；“六张网”织密铺展，推动东西优势互补、共享基建红利……一项项发展成果不断增强人民获得感、幸福感、安全感。</p><p>　　时代车轮滚滚向前，思想昭示历久弥新。</p><p>　　建党105周年、红军长征胜利90周年、“十五五”开局之年——站在历史交汇处，望向新时代的历史性成就、历史性变革，习近平总书记的这番话意蕴深远：</p><p>　　“我们党已经发展成为具有重大全球影响力的世界第一大执政党，得到人民衷心拥护和支持，是中国特色社会主义事业的坚强领导核心，完全无愧为伟大光荣正确的党。”</p><p>　　历史给出答案，也启示未来。</p><p>　　2021年7月，中国共产党与世界政党领导人峰会举行，主题是“为人民谋幸福：政党的责任”。</p><p>　　“中国共产党将坚持以人民为中心的发展思想，在宏阔的时空维度中思考民族复兴和人类进步的深刻命题，同各国政党一起努力，创造更加美好的未来。”</p><p>　　以人民为中心的发展思想，在中国与世界的频密互动中释放出强大感召力、影响力。</p><p>　　习近平主席在二十国集团领导人第十九次峰会上，分享中国脱贫攻坚实践，娓娓讲述“弱鸟”先飞、高飞带来的信心和可能；在联合国发展峰会上，阐明“发展的最终目的是为了人民”……一次次讲述让中国智慧深入人心。</p><p>　　从共建“一带一路”到四大全球倡议，从照亮万家灯火的清洁能源到急人所急的减贫惠民合作计划……一项项合作让中国方案惠及全球。</p><p>　　“我将无我，不负人民”的中国声音，在世界聚光灯下发出，也在国际社会收获共鸣，“向东看”“去中国”成为时代潮流。</p><p>　　今年，北京人民大会堂，习近平主席同外国政要会谈会见的现场，提供了读懂中国的视角：</p><p>　　来华进行国事访问的美国总统特朗普表示：“习近平主席是伟大的领导人，中国是伟大的国家，我十分尊重习近平主席和中国人民。”</p><p>　　博茨瓦纳总统博科回顾访华行程从福建开始，“那是您曾经工作过的地方，您在那里取得了了不起的成就”。</p><p>　　多哥部长会议主席福雷的访华首站在陕西，“我在那边还看见了您本人的一张照片，和当地的人民在一起”……</p><p>　　近年来，一些外国政要在访华期间参访城市、乡村，实地感受中国式现代化的万千气象。越来越多外国政党领导人的行程中有着共同一站：中国共产党历史展览馆。</p><p>　　穿行于这部立体的壮丽史诗中，感悟百年大党治国理政经验。行至“我将无我&nbsp;&nbsp;不负人民”展区，习近平总书记与各族人民在一起的照片墙引人驻足凝望：</p><p>　　湖南湘西十八洞村，和村民在一起；河北唐山社区文化活动室，和居民在一起；北京市少年宫，和孩子们在一起……</p><p>　　一个个瞬间定格山高水远的跋涉，组成一幅人民领袖同人民群众心手相连的画卷。展区前方，八个大字熠熠生辉——</p><p>　　“我将无我&nbsp;&nbsp;不负人民”。</p><p>　　（本报记者程龙、杨翘楚、王嵘参与采写）</p><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>本报记者  黄  超  陈世涵  邝西曦</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188024</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188024.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188024.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> “我将无我，不负人民”的时代答卷 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

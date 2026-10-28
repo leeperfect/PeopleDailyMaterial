@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 完善农家书屋功能  提升乡村阅读服务效能（专题深思） </title>
+		<meta name="author" content='第009版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.734248,30.99559925,396.452652,30.99559925,396.452652,339.68647100000004,3.734248,339.68647100000004" shape="polygon" href="content_30188075.html"><Area coords="6.84612,354.23542575,163.06216,354.23542575,163.06216,568.6743675,6.84612,568.6743675" shape="polygon" href="content_30188076.html"><Area coords="396.452652,396.6171635,396.452652,354.23542575,173.64252799999997,354.23542575,173.64252799999997,396.6171635,173.64252799999997,571.2046205,396.452652,571.2046205" shape="polygon" href="content_30188077.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/28/f2a8dfc1-89dc-4e00-ae85-b62b231bb4a8.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第09版：理论
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30188075.html"> 新时代全面从严治党体系的鲜明特点和重大意义（深入学习贯彻习近平新时代中国特色社会主义思想） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188076.html"> 深耕潜绩  固本致远（思想纵横） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188077.html"> 完善农家书屋功能  提升乡村阅读服务效能（专题深思） </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月28日
+							Wed</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_10.html">10版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_11.html">11版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_12.html">12版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_13.html">13版：生态</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_14.html">14版：专题</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_15.html">15版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_18.html">18版：民生</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_19.html">19版：财经</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/28/node_09.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30188076.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p> 　　阅读是人类获取知识、启智增慧、培养道德的重要途径。习近平总书记致信祝贺首届全民阅读大会强调：“希望全社会都参与到阅读中来，形成爱读书、读好书、善读书的浓厚氛围。”农家书屋是保障农民阅读权益、促进乡村阅读的基础性工程，对于推动农村精神文明建设、助力乡村全面振兴具有重要意义。今年6月印发的《推进农家书屋改革提升促进乡村阅读行动方案》明确要求，切实盘活用好农家书屋等各类农村阅读设施，培养农民群众阅读兴趣、满足农民群众基本阅读需求。要进一步完善农家书屋功能，提升乡村阅读服务效能，以丰富的阅读设施、优质的阅读资源、常态化的阅读活动，更好满足农民精神文化需求，推进乡村文化建设。</p>
+  <p>　　本世纪初，为补齐农村阅读设施短板，我国启动实施农家书屋工程。经过多年建设，农家书屋已广泛覆盖农村地区，成为乡村阅读的重要阵地，为培育读书风尚、丰富农民精神文化生活提供了有力支撑。随着乡村全面振兴深入推进，农村人口结构、生产生活方式和信息获取渠道发生深刻变化，也对农家书屋提出了新要求。当前，部分农家书屋图书资源供给的针对性、时效性有待提升，存在阅读活动吸引力不足，数字阅读与传统阅读结合不够深入等问题。要着眼新形势新要求，立足“农家”定位，提升“书”的品质，丰富“屋”的功能，浓厚“读”的氛围，在盘活空间、配优资源、做实活动、健全机制上出实招、求突破，推动农家书屋更好扎根乡村、服务农民。</p>
+  <p>　　优化书屋布局。科学布局是发挥农家书屋作用的基础。伴随农村人口流动加快、村庄布局调整，部分书屋选址与农村实际情况和需求出现脱节。要通过调查研究摸清乡村实际，把群众在哪里、需要什么、如何使用农家书屋等情况了解清楚，对农家书屋建设进行动态调整，促进其建设布点更加精准实用。可通过场地共享，推动农家书屋与党群服务中心、新时代文明实践所、村史馆等融合发展，不断升级服务能力；通过共建共享，促进农家书屋与乡村学校图书馆（室）深度联动，建设贯通校内校外的阅读体系；通过资源联动，把具有乡村特色的文化内容和公共服务引入书屋，在突出阅读主业的基础上拓展功能，打造“小而美”的特色阅读空间，促进阵地融起来、资源动起来、服务连起来。</p>
+  <p>　　提升内容品质。农民是农家书屋的目标受众，提高农家书屋图书内容品质要在“农”字上下功夫，从“准、优、新、活”四方面入手。“准”就是精准服务农民阅读需要，可健全需求征集和阅读反馈机制，推广“百姓点单”“你购书、我买单”以及“订单式”“菜单式”服务，让图书供给契合群众需求。“优”就是推动优质资源直达基层，加强农家书屋与公共图书馆、实体书店、出版发行机构等协同联动，拓宽好书下乡渠道。“新”就是让馆藏保持活力，健全图书资源动态补充和定期更新机制，促进优质图书在城乡之间、书屋之间有序流动，确保书架常新、好书常在。“活”就是让农家书屋从“有书可读”进一步走向“有人来读”，积极组织科普阅读、家庭阅读等主题阅读，把图书选配与阅读服务紧密结合起来，吸引更多读者。</p>
+  <p>　　加强阅读推广。农家书屋是培养乡村阅读风尚、助力农村精神文明建设的重要阵地，要通过科学引导加强阅读推广，让更多农民参与阅读、爱上阅读、受益于阅读。聚焦重点群体，让阅读服务走近更多人群。面向农村妇女儿童，把亲子共读、家庭阅读指导、儿童阅读陪伴等做成常态服务；面向老年人、返乡青年等群体，结合其生活特点和实际需要设计阅读项目。聚焦乡土记忆，把地方文献建设与阅读推广结合起来，通过乡土文化讲读、村史共读、口述记忆等活动，让群众在阅读中认识家乡、记住乡愁。聚焦专业内容，深化与公共图书馆、书店、社会力量合作，不断提高阅读活动的质量水平；开发适用于农家书屋的阅读推广工具包，把创新理念和前沿经验转化为基层拿来能用、用之有效的专业工具。聚焦品牌建设，常态化开展群众认可、富有实效的阅读活动，培育一批具有乡村特色、影响广泛的阅读品牌。</p>
+  <p>　　健全管理运行机制。推动管理运行机制进一步完善，是促进农家书屋更好实现资源下沉、服务群众、涵养乡风的重要抓手。可在有条件的地区推动将农家书屋纳入公共图书馆总分馆体系统一管理，在图书流通、业务指导、活动组织等方面建立完善的统筹管理机制，让分散的农家书屋接入专业化、常态化的公共阅读服务体系。完善社会力量参与机制，在坚持公益属性、保障基本服务的前提下，探索更加灵活的管理和使用方式、引入专业力量参与运营，探索公益认养、项目认领、合作共建等创新方式，增强农家书屋运行活力。健全人才队伍建设机制，加强书屋管理人员和志愿服务力量的专业培训，重视阅读推广人的培养机制与乡村阅读组织的孵化机制，让更多懂阅读、会推广、善服务的人扎根基层。创新评价机制，突出服务效能导向，立足农家书屋深耕乡土、服务群众的特点，既考察投入保障和运行基础，也关注资源利用情况、群众受益程度，避免片面地以农家书屋的数量和规模作为评价依据。</p>
+  <p>　　（作者为中山大学信息管理学院教授） </p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>肖  鹏</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188077</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188077.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188077.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 完善农家书屋功能  提升乡村阅读服务效能（专题深思） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 完善农家书屋功能  提升乡村阅读服务效能（专题深思） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							肖  鹏
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月28日</span>&nbsp;第&nbsp;09&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p> 　　阅读是人类获取知识、启智增慧、培养道德的重要途径。习近平总书记致信祝贺首届全民阅读大会强调：“希望全社会都参与到阅读中来，形成爱读书、读好书、善读书的浓厚氛围。”农家书屋是保障农民阅读权益、促进乡村阅读的基础性工程，对于推动农村精神文明建设、助力乡村全面振兴具有重要意义。今年6月印发的《推进农家书屋改革提升促进乡村阅读行动方案》明确要求，切实盘活用好农家书屋等各类农村阅读设施，培养农民群众阅读兴趣、满足农民群众基本阅读需求。要进一步完善农家书屋功能，提升乡村阅读服务效能，以丰富的阅读设施、优质的阅读资源、常态化的阅读活动，更好满足农民精神文化需求，推进乡村文化建设。</p><p>　　本世纪初，为补齐农村阅读设施短板，我国启动实施农家书屋工程。经过多年建设，农家书屋已广泛覆盖农村地区，成为乡村阅读的重要阵地，为培育读书风尚、丰富农民精神文化生活提供了有力支撑。随着乡村全面振兴深入推进，农村人口结构、生产生活方式和信息获取渠道发生深刻变化，也对农家书屋提出了新要求。当前，部分农家书屋图书资源供给的针对性、时效性有待提升，存在阅读活动吸引力不足，数字阅读与传统阅读结合不够深入等问题。要着眼新形势新要求，立足“农家”定位，提升“书”的品质，丰富“屋”的功能，浓厚“读”的氛围，在盘活空间、配优资源、做实活动、健全机制上出实招、求突破，推动农家书屋更好扎根乡村、服务农民。</p><p>　　优化书屋布局。科学布局是发挥农家书屋作用的基础。伴随农村人口流动加快、村庄布局调整，部分书屋选址与农村实际情况和需求出现脱节。要通过调查研究摸清乡村实际，把群众在哪里、需要什么、如何使用农家书屋等情况了解清楚，对农家书屋建设进行动态调整，促进其建设布点更加精准实用。可通过场地共享，推动农家书屋与党群服务中心、新时代文明实践所、村史馆等融合发展，不断升级服务能力；通过共建共享，促进农家书屋与乡村学校图书馆（室）深度联动，建设贯通校内校外的阅读体系；通过资源联动，把具有乡村特色的文化内容和公共服务引入书屋，在突出阅读主业的基础上拓展功能，打造“小而美”的特色阅读空间，促进阵地融起来、资源动起来、服务连起来。</p><p>　　提升内容品质。农民是农家书屋的目标受众，提高农家书屋图书内容品质要在“农”字上下功夫，从“准、优、新、活”四方面入手。“准”就是精准服务农民阅读需要，可健全需求征集和阅读反馈机制，推广“百姓点单”“你购书、我买单”以及“订单式”“菜单式”服务，让图书供给契合群众需求。“优”就是推动优质资源直达基层，加强农家书屋与公共图书馆、实体书店、出版发行机构等协同联动，拓宽好书下乡渠道。“新”就是让馆藏保持活力，健全图书资源动态补充和定期更新机制，促进优质图书在城乡之间、书屋之间有序流动，确保书架常新、好书常在。“活”就是让农家书屋从“有书可读”进一步走向“有人来读”，积极组织科普阅读、家庭阅读等主题阅读，把图书选配与阅读服务紧密结合起来，吸引更多读者。</p><p>　　加强阅读推广。农家书屋是培养乡村阅读风尚、助力农村精神文明建设的重要阵地，要通过科学引导加强阅读推广，让更多农民参与阅读、爱上阅读、受益于阅读。聚焦重点群体，让阅读服务走近更多人群。面向农村妇女儿童，把亲子共读、家庭阅读指导、儿童阅读陪伴等做成常态服务；面向老年人、返乡青年等群体，结合其生活特点和实际需要设计阅读项目。聚焦乡土记忆，把地方文献建设与阅读推广结合起来，通过乡土文化讲读、村史共读、口述记忆等活动，让群众在阅读中认识家乡、记住乡愁。聚焦专业内容，深化与公共图书馆、书店、社会力量合作，不断提高阅读活动的质量水平；开发适用于农家书屋的阅读推广工具包，把创新理念和前沿经验转化为基层拿来能用、用之有效的专业工具。聚焦品牌建设，常态化开展群众认可、富有实效的阅读活动，培育一批具有乡村特色、影响广泛的阅读品牌。</p><p>　　健全管理运行机制。推动管理运行机制进一步完善，是促进农家书屋更好实现资源下沉、服务群众、涵养乡风的重要抓手。可在有条件的地区推动将农家书屋纳入公共图书馆总分馆体系统一管理，在图书流通、业务指导、活动组织等方面建立完善的统筹管理机制，让分散的农家书屋接入专业化、常态化的公共阅读服务体系。完善社会力量参与机制，在坚持公益属性、保障基本服务的前提下，探索更加灵活的管理和使用方式、引入专业力量参与运营，探索公益认养、项目认领、合作共建等创新方式，增强农家书屋运行活力。健全人才队伍建设机制，加强书屋管理人员和志愿服务力量的专业培训，重视阅读推广人的培养机制与乡村阅读组织的孵化机制，让更多懂阅读、会推广、善服务的人扎根基层。创新评价机制，突出服务效能导向，立足农家书屋深耕乡土、服务群众的特点，既考察投入保障和运行基础，也关注资源利用情况、群众受益程度，避免片面地以农家书屋的数量和规模作为评价依据。</p><p>　　（作者为中山大学信息管理学院教授） </p><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>肖  鹏</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188077</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188077.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188077.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 完善农家书屋功能  提升乡村阅读服务效能（专题深思） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

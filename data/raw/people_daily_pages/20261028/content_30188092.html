@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 栖于自然  对话古今（感知文化里的中国） </title>
+		<meta name="author" content='第012版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="293.13846,30.99559925,3.734248,30.99559925,3.734248,339.68647100000004,3.734248,340.31903424999996,293.13846,340.31903424999996" shape="polygon" href="content_30188092.html"><Area coords="304.341204,30.99559925,396.452652,30.99559925,396.452652,481.38063900000003,304.341204,481.38063900000003" shape="polygon" href="content_30188093.html"><Area coords="3.734248,354.23542575,293.13846,354.23542575,293.13846,453.54785599999997,3.734248,453.54785599999997" shape="polygon" href="content_30188094.html"><Area coords="91.489072,487.07370825,91.489072,463.03630475,91.489072,463.03630475,3.734248,463.03630475,3.734248,463.03630475,3.734248,487.07370825,3.734248,571.83718375,91.489072,571.83718375" shape="polygon" href="content_30188095.html"><Area coords="293.13846,491.50165100000004,293.13846,463.03630475,293.13846,463.03630475,102.691816,463.03630475,102.691816,463.03630475,102.691816,491.50165100000004,102.691816,571.83718375,293.13846,571.83718375" shape="polygon" href="content_30188096.html"><Area coords="396.452652,511.1111117500001,396.452652,496.562157,396.452652,496.562157,304.341204,496.562157,304.341204,496.562157,304.341204,511.1111117500001,304.341204,561.71617175,396.452652,561.71617175" shape="polygon" href="content_30188097.html"><Area coords="304.341204,568.6743675,396.452652,568.6743675,396.452652,571.83718375,304.341204,571.83718375" shape="polygon" href="content_30188098.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/28/ed567866-5896-476d-8499-ac47349baa9c.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第12版：文化
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30188092.html"> 栖于自然  对话古今（感知文化里的中国） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188093.html"> 书香与青春“双向奔赴”（校馆弦歌） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188094.html"> 城墙下  商圈里  有好戏（提升公共文化服务水平） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188095.html"> “振兴杯”全国青年职业技能大赛全国决赛举办 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188096.html"> 打造服务平台  加强人才留育 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188097.html"> 国家人工智能应用中试基地（家居家电方向）启动建设 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188098.html"> 本版责编：肖  遥  陈世涵  银  燕 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月28日
+							Wed</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_10.html">10版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_11.html">11版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_12.html">12版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_13.html">13版：生态</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_14.html">14版：专题</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_15.html">15版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_18.html">18版：民生</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_19.html">19版：财经</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/28/node_12.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30188093.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　北京延庆连绵的群山中，八达岭长城蜿蜒起伏。山脚台地间，一座灰白色建筑静卧。远远望去，仿佛一块历经岁月沧桑的巨型长城砖。</p>
+  <p>　　10月24日，经过改造提升，中国长城博物馆焕新开放。这座承载着中华文明悠久印记的文化殿堂，通过古今对话，让公众感受长城绵延不绝的精神力量。</p>
+  <p>　　建筑降低高度、室内外结合，展示好长城这一珍贵的展品</p>
+  <p>　　中国长城博物馆是长城国家文化公园（北京段）重要标志性工程。1994年9月，中国长城博物馆老馆开馆。2022年4月，老馆闭馆。2023年12月，改造提升工程开工。</p>
+  <p>　　“我们按照最小干预遗产地风貌这一原则，将建筑融入自然环境之中。”中国长城博物馆设计总负责人、北京市建筑设计研究院股份有限公司总建筑师李亦农介绍，新馆建筑高度由老馆的16米降至9米，使建筑体量更加舒展，与群山融为一体。</p>
+  <p>　　过去，山体因为逐年建设形成了一道高约10米的挡土墙，使墙内高台之上的老馆难以到达，大大影响了客流。团队将博物馆融入上层台地中，用建筑的主立面代替原有挡土墙位置，让出更大的室外活动场所，供室外展览、公众活动等使用。</p>
+  <p>　　博物馆东立面紧邻山体，采用多种石材雕琢打造，让建筑外立面与山体挡墙自然衔接。“博物馆总面积约1.6万平方米，其中超过1万平方米通过设计消隐在山体和绿化里，尽量减少对自然环境的干扰。”李亦农说。</p>
+  <p>　　步入二层的长城厅，透过宽阔的落地幕墙，八达岭长城南一楼至南四楼的壮阔景色尽收眼底。“博物馆的展品一般在馆内，但这个馆最珍贵的展品在馆外——我们眼前的长城。这种室内外结合的设计，可以让观众在四季变换中感受长城的雄伟壮丽。”李亦农说。</p>
+  <p>　　汇聚24家博物馆700余件（套）文物，帮助观众更好读懂历史、感悟精神</p>
+  <p>　　长城是中华民族的代表性符号和中华文明的重要标识。围绕长城历史、长城文化、长城精神3个层面，中国长城博物馆推出一系列重磅展览。</p>
+  <p>　　基本陈列“万里长城万里长”，汇聚来自国内24家博物馆的700余件（套）文物。</p>
+  <p>　　“提起长城，人们往往想到的是一座绵亘万里的高墙，实际上，长城是由关隘、敌台、烽燧、城堡等设施交织构筑的军事防御体系；长城也不是少数朝代一次性修筑，从春秋战国直至明清，历代都在修缮、沿用长城。”首都博物馆展览部主任章文永说，“希望展览能够传递中华文明连续性、创新性与包容性的深层价值。”</p>
+  <p>　　展览第一单元“万里巨构&nbsp;&nbsp;千载续建”聚焦历代长城营建历史，展出多件重量级文物。来自中国国家博物馆的“子禾子”青铜釜，是战国时期齐国修筑长城的实物明证。一级文物戚氏军刀，见证名将戚继光与长城的紧密联系。</p>
+  <p>　　展览还设立“长城内外&nbsp;&nbsp;和同一家”“长城抗战&nbsp;&nbsp;精神丰碑”“长城保护&nbsp;&nbsp;守卫根脉”“世界遗产&nbsp;&nbsp;友谊桥梁”等单元。从1987年的《长城世界遗产证书》原件到长城保护员巡护长城时携带的镰刀、长城小站志愿者使用的皮卷尺等，观众可以由此感受守护长城的接续历程。</p>
+  <p>　　展柜里，瓦刀、轧子、墩锤、桃铲等工具由北京市怀柔区文物管理所长城修缮技术专家程永茂捐赠，其中一把瓦刀在箭扣长城抢险加固工程中使用过。“长城地势险峻，机械无法抵达，修缮工作只能依靠錾子、铲子等工具手工完成。”首都博物馆藏品部副主任张胜磊介绍。</p>
+  <p>　　“策展过程中我们组织了20多次专家论证会，大纲修改几十遍。相较过去，不仅展品数量大大提升，而且通过研究阐释，让文物信息更充分展示出来，帮助观众更好读懂历史、感悟精神。”首都博物馆展览部研究馆员黄小钰说。</p>
+  <p>　　472块汉白玉拼出《万里和平》，彰显长城的历史厚度和时代风华</p>
+  <p>　　作为基本陈列的补充和延伸，博物馆还设有专题展览和数字展览。</p>
+  <p>　　“关山万里雄古今——长城沿线考古成果展”汇聚了长城沿线15个省区市的考古成果。河北崇礼太子城遗址出土的一件金代铜坐龙尤为珍贵——目前已发现的金代铜坐龙均出土于都城、皇陵或皇家行宫，而这件文物，据专家推测，应该是金代皇帝大辇顶轮上的装饰物。</p>
+  <p>　　粟、高粱、大麦、荞麦……展览中还展示了八达岭长城遗址敌台炕灶里浮选出的炭化植物种子，是目前首批在明长城遗址获得的有科学测年的农作物遗存。</p>
+  <p>　　即将开放的数字展厅以“万里长城——凝聚中华文明的精神脊梁”为主题，借助多折幕沉浸投影与融合、实景三维与数字孪生等技术构建数字幻境。</p>
+  <p>　　一层和平厅，汉白玉浮雕作品《万里和平》令人震撼。浮雕总面积约450平方米，由472块汉白玉拼接而成。雕塑以180度半全景式融入空间，和天圆地方的大厅一起，形成“天地之间”的意境。</p>
+  <p>　　“汉白玉的温润质地，契合中华民族内敛、谦逊、包容的特性。长城是以和为贵、协和万邦的智慧象征，我们用当代的艺术语言，来彰显长城的历史厚度和时代风华。”北京工业大学艺术设计学院院长邹锋介绍。</p>
+  <p>　　“作为助力北京推进全国文化中心、国际交往中心功能建设的重要项目，中国长城博物馆不仅是传播长城文化、展示长城精神的场所，也将成为长城文化研究与传播的学术殿堂和国际交流平台。”首都博物馆馆长郭京宁表示。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>本报记者  施  芳</author><subtitle></subtitle><introtitle><p> 中国长城博物馆焕新开放，基本陈列展出700余件（套）文物 </p></introtitle><keyword></keyword><paperarticleid>30188092</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188092.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188092.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 栖于自然  对话古今（感知文化里的中国） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 中国长城博物馆焕新开放，基本陈列展出700余件（套）文物 </p></h3>
+						<h1><p> 栖于自然  对话古今（感知文化里的中国） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  施  芳
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月28日</span>&nbsp;第&nbsp;12&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202610/28/edf6a338-59bc-4073-bbdd-4133dcaff512.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　“子禾子”青铜釜。</p><p>　　本报记者  施  芳摄</p>"></p><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202610/28/7c9f77ce-a56a-4872-9553-2e19ee6e7808.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　中国长城博物馆二层的长城厅，观众可在此远眺八达岭长城。</p><p>　　新华社记者  陈钟昊摄</p>"></p><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202610/28/1a169c56-8708-40eb-ac3a-c1d636ea9ab3.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　中国长城博物馆外景。</p><p>　　本报记者  施  芳摄</p>"></p><p>　　北京延庆连绵的群山中，八达岭长城蜿蜒起伏。山脚台地间，一座灰白色建筑静卧。远远望去，仿佛一块历经岁月沧桑的巨型长城砖。</p><p>　　10月24日，经过改造提升，中国长城博物馆焕新开放。这座承载着中华文明悠久印记的文化殿堂，通过古今对话，让公众感受长城绵延不绝的精神力量。</p><p>　　建筑降低高度、室内外结合，展示好长城这一珍贵的展品</p><p>　　中国长城博物馆是长城国家文化公园（北京段）重要标志性工程。1994年9月，中国长城博物馆老馆开馆。2022年4月，老馆闭馆。2023年12月，改造提升工程开工。</p><p>　　“我们按照最小干预遗产地风貌这一原则，将建筑融入自然环境之中。”中国长城博物馆设计总负责人、北京市建筑设计研究院股份有限公司总建筑师李亦农介绍，新馆建筑高度由老馆的16米降至9米，使建筑体量更加舒展，与群山融为一体。</p><p>　　过去，山体因为逐年建设形成了一道高约10米的挡土墙，使墙内高台之上的老馆难以到达，大大影响了客流。团队将博物馆融入上层台地中，用建筑的主立面代替原有挡土墙位置，让出更大的室外活动场所，供室外展览、公众活动等使用。</p><p>　　博物馆东立面紧邻山体，采用多种石材雕琢打造，让建筑外立面与山体挡墙自然衔接。“博物馆总面积约1.6万平方米，其中超过1万平方米通过设计消隐在山体和绿化里，尽量减少对自然环境的干扰。”李亦农说。</p><p>　　步入二层的长城厅，透过宽阔的落地幕墙，八达岭长城南一楼至南四楼的壮阔景色尽收眼底。“博物馆的展品一般在馆内，但这个馆最珍贵的展品在馆外——我们眼前的长城。这种室内外结合的设计，可以让观众在四季变换中感受长城的雄伟壮丽。”李亦农说。</p><p>　　汇聚24家博物馆700余件（套）文物，帮助观众更好读懂历史、感悟精神</p><p>　　长城是中华民族的代表性符号和中华文明的重要标识。围绕长城历史、长城文化、长城精神3个层面，中国长城博物馆推出一系列重磅展览。</p><p>　　基本陈列“万里长城万里长”，汇聚来自国内24家博物馆的700余件（套）文物。</p><p>　　“提起长城，人们往往想到的是一座绵亘万里的高墙，实际上，长城是由关隘、敌台、烽燧、城堡等设施交织构筑的军事防御体系；长城也不是少数朝代一次性修筑，从春秋战国直至明清，历代都在修缮、沿用长城。”首都博物馆展览部主任章文永说，“希望展览能够传递中华文明连续性、创新性与包容性的深层价值。”</p><p>　　展览第一单元“万里巨构&nbsp;&nbsp;千载续建”聚焦历代长城营建历史，展出多件重量级文物。来自中国国家博物馆的“子禾子”青铜釜，是战国时期齐国修筑长城的实物明证。一级文物戚氏军刀，见证名将戚继光与长城的紧密联系。</p><p>　　展览还设立“长城内外&nbsp;&nbsp;和同一家”“长城抗战&nbsp;&nbsp;精神丰碑”“长城保护&nbsp;&nbsp;守卫根脉”“世界遗产&nbsp;&nbsp;友谊桥梁”等单元。从1987年的《长城世界遗产证书》原件到长城保护员巡护长城时携带的镰刀、长城小站志愿者使用的皮卷尺等，观众可以由此感受守护长城的接续历程。</p><p>　　展柜里，瓦刀、轧子、墩锤、桃铲等工具由北京市怀柔区文物管理所长城修缮技术专家程永茂捐赠，其中一把瓦刀在箭扣长城抢险加固工程中使用过。“长城地势险峻，机械无法抵达，修缮工作只能依靠錾子、铲子等工具手工完成。”首都博物馆藏品部副主任张胜磊介绍。</p><p>　　“策展过程中我们组织了20多次专家论证会，大纲修改几十遍。相较过去，不仅展品数量大大提升，而且通过研究阐释，让文物信息更充分展示出来，帮助观众更好读懂历史、感悟精神。”首都博物馆展览部研究馆员黄小钰说。</p><p>　　472块汉白玉拼出《万里和平》，彰显长城的历史厚度和时代风华</p><p>　　作为基本陈列的补充和延伸，博物馆还设有专题展览和数字展览。</p><p>　　“关山万里雄古今——长城沿线考古成果展”汇聚了长城沿线15个省区市的考古成果。河北崇礼太子城遗址出土的一件金代铜坐龙尤为珍贵——目前已发现的金代铜坐龙均出土于都城、皇陵或皇家行宫，而这件文物，据专家推测，应该是金代皇帝大辇顶轮上的装饰物。</p><p>　　粟、高粱、大麦、荞麦……展览中还展示了八达岭长城遗址敌台炕灶里浮选出的炭化植物种子，是目前首批在明长城遗址获得的有科学测年的农作物遗存。</p><p>　　即将开放的数字展厅以“万里长城——凝聚中华文明的精神脊梁”为主题，借助多折幕沉浸投影与融合、实景三维与数字孪生等技术构建数字幻境。</p><p>　　一层和平厅，汉白玉浮雕作品《万里和平》令人震撼。浮雕总面积约450平方米，由472块汉白玉拼接而成。雕塑以180度半全景式融入空间，和天圆地方的大厅一起，形成“天地之间”的意境。</p><p>　　“汉白玉的温润质地，契合中华民族内敛、谦逊、包容的特性。长城是以和为贵、协和万邦的智慧象征，我们用当代的艺术语言，来彰显长城的历史厚度和时代风华。”北京工业大学艺术设计学院院长邹锋介绍。</p><p>　　“作为助力北京推进全国文化中心、国际交往中心功能建设的重要项目，中国长城博物馆不仅是传播长城文化、展示长城精神的场所，也将成为长城文化研究与传播的学术殿堂和国际交流平台。”首都博物馆馆长郭京宁表示。</p><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>本报记者  施  芳</author><subtitle></subtitle><introtitle><p> 中国长城博物馆焕新开放，基本陈列展出700余件（套）文物 </p></introtitle><keyword></keyword><paperarticleid>30188092</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188092.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188092.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 栖于自然  对话古今（感知文化里的中国） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

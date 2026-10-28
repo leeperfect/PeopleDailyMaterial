@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 钢船逐浪  渔获满舱 </title>
+		<meta name="author" content='第006版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="6.84612,36.05610525,283.180464,36.05610525,283.180464,329.565459,6.84612,329.565459" shape="polygon" href="content_30188064.html"><Area coords="297.495084,30.99559925,396.452652,30.99559925,396.452652,561.71617175,297.495084,561.71617175" shape="polygon" href="content_30188065.html"><Area coords="3.734248,344.74697699999996,286.914712,344.74697699999996,286.914712,571.2046205,3.734248,571.2046205" shape="polygon" href="content_30188066.html"><Area coords="297.495084,568.04180425,396.452652,568.04180425,396.452652,571.2046205,297.495084,571.2046205" shape="polygon" href="content_30188067.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/28/d53bf8c8-76bf-4e69-bda2-6425787d5647.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第06版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30188064.html"> 设计药物分子  守护患者健康（弘扬科学家精神） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188065.html"> 钢船逐浪  渔获满舱 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188066.html"> 全面从严治党就在身边 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188067.html"> 本版责编：康  岩  刘涓溪  王  博 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月28日
+							Wed</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_10.html">10版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_11.html">11版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_12.html">12版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_13.html">13版：生态</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_14.html">14版：专题</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_15.html">15版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_18.html">18版：民生</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_19.html">19版：财经</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/28/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/28/node_06.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30188064.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30188066.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　辽宁大连金普新区杏树屯国家级渔港内，航道里船来船往，泊位上桅樯林立。码头上，货车穿梭，鱼筐堆叠。随着马达声由远及近，两艘崭新钢质渔船稳稳破浪归港。船主孙港汇立在船头指挥，船员们手脚麻利地抬筐、分拣、转运，层层叠叠的鲜鱼在阳光下闪闪发亮。</p>
+  <p>　　满舱的收成、踏实的喜悦，是辽宁渔业丰收的生动答卷，更是渔船“木改钢”专项行动的生动缩影。</p>
+  <p>　　千百年来，辽宁沿海渔民依海而生，木质渔船承载着耕海生计，但长期暗藏隐患。2025年10月，辽宁省启动为期3年的渔船“木改钢”专项行动，一场守护海上平安、惠及万千渔民、重塑渔业格局的深层变革全面铺开。</p>
+  <p>　　<strong>问题导向，筑牢安全防线</strong></p>
+  <p>　　靠海吃海，最惧险海求财。长期以来，辽宁大量渔民依靠超期服役的老旧渔船作业。据统计，辽宁12680艘海洋捕捞渔船，国家数据库在册的有10993艘，地方管理的达1687艘。老旧木船不仅抗风浪能力弱、作业半径小、捕捞效率低，而且长年受海风侵蚀、海水冲刷，船体疏松、船板老化、易渗水破损，每年还要耗费大量资金、人力维修养护。渔民不但面临增收瓶颈，更要时时面对出海的风险。</p>
+  <p>　　“以前开木船出海，遇大风就心慌，整夜不敢合眼，家人也彻夜牵挂。”锦州渔民孙敬军从事近海捕捞近20年，切身感受过老旧木船的诸多弊端——每年防腐补缝、上坞维修要花5000多元，反复修缮不仅增加作业成本，还屡屡错失最佳捕捞窗口期。一次近海突发六级大风，巨浪猛烈拍打船身，船体剧烈颠簸、船舱持续进水，他与船员全力抢险才侥幸返航。</p>
+  <p>　　辽宁坚持问题导向，筑牢渔业生产安全防线，渔船“木改钢”专项行动瞄准6485艘老旧渔船，既涵盖13年以上木质船，也包括16年以上钢质船。</p>
+  <p>　　孙敬军下定决心将老旧木船更换为全新的钢质渔船，彻底告别险象环生的出海日子。作为最早一批实施“木改钢”的渔民，他打造的43米钢质渔船“辽锦渔15168”投用后，作业模式实现跨越式升级：钢制船体坚固耐腐、稳定性强，可从容应对七八级海风；船上配齐北斗定位、智能鱼探仪、航行预警等数字化设备，捕捞作业更加精准高效。</p>
+  <p>　　“如今，新船渔网装载量从20块增至30块，航速由每小时8节提升至10节，作业半径大幅延伸，单次渔获量是旧木船的两三倍。”孙敬军感慨，“这一换，值！”</p>
+  <p>　　<strong>多措并举，赋能改造升级</strong></p>
+  <p>　　曾因钢质船成本较高而长期观望的大连市长海县渔民冯振雨这次终于行动了起来。“过去都是用命在搏，现在回想太不值当了。”冯振雨坦言，“新船30万元造价，直接补贴5万元，再叠加18年每年1.5万元的燃油补贴，实打实的惠民政策很难让人不动心。”</p>
+  <p>　　渔船迭代升级，不只是船体材质的更替，更是政策、政务、金融、产业全方位协同的系统性变革。辽宁靶向破局、精准赋能，通过政务提速、金融降本、智防治安、产业增效，全方位护航“木改钢”专项行动提质提速。</p>
+  <p>　　丹东东港市大东街道的船主关雅文趁着今年伏季休渔期，将7艘旧渔船拆解，新造5艘钢质渔船。“以前以为改船手续烦琐，要跑断腿，没想到准备材料有人教、办理流程有人带，第一艘船仅用一个月，后面6艘船两周就办完拆解，目前已有4艘新船下水。”关雅文说。</p>
+  <p>　　辽宁抢抓休渔窗口期，出台26项配套制度，打出政策“组合拳”：推进流程再造，将13个审批环节精简至6个，办理时限压缩50%以上；组建省级渔业船舶审图技术交流中心，发布19款标准化新船型；根据渔船长度分档，更新改造费用最高补贴可达造船费用的30%；推出最长20年超低息“木改钢”专项贷款；举办新型钢质渔船实操技能培训班，手把手教渔民操作智能设备……</p>
+  <p>　　在盖州市光辉渔船修造厂的船坞内，大大小小的钢制渔船整齐排列，现场弧光闪烁。中午时分，海水满潮，一艘新船缓缓下水试航。“渔民对钢质渔船的需求增长很快，今年我们已接到110艘新船订单，远超去年同期。”船厂施工现场负责人刘卫介绍，现在船厂加班加点，目前已交付钢质渔船80余艘，剩余船只预计年底前可全部交付。</p>
+  <p>　　政策红利持续释放，形成“渔民增收、企业增效、产业提质”的良性循环。今年伏季休渔期，辽宁仅用4个月，便完成677艘渔船从设计、审批、建造到下水的全流程工作，为渔民抢回完整捕捞季，实现“休渔期造船、开海即丰收”。</p>
+  <p>　　<strong>柔性施策，守护民生温度</strong></p>
+  <p>　　“木改钢”工作一头连着产业安全，一头连着万千渔民生计。辽宁一方面守牢安全红线，推进智能监管平台建设，严禁不达标渔船出海；一方面坚决摒弃“运动式”“一刀切”推进模式，让改革贴合基层、温暖民生。</p>
+  <p>　　各地通过入户走访、渔港座谈、政策宣讲等方式，帮渔民算清安全账、经济账。针对不同年龄和意愿的渔民，各地充分尊重渔民自主选择，提供改造升级、转产就业、兜底保障等多种服务：有意深耕捕捞、扩大产能的渔民，可享受惠民政策升级新船；年事已高、无力作业的渔民，可申请减船转产、上岸安居。</p>
+  <p>　　在东港市，蓝莓大棚从采后恢复转入蓄能过冬的关键期，棚主唐洪伟正细心地为果树施秋肥。在减船转产政策的支持下，在海上驰骋了30余年的唐洪伟决定“上岸”。“刚离开大海的时候，也不舍，也茫然，政府推荐创业项目、提供指导，我选定了大棚蓝莓种植。”唐洪伟说，“现在，蓝莓大棚就是我的‘新船’，不靠海，靠土地一样有回报。”</p>
+  <p>　　针对转型中的民生诉求，各地推出柔性帮扶举措，扎实做好兜底保障：丹东市引导“老旧小木”渔船逐步退出捕捞业，拓宽渔民就业发展路径；营口市对符合就业困难人员标准的“上岸”渔民，提供公益性岗位；葫芦岛市创新“以租代购”模式，由合作社统一处置旧船、采购新船，让渔民灵活租用……</p>
+  <p>　　随着老旧木船加速退出，崭新钢船逐浪前行，辽宁渔业迎来高质量发展新气象。截至今年10月初，辽宁累计申请“木改钢”渔船3418艘，更新改造1964艘，已建成1024艘，减船转产1454艘，渔船新建总量超过过去10年总和。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>本报记者  刘成友  刘洪超  胡婧怡</author><subtitle></subtitle><introtitle><p> 辽宁推动渔船“木改钢”惠及万千渔民—— </p></introtitle><keyword></keyword><paperarticleid>30188065</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188065.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188065.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 钢船逐浪  渔获满舱 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 辽宁推动渔船“木改钢”惠及万千渔民—— </p></h3>
+						<h1><p> 钢船逐浪  渔获满舱 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  刘成友  刘洪超  胡婧怡
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月28日</span>&nbsp;第&nbsp;06&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　辽宁大连金普新区杏树屯国家级渔港内，航道里船来船往，泊位上桅樯林立。码头上，货车穿梭，鱼筐堆叠。随着马达声由远及近，两艘崭新钢质渔船稳稳破浪归港。船主孙港汇立在船头指挥，船员们手脚麻利地抬筐、分拣、转运，层层叠叠的鲜鱼在阳光下闪闪发亮。</p><p>　　满舱的收成、踏实的喜悦，是辽宁渔业丰收的生动答卷，更是渔船“木改钢”专项行动的生动缩影。</p><p>　　千百年来，辽宁沿海渔民依海而生，木质渔船承载着耕海生计，但长期暗藏隐患。2025年10月，辽宁省启动为期3年的渔船“木改钢”专项行动，一场守护海上平安、惠及万千渔民、重塑渔业格局的深层变革全面铺开。</p><p>　　<strong>问题导向，筑牢安全防线</strong></p><p>　　靠海吃海，最惧险海求财。长期以来，辽宁大量渔民依靠超期服役的老旧渔船作业。据统计，辽宁12680艘海洋捕捞渔船，国家数据库在册的有10993艘，地方管理的达1687艘。老旧木船不仅抗风浪能力弱、作业半径小、捕捞效率低，而且长年受海风侵蚀、海水冲刷，船体疏松、船板老化、易渗水破损，每年还要耗费大量资金、人力维修养护。渔民不但面临增收瓶颈，更要时时面对出海的风险。</p><p>　　“以前开木船出海，遇大风就心慌，整夜不敢合眼，家人也彻夜牵挂。”锦州渔民孙敬军从事近海捕捞近20年，切身感受过老旧木船的诸多弊端——每年防腐补缝、上坞维修要花5000多元，反复修缮不仅增加作业成本，还屡屡错失最佳捕捞窗口期。一次近海突发六级大风，巨浪猛烈拍打船身，船体剧烈颠簸、船舱持续进水，他与船员全力抢险才侥幸返航。</p><p>　　辽宁坚持问题导向，筑牢渔业生产安全防线，渔船“木改钢”专项行动瞄准6485艘老旧渔船，既涵盖13年以上木质船，也包括16年以上钢质船。</p><p>　　孙敬军下定决心将老旧木船更换为全新的钢质渔船，彻底告别险象环生的出海日子。作为最早一批实施“木改钢”的渔民，他打造的43米钢质渔船“辽锦渔15168”投用后，作业模式实现跨越式升级：钢制船体坚固耐腐、稳定性强，可从容应对七八级海风；船上配齐北斗定位、智能鱼探仪、航行预警等数字化设备，捕捞作业更加精准高效。</p><p>　　“如今，新船渔网装载量从20块增至30块，航速由每小时8节提升至10节，作业半径大幅延伸，单次渔获量是旧木船的两三倍。”孙敬军感慨，“这一换，值！”</p><p>　　<strong>多措并举，赋能改造升级</strong></p><p>　　曾因钢质船成本较高而长期观望的大连市长海县渔民冯振雨这次终于行动了起来。“过去都是用命在搏，现在回想太不值当了。”冯振雨坦言，“新船30万元造价，直接补贴5万元，再叠加18年每年1.5万元的燃油补贴，实打实的惠民政策很难让人不动心。”</p><p>　　渔船迭代升级，不只是船体材质的更替，更是政策、政务、金融、产业全方位协同的系统性变革。辽宁靶向破局、精准赋能，通过政务提速、金融降本、智防治安、产业增效，全方位护航“木改钢”专项行动提质提速。</p><p>　　丹东东港市大东街道的船主关雅文趁着今年伏季休渔期，将7艘旧渔船拆解，新造5艘钢质渔船。“以前以为改船手续烦琐，要跑断腿，没想到准备材料有人教、办理流程有人带，第一艘船仅用一个月，后面6艘船两周就办完拆解，目前已有4艘新船下水。”关雅文说。</p><p>　　辽宁抢抓休渔窗口期，出台26项配套制度，打出政策“组合拳”：推进流程再造，将13个审批环节精简至6个，办理时限压缩50%以上；组建省级渔业船舶审图技术交流中心，发布19款标准化新船型；根据渔船长度分档，更新改造费用最高补贴可达造船费用的30%；推出最长20年超低息“木改钢”专项贷款；举办新型钢质渔船实操技能培训班，手把手教渔民操作智能设备……</p><p>　　在盖州市光辉渔船修造厂的船坞内，大大小小的钢制渔船整齐排列，现场弧光闪烁。中午时分，海水满潮，一艘新船缓缓下水试航。“渔民对钢质渔船的需求增长很快，今年我们已接到110艘新船订单，远超去年同期。”船厂施工现场负责人刘卫介绍，现在船厂加班加点，目前已交付钢质渔船80余艘，剩余船只预计年底前可全部交付。</p><p>　　政策红利持续释放，形成“渔民增收、企业增效、产业提质”的良性循环。今年伏季休渔期，辽宁仅用4个月，便完成677艘渔船从设计、审批、建造到下水的全流程工作，为渔民抢回完整捕捞季，实现“休渔期造船、开海即丰收”。</p><p>　　<strong>柔性施策，守护民生温度</strong></p><p>　　“木改钢”工作一头连着产业安全，一头连着万千渔民生计。辽宁一方面守牢安全红线，推进智能监管平台建设，严禁不达标渔船出海；一方面坚决摒弃“运动式”“一刀切”推进模式，让改革贴合基层、温暖民生。</p><p>　　各地通过入户走访、渔港座谈、政策宣讲等方式，帮渔民算清安全账、经济账。针对不同年龄和意愿的渔民，各地充分尊重渔民自主选择，提供改造升级、转产就业、兜底保障等多种服务：有意深耕捕捞、扩大产能的渔民，可享受惠民政策升级新船；年事已高、无力作业的渔民，可申请减船转产、上岸安居。</p><p>　　在东港市，蓝莓大棚从采后恢复转入蓄能过冬的关键期，棚主唐洪伟正细心地为果树施秋肥。在减船转产政策的支持下，在海上驰骋了30余年的唐洪伟决定“上岸”。“刚离开大海的时候，也不舍，也茫然，政府推荐创业项目、提供指导，我选定了大棚蓝莓种植。”唐洪伟说，“现在，蓝莓大棚就是我的‘新船’，不靠海，靠土地一样有回报。”</p><p>　　针对转型中的民生诉求，各地推出柔性帮扶举措，扎实做好兜底保障：丹东市引导“老旧小木”渔船逐步退出捕捞业，拓宽渔民就业发展路径；营口市对符合就业困难人员标准的“上岸”渔民，提供公益性岗位；葫芦岛市创新“以租代购”模式，由合作社统一处置旧船、采购新船，让渔民灵活租用……</p><p>　　随着老旧木船加速退出，崭新钢船逐浪前行，辽宁渔业迎来高质量发展新气象。截至今年10月初，辽宁累计申请“木改钢”渔船3418艘，更新改造1964艘，已建成1024艘，减船转产1454艘，渔船新建总量超过过去10年总和。</p><!--/enpcontent--><!--enpproperty <date>2026-10-28 00:00:00:0</date><author>本报记者  刘成友  刘洪超  胡婧怡</author><subtitle></subtitle><introtitle><p> 辽宁推动渔船“木改钢”惠及万千渔民—— </p></introtitle><keyword></keyword><paperarticleid>30188065</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/28/content_30188065.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/28/content_30188065.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 钢船逐浪  渔获满舱 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

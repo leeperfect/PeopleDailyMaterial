@@ -5,7 +5,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import sqlite3
 import subprocess
 import sys
 import time
@@ -92,11 +91,6 @@ def collect(issue: date, interval: float = 1.5):
         report['directory_article_count'] = len(targets)
         if not targets:
             raise RuntimeError('目录未解析出文章')
-        backup = ROOT/'data/core/backups'/f'before-paper-{key}-{datetime.now():%H%M%S}.sqlite'
-        backup.parent.mkdir(parents=True,exist_ok=True)
-        source = sqlite3.connect(f'file:{ROOT / "data/core/articles.sqlite"}?mode=ro',uri=True)
-        dest = sqlite3.connect(backup); source.backup(dest);dest.close();source.close()
-        report['core_backup'] = str(backup.relative_to(ROOT))
         store = ArticleStore(str(ROOT/'data/core/articles.sqlite'))
         for index,(url,info) in enumerate(targets.items(),1):
             aid = build_article_id({'date':issue.isoformat(),'url':url})
