@@ -1,0 +1,30 @@
+{
+  "run_time": "2026-10-29T09:44:04+08:00",
+  "status": "failed",
+  "last_success_date": "2026-10-28",
+  "start_date": "2026-10-29",
+  "end_date": "2026-10-29",
+  "crawl": {
+    "status": "failed_before_list",
+    "downloaded": 0,
+    "coverage_verified": false,
+    "errors": [
+      "受限环境域名解析失败",
+      "获准联网后频道接口 SSL UNEXPECTED_EOF_WHILE_READING"
+    ]
+  },
+  "notion": {
+    "status": "not_run",
+    "created": 0,
+    "updated": 0,
+    "skipped": 0,
+    "failed": 0
+  },
+  "topics": {
+    "status": "not_run"
+  },
+  "miaoda": {
+    "status": "not_run"
+  },
+  "next_start_date": "2026-10-29"
+}
