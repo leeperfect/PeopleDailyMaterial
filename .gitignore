@@ -86,3 +86,12 @@ data/peopleapp_opinion/site/
 .local/
 # 本地日报采集前的核心库快照不进入 Git
 /data/core/backups/
+
+# 所有目录的新 SQLite 主库及旁路文件均留在本地；历史已跟踪文件另行审查
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+# 其他环境凭据文件；仅允许显式示例
+.env.*
+!.env.example
