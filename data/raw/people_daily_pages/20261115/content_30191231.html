@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 一湾连亚太 </title>
+		<meta name="author" content='第002版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.52,31.1075,293.8,31.1075,293.8,306.59,3.52,306.59" shape="polygon" href="content_30191227.html"><Area coords="304.44,31.1075,396.48,31.1075,396.48,305.44,304.44,305.44" shape="polygon" href="content_30191228.html"><Area coords="95.56,339.825,95.56,316.0775,3.52,316.0775,3.52,339.825,3.52,409.9175,95.56,409.9175" shape="polygon" href="content_30191229.html"><Area coords="106.2,316.0775,205.32,316.0775,205.32,571.3775,106.2,571.3775" shape="polygon" href="content_30191230.html"><Area coords="215.92,316.0775,396.48,316.0775,396.48,571.3775,215.92,571.3775" shape="polygon" href="content_30191231.html"><Area coords="95.56,444.3025,95.56,420.555,3.52,420.555,3.52,444.3025,3.52,538.1425,95.56,538.1425" shape="polygon" href="content_30191232.html"><Area coords="3.52,544.065,95.56,544.065,95.56,571.3775,3.52,571.3775" shape="polygon" href="content_30191233.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/15/237dbc8c-1eff-4874-be4f-e94038334673.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第02版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30191227.html"> 为两岸关系和平发展、实现祖国完全统一而努力 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191228.html"> 赓续血脉  传承薪火 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191229.html"> 纪念孙中山先生诞辰160周年活动嘉宾团晋谒中山陵仪式在南京举行 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191230.html"> 以高质量党建引领企业高质量发展 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191231.html"> 一湾连亚太 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191232.html"> 纪念孙中山诞辰160周年国际学术研讨会在广东中山召开 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191233.html"> 一版责编：胡安琪  张帅祯  张宇杰 二版责编：吕  莉  张安宇  陈  震 三版责编：韩晓明  周  輖  关皓宇 四版责编：刘  念  韩春瑶  马志远 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月15日
+							Sun</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_05.html">05版：教育</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_06.html">06版：港澳台侨</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_07.html">07版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_08.html">08版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/15/node_02.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30191230.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30191232.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　亚太经合组织第三十三次领导人非正式会议将于11月18日至19日在广东深圳举行。“开放、创新、合作”是APEC“中国年”三大优先领域。</p>
+  <p>　　“构建亚太共同体是实现亚太地区长远发展繁荣的必由之路，也是各方的共同愿景。”习近平主席深刻指出。</p>
+  <p>　　潮起湾区，风动亚太。深圳蛇口港，巨轮往来，货物加速出海；太平洋岛屿上，卫星接通，孤岛连世界；“数字工坊”里，送教上门，产业联动发展……开放、创新、合作，从深圳这个重要窗口，我们能够看到粤港澳大湾区联通亚太、共促繁荣的故事，从中更能读懂中国与亚太共创美好明天的坚实步伐。</p>
+  <p><strong>　　开放：摩托车出海加速记</strong></p>
+  <p>　　“开放是亚太合作的生命线。”擘画亚太合作，习近平主席作出重要论断。</p>
+  <p>　　这条“生命线”，铺就了一条条畅通亚太乃至全球的贸易航线。</p>
+  <p>　　深圳蛇口港内，各色集装箱层层叠叠，驳船穿梭，桥吊起落，一只只集装箱装上远洋货轮，驶向大洋深处。</p>
+  <p>　　“过去，‘货等港’；现在，‘港等货’。”广东江门长华集团物流负责人容伟文说。</p>
+  <p>　　“最近手头好几单货同时转。”点开手机屏幕，容伟文一一细数：“秘鲁1512辆，将要出发；智利540辆，成品打包装；印尼756辆、埃及5000辆，排队等上线……”</p>
+  <p>　　日均3个集装箱出海，年出口15万辆。生产线不停歇，摩托车一下线，便能走上出海快车道。</p>
+  <p>　　就在几年前，这样的效率不敢想。</p>
+  <p>　　“近年来外贸货量一路涨，海港港口面积却有限。”容伟文感慨，货物出海，跟着“等”了起来。</p>
+  <p>　　“摩托车装箱后，一般要运到离工厂120多公里远的蛇口港，排队等进场。”容伟文回忆，“进了场，等理货、等报关、等放行，有时一等好几天，港口堆不下货物，还得搁外堆场，另收费用。”</p>
+  <p>　　那时候，货追着港跑，人追着货跑。港口情况、船期等信息要实时关注，就怕耽误订单。</p>
+  <p>　　“现在反过来——‘港等货’。”容伟文话锋一转，“提柜、报关、放行，前移到‘家门口’江门高新港，‘一站办齐’，省时省事省心。今年，企业已出口约1000个标准箱摩托车，节省成本120余万元。”</p>
+  <p>　　摩托车出海是一个缩影。粤港澳大湾区，内河支线网络密集、深水海港资源丰富。“珠三角腹地货物，海关将通关手续前移到内河港口，一次办结，‘一单到底’，货物运输至海港，直接接驳远洋大船出海，不用再办转关手续。在这种海关监管模式下，物流效率平均提升约30%。”深圳海关口岸监管处副处长潘峰介绍。</p>
+  <p>　　改革赋能，出海加速。“过去，货量一大，港口堆场就吃紧；现在，货物抵港后能直接衔接国际船期，堆场不堵、环节少了，码头周转更快。”蛇口港港口物流相关负责人说。</p>
+  <p>　　据海关总署广东分署统计，今年前10月，粤港澳大湾区内地9市进出口9.46万亿元，同比增长26%。</p>
+  <p>　　“这批货从香港走，这批从深圳走……”容伟文打开近期订单，“粤港澳大湾区海港丰富，企业可根据订单情况选择港口，出海效率高。”</p>
+  <p>　　地图里，深圳港、广州港、香港港等错落分布，密织的航线网络从粤港澳大湾区铺展开来，辐射全球。</p>
+  <p>　　打通堵点，企业出海跑出“加速度”。如今，一条条更加便捷高效的开放之路，让特区、湾区与亚太地区紧密相连、共享繁荣。</p>
+  <p><strong>　　创新：太平洋海岛通网记</strong></p>
+  <p>　　创新是亚太发展的引擎。习近平主席指出：“强化数智赋能，塑造亚太创新发展新优势。”</p>
+  <p>　　太平洋见证新机遇。</p>
+  <p>　　“过去，上岛后手机变‘砖头’；现在，满格信号连接全世界。”视频采访那头，阿古斯坐在印度尼西亚巴布亚省比亚克岛的海边咖啡厅，爽朗大笑。</p>
+  <p>　　翻开印尼地图，浩瀚大洋上，一座座岛屿散落碧波。这个世界上最大的群岛国家，岛屿超1.7万个，不少偏远岛屿缺乏网络连接。在巴布亚省，以前常常要坐半个多小时船，才能搜寻到信号。</p>
+  <p>　　近年来，印尼政府加快电信网络升级建设。亚太卫星宽带通信（深圳）有限公司与当地电信运营商合作，相继让14个久困于地理阻隔的偏远岛屿与外部世界相连。</p>
+  <p>　　2024年7月，一批亚太星通基站设备运抵比亚克岛。“岛上酷热难耐，雨后道路泥泞不堪，我们几乎一路推着汽车前进，花了3个多月布点，才让信号覆盖全岛。”亚太星通国际业务部销售经理关晓莹说。</p>
+  <p>　　岛上建基站，只解决信号覆盖；通话和数据，还得送回运营商主干网。常规做法是拉海底光缆，可岛屿分散，拉光缆成本高、周期长。亚太星通换思路，在基站旁立起卫星终端，通话和数据经由卫星回传。</p>
+  <p>　　新方案带来新难题。“按当地数据安全管理要求，通信数据不能在境外落地，而我们的卫星关口站不在印尼。”关晓莹说。</p>
+  <p>　　问题倒逼创新。亚太星通采用虚拟关口站技术，数据全程加密，接入运营商在雅加达的对接节点。“我们只是搭建数据通道，数据绕行天空，原原本本地落回印尼。”关晓莹说，合作方把整条数据路径测了一遍，安全评估通过，项目终于落了地。</p>
+  <p>　　除了岛屿，亚太星通的数智技术还向茫茫大洋延伸。依托“智慧船舶平台”，船在万里海上，航行状态、设备工况等，岸上一目了然。“我们正在用数智技术为亚太地区的远洋运输、海洋渔业等产业赋能，目前已有上万艘渔船接入平台。”亚太星通海事业务部负责人徐源说。</p>
+  <p>　　在印尼数字基建领域，华为、腾讯、香港亚太卫星等多家粤港澳大湾区企业积极参与，从扩大偏远岛屿和村庄网络覆盖，到建设数据中心、培育人工智能人才，让数字红利惠及“万岛之国”角落。</p>
+  <p>　　有了网络信号，比亚克岛也有了数字产业。在雅加达工作多年的阿古斯返乡创业，成了一名网络博主。</p>
+  <p>　　信号满格，不只是连上网，更是连上发展机会。以创新跨越山海、弥合数字鸿沟，为亚太经济插上腾飞翅膀。</p>
+  <p><strong>　　合作：职教课跨境育才记</strong></p>
+  <p>　　越是风高浪急，越要同舟共济。习近平主席指出，“希望同亚太伙伴们携手同心，共同创建引领世界、惠及各方、造福子孙的美好亚太。”</p>
+  <p>　　亚太共同繁荣美好愿景，落在一个个具体合作中。</p>
+  <p>　　“用中国技术，维修保养中国车。”新加坡一家新能源汽车维修店里，经理张志祥打开客户登记簿，神采飞扬，“营业额翻着番涨！”</p>
+  <p>　　今年8月底，张志祥飞到深圳，参加“深圳电动汽车大师留学班”，这是深圳职业技术大学与新加坡淡马锡理工学院的合作项目，19名新加坡学员，多是维修厂经营者、技术主管。</p>
+  <p>　　今年前三季度，我国新能源汽车出口突破400万辆，同比增长130%。亚太街头，中国品牌新能源汽车越来越多。</p>
+  <p>　　车好卖，维修师傅却难寻。</p>
+  <p>　　“几年前，出海车企找上门来，委托学校为其海外经销商培养技术服务人才。”深职大汽车与交通学院副院长崔宏巍说，之前从国内派技术人员，成本高、留人难，不如培养本地化售后服务团队。</p>
+  <p>　　职教出海，连着亚太合作大棋局。</p>
+  <p>　　深职大既走出去，又请进来：一边在海外设立“深圳数字工坊”，把职业技能送出去；一边把海外职教老师、技术工人请进国内研修。</p>
+  <p>　　深职大实训室，新能源汽车整车、刀片电池台架等一字排开。学员们轮番做高压安全断电实操，碰上疑难故障，问题输进学校自研的汽车垂类大模型，诊断思路实时弹出。4天40个学时，课程排得满满当当。</p>
+  <p>　　“很解渴！”结业时，张志祥依依不舍，“第二期开班，我还来。”</p>
+  <p>　　送教上门的首站，是泰国东方技术学院。2024年10月，深职大首个“深圳数字工坊”落地泰国。“过去两年，有79名泰国教师拿到课程证书，比亚迪泰国工厂本地化用工率达到90%以上。”深职大教师马德粮说。</p>
+  <p>　　在粤港澳大湾区，职教合作早有探索。2008年起，深职大（时为深圳职业技术学院）与香港职业训练局合作开展深港人才联合培养项目，颁发双方文凭，已累计培养339名学生。</p>
+  <p>　　如今，深职大已在15个国家建成19个“深圳数字工坊”，英文版教学资源推广至150多个国家，累计培训海外高技能人才4000余名。</p>
+  <p>　　“职教出海”，如何走得更远？</p>
+  <p>　　深职大建成1200个英文版数字化教学资源，纳入联合国教科文组织职业教育免费在线课程体系。</p>
+  <p>　　筹备新一期“大师班”，派遣教师赴新西兰奥塔哥理工学院培训，接待韩国技术教育大学来访师生……崔宏巍的日程表上，跨境育才之路，越走越畅。</p>
+  <p>　　“路通到哪里，我们的合作就在哪里。”跨境育才，让中国技术落地生根；互利共赢，展现亚太包容发展新气象。</p>
+  <p>　　一湾连亚太。建设亚太共同体，促进共同繁荣，更多精彩故事正在续写。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-15 00:00:00:0</date><author>本报记者  江  琳  程远州</author><subtitle><p> ——从三个故事看构建亚太共同体的生动实践 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191231</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/15/content_30191231.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/15/content_30191231.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 一湾连亚太 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 一湾连亚太 </p></h1>
+						<h2><p> ——从三个故事看构建亚太共同体的生动实践 </p></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  江  琳  程远州
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月15日</span>&nbsp;第&nbsp;02&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　亚太经合组织第三十三次领导人非正式会议将于11月18日至19日在广东深圳举行。“开放、创新、合作”是APEC“中国年”三大优先领域。</p><p>　　“构建亚太共同体是实现亚太地区长远发展繁荣的必由之路，也是各方的共同愿景。”习近平主席深刻指出。</p><p>　　潮起湾区，风动亚太。深圳蛇口港，巨轮往来，货物加速出海；太平洋岛屿上，卫星接通，孤岛连世界；“数字工坊”里，送教上门，产业联动发展……开放、创新、合作，从深圳这个重要窗口，我们能够看到粤港澳大湾区联通亚太、共促繁荣的故事，从中更能读懂中国与亚太共创美好明天的坚实步伐。</p><p><strong>　　开放：摩托车出海加速记</strong></p><p>　　“开放是亚太合作的生命线。”擘画亚太合作，习近平主席作出重要论断。</p><p>　　这条“生命线”，铺就了一条条畅通亚太乃至全球的贸易航线。</p><p>　　深圳蛇口港内，各色集装箱层层叠叠，驳船穿梭，桥吊起落，一只只集装箱装上远洋货轮，驶向大洋深处。</p><p>　　“过去，‘货等港’；现在，‘港等货’。”广东江门长华集团物流负责人容伟文说。</p><p>　　“最近手头好几单货同时转。”点开手机屏幕，容伟文一一细数：“秘鲁1512辆，将要出发；智利540辆，成品打包装；印尼756辆、埃及5000辆，排队等上线……”</p><p>　　日均3个集装箱出海，年出口15万辆。生产线不停歇，摩托车一下线，便能走上出海快车道。</p><p>　　就在几年前，这样的效率不敢想。</p><p>　　“近年来外贸货量一路涨，海港港口面积却有限。”容伟文感慨，货物出海，跟着“等”了起来。</p><p>　　“摩托车装箱后，一般要运到离工厂120多公里远的蛇口港，排队等进场。”容伟文回忆，“进了场，等理货、等报关、等放行，有时一等好几天，港口堆不下货物，还得搁外堆场，另收费用。”</p><p>　　那时候，货追着港跑，人追着货跑。港口情况、船期等信息要实时关注，就怕耽误订单。</p><p>　　“现在反过来——‘港等货’。”容伟文话锋一转，“提柜、报关、放行，前移到‘家门口’江门高新港，‘一站办齐’，省时省事省心。今年，企业已出口约1000个标准箱摩托车，节省成本120余万元。”</p><p>　　摩托车出海是一个缩影。粤港澳大湾区，内河支线网络密集、深水海港资源丰富。“珠三角腹地货物，海关将通关手续前移到内河港口，一次办结，‘一单到底’，货物运输至海港，直接接驳远洋大船出海，不用再办转关手续。在这种海关监管模式下，物流效率平均提升约30%。”深圳海关口岸监管处副处长潘峰介绍。</p><p>　　改革赋能，出海加速。“过去，货量一大，港口堆场就吃紧；现在，货物抵港后能直接衔接国际船期，堆场不堵、环节少了，码头周转更快。”蛇口港港口物流相关负责人说。</p><p>　　据海关总署广东分署统计，今年前10月，粤港澳大湾区内地9市进出口9.46万亿元，同比增长26%。</p><p>　　“这批货从香港走，这批从深圳走……”容伟文打开近期订单，“粤港澳大湾区海港丰富，企业可根据订单情况选择港口，出海效率高。”</p><p>　　地图里，深圳港、广州港、香港港等错落分布，密织的航线网络从粤港澳大湾区铺展开来，辐射全球。</p><p>　　打通堵点，企业出海跑出“加速度”。如今，一条条更加便捷高效的开放之路，让特区、湾区与亚太地区紧密相连、共享繁荣。</p><p><strong>　　创新：太平洋海岛通网记</strong></p><p>　　创新是亚太发展的引擎。习近平主席指出：“强化数智赋能，塑造亚太创新发展新优势。”</p><p>　　太平洋见证新机遇。</p><p>　　“过去，上岛后手机变‘砖头’；现在，满格信号连接全世界。”视频采访那头，阿古斯坐在印度尼西亚巴布亚省比亚克岛的海边咖啡厅，爽朗大笑。</p><p>　　翻开印尼地图，浩瀚大洋上，一座座岛屿散落碧波。这个世界上最大的群岛国家，岛屿超1.7万个，不少偏远岛屿缺乏网络连接。在巴布亚省，以前常常要坐半个多小时船，才能搜寻到信号。</p><p>　　近年来，印尼政府加快电信网络升级建设。亚太卫星宽带通信（深圳）有限公司与当地电信运营商合作，相继让14个久困于地理阻隔的偏远岛屿与外部世界相连。</p><p>　　2024年7月，一批亚太星通基站设备运抵比亚克岛。“岛上酷热难耐，雨后道路泥泞不堪，我们几乎一路推着汽车前进，花了3个多月布点，才让信号覆盖全岛。”亚太星通国际业务部销售经理关晓莹说。</p><p>　　岛上建基站，只解决信号覆盖；通话和数据，还得送回运营商主干网。常规做法是拉海底光缆，可岛屿分散，拉光缆成本高、周期长。亚太星通换思路，在基站旁立起卫星终端，通话和数据经由卫星回传。</p><p>　　新方案带来新难题。“按当地数据安全管理要求，通信数据不能在境外落地，而我们的卫星关口站不在印尼。”关晓莹说。</p><p>　　问题倒逼创新。亚太星通采用虚拟关口站技术，数据全程加密，接入运营商在雅加达的对接节点。“我们只是搭建数据通道，数据绕行天空，原原本本地落回印尼。”关晓莹说，合作方把整条数据路径测了一遍，安全评估通过，项目终于落了地。</p><p>　　除了岛屿，亚太星通的数智技术还向茫茫大洋延伸。依托“智慧船舶平台”，船在万里海上，航行状态、设备工况等，岸上一目了然。“我们正在用数智技术为亚太地区的远洋运输、海洋渔业等产业赋能，目前已有上万艘渔船接入平台。”亚太星通海事业务部负责人徐源说。</p><p>　　在印尼数字基建领域，华为、腾讯、香港亚太卫星等多家粤港澳大湾区企业积极参与，从扩大偏远岛屿和村庄网络覆盖，到建设数据中心、培育人工智能人才，让数字红利惠及“万岛之国”角落。</p><p>　　有了网络信号，比亚克岛也有了数字产业。在雅加达工作多年的阿古斯返乡创业，成了一名网络博主。</p><p>　　信号满格，不只是连上网，更是连上发展机会。以创新跨越山海、弥合数字鸿沟，为亚太经济插上腾飞翅膀。</p><p><strong>　　合作：职教课跨境育才记</strong></p><p>　　越是风高浪急，越要同舟共济。习近平主席指出，“希望同亚太伙伴们携手同心，共同创建引领世界、惠及各方、造福子孙的美好亚太。”</p><p>　　亚太共同繁荣美好愿景，落在一个个具体合作中。</p><p>　　“用中国技术，维修保养中国车。”新加坡一家新能源汽车维修店里，经理张志祥打开客户登记簿，神采飞扬，“营业额翻着番涨！”</p><p>　　今年8月底，张志祥飞到深圳，参加“深圳电动汽车大师留学班”，这是深圳职业技术大学与新加坡淡马锡理工学院的合作项目，19名新加坡学员，多是维修厂经营者、技术主管。</p><p>　　今年前三季度，我国新能源汽车出口突破400万辆，同比增长130%。亚太街头，中国品牌新能源汽车越来越多。</p><p>　　车好卖，维修师傅却难寻。</p><p>　　“几年前，出海车企找上门来，委托学校为其海外经销商培养技术服务人才。”深职大汽车与交通学院副院长崔宏巍说，之前从国内派技术人员，成本高、留人难，不如培养本地化售后服务团队。</p><p>　　职教出海，连着亚太合作大棋局。</p><p>　　深职大既走出去，又请进来：一边在海外设立“深圳数字工坊”，把职业技能送出去；一边把海外职教老师、技术工人请进国内研修。</p><p>　　深职大实训室，新能源汽车整车、刀片电池台架等一字排开。学员们轮番做高压安全断电实操，碰上疑难故障，问题输进学校自研的汽车垂类大模型，诊断思路实时弹出。4天40个学时，课程排得满满当当。</p><p>　　“很解渴！”结业时，张志祥依依不舍，“第二期开班，我还来。”</p><p>　　送教上门的首站，是泰国东方技术学院。2024年10月，深职大首个“深圳数字工坊”落地泰国。“过去两年，有79名泰国教师拿到课程证书，比亚迪泰国工厂本地化用工率达到90%以上。”深职大教师马德粮说。</p><p>　　在粤港澳大湾区，职教合作早有探索。2008年起，深职大（时为深圳职业技术学院）与香港职业训练局合作开展深港人才联合培养项目，颁发双方文凭，已累计培养339名学生。</p><p>　　如今，深职大已在15个国家建成19个“深圳数字工坊”，英文版教学资源推广至150多个国家，累计培训海外高技能人才4000余名。</p><p>　　“职教出海”，如何走得更远？</p><p>　　深职大建成1200个英文版数字化教学资源，纳入联合国教科文组织职业教育免费在线课程体系。</p><p>　　筹备新一期“大师班”，派遣教师赴新西兰奥塔哥理工学院培训，接待韩国技术教育大学来访师生……崔宏巍的日程表上，跨境育才之路，越走越畅。</p><p>　　“路通到哪里，我们的合作就在哪里。”跨境育才，让中国技术落地生根；互利共赢，展现亚太包容发展新气象。</p><p>　　一湾连亚太。建设亚太共同体，促进共同繁荣，更多精彩故事正在续写。</p><!--/enpcontent--><!--enpproperty <date>2026-11-15 00:00:00:0</date><author>本报记者  江  琳  程远州</author><subtitle><p> ——从三个故事看构建亚太共同体的生动实践 </p></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191231</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/15/content_30191231.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/15/content_30191231.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 一湾连亚太 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

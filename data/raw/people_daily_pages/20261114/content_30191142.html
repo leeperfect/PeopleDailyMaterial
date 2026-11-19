@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 对接一名专员，就能匹配所需服务（经济新方位·从“0”到“1”，把“1”拉长） </title>
+		<meta name="author" content='第003版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.734248,30.99559925,194.803264,30.99559925,194.803264,154.97799625,3.734248,154.97799625" shape="polygon" href="content_30191140.html"><Area coords="396.452652,83.498349,396.452652,30.99559925,396.452652,30.99559925,205.383636,30.99559925,205.383636,30.99559925,205.383636,83.498349,205.383636,167.62926125,396.452652,167.62926125" shape="polygon" href="content_30191141.html"><Area coords="3.734248,163.83388175,194.803264,163.83388175,194.803264,491.50165100000004,3.734248,491.50165100000004" shape="polygon" href="content_30191142.html"><Area coords="3.734248,500.99009975,194.803264,500.99009975,194.803264,571.2046205,3.734248,571.2046205" shape="polygon" href="content_30191143.html"><Area coords="268.865848,316.28163075,396.452652,316.28163075,396.452652,178.38283650000002,396.452652,178.38283650000002,205.383636,178.38283650000002,205.383636,263.77887525,205.383636,411.16611824999995,268.865848,411.16611824999995" shape="polygon" href="content_30191144.html"><Area coords="272.600096,325.7700795,396.452652,325.7700795,396.452652,411.16611824999995,272.600096,411.16611824999995" shape="polygon" href="content_30191145.html"><Area coords="396.452652,420.65456699999993,205.383636,420.65456699999993,205.383636,420.65456699999993,205.383636,420.65456699999993,205.383636,444.05940725,205.383636,444.05940725,205.383636,481.38063900000003,396.452652,481.38063900000003" shape="polygon" href="content_30191146.html"><Area coords="205.383636,491.50165100000004,272.600096,491.50165100000004,272.600096,571.2046205,205.383636,571.2046205" shape="polygon" href="content_30191147.html"><Area coords="283.180464,491.50165100000004,396.452652,491.50165100000004,396.452652,571.2046205,283.180464,571.2046205" shape="polygon" href="content_30191148.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/14/219167cb-7cc4-4caa-afba-5f3ed228bf57.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第03版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30191140.html"> 李强抵达曼谷开始对泰国进行正式访问 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191141.html"> 充分发挥高标准农田综合效益 为守牢粮食安全底线建设农业强国提供坚实支撑 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191142.html"> 对接一名专员，就能匹配所需服务（经济新方位·从“0”到“1”，把“1”拉长） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191143.html"> 大幅提升知识产权公共服务质效（延伸阅读） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191144.html"> 以技术创新回应市场需求（高质量发展微视角） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191145.html"> 铸就光纤产业硬核实力（专家点评） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191146.html"> 第二十三届中国国际农产品交易会开幕 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191147.html"> 李强同泰国总理阿努廷会谈 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191148.html"> 韩正出席2026世界中文大会开幕式并致辞 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月14日
+							Sat</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_05.html">05版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_06.html">06版：科技·新知</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_07.html">07版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_08.html">08版：文化遗产</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/14/node_03.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30191141.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30191143.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　记者见到顾金芳时，她正忙着打电话帮企业对接专利申请。这边刚挂断电话，那边微信提醒又响起。“正同时服务10多家企业。”她告诉记者。</p>
+  <p>　　作为浙江泽大（平湖）律师事务所的律师，顾金芳还有一个身份——知识产权服务专员。这支由浙江省市场监管局牵头、省知识产权保护中心协同成立的服务专员队伍，成员来自知识产权公共服务机构、高校、科研机构、社会组织等，全方位提供知识产权服务。今年1月至9月，这支队伍累计为企业解决知识产权问题和需求1万余个。</p>
+  <p><strong>　　精准对接供需，深耕属地服务</strong></p>
+  <p>　　去年8月，顾金芳在浙江嘉兴平湖市的一场知识产权服务专员聘任会上接过聘书。</p>
+  <p>　　与本身就从事知识产权工作的服务专员相比，身为律师的顾金芳略显特殊。当初推选她，平湖市市场监管局知识产权发展科科长徐琳琳有充分的考量：“顾金芳既有企业知识产权法务从业经历，又有近15年的律师工作经历，专业能力过硬、责任心强，是对服务专员队伍很好的补充。”</p>
+  <p>　　服务专员能提供哪些服务？</p>
+  <p>　　刚获聘时，顾金芳就把负责对接的10多家企业跑了个遍。她发现两个痛点：“对于知识产权，企业往往是要么没资源，要么缺乏保护意识。”</p>
+  <p>　　先说资源。艾华（浙江）新材料有限公司总经理金兴国告诉顾金芳：“企业想推进产品创新，却苦于技术不过硬。”顾金芳在知识产权指导站驻站服务期间，恰好对接过浙江工业大学平湖新材料研究院，便试着牵线搭桥。双方一拍即合，合作研发的水性阻尼材料今年实现量产。</p>
+  <p>　　再看意识。“咱们要关口前移、未雨绸缪，主动布局知识产权申请。”在浙江佳佳童车有限公司的会议室里，顾金芳建议。</p>
+  <p>　　这家童车企业，过去吃过专利被侵权的亏，打官司费时、费钱、费精力。公司工程部经理王四江说：“说到底，还是因为对知识产权重视不够，也不懂。”在顾金芳指导下，企业为这两年自主设计的童车申请了外观设计专利。</p>
+  <p>　　获聘一年多，顾金芳总结出服务经验——分类施策、双轨并行，针对平湖先进装备制造和传统时尚两类特色产业，采取不同的服务模式。“比如，汽车零部件等装备制造企业，普遍面临专利审查周期长、布局方向不明等问题，要帮助他们精准识别可布局的高价值专利点，打通快速预审通道；对时尚产业，要聚焦知识产权保护职能，建立侵权纠纷快速响应机制，有效维护企业原创设计的合法权益。”顾金芳说。</p>
+  <p><strong>　　破解发展难题，助推全面发展</strong></p>
+  <p>　　从专利申请到专利侵权，在浙江，企业遇到知识产权相关问题时，都可以请服务专员“搭把手”。</p>
+  <p>　　专员肖倩乔去年曾接到一家技术公司的求助——企业正值上市关键期，关键专利疑似遭遇侵权。如何保障上市进程并有效维权？</p>
+  <p>　　作为浙江省知识产权保护中心服务发展部副部长，肖倩乔还担任杭州市中级人民法院兼职技术调查官，在专利侵权纠纷方面有不少经验。掌握企业情况后，她随即组建了一个服务团队。</p>
+  <p>　　“我负责专利侵权纠纷的技术调查，其他3名成员有企业知识产权管理和专利实审等背景，大家都有10年以上的专业经验。”肖倩乔介绍，从第一次现场沟通到基本确定解决方案，一个月便解决了问题。</p>
+  <p>　　“服务团队的专业细心让我们安心！”该技术公司有关负责人说，在服务团队帮助下，他们完成11件疑似侵权专利的关联度排查，公司顺利上市，关键技术也得到了保护。</p>
+  <p>　　得益于服务机制，浙江众凌科技股份有限公司的创新步伐走得更扎实。提及专员蔡碎斌，公司相关负责人赵明烜连连点赞。</p>
+  <p>　　“我们在新一代高清柔性显示技术研发领域取得突破，但申请发明专利授权保护时总是被驳回。”赵明烜介绍，比如在申报选择分类时就犯了难，“到底是属于半导体材料还是高端细分材料，实在无从下手，更别提填写不规范、不专业等问题了，总不能找个人手把手教吧。”</p>
+  <p>　　了解到相关情况后，浙江省知识产权保护中心工作人员蔡碎斌接下任务，成为赵明烜口中那个“手把手教”的人。蔡碎斌快速组建起服务团队，多次实地考察，邀请相关专家调研座谈，协助企业重构专利布局策略，深挖技术创新点，优化申报文本……8个月时间，帮助企业向相关部门提交24件批量预审，获得授权23件。</p>
+  <p>　　“这对我们意义重大，以此为基础，公司开启海外专利申请之路，进一步打开国际市场。”赵明烜说。</p>
+  <p><strong>　　健全长效机制，筑牢服务根基</strong></p>
+  <p>　　作为当地政府提供的一项免费公共服务，自去年7月启动以来，这支知识产权服务专员队伍逐渐发展到453人，结对创新主体2014家，其中纳入护航战略科技力量行动的104家。</p>
+  <p>　　服务机制充分考虑省内相关企业需求特点，且根据服务对象不同，采取“一对多”“多对一”等不同的专员匹配方式，既保证服务质量，又确保可持续性。</p>
+  <p>　　“建立这一机制，主要是想促进供需匹配，提供精准服务。”浙江省市场监管局知识产权发展处处长许希雳举例，“去年初，在宁波一家高端装备制造企业调研时，对方一口气提出27项知识产权问题。事后逐一分析，绝大多数问题都能依托现有公共服务解决，只是供需没有充分匹配。”</p>
+  <p>　　基于此，知识产权服务专员机制应运而生。“我们最朴素的想法，就是让企业不再为‘找谁办、怎么办’发愁。企业只需对接一名专员，就能匹配到所需的知识产权公共服务。”许希雳说。</p>
+  <p>　　另一方面，原本散落在各地各领域的服务资源也拧成了一股绳，为企业提供了清晰的入口、简明的流程、靠得住的帮手，知识产权服务专员成为政府延伸服务的触角。</p>
+  <p>　　服务专员队伍如何建设？许希雳介绍，目前主要面向浙江省知识产权领域相关事业单位、高校、协会等在职工作人员遴选，要求相关专业毕业或具有2年以上知识产权工作经验，对符合条件人员培训后会统一颁发聘书，服务过程中也会定期开展业务培训。</p>
+  <p>　　顾金芳在培训中学到不少干货。“让我印象最深的，是有关涉外知识产权的业务培训。”她说，自己学到了涉外商标申请的系列知识，后来在帮助企业时少走很多弯路。</p>
+  <p>　　据了解，专员虽不领取报酬，但相关激励举措已融入人事管理制度，纳入派出单位的考核评价体系。此外，还会定期开展优秀案例和专员的表彰。</p>
+  <p>　　“这支队伍是动态调整的。”许希雳告诉记者，以两年为评价周期，根据企业满意度、专员日常工作开展情况、服务成效等对其进行评价，对表现出色且有意愿的专员会继续聘用。</p>
+  <p>　　在许希雳看来，下一步的工作重点是加强动态管理并健全评价机制。“希望通过不断完善机制，让专员更有成就感、获得感，让企业也能切实获益。”许希雳说。</p>
+  <p>　　本期统筹：祁嘉润</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-14 00:00:00:0</date><author>本报记者  窦瀚洋</author><subtitle></subtitle><introtitle><p> 浙江建起一支知识产权服务专员队伍，结对创新主体超两千家 </p></introtitle><keyword></keyword><paperarticleid>30191142</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/14/content_30191142.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/14/content_30191142.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 对接一名专员，就能匹配所需服务（经济新方位·从“0”到“1”，把“1”拉长） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 浙江建起一支知识产权服务专员队伍，结对创新主体超两千家 </p></h3>
+						<h1><p> 对接一名专员，就能匹配所需服务（经济新方位·从“0”到“1”，把“1”拉长） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  窦瀚洋
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月14日</span>&nbsp;第&nbsp;03&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　记者见到顾金芳时，她正忙着打电话帮企业对接专利申请。这边刚挂断电话，那边微信提醒又响起。“正同时服务10多家企业。”她告诉记者。</p><p>　　作为浙江泽大（平湖）律师事务所的律师，顾金芳还有一个身份——知识产权服务专员。这支由浙江省市场监管局牵头、省知识产权保护中心协同成立的服务专员队伍，成员来自知识产权公共服务机构、高校、科研机构、社会组织等，全方位提供知识产权服务。今年1月至9月，这支队伍累计为企业解决知识产权问题和需求1万余个。</p><p><strong>　　精准对接供需，深耕属地服务</strong></p><p>　　去年8月，顾金芳在浙江嘉兴平湖市的一场知识产权服务专员聘任会上接过聘书。</p><p>　　与本身就从事知识产权工作的服务专员相比，身为律师的顾金芳略显特殊。当初推选她，平湖市市场监管局知识产权发展科科长徐琳琳有充分的考量：“顾金芳既有企业知识产权法务从业经历，又有近15年的律师工作经历，专业能力过硬、责任心强，是对服务专员队伍很好的补充。”</p><p>　　服务专员能提供哪些服务？</p><p>　　刚获聘时，顾金芳就把负责对接的10多家企业跑了个遍。她发现两个痛点：“对于知识产权，企业往往是要么没资源，要么缺乏保护意识。”</p><p>　　先说资源。艾华（浙江）新材料有限公司总经理金兴国告诉顾金芳：“企业想推进产品创新，却苦于技术不过硬。”顾金芳在知识产权指导站驻站服务期间，恰好对接过浙江工业大学平湖新材料研究院，便试着牵线搭桥。双方一拍即合，合作研发的水性阻尼材料今年实现量产。</p><p>　　再看意识。“咱们要关口前移、未雨绸缪，主动布局知识产权申请。”在浙江佳佳童车有限公司的会议室里，顾金芳建议。</p><p>　　这家童车企业，过去吃过专利被侵权的亏，打官司费时、费钱、费精力。公司工程部经理王四江说：“说到底，还是因为对知识产权重视不够，也不懂。”在顾金芳指导下，企业为这两年自主设计的童车申请了外观设计专利。</p><p>　　获聘一年多，顾金芳总结出服务经验——分类施策、双轨并行，针对平湖先进装备制造和传统时尚两类特色产业，采取不同的服务模式。“比如，汽车零部件等装备制造企业，普遍面临专利审查周期长、布局方向不明等问题，要帮助他们精准识别可布局的高价值专利点，打通快速预审通道；对时尚产业，要聚焦知识产权保护职能，建立侵权纠纷快速响应机制，有效维护企业原创设计的合法权益。”顾金芳说。</p><p><strong>　　破解发展难题，助推全面发展</strong></p><p>　　从专利申请到专利侵权，在浙江，企业遇到知识产权相关问题时，都可以请服务专员“搭把手”。</p><p>　　专员肖倩乔去年曾接到一家技术公司的求助——企业正值上市关键期，关键专利疑似遭遇侵权。如何保障上市进程并有效维权？</p><p>　　作为浙江省知识产权保护中心服务发展部副部长，肖倩乔还担任杭州市中级人民法院兼职技术调查官，在专利侵权纠纷方面有不少经验。掌握企业情况后，她随即组建了一个服务团队。</p><p>　　“我负责专利侵权纠纷的技术调查，其他3名成员有企业知识产权管理和专利实审等背景，大家都有10年以上的专业经验。”肖倩乔介绍，从第一次现场沟通到基本确定解决方案，一个月便解决了问题。</p><p>　　“服务团队的专业细心让我们安心！”该技术公司有关负责人说，在服务团队帮助下，他们完成11件疑似侵权专利的关联度排查，公司顺利上市，关键技术也得到了保护。</p><p>　　得益于服务机制，浙江众凌科技股份有限公司的创新步伐走得更扎实。提及专员蔡碎斌，公司相关负责人赵明烜连连点赞。</p><p>　　“我们在新一代高清柔性显示技术研发领域取得突破，但申请发明专利授权保护时总是被驳回。”赵明烜介绍，比如在申报选择分类时就犯了难，“到底是属于半导体材料还是高端细分材料，实在无从下手，更别提填写不规范、不专业等问题了，总不能找个人手把手教吧。”</p><p>　　了解到相关情况后，浙江省知识产权保护中心工作人员蔡碎斌接下任务，成为赵明烜口中那个“手把手教”的人。蔡碎斌快速组建起服务团队，多次实地考察，邀请相关专家调研座谈，协助企业重构专利布局策略，深挖技术创新点，优化申报文本……8个月时间，帮助企业向相关部门提交24件批量预审，获得授权23件。</p><p>　　“这对我们意义重大，以此为基础，公司开启海外专利申请之路，进一步打开国际市场。”赵明烜说。</p><p><strong>　　健全长效机制，筑牢服务根基</strong></p><p>　　作为当地政府提供的一项免费公共服务，自去年7月启动以来，这支知识产权服务专员队伍逐渐发展到453人，结对创新主体2014家，其中纳入护航战略科技力量行动的104家。</p><p>　　服务机制充分考虑省内相关企业需求特点，且根据服务对象不同，采取“一对多”“多对一”等不同的专员匹配方式，既保证服务质量，又确保可持续性。</p><p>　　“建立这一机制，主要是想促进供需匹配，提供精准服务。”浙江省市场监管局知识产权发展处处长许希雳举例，“去年初，在宁波一家高端装备制造企业调研时，对方一口气提出27项知识产权问题。事后逐一分析，绝大多数问题都能依托现有公共服务解决，只是供需没有充分匹配。”</p><p>　　基于此，知识产权服务专员机制应运而生。“我们最朴素的想法，就是让企业不再为‘找谁办、怎么办’发愁。企业只需对接一名专员，就能匹配到所需的知识产权公共服务。”许希雳说。</p><p>　　另一方面，原本散落在各地各领域的服务资源也拧成了一股绳，为企业提供了清晰的入口、简明的流程、靠得住的帮手，知识产权服务专员成为政府延伸服务的触角。</p><p>　　服务专员队伍如何建设？许希雳介绍，目前主要面向浙江省知识产权领域相关事业单位、高校、协会等在职工作人员遴选，要求相关专业毕业或具有2年以上知识产权工作经验，对符合条件人员培训后会统一颁发聘书，服务过程中也会定期开展业务培训。</p><p>　　顾金芳在培训中学到不少干货。“让我印象最深的，是有关涉外知识产权的业务培训。”她说，自己学到了涉外商标申请的系列知识，后来在帮助企业时少走很多弯路。</p><p>　　据了解，专员虽不领取报酬，但相关激励举措已融入人事管理制度，纳入派出单位的考核评价体系。此外，还会定期开展优秀案例和专员的表彰。</p><p>　　“这支队伍是动态调整的。”许希雳告诉记者，以两年为评价周期，根据企业满意度、专员日常工作开展情况、服务成效等对其进行评价，对表现出色且有意愿的专员会继续聘用。</p><p>　　在许希雳看来，下一步的工作重点是加强动态管理并健全评价机制。“希望通过不断完善机制，让专员更有成就感、获得感，让企业也能切实获益。”许希雳说。</p><p>　　本期统筹：祁嘉润</p><!--/enpcontent--><!--enpproperty <date>2026-11-14 00:00:00:0</date><author>本报记者  窦瀚洋</author><subtitle></subtitle><introtitle><p> 浙江建起一支知识产权服务专员队伍，结对创新主体超两千家 </p></introtitle><keyword></keyword><paperarticleid>30191142</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/14/content_30191142.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/14/content_30191142.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 对接一名专员，就能匹配所需服务（经济新方位·从“0”到“1”，把“1”拉长） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

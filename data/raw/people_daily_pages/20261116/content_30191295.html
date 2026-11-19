@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 携手同行  建设更加美好的世界 </title>
+		<meta name="author" content='第010版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="392.718404,434.57095849999996,392.718404,411.16611824999995,392.718404,36.05610525,6.84612,36.05610525,6.84612,490.86908775000006,392.718404,490.86908775000006" shape="polygon" href="content_30191295.html"><Area coords="293.13846,500.99009975,360.35492,500.99009975,360.35492,509.84598525,293.13846,509.84598525" shape="polygon" href="content_30191296.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/16/4b3522cc-e407-4251-856c-f30697030867.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第10版：特别报道
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30191295.html"> 携手同行  建设更加美好的世界 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191296.html"> 本版责编：巩育华  史  哲  高  佶 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月16日
+							Mon</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_07.html">07版：读者来信</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_08.html">08版：视觉</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_10.html">10版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_11.html">11版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_13.html">13版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_14.html">14版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_15.html">15版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_17.html">17版：财经</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_18.html">18版：科技</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_19.html">19版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/16/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/16/node_10.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30191296.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p> 　　立足互惠工程&nbsp;&nbsp;构建人文交流纽带</p>
+  <p>　　中国核工业集团有限公司宣传文化中心主任&nbsp;&nbsp;赖江南</p>
+  <p>　　作为中国国家核科技工业的主体，中核集团始终秉持和平利用核能理念，立足国内，深耕海外，足迹遍布30多个共建“一带一路”国家。</p>
+  <p>　　立足硬联通，以民生项目夯实交流交往的物质根基。依托完整核工业体系优势，我们既开展前沿核能合作，也承接民生基建项目。如在法国，迄今规模最大的国际聚变科研工程ITER汇聚科创智慧。一项项工程是增进认知、厚植互信的重要载体，把实事办在实处，文明交流方能根深叶茂。</p>
+  <p>　　深化软联通，以兼容互济拓展文明共处的广阔空间。硬联通消弭地理阻隔，软联通跨越文化与规则差异。在纳米比亚，我们尊重当地部族习俗与用工文化，搭建常态化沟通机制。规则对接是前提，人才共育是纽带，文化尊重是底色。</p>
+  <p>　　聚焦心联通，以情感共鸣叩响文明相通的心灵之门。在巴基斯坦恰西玛核电项目，中外建设者朝夕相伴、共庆佳节，结下深厚情谊。在纳米比亚，马拉松赛事搭建文化交流平台，不同肤色的人们并肩奔跑。在东帝汶，项目团队走进校园，开展科普活动、公益帮扶。</p>
+  <p>　　面向“十五五”的新征程，我们将继续发挥核工业体系优势，讲好互利共赢的实践故事，展现和合共生的文明图景。</p>
+  <p>　　（本报记者&nbsp;&nbsp;杨&nbsp;&nbsp;阳整理）&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　建设世界级冰雪旅游度假胜地</p>
+  <p>　　黑龙江省文化和旅游厅党组成员、副厅长&nbsp;&nbsp;魏大威</p>
+  <p>　　黑龙江是共建“一带一路”的重要节点，我们主动服务共建“一带一路”同欧亚经济联盟对接合作，为共建国家和地区经贸合作、文旅交流搭桥，让北国风光走向世界。</p>
+  <p>　　黑龙江是冰雪胜地。我们做强冰雪文化、冰雪旅游、冰雪运动、冰雪装备全产业链，建设世界级冰雪旅游度假胜地、冰雪经济高地。哈尔滨获评“世界冰雪旅游卓越城市”，哈尔滨冰雪大世界、亚布力滑雪旅游度假区、中国雪乡等享誉海内外。我们持续办好冰雪旅游季，擦亮“北国好风光·美在黑龙江”旅游品牌。</p>
+  <p>　　黑龙江也是康养秘境。春有冰凌花破雪，夏有清凉绿意，秋有五花山色与丰收景象，冬有冰雪与雾凇，四季各有风光。今冬，“哈亚雪牡”冰雪旅游1号线将升级：哈尔滨冰雪大世界打造《冰雪奇缘》主题区域；亚布力整合三大滑雪场，实现“三山联网”；中国雪乡推出民俗巡游等体验，让游客尽享赏雪、滑雪、民俗与康养。</p>
+  <p>　　黑龙江还是开放枢纽。我们持续办好中俄文化大集，开展艺术展演、文博联展、非遗交流和客源互送；打造跨境旅游合作区，推出中俄联动精品线路，上线“蝴蝶云谷—中俄通”跨境文旅数字化服务平台，不断完善语言、通关、出行等服务。</p>
+  <p>　　（本报记者&nbsp;&nbsp;孟繁哲整理）</p>
+  <p>　　</p>
+  <p>　　让更多人客观、不带偏见地理解彼此</p>
+  <p>　　匈牙利民主传媒集团执行总裁&nbsp;&nbsp;大卫·本奇克</p>
+  <p>　　中国之行让我明白，一场真诚对话带来的认知比书本更加深刻，要用真诚对话拉近心灵距离。</p>
+  <p>　　古丝绸之路将丝绸运向西方，把玻璃器皿传入东方，但它最珍贵的“货物”却没有重量，那就是思想——丝绸之路改变了往来行者的精神世界。</p>
+  <p>　　我们是迄今人类历史上互联互通程度最高的一代人，欧洲人几秒钟就可以网购下单来自中国深圳的商品，在大多数欧洲城市我们都能买到中国汽车，但是很多欧洲人对中国的了解仅来源于新闻。商品流通的速度已经超过相互理解的速度，这正是我们需要弥合的鸿沟。让更多人客观、不带偏见地理解彼此，是媒体行业肩负的使命。</p>
+  <p>　　“一带一路”新闻合作联盟汇聚了来自120个国家和地区的327家媒体机构。我想提出3点建议：</p>
+  <p>　　第一，开展记者互访。如果一名匈牙利记者来中国工作交流一个月，或一名中国记者前往布达佩斯开展工作交流，那么其日后的报道视角会因此更加丰富。</p>
+  <p>　　第二，推动作品互译。要让中国读者通过欧洲本土作者的翻译认识欧洲，让欧洲受众倾听来自中国的声音，而不是经由第三方代为解读。</p>
+  <p>　　第三，投资青年人才。为共建“一带一路”国家的新闻专业学生设立奖学金，加强青年学子交流互鉴，筑牢长期友好纽带。</p>
+  <p>　　（本报记者&nbsp;&nbsp;荣&nbsp;&nbsp;翌整理）&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　与中亚各国凝聚共识、共谋发展</p>
+  <p>　　国务院发展研究中心欧亚社会发展研究所中亚研究室主任&nbsp;&nbsp;许&nbsp;&nbsp;涛</p>
+  <p>　　“文明因交流而多彩，文明因互鉴而丰富。”绵延千年的丝绸之路是经贸通道，更是文明互鉴、民心相通的精神纽带。</p>
+  <p>　　中国与中亚人文交流源远流长。丝路互通孕育出平等互信、开放包容、互尊互利的合作基因，为新时代人文合作筑牢根基。汉代丝路开通后，中原文明与中亚绿洲、游牧文明深度交融，撒马尔罕、布哈拉等古城成为文明交汇节点；张骞、玄奘等使者往来穿梭，搭建跨文明沟通桥梁。中亚各国独立后，与中国重启文化、教育、考古等领域的合作。</p>
+  <p>　　依托共建“一带一路”合作框架，中国与中亚各国共同构建和平发展、独立自主、互利共赢的区域叙事。教育层面，扩大中亚来华留学规模，推进高校联合办学、智库互访，助力人才培养。文化领域，艺术节、文物巡展、非遗交流持续开展，《玛纳斯》史诗、“丝绸之路：长安—天山廊道的路网”等文化遗产，凝聚“丝路同源、命运相依”的文化共识。</p>
+  <p>　　面向共同现代化目标，双方协同打造人文软实力，推动合作从文明交流走向命运与共。治理经验互鉴成为亮点，《习近平谈治国理政》在中亚发行，受到当地政界重视。此外，为顺应时代变革和发展趋势，双方正在开拓人工智能领域的合作，未来还将借助新媒体平台讲好丝路故事，持续提升区域文化影响力。</p>
+  <p>　　（《中国经济周刊》记者&nbsp;&nbsp;石青川整理）&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　深化互利合作&nbsp;&nbsp;增进健康福祉</p>
+  <p>　　扬子江药业集团党委书记、董事长、总裁&nbsp;&nbsp;徐浩宇</p>
+  <p>　　扬子江药业集团多款产品所用的胖大海，来自共建“一带一路”国家老挝。这味药食同源的原料生长缓慢、采收不易，过去当地有些村民为尽快获得收益，会砍树采果。我们到老挝占巴塞省建设胖大海育苗基地，组织质检专家驻村指导，把药材质量要求和贮存方法带进村寨，培训村民育苗、管理土壤肥力。</p>
+  <p>　　如今，越来越多村民参与胖大海资源管护，收入也有所增加。依托规范化种植管控经验，我们在老挝稳步建设100公顷胖大海生态园区，希望把育苗、管护等技术留在村寨，推动这项产业长久发展下去。</p>
+  <p>　　创立55年来，我们始终践行“求索进取&nbsp;&nbsp;护佑众生”的企业使命，将质量要求落实到源头管理、研发和制造等环节，把可持续发展理念融入企业运营。我们的产品出口业务已拓展至多个共建“一带一路”国家，工业技术服务也在乌干达等地推进；参与起草的5项中药材质量标准被纳入《欧洲药典》。</p>
+  <p>　　截至今年10月底，我们的国际业务累计触达47个国家和地区。高质量共建“一带一路”，重在共建共享、互利共赢，让发展成果惠及更多民众。我们愿同各方深化合作，取得更多务实成果，为构建人类卫生健康共同体贡献更多智慧和力量。</p>
+  <p>　　（本报记者&nbsp;&nbsp;白光迪整理）</p>
+  <p>　　</p>
+  <p>　　让中国乳业创新惠及更多人</p>
+  <p>　　飞鹤集团董事长&nbsp;&nbsp;冷友斌</p>
+  <p>　　高质量共建“一带一路”，为中国产业走向世界开辟了广阔空间，中国乳业正走出一条共商共建共享的开放合作之路。</p>
+  <p>　　共商，是尊重各国市场差异、人群特征与发展诉求。我们打造了AceKid系列奶粉，把中国的鲜活营养标准带到东南亚。同时，我们联合新加坡高校、医疗机构开展婴幼儿营养、脑发育学术交流，与海外伙伴共建区域母乳数据库，为联合研发找准方向。</p>
+  <p>　　共建，在当地把产业做起来。我们带着研发、配方、产品和整套质量、标准体系，历时8年在加拿大建成工厂，取得婴幼儿配方奶粉生产许可证，并通过美国食品药品监督管理局初审，让中国乳业在高标准市场中接受检验。</p>
+  <p>　　共享，推动技术成果落地应用。面对优质蛋白供给不足这一课题，飞鹤自主研发乳蛋白鲜萃活性工艺，实现从生牛乳中一次性低温萃取原生蛋白，实现16种核心原料自研自产，三大深加工基地全部投产，日处理鲜奶能力达3600吨，并面向全球提供乳原料一站式解决方案。我们希望把技术和能力共享出来，为全球食品、运动营养等领域提供优质蛋白原料。</p>
+  <p>　　面向未来，飞鹤集团将继续以共商凝聚共识、以共建做强产业、以共享惠及民生，把中国乳业的技术、标准与创新能力带到更多共建“一带一路”国家。</p>
+  <p>　　（《中国经济周刊》记者&nbsp;&nbsp;石青川整理）&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　努力打造国际生态旅游目的地</p>
+  <p>　　青海省文化和旅游厅党组成员、副厅长&nbsp;&nbsp;马&nbsp;&nbsp;力</p>
+  <p>　　青海省位于青藏高原腹地，是古丝绸之路青海道、唐蕃古道交会的关键通道。各族群众守望相助、共生交融，构筑起多元一体、和合共生的文明交流走廊。</p>
+  <p>　　近年来，青海深入践行习近平生态文明思想，牢记打造国际生态旅游目的地的使命，坚持生态优先、绿色发展，走出一条生态保护、绿色发展、民生改善、协同共赢的实践路径。</p>
+  <p>　　一是以青海湖示范区建设破题。创新管理机制，建立生态容量管控体系，有序布局生态观景点，健全生态价值转化机制，带动环湖农牧民共享生态旅游发展成果。二是以三江源国家公园守护固本强基。严守国家生态安全底线，系统保护高原珍稀物种和生物多样性，培育生态研学、高原科考、自然教育等特色文旅产品。三是以河湟文化走廊赋能增效。系统梳理丝路遗存，推动非遗活化利用，促进中华优秀传统文化创造性转化、创新性发展。四是以黄河旅游带拓展发展格局。完善交通路网和公共服务，培育新业态，迭代升级智慧文旅服务体系，全力打造高品质文旅体验。</p>
+  <p>　　共建“一带一路”搭建了广阔合作平台，诚邀各国媒体走进青海，用镜头记录高原生态画卷，用笔墨讲述青海丝路故事，传播生态之美、人文之韵、团结之志，推动丝路文明在和合共生、互学互鉴中薪火永续、历久弥新。</p>
+  <p>　　（《人民论坛》记者&nbsp;&nbsp;陈&nbsp;&nbsp;楠整理） </p>
+  <p>　　</p>
+  <p>　　肩负媒体责任&nbsp;&nbsp;搭建对话平台</p>
+  <p>　　乌拉圭《共和国报》总编辑&nbsp;&nbsp;比尔希尼亚·格拉纳蒂斯</p>
+  <p>　　谈起共建“一带一路”倡议，我想把它比作一台巨大的织布机——经济发展和投资像穿越各地的丝线，而最终织出的图案、色彩和织物韧性则取决于文化合作与相互理解。</p>
+  <p>　　文化是一个民族的灵魂。通过推动学术交流、旅游往来和艺术合作，共建“一带一路”倡议所做的远不只是拓展合作，还促进不同文化向彼此开放并因此而变得更加丰富。与世界相连，我们需要桥梁，在此过程中，媒体发挥着重要作用。</p>
+  <p>　　基础设施连接不同的地区，而故事连接不同的人。在这个高度互联但易被偏见分割的世界里，记者肩负着重要责任。我们的使命是搭建真正有效的对话合作平台，成为文化交流的使者。</p>
+  <p>　　通过媒体合作，例如共享内容、建立联合新闻网络，媒体能帮助人们消除刻板印象。当乌拉圭等拉美国家的普通民众能够了解中国人民的日常生活，我们彼此间的距离就会缩短。</p>
+  <p>　　在数字时代，信息传播速度极快，我们要确保信息传播始终服务于真相、秉持尊重、促进和平。《共和国报》将继续坚持严谨负责的态度和深厚的人文关怀，讲述我们共同走过的旅程。希望我们继续努力，以坚定的决心不断向前，秉持以人民为中心的发展理念，携手编织更加平等包容、相互尊重的美好图景。</p>
+  <p>　　（本报记者&nbsp;&nbsp;孙亚慧整理） </p>
+  <p>　　</p>
+  <p>　　挖掘水下文化遗产的历史价值</p>
+  <p>　　武汉大学教授、中国古迹遗址保护协会副理事长&nbsp;&nbsp;姜&nbsp;&nbsp;波</p>
+  <p>　　海洋考古为研究古代文明交流提供了资源宝库，也为今天的文明交流互鉴和民心相通提供了历史支撑。</p>
+  <p>　　近年来，沉船、海港和海洋贸易品考古成果不断涌现。“南海Ⅰ号”宋代沉船出水文物超过18万件，瓷器、铁器、漆器等文物展现了古代海洋贸易的丰富面貌。南海西北陆坡一号、二号明代沉船，一艘满载中国瓷器出海，一艘满载东南亚名贵木材返航，生动呈现了双向海上交流。这些考古成果，让古代航海与贸易的历史更加清晰，也为从中国视角研究文明交流史提供了实证。</p>
+  <p>　　海洋考古还可以提炼具有中国特色、蕴含文明交流内涵的文化符号。龙泉窑瓷器远销东南亚、印度洋乃至非洲东海岸，外销青花瓷传入西方，推动欧洲兴起“中国风”。丝绸、瓷器、茶叶等，是古代文明交流的重要媒介，也是今天讲述中国故事的生动载体。</p>
+  <p>　　考古发现同样印证了中华文明的包容性、和平性：泉州留下的多种宗教遗存，见证不同文化的交汇；郑和《布施锡兰山佛寺碑》以多种文字记载礼尚往来的史实，是不同信仰人群平等交往的珍贵实录。</p>
+  <p>　　我们要深入挖掘水下文化遗产的历史价值，提炼中华文明的文化符号，为新时代文明交流互鉴和民心相通提供历史借鉴。</p>
+  <p>　　（本报记者&nbsp;&nbsp;白光迪整理）&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　丝路有约&nbsp;&nbsp;内陆城市把握时代风口</p>
+  <p>　　山东省临沂市委常委、宣传部部长&nbsp;&nbsp;张晓彬</p>
+  <p>　　福建福州是21世纪海上丝绸之路核心区战略支点，山东临沂积极融入新亚欧大陆桥经济走廊。一海一陆，遥相呼应。</p>
+  <p>　　临沂得天时，出海逐梦。“一带一路”蓝图为内陆城市打开了时代风口。《中共中央办公厅国务院办公厅关于加快革命老区振兴发展的意见》发布，山东省批复设立临沂“一带一路”综合试验区，临沂商城发展上升为省级战略。</p>
+  <p>　　临沂占地利，向海图强。临沂处在京津冀协同发展、长三角一体化发展、黄河流域生态保护和高质量发展三大国家战略交汇带，是全国制造业百强市。我们聚力锻造三大优势：全国最大的市场集群集于一城，数贸平台联通内外，中欧班列、航空口岸通达亚欧；世界优品市场成形成势；全球源头工厂加快建设，实现“前店后厂、前展后仓”。</p>
+  <p>　　临沂聚人和，山海同心。民心相通是“一带一路”建设的社会根基。民族歌剧《沂蒙山》摘得文华大奖，临沂连续举办22届书圣文化节，以书法之美增进各国友人价值认同。老区人民淳朴厚道、热情好客，国际传播中心邀请世界百名摄影师走进沂蒙，一曲《沂蒙山小调》唱出连通世界的情感。</p>
+  <p>　　丝路有约，未来可期。我们愿与各方携手，合作共赢。好客山东、亲情沂蒙，期待您的到来。</p>
+  <p>　　（吴硕博整理） </p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-16 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191295</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/16/content_30191295.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/16/content_30191295.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 携手同行  建设更加美好的世界 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 携手同行  建设更加美好的世界 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月16日</span>&nbsp;第&nbsp;10&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p> 　　立足互惠工程&nbsp;&nbsp;构建人文交流纽带</p><p>　　中国核工业集团有限公司宣传文化中心主任&nbsp;&nbsp;赖江南</p><p>　　作为中国国家核科技工业的主体，中核集团始终秉持和平利用核能理念，立足国内，深耕海外，足迹遍布30多个共建“一带一路”国家。</p><p>　　立足硬联通，以民生项目夯实交流交往的物质根基。依托完整核工业体系优势，我们既开展前沿核能合作，也承接民生基建项目。如在法国，迄今规模最大的国际聚变科研工程ITER汇聚科创智慧。一项项工程是增进认知、厚植互信的重要载体，把实事办在实处，文明交流方能根深叶茂。</p><p>　　深化软联通，以兼容互济拓展文明共处的广阔空间。硬联通消弭地理阻隔，软联通跨越文化与规则差异。在纳米比亚，我们尊重当地部族习俗与用工文化，搭建常态化沟通机制。规则对接是前提，人才共育是纽带，文化尊重是底色。</p><p>　　聚焦心联通，以情感共鸣叩响文明相通的心灵之门。在巴基斯坦恰西玛核电项目，中外建设者朝夕相伴、共庆佳节，结下深厚情谊。在纳米比亚，马拉松赛事搭建文化交流平台，不同肤色的人们并肩奔跑。在东帝汶，项目团队走进校园，开展科普活动、公益帮扶。</p><p>　　面向“十五五”的新征程，我们将继续发挥核工业体系优势，讲好互利共赢的实践故事，展现和合共生的文明图景。</p><p>　　（本报记者&nbsp;&nbsp;杨&nbsp;&nbsp;阳整理）&nbsp;&nbsp;</p><p>　　</p><p>　　建设世界级冰雪旅游度假胜地</p><p>　　黑龙江省文化和旅游厅党组成员、副厅长&nbsp;&nbsp;魏大威</p><p>　　黑龙江是共建“一带一路”的重要节点，我们主动服务共建“一带一路”同欧亚经济联盟对接合作，为共建国家和地区经贸合作、文旅交流搭桥，让北国风光走向世界。</p><p>　　黑龙江是冰雪胜地。我们做强冰雪文化、冰雪旅游、冰雪运动、冰雪装备全产业链，建设世界级冰雪旅游度假胜地、冰雪经济高地。哈尔滨获评“世界冰雪旅游卓越城市”，哈尔滨冰雪大世界、亚布力滑雪旅游度假区、中国雪乡等享誉海内外。我们持续办好冰雪旅游季，擦亮“北国好风光·美在黑龙江”旅游品牌。</p><p>　　黑龙江也是康养秘境。春有冰凌花破雪，夏有清凉绿意，秋有五花山色与丰收景象，冬有冰雪与雾凇，四季各有风光。今冬，“哈亚雪牡”冰雪旅游1号线将升级：哈尔滨冰雪大世界打造《冰雪奇缘》主题区域；亚布力整合三大滑雪场，实现“三山联网”；中国雪乡推出民俗巡游等体验，让游客尽享赏雪、滑雪、民俗与康养。</p><p>　　黑龙江还是开放枢纽。我们持续办好中俄文化大集，开展艺术展演、文博联展、非遗交流和客源互送；打造跨境旅游合作区，推出中俄联动精品线路，上线“蝴蝶云谷—中俄通”跨境文旅数字化服务平台，不断完善语言、通关、出行等服务。</p><p>　　（本报记者&nbsp;&nbsp;孟繁哲整理）</p><p>　　</p><p>　　让更多人客观、不带偏见地理解彼此</p><p>　　匈牙利民主传媒集团执行总裁&nbsp;&nbsp;大卫·本奇克</p><p>　　中国之行让我明白，一场真诚对话带来的认知比书本更加深刻，要用真诚对话拉近心灵距离。</p><p>　　古丝绸之路将丝绸运向西方，把玻璃器皿传入东方，但它最珍贵的“货物”却没有重量，那就是思想——丝绸之路改变了往来行者的精神世界。</p><p>　　我们是迄今人类历史上互联互通程度最高的一代人，欧洲人几秒钟就可以网购下单来自中国深圳的商品，在大多数欧洲城市我们都能买到中国汽车，但是很多欧洲人对中国的了解仅来源于新闻。商品流通的速度已经超过相互理解的速度，这正是我们需要弥合的鸿沟。让更多人客观、不带偏见地理解彼此，是媒体行业肩负的使命。</p><p>　　“一带一路”新闻合作联盟汇聚了来自120个国家和地区的327家媒体机构。我想提出3点建议：</p><p>　　第一，开展记者互访。如果一名匈牙利记者来中国工作交流一个月，或一名中国记者前往布达佩斯开展工作交流，那么其日后的报道视角会因此更加丰富。</p><p>　　第二，推动作品互译。要让中国读者通过欧洲本土作者的翻译认识欧洲，让欧洲受众倾听来自中国的声音，而不是经由第三方代为解读。</p><p>　　第三，投资青年人才。为共建“一带一路”国家的新闻专业学生设立奖学金，加强青年学子交流互鉴，筑牢长期友好纽带。</p><p>　　（本报记者&nbsp;&nbsp;荣&nbsp;&nbsp;翌整理）&nbsp;&nbsp;</p><p>　　</p><p>　　与中亚各国凝聚共识、共谋发展</p><p>　　国务院发展研究中心欧亚社会发展研究所中亚研究室主任&nbsp;&nbsp;许&nbsp;&nbsp;涛</p><p>　　“文明因交流而多彩，文明因互鉴而丰富。”绵延千年的丝绸之路是经贸通道，更是文明互鉴、民心相通的精神纽带。</p><p>　　中国与中亚人文交流源远流长。丝路互通孕育出平等互信、开放包容、互尊互利的合作基因，为新时代人文合作筑牢根基。汉代丝路开通后，中原文明与中亚绿洲、游牧文明深度交融，撒马尔罕、布哈拉等古城成为文明交汇节点；张骞、玄奘等使者往来穿梭，搭建跨文明沟通桥梁。中亚各国独立后，与中国重启文化、教育、考古等领域的合作。</p><p>　　依托共建“一带一路”合作框架，中国与中亚各国共同构建和平发展、独立自主、互利共赢的区域叙事。教育层面，扩大中亚来华留学规模，推进高校联合办学、智库互访，助力人才培养。文化领域，艺术节、文物巡展、非遗交流持续开展，《玛纳斯》史诗、“丝绸之路：长安—天山廊道的路网”等文化遗产，凝聚“丝路同源、命运相依”的文化共识。</p><p>　　面向共同现代化目标，双方协同打造人文软实力，推动合作从文明交流走向命运与共。治理经验互鉴成为亮点，《习近平谈治国理政》在中亚发行，受到当地政界重视。此外，为顺应时代变革和发展趋势，双方正在开拓人工智能领域的合作，未来还将借助新媒体平台讲好丝路故事，持续提升区域文化影响力。</p><p>　　（《中国经济周刊》记者&nbsp;&nbsp;石青川整理）&nbsp;&nbsp;</p><p>　　</p><p>　　深化互利合作&nbsp;&nbsp;增进健康福祉</p><p>　　扬子江药业集团党委书记、董事长、总裁&nbsp;&nbsp;徐浩宇</p><p>　　扬子江药业集团多款产品所用的胖大海，来自共建“一带一路”国家老挝。这味药食同源的原料生长缓慢、采收不易，过去当地有些村民为尽快获得收益，会砍树采果。我们到老挝占巴塞省建设胖大海育苗基地，组织质检专家驻村指导，把药材质量要求和贮存方法带进村寨，培训村民育苗、管理土壤肥力。</p><p>　　如今，越来越多村民参与胖大海资源管护，收入也有所增加。依托规范化种植管控经验，我们在老挝稳步建设100公顷胖大海生态园区，希望把育苗、管护等技术留在村寨，推动这项产业长久发展下去。</p><p>　　创立55年来，我们始终践行“求索进取&nbsp;&nbsp;护佑众生”的企业使命，将质量要求落实到源头管理、研发和制造等环节，把可持续发展理念融入企业运营。我们的产品出口业务已拓展至多个共建“一带一路”国家，工业技术服务也在乌干达等地推进；参与起草的5项中药材质量标准被纳入《欧洲药典》。</p><p>　　截至今年10月底，我们的国际业务累计触达47个国家和地区。高质量共建“一带一路”，重在共建共享、互利共赢，让发展成果惠及更多民众。我们愿同各方深化合作，取得更多务实成果，为构建人类卫生健康共同体贡献更多智慧和力量。</p><p>　　（本报记者&nbsp;&nbsp;白光迪整理）</p><p>　　</p><p>　　让中国乳业创新惠及更多人</p><p>　　飞鹤集团董事长&nbsp;&nbsp;冷友斌</p><p>　　高质量共建“一带一路”，为中国产业走向世界开辟了广阔空间，中国乳业正走出一条共商共建共享的开放合作之路。</p><p>　　共商，是尊重各国市场差异、人群特征与发展诉求。我们打造了AceKid系列奶粉，把中国的鲜活营养标准带到东南亚。同时，我们联合新加坡高校、医疗机构开展婴幼儿营养、脑发育学术交流，与海外伙伴共建区域母乳数据库，为联合研发找准方向。</p><p>　　共建，在当地把产业做起来。我们带着研发、配方、产品和整套质量、标准体系，历时8年在加拿大建成工厂，取得婴幼儿配方奶粉生产许可证，并通过美国食品药品监督管理局初审，让中国乳业在高标准市场中接受检验。</p><p>　　共享，推动技术成果落地应用。面对优质蛋白供给不足这一课题，飞鹤自主研发乳蛋白鲜萃活性工艺，实现从生牛乳中一次性低温萃取原生蛋白，实现16种核心原料自研自产，三大深加工基地全部投产，日处理鲜奶能力达3600吨，并面向全球提供乳原料一站式解决方案。我们希望把技术和能力共享出来，为全球食品、运动营养等领域提供优质蛋白原料。</p><p>　　面向未来，飞鹤集团将继续以共商凝聚共识、以共建做强产业、以共享惠及民生，把中国乳业的技术、标准与创新能力带到更多共建“一带一路”国家。</p><p>　　（《中国经济周刊》记者&nbsp;&nbsp;石青川整理）&nbsp;&nbsp;</p><p>　　</p><p>　　努力打造国际生态旅游目的地</p><p>　　青海省文化和旅游厅党组成员、副厅长&nbsp;&nbsp;马&nbsp;&nbsp;力</p><p>　　青海省位于青藏高原腹地，是古丝绸之路青海道、唐蕃古道交会的关键通道。各族群众守望相助、共生交融，构筑起多元一体、和合共生的文明交流走廊。</p><p>　　近年来，青海深入践行习近平生态文明思想，牢记打造国际生态旅游目的地的使命，坚持生态优先、绿色发展，走出一条生态保护、绿色发展、民生改善、协同共赢的实践路径。</p><p>　　一是以青海湖示范区建设破题。创新管理机制，建立生态容量管控体系，有序布局生态观景点，健全生态价值转化机制，带动环湖农牧民共享生态旅游发展成果。二是以三江源国家公园守护固本强基。严守国家生态安全底线，系统保护高原珍稀物种和生物多样性，培育生态研学、高原科考、自然教育等特色文旅产品。三是以河湟文化走廊赋能增效。系统梳理丝路遗存，推动非遗活化利用，促进中华优秀传统文化创造性转化、创新性发展。四是以黄河旅游带拓展发展格局。完善交通路网和公共服务，培育新业态，迭代升级智慧文旅服务体系，全力打造高品质文旅体验。</p><p>　　共建“一带一路”搭建了广阔合作平台，诚邀各国媒体走进青海，用镜头记录高原生态画卷，用笔墨讲述青海丝路故事，传播生态之美、人文之韵、团结之志，推动丝路文明在和合共生、互学互鉴中薪火永续、历久弥新。</p><p>　　（《人民论坛》记者&nbsp;&nbsp;陈&nbsp;&nbsp;楠整理） </p><p>　　</p><p>　　肩负媒体责任&nbsp;&nbsp;搭建对话平台</p><p>　　乌拉圭《共和国报》总编辑&nbsp;&nbsp;比尔希尼亚·格拉纳蒂斯</p><p>　　谈起共建“一带一路”倡议，我想把它比作一台巨大的织布机——经济发展和投资像穿越各地的丝线，而最终织出的图案、色彩和织物韧性则取决于文化合作与相互理解。</p><p>　　文化是一个民族的灵魂。通过推动学术交流、旅游往来和艺术合作，共建“一带一路”倡议所做的远不只是拓展合作，还促进不同文化向彼此开放并因此而变得更加丰富。与世界相连，我们需要桥梁，在此过程中，媒体发挥着重要作用。</p><p>　　基础设施连接不同的地区，而故事连接不同的人。在这个高度互联但易被偏见分割的世界里，记者肩负着重要责任。我们的使命是搭建真正有效的对话合作平台，成为文化交流的使者。</p><p>　　通过媒体合作，例如共享内容、建立联合新闻网络，媒体能帮助人们消除刻板印象。当乌拉圭等拉美国家的普通民众能够了解中国人民的日常生活，我们彼此间的距离就会缩短。</p><p>　　在数字时代，信息传播速度极快，我们要确保信息传播始终服务于真相、秉持尊重、促进和平。《共和国报》将继续坚持严谨负责的态度和深厚的人文关怀，讲述我们共同走过的旅程。希望我们继续努力，以坚定的决心不断向前，秉持以人民为中心的发展理念，携手编织更加平等包容、相互尊重的美好图景。</p><p>　　（本报记者&nbsp;&nbsp;孙亚慧整理） </p><p>　　</p><p>　　挖掘水下文化遗产的历史价值</p><p>　　武汉大学教授、中国古迹遗址保护协会副理事长&nbsp;&nbsp;姜&nbsp;&nbsp;波</p><p>　　海洋考古为研究古代文明交流提供了资源宝库，也为今天的文明交流互鉴和民心相通提供了历史支撑。</p><p>　　近年来，沉船、海港和海洋贸易品考古成果不断涌现。“南海Ⅰ号”宋代沉船出水文物超过18万件，瓷器、铁器、漆器等文物展现了古代海洋贸易的丰富面貌。南海西北陆坡一号、二号明代沉船，一艘满载中国瓷器出海，一艘满载东南亚名贵木材返航，生动呈现了双向海上交流。这些考古成果，让古代航海与贸易的历史更加清晰，也为从中国视角研究文明交流史提供了实证。</p><p>　　海洋考古还可以提炼具有中国特色、蕴含文明交流内涵的文化符号。龙泉窑瓷器远销东南亚、印度洋乃至非洲东海岸，外销青花瓷传入西方，推动欧洲兴起“中国风”。丝绸、瓷器、茶叶等，是古代文明交流的重要媒介，也是今天讲述中国故事的生动载体。</p><p>　　考古发现同样印证了中华文明的包容性、和平性：泉州留下的多种宗教遗存，见证不同文化的交汇；郑和《布施锡兰山佛寺碑》以多种文字记载礼尚往来的史实，是不同信仰人群平等交往的珍贵实录。</p><p>　　我们要深入挖掘水下文化遗产的历史价值，提炼中华文明的文化符号，为新时代文明交流互鉴和民心相通提供历史借鉴。</p><p>　　（本报记者&nbsp;&nbsp;白光迪整理）&nbsp;&nbsp;</p><p>　　</p><p>　　丝路有约&nbsp;&nbsp;内陆城市把握时代风口</p><p>　　山东省临沂市委常委、宣传部部长&nbsp;&nbsp;张晓彬</p><p>　　福建福州是21世纪海上丝绸之路核心区战略支点，山东临沂积极融入新亚欧大陆桥经济走廊。一海一陆，遥相呼应。</p><p>　　临沂得天时，出海逐梦。“一带一路”蓝图为内陆城市打开了时代风口。《中共中央办公厅国务院办公厅关于加快革命老区振兴发展的意见》发布，山东省批复设立临沂“一带一路”综合试验区，临沂商城发展上升为省级战略。</p><p>　　临沂占地利，向海图强。临沂处在京津冀协同发展、长三角一体化发展、黄河流域生态保护和高质量发展三大国家战略交汇带，是全国制造业百强市。我们聚力锻造三大优势：全国最大的市场集群集于一城，数贸平台联通内外，中欧班列、航空口岸通达亚欧；世界优品市场成形成势；全球源头工厂加快建设，实现“前店后厂、前展后仓”。</p><p>　　临沂聚人和，山海同心。民心相通是“一带一路”建设的社会根基。民族歌剧《沂蒙山》摘得文华大奖，临沂连续举办22届书圣文化节，以书法之美增进各国友人价值认同。老区人民淳朴厚道、热情好客，国际传播中心邀请世界百名摄影师走进沂蒙，一曲《沂蒙山小调》唱出连通世界的情感。</p><p>　　丝路有约，未来可期。我们愿与各方携手，合作共赢。好客山东、亲情沂蒙，期待您的到来。</p><p>　　（吴硕博整理） </p><!--/enpcontent--><!--enpproperty <date>2026-11-16 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191295</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/16/content_30191295.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/16/content_30191295.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 携手同行  建设更加美好的世界 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 聚焦主业，助力高水平对外开放 </title>
+		<meta name="author" content='第010版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="297.6,322.46,332.32,322.46,332.32,196.7075,297.6,196.7075,297.6,113.10250000000002,297.6,50.025,6.8,50.025,6.8,225.8025,156.92,225.8025,156.92,284.51,142.56,284.51,142.56,391.6325,297.6,391.6325" shape="polygon" href="content_30190221.html"><Area coords="396.32,263.7525,396.32,50.025,308.16,50.025,308.16,196.7075,332.32,196.7075,332.32,322.46,308.16,322.46,308.16,561.6600000000001,396.32,561.6600000000001" shape="polygon" href="content_30190222.html"><Area coords="6.8,230.9775,148.64,230.9775,148.64,284.51,142.56,284.51,142.56,391.6325,148.64,391.6325,148.64,409.86,6.8,409.86" shape="polygon" href="content_30190223.html"><Area coords="148.64,449.1325,148.64,415.61,6.8,415.61,6.8,449.1325,6.8,566.835,148.64,566.835" shape="polygon" href="content_30190224.html"><Area coords="297.6,434.585,297.6,401.6375,159.2,401.6375,159.2,434.585,159.2,571.2625,297.6,571.2625" shape="polygon" href="content_30190225.html"><Area coords="307.44,568.1575,396.32,568.1575,396.32,571.2625,307.44,571.2625" shape="polygon" href="content_30190226.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/09/d2ee3a16-2ae8-4f85-952a-93d47320db04.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第10版：特别报道
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30190221.html"> 以创新引领提升服务能力 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190222.html"> 聚焦主业，助力高水平对外开放 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190223.html"> 一双概念鞋背后的“绿色链”（进博会故事） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190224.html"> 两个“1000台”看中国的开放创新（进博会故事） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190225.html"> 做好保险保障  赋能绿色办展 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190226.html"> 本版责编：吕钟正  吴  凯  韩文榕 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月09日
+							Mon</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_07.html">07版：读者来信</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_08.html">08版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_09.html">09版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_10.html">10版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_11.html">11版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_12.html">12版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_13.html">13版：公告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_14.html">14版：公告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_15.html">15版：公告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_16.html">16版：公告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_18.html">18版：人文</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_19.html">19版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/09/node_10.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30190221.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30190223.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p> 　　作为央企，中国能源建设集团有限公司（以下简称“中国能建”）连续参加9届进博会，累计意向采购金额近140亿美元。本届进博会上，中国能建所属企业与德国、意大利、美国等国企业签署了超16亿美元采购协议，深化产业链协同与技术互通，将开放合作蓝图转化为务实成果。</p>
+  <p>　　进博会见证中国能建积极参与全球绿色产能合作的生动实践，彰显央企使命担当。</p>
+  <p>　　链通供需，共筑互利合作纽带</p>
+  <p>　　进博会开放底色更鲜明。本届进博会国家展吸引69个国家和国际组织参展，主体数量超去年，为增强全球产业链供应链韧性拓展广阔空间。</p>
+  <p>　　“进博会是联通国内国际两个市场的重要窗口，是全球共享的国际公共产品。”中国能建党委书记、董事长倪真表示，今年签约的先进能源装备将投向海外重点工程。中国能源建设集团广东火电工程有限公司向德国西门子能源采购的燃机设备，将投用于阿联酋某电站项目。</p>
+  <p>　　中国能建与西门子能源的合作远不止于此，上届进博会采购的风机、光伏组件等装备，已落地沙特PIF5风电项目、福里斯2吉瓦光伏项目。其中，沙特PIF5风电项目建成后年发电量可达38亿千瓦时，将有力推动当地能源结构绿色转型。</p>
+  <p>　　“这只是我们深耕中东能源市场的一个缩影。”倪真表示，依托进博会这一平台，中国能建持续增进与全球合作伙伴的友谊。目前，仅在中东区域，中国能建在手项目合同总额就超210亿美元，在沙特阿拉伯等国形成“完工一批、在建一批、储备一批”滚动发展格局。</p>
+  <p>　　输出方案，赋能全球能源绿色转型</p>
+  <p>　　中国能建在90多个国家和地区设立了394个境外机构，业务范围覆盖147个国家和地区。“十四五”时期，境外新签合同额累计达1.4万亿元，在共建“一带一路”国家和地区累计新签合同额突破6000亿元。</p>
+  <p>　　多年来，中国能建秉持“高端切入、规划引领、设计先行、创新驱动、技术赋能”发展理念，构建了以规划引领为基础、以技术牵引为重点、以客户需求为导向的国际业务开发模式，设计、投资、建设了一批标志性国际工程。</p>
+  <p>　　依托所属电力规划设计总院和20余家专业设计院，中国能建规划咨询优势持续释放：承担“一带一路”能源合作专项规划研究，在乌兹别克斯坦设立我国首个海外能源规划研究机构，深度参与10多个国家能源电力规划研究和新型电力系统国际合作，以规划协同推动合作共赢走深走实。</p>
+  <p>　　创新是国际合作的关键动能。中国能建依托9个国家级、82个省级科研机构等研发平台，持续加大原始创新、集成创新、开放创新力度，全力推动工程转化、商业转化、产业转化，不断提升国际合作的含技量、含智量、含金量。</p>
+  <p>　　2025年12月，中国能建投资建设的“青氢一号”绿色氢氨醇一体化项目——中能建松原氢能产业园（绿色氢氨醇一体化）项目投产，破解了新能源波动与化工稳定生产之间动态耦合的世界级难题。今年10月，该项目生产的绿氨在浙江舟山完成全球首例绿氨燃料船对船加注，实现绿氨作为船用绿色燃料的“生产—储运—加注—应用”全链路首次贯通，为全球航运业能源绿色转型提供了中国方案。</p>
+  <p>　　建设民生工程，服务高质量共建“一带一路”</p>
+  <p>　　中国能建充分利用国际业务布局广的优势，服务高质量共建“一带一路”，把ESG（环境、社会和公司治理）理念融入海外经营，投资建设了一批民生工程，让合作红利惠及千家万户。</p>
+  <p>　　在做好基础设施“硬联通”、规则标准“软联通”的同时，中国能建还积极推动与共建国家人民“心联通”。</p>
+  <p>　　中国能建坚持融入当地，用心用情做好民生帮扶、人才培育、生态保护。在乌兹别克斯坦，打造“中亚讲堂”，派遣300余名项目专家，累计培训1300余人次，为当地培育本土化技术队伍；在土耳其，项目团队守护海岸生态、清理海滩垃圾，维护海龟栖息繁衍的家园；在肯尼亚，凿井供水、援建医疗设施，助力保障妇幼健康；面对越南台风、巴基斯坦洪灾、缅甸地震等灾害，第一时间驰援救灾、伸出援手。</p>
+  <p>　　未来，中国能建将围绕能源电力、水利两大核心主业，充分发挥高端智库与规划设计牵引优势、能源电力领域全产业链一体化优势、能源电力技术创新与人才队伍优势、“能源+”融合发展优势、国际化布局优势、品牌品质和市场声誉软实力优势等，围绕“研、规、设、投、建、营、标、装、材”全链条，持续以务实行动服务国家高水平对外开放大局。 </p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-09 00:00:00:0</date><author>本报记者  王云杉  李  强</author><subtitle></subtitle><introtitle><p> 中国能建连续参加九届进博会 </p></introtitle><keyword></keyword><paperarticleid>30190222</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/09/content_30190222.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/09/content_30190222.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 聚焦主业，助力高水平对外开放 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 中国能建连续参加九届进博会 </p></h3>
+						<h1><p> 聚焦主业，助力高水平对外开放 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  王云杉  李  强
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月09日</span>&nbsp;第&nbsp;10&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p> 　　作为央企，中国能源建设集团有限公司（以下简称“中国能建”）连续参加9届进博会，累计意向采购金额近140亿美元。本届进博会上，中国能建所属企业与德国、意大利、美国等国企业签署了超16亿美元采购协议，深化产业链协同与技术互通，将开放合作蓝图转化为务实成果。</p><p>　　进博会见证中国能建积极参与全球绿色产能合作的生动实践，彰显央企使命担当。</p><p>　　链通供需，共筑互利合作纽带</p><p>　　进博会开放底色更鲜明。本届进博会国家展吸引69个国家和国际组织参展，主体数量超去年，为增强全球产业链供应链韧性拓展广阔空间。</p><p>　　“进博会是联通国内国际两个市场的重要窗口，是全球共享的国际公共产品。”中国能建党委书记、董事长倪真表示，今年签约的先进能源装备将投向海外重点工程。中国能源建设集团广东火电工程有限公司向德国西门子能源采购的燃机设备，将投用于阿联酋某电站项目。</p><p>　　中国能建与西门子能源的合作远不止于此，上届进博会采购的风机、光伏组件等装备，已落地沙特PIF5风电项目、福里斯2吉瓦光伏项目。其中，沙特PIF5风电项目建成后年发电量可达38亿千瓦时，将有力推动当地能源结构绿色转型。</p><p>　　“这只是我们深耕中东能源市场的一个缩影。”倪真表示，依托进博会这一平台，中国能建持续增进与全球合作伙伴的友谊。目前，仅在中东区域，中国能建在手项目合同总额就超210亿美元，在沙特阿拉伯等国形成“完工一批、在建一批、储备一批”滚动发展格局。</p><p>　　输出方案，赋能全球能源绿色转型</p><p>　　中国能建在90多个国家和地区设立了394个境外机构，业务范围覆盖147个国家和地区。“十四五”时期，境外新签合同额累计达1.4万亿元，在共建“一带一路”国家和地区累计新签合同额突破6000亿元。</p><p>　　多年来，中国能建秉持“高端切入、规划引领、设计先行、创新驱动、技术赋能”发展理念，构建了以规划引领为基础、以技术牵引为重点、以客户需求为导向的国际业务开发模式，设计、投资、建设了一批标志性国际工程。</p><p>　　依托所属电力规划设计总院和20余家专业设计院，中国能建规划咨询优势持续释放：承担“一带一路”能源合作专项规划研究，在乌兹别克斯坦设立我国首个海外能源规划研究机构，深度参与10多个国家能源电力规划研究和新型电力系统国际合作，以规划协同推动合作共赢走深走实。</p><p>　　创新是国际合作的关键动能。中国能建依托9个国家级、82个省级科研机构等研发平台，持续加大原始创新、集成创新、开放创新力度，全力推动工程转化、商业转化、产业转化，不断提升国际合作的含技量、含智量、含金量。</p><p>　　2025年12月，中国能建投资建设的“青氢一号”绿色氢氨醇一体化项目——中能建松原氢能产业园（绿色氢氨醇一体化）项目投产，破解了新能源波动与化工稳定生产之间动态耦合的世界级难题。今年10月，该项目生产的绿氨在浙江舟山完成全球首例绿氨燃料船对船加注，实现绿氨作为船用绿色燃料的“生产—储运—加注—应用”全链路首次贯通，为全球航运业能源绿色转型提供了中国方案。</p><p>　　建设民生工程，服务高质量共建“一带一路”</p><p>　　中国能建充分利用国际业务布局广的优势，服务高质量共建“一带一路”，把ESG（环境、社会和公司治理）理念融入海外经营，投资建设了一批民生工程，让合作红利惠及千家万户。</p><p>　　在做好基础设施“硬联通”、规则标准“软联通”的同时，中国能建还积极推动与共建国家人民“心联通”。</p><p>　　中国能建坚持融入当地，用心用情做好民生帮扶、人才培育、生态保护。在乌兹别克斯坦，打造“中亚讲堂”，派遣300余名项目专家，累计培训1300余人次，为当地培育本土化技术队伍；在土耳其，项目团队守护海岸生态、清理海滩垃圾，维护海龟栖息繁衍的家园；在肯尼亚，凿井供水、援建医疗设施，助力保障妇幼健康；面对越南台风、巴基斯坦洪灾、缅甸地震等灾害，第一时间驰援救灾、伸出援手。</p><p>　　未来，中国能建将围绕能源电力、水利两大核心主业，充分发挥高端智库与规划设计牵引优势、能源电力领域全产业链一体化优势、能源电力技术创新与人才队伍优势、“能源+”融合发展优势、国际化布局优势、品牌品质和市场声誉软实力优势等，围绕“研、规、设、投、建、营、标、装、材”全链条，持续以务实行动服务国家高水平对外开放大局。 </p><!--/enpcontent--><!--enpproperty <date>2026-11-09 00:00:00:0</date><author>本报记者  王云杉  李  强</author><subtitle></subtitle><introtitle><p> 中国能建连续参加九届进博会 </p></introtitle><keyword></keyword><paperarticleid>30190222</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/09/content_30190222.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/09/content_30190222.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 聚焦主业，助力高水平对外开放 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

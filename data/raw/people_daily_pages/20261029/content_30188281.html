@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 江西赣州  实“赣”绘新卷 </title>
+		<meta name="author" content='第016版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.734248,21.5071505,396.452652,21.5071505,396.452652,572.469747,3.734248,572.469747" shape="polygon" href="content_30188281.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/29/8b293bf3-0139-49e3-a8b2-21fce94e0ea1.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第16版：广告
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30188281.html"> 江西赣州  实“赣”绘新卷 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月29日
+							Thu</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_10.html">10版：各地传真</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_11.html">11版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_13.html">13版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_14.html">14版：社会</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_15.html">15版：体育</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_18.html">18版：民主政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_19.html">19版：法治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/29/node_16.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　金秋的赣南，处处焕发出勃勃生机，拼经济、稳增长、促发展的奋发步履铿锵有力。2026年2月，《中共中央办公厅国务院办公厅关于加快革命老区振兴发展的意见》出台，赣南老区发展再次迎来重大机遇。</p>
+  <p>　　实“赣”长卷耀红土，振兴发展踏歌行。江西省赣州市奋楫扬帆，以建设革命老区高质量发展示范区为总抓手，在“十五五”开局之年，奋力开拓经济社会高质量发展新局面。</p>
+  <p>　　</p>
+  <p>　　兴产业、促开放，发展动能更强劲</p>
+  <p>　　走进位于赣州市大余县新华工业园的赣州品信新材料有限公司，废钨丝、废钨合金、废铣刀等废料，通过公司自主研发的熔盐电解制备钨铁技术实现“变废为宝”。作为“世界钨都”，大余县锚定高端化、智能化、绿色化方向，已形成“采掘—粗选—钨精矿—仲钨酸铵—氧化钨—钨粉—碳化钨粉—硬质合金—刀钻具—资源综合回收利用”完整产业链。</p>
+  <p>　　坚持集群发展、创新发展，赣州优化实施“7510”行动计划，有力开展支持企业成长“榕树行动”，努力构建具有赣州特色的现代化产业体系。有色金属和新材料、电子信息、现代家居、纺织服装4个千亿元产业集群快速发展；全市规模以上工业企业突破3100家，数量保持全省第一。新质生产力活力持续迸发，科技力量加速集聚，国家稀土技术创新中心启动企业化运营，赣南实验室正式运行；原始创新突破不断，两款1类化药创新药、一款1.2类创新中药上市，实现江西省“零的突破”。</p>
+  <p>　　现代服务业持续繁荣发展。赣州推进文体商旅深度融合，打造“网红城市”新名片。从赣州市足球超级联赛“虔超”的加油呐喊，到歌手演唱会的万人合唱，再到“唱游赣州”惠民音乐会的场景创新，一系列赛事演艺活动燃动全城，“赣州热度”愈加出圈。</p>
+  <p>　　大产业、大平台、大企业、大市场同频共振，为高质量发展积蓄强劲动能。地处赣粤闽湘四省交界的赣州，开放浪潮奔涌而来。</p>
+  <p>　　以改革促发展，赣州扎实推进对标深圳规则规制改革，省级累计授权31个事项，市级推出84个改革事项。实施综合货运枢纽补链强链行动，累计开行中欧班列超1800列、占全省的80%以上。</p>
+  <p>　　以合作谋共赢，赣州大力实施招商引资攻坚行动，今年新引进众擎机器人、移远通信等亿元以上项目112个。深赣对口合作走深走实，18个年度重点合作事项有序推进，赣州向着打造对接融入粤港澳大湾区桥头堡的目标稳步前行。　　</p>
+  <p>　　强基础、优环境，城乡蝶变换新颜</p>
+  <p>　　正式通航一年多来，赣州瑞金机场已开通至北京、上海、广东广州、四川成都、江苏南京、贵州遵义的6条航线，累计旅客吞吐量突破20万人次，为赣闽边际群众架起一条“空中快车道”。</p>
+  <p>　　赣州全国性综合交通枢纽地位日益凸显，已建成全省规模最大的铁路网、高速公路网、农村公路网，实现县县通“双高速”、通管道天然气，村村通5G网络。安全高效的基础设施体系，为振兴发展提供了坚实支撑。</p>
+  <p>　　城乡发展既要强筋壮骨，又要扩容提质。在安远县城东片区，多条道路同时施工，挖掘机有序开挖作业，地下“毛细血管”升级改造正加紧进行。此前，城东片区地下管网存在管道老化、雨污混接、排水能力不足等问题。安远县住房和城乡建设局统筹推进地下管网更新工程，持续提升城市功能品质。</p>
+  <p>　　今年以来，赣州实施城市更新项目529个，完成投资163.8亿元。目前，中心城区建成区面积扩大至254平方公里，快速路总里程逾131公里。全市常住人口城镇化率提高至60.27%。</p>
+  <p>　　大美赣南，大城崛起。作为我国南方地区重要生态屏障，赣州扎实做好“治山理水、显山露水”文章，2025年国考断面水质优良率100%，空气质量保持全省最优。全市累计改造低质低效林530万亩，完成2423座历史遗留废弃矿山治理，打造了“四融一共”和美乡村先行村258个，宜居宜游的城乡生态画卷徐徐铺展。</p>
+  <p>　　巩固拓展脱贫攻坚成果同乡村振兴有效衔接5年过渡期任务圆满完成，赣州奋力迈向新征程。通过完善防止返贫致贫监测预警和帮扶机制，帮助13.31万人消除返贫致贫风险。实施帮扶车间带动、公益性岗位安置、打造特色劳务品牌等举措，全市63.42万脱贫劳动力就近灵活就业。</p>
+  <p>　　乡村全面振兴路上，现代农业绘“丰”景。“赣南脐橙”品牌价值连续12年位居全国水果类第一，“赣南茶油”连续9年荣登中国地理标志产品区域品牌百强榜，“赣南硒品”走进世界硒都（恩施）硒产品博览交易会、中国国际农产品交易会，全市农林牧渔业总产值突破800亿元。&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <p>　　惠民生、聚人心，红色基因代代传</p>
+  <p>　　在寻乌县长宁镇三二五村，乡亲们种百香果、开网店、当义务宣讲员，田园生活丰富多彩。依托丰富的红色资源，三二五村精心打造了寻乌调查·1930红色文旅街区和三二五文化客厅，提升公共文化服务效能，成为全国红色美丽村庄建设试点。</p>
+  <p>　　悠悠万事，民生为大。自“十三五”以来，赣州坚持以人民为中心，民生支出占一般公共预算支出的比重保持在八成以上，公共服务普惠提质，城乡居民收入近5年来年均增幅全省第一。</p>
+  <p>　　聚焦群众急难愁盼，办好民生实事。“免费住+精准帮”就业服务，让4000余名高校毕业生求职路上更安心。2个国家区域医疗中心高质量运营，66个“医保服务e站”落地，让群众就医少跑腿。4.3万套“可躺式”课桌椅配置到近200所中小学，让孩子们午休更舒适。旧校舍“上新”，208个“一老一小幸福院”守护“朝夕美好”。</p>
+  <p>　　沐浴暖阳的赣南人民，全力投身振兴发展大局，干群同心加油干的生动场景处处可见。</p>
+  <p>　　打造高素质干部人才队伍，切实解民忧、办实事。日前，赣州市第32期中青年干部培训班将学员划分成8个调研组，深入基层一线开展社会实践调研。调研组将赣州市“如我+”行动融入实践调研全过程，将收集到的真实诉求梳理转化成可落地的务实对策。</p>
+  <p>　　助老服务队每天“九点有约”，“技能共享服务群”提供“15分钟技能上门”，“共享爷爷”帮助接送辖区学生……龙南市城市社区创新实施“网格+共享”管理模式，“社区工作者+党员志愿者+职能部门干部”3股力量下沉到13个网格，实现一般诉求2小时内响应、复杂问题24小时内处置，累计开展共享服务近4000次，为基层治理注入动能。</p>
+  <p>　　上下一心高度凝聚，赣州各项事业有了深厚持久的力量源泉。新时代赶考路上，赣州传承红色基因，大力弘扬伟大长征精神、苏区精神，作答振兴发展的“每一个行程、每一次突围、每一场战斗”。</p>
+  <p>　　红土逐梦再出发，老区奋楫正当时。</p>
+  <p>　　数据来源：中共赣州市委宣传部、赣州市融媒体中心</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-29 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188281</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/29/content_30188281.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/29/content_30188281.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 江西赣州  实“赣”绘新卷 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 江西赣州  实“赣”绘新卷 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月29日</span>&nbsp;第&nbsp;16&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p style="text-align:center;" class="not-indent"><img src="../../../pic/202610/29/9df59b53-bb6e-446b-832c-e69132f9933f.jpg" style="max-width:100%;"></p><p>　　金秋的赣南，处处焕发出勃勃生机，拼经济、稳增长、促发展的奋发步履铿锵有力。2026年2月，《中共中央办公厅国务院办公厅关于加快革命老区振兴发展的意见》出台，赣南老区发展再次迎来重大机遇。</p><p>　　实“赣”长卷耀红土，振兴发展踏歌行。江西省赣州市奋楫扬帆，以建设革命老区高质量发展示范区为总抓手，在“十五五”开局之年，奋力开拓经济社会高质量发展新局面。</p><p>　　</p><p>　　兴产业、促开放，发展动能更强劲</p><p>　　走进位于赣州市大余县新华工业园的赣州品信新材料有限公司，废钨丝、废钨合金、废铣刀等废料，通过公司自主研发的熔盐电解制备钨铁技术实现“变废为宝”。作为“世界钨都”，大余县锚定高端化、智能化、绿色化方向，已形成“采掘—粗选—钨精矿—仲钨酸铵—氧化钨—钨粉—碳化钨粉—硬质合金—刀钻具—资源综合回收利用”完整产业链。</p><p>　　坚持集群发展、创新发展，赣州优化实施“7510”行动计划，有力开展支持企业成长“榕树行动”，努力构建具有赣州特色的现代化产业体系。有色金属和新材料、电子信息、现代家居、纺织服装4个千亿元产业集群快速发展；全市规模以上工业企业突破3100家，数量保持全省第一。新质生产力活力持续迸发，科技力量加速集聚，国家稀土技术创新中心启动企业化运营，赣南实验室正式运行；原始创新突破不断，两款1类化药创新药、一款1.2类创新中药上市，实现江西省“零的突破”。</p><p>　　现代服务业持续繁荣发展。赣州推进文体商旅深度融合，打造“网红城市”新名片。从赣州市足球超级联赛“虔超”的加油呐喊，到歌手演唱会的万人合唱，再到“唱游赣州”惠民音乐会的场景创新，一系列赛事演艺活动燃动全城，“赣州热度”愈加出圈。</p><p>　　大产业、大平台、大企业、大市场同频共振，为高质量发展积蓄强劲动能。地处赣粤闽湘四省交界的赣州，开放浪潮奔涌而来。</p><p>　　以改革促发展，赣州扎实推进对标深圳规则规制改革，省级累计授权31个事项，市级推出84个改革事项。实施综合货运枢纽补链强链行动，累计开行中欧班列超1800列、占全省的80%以上。</p><p>　　以合作谋共赢，赣州大力实施招商引资攻坚行动，今年新引进众擎机器人、移远通信等亿元以上项目112个。深赣对口合作走深走实，18个年度重点合作事项有序推进，赣州向着打造对接融入粤港澳大湾区桥头堡的目标稳步前行。　　</p><p>　　强基础、优环境，城乡蝶变换新颜</p><p>　　正式通航一年多来，赣州瑞金机场已开通至北京、上海、广东广州、四川成都、江苏南京、贵州遵义的6条航线，累计旅客吞吐量突破20万人次，为赣闽边际群众架起一条“空中快车道”。</p><p>　　赣州全国性综合交通枢纽地位日益凸显，已建成全省规模最大的铁路网、高速公路网、农村公路网，实现县县通“双高速”、通管道天然气，村村通5G网络。安全高效的基础设施体系，为振兴发展提供了坚实支撑。</p><p>　　城乡发展既要强筋壮骨，又要扩容提质。在安远县城东片区，多条道路同时施工，挖掘机有序开挖作业，地下“毛细血管”升级改造正加紧进行。此前，城东片区地下管网存在管道老化、雨污混接、排水能力不足等问题。安远县住房和城乡建设局统筹推进地下管网更新工程，持续提升城市功能品质。</p><p>　　今年以来，赣州实施城市更新项目529个，完成投资163.8亿元。目前，中心城区建成区面积扩大至254平方公里，快速路总里程逾131公里。全市常住人口城镇化率提高至60.27%。</p><p>　　大美赣南，大城崛起。作为我国南方地区重要生态屏障，赣州扎实做好“治山理水、显山露水”文章，2025年国考断面水质优良率100%，空气质量保持全省最优。全市累计改造低质低效林530万亩，完成2423座历史遗留废弃矿山治理，打造了“四融一共”和美乡村先行村258个，宜居宜游的城乡生态画卷徐徐铺展。</p><p>　　巩固拓展脱贫攻坚成果同乡村振兴有效衔接5年过渡期任务圆满完成，赣州奋力迈向新征程。通过完善防止返贫致贫监测预警和帮扶机制，帮助13.31万人消除返贫致贫风险。实施帮扶车间带动、公益性岗位安置、打造特色劳务品牌等举措，全市63.42万脱贫劳动力就近灵活就业。</p><p>　　乡村全面振兴路上，现代农业绘“丰”景。“赣南脐橙”品牌价值连续12年位居全国水果类第一，“赣南茶油”连续9年荣登中国地理标志产品区域品牌百强榜，“赣南硒品”走进世界硒都（恩施）硒产品博览交易会、中国国际农产品交易会，全市农林牧渔业总产值突破800亿元。&nbsp;&nbsp;&nbsp;&nbsp;</p><p>　　惠民生、聚人心，红色基因代代传</p><p>　　在寻乌县长宁镇三二五村，乡亲们种百香果、开网店、当义务宣讲员，田园生活丰富多彩。依托丰富的红色资源，三二五村精心打造了寻乌调查·1930红色文旅街区和三二五文化客厅，提升公共文化服务效能，成为全国红色美丽村庄建设试点。</p><p>　　悠悠万事，民生为大。自“十三五”以来，赣州坚持以人民为中心，民生支出占一般公共预算支出的比重保持在八成以上，公共服务普惠提质，城乡居民收入近5年来年均增幅全省第一。</p><p>　　聚焦群众急难愁盼，办好民生实事。“免费住+精准帮”就业服务，让4000余名高校毕业生求职路上更安心。2个国家区域医疗中心高质量运营，66个“医保服务e站”落地，让群众就医少跑腿。4.3万套“可躺式”课桌椅配置到近200所中小学，让孩子们午休更舒适。旧校舍“上新”，208个“一老一小幸福院”守护“朝夕美好”。</p><p>　　沐浴暖阳的赣南人民，全力投身振兴发展大局，干群同心加油干的生动场景处处可见。</p><p>　　打造高素质干部人才队伍，切实解民忧、办实事。日前，赣州市第32期中青年干部培训班将学员划分成8个调研组，深入基层一线开展社会实践调研。调研组将赣州市“如我+”行动融入实践调研全过程，将收集到的真实诉求梳理转化成可落地的务实对策。</p><p>　　助老服务队每天“九点有约”，“技能共享服务群”提供“15分钟技能上门”，“共享爷爷”帮助接送辖区学生……龙南市城市社区创新实施“网格+共享”管理模式，“社区工作者+党员志愿者+职能部门干部”3股力量下沉到13个网格，实现一般诉求2小时内响应、复杂问题24小时内处置，累计开展共享服务近4000次，为基层治理注入动能。</p><p>　　上下一心高度凝聚，赣州各项事业有了深厚持久的力量源泉。新时代赶考路上，赣州传承红色基因，大力弘扬伟大长征精神、苏区精神，作答振兴发展的“每一个行程、每一次突围、每一场战斗”。</p><p>　　红土逐梦再出发，老区奋楫正当时。</p><p>　　数据来源：中共赣州市委宣传部、赣州市融媒体中心</p><!--/enpcontent--><!--enpproperty <date>2026-10-29 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188281</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/29/content_30188281.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/29/content_30188281.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 江西赣州  实“赣”绘新卷 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

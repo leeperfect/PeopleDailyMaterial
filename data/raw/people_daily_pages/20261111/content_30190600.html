@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 下功夫办气韵生动的副刊 </title>
+		<meta name="author" content='第007版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="233.64,73.83,233.64,31.1075,3.52,31.1075,3.52,73.83,3.52,243.685,233.64,243.685" shape="polygon" href="content_30190599.html"><Area coords="244.24,31.1075,396.48,31.1075,396.48,282.8425,244.24,282.8425" shape="polygon" href="content_30190600.html"><Area coords="3.52,254.3225,233.64,254.3225,233.64,291.18,3.52,291.18" shape="polygon" href="content_30190601.html"><Area coords="3.52,297.04499999999996,396.48,297.04499999999996,396.48,571.3775,3.52,571.3775" shape="polygon" href="content_30190602.html"><Area coords="244.24,287.5575,396.48,287.5575,396.48,291.18,244.24,291.18" shape="polygon" href="content_30190603.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/11/15c3230a-7070-4917-aa25-5d844871c4bf.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第07版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30190599.html"> 就《基金会管理条例》修订答记者问 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190600.html"> 下功夫办气韵生动的副刊 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190601.html"> 四部门发文促进创新药安全合理配备使用 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190602.html"> 建设银行广东省分行 以扎实有力的金融服务，助力革命老区新发展 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190603.html"> 本版责编：管璇悦  张伟昊  翟钦奇 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月11日
+							Wed</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_08.html">08版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_10.html">10版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_11.html">11版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_13.html">13版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_14.html">14版：文件</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_15.html">15版：文件</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_18.html">18版：产经</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_19.html">19版：消费</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/11/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/11/node_07.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30190599.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30190601.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　下功夫办好副刊，不只对副刊本身有意义，也有助于增强党报影响力。</p>
+  <p>　　今年9月14日，著名作家王蒙在人民日报大地副刊发表《办气韵生动的副刊》一文后，人民日报、光明日报聚焦副刊特点、功能等话题，接连刊发《居“报尾”而向“潮头”》等多篇评论进行阐发，全国业界围绕如何办好副刊展开大讨论。</p>
+  <p>　　11月7日，在江西九江举行的2026中国报纸副刊研究会年会上，来自全国100多家媒体的180余名副刊工作者围绕“下功夫办好副刊”这一主题，说经验、提问题、找思路，探讨如何在智能互联的新技术条件、新传播生态下，守正创新、涵养根基、以文润心，办出气韵生动的副刊。</p>
+  <p>　　<strong>坚守特色，不负时代</strong></p>
+  <p>　　副刊虽居报纸一隅，却在历史上频频与时代大潮同频共振，引领社会风向。“居‘报尾’而向‘潮头’”，副刊这一特色在交流中被反复提及。</p>
+  <p>　　“办好副刊不是版面小事，而是文化建设、舆论引领的深耕工程。”中华全国新闻工作者协会党组书记崔士鑫以“副刊不‘副’”开宗明义。他说，中国报纸副刊自百年前诞生以来，就是思想启蒙、文化传播的重要阵地。副刊看似居于版位之后，实际上作用于人心之中；看似以文艺为表，实际上关系价值涵养、文化认同和精神凝聚。</p>
+  <p>　　在中国作家协会副主席、江苏省作家协会主席毕飞宇的读报经验中，新报纸到手，通常先翻头版；可若想让一份报纸陪自己度过整个夜晚，反而会从后往前看，“新闻记录的是物理世界里发生的事，副刊安放的则是人的精神，是那些未必现实发生、却真实存在于灵魂深处的东西”。</p>
+  <p>　　江西省委常委、宣传部部长卢小青说，副刊是一张报纸的气血与神采，在这方面江西的省、市、县三级报纸都有作为。江西日报社社长张锋说：“副刊既是一张党报的文化面孔、精神底色，也是展示精神标识、文化精髓的重要载体。”</p>
+  <p>　　“好副刊”的根本，藏在副刊前辈的来路中，也展现在新的时代条件下坚守特色的实践里。</p>
+  <p>　　<strong>守正创新，以文化人</strong></p>
+  <p>　　人民日报社副总编辑徐立京在主旨演讲中谈到，坚持党报姓党是副刊根本之道，坚持以文化人是副刊立身之本，坚持守正创新是副刊活力之源。无论媒介样态如何变化，副刊的文学品质、人文底色、原创精神不能削弱。</p>
+  <p>　　上海报业集团党委副书记，解放日报社党委书记、社长缪克构将心得归于“守正”。解放日报“朝花”、文汇报“笔会”、新民晚报“夜光杯”3家副刊依托各自积淀与特色，各美其美，共同的特质是守正创新、兼容并包、薪火相传。</p>
+  <p>　　以文润心，是副刊区别于其他报纸版面的核心价值。解放军报社文化副刊编辑室主任栗振宇说：“文风好的作品自带一种‘呼吸感’，能让读者体味到顾盼有情、跌宕起伏、留有余味。”</p>
+  <p>　　广西日报社副总编辑罗猛提到一个细节：王蒙先生因听力不佳，对举手提问的年轻编辑说“靠近点说”。他就此想到，编者之于作者，何尝不需要“靠近点说”呢？编者、作者、读者，三方的距离近了，纸上的气韵也就自然生发。</p>
+  <p>　　连珠妙语，引发关于副刊动人力量的深入思考。</p>
+  <p>　　<strong>发挥优势，下大功夫</strong></p>
+  <p>　　在深化主流媒体系统性变革中，副刊要真正发挥优势，敢于作为、善于作为，尤需用心、用力、用情。</p>
+  <p>　　中国文化报社副总编辑陈新华看重基层作者的参与，认为这能催生“有温度、有深度、有格调”的作品。浙江日报社全媒体文化新闻部主任霍建虹认为，副刊贵在厚重中透着灵动，“不是拒绝鲜活，而是拒绝浮躁。”</p>
+  <p>　　人民日报社文艺部副主任刘琼说：“宏大主题可以落在日常小事，思想表达不必刻板说教。副刊的新闻性，重在构建副刊与时代生活的坚实关系，深耕深度、情理与审美，提供让人愿意反复品读、引发共鸣的内容。”</p>
+  <p>　　数智化浪潮下，副刊的生命力在纸上，也在网上，靠守正，亦靠创新。新华日报社原党委委员、副总编辑顾新东说，用好人工智能等新技术，以此赋能副刊作品，融入音频、短视频、微短剧等形式，“让编辑、读者在双向互动中‘对话’，吸地气、强引导。”</p>
+  <p>　　技术为媒体人赋能，却也考验着创作者的初心。工人日报社社会文化新闻部编辑吴丽蓉说，在人工智能可以一键生成内容的当下，“‘真’是底线要求，也可以说是最高要求。”</p>
+  <p>　　下功夫办好副刊，也正符合广大读者的热切期盼。“期待广大副刊人带着动力上路，拿出精品力作、传世佳作。”南开大学教授孙德宏说。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-11 00:00:00:0</date><author>本报记者  姚雪青  周  欢  马  涌</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30190600</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/11/content_30190600.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/11/content_30190600.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 下功夫办气韵生动的副刊 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 下功夫办气韵生动的副刊 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  姚雪青  周  欢  马  涌
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月11日</span>&nbsp;第&nbsp;07&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　下功夫办好副刊，不只对副刊本身有意义，也有助于增强党报影响力。</p><p>　　今年9月14日，著名作家王蒙在人民日报大地副刊发表《办气韵生动的副刊》一文后，人民日报、光明日报聚焦副刊特点、功能等话题，接连刊发《居“报尾”而向“潮头”》等多篇评论进行阐发，全国业界围绕如何办好副刊展开大讨论。</p><p>　　11月7日，在江西九江举行的2026中国报纸副刊研究会年会上，来自全国100多家媒体的180余名副刊工作者围绕“下功夫办好副刊”这一主题，说经验、提问题、找思路，探讨如何在智能互联的新技术条件、新传播生态下，守正创新、涵养根基、以文润心，办出气韵生动的副刊。</p><p>　　<strong>坚守特色，不负时代</strong></p><p>　　副刊虽居报纸一隅，却在历史上频频与时代大潮同频共振，引领社会风向。“居‘报尾’而向‘潮头’”，副刊这一特色在交流中被反复提及。</p><p>　　“办好副刊不是版面小事，而是文化建设、舆论引领的深耕工程。”中华全国新闻工作者协会党组书记崔士鑫以“副刊不‘副’”开宗明义。他说，中国报纸副刊自百年前诞生以来，就是思想启蒙、文化传播的重要阵地。副刊看似居于版位之后，实际上作用于人心之中；看似以文艺为表，实际上关系价值涵养、文化认同和精神凝聚。</p><p>　　在中国作家协会副主席、江苏省作家协会主席毕飞宇的读报经验中，新报纸到手，通常先翻头版；可若想让一份报纸陪自己度过整个夜晚，反而会从后往前看，“新闻记录的是物理世界里发生的事，副刊安放的则是人的精神，是那些未必现实发生、却真实存在于灵魂深处的东西”。</p><p>　　江西省委常委、宣传部部长卢小青说，副刊是一张报纸的气血与神采，在这方面江西的省、市、县三级报纸都有作为。江西日报社社长张锋说：“副刊既是一张党报的文化面孔、精神底色，也是展示精神标识、文化精髓的重要载体。”</p><p>　　“好副刊”的根本，藏在副刊前辈的来路中，也展现在新的时代条件下坚守特色的实践里。</p><p>　　<strong>守正创新，以文化人</strong></p><p>　　人民日报社副总编辑徐立京在主旨演讲中谈到，坚持党报姓党是副刊根本之道，坚持以文化人是副刊立身之本，坚持守正创新是副刊活力之源。无论媒介样态如何变化，副刊的文学品质、人文底色、原创精神不能削弱。</p><p>　　上海报业集团党委副书记，解放日报社党委书记、社长缪克构将心得归于“守正”。解放日报“朝花”、文汇报“笔会”、新民晚报“夜光杯”3家副刊依托各自积淀与特色，各美其美，共同的特质是守正创新、兼容并包、薪火相传。</p><p>　　以文润心，是副刊区别于其他报纸版面的核心价值。解放军报社文化副刊编辑室主任栗振宇说：“文风好的作品自带一种‘呼吸感’，能让读者体味到顾盼有情、跌宕起伏、留有余味。”</p><p>　　广西日报社副总编辑罗猛提到一个细节：王蒙先生因听力不佳，对举手提问的年轻编辑说“靠近点说”。他就此想到，编者之于作者，何尝不需要“靠近点说”呢？编者、作者、读者，三方的距离近了，纸上的气韵也就自然生发。</p><p>　　连珠妙语，引发关于副刊动人力量的深入思考。</p><p>　　<strong>发挥优势，下大功夫</strong></p><p>　　在深化主流媒体系统性变革中，副刊要真正发挥优势，敢于作为、善于作为，尤需用心、用力、用情。</p><p>　　中国文化报社副总编辑陈新华看重基层作者的参与，认为这能催生“有温度、有深度、有格调”的作品。浙江日报社全媒体文化新闻部主任霍建虹认为，副刊贵在厚重中透着灵动，“不是拒绝鲜活，而是拒绝浮躁。”</p><p>　　人民日报社文艺部副主任刘琼说：“宏大主题可以落在日常小事，思想表达不必刻板说教。副刊的新闻性，重在构建副刊与时代生活的坚实关系，深耕深度、情理与审美，提供让人愿意反复品读、引发共鸣的内容。”</p><p>　　数智化浪潮下，副刊的生命力在纸上，也在网上，靠守正，亦靠创新。新华日报社原党委委员、副总编辑顾新东说，用好人工智能等新技术，以此赋能副刊作品，融入音频、短视频、微短剧等形式，“让编辑、读者在双向互动中‘对话’，吸地气、强引导。”</p><p>　　技术为媒体人赋能，却也考验着创作者的初心。工人日报社社会文化新闻部编辑吴丽蓉说，在人工智能可以一键生成内容的当下，“‘真’是底线要求，也可以说是最高要求。”</p><p>　　下功夫办好副刊，也正符合广大读者的热切期盼。“期待广大副刊人带着动力上路，拿出精品力作、传世佳作。”南开大学教授孙德宏说。</p><!--/enpcontent--><!--enpproperty <date>2026-11-11 00:00:00:0</date><author>本报记者  姚雪青  周  欢  马  涌</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30190600</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/11/content_30190600.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/11/content_30190600.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 下功夫办气韵生动的副刊 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

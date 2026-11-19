@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> “藏书楼”里上一堂有温度的思政课（校馆弦歌） </title>
+		<meta name="author" content='第007版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.734248,30.99559925,283.180464,30.99559925,283.180464,254.2904265,3.734248,254.2904265" shape="polygon" href="content_30192135.html"><Area coords="293.760836,31.6281625,396.452652,31.6281625,396.452652,561.71617175,293.760836,561.71617175" shape="polygon" href="content_30192136.html"><Area coords="3.734248,263.77887525,283.180464,263.77887525,283.180464,328.93289574999994,3.734248,328.93289574999994" shape="polygon" href="content_30192137.html"><Area coords="3.734248,339.68647100000004,283.180464,339.68647100000004,283.180464,411.16611824999995,3.734248,411.16611824999995" shape="polygon" href="content_30192138.html"><Area coords="3.734248,420.65456699999993,56.636092,420.65456699999993,56.636092,571.2046205,3.734248,571.2046205" shape="polygon" href="content_30192139.html"><Area coords="67.216464,420.65456699999993,283.180464,420.65456699999993,283.180464,571.2046205,67.216464,571.2046205" shape="polygon" href="content_30192140.html"><Area coords="293.760836,568.04180425,396.452652,568.04180425,396.452652,571.2046205,293.760836,571.2046205" shape="polygon" href="content_30192141.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/19/04bcdb04-43ed-4949-95a8-86ee7d27e66f.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第07版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30192135.html"> “藏书楼”里上一堂有温度的思政课（校馆弦歌） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30192136.html"> 果香飘向远方  生活充满希望（铸牢共同体  中华一家亲） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30192137.html"> 从一份“成绩单”看粤港澳大湾区外贸新意足 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30192138.html"> 从一颗车厘子看跨境贸易便利化 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30192139.html"> “全国十佳救护员”发布 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30192140.html"> 二〇二六年亚太经合组织工商领导人峰会深圳倡议 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30192141.html"> 本版责编：康  岩  刘涓溪  王  博 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月19日
+							Thu</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_05.html">05版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_09.html">09版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_10.html">10版：各地传真</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_11.html">11版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_13.html">13版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_14.html">14版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_15.html">15版：社会</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_17.html">17版：法治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_18.html">18版：民主政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_19.html">19版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/19/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/19/node_07.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30192136.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　走进深圳大学粤海校区汇智楼二楼思政空间，钱学森、竺可桢、严济慈等科学家们的入党志愿书影印档案挂满展墙。</p>
+  <p>　　“从前只知道科学家们的学术成就，今日才读懂科研成果背后坚定不移跟党走的精神底色。”读着泛黄纸页上的真挚字句，电子与信息工程学院学生陈杨儿感慨。</p>
+  <p>　　记者走访华南理工大学、暨南大学、深圳大学三所广东高校的图书馆发现，昔日的“藏书楼”变成“第二思政课堂”，学校活化利用丰富的红色文献、中华优秀传统文化等馆藏资源，面向青年学子开展沉浸式育人实践。</p>
+  <p>　　<strong>藏书章，见证百年报国路</strong></p>
+  <p>　　在华南理工大学五山校区图书馆一楼走廊里，几十枚藏书印章静静地躺在玻璃展柜中。印面上镌刻着学校从广东省立工业专科学校到华南理工大学的发展轨迹，也承载着实业救国、科技报国的办学初心。学生们走进图书馆，便能与百年校史照面。</p>
+  <p>　　“每枚印章，都是一段校史。”华南理工大学图书馆馆长王晓丽说，图书馆活化特藏史料，引导学子辨识印迹、研读校史。</p>
+  <p>　　上世纪30年代，国立中山大学石牌校区图书总馆奠基，图书馆学家杜定友主持筹建。后来，日军轰炸中大校园，只完成一楼结构的新馆停工，此地一度沦为日军马厩。</p>
+  <p>　　抗日战争时期，杜定友立誓与图书共存亡，发动馆员拆桌椅、黑板做成木箱，将5万多册书装进299只箱子，设法将全部善本书、志书2万余册，碑帖3万余张，移存香港九龙货仓，后因战争下落不明。直到抗战胜利后，经多方查访，终于在香港西环永源仓发现173箱图书，有中山大学图书馆印章。杜定友亲赴香港，将图书带回广州。</p>
+  <p>　　如今，华南理工大学图书馆拥有纸质文献约399万册、电子文献746万余册（件），如何用好这庞大体量的馆藏资源？</p>
+  <p>　　“把静态的文献资源，转化成看得见、读得到、可研讨、能创新的育人场景。”王晓丽说，学校在三个校区的图书馆分别打造研习书院、研墨学堂、人工智能科普展厅等多元特色空间，举办不同主题的文化活动。展映《典籍里的中国》等专题纪录片，举办非遗手作、节俗体验、知识竞赛等多元活动，让学生们不再隔着玻璃看古籍，而是沉浸式感受可触摸的文化记忆；活化典籍运用，与国家重点实验室联合面向校内外用户打造“纸寿千年—抄纸之艺”“古韵今承—榫卯之美”等科普活动；构建“校内科技体验+校外科普赋能”的多元实践体系，面向全校师生组建大学生科技志愿服务队。</p>
+  <p>　　2021年，五山校区图书馆启用粤港澳大湾区首个融合传统书院与红色文化的学习空间研习书院，收藏近3万册中国特色社会主义理论主题文献及中国传统文化精粹文献。依托红色文化资源，研习书院开展红色主题阅读推广活动，引导青年学子树立理想信念。</p>
+  <p>　　百年传承报国情，变成一代代学子的选择。1964届校友宋育安投身核工业一线，2025年，他把我国第一颗原子弹爆炸成功60周年纪念章捐给母校；2026届毕业生吉柏安放弃企业邀约，毅然参军入伍。</p>
+  <p>　　<strong>侨批纸，写满万里家国情</strong></p>
+  <p>　　暨南大学石牌校区图书馆，远望如一本翻开的大书。走进馆内，2016年揭牌的世界华侨华人文献馆，占地约1700平方米，是海内外规模最大的华侨华人主题文献机构。</p>
+  <p>　　11月16日，暨南大学迎来建校120周年。校庆前夕，“薪火传侨心——百廿暨南侨批文献特展”开展，近千件侨批铺满展柜。</p>
+  <p>　　旅菲华侨教员林锡国的一封侨批，写于九一八事变后：“凡是中国国民，都要尽一份国民责任，同心奋斗挽救危亡。”展柜另一侧，一张捐款收据上写着：“纽约华侨抗日救国筹饷总会会员黄焕经，从1938年11月到1941年9月，每月捐出5块钱”。</p>
+  <p>　　“抗战时期，千千万万海外侨胞通过侨批侨汇，累计捐款总额达95.74亿元，支援祖国抗战。”暨南大学图书馆副馆长、世界华侨华人文献馆主任王华为学生们讲解，“侨批里写满了乡愁，更写满了危难时刻海外侨胞与祖国同呼吸、共命运的满腔赤诚。”</p>
+  <p>　　在世界华侨华人文献馆，几乎每天都有形式多样的参观学习活动。图书馆正成为集文献收藏、阅览、展示、研究等功能于一体的现代化场馆，先后成为广东省爱国主义教育基地和广东省社科普及基地。</p>
+  <p>　　不久前，暨南大学公共管理学院在这里开展主题党日，师生们先看以侨批为线索的电影《给阿嬷的情书》，再走进展区，认真观看侨批档案。</p>
+  <p>　　在华侨华人展区，参观者拿起听筒，《卖花词》激昂悲壮的歌声传来。这首为南洋侨胞义卖筹款而作的抗战歌曲，让很多人听得潸然泪下。“有位华侨是音乐工作者，他在馆内听了《卖花词》后，开始研究侨批，多次委托我们查阅资料。”暨南大学物理与光电工程学院大四学生、馆内志愿讲解员田小雨说。</p>
+  <p>　　世界华侨华人文献馆内收藏超5万册（件），如何让这些文献文物“活起来”？</p>
+  <p>　　王华介绍，图书馆通过图文与实物展示、场景模拟、多媒体演示等多种形式直观生动地予以呈现，此外还组织师生开展侨批主题文学创作、侨批诵读、侨批周边文创纪念品设计比赛以及侨批文化研学营等活动，以青年学子喜闻乐见的方式寓教于乐。</p>
+  <p>　　<strong>特色文献，纵览特区来时路</strong></p>
+  <p>　　走进深圳大学丽湖校区图书馆，“深圳党史和地方志专业阅览区”的标识十分醒目。这座城市的“成长档案”，向师生们敞开。</p>
+  <p>　　“研究改革开放，离不开特区文献。”深圳大学图书馆丽湖校区读者部主任易晓娥介绍，深圳大学正推进“改革开放研究”重大专项，目标是建设中国改革开放研究的学术中心，图书馆搭建起改革开放研究的特色文献平台，把特区的奋斗足迹变成师生可以查阅研读的知识宝库。</p>
+  <p>　　如何把地方史料变成鲜活育人资源，让特区精神可感可知？在深圳大学图书馆内，“深圳改革开放史”专题党课开讲，围绕特区建设等重大主题的图文展、主题书展推出。观展结束，旁边的书架上，上百种相关著作，可随手翻阅。</p>
+  <p>　　“我们在挑选资料时，讲究一个‘实’字，让学生们意识到，特区精神就在身边。”易晓娥说，图书馆通过“办一场展览、读一批好书、上一堂实景思政课”的方式，让学生们读懂特区奋斗历程。</p>
+  <p>　　目前，深圳大学图书馆馆藏484万册纸本图书、415万册电子图书、11万种全文电子期刊，两次荣获中国图书馆学会授予的“全民阅读先进单位”称号，也是中国图书馆学会授予的“全民阅读示范基地”。</p>
+  <p>　　在广东各大高校，图书馆扮演“第二思政课堂”角色已成常态，馆藏资源、专题空间和实践活动与思政课教学深度融合，开展沉浸式育人实践，把信仰种进火热青春。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-19 00:00:00:0</date><author>本报记者  程远州</author><subtitle></subtitle><introtitle><p> 广东三所高校依托丰富馆藏，开展沉浸式育人实践—— </p></introtitle><keyword></keyword><paperarticleid>30192135</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/19/content_30192135.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/19/content_30192135.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> “藏书楼”里上一堂有温度的思政课（校馆弦歌） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 广东三所高校依托丰富馆藏，开展沉浸式育人实践—— </p></h3>
+						<h1><p> “藏书楼”里上一堂有温度的思政课（校馆弦歌） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  程远州
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月19日</span>&nbsp;第&nbsp;07&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　走进深圳大学粤海校区汇智楼二楼思政空间，钱学森、竺可桢、严济慈等科学家们的入党志愿书影印档案挂满展墙。</p><p>　　“从前只知道科学家们的学术成就，今日才读懂科研成果背后坚定不移跟党走的精神底色。”读着泛黄纸页上的真挚字句，电子与信息工程学院学生陈杨儿感慨。</p><p>　　记者走访华南理工大学、暨南大学、深圳大学三所广东高校的图书馆发现，昔日的“藏书楼”变成“第二思政课堂”，学校活化利用丰富的红色文献、中华优秀传统文化等馆藏资源，面向青年学子开展沉浸式育人实践。</p><p>　　<strong>藏书章，见证百年报国路</strong></p><p>　　在华南理工大学五山校区图书馆一楼走廊里，几十枚藏书印章静静地躺在玻璃展柜中。印面上镌刻着学校从广东省立工业专科学校到华南理工大学的发展轨迹，也承载着实业救国、科技报国的办学初心。学生们走进图书馆，便能与百年校史照面。</p><p>　　“每枚印章，都是一段校史。”华南理工大学图书馆馆长王晓丽说，图书馆活化特藏史料，引导学子辨识印迹、研读校史。</p><p>　　上世纪30年代，国立中山大学石牌校区图书总馆奠基，图书馆学家杜定友主持筹建。后来，日军轰炸中大校园，只完成一楼结构的新馆停工，此地一度沦为日军马厩。</p><p>　　抗日战争时期，杜定友立誓与图书共存亡，发动馆员拆桌椅、黑板做成木箱，将5万多册书装进299只箱子，设法将全部善本书、志书2万余册，碑帖3万余张，移存香港九龙货仓，后因战争下落不明。直到抗战胜利后，经多方查访，终于在香港西环永源仓发现173箱图书，有中山大学图书馆印章。杜定友亲赴香港，将图书带回广州。</p><p>　　如今，华南理工大学图书馆拥有纸质文献约399万册、电子文献746万余册（件），如何用好这庞大体量的馆藏资源？</p><p>　　“把静态的文献资源，转化成看得见、读得到、可研讨、能创新的育人场景。”王晓丽说，学校在三个校区的图书馆分别打造研习书院、研墨学堂、人工智能科普展厅等多元特色空间，举办不同主题的文化活动。展映《典籍里的中国》等专题纪录片，举办非遗手作、节俗体验、知识竞赛等多元活动，让学生们不再隔着玻璃看古籍，而是沉浸式感受可触摸的文化记忆；活化典籍运用，与国家重点实验室联合面向校内外用户打造“纸寿千年—抄纸之艺”“古韵今承—榫卯之美”等科普活动；构建“校内科技体验+校外科普赋能”的多元实践体系，面向全校师生组建大学生科技志愿服务队。</p><p>　　2021年，五山校区图书馆启用粤港澳大湾区首个融合传统书院与红色文化的学习空间研习书院，收藏近3万册中国特色社会主义理论主题文献及中国传统文化精粹文献。依托红色文化资源，研习书院开展红色主题阅读推广活动，引导青年学子树立理想信念。</p><p>　　百年传承报国情，变成一代代学子的选择。1964届校友宋育安投身核工业一线，2025年，他把我国第一颗原子弹爆炸成功60周年纪念章捐给母校；2026届毕业生吉柏安放弃企业邀约，毅然参军入伍。</p><p>　　<strong>侨批纸，写满万里家国情</strong></p><p>　　暨南大学石牌校区图书馆，远望如一本翻开的大书。走进馆内，2016年揭牌的世界华侨华人文献馆，占地约1700平方米，是海内外规模最大的华侨华人主题文献机构。</p><p>　　11月16日，暨南大学迎来建校120周年。校庆前夕，“薪火传侨心——百廿暨南侨批文献特展”开展，近千件侨批铺满展柜。</p><p>　　旅菲华侨教员林锡国的一封侨批，写于九一八事变后：“凡是中国国民，都要尽一份国民责任，同心奋斗挽救危亡。”展柜另一侧，一张捐款收据上写着：“纽约华侨抗日救国筹饷总会会员黄焕经，从1938年11月到1941年9月，每月捐出5块钱”。</p><p>　　“抗战时期，千千万万海外侨胞通过侨批侨汇，累计捐款总额达95.74亿元，支援祖国抗战。”暨南大学图书馆副馆长、世界华侨华人文献馆主任王华为学生们讲解，“侨批里写满了乡愁，更写满了危难时刻海外侨胞与祖国同呼吸、共命运的满腔赤诚。”</p><p>　　在世界华侨华人文献馆，几乎每天都有形式多样的参观学习活动。图书馆正成为集文献收藏、阅览、展示、研究等功能于一体的现代化场馆，先后成为广东省爱国主义教育基地和广东省社科普及基地。</p><p>　　不久前，暨南大学公共管理学院在这里开展主题党日，师生们先看以侨批为线索的电影《给阿嬷的情书》，再走进展区，认真观看侨批档案。</p><p>　　在华侨华人展区，参观者拿起听筒，《卖花词》激昂悲壮的歌声传来。这首为南洋侨胞义卖筹款而作的抗战歌曲，让很多人听得潸然泪下。“有位华侨是音乐工作者，他在馆内听了《卖花词》后，开始研究侨批，多次委托我们查阅资料。”暨南大学物理与光电工程学院大四学生、馆内志愿讲解员田小雨说。</p><p>　　世界华侨华人文献馆内收藏超5万册（件），如何让这些文献文物“活起来”？</p><p>　　王华介绍，图书馆通过图文与实物展示、场景模拟、多媒体演示等多种形式直观生动地予以呈现，此外还组织师生开展侨批主题文学创作、侨批诵读、侨批周边文创纪念品设计比赛以及侨批文化研学营等活动，以青年学子喜闻乐见的方式寓教于乐。</p><p>　　<strong>特色文献，纵览特区来时路</strong></p><p>　　走进深圳大学丽湖校区图书馆，“深圳党史和地方志专业阅览区”的标识十分醒目。这座城市的“成长档案”，向师生们敞开。</p><p>　　“研究改革开放，离不开特区文献。”深圳大学图书馆丽湖校区读者部主任易晓娥介绍，深圳大学正推进“改革开放研究”重大专项，目标是建设中国改革开放研究的学术中心，图书馆搭建起改革开放研究的特色文献平台，把特区的奋斗足迹变成师生可以查阅研读的知识宝库。</p><p>　　如何把地方史料变成鲜活育人资源，让特区精神可感可知？在深圳大学图书馆内，“深圳改革开放史”专题党课开讲，围绕特区建设等重大主题的图文展、主题书展推出。观展结束，旁边的书架上，上百种相关著作，可随手翻阅。</p><p>　　“我们在挑选资料时，讲究一个‘实’字，让学生们意识到，特区精神就在身边。”易晓娥说，图书馆通过“办一场展览、读一批好书、上一堂实景思政课”的方式，让学生们读懂特区奋斗历程。</p><p>　　目前，深圳大学图书馆馆藏484万册纸本图书、415万册电子图书、11万种全文电子期刊，两次荣获中国图书馆学会授予的“全民阅读先进单位”称号，也是中国图书馆学会授予的“全民阅读示范基地”。</p><p>　　在广东各大高校，图书馆扮演“第二思政课堂”角色已成常态，馆藏资源、专题空间和实践活动与思政课教学深度融合，开展沉浸式育人实践，把信仰种进火热青春。</p><!--/enpcontent--><!--enpproperty <date>2026-11-19 00:00:00:0</date><author>本报记者  程远州</author><subtitle></subtitle><introtitle><p> 广东三所高校依托丰富馆藏，开展沉浸式育人实践—— </p></introtitle><keyword></keyword><paperarticleid>30192135</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/19/content_30192135.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/19/content_30192135.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> “藏书楼”里上一堂有温度的思政课（校馆弦歌） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

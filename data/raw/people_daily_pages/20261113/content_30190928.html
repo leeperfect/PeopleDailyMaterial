@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 架AI之桥  解生命密码（深度观察·挑大梁、当主角，我们有信心） </title>
+		<meta name="author" content='第017版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.734248,26.5676565,396.452652,26.5676565,396.452652,140.4290415,3.734248,140.4290415" shape="polygon" href="content_30190927.html"><Area coords="3.734248,154.34543299999999,396.452652,154.34543299999999,396.452652,458.608362,3.734248,458.608362" shape="polygon" href="content_30190928.html"><Area coords="3.734248,466.199121,397.075028,466.199121,397.075028,571.2046205,3.734248,571.2046205" shape="polygon" href="content_30190929.html"><Area coords="308.697824,265.04400175,382.7604079999999,265.04400175,382.7604079999999,268.83938125000003,308.697824,268.83938125000003" shape="polygon" href="content_30190930.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/13/4509dc92-047b-4590-9b95-c513b5f4c95d.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第17版：科技
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30190927.html"> AI时代，软件产业靠什么赢得竞争（创新谈） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190928.html"> 架AI之桥  解生命密码（深度观察·挑大梁、当主角，我们有信心） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190929.html"> 以科技创新筑牢“大国棉仓”（“咖”说科技） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190930.html"> 本版责编：刘诗瑶 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月13日
+							Fri</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_08.html">08版：经济</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_10.html">10版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_11.html">11版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_13.html">13版：记者调查</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_14.html">14版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_15.html">15版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_17.html">17版：科技</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_18.html">18版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_19.html">19版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/13/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/13/node_17.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30190927.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30190929.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　习近平总书记强调，青年人才是基础研究的生力军，很多重大成果都是年轻人做出来的。</p>
+  <p>　　“十五五”开局之年，我国基础研究成果涌现，这背后离不开广大青年人才创新进取、勇攀高峰，为推进中国式现代化建设贡献青春力量。</p>
+  <p>　　青年人才如何在基础研究一线挑大梁、当主角，如何创造条件让他们充分施展才华？从今天开始，科技版推出“挑大梁、当主角，我们有信心”系列报道，从不同角度进行深入探讨。</p>
+  <p>　　——编&nbsp;&nbsp;者</p>
+  <p>　　</p>
+  <p>　　从寻找罕见病致病原因，到筛选肿瘤潜在药物靶点，AI正为生命科学研究打开新的窗口。</p>
+  <p>　　2025年10月，之江实验室与华大生命科学研究院联合研发的全球首个百亿参数人类基因组基础模型Genos正式发布。一年来，团队已与近40家医院、高校等机构开展合作，尝试借助AI解读遗传变异，为疾病诊断研究、药物靶点发现等寻找新线索。</p>
+  <p>　　这项前沿探索的背后是一支年轻的科研队伍。联合研发团队约130人，平均年龄只有30岁。来自计算机、生命科学等不同专业背景的他们，尝试让AI从海量基因组数据中学习，寻找人类尚未认识的生命密码。</p>
+  <p>　　探索数十亿个碱基对里的未知</p>
+  <p>　　人类基因组包含数十亿个碱基对，记录着人的遗传信息。2003年，人类基因组计划宣布完成，科学家首次拥有了人类基因组高质量参考序列。此后，随着技术不断进步，海量基因组数据加速积累。然而，如何理解基因组序列中的遗传信息，仍是生命科学研究面临的重大挑战。</p>
+  <p>　　华大生命科学研究院领域首席科学家刘石平表示，到目前为止，科学家对人类基因组的理解还有许多空白。比如，基因组的某个位置发生变化，会不会影响身体健康？不同基因之间如何相互影响？这些奥秘都还有待发现。“目前已知的蛋白质编码基因仅有2万多个，即使对于这些已知基因，其具体作用以及与疾病的关系也远未研究透彻。”刘石平说。</p>
+  <p>　　AI快速发展带来新的思路：既然AI模型能从海量文字中学习语言规律，是否能从大量基因组序列中学习，让原始科学数据直接进入基础模型，帮助科学家找到过去难以发现的联系？</p>
+  <p>　　彼时，之江实验室正探索让科学数据进入基础模型的途径，生命科学是其中一个重点领域；华大生命科学研究院则在基因组研究中积累了数据与经验，双方一拍即合。刘石平记得，双方首次碰面进行了约1个小时的交流后，就决定组建联合攻关团队，训练啃下人类基因组这块“硬骨头”的基础模型，寻找与疾病、健康有关的科学线索。</p>
+  <p>　　1995年出生的之江实验室生命科学计算研究中心青年科研骨干刘峻琛，是最早加入的团队成员之一。2023年，他从北京邮电大学电子科学与技术专业博士毕业后，进入之江实验室工作。原本并不熟悉生物学的刘峻琛，在参与Genos项目时，有着最朴素的志向，“在了解了许多基因相关的罕见病案例后，我想，如果能运用自己在计算机方面的知识去帮助解决生物学上的难题，就有可能让一些家庭少受痛苦。”刘峻琛说。</p>
+  <p>　　与刘峻琛并肩作战的华大生命科学研究院青年科研骨干邓凯文，同样出生于1995年。他在校期间经历了大语言模型快速发展的几年，看到AI处理人类语言的能力不断进步，他琢磨：既然人类基因组序列和自然语言同样是一维信息，能不能让AI也学会“解读”人类基因组序列？“当时在实验室，我非常关注这个事情。”邓凯文表示，随着国外团队陆续开展相关探索，他越发想自己尝试，但受限于计算资源，难以组织大规模的基础模型训练。</p>
+  <p>　　2025年7月毕业后，邓凯文进入华大生命科学研究院工作。听说Genos项目正在之江实验室开展，入职才不到一周的他，赶紧来到浙江杭州参与初版模型研发。“我一直想尝试自己训练一个基因组基础模型，看看能有什么效果。”邓凯文说。</p>
+  <p>　　刘峻琛带着AI技术走入生命科学，邓凯文带着生物学问题寻找新的方法。就这样，一群来自计算机、生命科学等不同领域的青年科研人员来到同一个课题前，尝试让AI读懂人类的海量遗传序列信息。</p>
+  <p>　　让两种学科“语言”说到一起</p>
+  <p>　　联合攻关的首道难题，是如何用不同学科语言进行交流。</p>
+  <p>　　刘峻琛还记得一次关于“序列长度”的讨论。面对同一个词，计算机专业背景的同事说的是模型处理的“词元”长度，生命科学专业背景的同事想的却是DNA（脱氧核糖核酸）的碱基长度。讨论后大家才发现，原来说的根本不是一回事。</p>
+  <p>　　类似的“小插曲”在这支跨学科团队里并不少见，计算机研究人员熟悉模型和算法，但需要学习基因组中的生命规律；生命科学研究人员了解基因的功能和作用，却需要学习如何训练大模型。联合攻关的头一个月，来自不同专业的年轻人坐在一起补基础知识，之江实验室生命科学计算研究中心副主任马静负责带领团队评测不同方案的效果。</p>
+  <p>　　跨过了沟通这道关，更大的科研难题接踵而来。此前，一些基因组模型主要利用参考基因组训练，有限的参考数据难以充分呈现不同人群之间的遗传差异。想让AI真正理解人类基因组，就要让它接触更加多样化的遗传信息。</p>
+  <p>　　正在团队琢磨数据来源时，人类泛基因组参考联盟开放了一批高质量基因组数据，涵盖不同地区和人群。“这是很关键的节点，这批开放的科学数据让团队坚定了研究方向，把人类遗传多样性作为重要考虑，让模型学习不同个体的基因组信息，为研究遗传变异与疾病的关联提供更可靠的基础。”马静回忆。</p>
+  <p>　　有了数据，怎么把模型训练得更好仍是挑战。人类基因组序列看起来只有四种字母代表的碱基，但内在关系却极其复杂。一个碱基变化可能对生命活动产生重要影响，相隔遥远的两段序列也可能共同影响某个基因的表达。如何让模型既能分析较长的序列，又不遗漏细微变化，成了研发的一道难题。</p>
+  <p>　　当时，邓凯文参与了模型测评工作，从生物学的视角比较不同版本的模型在具体科研任务中的表现。团队发现，训练数据覆盖更多个体基因组，也就更有助于提高模型在人类相关变异识别上的性能，为团队后续扩大数据规模提供了依据。</p>
+  <p>　　在之江实验室，像这样的科研讨论随时都可能发生。上午9点，10名团队成员围在白板前，讨论基因组基础模型新版本的优化路径，经过几轮交流，前一晚冒出的程序问题有了应对办法。</p>
+  <p>　　“有问题能随时当面讨论，非常方便。”刘峻琛说，他与邓凯文在同一间办公室工作，不同专业背景的年轻人逐渐学会从对方角度思考问题。</p>
+  <p>　　这种紧密的合作，也得益于科研组织方式的创新。之江实验室生命科学计算研究中心副主任陈高祥介绍，实验室的“种子班”机制让外部机构和实验室相关人员可以集中办公，在物理空间上实现“零距离”交流，遇到问题随时讨论、共同攻关。</p>
+  <p>　　经过数月集中攻关，团队成功攻克上述难题，Genos模型首次汇聚了全球范围内636个“端粒到端粒”级别的人类基因组作为训练数据，更全面地代表人类遗传多样性；同时，还通过混合专家架构，实现了百万碱基超长上下文序列与单碱基的精准建模，如同阅读一部鸿篇巨著，既能一字不差地记住细节，又能洞悉全局的宏大叙事。</p>
+  <p>　　从模型出发，沿着新的科学问题继续追问</p>
+  <p>　　Genos初版发布后，团队仍把大部分精力放在模型升级上。刘石平坦言，目前的模型对人类基因组的理解还不够深入，距离发现更多可信的生命规律，还有很长的路要走。邓凯文和刘峻琛如今各自负责研究新模型中的一个模块，两个人的工作恰好对应着基因组中两类难题。</p>
+  <p>　　邓凯文琢磨的是“空间关系”。比如，电脑屏幕上的DNA是一串依次排列的碱基，但在人体细胞中，DNA却以复杂的三维结构存在，序列上相隔很远的两个区域，在空间中可能彼此靠近，共同影响某个基因的活动。怎样让模型从一维序列中识别这些复杂的联系？他尝试调整模型的关注方式，让模型能够学习远距离区域之间的联系。</p>
+  <p>　　刘峻琛则把研究重点放在模型的“记忆”上。现有模型还无法一次处理完一个人的完整基因组，他希望先挑选出最有代表性的信息，让模型在分析局部DNA序列时，也能结合个体的整体遗传特征作出判断。</p>
+  <p>　　两人的工作时常交汇，一个新的研究思路能否在计算上实现、是否具有生物学意义，需要他们共同寻找答案。</p>
+  <p>　　AI进入基础研究改变了传统科研范式，如何从众多设想中找到真正值得研究的科学问题成了新的考验。“现在AI让我们尝试新想法的门槛降低了，但哪个想法能真正促进科学发现，需要培养这种判断的‘审美’。”邓凯文说。</p>
+  <p>　　刘峻琛对此深有感触。AI让科研节奏越来越快，新论文新成果不断涌现。他有时担心，自己的新想法如果没有尽快做出来，会不会很快被其他团队抢先实现。但他也时刻提醒自己，不能丢失了科研本该有的严谨。“既要用AI提高效率，又不能因为图方便，在研究内容上出现漏洞。”刘峻琛说。</p>
+  <p>　　马静介绍，目前，团队进一步研发了OneGenome模型，将基因组序列与生物医学知识融合，让更多人便捷地使用AI开展生命科学研究。</p>
+  <p>　　从提出设想、训练模型，到追问新的科学问题，团队年轻人将AI与基础研究深度融合，不断拓展自己的科研视野。人类基因组数十亿个碱基对中，还有太多未知。他们仍在坚持探索，利用AI读出更多原始信息，让科学研究离生命奥秘更近一步。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-13 00:00:00:0</date><author>本报记者  李君强</author><subtitle></subtitle><introtitle><p> 青年联合团队打造百亿参数人类基因组基础模型 </p></introtitle><keyword></keyword><paperarticleid>30190928</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/13/content_30190928.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/13/content_30190928.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 架AI之桥  解生命密码（深度观察·挑大梁、当主角，我们有信心） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 青年联合团队打造百亿参数人类基因组基础模型 </p></h3>
+						<h1><p> 架AI之桥  解生命密码（深度观察·挑大梁、当主角，我们有信心） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  李君强
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月13日</span>&nbsp;第&nbsp;17&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202611/13/31a8ed8c-5948-4755-a46b-8b38c6cee91f.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　青年联合团队正在展示模型的相关应用场景。</p>"></p><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202611/13/8f8c16b5-554a-4c27-ba23-bf5f3e71f6b3.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　青年联合团队正在讨论模型的下一步优化方向。</p><p>　　以上图片均为周志豪摄</p>"></p><p style="text-align:center;" class="not-indent"><img src="../../../pic/202611/13/e6cdeb35-e708-4263-ba41-348030ba1af4.jpg" style="max-width:100%;"></p><p>　　习近平总书记强调，青年人才是基础研究的生力军，很多重大成果都是年轻人做出来的。</p><p>　　“十五五”开局之年，我国基础研究成果涌现，这背后离不开广大青年人才创新进取、勇攀高峰，为推进中国式现代化建设贡献青春力量。</p><p>　　青年人才如何在基础研究一线挑大梁、当主角，如何创造条件让他们充分施展才华？从今天开始，科技版推出“挑大梁、当主角，我们有信心”系列报道，从不同角度进行深入探讨。</p><p>　　——编&nbsp;&nbsp;者</p><p>　　</p><p>　　从寻找罕见病致病原因，到筛选肿瘤潜在药物靶点，AI正为生命科学研究打开新的窗口。</p><p>　　2025年10月，之江实验室与华大生命科学研究院联合研发的全球首个百亿参数人类基因组基础模型Genos正式发布。一年来，团队已与近40家医院、高校等机构开展合作，尝试借助AI解读遗传变异，为疾病诊断研究、药物靶点发现等寻找新线索。</p><p>　　这项前沿探索的背后是一支年轻的科研队伍。联合研发团队约130人，平均年龄只有30岁。来自计算机、生命科学等不同专业背景的他们，尝试让AI从海量基因组数据中学习，寻找人类尚未认识的生命密码。</p><p>　　探索数十亿个碱基对里的未知</p><p>　　人类基因组包含数十亿个碱基对，记录着人的遗传信息。2003年，人类基因组计划宣布完成，科学家首次拥有了人类基因组高质量参考序列。此后，随着技术不断进步，海量基因组数据加速积累。然而，如何理解基因组序列中的遗传信息，仍是生命科学研究面临的重大挑战。</p><p>　　华大生命科学研究院领域首席科学家刘石平表示，到目前为止，科学家对人类基因组的理解还有许多空白。比如，基因组的某个位置发生变化，会不会影响身体健康？不同基因之间如何相互影响？这些奥秘都还有待发现。“目前已知的蛋白质编码基因仅有2万多个，即使对于这些已知基因，其具体作用以及与疾病的关系也远未研究透彻。”刘石平说。</p><p>　　AI快速发展带来新的思路：既然AI模型能从海量文字中学习语言规律，是否能从大量基因组序列中学习，让原始科学数据直接进入基础模型，帮助科学家找到过去难以发现的联系？</p><p>　　彼时，之江实验室正探索让科学数据进入基础模型的途径，生命科学是其中一个重点领域；华大生命科学研究院则在基因组研究中积累了数据与经验，双方一拍即合。刘石平记得，双方首次碰面进行了约1个小时的交流后，就决定组建联合攻关团队，训练啃下人类基因组这块“硬骨头”的基础模型，寻找与疾病、健康有关的科学线索。</p><p>　　1995年出生的之江实验室生命科学计算研究中心青年科研骨干刘峻琛，是最早加入的团队成员之一。2023年，他从北京邮电大学电子科学与技术专业博士毕业后，进入之江实验室工作。原本并不熟悉生物学的刘峻琛，在参与Genos项目时，有着最朴素的志向，“在了解了许多基因相关的罕见病案例后，我想，如果能运用自己在计算机方面的知识去帮助解决生物学上的难题，就有可能让一些家庭少受痛苦。”刘峻琛说。</p><p>　　与刘峻琛并肩作战的华大生命科学研究院青年科研骨干邓凯文，同样出生于1995年。他在校期间经历了大语言模型快速发展的几年，看到AI处理人类语言的能力不断进步，他琢磨：既然人类基因组序列和自然语言同样是一维信息，能不能让AI也学会“解读”人类基因组序列？“当时在实验室，我非常关注这个事情。”邓凯文表示，随着国外团队陆续开展相关探索，他越发想自己尝试，但受限于计算资源，难以组织大规模的基础模型训练。</p><p>　　2025年7月毕业后，邓凯文进入华大生命科学研究院工作。听说Genos项目正在之江实验室开展，入职才不到一周的他，赶紧来到浙江杭州参与初版模型研发。“我一直想尝试自己训练一个基因组基础模型，看看能有什么效果。”邓凯文说。</p><p>　　刘峻琛带着AI技术走入生命科学，邓凯文带着生物学问题寻找新的方法。就这样，一群来自计算机、生命科学等不同领域的青年科研人员来到同一个课题前，尝试让AI读懂人类的海量遗传序列信息。</p><p>　　让两种学科“语言”说到一起</p><p>　　联合攻关的首道难题，是如何用不同学科语言进行交流。</p><p>　　刘峻琛还记得一次关于“序列长度”的讨论。面对同一个词，计算机专业背景的同事说的是模型处理的“词元”长度，生命科学专业背景的同事想的却是DNA（脱氧核糖核酸）的碱基长度。讨论后大家才发现，原来说的根本不是一回事。</p><p>　　类似的“小插曲”在这支跨学科团队里并不少见，计算机研究人员熟悉模型和算法，但需要学习基因组中的生命规律；生命科学研究人员了解基因的功能和作用，却需要学习如何训练大模型。联合攻关的头一个月，来自不同专业的年轻人坐在一起补基础知识，之江实验室生命科学计算研究中心副主任马静负责带领团队评测不同方案的效果。</p><p>　　跨过了沟通这道关，更大的科研难题接踵而来。此前，一些基因组模型主要利用参考基因组训练，有限的参考数据难以充分呈现不同人群之间的遗传差异。想让AI真正理解人类基因组，就要让它接触更加多样化的遗传信息。</p><p>　　正在团队琢磨数据来源时，人类泛基因组参考联盟开放了一批高质量基因组数据，涵盖不同地区和人群。“这是很关键的节点，这批开放的科学数据让团队坚定了研究方向，把人类遗传多样性作为重要考虑，让模型学习不同个体的基因组信息，为研究遗传变异与疾病的关联提供更可靠的基础。”马静回忆。</p><p>　　有了数据，怎么把模型训练得更好仍是挑战。人类基因组序列看起来只有四种字母代表的碱基，但内在关系却极其复杂。一个碱基变化可能对生命活动产生重要影响，相隔遥远的两段序列也可能共同影响某个基因的表达。如何让模型既能分析较长的序列，又不遗漏细微变化，成了研发的一道难题。</p><p>　　当时，邓凯文参与了模型测评工作，从生物学的视角比较不同版本的模型在具体科研任务中的表现。团队发现，训练数据覆盖更多个体基因组，也就更有助于提高模型在人类相关变异识别上的性能，为团队后续扩大数据规模提供了依据。</p><p>　　在之江实验室，像这样的科研讨论随时都可能发生。上午9点，10名团队成员围在白板前，讨论基因组基础模型新版本的优化路径，经过几轮交流，前一晚冒出的程序问题有了应对办法。</p><p>　　“有问题能随时当面讨论，非常方便。”刘峻琛说，他与邓凯文在同一间办公室工作，不同专业背景的年轻人逐渐学会从对方角度思考问题。</p><p>　　这种紧密的合作，也得益于科研组织方式的创新。之江实验室生命科学计算研究中心副主任陈高祥介绍，实验室的“种子班”机制让外部机构和实验室相关人员可以集中办公，在物理空间上实现“零距离”交流，遇到问题随时讨论、共同攻关。</p><p>　　经过数月集中攻关，团队成功攻克上述难题，Genos模型首次汇聚了全球范围内636个“端粒到端粒”级别的人类基因组作为训练数据，更全面地代表人类遗传多样性；同时，还通过混合专家架构，实现了百万碱基超长上下文序列与单碱基的精准建模，如同阅读一部鸿篇巨著，既能一字不差地记住细节，又能洞悉全局的宏大叙事。</p><p>　　从模型出发，沿着新的科学问题继续追问</p><p>　　Genos初版发布后，团队仍把大部分精力放在模型升级上。刘石平坦言，目前的模型对人类基因组的理解还不够深入，距离发现更多可信的生命规律，还有很长的路要走。邓凯文和刘峻琛如今各自负责研究新模型中的一个模块，两个人的工作恰好对应着基因组中两类难题。</p><p>　　邓凯文琢磨的是“空间关系”。比如，电脑屏幕上的DNA是一串依次排列的碱基，但在人体细胞中，DNA却以复杂的三维结构存在，序列上相隔很远的两个区域，在空间中可能彼此靠近，共同影响某个基因的活动。怎样让模型从一维序列中识别这些复杂的联系？他尝试调整模型的关注方式，让模型能够学习远距离区域之间的联系。</p><p>　　刘峻琛则把研究重点放在模型的“记忆”上。现有模型还无法一次处理完一个人的完整基因组，他希望先挑选出最有代表性的信息，让模型在分析局部DNA序列时，也能结合个体的整体遗传特征作出判断。</p><p>　　两人的工作时常交汇，一个新的研究思路能否在计算上实现、是否具有生物学意义，需要他们共同寻找答案。</p><p>　　AI进入基础研究改变了传统科研范式，如何从众多设想中找到真正值得研究的科学问题成了新的考验。“现在AI让我们尝试新想法的门槛降低了，但哪个想法能真正促进科学发现，需要培养这种判断的‘审美’。”邓凯文说。</p><p>　　刘峻琛对此深有感触。AI让科研节奏越来越快，新论文新成果不断涌现。他有时担心，自己的新想法如果没有尽快做出来，会不会很快被其他团队抢先实现。但他也时刻提醒自己，不能丢失了科研本该有的严谨。“既要用AI提高效率，又不能因为图方便，在研究内容上出现漏洞。”刘峻琛说。</p><p>　　马静介绍，目前，团队进一步研发了OneGenome模型，将基因组序列与生物医学知识融合，让更多人便捷地使用AI开展生命科学研究。</p><p>　　从提出设想、训练模型，到追问新的科学问题，团队年轻人将AI与基础研究深度融合，不断拓展自己的科研视野。人类基因组数十亿个碱基对中，还有太多未知。他们仍在坚持探索，利用AI读出更多原始信息，让科学研究离生命奥秘更近一步。</p><!--/enpcontent--><!--enpproperty <date>2026-11-13 00:00:00:0</date><author>本报记者  李君强</author><subtitle></subtitle><introtitle><p> 青年联合团队打造百亿参数人类基因组基础模型 </p></introtitle><keyword></keyword><paperarticleid>30190928</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/13/content_30190928.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/13/content_30190928.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 架AI之桥  解生命密码（深度观察·挑大梁、当主角，我们有信心） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

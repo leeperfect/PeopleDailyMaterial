@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> “让开放合作的蓝图成为看得见、摸得着的实景” </title>
+		<meta name="author" content='第004版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="194.611728,54.764817,194.611728,30.926012749999998,3.803488,30.926012749999998,3.803488,54.764817,3.803488,105.66388025,194.611728,105.66388025" shape="polygon" href="content_30189550.html"><Area coords="205.388272,34.147473250000004,396.196512,34.147473250000004,396.196512,547.64815275,205.388272,547.64815275" shape="polygon" href="content_30189551.html"><Area coords="194.611728,135.30130649999998,194.611728,116.61684249999999,194.611728,116.61684249999999,3.803488,116.61684249999999,3.803488,116.61684249999999,3.803488,135.30130649999998,3.803488,177.18028149999998,194.611728,177.18028149999998" shape="polygon" href="content_30189552.html"><Area coords="3.803488,188.13324949999998,194.611728,188.13324949999998,194.611728,533.47373,3.803488,533.47373" shape="polygon" href="content_30189553.html"><Area coords="194.611728,543.782399,3.803488,543.782399,3.803488,543.782399,3.803488,558.6011149999999,3.803488,571.4869512500001,194.611728,571.4869512500001" shape="polygon" href="content_30189554.html"><Area coords="205.388272,553.44677475,396.196512,553.44677475,396.196512,571.4869512500001,205.388272,571.4869512500001" shape="polygon" href="content_30189555.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/05/59d9b8a0-1ae5-4734-bba9-968c77290fd6.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第04版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30189550.html"> 何立峰在香港国际金融领袖投资峰会上发表视频致辞 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189551.html"> 十四届全国人大常委会第二十五次会议审议多部报告 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189552.html"> 2026鼓岭论坛在福州举行 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189553.html"> “让开放合作的蓝图成为看得见、摸得着的实景” </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189554.html"> 前9月我国服务进出口总额同比增8.5% </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189555.html"> 一版责编：胡安琪  赵  政  栾心怡   二版责编：吴  刚  姜  波  谢佳宁  三版责编：吕  莉  郭雪岩  陈  震   四版责编：刘  念  崔  斌  张雪妍 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月05日
+							Thu</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_07.html">07版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_09.html">09版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_10.html">10版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_11.html">11版：各地传真</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_13.html">13版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_14.html">14版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_15.html">15版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_17.html">17版：法治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_18.html">18版：民主政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_19.html">19版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/05/node_04.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30189552.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30189554.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　3617、4108、4142——三个数字，连成一条上扬的曲线。</p>
+  <p>　　2018年，首届中国国际进口博览会，这个全球首个以进口为主题的国家级展会在上海举办，3617家境外企业奔赴盛会；</p>
+  <p>　　2025年，第八届进博会共有4108家企业参展，创下历史新高；</p>
+  <p>　　11月5日开幕的第九届进博会，4142家境外企业参展，整体展览面积首次突破44万平方米，世界500强和行业龙头企业首超300家，多项数据再创新高。</p>
+  <p>　　在世界经济增长乏力背景下，全球企业为何不约而同奔赴进博、扎根中国？</p>
+  <p>　　习近平主席强调，“中国正在加快发展新质生产力，稳步扩大制度型开放，愿将中国市场打造成为世界的市场、共享的市场”“让开放合作的蓝图成为看得见、摸得着的实景”。</p>
+  <p>　　言必信、行必果。众多外企不约而同的“奔赴”，传递出一个清晰信号：坚持高水平对外开放的中国，不仅是重要的出口目的地，也是极富价值的投资地、创业地。<br></p>
+  <p>　　历届进博会上，在一个个首发首秀直抵市场的故事里，在一条条从展台延伸到产业链的合作纽带中，我们看到，一个日益开放、持续创新的中国，不断为变乱交织的世界注入更多确定性和正能量。</p>
+  <p>　<strong>　看开放——</strong></p>
+  <p><strong>　　稳步扩大制度型开放，超大规模市场联通国内国际双循环</strong></p>
+  <p>　　“开放是人类文明进步的重要动力，是世界繁荣发展的必由之路。”</p>
+  <p>　　“我们要把握经济全球化发展大势，支持世界各国扩大开放，反对单边主义、保护主义，推动人类走向更加美好的未来。”</p>
+  <p>　　2018年11月，当保护主义、单边主义抬头，经济全球化遭遇波折之时，首届进博会成功举办，展现了中国一以贯之的开放姿态，为世界的合作共赢注入了强大正能量。</p>
+  <p>　　2022年11月，习近平主席在第五届中国国际进口博览会开幕式上强调：“中国愿同各国一道，践行真正的多边主义，凝聚更多开放共识，共同克服全球经济发展面临的困难和挑战，让开放为全球发展带来新的光明前程！”</p>
+  <p>　　新时代以来，中国坚定不移推进高水平对外开放，开放的大门越开越大。</p>
+  <p>　　中国稳步扩大制度型开放，持续优化营商环境，高质量共建“一带一路”，依托超大规模市场联通国内国际双循环。</p>
+  <p>　　中国坚持互利共赢，积极推动贸易投资自由化便利化，助力建设开放型世界经济。</p>
+  <p>　　如今，中国已经成为全球第二大消费市场和进口市场，是唯一举办国家级国际进口博览会、持续向全世界开放市场的发展中国家。</p>
+  <p>　　本届进博会上，国家展吸引69个国家和国际组织参展，主体数量超过去年。企业展中，美国企业参展面积超过5万平方米，连续8届保持第一；加拿大、新西兰企业参展面积创历届之最，澳大利亚企业参展面积较去年扩大25%。</p>
+  <p>　　面对保护主义的逆风，各国企业用脚投票，坚定不移看好中国市场。</p>
+  <p>　　“对拜耳而言，信心不是一句口号，而是体现在持续的行动中。”拜耳集团管理委员会主席比尔·安德森说。在他看来，进博会的角色在变化：最初，更多是把全球创新带进中国的窗口；如今，它已成为推动创新转化为实际成果的平台。</p>
+  <p>　　今年，拜耳将带来近30项首展，处方药、健康消费品、作物科学三大事业部整体亮相。在中国，拜耳已布局6个研发和创新中心、4个供应中心，与清华大学、北京大学累计开展超过110个联合研究项目。</p>
+  <p>　　“创新往往始于交流，进博会每年都为我们创造这样的机会。”安德森说。</p>
+  <p>　　从外资准入负面清单持续缩减，到23个自贸试验区覆盖东西南北中，一项项扩大开放的制度安排，让“中国开放的大门只会越开越大”成为稳定预期。</p>
+  <p>　　“傲胜是中国营商环境持续优化的受益者和见证者。从支持首发经济发展，到通关便利化、知识产权保护等领域的不断完善，这些都让外资企业能更安心地扎根中国。”傲胜（中国）总部管理负责人林晓慧表示。本届进博会，傲胜带着“人工智能+消费”的概念来到现场，将全球创新成果与中国市场需求深度融合。</p>
+  <p>　　进博会是一扇窗。透过这扇窗，我们能看见中国对外开放奔涌不息的浪潮。</p>
+  <p>　　<strong>看机遇——</strong></p>
+  <p><strong>　　首发首秀直抵市场，创新生态同频共振</strong></p>
+  <p>　　“十五五”开局之年，中国经济持续向新向优向好发展，高质量发展步履坚实。</p>
+  <p>　　习近平主席指出：“‘十五五’规划既是中国自身的发展蓝图，也是面向世界的合作清单。”</p>
+  <p>　　当前，百年未有之大变局加速演进，世界进入新的动荡变革期。单边主义、保护主义抬头，地缘政治冲突此起彼伏，全球贸易增长放缓，产业链供应链碎片化风险持续增加。</p>
+  <p>　　与此同时，中国经济迈入高质量发展阶段，持续向世界释放双重红利，即在创造越来越多“市场红利”的同时，创造越来越多“创新红利”。</p>
+  <p>　　在新质生产力加速发展驱动下，我国参与经济全球化的方式实现系统性跃升，“中国机遇2.0”应运而生。</p>
+  <p>　　“中国机遇2.0”意味着什么？进博会上有答案。</p>
+  <p>　　本届进博会，全球首发、亚洲首展、中国首秀的代表性展品超过480件，创历年新高，9届“全勤”的企业和机构近200家，首次参展的“新面孔”企业超过2000家。愈来愈多的全球新品把“首秀”舞台选在“四叶草”。</p>
+  <p>　　“中国机遇远不止于市场规模，更在于与中国共同成长。过去数十年间，辉瑞在中国的角色不断演进，从全球创新成果的引入者，逐步发展成为中国医疗健康与创新生态系统的共同建设者。”谈及“中国机遇2.0”，辉瑞全球高级副总裁、辉瑞中国区总裁彭振科的看法很有代表性。</p>
+  <p>　　本届进博会，辉瑞的创新减肥药埃诺格鲁肽注射液（先维盈）迎来全球首展。此前，已有10余款辉瑞创新产品通过进博会平台进入中国。</p>
+  <p>　　“辉瑞中国2030战略框架下，我们承诺向中国市场额外投资10亿美元。目前，这一承诺已提前完成，实际投资额也已超过原定目标。”彭振科说。</p>
+  <p>　　首发的密度，映照中国创新生态的厚度。</p>
+  <p>　　“十四五”时期，中国全社会研发经费年均增长10%，投入规模世界第二，2025年基础研究经费比重超7%，创历史新高。</p>
+  <p>　　互利共赢的全球合作新模式，构建起“中国机遇2.0”与全球经济的新型互动关系。</p>
+  <p>　　一方面，越来越多的跨国企业持续来华设立研发中心、地区总部，深度融入中国创新链产业链，在分享中国发展红利的同时，为全球产业发展注入新红利。</p>
+  <p>　　另一方面，我国以完备的产业体系和规模化创新优势，为广大发展中国家现代化进程、发达国家再工业化提供可落地的转型方案，持续激活全球发展活力。</p>
+  <p>　　今年，进博会“全勤生”现代汽车将中国市场视作最快的技术试验场，重点展示电动化、氢能、未来移动出行等板块创新成果。现代汽车集团（中国）首席专家吴雁冰介绍，现代汽车进入中国24年，累计投资超1300亿元，形成从研发、制造到供应链的完整本土化体系。</p>
+  <p>　　新品首发、市场验证、政策对接、产业合作，进博会大幅缩短了海外创新产品与技术在中国推广应用的进程，帮助跨国企业快速链接全球创新生态链。</p>
+  <p>　　<strong>看共享——</strong></p>
+  <p><strong>　　进博之约，见证的是中国与世界的携手并进</strong></p>
+  <p>　　进博会是中国的，更是世界的。</p>
+  <p>　　进博会已从一场展会成长为全球共享的国际公共产品。</p>
+  <p>　　本届进博会，联合国贸发会议、联合国工发组织等6个国际组织参展参会，40余个交易团、600余个交易分团到会观摩采购，中外企业踊跃参与、双向奔赴。</p>
+  <p>　　普惠包容，是这个“公共产品”的鲜明底色。</p>
+  <p>　　本届进博会升级亚非产品专区，助力非洲建交国把握对华零关税机遇，推动咖啡、芝麻等一大批特色商品跨越山海、走进中国千家万户，将宏观层面的开放承诺转化为看得见、摸得着的订单增量和民生实惠。</p>
+  <p>　　共享的价值，在一笔笔交易中实现。</p>
+  <p>　　今年进博会，中国中化第九次参会，采购清单里不仅有化工产品、高端化工智能装备，也有非洲芝麻等优质农产品，既丰富国内市场供给、更好满足群众多元化消费需求，也助力非洲特色物产融入全球产业链、价值链。</p>
+  <p>　　共享的分量，在一个个项目上彰显。</p>
+  <p>　　2021年进博会上，西门子能源与松赞集团签署战略合作框架协议，共同开发电力和热力等乡村能源基础设施。两年后，双方共同打造的松赞巴松措林卡酒店正式投入运营，配备了西门子能源微网智能系统，年平均替代约100万千瓦时的传统能源消耗。</p>
+  <p>　　“进博会是西门子能源展示创新技术、深化与中国伙伴合作交流的重要平台。”西门子能源全球高级副总裁姚振国说。</p>
+  <p>　　中国式现代化，立己达人、赋能全球。从6天展期到常态化对接，进博会的溢出效应早已越过展馆。与中国同行，就是与机遇同行。进博之约，见证的是中国与世界的携手并进。</p>
+  <p>　　“中国愿同世界各国携起手来，共同维护多边贸易体制，保障全球产业链供应链稳定畅通，拓展国际经贸互利合作空间，推进普惠包容的经济全球化，为世界发展繁荣持续注入新动力。”</p>
+  <p>　　潮涌东方，百川入海。一个坚定不移推进高水平对外开放的中国，必将让开放的春风温暖世界，让合作共赢的成果更好惠及各国人民。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-05 00:00:00:0</date><author>本报记者  罗珊珊  王东辉</author><subtitle></subtitle><introtitle><p> 从进博会参展企业数量屡创新高感悟—— </p></introtitle><keyword></keyword><paperarticleid>30189553</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/05/content_30189553.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/05/content_30189553.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> “让开放合作的蓝图成为看得见、摸得着的实景” </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 从进博会参展企业数量屡创新高感悟—— </p></h3>
+						<h1><p> “让开放合作的蓝图成为看得见、摸得着的实景” </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  罗珊珊  王东辉
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月05日</span>&nbsp;第&nbsp;04&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　3617、4108、4142——三个数字，连成一条上扬的曲线。</p><p>　　2018年，首届中国国际进口博览会，这个全球首个以进口为主题的国家级展会在上海举办，3617家境外企业奔赴盛会；</p><p>　　2025年，第八届进博会共有4108家企业参展，创下历史新高；</p><p>　　11月5日开幕的第九届进博会，4142家境外企业参展，整体展览面积首次突破44万平方米，世界500强和行业龙头企业首超300家，多项数据再创新高。</p><p>　　在世界经济增长乏力背景下，全球企业为何不约而同奔赴进博、扎根中国？</p><p>　　习近平主席强调，“中国正在加快发展新质生产力，稳步扩大制度型开放，愿将中国市场打造成为世界的市场、共享的市场”“让开放合作的蓝图成为看得见、摸得着的实景”。</p><p>　　言必信、行必果。众多外企不约而同的“奔赴”，传递出一个清晰信号：坚持高水平对外开放的中国，不仅是重要的出口目的地，也是极富价值的投资地、创业地。<br></p><p>　　历届进博会上，在一个个首发首秀直抵市场的故事里，在一条条从展台延伸到产业链的合作纽带中，我们看到，一个日益开放、持续创新的中国，不断为变乱交织的世界注入更多确定性和正能量。</p><p>　<strong>　看开放——</strong></p><p><strong>　　稳步扩大制度型开放，超大规模市场联通国内国际双循环</strong></p><p>　　“开放是人类文明进步的重要动力，是世界繁荣发展的必由之路。”</p><p>　　“我们要把握经济全球化发展大势，支持世界各国扩大开放，反对单边主义、保护主义，推动人类走向更加美好的未来。”</p><p>　　2018年11月，当保护主义、单边主义抬头，经济全球化遭遇波折之时，首届进博会成功举办，展现了中国一以贯之的开放姿态，为世界的合作共赢注入了强大正能量。</p><p>　　2022年11月，习近平主席在第五届中国国际进口博览会开幕式上强调：“中国愿同各国一道，践行真正的多边主义，凝聚更多开放共识，共同克服全球经济发展面临的困难和挑战，让开放为全球发展带来新的光明前程！”</p><p>　　新时代以来，中国坚定不移推进高水平对外开放，开放的大门越开越大。</p><p>　　中国稳步扩大制度型开放，持续优化营商环境，高质量共建“一带一路”，依托超大规模市场联通国内国际双循环。</p><p>　　中国坚持互利共赢，积极推动贸易投资自由化便利化，助力建设开放型世界经济。</p><p>　　如今，中国已经成为全球第二大消费市场和进口市场，是唯一举办国家级国际进口博览会、持续向全世界开放市场的发展中国家。</p><p>　　本届进博会上，国家展吸引69个国家和国际组织参展，主体数量超过去年。企业展中，美国企业参展面积超过5万平方米，连续8届保持第一；加拿大、新西兰企业参展面积创历届之最，澳大利亚企业参展面积较去年扩大25%。</p><p>　　面对保护主义的逆风，各国企业用脚投票，坚定不移看好中国市场。</p><p>　　“对拜耳而言，信心不是一句口号，而是体现在持续的行动中。”拜耳集团管理委员会主席比尔·安德森说。在他看来，进博会的角色在变化：最初，更多是把全球创新带进中国的窗口；如今，它已成为推动创新转化为实际成果的平台。</p><p>　　今年，拜耳将带来近30项首展，处方药、健康消费品、作物科学三大事业部整体亮相。在中国，拜耳已布局6个研发和创新中心、4个供应中心，与清华大学、北京大学累计开展超过110个联合研究项目。</p><p>　　“创新往往始于交流，进博会每年都为我们创造这样的机会。”安德森说。</p><p>　　从外资准入负面清单持续缩减，到23个自贸试验区覆盖东西南北中，一项项扩大开放的制度安排，让“中国开放的大门只会越开越大”成为稳定预期。</p><p>　　“傲胜是中国营商环境持续优化的受益者和见证者。从支持首发经济发展，到通关便利化、知识产权保护等领域的不断完善，这些都让外资企业能更安心地扎根中国。”傲胜（中国）总部管理负责人林晓慧表示。本届进博会，傲胜带着“人工智能+消费”的概念来到现场，将全球创新成果与中国市场需求深度融合。</p><p>　　进博会是一扇窗。透过这扇窗，我们能看见中国对外开放奔涌不息的浪潮。</p><p>　　<strong>看机遇——</strong></p><p><strong>　　首发首秀直抵市场，创新生态同频共振</strong></p><p>　　“十五五”开局之年，中国经济持续向新向优向好发展，高质量发展步履坚实。</p><p>　　习近平主席指出：“‘十五五’规划既是中国自身的发展蓝图，也是面向世界的合作清单。”</p><p>　　当前，百年未有之大变局加速演进，世界进入新的动荡变革期。单边主义、保护主义抬头，地缘政治冲突此起彼伏，全球贸易增长放缓，产业链供应链碎片化风险持续增加。</p><p>　　与此同时，中国经济迈入高质量发展阶段，持续向世界释放双重红利，即在创造越来越多“市场红利”的同时，创造越来越多“创新红利”。</p><p>　　在新质生产力加速发展驱动下，我国参与经济全球化的方式实现系统性跃升，“中国机遇2.0”应运而生。</p><p>　　“中国机遇2.0”意味着什么？进博会上有答案。</p><p>　　本届进博会，全球首发、亚洲首展、中国首秀的代表性展品超过480件，创历年新高，9届“全勤”的企业和机构近200家，首次参展的“新面孔”企业超过2000家。愈来愈多的全球新品把“首秀”舞台选在“四叶草”。</p><p>　　“中国机遇远不止于市场规模，更在于与中国共同成长。过去数十年间，辉瑞在中国的角色不断演进，从全球创新成果的引入者，逐步发展成为中国医疗健康与创新生态系统的共同建设者。”谈及“中国机遇2.0”，辉瑞全球高级副总裁、辉瑞中国区总裁彭振科的看法很有代表性。</p><p>　　本届进博会，辉瑞的创新减肥药埃诺格鲁肽注射液（先维盈）迎来全球首展。此前，已有10余款辉瑞创新产品通过进博会平台进入中国。</p><p>　　“辉瑞中国2030战略框架下，我们承诺向中国市场额外投资10亿美元。目前，这一承诺已提前完成，实际投资额也已超过原定目标。”彭振科说。</p><p>　　首发的密度，映照中国创新生态的厚度。</p><p>　　“十四五”时期，中国全社会研发经费年均增长10%，投入规模世界第二，2025年基础研究经费比重超7%，创历史新高。</p><p>　　互利共赢的全球合作新模式，构建起“中国机遇2.0”与全球经济的新型互动关系。</p><p>　　一方面，越来越多的跨国企业持续来华设立研发中心、地区总部，深度融入中国创新链产业链，在分享中国发展红利的同时，为全球产业发展注入新红利。</p><p>　　另一方面，我国以完备的产业体系和规模化创新优势，为广大发展中国家现代化进程、发达国家再工业化提供可落地的转型方案，持续激活全球发展活力。</p><p>　　今年，进博会“全勤生”现代汽车将中国市场视作最快的技术试验场，重点展示电动化、氢能、未来移动出行等板块创新成果。现代汽车集团（中国）首席专家吴雁冰介绍，现代汽车进入中国24年，累计投资超1300亿元，形成从研发、制造到供应链的完整本土化体系。</p><p>　　新品首发、市场验证、政策对接、产业合作，进博会大幅缩短了海外创新产品与技术在中国推广应用的进程，帮助跨国企业快速链接全球创新生态链。</p><p>　　<strong>看共享——</strong></p><p><strong>　　进博之约，见证的是中国与世界的携手并进</strong></p><p>　　进博会是中国的，更是世界的。</p><p>　　进博会已从一场展会成长为全球共享的国际公共产品。</p><p>　　本届进博会，联合国贸发会议、联合国工发组织等6个国际组织参展参会，40余个交易团、600余个交易分团到会观摩采购，中外企业踊跃参与、双向奔赴。</p><p>　　普惠包容，是这个“公共产品”的鲜明底色。</p><p>　　本届进博会升级亚非产品专区，助力非洲建交国把握对华零关税机遇，推动咖啡、芝麻等一大批特色商品跨越山海、走进中国千家万户，将宏观层面的开放承诺转化为看得见、摸得着的订单增量和民生实惠。</p><p>　　共享的价值，在一笔笔交易中实现。</p><p>　　今年进博会，中国中化第九次参会，采购清单里不仅有化工产品、高端化工智能装备，也有非洲芝麻等优质农产品，既丰富国内市场供给、更好满足群众多元化消费需求，也助力非洲特色物产融入全球产业链、价值链。</p><p>　　共享的分量，在一个个项目上彰显。</p><p>　　2021年进博会上，西门子能源与松赞集团签署战略合作框架协议，共同开发电力和热力等乡村能源基础设施。两年后，双方共同打造的松赞巴松措林卡酒店正式投入运营，配备了西门子能源微网智能系统，年平均替代约100万千瓦时的传统能源消耗。</p><p>　　“进博会是西门子能源展示创新技术、深化与中国伙伴合作交流的重要平台。”西门子能源全球高级副总裁姚振国说。</p><p>　　中国式现代化，立己达人、赋能全球。从6天展期到常态化对接，进博会的溢出效应早已越过展馆。与中国同行，就是与机遇同行。进博之约，见证的是中国与世界的携手并进。</p><p>　　“中国愿同世界各国携起手来，共同维护多边贸易体制，保障全球产业链供应链稳定畅通，拓展国际经贸互利合作空间，推进普惠包容的经济全球化，为世界发展繁荣持续注入新动力。”</p><p>　　潮涌东方，百川入海。一个坚定不移推进高水平对外开放的中国，必将让开放的春风温暖世界，让合作共赢的成果更好惠及各国人民。</p><!--/enpcontent--><!--enpproperty <date>2026-11-05 00:00:00:0</date><author>本报记者  罗珊珊  王东辉</author><subtitle></subtitle><introtitle><p> 从进博会参展企业数量屡创新高感悟—— </p></introtitle><keyword></keyword><paperarticleid>30189553</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/05/content_30189553.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/05/content_30189553.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> “让开放合作的蓝图成为看得见、摸得着的实景” </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

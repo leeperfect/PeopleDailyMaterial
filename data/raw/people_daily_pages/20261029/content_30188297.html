@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 黄河曲弯处处春 </title>
+		<meta name="author" content='第020版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.803488,30.926012749999998,308.082408,30.926012749999998,308.082408,210.68346725,3.803488,210.68346725" shape="polygon" href="content_30188297.html"><Area coords="318.858956,36.08034725,393.02694,36.08034725,393.02694,455.514402,318.858956,455.514402" shape="polygon" href="content_30188298.html"><Area coords="3.803488,221.63642949999996,77.971472,221.63642949999996,77.971472,561.8225755,3.803488,561.8225755" shape="polygon" href="content_30188299.html"><Area coords="85.578448,221.63642949999996,155.309032,221.63642949999996,155.309032,333.743225,85.578448,333.743225" shape="polygon" href="content_30188300.html"><Area coords="166.08558000000002,221.63642949999996,308.082408,221.63642949999996,308.082408,316.34734175,166.08558000000002,316.34734175" shape="polygon" href="content_30188301.html"><Area coords="88.11410400000001,347.91764774999996,308.082408,347.91764774999996,308.082408,457.44727600000004,88.11410400000001,457.44727600000004" shape="polygon" href="content_30188302.html"><Area coords="88.11410400000001,468.40024399999993,396.196512,468.40024399999993,396.196512,561.8225755,88.11410400000001,561.8225755" shape="polygon" href="content_30188303.html"><Area coords="166.08558000000002,320.85738875,237.083992,320.85738875,237.083992,338.25326625,166.08558000000002,338.25326625" shape="polygon" href="content_30188304.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/29/7a154b1e-64dc-4cf0-ad55-f52093534f4f.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第20版：副刊
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30188297.html"> 黄河曲弯处处春 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188298.html"> 定睛一看灵感来（文思） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188299.html"> 云中谁寄锦书来 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188300.html"> 收割玉米 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188301.html"> 图片报道 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188302.html"> 冲  菜（多味斋） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188303.html"> 北广场 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30188304.html"> 本版责编：张珊珊 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月29日
+							Thu</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_10.html">10版：各地传真</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_11.html">11版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_13.html">13版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_14.html">14版：社会</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_15.html">15版：体育</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_18.html">18版：民主政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_19.html">19版：法治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/29/node_20.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30188298.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p> 　　2008年，我到内蒙古杭锦旗的一个乡里当扶贫工作队队长，归杭锦旗沿河工委领导。沿河工委书记老王是我的兵团战友，同黄河打了一辈子交道，曾有战友劝他，离开沿河这苦寒地方吧！年纪大了，到市里找个单位养老。老王却说，我是33年的“老黄河”了，晚上听不见黄河的浪涛声，都睡不着觉。我知道老王说的是真心话，他把家安在了黄河南岸的独贵塔拉镇，这些年有兵团战友故地重游，他的家就是战友落脚的地方。只要有空闲，老王就陪战友们聚聚，唱些兵团的老歌曲，有时候唱得泪眼婆娑，还感慨说：叙不完的是战友情，忘不掉的是黄河湾。</p>
+  <p>　　老王说的黄河湾，是指内蒙古的杭锦草原。黄河流经内蒙古鄂尔多斯高原时，先是浩浩荡荡向北，可进入这里后，一个骏马掉头，拐了个直弯，化成了一支飞箭向东而去。老话说，黄河百害，唯富河套，可这一富偏偏漏掉了地处河套平原的内蒙古鄂尔多斯的广袤沿黄地带。这里南有库布其沙漠，北边就是黄河，经年累月沙漠北移，严重侵蚀着沿黄地带。为了黄河安澜，人们种树种草，前挡后拉，严防死守不让沙漠探头阻塞黄河。</p>
+  <p>　　我找老王报到那天，他给我介绍情况，末了感慨地说：老肖，我在沿河工委当了10年书记，一到结冰化冰时，每天日子都是过得恓恓惶惶。为了治凌洪，我把命都快搭进去了，可沙害没挡住，凌洪也没挡住。我不骗你，做梦我都喊自己的名字，你是个干甚的呢？</p>
+  <p>　　老王的话，听得我心里有些酸楚。黄河的凌洪，我太熟悉了，每到初冬结冰和春天化冰时，泡在黄河里的浮冰就会结成高高的冰坝，横亘在河面上，横七竖八地垛在一起阻塞着黄河。奔流的水位就会陡然升高，冰水会不时溢出黄河南岸，形成凌洪。夜里凌洪袭来时，冰块相撞还会发出哇哇怪叫，声传几十里外。我小时候，黄河南岸几乎每年都有凌洪溢堤，给人民生命财产和经济发展造成巨大损失。所以，这里的老百姓说：黄河百害，凌洪最坏。</p>
+  <p>　　我说，老王，我们工作队在你辖区，你有事情尽管吩咐，我随叫随到。老王说，少不了要惊动你。后来，老王真就叫了我，让我跟他察看防洪堤，预防灾情。记得那是个春夜，只见冰水咣咣地拍打着堤岸，春风卷起波浪，呼啸着冲向堤岸，看得人胆战心惊。堤岸上摆满了沙袋，民兵、职工、村民扛着锹站了满满一堤岸，时刻准备着与凌洪拼命一搏。老王对我说，你看我这些“兵”怎么样？算不算严阵以待？这里的人个个都能打硬仗。正说着话，远处传来了轰隆隆的声音，老王听了，高兴地说，炮兵炸冰坝了，看来水马上就能退了。堤坝上随之一片欢腾。</p>
+  <p>　　有年初春的一个夜里，我接到一个电话，独贵塔拉镇奎素段有两处溃堤，凌洪横扫了独贵塔拉镇和几个村庄。天一亮，我就赶到救灾现场，只见人们在泥水里走得深一脚浅一脚。市领导索性脱掉皮鞋，挽起裤腿跟着老王蹚水。路上经过老王的家，这里已经被凌洪毁掉了，几块浮冰顶在老王家门口，老王连看都没看一眼。我同老王打了声招呼，就跟他们来到高坡上的一间房子里。就在这间房子里，召开了现场救灾会，市领导红着眼睛主持会议。临散会时，老王突然说了一句，我马上就要退休了，还赶上这么一桩子事，想给大家说个体会，凌洪不能这么治了，我们一定要有治灾新思维。这时，一位戴眼镜的青年干部站了起来，说自己是当地水利局的技术员。他说，太同意了，咱不能总是被灾害牵着鼻子走，能不能从根子上解决千年凌洪老问题？市领导鼓励他说说具体想法，那名青年技术员却说，我没啥具体想法，就是觉得要从根子上解决。一些人听了就笑了，老王却不笑，不满意地说，笑甚呢？我们就是要从根子上解决问题。</p>
+  <p>　　后来，老王退休了。有一次见面，他对我说，现在沿河水利上青年人作了大贡献，两个措施我以前见都没见过，却极大解决了水患问题。我问什么措施，老王说，现在实施黄河水权转换，沿黄工业园区生产生活的缺水问题改善很大，我当年咋想不出这好办法呢？我说你那会儿哪有工业园区？你除了种麦子种葵花搞些传统农业，还能搞什么？老王说的水权转换，主要是政府主导，用水企业投资，整理农业用水管网沟渠。农业用水系统尤其是直接用于浇地的支、斗、毛渠多年失修。现在修缮了灌溉渠道，将节约下来的农业用水通过水权转换，用在沿黄十数个工业园区项目上来。这样，黄河供水指标没有变，而工业用水得到了保障，农业用水成本也大大降低，工农互补，沿黄经济一派春光。</p>
+  <p>　　老王说的第二条措施更有意思，其实是水利人搞了一个变害为宝，大胆提出将凌水引进库布其沙漠的想法。到2023年，已有近5亿立方米凌水被引进沙漠，这就大大解决了凌洪溢岸的凌灾问题。引凌入沙实施10余年来，黄河南岸几无凌灾。凌水引进了沙漠，形成了百余公里的千岛湖，沙湖像一串串珍珠镶嵌在库布其沙漠上。当地大力发展沙漠上独有的特色养殖，鱼虾、甲鱼、螃蟹就养在这大漠沙湖里，为沿岸的养殖户带来了丰厚的收入。</p>
+  <p>　　后来有一次，老王邀我们几位兵团战友再去黄河湾，说要带我们尝尝沙漠海鲜，大家欣然而往。我们来到生机勃勃的黄河南岸，沙漠已经赫然退去，只见成片的土地阡陌交错，直铺天际。老王说，现在搞的是“公司+农户”的运营方式，从种子入土到产品销售，全是公司化运作。说着，老王感叹，以前真是想不到，地还能这样种！老王还带我们参观了沙漠水产养殖，介绍我们认识了水产养殖户老李。见到老李时，他穿着水裤正站在虾塘里，晃着手中的网抄说，算到去年，我在这里养了10年虾，跟引凌入沙基本同步。一个查看虾苗成色的水产技术员说，老李这样的引凌入沙受益户，这里不下几百户。我们问他年收入大概有多少，老李连忙摆了摆手说，也就是挣点辛苦钱。老王说，要说辛苦，那些年我不比你辛苦？说着笑了起来，忽然又停下问我：你听说过智慧黄河工程吗？</p>
+  <p>　　我说，现在各地都在推进智慧城市建设，这智慧黄河工程一定是智慧城市建设的一部分吧。老王说，我去了水利局，就想打听个明白，究竟咋个智慧法？人家工程师给我讲了两个小时，我才算听出了一点门道，我给你说说？我笑着说，两个小时就听出一点门道，你就别在我这卖弄了，也给我留点儿想象空间！</p>
+  <p>　　老王哈哈笑了起来，你说得对，是得留点儿想象空间，可很多变化，以前是根本想不到哟。</p>
+  <p>　　春风满面的老王，脸上的笑容就像美丽黄河涌起的浪花…… </p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-29 00:00:00:0</date><author>肖亦农</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188297</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/29/content_30188297.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/29/content_30188297.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 黄河曲弯处处春 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 黄河曲弯处处春 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							肖亦农
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月29日</span>&nbsp;第&nbsp;20&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p> 　　2008年，我到内蒙古杭锦旗的一个乡里当扶贫工作队队长，归杭锦旗沿河工委领导。沿河工委书记老王是我的兵团战友，同黄河打了一辈子交道，曾有战友劝他，离开沿河这苦寒地方吧！年纪大了，到市里找个单位养老。老王却说，我是33年的“老黄河”了，晚上听不见黄河的浪涛声，都睡不着觉。我知道老王说的是真心话，他把家安在了黄河南岸的独贵塔拉镇，这些年有兵团战友故地重游，他的家就是战友落脚的地方。只要有空闲，老王就陪战友们聚聚，唱些兵团的老歌曲，有时候唱得泪眼婆娑，还感慨说：叙不完的是战友情，忘不掉的是黄河湾。</p><p>　　老王说的黄河湾，是指内蒙古的杭锦草原。黄河流经内蒙古鄂尔多斯高原时，先是浩浩荡荡向北，可进入这里后，一个骏马掉头，拐了个直弯，化成了一支飞箭向东而去。老话说，黄河百害，唯富河套，可这一富偏偏漏掉了地处河套平原的内蒙古鄂尔多斯的广袤沿黄地带。这里南有库布其沙漠，北边就是黄河，经年累月沙漠北移，严重侵蚀着沿黄地带。为了黄河安澜，人们种树种草，前挡后拉，严防死守不让沙漠探头阻塞黄河。</p><p>　　我找老王报到那天，他给我介绍情况，末了感慨地说：老肖，我在沿河工委当了10年书记，一到结冰化冰时，每天日子都是过得恓恓惶惶。为了治凌洪，我把命都快搭进去了，可沙害没挡住，凌洪也没挡住。我不骗你，做梦我都喊自己的名字，你是个干甚的呢？</p><p>　　老王的话，听得我心里有些酸楚。黄河的凌洪，我太熟悉了，每到初冬结冰和春天化冰时，泡在黄河里的浮冰就会结成高高的冰坝，横亘在河面上，横七竖八地垛在一起阻塞着黄河。奔流的水位就会陡然升高，冰水会不时溢出黄河南岸，形成凌洪。夜里凌洪袭来时，冰块相撞还会发出哇哇怪叫，声传几十里外。我小时候，黄河南岸几乎每年都有凌洪溢堤，给人民生命财产和经济发展造成巨大损失。所以，这里的老百姓说：黄河百害，凌洪最坏。</p><p>　　我说，老王，我们工作队在你辖区，你有事情尽管吩咐，我随叫随到。老王说，少不了要惊动你。后来，老王真就叫了我，让我跟他察看防洪堤，预防灾情。记得那是个春夜，只见冰水咣咣地拍打着堤岸，春风卷起波浪，呼啸着冲向堤岸，看得人胆战心惊。堤岸上摆满了沙袋，民兵、职工、村民扛着锹站了满满一堤岸，时刻准备着与凌洪拼命一搏。老王对我说，你看我这些“兵”怎么样？算不算严阵以待？这里的人个个都能打硬仗。正说着话，远处传来了轰隆隆的声音，老王听了，高兴地说，炮兵炸冰坝了，看来水马上就能退了。堤坝上随之一片欢腾。</p><p>　　有年初春的一个夜里，我接到一个电话，独贵塔拉镇奎素段有两处溃堤，凌洪横扫了独贵塔拉镇和几个村庄。天一亮，我就赶到救灾现场，只见人们在泥水里走得深一脚浅一脚。市领导索性脱掉皮鞋，挽起裤腿跟着老王蹚水。路上经过老王的家，这里已经被凌洪毁掉了，几块浮冰顶在老王家门口，老王连看都没看一眼。我同老王打了声招呼，就跟他们来到高坡上的一间房子里。就在这间房子里，召开了现场救灾会，市领导红着眼睛主持会议。临散会时，老王突然说了一句，我马上就要退休了，还赶上这么一桩子事，想给大家说个体会，凌洪不能这么治了，我们一定要有治灾新思维。这时，一位戴眼镜的青年干部站了起来，说自己是当地水利局的技术员。他说，太同意了，咱不能总是被灾害牵着鼻子走，能不能从根子上解决千年凌洪老问题？市领导鼓励他说说具体想法，那名青年技术员却说，我没啥具体想法，就是觉得要从根子上解决。一些人听了就笑了，老王却不笑，不满意地说，笑甚呢？我们就是要从根子上解决问题。</p><p>　　后来，老王退休了。有一次见面，他对我说，现在沿河水利上青年人作了大贡献，两个措施我以前见都没见过，却极大解决了水患问题。我问什么措施，老王说，现在实施黄河水权转换，沿黄工业园区生产生活的缺水问题改善很大，我当年咋想不出这好办法呢？我说你那会儿哪有工业园区？你除了种麦子种葵花搞些传统农业，还能搞什么？老王说的水权转换，主要是政府主导，用水企业投资，整理农业用水管网沟渠。农业用水系统尤其是直接用于浇地的支、斗、毛渠多年失修。现在修缮了灌溉渠道，将节约下来的农业用水通过水权转换，用在沿黄十数个工业园区项目上来。这样，黄河供水指标没有变，而工业用水得到了保障，农业用水成本也大大降低，工农互补，沿黄经济一派春光。</p><p>　　老王说的第二条措施更有意思，其实是水利人搞了一个变害为宝，大胆提出将凌水引进库布其沙漠的想法。到2023年，已有近5亿立方米凌水被引进沙漠，这就大大解决了凌洪溢岸的凌灾问题。引凌入沙实施10余年来，黄河南岸几无凌灾。凌水引进了沙漠，形成了百余公里的千岛湖，沙湖像一串串珍珠镶嵌在库布其沙漠上。当地大力发展沙漠上独有的特色养殖，鱼虾、甲鱼、螃蟹就养在这大漠沙湖里，为沿岸的养殖户带来了丰厚的收入。</p><p>　　后来有一次，老王邀我们几位兵团战友再去黄河湾，说要带我们尝尝沙漠海鲜，大家欣然而往。我们来到生机勃勃的黄河南岸，沙漠已经赫然退去，只见成片的土地阡陌交错，直铺天际。老王说，现在搞的是“公司+农户”的运营方式，从种子入土到产品销售，全是公司化运作。说着，老王感叹，以前真是想不到，地还能这样种！老王还带我们参观了沙漠水产养殖，介绍我们认识了水产养殖户老李。见到老李时，他穿着水裤正站在虾塘里，晃着手中的网抄说，算到去年，我在这里养了10年虾，跟引凌入沙基本同步。一个查看虾苗成色的水产技术员说，老李这样的引凌入沙受益户，这里不下几百户。我们问他年收入大概有多少，老李连忙摆了摆手说，也就是挣点辛苦钱。老王说，要说辛苦，那些年我不比你辛苦？说着笑了起来，忽然又停下问我：你听说过智慧黄河工程吗？</p><p>　　我说，现在各地都在推进智慧城市建设，这智慧黄河工程一定是智慧城市建设的一部分吧。老王说，我去了水利局，就想打听个明白，究竟咋个智慧法？人家工程师给我讲了两个小时，我才算听出了一点门道，我给你说说？我笑着说，两个小时就听出一点门道，你就别在我这卖弄了，也给我留点儿想象空间！</p><p>　　老王哈哈笑了起来，你说得对，是得留点儿想象空间，可很多变化，以前是根本想不到哟。</p><p>　　春风满面的老王，脸上的笑容就像美丽黄河涌起的浪花…… </p><!--/enpcontent--><!--enpproperty <date>2026-10-29 00:00:00:0</date><author>肖亦农</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30188297</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/29/content_30188297.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/29/content_30188297.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 黄河曲弯处处春 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

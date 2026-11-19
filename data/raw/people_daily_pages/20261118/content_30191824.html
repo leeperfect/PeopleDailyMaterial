@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 天山脚下，一街一巷皆同心（铸牢共同体  中华一家亲） </title>
+		<meta name="author" content='第007版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="4.356624,30.99559925,280.068592,30.99559925,280.068592,196.0946075,4.356624,196.0946075" shape="polygon" href="content_30191823.html"><Area coords="290.026588,31.6281625,396.452652,31.6281625,396.452652,561.71617175,290.026588,561.71617175" shape="polygon" href="content_30191824.html"><Area coords="279.446216,206.84818274999998,3.734248,206.84818274999998,3.734248,240.374035,3.734248,240.374035,3.734248,352.97029925000004,279.446216,352.97029925000004" shape="polygon" href="content_30191825.html"><Area coords="113.272188,363.7238745,3.734248,363.7238745,3.734248,509.84598525,3.734248,571.2046205,113.272188,571.2046205" shape="polygon" href="content_30191826.html"><Area coords="123.852556,363.7238745,280.068592,363.7238745,280.068592,570.57205725,123.852556,570.57205725" shape="polygon" href="content_30191827.html"><Area coords="290.026588,568.04180425,396.452652,568.04180425,396.452652,571.2046205,290.026588,571.2046205" shape="polygon" href="content_30191828.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/18/f6611625-e225-4c77-95e0-af072f8d3cf5.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第07版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30191823.html"> 汇聚工商界力量  共促亚太繁荣 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191824.html"> 天山脚下，一街一巷皆同心（铸牢共同体  中华一家亲） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191825.html"> 相约深圳：携手共创亚太合作光明未来 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191826.html"> 构建协同共生的出海服务生态 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191827.html"> 图片报道 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191828.html"> 本版责编：康  岩  刘涓溪  王  博 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月18日
+							Wed</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_10.html">10版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_11.html">11版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_13.html">13版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_14.html">14版：生态</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_15.html">15版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_17.html">17版：产经</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_18.html">18版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_19.html">19版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/18/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/18/node_07.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30191823.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30191825.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　天山南北，各族群众比邻而居、携手劳作、同台欢歌。拆墙并院、结亲兴业、老物件讲述团结故事，新疆各族群众在空间、经济、文化上相互嵌入，像石榴籽一样紧紧抱在一起。</p>
+  <p>　　<strong>从“一扇门”到“一家人”</strong></p>
+  <p>　　心心相印，在共享空间中扎根。每天清晨出门，到社区党群服务中心的棋牌室游戏、聊天，中午去食堂吃热乎乎的饭菜，午后在广场上晒太阳……这是不少新疆喀什市东湖社区老年居民的日常。过去，3个老旧小区被围墙隔开、相互独立，外墙、管网老化严重，有的居民冬天甚至都不敢开窗。</p>
+  <p>　　2023年，1.09亿元专项资金助力片区老旧小区改造，“拆墙破门”行动同步推进，打开“一扇门”，空地上建起文化广场和儿童游乐场，东湖社区党群服务中心打造出居民所盼的活动空间。生活在一起、休闲在一起，整个社区各族群众成为一家人，谁家有事，左右邻里都来帮忙。“一开始，大家都有顾虑，”东湖社区党总支书记周昊坦言，“门打开了，心慢慢敞开了。”</p>
+  <p>　　更多居民的心相融在一起。“我太喜欢这里了，天天都来。”住在附近小区的锡伯族阿姨香莲花每日都乘20分钟公交车，来东湖社区的舞蹈室参加排练。教室里，维吾尔族长裙和汉族手绢交织飘扬，民族交流交往交融的喜悦跳到了大家心坎上。让东湖社区党总支副书记张晓真最有感触的，是一次社区活动中各族小朋友们一起拔河的景象。“心往一处想，力往一处使，一起向目标进发！”张晓真说。</p>
+  <p>　　心心相连，在共同富裕中茁壮成长。走进一扇门，就是一家人。阿勒泰市拉斯特乡拉斯特村党群服务中心有一家小小的手工工坊，里面摆满了各类手工艺品，最吸引人目光的是最近“大火”的新疆小羊，还有各民族风格的刺绣作品。</p>
+  <p>　　古丽曼·沙塔尔是这里的负责人，“去年阿禾公路通车，我们村在零公里起点，来的游客多了，我就想带着村里的姐妹们一起挣点钱。”古丽曼说，村里免费提供了场地，大家照顾家庭之余，就聚在这家小工坊里边聊天边做手工，除了供游客现场购买，还接了不少附近景区的旅游纪念品订单。</p>
+  <p>　　工坊并没有考勤，村民们可以把材料带回家制作，但只要有空，大家都愿意聚在一起，“聊聊家常能增进感情，有啥困难还能互相帮忙。”古丽曼说。</p>
+  <p>　　<strong>从“你帮我”到“一起赚”</strong></p>
+  <p>　　信任是超越血缘的情缘。</p>
+  <p>　　清朝，一名天津商人途经阿克苏意外受伤，在当地老乡家休养一年多。随后，商人将老乡幼子收为义子，取名“王三”。王三随养父回津，潜心学习中医与经商，后重返阿克苏，在自家老宅处建集市，为各族群众免费看病送药。老乡们称这里为“王三街”。百余年间，各族群众相亲相爱成为“王三街”的精神气质。</p>
+  <p>　　2016年，27家王三街的维吾尔族商户与27家兴隆街的汉族商户率先打破街道界限，在经营上互帮互助、相互合作。两年后，85家各族商户自发成立阿克苏王三街民族团结进步促进会，一场场结亲持续开展，“大家一起把日子过得红红火火。”阿克苏地区民族团结进步促进会会长赵彬说。</p>
+  <p>　　如今，王三街经过街区改造后再换新容貌，环境更整洁、设施更齐全，各地游客纷至沓来。“我的超市成了网红打卡点。”王三街民族团结结对商户赛买提·艾则孜说。大家相互出谋划策、相互加油鼓劲，“生意经”越念越顺、“腰包”越来越鼓，民族团结之花在市井烟火中处处绽放。</p>
+  <p>　　从“你帮我”，到“一起赚”，信任在共同劳动里长出来。</p>
+  <p>　　“姐姐，我最近要去南疆卖羊，等我回来了给你打电话到家里来吃饭！”新疆生产建设兵团第四师六十三团十六连的詹春琼接到弟弟的电话，连连应“好”。这个“弟弟”，是在詹春琼帮助下过上好日子的维吾尔族兄弟、霍城县三道河乡大柳树村的艾木拉。</p>
+  <p>　　那时候，连队农业生产需要大量劳动力，詹春琼认识了来打工的艾木拉，知道他家里困难，主动帮他介绍活计。有了詹春琼支持，艾木拉买了小面包车，一边打工一边当起了劳务经纪人。相识10余年，詹春琼已经把艾木拉当成了亲人，看到他每天穿着球鞋干活捂脚，詹春琼给他做了一双布鞋。“现在弟弟养了800多只羊，日子过得红火着呢！”詹春琼说，逢年过节两家都相互走动，至今感情依旧很好。</p>
+  <p>　　连队职工海拉提·布尔力克更是把詹春琼称为汉族妈妈，“是妈妈教我开农机，有了手艺能赚钱，2013年我要买货车搞运输，妈妈主动借给我1.5万元现金。”目前，海拉提一家在詹春琼的帮助下，已经从曾经的贫困家庭变成增收致富的先进家庭。</p>
+  <p>　　<strong>从“老物件”到“新讲法”</strong></p>
+  <p>　　交融的文化凝聚“一家人”。阿勒泰市红墩镇萨亚铁热克村“户儿家”文化大院里洋溢着欢声笑语。这个村落始建于1861年，“户儿家”原指当时从甘肃、陕西、山西一带，迁徙至阿勒泰的40多户汉族农民，他们修渠开荒，用粮食和当地牧民换牛羊，慢慢地融合成了一家人。如今这个村子有8个民族、3000多人。</p>
+  <p>　　2012年，村民李红秀把自家房子改成了民俗陈列馆，邻居们把家里的旧马鞍、犁地器具、煤油灯一件件送来。350多件旧物件，留存着各民族共同生产生活的痕迹。墙上挂着一张拍摄于1954年的照片，是李红秀丈夫的爷爷曹光友一家25口人的合影。“爷爷曾收养4个哈萨克族孤儿，将他们抚养成人。”李红秀说，“户儿家”的家庭成员由多个民族构成的情况非常多。</p>
+  <p>　　阿斯亚·巴合恰尔便是曹光友收养的哈萨克族孤儿的后代。“我的母亲是哈萨克族，她的亲生父母去世早，外公曹光友收养了她。我的父亲是回族人，我们家由3个民族组成。”阿斯亚说，她从小在多民族家庭长大，老辈们不分你我、热心助人的精神深深影响了她。如今，阿斯亚也热心公益事业，常年照料生病的邻居，用传统草药知识为牧民的孩子治病，组织“爱心妈妈”团队为孤残儿童编织爱心毛衣等。</p>
+  <p>　　村民守望相助，8个民族亲如一家，这就是“中华民族一家亲”最真实的样本。</p>
+  <p>　　在额敏县杰勒阿尕什镇纳仁恰汗库勒村，村民阿山的故事人人都听过。上世纪60年代，阿山带领全村各族群众艰苦奋斗，齐心协力发展生产、改善村容，实现粮食丰产增收，凝结出无私奉献、团结奋进的奋斗精神，成为全村民族团结的精神内核。</p>
+  <p>　　如今，凝结了各民族手足相亲、守望相助深厚情谊的500余件老物件、老照片，在“阿山的故事”民俗文化陈列馆里一一呈现。“通过老物件、老照片的展示，让村民们珍惜今天的幸福生活来之不易，教育子孙后代饮水思源。”村党支部书记李富江说。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-18 00:00:00:0</date><author>本报记者  贺  勇  李亚楠  易舒冉  崔  妍</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191824</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/18/content_30191824.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/18/content_30191824.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 天山脚下，一街一巷皆同心（铸牢共同体  中华一家亲） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 天山脚下，一街一巷皆同心（铸牢共同体  中华一家亲） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  贺  勇  李亚楠  易舒冉  崔  妍
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月18日</span>&nbsp;第&nbsp;07&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　天山南北，各族群众比邻而居、携手劳作、同台欢歌。拆墙并院、结亲兴业、老物件讲述团结故事，新疆各族群众在空间、经济、文化上相互嵌入，像石榴籽一样紧紧抱在一起。</p><p>　　<strong>从“一扇门”到“一家人”</strong></p><p>　　心心相印，在共享空间中扎根。每天清晨出门，到社区党群服务中心的棋牌室游戏、聊天，中午去食堂吃热乎乎的饭菜，午后在广场上晒太阳……这是不少新疆喀什市东湖社区老年居民的日常。过去，3个老旧小区被围墙隔开、相互独立，外墙、管网老化严重，有的居民冬天甚至都不敢开窗。</p><p>　　2023年，1.09亿元专项资金助力片区老旧小区改造，“拆墙破门”行动同步推进，打开“一扇门”，空地上建起文化广场和儿童游乐场，东湖社区党群服务中心打造出居民所盼的活动空间。生活在一起、休闲在一起，整个社区各族群众成为一家人，谁家有事，左右邻里都来帮忙。“一开始，大家都有顾虑，”东湖社区党总支书记周昊坦言，“门打开了，心慢慢敞开了。”</p><p>　　更多居民的心相融在一起。“我太喜欢这里了，天天都来。”住在附近小区的锡伯族阿姨香莲花每日都乘20分钟公交车，来东湖社区的舞蹈室参加排练。教室里，维吾尔族长裙和汉族手绢交织飘扬，民族交流交往交融的喜悦跳到了大家心坎上。让东湖社区党总支副书记张晓真最有感触的，是一次社区活动中各族小朋友们一起拔河的景象。“心往一处想，力往一处使，一起向目标进发！”张晓真说。</p><p>　　心心相连，在共同富裕中茁壮成长。走进一扇门，就是一家人。阿勒泰市拉斯特乡拉斯特村党群服务中心有一家小小的手工工坊，里面摆满了各类手工艺品，最吸引人目光的是最近“大火”的新疆小羊，还有各民族风格的刺绣作品。</p><p>　　古丽曼·沙塔尔是这里的负责人，“去年阿禾公路通车，我们村在零公里起点，来的游客多了，我就想带着村里的姐妹们一起挣点钱。”古丽曼说，村里免费提供了场地，大家照顾家庭之余，就聚在这家小工坊里边聊天边做手工，除了供游客现场购买，还接了不少附近景区的旅游纪念品订单。</p><p>　　工坊并没有考勤，村民们可以把材料带回家制作，但只要有空，大家都愿意聚在一起，“聊聊家常能增进感情，有啥困难还能互相帮忙。”古丽曼说。</p><p>　　<strong>从“你帮我”到“一起赚”</strong></p><p>　　信任是超越血缘的情缘。</p><p>　　清朝，一名天津商人途经阿克苏意外受伤，在当地老乡家休养一年多。随后，商人将老乡幼子收为义子，取名“王三”。王三随养父回津，潜心学习中医与经商，后重返阿克苏，在自家老宅处建集市，为各族群众免费看病送药。老乡们称这里为“王三街”。百余年间，各族群众相亲相爱成为“王三街”的精神气质。</p><p>　　2016年，27家王三街的维吾尔族商户与27家兴隆街的汉族商户率先打破街道界限，在经营上互帮互助、相互合作。两年后，85家各族商户自发成立阿克苏王三街民族团结进步促进会，一场场结亲持续开展，“大家一起把日子过得红红火火。”阿克苏地区民族团结进步促进会会长赵彬说。</p><p>　　如今，王三街经过街区改造后再换新容貌，环境更整洁、设施更齐全，各地游客纷至沓来。“我的超市成了网红打卡点。”王三街民族团结结对商户赛买提·艾则孜说。大家相互出谋划策、相互加油鼓劲，“生意经”越念越顺、“腰包”越来越鼓，民族团结之花在市井烟火中处处绽放。</p><p>　　从“你帮我”，到“一起赚”，信任在共同劳动里长出来。</p><p>　　“姐姐，我最近要去南疆卖羊，等我回来了给你打电话到家里来吃饭！”新疆生产建设兵团第四师六十三团十六连的詹春琼接到弟弟的电话，连连应“好”。这个“弟弟”，是在詹春琼帮助下过上好日子的维吾尔族兄弟、霍城县三道河乡大柳树村的艾木拉。</p><p>　　那时候，连队农业生产需要大量劳动力，詹春琼认识了来打工的艾木拉，知道他家里困难，主动帮他介绍活计。有了詹春琼支持，艾木拉买了小面包车，一边打工一边当起了劳务经纪人。相识10余年，詹春琼已经把艾木拉当成了亲人，看到他每天穿着球鞋干活捂脚，詹春琼给他做了一双布鞋。“现在弟弟养了800多只羊，日子过得红火着呢！”詹春琼说，逢年过节两家都相互走动，至今感情依旧很好。</p><p>　　连队职工海拉提·布尔力克更是把詹春琼称为汉族妈妈，“是妈妈教我开农机，有了手艺能赚钱，2013年我要买货车搞运输，妈妈主动借给我1.5万元现金。”目前，海拉提一家在詹春琼的帮助下，已经从曾经的贫困家庭变成增收致富的先进家庭。</p><p>　　<strong>从“老物件”到“新讲法”</strong></p><p>　　交融的文化凝聚“一家人”。阿勒泰市红墩镇萨亚铁热克村“户儿家”文化大院里洋溢着欢声笑语。这个村落始建于1861年，“户儿家”原指当时从甘肃、陕西、山西一带，迁徙至阿勒泰的40多户汉族农民，他们修渠开荒，用粮食和当地牧民换牛羊，慢慢地融合成了一家人。如今这个村子有8个民族、3000多人。</p><p>　　2012年，村民李红秀把自家房子改成了民俗陈列馆，邻居们把家里的旧马鞍、犁地器具、煤油灯一件件送来。350多件旧物件，留存着各民族共同生产生活的痕迹。墙上挂着一张拍摄于1954年的照片，是李红秀丈夫的爷爷曹光友一家25口人的合影。“爷爷曾收养4个哈萨克族孤儿，将他们抚养成人。”李红秀说，“户儿家”的家庭成员由多个民族构成的情况非常多。</p><p>　　阿斯亚·巴合恰尔便是曹光友收养的哈萨克族孤儿的后代。“我的母亲是哈萨克族，她的亲生父母去世早，外公曹光友收养了她。我的父亲是回族人，我们家由3个民族组成。”阿斯亚说，她从小在多民族家庭长大，老辈们不分你我、热心助人的精神深深影响了她。如今，阿斯亚也热心公益事业，常年照料生病的邻居，用传统草药知识为牧民的孩子治病，组织“爱心妈妈”团队为孤残儿童编织爱心毛衣等。</p><p>　　村民守望相助，8个民族亲如一家，这就是“中华民族一家亲”最真实的样本。</p><p>　　在额敏县杰勒阿尕什镇纳仁恰汗库勒村，村民阿山的故事人人都听过。上世纪60年代，阿山带领全村各族群众艰苦奋斗，齐心协力发展生产、改善村容，实现粮食丰产增收，凝结出无私奉献、团结奋进的奋斗精神，成为全村民族团结的精神内核。</p><p>　　如今，凝结了各民族手足相亲、守望相助深厚情谊的500余件老物件、老照片，在“阿山的故事”民俗文化陈列馆里一一呈现。“通过老物件、老照片的展示，让村民们珍惜今天的幸福生活来之不易，教育子孙后代饮水思源。”村党支部书记李富江说。</p><!--/enpcontent--><!--enpproperty <date>2026-11-18 00:00:00:0</date><author>本报记者  贺  勇  李亚楠  易舒冉  崔  妍</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191824</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/18/content_30191824.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/18/content_30191824.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 天山脚下，一街一巷皆同心（铸牢共同体  中华一家亲） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 中国银行  做实金融知识普及  守护群众美好生活 </title>
+		<meta name="author" content='第012版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.803488,21.26163125,396.196512,21.26163125,396.196512,572.77553775,3.803488,572.77553775" shape="polygon" href="content_30188268.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202610/29/5d16ebcf-e377-4729-87e0-012ad3e6753d.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第12版：广告
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30188268.html"> 中国银行  做实金融知识普及  守护群众美好生活 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年10月29日
+							Thu</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_07.html">07版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_09.html">09版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_10.html">10版：各地传真</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_11.html">11版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_13.html">13版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_14.html">14版：社会</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_15.html">15版：体育</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_18.html">18版：民主政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_19.html">19版：法治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202610/29/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202610/29/node_12.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　金融是国民经济的血脉，是国家核心竞争力的重要组成部分。金融消费者权益保护，是践行金融工作政治性、人民性的直接体现；金融知识普及，既关乎千家万户的切身利益，也关乎金融市场信心、金融安全稳定与经济社会高质量发展。把金融知识送到群众身边、送进群众心里，是中国银行履行社会责任、践行金融为民的生动实践。</p>
+  <p>　　今秋，以“清朗金融网络&nbsp;&nbsp;守护安心消费”为主题的2026年金融教育宣传周如约而至，金融知识普及活动如火如荼开展。中国银行立足“乡村”与“城市”两大场景精心搭台——在革命老区的乡村校园和历史悠久的胡同街巷分别举办金融消费者教育宣传活动，帮助增加群众金融知识储备，让金融知识微光汇聚成炬。</p>
+  <p>　　</p>
+  <p>　　从乡村校园到古风市集</p>
+  <p>　　金融知识普及活动丰富多彩</p>
+  <p>　　在中国银行定点帮扶县——陕西省咸阳市淳化县的乡村校园里，中国银行启动“微光计划”金融消保宣教乡村行活动。活动以“博物馆奇妙夜”为主题，采用轻量化、趣味化的反诈科普形式，通过沉浸式场景把复杂的金融骗局拆解为易懂的故事，向革命老区的乡村儿童普及反诈知识。</p>
+  <p>　　“微光计划”自2021年试点开始，已走过50个乡镇、行程超万公里，“微光电影院”“稻田音乐会”等特色活动广受欢迎。随着《中国银行“微光计划”金融消保宣教乡村行三年行动方案》的发布，该计划由区域试点正式向全国推广。未来3年将重点深耕陕、甘、宁、云、贵、川、青、新、藏等地区，走进30个重点县域及偏远乡镇，预计对接不少于100所乡村中小学，直接服务逾10万人次，以“文化润心”“科技赋能”“美育惠乡”三大主题逐年推进，让金融消保微光精准照进广大乡村地区。</p>
+  <p>　　在北京市东城区隆福寺，中国银行以“隆福有信·消保为民”为主题打造古风市集，将“公平交易、童叟无欺”的金融理念融入市集场景，让市民游客在逛吃游玩间学习金融知识。</p>
+  <p>　　古风市集设置六大展区，各具巧思。“隆福通宝”集章游引导市民在打卡通关中了解金融消费者受教育权与知情权；“日消万钱”投壶互动普及征信常识、理性消费理念；“文奎辨伪”鉴真局讲解合法维权渠道和识骗防骗要领；“隆福花市”传递投资理财“适当性”理念；“藻井观星”权益大转盘集中展示金融消费者八项基本权利；“寻秋隆福”反诈飞花令以诗词形式传播识骗防诈知识。古韵与新风交融，市井烟火与金融科普相映成趣。活动开展以来，已有超1.4万名市民参与集章活动；线上传播量逾700万次，让古都的金融好声音传得更远。</p>
+  <p>　　两大活动前后相续、一脉相承，既彰显历史文化厚度，又贴近城乡群众需求，是中国银行以场景化、生活化方式推动金融知识深入群众的生动诠释。</p>
+  <p>　　近年来，中国银行持续把金融消费者教育宣传作为践行金融为民的重要抓手，发挥集团综合化经营优势，统筹境内外机构协同，联动自有平台与主流媒体，深化与监管部门、地方政府、行业协会的协同共建，汇聚金融宣教合力，构建融合协同的金融教育传播格局，以“大消保”工作体系为根基、以“数字消保”新模式为支撑，推动优秀教育宣传成果全行共享、精准直达。坚持诚实守信、以义取利、稳健审慎、守正创新、依法合规，中国银行把金融文化理念融入宣教全过程，引导群众树立理性投资、依法维权观念，为常态化金融教育筑牢精神内核。</p>
+  <p>　　从集中宣传到四季相伴</p>
+  <p>　　推动金融教育常态长效</p>
+  <p>　　金融消费者教育宣传是旨在提升国民金融素养、营造安全放心金融消费环境的基础工程，具有长期性和系统性。中国银行以“中行消保&nbsp;&nbsp;四季相伴”系列常态化活动为抓手，针对“一老一少一新”、“两司两员”、乡村群体、跨境消费者等群体的差异化需求开展精准宣教，聚焦适老化服务、支付便利化、反诈防非等主题，唱响“金融好声音”，推动金融知识从“入眼”走向“入心”。</p>
+  <p>　　2026年，中国银行集中发力开展金融消费者教育宣传活动，紧抓“3·15”国际消费者权益日、“5·15”全国投资者保护宣传日与6月“普及金融知识万里行”、9月金融教育宣传周四大重要节点，接连推进金融宣教工作。截至9月末，全行累计开展活动超32万场，较上年同期增长100%，把金融知识送到工厂车间、田间地头、校园课堂，金融教育正沉淀为融入日常、赋能民生的长效实践，覆盖之广、触达之深、形式之新实现多重突破。原创精品持续破圈，中国银行联合反诈部门创作的反诈视频《拿手》，荣获第三届全国反诈短视频大赛奖项；原创视频《反诈风暴之助贷陷阱》《险在一瞬，止于反诈》分别获评中国人民银行2026年金融行业全国反诈短视频大赛精品短视频和优秀短视频。连续举办的消保创意大赛，更催生出动漫、H5、情景剧等一批原创作品。从微电影到数字内容，从创意大赛到人工智能生成，中国银行以群众喜闻乐见的形式推动金融知识入脑入心，让金融教育的传播力、引导力、影响力持续放大。</p>
+  <p>　　中国银行聚焦重点群体，把服务送到“最后一公里”。帮助老年群体跨越“数字鸿沟”，以陪伴式、方言化服务守护“银发”权益；帮助青少年群体树立理性消费与防诈意识，把金融知识送进开学第一课；帮助新市民群体树立理性投资、理性维权意识，在园区、社区建起“身边的金融课堂”；让“两司两员”群体歇脚有去处、金融知识随身学，以暖心驿站把消保服务送到群众身边；帮助跨境消费者便利识别风险，以多语种服务护航“走出去”与“引进来”。中国银行以差异化、场景化的精准宣教，让不同年龄、不同地域、不同身份的群众都能听得懂、用得上金融知识，守护好人民群众“钱袋子”。</p>
+  <p>　　从各展所长到同向发力</p>
+  <p>　　各分行同向汇聚金融为民暖流</p>
+  <p>　　金融消费者教育宣传在各地分行同步展开。从南海之滨到雪域高原，从繁华都市到边远村寨，中国银行遍布全国的机构网点闻令而动、同向发力，把金融知识送到群众身边。</p>
+  <p>　　在广东，中国银行把金融消保宣教活动办进国际旅客抵穗“第一站”广州白云国际机场：设“金融安全拍一拍”、盲盒墙、扭蛋机，内藏可带走的双语金融风险提示“锦囊”与“知识卡”，反诈主题原创快闪舞蹈火热上演，让金融消保的“中国温度”随航班飞向世界；同时，走进百年街区，以非遗潮剧结合防诈内容，开展“潮音话金融”宣教活动。在重庆，中国银行把金融课堂搬上巫山“小红船”客轮，沿峡江“背篓航线”设置流动金融宣传站，工作人员用当地方言为老年乘客讲解保护账户安全、识别非法集资知识，面向沿江农户和游客发放理性消费、合理信贷定制宣传折页，让金融守护随船驶入民心。在青海，中国银行立足当地特点和本地产业，宣传小队深入草原、牧区、枸杞种植基地，面向牧民、种植户、外来务工群体开展精准宣传，结合枸杞收购季电信诈骗、虚假收购、资金转账风险等高发的特点，用通俗易懂的语言讲解反诈、征信风险知识，把金融课堂搬到田间，有效填补务工人员金融知识空白。</p>
+  <p>　　从金融为民到履职担当</p>
+  <p>　　积极践行金融工作的政治性、人民性</p>
+  <p>　　高质量发展，行稳方能致远。金融消保事关群众切身利益和金融安全大局，是中国银行厚植为民情怀、服务民生福祉的重要着力点。</p>
+  <p>　　奋进“十五五”，中国银行将积极践行金融工作的政治性、人民性，持续健全“大消保”工作体系，推动消保从“事后救火”向“事前防火”转型，努力将消保工作转化为推动集团高质量发展的内生动力、转化为满足人民群众对美好生活向往的坚实支撑、转化为服务金融强国建设的责任担当。</p>
+  <p>　　中国银行将以“大消保”工作体系为牵引，推动金融消费者教育宣传融入日常、形成长效，让金融知识普及常态化、长效化，以更接地气、更聚人气的宣教活动，把实用的风险防范知识送到群众身边，让金融消保温暖守护千家万户、抵达群众心间。</p>
+  <p>　　新征程上，中国银行将始终站稳人民立场，坚定不移走好中国特色金融发展之路，以金融知识普及的点滴之力厚植金融消费的安全土壤，汇聚建设金融强国的坚实力量。</p>
+  <p>　　数据来源：中国银行</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-10-29 00:00:00:0</date><author></author><subtitle></subtitle><introtitle><p> 厚植为民情怀  彰显大行担当 </p></introtitle><keyword></keyword><paperarticleid>30188268</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/29/content_30188268.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/29/content_30188268.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 中国银行  做实金融知识普及  守护群众美好生活 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 厚植为民情怀  彰显大行担当 </p></h3>
+						<h1><p> 中国银行  做实金融知识普及  守护群众美好生活 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年10月29日</span>&nbsp;第&nbsp;12&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p style="text-align:center;" class="not-indent"><img src="../../../pic/202610/29/b11bfc2c-98b2-44ef-a17d-c98097718bb2.jpg" style="max-width:100%;"></p><p>　　金融是国民经济的血脉，是国家核心竞争力的重要组成部分。金融消费者权益保护，是践行金融工作政治性、人民性的直接体现；金融知识普及，既关乎千家万户的切身利益，也关乎金融市场信心、金融安全稳定与经济社会高质量发展。把金融知识送到群众身边、送进群众心里，是中国银行履行社会责任、践行金融为民的生动实践。</p><p>　　今秋，以“清朗金融网络&nbsp;&nbsp;守护安心消费”为主题的2026年金融教育宣传周如约而至，金融知识普及活动如火如荼开展。中国银行立足“乡村”与“城市”两大场景精心搭台——在革命老区的乡村校园和历史悠久的胡同街巷分别举办金融消费者教育宣传活动，帮助增加群众金融知识储备，让金融知识微光汇聚成炬。</p><p>　　</p><p>　　从乡村校园到古风市集</p><p>　　金融知识普及活动丰富多彩</p><p>　　在中国银行定点帮扶县——陕西省咸阳市淳化县的乡村校园里，中国银行启动“微光计划”金融消保宣教乡村行活动。活动以“博物馆奇妙夜”为主题，采用轻量化、趣味化的反诈科普形式，通过沉浸式场景把复杂的金融骗局拆解为易懂的故事，向革命老区的乡村儿童普及反诈知识。</p><p>　　“微光计划”自2021年试点开始，已走过50个乡镇、行程超万公里，“微光电影院”“稻田音乐会”等特色活动广受欢迎。随着《中国银行“微光计划”金融消保宣教乡村行三年行动方案》的发布，该计划由区域试点正式向全国推广。未来3年将重点深耕陕、甘、宁、云、贵、川、青、新、藏等地区，走进30个重点县域及偏远乡镇，预计对接不少于100所乡村中小学，直接服务逾10万人次，以“文化润心”“科技赋能”“美育惠乡”三大主题逐年推进，让金融消保微光精准照进广大乡村地区。</p><p>　　在北京市东城区隆福寺，中国银行以“隆福有信·消保为民”为主题打造古风市集，将“公平交易、童叟无欺”的金融理念融入市集场景，让市民游客在逛吃游玩间学习金融知识。</p><p>　　古风市集设置六大展区，各具巧思。“隆福通宝”集章游引导市民在打卡通关中了解金融消费者受教育权与知情权；“日消万钱”投壶互动普及征信常识、理性消费理念；“文奎辨伪”鉴真局讲解合法维权渠道和识骗防骗要领；“隆福花市”传递投资理财“适当性”理念；“藻井观星”权益大转盘集中展示金融消费者八项基本权利；“寻秋隆福”反诈飞花令以诗词形式传播识骗防诈知识。古韵与新风交融，市井烟火与金融科普相映成趣。活动开展以来，已有超1.4万名市民参与集章活动；线上传播量逾700万次，让古都的金融好声音传得更远。</p><p>　　两大活动前后相续、一脉相承，既彰显历史文化厚度，又贴近城乡群众需求，是中国银行以场景化、生活化方式推动金融知识深入群众的生动诠释。</p><p>　　近年来，中国银行持续把金融消费者教育宣传作为践行金融为民的重要抓手，发挥集团综合化经营优势，统筹境内外机构协同，联动自有平台与主流媒体，深化与监管部门、地方政府、行业协会的协同共建，汇聚金融宣教合力，构建融合协同的金融教育传播格局，以“大消保”工作体系为根基、以“数字消保”新模式为支撑，推动优秀教育宣传成果全行共享、精准直达。坚持诚实守信、以义取利、稳健审慎、守正创新、依法合规，中国银行把金融文化理念融入宣教全过程，引导群众树立理性投资、依法维权观念，为常态化金融教育筑牢精神内核。</p><p>　　从集中宣传到四季相伴</p><p>　　推动金融教育常态长效</p><p>　　金融消费者教育宣传是旨在提升国民金融素养、营造安全放心金融消费环境的基础工程，具有长期性和系统性。中国银行以“中行消保&nbsp;&nbsp;四季相伴”系列常态化活动为抓手，针对“一老一少一新”、“两司两员”、乡村群体、跨境消费者等群体的差异化需求开展精准宣教，聚焦适老化服务、支付便利化、反诈防非等主题，唱响“金融好声音”，推动金融知识从“入眼”走向“入心”。</p><p>　　2026年，中国银行集中发力开展金融消费者教育宣传活动，紧抓“3·15”国际消费者权益日、“5·15”全国投资者保护宣传日与6月“普及金融知识万里行”、9月金融教育宣传周四大重要节点，接连推进金融宣教工作。截至9月末，全行累计开展活动超32万场，较上年同期增长100%，把金融知识送到工厂车间、田间地头、校园课堂，金融教育正沉淀为融入日常、赋能民生的长效实践，覆盖之广、触达之深、形式之新实现多重突破。原创精品持续破圈，中国银行联合反诈部门创作的反诈视频《拿手》，荣获第三届全国反诈短视频大赛奖项；原创视频《反诈风暴之助贷陷阱》《险在一瞬，止于反诈》分别获评中国人民银行2026年金融行业全国反诈短视频大赛精品短视频和优秀短视频。连续举办的消保创意大赛，更催生出动漫、H5、情景剧等一批原创作品。从微电影到数字内容，从创意大赛到人工智能生成，中国银行以群众喜闻乐见的形式推动金融知识入脑入心，让金融教育的传播力、引导力、影响力持续放大。</p><p>　　中国银行聚焦重点群体，把服务送到“最后一公里”。帮助老年群体跨越“数字鸿沟”，以陪伴式、方言化服务守护“银发”权益；帮助青少年群体树立理性消费与防诈意识，把金融知识送进开学第一课；帮助新市民群体树立理性投资、理性维权意识，在园区、社区建起“身边的金融课堂”；让“两司两员”群体歇脚有去处、金融知识随身学，以暖心驿站把消保服务送到群众身边；帮助跨境消费者便利识别风险，以多语种服务护航“走出去”与“引进来”。中国银行以差异化、场景化的精准宣教，让不同年龄、不同地域、不同身份的群众都能听得懂、用得上金融知识，守护好人民群众“钱袋子”。</p><p>　　从各展所长到同向发力</p><p>　　各分行同向汇聚金融为民暖流</p><p>　　金融消费者教育宣传在各地分行同步展开。从南海之滨到雪域高原，从繁华都市到边远村寨，中国银行遍布全国的机构网点闻令而动、同向发力，把金融知识送到群众身边。</p><p>　　在广东，中国银行把金融消保宣教活动办进国际旅客抵穗“第一站”广州白云国际机场：设“金融安全拍一拍”、盲盒墙、扭蛋机，内藏可带走的双语金融风险提示“锦囊”与“知识卡”，反诈主题原创快闪舞蹈火热上演，让金融消保的“中国温度”随航班飞向世界；同时，走进百年街区，以非遗潮剧结合防诈内容，开展“潮音话金融”宣教活动。在重庆，中国银行把金融课堂搬上巫山“小红船”客轮，沿峡江“背篓航线”设置流动金融宣传站，工作人员用当地方言为老年乘客讲解保护账户安全、识别非法集资知识，面向沿江农户和游客发放理性消费、合理信贷定制宣传折页，让金融守护随船驶入民心。在青海，中国银行立足当地特点和本地产业，宣传小队深入草原、牧区、枸杞种植基地，面向牧民、种植户、外来务工群体开展精准宣传，结合枸杞收购季电信诈骗、虚假收购、资金转账风险等高发的特点，用通俗易懂的语言讲解反诈、征信风险知识，把金融课堂搬到田间，有效填补务工人员金融知识空白。</p><p>　　从金融为民到履职担当</p><p>　　积极践行金融工作的政治性、人民性</p><p>　　高质量发展，行稳方能致远。金融消保事关群众切身利益和金融安全大局，是中国银行厚植为民情怀、服务民生福祉的重要着力点。</p><p>　　奋进“十五五”，中国银行将积极践行金融工作的政治性、人民性，持续健全“大消保”工作体系，推动消保从“事后救火”向“事前防火”转型，努力将消保工作转化为推动集团高质量发展的内生动力、转化为满足人民群众对美好生活向往的坚实支撑、转化为服务金融强国建设的责任担当。</p><p>　　中国银行将以“大消保”工作体系为牵引，推动金融消费者教育宣传融入日常、形成长效，让金融知识普及常态化、长效化，以更接地气、更聚人气的宣教活动，把实用的风险防范知识送到群众身边，让金融消保温暖守护千家万户、抵达群众心间。</p><p>　　新征程上，中国银行将始终站稳人民立场，坚定不移走好中国特色金融发展之路，以金融知识普及的点滴之力厚植金融消费的安全土壤，汇聚建设金融强国的坚实力量。</p><p>　　数据来源：中国银行</p><!--/enpcontent--><!--enpproperty <date>2026-10-29 00:00:00:0</date><author></author><subtitle></subtitle><introtitle><p> 厚植为民情怀  彰显大行担当 </p></introtitle><keyword></keyword><paperarticleid>30188268</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202610/29/content_30188268.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202610/29/content_30188268.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 中国银行  做实金融知识普及  守护群众美好生活 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 丰收景象背后的“三个一” </title>
+		<meta name="author" content='第006版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.803488,30.926012749999998,300.475436,30.926012749999998,300.475436,221.63642949999996,3.803488,221.63642949999996" shape="polygon" href="content_30189556.html"><Area coords="311.885896,31.570306000000002,396.196512,31.570306000000002,396.196512,262.226818,311.885896,262.226818" shape="polygon" href="content_30189557.html"><Area coords="3.803488,230.65651774999998,91.917592,230.65651774999998,91.917592,353.07198225,3.803488,353.07198225" shape="polygon" href="content_30189558.html"><Area coords="102.694136,230.65651774999998,300.475436,230.65651774999998,300.475436,353.07198225,102.694136,353.07198225" shape="polygon" href="content_30189559.html"><Area coords="396.196512,292.50854325,396.196512,273.17978025,396.196512,273.17978025,311.885896,273.17978025,311.885896,273.17978025,311.885896,292.50854325,311.885896,376.26649325,396.196512,376.26649325" shape="polygon" href="content_30189560.html"><Area coords="3.803488,364.0249445,300.475436,364.0249445,300.475436,571.4869512500001,3.803488,571.4869512500001" shape="polygon" href="content_30189561.html"><Area coords="396.196512,401.39387825,396.196512,382.70941425000007,311.885896,382.70941425000007,311.885896,401.39387825,311.885896,481.28608025,396.196512,481.28608025" shape="polygon" href="content_30189562.html"><Area coords="396.196512,501.25913074999994,396.196512,487.08470800000003,396.196512,487.08470800000003,311.885896,487.08470800000003,311.885896,487.08470800000003,311.885896,501.25913074999994,311.885896,561.8225755,396.196512,561.8225755" shape="polygon" href="content_30189563.html"><Area coords="311.885896,568.26549075,396.196512,568.26549075,396.196512,571.4869512500001,311.885896,571.4869512500001" shape="polygon" href="content_30189564.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/05/fb072fa0-edd9-4260-9332-5f56b104d4f3.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第06版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30189556.html"> 志合越山海  丝路聚和声 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189557.html"> 在这里，交往交流交融暖人心（铸牢共同体  中华一家亲） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189558.html"> 第140届广交会圆满闭幕 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189559.html"> 图片报道 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189560.html"> 2026中国广播电视精品创作大会开幕 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189561.html"> 丰收景象背后的“三个一” </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189562.html"> 世界顶尖大学校长论坛举行 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189563.html"> 2027年军队文职人员公开招考工作全面展开 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30189564.html"> 本版责编：张彦春  宋  宇  王  博 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月05日
+							Thu</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_07.html">07版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_08.html">08版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_09.html">09版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_10.html">10版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_11.html">11版：各地传真</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_12.html">12版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_13.html">13版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_14.html">14版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_15.html">15版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_16.html">16版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_17.html">17版：法治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_18.html">18版：民主政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_19.html">19版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/05/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/05/node_06.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30189560.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30189562.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　大洋上的海温起伏，牵动着亿万亩粮田的安危。近期，国家气候中心通报，超强厄尔尼诺事件已经形成，并将持续发展。年初以来，全球关键航运通道受阻，风险向能源、粮食等领域传递。</p>
+  <p>　　视线转向神州大地。农业农村部最新农情调度显示，截至11月4日，我国秋粮收获已过九成，全年粮食丰收已成定局。</p>
+  <p>　　仓廪实，天下安。习近平总书记心系粮食安全，强调“咱们这个国家再现代化，粮食主要还是要靠自己，14亿人吃饭靠谁都靠不住，必须抓好粮食生产”。</p>
+  <p>　　今年是“十五五”开局之年，夺取全年粮食丰收意义重大。翻开田野上的丰收答卷，透过一张防灾减灾网、一条生产供应链和一套稳产增产技术方案，读懂“中国饭碗”背后的深厚根基。</p>
+  <p>　　<strong>一张防灾减灾网——<br></strong></p>
+  <p><strong>　　无灾多增产、受灾少减产，为收成兜底</strong></p>
+  <p>　　河南漯河市召陵区万金镇司庄村，种粮户杨改的3亩多玉米今年迎来丰收。“今年雨水多，多亏新修的这条渠，收成保住了。”在他身后，一条1公里长的沟渠蜿蜒向南，将良田紧紧环抱。</p>
+  <p>　　近年来，我国雨带北移西扩趋势明显。受台风“白海豚”影响，8月10日至13日，漯河市遭遇近年最强降水过程。</p>
+  <p>　　玉米长时间积水，易导致根系缺氧、引发早衰。杨改家耕地前的这条沟渠，打通了107国道万金段沿线13个村庄的排水堵点，有效避免了大面积内涝。</p>
+  <p>　　“我们6月份就组织机械清淤泥、修边坡。暴雨一来，沿线的来水汇集之后，两天就排完了。”司庄村党支部书记刘春生说。据介绍，今年漯河市通过1060公里沟渠疏浚整治，形成了“田有沟、沟通渠、渠入河”的田间排涝格局。</p>
+  <p>　　不利条件下能稳住多少产能，考验着我国农业防灾减灾体系的每一环。</p>
+  <p>　　农田，正是这张防灾减灾网中的关键结点。放眼超10亿亩高标准农田，超七成位于粮食主产省（区）、超八成位于坡度6度以下平坦地区，近九成是位于年降水量400毫米以上的地区，依据地形优势的均衡分布，助力粮食产能最大化。同时，随着近年气候格局深刻变化，多个主产区加快疏通田间“毛细血管”，促进排涝效率进一步提升。</p>
+  <p>　　这张网在防治病虫害方面也发挥着重要作用。</p>
+  <p>　　今年，稻飞虱在江南和长江中下游中晚稻区较往年重发。在湖南，7月下旬，全省稻飞虱发生面积达4.8万亩，是去年同期的11倍。南县青树嘴镇昌群农机合作社负责人昌建文回忆起几个月前的场景，心有余悸：“一蔸稻上百头虫，手一碰，成虫‘嗡’地腾起一片。”</p>
+  <p>　　南县迅速启动应急响应，500台套植保无人机投入统防作业，农技人员每周至少下田两次，严格执行病虫情周报和突发虫情24小时快报制度。“有关部门安排无人机打药，一亩田几分钟，确保药液精准喷施稻株基部，虫害很快被控制住了。”昌建文说，家里4000余亩田两次统防下来，虫明显少了。通过应防尽防，南县有效遏制了田间虫口密度。</p>
+  <p>　　多层次农技推广，延伸防灾减灾网的覆盖面。目前，我国已建成世界最大农技推广体系。针对局部涝灾、部分南方稻区稻飞虱多发态势，农业农村部及时发布风险预警和技术指导意见，先后派出多个工作组和科技小分队，指导重点省份用好中央财政重大病虫害防控资金，大力开展统防统治和联防联控，实现“虫口夺粮”。</p>
+  <p>　　<strong>一条生产供应链——</strong></p>
+  <p><strong>　　从种粮到卖粮，政策组合拳全程护航</strong></p>
+  <p>　　一条细细的海峡，卡住了国际能源运输，也影响到关键农资原料供给。</p>
+  <p>　　秋粮大面积收获，农机用油同步迎来高峰期。在山东肥城市仪阳街道王晋村，趁卸粮间隙，农机手王兆勇驱车赶往约两公里外的农机保供加油站，为作业机械补给燃油。“加满这一箱油，比市场价省了五六十元。”他扬了扬手里的农机专用加油卡。</p>
+  <p>　　油价稳了，农机才能跑起来。今年以来，农业农村部与中国石油、中国石化密切会商，努力采取措施加大农机加油专属优惠力度。</p>
+  <p>　　“开镰前，我们全面摸排了全市农机保有量、作业区域和秋收用油需求，提前锁定保供站点和油源。”肥城市农业机械发展服务中心农机生产科科长伊永林介绍，农业用油保供期间，全市中石化指定站点对专用号段农机卡用户，实行柴油每升优惠0.3元；中石油乡镇保供站点，对持卡农机手给予3%用油优惠，全方位降低农机作业成本。</p>
+  <p>　　化肥，粮食的“粮食”。山东农大肥业科技股份有限公司生产车间里，生产线全速运转。作为全市肥料保供龙头企业，肥城基地年产能达180万吨，重点保障当地小麦、玉米等主粮作物用肥需求。</p>
+  <p>　　在益农农资销售门店，各类复合肥、水溶肥、基础肥料备货充足、品类齐全。“复合肥价格涨了一些，我们按照农技人员指导，应用测土配方施肥，按需用肥，算下来一季化肥亩均投入增加20元左右，总体上在可承受范围。”肥城市种粮大户冀荣祥说。</p>
+  <p>　　“我国化肥工业体系较为完整，主要化肥产品具有较强的供给能力。”中国社会科学院农村发展研究所研究员胡冰川说，今年以来，我国充分发挥产能和制度优势，加强化肥储备、进口采购和生产季节供应之间的协调，有效熨平国际市场波动影响。</p>
+  <p>　　为保护种粮农民利益，我国农业支持保护政策体系持续健全。</p>
+  <p>　　今年8月初，江西、湖南启动2026年早籼稻最低收购价执行预案。在江西上犹县营前镇，种粮大户周冬平今年种植早稻2000多亩，亩产干谷472公斤。“新粮集中上市时，上门收购的粮贩普遍出价偏低，国家最低收购价政策启动后，达标的稻谷按托市价卖给国有粮库，亩均纯收益400多元。”周冬平说。营前镇积极发展农业社会化服务，全镇托管田块亩均增产4.5公斤、亩均生产成本下降28元。</p>
+  <p>　　有了早稻的稳定收成，周冬平今年晚稻种的是香禾优细丝苗品种，跟粮油加工企业签了订单。上犹县农业农村局党组成员、农技推广中心主任刘光文介绍，今年全县中晚稻种植规模与早稻基本相当，预计每斤收购价在1.3元左右，除了国有库点敞开收购达标稻谷，多元经营主体也积极入市开展市场化收购，粮农收益有望好于早稻。</p>
+  <p>　　<strong>一套稳产增产技术方案——</strong></p>
+  <p><strong>　　技术持续上新，推动粮食安全水平向更高层次跃升</strong></p>
+  <p>　　“十五五”规划纲要把粮食综合生产能力达到1.45万亿斤左右列为约束性指标。秋粮约占全年粮食产量的3/4，从种植规模和增产潜力看，大头在玉米。</p>
+  <p>　　多要素集成作用下，各地逐年擦亮单产这一关键指标。2025年单产提升对全国粮食增产的贡献率已超90%。从今年秋收看，多地捷报频传。</p>
+  <p>　　亩产1799.1公斤！在新疆伊犁哈萨克自治州，百亩玉米攻关田再次刷新全国玉米高产纪录。</p>
+  <p>　　“我们选用耐密抗倒品种，因苗因墒精准调控灌水和施肥。伊犁河谷光热充沛、昼夜温差大，充分释放了玉米高产潜力。”中国农业科学院作物科学研究所研究员李少昆介绍。</p>
+  <p>　　在河北霸州市的百亩“夏双早”模式夏玉米高产示范方，黄淮海夏玉米区北缘夏玉米亩产实现新突破。河北省玉米产业技术体系廊坊综合试验站站长王瑞华介绍，夏收后抢时早播，争取了更多热量资源，示范方亩均留苗约6500株，在6—8片展叶时精准控旺、防止倒伏；滴灌水肥一体分次施用，后期通过一喷多促，延长灌浆时间、增加粒重。</p>
+  <p>　　“十四五”时期，密植高产精准调控技术在全国累计推广2.4亿亩，覆盖18个省份，亩均增产226斤，带动农民增收近300亿元。今年，我国首次启动20个大面积单产提升整建制推进市，整建制推进县由702个增加到1000个，促进更大范围均衡增产。</p>
+  <p>　　农业AI（人工智能）大模型“上新”，支撑农业新质生产力跑出加速度。</p>
+  <p>　　在黑龙江北大荒农垦集团有限公司的农场，今年60万种植户、4800万亩大田通过北大荒农服APP，实现全周期数字化支撑。这款APP通过引入神农大模型、天工开悟寒地大模型，实现产学研AI能力融合创新。在运行机制上，平台依托“空天地人机”一体化感知体系，汇聚卫星遥感、无人机巡田、田间物联网传感器实时监测数据，叠加垦区多年种植历史数据、寒地土壤长期观测数据，结合神农大模型千万级农业知识图谱与多模态农业知识库，依托“智壤全息一张图”建立地块数字档案。</p>
+  <p>　　中国农业大学信息与电气工程学院教授、神农大模型研发团队负责人王耀君介绍，“神农大模型”自2023年首发以来持续迭代，现已覆盖31个省（区、市），服务百万农户，落地应用超500万亩农田。</p>
+  <p>　　我国农业科技进步贡献率达到64.8%，新技术应用不断抬升现代农业发展的天花板，推动粮食安全水平向更高层次跃升。</p>
+  <p>　　当前，秋冬种正在各地有序推进。透过动荡的国际农产品供应链，看到我国秋日“丰”景背后的“三个一”，这份稳弥足珍贵。中国饭碗之稳，正在为解决好14亿多人口的吃饭问题、推动全球粮食安全注入源源不断的确定性。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-05 00:00:00:0</date><author>本报记者  郁静娴</author><subtitle></subtitle><introtitle><p> 截至11月4日，全国秋粮收获已过九成，丰收已成定局 </p></introtitle><keyword></keyword><paperarticleid>30189561</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/05/content_30189561.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/05/content_30189561.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 丰收景象背后的“三个一” </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 截至11月4日，全国秋粮收获已过九成，丰收已成定局 </p></h3>
+						<h1><p> 丰收景象背后的“三个一” </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  郁静娴
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月05日</span>&nbsp;第&nbsp;06&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202611/05/aaaa3c2a-c22f-4cb3-ad73-65f9b2e33b65.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　11月3日，农户在江苏盐城一处现代农业示范基地抢收水稻。</p><p>　　彭  岭摄（影像中国）</p>"></p><p>　　大洋上的海温起伏，牵动着亿万亩粮田的安危。近期，国家气候中心通报，超强厄尔尼诺事件已经形成，并将持续发展。年初以来，全球关键航运通道受阻，风险向能源、粮食等领域传递。</p><p>　　视线转向神州大地。农业农村部最新农情调度显示，截至11月4日，我国秋粮收获已过九成，全年粮食丰收已成定局。</p><p>　　仓廪实，天下安。习近平总书记心系粮食安全，强调“咱们这个国家再现代化，粮食主要还是要靠自己，14亿人吃饭靠谁都靠不住，必须抓好粮食生产”。</p><p>　　今年是“十五五”开局之年，夺取全年粮食丰收意义重大。翻开田野上的丰收答卷，透过一张防灾减灾网、一条生产供应链和一套稳产增产技术方案，读懂“中国饭碗”背后的深厚根基。</p><p>　　<strong>一张防灾减灾网——<br></strong></p><p><strong>　　无灾多增产、受灾少减产，为收成兜底</strong></p><p>　　河南漯河市召陵区万金镇司庄村，种粮户杨改的3亩多玉米今年迎来丰收。“今年雨水多，多亏新修的这条渠，收成保住了。”在他身后，一条1公里长的沟渠蜿蜒向南，将良田紧紧环抱。</p><p>　　近年来，我国雨带北移西扩趋势明显。受台风“白海豚”影响，8月10日至13日，漯河市遭遇近年最强降水过程。</p><p>　　玉米长时间积水，易导致根系缺氧、引发早衰。杨改家耕地前的这条沟渠，打通了107国道万金段沿线13个村庄的排水堵点，有效避免了大面积内涝。</p><p>　　“我们6月份就组织机械清淤泥、修边坡。暴雨一来，沿线的来水汇集之后，两天就排完了。”司庄村党支部书记刘春生说。据介绍，今年漯河市通过1060公里沟渠疏浚整治，形成了“田有沟、沟通渠、渠入河”的田间排涝格局。</p><p>　　不利条件下能稳住多少产能，考验着我国农业防灾减灾体系的每一环。</p><p>　　农田，正是这张防灾减灾网中的关键结点。放眼超10亿亩高标准农田，超七成位于粮食主产省（区）、超八成位于坡度6度以下平坦地区，近九成是位于年降水量400毫米以上的地区，依据地形优势的均衡分布，助力粮食产能最大化。同时，随着近年气候格局深刻变化，多个主产区加快疏通田间“毛细血管”，促进排涝效率进一步提升。</p><p>　　这张网在防治病虫害方面也发挥着重要作用。</p><p>　　今年，稻飞虱在江南和长江中下游中晚稻区较往年重发。在湖南，7月下旬，全省稻飞虱发生面积达4.8万亩，是去年同期的11倍。南县青树嘴镇昌群农机合作社负责人昌建文回忆起几个月前的场景，心有余悸：“一蔸稻上百头虫，手一碰，成虫‘嗡’地腾起一片。”</p><p>　　南县迅速启动应急响应，500台套植保无人机投入统防作业，农技人员每周至少下田两次，严格执行病虫情周报和突发虫情24小时快报制度。“有关部门安排无人机打药，一亩田几分钟，确保药液精准喷施稻株基部，虫害很快被控制住了。”昌建文说，家里4000余亩田两次统防下来，虫明显少了。通过应防尽防，南县有效遏制了田间虫口密度。</p><p>　　多层次农技推广，延伸防灾减灾网的覆盖面。目前，我国已建成世界最大农技推广体系。针对局部涝灾、部分南方稻区稻飞虱多发态势，农业农村部及时发布风险预警和技术指导意见，先后派出多个工作组和科技小分队，指导重点省份用好中央财政重大病虫害防控资金，大力开展统防统治和联防联控，实现“虫口夺粮”。</p><p>　　<strong>一条生产供应链——</strong></p><p><strong>　　从种粮到卖粮，政策组合拳全程护航</strong></p><p>　　一条细细的海峡，卡住了国际能源运输，也影响到关键农资原料供给。</p><p>　　秋粮大面积收获，农机用油同步迎来高峰期。在山东肥城市仪阳街道王晋村，趁卸粮间隙，农机手王兆勇驱车赶往约两公里外的农机保供加油站，为作业机械补给燃油。“加满这一箱油，比市场价省了五六十元。”他扬了扬手里的农机专用加油卡。</p><p>　　油价稳了，农机才能跑起来。今年以来，农业农村部与中国石油、中国石化密切会商，努力采取措施加大农机加油专属优惠力度。</p><p>　　“开镰前，我们全面摸排了全市农机保有量、作业区域和秋收用油需求，提前锁定保供站点和油源。”肥城市农业机械发展服务中心农机生产科科长伊永林介绍，农业用油保供期间，全市中石化指定站点对专用号段农机卡用户，实行柴油每升优惠0.3元；中石油乡镇保供站点，对持卡农机手给予3%用油优惠，全方位降低农机作业成本。</p><p>　　化肥，粮食的“粮食”。山东农大肥业科技股份有限公司生产车间里，生产线全速运转。作为全市肥料保供龙头企业，肥城基地年产能达180万吨，重点保障当地小麦、玉米等主粮作物用肥需求。</p><p>　　在益农农资销售门店，各类复合肥、水溶肥、基础肥料备货充足、品类齐全。“复合肥价格涨了一些，我们按照农技人员指导，应用测土配方施肥，按需用肥，算下来一季化肥亩均投入增加20元左右，总体上在可承受范围。”肥城市种粮大户冀荣祥说。</p><p>　　“我国化肥工业体系较为完整，主要化肥产品具有较强的供给能力。”中国社会科学院农村发展研究所研究员胡冰川说，今年以来，我国充分发挥产能和制度优势，加强化肥储备、进口采购和生产季节供应之间的协调，有效熨平国际市场波动影响。</p><p>　　为保护种粮农民利益，我国农业支持保护政策体系持续健全。</p><p>　　今年8月初，江西、湖南启动2026年早籼稻最低收购价执行预案。在江西上犹县营前镇，种粮大户周冬平今年种植早稻2000多亩，亩产干谷472公斤。“新粮集中上市时，上门收购的粮贩普遍出价偏低，国家最低收购价政策启动后，达标的稻谷按托市价卖给国有粮库，亩均纯收益400多元。”周冬平说。营前镇积极发展农业社会化服务，全镇托管田块亩均增产4.5公斤、亩均生产成本下降28元。</p><p>　　有了早稻的稳定收成，周冬平今年晚稻种的是香禾优细丝苗品种，跟粮油加工企业签了订单。上犹县农业农村局党组成员、农技推广中心主任刘光文介绍，今年全县中晚稻种植规模与早稻基本相当，预计每斤收购价在1.3元左右，除了国有库点敞开收购达标稻谷，多元经营主体也积极入市开展市场化收购，粮农收益有望好于早稻。</p><p>　　<strong>一套稳产增产技术方案——</strong></p><p><strong>　　技术持续上新，推动粮食安全水平向更高层次跃升</strong></p><p>　　“十五五”规划纲要把粮食综合生产能力达到1.45万亿斤左右列为约束性指标。秋粮约占全年粮食产量的3/4，从种植规模和增产潜力看，大头在玉米。</p><p>　　多要素集成作用下，各地逐年擦亮单产这一关键指标。2025年单产提升对全国粮食增产的贡献率已超90%。从今年秋收看，多地捷报频传。</p><p>　　亩产1799.1公斤！在新疆伊犁哈萨克自治州，百亩玉米攻关田再次刷新全国玉米高产纪录。</p><p>　　“我们选用耐密抗倒品种，因苗因墒精准调控灌水和施肥。伊犁河谷光热充沛、昼夜温差大，充分释放了玉米高产潜力。”中国农业科学院作物科学研究所研究员李少昆介绍。</p><p>　　在河北霸州市的百亩“夏双早”模式夏玉米高产示范方，黄淮海夏玉米区北缘夏玉米亩产实现新突破。河北省玉米产业技术体系廊坊综合试验站站长王瑞华介绍，夏收后抢时早播，争取了更多热量资源，示范方亩均留苗约6500株，在6—8片展叶时精准控旺、防止倒伏；滴灌水肥一体分次施用，后期通过一喷多促，延长灌浆时间、增加粒重。</p><p>　　“十四五”时期，密植高产精准调控技术在全国累计推广2.4亿亩，覆盖18个省份，亩均增产226斤，带动农民增收近300亿元。今年，我国首次启动20个大面积单产提升整建制推进市，整建制推进县由702个增加到1000个，促进更大范围均衡增产。</p><p>　　农业AI（人工智能）大模型“上新”，支撑农业新质生产力跑出加速度。</p><p>　　在黑龙江北大荒农垦集团有限公司的农场，今年60万种植户、4800万亩大田通过北大荒农服APP，实现全周期数字化支撑。这款APP通过引入神农大模型、天工开悟寒地大模型，实现产学研AI能力融合创新。在运行机制上，平台依托“空天地人机”一体化感知体系，汇聚卫星遥感、无人机巡田、田间物联网传感器实时监测数据，叠加垦区多年种植历史数据、寒地土壤长期观测数据，结合神农大模型千万级农业知识图谱与多模态农业知识库，依托“智壤全息一张图”建立地块数字档案。</p><p>　　中国农业大学信息与电气工程学院教授、神农大模型研发团队负责人王耀君介绍，“神农大模型”自2023年首发以来持续迭代，现已覆盖31个省（区、市），服务百万农户，落地应用超500万亩农田。</p><p>　　我国农业科技进步贡献率达到64.8%，新技术应用不断抬升现代农业发展的天花板，推动粮食安全水平向更高层次跃升。</p><p>　　当前，秋冬种正在各地有序推进。透过动荡的国际农产品供应链，看到我国秋日“丰”景背后的“三个一”，这份稳弥足珍贵。中国饭碗之稳，正在为解决好14亿多人口的吃饭问题、推动全球粮食安全注入源源不断的确定性。</p><!--/enpcontent--><!--enpproperty <date>2026-11-05 00:00:00:0</date><author>本报记者  郁静娴</author><subtitle></subtitle><introtitle><p> 截至11月4日，全国秋粮收获已过九成，丰收已成定局 </p></introtitle><keyword></keyword><paperarticleid>30189561</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/05/content_30189561.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/05/content_30189561.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 丰收景象背后的“三个一” </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

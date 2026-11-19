@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 循环理念深入生产生活（深阅读） </title>
+		<meta name="author" content='第004版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.52,31.1075,194.68,31.1075,194.68,173.5925,3.52,173.5925" shape="polygon" href="content_30191149.html"><Area coords="205.32,31.1075,396.48,31.1075,396.48,324.645,205.32,324.645" shape="polygon" href="content_30191150.html"><Area coords="3.52,183.08,194.68,183.08,194.68,324.415,3.52,324.415" shape="polygon" href="content_30191151.html"><Area coords="194.68,335.0525,3.52,335.0525,3.52,363.5725,3.52,386.17,194.68,386.17" shape="polygon" href="content_30191152.html"><Area coords="205.32,335.0525,304.44,335.0525,304.44,362.4225,205.32,362.4225" shape="polygon" href="content_30191153.html"><Area coords="396.48,358.8,396.48,335.0525,396.48,335.0525,315.04,335.0525,315.04,335.0525,315.04,358.8,315.04,447.925,396.48,447.925" shape="polygon" href="content_30191154.html"><Area coords="3.52,396.8075,304.44,396.8075,304.44,571.3775,3.52,571.3775" shape="polygon" href="content_30191155.html"><Area coords="314.92,458.5625,396.36,458.5625,396.36,571.435,314.92,571.435" shape="polygon" href="content_30191156.html"><Area coords="205.32,365.7,304.44,365.7,304.44,388.24,205.32,388.24" shape="polygon" href="content_30191157.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/14/de633305-03b9-4b84-beb5-218c50efb433.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第04版：要闻
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30191149.html"> 学习贯彻党的二十届五中全会精神中央宣讲团在山西、新疆宣讲（学习贯彻党的二十届五中全会精神） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191150.html"> 循环理念深入生产生活（深阅读） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191151.html"> 图片报道 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191152.html"> 广东省各界纪念孙中山先生诞辰160周年大会举行 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191153.html"> 国务院任免国家工作人员 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191154.html"> 2027年全国硕士研究生招生考试共347万人报名 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191155.html"> 矢志团结奋斗  再创新的辉煌 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191156.html"> 汪致远同志逝世 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191157.html"> 一版责编：胡安琪  赵  政  张宇杰 二版责编：韩晓明  周  輖  关皓宇 三版责编：吕  莉  张安宇  陈  震 四版责编：刘  念  韩春瑶  崔  斌 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月14日
+							Sat</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_05.html">05版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_06.html">06版：科技·新知</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_07.html">07版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_08.html">08版：文化遗产</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/14/node_04.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30191149.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30191151.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　今年7月，生态环境部、国家发展改革委、工业和信息化部、住房城乡建设部等部门印发《固体废物污染防治“十五五”规划》，提出到2030年建成一批“无废城市”。</p>
+  <p>　　“无废城市”这一城市发展模式，并非不产生固体废物，而是通过推动形成绿色发展方式和生活方式，持续推进固体废物源头减量和资源化利用，最大限度减少填埋量，将固体废物对环境的影响降至最低。</p>
+  <p>　　2024年，上海出台国内首部“无废城市”建设地方性法规——《上海市无废城市建设条例》。废弃的工业活性炭在高温处理下“重生”，猪粪经发酵产生的生物天然气供给生产生活，社区的“玩具交换屋”让旧玩具循环利用，“零废弃花园”为环境增绿添彩……从工厂到养殖场，从企业到居民，一场广泛参与的“无废城市”建设在上海纵深推进，提供了一个可供观察、借鉴的地方样本。</p>
+  <p><strong>　　工业生产变废为宝</strong></p>
+  <p>　　一袋袋废弃活性炭被倒入提升机，经过烘干、炭化、活化等步骤，又恢复其功能，可以重新投入使用。在上海松江经济技术开发区，上海集承环保技术有限公司的车间里上演着废弃活性炭的“重生记”。</p>
+  <p>　　活性炭用于吸附工业生产中的有毒有害物质，废弃后必须交由持证单位进行规范处置或资源化再生。对企业而言，废弃活性炭处理是件耗钱、耗时的事。上海味之素氨基酸有限公司相关负责人介绍：“我们年产废弃活性炭250吨，以前处置费就要百万元上下。”</p>
+  <p>　　在上海建设“无废城市”的背景下，该企业与专注从事资源再生的上海集承公司展开了合作。</p>
+  <p>　　“每从产废企业回收1吨废弃活性炭，就可以将其处理成六七百公斤的再生炭。”上海集承公司副总经理王洪丽介绍，这不仅控制了企业的处理成本，更从源头上减少了生产新活性炭的耗能，实现了降碳减排。目前，公司的处理能力是每年1万吨。</p>
+  <p>　　这家公司的活性炭产线旁，还有另外8条不同的“危废综合利用”产线：金属污泥，可通过调配还原出铜、镍等金属；集成电路行业的废酸，可以转化为多种化学产品……</p>
+  <p>　　工业“无废”，关键在循环利用。聚焦钢铁、电力、化工等重点行业，上海推行工业固废产生总量与单位产品产生强度“双控”方案，已建成国家级绿色工厂196家、国家级绿色园区8个。2025年，全市一般工业固体废物产生量为2139.8万吨，综合利用率为98.2%，保持全国领先水平。</p>
+  <p><strong>　　农业养殖减排增效</strong></p>
+  <p>　　4层楼高的猪舍内，约4万头生猪正有序进食。在上海金山区廊下镇，上海松林农业发展有限公司总经理付娟林走在前头，带领客人参观公司的规模化生态养猪场，“大家可以近距离感受下，应该看不到粪便，也闻不到异味。”</p>
+  <p>　　在这里，有一套全自动系统全天运转，可将猪粪收集至密闭管道，汇入厌氧发酵罐进行处理，生成的产品可以二次利用。“美化环境，变废为宝。”付娟林道出这一做法的优势，“养猪，也可以干干净净。”</p>
+  <p>　　猪粪处理，曾是让付娟林糟心的事：想二次利用，可处理起来费事、做不完；请人处理，成本又高。</p>
+  <p>　　2023年，申能集团旗下的上海申汲能源环境科技有限公司广泛搜寻可落地的环保能源项目，适逢松林公司有处理猪粪的需求，双方一拍即合。</p>
+  <p>　　很快，资源循环新模式建立起来：猪粪经厌氧发酵产生沼气，再提纯为生物天然气，达标后并入上海天然气管网，用于生产生活；生物天然气可进一步转化为绿色甲醇，用作船舶燃料；处理过程中多余的二氧化碳等物质，也能通过微藻处理转化成高端蛋白，作为饲料或饲料添加剂。</p>
+  <p>　　“这样的循环，让企业降本增效，也让城市减排添绿。”上海申汲能源环境科技有限公司副总经理陆强说。</p>
+  <p>　　相关经验还得到复制推广。同在廊下镇的光明牧业有限公司金山种奶牛场，原先粪污处置费用每年上万元。如今，牛场的牛粪与镇里的秸秆、果蔬废弃物等均得到回收处理，年产生物天然气183.5万立方米，并入城市天然气管网；年产沼渣3.1万吨、沼液14.8万吨，可还田利用，提升土壤肥力。</p>
+  <p>　　目前，上海规模化畜禽养殖场粪污处理设施配套率达100%，农作物秸秆综合利用率稳定在98%左右，“无废”理念为农业领域带来了深刻改变。</p>
+  <p><strong>　　社区生活倡导流转</strong></p>
+  <p>　　上海长宁区新华路街道，弄堂里阳光正好。几名居民正在社区营造中心讨论可持续社区建设。不远处的“零废弃花园”内，一些居民翻土种花，香草、柠檬、小金橘等在欢笑声中长势喜人。</p>
+  <p>　　社区是“无废城市”建设的重要环节。如何调动居民参与建设的积极性？2021年，新华路街道发起“一平米”行动，每年以经费支持一批有利于社区建设的行动，鼓励居民自发组队、共建共治，让社区变得更好。</p>
+  <p>　　发起行动当年，一群宝妈宝爸讨论出了一个打造“玩具交换屋”的想法，希望能助力环保事业、培养孩子们的环保意识。很快，“玩具交换屋”就得到“一平米”行动的支持，在街道中心位置落成。来自各个家庭的闲置玩具汇聚到屋内，参与到交换流转当中。</p>
+  <p>　　玩具交换屋旁的“零废弃花园”，同样是“一平米”行动支持的项目。项目理念由街道内一名可持续设计师提出，得到大量居民的响应。大家将闲置的木板、水管、花箱等凑在一起，用于种花，落叶、厨余垃圾等则被拿来堆肥。</p>
+  <p>　　5年来，街道的社区花园已拓展到4个。“打造这个花园，既培养了大人孩子的动手能力、环保意识，也增强了社区居民的交流互动。”新华路街道居民何嘉说，“社区更美了，大家也乐在其中、心意相通。”</p>
+  <p>　　上海立足本地特色，全域建设“无废城市”，在打通医疗废物收运“最后一公里”、厚植“无废文化”等方面积极探索新范式、新路径；推进垃圾分类2.0版提质增效，建成“两网融合”回收服务点1.5万个、中转站198座，生活垃圾回收利用率达45.3%。</p>
+  <p>　　从分类投放、光盘行动，到旧物改造、邻里共享，市民们的点滴行动汇聚成超大城市治理的磅礴力量，让循环、“无废”理念深入生产生活。</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-14 00:00:00:0</date><author>本报记者  王崟欣</author><subtitle></subtitle><introtitle><p> 上海资源化利用固废工作向纵深推进 </p></introtitle><keyword></keyword><paperarticleid>30191150</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/14/content_30191150.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/14/content_30191150.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 循环理念深入生产生活（深阅读） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 上海资源化利用固废工作向纵深推进 </p></h3>
+						<h1><p> 循环理念深入生产生活（深阅读） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  王崟欣
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月14日</span>&nbsp;第&nbsp;04&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p>　　今年7月，生态环境部、国家发展改革委、工业和信息化部、住房城乡建设部等部门印发《固体废物污染防治“十五五”规划》，提出到2030年建成一批“无废城市”。</p><p>　　“无废城市”这一城市发展模式，并非不产生固体废物，而是通过推动形成绿色发展方式和生活方式，持续推进固体废物源头减量和资源化利用，最大限度减少填埋量，将固体废物对环境的影响降至最低。</p><p>　　2024年，上海出台国内首部“无废城市”建设地方性法规——《上海市无废城市建设条例》。废弃的工业活性炭在高温处理下“重生”，猪粪经发酵产生的生物天然气供给生产生活，社区的“玩具交换屋”让旧玩具循环利用，“零废弃花园”为环境增绿添彩……从工厂到养殖场，从企业到居民，一场广泛参与的“无废城市”建设在上海纵深推进，提供了一个可供观察、借鉴的地方样本。</p><p><strong>　　工业生产变废为宝</strong></p><p>　　一袋袋废弃活性炭被倒入提升机，经过烘干、炭化、活化等步骤，又恢复其功能，可以重新投入使用。在上海松江经济技术开发区，上海集承环保技术有限公司的车间里上演着废弃活性炭的“重生记”。</p><p>　　活性炭用于吸附工业生产中的有毒有害物质，废弃后必须交由持证单位进行规范处置或资源化再生。对企业而言，废弃活性炭处理是件耗钱、耗时的事。上海味之素氨基酸有限公司相关负责人介绍：“我们年产废弃活性炭250吨，以前处置费就要百万元上下。”</p><p>　　在上海建设“无废城市”的背景下，该企业与专注从事资源再生的上海集承公司展开了合作。</p><p>　　“每从产废企业回收1吨废弃活性炭，就可以将其处理成六七百公斤的再生炭。”上海集承公司副总经理王洪丽介绍，这不仅控制了企业的处理成本，更从源头上减少了生产新活性炭的耗能，实现了降碳减排。目前，公司的处理能力是每年1万吨。</p><p>　　这家公司的活性炭产线旁，还有另外8条不同的“危废综合利用”产线：金属污泥，可通过调配还原出铜、镍等金属；集成电路行业的废酸，可以转化为多种化学产品……</p><p>　　工业“无废”，关键在循环利用。聚焦钢铁、电力、化工等重点行业，上海推行工业固废产生总量与单位产品产生强度“双控”方案，已建成国家级绿色工厂196家、国家级绿色园区8个。2025年，全市一般工业固体废物产生量为2139.8万吨，综合利用率为98.2%，保持全国领先水平。</p><p><strong>　　农业养殖减排增效</strong></p><p>　　4层楼高的猪舍内，约4万头生猪正有序进食。在上海金山区廊下镇，上海松林农业发展有限公司总经理付娟林走在前头，带领客人参观公司的规模化生态养猪场，“大家可以近距离感受下，应该看不到粪便，也闻不到异味。”</p><p>　　在这里，有一套全自动系统全天运转，可将猪粪收集至密闭管道，汇入厌氧发酵罐进行处理，生成的产品可以二次利用。“美化环境，变废为宝。”付娟林道出这一做法的优势，“养猪，也可以干干净净。”</p><p>　　猪粪处理，曾是让付娟林糟心的事：想二次利用，可处理起来费事、做不完；请人处理，成本又高。</p><p>　　2023年，申能集团旗下的上海申汲能源环境科技有限公司广泛搜寻可落地的环保能源项目，适逢松林公司有处理猪粪的需求，双方一拍即合。</p><p>　　很快，资源循环新模式建立起来：猪粪经厌氧发酵产生沼气，再提纯为生物天然气，达标后并入上海天然气管网，用于生产生活；生物天然气可进一步转化为绿色甲醇，用作船舶燃料；处理过程中多余的二氧化碳等物质，也能通过微藻处理转化成高端蛋白，作为饲料或饲料添加剂。</p><p>　　“这样的循环，让企业降本增效，也让城市减排添绿。”上海申汲能源环境科技有限公司副总经理陆强说。</p><p>　　相关经验还得到复制推广。同在廊下镇的光明牧业有限公司金山种奶牛场，原先粪污处置费用每年上万元。如今，牛场的牛粪与镇里的秸秆、果蔬废弃物等均得到回收处理，年产生物天然气183.5万立方米，并入城市天然气管网；年产沼渣3.1万吨、沼液14.8万吨，可还田利用，提升土壤肥力。</p><p>　　目前，上海规模化畜禽养殖场粪污处理设施配套率达100%，农作物秸秆综合利用率稳定在98%左右，“无废”理念为农业领域带来了深刻改变。</p><p><strong>　　社区生活倡导流转</strong></p><p>　　上海长宁区新华路街道，弄堂里阳光正好。几名居民正在社区营造中心讨论可持续社区建设。不远处的“零废弃花园”内，一些居民翻土种花，香草、柠檬、小金橘等在欢笑声中长势喜人。</p><p>　　社区是“无废城市”建设的重要环节。如何调动居民参与建设的积极性？2021年，新华路街道发起“一平米”行动，每年以经费支持一批有利于社区建设的行动，鼓励居民自发组队、共建共治，让社区变得更好。</p><p>　　发起行动当年，一群宝妈宝爸讨论出了一个打造“玩具交换屋”的想法，希望能助力环保事业、培养孩子们的环保意识。很快，“玩具交换屋”就得到“一平米”行动的支持，在街道中心位置落成。来自各个家庭的闲置玩具汇聚到屋内，参与到交换流转当中。</p><p>　　玩具交换屋旁的“零废弃花园”，同样是“一平米”行动支持的项目。项目理念由街道内一名可持续设计师提出，得到大量居民的响应。大家将闲置的木板、水管、花箱等凑在一起，用于种花，落叶、厨余垃圾等则被拿来堆肥。</p><p>　　5年来，街道的社区花园已拓展到4个。“打造这个花园，既培养了大人孩子的动手能力、环保意识，也增强了社区居民的交流互动。”新华路街道居民何嘉说，“社区更美了，大家也乐在其中、心意相通。”</p><p>　　上海立足本地特色，全域建设“无废城市”，在打通医疗废物收运“最后一公里”、厚植“无废文化”等方面积极探索新范式、新路径；推进垃圾分类2.0版提质增效，建成“两网融合”回收服务点1.5万个、中转站198座，生活垃圾回收利用率达45.3%。</p><p>　　从分类投放、光盘行动，到旧物改造、邻里共享，市民们的点滴行动汇聚成超大城市治理的磅礴力量，让循环、“无废”理念深入生产生活。</p><!--/enpcontent--><!--enpproperty <date>2026-11-14 00:00:00:0</date><author>本报记者  王崟欣</author><subtitle></subtitle><introtitle><p> 上海资源化利用固废工作向纵深推进 </p></introtitle><keyword></keyword><paperarticleid>30191150</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/14/content_30191150.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/14/content_30191150.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 循环理念深入生产生活（深阅读） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

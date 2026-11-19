@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 中医药传统知识保护条例 </title>
+		<meta name="author" content='第005版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="3.734248,30.99559925,243.970864,30.99559925,243.970864,381.4356455,3.734248,381.4356455" shape="polygon" href="content_30191105.html"><Area coords="396.452652,49.97249675,396.452652,30.99559925,396.452652,30.99559925,255.17360799999997,30.99559925,255.17360799999997,30.99559925,255.17360799999997,49.97249675,255.17360799999997,120.1870175,396.452652,120.1870175" shape="polygon" href="content_30191106.html"><Area coords="255.17360799999997,125.88008674999999,396.452652,125.88008674999999,396.452652,186.60615875000002,255.17360799999997,186.60615875000002" shape="polygon" href="content_30191107.html"><Area coords="396.452652,211.90868875,396.452652,192.299228,255.17360799999997,192.299228,255.17360799999997,211.90868875,255.17360799999997,248.59735725000002,396.452652,248.59735725000002" shape="polygon" href="content_30191108.html"><Area coords="255.17360799999997,259.3509325,396.452652,259.3509325,396.452652,371.94719675,255.17360799999997,371.94719675" shape="polygon" href="content_30191109.html"><Area coords="3.734248,386.49615150000005,396.452652,386.49615150000005,396.452652,570.57205725,3.734248,570.57205725" shape="polygon" href="content_30191110.html"><Area coords="255.17360799999997,377.64026600000005,396.452652,377.64026600000005,396.452652,381.4356455,255.17360799999997,381.4356455" shape="polygon" href="content_30191111.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/14/7e6283a3-91c2-4e2f-a0e5-aed29f026f50.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第05版：综合
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30191105.html"> 中医药传统知识保护条例 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191106.html"> 国务院安委办对11个市级政府开展安全生产约谈 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191107.html"> 首批“人工智能+交通运输”场景清单发布 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191108.html"> 2026企业科技创新发展论坛开幕 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191109.html"> 汲取榜样力量  写好实干答卷 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191110.html"> 中国太保：赴进博之约，担金融之责 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191111.html"> 本版责编：管璇悦  张伟昊  翟钦奇 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月14日
+							Sat</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_05.html">05版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_06.html">06版：科技·新知</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_07.html">07版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_08.html">08版：文化遗产</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/14/node_05.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30191106.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p> 　　中华人民共和国国务院令</p>
+  <p>　　第850号</p>
+  <p>　　《中医药传统知识保护条例》已经2026年9月18日国务院第97次常务会议通过，现予公布，自2027年1月1日起施行。</p>
+  <p>　　总理&nbsp;&nbsp;李&nbsp;&nbsp;强&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <p>　　2026年10月23日&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　第一条&nbsp;&nbsp;为了保护中医药传统知识，促进中医药传统知识的传承和发展，弘扬中医药文化，根据《中华人民共和国中医药法》，制定本条例。</p>
+  <p>　　第二条&nbsp;&nbsp;本条例所称中医药传统知识，是指基于中华民族长期实践积累、世代传承发展形成的中医药理论、技术方法及其相关表现形式，包括：</p>
+  <p>　　（一）中医药预防、保健、诊断、治疗、康复的传统理论、技术方法；</p>
+  <p>　　（二）中医药经典名方、验方；</p>
+  <p>　　（三）中药材品种选育、种植养殖、采集、鉴别的传统技术，中药饮片炮制、中药制剂配制的传统技术和工艺；</p>
+  <p>　　（四）中医药古籍文献，中医药特有的传统标记、符号；</p>
+  <p>　　（五）其他中医药传统知识。</p>
+  <p>　　第三条&nbsp;&nbsp;保护中医药传统知识应当遵循中医药发展规律，坚持传承精华、守正创新，坚持保护优先、保护和利用相结合。</p>
+  <p>　　开展中医药传统知识保护活动，应当遵守法律、行政法规，不得损害国家利益、社会公共利益和他人合法权益。</p>
+  <p>　　第四条&nbsp;&nbsp;国务院中医药主管部门负责全国的中医药传统知识保护工作。</p>
+  <p>　　县级以上地方人民政府中医药主管部门负责本行政区域内的中医药传统知识保护工作。</p>
+  <p>　　县级以上人民政府其他有关部门在各自职责范围内负责与中医药传统知识保护有关的工作。</p>
+  <p>　　第五条&nbsp;&nbsp;国务院中医药主管部门与国务院其他有关部门建立中医药传统知识相关信息共享机制，加强工作协调。</p>
+  <p>　　第六条&nbsp;&nbsp;省级以上人民政府中医药主管部门将中医药传统知识保护纳入相关规划，加强中医药传统知识传承传播、推广应用和科学技术研究，并提供必要的支持。</p>
+  <p>　　县级以上人民政府中医药主管部门鼓励和引导社会力量通过捐赠、志愿服务等方式参与中医药传统知识保护工作。</p>
+  <p>　　第七条&nbsp;&nbsp;国家鼓励和支持新闻媒体、公共文化机构等根据各自业务范围开展中医药传统知识宣传、展示、体验等活动。</p>
+  <p>　　开展中医药传统知识宣传、展示、体验等活动，应当遵守国家有关规定，不得作虚假、夸大宣传，不得牟取不正当利益。</p>
+  <p>　　第八条&nbsp;&nbsp;国家支持中医药传统知识对外交流与合作，促进中医药传统知识的国际传播和应用。</p>
+  <p>　　涉及中医药传统知识的外商投资、对外投资、技术出口的管理，依照《中华人民共和国外商投资法》、《中华人民共和国对外贸易法》、《国务院关于对外投资的规定》、《中华人民共和国技术进出口管理条例》等法律、行政法规和国家有关规定执行。</p>
+  <p>　　第九条&nbsp;&nbsp;国务院中医药主管部门会同国务院其他有关部门加强中医药传统知识人才培养。</p>
+  <p>　　对在中医药传统知识保护工作中做出突出贡献的组织、个人，按照国家有关规定给予奖励。</p>
+  <p>　　第十条&nbsp;&nbsp;中医药传统知识保护工作涉及国家秘密、工作秘密、商业秘密、个人隐私和个人信息的，应当遵守有关法律、行政法规的规定。</p>
+  <p>　　第十一条&nbsp;&nbsp;国务院中医药主管部门加强对中医药古籍文献整理、遴选和中医药传统知识调查的统筹协调。</p>
+  <p>　　第十二条&nbsp;&nbsp;国务院中医药主管部门建立中医药传统知识保护数据库，对纳入保护数据库的中医药传统知识实行分类管理。保护数据库管理的具体办法由国务院中医药主管部门制定。</p>
+  <p>　　第十三条&nbsp;&nbsp;国务院中医药主管部门组织专业机构对中医药古籍文献进行整理、遴选，遴选出的中医药古籍文献和古籍文献记载的中医药传统知识经国务院中医药主管部门认定后纳入保护数据库。</p>
+  <p>　　第十四条&nbsp;&nbsp;省级人民政府中医药主管部门负责组织开展本行政区域内的中医药传统知识调查，调查发现的中医药传统知识经国务院中医药主管部门认定后纳入保护数据库。</p>
+  <p>　　开展中医药传统知识调查可以吸纳医疗机构、高等学校、科研机构、企业、学会、行业协会商会等参与。</p>
+  <p>　　境外组织、个人不得在我国境内开展中医药传统知识调查。</p>
+  <p>　　中医药传统知识调查的具体办法由国务院中医药主管部门制定。</p>
+  <p>　　第十五条&nbsp;&nbsp;开展中医药传统知识调查，应当征得调查对象的同意，尊重其风俗习惯，不得损害其合法权益；调查中取得的实物、资料应当妥善保存，防止损毁、流失。</p>
+  <p>　　对通过调查或者其他途径发现的濒临消失的中医药传统知识，省级人民政府中医药主管部门应当立即予以记录，并收集有关实物、资料或者采取其他抢救性保护措施。</p>
+  <p>　　第十六条&nbsp;&nbsp;国家鼓励组织、个人向所在地省级人民政府中医药主管部门申报其持有的中医药传统知识，申报的中医药传统知识经省级人民政府中医药主管部门初核、国务院中医药主管部门认定后纳入保护数据库。</p>
+  <p>　　第十七条&nbsp;&nbsp;国务院中医药主管部门公布纳入保护数据库的中医药传统知识相关信息。</p>
+  <p>　　国务院中医药主管部门会同国务院文化和旅游等部门采用数字化技术收录中医药传统知识，以利于保存使用，方便公众查阅。</p>
+  <p>　　第十八条&nbsp;&nbsp;中医药传统知识持有人对其持有的中医药传统知识享有传承使用的权利，对他人获取、利用其持有的中医药传统知识享有知情同意和利益分享等权利。</p>
+  <p>　　国家支持合理利用中医药古籍记载的传统理论、技术方法和经典名方等处于公共领域且可以公开获取的中医药传统知识，并由国务院中医药主管部门履行持有人职责。具体办法由国务院中医药主管部门制定。</p>
+  <p>　　第十九条&nbsp;&nbsp;国务院中医药主管部门建立中医药传统知识保护名录，将保护数据库中具有代表性、独特性和重要保护价值的中医药传统知识列入保护名录。保护名录管理的具体办法由国务院中医药主管部门制定。</p>
+  <p>　　第二十条&nbsp;&nbsp;国务院中医药主管部门成立保护名录评审专家组，从保护数据库中遴选拟列入保护名录的中医药传统知识。国务院中医药主管部门对遴选出的中医药传统知识予以公示，并根据公示结果发布保护名录。</p>
+  <p>　　省级人民政府中医药主管部门可以向国务院中医药主管部门推荐拟列入保护名录的中医药传统知识。</p>
+  <p>　　列入保护名录的中医药传统知识不再符合条件的，由国务院中医药主管部门组织评审专家组认定后予以移除，并及时向社会公布。</p>
+  <p>　　第二十一条&nbsp;&nbsp;县级以上地方人民政府可以根据实际情况为列入保护名录的中医药传统知识传承传播提供必要的支持。</p>
+  <p>　　第二十二条&nbsp;&nbsp;国务院文化和旅游部门会同国务院文物、中医药等主管部门加强对列入保护名录的中医药古籍的保护、修复、合理利用、传承工作。</p>
+  <p>　　第二十三条&nbsp;&nbsp;县级以上人民政府中医药主管部门根据中医药传统知识保护需要，依托高水平医疗机构，通过下列方式促进列入保护名录的中医药传统知识推广应用：</p>
+  <p>　　（一）收集、整理有关实物、资料；</p>
+  <p>　　（二）开展临床应用；</p>
+  <p>　　（三）开展应用研究，提升临床应用的标准化、规范化水平；</p>
+  <p>　　（四）开展师承教育、培训，培养后继人才；</p>
+  <p>　　（五）举办技术方法演示、学术研讨交流等活动。</p>
+  <p>　　第二十四条&nbsp;&nbsp;国务院中医药主管部门会同国务院工业和信息化、药品监督管理等部门依托中药饮片生产企业、医疗机构等，对列入保护名录的中药饮片炮制传统技术和工艺进行研究和推广应用，支持应用中药饮片炮制传统技术和工艺提升中药饮片质量水平。</p>
+  <p>　　第二十五条&nbsp;&nbsp;国务院中医药主管部门会同国务院农业农村、药品监督管理等部门对列入保护名录的中药材品种选育、种植养殖、采集、鉴别传统技术进行推广应用。</p>
+  <p>　　第二十六条&nbsp;&nbsp;国家鼓励和支持运用传统中医药研究方法和现代科学技术对中医药传统知识开展研究，鼓励医疗机构、高等学校、科研机构、企业、学会、行业协会商会等合作开展研究，加强基础理论、作用机理、临床应用等研究，促进中医药理论、技术方法的传承和创新。</p>
+  <p>　　第二十七条&nbsp;&nbsp;省级以上人民政府中医药主管部门根据中医药传统知识保护需要，组织高等学校、科研机构等采取下列方式对列入保护名录的中医药传统知识开展科学技术研究：</p>
+  <p>　　（一）收集、整理有关实物、资料；</p>
+  <p>　　（二）开展理论、技术方法溯源和关键信息考证；</p>
+  <p>　　（三）进行开发利用、成果转化。</p>
+  <p>　　第二十八条&nbsp;&nbsp;县级以上人民政府中医药主管部门和其他有关部门未依照本条例规定履行中医药传统知识保护职责的，由本级人民政府或者上一级人民政府有关部门责令限期改正；情节严重的，对负有责任的领导人员和直接责任人员依法给予处分。</p>
+  <p>　　第二十九条&nbsp;&nbsp;违反本条例第十四条第三款规定开展中医药传统知识调查的，由县级以上人民政府中医药主管部门责令停止违法行为，给予警告，没收违法所得和调查中取得的实物、资料，可以并处5万元以上50万元以下的罚款。</p>
+  <p>　　第三十条&nbsp;&nbsp;违反本条例规定，给中医药传统知识持有人等造成损害的，依法承担民事责任；构成犯罪的，依法追究刑事责任。</p>
+  <p>　　第三十一条&nbsp;&nbsp;中医药传统知识属于文物、非物质文化遗产项目的，还应当依照《中华人民共和国文物保护法》、《中华人民共和国非物质文化遗产法》的有关规定进行保护。</p>
+  <p>　　第三十二条&nbsp;&nbsp;本条例自2027年1月1日起施行。</p>
+  <p>　　（新华社北京11月9日电） </p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-14 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191105</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/14/content_30191105.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/14/content_30191105.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 中医药传统知识保护条例 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 中医药传统知识保护条例 </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月14日</span>&nbsp;第&nbsp;05&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p> 　　中华人民共和国国务院令</p><p>　　第850号</p><p>　　《中医药传统知识保护条例》已经2026年9月18日国务院第97次常务会议通过，现予公布，自2027年1月1日起施行。</p><p>　　总理&nbsp;&nbsp;李&nbsp;&nbsp;强&nbsp;&nbsp;&nbsp;&nbsp;</p><p>　　2026年10月23日&nbsp;&nbsp;</p><p>　　</p><p>　　第一条&nbsp;&nbsp;为了保护中医药传统知识，促进中医药传统知识的传承和发展，弘扬中医药文化，根据《中华人民共和国中医药法》，制定本条例。</p><p>　　第二条&nbsp;&nbsp;本条例所称中医药传统知识，是指基于中华民族长期实践积累、世代传承发展形成的中医药理论、技术方法及其相关表现形式，包括：</p><p>　　（一）中医药预防、保健、诊断、治疗、康复的传统理论、技术方法；</p><p>　　（二）中医药经典名方、验方；</p><p>　　（三）中药材品种选育、种植养殖、采集、鉴别的传统技术，中药饮片炮制、中药制剂配制的传统技术和工艺；</p><p>　　（四）中医药古籍文献，中医药特有的传统标记、符号；</p><p>　　（五）其他中医药传统知识。</p><p>　　第三条&nbsp;&nbsp;保护中医药传统知识应当遵循中医药发展规律，坚持传承精华、守正创新，坚持保护优先、保护和利用相结合。</p><p>　　开展中医药传统知识保护活动，应当遵守法律、行政法规，不得损害国家利益、社会公共利益和他人合法权益。</p><p>　　第四条&nbsp;&nbsp;国务院中医药主管部门负责全国的中医药传统知识保护工作。</p><p>　　县级以上地方人民政府中医药主管部门负责本行政区域内的中医药传统知识保护工作。</p><p>　　县级以上人民政府其他有关部门在各自职责范围内负责与中医药传统知识保护有关的工作。</p><p>　　第五条&nbsp;&nbsp;国务院中医药主管部门与国务院其他有关部门建立中医药传统知识相关信息共享机制，加强工作协调。</p><p>　　第六条&nbsp;&nbsp;省级以上人民政府中医药主管部门将中医药传统知识保护纳入相关规划，加强中医药传统知识传承传播、推广应用和科学技术研究，并提供必要的支持。</p><p>　　县级以上人民政府中医药主管部门鼓励和引导社会力量通过捐赠、志愿服务等方式参与中医药传统知识保护工作。</p><p>　　第七条&nbsp;&nbsp;国家鼓励和支持新闻媒体、公共文化机构等根据各自业务范围开展中医药传统知识宣传、展示、体验等活动。</p><p>　　开展中医药传统知识宣传、展示、体验等活动，应当遵守国家有关规定，不得作虚假、夸大宣传，不得牟取不正当利益。</p><p>　　第八条&nbsp;&nbsp;国家支持中医药传统知识对外交流与合作，促进中医药传统知识的国际传播和应用。</p><p>　　涉及中医药传统知识的外商投资、对外投资、技术出口的管理，依照《中华人民共和国外商投资法》、《中华人民共和国对外贸易法》、《国务院关于对外投资的规定》、《中华人民共和国技术进出口管理条例》等法律、行政法规和国家有关规定执行。</p><p>　　第九条&nbsp;&nbsp;国务院中医药主管部门会同国务院其他有关部门加强中医药传统知识人才培养。</p><p>　　对在中医药传统知识保护工作中做出突出贡献的组织、个人，按照国家有关规定给予奖励。</p><p>　　第十条&nbsp;&nbsp;中医药传统知识保护工作涉及国家秘密、工作秘密、商业秘密、个人隐私和个人信息的，应当遵守有关法律、行政法规的规定。</p><p>　　第十一条&nbsp;&nbsp;国务院中医药主管部门加强对中医药古籍文献整理、遴选和中医药传统知识调查的统筹协调。</p><p>　　第十二条&nbsp;&nbsp;国务院中医药主管部门建立中医药传统知识保护数据库，对纳入保护数据库的中医药传统知识实行分类管理。保护数据库管理的具体办法由国务院中医药主管部门制定。</p><p>　　第十三条&nbsp;&nbsp;国务院中医药主管部门组织专业机构对中医药古籍文献进行整理、遴选，遴选出的中医药古籍文献和古籍文献记载的中医药传统知识经国务院中医药主管部门认定后纳入保护数据库。</p><p>　　第十四条&nbsp;&nbsp;省级人民政府中医药主管部门负责组织开展本行政区域内的中医药传统知识调查，调查发现的中医药传统知识经国务院中医药主管部门认定后纳入保护数据库。</p><p>　　开展中医药传统知识调查可以吸纳医疗机构、高等学校、科研机构、企业、学会、行业协会商会等参与。</p><p>　　境外组织、个人不得在我国境内开展中医药传统知识调查。</p><p>　　中医药传统知识调查的具体办法由国务院中医药主管部门制定。</p><p>　　第十五条&nbsp;&nbsp;开展中医药传统知识调查，应当征得调查对象的同意，尊重其风俗习惯，不得损害其合法权益；调查中取得的实物、资料应当妥善保存，防止损毁、流失。</p><p>　　对通过调查或者其他途径发现的濒临消失的中医药传统知识，省级人民政府中医药主管部门应当立即予以记录，并收集有关实物、资料或者采取其他抢救性保护措施。</p><p>　　第十六条&nbsp;&nbsp;国家鼓励组织、个人向所在地省级人民政府中医药主管部门申报其持有的中医药传统知识，申报的中医药传统知识经省级人民政府中医药主管部门初核、国务院中医药主管部门认定后纳入保护数据库。</p><p>　　第十七条&nbsp;&nbsp;国务院中医药主管部门公布纳入保护数据库的中医药传统知识相关信息。</p><p>　　国务院中医药主管部门会同国务院文化和旅游等部门采用数字化技术收录中医药传统知识，以利于保存使用，方便公众查阅。</p><p>　　第十八条&nbsp;&nbsp;中医药传统知识持有人对其持有的中医药传统知识享有传承使用的权利，对他人获取、利用其持有的中医药传统知识享有知情同意和利益分享等权利。</p><p>　　国家支持合理利用中医药古籍记载的传统理论、技术方法和经典名方等处于公共领域且可以公开获取的中医药传统知识，并由国务院中医药主管部门履行持有人职责。具体办法由国务院中医药主管部门制定。</p><p>　　第十九条&nbsp;&nbsp;国务院中医药主管部门建立中医药传统知识保护名录，将保护数据库中具有代表性、独特性和重要保护价值的中医药传统知识列入保护名录。保护名录管理的具体办法由国务院中医药主管部门制定。</p><p>　　第二十条&nbsp;&nbsp;国务院中医药主管部门成立保护名录评审专家组，从保护数据库中遴选拟列入保护名录的中医药传统知识。国务院中医药主管部门对遴选出的中医药传统知识予以公示，并根据公示结果发布保护名录。</p><p>　　省级人民政府中医药主管部门可以向国务院中医药主管部门推荐拟列入保护名录的中医药传统知识。</p><p>　　列入保护名录的中医药传统知识不再符合条件的，由国务院中医药主管部门组织评审专家组认定后予以移除，并及时向社会公布。</p><p>　　第二十一条&nbsp;&nbsp;县级以上地方人民政府可以根据实际情况为列入保护名录的中医药传统知识传承传播提供必要的支持。</p><p>　　第二十二条&nbsp;&nbsp;国务院文化和旅游部门会同国务院文物、中医药等主管部门加强对列入保护名录的中医药古籍的保护、修复、合理利用、传承工作。</p><p>　　第二十三条&nbsp;&nbsp;县级以上人民政府中医药主管部门根据中医药传统知识保护需要，依托高水平医疗机构，通过下列方式促进列入保护名录的中医药传统知识推广应用：</p><p>　　（一）收集、整理有关实物、资料；</p><p>　　（二）开展临床应用；</p><p>　　（三）开展应用研究，提升临床应用的标准化、规范化水平；</p><p>　　（四）开展师承教育、培训，培养后继人才；</p><p>　　（五）举办技术方法演示、学术研讨交流等活动。</p><p>　　第二十四条&nbsp;&nbsp;国务院中医药主管部门会同国务院工业和信息化、药品监督管理等部门依托中药饮片生产企业、医疗机构等，对列入保护名录的中药饮片炮制传统技术和工艺进行研究和推广应用，支持应用中药饮片炮制传统技术和工艺提升中药饮片质量水平。</p><p>　　第二十五条&nbsp;&nbsp;国务院中医药主管部门会同国务院农业农村、药品监督管理等部门对列入保护名录的中药材品种选育、种植养殖、采集、鉴别传统技术进行推广应用。</p><p>　　第二十六条&nbsp;&nbsp;国家鼓励和支持运用传统中医药研究方法和现代科学技术对中医药传统知识开展研究，鼓励医疗机构、高等学校、科研机构、企业、学会、行业协会商会等合作开展研究，加强基础理论、作用机理、临床应用等研究，促进中医药理论、技术方法的传承和创新。</p><p>　　第二十七条&nbsp;&nbsp;省级以上人民政府中医药主管部门根据中医药传统知识保护需要，组织高等学校、科研机构等采取下列方式对列入保护名录的中医药传统知识开展科学技术研究：</p><p>　　（一）收集、整理有关实物、资料；</p><p>　　（二）开展理论、技术方法溯源和关键信息考证；</p><p>　　（三）进行开发利用、成果转化。</p><p>　　第二十八条&nbsp;&nbsp;县级以上人民政府中医药主管部门和其他有关部门未依照本条例规定履行中医药传统知识保护职责的，由本级人民政府或者上一级人民政府有关部门责令限期改正；情节严重的，对负有责任的领导人员和直接责任人员依法给予处分。</p><p>　　第二十九条&nbsp;&nbsp;违反本条例第十四条第三款规定开展中医药传统知识调查的，由县级以上人民政府中医药主管部门责令停止违法行为，给予警告，没收违法所得和调查中取得的实物、资料，可以并处5万元以上50万元以下的罚款。</p><p>　　第三十条&nbsp;&nbsp;违反本条例规定，给中医药传统知识持有人等造成损害的，依法承担民事责任；构成犯罪的，依法追究刑事责任。</p><p>　　第三十一条&nbsp;&nbsp;中医药传统知识属于文物、非物质文化遗产项目的，还应当依照《中华人民共和国文物保护法》、《中华人民共和国非物质文化遗产法》的有关规定进行保护。</p><p>　　第三十二条&nbsp;&nbsp;本条例自2027年1月1日起施行。</p><p>　　（新华社北京11月9日电） </p><!--/enpcontent--><!--enpproperty <date>2026-11-14 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191105</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/14/content_30191105.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/14/content_30191105.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 中医药传统知识保护条例 </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

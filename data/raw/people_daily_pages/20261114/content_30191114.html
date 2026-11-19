@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 没了闰秒，会不会影响我们的日常生活（唠“科”） </title>
+		<meta name="author" content='第006版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="148.74754,249.22992050000002,293.760836,249.22992050000002,293.760836,75.27502675000001,293.760836,75.27502675000001,293.760836,30.99559925,6.84612,30.99559925,6.84612,78.43784299999999,6.84612,148.65236375,70.950708,148.65236375,70.950708,78.43784299999999,74.062584,78.43784299999999,74.062584,159.405939,6.84612,159.405939,6.84612,411.16611824999995,148.74754,411.16611824999995" shape="polygon" href="content_30191112.html"><Area coords="155.593664,249.86248375000002,290.026588,249.86248375000002,290.026588,409.90099174999995,155.593664,409.90099174999995" shape="polygon" href="content_30191113.html"><Area coords="396.452652,26.5676565,304.341204,26.5676565,304.341204,33.52585225,304.341204,352.97029925000004,396.452652,352.97029925000004" shape="polygon" href="content_30191114.html"><Area coords="304.341204,363.7238745,396.452652,363.7238745,396.452652,481.38063900000003,304.341204,481.38063900000003" shape="polygon" href="content_30191115.html"><Area coords="3.734248,430.14301574999996,85.265328,430.14301574999996,85.265328,571.2046205,3.734248,571.2046205" shape="polygon" href="content_30191116.html"><Area coords="293.760836,430.14301574999996,95.845696,430.14301574999996,95.845696,468.09681075000003,95.845696,475.0550065,95.845696,571.2046205,293.760836,571.2046205" shape="polygon" href="content_30191117.html"><Area coords="304.341204,487.07370825,396.452652,487.07370825,396.452652,561.71617175,304.341204,561.71617175" shape="polygon" href="content_30191118.html"><Area coords="304.341204,568.04180425,396.452652,568.04180425,396.452652,571.2046205,304.341204,571.2046205" shape="polygon" href="content_30191119.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/14/19cf9b6b-e331-41f9-9539-a270398034f0.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第06版：科技·新知
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30191112.html"> 由“氧”到“氟”，锂电池练就强劲心脏（院士讲科普） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191113.html"> 新型电池，不止一条赛道（延伸阅读） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191114.html"> 没了闰秒，会不会影响我们的日常生活（唠“科”） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191115.html"> 中国第四十三次南极考察队出征 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191116.html"> 我国科学家破译大麦早熟稳产遗传密码 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191117.html"> 怎样让番茄有爆米花味（趣科普） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191118.html"> 我国成功完成空间站舱外激光“微创”试验 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191119.html">本版责编：曹怡晴 肖 遥 陈圆圆</a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月14日
+							Sat</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_05.html">05版：综合</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_06.html">06版：科技·新知</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_07.html">07版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/14/node_08.html">08版：文化遗产</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/14/node_06.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+								<a class="preart" href="content_30191113.html">
+									<span> 上一篇</span>
+								</a>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30191115.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p> 　　第二十八届国际计量大会在法国凡尔赛表决通过：从2027年5月20日起，国际标准时间启用“连续协调世界时”，闰秒将不再使用。</p>
+  <p>　　消息一出，不少人犯嘀咕：没了闰秒，会不会影响我们的日常生活？</p>
+  <p>　　首先，我们来看看，时间到底是怎么“算”出来的。</p>
+  <p>　　人类计时依赖两套并行的体系。一套以地球自转为基准，太阳连续两次经过同一位置的时间间隔为一天，这是“世界时”，日常生活、天文观测和大地测量都习惯使用它；另一套以原子跃迁频率为基准，叫“原子时”，由此定义的秒长几乎不随时间变化，通信、导航等系统都需要这样的时间基准。</p>
+  <p>　　问题在于，地球这个“钟”不太靠谱。地球自转速率受日月摄动、海洋大气、地球内部运动等诸多因素影响，并不均匀，长期看还在慢慢变慢。原子时走得稳稳当当，世界时却时不时“磨蹭”一下。时间一长，两套标准就对不上了。</p>
+  <p>　　目前，全球通行的标准时间叫“协调世界时”。“秒长”采用原子时秒，保证均匀稳定；“时刻”尽量逼近世界时，通过闰秒，保证跟地球自转合拍。说白了，协调世界时就是两套标准的折中和协调，这套办法从半个多世纪前定下来，一直用到今天。</p>
+  <p>　　当世界时和原子时的时刻差预测接近0.9秒时，就给协调世界时一个整秒的调整，这就是闰秒。从1972年到现在，全球一共实施了27次闰秒，全是“正闰秒”，即增加一秒——这50多年里，地球自转相对原子时一直在减慢，平均两年闰一次。当然也不绝对，上一次闰秒发生在北京时间2017年1月1日，至今已近10年未再增加闰秒。</p>
+  <p>　　加一秒而已，能有多大事？</p>
+  <p>　　对普通人来说，多一秒少一秒没啥感觉。但对现代数字系统而言，这一秒的“突然袭击”却可能掀起不小的风波。闰秒降临的周期不是固定的，国际地球自转服务组织通常只提前半年发通知，很多软件系统无法事先把这一秒写进代码。2012年闰秒曾导致多个海外网站崩溃，澳大利亚某航空订票系统瘫痪；2015年闰秒则导致美国洲际交易所被迫停牌60多分钟。我国在闰秒调整过程中未出现意外。</p>
+  <p>　　2012年世界无线电通信全会上，不少国家主张取消闰秒，理由很充分：航空航天、全球定位系统、电信、网络同步等都需要连续时标；数字时间分配系统难以有效处理闰秒；闰秒发生时正是东半球国家白天工作时间，冲击更显著。</p>
+  <p>　　更麻烦的是，近年地球自转出现了加速迹象。这意味着未来可能不再需要“加一秒”，反而要“减一秒”——也就是负闰秒。当前，负闰秒出现的概率在快速上升，有专家估计到2035年可达30%。而负闰秒是人类从未遇到过的情况，真让它发生会出什么状况，谁也说不准。</p>
+  <p>　　以后不管世界时了吗？</p>
+  <p>　　管，但换了个管法。新方案叫“闰时”：不必再每隔几年就拨动一次秒针，而是允许原子时和世界时慢慢拉开差距，等累积到大约1小时，再一次性调整。按目前趋势估算，攒够这1小时大概需要数千年。</p>
+  <p>　　需要特别说明的是，世界时测量服务是守时、深空探测和高精度天体测量等领域所必需的基础服务。近年来，中国科学院国家授时中心利用在国内建立的多手段世界时测量系统，已经开展了世界时服务工作，能够初步满足我国各项工作的需求。因此，闰秒的取消与否不会影响我国的时间服务工作。</p>
+  <p>　　从“秒”到“时”，调整的间隔拉长了，把时间的连续性和稳定性放在了优先位置。用了半个多世纪的闰秒，完成了它的历史使命，而我们的时间，还将稳稳当当地走下去。</p>
+  <p>　　（作者为中国科学院国家授时中心党委书记） </p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-14 00:00:00:0</date><author>窦  忠</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191114</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/14/content_30191114.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/14/content_30191114.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 没了闰秒，会不会影响我们的日常生活（唠“科”） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 没了闰秒，会不会影响我们的日常生活（唠“科”） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							窦  忠
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月14日</span>&nbsp;第&nbsp;06&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p> 　　第二十八届国际计量大会在法国凡尔赛表决通过：从2027年5月20日起，国际标准时间启用“连续协调世界时”，闰秒将不再使用。</p><p>　　消息一出，不少人犯嘀咕：没了闰秒，会不会影响我们的日常生活？</p><p>　　首先，我们来看看，时间到底是怎么“算”出来的。</p><p>　　人类计时依赖两套并行的体系。一套以地球自转为基准，太阳连续两次经过同一位置的时间间隔为一天，这是“世界时”，日常生活、天文观测和大地测量都习惯使用它；另一套以原子跃迁频率为基准，叫“原子时”，由此定义的秒长几乎不随时间变化，通信、导航等系统都需要这样的时间基准。</p><p>　　问题在于，地球这个“钟”不太靠谱。地球自转速率受日月摄动、海洋大气、地球内部运动等诸多因素影响，并不均匀，长期看还在慢慢变慢。原子时走得稳稳当当，世界时却时不时“磨蹭”一下。时间一长，两套标准就对不上了。</p><p>　　目前，全球通行的标准时间叫“协调世界时”。“秒长”采用原子时秒，保证均匀稳定；“时刻”尽量逼近世界时，通过闰秒，保证跟地球自转合拍。说白了，协调世界时就是两套标准的折中和协调，这套办法从半个多世纪前定下来，一直用到今天。</p><p>　　当世界时和原子时的时刻差预测接近0.9秒时，就给协调世界时一个整秒的调整，这就是闰秒。从1972年到现在，全球一共实施了27次闰秒，全是“正闰秒”，即增加一秒——这50多年里，地球自转相对原子时一直在减慢，平均两年闰一次。当然也不绝对，上一次闰秒发生在北京时间2017年1月1日，至今已近10年未再增加闰秒。</p><p>　　加一秒而已，能有多大事？</p><p>　　对普通人来说，多一秒少一秒没啥感觉。但对现代数字系统而言，这一秒的“突然袭击”却可能掀起不小的风波。闰秒降临的周期不是固定的，国际地球自转服务组织通常只提前半年发通知，很多软件系统无法事先把这一秒写进代码。2012年闰秒曾导致多个海外网站崩溃，澳大利亚某航空订票系统瘫痪；2015年闰秒则导致美国洲际交易所被迫停牌60多分钟。我国在闰秒调整过程中未出现意外。</p><p>　　2012年世界无线电通信全会上，不少国家主张取消闰秒，理由很充分：航空航天、全球定位系统、电信、网络同步等都需要连续时标；数字时间分配系统难以有效处理闰秒；闰秒发生时正是东半球国家白天工作时间，冲击更显著。</p><p>　　更麻烦的是，近年地球自转出现了加速迹象。这意味着未来可能不再需要“加一秒”，反而要“减一秒”——也就是负闰秒。当前，负闰秒出现的概率在快速上升，有专家估计到2035年可达30%。而负闰秒是人类从未遇到过的情况，真让它发生会出什么状况，谁也说不准。</p><p>　　以后不管世界时了吗？</p><p>　　管，但换了个管法。新方案叫“闰时”：不必再每隔几年就拨动一次秒针，而是允许原子时和世界时慢慢拉开差距，等累积到大约1小时，再一次性调整。按目前趋势估算，攒够这1小时大概需要数千年。</p><p>　　需要特别说明的是，世界时测量服务是守时、深空探测和高精度天体测量等领域所必需的基础服务。近年来，中国科学院国家授时中心利用在国内建立的多手段世界时测量系统，已经开展了世界时服务工作，能够初步满足我国各项工作的需求。因此，闰秒的取消与否不会影响我国的时间服务工作。</p><p>　　从“秒”到“时”，调整的间隔拉长了，把时间的连续性和稳定性放在了优先位置。用了半个多世纪的闰秒，完成了它的历史使命，而我们的时间，还将稳稳当当地走下去。</p><p>　　（作者为中国科学院国家授时中心党委书记） </p><!--/enpcontent--><!--enpproperty <date>2026-11-14 00:00:00:0</date><author>窦  忠</author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191114</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/14/content_30191114.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/14/content_30191114.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 没了闰秒，会不会影响我们的日常生活（唠“科”） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

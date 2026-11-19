@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 如何斩断私域“神药”的链条？（金台视线） </title>
+		<meta name="author" content='第007版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="7.08,27.485,293.8,27.485,293.8,373.06,7.08,373.06" shape="polygon" href="content_30190208.html"><Area coords="311.52,36.8575,392.92,36.8575,392.92,225.8025,311.52,225.8025" shape="polygon" href="content_30190209.html"><Area coords="307.96,242.2475,396.48,242.2475,396.48,563.04,307.96,563.04" shape="polygon" href="content_30190210.html"><Area coords="3.52,387.32,297.36,387.32,297.36,571.3775,3.52,571.3775" shape="polygon" href="content_30190211.html"><Area coords="307.96,567.8125,396.48,567.8125,396.48,571.55,307.96,571.55" shape="polygon" href="content_30190212.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/09/26db47ca-e01b-4b84-8f90-3e121edd8f8e.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第07版：读者来信
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30190208.html"> 如何斩断私域“神药”的链条？（金台视线） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190209.html"> 电线杆立于机耕路 大型农机无法通行（身边事） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190210.html"> 建议 </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190211.html"> 本是领养猫咪，却背上了“贷款”（百姓关注） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30190212.html"> 本版责编：胡笑源 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月09日
+							Mon</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_05.html">05版：评论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_06.html">06版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_07.html">07版：读者来信</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_08.html">08版：政治</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_09.html">09版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_10.html">10版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_11.html">11版：理论</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_12.html">12版：文化</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_13.html">13版：公告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_14.html">14版：公告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_15.html">15版：公告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_16.html">16版：公告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_17.html">17版：国际</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_18.html">18版：人文</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_19.html">19版：广告</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/09/node_20.html">20版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/09/node_07.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30190209.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p> 　　私域“神药”问题屡被曝光。一些不法商家通过微信群、企业微信、小程序等媒介，在相对私密和封闭的范围内，开展夸大健康类产品疗效的宣传，坑骗老年消费者。有读者、网友称，自己或身边人陷入此类骗局，不仅蒙受经济损失，还可能损害身体健康。</p>
+  <p>　　更令人担忧的是，有些营销私域“神药”的商家，被曝光并处罚后，依然能改头换面继续引流、卖“神药”。</p>
+  <p>　　私域“神药”，为何有这么强的欺骗性？一些商家被打击后为何还能死灰复燃？记者开展了调查。</p>
+  <p>　　为何信“神药”？</p>
+  <p>　　拿捏老人心理需求，明暗结合、真假参半</p>
+  <p>　　“一笔订单就是一万五，这可都是养老钱。”几个月前，贵州贵阳市读者严先生回家探望母亲，发现屋里堆了许多快递纸箱，里面是一盒盒药膏。一问，才知是从直播间买的，商家称可以治“三高”、脑梗等诸多老年人常见病。</p>
+  <p>　　有这么神吗？严先生查阅说明书，发现“功能主治”中都不包括这些疾病。拿过母亲手机一看，私域直播软件、养生群、嘘寒问暖的“健康小助理”、过期的“养生课”链接……他才发现，这就是媒体曝光过的私域“神药”，于是向相关部门投诉。</p>
+  <p>　　在相关部门协助下，他们成功拿到退款。但严先生还是很担心，因为卖药的机构还在，母亲至今也不相信“专家”和“小助理”骗了自己。“我在外地工作，不能总陪着母亲，万一她又被骗了怎么办？”严先生说，“我就不明白，为啥母亲宁可信骗子，也不信我的话？”</p>
+  <p>　　“老年人坚信的不一定是产品，而是一段长期经营的关系。”复旦大学老龄研究院教授申琦曾带领研究团队调研发现，很多老人是真心把主播当朋友。“商家能够取得信任，往往是因为他们满足了老人的三种心理需求：希望身体健康，希望有人关心，希望自己能独立处理生活中的事情。”申琦说。</p>
+  <p>　　主播或者“健康小助理”通常很关心老人身体状况，经常介绍“养生知识”，有的还帮忙跑腿，解决生活问题。这满足了前两个需求。此外，老人通过听讲座和买药，还能产生充实感和掌控感。一位老人对记者说：“每天听一点健康知识，感觉是一个进步。而且，自己要是把身体调理好，就不用老跑医院了，也不会拖孩子后腿。”</p>
+  <p>　　“这种长期积累起来的关系，不是拿出一篇辟谣文章就能马上改变的。”申琦说。</p>
+  <p>　　除了拿捏老年消费者的心理，商家还努力为自己建立权威可信的人设。记者发现，他们在私域和公域呈现出两种风格。在私域极力增强隐蔽性，新来者往往要经过“线下接触或熟人引流—加入微信群—领取链接或二维码—进入特定直播间”等多个步骤。部分直播间还设置邀请码、限定观看人员、随时更换链接。但这并不意味着他们在公域无所作为。相反，许多商家在公开场合相当活跃，以为私域背书和引流。</p>
+  <p>　　王谢（化名）的母亲在“专家”“小助理”的引导下，购买了120多瓶“某某膏”，花费近5万元。商家称此药能快速治愈高血压、冠心病、心绞痛、中风偏瘫等10余种病症。王谢的母亲服用后却感到心脏不适。</p>
+  <p>　　王谢说，私域直播间主讲人“史老”在电视台出镜，增强了迷惑性。“史老”自称御医传人，根据宫廷秘方研发出了“某某膏”。某电视台曾播出数期他出镜的广告，却被包装成了访谈节目。比较“史老”的公开广告和内部宣传品，他在电视上讲得比较保守。粉丝很难发现二者差别，只单纯地认为“史老”上了电视，等于得到媒体的背书，更加相信他在私域直播间所讲的内容。</p>
+  <p>　　公域为私域提供流量和掩护的例子不胜枚举：有网友看到电视养生节目，扫描屏幕二维码想了解健康知识，却跳转到企业微信，被推荐了一款植物饮料，说可以治老年慢性病；有网友看到博主科普医药知识，私信请教问题，被引导加上微信，花数万元购买减肥“神药”；有些商家常组织义诊活动，打造负责任的企业形象，得到当地相关部门表扬，私域中却宣传和兜售“神药”……</p>
+  <p>　　“真假参半”的手法也常被采用。许多消费者买到的食品、药品、保健品，本身是合格的，但疗效被随意夸大。比如有些保健品是合规上市的，却被私域直播宣传成可以治疗“三高”、心脏病甚至癌症等疾病；有的“专家”的医师身份是真的，荣誉称号是假的；查得到执业注册信息，但在私域直播间内编造“某疗法传承人”“御医世家”等身份。这使得一些消费者做了背景调查，未了解全部真相，反而更加信任商家。</p>
+  <p>　　何以难断根？</p>
+  <p>　　调查无此人或证据不足，产业链条未切断</p>
+  <p>　　在留言和来信中，“联系不上”“中止调查”“终止调解”是高频词。</p>
+  <p>　　有的时候，监管部门联系不到商家。网友吴奇（化名）的父亲，今年7月在私域平台购买了一款非处方药，客服说可治疗心脑血管病、肝病、肾病、风湿等各种疾病。“我爸花了5万多元。但这只是治贫血的药，对方完全是虚假宣传。”吴奇向相关部门投诉，并提供了企业名称和地址。执法人员很快赶赴现场检查，却发现其注册登记的联系方式联系不上、在注册的经营地址也查无此人。当地相关部门回复吴奇：“无法对当事人以及其设在平台上的店铺和相关产品情况进行核实”“因当事人下落不明……我局依法中止调查”。</p>
+  <p>　　有的时候，是消费者拿不出有力证据。执法人员到现场核查，发现产品本身是合格品，甚至机构、工作人员也都有资质，消费者却没有“实锤”。西南政法大学经济法学院副教授杨文明认为，私域虚假宣传存在“发现难、固定难、归责难”的问题。由于在私域活动，违法行为本就十分隐蔽、不易被发现。虚假宣传往往通过口头方式呈现，直播结束后，链接失效、回放关闭、群聊解散、账号更换，消费者仅凭一张商品照片或者付款截图，往往难以完整证明经营者作出了何种承诺，核心证据具有瞬时性，不易固定。加上部分消费者是老年人，电子证据取得能力更为不足。此外，交易链被人为拆分，电子证据分散。私域营销涉及多方主体，直播间的运营方、商品的生产方、销售方、直播方、交易收款方等可能都是不同的主体，宣传、订单、支付、物流和售后记录分散在不同主体手中，出现问题，各方互相推诿，难以锁定责任方。</p>
+  <p>　　有群众还反映，一些私域“神药”过去被曝光或处罚，不久就改头换面，继续吸粉引流。</p>
+  <p>　　读者韩旭（化名）的母亲患了癌症，花了4万多元，购买了一批号称能“调理癌细胞”的产品。实际上，就是一款普通饮料。韩旭发现，这款产品此前已经被媒体曝光过虚假宣传，涉事企业还受到处罚。如今，经销商变了，但生产厂家相同，发货地相近，宣传话术也高度相似。他怀疑，这就是同一批人换了个“马甲”。</p>
+  <p>　　相关人士透露，这种情况确实存在，症结在产业链上。当前受关注较多的是门店或者账号，但它们都只是整条产业链的末端。其实，供应商、私域直播平台、“节目”制作团队等环节既分工合作，又相对独立。如果只打击其中某个末端节点，背后的操盘团队、撮合机制还在，一种“神药”被打掉了，还是会有新的“神药”出现。</p>
+  <p>　　网友小徐参与过一个所谓“健康教育私域运营”项目。入职培训时，负责人告诉他，项目真实目的是让老年人购买保健品，为此需要获取他们的微信账号、年龄等信息，具体手段是以建立健康档案，提供个性化服务为名，让老年人填写自己和家人的信息。有了这样的基础，公司就可以通过群组、展会等撮合机制，与需要打开销路的供应商合作。</p>
+  <p>　　“他们管这个叫‘打粉’。行业里有人是卖产品的，有人是卖工具的，有人是卖流量的，有人是卖信息的，各取所需。”小徐说，“像蚯蚓一样，只切掉一个小部位，主体还在，可以再生出来。”</p>
+  <p>　　如何破难题？</p>
+  <p>　　全链条、跨区域治理，用“良币”驱逐“劣币”</p>
+  <p>　　问题如何破解？不少专家认为，私域“神药”骗局正在变得更加“专业化”、组织化，应认真研究其如何利用信息、情感和社会关系影响消费者判断，对症下药。</p>
+  <p>　　私域“神药”具有链条式运作特点，因此治理不能只盯单个品牌、门店，而是要加强系统性、协调性。杨文明认为，执法应向整个组织链条延伸，重点调取培训课件、统一脚本、招商材料、佣金结算和供货记录；对生产端、品牌运营方、直播服务机构分别依据实际参与程度定责，既防止真正组织者隐身，也避免无差别扩大上游责任。</p>
+  <p>　　此外，还需完善跨区域、跨部门案件协同。私域直播经常出现平台、主播、仓库、销售公司和受害消费者分属不同地区的情况。应强化市场监管、网信、药监、卫生健康等部门和公安机关之间的线索移送、证据协查和案件会商机制，减少消费者在多地之间反复投诉。涉嫌诈骗、非法经营或者生产销售假劣药等犯罪的，应依法移送；同时，也不能把一般虚假宣传不加区分地都按刑事诈骗处理。</p>
+  <p>　　在这些方面，已有一些积极探索。在上海，闵行区检察院为破解私域场景取证难题，邀请具有通信技术、食品、医学等经验的志愿者，在检察人员指导下观看线上私域直播、参与线下门店“内部品鉴”，协助固定完整证据链。最终，6家违法经营者受到处罚。</p>
+  <p>　　在河南，某公司涉嫌虚假宣传。核查过程中，涉案企业通过变更法定代表人、迁移注册地址、关停通信设备等方式对抗调查。市场监管部门启动穿透式监管机制，核查关联账户资金流向、交易链条，锁定涉案公司违法事实；随后联合其他省份市场监管部门对生产厂商进行突击检查，查获出库单、销售明细等证据。</p>
+  <p>　　法律法规也在逐步完善。杨文明介绍，今年2月施行的《直播电商监督管理办法》第二十四条对私域直播作出兜底性规定，要求其他网络服务提供者根据其实际提供的网络经营场所、交易撮合、信息发布等服务，履行相应的身份核验、信息报送、违法处置、交易信息保存、协助维权和配合执法义务。</p>
+  <p>　　“说是私域，但门店在大街上就能看见，并不隐蔽。有的‘品牌’遭遇多人投诉，相关视频多达几百个，提供给相关部门，仍然说没有证据。如果商家虚假宣传又不用付出代价，胆子会越来越大。”四川成都读者安礼说，私域“神药”取证难众所周知，但也有一些线索，调查条件是比较成熟的，有关部门应该积极主动作为，捍卫消费者的合法权益，通过严厉打击私域直播欺诈典型案例，起到“罚一儆百”的作用。</p>
+  <p>　　还有不少读者提出，抵御私域“神药”，需要进一步关心老年人，理解他们的需求。老年人关心健康、希望改善身体状况，是正常的消费需求，银发经济的发展也离不开这些需求，关键是用真正有效的产品和服务去满足他们的需求。</p>
+  <p>　　“对于高龄、独居、患有慢性病的老人，社区卫生服务中心、家庭医生以及基层养老服务机构可以提供更多可信赖的健康咨询渠道。”申琦认为，治理不只是盯着卖出去的那盒药，而是应该关注整个营销过程，用真正优质的基层健康服务和情感陪伴，以“良币”驱逐“劣币”。 </p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-09 00:00:00:0</date><author>本报记者  沈童睿</author><subtitle></subtitle><introtitle><p> 私域直播夸大疗效、坑骗老年消费者，屡被曝光查处仍能死灰复燃 </p></introtitle><keyword></keyword><paperarticleid>30190208</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/09/content_30190208.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/09/content_30190208.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 如何斩断私域“神药”的链条？（金台视线） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3><p> 私域直播夸大疗效、坑骗老年消费者，屡被曝光查处仍能死灰复燃 </p></h3>
+						<h1><p> 如何斩断私域“神药”的链条？（金台视线） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							本报记者  沈童睿
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月09日</span>&nbsp;第&nbsp;07&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p> 　　私域“神药”问题屡被曝光。一些不法商家通过微信群、企业微信、小程序等媒介，在相对私密和封闭的范围内，开展夸大健康类产品疗效的宣传，坑骗老年消费者。有读者、网友称，自己或身边人陷入此类骗局，不仅蒙受经济损失，还可能损害身体健康。</p><p>　　更令人担忧的是，有些营销私域“神药”的商家，被曝光并处罚后，依然能改头换面继续引流、卖“神药”。</p><p>　　私域“神药”，为何有这么强的欺骗性？一些商家被打击后为何还能死灰复燃？记者开展了调查。</p><p>　　为何信“神药”？</p><p>　　拿捏老人心理需求，明暗结合、真假参半</p><p>　　“一笔订单就是一万五，这可都是养老钱。”几个月前，贵州贵阳市读者严先生回家探望母亲，发现屋里堆了许多快递纸箱，里面是一盒盒药膏。一问，才知是从直播间买的，商家称可以治“三高”、脑梗等诸多老年人常见病。</p><p>　　有这么神吗？严先生查阅说明书，发现“功能主治”中都不包括这些疾病。拿过母亲手机一看，私域直播软件、养生群、嘘寒问暖的“健康小助理”、过期的“养生课”链接……他才发现，这就是媒体曝光过的私域“神药”，于是向相关部门投诉。</p><p>　　在相关部门协助下，他们成功拿到退款。但严先生还是很担心，因为卖药的机构还在，母亲至今也不相信“专家”和“小助理”骗了自己。“我在外地工作，不能总陪着母亲，万一她又被骗了怎么办？”严先生说，“我就不明白，为啥母亲宁可信骗子，也不信我的话？”</p><p>　　“老年人坚信的不一定是产品，而是一段长期经营的关系。”复旦大学老龄研究院教授申琦曾带领研究团队调研发现，很多老人是真心把主播当朋友。“商家能够取得信任，往往是因为他们满足了老人的三种心理需求：希望身体健康，希望有人关心，希望自己能独立处理生活中的事情。”申琦说。</p><p>　　主播或者“健康小助理”通常很关心老人身体状况，经常介绍“养生知识”，有的还帮忙跑腿，解决生活问题。这满足了前两个需求。此外，老人通过听讲座和买药，还能产生充实感和掌控感。一位老人对记者说：“每天听一点健康知识，感觉是一个进步。而且，自己要是把身体调理好，就不用老跑医院了，也不会拖孩子后腿。”</p><p>　　“这种长期积累起来的关系，不是拿出一篇辟谣文章就能马上改变的。”申琦说。</p><p>　　除了拿捏老年消费者的心理，商家还努力为自己建立权威可信的人设。记者发现，他们在私域和公域呈现出两种风格。在私域极力增强隐蔽性，新来者往往要经过“线下接触或熟人引流—加入微信群—领取链接或二维码—进入特定直播间”等多个步骤。部分直播间还设置邀请码、限定观看人员、随时更换链接。但这并不意味着他们在公域无所作为。相反，许多商家在公开场合相当活跃，以为私域背书和引流。</p><p>　　王谢（化名）的母亲在“专家”“小助理”的引导下，购买了120多瓶“某某膏”，花费近5万元。商家称此药能快速治愈高血压、冠心病、心绞痛、中风偏瘫等10余种病症。王谢的母亲服用后却感到心脏不适。</p><p>　　王谢说，私域直播间主讲人“史老”在电视台出镜，增强了迷惑性。“史老”自称御医传人，根据宫廷秘方研发出了“某某膏”。某电视台曾播出数期他出镜的广告，却被包装成了访谈节目。比较“史老”的公开广告和内部宣传品，他在电视上讲得比较保守。粉丝很难发现二者差别，只单纯地认为“史老”上了电视，等于得到媒体的背书，更加相信他在私域直播间所讲的内容。</p><p>　　公域为私域提供流量和掩护的例子不胜枚举：有网友看到电视养生节目，扫描屏幕二维码想了解健康知识，却跳转到企业微信，被推荐了一款植物饮料，说可以治老年慢性病；有网友看到博主科普医药知识，私信请教问题，被引导加上微信，花数万元购买减肥“神药”；有些商家常组织义诊活动，打造负责任的企业形象，得到当地相关部门表扬，私域中却宣传和兜售“神药”……</p><p>　　“真假参半”的手法也常被采用。许多消费者买到的食品、药品、保健品，本身是合格的，但疗效被随意夸大。比如有些保健品是合规上市的，却被私域直播宣传成可以治疗“三高”、心脏病甚至癌症等疾病；有的“专家”的医师身份是真的，荣誉称号是假的；查得到执业注册信息，但在私域直播间内编造“某疗法传承人”“御医世家”等身份。这使得一些消费者做了背景调查，未了解全部真相，反而更加信任商家。</p><p>　　何以难断根？</p><p>　　调查无此人或证据不足，产业链条未切断</p><p>　　在留言和来信中，“联系不上”“中止调查”“终止调解”是高频词。</p><p>　　有的时候，监管部门联系不到商家。网友吴奇（化名）的父亲，今年7月在私域平台购买了一款非处方药，客服说可治疗心脑血管病、肝病、肾病、风湿等各种疾病。“我爸花了5万多元。但这只是治贫血的药，对方完全是虚假宣传。”吴奇向相关部门投诉，并提供了企业名称和地址。执法人员很快赶赴现场检查，却发现其注册登记的联系方式联系不上、在注册的经营地址也查无此人。当地相关部门回复吴奇：“无法对当事人以及其设在平台上的店铺和相关产品情况进行核实”“因当事人下落不明……我局依法中止调查”。</p><p>　　有的时候，是消费者拿不出有力证据。执法人员到现场核查，发现产品本身是合格品，甚至机构、工作人员也都有资质，消费者却没有“实锤”。西南政法大学经济法学院副教授杨文明认为，私域虚假宣传存在“发现难、固定难、归责难”的问题。由于在私域活动，违法行为本就十分隐蔽、不易被发现。虚假宣传往往通过口头方式呈现，直播结束后，链接失效、回放关闭、群聊解散、账号更换，消费者仅凭一张商品照片或者付款截图，往往难以完整证明经营者作出了何种承诺，核心证据具有瞬时性，不易固定。加上部分消费者是老年人，电子证据取得能力更为不足。此外，交易链被人为拆分，电子证据分散。私域营销涉及多方主体，直播间的运营方、商品的生产方、销售方、直播方、交易收款方等可能都是不同的主体，宣传、订单、支付、物流和售后记录分散在不同主体手中，出现问题，各方互相推诿，难以锁定责任方。</p><p>　　有群众还反映，一些私域“神药”过去被曝光或处罚，不久就改头换面，继续吸粉引流。</p><p>　　读者韩旭（化名）的母亲患了癌症，花了4万多元，购买了一批号称能“调理癌细胞”的产品。实际上，就是一款普通饮料。韩旭发现，这款产品此前已经被媒体曝光过虚假宣传，涉事企业还受到处罚。如今，经销商变了，但生产厂家相同，发货地相近，宣传话术也高度相似。他怀疑，这就是同一批人换了个“马甲”。</p><p>　　相关人士透露，这种情况确实存在，症结在产业链上。当前受关注较多的是门店或者账号，但它们都只是整条产业链的末端。其实，供应商、私域直播平台、“节目”制作团队等环节既分工合作，又相对独立。如果只打击其中某个末端节点，背后的操盘团队、撮合机制还在，一种“神药”被打掉了，还是会有新的“神药”出现。</p><p>　　网友小徐参与过一个所谓“健康教育私域运营”项目。入职培训时，负责人告诉他，项目真实目的是让老年人购买保健品，为此需要获取他们的微信账号、年龄等信息，具体手段是以建立健康档案，提供个性化服务为名，让老年人填写自己和家人的信息。有了这样的基础，公司就可以通过群组、展会等撮合机制，与需要打开销路的供应商合作。</p><p>　　“他们管这个叫‘打粉’。行业里有人是卖产品的，有人是卖工具的，有人是卖流量的，有人是卖信息的，各取所需。”小徐说，“像蚯蚓一样，只切掉一个小部位，主体还在，可以再生出来。”</p><p>　　如何破难题？</p><p>　　全链条、跨区域治理，用“良币”驱逐“劣币”</p><p>　　问题如何破解？不少专家认为，私域“神药”骗局正在变得更加“专业化”、组织化，应认真研究其如何利用信息、情感和社会关系影响消费者判断，对症下药。</p><p>　　私域“神药”具有链条式运作特点，因此治理不能只盯单个品牌、门店，而是要加强系统性、协调性。杨文明认为，执法应向整个组织链条延伸，重点调取培训课件、统一脚本、招商材料、佣金结算和供货记录；对生产端、品牌运营方、直播服务机构分别依据实际参与程度定责，既防止真正组织者隐身，也避免无差别扩大上游责任。</p><p>　　此外，还需完善跨区域、跨部门案件协同。私域直播经常出现平台、主播、仓库、销售公司和受害消费者分属不同地区的情况。应强化市场监管、网信、药监、卫生健康等部门和公安机关之间的线索移送、证据协查和案件会商机制，减少消费者在多地之间反复投诉。涉嫌诈骗、非法经营或者生产销售假劣药等犯罪的，应依法移送；同时，也不能把一般虚假宣传不加区分地都按刑事诈骗处理。</p><p>　　在这些方面，已有一些积极探索。在上海，闵行区检察院为破解私域场景取证难题，邀请具有通信技术、食品、医学等经验的志愿者，在检察人员指导下观看线上私域直播、参与线下门店“内部品鉴”，协助固定完整证据链。最终，6家违法经营者受到处罚。</p><p>　　在河南，某公司涉嫌虚假宣传。核查过程中，涉案企业通过变更法定代表人、迁移注册地址、关停通信设备等方式对抗调查。市场监管部门启动穿透式监管机制，核查关联账户资金流向、交易链条，锁定涉案公司违法事实；随后联合其他省份市场监管部门对生产厂商进行突击检查，查获出库单、销售明细等证据。</p><p>　　法律法规也在逐步完善。杨文明介绍，今年2月施行的《直播电商监督管理办法》第二十四条对私域直播作出兜底性规定，要求其他网络服务提供者根据其实际提供的网络经营场所、交易撮合、信息发布等服务，履行相应的身份核验、信息报送、违法处置、交易信息保存、协助维权和配合执法义务。</p><p>　　“说是私域，但门店在大街上就能看见，并不隐蔽。有的‘品牌’遭遇多人投诉，相关视频多达几百个，提供给相关部门，仍然说没有证据。如果商家虚假宣传又不用付出代价，胆子会越来越大。”四川成都读者安礼说，私域“神药”取证难众所周知，但也有一些线索，调查条件是比较成熟的，有关部门应该积极主动作为，捍卫消费者的合法权益，通过严厉打击私域直播欺诈典型案例，起到“罚一儆百”的作用。</p><p>　　还有不少读者提出，抵御私域“神药”，需要进一步关心老年人，理解他们的需求。老年人关心健康、希望改善身体状况，是正常的消费需求，银发经济的发展也离不开这些需求，关键是用真正有效的产品和服务去满足他们的需求。</p><p>　　“对于高龄、独居、患有慢性病的老人，社区卫生服务中心、家庭医生以及基层养老服务机构可以提供更多可信赖的健康咨询渠道。”申琦认为，治理不只是盯着卖出去的那盒药，而是应该关注整个营销过程，用真正优质的基层健康服务和情感陪伴，以“良币”驱逐“劣币”。 </p><!--/enpcontent--><!--enpproperty <date>2026-11-09 00:00:00:0</date><author>本报记者  沈童睿</author><subtitle></subtitle><introtitle><p> 私域直播夸大疗效、坑骗老年消费者，屡被曝光查处仍能死灰复燃 </p></introtitle><keyword></keyword><paperarticleid>30190208</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/09/content_30190208.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/09/content_30190208.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 如何斩断私域“神药”的链条？（金台视线） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>

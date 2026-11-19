@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+		<title> 课堂来了银发学员（深聚焦） </title>
+		<meta name="author" content='第005版' />
+
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<META name='filetype' content='1'>
+	<meta name='publishedtype' content='1'>
+	<meta name='pagetype' content='1'>
+	<meta name='catalogs' content='rmrbdzb'>
+	<meta name='contentid' content='rmrbdzb_xxxxxxxx'>
+	<meta name='publishdate' content='2013-07-17'>
+	<!--优先使用 IE 最新版本和 Chrome-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<!--360 使用Google Chrome Frame-->
+	<meta name="renderer" content="webkit">
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/default.css" rel="stylesheet">
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/prototype.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/rmrb/mp.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/calendar2.js"></script>
+	<script language=Javascript
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/range.js"></script>
+	<script type="text/javascript"
+		src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/app.js"></script>
+	<script src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.js"></script>
+	<link href="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/swiper.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		function nTabs (tabObj, obj) {
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for (i = 0; i < tabList.length; i++) {
+				if (tabList[i].id == obj.id) {
+					document.getElementById(tabObj + "_Title" + i).className = "active";
+					document.getElementById(tabObj + "_Content" + i).style.display = "block";
+				} else {
+					document.getElementById(tabObj + "_Title" + i).className = "normal";
+					document.getElementById(tabObj + "_Content" + i).style.display = "none";
+				}
+			}
+		}
+		function CopyAll () {
+
+			var obj = document.getElementById("articleContent");
+
+			if (obj != null) {
+
+				var content = obj.innerText;
+
+				window.clipboardData.setData("Text", content);
+
+				alert("复制成功");
+
+			}
+
+		}
+
+		function zoomIn () {
+			newZoom = parseInt(ozoom.style.zoom) + 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+		function zoomOut () {
+			newZoom = parseInt(ozoom.style.zoom) - 10 + '%'
+			ozoom.style.zoom = newZoom;
+		}
+
+	</script>
+	<script type="text/javascript">
+		var focus_width = 260;
+		var focus_height = 180;
+		var text_height = 20;
+		var swf_height = focus_height + text_height;
+		var pics = "";
+		var links = "";
+		var texts = "";
+		var resCount = 0;
+		function showArtPics () {
+			if (resCount > 0) {
+				pics = pics.substring(0, pics.length - 1);
+				links = links.substring(0, links.length - 1);
+				texts = texts.substring(0, texts.length - 1);
+				var content = "";
+				content += '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="' + focus_width + '" height="' + swf_height + '">';
+				content += '<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="../../../tplimg/picflash.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">';
+				content += '<param name="menu" value="false"/><param name="wmode" value="opaque"/>';
+				content += '<param name="FlashVars" value="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '">';
+				content += '<embed src="../../../tplimg/picflash.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + focus_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />';
+				content += '<\/object>';
+				document.getElementById("showArtPicsDiv").innerHTML = content;
+			}
+		}
+	</script>
+	<style>
+		body,
+		div {
+			font-family: '宋体';
+		}
+
+		.main .article-box .article h1,
+		.main .article-box .article h2,
+		.main .article-box .article h3 {
+			font-family: Microsoft YaHei, SimSun, sans-serif, '宋体';
+		}
+
+		.main .right-main .title {
+			font-weight: bold;
+		}
+
+		.pci_c {
+			margin: 10px auto;
+			width: 410px
+		}
+
+		table {
+			border-spacing: 0;
+		}
+
+		table td {
+			text-align: center;
+			border-spacing: 0;
+		}
+
+		.pci_c td img {
+			width: auto;
+		}
+
+		.top img {
+			padding-top: 15px;
+			margin-left: 0px;
+		}
+
+		.nav {
+			margin-right: 0;
+		}
+
+		.pci_c td {
+			width: 100%;
+		}
+
+		.pci_c td p {
+			text-align: left;
+			font-size: 14px;
+			width: auto;
+			padding-top: 15px;
+			line-height: 160%;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			text-align: center;
+			background: #d00;
+			color: #fff;
+			width: 19.5%;
+			float: left;
+			margin-bottom: 1px;
+			margin-right: 1px;
+			text-indent: 0;
+			height: 34px;
+			line-height: 34px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide a {
+			color: #fff;
+		}
+
+		.curr-news span {
+			display: inline-block;
+			color: #fff;
+			background: #d00;
+			padding: 5px 15px;
+			font-size: 16px;
+			height: 25px;
+			line-height: 25px;
+		}
+
+		.main .right-main .date-box span {
+			cursor: pointer;
+		}
+
+		.ribao,
+		.zhoubao,
+		.zazhi {
+			background: none;
+			padding: 10px 15px;
+			width: 140px;
+			z-index: 3;
+			position: absolute;
+			top: 60px;
+			left: -30px;
+			display: none;
+		}
+
+		.ribao li,
+		.zhoubao li,
+		.zazhi li {
+			border: 1px solid #e2e2e2;
+			color: #333;
+			padding: 3px 10px;
+			border-top: none;
+			width: 150px;
+			background: #fff;
+		}
+
+		.ribao li:nth-child(1),
+		.zhoubao li:nth-child(1),
+		.zazhi li:nth-child(1) {
+			border-top: 1px solid #e2e2e2;
+		}
+
+		.nav li {
+			cursor: pointer;
+		}
+
+		.ribao li a,
+		.zhoubao li a,
+		.zazhi li a {
+			color: #333;
+		}
+
+		.main .news .news-list li span {
+			font-size: 20px;
+			margin-right: 5px;
+		}
+
+		.main .article-box .art-btn span {
+			padding: 0 15px;
+		}
+
+		.main .article-box .art-btn strong {
+			font-weight: normal;
+			float: right;
+			margin-right: 15px;
+		}
+
+		.main .article-box .art-btn strong span {
+			padding: 0px;
+		}
+
+		.main .swiper-box .swiper-container .swiper-slide {
+			font-size: 12px;
+			width: 24.5%;
+		}
+		#ozoom > p{
+    line-height: 170%;
+    padding: 5px 0;
+}
+
+		/* .main .swiper-box .swiper-container .swiper-slide:nth-child(4){
+        line-height:129%;padding:8px 1% 0 1%;height:36px;width:22.5%
+    } */
+		@media (min-device-width: 320px) and (max-width: 689px),
+		(max-device-width: 480px) {
+			body {
+				overflow: auto;
+			}
+		}
+	</style>
+</head>
+
+
+	<body onLoad="initialize();initMPPage();showArtPics();">
+		<!--题图-->
+		<div class="top">
+			<div class="w1000">
+				<a href="http://www.people.com.cn" target="_blank"><img class="left"
+						src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/logo.png" alt=""></a>
+				<ul class="right nav">
+					<li id="ribao">日报
+						<ul class="ribao" id="ribaobox">
+							<li><a href='http://paper.people.com.cn/rmrb/paperindex.htm' target='_blank'>人民日报</a></li>
+							<li><a href="http://paper.people.com.cn/rmrbhwb/paperindex.htm" target="_blank">人民日报海外版</a>
+							</li>
+							<li><a href="http://www.huanqiu.com/" target="_blank">环球时报</a></li>
+							<li><a href="http://epaper.stcn.com/" target="_blank">证券时报</a></li>
+						</ul>
+					</li>
+					<li id="zhoubao">周报
+						<ul class="zhoubao" id="zhoubaobox">
+							<li><a href="http://paper.people.com.cn/gjjrb/paperindex.htm" target="_blank">国际金融报</a></li>
+							<li><a href="http://paper.people.com.cn/zgnyb/paperindex.htm" target="_blank">中国能源报</a></li>
+							<li><a href="http://paper.people.com.cn/jksb/paperindex.htm" target="_blank">健康时报</a></li>
+							<li><a href="http://paper.people.com.cn/fcyym/paperindex.htm" target="_blank">讽刺与幽默</a></li>
+							<li><a href="http://paper.people.com.cn/zgcsb/paperindex.htm" target="_blank">中国城市报</a></li>
+						</ul>
+
+					</li>
+					<li id="zazhi">杂志
+						<ul class="zazhi" id="zazhibox">
+							<li><a href="http://paper.people.com.cn/xwzx/paperindex.htm" target="_blank">新闻战线</a></li>
+							<li><a href="http://paper.people.com.cn/rmlt/paperindex.htm" target="_blank">人民论坛</a></li>
+							<li><a href="http://paper.people.com.cn/rmzk/paperindex.htm" target="_blank">人民周刊</a></li>
+							<li><a href="http://paper.people.com.cn/zgjjzk/paperindex.htm" target="_blank">中国经济周刊</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/mszk/paperindex.htm" target="_blank">民生周刊</a></li>
+							<li><a href="http://history.people.com.cn/GB/198819/index.html" target="_blank">国家人文历史</a>
+							</li>
+							<li><a href="http://paper.people.com.cn/zgby/paperindex.htm" target="_blank">中国报业</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="main w1000">
+			<div class="left paper-box">
+				<div class="paper">
+					<MAP NAME="PagePicMap"><Area coords="299.362208,571.83718375,298.117456,398.51485325,186.09002,401.67766950000004,184.845272,261.8811855,300.606956,262.51374875,299.98458,28.465346250000003,242.726112,30.363036,6.84612,30.363036,6.84612,565.51155125,134.432924,566.77667775" shape="polygon" href="content_30191199.html"><Area coords="187.334768,263.77887525,297.495084,263.77887525,297.495084,400.412543,187.334768,400.412543" shape="polygon" href="content_30191200.html"><Area coords="306.208328,30.99559925,396.452652,30.99559925,396.452652,352.97029925000004,306.208328,352.97029925000004" shape="polygon" href="content_30191201.html"><Area coords="308.075452,358.03080524999996,396.452652,358.03080524999996,396.452652,575.0,308.075452,575.0" shape="polygon" href="content_30191202.html"><Area coords="145.013292,558.5533555,180.48864800000004,558.5533555,180.48864800000004,566.77667775,145.013292,566.77667775" shape="polygon" href="content_30191203.html"></MAP>
+					<img width="400" height="575" src="../../../pic/202611/15/187ea99c-49fe-4cd9-b7f5-1e8b1495bdd6.jpg.2" border="0" USEMAP=#PagePicMap>
+				</div>
+				<div class="paper-bot">
+					<p class="left ban">
+						第05版：教育
+					</p>
+					<!-- <p class="right btn">PDF下载</p> -->
+				</div>
+				<div class="news">
+					<p class="curr-news"><span>本版新闻</span></p>
+					<!--新样式-->
+					<ul class='news-list'>
+								<li>
+									<span>·</span>
+									<a href="content_30191199.html"> 课堂来了银发学员（深聚焦） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191200.html"> 学习，“老”有乐趣了！（记者手记） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191201.html"> 让拔尖创新人才尽早“冒尖”（在一线） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191202.html"> 从“要我做”到“我要做”（师说） </a>
+								</li>
+								<li>
+									<span>·</span>
+									<a href="content_30191203.html"> 本版责编：闫伊乔 </a>
+								</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="right right-main">
+				<div class="date-box">
+					<p class="date left">
+						人民日报 <span class="newstime">2026年11月15日
+							Sun</span>
+						<span>
+							<img onClick="autoShowDate();"
+								src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/images/down.png"
+								alt="">
+						</span>
+					</p>
+					<p class="right">
+
+					</p>
+					<!-------rqdh版面导航------>
+					<div id=daydh
+						style="display:none; position:absolute; left:140px;top:30px;z-index:1000; filter:alpha(opacity=90);"
+						onmouseover="document.getElementById('daydh').style.display='block';">
+						<form name=CLD style="padding:0px;margin:0px;">
+							<table width="210" border="0" cellpadding="0" cellspacing="1" bordercolor="#007CD2"
+								bgcolor="#e0e0e0">
+								<tr>
+									<td bgcolor="#D8EFFF" style="padding: 3px;">
+										<table cellspacing=0 cellpadding=0 width="100%" align=center border=0
+											bgcolor="#D8EFFF">
+											<tr>
+												<td>
+													<table width="100%" align=center border="0" cellpadding="1"
+														cellspacing="1">
+														<tr class="default" align=center>
+															<td height=15 colspan=7 bgcolor="#FFFFFF">
+																<table width="100%" border="0" cellpadding="2"
+																	cellspacing="0">
+																	<tr align="center">
+																		<td align="left" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SY>
+																				<script language=JavaScript>
+																					for (i = 2006; i < 2051; i++)
+																						document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SY,1)" /></td>
+																		<td align="center" nowrap><img
+																				src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d1.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,0)" /></td>
+																		<td><select class=jumpmenu
+																				onChange=changeMPCld() name=SM>
+																				<script language="JavaScript">
+																					for (i = 1; i < 13; i++) document.write('<option>' + i + '</option>')
+																				</script>
+																			</select>
+																		</td>
+																		<td><img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/d.gif"
+																				width="7" height="11"
+																				style="cursor:hand;"
+																				onClick="turnpage(SM,1)" /></td>
+																		<td align="right" nowrap><strong>
+																				<font id=GZ
+																					fface="Arial, Helvetica, sans-serif">
+																				</font>
+																			</strong></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr align=middle bgcolor="#FFFFFF" class="default">
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">日</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">一</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">二</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">三</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">四</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">五</font>
+																</b></td>
+															<td style="color: #fff;background: #d00;" align="center"
+																class="fontstyle01"><b>
+																	<font face="Arial, Helvetica, sans-serif">六</font>
+																</b> </td>
+														</tr>
+														<script type="text/JavaScript">
+															var gNum;
+															for(i=0;i<6;i++)
+															{
+																document.write('<tr align=center>');
+																for(j=0;j<7;j++)
+																{
+																	gNum = i*7+j;
+																	document.write('<td  bgcolor="#FFFFFF" class="default" align=center id="GD' + gNum +'" style="cursor: default;" width="14%"><a href="" id="CD' + gNum + '"><span class="date" style="font-family:Verdana, Arial;font-size:11px;"><font _onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()" id="SD' + gNum +'"');
+																	document.write('></font></span></a><br><font id="LD' + gNum + '" size=2 class=pt9 style=display:none></font></td>');
+																}
+																document.write('</tr>');
+															}
+														</script>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" height="22"><a href="#" onClick="autoShowDate();">关闭</a></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<!-------rqdh版面导航END------>
+				</div>
+				<div class="swiper-box">
+					<div class="swiper-container">
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_01.html">01版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_02.html">02版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_03.html">03版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_04.html">04版：要闻</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_05.html">05版：教育</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_06.html">06版：港澳台侨</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_07.html">07版：特别报道</a>
+							</div>
+							<div class="swiper-slide">
+								<a id="pageLink" href="../../../layout/202611/15/node_08.html">08版：副刊</a>
+							</div>
+					</div>
+					<!-- <div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				</div>
+				<div class="article-box">
+					<div class="art-btn">
+						<span>
+							<a href="../../../layout/202611/15/node_05.html">返回目录</a>
+						</span>
+						&nbsp;&nbsp;
+						<a href="#" onclick="zoomIn();">
+							<span class="big">放大</span>
+						</a>
+						<a href="#" onclick="zoomOut();">
+							<span class="small">缩小</span>
+						</a>
+						<a href="#" onclick="CopyAll();">
+							<span>全文复制</span>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<strong>
+							&nbsp;&nbsp;
+								<a class="preart" href="content_30191200.html">
+									<span>下一篇 </span>
+								</a>
+						</strong>
+						<div style="display:none" id="articleContent">
+							<!--enpcontent--><html>
+ <head></head>
+ <body>
+  <p>　　“十五五”规划纲要提出，扩大老年教育资源供给，发展老年大学，满足老年人精神文化需求。老年大学的课堂什么样？在这里可以学什么？带来了什么新变化？记者走进几所不同的老年大学课堂，听听老年人的学习心声。</p>
+  <p>　　——编&nbsp;&nbsp;者&nbsp;&nbsp;</p>
+  <p>　　</p>
+  <p>　　身边的课堂：</p>
+  <p>　　“日子不闲得慌，越过越有劲头”</p>
+  <p>　　本报记者&nbsp;&nbsp;游&nbsp;&nbsp;仪</p>
+  <p>　　下午3点，四川省遂宁市蓬溪县常乐镇拱市村，75岁的朱忠华溜达着出了家门，5分钟后来到了村老年大学。院坝里，非洲鼓课刚结束；教室里，手法医学培训课马上开始。</p>
+  <p>　　“疏通经络，气血活了，对身体有好处……”遂宁市老年大学授课教师蒋清蓉一边示范拍打肘窝，一边给围坐的老人讲解。朱忠华跟着拍打，聚精会神。</p>
+  <p>　　2022年，遂宁市老年大学拱市村分校一挂牌，朱忠华就报了名。“没想到，我这辈子还能在村里上‘大学’！”朱忠华说，自己的3个娃儿全在外地，过去农闲时没事干，他和老伴只能喝喝茶、散散步；要是去城里上老年大学，坐车都得个把小时。自打老年大学开到了村上，老伴去学广场舞，他自己学唱歌、手法医学，生活更热闹了。</p>
+  <p>　　师资哪里来？遂宁市老年大学校务委员袁红梅介绍，村里提供场地、负责日常管理，老年大学派老师免费授课。</p>
+  <p>　　课怎么上？村民说了算。袁红梅回忆，一开始教的是其他舞种，大伙却喜欢跳锅庄，二话不说，赶紧调整；村民想学果树修枝，把意见提给学校，老年大学便开设了相关课程；高血压的注意事项、糖尿病的饮食忌口、心脑血管疾病如何预防，这些与老人身体健康息息相关的养生知识也很受欢迎。</p>
+  <p>　　“过去，开展文体活动不容易，连广场舞都组织不起来。”拱市村党总支书记杨绍斌说，“如今，大家踊跃报名老年大学的课程，也积极响应村里组织的各项活动。”还有在外工作的年轻人给杨绍斌打电话，了解自家老人今天“上学”了没有、身体状况怎么样。</p>
+  <p>　　如今，遂宁市老年大学已开设4个乡村分校，把课堂搬到田间村落，逐步建立涵盖市、县、镇、村的老年教育服务网络。在袁红梅看来，优质资源下沉，打通了老年教育的“最后一公里”，也为乡村全面振兴注入新动力。</p>
+  <p>　　对朱忠华来说，上老年大学的好处很实在：学了养生知识、培养锻炼习惯，自己身体少遭罪，孩子在外头少操心。“歌唱起来、养生操做起来，日子不闲得慌，越过越有劲头。在这儿，大家都是同学，邻里关系也更和谐咯！”朱忠华说。</p>
+  <p>　　</p>
+  <p>　　行走的课堂：</p>
+  <p>　　“在壮美山河中丰盈精神”</p>
+  <p>　　本报记者&nbsp;&nbsp;肖家鑫&nbsp;&nbsp;李&nbsp;&nbsp;蕊</p>
+  <p>　　湘江边，骤雨初歇。听完红军抢渡湘江的故事，70岁的姜美荣举起相机，镜头对准岸边静默的塑像，按下快门。</p>
+  <p>　　今年，山东老年大学组织“重走长征路”游学，作为摄影骨干班成员，姜美荣第一时间报了名。“26天的行程，重走长征路，感觉书本里的历史更鲜活了，心里也多了力量，多了感恩。”</p>
+  <p>　　“耆鲁游学”，是山东老年大学的品牌项目。“不是给课堂简单加一段行程，而是为学员打开新学习场景。”学校学员工作处处长费凡说，“我们调研发现，老年学员有时间精力、有深度文化体验需求，但市面上的旅行团往往停留在打卡拍照，甚至夹杂购物陷阱。学校办游学，希望为老年人提供适老化、有内涵的行程，让他们省心安心、学有所得。”</p>
+  <p>　　旅游是看风景，游学则是慢下来深度体验，品文化、学门道。姜美荣体会颇深：“在安徽黄山的那次游学中，当地老年大学的老师带着大家了解非遗。走到哪里，哪里就是课堂，那种充实感是一般跟团游给不了的。”</p>
+  <p>　　“我们把课堂搬到了广阔天地。”学校教师徐志光教的是书画班，不仅在教室讲构图、色彩，还把学员带到千佛山、大明湖写生，“外出写生发现短板，回到教室就针对性讲解；补足之后再出去画，又有新体会。”</p>
+  <p>　　钢琴表演班也走出了校门。今年9月，学员王晓红和15名同学坐上开往青岛的火车，走进青岛市老年大学演艺厅。“两地学员轮番登台，以琴会友。回来后，大家练琴的劲头都不一样了！”王晓红笑着回忆。</p>
+  <p>　　“老年教育不再局限于‘三尺讲台’，而是在实景中印证所学，在交流中开阔视野。”山东老年大学教务处副处长许永治介绍，学校注重做好游学、研学的组织保障：出发前，摸排老人身体状况、办理保险；行程中，合理安排交通、住宿，景点数量不贪多，留足学习交流时间，并随时根据天气和老人身体情况调整行程。</p>
+  <p>　　揣着热爱出发，晚年生活一样能过得热气腾腾。</p>
+  <p>　　2024年退休后，面对突然闲下来的日子，王强总觉得“心没着没落”。在老伴鼓励下，他走进山东老年大学学摄影，从零基础读到骨干班。“和学友们一起，在壮美山河中丰盈精神，回头看这些照片、走过的一段段路，我觉得自己开启了人生的新阶段。”王强说。</p>
+  <p>　　</p>
+  <p>　　云上的课堂：</p>
+  <p>　　“网上有个学习的好地方”</p>
+  <p>　　本报记者&nbsp;&nbsp;吴&nbsp;&nbsp;月</p>
+  <p>　　清早起床，打开“国家老年大学”微信小程序，浏览全国老年教育公共服务平台课程，是天津市民陈梅的习惯。“我有一部旧手机，专门用来学习。”做家务、吃饭时，她的手机里也常播放着课程。</p>
+  <p>　　退休前，陈梅在企业从事财务工作，虽然也爱书法、爱摄影、爱手工，但工作忙，没有太多时间发展兴趣爱好。“退休后，一下子多了好多可以自由支配的时间。在新闻里听说国家老年大学开设线上课程、随时随地可学，我立刻注册成为学员。”陈梅说。</p>
+  <p>　　在云上课堂，陈梅发现了许多“宝藏”课程：开学第一课由钟南山院士讲授，她反复听了好几次；老年人权益保障课上，一线检察官与高校教授联合授课，讲解识骗防诈技巧等；最近，她又学起了人工智能通识课……</p>
+  <p>　　国家老年大学资源平台中心主任王硕介绍，经过几年建设，全国老年教育公共服务平台已汇聚超过731万分钟课程资源，注册用户突破1263万。</p>
+  <p>　　“此前我们调研发现，一些地方的老年学校缺乏优质师资、课程，一些老年学员行动不便、外出上学不易。如今，线上平台如同‘没有围墙的大学’，让学习不受地域、时间、行动条件的限制。”王硕说。</p>
+  <p>　　线上听课虽方便，但难免少了交流互动，以及共同学习的“氛围感”。为此，国家老年大学不断创新教学形式。</p>
+  <p>　　“屏幕前的各位朋友上午好！非常高兴与大家相聚在乐学直播间，我是小郭老师……”周五上午9点半，“楷书入门”准时开讲。授课老师郭婧超对着摄像机打招呼，直播间里也刷起了“老师好”。</p>
+  <p>　　“这一笔，是带了一些侧锋完成的吗？”“起笔是逆锋起吗？”“出钩的角度是怎样形成的？”课上，跟随直播临摹练习的学员提出疑问，郭婧超则对着一条条“弹幕”细细解答。借助高拍仪，笔锋的变化在屏幕上清晰呈现。</p>
+  <p>　　作为一名90后，郭婧超常常被老年学员的热情打动：“看到大家给直播点赞，我感受到学员的信任与支持，这也促使我继续坚持下去。”</p>
+  <p>　　屏幕那端，陈梅也常在手机前“追更”课程。“有人说退休后没事做，我却感觉每天要学、要做的事情太多了。”她还把学习平台分享给了刚退休的同事，“我告诉他们，网上有个学习的好地方！”</p>
+  <p>　　</p>
+  <p>　　■感言</p>
+  <p>　　还记得刚退休的头几个月，心里有点蒙，就像一艘开了几十年的船突然被通知“不用再航行了”，有些失落。这时，看到国家老年大学招生，我第一学期就报了5门课：朗诵、短视频、家族故事写作、微电影、素人改造。从一站上讲台分享就紧张，到能够面对镜头侃侃而谈，通过学习，我收获的不仅是技巧，也是“我还能行”的底气。</p>
+  <p>　　——朱孝琪（国家老年大学学员）</p>
+  <p>　　在老年大学学声乐一年了，最难忘的是在社区的一次演出。唱到“我歌唱每一座高山，我歌唱每一条河”时，我的眼眶湿润了。老年大学给了我们一个平台，让我们在晚年还能继续追逐梦想，还能用歌声点亮生活。如果你心里也藏着一个未完成的梦，那就勇敢地迈出第一步吧。因为，最好的时光，永远是现在。</p>
+  <p>　　——倪华明（湖北荆州市老年大学学员）</p>
+  <p>　　我不仅在老年大学学习，也在社区教唱歌、教朗诵。有时候，教别人比我自个儿上台累，但看到伙伴们从怯于开口到眼里有光，我感觉比自己拿奖还高兴。上老年大学，一开始是为了弥补自己年轻时的缺憾，后来我发现，学习不仅能让自己快乐，还能让家里热闹、让身边的人温暖。</p>
+  <p>　　——丁小红（浙江老年开放大学上城学院学员）</p>
+ </body>
+</html><!--/enpcontent--><!--enpproperty <date>2026-11-15 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191199</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/15/content_30191199.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/15/content_30191199.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 课堂来了银发学员（深聚焦） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+					<div class="article">
+						<h3></h3>
+						<h1><p> 课堂来了银发学员（深聚焦） </p></h1>
+						<h2></h2>
+						<p class="sec">
+							<!-- <span class="origin">人民日报</span>
+							<span class="date">(2020年02月06日 01版)</span> -->
+							
+							<span class="date">
+								《人民日报》（<span
+									class="newstime">2026年11月15日</span>&nbsp;第&nbsp;05&nbsp;版）
+							</span>
+						</p>
+						<style>
+							.attachment {
+								margin-top: 20px;
+								text-align: center;
+							}
+							.attachment img{
+								margin:0 auto;
+							}
+							.attachment .att-content{
+								text-align:justify;
+								line-height: 140%;
+								width:90%;
+								font-size: 14px;
+								width:400px;
+								margin:10px auto 15px auto;
+							}
+						</style>
+						<div id="ozoom">
+							<!--enpcontent--><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202611/15/042795ea-85d0-4694-b490-31b2d75aa0c9.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　浙江金华市金东区老年大学，师生进行无人机实操训练。</p><p>　　陈  业摄</p>"></p><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202611/15/c379b71b-adce-4472-ae4b-c637bf9ea5f5.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　内蒙古呼和浩特市老年大学，学员们交流国画技艺。</p><p>　　丁根厚摄</p>"></p><p class="not-indent patt" style="max-width:100%;"><img src="../../../pic/202611/15/0eedd27b-e634-4225-adea-fc6c0a4ae789.jpg" style="max-width: 100%;" class="picture-illustrating not-indent patt" data-toggle="tooltip" placement="bottom" trigger="hover focus" html="true" data-original-title="<p>　　江西丰城市上塘镇老年大学，学员们学习旗袍模特展示技巧。</p><p>　　周  亮摄</p>"></p><p>　　“十五五”规划纲要提出，扩大老年教育资源供给，发展老年大学，满足老年人精神文化需求。老年大学的课堂什么样？在这里可以学什么？带来了什么新变化？记者走进几所不同的老年大学课堂，听听老年人的学习心声。</p><p>　　——编&nbsp;&nbsp;者&nbsp;&nbsp;</p><p>　　</p><p>　　身边的课堂：</p><p>　　“日子不闲得慌，越过越有劲头”</p><p>　　本报记者&nbsp;&nbsp;游&nbsp;&nbsp;仪</p><p>　　下午3点，四川省遂宁市蓬溪县常乐镇拱市村，75岁的朱忠华溜达着出了家门，5分钟后来到了村老年大学。院坝里，非洲鼓课刚结束；教室里，手法医学培训课马上开始。</p><p>　　“疏通经络，气血活了，对身体有好处……”遂宁市老年大学授课教师蒋清蓉一边示范拍打肘窝，一边给围坐的老人讲解。朱忠华跟着拍打，聚精会神。</p><p>　　2022年，遂宁市老年大学拱市村分校一挂牌，朱忠华就报了名。“没想到，我这辈子还能在村里上‘大学’！”朱忠华说，自己的3个娃儿全在外地，过去农闲时没事干，他和老伴只能喝喝茶、散散步；要是去城里上老年大学，坐车都得个把小时。自打老年大学开到了村上，老伴去学广场舞，他自己学唱歌、手法医学，生活更热闹了。</p><p>　　师资哪里来？遂宁市老年大学校务委员袁红梅介绍，村里提供场地、负责日常管理，老年大学派老师免费授课。</p><p>　　课怎么上？村民说了算。袁红梅回忆，一开始教的是其他舞种，大伙却喜欢跳锅庄，二话不说，赶紧调整；村民想学果树修枝，把意见提给学校，老年大学便开设了相关课程；高血压的注意事项、糖尿病的饮食忌口、心脑血管疾病如何预防，这些与老人身体健康息息相关的养生知识也很受欢迎。</p><p>　　“过去，开展文体活动不容易，连广场舞都组织不起来。”拱市村党总支书记杨绍斌说，“如今，大家踊跃报名老年大学的课程，也积极响应村里组织的各项活动。”还有在外工作的年轻人给杨绍斌打电话，了解自家老人今天“上学”了没有、身体状况怎么样。</p><p>　　如今，遂宁市老年大学已开设4个乡村分校，把课堂搬到田间村落，逐步建立涵盖市、县、镇、村的老年教育服务网络。在袁红梅看来，优质资源下沉，打通了老年教育的“最后一公里”，也为乡村全面振兴注入新动力。</p><p>　　对朱忠华来说，上老年大学的好处很实在：学了养生知识、培养锻炼习惯，自己身体少遭罪，孩子在外头少操心。“歌唱起来、养生操做起来，日子不闲得慌，越过越有劲头。在这儿，大家都是同学，邻里关系也更和谐咯！”朱忠华说。</p><p>　　</p><p>　　行走的课堂：</p><p>　　“在壮美山河中丰盈精神”</p><p>　　本报记者&nbsp;&nbsp;肖家鑫&nbsp;&nbsp;李&nbsp;&nbsp;蕊</p><p>　　湘江边，骤雨初歇。听完红军抢渡湘江的故事，70岁的姜美荣举起相机，镜头对准岸边静默的塑像，按下快门。</p><p>　　今年，山东老年大学组织“重走长征路”游学，作为摄影骨干班成员，姜美荣第一时间报了名。“26天的行程，重走长征路，感觉书本里的历史更鲜活了，心里也多了力量，多了感恩。”</p><p>　　“耆鲁游学”，是山东老年大学的品牌项目。“不是给课堂简单加一段行程，而是为学员打开新学习场景。”学校学员工作处处长费凡说，“我们调研发现，老年学员有时间精力、有深度文化体验需求，但市面上的旅行团往往停留在打卡拍照，甚至夹杂购物陷阱。学校办游学，希望为老年人提供适老化、有内涵的行程，让他们省心安心、学有所得。”</p><p>　　旅游是看风景，游学则是慢下来深度体验，品文化、学门道。姜美荣体会颇深：“在安徽黄山的那次游学中，当地老年大学的老师带着大家了解非遗。走到哪里，哪里就是课堂，那种充实感是一般跟团游给不了的。”</p><p>　　“我们把课堂搬到了广阔天地。”学校教师徐志光教的是书画班，不仅在教室讲构图、色彩，还把学员带到千佛山、大明湖写生，“外出写生发现短板，回到教室就针对性讲解；补足之后再出去画，又有新体会。”</p><p>　　钢琴表演班也走出了校门。今年9月，学员王晓红和15名同学坐上开往青岛的火车，走进青岛市老年大学演艺厅。“两地学员轮番登台，以琴会友。回来后，大家练琴的劲头都不一样了！”王晓红笑着回忆。</p><p>　　“老年教育不再局限于‘三尺讲台’，而是在实景中印证所学，在交流中开阔视野。”山东老年大学教务处副处长许永治介绍，学校注重做好游学、研学的组织保障：出发前，摸排老人身体状况、办理保险；行程中，合理安排交通、住宿，景点数量不贪多，留足学习交流时间，并随时根据天气和老人身体情况调整行程。</p><p>　　揣着热爱出发，晚年生活一样能过得热气腾腾。</p><p>　　2024年退休后，面对突然闲下来的日子，王强总觉得“心没着没落”。在老伴鼓励下，他走进山东老年大学学摄影，从零基础读到骨干班。“和学友们一起，在壮美山河中丰盈精神，回头看这些照片、走过的一段段路，我觉得自己开启了人生的新阶段。”王强说。</p><p>　　</p><p>　　云上的课堂：</p><p>　　“网上有个学习的好地方”</p><p>　　本报记者&nbsp;&nbsp;吴&nbsp;&nbsp;月</p><p>　　清早起床，打开“国家老年大学”微信小程序，浏览全国老年教育公共服务平台课程，是天津市民陈梅的习惯。“我有一部旧手机，专门用来学习。”做家务、吃饭时，她的手机里也常播放着课程。</p><p>　　退休前，陈梅在企业从事财务工作，虽然也爱书法、爱摄影、爱手工，但工作忙，没有太多时间发展兴趣爱好。“退休后，一下子多了好多可以自由支配的时间。在新闻里听说国家老年大学开设线上课程、随时随地可学，我立刻注册成为学员。”陈梅说。</p><p>　　在云上课堂，陈梅发现了许多“宝藏”课程：开学第一课由钟南山院士讲授，她反复听了好几次；老年人权益保障课上，一线检察官与高校教授联合授课，讲解识骗防诈技巧等；最近，她又学起了人工智能通识课……</p><p>　　国家老年大学资源平台中心主任王硕介绍，经过几年建设，全国老年教育公共服务平台已汇聚超过731万分钟课程资源，注册用户突破1263万。</p><p>　　“此前我们调研发现，一些地方的老年学校缺乏优质师资、课程，一些老年学员行动不便、外出上学不易。如今，线上平台如同‘没有围墙的大学’，让学习不受地域、时间、行动条件的限制。”王硕说。</p><p>　　线上听课虽方便，但难免少了交流互动，以及共同学习的“氛围感”。为此，国家老年大学不断创新教学形式。</p><p>　　“屏幕前的各位朋友上午好！非常高兴与大家相聚在乐学直播间，我是小郭老师……”周五上午9点半，“楷书入门”准时开讲。授课老师郭婧超对着摄像机打招呼，直播间里也刷起了“老师好”。</p><p>　　“这一笔，是带了一些侧锋完成的吗？”“起笔是逆锋起吗？”“出钩的角度是怎样形成的？”课上，跟随直播临摹练习的学员提出疑问，郭婧超则对着一条条“弹幕”细细解答。借助高拍仪，笔锋的变化在屏幕上清晰呈现。</p><p>　　作为一名90后，郭婧超常常被老年学员的热情打动：“看到大家给直播点赞，我感受到学员的信任与支持，这也促使我继续坚持下去。”</p><p>　　屏幕那端，陈梅也常在手机前“追更”课程。“有人说退休后没事做，我却感觉每天要学、要做的事情太多了。”她还把学习平台分享给了刚退休的同事，“我告诉他们，网上有个学习的好地方！”</p><p>　　</p><p>　　■感言</p><p>　　还记得刚退休的头几个月，心里有点蒙，就像一艘开了几十年的船突然被通知“不用再航行了”，有些失落。这时，看到国家老年大学招生，我第一学期就报了5门课：朗诵、短视频、家族故事写作、微电影、素人改造。从一站上讲台分享就紧张，到能够面对镜头侃侃而谈，通过学习，我收获的不仅是技巧，也是“我还能行”的底气。</p><p>　　——朱孝琪（国家老年大学学员）</p><p>　　在老年大学学声乐一年了，最难忘的是在社区的一次演出。唱到“我歌唱每一座高山，我歌唱每一条河”时，我的眼眶湿润了。老年大学给了我们一个平台，让我们在晚年还能继续追逐梦想，还能用歌声点亮生活。如果你心里也藏着一个未完成的梦，那就勇敢地迈出第一步吧。因为，最好的时光，永远是现在。</p><p>　　——倪华明（湖北荆州市老年大学学员）</p><p>　　我不仅在老年大学学习，也在社区教唱歌、教朗诵。有时候，教别人比我自个儿上台累，但看到伙伴们从怯于开口到眼里有光，我感觉比自己拿奖还高兴。上老年大学，一开始是为了弥补自己年轻时的缺憾，后来我发现，学习不仅能让自己快乐，还能让家里热闹、让身边的人温暖。</p><p>　　——丁小红（浙江老年开放大学上城学院学员）</p><!--/enpcontent--><!--enpproperty <date>2026-11-15 00:00:00:0</date><author></author><subtitle></subtitle><introtitle></introtitle><keyword></keyword><paperarticleid>30191199</paperarticleid><channel>1</channel><nodeid>0</nodeid><nodename></nodename><url>http://paper.people.com.cn/rmrb/pc/content/202611/15/content_30191199.html</url><urlpad>http://paper.people.com.cn/rmrb/pad/content/202611/15/content_30191199.html</urlpad><siteid>1</siteid><paperid>1921</paperid><title><p> 课堂来了银发学员（深聚焦） </p></title><liability></liability>/enpproperty-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class=" clearfix w1000">
+				<div class="copyright">
+					人 民 网 版 权 所 有 ，未 经 书 面 授 权 禁 止 使 用<br>
+					Copyright &copy; 1997-2026 by www.people.com.cn all rights reserved
+				</div>
+			</div>
+		</div>
+		<div class="go-top" id="go-top">
+			<img src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/go_top.png" alt="">
+		</div>
+		<script language=JavaScript>
+			document.write("<div id=detail style=position:absolute;width:300px;></div>");
+		</script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/disname2.js"></script>
+		<script language=Javascript
+			src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/new.js"></script>
+		<script>
+			// var swiperBox = document.getElementById('swiperBox').getElementsByTagName('div');
+
+			// if(swiperBox.length <= 4){
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:swiperBox.length,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+
+			//   })
+			// }else{
+			//     var mySwiper = new Swiper('.swiper-container', {
+			//     slidesPerView:4,
+			//     slidesPerColumnFill : 'row',
+			//     spaceBetween : 3,
+			//     navigation: {
+			//         nextEl: '.swiper-button-next',
+			//         prevEl: '.swiper-button-prev',
+			//     },
+			//   })
+			// }
+
+
+			// ; (function () {
+			// 	var _global;
+			// 	let duration = 500;//时间参数
+			// 	var plugin = {
+			// 		tipNav: function (tipmain, tipsub) {
+			// 			tipmain.addEventListener('mouseover', function () {
+			// 				tipsub.style.display = 'block'
+			// 			}, false);
+			// 			tipmain.addEventListener('mouseout', function () {
+			// 				tipsub.style.display = 'none'
+			// 			}, false);
+			// 		},
+			// 		replayTop: function (tipmain) {
+			// 			tipmain.addEventListener('click', function () {
+			// 				let topSzie = document.documentElement.scrollTop;
+			// 				let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+			// 				let st = setInterval(function () {
+			// 					topSzie -= s;
+			// 					if (topSzie <= 0) {
+			// 						topSzie = 0; //当l<=0时，设置l=0
+			// 						clearInterval(st);
+			// 					}
+			// 					document.documentElement.scrollTop = topSzie;
+			// 				}, 25)
+			// 			}, false);
+
+			// 		}
+			// 	}
+			// 	//赋值全局
+			// 	_global = (function () { return this || (0, eval)('this'); }());
+			// 	!('plugin' in _global) && (_global.plugin = plugin);
+
+			// })(window)
+
+
+			// var ribaoButton = document.getElementById('ribao');
+			// var ribaoBox = document.getElementById('ribaobox');
+			// var zhoubaoButton = document.getElementById('zhoubao');
+			// var zhoubaoBox = document.getElementById('zhoubaobox');
+			// var zazhiButton = document.getElementById('zazhi');
+			// var zaizhiBox = document.getElementById('zazhibox');
+			// var goTop = document.getElementById('go-top');
+
+			// plugin.tipNav(ribaoButton, ribaoBox);
+			// plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			// plugin.tipNav(zazhiButton, zaizhiBox);
+			// plugin.replayTop(goTop);
+
+
+		</script>
+		<script>
+			updateMetaRmrb(location.href);
+			function updateMetaRmrb(webLastUrl) {
+				// console.log(webLastUrl)
+				var x = webLastUrl.indexOf('content_');
+				var y = webLastUrl.indexOf('.html');
+				
+				if (x >= 0) {
+					var publishdate = webLastUrl.substring(x-10, x);
+					publishdate = publishdate.substring(0, 4) + '-' + publishdate.substring(4, 6) + '-' + publishdate.substring(7, 9);
+					var contentid = 'rmrbdzb_' + webLastUrl.substring(x + 8, y);
+					showMetaRmrb(publishdate, contentid);
+				}
+			}
+			function showMetaRmrb(publishdate, contentid) {
+				var metas = document.getElementsByTagName('meta');
+				for (var i = 0; i < metas.length; i++) {
+					if ('contentid' == metas[i].name) {
+						metas[i].content = contentid;
+					} else if ('publishdate' == metas[i].name) {
+						metas[i].content = publishdate;
+					}
+				}
+			}
+
+
+			; (function () {
+				var _global;
+				let duration = 500;//时间参数
+				var plugin = {
+					tipNav: function (tipmain, tipsub) {
+						tipmain.addEventListener('mouseover', function () {
+							tipsub.style.display = 'block'
+						}, false);
+						tipmain.addEventListener('mouseout', function () {
+							tipsub.style.display = 'none'
+						}, false);
+					},
+					replayTop: function (tipmain) {
+						tipmain.addEventListener('click', function () {
+							let topSzie = document.documentElement.scrollTop;
+							let s = topSzie / 600 * 25;  //路程/时间=s *25每隔25ms秒 动的路程
+							let st = setInterval(function () {
+								topSzie -= s;
+								if (topSzie <= 0) {
+									topSzie = 0; //当l<=0时，设置l=0
+									clearInterval(st);
+								}
+								document.documentElement.scrollTop = topSzie;
+							}, 25)
+						}, false);
+
+					}
+				}
+				//赋值全局
+				_global = (function () { return this || (0, eval)('this'); }());
+				!('plugin' in _global) && (_global.plugin = plugin);
+
+			})(window)
+
+
+			var ribaoButton = document.getElementById('ribao');
+			var ribaoBox = document.getElementById('ribaobox');
+			var zhoubaoButton = document.getElementById('zhoubao');
+			var zhoubaoBox = document.getElementById('zhoubaobox');
+			var zazhiButton = document.getElementById('zazhi');
+			var zaizhiBox = document.getElementById('zazhibox');
+			var goTop = document.getElementById('go-top');
+
+			plugin.tipNav(ribaoButton, ribaoBox);
+			plugin.tipNav(zhoubaoButton, zhoubaoBox);
+			plugin.tipNav(zazhiButton, zaizhiBox);
+			plugin.replayTop(goTop);
+
+
+		</script>
+		<script language=Javascript src="../../../../../../testx/template/amucsite/projectPaper/rmPaper/files/webdig_test.js"></script>
+		<input type="hidden" id="paperID" value="1,921">
+		<input type="hidden" id="siteID" value="1">
+	</body>
+
+
+</html>
