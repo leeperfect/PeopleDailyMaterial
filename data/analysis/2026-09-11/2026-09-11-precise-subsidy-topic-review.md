@@ -58,7 +58,7 @@ platform: 公众号 + 申论题卡
 
 ## 六、产出清单
 
-- 公众号成稿：data/articles/人民日报系列/97-《人民日报》深度分析【精准资助】：不公开谁在受助，怎样把钱发准、把账说清.md
+- 公众号成稿：data/articles/人民日报系列/97-【R】《人民日报》深度分析【精准资助】：不公开谁在受助，怎样把钱发准、把账说清.md
 - 申论题卡：data/analysis/2026-09-11/shenlun-precise-subsidy-card.md
 - 公众号过程稿：data/analysis/2026-09-11/wechat-precise-subsidy.md
 - 三篇来源教研速读：已补入 vault 原文

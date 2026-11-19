@@ -6,7 +6,7 @@ topic: 《人民日报》讲农业社会化服务：不是把地“交出去”�
 priority: S
 status: 备选
 platform: 公众号 + 课堂讲解
-final_article: data/articles/人民日报系列/48-人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md
+final_article: data/articles/人民日报系列/48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md
 process_draft: data/analysis/2026-07-20/wechat-agricultural-socialized-service.md
 xiaohongshu_script: data/xiaohongshu/48-xiaohongshu-agricultural-socialized-service-card-script.md
 ---

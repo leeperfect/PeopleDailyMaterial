@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-08-07
 topic: 中试平台与科技成果产业化验证
-article: data/articles/人民日报系列/68-人民日报讲中试平台：不是把实验室放大，而是让技术经得起量产和市场检验.md
+article: data/articles/人民日报系列/68-【R】人民日报讲中试平台：不是把实验室放大，而是让技术经得起量产和市场检验.md
 source_review: data/analysis/2026-08-07/2026-08-07-pilot-testing-platform-industrialization-validation-topic-review.md
 process_draft: data/analysis/2026-08-07/wechat-pilot-testing-platform-industrialization-validation.md
 ppt_outline: data/analysis/2026-08-07/ppt-pilot-testing-platform-industrialization-validation-outline.md

@@ -3,7 +3,7 @@ type: wechat_process_draft
 date: 2026-08-12
 topic: 公共文化服务：文化融入生活与群众参与共创
 source_review: data/analysis/2026-08-12/2026-08-12-public-culture-life-participatory-service-topic-review.md
-final_article: data/articles/人民日报系列/72-人民日报讲公共文化服务：不是把节目“送下去”，而是让文化融入生活、让群众成为主角.md
+final_article: data/articles/人民日报系列/72-【R】人民日报讲公共文化服务：不是把节目“送下去”，而是让文化融入生活、让群众成为主角.md
 xiaohongshu_script: data/xiaohongshu/72-xiaohongshu-public-culture-life-participatory-service-card-script.md
 ---
 

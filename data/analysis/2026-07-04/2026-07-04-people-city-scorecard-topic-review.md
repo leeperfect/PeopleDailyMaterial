@@ -5,7 +5,7 @@ topic: 《人民日报》讲人民城市：评价一座城，不能只看GDP和�
 priority: S
 status: 成稿
 platform: 公众号 + 小红书
-final_article: data/articles/人民日报系列/31-人民日报讲人民城市：评价一座城，不能只看GDP和地标.md
+final_article: data/articles/人民日报系列/31-r人民日报讲人民城市：评价一座城，不能只看GDP和地标.md
 process_draft: data/analysis/2026-07-04/wechat-people-city-scorecard.md
 xiaohongshu_script: data/analysis/2026-07-04/xiaohongshu-people-city-scorecard-script.md
 source_package: data/analysis/2026-06-22_to_2026-06-28/2026-06-22_to_2026-06-28-material-assets.json
@@ -65,7 +65,7 @@ source_package: data/analysis/2026-06-22_to_2026-06-28/2026-06-22_to_2026-06-28-
 
 ## 产出说明
 
-- 公众号成稿：`data/articles/人民日报系列/31-人民日报讲人民城市：评价一座城，不能只看GDP和地标.md`
+- 公众号成稿：`data/articles/人民日报系列/31-r人民日报讲人民城市：评价一座城，不能只看GDP和地标.md`
 - 过程稿：`data/analysis/2026-07-04/wechat-people-city-scorecard.md`
 - 小红书脚本：`data/analysis/2026-07-04/xiaohongshu-people-city-scorecard-script.md`
 

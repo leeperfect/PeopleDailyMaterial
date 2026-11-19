@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-19",
+  "status": "local_complete_online_not_synced",
+  "new_lessons": [{"key": "D20261119A", "title": "矿坑变公园，修复成效该看什么", "source_ids": ["people_daily_20261119_30192024"]}],
+  "revised_lessons": 0,
+  "counts": {"lesson_packages": 102, "handouts": 306, "fresh_articles": 4012, "fresh_paper_count": 3223, "fresh_app_count": 789, "fresh_with_lessons": 92},
+  "validation": ["编译课程、生成站点和导出讲义全部成功", "原有101套课程内容指纹未变", "10项资料检查通过；学生答案及教师个人资料隔离检查通过", "新增课稿公开用语检查：必须改写0处、语境复核0处"],
+  "publication": {"status": "not_synced", "error": "token_missing", "exit_code": 3, "online_verified": false, "note": "飞书用户授权缺失。授权后须覆盖原应用，并回读两库截止日期、课程和来源数量；保留上次成功发布记录。"},
+  "app_id": "app_17bwxbh4hnq",
+  "paper_issue_report": "data/exports/people_daily_issue_20261119.json",
+  "paper_issue": {"status": "complete", "sections": 20, "directory_links": 101, "stored": 85, "excluded": 16},
+  "new_paper_articles": 85,
+  "app_collection": "read_only_local",
+  "app_articles_dated_today": 0,
+  "coverage": {"paper_until": "2026-11-19", "paper_count": 20724, "app_until": "2026-11-18", "app_count": 2573},
+  "historical_gap_dates": 0,
+  "historical_gap_check": "按核心库逐日核验，2025-01-01 至 2026-11-19 每日均有入库资料，与已登记缺口为空一致。"
+}

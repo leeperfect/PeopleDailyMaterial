@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-07-26
 topic: 人工智能全球治理
-article: data/articles/人民日报系列/54-人民日报讲人工智能全球治理：不能让AI成为“富国和富人的游戏”.md
+article: data/articles/往期文章/人民日报系列/54-【R】人民日报讲人工智能全球治理：不能让AI成为“富国和富人的游戏”.md
 source_review: data/analysis/2026-07-26/2026-07-26-ai-global-governance-public-good-topic-review.md
 process_draft: data/analysis/2026-07-26/wechat-ai-global-governance-public-good.md
 ppt_outline: data/analysis/2026-07-26/ppt-ai-global-governance-public-good-outline.md

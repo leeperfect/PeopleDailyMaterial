@@ -2,7 +2,7 @@
 type: shenlun_card
 date: 2026-09-11
 topic: 技术经理人队伍建设与科技成果转化
-article: data/articles/人民日报系列/96-《人民日报》深度分析【技术经理人】：好技术为什么还需要一个懂市场的合伙人.md
+article: data/articles/人民日报系列/96-【R】《人民日报》深度分析【技术经理人】：好技术为什么还需要一个懂市场的合伙人.md
 source_review: data/analysis/2026-09-11/2026-09-11-technology-manager-topic-review.md
 usage: 申论题卡，可用于课堂训练与讲义
 ---

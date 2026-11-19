@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-09-11
 topic: 旅居经济：风景能把人吸引来，什么才能让人住下来
-article: data/articles/人民日报系列/95-《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来.md
+article: data/articles/人民日报系列/95-【R】《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来.md
 image_rule: AI直接生成，无人物
 ---
 

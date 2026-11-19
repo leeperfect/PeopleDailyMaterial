@@ -3,7 +3,7 @@ type: wechat_process_draft
 date: 2026-07-26
 topic: 全民健身进入生活圈
 source_review: data/analysis/2026-07-26/2026-07-26-fitness-life-circle-topic-review.md
-final_article: data/articles/人民日报系列/56-人民日报讲全民健身：不是多建几个场馆，而是让赛事、设施和服务进入生活圈.md
+final_article: data/articles/往期文章/人民日报系列/56-【R】人民日报讲全民健身：不是多建几个场馆，而是让赛事、设施和服务进入生活圈.md
 xiaohongshu_script: data/xiaohongshu/56-xiaohongshu-fitness-life-circle-card-script.md
 ---
 

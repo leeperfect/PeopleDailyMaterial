@@ -5,7 +5,7 @@ topic: 新时代社会工作的党建统领、专业服务与协同治理
 priority: S
 status: 成稿
 platform: 公众号 + 课堂讲解
-final_article: data/articles/人民日报系列/61-人民日报讲新时代社会工作：不是社区“兜底包办”，而是把党的领导、专业服务和多元参与连起来.md
+final_article: data/articles/人民日报系列/61-【R】人民日报讲新时代社会工作：不是社区“兜底包办”，而是把党的领导、专业服务和多元参与连起来.md
 process_draft: data/analysis/2026-07-26/wechat-new-era-social-work-collaborative-governance.md
 xiaohongshu_script: data/xiaohongshu/61-xiaohongshu-new-era-social-work-collaborative-governance-card-script.md
 classroom_outline: data/analysis/2026-07-26/classroom-new-era-social-work-collaborative-governance.md

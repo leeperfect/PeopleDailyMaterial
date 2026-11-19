@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-08-12
 topic: 基层责任边界与跨部门协同
-article: data/articles/人民日报系列/70-人民日报讲基层责任边界：属地不是无限责任，牵头也不是全包全责.md
+article: data/articles/人民日报系列/70-【R】人民日报讲基层责任边界：属地不是无限责任，牵头也不是全包全责.md
 source_review: data/analysis/2026-08-12/2026-08-12-grassroots-responsibility-boundary-coordination-topic-review.md
 process_draft: data/analysis/2026-08-12/wechat-grassroots-responsibility-boundary-coordination.md
 interview_card: data/analysis/2026-08-12/interview-card-grassroots-responsibility-boundary-coordination.md

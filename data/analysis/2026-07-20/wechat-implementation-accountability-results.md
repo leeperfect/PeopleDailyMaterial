@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-07-20
 topic: 《人民日报》讲抓落实：不能挑肥拣瘦，更不能拿漂亮数据当政绩
-article: data/articles/人民日报系列/50-人民日报讲抓落实：不能挑肥拣瘦，更不能拿漂亮数据当政绩.md
+article: data/articles/人民日报系列/50-【R】人民日报讲抓落实：不能挑肥拣瘦，更不能拿漂亮数据当政绩.md
 source_review: data/analysis/2026-07-20/2026-07-20-implementation-accountability-results-topic-review.md
 xiaohongshu_script: data/xiaohongshu/50-xiaohongshu-implementation-accountability-results-card-script.md
 classroom_outline: data/analysis/2026-07-20/classroom-implementation-accountability-results-outline.md

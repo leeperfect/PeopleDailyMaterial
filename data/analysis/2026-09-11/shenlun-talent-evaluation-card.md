@@ -2,7 +2,7 @@
 type: shenlun_card
 date: 2026-09-11
 topic: 人才评价改革与实践成果认定
-article: data/articles/人民日报系列/98-《人民日报》深度分析【人才评价】：不只凭论文，怎样认定一个人真有本事.md
+article: data/articles/人民日报系列/98-【R】《人民日报》深度分析【人才评价】：不只凭论文，怎样认定一个人真有本事.md
 source_review: data/analysis/2026-09-11/2026-09-11-talent-evaluation-topic-review.md
 usage: 申论题卡，可用于课堂训练与讲义
 ---

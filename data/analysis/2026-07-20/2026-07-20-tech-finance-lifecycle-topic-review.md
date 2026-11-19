@@ -6,7 +6,7 @@ topic: 《人民日报》讲科技金融：不是多给一笔贷款，而是陪�
 priority: S
 status: 备选
 platform: 公众号 + PPT
-final_article: data/articles/人民日报系列/49-人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md
+final_article: data/articles/人民日报系列/49-【R】人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md
 process_draft: data/analysis/2026-07-20/wechat-tech-finance-lifecycle.md
 xiaohongshu_script: data/xiaohongshu/49-xiaohongshu-tech-finance-lifecycle-card-script.md
 ppt_outline: data/analysis/2026-07-20/ppt-tech-finance-lifecycle-outline.md

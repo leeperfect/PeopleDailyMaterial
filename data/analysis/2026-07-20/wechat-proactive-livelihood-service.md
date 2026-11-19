@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-07-20
 topic: 《人民日报》讲民生服务：不能总等群众找政策，要让政策主动找人
-article: data/articles/人民日报系列/51-人民日报讲民生服务：不能总等群众找政策，要让政策主动找人.md
+article: data/articles/人民日报系列/51-【R】人民日报讲民生服务：不能总等群众找政策，要让政策主动找人.md
 source_review: data/analysis/2026-07-20/2026-07-20-proactive-livelihood-service-topic-review.md
 xiaohongshu_script: data/xiaohongshu/51-xiaohongshu-proactive-livelihood-service-card-script.md
 interview_card: data/analysis/2026-07-20/interview-proactive-livelihood-service-card.md

@@ -5,7 +5,7 @@ topic: 物业治理从服务覆盖走向协商共治
 priority: A
 status: 成稿
 platform: 公众号 + 面试题卡
-final_article: data/articles/人民日报系列/57-人民日报讲物业治理：不是“有人扫地”就行，而要从收费公开走向协商共治.md
+final_article: data/articles/往期文章/人民日报系列/57-【R】人民日报讲物业治理：不是“有人扫地”就行，而要从收费公开走向协商共治.md
 process_draft: data/analysis/2026-07-26/wechat-property-governance-transparency-co-governance.md
 xiaohongshu_script: data/xiaohongshu/57-xiaohongshu-property-governance-transparency-co-governance-card-script.md
 ---

@@ -3,7 +3,7 @@ type: wechat_process_draft
 date: 2026-07-26
 topic: 网络消费治理的规则更新与责任闭环
 source_review: data/analysis/2026-07-26/2026-07-26-network-consumption-rules-platform-liability-topic-review.md
-final_article: data/articles/人民日报系列/58-人民日报讲网络消费治理：商家写了“概不退款”，不等于可以免责.md
+final_article: data/articles/往期文章/人民日报系列/58-【R】人民日报讲网络消费治理：商家写了"概不退款"，不等于可以免责.md
 xiaohongshu_script: data/xiaohongshu/58-xiaohongshu-network-consumption-rules-platform-liability-card-script.md
 ---
 

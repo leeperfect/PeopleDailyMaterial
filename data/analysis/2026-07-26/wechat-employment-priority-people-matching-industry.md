@@ -3,7 +3,7 @@ type: wechat_process_draft
 date: 2026-07-26
 topic: 就业优先战略升级
 source_review: data/analysis/2026-07-26/2026-07-26-employment-priority-people-matching-industry-topic-review.md
-final_article: data/articles/人民日报系列/55-人民日报讲就业优先战略升级：不是只保岗位，而是投资于人、匹配到岗、产业带岗.md
+final_article: data/articles/往期文章/人民日报系列/55-【R】人民日报讲就业优先战略升级：不是只保岗位，而是投资于人、匹配到岗、产业带岗.md
 xiaohongshu_script: data/xiaohongshu/55-xiaohongshu-employment-priority-people-matching-industry-card-script.md
 interview_card: data/analysis/2026-07-26/interview-employment-priority-people-matching-industry.md
 ---

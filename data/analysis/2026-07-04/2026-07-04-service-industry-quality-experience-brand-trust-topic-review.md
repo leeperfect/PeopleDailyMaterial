@@ -5,7 +5,7 @@ topic: 服务业高质量发展：从“卖产品”到“卖体验、卖品牌�
 priority: S
 status: 已完成
 platform: 公众号 + 小红书
-final_article: data/articles/人民日报系列/33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md
+final_article: data/articles/人民日报系列/33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md
 ---
 
 # 服务业高质量发展选题复盘
@@ -75,7 +75,7 @@ final_article: data/articles/人民日报系列/33-人民日报讲服务业高�
 
 ## 七、出品清单
 
-- 公众号成稿：`data/articles/人民日报系列/33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md`
+- 公众号成稿：`data/articles/人民日报系列/33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md`
 - 过程稿：`data/analysis/2026-07-04/wechat-service-industry-quality-experience-brand-trust.md`
 - 小红书脚本：`data/analysis/2026-07-04/xiaohongshu-service-industry-quality-experience-brand-trust-script.md`
 - 来源标注：9篇原文均已补充 `Codex 教研速读｜2026-07-04`

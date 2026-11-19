@@ -2,7 +2,7 @@
 type: interview_question_card
 date: 2026-07-04
 topic: 营商环境全生命周期：企业不仅要进得来，也要活得好、退得出
-article: data/articles/人民日报系列/32-人民日报讲营商环境新写法：企业不仅要进得来，也要活得好、退得出.md
+article: data/articles/人民日报系列/32-r人民日报讲营商环境新写法：企业不仅要进得来，也要活得好、退得出.md
 source_review: data/analysis/2026-07-04/2026-07-04-business-environment-lifecycle-topic-review.md
 platform: 面试题卡
 ---

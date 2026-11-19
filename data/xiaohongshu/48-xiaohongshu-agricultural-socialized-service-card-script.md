@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-07-20
 topic: 《人民日报》讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业
-article: data/articles/人民日报系列/48-人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md
+article: data/articles/人民日报系列/48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md
 source_review: data/analysis/2026-07-20/2026-07-20-agricultural-socialized-service-topic-review.md
 process_draft: data/analysis/2026-07-20/wechat-agricultural-socialized-service.md
 image_rule: AI直接生成，无人物

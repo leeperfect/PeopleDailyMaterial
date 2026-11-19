@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-07-21
 topic: 《人民日报》讲防灾救灾：预警不能只“发出去”，关键要有人接、马上动
-article: data/articles/人民日报系列/53-人民日报讲防灾救灾：预警不能只“发出去”，关键要有人接、马上动.md
+article: data/articles/人民日报系列/53-【R】人民日报讲防灾救灾：预警不能只“发出去”，关键要有人接、马上动.md
 source_review: data/analysis/2026-07-20/2026-07-20-disaster-warning-action-chain-topic-review.md
 process_draft: data/analysis/2026-07-20/wechat-disaster-warning-action-chain.md
 image_rule: AI直接生成，无人物

@@ -6,7 +6,7 @@ topic: 《人民日报》讲民生服务：不能总等群众找政策，要让�
 priority: A
 status: 备选
 platform: 公众号 + 面试题卡
-final_article: data/articles/人民日报系列/51-人民日报讲民生服务：不能总等群众找政策，要让政策主动找人.md
+final_article: data/articles/人民日报系列/51-【R】人民日报讲民生服务：不能总等群众找政策，要让政策主动找人.md
 process_draft: data/analysis/2026-07-20/wechat-proactive-livelihood-service.md
 xiaohongshu_script: data/xiaohongshu/51-xiaohongshu-proactive-livelihood-service-card-script.md
 interview_card: data/analysis/2026-07-20/interview-proactive-livelihood-service-card.md

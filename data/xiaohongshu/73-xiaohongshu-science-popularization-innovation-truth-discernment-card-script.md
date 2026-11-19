@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-08-12
 topic: 科学普及：创新基础、公众辨伪与协同治理
-article: data/articles/人民日报系列/73-人民日报讲科学普及：不是把知识讲简单，而是为创新筑基础、为公众辨真伪.md
+article: data/articles/人民日报系列/73-【R】人民日报讲科学普及：不是把知识讲简单，而是为创新筑基础、为公众辨真伪.md
 source_review: data/analysis/2026-08-12/2026-08-12-science-popularization-innovation-truth-discernment-topic-review.md
 process_draft: data/analysis/2026-08-12/wechat-science-popularization-innovation-truth-discernment.md
 classroom_outline: data/analysis/2026-08-12/classroom-science-popularization-innovation-truth-discernment-outline.md

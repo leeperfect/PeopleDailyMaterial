@@ -6,7 +6,7 @@ topic: “土特产”的标准化、品牌化与全链条增值
 priority: S
 status: 已完成
 platform: 公众号 + 申论题卡
-final_article: data/articles/人民日报系列/74-人民日报讲“土特产”：不是把特产卖出去，而是把一方资源做成标准、品牌和产业链.md
+final_article: data/articles/人民日报系列/74-【R】人民日报讲“土特产”：不是把特产卖出去，而是把一方资源做成标准、品牌和产业链.md
 process_draft: data/analysis/2026-08-17/wechat-local-specialty-standard-brand-value-chain.md
 xiaohongshu_script: data/xiaohongshu/74-xiaohongshu-local-specialty-standard-brand-value-chain-card-script.md
 shenlun_card: data/analysis/2026-08-17/shenlun-card-local-specialty-standard-brand-value-chain.md

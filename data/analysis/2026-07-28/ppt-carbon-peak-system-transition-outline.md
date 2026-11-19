@@ -2,7 +2,7 @@
 type: ppt_outline
 date: 2026-07-28
 topic: 碳达峰从单项减排到系统转型
-article: data/articles/人民日报系列/65-人民日报讲碳达峰：不是简单限产减排，而是能源、产业、生活方式一起转.md
+article: data/articles/人民日报系列/65-【R】人民日报讲碳达峰：不是简单限产减排，而是能源、产业、生活方式一起转.md
 source_review: data/analysis/2026-07-28/2026-07-28-carbon-peak-system-transition-topic-review.md
 process_draft: data/analysis/2026-07-28/wechat-carbon-peak-system-transition.md
 xiaohongshu_script: data/xiaohongshu/65-xiaohongshu-carbon-peak-system-transition-card-script.md

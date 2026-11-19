@@ -2,7 +2,7 @@
 type: classroom_outline
 date: 2026-07-28
 topic: 新职业从岗位出现到规范成熟的制度链
-article: data/articles/人民日报系列/64-人民日报讲新职业：有了“新名字”还不够，标准、培训、评价和保障都要跟上.md
+article: data/articles/人民日报系列/64-【R】人民日报讲新职业：有了“新名字”还不够，标准、培训、评价和保障都要跟上.md
 source_review: data/analysis/2026-07-28/2026-07-28-new-occupation-growth-standards-training-rights-topic-review.md
 process_draft: data/analysis/2026-07-28/wechat-new-occupation-growth-standards-training-rights.md
 xiaohongshu_script: data/xiaohongshu/64-xiaohongshu-new-occupation-growth-standards-training-rights-card-script.md

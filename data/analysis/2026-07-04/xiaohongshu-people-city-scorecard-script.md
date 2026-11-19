@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-07-04
 topic: 《人民日报》讲人民城市：评价一座城，不能只看GDP和地标
-article: data/articles/人民日报系列/31-人民日报讲人民城市：评价一座城，不能只看GDP和地标.md
+article: data/articles/人民日报系列/31-r人民日报讲人民城市：评价一座城，不能只看GDP和地标.md
 card_count: 12
 image_rule: AI直接生成，无人物
 ---

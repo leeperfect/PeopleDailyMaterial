@@ -5,7 +5,7 @@ topic: 旅游强国的品质供给、承载治理与社区共享
 priority: A
 status: 成稿
 platform: 公众号 + 小红书
-final_article: data/articles/人民日报系列/59-人民日报讲旅游强国：不是游客越多越好，而是供给、服务、保护和承载力一起提升.md
+final_article: data/articles/往期文章/人民日报系列/59-【R】人民日报讲旅游强国：不是游客越多越好，而是供给、服务、保护和承载力一起提升.md
 process_draft: data/analysis/2026-07-26/wechat-tourism-quality-capacity-community.md
 xiaohongshu_script: data/xiaohongshu/59-xiaohongshu-tourism-quality-capacity-community-card-script.md
 ---

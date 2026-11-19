@@ -2,7 +2,7 @@
 type: interview_question_card
 date: 2026-07-26
 topic: 无障碍环境的全场景可及与全链条治理
-article: data/articles/人民日报系列/60-人民日报讲无障碍环境：不是修一条坡道，而是让出行、阅读和服务都可及.md
+article: data/articles/往期文章/人民日报系列/60-【R】人民日报讲无障碍环境：不是修一条坡道，而是让出行、阅读和服务都可及.md
 source_review: data/analysis/2026-07-26/2026-07-26-accessible-environment-full-chain-topic-review.md
 process_draft: data/analysis/2026-07-26/wechat-accessible-environment-full-chain.md
 xiaohongshu_script: data/xiaohongshu/60-xiaohongshu-accessible-environment-full-chain-card-script.md

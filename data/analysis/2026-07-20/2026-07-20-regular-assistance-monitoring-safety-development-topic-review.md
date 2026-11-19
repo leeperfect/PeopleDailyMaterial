@@ -5,7 +5,7 @@ topic: 《人民日报》讲透“常态化帮扶”：不是继续“输血”�
 priority: A
 status: 备选
 platform: 公众号 + 课堂讲解
-final_article: data/articles/人民日报系列/47-人民日报讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力.md
+final_article: data/articles/人民日报系列/47-【R】人民日报讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力.md
 process_draft: data/analysis/2026-07-20/wechat-regular-assistance-monitoring-safety-development.md
 xiaohongshu_script: data/xiaohongshu/47-xiaohongshu-regular-assistance-monitoring-safety-development-card-script.md
 ---

@@ -3,7 +3,7 @@ type: wechat_process_draft
 date: 2026-07-28
 topic: 普惠托育的可及、可负担、优质与系统支持
 source_review: data/analysis/2026-07-28/2026-07-28-inclusive-childcare-access-affordability-quality-topic-review.md
-final_article: data/articles/人民日报系列/63-人民日报讲普惠托育：不是多建几个托班，而要让家庭“托得到、托得起、托得好”.md
+final_article: data/articles/人民日报系列/63-【R】人民日报讲普惠托育：不是多建几个托班，而要让家庭“托得到、托得起、托得好”.md
 xiaohongshu_script: data/xiaohongshu/63-xiaohongshu-inclusive-childcare-access-affordability-quality-card-script.md
 interview_card: data/analysis/2026-07-28/interview-inclusive-childcare-access-affordability-quality.md
 ---

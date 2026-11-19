@@ -5,7 +5,7 @@ topic: 基层责任边界与跨部门协同
 priority: S
 status: 成稿
 platform: 公众号 + 面试题卡
-final_article: data/articles/人民日报系列/70-人民日报讲基层责任边界：属地不是无限责任，牵头也不是全包全责.md
+final_article: data/articles/人民日报系列/70-【R】人民日报讲基层责任边界：属地不是无限责任，牵头也不是全包全责.md
 process_draft: data/analysis/2026-08-12/wechat-grassroots-responsibility-boundary-coordination.md
 xiaohongshu_script: data/xiaohongshu/70-xiaohongshu-grassroots-responsibility-boundary-coordination-card-script.md
 interview_card: data/analysis/2026-08-12/interview-card-grassroots-responsibility-boundary-coordination.md

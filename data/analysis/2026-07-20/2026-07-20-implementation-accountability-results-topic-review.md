@@ -6,7 +6,7 @@ topic: 《人民日报》讲抓落实：不能挑肥拣瘦，更不能拿漂亮�
 priority: A
 status: 备选
 platform: 公众号 + 课堂讲解
-final_article: data/articles/人民日报系列/50-人民日报讲抓落实：不能挑肥拣瘦，更不能拿漂亮数据当政绩.md
+final_article: data/articles/人民日报系列/50-【R】人民日报讲抓落实：不能挑肥拣瘦，更不能拿漂亮数据当政绩.md
 process_draft: data/analysis/2026-07-20/wechat-implementation-accountability-results.md
 xiaohongshu_script: data/xiaohongshu/50-xiaohongshu-implementation-accountability-results-card-script.md
 classroom_outline: data/analysis/2026-07-20/classroom-implementation-accountability-results-outline.md

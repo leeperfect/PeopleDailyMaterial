@@ -6,7 +6,7 @@ topic: 《人民日报》讲防灾救灾：预警不能只“发出去”，关�
 priority: S
 status: 备选
 platform: 公众号 + 面试题卡
-final_article: data/articles/人民日报系列/53-人民日报讲防灾救灾：预警不能只“发出去”，关键要有人接、马上动.md
+final_article: data/articles/人民日报系列/53-【R】人民日报讲防灾救灾：预警不能只“发出去”，关键要有人接、马上动.md
 process_draft: data/analysis/2026-07-20/wechat-disaster-warning-action-chain.md
 xiaohongshu_script: data/xiaohongshu/53-xiaohongshu-disaster-warning-action-chain-card-script.md
 ---

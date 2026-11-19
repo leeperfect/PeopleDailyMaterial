@@ -1,6 +1,6 @@
 # 热点授课资料目录
 
-共 101 套；原有 49 个热点、新增 52 个主题。资料截至 2026-10-28。
+共 102 套；原有 49 个热点、新增 53 个主题。资料截至 2026-11-19。
 
 每套包含教师详稿、学生练习单和课件提纲。学生版不含答案；教师稿含参考答案与课堂追问。均为教研稿，授课前请结合班型试讲。
 
@@ -189,6 +189,12 @@
 | 善意救助与组织保障 | [打开](peopleapp_hotspot_lesson_3f3f61a7d2-teacher.md) | [打开](peopleapp_hotspot_lesson_3f3f61a7d2-student.md) | [打开](peopleapp_hotspot_lesson_3f3f61a7d2-slides.md) |
 | 公共场所冲突与幼童保护 | [打开](peopleapp_hotspot_lesson_08f28f0282-teacher.md) | [打开](peopleapp_hotspot_lesson_08f28f0282-student.md) | [打开](peopleapp_hotspot_lesson_08f28f0282-slides.md) |
 | 医疗投诉与公正处理机制 | [打开](peopleapp_hotspot_lesson_60dc50e297-teacher.md) | [打开](peopleapp_hotspot_lesson_60dc50e297-student.md) | [打开](peopleapp_hotspot_lesson_60dc50e297-slides.md) |
+
+## 生态环境与国土空间治理
+
+| 课程 | 教师稿 | 学生练习 | 课件提纲 |
+| --- | --- | --- | --- |
+| 矿坑变公园，修复成效该看什么 | [打开](peopleapp_hotspot_lesson_f36f0f56f7-teacher.md) | [打开](peopleapp_hotspot_lesson_f36f0f56f7-student.md) | [打开](peopleapp_hotspot_lesson_f36f0f56f7-slides.md) |
 
 ## 生态环境与城市治理
 

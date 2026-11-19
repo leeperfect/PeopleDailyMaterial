@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-07-28
 topic: 农业现代化从稳产保供到全链条增值
-article: data/articles/人民日报系列/66-人民日报讲农业现代化：不能只保产量，还要把农业做成大产业.md
+article: data/articles/人民日报系列/66-【R】人民日报讲农业现代化：不能只保产量，还要把农业做成大产业.md
 source_review: data/analysis/2026-07-28/2026-07-28-agricultural-modernization-big-industry-topic-review.md
 process_draft: data/analysis/2026-07-28/wechat-agricultural-modernization-big-industry.md
 ppt_outline: data/analysis/2026-07-28/ppt-agricultural-modernization-big-industry-outline.md

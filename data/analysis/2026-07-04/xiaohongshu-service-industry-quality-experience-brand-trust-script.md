@@ -2,7 +2,7 @@
 type: xiaohongshu_script
 date: 2026-07-04
 topic: 服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”
-source_article: data/articles/人民日报系列/33-人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md
+source_article: data/articles/人民日报系列/33-【R】人民日报讲服务业高质量发展：从“卖产品”到“卖体验、卖品牌、卖信任”.md
 card_count: 14
 image_policy: AI直接生成，不使用人物
 status: 待制图

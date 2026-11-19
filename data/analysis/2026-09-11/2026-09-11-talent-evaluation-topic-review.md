@@ -61,7 +61,7 @@ platform: 公众号系列 + 申论题卡
 
 ## 六、产出清单
 
-- 公众号成稿：data/articles/人民日报系列/98-《人民日报》深度分析【人才评价】：不只凭论文，怎样认定一个人真有本事.md
+- 公众号成稿：data/articles/人民日报系列/98-【R】《人民日报》深度分析【人才评价】：不只凭论文，怎样认定一个人真有本事.md
 - 申论题卡：data/analysis/2026-09-11/shenlun-talent-evaluation-card.md
 - 公众号过程稿：data/analysis/2026-09-11/wechat-talent-evaluation.md
 - 四篇来源教研速读：已补入 vault 原文

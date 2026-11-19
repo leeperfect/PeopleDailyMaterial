@@ -3,7 +3,7 @@ type: wechat_process_draft
 date: 2026-08-12
 topic: 制造业新模式：需求牵引、柔性生产与共享制造
 source_review: data/analysis/2026-08-12/2026-08-12-manufacturing-demand-flexible-shared-production-topic-review.md
-final_article: data/articles/人民日报系列/71-人民日报讲制造业新模式：不是只追求“大批量”，而是让生产跟着需求变、资源围着企业转.md
+final_article: data/articles/人民日报系列/71-【R】人民日报讲制造业新模式：不是只追求“大批量”，而是让生产跟着需求变、资源围着企业转.md
 xiaohongshu_script: data/xiaohongshu/71-xiaohongshu-manufacturing-demand-flexible-shared-production-card-script.md
 ppt_outline: data/analysis/2026-08-12/ppt-manufacturing-demand-flexible-shared-production-outline.md
 ---

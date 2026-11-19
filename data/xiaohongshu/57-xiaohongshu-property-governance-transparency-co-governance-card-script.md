@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-07-26
 topic: 物业治理从服务覆盖走向协商共治
-article: data/articles/人民日报系列/57-人民日报讲物业治理：不是“有人扫地”就行，而要从收费公开走向协商共治.md
+article: data/articles/往期文章/人民日报系列/57-【R】人民日报讲物业治理：不是“有人扫地”就行，而要从收费公开走向协商共治.md
 source_review: data/analysis/2026-07-26/2026-07-26-property-governance-transparency-co-governance-topic-review.md
 process_draft: data/analysis/2026-07-26/wechat-property-governance-transparency-co-governance.md
 image_rule: AI直接生成，无人物

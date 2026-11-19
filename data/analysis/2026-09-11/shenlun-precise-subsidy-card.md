@@ -2,7 +2,7 @@
 type: shenlun_card
 date: 2026-09-11
 topic: 精准资助与尊严保护
-article: data/articles/人民日报系列/97-《人民日报》深度分析【精准资助】：不公开谁在受助，怎样把钱发准、把账说清.md
+article: data/articles/人民日报系列/97-【R】《人民日报》深度分析【精准资助】：不公开谁在受助，怎样把钱发准、把账说清.md
 source_review: data/analysis/2026-09-11/2026-09-11-precise-subsidy-topic-review.md
 usage: 申论题卡，可用于课堂训练与讲义
 ---

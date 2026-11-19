@@ -5,7 +5,7 @@ slug: living-travel-economy
 topic: "旅居经济：风景能把人吸引来，什么才能让人住下来"
 priority: S级
 platform: 公众号系列 + 小红书
-article: data/articles/人民日报系列/95-《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来.md
+article: data/articles/人民日报系列/95-【R】《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来.md
 ---
 
 # 选题复盘｜《人民日报》深度分析【旅居经济】
@@ -80,7 +80,7 @@ article: data/articles/人民日报系列/95-《人民日报》深度分析【�
 
 ## 九、产出清单
 
-- 公众号成稿：`data/articles/人民日报系列/95-《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来.md`
+- 公众号成稿：`data/articles/人民日报系列/95-【R】《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来.md`
 - 小红书卡片脚本：`data/xiaohongshu/95-xiaohongshu-living-travel-economy-card-script.md`
 - 公众号过程稿：`data/analysis/2026-09-11/wechat-living-travel-economy.md`
 - 索引更新：`data/articles/文章索引.md` 追加 95 条目，下一篇编号更新为 96。

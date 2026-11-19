@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-07-20
 topic: 《人民日报》讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期
-article: data/articles/人民日报系列/49-人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md
+article: data/articles/人民日报系列/49-【R】人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md
 source_review: data/analysis/2026-07-20/2026-07-20-tech-finance-lifecycle-topic-review.md
 xiaohongshu_script: data/xiaohongshu/49-xiaohongshu-tech-finance-lifecycle-card-script.md
 ppt_outline: data/analysis/2026-07-20/ppt-tech-finance-lifecycle-outline.md

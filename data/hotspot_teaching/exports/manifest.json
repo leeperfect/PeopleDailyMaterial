@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T11:10:25",
+  "generated_at": "2026-11-19T11:05:27",
   "schema_version": 1,
   "source_databases": {
     "hotspot_topics": "data/peopleapp_opinion/core/hotspot_topics.sqlite",
@@ -8,17 +8,17 @@
   },
   "counts": {
     "topics": 49,
-    "sources": 361,
-    "links": 365,
+    "sources": 373,
+    "links": 377,
     "cards": 49,
-    "daily_editions": 22,
-    "weekly_editions": 13,
-    "lesson_packages": 101,
-    "fresh_articles": 978,
-    "supplemental_topics": 52,
-    "site_topics": 101
+    "daily_editions": 24,
+    "weekly_editions": 15,
+    "lesson_packages": 102,
+    "fresh_articles": 4012,
+    "supplemental_topics": 53,
+    "site_topics": 102
   },
-  "sha256": "48e245c24cd3da6254c428909ae80bd91f25d3da8d77384bf845c0d67e7c25f8",
+  "sha256": "ba722db6b19ff7ab4ebe6f9b42e232cbdc0620c3a500996288233c9895776eff",
   "files": [
     "daily_editions.jsonl",
     "fresh_articles.jsonl",

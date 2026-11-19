@@ -5,7 +5,7 @@ topic: 人工智能全球治理
 priority: S
 status: 已成稿
 platform: 公众号 + PPT
-final_article: data/articles/人民日报系列/54-人民日报讲人工智能全球治理：不能让AI成为“富国和富人的游戏”.md
+final_article: data/articles/往期文章/人民日报系列/54-【R】人民日报讲人工智能全球治理：不能让AI成为“富国和富人的游戏”.md
 process_draft: data/analysis/2026-07-26/wechat-ai-global-governance-public-good.md
 xiaohongshu_script: data/xiaohongshu/54-xiaohongshu-ai-global-governance-public-good-card-script.md
 ppt_outline: data/analysis/2026-07-26/ppt-ai-global-governance-public-good-outline.md

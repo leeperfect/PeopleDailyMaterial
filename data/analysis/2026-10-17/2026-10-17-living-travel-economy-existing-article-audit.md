@@ -5,7 +5,7 @@ article_number: 95
 slug: living-travel-economy
 topic: 旅居经济
 status: published_confirmed_by_user
-final_article: data/articles/人民日报系列/95-《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来.md
+final_article: data/articles/人民日报系列/95-【R】《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来.md
 humanizer_article: data/articles/人民日报系列/95-【R】《人民日报》深度分析【旅居经济】：风景能把人吸引来，什么才能让人住下来.md
 source_review: data/analysis/2026-09-11/2026-09-11-living-travel-economy-topic-review.md
 process_draft: data/analysis/2026-09-11/wechat-living-travel-economy.md

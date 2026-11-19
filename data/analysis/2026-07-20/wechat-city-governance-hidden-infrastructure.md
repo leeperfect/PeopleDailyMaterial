@@ -2,7 +2,7 @@
 type: wechat_process_draft
 date: 2026-07-20
 topic: 城市治理别只看“面子”：地下管网、适儿化空间和安全监管才是里子
-article: data/articles/人民日报系列/52-人民日报讲城市治理：别只看“面子”，地下管网、适儿化空间和安全监管才是里子.md
+article: data/articles/人民日报系列/52-【R】人民日报讲城市治理：别只看“面子”，地下管网、适儿化空间和安全监管才是里子.md
 source_review: data/analysis/2026-07-20/2026-07-20-city-governance-hidden-infrastructure-topic-review.md
 xiaohongshu_script: data/xiaohongshu/52-xiaohongshu-city-governance-hidden-infrastructure-card-script.md
 ---

@@ -3,7 +3,7 @@ type: wechat_process_draft
 date: 2026-08-08
 topic: 未成年人保护前端防治与干预矫治
 source_review: data/analysis/2026-08-08/2026-08-08-minor-protection-early-risk-intervention-topic-review.md
-final_article: data/articles/人民日报系列/69-人民日报讲未成年人保护：不能等孩子“出事”后再管，要把风险发现和干预矫治做在前面.md
+final_article: data/articles/人民日报系列/69-【R】人民日报讲未成年人保护：不能等孩子“出事”后再管，要把风险发现和干预矫治做在前面.md
 xiaohongshu_script: data/xiaohongshu/69-xiaohongshu-minor-protection-early-risk-intervention-card-script.md
 interview_card: data/analysis/2026-08-08/interview-card-minor-protection-early-risk-intervention.md
 ---

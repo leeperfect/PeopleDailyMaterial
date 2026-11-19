@@ -2,7 +2,7 @@
 type: ppt_outline
 date: 2026-08-07
 topic: 耐心资本与科技创新周期适配
-article: data/articles/人民日报系列/67-人民日报讲耐心资本：不是“多等几年”，而是给创新时间、为失败留空间.md
+article: data/articles/人民日报系列/67-【R】人民日报讲耐心资本：不是“多等几年”，而是给创新时间、为失败留空间.md
 source_review: data/analysis/2026-08-07/2026-08-07-patient-capital-innovation-cycle-topic-review.md
 process_draft: data/analysis/2026-08-07/wechat-patient-capital-innovation-cycle.md
 xiaohongshu_script: data/xiaohongshu/67-xiaohongshu-patient-capital-innovation-cycle-card-script.md

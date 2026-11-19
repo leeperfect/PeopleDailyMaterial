@@ -2,7 +2,7 @@
 type: xiaohongshu_card_script
 date: 2026-07-20
 topic: 《人民日报》讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力
-article: data/articles/人民日报系列/47-人民日报讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力.md
+article: data/articles/人民日报系列/47-【R】人民日报讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力.md
 source_review: data/analysis/2026-07-20/2026-07-20-regular-assistance-monitoring-safety-development-topic-review.md
 process_draft: data/analysis/2026-07-20/wechat-regular-assistance-monitoring-safety-development.md
 image_rule: AI直接生成，无人物

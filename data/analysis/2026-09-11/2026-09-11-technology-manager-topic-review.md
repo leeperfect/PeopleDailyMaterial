@@ -5,7 +5,7 @@ slug: technology-manager
 topic: "技术经理人：好技术为什么还需要一个懂市场的合伙人"
 priority: S级
 platform: 公众号系列 + 申论题卡
-article: data/articles/人民日报系列/96-《人民日报》深度分析【技术经理人】：好技术为什么还需要一个懂市场的合伙人.md
+article: data/articles/人民日报系列/96-【R】《人民日报》深度分析【技术经理人】：好技术为什么还需要一个懂市场的合伙人.md
 ---
 
 # 选题复盘｜《人民日报》深度分析【技术经理人】
@@ -84,7 +84,7 @@ article: data/articles/人民日报系列/96-《人民日报》深度分析【�
 
 ## 九、产出清单
 
-- 公众号成稿：`data/articles/人民日报系列/96-《人民日报》深度分析【技术经理人】：好技术为什么还需要一个懂市场的合伙人.md`
+- 公众号成稿：`data/articles/人民日报系列/96-【R】《人民日报》深度分析【技术经理人】：好技术为什么还需要一个懂市场的合伙人.md`
 - 申论题卡：`data/analysis/2026-09-11/shenlun-technology-manager-card.md`
 - 公众号过程稿：`data/analysis/2026-09-11/wechat-technology-manager.md`
 - 索引更新：`data/articles/文章索引.md` 追加 96 条目，下一篇编号更新为 97。
