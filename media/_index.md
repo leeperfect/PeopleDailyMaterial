@@ -4,8 +4,8 @@
 
 | 日期 | 主题 | 类型 | 本地位置 | 网盘位置 | 关联文本/说明 |
 |---|---|---|---|---|---|
-| 2026-07-20 | 教育科技人才创新链 | 公众号配图 | `media/images/article-41-innovation-chain.png` | 待上传 | `data/articles/人民日报系列/41-人民日报讲教育科技人才一体发展：不是三个词并列，而是一条创新链.md`；信息图，展示五环节创新链逻辑架构 |
-| 2026-07-16 | 乡村文化振兴：农家书屋提质五步法 | 公众号配图 | `media/images/article-42-rural-reading-room-five-steps.png` | 待上传 | `data/articles/人民日报系列/42-人民日报讲乡村文化振兴：农家书屋不能只"有书"，关键要"有人来、有用处".md`；手绘风信息图，展示五步法核心行动链条 |
+| 2026-07-20 | 教育科技人才创新链 | 公众号配图 | `media/images/article-41-innovation-chain.png` | 待上传 | `data/articles/往期文章/人民日报系列/41-人民日报讲教育科技人才一体发展：不是三个词并列，而是一条创新链.md`；信息图，展示五环节创新链逻辑架构 |
+| 2026-07-16 | 乡村文化振兴：农家书屋提质五步法 | 公众号配图 | `media/images/article-42-rural-reading-room-five-steps.png` | 待上传 | `data/articles/往期文章/人民日报系列/42-人民日报讲乡村文化振兴：农家书屋不能只“有书”，关键要“有人来、有用处”.md`；手绘风信息图，展示五步法核心行动链条 |
 | 2026-07-04 | 公众号写作工作流固定头图 | 公众号封面 | `media/images/wechat-fixed-covers/` | 待上传 | `hotspot-header.png` 用于热点系列，`people-daily-header.png` 用于人民日报系列；由草稿同步流程自动选择 |
 | 2026-08-22 | 今日头条固定头图 | 今日头条封面 | `media/images/toutiao-fixed-covers/people-daily-cover.jpg` | 待上传 | 人民日报系列今日头条草稿固定使用；单图封面 |
 | 2026-05-30 | 县域发展：人民日报五个动作 | 小红书图 | `media/images/2026-05-30-county-development-xhs/` | 待上传 | `data/articles/往期文章/人民日报系列/申论写县域发展，别再只会说“因地制宜”：人民日报给了五个动作.md`；含 10 张 |
@@ -14,7 +14,7 @@
 | 2026-06-02 | 基础设施：六张网 | 小红书图 / 公众号封面 | `media/images/2026-06-02-six-networks-infrastructure-xhs-wechat/` | 待上传 | `data/articles/往期文章/人民日报系列/申论写基础设施，别只会写“修路架桥”：人民日报讲的是“六张网”.md`；含 14 张小红书图、2 张微信封面和 1 张预览图 |
 | 2026-06-03 | 公共服务均等化：从“有没有”到“够得到” | 小红书图 / 公众号封面 | `media/images/2026-06-03-public-service-equalization-xhs-wechat/` | 待上传 | `data/articles/往期文章/人民日报系列/01-人民日报讲公共服务均等化：从“有没有”到“够得到”.md`；含 14 张小红书图、2 张微信封面和 1 张预览图 |
 | 2026-06-04 | 新质生产力：从词元、农机到田间大模型 | 小红书图 / 公众号封面 | `media/images/2026-06-04-new-quality-productivity-xhs-wechat/` | 待上传 | `data/articles/往期文章/人民日报系列/03-人民日报讲新质生产力：别写空，从词元、农机到田间大模型.md`；含 14 张小红书图、2 张微信封面和 1 张预览图 |
-| 2026-06-06 | 生态文明：法治、治理和长期主义 | 小红书图 | `media/images/2026-06-06-ecological-civilization-xhs/` | 待上传 | `data/articles/人民日报系列/05-人民日报讲生态文明：把绿色发展写成法治、治理和长期主义.md`；含 13 张 |
+| 2026-06-06 | 生态文明：法治、治理和长期主义 | 小红书图 | `media/images/2026-06-06-ecological-civilization-xhs/` | 待上传 | `data/articles/往期文章/人民日报系列/05-人民日报讲生态文明：把绿色发展写成法治、治理和长期主义.md`；含 13 张 |
 | 2026-06-06 | 广西事业单位面试押题预测（现象认知类） | 公众号封面 | `media/images/2026-06-06-guangxi-interview-phenomenon-wechat-cover/` | 待上传 | 公众号头图 2100×900 |
 | 2026-06-06 | 新就业群体治理：从服务对象到城市伙伴 | 公众号配图 / 信息图 | `media/images/2026-06-06-new-employment-group-infographic/` | 待上传 | `data/articles/往期文章/人民日报系列/06-人民日报讲新就业群体治理：从服务对象到城市伙伴.md`；含手绘信息图、蓝图等轴测重绘版、明艳素描草图竖版与底图 |
 | 2026-06-07 | 新就业群体治理：从服务对象到城市伙伴 | 小红书图 | `media/images/2026-06-07-new-employment-group-xhs/` | 待上传 | `data/articles/往期文章/人民日报系列/06-人民日报讲新就业群体治理：从服务对象到城市伙伴.md`；含 16 张 |
@@ -33,42 +33,31 @@
 | 2026-06-11 | 向海图强：科技、生态和产业链 | 小红书图 / 视频号封面 | `media/images/2026-06-11-marine-economy-xhs-video/` | 待上传 | `data/analysis/2026-06-11/xiaohongshu-marine-economy-tech-ecology-industry-chain-card-script.md`；含 14 张小红书图、2 张 3:4 视频号封面和 1 张预览图，海军蓝 |
 | 2026-06-12 | 清欠企业账款：账款链也是信心链 | 小红书图 / 视频号封面 | `media/images/2026-06-12-arrears-payment-confidence-chain-xhs-video/` | 待上传 | `data/analysis/2026-06-11/xiaohongshu-arrears-payment-confidence-chain-card-script.md`；含 13 张小红书图、3 张 3:4 视频号封面和 1 张预览图，封面统一使用“《人民日报》这样写”无衬线大标题，主色 #419375 |
 | 2026-06-12 | 银发经济：服务供给和人力资源 | 小红书图 / 视频号封面 | `media/images/2026-06-12-silver-economy-service-human-resources-xhs-video/` | 待上传 | `data/analysis/2026-06-11/xiaohongshu-silver-economy-service-human-resources-card-script.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，暖白 #f0efeb Editorial 杂志风 |
-| 2026-06-13 | 就业难：不能只写“多给岗位”，要写出就业链 | 小红书图 / 视频号封面 | `media/images/2026-06-13-employment-chain-xhs-video/` | 待上传 | `data/articles/人民日报系列/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，小米橙 Editorial 杂志风，系列名“《人民日报》这样写”与主标题分层 |
-| 2026-06-19 | 韧性治理：早识别、早前置、能联动 | 小红书图 / 视频号封面 | `media/images/2026-06-19-resilient-governance-xhs-video/` | 待上传 | `data/articles/人民日报系列/17-人民日报讲韧性治理：不是灾后救急，而是早识别、早前置、能联动.md`；含 14 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，公开图库配图 |
-| 2026-06-19 | 资源循环：绿色消费和产业链再造 | 小红书图 / 视频号封面 | `media/images/2026-06-19-resource-circulation-xhs-video/` | 待上传 | `data/articles/人民日报系列/18-人民日报讲资源循环：不是回收旧物，而是绿色消费和产业链再造.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，公开图库配图 |
-| 2026-06-20 | AI时代教育：重塑思维和终身学习 | 小红书图 / 视频号封面 | `media/images/2026-06-20-ai-era-education-xhs-video/` | 待上传 | `data/articles/人民日报系列/19-人民日报讲AI时代教育：不是人人学工具，而是重塑思维和终身学习.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，公开图库配图 |
-| 2026-06-21 | 大国向西：通道、算力、产业和安全腹地 | 小红书图 / 视频号封面 | `media/images/2026-06-21-westward-development-xhs-video/` | 待上传 | `data/articles/人民日报系列/20-人民日报讲大国向西：不是区域口号，而是通道、算力、产业和安全腹地.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，戈壁金 × 深墨蓝 × 通道红，公开图库配图 |
-| 2026-06-21 | 服务消费：把好服务嵌入生活半径 | 小红书图 / 视频号封面 | `media/images/2026-06-21-service-consumption-xhs-video/` | 待上传 | `data/articles/人民日报系列/21-人民日报讲服务消费：不是发券促销，而是把好服务嵌入生活半径.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，杏桃暖色 × 生活绿 × 深墨灰，公开图库配图 |
-| 2026-06-21 | 新型城镇化：服务跟着人走 | 小红书图 / 视频号封面 | `media/images/2026-06-21-new-urbanization-xhs-video/` | 待上传 | `data/articles/人民日报系列/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，城市青绿 × 暖米白 × 公共服务蓝，公开图库配图 |
-| 2026-06-21 | 科技成果转化：打通最后一公里 | 小红书图 / 视频号封面 | `media/images/2026-06-21-tech-transfer-xhs-video/` | 待上传 | `data/articles/人民日报系列/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，实验室冷蓝 × 转化橙 × 深墨灰，公开图库配图 |
-| 2026-06-21 | 主流媒体融合：内容、技术和服务重构 | 小红书图 / 视频号封面 | `media/images/2026-06-21-media-convergence-xhs-video/` | 待上传 | `data/articles/人民日报系列/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，媒体红 × 数智蓝 × 深墨灰，公开图库配图 |
-| 2026-06-22 | 现代农业：科技体检、田保姆和青年农机手 | 小红书图 / 视频号封面 | `media/images/2026-06-22-modern-agriculture-xhs-video/` | 待上传 | `data/articles/人民日报系列/25-人民日报讲现代农业：不是只靠苦干，而是科技体检、田保姆和青年农机手一起上.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，麦穗金 × 稻田绿 × 土壤棕 × 深墨绿，公开图库配图，已自动审查 |
+| 2026-06-13 | 就业难：不能只写“多给岗位”，要写出就业链 | 小红书图 / 视频号封面 | `media/images/2026-06-13-employment-chain-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，小米橙 Editorial 杂志风，系列名“《人民日报》这样写”与主标题分层 |
+| 2026-06-19 | 韧性治理：早识别、早前置、能联动 | 小红书图 / 视频号封面 | `media/images/2026-06-19-resilient-governance-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/17-人民日报讲韧性治理：不是灾后救急，而是早识别、早前置、能联动.md`；含 14 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，公开图库配图 |
+| 2026-06-19 | 资源循环：绿色消费和产业链再造 | 小红书图 / 视频号封面 | `media/images/2026-06-19-resource-circulation-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/18-人民日报讲资源循环：不是回收旧物，而是绿色消费和产业链再造.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，公开图库配图 |
+| 2026-06-20 | AI时代教育：重塑思维和终身学习 | 小红书图 / 视频号封面 | `media/images/2026-06-20-ai-era-education-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/19-人民日报讲AI时代教育：不是人人学工具，而是重塑思维和终身学习.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，公开图库配图 |
+| 2026-06-21 | 大国向西：通道、算力、产业和安全腹地 | 小红书图 / 视频号封面 | `media/images/2026-06-21-westward-development-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/20-人民日报讲大国向西：不是区域口号，而是通道、算力、产业和安全腹地.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，戈壁金 × 深墨蓝 × 通道红，公开图库配图 |
+| 2026-06-21 | 服务消费：把好服务嵌入生活半径 | 小红书图 / 视频号封面 | `media/images/2026-06-21-service-consumption-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/21-人民日报讲服务消费：不是发券促销，而是把好服务嵌入生活半径.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，杏桃暖色 × 生活绿 × 深墨灰，公开图库配图 |
+| 2026-06-21 | 新型城镇化：服务跟着人走 | 小红书图 / 视频号封面 | `media/images/2026-06-21-new-urbanization-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/22-人民日报讲新型城镇化：不是进城落脚，而是服务跟着人走.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，城市青绿 × 暖米白 × 公共服务蓝，公开图库配图 |
+| 2026-06-21 | 科技成果转化：打通最后一公里 | 小红书图 / 视频号封面 | `media/images/2026-06-21-tech-transfer-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/23-人民日报讲科技成果转化：别只写“产学研”，关键是打通最后一公里.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，实验室冷蓝 × 转化橙 × 深墨灰，公开图库配图 |
+| 2026-06-21 | 主流媒体融合：内容、技术和服务重构 | 小红书图 / 视频号封面 | `media/images/2026-06-21-media-convergence-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/24-人民日报讲主流媒体融合：不是多开账号，而是重构内容、技术和服务.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，媒体红 × 数智蓝 × 深墨灰，公开图库配图 |
+| 2026-06-22 | 现代农业：科技体检、田保姆和青年农机手 | 小红书图 / 视频号封面 | `media/images/2026-06-22-modern-agriculture-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/25-人民日报讲现代农业：不是只靠苦干，而是科技体检、田保姆和青年农机手一起上.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，麦穗金 × 稻田绿 × 土壤棕 × 深墨绿，公开图库配图，已自动审查 |
 | 2026-06-23 | 云南热点面试预测框架 | 公众号封面 / 分享卡 | `media/images/2026-06-23-yunnan-hotspots-wechat-cover/` | 待上传 | `data/analysis/2026-06-22/2026-h1-yunnan-hotspots-interview-peopledaily.md`；含 21:9 头图、1:1 分享卡和配对预览，Editorial 资料订制风，云南绿 × 普洱墨绿 × 茶金，已自动审查 |
 | 2026-06-23 | 云南热点政策预测框架 | 公众号封面 / 分享卡 | `media/images/2026-06-23-yunnan-hotspots-policy-wechat-cover/` | 待上传 | `data/analysis/2026-06-22/2026-h1-yunnan-hotspots-interview.md`；含 21:9 头图、1:1 分享卡和配对预览，Editorial 资料定制风，滇池青 × 政策蓝绿 × 茶金，已自动审查 |
-| 2026-06-23 | 就业难：就业链高分写法 | 小红书图 / 视频号封面 | `media/images/2026-06-23-employment-chain-xhs-video/` | 待上传 | `data/articles/人民日报系列/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，就业橙 × 炭黑 × 暖米白，公开图库配图，8 条引用全覆盖，已自动审查 |
-
-| 2026-07-11 | 县域经济因地制宜发展 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-11-county-economy-notebooklm/` | 待上传 | `data/articles/人民日报系列/44-人民日报再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”.md`；含10页PPT原图和1张独立信息图，已生成出版登记清单 |
-
+| 2026-06-23 | 就业难：就业链高分写法 | 小红书图 / 视频号封面 | `media/images/2026-06-23-employment-chain-xhs-video/` | 待上传 | `data/articles/往期文章/人民日报系列/16-人民日报讲就业难：不能只写“多给岗位”，要写出就业链.md`；含 15 张小红书图、3 张 3:4 视频号封面和 1 张预览图，Editorial 杂志风，就业橙 × 炭黑 × 暖米白，公开图库配图，8 条引用全覆盖，已自动审查 |
+| 2026-07-11 | 县域经济因地制宜发展 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-11-county-economy-notebooklm/` | 待上传 | `data/articles/往期文章/人民日报系列/44-人民日报再谈因地制宜：县域经济不是“小而全”，而要“特而强、融得进”.md`；含10页PPT原图和1张独立信息图，已生成出版登记清单 |
 | 2026-07-11 | 县域经济不是"小而全"，而要"特而强、融得进" | 小红书图 | `media/images/2026-07-11-county-economy-specialized-xhs/` | 待上传 | `data/xiaohongshu/44-xiaohongshu-county-economy-specialized-integrated-card-script.md`；含15张3:4小红书卡片（2160×2880），Editorial Magazine风格，暖米白×深墨蓝×编辑红，图示+真实照片混合视觉（龙脊梯田/苹果园/纺织厂/集装箱港/足球场/乡村公路/年轮，均来自Wikimedia Commons CC0/CC BY/公共领域），末页附参考文献，validate-social-deck 15/15 PASS |
 | 2026-07-11 | 县域经济特而强融得进（新版） | 小红书图 | `media/images/2026-07-11-county-economy-xhs/` | 待上传 | `data/xiaohongshu/44-xiaohongshu-county-economy-specialized-integrated-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+深靛蓝#1d4ed8，3张AI生成配图，末页参考文献） |
-
-| 2026-07-12 | 政绩考核：分类考、精准考、看长效 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-performance-assessment-notebooklm/` | 待上传 | `data/articles/人民日报系列/45-人民日报讲政绩考核：不是考得多，而是分类考、精准考、看长效.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
-
+| 2026-07-12 | 政绩考核：分类考、精准考、看长效 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-performance-assessment-notebooklm/` | 待上传 | `data/articles/往期文章/人民日报系列/45-人民日报讲政绩考核：不是考得多，而是分类考、精准考、看长效.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
 | 2026-07-12 | 政绩考核不是考得多，而是考得准 | 小红书图 | `media/images/2026-07-12-performance-assessment-xhs/` | 待上传 | `data/xiaohongshu/45-xiaohongshu-performance-assessment-card-script.md`；含11张3:4小红书卡片（2160×2880），Bold Contrast高对比风格，纯黑/白底×朱红强调色，阿里巴巴普惠体，AI生成封面（文件+卡尺+警示灯）和长效页（湖泊），含装饰性水印符号，validate通过 |
-
-| 2026-07-12 | AI应用别只写"赋能"：真实场景、合理定价和安全规则要一起跟上 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-ai-application-scene-pricing-safety-notebooklm/` | 待上传 | `data/articles/人民日报系列/46-人民日报讲AI应用落地：场景要真、定价要公、安全要守.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
-
+| 2026-07-12 | AI应用别只写"赋能"：真实场景、合理定价和安全规则要一起跟上 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-12-ai-application-scene-pricing-safety-notebooklm/` | 待上传 | `data/articles/往期文章/人民日报系列/46-人民日报讲AI应用落地：场景要真、定价要公、安全要守.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
 | 2026-07-12 | 写AI别只会"赋能" | 小红书图 | `media/images/2026-07-12-ai-application-scene-pricing-safety-xhs/` | 待上传 | `data/xiaohongshu/46-xiaohongshu-ai-application-scene-pricing-safety-card-script.md`；含6张3:4小红书卡片（2160×2880），Bold Contrast高对比风格，纯黑底×青色强调色(#00c8ff)，阿里巴巴普惠体，AI生成封面（发光芯片电路板）和安全页（数字锁），含装饰性水印符号，guizang validator 0 FAIL |
-
-| 2026-07-20 | 常态化帮扶 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-regular-assistance-governance-notebooklm/` | 待上传 | `data/articles/人民日报系列/47-【R】人民日报讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力.md`；含15页PPT原图和1张独立信息图，已生成出版登记清单 |
-
+| 2026-07-20 | 常态化帮扶 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-regular-assistance-governance-notebooklm/` | 待上传 | `data/articles/往期文章/人民日报系列/47-【R】人民日报讲透“常态化帮扶”：不是继续“输血”，而是监测、兜底、造血一起发力.md`；含15页PPT原图和1张独立信息图，已生成出版登记清单 |
 | 2026-07-20 | 常态化帮扶不是继续"输血" | 小红书图 | `media/images/2026-07-20-regular-assistance-xhs/` | 待上传 | `data/xiaohongshu/47-xiaohongshu-regular-assistance-monitoring-safety-development-card-script.md`；含10张3:4小红书卡片（2160×2880），Bold Contrast高对比风格，纯黑底×暖琥珀强调色(#f5a623)，阿里巴巴普惠体，AI生成封面（黎明大棚）和案例页（暖棚内部），含装饰性水印符号 |
-
-| 2026-07-20 | 农业社会化服务 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-agricultural-socialized-service-notebooklm/` | 待上传 | `data/articles/人民日报系列/48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
-
+| 2026-07-20 | 农业社会化服务 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-agricultural-socialized-service-notebooklm/` | 待上传 | `data/articles/往期文章/人民日报系列/48-【R】人民日报讲农业社会化服务：不是把地“交出去”，而是让小农户接上现代农业.md`；含13页PPT原图和1张独立信息图，已生成出版登记清单 |
 | 2026-07-20 | 土地托管不是把地"交出去" | 小红书图 | `media/images/2026-07-20-agricultural-socialized-service-xhs/` | 待上传 | `data/xiaohongshu/48-xiaohongshu-agricultural-socialized-service-card-script.md`；含13张3:4小红书卡片（2160×2880），Bold Contrast高对比风格，纯黑底×鲜绿强调色(#00c853)，阿里巴巴普惠体，AI生成封面（航拍农田）、案例页（插秧机泥田）、产后页（粮仓），含装饰性水印符号，末页为6篇人民日报参考文献 |
-
-| 2026-07-20 | 科技金融 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-tech-finance-lifecycle-notebooklm/` | 待上传 | `data/articles/人民日报系列/49-【R】人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md`；含14页PPT原图和1张独立信息图，已生成出版登记清单 |
+| 2026-07-20 | 科技金融 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-07-20-tech-finance-lifecycle-notebooklm/` | 待上传 | `data/articles/往期文章/人民日报系列/49-【R】人民日报讲科技金融：不是多给一笔贷款，而是陪创新走完整个周期.md`；含14页PPT原图和1张独立信息图，已生成出版登记清单 |
 | 2026-07-20 | 科技金融不是多给一笔贷款 | 小红书图 | `media/images/2026-07-20-tech-finance-xhs/` | 待上传 | `data/xiaohongshu/49-xiaohongshu-tech-finance-lifecycle-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+亮蓝#00aaff，3张AI生成配图，末页参考文献） |
 | 2026-07-20 | 抓落实不能挑肥拣瘦 | 小红书图 | `media/images/2026-07-20-implementation-accountability-xhs/` | 待上传 | `data/xiaohongshu/50-xiaohongshu-implementation-accountability-results-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+政务蓝#2563eb，3张AI生成配图，末页参考文献） |
 | 2026-07-20 | 民生服务让政策主动找人 | 小红书图 | `media/images/2026-07-20-proactive-livelihood-xhs/` | 待上传 | `data/xiaohongshu/51-xiaohongshu-proactive-livelihood-service-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+天蓝#0ea5e9，3张AI生成配图，末页参考文献） |
@@ -77,69 +66,49 @@
 | 2026-07-26 | AI不能成为"富国和富人的游戏" | 小红书图 | `media/images/2026-07-26-ai-global-governance-xhs/` | 待上传 | `data/xiaohongshu/54-xiaohongshu-ai-global-governance-public-good-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+深海青#0891b2，3张AI生成配图，末页参考文献） |
 | 2026-07-26 | 就业优先不是只保岗位 | 小红书图 | `media/images/2026-07-26-employment-priority-xhs/` | 待上传 | `data/xiaohongshu/55-xiaohongshu-employment-priority-people-matching-industry-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+墨绿#059669，3张AI生成配图，末页参考文献） |
 | 2026-07-26 | 全民健身不是多建几个场馆 | 小红书图 | `media/images/2026-07-26-fitness-life-circle-xhs/` | 待上传 | `data/xiaohongshu/56-xiaohongshu-fitness-life-circle-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+草木绿#16a34a，3张AI生成配图，末页参考文献） |
-
 | 2026-08-17 | 票根经济：从观赛流量到城市消费链 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-08-17-ticket-stub-economy-city-consumption-chain-notebooklm/` | 待上传 | `data/articles/人民日报系列/75-【R】人民日报讲票根经济：不是赛后发优惠券，而是把赛事流量接成城市消费链.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
-
 | 2026-08-20 | 健康优先不是卫生部门"单打独斗" | 小红书图 | `media/images/2026-08-20-health-priority-xhs/` | 待上传 | `data/xiaohongshu/78-xiaohongshu-health-priority-prevention-daily-life-card-script.md`；含14张3:4小红书卡片（perfect-redcard-skill，黑底+翡翠绿#059669，3张AI生成配图，末页7篇人民日报参考文献） |
 | 2026-08-22 | 带薪休假不是"放几天假"，而是让职工敢休、单位能排、消费接得住 | 小红书图 / 视频封面 | `media/images/2026-08-22-paid-leave-xhs/` | 待上传 | `data/xiaohongshu/80-xiaohongshu-paid-leave-rights-time-consumption-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+砖红#dc2626，3张AI生成配图，人民日报标识突出，末页6篇人民日报参考文献） |
 | 2026-09-04 | 县域青年发展：岗位、住房只是起点，关键是让青年有成长空间 | 小红书图 / 视频封面 | `media/images/2026-09-04-81-county-youth-xhs/` | 待上传 | `data/xiaohongshu/81-xiaohongshu-county-youth-development-growth-ecosystem-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+产业橙#ea580c，3张AI生成配图，《人民日报》深度分析统一标识，末页5篇人民日报参考文献） |
 | 2026-09-05 | 基层群众议事：从听意见到见结果的五个动作 | 小红书图 / 视频封面 | `media/images/2026-09-05-82-grassroots-deliberation-xhs/` | 待上传 | `data/xiaohongshu/82-xiaohongshu-grassroots-deliberation-results-closed-loop-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+制度红#dc2626，3张AI生成配图，《人民日报》深度分析统一标识，末页7篇人民日报参考文献） |
 | 2026-09-05 | 基层减负：权责、资源和能力一起配上 | 小红书图 / 视频封面 | `media/images/2026-09-05-83-grassroots-burden-xhs/` | 待上传 | `data/xiaohongshu/83-xiaohongshu-grassroots-burden-reduction-responsibility-resources-capability-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+深绿#15803d，3张AI生成配图，《人民日报》深度分析统一标识，末页8篇人民日报参考文献） |
 | 2026-09-05 | "十五五"开局如何落地：内需、创新、民生和风险要接成一条链 | 小红书图 / 视频封面 | `media/images/2026-09-05-84-fifteen-five-xhs/` | 待上传 | `data/xiaohongshu/84-xiaohongshu-fifteen-five-opening-implementation-chain-card-script.md`；含14张3:4小红书卡片+1张4:3视频封面（perfect-redcard-skill，黑底+墨绿#14532d，3张AI生成配图，《人民日报》深度分析统一标识，末页9篇人民日报参考文献） |
-
 | 2026-08-22 | 带薪休假：让职工敢休、单位能排、消费接得住 | 双平台手动配图 | `media/images/2026-08-22-article-80/` | 待上传 | `data/articles/人民日报系列/80-人民日报讲带薪休假：不是“放几天假”，而是让职工敢休、单位能排、消费接得住.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-20 | 健康优先：把预防融入学校、社区和日常生活 | 双平台手动配图 | `media/images/2026-08-20-article-78/` | 待上传 | `data/articles/人民日报系列/78-人民日报讲健康优先：不是卫生部门“单打独斗”，而要把预防融入学校、社区和日常生活.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-20 | 正确政绩观全库综述：从想干事到干成正确的事 | 双平台手动配图 | `media/images/2026-08-20-article-79/` | 待上传 | `data/articles/人民日报系列/79-人民日报用164篇文章讲透政绩观：从“想干事”到“干成正确的事”，中间隔着六道关.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-24 | 县域青年发展：让青年有成长空间 | 双平台手动配图 | `media/images/2026-08-24-article-81/` | 待上传 | `data/articles/人民日报系列/81-人民日报讲县域青年发展：岗位、住房只是起点，关键是让青年有成长空间.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-24 | 基层群众议事：从听意见到见结果 | 双平台手动配图 | `media/images/2026-08-24-article-82/` | 待上传 | `data/articles/人民日报系列/82-人民日报讲基层群众议事：从“听意见”到“见结果”的五个动作.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-24 | 基层减负：权责、资源和能力一起配上 | 双平台手动配图 | `media/images/2026-08-24-article-83/` | 待上传 | `data/articles/人民日报系列/83-人民日报讲基层减负：不是简单少干活，而要把权责、资源和能力一起配上.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-29 | 企业信用修复 | NotebookLM PPT / 信息图 / 公众号配图 | `media/images/2026-08-29-credit-repair-notebooklm/` | 待上传 | `data/articles/人民日报系列/86-《人民日报》深度分析【企业信用修复】：不良记录不是“一删了之”，而是纠错、履责、退出惩戒.md`；含12页PPT原图和1张独立信息图，已生成出版登记清单 |
-
 | 2026-08-24 | 《人民日报》讲提振消费：让群众能消费、敢消费、愿消费，要补哪四块 | 双平台手动配图 | `media/images/2026-08-24-article-85/` | 待上传 | `data/articles/人民日报系列/85-人民日报讲提振消费：让群众能消费、敢消费、愿消费，要补哪四块.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-24 | “十五五”开局如何落地：内需、创新、民生和风险要接成一条链 | 双平台手动配图 | `media/images/2026-08-24-article-84/` | 待上传 | `data/articles/人民日报系列/84-人民日报讲“十五五”开局：内需、创新、民生和风险要接成一条链.md`；由本地双平台配图工作台登记 |
-
 | 2026-09-05 | 提振消费：能消费、敢消费、愿消费要补哪四块 | 小红书图 / 视频封面 | `media/images/2026-09-05-85-consumption-boost-xhs/` | 待上传 | `data/xiaohongshu/85-xiaohongshu-consumption-ability-expectation-supply-trust-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，朱红#dc2626，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第85期」，末页参考文献9篇 |
-
 | 2026-09-05 | 企业信用修复：不良记录不是"一删了之" | 小红书图 / 视频封面 | `media/images/2026-09-05-86-credit-repair-xhs/` | 待上传 | `data/xiaohongshu/86-xiaohongshu-credit-repair-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，深蓝#1d4ed8，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第86期」，末页参考文献8篇 |
-
 | 2026-09-05 | 县域消费：供给、物流和服务跟着需求下沉 | 小红书图 / 视频封面 | `media/images/2026-09-05-87-county-consumption-xhs/` | 待上传 | `data/xiaohongshu/87-xiaohongshu-county-consumption-demand-supply-logistics-service-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，湖蓝#0891b2，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第87期」，末页参考文献9篇 |
-
 | 2026-08-30 | 平台算法治理 | 双平台手动配图 | `media/images/2026-08-30-article-88/` | 待上传 | `data/articles/人民日报系列/88-《人民日报》深度分析【平台算法治理】：配送不能只由倒计时决定，安全、效率和权益都要算进去.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-30 | 职业伤害保障 | 双平台手动配图 | `media/images/2026-08-30-article-89/` | 待上传 | `data/articles/人民日报系列/89-《人民日报》深度分析【职业伤害保障】：不能等出了事故再赔钱，预防、认定、理赔、康复要接起来.md`；由本地双平台配图工作台登记 |
-
 | 2026-09-06 | 平台算法治理：配送不能只由倒计时决定 | 小红书图 / 视频封面 | `media/images/2026-09-06-88-algorithm-governance-xhs/` | 待上传 | `data/xiaohongshu/88-xiaohongshu-platform-algorithm-governance-delivery-safety-rights-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，科技蓝#2563eb，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第88期」，末页参考文献6篇 |
-
 | 2026-09-06 | 职业伤害保障：预防、认定、理赔、康复要接起来 | 小红书图 / 视频封面 | `media/images/2026-09-06-89-occupational-injury-xhs/` | 待上传 | `data/xiaohongshu/89-xiaohongshu-occupational-injury-protection-prevention-claim-rehabilitation-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，安全蓝#1d4ed8，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第89期」，末页参考文献9篇 |
-
 | 2026-09-06 | 民生服务快办：风险分级、流程再造、主动触达 | 小红书图 / 视频封面 | `media/images/2026-09-06-90-public-service-fast-track-xhs/` | 待上传 | `data/xiaohongshu/90-xiaohongshu-public-service-fast-track-risk-classification-process-redesign-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，服务蓝#0ea5e9，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第90期」，末页参考文献6篇 |
-
 | 2026-09-06 | 城市更新后半程：服务、运营和居民参与 | 小红书图 / 视频封面 | `media/images/2026-09-06-91-urban-renewal-xhs/` | 待上传 | `data/xiaohongshu/91-xiaohongshu-urban-renewal-second-half-services-operations-resident-participation-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，城市砖红#b91c1c，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第91期」，末页参考文献7篇 |
-
 | 2026-09-06 | 完整社区：从"提需求"到"共运营" | 小红书图 / 视频封面 | `media/images/2026-09-06-92-complete-community-xhs/` | 待上传 | `data/xiaohongshu/92-xiaohongshu-complete-community-resident-participation-long-term-operation-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，暖砖红#b45309，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第92期」，末页参考文献8篇 |
-
 | 2026-09-06 | 生态产品价值实现：好生态变资产、变产业、变收入 | 小红书图 / 视频封面 | `media/images/2026-09-06-93-ecological-product-value-xhs/` | 待上传 | `data/xiaohongshu/93-xiaohongshu-ecological-product-value-assets-industry-income-card-script.md`；含14张3:4小红书卡片和1张4:3视频封面，森林绿#15803d，Bold Contrast风格，统一标识「《人民日报》深度分析 · 第93期」，末页参考文献13篇 |
-
 | 2026-08-30 | 县域消费 | 双平台手动配图 | `media/images/2026-08-30-article-87/` | 待上传 | `data/articles/人民日报系列/87-《人民日报》深度分析【县域消费】：不是把商场搬到县城，而是让供给、物流和服务跟着需求下沉.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-30 | 民生服务快办 | 双平台手动配图 | `media/images/2026-08-30-article-90/` | 待上传 | `data/articles/人民日报系列/90-《人民日报》深度分析【民生服务快办】：不是催窗口再快一点，而是按风险和紧急程度重做流程.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-30 | 城市更新后半程 | 双平台手动配图 | `media/images/2026-08-30-article-91/` | 待上传 | `data/articles/人民日报系列/91-《人民日报》深度分析【城市更新后半程】：空间建好了，服务、运营和居民参与还要接上.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-30 | 完整社区 | 双平台手动配图 | `media/images/2026-08-30-article-92/` | 待上传 | `data/articles/人民日报系列/92-《人民日报》深度分析【完整社区】：不是把设施配齐，而是让居民从“提需求”走到“共运营”.md`；由本地双平台配图工作台登记 |
-
 | 2026-08-30 | 生态产品价值实现 | 双平台手动配图 | `media/images/2026-08-30-article-93/` | 待上传 | `data/articles/人民日报系列/93-《人民日报》深度分析【生态产品价值实现】：好生态怎样变资产、变产业、变群众收入.md`；由本地双平台配图工作台登记 |
-
 | 2026-10-17 | 片区化乡村振兴 | 双平台手动配图 | `media/images/article-inbox/` | 待上传 | `data/articles/人民日报系列/99-《人民日报》深度分析【片区化乡村振兴】：几个村怎样协作，才能把分散资源用起来.md`；由本地双平台配图工作台登记 |
-
 | 2026-10-17 | 概念验证 | 双平台手动配图 | `media/images/2026-10-17-article-101/` | 待上传 | `data/articles/人民日报系列/101-《人民日报》深度分析【概念验证】：好技术进入生产线前，先验证什么.md`；由本地双平台配图工作台登记 |
+| 2026-11-15 | 人民城市：一个理念，三层展开（国考热点分享） | 课件 / 网页PPT | `media/ppt/2026-11-15-people-city-hotspot/index.html` | 待上传 | guizang 电子杂志风·靛蓝瓷，25 页含演讲备注与计时；主线"三问定心·六维定靶·五法定行"。大纲 `data/analysis/2026-11-15/2026-11-15-people-city-hotspot-sharing-outline-v2.md`；配图为《人民日报》新时代画卷 12 张＋2026-07-15 第 08 版高清版面；`images/` 配图、`assets/motion.min.js` 离线动效、`qa/` 逐页预览 PNG。浏览器打开即用，← → 翻页、P 演讲模式 |
+| 2026-11-16 | 申论方法：“加强监管”这四个字，正在扣你的分 | 公众号配图 / 公众号封面 / 预览图 | `media/images/2026-11-16-jiaqiang-jianguan/` | 待上传 | `data/articles/申论方法系列/考试中“加强监管”这四个字，正在扣你的分.md`；zen-whitespace + fresh 线描新视觉规范首篇；fig-01 四种力量关系图、fig-02 六个环节流程链、fig-03 主体罗列 vs 主体＋专属动作对照、fig-04 人防·技防·制度防三角关系；cover-21x9 与 cover-1x1 为本篇专用封面（不覆盖固定头图）；preview/ 为 390px 手机预览长图 |
+| 2026-11-16 | 申论方法：“加强监管”这四个字，正在扣你的分（封面 v2 候选） | 公众号封面候选 | `media/images/2026-11-16-jiaqiang-jianguan/cover-v2-*.png` | 待上传 | 三个方向 a-correction（白底批改划线＋−分圈）/ b-solid（墨绿满版）/ c-grid（杂志字格），各含 21x9 与 1x1；生成脚本 `preview/cover-v2-build.py`；待 Perfect 选定后用 `.local/penny/replace_draft_cover.py` 替换草稿封面 |
+| 2026-11-16 | 申论方法：“加强监管”这四个字，正在扣你的分（封面 v3 候选） | 公众号封面候选 | `media/images/2026-11-16-jiaqiang-jianguan/cover-v3-*.png` | 待上传 | 高端极简海报风（深墨绿满版底＋抽象主视觉＋risograph 颗粒＋径向光晕＋细宋体标题）；pen（钢笔笔尖划线，陶土橙点缀）/ forces（四股力量汇向中心，纯墨绿系）/ seal（被笔痕划过的盾形印章，纯墨绿系），各含 21x9 与 1x1；主视觉 AI 生成无文字，标题系统宋体排版；源图与生成脚本在 `preview/cover-v3-src/`、`preview/cover-v3-build.py`；选定后 `.local/penny/replace_draft_cover.py <方向> --execute` 替换草稿封面 |
+| 2026-11-16 | 申论方法：“加强监管”这四个字，正在扣你的分（封面 v4 候选） | 公众号封面候选 | `media/images/2026-11-16-jiaqiang-jianguan/cover-v4-*.png` | 待上传 | 按 dsh-guizang-design / guizang-social-card-skill 瑞士国际风重做，品牌色小米橙 #FF6900（经 gz-theme.mjs brand 生成主题）；four-cells（米白底＋超细大标题＋四种力量 2×2 方格，政府格橙色）/ orange-ledger（整版小米橙＋近黑超细“加强监管”＋三行职责台账），各含 21x9（2100×900 渲染后导出 1880×800）与 1x1；字体 Inter / Noto Sans SC / JetBrains Mono 子集内置，无 AI 图；生成脚本 `preview/cover-v4-build.py`，配对预览 `preview/cover-v4-*-pair.png`；选定后 `.local/penny/replace_draft_cover.py <方向> --execute` 替换草稿封面 |
+| 2026-11-16 | 申论方法：“加强监管”这四个字，正在扣你的分（配图小米橙版） | 正文配图 | `media/images/2026-11-16-jiaqiang-jianguan/fig-0[1-4]-*-orange.png` | 待上传 | 以原四张墨绿版为参考重画，fresh 线描、白底细黑线不变，点缀改小米橙 #FF6900 / 浅橙 #FFCAB3；fig-02 标题沿用原图像素防错字，fig-04 去掉人物胸章内的乱码小字；对应正文 `data/exports/wechat_html/…(zen-whitespace)-orange.html`，390 预览 `preview/wechat-preview-390-orange.png` |
+| 2026-11-16 | 申论方法：“加强监管”这四个字，正在扣你的分（封面 v5 候选） | 公众号封面候选 | `media/images/2026-11-16-jiaqiang-jianguan/cover-v5-*.png` | 待上传 | 借鉴 Adobe 品牌指南配色与版式（Adobe red #EB1000 / 黑 / 白；标题最粗、字距 -0.02em、紧行距、左上对齐；副标题 Regular；左下签名 LeePerfect），未用 Adobe logo 与字体；red（红底白字）/ white（白底黑标题，“加强监管”与签名用红），各含 21x9（1880×800）与 1x1；字体思源黑体 CN Heavy / Regular；生成脚本 `preview/cover-v5-build.py`，缩略图 `preview/cover-v5-thumbs-360.png`；选定后 `.local/penny/replace_draft_cover.py <red|white> --execute` 替换草稿封面 |
+| 2026-11-16 | 申论方法：“加强监管”这四个字，正在扣你的分（封面 v5b 候选） | 公众号封面候选 | `media/images/2026-11-16-jiaqiang-jianguan/cover-v5b-*.png` | 待上传 | v5 调整版：按 guizang-social-card-skill `references/production-workflow.md` 行高标准，标题行高 0.98→1.16（标准 1.08–1.22）、字距 -0.02em→+0.02em，副标题行高 1.3→1.5（标准 1.35–1.55）、字距 +0.04em；签名改 PerfectAcademy（字重/位置不变）；red / white 各含 21x9 与 1x1；脚本 `preview/cover-v5b-build.py`，缩略图 `preview/cover-v5b-thumbs-360.png`；选定后 `.local/penny/replace_draft_cover.py <red-b|white-b> --execute` |
+| 2026-06-14 | 通过 AI 高效备课资料包 | 打包交付 | `media/packages/通过 AI 高效备课资料包.zip` | 待上传 | 原存 `data/`，2026-11-18 按"非文本成品进 media/"规则移入 `media/packages/` |
 
 ## 类型写法
 

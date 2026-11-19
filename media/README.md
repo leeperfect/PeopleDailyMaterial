@@ -12,6 +12,8 @@ media/
   video/           # 口播、短视频、录屏、课程视频
   audio/           # 口播音频、课程音频、配音文件
   packages/        # 打包交付物、压缩包、整套发布包
+  ppt/             # 网页 PPT 成品（单 HTML 课件，含配图与离线动效）
+  wechat-html/     # 公众号正文排版 HTML 成品
 ```
 
 推荐命名方式：

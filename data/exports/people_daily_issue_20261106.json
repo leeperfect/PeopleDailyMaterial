@@ -1,0 +1,714 @@
+{
+  "issue_date": "2026-11-06",
+  "status": "complete",
+  "request_interval": 1.5,
+  "sections": [
+    {
+      "section_no": "01",
+      "section_name": "要闻",
+      "articles": 7,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_01.html"
+    },
+    {
+      "section_no": "02",
+      "section_name": "要闻",
+      "articles": 9,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_02.html"
+    },
+    {
+      "section_no": "03",
+      "section_name": "要闻",
+      "articles": 10,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_03.html"
+    },
+    {
+      "section_no": "04",
+      "section_name": "要闻",
+      "articles": 6,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_04.html"
+    },
+    {
+      "section_no": "05",
+      "section_name": "评论",
+      "articles": 8,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_05.html"
+    },
+    {
+      "section_no": "06",
+      "section_name": "要闻",
+      "articles": 9,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_06.html"
+    },
+    {
+      "section_no": "07",
+      "section_name": "综合",
+      "articles": 5,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_07.html"
+    },
+    {
+      "section_no": "08",
+      "section_name": "广告",
+      "articles": 1,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_08.html"
+    },
+    {
+      "section_no": "09",
+      "section_name": "特别报道",
+      "articles": 5,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_09.html"
+    },
+    {
+      "section_no": "10",
+      "section_name": "特别报道",
+      "articles": 8,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_10.html"
+    },
+    {
+      "section_no": "11",
+      "section_name": "理论",
+      "articles": 2,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_11.html"
+    },
+    {
+      "section_no": "12",
+      "section_name": "广告",
+      "articles": 1,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_12.html"
+    },
+    {
+      "section_no": "13",
+      "section_name": "记者调查",
+      "articles": 3,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_13.html"
+    },
+    {
+      "section_no": "14",
+      "section_name": "国际副刊",
+      "articles": 5,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_14.html"
+    },
+    {
+      "section_no": "15",
+      "section_name": "广告",
+      "articles": 1,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_15.html"
+    },
+    {
+      "section_no": "16",
+      "section_name": "广告",
+      "articles": 1,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_16.html"
+    },
+    {
+      "section_no": "17",
+      "section_name": "绿色",
+      "articles": 3,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_17.html"
+    },
+    {
+      "section_no": "18",
+      "section_name": "民生",
+      "articles": 4,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_18.html"
+    },
+    {
+      "section_no": "19",
+      "section_name": "广告",
+      "articles": 1,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_19.html"
+    },
+    {
+      "section_no": "20",
+      "section_name": "副刊",
+      "articles": 7,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/06/node_20.html"
+    }
+  ],
+  "articles": [
+    {
+      "article_id": "people_daily_20261106_30189661",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189661.html",
+      "title": "大国粮仓记",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189662",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189662.html",
+      "title": "让我们的粮仓更充盈（编辑手记）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189663",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189663.html",
+      "title": "石砭峪新村有了“新账本”（贯彻五中全会精神一线见闻）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189664",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189664.html",
+      "title": "李强会见全国应急管理系统先进模范和中国消防忠诚卫士表彰大会代表",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189665",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189665.html",
+      "title": "深入学习贯彻党的二十届五中全会精神  加强人大代表思想政治和纪律作风建设",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189666",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189666.html",
+      "title": "第六届国际道教论坛在中国杭州开幕",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189667",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189667.html",
+      "title": "丁薛祥出席第九届中国国际进口博览会开幕式并会见与会外方政要",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189668",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189668.html",
+      "title": "公布《国务院关于修改和废止部分行政法规的决定》",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189669",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189669.html",
+      "title": "凝聚共襄民族复兴伟业强大合力（学习贯彻党的二十届五中全会精神）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189670",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189670.html",
+      "title": "加快推进健康中国建设  不断增进人民健康福祉",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189671",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189671.html",
+      "title": "强化科技创新与产业创新深度融合  推动经济持续向新向优向好发展",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189672",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189672.html",
+      "title": "扎实做好稳就业工作  持续兜住兜牢民生底线",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189673",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189673.html",
+      "title": "智能互联  智见未来",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189674",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189674.html",
+      "title": "国务院办公厅关于2027年部分节假日安排的通知",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189675",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189675.html",
+      "title": "检察机关依法对马兴瑞涉嫌受贿案提起公诉",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189677",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189677.html",
+      "title": "中国灵感“拼出”世界新意（进博会故事）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189678",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189678.html",
+      "title": "共护蔚蓝底色  共促永续繁荣（寰宇平）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189679",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189679.html",
+      "title": "与世界共享中国大市场机遇",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189680",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189680.html",
+      "title": "全球为何聚焦“出口中国”（快评）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189681",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189681.html",
+      "title": "王毅会见朝鲜劳动党代表团",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189682",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189682.html",
+      "title": "丁仲礼会见中法市长圆桌会议2026双方代表",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189683",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189683.html",
+      "title": "“2026·中国—智利人权研讨会”在圣地亚哥举行",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189684",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189684.html",
+      "title": "刘海星率中共代表团访问巴基斯坦、孟加拉国",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189685",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189685.html",
+      "title": "我国3项档案文献遗产入选《世界记忆亚太地区名录》",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189686",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189686.html",
+      "title": "中国为全球海洋生物多样性治理贡献力量",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189687",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189687.html",
+      "title": "学习贯彻党的二十届五中全会精神中央宣讲团在上海、中央纪委国家监委机关、公安部宣讲（学习贯彻党的二十届五中全会精神）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189688",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189688.html",
+      "title": "十四届全国人大常委会第二十五次会议审议多部报告",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189689",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189689.html",
+      "title": "同心绘新图  万里奏强音",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189690",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189690.html",
+      "title": "深入学习贯彻党的二十届五中全会精神  加强人大代表思想政治和纪律作风建设",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189691",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189691.html",
+      "title": "丁薛祥出席第九届中国国际进口博览会开幕式并会见与会外方政要",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189692",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189692.html",
+      "title": "第六届国际道教论坛在中国杭州开幕",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189693",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189693.html",
+      "title": "服务党的使命任务，打铁必须自身硬（评论员观察）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189694",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189694.html",
+      "title": "从“生存下去”到“活得更好”（暖闻热评）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189695",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189695.html",
+      "title": "消费潜力，常在触手可及的身边（人民时评）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189696",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189696.html",
+      "title": "图片报道",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189697",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189697.html",
+      "title": "“旁听”遵义会议，一次精神会师（纵横）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189698",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189698.html",
+      "title": "让陪诊服务靠得住用得好（人民锐评）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189701",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189701.html",
+      "title": "中央和国家机关要走好第一方阵（学习贯彻党的二十届五中全会精神）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189702",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189702.html",
+      "title": "团结根植天山  共创美好生活（铸牢共同体  中华一家亲）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189703",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189703.html",
+      "title": "2026年世界互联网大会乌镇峰会闭幕",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189704",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189704.html",
+      "title": "《智能体发展自律公约》发布",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189705",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189705.html",
+      "title": "2026“直通乌镇”全球互联网大赛结果揭晓",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189706",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189706.html",
+      "title": "图片报道",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189707",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189707.html",
+      "title": "长三角“AI+”高价值场景共建共享合作倡议发布",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189708",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189708.html",
+      "title": "《实施全面节约战略行动方案》印发",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189710",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189710.html",
+      "title": "国务院关于修改和废止部分行政法规的决定",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189711",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189711.html",
+      "title": "黄土高原小山村结缘碳汇交易（美丽中国·大河新颜）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189712",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189712.html",
+      "title": "母亲河，未来会更美（编辑手记）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189713",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189713.html",
+      "title": "青海拉面飘出新滋味（培育更多“中国服务”品牌）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189716",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189716.html",
+      "title": "坚持共享市场  扩大开放合作",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189717",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189717.html",
+      "title": "进博舞台  续写精彩（编辑观察）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189718",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189718.html",
+      "title": "“做消费者美好生活的陪伴者”（探馆进博会）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189719",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189719.html",
+      "title": "“把更多好水果带给中国消费者”（探馆进博会）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189721",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189721.html",
+      "title": "同聚“四叶草”  开拓新机遇",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189722",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189722.html",
+      "title": "进博会“朋友圈”再扩容",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189723",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189723.html",
+      "title": "看不见的展品，看得见的服务",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189724",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189724.html",
+      "title": "推动更多前沿科技落地应用",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189725",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189725.html",
+      "title": "用一杯咖啡打开更广阔的市场",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189726",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189726.html",
+      "title": "见证中国设计走向全球",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189727",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189727.html",
+      "title": "以创新技术守护健康",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189757",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189757.html",
+      "title": "践行“四个坚持”  打造党和人民信赖的新闻工作者队伍（深入学习贯彻习近平新时代中国特色社会主义思想）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189758",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189758.html",
+      "title": "以绣花功夫把工作做扎实、做到位（思想纵横）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189732",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189732.html",
+      "title": "会诊转诊一站式  患者省心又省钱（人民眼·优化就医体验）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189733",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189733.html",
+      "title": "解决急难愁盼  优化就医体验（有所思）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189735",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189735.html",
+      "title": "温故创新  风谊长存",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189736",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189736.html",
+      "title": "用双脚丈量长征（阅见世界）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189737",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189737.html",
+      "title": "南非“茶”香（大千絮语）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189738",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189738.html",
+      "title": "盐矿小镇（域外见闻）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189742",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189742.html",
+      "title": "绿色传奇（深度观察）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189743",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189743.html",
+      "title": "每一棵树每一片草每一缕风的诉说",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189759",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189759.html",
+      "title": "从“一日聚”看银发服务创新（多棱镜）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189760",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189760.html",
+      "title": "“沉睡”钱包变安居红利（大国小家）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189761",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189761.html",
+      "title": "如何避免公租房沦为“人情房”（枝叶关情）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189750",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189750.html",
+      "title": "无与伦比的苦难  前所未有的胜利（大地读书会）",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189751",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189751.html",
+      "title": "时间深处的文明密码",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189752",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189752.html",
+      "title": "接过法布尔的放大镜",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189753",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189753.html",
+      "title": "写作如果有诀窍，那就是多写",
+      "status": "existing"
+    },
+    {
+      "article_id": "people_daily_20261106_30189755",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189755.html",
+      "title": "辨认一个人何以成为自己",
+      "word_count": 1354,
+      "status": "downloaded"
+    }
+  ],
+  "excluded": [
+    {
+      "article_id": "people_daily_20261106_30189676",
+      "title": "一版责编：胡安琪  赵  政  栾心怡  二版责编：吕  莉  郭雪岩  陈  震  三版责编：吴  刚  姜  波  谢佳宁  四版责编：刘  念  崔  斌  张雪妍",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189676.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189699",
+      "title": "欢迎赐稿",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189699.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189700",
+      "title": "本版责编：李  拯  张  凡  余  璇",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189700.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189709",
+      "title": "本版责编：张彦春  宋  宇  王  博",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189709.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189714",
+      "title": "本版责编：陈  娟  杨笑雨  董汶鑫",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189714.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189715",
+      "title": "南方电网公司  加快打造新型电网，助力建设能源强国",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189715.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189720",
+      "title": "本版责编  吕钟正  吴  凯  韩文榕",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189720.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189728",
+      "title": "本版责编：管璇悦  张伟昊  翟钦奇",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189728.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189731",
+      "title": "融通山海  共赴未来 兴业银行以金融之力服务高质量共建“一带一路”",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189731.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189734",
+      "title": "本版责编：杨  彦  孙  振  戴林峰",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189734.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189739",
+      "title": "本版责编：王佳可  庄雪雅  李欣怡",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189739.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189740",
+      "title": "五粮启新程  浓香汇全球",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189740.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189741",
+      "title": "内蒙古  岭上铺锦  秋满兴安",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189741.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189744",
+      "title": "本版责编：寇江泽",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189744.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189762",
+      "title": "本版责编：寇江泽",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189762.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189749",
+      "title": "推动科技创新和产业创新深度融合  金正大助力千人赴德开展农业研学",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189749.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261106_30189754",
+      "title": "新书架",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189754.html",
+      "reason": "图片版式，文字仅存于图片提示；保留原HTML"
+    },
+    {
+      "article_id": "people_daily_20261106_30189756",
+      "title": "本版责编  任飞帆",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/06/content_30189756.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    }
+  ],
+  "errors": [],
+  "robots_status": "404; no robots restrictions published",
+  "directory_article_count": 96,
+  "completed_at": "2026-11-18T21:20:36+08:00",
+  "stored_articles": 78,
+  "excluded_articles": 18
+}

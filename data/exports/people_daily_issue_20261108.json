@@ -1,0 +1,417 @@
+{
+  "issue_date": "2026-11-08",
+  "status": "complete",
+  "request_interval": 1.5,
+  "sections": [
+    {
+      "section_no": "01",
+      "section_name": "要闻",
+      "articles": 8,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/08/node_01.html"
+    },
+    {
+      "section_no": "02",
+      "section_name": "要闻",
+      "articles": 6,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/08/node_02.html"
+    },
+    {
+      "section_no": "03",
+      "section_name": "要闻",
+      "articles": 8,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/08/node_03.html"
+    },
+    {
+      "section_no": "04",
+      "section_name": "要闻",
+      "articles": 9,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/08/node_04.html"
+    },
+    {
+      "section_no": "05",
+      "section_name": "特别报道",
+      "articles": 4,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/08/node_05.html"
+    },
+    {
+      "section_no": "06",
+      "section_name": "特别报道",
+      "articles": 6,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/08/node_06.html"
+    },
+    {
+      "section_no": "07",
+      "section_name": "新青年",
+      "articles": 4,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/08/node_07.html"
+    },
+    {
+      "section_no": "08",
+      "section_name": "文化遗产",
+      "articles": 6,
+      "url": "https://paper.people.com.cn/rmrb/pc/layout/202611/08/node_08.html"
+    }
+  ],
+  "articles": [
+    {
+      "article_id": "people_daily_20261108_30189991",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189991.html",
+      "title": "部署党的二十一大代表选举工作",
+      "word_count": 1529,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189992",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189992.html",
+      "title": "“三农”发展不断迈上新台阶（活力中国调研行）",
+      "word_count": 3359,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189993",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189993.html",
+      "title": "以更优服务解决群众急难愁盼（贯彻五中全会精神一线见闻）",
+      "word_count": 1073,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189994",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189994.html",
+      "title": "图片报道",
+      "word_count": 109,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189995",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189995.html",
+      "title": "煤海向绿  “风光”逐新",
+      "word_count": 1610,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189996",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189996.html",
+      "title": "为全球发展进步注入青春力量（今日谈）",
+      "word_count": 348,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189997",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189997.html",
+      "title": "累计完工改造城镇老旧小区1.6万个",
+      "word_count": 382,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189998",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189998.html",
+      "title": "超800万人次接受补贴性培训",
+      "word_count": 322,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189999",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189999.html",
+      "title": "第七届世界媒体峰会在北京举办",
+      "word_count": 473,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190000",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190000.html",
+      "title": "开放链全球  智造启新程（进博会观察）",
+      "word_count": 2497,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190001",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190001.html",
+      "title": "将强化纳税人权益保护贯穿始终",
+      "word_count": 1675,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190002",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190002.html",
+      "title": "联合收割机，研发跟着用户走（身边的创新·想不到的中国农机）",
+      "word_count": 1275,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190003",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190003.html",
+      "title": "中国空间站将迎来首位外籍航天员",
+      "word_count": 292,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190004",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190004.html",
+      "title": "煤海向绿  “风光”逐新",
+      "word_count": 1610,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190005",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190005.html",
+      "title": "开放融通  共生机遇",
+      "word_count": 2434,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190006",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190006.html",
+      "title": "坚守多边主义，推进普惠包容的经济全球化",
+      "word_count": 2629,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190007",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190007.html",
+      "title": "何立峰与美国财政部长贝森特、贸易代表格里尔举行视频通话",
+      "word_count": 244,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190008",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190008.html",
+      "title": "郑建邦出席非洲国家议员研讨班开班式",
+      "word_count": 132,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190009",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190009.html",
+      "title": "第十四届中欧论坛聚焦对话与人工智能合作",
+      "word_count": 250,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190010",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190010.html",
+      "title": "2026中非经贸和文化论坛在浙江举行",
+      "word_count": 118,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190011",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190011.html",
+      "title": "“希望能够从中国的基建经验中获得启发”",
+      "word_count": 1100,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190012",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190012.html",
+      "title": "传承“鼓岭情缘”，汇聚中美相向而行的力量（和音）",
+      "word_count": 1298,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190013",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190013.html",
+      "title": "学习贯彻党的二十届五中全会精神中央宣讲团在山东、陕西、青海宣讲（学习贯彻党的二十届五中全会精神）",
+      "word_count": 1339,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190014",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190014.html",
+      "title": "保民平安  为民造福",
+      "word_count": 1769,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190015",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190015.html",
+      "title": "2026中国报纸副刊研究会年会在江西九江举行",
+      "word_count": 585,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190016",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190016.html",
+      "title": "第十四届范敬宜新闻教育奖颁发",
+      "word_count": 363,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190017",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190017.html",
+      "title": "图片报道",
+      "word_count": 87,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190018",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190018.html",
+      "title": "港澳台侨媒体采访联谊活动在京举行",
+      "word_count": 254,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190019",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190019.html",
+      "title": "全国法学会基层服务站点和法学专家咨询工作推进会召开",
+      "word_count": 425,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190020",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190020.html",
+      "title": "“三农”发展不断迈上新台阶（活力中国调研行）",
+      "word_count": 3359,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189971",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189971.html",
+      "title": "以开放促创新  以合作促发展",
+      "word_count": 2460,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189972",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189972.html",
+      "title": "进博“含新量”成为发展“含金量”",
+      "word_count": 954,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189973",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189973.html",
+      "title": "开放汇聚创新之力",
+      "word_count": 808,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189975",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189975.html",
+      "title": "做深度嵌入中国产业链的同行者",
+      "word_count": 1683,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189976",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189976.html",
+      "title": "政策性金融赋能先进制造，助力外贸高质量发展",
+      "word_count": 1918,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189977",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189977.html",
+      "title": "传统技艺邂逅开放盛会（进博会故事）",
+      "word_count": 919,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189978",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189978.html",
+      "title": "链接全球资源  持续深耕乳业",
+      "word_count": 1123,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189979",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189979.html",
+      "title": "“让产品经得起消费者检验”",
+      "word_count": 934,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190022",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190022.html",
+      "title": "年轻人为何爱上“访古”",
+      "word_count": 3932,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190023",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190023.html",
+      "title": "在“喝大水”里找回对生活的掌控感",
+      "word_count": 1209,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30190024",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190024.html",
+      "title": "小黄花长成“金疙瘩”（青春日记）",
+      "word_count": 1017,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189985",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189985.html",
+      "title": "扎实推进文化遗产法治建设",
+      "word_count": 1993,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189986",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189986.html",
+      "title": "推动非物质文化遗产融入大保护新格局",
+      "word_count": 1611,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189987",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189987.html",
+      "title": "古人的“小火锅”与“一人食”（上新了）",
+      "word_count": 1282,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189988",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189988.html",
+      "title": "通过一条大河，让世界了解中国（博古知今）",
+      "word_count": 1808,
+      "status": "downloaded"
+    },
+    {
+      "article_id": "people_daily_20261108_30189989",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189989.html",
+      "title": "北宋皇陵的“前世今生”",
+      "word_count": 1520,
+      "status": "downloaded"
+    }
+  ],
+  "excluded": [
+    {
+      "article_id": "people_daily_20261108_30190021",
+      "title": "一版责编：胡安琪  赵  政  张宇杰  二版责编：吕  莉  郭雪岩  陈  震  三版责编：吴  刚  周  輖  谢佳宁  四版责编：刘  念  崔  斌  张雪妍",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190021.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261108_30189974",
+      "title": "本版责编：朱  隽  王  浩  邓剑洋",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189974.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261108_30189980",
+      "title": "本版责编：吕钟正  吴  凯  韩文榕",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189980.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261108_30190025",
+      "title": "本版责编：刘博通",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30190025.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    },
+    {
+      "article_id": "people_daily_20261108_30189990",
+      "title": "本版责编  王  瑨",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202611/08/content_30189990.html",
+      "reason": "版面联系信息或广告；原HTML留存，不作为文章入库"
+    }
+  ],
+  "errors": [],
+  "robots_status": "404; no robots restrictions published",
+  "directory_article_count": 51,
+  "completed_at": "2026-11-18T21:24:07+08:00",
+  "stored_articles": 46,
+  "excluded_articles": 5
+}
