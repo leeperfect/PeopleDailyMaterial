@@ -18,7 +18,8 @@ class DataExporter:
     """数据导出类"""
     def __init__(self, config: Dict):
         self.config = config
-        self.export_dir = self.config.get('export.dir', 'data/exports')
+        # 兼容两种传参：完整 config（键为 export.dir）或 export 子字典（键为 dir）
+        self.export_dir = self.config.get('export.dir', self.config.get('dir', 'data/exports'))
         ensure_directory(self.export_dir)
     
     def export_to_json(self, articles: List[Dict], filename: Optional[str] = None) -> str:

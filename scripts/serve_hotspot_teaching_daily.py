@@ -7,9 +7,8 @@ import argparse
 import importlib.util
 import json
 import socket
-import sys
 import webbrowser
-from functools import partial
+from functools import lru_cache, partial
 from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -33,10 +32,16 @@ def build_data() -> None:
     module.export_bundle(counts)
 
 
+@lru_cache(maxsize=1)
+def _read_payload(path: Path, version: tuple[int, int, int]) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def load_payload() -> dict:
     if not DATA_FILE.exists():
         build_data()
-    return json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    stat = DATA_FILE.stat()
+    return _read_payload(DATA_FILE, (stat.st_ino, stat.st_mtime_ns, stat.st_size))
 
 
 def topic_by_id(payload: dict, topic_id: str) -> dict | None:
@@ -47,8 +52,8 @@ def edition_payload(payload: dict, table: str, key: str, value: str) -> dict | N
     edition = next((item for item in payload.get(table, []) if item.get(key) == value), None)
     if not edition:
         return None
-    topics = [topic_by_id(payload, topic_id) for topic_id in edition.get("topic_ids", [])]
-    return {**edition, "topics": [item for item in topics if item]}
+    by_id = {topic["topic_id"]: topic for topic in payload.get("topics", []) if topic.get("topic_id")}
+    return {**edition, "topics": [by_id[key] for key in edition.get("topic_ids", []) if key in by_id]}
 
 
 class TeachingDailyHandler(SimpleHTTPRequestHandler):

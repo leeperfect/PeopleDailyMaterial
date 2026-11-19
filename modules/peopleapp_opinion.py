@@ -639,7 +639,7 @@ def default_date_range(days: int) -> Tuple[str, str]:
 def load_all_articles(limit: Optional[int] = None) -> List[Dict]:
     if not DB_PATH.exists():
         return []
-    store = ArticleStore(str(DB_PATH))
+    store = ArticleStore(str(DB_PATH), read_only=True)
     try:
         articles = store.get_articles(limit=limit)
         return enrich_articles_with_meta(store, articles)
@@ -650,7 +650,7 @@ def load_all_articles(limit: Optional[int] = None) -> List[Dict]:
 def search_articles(query: str, limit: int = 20) -> List[Dict]:
     if not DB_PATH.exists():
         return []
-    store = ArticleStore(str(DB_PATH))
+    store = ArticleStore(str(DB_PATH), read_only=True)
     try:
         articles = store.search(query, limit=limit)
         return enrich_articles_with_meta(store, articles)
@@ -666,7 +666,7 @@ def load_articles(
 ) -> List[Dict]:
     if not DB_PATH.exists():
         return []
-    store = ArticleStore(str(DB_PATH))
+    store = ArticleStore(str(DB_PATH), read_only=True)
     try:
         articles = store.get_articles(
             dates=dates,

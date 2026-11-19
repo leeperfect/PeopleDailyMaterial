@@ -10,7 +10,7 @@ scope: PeopleDailyMaterial
 
 日常最短说法：
 
-> 第 81 篇已经在 Obsidian 配好图片。使用 `$dual-platform-draft-sync`：公众号固定调用 `$gzh-design` 的“红白色系”，今日头条固定使用 Word 文档导入；只保存草稿，不发布。
+> 第 81 篇已经在 Obsidian 配好图片。使用 `$dual-platform-draft-sync`：公众号固定调用 `$gzh-design` 的 zen-whitespace 小米橙主题（docs/visual-spec-zen-whitespace-fresh.md），今日头条固定使用 Word 文档导入；只保存草稿，不发布。
 
 如果当前 Agent 已经能够准确识别文章，也可以直接说：
 
@@ -53,15 +53,15 @@ python3 scripts/writing_workflow.py status "<文章路径>"
 
 必须确认：二润稿通过、重点加粗通过、配图清单存在、状态为 `figures_confirmed`、正文和配图在确认后没有变化。
 
-### 4. 生成公众号“红白色系”HTML
+### 4. 生成公众号 zen-whitespace 小米橙 HTML
 
-显式调用 `$gzh-design`，主题固定为“红白色系”，不再逐篇询问主题。按该 Skill 的组件库生成纯 `<section>…</section>` 正文片段，并保证原文段落、配图、金句集合和参考文章完整。
+显式调用 `$gzh-design`，主题固定为 zen-whitespace「留白禅意风」，再按 `docs/visual-spec-zen-whitespace-fresh.md` 第 7 节换色为小米橙（#4A5D52→#FF6900、锚点加粗 #E65100、#B5C8BC→#FFCAB3，文件名带 -orange，换色后重跑校验并核对正文文字零差异），不再逐篇询问主题。按该 Skill 的组件库生成纯 `<section>…</section>` 正文片段，并保证原文段落、配图、金句集合和参考文章完整。
 
 生成后强制运行：
 
 ```bash
 python3 ~/.codex/skills/gzh-design/scripts/component_lint.py ~/.codex/skills/gzh-design
-python3 ~/.codex/skills/gzh-design/scripts/validate_gzh_html.py "<红白色系正文HTML>"
+python3 ~/.codex/skills/gzh-design/scripts/validate_gzh_html.py "<已校验正文HTML>"
 ```
 
 组件库检查必须为 0 ERROR；最终 HTML 校验必须为 0 ERROR、0 WARNING。公众号后续上传与预览使用同一份已校验 HTML，不再以 doocs/md 为默认排版来源。
@@ -70,12 +70,12 @@ python3 ~/.codex/skills/gzh-design/scripts/validate_gzh_html.py "<红白色系�
 
 ```bash
 python3 scripts/writing_workflow.py sync-dual "<文章路径>" \
-  --wechat-html "<红白色系正文HTML>"
+  --wechat-html "<已校验正文HTML>"
 ```
 
 公众号端：
 
-1. 读取并复验 `$gzh-design` 生成的红白色系 HTML；
+1. 读取并复验 `$gzh-design` 生成的 zen-whitespace 小米橙 HTML；
 2. 上传 HTML 中引用的本地正文图片；
 3. 按文章系列选择公众号固定封面；
 4. 作者使用 `LeePerfect`，开启评论且不限制粉丝；

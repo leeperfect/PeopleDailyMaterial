@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import logging
+import tempfile
 from typing import Optional, Dict, Any
 
 
@@ -69,13 +70,19 @@ def get_project_root() -> str:
 
 def safe_json_dump(data: Any, file_path: str):
     """安全地将数据写入JSON文件"""
+    temporary = None
     try:
-        with open(file_path, 'w', encoding='utf-8') as f:
+        with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=os.path.dirname(os.path.abspath(file_path)), delete=False) as f:
+            temporary = f.name
             json.dump(data, f, ensure_ascii=False, indent=2)
+        os.replace(temporary, file_path)
         return True
     except Exception as e:
         logging.error(f"写入JSON文件失败: {str(e)}")
         return False
+    finally:
+        if temporary and os.path.exists(temporary):
+            os.unlink(temporary)
 
 
 def safe_json_load(file_path: str) -> Optional[Any]:

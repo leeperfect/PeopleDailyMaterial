@@ -15,7 +15,7 @@ DEFAULT_DB_PATH = ROOT / "data" / "core" / "material_assets.sqlite"
 
 
 def connect(db_path: Path) -> sqlite3.Connection:
-    conn = sqlite3.connect(str(db_path))
+    conn = sqlite3.connect(f"{db_path.resolve().as_uri()}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -155,15 +155,21 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=20, help="最多显示多少张素材卡")
     args = parser.parse_args()
 
-    conn = connect(Path(args.db_path))
-    if args.topics:
-        print_topics(conn, args.date)
-    elif args.ideas:
-        print_ideas(conn, args.date)
-    elif args.questions:
-        print_questions(conn, args.date)
-    else:
-        print_cards(conn, args)
+    try:
+        conn = connect(Path(args.db_path))
+    except sqlite3.OperationalError as exc:
+        parser.exit(1, f"无法只读打开素材库 {args.db_path}：{exc}\n")
+    try:
+        if args.topics:
+            print_topics(conn, args.date)
+        elif args.ideas:
+            print_ideas(conn, args.date)
+        elif args.questions:
+            print_questions(conn, args.date)
+        else:
+            print_cards(conn, args)
+    finally:
+        conn.close()
 
 
 if __name__ == "__main__":

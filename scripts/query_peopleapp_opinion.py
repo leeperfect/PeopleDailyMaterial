@@ -34,7 +34,7 @@ def print_stats() -> None:
     if not DB_PATH.exists():
         print("APP 评论库尚未建立，请先运行 scripts/crawl_peopleapp_opinion.py")
         return
-    store = ArticleStore(str(DB_PATH))
+    store = ArticleStore(str(DB_PATH), read_only=True)
     try:
         stats = store.stats()
     finally:
@@ -55,6 +55,10 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=20, help="最多显示多少条，默认 20")
     parser.add_argument("--stats", action="store_true", help="只显示库概况")
     args = parser.parse_args()
+    if args.search and any((args.date, args.start, args.end)):
+        parser.error("关键词检索尚不能同时限定日期，请分开查询")
+    if args.limit < 1:
+        parser.error("--limit 必须是正整数")
 
     if args.stats:
         print_stats()

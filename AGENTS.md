@@ -12,8 +12,8 @@
 - `core` 是机器检索和同步合同。
 - `vault` 是人看的阅读视图。
 - `analysis` 是教研分析和出品过程。
-- `articles/人民日报系列` 和 `articles/热点系列` 是两类当前成品稿入口。
-- `articles/往期文章` 是已发表文章的人工归档入口，内部按两个系列继续分类。
+- `articles/人民日报系列`、`articles/热点系列` 和 `articles/申论方法系列` 是三类当前成品稿入口。
+- `articles/往期文章` 是已发表文章的人工归档入口，内部按系列继续分类。
 - `media` 是图片、课件、音视频等本地多媒体资产库，由网盘同步，不进 GitHub。
 - Notion 是外部分发视图，不是本地唯一事实源。
 
@@ -31,15 +31,17 @@
 - `data/data_analysis/`：自媒体后台原始数据、拆分明细、每期详细运营报告和长期运营总览，供老师直接查看。
 - `data/articles/人民日报系列/`：当前可编辑、待发布的人民日报选题文章。
 - `data/articles/热点系列/`：当前可编辑、待发布的热点分析文章。
+- `data/articles/申论方法系列/`：当前可编辑、待发布的申论写作方法文章（2026-11-18 立为正式第三系列）。
 - `data/articles/往期文章/人民日报系列/`：已发表的人民日报选题文章。
 - `data/articles/往期文章/热点系列/`：已发表的热点分析文章。
-- `data/articles/文章索引.md`：两个系列及其往期归档的统一查找入口。
+- `data/articles/文章索引.md`：各系列及其往期归档的统一查找入口。
+- `data/articles/原稿归档/`：被润色版取代的原稿留档；文件名含 `【R】` 或 `-r` 的润色版是权威版，索引和引用一律指向权威版。
 - `data/exports/`：JSON/CSV/Notion 等外部同步或分发产物。
 - `media/`：小红书图片、公众号配图、课件、视频、音频、压缩包等非文本资产。真实文件不进入 GitHub，只通过网盘同步；GitHub 只保留 `media/_index.md` 索引。
 - `docs/`：数据库说明、内容生产流程、项目规范。
 - `tests/`：自动检查。
 
-不要把已经清掉的空占位目录当成当前结构重新创建，例如 `data/source/`、`data/index/`、`data/manifests/`、`data/checkpoints/`，除非后续确实有脚本需要它们。
+不要把已经清掉的空占位目录当成当前结构重新创建，例如 `data/index/`、`data/manifests/`、`data/checkpoints/`，除非后续确实有脚本需要它们（`data/checkpoints/` 会由断点续传模块在运行时自动创建）。注意：`data/source/` 现存放《马江博·政经参考（2026）》和十五五规划纲要 PDF 等选题来源资料，是有效内容，不属于空占位目录，不要删除。
 
 ## 数据和同步规则
 
@@ -64,7 +66,7 @@
 - 新增小红书图、公众号配图、课件、视频、音频后，要同步补 `media/_index.md`，记录主题、类型、本地路径和网盘位置。
 - 不要为了“目录更清爽”删除 `data/raw/`、`data/core/`、`data/vault/`、`data/analysis/`、`data/articles/` 里的有效内容。
 - 可以清理的通常是本地缓存、日志、`.DS_Store`、`__pycache__`、虚拟环境、空占位目录。
-- `.trae/`、`api/`、`outputs/`、`node_modules/`、`docs/vercel-labsagent.md`、`未命名.base`、`未命名.canvas` 属于疑似旧工具或旧实验文件；删除前要明确取得用户确认。
+- `.trae/`、`api/`、`outputs/`、`node_modules/`、`docs/vercel-labsagent.md`、`未命名.base`、`未命名.canvas`、`未命名 1.base`、`未命名 1.canvas`、`未命名 2.canvas` 属于疑似旧工具或旧实验文件；删除前要明确取得用户确认。
 
 ## 国务院政策资料库
 
@@ -114,7 +116,7 @@ python3 scripts/sync_idea_magazine_to_miaoda.py
 python3 scripts/sync_hotspot_magazine_to_miaoda.py
 ```
 
-重建本地核心库：
+首次建立本地核心库（已有主库时使用 `--db-path` 指定新的核验目录，不覆盖主库）：
 
 ```bash
 python3 scripts/rebuild_article_database.py
@@ -143,6 +145,7 @@ python3 scripts/sync_to_notion.py 2026-05-27
 - 文档使用中文；机器流程、脚本、结构化数据文件名仍使用英文。
 - 基于人民日报选题形成的成稿放在 `data/articles/人民日报系列/`，沿用数字编号；下一编号同时核对系列目录文件名和 `data/articles/文章索引.md` 后确定。
 - 基于近期公共热点和官媒评论形成的分析稿放在 `data/articles/热点系列/`，使用“热点1、热点2……”独立编号。
+- 基于申论写作方法、答题技巧形成的成稿放在 `data/articles/申论方法系列/`，使用“方法1、方法2……”独立编号；首篇《考试中“加强监管”这四个字，正在扣你的分》保留原文件名，不追溯改名。发表后移入 `data/articles/往期文章/申论方法系列/`（首次归档时创建该目录）。
 - 文章发表后由老师手动移入 `data/articles/往期文章/` 下对应系列，保留原编号，并同步更新 `data/articles/文章索引.md`。
 - 做单篇文章教研标注时，优先增量补充，不删旧批注。
 - 每次完成文章写作，固定生成四项：公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。小红书卡片脚本集中放入 `data/xiaohongshu/`；教研复盘和公众号过程稿放入 `data/analysis/`；非文本成品放入 `media/`。
@@ -160,9 +163,10 @@ python3 scripts/sync_to_notion.py 2026-05-27
 
 ## 公众号写作工作流
 
+- 公众号视觉规范以 `docs/visual-spec-zen-whitespace-fresh.md` 为准（2026-11-18 老师确认）：正文 zen-whitespace 留白禅意风 × fresh 线描配图，主色小米橙 #FF6900；旧“红白色系 / 砖红”仅用于历史旧稿兼容，不再用于新稿。新稿封面按该规范第 6 节每篇专用设计，固定头图仍作默认兜底。
 - 双平台草稿同步的可复用入口是项目 Skill：`.agents/skills/dual-platform-draft-sync/SKILL.md`。用户说“图片插好了”“Obsidian 配图完成”“同步双平台草稿”或要求其他 Agent 直接走完整同步流程时，必须调用该 Skill，并按 `docs/dual-platform-draft-sync.md` 执行。
 
-- 用户说“写稿”时：按“写稿 → 送去二润”连续执行，不再等待第二条命令。用户已将“一润结束后直接送得到大脑二润”设为本项目长期授权，因此不得在每篇文章完成后再次索要全文外发确认。必须先调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑，并固定生成公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。成稿保存到 `data/articles/人民日报系列/` 或 `data/articles/热点系列/`，小红书卡片脚本保存到 `data/xiaohongshu/`，其余过程文字保存到 `data/analysis/`，同时同步 `data/articles/文章索引.md`。四项产物及来源校验通过后，先按 `docs/public-content-wording-safety.md` 审查正文与参考文章，并运行 `python3 scripts/check_public_wording.py "<公众号成稿路径>" "<小红书脚本路径>"`；所有“必须改写”项清零后，再运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft`。随后调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架；润色后再次执行用语预检，最后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`，把一润稿送入得到大脑并记录精确 `note_id`。只有用语预检未通过、来源校验失败、得到鉴权失效或发送接口明确报错时才停止，并向用户说明阻塞点。
+- 用户说“写稿”时：按“写稿 → 送去二润”连续执行，不再等待第二条命令。用户已将“一润结束后直接送得到大脑二润”设为本项目长期授权，因此不得在每篇文章完成后再次索要全文外发确认。必须先调用 `peopledaily-article-production` Skill，按选题卡读取真实来源、补充 `Codex 教研速读`、建立递进逻辑，并固定生成公众号成稿、小红书卡片脚本、选题教研复盘、公众号过程稿。成稿按类型保存到 `data/articles/人民日报系列/`、`data/articles/热点系列/` 或 `data/articles/申论方法系列/`，小红书卡片脚本保存到 `data/xiaohongshu/`，其余过程文字保存到 `data/analysis/`，同时同步 `data/articles/文章索引.md`。四项产物及来源校验通过后，先按 `docs/public-content-wording-safety.md` 审查正文与参考文章，并运行 `python3 scripts/check_public_wording.py "<公众号成稿路径>" "<小红书脚本路径>"`；所有“必须改写”项清零后，再运行 `python3 scripts/writing_workflow.py snapshot "<文章路径>" --stage draft`。随后调用 `humanizer-zh` Skill 润色正文，质量评分目标不低于 45/50，且必须保留 YAML、事实、数字、引用、参考文章和教学框架；润色后再次执行用语预检，最后运行 `python3 scripts/writing_workflow.py send "<文章路径>"`，把一润稿送入得到大脑并记录精确 `note_id`。只有用语预检未通过、来源校验失败、得到鉴权失效或发送接口明确报错时才停止，并向用户说明阻塞点。
 - 用户单独说“送去二润”或“写完并送去二润”时：继续兼容。若文章尚未形成，完整执行“写稿 → 送去二润”；若已有可审查初稿，则从初稿快照和 Humanizer 一润开始执行，不重复写稿。
 - 用户说“拉回”或“我在得到改好了，拉回”时：按“拉回 → 重点加粗审查 → 登记 NotebookLM 配图 → 双平台配图初排 → 打开本地双平台配图工作台”连续执行，并停在本地配图环节；不得在“拉回”阶段创建公众号或今日头条草稿。先根据当前文章运行 `python3 scripts/writing_workflow.py pull "<文章路径>"`，必须使用本地记录的精确 `note_id`；校验不通过时不得覆盖本地稿，也不得继续配图或上传草稿。拉回成功后必须继续审查重点，只在得到版原文上增加 `**加粗**`，不得改写任何文字或结构：
   - 优先突出核心判断、总公式、章节递进结论、申论可用表达、面试答题关键动作和结尾认知升级。
@@ -173,7 +177,7 @@ python3 scripts/sync_to_notion.py 2026-05-27
   - 运行 `apply-figures --initial --platform shared` 形成两端共用的初始方案，再打开“双平台配图工作台”；工作台默认让公众号和今日头条共用图片、顺序和章节位置，只有确有需要时才设置平台微调。
   - 配图缺失、登记失败或初排校验不通过时，流程停在对应环节并明确说明缺少什么，不得退化为无图草稿。
   - 用户必须在本地工作台查看公众号和今日头条预览并点击“确认配图”；确认后状态进入 `figures_confirmed`。确认前不得运行任何平台同步。
-- 用户说“同步双平台草稿”时：必须先调用项目 `$dual-platform-draft-sync` Skill。统一检查得到拉回、重点加粗、配图清单、人工确认和确认后正文/配图是否变化。公众号端必须显式调用全局 `$gzh-design` Skill，固定选用“红白色系”，不再询问主题；完整读取它的 `theme-index.md`、`theme-red-white.md` 和 `common-components.md`，生成纯 `<section>…</section>` 正文 HTML，并运行 `component_lint.py` 与 `validate_gzh_html.py`；组件库必须为 0 ERROR，最终 HTML 必须为 0 ERROR、0 WARNING，才允许同步。然后运行 `python3 scripts/writing_workflow.py sync-dual "<文章路径>" --wechat-html "<红白色系正文HTML>"`：公众号使用这份已校验 HTML 创建草稿；今日头条生成 `.docx` 和 `import-payload.json`。随后使用已安装的 Chrome 控制能力打开新的空白头条编辑页，点击“文档导入”并选择交接记录中的 `docx_path`，标题单独填写，核对章节、加粗、列表、参考文章和正文图片数量，再应用固定选项并等待“草稿已保存”。不得点击正式发布。页面字段、登录状态、验证码、文档导入或保存结果无法可靠确认时立即暂停，不得猜测点击。确认草稿保存后运行 `mark-toutiao-saved` 登记结果。
+- 用户说“同步双平台草稿”时：必须先调用项目 `$dual-platform-draft-sync` Skill。统一检查得到拉回、重点加粗、配图清单、人工确认和确认后正文/配图是否变化。公众号端必须显式调用全局 `$gzh-design` Skill，固定选用 zen-whitespace「留白禅意风」并按 `docs/visual-spec-zen-whitespace-fresh.md` 换成小米橙配色（#4A5D52→#FF6900、锚点加粗用 #E65100、#B5C8BC→#FFCAB3，文件名带 -orange，换色后重跑校验并核对正文文字零差异），不再询问主题；完整读取它的 `theme-index.md`、`theme-zen-whitespace.md` 和 `common-components.md`，生成纯 `<section>…</section>` 正文 HTML，并运行 `component_lint.py` 与 `validate_gzh_html.py`；组件库必须为 0 ERROR，最终 HTML 必须为 0 ERROR、0 WARNING，才允许同步。然后运行 `python3 scripts/writing_workflow.py sync-dual "<文章路径>" --wechat-html "<已校验正文HTML>"`：公众号使用这份已校验 HTML 创建草稿；今日头条生成 `.docx` 和 `import-payload.json`。随后使用已安装的 Chrome 控制能力打开新的空白头条编辑页，点击“文档导入”并选择交接记录中的 `docx_path`，标题单独填写，核对章节、加粗、列表、参考文章和正文图片数量，再应用固定选项并等待“草稿已保存”。不得点击正式发布。页面字段、登录状态、验证码、文档导入或保存结果无法可靠确认时立即暂停，不得猜测点击。确认草稿保存后运行 `mark-toutiao-saved` 登记结果。
   - 如果用户说明图片已经在 Obsidian/Markdown 中插好，必须先运行 `python3 scripts/writing_workflow.py confirm-inline-figures "<文章路径>"`，登记正文图片、生成清单并确认配图，再运行 `sync-dual`；不得要求用户重复导入图片。
   - 今日头条固定选项为：单图、位置留空、投放广告赚收益、不勾选头条首发、合集“人民日报热点”、勾选同步微头条、作品声明只勾选“取材网络”。固定单图封面为 `media/images/toutiao-fixed-covers/people-daily-cover.jpg`。
   - 今日头条默认使用 `scripts/build_toutiao_import_docx.py` 生成 Word：`.docx` 不超过 15 MB，图片按 Markdown 原位置嵌入，H1 不进入正文，有序/无序列表使用 Word 原生列表，加粗使用 Word 字符格式。导入后必须检查图片数与清单一致、有序列表无双编号、无序列表无双圆点、正文无残留 `**`。只有“文档导入”不可用或明确失败时，才允许回退到旧富文本逐图上传，并说明原因。
@@ -181,10 +185,10 @@ python3 scripts/sync_to_notion.py 2026-05-27
   - Obsidian 正式文章配图由“文章配图粘贴”插件保存到 `media/images/YYYY-MM-DD-article-文章编号/fig-文章编号-两位序号.png`，Markdown 使用项目根目录相对链接；默认附件兜底目录 `media/images/article-inbox/` 不作为正式文章配图目录。
   - 今日头条首次同步且尚无选项模板时，在页面上请用户确认一次原创、首发、封面、广告等当前可见选项；用 `save-toutiao-profile --profile-json` 保存页面上的选项名称和值。“只保存草稿、禁止正式发布”是工作流强制安全边界，不作为页面选项保存。
   - 任一平台失败时保留另一平台成功结果，并使用 `sync-dual --platform wechat` 或 `sync-dual --platform toutiao` 单独重试。
-- 用户说“预览公众号排版”时：调用 `$gzh-design`，固定“红白色系”，生成并校验 HTML 后用 Codex 内置浏览器打开该 Skill 生成的预览页。预览与公众号草稿必须使用同一份已校验 HTML。
-- 用户说“打开完整排版编辑器”或“保存本文排版”时：`doocs/md` 仅作为兼容旧稿的手工编辑兜底，不再决定新稿默认主题。新稿仍须回到 `$gzh-design` 的“红白色系”重新生成、校验和预览；正文变化会撤销旧配图确认，必须重新确认配图。
+- 用户说“预览公众号排版”时：调用 `$gzh-design`，固定 zen-whitespace 小米橙（按 `docs/visual-spec-zen-whitespace-fresh.md`），生成并校验 HTML 后用 Codex 内置浏览器打开该 Skill 生成的预览页。预览与公众号草稿必须使用同一份已校验 HTML。
+- 用户说“打开完整排版编辑器”或“保存本文排版”时：`doocs/md` 仅作为兼容旧稿的手工编辑兜底，不再决定新稿默认主题。新稿仍须回到 `$gzh-design` 的 zen-whitespace 小米橙主题重新生成、校验和预览；正文变化会撤销旧配图确认，必须重新确认配图。
 - 用户说“同步到公众号草稿箱”时：作为单平台重试口令兼容，但仍必须通过得到拉回、重点加粗和人工配图确认门槛。先检查 `.env` 是否已经安全配置；未配置时启动 `scripts/wechat_setup.py` 本地私密配置页，并一次只引导用户完成一个步骤；不得要求用户把 AppSecret 粘贴到聊天。
-- 当前账号无草稿接口权限时，使用 Codex 内置浏览器登录公众号后台代填；若页面变化导致代填失败，打开 `$gzh-design` 生成的红白色系预览页，让用户使用“一键复制公众号富文本”兜底。
+- 当前账号无草稿接口权限时，使用 Codex 内置浏览器登录公众号后台代填；若页面变化导致代填失败，打开 `$gzh-design` 生成的 zen-whitespace 小米橙预览页，让用户使用“一键复制公众号富文本”兜底。
 - 固定作者为 `LeePerfect`。热点系列使用 `media/images/wechat-fixed-covers/hotspot-header.png`；人民日报系列使用 `media/images/wechat-fixed-covers/people-daily-header.png`。
 - 公众号草稿默认开启评论，且不限制为仅粉丝评论：`need_open_comment=1`、`only_fans_can_comment=0`。
 - 公众号流程只允许创建草稿，不得自动群发。相同正文和排版已建草稿时，不得重复创建，除非用户明确要求。

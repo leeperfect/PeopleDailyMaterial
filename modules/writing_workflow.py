@@ -84,10 +84,11 @@ def load_state(config: dict[str, Any] | None = None) -> dict[str, Any]:
         return {"schema_version": 1, "articles": {}}
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return {"schema_version": 1, "articles": {}}
+    except (json.JSONDecodeError, OSError) as exc:
+        raise ValueError(f"写作记录无法读取，已停止，原文件未覆盖：{path}") from exc
+    if not isinstance(data, dict) or not isinstance(data.get("articles"), dict):
+        raise ValueError(f"写作记录格式不正确，已停止：{path}")
     data.setdefault("schema_version", 1)
-    data.setdefault("articles", {})
     return data
 
 
@@ -115,16 +116,19 @@ def article_state(
 
 
 def detect_series(article_path: Path, metadata: dict[str, Any]) -> str:
-    candidates = " ".join(
-        str(metadata.get(key, ""))
-        for key in ("series", "series_no", "topic", "title")
-    )
-    path_text = str(article_path)
-    if "热点系列" in path_text or "热点系列" in candidates or metadata.get("series_no", "").startswith("热点"):
+    series_by_dir = {"申论方法系列": "shenlun_method", "热点系列": "hotspot", "人民日报系列": "people_daily"}
+    for folder in reversed(article_path.parent.parts):
+        if folder in series_by_dir:
+            return series_by_dir[folder]
+    candidates = " ".join(str(metadata.get(key, "")) for key in ("series", "series_no", "topic", "title"))
+    series_no = str(metadata.get("series_no") or "")
+    if "申论方法系列" in candidates or series_no.startswith("方法"):
+        return "shenlun_method"
+    if "热点系列" in candidates or series_no.startswith("热点"):
         return "hotspot"
-    if "人民日报系列" in path_text or "人民日报" in candidates:
+    if "人民日报" in candidates:
         return "people_daily"
-    raise ValueError("无法判断文章属于“人民日报系列”还是“热点系列”")
+    raise ValueError("无法确定文章系列，请放入人民日报、热点或申论方法的对应系列目录")
 
 
 def cover_for_article(
@@ -133,9 +137,14 @@ def cover_for_article(
     config: dict[str, Any],
 ) -> Path:
     series = detect_series(article_path, metadata)
-    cover = project_path(config["covers"][series])
-    if not cover.exists():
-        raise FileNotFoundError(f"固定封面不存在：{cover}")
+    value = metadata.get("wechat_cover") or config.get("covers", {}).get(series)
+    if not value:
+        raise ValueError("没有为该系列配置公众号封面，请在文章 YAML 的 wechat_cover 填写本篇封面的项目相对路径")
+    cover = project_path(value).resolve()
+    if not cover.is_relative_to(PROJECT_ROOT.resolve()) or cover.suffix.lower() not in {".png", ".jpg", ".jpeg"}:
+        raise ValueError("公众号封面必须是项目内的 PNG 或 JPEG 图片")
+    if not cover.is_file():
+        raise FileNotFoundError(f"公众号封面不存在：{cover}")
     return cover
 
 

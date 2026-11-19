@@ -23,11 +23,13 @@ STATUS_OPTIONS = ["热点", "候选", "专题"]
 PRIORITY_OPTIONS = ["S", "A", "B", "C"]
 
 
-def connect(path: Path | None = None) -> sqlite3.Connection:
+def connect(path: Path | None = None, *, read_only: bool = False) -> sqlite3.Connection:
     path = path or TOPIC_DB
-    conn = sqlite3.connect(str(path), timeout=10)
+    target = path.resolve().as_uri() + "?mode=ro" if read_only else str(path)
+    conn = sqlite3.connect(target, uri=read_only, timeout=10)
     conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA journal_mode=WAL")
+    if not read_only:
+        conn.execute("PRAGMA journal_mode=WAL")
     conn.execute("PRAGMA busy_timeout=10000")
     return conn
 
@@ -42,14 +44,14 @@ def json_list(text: str | None) -> list[str]:
     return [str(item) for item in value] if isinstance(value, list) else []
 
 
-def topic_payload() -> dict[str, Any]:
+def topic_payload(*, share: bool = False) -> dict[str, Any]:
     if not TOPIC_DB.exists():
         raise FileNotFoundError(
             "未找到 APP 评论热点总库，请先运行 "
             "python3 scripts/update_peopleapp_opinion_topic_library.py --all"
         )
 
-    conn = connect()
+    conn = connect(read_only=share)
     try:
         topic_rows = list(
             conn.execute(
@@ -103,7 +105,7 @@ def topic_payload() -> dict[str, Any]:
                 row["angle"] or "",
                 row["status"] or "",
                 row["priority"] or "",
-                row["manual_note"] or "",
+                "" if share else row["manual_note"] or "",
                 row["ai_brief"] or "",
                 " ".join(topic_sources),
                 " ".join(article["title"] for article in articles),
@@ -123,7 +125,7 @@ def topic_payload() -> dict[str, Any]:
                 "end_date": row["end_date"] or "",
                 "sources": topic_sources,
                 "ai_brief": row["ai_brief"] or "",
-                "manual_note": row["manual_note"] or "",
+                **({} if share else {"manual_note": row["manual_note"] or ""}),
                 "selected": bool(row["selected"]),
                 "articles": articles,
                 "searchable": searchable,

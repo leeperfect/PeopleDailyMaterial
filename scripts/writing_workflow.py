@@ -70,7 +70,7 @@ def doctor(article: str | None = None) -> int:
             _, _, metadata = split_frontmatter(article_path.read_text(encoding="utf-8"))
             try:
                 cover_for_article(article_path, metadata, config)
-                checks.append(("文章系列识别", True, "已匹配固定封面"))
+                checks.append(("文章系列识别", True, "已匹配本篇或本系列封面"))
             except Exception as error:
                 checks.append(("文章系列识别", False, str(error)))
     for label, passed, detail in checks:
@@ -245,11 +245,11 @@ def main() -> int:
     publish_parser.add_argument("--force", action="store_true")
     publish_parser.add_argument(
         "--wechat-html",
-        help="gzh-design 红白色系生成并通过校验的公众号正文 HTML",
+        help="gzh-design 生成并通过校验的公众号正文 HTML（新稿 zen-whitespace 小米橙）",
     )
     dual_parser = subparsers.add_parser(
         "sync-dual",
-        help="同步红白公众号草稿并准备今日头条 Word 导入",
+        help="同步公众号草稿并准备今日头条 Word 导入",
     )
     dual_parser.add_argument("article")
     dual_parser.add_argument("--platform", choices=["both", "wechat", "toutiao"], default="both")
@@ -257,7 +257,7 @@ def main() -> int:
     dual_parser.add_argument("--force-wechat", action="store_true")
     dual_parser.add_argument(
         "--wechat-html",
-        help="gzh-design 红白色系生成并通过校验的公众号正文 HTML",
+        help="gzh-design 生成并通过校验的公众号正文 HTML（新稿 zen-whitespace 小米橙）",
     )
     dual_parser.add_argument(
         "--no-figures",

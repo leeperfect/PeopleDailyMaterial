@@ -1,11 +1,11 @@
 ---
 name: dual-platform-draft-sync
-description: 将已经在 Obsidian 成稿中插入本地图片的文章，登记配图并同步到微信公众号与今日头条草稿。公众号固定调用 gzh-design 的“红白色系”，今日头条默认生成 Word 并使用“文档导入”。用户说“图片插好了”“同步双平台草稿”或要求复用双平台发布流程时使用；不负责正式发布。
+description: 将已经在 Obsidian 成稿中插入本地图片的文章，登记配图并同步到微信公众号与今日头条草稿。公众号固定调用 gzh-design 的 zen-whitespace 留白禅意风并按项目视觉规范换成小米橙配色，今日头条默认生成 Word 并使用“文档导入”。用户说“图片插好了”“同步双平台草稿”或要求复用双平台发布流程时使用；不负责正式发布。
 ---
 
 # 双平台草稿同步
 
-把 Markdown 视为正文事实源。正文图片只登记一次；公众号使用 `$gzh-design` 的“红白色系”，今日头条使用包含正文图片的 `.docx` 文档导入。两个平台都只保存草稿。
+把 Markdown 视为正文事实源。正文图片只登记一次；公众号使用 `$gzh-design` 的 zen-whitespace 小米橙主题（见 docs/visual-spec-zen-whitespace-fresh.md），今日头条使用包含正文图片的 `.docx` 文档导入。两个平台都只保存草稿。
 
 ## 入口判断
 
@@ -26,19 +26,19 @@ description: 将已经在 Obsidian 成稿中插入本地图片的文章，登记
    ```
 
 3. 用 `status` 确认二润、重点加粗、配图清单和人工确认均通过。
-4. **显式调用 `$gzh-design`**，指定“红白色系”，不再询问主题。必须完整读取该 Skill 的 `theme-index.md`、`theme-red-white.md` 和 `common-components.md`，按组件库生成纯 `<section>…</section>` 正文 HTML；不得改写或遗漏正文、图片、金句集合和参考文章。
+4. **显式调用 `$gzh-design`**，指定 zen-whitespace「留白禅意风」，按 `docs/visual-spec-zen-whitespace-fresh.md` 换色为小米橙（#4A5D52→#FF6900、锚点加粗 #E65100、#B5C8BC→#FFCAB3，文件名带 -orange），不再询问主题。必须完整读取该 Skill 的 `theme-index.md`、`theme-zen-whitespace.md` 和 `common-components.md`，按组件库生成纯 `<section>…</section>` 正文 HTML；不得改写或遗漏正文、图片、金句集合和参考文章。
 5. 对公众号产物执行双关校验：组件库检查必须为 0 ERROR；最终 HTML 必须为 0 ERROR、0 WARNING：
 
    ```bash
    python3 ~/.codex/skills/gzh-design/scripts/component_lint.py ~/.codex/skills/gzh-design
-   python3 ~/.codex/skills/gzh-design/scripts/validate_gzh_html.py "<红白色系正文HTML>"
+   python3 ~/.codex/skills/gzh-design/scripts/validate_gzh_html.py "<已校验正文HTML>"
    ```
 
 6. 使用已校验 HTML 执行：
 
    ```bash
    python3 scripts/writing_workflow.py sync-dual "<文章路径>" \
-     --wechat-html "<红白色系正文HTML>"
+     --wechat-html "<已校验正文HTML>"
    ```
 
    该命令只创建公众号草稿；同时生成今日头条导入用 `.docx` 和浏览器交接记录。公众号不得回退到 doocs/md 作为默认排版。

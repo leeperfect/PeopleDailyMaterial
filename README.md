@@ -4,7 +4,7 @@
 
 核心原则是：**目录服务人的阅读，数据库服务机器检索，raw 服务事实留存**。也就是说，平时不要在一堆 JSON 和数据库文件里找内容；人看文章、AI 查资料、Notion 同步，各走各的入口。
 
-## 先看这三个入口
+## 先看这四个入口
 
 如果你只是想使用素材库，优先看这几个地方：
 
@@ -58,8 +58,16 @@ PeopleDailyMaterial/
 │   ├── articles/                  # 公众号成品层
 │   │   ├── 人民日报系列/          # 当前人民日报选题文章
 │   │   ├── 热点系列/              # 当前热点分析文章
-│   │   ├── 往期文章/              # 已发表文章，内部继续按两个系列分类
-│   │   └── 文章索引.md            # 当前与往期文章统一入口
+│   │   ├── 申论方法系列/          # 当前申论写作方法文章
+│   │   ├── 往期文章/              # 已发表文章，按对应系列分类
+│   │   ├── 原稿归档/            # 被润色版取代的原稿留档
+│   │   ├── 文章索引.md            # 当前与往期文章统一入口
+│   │   └── 选题库.md              # 公众号选题总表（由脚本生成）
+│   ├── xiaohongshu/              # 小红书卡片脚本，编号与公众号成稿一致
+│   ├── data_analysis/            # 自媒体后台数据、运营报告与长期总览
+│   ├── gov_policy/               # 国务院政策资料库（中国政府网采集）
+│   ├── peopleapp_opinion/        # 人民日报 APP 评论热点库
+│   ├── hotspot_teaching/         # 热点教学日报与授课资料
 │   └── exports/                  # 给 Notion、表格或外部工具的导出文件
 ├── docs/                         # 流程说明、数据库说明、内容生产规范
 └── tests/                        # 自动检查
@@ -73,13 +81,13 @@ PeopleDailyMaterial/
 
 `data/vault/` 是人类阅读层。它适合用 Obsidian 打开，按日期、版面、专题浏览，也适合人工做教研标注。
 
-`data/articles/` 是成品层。基于人民日报选题的当前成稿放在 `人民日报系列/`，基于近期公共热点和官媒评论的当前成稿放在 `热点系列/`；已经发表的文章由老师手动移入 `往期文章/` 下的对应系列。
+`data/articles/` 是成品层。基于人民日报选题的当前成稿放在 `人民日报系列/`，基于近期公共热点和官媒评论的当前成稿放在 `热点系列/`，申论方法稿放在 `申论方法系列/`；已经发表的文章由老师手动移入 `往期文章/` 下的对应系列。
 
-人民日报系列沿用数字编号，热点系列使用“热点1、热点2……”独立编号。两个系列及其往期文章统一通过 `data/articles/文章索引.md` 查找。
+人民日报系列沿用数字编号，热点系列使用“热点1、热点2……”独立编号。申论方法系列使用“方法+数字”独立编号（首篇保留原名）。三个系列及其往期文章统一通过 `data/articles/文章索引.md` 查找。
 
 其中 `data/articles/选题库.md` 是长期选题池。每次完成文章梳理后，运行 `python3 scripts/export_content_ideas.py` 刷新，就能按月份、季度、状态查看可继续精筛的选题。
 
-`data/analysis/` 是工作过程层。复盘、选题拆解、公众号文案、小红书文案、PPT 讲稿和视觉 brief 放这里。它不是日常找原文的入口。
+`data/analysis/` 是工作过程层。复盘、选题拆解、公众号过程稿、PPT 讲稿和视觉 brief 放这里；小红书卡片脚本统一放在 `data/xiaohongshu/`。它不是日常找原文的入口。
 
 `media/` 是本地多媒体资产层。小红书图片、公众号配图、课件、视频、音频、压缩包都放这里，并通过网盘同步，不进入 GitHub。GitHub 只保存 `media/_index.md` 这样的文字索引，方便人和 AI 知道资产在哪里。
 
@@ -136,12 +144,13 @@ python3 scripts/sync_to_notion.py 2026-05-27
 同步一段日期：
 
 ```bash
-python3 scripts/sync_to_notion.py --start 2026-05-01 --end 2026-05-27
+python3 scripts/sync_to_notion.py --all --start 2026-05-01 --end 2026-05-27 --dry-run
+# 核对范围和篇数后，去掉 --dry-run 才实际同步
 ```
 
 ## 重建核心库
 
-当你大规模整理 Markdown、补了历史 JSON，或者怀疑数据库和文件不一致时，运行：
+首次建库时运行下列命令。已有库不会被默认覆盖；要核对重建结果，请加 `--db-path .local/rebuild-check/articles.sqlite`，使用尚不存在的输出目录，只生成旁路副本。
 
 ```bash
 python3 scripts/rebuild_article_database.py
@@ -155,7 +164,7 @@ data/core/articles.jsonl
 data/core/rebuild_manifest.json
 ```
 
-这一步不会改变 Notion；它只是把本地事实层重新整理成 AI 和脚本更容易读取的核心库。
+JSONL 和清单是执行重建时的快照，不随每日采集自动更新，不能替代最新 SQLite 库的备份。这一步不会改变 Notion；它只是把本地事实层重新整理成 AI 和脚本更容易读取的核心库。
 
 ## 刷新选题库
 
@@ -180,9 +189,17 @@ Markdown 表适合直接阅读和挑选，CSV 适合以后按月、季度、年�
 python3 idea_magazine.py
 ```
 
+然后打开：
+
+```text
+http://127.0.0.1:8765
+```
+
+这个页面会直接读取本地数据库，支持搜索、按优先级/状态筛选、按月份/季度筛选、加入精筛池、调整状态、写个人备注，并同步刷新 Markdown 和 CSV 选题库。原来的 `python3 scripts/serve_idea_magazine.py` 入口也继续可用。
+
 ## 公众号写作工作流
 
-项目已接入“Codex 写作 → Humanizer-zh 一润 → 得到大脑二润 → doocs/md 排版 → 公众号草稿箱”流程。日常可以直接对 Codex说：
+项目已接入“Codex 写作 → Humanizer-zh 一润 → 得到大脑二润 → gzh-design 排版 → 公众号/今日头条双平台草稿”流程（doocs/md 仅作旧稿手工编辑兜底）。日常可以直接对 Codex说：
 
 ```text
 写稿
@@ -193,17 +210,9 @@ python3 idea_magazine.py
 同步到公众号草稿箱。
 ```
 
-固定作者为 `LeePerfect`，人民日报系列与热点系列会自动选择各自统一头图。第一次使用公众号接口时，Codex会逐步引导配置 AppID、AppSecret 和 IP 白名单；密钥只保存在被 Git 忽略的 `.env`。
+固定作者为 `LeePerfect`。在成稿 YAML 的 `wechat_cover` 写入本篇 PNG/JPEG 封面的项目相对路径，草稿优先使用该图；未指定时，人民日报和热点系列分别使用已有固定头图。申论方法系列没有默认头图，未指定则停止，不借用其他系列的图。第一次使用公众号接口时，Codex会逐步引导配置 AppID、AppSecret 和 IP 白名单；密钥只保存在被 Git 忽略的 `.env`。
 
-完整说明见 [docs/writing-workflow.md](docs/writing-workflow.md)。
-
-然后打开：
-
-```text
-http://127.0.0.1:8765
-```
-
-这个页面会直接读取本地数据库，支持搜索、按优先级/状态筛选、按月份/季度筛选、加入精筛池、调整状态、写个人备注，并同步刷新 Markdown 和 CSV 选题库。原来的 `python3 scripts/serve_idea_magazine.py` 入口也继续可用。
+完整说明见 [docs/writing-workflow.md](docs/writing-workflow.md) 与 [docs/dual-platform-draft-sync.md](docs/dual-platform-draft-sync.md)（以 AGENTS.md 现行规则为准）。
 
 如果要挑选人民日报 APP 评论库归并出的热点选题，运行：
 
@@ -238,7 +247,7 @@ python3 scripts/review_hotspot_teaching_card.py
 
 ## 抓取新文章
 
-抓取当天文章：
+打开日期选择界面，选当天或其他日期后再选文章：
 
 ```bash
 python3 main.py
@@ -262,7 +271,7 @@ python3 main.py --date 2026-05-27
 - `data/exports/`：同步和导出产物。
 - `media/` 里的真实大文件：由网盘同步，GitHub 只保留索引。
 
-这次已经清理掉本地缓存、日志、虚拟环境、空的占位目录和系统临时文件。还有一些疑似旧工具目录或旧实验文件仍然留着，等你确认后再删：`.trae/`、`api/`、`outputs/`、`node_modules/`、`docs/vercel-labsagent.md`、`未命名.base`、`未命名.canvas`。
+本地缓存、日志、闲置虚拟环境、空的占位目录和系统临时文件已清理（最近一次：2026-11-18）。还有一些疑似旧工具目录或旧实验文件仍然留着，等你确认后再删：`.trae/`、`api/`、`outputs/`、`node_modules/`、`docs/vercel-labsagent.md`、`未命名.base`、`未命名.canvas`、`未命名 1.base`、`未命名 1.canvas`、`未命名 2.canvas`。
 
 ## 配置提醒
 

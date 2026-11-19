@@ -2,16 +2,23 @@
 requests
 beautifulsoup4
 notion-client
+httpx
 lxml
-python-dotenv
 pandas
-numpy
-scikit-learn
-Flask
-matplotlib
-seaborn
 jieba
-cryptography
 PyYAML
+# Word/Excel/图片处理（头条导入 docx、运营数据导入、配图登记）
+python-docx
+openpyxl
+Pillow
 # Playwright stealth 模式用于文章页反爬
 playwright
+
+# 以下依赖仅被待确认清理的旧模块使用（api/、modules/analyzer.py、
+# modules/security.py），确认删除后可一并移除：
+Flask
+scikit-learn
+matplotlib
+seaborn
+numpy
+cryptography

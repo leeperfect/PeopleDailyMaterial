@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Refine the central content idea pool by support strength and duplication."""
+"""Incrementally merge the curated idea whitelist into the central content idea pool.
+
+增量合并口径（2026-11-18 起）：
+- 白名单 REFINED_IDEAS 内的选题按 idea_id 更新/插入，保留人工状态与优先级；
+- 库内其他选题（含按项目规则直接写库的新选题）一律保留，不再清空重插；
+- 仅当库内某条非白名单选题与白名单选题标题完全相同时，才视为重复合并：
+  旧条归档到 content_ideas_refine_archive，标题键写入 content_idea_rejected_keys。
+"""
 
 from __future__ import annotations
 
@@ -2648,9 +2655,10 @@ def current_rows(conn: sqlite3.Connection) -> List[sqlite3.Row]:
 
 
 def already_refined(rows: List[sqlite3.Row]) -> bool:
-    if len(rows) != len(REFINED_IDEAS):
-        return False
+    """白名单全部就位且无同标题重复条时视为已精筛；库内多出的非白名单选题不影响判断。"""
     by_id = {row["idea_id"]: row for row in rows}
+    refined_ids = {idea["idea_id"] for idea in REFINED_IDEAS}
+    refined_keys = {title_key(idea["title"]) for idea in REFINED_IDEAS}
     for idea in REFINED_IDEAS:
         row = by_id.get(idea["idea_id"])
         if not row:
@@ -2658,6 +2666,9 @@ def already_refined(rows: List[sqlite3.Row]) -> bool:
         if row["title"] != idea["title"]:
             return False
         if json_list(row["support_article_ids_json"]) != list(dict.fromkeys(idea["support_article_ids"])):
+            return False
+    for row in rows:
+        if row["idea_id"] not in refined_ids and title_key(row["title"]) in refined_keys:
             return False
     return True
 
@@ -2693,16 +2704,11 @@ def archive_rows(conn: sqlite3.Connection, rows: Iterable[sqlite3.Row], run_id: 
     return count
 
 
-def reject_old_titles(conn: sqlite3.Connection, rows: Iterable[sqlite3.Row], now: str) -> int:
-    refined_ids = {idea["idea_id"] for idea in REFINED_IDEAS}
-    refined_keys = {title_key(idea["title"]) for idea in REFINED_IDEAS}
+def reject_duplicate_titles(conn: sqlite3.Connection, rows: Iterable[sqlite3.Row], now: str) -> int:
+    """只把与白名单同标题的重复条写入剔除键，防止自动同步时重复回流；其他选题不动。"""
     rejected = 0
     for row in rows:
         key = title_key(row["title"])
-        if row["idea_id"] in refined_ids or key in refined_keys:
-            continue
-        support_count = len(json_list(row["support_article_ids_json"]))
-        reason = "支撑文章不足3篇" if support_count < MIN_SUPPORT_COUNT else "重复度高，已合并进精筛选题"
         conn.execute(
             """
             INSERT INTO content_idea_rejected_keys(title_key, original_title, reason, refined_idea_id, updated_at)
@@ -2713,15 +2719,15 @@ def reject_old_titles(conn: sqlite3.Connection, rows: Iterable[sqlite3.Row], now
                 refined_idea_id = excluded.refined_idea_id,
                 updated_at = excluded.updated_at
             """,
-            (key, row["title"], reason, "", now),
+            (key, row["title"], "与精筛白名单选题同标题，已合并", "", now),
         )
         rejected += 1
     return rejected
 
 
-def replace_content_ideas(conn: sqlite3.Connection, now: str) -> None:
+def merge_content_ideas(conn: sqlite3.Connection, now: str, duplicate_ids: Iterable[str] = ()) -> None:
+    """增量合并：按 idea_id 更新/插入白名单选题，仅删除同标题重复条，保留其余全部选题。"""
     existing_by_id = {row["idea_id"]: row for row in conn.execute("SELECT * FROM content_ideas")}
-    conn.execute("DELETE FROM content_ideas")
     for idea in REFINED_IDEAS:
         support_ids = list(dict.fromkeys(idea["support_article_ids"]))
         existing = existing_by_id.get(idea["idea_id"])
@@ -2735,6 +2741,14 @@ def replace_content_ideas(conn: sqlite3.Connection, now: str) -> None:
                 outline_json, status, priority, created_at, updated_at
             )
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(idea_id) DO UPDATE SET
+                date = excluded.date,
+                title = excluded.title,
+                angle = excluded.angle,
+                platform = excluded.platform,
+                support_article_ids_json = excluded.support_article_ids_json,
+                outline_json = excluded.outline_json,
+                updated_at = excluded.updated_at
             """,
             (
                 idea["idea_id"],
@@ -2750,6 +2764,8 @@ def replace_content_ideas(conn: sqlite3.Connection, now: str) -> None:
                 now,
             ),
         )
+    for idea_id in set(duplicate_ids):
+        conn.execute("DELETE FROM content_ideas WHERE idea_id = ?", (idea_id,))
 
 
 def refresh_exports() -> None:
@@ -2774,22 +2790,25 @@ def refresh_exports() -> None:
 def write_report(path: Path, before_rows: List[sqlite3.Row], articles: Dict[str, sqlite3.Row], result: Dict[str, int]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     before_count = result.get("before", len(before_rows))
+    after_count = result.get("after", len(REFINED_IDEAS))
     lines = [
         "# 公众号选题库精筛说明",
         "",
         f"> 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M')}",
-        "> 筛选口径：每个保留选题至少绑定 3 篇人民日报文章；重复度高的标题合并到更强母题；素材不足的标题不进入主选题库。",
+        "> 筛选口径（2026-11-18 起改为增量合并）：白名单选题按 idea_id 更新/插入，每个至少绑定 3 篇人民日报文章；库内其他选题（含直接写库的新选题）一律保留；仅与白名单同标题的重复条被合并归档。",
         "",
         "## 处理结果",
         "",
         "| 项目 | 数量 |",
         "|---|---:|",
-        f"| 原选题 | {before_count} |",
-        f"| 精筛后选题 | {len(REFINED_IDEAS)} |",
-        f"| 归档旧选题 | {result.get('archived', 0)} |",
+        f"| 合并前选题 | {before_count} |",
+        f"| 合并后选题总数 | {after_count} |",
+        f"| 白名单选题 | {len(REFINED_IDEAS)} |",
+        f"| 保留的非白名单选题 | {result.get('kept_non_whitelist', max(after_count - len(REFINED_IDEAS), 0))} |",
+        f"| 同标题合并归档 | {result.get('archived', 0)} |",
         f"| 写入剔除标题键 | {result.get('rejected', 0)} |",
         "",
-        "## 保留选题",
+        "## 白名单选题",
         "",
         "| 优先级 | 状态 | 选题 | 支撑文章数 | 支撑文章 |",
         "|---|---|---|---:|---|",
@@ -2801,11 +2820,11 @@ def write_report(path: Path, before_rows: List[sqlite3.Row], articles: Dict[str,
             f"{len(idea['support_article_ids'])} | {titles} |"
         )
 
-    lines.extend(["", "## 删除或合并原则", ""])
-    lines.append("- 支撑文章少于 3 篇的，不再作为独立选题。")
-    lines.append("- 标题只是同一母题的不同说法时，合并到更强的母题，例如正确政绩观、公共服务均等化、基层治理、新质生产力等。")
-    lines.append("- 已完成或已精筛的重点选题尽量保留原 `idea_id`，避免丢失人工状态。")
-    lines.append("- 旧选题已经写入数据库归档表 `content_ideas_refine_archive`，被剔除标题写入 `content_idea_rejected_keys`，防止自动同步时重复回流。")
+    lines.extend(["", "## 合并原则（增量模式）", ""])
+    lines.append("- 白名单选题支撑文章少于 3 篇时直接报错，不入库。")
+    lines.append("- 库内非白名单选题一律保留；按项目规则直接写入 content_ideas 的新选题不会被本脚本剔除。")
+    lines.append("- 仅当非白名单选题与白名单选题标题完全相同时才合并：旧条归档到 `content_ideas_refine_archive`，标题键写入 `content_idea_rejected_keys` 防止重复回流。")
+    lines.append("- 已完成或已精筛的重点选题保留原 `idea_id` 与人工状态、优先级。")
     lines.append("")
     path.write_text("\n".join(lines), encoding="utf-8")
 
@@ -2821,10 +2840,11 @@ def refine_content_ideas(db_path: Path = ASSET_DB, refresh: bool = True, report_
             archived = latest_archive_count(conn)
             rejected = rejected_key_count(conn)
             result = {
-                "before": archived or len(rows),
-                "after": len(REFINED_IDEAS),
+                "before": len(rows),
+                "after": len(rows),
                 "archived": archived,
                 "rejected": rejected,
+                "kept_non_whitelist": len(rows) - len(REFINED_IDEAS),
                 "changed": 0,
             }
             write_report(report_path, rows, articles, result)
@@ -2833,14 +2853,29 @@ def refine_content_ideas(db_path: Path = ASSET_DB, refresh: bool = True, report_
             return result
         run_id = datetime.now().strftime("%Y%m%d%H%M%S")
         now = datetime.now().isoformat(timespec="seconds")
-        archived = archive_rows(conn, rows, run_id, now)
-        rejected = reject_old_titles(conn, rows, now)
-        replace_content_ideas(conn, now)
+        refined_ids = {idea["idea_id"] for idea in REFINED_IDEAS}
+        refined_keys = {title_key(idea["title"]) for idea in REFINED_IDEAS}
+        duplicates = [
+            row for row in rows
+            if row["idea_id"] not in refined_ids and title_key(row["title"]) in refined_keys
+        ]
+        archived = archive_rows(conn, duplicates, run_id, now)
+        rejected = reject_duplicate_titles(conn, duplicates, now)
+        merge_content_ideas(conn, now, [row["idea_id"] for row in duplicates])
         conn.commit()
+        after_count = len(rows) - archived
+        kept_extra = after_count - len(REFINED_IDEAS)
     finally:
         conn.close()
 
-    result = {"before": len(rows), "after": len(REFINED_IDEAS), "archived": archived, "rejected": rejected, "changed": 1}
+    result = {
+        "before": len(rows),
+        "after": after_count,
+        "archived": archived,
+        "rejected": rejected,
+        "kept_non_whitelist": kept_extra,
+        "changed": 1,
+    }
     write_report(report_path, rows, articles, result)
     if refresh:
         refresh_exports()

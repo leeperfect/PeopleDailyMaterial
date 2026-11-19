@@ -16,6 +16,8 @@ import logging
 from datetime import datetime
 from typing import Dict, List, Optional, Set
 
+from modules.utils import safe_json_dump
+
 # 检查点文件保存目录
 CHECKPOINT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'checkpoints')
 
@@ -92,11 +94,8 @@ class Checkpoint:
     def _save(self):
         """保存检查点数据到磁盘"""
         self._data['updated_at'] = datetime.now().isoformat()
-        try:
-            with open(self.checkpoint_path, 'w', encoding='utf-8') as f:
-                json.dump(self._data, f, ensure_ascii=False, indent=2)
-        except IOError as e:
-            logging.error(f"保存检查点失败: {e}")
+        if not safe_json_dump(self._data, self.checkpoint_path):
+            raise OSError(f'检查点保存失败：{self.task_id}')
     
     def has_checkpoint(self) -> bool:
         """是否存在未完成的检查点"""
@@ -123,11 +122,19 @@ class Checkpoint:
         
         每完成一篇就写盘，确保崩溃时不丢失进度。
         """
-        self._data['completed'][url] = {
-            'title': title,
-            'date': date_str,
-            'saved_at': datetime.now().isoformat(),
-        }
+        self.mark_batch_completed([{'url': url, 'title': title, 'date': date_str}])
+
+    def mark_batch_completed(self, articles: List[Dict]):
+        """一批正文和阅读视图都已保存后，再一次写入进度。"""
+        for article in articles:
+            url = article.get('url') or article.get('source_url')
+            if not url:
+                continue
+            self._data['completed'][url] = {
+                'title': article.get('title', ''), 'date': article.get('date', ''),
+                'saved_at': datetime.now().isoformat(),
+            }
+            self._data['failed'].pop(url, None)
         self._save()
     
     def mark_failed(self, url: str, title: str = '', error: str = ''):

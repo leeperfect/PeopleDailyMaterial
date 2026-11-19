@@ -16,6 +16,7 @@
 import argparse
 import json
 import os
+from pathlib import Path
 import re
 import sys
 from datetime import datetime
@@ -31,35 +32,22 @@ from modules.article_identity import build_article_id, normalize_date
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 RAW_DIR = os.path.join(DATA_DIR, "raw")
 VAULT_DIR = os.path.join(DATA_DIR, "vault")
-CORE_DIR = os.path.join(DATA_DIR, "core")
-SOURCE_DIR = os.path.join(DATA_DIR, "source", "people_daily")
-INDEX_DIR = os.path.join(DATA_DIR, "index")
 
 
 def relpath(path: str) -> str:
     return os.path.relpath(path, PROJECT_ROOT)
 
 
-def ensure_new_layout_dirs():
-    """创建新结构的核心目录，不移动旧数据。"""
-    for path in [
-        CORE_DIR,
-        SOURCE_DIR,
-        os.path.join(SOURCE_DIR, "raw_articles"),
-        os.path.join(SOURCE_DIR, "raw_html"),
-        INDEX_DIR,
-        os.path.join(INDEX_DIR, "vector"),
-        os.path.join(INDEX_DIR, "fts"),
-        os.path.join(DATA_DIR, "manifests"),
-        os.path.join(DATA_DIR, "manifests", "crawl_runs"),
-    ]:
-        os.makedirs(path, exist_ok=True)
-
-
 def parse_scalar(value: str):
     value = value.strip()
     if not value:
         return ""
+    # 现行阅读视图用 JSON 编码字符串与列表；旧稿仍可能是未加引号的 YAML。
+    if value.startswith(('"', '[')):
+        try:
+            return json.loads(value)
+        except json.JSONDecodeError:
+            pass
     if value.startswith('"') and value.endswith('"'):
         return value[1:-1].replace('\\"', '"')
     if value.startswith("'") and value.endswith("'"):
@@ -178,7 +166,8 @@ def scan_vault_articles() -> Dict[str, Dict]:
                 "series_part": meta.get("series_part"),
                 "related_titles": meta.get("related") or [],
             }
-            records[build_article_id(article)] = article
+            article["article_id"] = meta.get("article_id") or build_article_id(article)
+            records[article["article_id"]] = article
 
     return records
 
@@ -197,21 +186,21 @@ def scan_raw_articles() -> Dict[str, Dict]:
         try:
             with open(path, "r", encoding="utf-8") as f:
                 articles = json.load(f)
-        except (json.JSONDecodeError, OSError):
-            continue
+        except (json.JSONDecodeError, OSError) as exc:
+            raise ValueError(f"无法读取原始资料：{path}") from exc
         if not isinstance(articles, list):
-            continue
+            raise ValueError(f"原始资料不是文章列表：{path}")
 
         for article in articles:
             if not isinstance(article, dict):
-                continue
+                raise ValueError(f"原始资料含非文章记录：{path}")
             item = dict(article)
             item["date"] = normalize_date(item.get("date") or date)
             item["source"] = item.get("source") or "people_daily"
             item["source_url"] = item.get("source_url") or item.get("url") or ""
             item["url"] = item.get("url") or item.get("source_url") or ""
             item["raw_path"] = relpath(path)
-            records[build_article_id(item)] = item
+            records[item.get("article_id") or build_article_id(item)] = item
 
     return records
 
@@ -222,7 +211,10 @@ def merge_records(vault_records: Dict[str, Dict], raw_records: Dict[str, Dict]) 
         existing = merged.get(article_id, {})
         item = dict(existing)
         item.update(raw)
-        for key in ["markdown_path", "section_no", "section_name", "related_titles"]:
+        # 日期归档或同名笔记拆分后，按编号扫描到的实际路径优先于采集时记下的旧位置。
+        if existing.get("markdown_path"):
+            item["markdown_path"] = existing["markdown_path"]
+        for key in ["section_no", "section_name", "related_titles"]:
             if existing.get(key) and not raw.get(key):
                 item[key] = existing[key]
         if existing.get("markdown_body") and not raw.get("markdown_body"):
@@ -254,30 +246,39 @@ def load_series_registry() -> Dict:
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
-    except (json.JSONDecodeError, OSError):
-        return {}
+    except (json.JSONDecodeError, OSError) as exc:
+        raise ValueError(f"系列登记无法读取：{path}") from exc
 
 
 def rebuild(db_path: str, reset: bool = True) -> Dict:
-    ensure_new_layout_dirs()
-    full_db_path = db_path if os.path.isabs(db_path) else os.path.join(PROJECT_ROOT, db_path)
-    if reset:
-        for suffix in ["", "-wal", "-shm"]:
-            candidate = f"{full_db_path}{suffix}"
-            if os.path.exists(candidate):
-                os.remove(candidate)
+    target = Path(PROJECT_ROOT, db_path).absolute()
+    if target.suffix not in {".sqlite", ".sqlite3", ".db"}:
+        raise ValueError("目标必须是 SQLite 数据库路径")
+    full_db_path = str(target)
+    jsonl_path = str(target.with_suffix(".jsonl"))
+    name = "rebuild_manifest.json" if target.stem == "articles" else f"{target.stem}_rebuild_manifest.json"
+    manifest_path = str(target.with_name(name))
+    if reset and any(os.path.lexists(p) for p in (target, full_db_path + "-wal", full_db_path + "-shm", jsonl_path, manifest_path)):
+        raise FileExistsError("不会覆盖已有库或快照。请用 --db-path 指向新的核验目录；需要增量更新原库时明确使用 --no-reset。")
 
     vault_records = scan_vault_articles()
     raw_records = scan_raw_articles()
     articles = merge_records(vault_records, raw_records)
 
+    if not articles:
+        raise ValueError("未找到可重建的文章，未写入数据库或快照")
+    registry = load_series_registry()
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if reset:
+        target.touch(exist_ok=False)
     store = ArticleStore(full_db_path)
-    store.upsert_articles(articles)
-    store.replace_series_registry(load_series_registry())
-    stats = store.stats()
-    store.close()
+    try:
+        store.upsert_articles(articles)
+        store.replace_series_registry(registry)
+        stats = store.stats()
+    finally:
+        store.close()
 
-    jsonl_path = os.path.join(CORE_DIR, "articles.jsonl")
     write_jsonl(articles, jsonl_path)
 
     manifest = {
@@ -290,7 +291,6 @@ def rebuild(db_path: str, reset: bool = True) -> Dict:
         "stats": stats,
         "note": "旧 data/raw 与 data/vault 未移动；新库作为核心事实索引层。",
     }
-    manifest_path = os.path.join(CORE_DIR, "rebuild_manifest.json")
     with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
@@ -303,7 +303,10 @@ def main():
     parser.add_argument("--no-reset", action="store_true", help="不删除旧库，改为增量 upsert")
     args = parser.parse_args()
 
-    manifest = rebuild(args.db_path, reset=not args.no_reset)
+    try:
+        manifest = rebuild(args.db_path, reset=not args.no_reset)
+    except (OSError, ValueError) as exc:
+        parser.exit(1, f"重建停止：{exc}\n")
     print("=" * 60)
     print("人民日报素材核心库重建完成")
     print("=" * 60)

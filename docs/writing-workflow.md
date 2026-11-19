@@ -6,6 +6,12 @@ scope: PeopleDailyMaterial
 
 # 公众号写作、二次润色与草稿箱工作流
 
+> **时效提示（2026-11-18）**：本文档写于 2026-08-22，部分流程已被更新规则取代，冲突时一律以 `AGENTS.md` 和 `docs/dual-platform-draft-sync.md` 为准：
+> ① 新稿排版默认使用 `$gzh-design` Skill，doocs/md 仅作旧稿手工编辑兜底；
+> ② 今日头条默认用 `scripts/build_toutiao_import_docx.py` 生成 Word 走"文档导入"，富文本逐图上传只是失败兜底；
+> ③ 四项产物形成后、送二润前、拉回后、同步平台前都必须运行 `python3 scripts/check_public_wording.py` 用语预检（本文旧流程未包含这一步）；
+> ④ `sync-dual` 必须携带 `--wechat-html "<已校验正文HTML>"`。
+
 这套流程把 Codex 写作、Humanizer-zh、得到大脑二润、Obsidian 本地配图、doocs/md 排版、公众号草稿箱和今日头条草稿连成一条线。日常只需要“写稿”“拉回”和“同步双平台草稿”三段口令，不需要打开 IDE。
 
 ## 三段口令完成全流程

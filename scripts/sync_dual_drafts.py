@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""编排红白色系公众号草稿与今日头条 Word 导入草稿，绝不正式发布。"""
+"""编排公众号草稿（新稿 zen-whitespace 小米橙）与今日头条 Word 导入草稿，绝不正式发布。"""
 
 from __future__ import annotations
 
@@ -69,7 +69,7 @@ def prepare(
         try:
             if not wechat_html:
                 raise RuntimeError(
-                    "公众号同步必须先调用 gzh-design Skill 生成“红白色系”HTML，"
+                    "公众号同步必须先调用 gzh-design Skill 生成“zen-whitespace 小米橙”主题 HTML（旧稿可用红白色系），"
                     "再通过 --wechat-html 传入；不再默认使用 doocs/md"
                 )
             _, article_body, _ = split_frontmatter(article_path.read_text(encoding="utf-8"))
@@ -267,7 +267,7 @@ def save_toutiao_profile(profile_json: str) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="同步公众号与今日头条草稿")
     subparsers = parser.add_subparsers(dest="command", required=True)
-    prepare_parser = subparsers.add_parser("prepare", help="创建红白公众号草稿并准备头条 Word 导入")
+    prepare_parser = subparsers.add_parser("prepare", help="创建公众号草稿并准备头条 Word 导入")
     prepare_parser.add_argument("article")
     prepare_parser.add_argument("--platform", choices=["both", "wechat", "toutiao"], default="both")
     prepare_parser.add_argument("--dry-run", action="store_true")

@@ -13,6 +13,8 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from urllib.robotparser import RobotFileParser
 
+from bs4 import BeautifulSoup
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from modules.article_database import ArticleStore
@@ -106,12 +108,22 @@ def collect(issue: date, interval: float = 1.5):
             article = parser.parse_article(html,url)
             if not article or not article.get('title'):
                 raise RuntimeError('文章结构无法解析：'+url)
-            # 官网meta日期可能是旧模板值，只核对正文中的报纸日期。
-            if not re.search(rf'{issue.year}年\s*{issue.month}月\s*{issue.day}日',html):
+            # 官网 meta 日期可能是旧模板值，只核对正文中的报纸日期。
+            # 官网日期存在零填充写法（如 2026年11月01日），月、日均兼容 0 前缀。
+            if not re.search(rf'{issue.year}年\s*0?{issue.month}月\s*0?{issue.day}日',html):
                 raise RuntimeError('正文未找到预期报纸日期：'+url)
             if not article.get('content','').strip():
                 if re.search(r'图片|广告|责编',info['title']) or info['section_name']=='广告':
                     report['excluded'].append({'article_id':aid,'title':info['title'],'url':url,'reason':'非文字资料，保留原HTML'})
+                    continue
+                # 图片版式（如"新书架"）：正文区只有图片，文字仅存于图片提示属性，
+                # 与既有图片类条目同口径排除，保留原始 HTML。
+                # 页面可能含多对 enpcontent 标记（首个常为空模板），取最长区域判定。
+                regions = re.findall(r'<!--enpcontent-->(.*?)<!--/enpcontent-->',html,re.S)
+                region = max(regions,key=len) if regions else ''
+                region_soup = BeautifulSoup(region,'html.parser')
+                if region_soup.find('img') and not region_soup.get_text().strip():
+                    report['excluded'].append({'article_id':aid,'title':info['title'],'url':url,'reason':'图片版式，文字仅存于图片提示；保留原HTML'})
                     continue
                 raise RuntimeError('文章正文为空，需复核：'+url)
             article.update(date=issue.isoformat(),article_id=aid,source='people_daily',source_url=url,

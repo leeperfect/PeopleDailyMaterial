@@ -36,7 +36,7 @@ def script_safe_json(value: Any) -> str:
 
 def build_site(output_path: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
     module = load_source_module()
-    payload = module.topic_payload()
+    payload = module.topic_payload(share=True)
     generated_at = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M")
     payload["meta"] = {
         "generated_at": generated_at,
@@ -51,10 +51,11 @@ def build_site(output_path: Path = DEFAULT_OUTPUT) -> dict[str, Any]:
         + ";</script>\n"
     )
     html = module.HTML.replace(marker, bootstrap + marker, 1)
+    output_path = output_path.resolve()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(html, encoding="utf-8")
     return {
-        "output": str(output_path.relative_to(ROOT)),
+        "output": str(output_path.relative_to(ROOT) if output_path.is_relative_to(ROOT) else output_path),
         "generated_at": generated_at,
         "topic_count": len(payload.get("topics", [])),
         "size_bytes": output_path.stat().st_size,

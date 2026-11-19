@@ -72,7 +72,7 @@ def fetch_ideas(conn: sqlite3.Connection, start: Optional[str], end: Optional[st
             f"""
             SELECT i.*,
                    COALESCE(n.selected, 0) AS selected,
-                   COALESCE(n.user_note, '') AS user_note
+                   '' AS user_note  -- 保留导出列兼容性，人工备注只留在本机工作台
             FROM content_ideas i
             LEFT JOIN content_idea_notes n ON n.idea_id = i.idea_id
             {where}

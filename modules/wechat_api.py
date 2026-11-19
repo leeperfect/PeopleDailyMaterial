@@ -124,13 +124,24 @@ def get_access_token(*, force: bool = False) -> str:
     return str(token)
 
 
+DEFAULT_PUBLIC_IP_URL = "https://checkip.amazonaws.com"
+DEFAULT_EXPECTED_PUBLIC_IP = "193.112.28.112"
+PUBLIC_IP_URL_ENV = "WECHAT_PUBLIC_IP_URL"
+EXPECTED_PUBLIC_IP_ENV = "WECHAT_EXPECTED_PUBLIC_IP"
+
+
 def public_ip() -> str:
+    url = os.environ.get(PUBLIC_IP_URL_ENV, DEFAULT_PUBLIC_IP_URL).strip() or DEFAULT_PUBLIC_IP_URL
+    expected = os.environ.get(EXPECTED_PUBLIC_IP_ENV, DEFAULT_EXPECTED_PUBLIC_IP).strip()
     try:
-        response = requests.get("https://api.ipify.org", timeout=10)
+        response = requests.get(url, timeout=10)
         response.raise_for_status()
     except requests.RequestException as error:
-        raise WechatApiError(f"查询公网 IP 失败：{error}") from error
-    return response.text.strip()
+        raise WechatApiError(safe_network_message("查询公网 IP 失败", error)) from error
+    ip = response.text.strip()
+    if expected and ip != expected:
+        raise WechatApiError(f"公网 IP 与预期固定出口不符，已停止：当前 {ip}，预期 {expected}")
+    return ip
 
 
 def draft_count() -> int:

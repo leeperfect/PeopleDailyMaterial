@@ -45,6 +45,29 @@ class PublishWechatDraftTest(unittest.TestCase):
         self.assertEqual(payload["need_open_comment"], 1)
         self.assertEqual(payload["only_fans_can_comment"], 0)
 
+    def test_zen_whitespace_orange_theme_is_accepted(self):
+        fragment = '<section style="color:#525252"><span style="color:#FF6900">01</span><u style="border-color:#FFCAB3">关键词</u><strong style="color:#E65100">结论</strong></section>'
+        label, theme_id, primary = MODULE.detect_gzh_theme(fragment)
+        self.assertEqual(theme_id, "zen-whitespace-orange")
+        self.assertEqual(primary, "#FF6900")
+
+    def test_legacy_red_white_theme_still_accepted(self):
+        fragment = '<section><span style="color:#DC2626">01</span><u style="border-color:#FECACA">关键词</u></section>'
+        label, theme_id, primary = MODULE.detect_gzh_theme(fragment)
+        self.assertEqual(theme_id, "red-white")
+        self.assertEqual(primary, "#DC2626")
+
+    def test_retired_zen_green_is_rejected(self):
+        fragment = '<section><span style="color:#FF6900">01</span><u style="border-color:#FFCAB3">词</u><span style="color:#4A5D52">旧墨绿</span></section>'
+        with self.assertRaises(RuntimeError):
+            MODULE.detect_gzh_theme(fragment)
+
+    def test_mixed_or_unknown_colors_are_rejected(self):
+        with self.assertRaises(RuntimeError):
+            MODULE.detect_gzh_theme('<section><span style="color:#FF6900">橙</span><span style="color:#DC2626">红</span><span style="color:#FECACA">浅红</span><span style="color:#FFCAB3">浅橙</span></section>')
+        with self.assertRaises(RuntimeError):
+            MODULE.detect_gzh_theme('<section><p>无主题色</p></section>')
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -28,13 +28,17 @@ def main():
     parser.add_argument("--category", help="分类")
     parser.add_argument("--limit", type=int, default=20, help="最多返回条数")
     args = parser.parse_args()
+    if args.search and any((args.date, args.start, args.end, args.category)):
+        parser.error("关键词检索尚不能同时限定日期或分类，请分开查询")
+    if args.limit < 1:
+        parser.error("--limit 必须是正整数")
 
     db_path = os.path.join(PROJECT_ROOT, DEFAULT_DB_PATH)
     if not os.path.exists(db_path):
         print("未找到核心库，请先运行: python scripts/rebuild_article_database.py")
         return
 
-    store = ArticleStore(db_path)
+    store = ArticleStore(db_path, read_only=True)
     try:
         if args.search:
             articles = store.search(args.search, limit=args.limit)

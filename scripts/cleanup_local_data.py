@@ -1,26 +1,39 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-清理本地数据脚本
+按日期范围删除本地文章数据的一次性历史脚本（危险，非常规维护工具）
 
 功能：
-1. 保留 2026-01-01 至 2026-01-09 的数据
-2. 删除其他日期的文章数据
-3. 更新同步状态和系列注册表
+1. 只保留 --keep-start 至 --keep-end 范围内的数据
+2. 删除范围外全部 raw/processed/vault 文章数据
+3. 同步改写 sync_status.json 和 series_registry.json
+
+警告：本脚本会真实删除 data/raw 与 data/vault 内容，违反项目
+"不轻易删改事实留存层" 原则，仅限老师明确要求的整库裁剪场景。
+必须显式传入日期范围和 --confirm-delete 才会执行；不带参数运行
+只会显示本警告并退出。日常清理缓存请用手动方式或清理类垃圾文件，
+不要运行本脚本。
 """
 
 import os
+import sys
 import json
 import shutil
-from datetime import datetime, timedelta
+import argparse
+import re
+from datetime import datetime
 
 
 def get_date_from_filename(filename):
     """从文件名中提取日期字符串 (YYYYMMDD 格式)"""
     # 文件名格式: articles_YYYYMMDD.json
-    if filename.startswith('articles_') and filename.endswith('.json'):
-        date_part = filename[9:17]  # articles_YYYYMMDD.json
-        return date_part
+    match = re.fullmatch(r'articles_([0-9]{8})\.json', filename)
+    if match:
+        try:
+            datetime.strptime(match[1], '%Y%m%d')
+        except ValueError:
+            return None
+        return match[1]
     return None
 
 
@@ -50,16 +63,16 @@ def cleanup_json_files(directory, start_date, end_date):
         start_date: 开始日期 (datetime)
         end_date: 结束日期 (datetime)
     """
-    if not os.path.exists(directory):
+    if not os.path.isdir(directory) or os.path.islink(directory):
         return
     
     deleted_count = 0
     kept_count = 0
     
     for filename in os.listdir(directory):
-        if not filename.startswith('articles_') or not filename.endswith('.json'):
+        file_path = os.path.join(directory, filename)
+        if not os.path.isfile(file_path) or os.path.islink(file_path):
             continue
-        
         date_str = get_date_from_filename(filename)
         if not date_str:
             continue
@@ -67,7 +80,6 @@ def cleanup_json_files(directory, start_date, end_date):
         if is_date_in_range(date_str, start_date, end_date):
             kept_count += 1
         else:
-            file_path = os.path.join(directory, filename)
             os.remove(file_path)
             deleted_count += 1
             print(f"  删除: {file_path}")
@@ -85,7 +97,7 @@ def cleanup_vault(directory, start_date, end_date):
         start_date: 开始日期 (datetime)
         end_date: 结束日期 (datetime)
     """
-    if not os.path.exists(directory):
+    if not os.path.isdir(directory) or os.path.islink(directory):
         return
     
     deleted_count = 0
@@ -94,19 +106,25 @@ def cleanup_vault(directory, start_date, end_date):
     # 遍历年份目录
     for year_dir in os.listdir(directory):
         year_path = os.path.join(directory, year_dir)
-        if not os.path.isdir(year_path):
+        if not re.fullmatch(r'[0-9]{4}', year_dir) or not os.path.isdir(year_path) or os.path.islink(year_path):
             continue
         
         # 遍历月份目录
         for month_dir in os.listdir(year_path):
             month_path = os.path.join(year_path, month_dir)
-            if not os.path.isdir(month_path):
+            if not re.fullmatch(r'0[1-9]|1[0-2]', month_dir) or not os.path.isdir(month_path) or os.path.islink(month_path):
                 continue
             
             # 遍历日期目录
             for date_dir in os.listdir(month_path):
                 date_path = os.path.join(month_path, date_dir)
-                if not os.path.isdir(date_path):
+                if not os.path.isdir(date_path) or os.path.islink(date_path):
+                    continue
+                if not re.fullmatch(rf'{year_dir}-{month_dir}-[0-9]{{2}}', date_dir):
+                    continue
+                try:
+                    datetime.strptime(date_dir, '%Y-%m-%d')
+                except ValueError:
                     continue
                 
                 # 检查日期目录名 (YYYY-MM-DD)
@@ -197,14 +215,33 @@ def cleanup_series_registry(file_path, start_date, end_date):
 
 def main():
     """主函数"""
+    parser = argparse.ArgumentParser(
+        description='危险：按日期范围删除 raw/processed/vault 文章数据。必须显式指定保留范围并加 --confirm-delete。')
+    parser.add_argument('--keep-start', metavar='YYYY-MM-DD', help='保留范围的开始日期')
+    parser.add_argument('--keep-end', metavar='YYYY-MM-DD', help='保留范围的结束日期')
+    parser.add_argument('--confirm-delete', action='store_true',
+                        help='确认执行真实删除（缺少此参数时只提示、不删除）')
+    args = parser.parse_args()
+
+    if not (args.keep_start and args.keep_end and args.confirm_delete):
+        print("=" * 60)
+        print("  ⚠️  本脚本会删除保留范围之外的全部 raw/vault 文章数据！")
+        print("  它是一次性历史裁剪工具，不是日常缓存清理工具。")
+        print("  如确需使用，请显式指定范围并确认，例如：")
+        print("    python3 scripts/cleanup_local_data.py \\")
+        print("        --keep-start 2026-01-01 --keep-end 2026-01-09 --confirm-delete")
+        print("  本次未执行任何删除。")
+        print("=" * 60)
+        sys.exit(1)
+
+    start_date = datetime.strptime(args.keep_start, '%Y-%m-%d')
+    end_date = datetime.strptime(args.keep_end, '%Y-%m-%d')
+    if start_date > end_date:
+        parser.error('保留开始日期不得晚于结束日期，未执行删除。')
+
     print("=" * 60)
-    print("  🗑️  本地数据清理工具")
+    print("  🗑️  本地数据清理工具（真实删除）")
     print("=" * 60)
-    
-    # 定义保留的日期范围
-    start_date = datetime(2026, 1, 1)
-    end_date = datetime(2026, 1, 9)
-    
     print(f"\n保留日期范围: {start_date.strftime('%Y-%m-%d')} 至 {end_date.strftime('%Y-%m-%d')}")
     print("\n开始清理...\n")
     

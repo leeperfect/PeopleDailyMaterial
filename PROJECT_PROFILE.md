@@ -1,6 +1,6 @@
 ---
 title: "项目档案"
-updated: 2026-06-06
+updated: 2026-11-18
 ---
 
 # 项目档案
@@ -11,11 +11,14 @@ updated: 2026-06-06
 
 事实留存层：`data/raw/` 原始抓取数据
 机器检索层：`data/core/` SQLite 核心库（稳定文章 ID、全文检索、教研素材资产库）
-人类阅读层：`data/vault/` Obsidian 格式文章 Markdown + `data/articles/人民日报系列/`、`data/articles/热点系列/` 成品稿
+人类阅读层：`data/vault/` Obsidian 格式文章 Markdown + `data/articles/人民日报系列/`、`data/articles/热点系列/`、`data/articles/申论方法系列/` 成品稿（已发表文章归档在 `data/articles/往期文章/` 对应系列）
 过程分析层：`data/analysis/` 教研复盘、选题拆解、文案、讲稿、视觉 brief
+卡片脚本层：`data/xiaohongshu/` 小红书卡片脚本，编号与公众号成稿一致
+运营数据层：`data/data_analysis/` 自媒体后台原始数据、拆分明细、每期运营报告与长期总览
+政策资料层：`data/gov_policy/` 中国政府网国务院政策原文库；`data/peopleapp_opinion/` 人民日报 APP 评论热点库；`data/hotspot_teaching/` 热点教学日报与授课资料
 本地媒体层：`media/` 小红书图片、公众号配图、课件、视频、音频、压缩包，由网盘同步，不进入 GitHub
 外部分发层：`data/exports/` JSON/CSV 导出 + Notion 数据库视图
-外部同步对象：Notion 数据库、GitHub 仓库、网盘多媒体目录
+外部同步对象：Notion 数据库、妙搭选题工作台网页、GitHub 仓库、网盘多媒体目录
 
 ## Commit 优先标签
 

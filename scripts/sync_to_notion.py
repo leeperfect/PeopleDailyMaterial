@@ -10,7 +10,7 @@
     python scripts/sync_to_notion.py 2026-05-12
     python scripts/sync_to_notion.py 2026-05-11 2026-05-12
     python scripts/sync_to_notion.py --all --update-existing --metadata-only --existing-only
-    python scripts/sync_to_notion.py --start 2026-05-01 --end 2026-05-16
+    python scripts/sync_to_notion.py --all --start 2026-05-01 --end 2026-05-16 --dry-run
     python scripts/sync_to_notion.py --update-existing 2026-05-12
     python scripts/sync_to_notion.py --from-raw 2026-05-12
 """
@@ -27,7 +27,8 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
 from modules.article_database import DEFAULT_DB_PATH, ArticleStore
-from modules.article_identity import normalize_date
+from modules.article_identity import build_article_id, normalize_date
+from modules.notion_index import AmbiguousArticleMatch, add_to_indexes, build_existing_indexes, find_duplicate
 from modules.notion import NotionAPI
 from modules.utils import Config, setup_logger
 
@@ -44,6 +45,7 @@ def load_articles_from_raw(date_str: str) -> List[Dict]:
 
     for article in articles:
         article["date"] = normalize_date(article.get("date") or date_str)
+        article["article_id"] = article.get("article_id") or build_article_id(article)
     return articles
 
 
@@ -57,7 +59,7 @@ def load_articles_from_database(
     if not os.path.exists(db_path):
         return []
 
-    store = ArticleStore(db_path)
+    store = ArticleStore(db_path, read_only=True)
     try:
         return store.get_articles(
             dates=[normalize_date(d) for d in dates] if dates else None,
@@ -76,7 +78,10 @@ def load_articles(
     end_date: Optional[str] = None,
     limit: Optional[int] = None,
 ) -> List[Dict]:
-    normalized_dates = [normalize_date(d) for d in dates] if dates else []
+    if limit is not None and limit < 1:
+        raise ValueError("文章篇数上限必须大于零")
+    normalized_dates = list(dict.fromkeys(normalize_date(d) for d in dates or []))
+    articles: List[Dict] = []
     if not force_raw:
         db_articles = load_articles_from_database(
             dates=normalized_dates or None,
@@ -86,68 +91,20 @@ def load_articles(
         )
         if db_articles:
             print(f"  已从核心库读取 {len(db_articles)} 篇文章")
-            return db_articles
+            articles.extend(db_articles)
 
-    articles: List[Dict] = []
-    for date_str in normalized_dates[:limit] if limit else normalized_dates:
-        articles.extend(load_articles_from_raw(date_str))
-    if articles:
-        print(f"  已从旧 JSON 读取 {len(articles)} 篇文章")
+    db_count = len(articles)
+    covered_dates = {article.get("date") for article in articles}
+    for date_str in normalized_dates:
+        if limit is not None and len(articles) >= limit:
+            break
+        if date_str in covered_dates:
+            continue
+        batch = load_articles_from_raw(date_str)
+        articles.extend(batch if limit is None else batch[:limit - len(articles)])
+    if len(articles) > db_count:
+        print(f"  已从旧 JSON 读取 {len(articles) - db_count} 篇文章")
     return articles
-
-
-def build_existing_indexes(existing_articles: List[Dict]) -> Dict[str, Dict]:
-    by_article_id = {}
-    by_url = {}
-    by_title_date = {}
-
-    for article in existing_articles:
-        article_id = article.get("article_id") or article.get("Article ID")
-        if article_id:
-            by_article_id[article_id] = article
-        if article.get("url"):
-            by_url[article["url"]] = article
-        title = article.get("title", "")
-        date = article.get("date", "")
-        if title and date:
-            by_title_date[(title, date)] = article
-
-    return {
-        "article_id": by_article_id,
-        "url": by_url,
-        "title_date": by_title_date,
-    }
-
-
-def find_duplicate(article: Dict, indexes: Dict[str, Dict]) -> Optional[Dict]:
-    article_id = article.get("article_id")
-    url = article.get("source_url") or article.get("url")
-    title = article.get("title", "")
-    date = article.get("date", "")
-
-    if article_id and article_id in indexes["article_id"]:
-        return indexes["article_id"][article_id]
-    if url and url in indexes["url"]:
-        return indexes["url"][url]
-    if title and date and (title, date) in indexes["title_date"]:
-        return indexes["title_date"][(title, date)]
-    return None
-
-
-def add_to_indexes(article: Dict, page_id: str, indexes: Dict[str, Dict]):
-    record = {
-        "id": page_id,
-        "article_id": article.get("article_id", ""),
-        "title": article.get("title", ""),
-        "url": article.get("source_url") or article.get("url") or "",
-        "date": article.get("date", ""),
-    }
-    if record["article_id"]:
-        indexes["article_id"][record["article_id"]] = record
-    if record["url"]:
-        indexes["url"][record["url"]] = record
-    if record["title"] and record["date"]:
-        indexes["title_date"][(record["title"], record["date"])] = record
 
 
 def sync_articles(
@@ -206,7 +163,7 @@ def sync_articles(
         if not title or title == "广告":
             continue
 
-        date_str = normalize_date(article.get("date") or normalized_dates[0])
+        date_str = normalize_date(article.get("date") or (normalized_dates[0] if len(normalized_dates) == 1 else ""))
         try:
             date = datetime.strptime(date_str, "%Y-%m-%d")
         except ValueError:
@@ -214,7 +171,12 @@ def sync_articles(
             total_failed += 1
             continue
 
-        duplicate = find_duplicate(article, indexes)
+        try:
+            duplicate = find_duplicate(article, indexes)
+        except AmbiguousArticleMatch as exc:
+            print(f"  [{i}/{len(articles)}] 身份待核对，未写入：{title[:40]}（{exc}）")
+            total_failed += 1
+            continue
         if duplicate and not update_existing:
             print(f"  [{i}/{len(articles)}] 已存在: {title[:40]}")
             total_skipped += 1
@@ -222,6 +184,7 @@ def sync_articles(
 
         if duplicate and update_existing:
             if dry_run:
+                add_to_indexes(article, duplicate["id"], indexes)
                 print(f"  [{i}/{len(articles)}] 将更新: {title[:40]}")
                 total_updated += 1
                 continue
@@ -233,6 +196,7 @@ def sync_articles(
                 print(f"  [{i}/{len(articles)}] 更新失败: {title[:40]}")
                 total_failed += 1
             else:
+                add_to_indexes(article, duplicate["id"], indexes)
                 print(f"  [{i}/{len(articles)}] 更新成功: {title[:40]}")
                 total_updated += 1
         else:
@@ -241,6 +205,7 @@ def sync_articles(
                 total_missing += 1
                 continue
             if dry_run:
+                add_to_indexes(article, f"dry-run:{i}", indexes)
                 print(f"  [{i}/{len(articles)}] 将新建: {title[:40]}")
                 total_synced += 1
                 continue
@@ -283,14 +248,25 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="只预览将执行的操作，不写入 Notion")
     args = parser.parse_args()
 
-    if args.all:
-        dates = None
-        start_date = args.start
-        end_date = args.end
-    else:
-        dates = args.dates or [datetime.now().strftime("%Y-%m-%d")]
-        start_date = args.start
-        end_date = args.end
+    if (args.start or args.end) and not args.all:
+        parser.error("按范围同步必须显式添加 --all；建议先加 --dry-run 预览")
+    if args.all and (args.dates or args.from_raw):
+        parser.error("--all 只用于核心库，不可与指定日期或 --from-raw 混用")
+    if args.limit is not None and args.limit < 1:
+        parser.error("--limit 必须是正整数（文章篇数）")
+    for value in [*args.dates, args.start, args.end]:
+        if value is not None:
+            try:
+                normalized = normalize_date(value)
+                if datetime.strptime(normalized, "%Y-%m-%d").date().isoformat() != normalized:
+                    raise ValueError
+            except ValueError:
+                parser.error(f"无效日期：{value}，请使用 YYYY-MM-DD")
+    start_date = normalize_date(args.start) if args.start else None
+    end_date = normalize_date(args.end) if args.end else None
+    if start_date and end_date and start_date > end_date:
+        parser.error("开始日期不得晚于结束日期")
+    dates = None if args.all else (args.dates or [datetime.now().strftime("%Y-%m-%d")])
 
     sync_articles(
         dates,

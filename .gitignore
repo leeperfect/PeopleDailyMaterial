@@ -18,6 +18,13 @@ data/checkpoints/
 logs/
 outputs/
 .claude/
+# 本机生成的工具缓存与对话记忆，不随资料镜像分发
+/.cache/
+/.memsearch/
+# 人工选材迁移报告含星级、用途及外部页面映射，仅留本机
+/data/exports/notion_selection_migration_*.csv
+/data/exports/notion_selection_migration_*.md
+/data/exports/notion_selection_migration_report.json
 
 # 本地生成的核心库与索引（可由脚本重建）
 data/core/*.sqlite
@@ -36,6 +43,8 @@ media/courseware/**
 media/video/**
 media/audio/**
 media/packages/**
+media/ppt/**
+media/wechat-html/**
 !media/images/.gitkeep
 !media/courseware/.gitkeep
 !media/video/.gitkeep
@@ -95,3 +104,6 @@ data/peopleapp_opinion/site/
 # 其他环境凭据文件；仅允许显式示例
 .env.*
 !.env.example
+# 嵌套技能仓库副本只留本机，不作为子模块提交
+/.agents/skills/dsh-guizang-design/
+/.agents/skills/guizang-ppt-skill/

@@ -11,6 +11,7 @@ import json
 import os
 import sqlite3
 from datetime import datetime
+from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence
 
 from modules.article_identity import (
@@ -28,12 +29,17 @@ SCHEMA_VERSION = 1
 class ArticleStore:
     """SQLite 文章库。"""
 
-    def __init__(self, db_path: str = DEFAULT_DB_PATH):
+    def __init__(self, db_path: str = DEFAULT_DB_PATH, *, read_only: bool = False):
         self.db_path = db_path
-        os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
-        self.conn = sqlite3.connect(self.db_path, timeout=10)
+        if read_only:
+            uri = Path(db_path).resolve().as_uri() + '?mode=ro'
+            self.conn = sqlite3.connect(uri, uri=True, timeout=10)
+        else:
+            Path(db_path).parent.mkdir(parents=True, exist_ok=True)
+            self.conn = sqlite3.connect(db_path, timeout=10)
         self.conn.row_factory = sqlite3.Row
-        self.init_schema()
+        if not read_only:
+            self.init_schema()
 
     def close(self):
         self.conn.close()
@@ -188,13 +194,11 @@ class ArticleStore:
         return item
 
     def upsert_article(self, article: Dict):
+        self.upsert_articles((article,))
+
+    def _write_article(self, article: Dict):
         item = self.normalize_article(article)
         now = datetime.now().isoformat(timespec="seconds")
-        existing = self.conn.execute(
-            "SELECT created_at FROM articles WHERE article_id = ?",
-            (item["article_id"],),
-        ).fetchone()
-        created_at = existing["created_at"] if existing else now
 
         year = int(item["date"][:4]) if item.get("date") and len(item["date"]) >= 4 else None
         month = int(item["date"][5:7]) if item.get("date") and len(item["date"]) >= 7 else None
@@ -203,13 +207,23 @@ class ArticleStore:
 
         self.conn.execute(
             """
-            INSERT OR REPLACE INTO articles (
+            INSERT INTO articles (
                 article_id, source, source_url, title, author, date, year, month,
                 section_no, section_name, category, keywords_json, summary,
                 content, markdown_body, raw_path, markdown_path, content_hash,
                 word_count, series_id, series_name, series_part, related_titles_json,
                 created_at, updated_at
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(article_id) DO UPDATE SET
+                source=excluded.source, source_url=excluded.source_url, title=excluded.title,
+                author=excluded.author, date=excluded.date, year=excluded.year, month=excluded.month,
+                section_no=excluded.section_no, section_name=excluded.section_name,
+                category=excluded.category, keywords_json=excluded.keywords_json, summary=excluded.summary,
+                content=excluded.content, markdown_body=excluded.markdown_body, raw_path=excluded.raw_path,
+                markdown_path=excluded.markdown_path, content_hash=excluded.content_hash,
+                word_count=excluded.word_count, series_id=excluded.series_id, series_name=excluded.series_name,
+                series_part=excluded.series_part, related_titles_json=excluded.related_titles_json,
+                updated_at=excluded.updated_at
             """,
             (
                 item["article_id"],
@@ -235,7 +249,7 @@ class ArticleStore:
                 item.get("series_name"),
                 item.get("series_part"),
                 json.dumps(related_titles, ensure_ascii=False),
-                created_at,
+                now,
                 now,
             ),
         )
@@ -243,11 +257,12 @@ class ArticleStore:
         self._replace_article_tags(item["article_id"], keywords, "keyword")
         self._replace_chunks(item)
         self._upsert_fts(item)
-        self.conn.commit()
 
     def upsert_articles(self, articles: Iterable[Dict]):
-        for article in articles:
-            self.upsert_article(article)
+        # 正文、标签、分块和索引一起生效；途中出错整批回滚。
+        with self.conn:
+            for article in articles:
+                self._write_article(article)
 
     def _replace_article_tags(self, article_id: str, tags: Sequence[str], tag_type: str):
         self.conn.execute(

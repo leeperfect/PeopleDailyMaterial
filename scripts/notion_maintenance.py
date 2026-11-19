@@ -13,11 +13,9 @@ import argparse
 import os
 import sys
 import time
-from collections import Counter
-from datetime import datetime
-from typing import Dict, Iterable, List, Optional, Tuple
+from datetime import date
+from typing import Dict, List, Optional, Tuple
 
-from notion_client.errors import APIResponseError
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
@@ -25,11 +23,8 @@ sys.path.insert(0, PROJECT_ROOT)
 from modules.article_database import DEFAULT_DB_PATH, ArticleStore
 from modules.article_identity import normalize_date
 from modules.notion import NotionAPI
+from modules.notion_index import AmbiguousArticleMatch, build_existing_indexes, find_duplicate
 from modules.utils import Config, setup_logger
-
-
-MAX_TEXT = 1900
-MAX_BLOCKS = 90
 
 
 def retry(label: str, func, attempts: int = 5, base_sleep: float = 2.0):
@@ -47,96 +42,9 @@ def retry(label: str, func, attempts: int = 5, base_sleep: float = 2.0):
     raise last_error
 
 
-def chunks(text: str, size: int = MAX_TEXT) -> Iterable[str]:
-    for i in range(0, len(text), size):
-        yield text[i : i + size]
-
-
-def paragraph_blocks(content: str) -> List[Dict]:
-    blocks: List[Dict] = []
-    for paragraph in content.split("\n"):
-        paragraph = paragraph.strip()
-        if not paragraph:
-            continue
-        for piece in chunks(paragraph):
-            blocks.append(
-                {
-                    "object": "block",
-                    "type": "paragraph",
-                    "paragraph": {
-                        "rich_text": [
-                            {
-                                "type": "text",
-                                "text": {"content": piece},
-                            }
-                        ]
-                    },
-                }
-            )
-    if not blocks:
-        blocks.append(
-            {
-                "object": "block",
-                "type": "paragraph",
-                "paragraph": {
-                    "rich_text": [
-                        {
-                            "type": "text",
-                            "text": {"content": "无内容"},
-                        }
-                    ]
-                },
-            }
-        )
-    return blocks
-
-
-def page_title(page: Dict) -> str:
-    props = page.get("properties", {})
-    return "".join(x.get("plain_text", "") for x in props.get("标题", {}).get("title", []))
-
-
-def page_record(notion_api: NotionAPI, page: Dict) -> Dict:
-    props = page.get("properties", {})
-    return {
-        "id": page.get("id"),
-        "title": page_title(page),
-        "article_id": notion_api._rich_text_plain(props, "Article ID", "文章ID"),
-        "url": (props.get("URL") or {}).get("url", ""),
-        "date": notion_api._date_start(props, "发布日期"),
-        "archived": page.get("archived", False),
-    }
-
-
-def get_data_source_id(notion_api: NotionAPI) -> str:
-    database = retry(
-        "获取 Notion data source",
-        lambda: notion_api.notion.databases.retrieve(database_id=notion_api.database_id),
-    )
-    data_sources = database.get("data_sources") or []
-    if not data_sources:
-        raise RuntimeError("Notion database response does not include data_sources")
-    return data_sources[0]["id"]
-
-
 def query_pages(notion_api: NotionAPI) -> List[Dict]:
-    data_source_id = get_data_source_id(notion_api)
-    pages: List[Dict] = []
-    cursor: Optional[str] = None
-    while True:
-        response = retry(
-            "查询 Notion 页面",
-            lambda: notion_api.notion.data_sources.query(
-                data_source_id=data_source_id,
-                start_cursor=cursor,
-                page_size=100,
-            ),
-        )
-        pages.extend(page_record(notion_api, page) for page in response.get("results", []))
-        if not response.get("has_more"):
-            break
-        cursor = response.get("next_cursor")
-    return pages
+    # 不使用工作区级搜索，也不把分页失败或多个数据源视为安全结果。
+    return notion_api.get_existing_articles()
 
 
 def load_local_articles(
@@ -144,7 +52,7 @@ def load_local_articles(
     start_date: Optional[str] = None,
     end_date: Optional[str] = None,
 ) -> List[Dict]:
-    store = ArticleStore(os.path.join(PROJECT_ROOT, DEFAULT_DB_PATH))
+    store = ArticleStore(os.path.join(PROJECT_ROOT, DEFAULT_DB_PATH), read_only=True)
     try:
         articles = store.get_articles(
             dates=[normalize_date(d) for d in dates] if dates else None,
@@ -160,47 +68,46 @@ def article_url(article: Dict) -> str:
     return article.get("source_url") or article.get("url") or ""
 
 
-def classify(pages: List[Dict], articles: List[Dict], assume_archived: Optional[set] = None):
+def classify(pages: List[Dict], articles: List[Dict], assume_archived: Optional[set] = None, in_scope=None):
     assume_archived = assume_archived or set()
     active_pages = [p for p in pages if p["id"] not in assume_archived]
-    by_url = {article_url(a): a for a in articles if article_url(a)}
-    by_title_date = {(a.get("title", ""), a.get("date", "")): a for a in articles if a.get("title") and a.get("date")}
+    by_url = {}
+    for article in articles:
+        url = article_url(article)
+        if url:
+            # 一个来源对应多个本地编号时不能安全归档旧页。
+            by_url[url] = None if url in by_url else article
 
     filled_ids = {p["article_id"] for p in active_pages if p["article_id"]}
     duplicate_archive: List[Tuple[Dict, Dict]] = []
     unmatched_blank: List[Dict] = []
 
     for page in active_pages:
-        if page["article_id"]:
+        if page["article_id"] or (in_scope and not in_scope(page)):
             continue
-        article = by_url.get(page["url"]) or by_title_date.get((page["title"], page["date"]))
+        article = by_url.get(page["url"])
         if article and article.get("article_id") in filled_ids:
             duplicate_archive.append((page, article))
         elif not article:
             unmatched_blank.append(page)
 
-    remaining_pages = [p for p in active_pages if p["id"] not in {p["id"] for p, _ in duplicate_archive}]
-    existing_ids = {p["article_id"] for p in remaining_pages if p["article_id"]}
-    existing_urls = {p["url"] for p in remaining_pages if p["url"]}
-    existing_title_dates = {(p["title"], p["date"]) for p in remaining_pages if p["title"] and p["date"]}
-
+    planned_archives = {p["id"] for p, _ in duplicate_archive}
+    remaining_pages = [p for p in active_pages if p["id"] not in planned_archives]
+    indexes = build_existing_indexes(remaining_pages)
     missing_articles: List[Dict] = []
+    needs_review = []
     for article in articles:
-        article_id = article.get("article_id")
-        url = article_url(article)
-        title_date = (article.get("title", ""), article.get("date", ""))
-        if article_id in existing_ids:
-            continue
-        if url and url in existing_urls:
-            continue
-        if title_date in existing_title_dates:
-            continue
-        missing_articles.append(article)
+        try:
+            if find_duplicate(article, indexes) is None:
+                missing_articles.append(article)
+        except AmbiguousArticleMatch as exc:
+            needs_review.append((article, str(exc)))
 
-    duplicate_ids = [article_id for article_id, count in Counter(p["article_id"] for p in remaining_pages if p["article_id"]).items() if count > 1]
+    duplicate_ids = list(duplicate_id_groups(remaining_pages, in_scope))
     return {
         "duplicate_archive": duplicate_archive,
         "missing_articles": missing_articles,
+        "needs_review": needs_review,
         "unmatched_blank": unmatched_blank,
         "duplicate_ids": duplicate_ids,
         "active_after_archive": remaining_pages,
@@ -226,14 +133,15 @@ def minimal_properties(article: Dict) -> Dict:
     return properties
 
 
-def duplicate_id_groups(pages: List[Dict]) -> Dict[str, List[Dict]]:
+def duplicate_id_groups(pages: List[Dict], in_scope=None) -> Dict[str, List[Dict]]:
     groups: Dict[str, List[Dict]] = {}
     for page in pages:
         article_id = page.get("article_id")
         if not article_id:
             continue
         groups.setdefault(article_id, []).append(page)
-    return {article_id: group for article_id, group in groups.items() if len(group) > 1}
+    return {article_id: group for article_id, group in groups.items()
+            if len(group) > 1 and (in_scope is None or all(in_scope(p) for p in group))}
 
 
 def page_has_children(notion_api: NotionAPI, page_id: str) -> bool:
@@ -259,11 +167,13 @@ def duplicate_keep_score(notion_api: NotionAPI, page: Dict, article: Optional[Di
     return score
 
 
-def archive_duplicate_id_pages(notion_api: NotionAPI, pages: List[Dict], articles: List[Dict], limit: Optional[int] = None) -> set:
+def archive_duplicate_id_pages(notion_api: NotionAPI, pages: List[Dict], articles: List[Dict], limit: Optional[int] = None, in_scope=None) -> set:
     article_by_id = {article.get("article_id"): article for article in articles if article.get("article_id")}
     archived_ids = set()
     targets = []
-    for article_id, group in duplicate_id_groups(pages).items():
+    for article_id, group in duplicate_id_groups(pages, in_scope).items():
+        if limit is not None and len(targets) >= limit:
+            break
         article = article_by_id.get(article_id)
         ranked = sorted(
             group,
@@ -283,27 +193,13 @@ def archive_duplicate_id_pages(notion_api: NotionAPI, pages: List[Dict], article
 
 
 def create_article_page(notion_api: NotionAPI, article: Dict) -> Optional[str]:
-    properties = minimal_properties(article)
-
-    page = retry(
-        "创建 Notion 页面",
-        lambda: notion_api.notion.pages.create(
-            parent={"database_id": notion_api.database_id},
-            properties=properties,
-        ),
-    )
-    page_id = page.get("id")
-    blocks = paragraph_blocks(article.get("content", ""))
-    for i in range(0, len(blocks), MAX_BLOCKS):
-        batch = blocks[i : i + MAX_BLOCKS]
-        retry(
-            "写入 Notion 正文",
-            lambda batch=batch: notion_api.notion.blocks.children.append(
-                block_id=page_id,
-                children=batch,
-            ),
-        )
-    return page_id
+    # 不盲目重试新建：如对端成功但回执丢失，下次先按身份重新核对。
+    # 裁剪属性以免不断扩张 select 选项，仍要求 Article ID 写入成功。
+    source = notion_api._get_data_source_id()
+    parent = {"data_source_id": source} if source else {"database_id": notion_api.database_id}
+    page = notion_api.notion.pages.create(parent=parent, properties=minimal_properties(article),
+                                         children=notion_api._body_blocks(article.get("content") or ""))
+    return page["id"]
 
 
 def archive_duplicate_page(notion_api: NotionAPI, page: Dict):
@@ -320,7 +216,10 @@ def print_plan(plan: Dict, pages: List[Dict], articles: List[Dict]):
     print(f"  将归档重复页: {len(plan['duplicate_archive'])}")
     print(f"  将新建缺失文章: {len(plan['missing_articles'])}")
     print(f"  空白且无法匹配页面: {len(plan['unmatched_blank'])}")
-    print(f"  已存在重复 Article ID: {len(plan['duplicate_ids'])}")
+    print(f"  范围内重复 Article ID 组数: {len(plan['duplicate_ids'])}")
+    print(f"  身份待人工核对（不新建）: {len(plan['needs_review'])}")
+    for article, reason in plan['needs_review'][:5]:
+        print(f"    {article.get('article_id')} {article.get('title', '')[:50]}：{reason}")
     if plan["duplicate_archive"]:
         print("  归档样例:")
         for page, article in plan["duplicate_archive"][:5]:
@@ -342,6 +241,25 @@ def main():
     parser.add_argument("--start", help="Only maintain articles on or after this date, format YYYY-MM-DD.")
     parser.add_argument("--end", help="Only maintain articles on or before this date, format YYYY-MM-DD.")
     args = parser.parse_args()
+    if args.limit is not None and args.limit < 1:
+        parser.error("--limit 必须是正整数（整次维护的页数上限）")
+    dates = {normalize_date(d) for d in args.date or []}
+    start, end = normalize_date(args.start), normalize_date(args.end)
+    for value in [*dates, start, end]:
+        if value:
+            try:
+                if date.fromisoformat(value).isoformat() != value:
+                    raise ValueError
+            except ValueError:
+                parser.error(f"无效日期：{value}，请使用 YYYY-MM-DD")
+    if start and end and start > end:
+        parser.error("开始日期不得晚于结束日期")
+
+    def in_scope(page):
+        day = page.get("date") or ""
+        if not (dates or start or end):
+            return True
+        return bool(day and (not dates or day in dates) and (not start or start <= day) and (not end or day <= end))
 
     config = Config()
     setup_logger(config)
@@ -352,7 +270,7 @@ def main():
     if args.date or args.start or args.end:
         scope = ", ".join(args.date or []) or f"{args.start or '最早'} ~ {args.end or '最新'}"
         print(f"本次只维护日期范围: {scope}")
-    plan = classify(pages, articles)
+    plan = classify(pages, articles, in_scope=in_scope)
     print_plan(plan, pages, articles)
 
     if args.dry_run or (not args.archive_duplicates and not args.create_missing):
@@ -361,13 +279,16 @@ def main():
 
     archived_ids = set()
     archived_count = 0
-    archive_targets = plan["duplicate_archive"][: args.limit] if args.limit else plan["duplicate_archive"]
+    attempts = 0
     if args.archive_duplicates:
-        duplicate_id_archived_ids = archive_duplicate_id_pages(notion_api, pages, articles, args.limit)
+        duplicate_id_archived_ids = archive_duplicate_id_pages(notion_api, pages, articles, args.limit, in_scope)
         archived_ids.update(duplicate_id_archived_ids)
         archived_count += len(duplicate_id_archived_ids)
 
+        attempts += len(duplicate_id_archived_ids)
+        archive_targets = plan["duplicate_archive"][:None if args.limit is None else args.limit - attempts]
         for index, (page, article) in enumerate(archive_targets, 1):
+            attempts += 1
             try:
                 archive_duplicate_page(notion_api, page)
                 archived_ids.add(page["id"])
@@ -379,8 +300,8 @@ def main():
             time.sleep(args.delay)
 
     # Reclassify against the in-memory page set so missing creation accounts for archived pages.
-    refreshed_plan = classify(pages, articles, assume_archived=archived_ids)
-    create_targets = refreshed_plan["missing_articles"][: args.limit] if args.limit else refreshed_plan["missing_articles"]
+    refreshed_plan = classify(pages, articles, assume_archived=archived_ids, in_scope=in_scope) if archived_ids else plan
+    create_targets = refreshed_plan["missing_articles"][:None if args.limit is None else args.limit - attempts]
     created_count = 0
     failed_create = 0
     if args.create_missing:

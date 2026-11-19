@@ -25,10 +25,12 @@ PRIORITY_OPTIONS = ["S", "A", "B", "C"]
 sys.path.insert(0, str(SCRIPT_DIR))
 
 
-def connect(path: Path) -> sqlite3.Connection:
-    conn = sqlite3.connect(str(path), timeout=10)
+def connect(path: Path, *, read_only: bool = False) -> sqlite3.Connection:
+    target = f"{path.resolve().as_uri()}?mode=ro" if read_only else str(path)
+    conn = sqlite3.connect(target, uri=read_only, timeout=10)
     conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA journal_mode=WAL")
+    if not read_only:
+        conn.execute("PRAGMA journal_mode=WAL")
     conn.execute("PRAGMA busy_timeout=10000")
     return conn
 
@@ -132,21 +134,32 @@ def ensure_note_table(conn: sqlite3.Connection) -> None:
     conn.commit()
 
 
-def load_article_map(asset_conn: sqlite3.Connection) -> Dict[str, Dict[str, str]]:
+def load_article_map(asset_conn: sqlite3.Connection, support_ids: set[str]) -> Dict[str, Dict[str, str]]:
     articles: Dict[str, Dict[str, str]] = {}
-    for row in asset_conn.execute("SELECT article_id, title, source_url FROM article_analysis"):
+    if not support_ids:
+        return articles
+    ids = sorted(support_ids)
+
+    def matching_rows(conn, sql):
+        # 分批低于旧 SQLite 的参数上限，避免为展示少量引文搬运全库。
+        for offset in range(0, len(ids), 500):
+            batch = ids[offset:offset + 500]
+            placeholders = ','.join('?' for _ in batch)
+            yield from conn.execute(f"{sql} WHERE article_id IN ({placeholders})", batch)
+
+    for row in matching_rows(asset_conn, "SELECT article_id, title, source_url, date FROM article_analysis"):
         articles[row["article_id"]] = {
             "article_id": row["article_id"],
             "title": row["title"] or row["article_id"],
             "url": row["source_url"] or "",
             "markdown_path": "",
-            "date": row["date"] if "date" in row.keys() else "",
+            "date": row["date"] or "",
         }
 
     if ARTICLE_DB.exists():
-        article_conn = connect(ARTICLE_DB)
+        article_conn = connect(ARTICLE_DB, read_only=True)
         try:
-            for row in article_conn.execute(
+            for row in matching_rows(article_conn,
                 "SELECT article_id, title, source_url, markdown_path, date, section_name FROM articles"
             ):
                 articles[row["article_id"]] = {
@@ -162,7 +175,7 @@ def load_article_map(asset_conn: sqlite3.Connection) -> Dict[str, Dict[str, str]
     return articles
 
 
-def row_to_idea(row: sqlite3.Row, article_map: Dict[str, Dict[str, str]]) -> Dict[str, Any]:
+def row_to_idea(row: sqlite3.Row, article_map: Dict[str, Dict[str, str]], *, share: bool = False) -> Dict[str, Any]:
     support_ids = json_list(row["support_article_ids_json"])
     support_articles = [
         article_map.get(article_id, {"article_id": article_id, "title": article_id, "url": "", "markdown_path": ""})
@@ -179,7 +192,7 @@ def row_to_idea(row: sqlite3.Row, article_map: Dict[str, Dict[str, str]]) -> Dic
             row["priority"] or "",
             " ".join(outline),
             " ".join(article["title"] for article in support_articles),
-            row["user_note"] or "",
+            "" if share else row["user_note"] or "",
         ]
     )
     return {
@@ -192,7 +205,7 @@ def row_to_idea(row: sqlite3.Row, article_map: Dict[str, Dict[str, str]]) -> Dic
         "status": normalize_status(row["status"]),
         "priority": normalize_priority(row["priority"], row["status"]),
         "selected": bool(row["selected"]),
-        "user_note": row["user_note"] or "",
+        **({} if share else {"user_note": row["user_note"] or ""}),
         "outline": outline,
         "support_articles": support_articles,
         "created_at": row["created_at"],
@@ -201,13 +214,13 @@ def row_to_idea(row: sqlite3.Row, article_map: Dict[str, Dict[str, str]]) -> Dic
     }
 
 
-def idea_payload() -> Dict[str, Any]:
+def idea_payload(*, share: bool = False) -> Dict[str, Any]:
     if not ASSET_DB.exists():
         raise FileNotFoundError(f"未找到素材资产库: {ASSET_DB}")
-    conn = connect(ASSET_DB)
+    conn = connect(ASSET_DB, read_only=share)
     try:
-        ensure_note_table(conn)
-        article_map = load_article_map(conn)
+        if not share:
+            ensure_note_table(conn)
         rows = list(
             conn.execute(
                 """
@@ -223,10 +236,12 @@ def idea_payload() -> Dict[str, Any]:
                 """
             )
         )
+        support_ids = {key for row in rows for key in json_list(row['support_article_ids_json'])}
+        article_map = load_article_map(conn, support_ids)
     finally:
         conn.close()
 
-    ideas = [row_to_idea(row, article_map) for row in rows]
+    ideas = [row_to_idea(row, article_map, share=share) for row in rows]
     status_counts: Dict[str, int] = {}
     priority_counts: Dict[str, int] = {}
     month_counts: Dict[str, int] = {}
@@ -272,7 +287,7 @@ def article_search(query: str, limit: int = 40) -> Dict[str, Any]:
         term = f"%{query}%"
         params.extend([term, term, term, term])
     params.append(limit)
-    conn = connect(ARTICLE_DB)
+    conn = connect(ARTICLE_DB, read_only=True)
     try:
         rows = list(
             conn.execute(

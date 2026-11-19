@@ -8,14 +8,14 @@
 data/
   core/
     articles.sqlite          # 核心 SQLite 数据库
-    articles.jsonl           # 可读备份，适合 AI 批量读取
+    articles.jsonl           # 上次重建的快照，不随日常采集刷新
     material_assets.sqlite    # 教研素材资产库
     rebuild_manifest.json    # 最近一次重建摘要
   raw/                       # 原始 JSON，事实留存层
   processed/                 # 旧处理结果，保留兼容
   vault/                     # 人类阅读视图，继续给 Obsidian 使用
   analysis/                  # 教研分析、复盘、出品过程
-  articles/                   # 两类公众号成稿、往期归档和统一索引
+  articles/                   # 三类公众号成稿、往期归档和统一索引
   exports/                   # 对外导出和同步辅助文件
 media/                       # 图片、课件、音视频等本地多媒体资产，网盘同步
 ```
@@ -28,15 +28,16 @@ media/                       # 图片、课件、音视频等本地多媒体资�
 - `data/raw` 是原始数据留存层，保证重建和追溯能力。
 - `data/articles/人民日报系列` 是人民日报选题当前成稿入口，沿用数字编号。
 - `data/articles/热点系列` 是热点分析当前成稿入口，使用“热点+数字”独立编号。
-- `data/articles/往期文章` 按两个系列保存老师手动归档的已发表文章。
+- `data/articles/申论方法系列` 是申论方法成稿入口，独立编号，首篇保留原名。
+- `data/articles/往期文章` 按对应系列保存老师手动归档的已发表文章。
 - `data/articles/文章索引.md` 是当前成稿和往期文章的统一查找入口。
 - `media` 是非文本资产层，保存小红书图、公众号配图、课件、视频、音频和打包文件。它不参与核心库重建，不进入 GitHub，只通过 `media/_index.md` 保留可检索线索。
 
-之前预留过的 `data/source/`、`data/index/`、`data/manifests/`、`data/checkpoints/` 已不作为日常常驻目录保留；如果未来确实接入单独向量库或外部索引，再由对应脚本生成。
+之前预留过的 `data/index/`、`data/manifests/`、`data/checkpoints/` 已不作为日常常驻目录保留；如果未来确实接入单独向量库或外部索引，再由对应脚本生成（`data/checkpoints/` 由断点续传模块运行时自动创建）。`data/source/` 现存放《马江博·政经参考（2026）》等选题来源资料，是有效内容，不要按空占位目录清理。
 
 ## 重建数据库
 
-当你整理了旧 Markdown、补了历史 JSON，或者怀疑数据库和文件不一致时，运行：
+首次建库可直接运行。已有主库时，核验请加 `--db-path .local/rebuild-check/articles.sqlite` 指向全新的位置；数据库、JSONL、清单都写到目标目录，不覆盖主库。仅在明确要更新原库时使用 `--no-reset`。
 
 ```bash
 python3 scripts/rebuild_article_database.py

@@ -20,7 +20,7 @@
 4. **一润并送得到** — `snapshot … --stage draft` → `humanizer-zh`（≥45/50，保 YAML/事实/数字/引用/框架）→ 再预检 → `writing_workflow.py send`。长期授权：一润后直接送得到，勿再索要全文外发确认。
 5. **拉回加粗配图** — `pull`（校验不过不覆盖）→ 只加粗 8–15 处 → `register-figures` / `apply-figures`；**本阶段不建平台草稿**。
 6. **本地确认配图** — 工作台确认，或 `confirm-inline-figures`；确认前不得 sync。
-7. **同步双平台草稿** — `dual-platform-draft-sync` + `gzh-design` 红白 HTML（0 ERROR / 0 WARNING）→ `sync-dual`；只建草稿，不发布、不群发。
+7. **同步双平台草稿** — `dual-platform-draft-sync` + `gzh-design` zen-whitespace 小米橙 HTML（0 ERROR / 0 WARNING，见 docs/visual-spec-zen-whitespace-fresh.md）→ `sync-dual`；只建草稿，不发布、不群发。
 
 ## 成稿结构硬规则
 

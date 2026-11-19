@@ -7,6 +7,8 @@ Markdown 文件写入模块 - 将文章保存为结构化 Markdown + YAML frontm
 import os
 import re
 import logging
+import json
+import yaml
 from datetime import datetime
 from typing import Dict, Optional
 
@@ -67,9 +69,26 @@ class MarkdownWriter:
             # 组合完整内容
             full_content = f"{frontmatter}\n{markdown_body}\n"
             
-            # 写入文件
-            with open(filepath, 'w', encoding='utf-8') as f:
-                f.write(full_content)
+            # 阅读视图可能带有老师的批注；重抓时只核对来源，不重写已有笔记。
+            try:
+                with open(filepath, 'x', encoding='utf-8') as f:
+                    f.write(full_content)
+            except FileExistsError:
+                with open(filepath, encoding='utf-8') as f:
+                    first = f.readline().strip()
+                    header = []
+                    if first == '---':
+                        for line in f:
+                            if line.strip() == '---':
+                                break
+                            header.append(line)
+                meta = yaml.safe_load(''.join(header)) or {}
+                if url := (article.get('url') or article.get('source_url')):
+                    if isinstance(meta, dict) and meta.get('source_url') == url:
+                        logging.info('保留已有阅读视图及批注：%s', filepath)
+                        return filepath
+                logging.error('同名阅读笔记来源无法核实，保留原文件：%s', filepath)
+                return None
             
             logging.info(f"Markdown 已保存: {filepath}")
             return filepath
@@ -81,46 +100,34 @@ class MarkdownWriter:
     def _build_frontmatter(self, article: Dict, date: datetime,
                            section_id: str, section_name: str) -> str:
         """构建 YAML frontmatter"""
-        title = article.get('title', '').replace('"', '\\"')
-        author = article.get('author', '').replace('"', '\\"')
-        plate = article.get('plate', section_name)
-        category = article.get('category', '')
-        keywords = article.get('keywords', [])
-        word_count = len(article.get('content', ''))
-        url = article.get('url', '')
-        summary = article.get('summary', '').replace('"', '\\"')
-        
-        # 系列信息
-        series_name = article.get('series_name', '') or ''
+        def quote(value):
+            # JSON 字符串也是合法 YAML，可保留引号、反斜线、标点等。
+            return json.dumps(value, ensure_ascii=False)
+
+        series_name = article.get('series_name') or ''
         series_int_id = article.get('series_int_id')
         series_part = article.get('series_part')
-        related_titles = article.get('related_titles', [])
-        
-        # 关键词列表
-        if keywords:
-            kw_str = ', '.join(keywords[:8])
-            kw_line = f"keywords: [{kw_str}]"
-        else:
-            kw_line = "keywords: []"
-        
+        related_titles = article.get('related_titles') or []
         lines = [
-            "---",
-            f'title: "{title}"',
-            f"date: {date.strftime('%Y-%m-%d')}",
-            f'section: "第{section_id}版"' if section_id else 'section: ""',
-            f'section_name: "{plate}"',
-            f'author: "{author}"',
-            f'category: "{category}"',
-            kw_line,
-            f"word_count: {word_count}",
-            f'source_url: "{url}"',
+            '---',
+            'title: ' + quote(article.get('title') or ''),
+            f'date: {date:%Y-%m-%d}',
+            'section: ' + quote(f'第{section_id}版' if section_id else ''),
+            'section_name: ' + quote(article.get('plate') or section_name),
+            'author: ' + quote(article.get('author') or ''),
+            'category: ' + quote(article.get('category') or ''),
+            'keywords: ' + quote((article.get('keywords') or [])[:8]),
+            'word_count: ' + str(len(article.get('content') or '')),
+            'source_url: ' + quote(article.get('url') or article.get('source_url') or ''),
         ]
-        
+        if article.get('article_id'):
+            lines.append('article_id: ' + quote(article['article_id']))
+
         # 系列字段（仅在有系列时添加）
         if series_int_id:
             lines.append(f"series: {series_int_id}")
             if series_name:
-                lines.append(f'series_name: "{series_name}"')
+                lines.append('series_name: ' + quote(series_name))
             if series_part is not None:
                 lines.append(f"series_part: {series_part}")
         
@@ -128,7 +135,7 @@ class MarkdownWriter:
         if related_titles:
             lines.append("related:")
             for rt in related_titles:
-                lines.append(f'  - "[[{rt}]]"')
+                lines.append('  - ' + quote(f'[[{rt}]]'))
         
         lines.append("---")
         lines.append("")
