@@ -290,3 +290,175 @@ def load_dotenv_values() -> dict[str, str]:
         key, value = line.split("=", 1)
         values[key.strip()] = value.strip().strip("\"'")
     return values
+
+
+def file_sha256(path: Path) -> str:
+    """计算文件的 SHA256 哈希值。"""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+class ExternalDraftMode:
+    """外部成稿登记模式的语义常量。
+
+    区分两种不同场景，避免混淆：
+    - POLISH_COMPLETED_EXTERNALLY: 用户在得到大脑以外的渠道完成了二润（如手动编辑、
+      其他润色工具、直接定稿），现在提交最终成稿；语义上等同于"已完成二润"。
+    - POLISH_NOT_APPLICABLE: 本稿性质决定不需要外部二润（如纯技术文档、已定稿公文），
+      用户明确豁免；语义上是"二润不适用"。
+
+    两者都不伪造得到大脑 pull 记录，但状态含义不同。
+    """
+
+    POLISH_COMPLETED_EXTERNALLY = "polish_completed_externally"
+    POLISH_NOT_APPLICABLE = "polish_not_applicable"
+
+    VALID_MODES = (POLISH_COMPLETED_EXTERNALLY, POLISH_NOT_APPLICABLE)
+
+    @classmethod
+    def label(cls, mode: str) -> str:
+        labels = {
+            cls.POLISH_COMPLETED_EXTERNALLY: "外部二润已完成",
+            cls.POLISH_NOT_APPLICABLE: "二润不适用",
+        }
+        return labels.get(mode, mode)
+
+
+def validate_external_draft_registration(
+    article_path: Path,
+    *,
+    expected_hash: str,
+    authorization_reason: str,
+    target_platform: str,
+    mode: str = ExternalDraftMode.POLISH_COMPLETED_EXTERNALLY,
+) -> dict[str, Any]:
+    """校验外部成稿登记请求的合法性。
+
+    这是"免二润"入口的核心校验：用户提供现成稿、明确授权跳过得到大脑往返。
+    必须记录源 hash、授权证据、单篇单平台范围、时间；不能让其他稿默认绕二润。
+
+    Args:
+        article_path: 文章路径
+        expected_hash: 用户提供的源稿 SHA256 哈希值
+        authorization_reason: 用户明确的授权理由
+        target_platform: 目标平台（wechat, toutiao, wechat_only）
+        mode: 外部成稿模式，区分"外部二润已完成"和"二润不适用"
+
+    Returns:
+        包含校验结果和计算值的字典，校验失败时 issues 非空。
+    """
+    issues: list[str] = []
+
+    if not article_path.exists():
+        issues.append(f"文章不存在：{article_path}")
+        return {"ok": False, "issues": issues}
+
+    if mode not in ExternalDraftMode.VALID_MODES:
+        issues.append(
+            f"外部成稿模式不正确：{mode}（允许值："
+            f"{', '.join(ExternalDraftMode.VALID_MODES)}）"
+        )
+
+    if not expected_hash or len(expected_hash) != 64:
+        issues.append("源稿 SHA256 哈希值格式不正确（应为64位十六进制）")
+
+    if not authorization_reason or len(authorization_reason) < 10:
+        issues.append("授权理由过短，必须明确说明为什么本篇可跳过得到大脑二润")
+
+    if target_platform not in ("wechat", "toutiao", "wechat_only"):
+        issues.append(f"目标平台不正确：{target_platform}（允许值：wechat, toutiao, wechat_only）")
+
+    actual_hash = file_sha256(article_path)
+    if expected_hash and actual_hash != expected_hash:
+        issues.append(
+            f"源稿 SHA256 不匹配：\n"
+            f"  预期：{expected_hash}\n"
+            f"  实际：{actual_hash}\n"
+            f"请确认文章未被修改，或更新预期哈希值"
+        )
+
+    source = article_path.read_text(encoding="utf-8")
+    _, body, _ = split_frontmatter(source)
+    if not body.strip():
+        issues.append("文章正文为空")
+
+    return {
+        "ok": not issues,
+        "issues": issues,
+        "actual_hash": actual_hash,
+        "body_hash": body_hash(body),
+        "mode": mode,
+        "mode_label": ExternalDraftMode.label(mode),
+    }
+
+
+def validate_external_candidate_import(
+    article_path: Path,
+    candidate_path: Path,
+    *,
+    source_evidence: str,
+) -> dict[str, Any]:
+    """校验外部二润候选稿导入请求的合法性。
+
+    这是"外部二润已完成"的候选导入入口：用户在得到官方网页等渠道完成润色，
+    手动取回候选稿，现在需要安全导入并覆盖本地文章。
+
+    与标准 pull 的区别：
+    - 不调用 getnote CLI
+    - 记录真实候选来源证据
+    - 执行相同的结构校验
+
+    Args:
+        article_path: 原始文章路径
+        candidate_path: 外部候选稿路径
+        source_evidence: 候选稿来源证据（如"得到官方网页@润色一下 2026-11-22"）
+
+    Returns:
+        包含校验结果的字典，校验失败时 issues 非空。
+    """
+    issues: list[str] = []
+
+    if not article_path.exists():
+        issues.append(f"原始文章不存在：{article_path}")
+        return {"ok": False, "issues": issues}
+
+    if not candidate_path.exists():
+        issues.append(f"候选稿不存在：{candidate_path}")
+        return {"ok": False, "issues": issues}
+
+    if not source_evidence or len(source_evidence) < 10:
+        issues.append('来源证据过短，必须说明候选稿从哪里取回（如"得到官方网页@润色一下"）')
+
+    original_source = article_path.read_text(encoding="utf-8")
+    _, original_body, original_metadata = split_frontmatter(original_source)
+    if not original_body.strip():
+        issues.append("原始文章正文为空")
+
+    candidate_source = candidate_path.read_text(encoding="utf-8")
+    _, candidate_body, _ = split_frontmatter(candidate_source)
+    if not candidate_body.strip():
+        issues.append("候选稿正文为空")
+
+    if issues:
+        return {"ok": False, "issues": issues}
+
+    original_hash = body_hash(original_body)
+    candidate_hash = body_hash(candidate_body)
+
+    if original_hash == candidate_hash:
+        issues.append("候选稿正文与原始文章完全一致，无需导入")
+
+    # 执行与标准 pull 相同的结构校验
+    structure_issues = structural_issues(original_body, candidate_body)
+    if structure_issues:
+        issues.extend(structure_issues)
+
+    return {
+        "ok": not issues,
+        "issues": issues,
+        "original_hash": original_hash,
+        "candidate_hash": candidate_hash,
+        "original_file_hash": file_sha256(article_path),
+        "candidate_file_hash": file_sha256(candidate_path),
+        "original_metadata": original_metadata,
+        "structure_issues": structure_issues,
+    }

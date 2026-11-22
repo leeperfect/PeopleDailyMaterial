@@ -50,7 +50,12 @@ def prepare(
     article_path = project_path(article).resolve()
     if not article_path.exists():
         raise RuntimeError(f"文章不存在：{article_path}")
-    readiness = require_publication_ready(article_path, allow_no_figures=no_figures)
+    # 【安全检查】根据目标平台校验外部成稿登记的平台绑定
+    readiness = require_publication_ready(
+        article_path,
+        allow_no_figures=no_figures,
+        target_platform=platform,  # "both", "wechat", "toutiao"
+    )
     figure_fingerprint = str(readiness["figure_check"]["fingerprint"])
 
     state = load_state(config)

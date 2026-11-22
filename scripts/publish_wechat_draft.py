@@ -269,7 +269,9 @@ def publish(
     article_path = project_path(article).resolve()
     if not article_path.exists():
         raise RuntimeError(f"文章不存在：{article_path}")
-    readiness = require_publication_ready(article_path, allow_no_figures=no_figures)
+    readiness = require_publication_ready(
+        article_path, allow_no_figures=no_figures, target_platform="wechat"
+    )
     source = article_path.read_text(encoding="utf-8")
     _, body, metadata = split_frontmatter(source)
     title = validated_title(metadata, body, article_path)
@@ -356,7 +358,7 @@ def replace_draft(article: str, media_id: str, *, wechat_html: str | None = None
     article_path = project_path(article).resolve()
     if not article_path.exists():
         raise RuntimeError(f"文章不存在：{article_path}")
-    readiness = require_publication_ready(article_path)
+    readiness = require_publication_ready(article_path, target_platform="wechat")
     source = article_path.read_text(encoding="utf-8")
     _, body, metadata = split_frontmatter(source)
     title = validated_title(metadata, body, article_path)
