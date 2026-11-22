@@ -16,10 +16,16 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from modules.writing_workflow import (
+    PROJECT_ROOT,
+    ExternalDraftMode,
     article_state,
+    atomic_write_text,
+    body_hash,
     bold_phrases,
     cover_for_article,
     emphasis_only_issues,
+    file_sha256,
+    join_frontmatter,
     load_dotenv_values,
     load_public_config,
     load_state,
@@ -27,7 +33,12 @@ from modules.writing_workflow import (
     save_snapshot,
     save_state,
     split_frontmatter,
+    unified_diff,
+    validate_external_candidate_import,
+    validate_external_draft_registration,
+    workflow_id,
 )
+from typing import Any
 
 
 def run_script(name: str, arguments: list[str]) -> int:
@@ -110,6 +121,236 @@ def snapshot(article: str, stage: str) -> None:
     print(f"已保存{stage}快照：{path}")
 
 
+def _get_emphasis_baseline(entry: dict[str, Any]) -> tuple[str, str]:
+    """获取重点加粗审查的基准快照路径和来源标签。
+
+    支持两种基准：
+    1. getnote_snapshot: 从得到大脑拉回的二润稿（标准流程）
+    2. external_draft_snapshot: 外部成稿登记的用户源稿（免二润入口）
+
+    Returns:
+        (快照路径, 来源标签)
+    """
+    # 路径 1：标准得到大脑拉回
+    if entry.get("getnote_snapshot"):
+        return str(entry["getnote_snapshot"]), "二润拉回候选稿"
+
+    # 路径 2：外部成稿登记
+    external = entry.get("external_draft_registration")
+    if isinstance(external, dict) and external.get("baseline_snapshot"):
+        mode_label = external.get("mode_label", "外部成稿")
+        return str(external["baseline_snapshot"]), f"{mode_label}基准稿"
+
+    return "", ""
+
+
+def register_external_draft(
+    article: str,
+    *,
+    source_hash: str,
+    reason: str,
+    platform: str,
+    mode: str,
+    candidate: str | None = None,
+    source_evidence: str | None = None,
+    accept_structure_risk: bool = False,
+) -> dict[str, Any]:
+    """登记外部成稿或导入外部二润候选稿。
+
+    这是"免二润"的正式可审计入口，支持两种场景：
+
+    场景 A（无候选稿）：用户提供的现成稿
+    - 源文件本身就是最终稿
+    - 记录源 hash、授权、单篇作用域
+    - 基准快照指向源文件
+
+    场景 B（有候选稿）：外部二润候选导入
+    - 用户在得到官方网页等渠道完成润色
+    - 手动取回候选稿到本地
+    - 校验并覆盖原文，记录来源证据
+    - 基准快照指向导入后的候选稿
+
+    两种场景都：
+    - 不伪造 getnote pull 记录
+    - 保留完整的校验链（emphasis-check、figures、readiness）
+    - 记录单篇、单平台、当次授权
+    """
+    config = load_public_config()
+    article_path = project_path(article).resolve()
+
+    # 场景 A：用户提供的现成稿（无候选稿）
+    if not candidate:
+        validation = validate_external_draft_registration(
+            article_path,
+            expected_hash=source_hash,
+            authorization_reason=reason,
+            target_platform=platform,
+            mode=mode,
+        )
+        if not validation["ok"]:
+            raise RuntimeError("外部成稿校验未通过：\n" + "\n".join(f"- {issue}" for issue in validation["issues"]))
+
+        source = article_path.read_text(encoding="utf-8")
+        frontmatter, body, metadata = split_frontmatter(source)
+        now = datetime.now().isoformat(timespec="seconds")
+
+        baseline_snapshot = save_snapshot(
+            article_path,
+            metadata,
+            "00-external-draft-baseline.md",
+            source,
+        )
+
+        state = load_state(config)
+        entry = article_state(state, article_path, create=True)
+        assert entry is not None
+
+        registration = {
+            "mode": mode,
+            "mode_label": validation["mode_label"],
+            "registered_at": now,
+            "source_file_hash": validation["actual_hash"],
+            "source_body_hash": validation["body_hash"],
+            "authorization_reason": reason,
+            "target_platform": platform,
+            "baseline_snapshot": str(baseline_snapshot.relative_to(PROJECT_ROOT)),
+            "candidate_imported": False,
+        }
+        entry["external_draft_registration"] = registration
+        entry["status"] = "external_draft_registered"
+        save_state(state, config)
+
+        print(f"外部成稿登记成功：{validation['mode_label']}")
+        print(f"源稿 SHA256：{validation['actual_hash']}")
+        print(f"授权理由：{reason}")
+        print(f"目标平台：{platform}")
+        print(f"基准快照：{baseline_snapshot}")
+        print("下一步：审查重点加粗（emphasis-check）")
+
+        return {
+            "ok": True,
+            "scenario": "user_provided_draft",
+            "registration": registration,
+        }
+
+    # 场景 B：外部二润候选导入
+    if not source_evidence:
+        raise RuntimeError("导入外部候选稿必须提供来源证据（--source-evidence）")
+
+    candidate_path = project_path(candidate).resolve()
+    validation = validate_external_candidate_import(
+        article_path,
+        candidate_path,
+        source_evidence=source_evidence,
+    )
+
+    # 检查源稿 hash 是否匹配
+    if validation.get("original_file_hash") != source_hash:
+        raise RuntimeError(
+            f"原稿 SHA256 不匹配：\n"
+            f"  预期：{source_hash}\n"
+            f"  实际：{validation.get('original_file_hash')}\n"
+            f"请确认文章未被修改"
+        )
+
+    structure_issues = validation.get("structure_issues", [])
+    if structure_issues and not accept_structure_risk:
+        raise RuntimeError(
+            "候选稿结构校验未通过（与标准 pull 相同检查）：\n"
+            + "\n".join(f"- {issue}" for issue in structure_issues)
+            + "\n如确认接受风险，请加 --accept-structure-risk"
+        )
+
+    if not validation["ok"]:
+        non_structure_issues = [issue for issue in validation["issues"] if issue not in structure_issues]
+        if non_structure_issues:
+            raise RuntimeError("外部候选稿校验未通过：\n" + "\n".join(f"- {issue}" for issue in non_structure_issues))
+
+    # 读取原稿和候选稿
+    original_source = article_path.read_text(encoding="utf-8")
+    frontmatter, original_body, metadata = split_frontmatter(original_source)
+    candidate_source = candidate_path.read_text(encoding="utf-8")
+    _, candidate_body, _ = split_frontmatter(candidate_source)
+
+    now = datetime.now().isoformat(timespec="seconds")
+
+    # 保存导入前快照
+    before_import_snapshot = save_snapshot(
+        article_path,
+        metadata,
+        "02-before-external-import.md",
+        original_source,
+    )
+
+    # 合并：保留原 YAML，使用候选正文
+    merged = join_frontmatter(frontmatter, candidate_body)
+    merged_snapshot = save_snapshot(
+        article_path,
+        metadata,
+        "03-external-candidate.md",
+        merged,
+    )
+
+    # 保存差异报告
+    diff_report = unified_diff(original_body, candidate_body)
+    diff_path = save_snapshot(
+        article_path,
+        metadata,
+        "external-candidate-diff.patch",
+        diff_report,
+    )
+
+    # 覆盖原文
+    atomic_write_text(article_path, merged)
+
+    # 更新状态
+    state = load_state(config)
+    entry = article_state(state, article_path, create=True)
+    assert entry is not None
+
+    registration = {
+        "mode": mode,
+        "mode_label": ExternalDraftMode.label(mode),
+        "registered_at": now,
+        "source_file_hash": source_hash,
+        "source_body_hash": validation["original_hash"],
+        "authorization_reason": reason,
+        "target_platform": platform,
+        "candidate_imported": True,
+        "candidate_source_path": str(candidate_path),
+        "candidate_file_hash": validation["candidate_file_hash"],
+        "candidate_body_hash": validation["candidate_hash"],
+        "source_evidence": source_evidence,
+        "before_import_snapshot": str(before_import_snapshot.relative_to(PROJECT_ROOT)),
+        "baseline_snapshot": str(merged_snapshot.relative_to(PROJECT_ROOT)),
+        "diff_report": str(diff_path.relative_to(PROJECT_ROOT)),
+        "structure_warnings": structure_issues,
+        "structure_risk_accepted": accept_structure_risk and bool(structure_issues),
+    }
+    entry["external_draft_registration"] = registration
+    entry["status"] = "external_draft_registered"
+    save_state(state, config)
+
+    print(f"外部候选稿导入成功：{ExternalDraftMode.label(mode)}")
+    print(f"来源证据：{source_evidence}")
+    print(f"原稿 SHA256：{source_hash}")
+    print(f"候选稿 SHA256：{validation['candidate_file_hash']}")
+    print(f"导入前快照：{before_import_snapshot}")
+    print(f"候选稿快照：{merged_snapshot}")
+    print(f"差异报告：{diff_path}")
+    if structure_issues:
+        print("已接受的结构警告：")
+        for issue in structure_issues:
+            print(f"  - {issue}")
+    print("下一步：审查重点加粗（emphasis-check）")
+
+    return {
+        "ok": True,
+        "scenario": "external_candidate_import",
+        "registration": registration,
+    }
+
+
 def emphasis_check(article: str) -> None:
     config = load_public_config()
     article_path = project_path(article).resolve()
@@ -117,12 +358,20 @@ def emphasis_check(article: str) -> None:
         raise RuntimeError(f"文章不存在：{article_path}")
     state = load_state(config)
     entry = article_state(state, article_path)
-    if not entry or not entry.get("getnote_snapshot"):
-        raise RuntimeError("没有找到二润拉回候选稿，不能校验重点加粗")
+    if not entry:
+        raise RuntimeError("没有找到这篇文章的工作流记录")
 
-    baseline_path = project_path(str(entry["getnote_snapshot"])).resolve()
+    baseline_snapshot, baseline_label = _get_emphasis_baseline(entry)
+    if not baseline_snapshot:
+        raise RuntimeError(
+            "没有找到重点加粗审查的基准稿：\n"
+            "- 标准流程需要先从得到大脑拉回二润稿\n"
+            "- 免二润入口需要先登记外部成稿"
+        )
+
+    baseline_path = project_path(baseline_snapshot).resolve()
     if not baseline_path.exists():
-        raise RuntimeError(f"二润拉回候选稿不存在：{baseline_path}")
+        raise RuntimeError(f"{baseline_label}不存在：{baseline_path}")
     current = article_path.read_text(encoding="utf-8")
     baseline = baseline_path.read_text(encoding="utf-8")
     _, current_body, metadata = split_frontmatter(current)
@@ -195,6 +444,49 @@ def main() -> int:
         help="校验二润稿只新增重点加粗，没有改动文字",
     )
     emphasis_parser.add_argument("article")
+
+    # 外部成稿登记（免二润入口）
+    external_parser = subparsers.add_parser(
+        "register-external-draft",
+        help="登记外部成稿或导入外部二润候选稿（免二润入口）",
+    )
+    external_parser.add_argument("article", help="文章路径")
+    external_parser.add_argument(
+        "--source-hash",
+        required=True,
+        help="源稿 SHA256 哈希值（64位十六进制）",
+    )
+    external_parser.add_argument(
+        "--reason",
+        required=True,
+        help="授权理由：为什么本篇可跳过得到大脑二润",
+    )
+    external_parser.add_argument(
+        "--platform",
+        choices=["wechat", "toutiao", "wechat_only"],
+        default="wechat_only",
+        help="目标平台（默认仅公众号）",
+    )
+    external_parser.add_argument(
+        "--mode",
+        choices=list(ExternalDraftMode.VALID_MODES),
+        default=ExternalDraftMode.POLISH_COMPLETED_EXTERNALLY,
+        help="外部成稿模式：polish_completed_externally（外部二润已完成）或 polish_not_applicable（二润不适用）",
+    )
+    external_parser.add_argument(
+        "--candidate",
+        help="外部二润候选稿路径（提供时会校验并覆盖原文）",
+    )
+    external_parser.add_argument(
+        "--source-evidence",
+        help='候选稿来源证据（如"得到官方网页@润色一下 2026-11-22"）',
+    )
+    external_parser.add_argument(
+        "--accept-structure-risk",
+        action="store_true",
+        help="明确接受候选稿的结构校验警告",
+    )
+
     preview_parser = subparsers.add_parser("preview", help="生成 doocs/md 只读预览")
     preview_parser.add_argument("article")
     layout_parser = subparsers.add_parser("save-layout", help="保存本文排版设置")
@@ -304,6 +596,23 @@ def main() -> int:
     if args.command == "emphasis-check":
         try:
             emphasis_check(args.article)
+        except RuntimeError as error:
+            print(str(error), file=sys.stderr)
+            return 1
+        return 0
+    if args.command == "register-external-draft":
+        try:
+            result = register_external_draft(
+                args.article,
+                source_hash=args.source_hash,
+                reason=args.reason,
+                platform=args.platform,
+                mode=args.mode,
+                candidate=args.candidate,
+                source_evidence=args.source_evidence,
+                accept_structure_risk=args.accept_structure_risk,
+            )
+            print(json.dumps(result, ensure_ascii=False, indent=2))
         except RuntimeError as error:
             print(str(error), file=sys.stderr)
             return 1

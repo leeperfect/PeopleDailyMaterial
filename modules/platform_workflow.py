@@ -8,9 +8,35 @@ from pathlib import Path
 from typing import Any
 
 from modules.figure_workflow import MARKDOWN_IMAGE_RE, preflight_figures
-from modules.writing_workflow import article_state, load_public_config, load_state
+from modules.writing_workflow import (
+    ExternalDraftMode,
+    article_state,
+    load_public_config,
+    load_state,
+)
 
 NO_FIGURES_FINGERPRINT = "no-figures"
+
+
+def _check_polish_readiness(entry: dict[str, Any]) -> tuple[bool, str]:
+    """检查二润完成状态：得到大脑拉回 或 外部成稿登记。
+
+    Returns:
+        (通过, 阻断原因)。通过时原因为空。
+    """
+    # 路径 1：标准得到大脑往返
+    if entry.get("last_pulled_at"):
+        return True, ""
+
+    # 路径 2：外部成稿登记（免二润入口）
+    external = entry.get("external_draft_registration")
+    if isinstance(external, dict) and external.get("registered_at"):
+        mode = external.get("mode", "")
+        if mode in ExternalDraftMode.VALID_MODES:
+            return True, ""
+        return False, f"外部成稿登记模式不正确：{mode}"
+
+    return False, "尚未从得到大脑安全拉回二润稿，也没有外部成稿登记"
 
 
 def publication_readiness(
@@ -22,8 +48,12 @@ def publication_readiness(
     state = load_state(config)
     entry = article_state(state, article_path) or {}
     issues: list[str] = []
-    if not entry.get("last_pulled_at"):
-        issues.append("尚未从得到大脑安全拉回二润稿")
+
+    # 二润完成检查：得到大脑拉回 或 外部成稿登记
+    polish_ok, polish_issue = _check_polish_readiness(entry)
+    if not polish_ok:
+        issues.append(polish_issue)
+
     if not entry.get("emphasis_reviewed_at"):
         issues.append("重点加粗审查尚未通过")
     source = article_path.read_text(encoding="utf-8")
