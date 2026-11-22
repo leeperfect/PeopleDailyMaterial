@@ -531,6 +531,22 @@ def main() -> int:
     setup_wechat_parser = subparsers.add_parser("setup-wechat", help="启动私密配置页")
     setup_wechat_parser.add_argument("--port", default="8788")
     subparsers.add_parser("wechat-preflight", help="验证公众号接口")
+
+    # 只读草稿核验入口
+    draft_get_parser = subparsers.add_parser(
+        "draft-get",
+        help="只读查询公众号草稿（用于同步前查重，不调用发布/更新）",
+    )
+    draft_get_parser.add_argument(
+        "media_id",
+        help="草稿 media_id（如 dvJDS0jXez9W5smqGkKQtpYiBqaMBx85kqcgBelnEt1soTqpdjWwRywkxPmBkpQ3）",
+    )
+    draft_get_parser.add_argument(
+        "--fields",
+        default="title,digest,update_time",
+        help="返回字段（逗号分隔，默认 title,digest,update_time；content 需显式请求）",
+    )
+
     publish_parser = subparsers.add_parser("publish", help="同步公众号草稿箱")
     publish_parser.add_argument("article")
     publish_parser.add_argument("--dry-run", action="store_true")
@@ -692,6 +708,44 @@ def main() -> int:
         return run_script("wechat_setup.py", ["serve", "--port", args.port])
     if args.command == "wechat-preflight":
         return run_script("wechat_setup.py", ["preflight"])
+    if args.command == "draft-get":
+        # 只读草稿查询：使用现有安全守卫，脱敏输出
+        try:
+            from modules.wechat_api import WechatApiError, get_draft
+
+            raw = get_draft(args.media_id)
+            # 脱敏：只返回请求的字段，不输出完整 content 除非显式请求
+            requested = set(f.strip() for f in args.fields.split(",") if f.strip())
+            news_item = raw.get("news_item", [{}])[0] if raw.get("news_item") else {}
+            sanitized = {
+                "media_id": args.media_id,
+                "exists": bool(news_item),
+                "query_time": datetime.now().isoformat(timespec="seconds"),
+            }
+            for field in ("title", "digest", "author", "update_time", "thumb_media_id"):
+                if field in requested and field in news_item:
+                    sanitized[field] = news_item[field]
+            if "content" in requested:
+                content = news_item.get("content", "")
+                sanitized["content_length"] = len(content)
+                sanitized["content_preview"] = content[:200] + "..." if len(content) > 200 else content
+            print(json.dumps(sanitized, ensure_ascii=False, indent=2))
+        except WechatApiError as error:
+            # 草稿不存在返回 40007
+            if error.code == 40007:
+                print(json.dumps({
+                    "media_id": args.media_id,
+                    "exists": False,
+                    "error_code": 40007,
+                    "query_time": datetime.now().isoformat(timespec="seconds"),
+                }, ensure_ascii=False, indent=2))
+                return 0
+            print(f"查询草稿失败：{error}", file=sys.stderr)
+            return 1
+        except Exception as error:
+            print(f"查询草稿时发生错误：{error}", file=sys.stderr)
+            return 1
+        return 0
     if args.command == "publish":
         arguments = [args.article]
         if args.dry_run:
